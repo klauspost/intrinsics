@@ -291,6 +291,9 @@ func getPackage(i Intrinsic) string {
 }
 
 func fixFuncName(in string) string {
+	if strings.HasPrefix(in, "_m_") {
+		in = strings.TrimPrefix(in, "_m_")
+	}
 	out := CamelCase(in)
 	if strings.HasPrefix(out, "mm512") {
 		out = strings.TrimPrefix(out, "mm512")

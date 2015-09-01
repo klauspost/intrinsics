@@ -295,8 +295,8 @@ TEXT ·maskmoveSi64(SB),7,$0
 
 	RET
 
-// func mMaskmovq(a M64, mask M64, mem_addr byte) 
-TEXT ·mMaskmovq(SB),7,$0
+// func maskmovq(a M64, mask M64, mem_addr byte) 
+TEXT ·maskmovq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ mask+8(FP),M1
 	MOVB mem_addr+16(FP),R10
@@ -393,8 +393,8 @@ TEXT ·mulhrsPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPavgb(a M64, b M64) M64
-TEXT ·mPavgb(SB),7,$0
+// func pavgb(a M64, b M64) M64
+TEXT ·pavgb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -403,8 +403,8 @@ TEXT ·mPavgb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPavgw(a M64, b M64) M64
-TEXT ·mPavgw(SB),7,$0
+// func pavgw(a M64, b M64) M64
+TEXT ·pavgw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -413,8 +413,8 @@ TEXT ·mPavgw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPextrw(a M64, imm8 int) int
-TEXT ·mPextrw(SB),7,$0
+// func pextrw(a M64, imm8 int) int
+TEXT ·pextrw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
@@ -423,8 +423,8 @@ TEXT ·mPextrw(SB),7,$0
 	MOVQ $0, ret+16(FP)
 	RET
 
-// func mPinsrw(a M64, i int, imm8 int) M64
-TEXT ·mPinsrw(SB),7,$0
+// func pinsrw(a M64, i int, imm8 int) M64
+TEXT ·pinsrw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ i+8(FP),R9
 	MOVQ imm8+16(FP),R10
@@ -434,8 +434,8 @@ TEXT ·mPinsrw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPmaxsw(a M64, b M64) M64
-TEXT ·mPmaxsw(SB),7,$0
+// func pmaxsw(a M64, b M64) M64
+TEXT ·pmaxsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -444,8 +444,8 @@ TEXT ·mPmaxsw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPmaxub(a M64, b M64) M64
-TEXT ·mPmaxub(SB),7,$0
+// func pmaxub(a M64, b M64) M64
+TEXT ·pmaxub(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -454,8 +454,8 @@ TEXT ·mPmaxub(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPminsw(a M64, b M64) M64
-TEXT ·mPminsw(SB),7,$0
+// func pminsw(a M64, b M64) M64
+TEXT ·pminsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -464,8 +464,8 @@ TEXT ·mPminsw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPminub(a M64, b M64) M64
-TEXT ·mPminub(SB),7,$0
+// func pminub(a M64, b M64) M64
+TEXT ·pminub(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -474,8 +474,8 @@ TEXT ·mPminub(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPmovmskb(a M64) int
-TEXT ·mPmovmskb(SB),7,$0
+// func pmovmskb(a M64) int
+TEXT ·pmovmskb(SB),7,$0
 	MOVQ a+0(FP),M0
 
 	//TODO: Code missing
@@ -483,8 +483,8 @@ TEXT ·mPmovmskb(SB),7,$0
 	MOVQ $0, ret+8(FP)
 	RET
 
-// func mPmulhuw(a M64, b M64) M64
-TEXT ·mPmulhuw(SB),7,$0
+// func pmulhuw(a M64, b M64) M64
+TEXT ·pmulhuw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -493,8 +493,8 @@ TEXT ·mPmulhuw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPsadbw(a M64, b M64) M64
-TEXT ·mPsadbw(SB),7,$0
+// func psadbw(a M64, b M64) M64
+TEXT ·psadbw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -503,8 +503,8 @@ TEXT ·mPsadbw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mPshufw(a M64, imm8 int) M64
-TEXT ·mPshufw(SB),7,$0
+// func pshufw(a M64, imm8 int) M64
+TEXT ·pshufw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 

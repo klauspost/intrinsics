@@ -537,7 +537,7 @@ func MaskmoveSi64(a M64, mask M64, mem_addr byte)  {
 func maskmoveSi64(a M64, mask M64, mem_addr byte) 
 
 
-// MMaskmovq: Conditionally store 8-bit integer elements from 'a' into memory
+// Maskmovq: Conditionally store 8-bit integer elements from 'a' into memory
 // using 'mask' (elements are not stored when the highest bit is not set in the
 // corresponding element). 
 //
@@ -550,11 +550,11 @@ func maskmoveSi64(a M64, mask M64, mem_addr byte)
 //
 // Instruction: 'MASKMOVQ'. Intrinsic: '_m_maskmovq'.
 // Requires SSE.
-func MMaskmovq(a M64, mask M64, mem_addr byte)  {
-	mMaskmovq(a, mask, mem_addr)
+func Maskmovq(a M64, mask M64, mem_addr byte)  {
+	maskmovq(a, mask, mem_addr)
 }
 
-func mMaskmovq(a M64, mask M64, mem_addr byte) 
+func maskmovq(a M64, mask M64, mem_addr byte) 
 
 
 // MaxPi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -725,7 +725,7 @@ func MulhrsPi16(a M64, b M64) M64 {
 func mulhrsPi16(a M64, b M64) M64
 
 
-// MPavgb: Average packed unsigned 8-bit integers in 'a' and 'b', and store the
+// Pavgb: Average packed unsigned 8-bit integers in 'a' and 'b', and store the
 // results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -735,15 +735,15 @@ func mulhrsPi16(a M64, b M64) M64
 //
 // Instruction: 'PAVGB'. Intrinsic: '_m_pavgb'.
 // Requires SSE.
-func MPavgb(a M64, b M64) M64 {
-	return M64(mPavgb(a, b))
+func Pavgb(a M64, b M64) M64 {
+	return M64(pavgb(a, b))
 }
 
-func mPavgb(a M64, b M64) M64
+func pavgb(a M64, b M64) M64
 
 
-// MPavgw: Average packed unsigned 16-bit integers in 'a' and 'b', and store
-// the results in 'dst'. 
+// Pavgw: Average packed unsigned 16-bit integers in 'a' and 'b', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*16
@@ -752,14 +752,14 @@ func mPavgb(a M64, b M64) M64
 //
 // Instruction: 'PAVGW'. Intrinsic: '_m_pavgw'.
 // Requires SSE.
-func MPavgw(a M64, b M64) M64 {
-	return M64(mPavgw(a, b))
+func Pavgw(a M64, b M64) M64 {
+	return M64(pavgw(a, b))
 }
 
-func mPavgw(a M64, b M64) M64
+func pavgw(a M64, b M64) M64
 
 
-// MPextrw: Extract a 16-bit integer from 'a', selected with 'imm8', and store
+// Pextrw: Extract a 16-bit integer from 'a', selected with 'imm8', and store
 // the result in the lower element of 'dst'. 
 //
 //		dst[15:0] := (a[63:0] >> (imm8[1:0] * 16))[15:0]
@@ -767,14 +767,14 @@ func mPavgw(a M64, b M64) M64
 //
 // Instruction: 'PEXTRW'. Intrinsic: '_m_pextrw'.
 // Requires SSE.
-func MPextrw(a M64, imm8 int) int {
-	return int(mPextrw(a, imm8))
+func Pextrw(a M64, imm8 int) int {
+	return int(pextrw(a, imm8))
 }
 
-func mPextrw(a M64, imm8 int) int
+func pextrw(a M64, imm8 int) int
 
 
-// MPinsrw: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst' at
+// Pinsrw: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst' at
 // the location specified by 'imm8'. 
 //
 //		dst[63:0] := a[63:0]
@@ -783,14 +783,14 @@ func mPextrw(a M64, imm8 int) int
 //
 // Instruction: 'PINSRW'. Intrinsic: '_m_pinsrw'.
 // Requires SSE.
-func MPinsrw(a M64, i int, imm8 int) M64 {
-	return M64(mPinsrw(a, i, imm8))
+func Pinsrw(a M64, i int, imm8 int) M64 {
+	return M64(pinsrw(a, i, imm8))
 }
 
-func mPinsrw(a M64, i int, imm8 int) M64
+func pinsrw(a M64, i int, imm8 int) M64
 
 
-// MPmaxsw: Compare packed 16-bit integers in 'a' and 'b', and store packed
+// Pmaxsw: Compare packed 16-bit integers in 'a' and 'b', and store packed
 // maximum values in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -804,14 +804,14 @@ func mPinsrw(a M64, i int, imm8 int) M64
 //
 // Instruction: 'PMAXSW'. Intrinsic: '_m_pmaxsw'.
 // Requires SSE.
-func MPmaxsw(a M64, b M64) M64 {
-	return M64(mPmaxsw(a, b))
+func Pmaxsw(a M64, b M64) M64 {
+	return M64(pmaxsw(a, b))
 }
 
-func mPmaxsw(a M64, b M64) M64
+func pmaxsw(a M64, b M64) M64
 
 
-// MPmaxub: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
+// Pmaxub: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -825,14 +825,14 @@ func mPmaxsw(a M64, b M64) M64
 //
 // Instruction: 'PMAXUB'. Intrinsic: '_m_pmaxub'.
 // Requires SSE.
-func MPmaxub(a M64, b M64) M64 {
-	return M64(mPmaxub(a, b))
+func Pmaxub(a M64, b M64) M64 {
+	return M64(pmaxub(a, b))
 }
 
-func mPmaxub(a M64, b M64) M64
+func pmaxub(a M64, b M64) M64
 
 
-// MPminsw: Compare packed 16-bit integers in 'a' and 'b', and store packed
+// Pminsw: Compare packed 16-bit integers in 'a' and 'b', and store packed
 // minimum values in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -846,14 +846,14 @@ func mPmaxub(a M64, b M64) M64
 //
 // Instruction: 'PMINSW'. Intrinsic: '_m_pminsw'.
 // Requires SSE.
-func MPminsw(a M64, b M64) M64 {
-	return M64(mPminsw(a, b))
+func Pminsw(a M64, b M64) M64 {
+	return M64(pminsw(a, b))
 }
 
-func mPminsw(a M64, b M64) M64
+func pminsw(a M64, b M64) M64
 
 
-// MPminub: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
+// Pminub: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -867,15 +867,15 @@ func mPminsw(a M64, b M64) M64
 //
 // Instruction: 'PMINUB'. Intrinsic: '_m_pminub'.
 // Requires SSE.
-func MPminub(a M64, b M64) M64 {
-	return M64(mPminub(a, b))
+func Pminub(a M64, b M64) M64 {
+	return M64(pminub(a, b))
 }
 
-func mPminub(a M64, b M64) M64
+func pminub(a M64, b M64) M64
 
 
-// MPmovmskb: Create mask from the most significant bit of each 8-bit element
-// in 'a', and store the result in 'dst'. 
+// Pmovmskb: Create mask from the most significant bit of each 8-bit element in
+// 'a', and store the result in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*8
@@ -885,14 +885,14 @@ func mPminub(a M64, b M64) M64
 //
 // Instruction: 'PMOVMSKB'. Intrinsic: '_m_pmovmskb'.
 // Requires SSE.
-func MPmovmskb(a M64) int {
-	return int(mPmovmskb(a))
+func Pmovmskb(a M64) int {
+	return int(pmovmskb(a))
 }
 
-func mPmovmskb(a M64) int
+func pmovmskb(a M64) int
 
 
-// MPmulhuw: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
+// Pmulhuw: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the high 16 bits of the
 // intermediate integers in 'dst'. 
 //
@@ -904,14 +904,14 @@ func mPmovmskb(a M64) int
 //
 // Instruction: 'PMULHUW'. Intrinsic: '_m_pmulhuw'.
 // Requires SSE.
-func MPmulhuw(a M64, b M64) M64 {
-	return M64(mPmulhuw(a, b))
+func Pmulhuw(a M64, b M64) M64 {
+	return M64(pmulhuw(a, b))
 }
 
-func mPmulhuw(a M64, b M64) M64
+func pmulhuw(a M64, b M64) M64
 
 
-// MPsadbw: Compute the absolute differences of packed unsigned 8-bit integers
+// Psadbw: Compute the absolute differences of packed unsigned 8-bit integers
 // in 'a' and 'b', then horizontally sum each consecutive 8 differences to
 // produce four unsigned 16-bit integers, and pack these unsigned 16-bit
 // integers in the low 16 bits of 'dst'. 
@@ -926,14 +926,14 @@ func mPmulhuw(a M64, b M64) M64
 //
 // Instruction: 'PSADBW'. Intrinsic: '_m_psadbw'.
 // Requires SSE.
-func MPsadbw(a M64, b M64) M64 {
-	return M64(mPsadbw(a, b))
+func Psadbw(a M64, b M64) M64 {
+	return M64(psadbw(a, b))
 }
 
-func mPsadbw(a M64, b M64) M64
+func psadbw(a M64, b M64) M64
 
 
-// MPshufw: Shuffle 16-bit integers in 'a' using the control in 'imm8', and
+// Pshufw: Shuffle 16-bit integers in 'a' using the control in 'imm8', and
 // store the results in 'dst'. 
 //
 //		SELECT4(src, control){
@@ -953,11 +953,11 @@ func mPsadbw(a M64, b M64) M64
 //
 // Instruction: 'PSHUFW'. Intrinsic: '_m_pshufw'.
 // Requires SSE.
-func MPshufw(a M64, imm8 int) M64 {
-	return M64(mPshufw(a, imm8))
+func Pshufw(a M64, imm8 int) M64 {
+	return M64(pshufw(a, imm8))
 }
 
-func mPshufw(a M64, imm8 int) M64
+func pshufw(a M64, imm8 int) M64
 
 
 // SadPu8: Compute the absolute differences of packed unsigned 8-bit integers
