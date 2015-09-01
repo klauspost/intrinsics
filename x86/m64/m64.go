@@ -420,7 +420,7 @@ func LoaduSi16(mem_addr uintptr) M128i {
 	return M128i(loaduSi16(uintptr(mem_addr)))
 }
 
-func loaduSi16(mem_addr uintptr) M128i
+func loaduSi16(mem_addr uintptr) [16]byte
 
 
 // LoaduSi161: Load unaligned 16-bit integer from memory into the first element
@@ -435,7 +435,7 @@ func LoaduSi161(mem_addr uintptr) M128i {
 	return M128i(loaduSi161(uintptr(mem_addr)))
 }
 
-func loaduSi161(mem_addr uintptr) M128i
+func loaduSi161(mem_addr uintptr) [16]byte
 
 
 // LoaduSi32: Load unaligned 32-bit integer from memory into the first element
@@ -450,7 +450,7 @@ func LoaduSi32(mem_addr uintptr) M128i {
 	return M128i(loaduSi32(uintptr(mem_addr)))
 }
 
-func loaduSi32(mem_addr uintptr) M128i
+func loaduSi32(mem_addr uintptr) [16]byte
 
 
 // LoaduSi321: Load unaligned 32-bit integer from memory into the first element
@@ -464,7 +464,7 @@ func LoaduSi321(mem_addr uintptr) M128i {
 	return M128i(loaduSi321(uintptr(mem_addr)))
 }
 
-func loaduSi321(mem_addr uintptr) M128i
+func loaduSi321(mem_addr uintptr) [16]byte
 
 
 // LoaduSi64: Load unaligned 64-bit integer from memory into the first element
@@ -479,7 +479,7 @@ func LoaduSi64(mem_addr uintptr) M128i {
 	return M128i(loaduSi64(uintptr(mem_addr)))
 }
 
-func loaduSi64(mem_addr uintptr) M128i
+func loaduSi64(mem_addr uintptr) [16]byte
 
 
 // LoaduSi641: Load unaligned 64-bit integer from memory into the first element
@@ -493,7 +493,7 @@ func LoaduSi641(mem_addr uintptr) M128i {
 	return M128i(loaduSi641(uintptr(mem_addr)))
 }
 
-func loaduSi641(mem_addr uintptr) M128i
+func loaduSi641(mem_addr uintptr) [16]byte
 
 
 // Maddubs16: Vertically multiply each unsigned 8-bit integer from 'a' with the
@@ -664,10 +664,10 @@ func movemask8(a M64) int
 // Instruction: 'MOVDQ2Q'. Intrinsic: '_mm_movepi64_pi64'.
 // Requires SSE2.
 func Movepi6464(a M128i) M64 {
-	return M64(movepi6464(a))
+	return M64(movepi6464([16]byte(a)))
 }
 
-func movepi6464(a M128i) M64
+func movepi6464(a [16]byte) M64
 
 
 // MulSu32: Multiply the low unsigned 32-bit integers from 'a' and 'b', and
@@ -1140,10 +1140,10 @@ func storel(mem_addr M64, a [4]float32)
 // Instruction: '...'. Intrinsic: '_mm_storeu_si16'.
 // Requires SSE.
 func StoreuSi16(mem_addr uintptr, a M128i)  {
-	storeuSi16(uintptr(mem_addr), a)
+	storeuSi16(uintptr(mem_addr), [16]byte(a))
 }
 
-func storeuSi16(mem_addr uintptr, a M128i) 
+func storeuSi16(mem_addr uintptr, a [16]byte) 
 
 
 // StoreuSi161: Store 16-bit integer from the first element of 'a' into memory.
@@ -1153,10 +1153,10 @@ func storeuSi16(mem_addr uintptr, a M128i)
 //
 // Instruction: 'MOVD+MOVW'. Intrinsic: '_mm_storeu_si16'.
 func StoreuSi161(mem_addr uintptr, a M128i)  {
-	storeuSi161(uintptr(mem_addr), a)
+	storeuSi161(uintptr(mem_addr), [16]byte(a))
 }
 
-func storeuSi161(mem_addr uintptr, a M128i) 
+func storeuSi161(mem_addr uintptr, a [16]byte) 
 
 
 // StoreuSi32: Store 32-bit integer from the first element of 'a' into memory.
@@ -1166,10 +1166,10 @@ func storeuSi161(mem_addr uintptr, a M128i)
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_storeu_si32'.
 func StoreuSi32(mem_addr uintptr, a M128i)  {
-	storeuSi32(uintptr(mem_addr), a)
+	storeuSi32(uintptr(mem_addr), [16]byte(a))
 }
 
-func storeuSi32(mem_addr uintptr, a M128i) 
+func storeuSi32(mem_addr uintptr, a [16]byte) 
 
 
 // StoreuSi321: Store 32-bit integer from the first element of 'a' into memory.
@@ -1180,10 +1180,10 @@ func storeuSi32(mem_addr uintptr, a M128i)
 // Instruction: 'MOVD'. Intrinsic: '_mm_storeu_si32'.
 // Requires SSE.
 func StoreuSi321(mem_addr uintptr, a M128i)  {
-	storeuSi321(uintptr(mem_addr), a)
+	storeuSi321(uintptr(mem_addr), [16]byte(a))
 }
 
-func storeuSi321(mem_addr uintptr, a M128i) 
+func storeuSi321(mem_addr uintptr, a [16]byte) 
 
 
 // StoreuSi64: Store 64-bit integer from the first element of 'a' into memory.
@@ -1194,10 +1194,10 @@ func storeuSi321(mem_addr uintptr, a M128i)
 // Instruction: 'MOVQ'. Intrinsic: '_mm_storeu_si64'.
 // Requires SSE.
 func StoreuSi64(mem_addr uintptr, a M128i)  {
-	storeuSi64(uintptr(mem_addr), a)
+	storeuSi64(uintptr(mem_addr), [16]byte(a))
 }
 
-func storeuSi64(mem_addr uintptr, a M128i) 
+func storeuSi64(mem_addr uintptr, a [16]byte) 
 
 
 // StoreuSi641: Store 64-bit integer from the first element of 'a' into memory.
@@ -1207,10 +1207,10 @@ func storeuSi64(mem_addr uintptr, a M128i)
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_storeu_si64'.
 func StoreuSi641(mem_addr uintptr, a M128i)  {
-	storeuSi641(uintptr(mem_addr), a)
+	storeuSi641(uintptr(mem_addr), [16]byte(a))
 }
 
-func storeuSi641(mem_addr uintptr, a M128i) 
+func storeuSi641(mem_addr uintptr, a [16]byte) 
 
 
 // Stream: Store 64-bits of integer data from 'a' into memory using a

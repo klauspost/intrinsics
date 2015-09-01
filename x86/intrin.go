@@ -934,10 +934,10 @@ func clflushopt(p uintptr)
 // Instruction: 'PCMPESTRI'. Intrinsic: '_mm_cmpestra'.
 // Requires SSE4.2.
 func Cmpestra(a M128i, la int, b M128i, lb int, imm8 int) int {
-	return int(cmpestra(a, la, b, lb, imm8))
+	return int(cmpestra([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestra(a M128i, la int, b M128i, lb int, imm8 int) int
+func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 
 
 // Cmpestrc: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -1072,10 +1072,10 @@ func cmpestra(a M128i, la int, b M128i, lb int, imm8 int) int
 // Instruction: 'PCMPESTRI'. Intrinsic: '_mm_cmpestrc'.
 // Requires SSE4.2.
 func Cmpestrc(a M128i, la int, b M128i, lb int, imm8 int) int {
-	return int(cmpestrc(a, la, b, lb, imm8))
+	return int(cmpestrc([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrc(a M128i, la int, b M128i, lb int, imm8 int) int
+func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 
 
 // Cmpestri: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -1223,10 +1223,10 @@ func cmpestrc(a M128i, la int, b M128i, lb int, imm8 int) int
 // Instruction: 'PCMPESTRI'. Intrinsic: '_mm_cmpestri'.
 // Requires SSE4.2.
 func Cmpestri(a M128i, la int, b M128i, lb int, imm8 int) int {
-	return int(cmpestri(a, la, b, lb, imm8))
+	return int(cmpestri([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestri(a M128i, la int, b M128i, lb int, imm8 int) int
+func cmpestri(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 
 
 // Cmpestrm: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -1372,10 +1372,10 @@ func cmpestri(a M128i, la int, b M128i, lb int, imm8 int) int
 // Instruction: 'PCMPESTRM'. Intrinsic: '_mm_cmpestrm'.
 // Requires SSE4.2.
 func Cmpestrm(a M128i, la int, b M128i, lb int, imm8 int) M128i {
-	return M128i(cmpestrm(a, la, b, lb, imm8))
+	return M128i(cmpestrm([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrm(a M128i, la int, b M128i, lb int, imm8 int) M128i
+func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 int) [16]byte
 
 
 // Cmpestro: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -1509,10 +1509,10 @@ func cmpestrm(a M128i, la int, b M128i, lb int, imm8 int) M128i
 // Instruction: 'PCMPESTRI'. Intrinsic: '_mm_cmpestro'.
 // Requires SSE4.2.
 func Cmpestro(a M128i, la int, b M128i, lb int, imm8 int) int {
-	return int(cmpestro(a, la, b, lb, imm8))
+	return int(cmpestro([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestro(a M128i, la int, b M128i, lb int, imm8 int) int
+func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 
 
 // Cmpestrs: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -1542,10 +1542,10 @@ func cmpestro(a M128i, la int, b M128i, lb int, imm8 int) int
 // Instruction: 'PCMPESTRI'. Intrinsic: '_mm_cmpestrs'.
 // Requires SSE4.2.
 func Cmpestrs(a M128i, la int, b M128i, lb int, imm8 int) int {
-	return int(cmpestrs(a, la, b, lb, imm8))
+	return int(cmpestrs([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrs(a M128i, la int, b M128i, lb int, imm8 int) int
+func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 
 
 // Cmpestrz: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -1575,10 +1575,10 @@ func cmpestrs(a M128i, la int, b M128i, lb int, imm8 int) int
 // Instruction: 'PCMPESTRI'. Intrinsic: '_mm_cmpestrz'.
 // Requires SSE4.2.
 func Cmpestrz(a M128i, la int, b M128i, lb int, imm8 int) int {
-	return int(cmpestrz(a, la, b, lb, imm8))
+	return int(cmpestrz([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrz(a M128i, la int, b M128i, lb int, imm8 int) int
+func cmpestrz(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 
 
 // Cmpistra: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1717,10 +1717,10 @@ func cmpestrz(a M128i, la int, b M128i, lb int, imm8 int) int
 // Instruction: 'PCMPISTRI'. Intrinsic: '_mm_cmpistra'.
 // Requires SSE4.2.
 func Cmpistra(a M128i, b M128i, imm8 int) int {
-	return int(cmpistra(a, b, imm8))
+	return int(cmpistra([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistra(a M128i, b M128i, imm8 int) int
+func cmpistra(a [16]byte, b [16]byte, imm8 int) int
 
 
 // Cmpistrc: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1859,10 +1859,10 @@ func cmpistra(a M128i, b M128i, imm8 int) int
 // Instruction: 'PCMPISTRI'. Intrinsic: '_mm_cmpistrc'.
 // Requires SSE4.2.
 func Cmpistrc(a M128i, b M128i, imm8 int) int {
-	return int(cmpistrc(a, b, imm8))
+	return int(cmpistrc([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrc(a M128i, b M128i, imm8 int) int
+func cmpistrc(a [16]byte, b [16]byte, imm8 int) int
 
 
 // Cmpistri: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -2014,10 +2014,10 @@ func cmpistrc(a M128i, b M128i, imm8 int) int
 // Instruction: 'PCMPISTRI'. Intrinsic: '_mm_cmpistri'.
 // Requires SSE4.2.
 func Cmpistri(a M128i, b M128i, imm8 int) int {
-	return int(cmpistri(a, b, imm8))
+	return int(cmpistri([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistri(a M128i, b M128i, imm8 int) int
+func cmpistri(a [16]byte, b [16]byte, imm8 int) int
 
 
 // Cmpistrm: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -2167,10 +2167,10 @@ func cmpistri(a M128i, b M128i, imm8 int) int
 // Instruction: 'PCMPISTRM'. Intrinsic: '_mm_cmpistrm'.
 // Requires SSE4.2.
 func Cmpistrm(a M128i, b M128i, imm8 int) M128i {
-	return M128i(cmpistrm(a, b, imm8))
+	return M128i(cmpistrm([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrm(a M128i, b M128i, imm8 int) M128i
+func cmpistrm(a [16]byte, b [16]byte, imm8 int) [16]byte
 
 
 // Cmpistro: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -2308,10 +2308,10 @@ func cmpistrm(a M128i, b M128i, imm8 int) M128i
 // Instruction: 'PCMPISTRI'. Intrinsic: '_mm_cmpistro'.
 // Requires SSE4.2.
 func Cmpistro(a M128i, b M128i, imm8 int) int {
-	return int(cmpistro(a, b, imm8))
+	return int(cmpistro([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistro(a M128i, b M128i, imm8 int) int
+func cmpistro(a [16]byte, b [16]byte, imm8 int) int
 
 
 // Cmpistrs: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -2349,10 +2349,10 @@ func cmpistro(a M128i, b M128i, imm8 int) int
 // Instruction: 'PCMPISTRI'. Intrinsic: '_mm_cmpistrs'.
 // Requires SSE4.2.
 func Cmpistrs(a M128i, b M128i, imm8 int) int {
-	return int(cmpistrs(a, b, imm8))
+	return int(cmpistrs([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrs(a M128i, b M128i, imm8 int) int
+func cmpistrs(a [16]byte, b [16]byte, imm8 int) int
 
 
 // Cmpistrz: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -2390,10 +2390,10 @@ func cmpistrs(a M128i, b M128i, imm8 int) int
 // Instruction: 'PCMPISTRI'. Intrinsic: '_mm_cmpistrz'.
 // Requires SSE4.2.
 func Cmpistrz(a M128i, b M128i, imm8 int) int {
-	return int(cmpistrz(a, b, imm8))
+	return int(cmpistrz([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrz(a M128i, b M128i, imm8 int) int
+func cmpistrz(a [16]byte, b [16]byte, imm8 int) int
 
 
 // Countbits32: Counts the number of set bits in 32-bit unsigned integer 'r1',
@@ -3670,10 +3670,10 @@ func storebeI64(ptr uintptr, data int64)
 // Instruction: '...'. Intrinsic: '_mm_test_all_ones'.
 // Requires SSE4.1.
 func TestAllOnes(a M128i) int {
-	return int(testAllOnes(a))
+	return int(testAllOnes([16]byte(a)))
 }
 
-func testAllOnes(a M128i) int
+func testAllOnes(a [16]byte) int
 
 
 // TestAllZeros: Compute the bitwise AND of 128 bits (representing integer
@@ -3690,10 +3690,10 @@ func testAllOnes(a M128i) int
 // Instruction: 'PTEST'. Intrinsic: '_mm_test_all_zeros'.
 // Requires SSE4.1.
 func TestAllZeros(a M128i, mask M128i) int {
-	return int(testAllZeros(a, mask))
+	return int(testAllZeros([16]byte(a), [16]byte(mask)))
 }
 
-func testAllZeros(a M128i, mask M128i) int
+func testAllZeros(a [16]byte, mask [16]byte) int
 
 
 // TestMixOnesZeros: Compute the bitwise AND of 128 bits (representing integer
@@ -3721,10 +3721,10 @@ func testAllZeros(a M128i, mask M128i) int
 // Instruction: 'PTEST'. Intrinsic: '_mm_test_mix_ones_zeros'.
 // Requires SSE4.1.
 func TestMixOnesZeros(a M128i, mask M128i) int {
-	return int(testMixOnesZeros(a, mask))
+	return int(testMixOnesZeros([16]byte(a), [16]byte(mask)))
 }
 
-func testMixOnesZeros(a M128i, mask M128i) int
+func testMixOnesZeros(a [16]byte, mask [16]byte) int
 
 
 // MMTRANSPOSE4PS: Macro: Transpose the 4x4 matrix formed by the 4 rows of

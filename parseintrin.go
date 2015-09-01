@@ -652,6 +652,12 @@ func (p Param) getNative() string {
 		return "[8]float32"
 	case "M512":
 		return "[16]float32"
+	case "M128i":
+		return "[16]byte"
+	case "M256i":
+		return "[32]byte"
+	case "M512i":
+		return "[64]byte"
 	case "M128d":
 		return "[2]float64"
 	case "M256d":

@@ -227,7 +227,7 @@ TEXT ·loadl(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func loaduSi16(mem_addr uintptr) M128i
+// func loaduSi16(mem_addr uintptr) [16]byte
 TEXT ·loaduSi16(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
@@ -235,7 +235,7 @@ TEXT ·loaduSi16(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func loaduSi161(mem_addr uintptr) M128i
+// func loaduSi161(mem_addr uintptr) [16]byte
 TEXT ·loaduSi161(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
@@ -243,7 +243,7 @@ TEXT ·loaduSi161(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func loaduSi32(mem_addr uintptr) M128i
+// func loaduSi32(mem_addr uintptr) [16]byte
 TEXT ·loaduSi32(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
@@ -251,7 +251,7 @@ TEXT ·loaduSi32(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func loaduSi321(mem_addr uintptr) M128i
+// func loaduSi321(mem_addr uintptr) [16]byte
 TEXT ·loaduSi321(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
@@ -259,7 +259,7 @@ TEXT ·loaduSi321(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func loaduSi64(mem_addr uintptr) M128i
+// func loaduSi64(mem_addr uintptr) [16]byte
 TEXT ·loaduSi64(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
@@ -267,7 +267,7 @@ TEXT ·loaduSi64(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func loaduSi641(mem_addr uintptr) M128i
+// func loaduSi641(mem_addr uintptr) [16]byte
 TEXT ·loaduSi641(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
@@ -354,7 +354,7 @@ TEXT ·movemask8(SB),7,$0
 	MOVQ $0, ret+8(FP)
 	RET
 
-// func movepi6464(a M128i) M64
+// func movepi6464(a [16]byte) M64
 TEXT ·movepi6464(SB),7,$0
 	MOVOU a+0(FP),X0
 
@@ -591,42 +591,42 @@ TEXT ·storel(SB),7,$0
 
 	RET
 
-// func storeuSi16(mem_addr uintptr, a M128i) 
+// func storeuSi16(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi16(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
 
 	RET
 
-// func storeuSi161(mem_addr uintptr, a M128i) 
+// func storeuSi161(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi161(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
 
 	RET
 
-// func storeuSi32(mem_addr uintptr, a M128i) 
+// func storeuSi32(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi32(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
 
 	RET
 
-// func storeuSi321(mem_addr uintptr, a M128i) 
+// func storeuSi321(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi321(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
 
 	RET
 
-// func storeuSi64(mem_addr uintptr, a M128i) 
+// func storeuSi64(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi64(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing
 
 	RET
 
-// func storeuSi641(mem_addr uintptr, a M128i) 
+// func storeuSi641(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi641(SB),7,$0
 	// Unimplemented. Unknown size of type uintptr
 	//TODO: Code missing

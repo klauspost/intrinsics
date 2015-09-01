@@ -14,10 +14,10 @@ import . "github.com/klauspost/intrinsics/x86"
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_abs_epi16'.
 // Requires AVX512BW.
 func Abs16(a M512i) M512i {
-	return M512i(abs16(a))
+	return M512i(abs16([64]byte(a)))
 }
 
-func abs16(a M512i) M512i
+func abs16(a [64]byte) [64]byte
 
 
 // MaskAbs16: Compute the absolute value of packed 16-bit integers in 'a', and
@@ -37,10 +37,10 @@ func abs16(a M512i) M512i
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_mask_abs_epi16'.
 // Requires AVX512BW.
 func MaskAbs16(src M512i, k Mmask32, a M512i) M512i {
-	return M512i(maskAbs16(src, uint32(k), a))
+	return M512i(maskAbs16([64]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskAbs16(src M512i, k uint32, a M512i) M512i
+func maskAbs16(src [64]byte, k uint32, a [64]byte) [64]byte
 
 
 // MaskzAbs16: Compute the absolute value of packed 16-bit integers in 'a', and
@@ -60,10 +60,10 @@ func maskAbs16(src M512i, k uint32, a M512i) M512i
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_maskz_abs_epi16'.
 // Requires AVX512BW.
 func MaskzAbs16(k Mmask32, a M512i) M512i {
-	return M512i(maskzAbs16(uint32(k), a))
+	return M512i(maskzAbs16(uint32(k), [64]byte(a)))
 }
 
-func maskzAbs16(k uint32, a M512i) M512i
+func maskzAbs16(k uint32, a [64]byte) [64]byte
 
 
 // Abs32: Compute the absolute value of packed 32-bit integers in 'a', and
@@ -78,10 +78,10 @@ func maskzAbs16(k uint32, a M512i) M512i
 // Instruction: 'VPABSD'. Intrinsic: '_mm512_abs_epi32'.
 // Requires AVX512F.
 func Abs32(a M512i) M512i {
-	return M512i(abs32(a))
+	return M512i(abs32([64]byte(a)))
 }
 
-func abs32(a M512i) M512i
+func abs32(a [64]byte) [64]byte
 
 
 // MaskAbs32: Compute the absolute value of packed 32-bit integers in 'a', and
@@ -101,10 +101,10 @@ func abs32(a M512i) M512i
 // Instruction: 'VPABSD'. Intrinsic: '_mm512_mask_abs_epi32'.
 // Requires AVX512F.
 func MaskAbs32(src M512i, k Mmask16, a M512i) M512i {
-	return M512i(maskAbs32(src, uint16(k), a))
+	return M512i(maskAbs32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskAbs32(src M512i, k uint16, a M512i) M512i
+func maskAbs32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
 // MaskzAbs32: Compute the absolute value of packed 32-bit integers in 'a', and
@@ -124,10 +124,10 @@ func maskAbs32(src M512i, k uint16, a M512i) M512i
 // Instruction: 'VPABSD'. Intrinsic: '_mm512_maskz_abs_epi32'.
 // Requires AVX512F.
 func MaskzAbs32(k Mmask16, a M512i) M512i {
-	return M512i(maskzAbs32(uint16(k), a))
+	return M512i(maskzAbs32(uint16(k), [64]byte(a)))
 }
 
-func maskzAbs32(k uint16, a M512i) M512i
+func maskzAbs32(k uint16, a [64]byte) [64]byte
 
 
 // Abs64: Compute the absolute value of packed 64-bit integers in 'a', and
@@ -142,10 +142,10 @@ func maskzAbs32(k uint16, a M512i) M512i
 // Instruction: 'VPABSQ'. Intrinsic: '_mm512_abs_epi64'.
 // Requires AVX512F.
 func Abs64(a M512i) M512i {
-	return M512i(abs64(a))
+	return M512i(abs64([64]byte(a)))
 }
 
-func abs64(a M512i) M512i
+func abs64(a [64]byte) [64]byte
 
 
 // MaskAbs64: Compute the absolute value of packed 64-bit integers in 'a', and
@@ -165,10 +165,10 @@ func abs64(a M512i) M512i
 // Instruction: 'VPABSQ'. Intrinsic: '_mm512_mask_abs_epi64'.
 // Requires AVX512F.
 func MaskAbs64(src M512i, k Mmask8, a M512i) M512i {
-	return M512i(maskAbs64(src, uint8(k), a))
+	return M512i(maskAbs64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskAbs64(src M512i, k uint8, a M512i) M512i
+func maskAbs64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
 // MaskzAbs64: Compute the absolute value of packed 64-bit integers in 'a', and
@@ -188,10 +188,10 @@ func maskAbs64(src M512i, k uint8, a M512i) M512i
 // Instruction: 'VPABSQ'. Intrinsic: '_mm512_maskz_abs_epi64'.
 // Requires AVX512F.
 func MaskzAbs64(k Mmask8, a M512i) M512i {
-	return M512i(maskzAbs64(uint8(k), a))
+	return M512i(maskzAbs64(uint8(k), [64]byte(a)))
 }
 
-func maskzAbs64(k uint8, a M512i) M512i
+func maskzAbs64(k uint8, a [64]byte) [64]byte
 
 
 // Abs8: Compute the absolute value of packed 8-bit integers in 'a', and store
@@ -206,10 +206,10 @@ func maskzAbs64(k uint8, a M512i) M512i
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_abs_epi8'.
 // Requires AVX512BW.
 func Abs8(a M512i) M512i {
-	return M512i(abs8(a))
+	return M512i(abs8([64]byte(a)))
 }
 
-func abs8(a M512i) M512i
+func abs8(a [64]byte) [64]byte
 
 
 // MaskAbs8: Compute the absolute value of packed 8-bit integers in 'a', and
@@ -229,10 +229,10 @@ func abs8(a M512i) M512i
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_mask_abs_epi8'.
 // Requires AVX512BW.
 func MaskAbs8(src M512i, k Mmask64, a M512i) M512i {
-	return M512i(maskAbs8(src, uint64(k), a))
+	return M512i(maskAbs8([64]byte(src), uint64(k), [64]byte(a)))
 }
 
-func maskAbs8(src M512i, k uint64, a M512i) M512i
+func maskAbs8(src [64]byte, k uint64, a [64]byte) [64]byte
 
 
 // MaskzAbs8: Compute the absolute value of packed 8-bit integers in 'a', and
@@ -252,10 +252,10 @@ func maskAbs8(src M512i, k uint64, a M512i) M512i
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_maskz_abs_epi8'.
 // Requires AVX512BW.
 func MaskzAbs8(k Mmask64, a M512i) M512i {
-	return M512i(maskzAbs8(uint64(k), a))
+	return M512i(maskzAbs8(uint64(k), [64]byte(a)))
 }
 
-func maskzAbs8(k uint64, a M512i) M512i
+func maskzAbs8(k uint64, a [64]byte) [64]byte
 
 
 // AbsPd: Finds the absolute value of each packed double-precision (64-bit)
@@ -528,10 +528,10 @@ func maskAcoshPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_adc_epi32'.
 // Requires KNCNI.
 func Adc32(v2 M512i, k2 Mmask16, v3 M512i, k2_res Mmask16) M512i {
-	return M512i(adc32(v2, uint16(k2), v3, uint16(k2_res)))
+	return M512i(adc32([64]byte(v2), uint16(k2), [64]byte(v3), uint16(k2_res)))
 }
 
-func adc32(v2 M512i, k2 uint16, v3 M512i, k2_res uint16) M512i
+func adc32(v2 [64]byte, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
 
 
 // MaskAdc32: Performs element-by-element addition of packed 32-bit integers in
@@ -554,10 +554,10 @@ func adc32(v2 M512i, k2 uint16, v3 M512i, k2_res uint16) M512i
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_mask_adc_epi32'.
 // Requires KNCNI.
 func MaskAdc32(v2 M512i, k1 Mmask16, k2 Mmask16, v3 M512i, k2_res Mmask16) M512i {
-	return M512i(maskAdc32(v2, uint16(k1), uint16(k2), v3, uint16(k2_res)))
+	return M512i(maskAdc32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(k2_res)))
 }
 
-func maskAdc32(v2 M512i, k1 uint16, k2 uint16, v3 M512i, k2_res uint16) M512i
+func maskAdc32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
 
 
 // Add16: Add packed 16-bit integers in 'a' and 'b', and store the results in
@@ -572,10 +572,10 @@ func maskAdc32(v2 M512i, k1 uint16, k2 uint16, v3 M512i, k2_res uint16) M512i
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_add_epi16'.
 // Requires AVX512BW.
 func Add16(a M512i, b M512i) M512i {
-	return M512i(add16(a, b))
+	return M512i(add16([64]byte(a), [64]byte(b)))
 }
 
-func add16(a M512i, b M512i) M512i
+func add16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAdd16: Add packed 16-bit integers in 'a' and 'b', and store the results
@@ -595,10 +595,10 @@ func add16(a M512i, b M512i) M512i
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_mask_add_epi16'.
 // Requires AVX512BW.
 func MaskAdd16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAdd16(src, uint32(k), a, b))
+	return M512i(maskAdd16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAdd16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskAdd16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAdd16: Add packed 16-bit integers in 'a' and 'b', and store the results
@@ -618,10 +618,10 @@ func maskAdd16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_maskz_add_epi16'.
 // Requires AVX512BW.
 func MaskzAdd16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAdd16(uint32(k), a, b))
+	return M512i(maskzAdd16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAdd16(k uint32, a M512i, b M512i) M512i
+func maskzAdd16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Add32: Add packed 32-bit integers in 'a' and 'b', and store the results in
@@ -636,10 +636,10 @@ func maskzAdd16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPADDD'. Intrinsic: '_mm512_add_epi32'.
 // Requires KNCNI.
 func Add32(a M512i, b M512i) M512i {
-	return M512i(add32(a, b))
+	return M512i(add32([64]byte(a), [64]byte(b)))
 }
 
-func add32(a M512i, b M512i) M512i
+func add32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAdd32: Add packed 32-bit integers in 'a' and 'b', and store the results
@@ -659,10 +659,10 @@ func add32(a M512i, b M512i) M512i
 // Instruction: 'VPADDD'. Intrinsic: '_mm512_mask_add_epi32'.
 // Requires KNCNI.
 func MaskAdd32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskAdd32(src, uint16(k), a, b))
+	return M512i(maskAdd32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAdd32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskAdd32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAdd32: Add packed 32-bit integers in 'a' and 'b', and store the results
@@ -682,10 +682,10 @@ func maskAdd32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPADDD'. Intrinsic: '_mm512_maskz_add_epi32'.
 // Requires AVX512F.
 func MaskzAdd32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzAdd32(uint16(k), a, b))
+	return M512i(maskzAdd32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAdd32(k uint16, a M512i, b M512i) M512i
+func maskzAdd32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Add64: Add packed 64-bit integers in 'a' and 'b', and store the results in
@@ -700,10 +700,10 @@ func maskzAdd32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPADDQ'. Intrinsic: '_mm512_add_epi64'.
 // Requires AVX512F.
 func Add64(a M512i, b M512i) M512i {
-	return M512i(add64(a, b))
+	return M512i(add64([64]byte(a), [64]byte(b)))
 }
 
-func add64(a M512i, b M512i) M512i
+func add64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAdd64: Add packed 64-bit integers in 'a' and 'b', and store the results
@@ -723,10 +723,10 @@ func add64(a M512i, b M512i) M512i
 // Instruction: 'VPADDQ'. Intrinsic: '_mm512_mask_add_epi64'.
 // Requires AVX512F.
 func MaskAdd64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskAdd64(src, uint8(k), a, b))
+	return M512i(maskAdd64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAdd64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskAdd64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAdd64: Add packed 64-bit integers in 'a' and 'b', and store the results
@@ -746,10 +746,10 @@ func maskAdd64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPADDQ'. Intrinsic: '_mm512_maskz_add_epi64'.
 // Requires AVX512F.
 func MaskzAdd64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzAdd64(uint8(k), a, b))
+	return M512i(maskzAdd64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAdd64(k uint8, a M512i, b M512i) M512i
+func maskzAdd64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Add8: Add packed 8-bit integers in 'a' and 'b', and store the results in
@@ -764,10 +764,10 @@ func maskzAdd64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_add_epi8'.
 // Requires AVX512BW.
 func Add8(a M512i, b M512i) M512i {
-	return M512i(add8(a, b))
+	return M512i(add8([64]byte(a), [64]byte(b)))
 }
 
-func add8(a M512i, b M512i) M512i
+func add8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAdd8: Add packed 8-bit integers in 'a' and 'b', and store the results in
@@ -787,10 +787,10 @@ func add8(a M512i, b M512i) M512i
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_mask_add_epi8'.
 // Requires AVX512BW.
 func MaskAdd8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAdd8(src, uint64(k), a, b))
+	return M512i(maskAdd8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAdd8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskAdd8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAdd8: Add packed 8-bit integers in 'a' and 'b', and store the results
@@ -810,10 +810,10 @@ func maskAdd8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_maskz_add_epi8'.
 // Requires AVX512BW.
 func MaskzAdd8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAdd8(uint64(k), a, b))
+	return M512i(maskzAdd8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAdd8(k uint64, a M512i, b M512i) M512i
+func maskzAdd8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // AddPd: Add packed double-precision (64-bit) floating-point elements in 'a'
@@ -1326,10 +1326,10 @@ func maskAddnRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, 
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_adds_epi16'.
 // Requires AVX512BW.
 func Adds16(a M512i, b M512i) M512i {
-	return M512i(adds16(a, b))
+	return M512i(adds16([64]byte(a), [64]byte(b)))
 }
 
-func adds16(a M512i, b M512i) M512i
+func adds16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAdds16: Add packed 16-bit integers in 'a' and 'b' using saturation, and
@@ -1349,10 +1349,10 @@ func adds16(a M512i, b M512i) M512i
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_mask_adds_epi16'.
 // Requires AVX512BW.
 func MaskAdds16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAdds16(src, uint32(k), a, b))
+	return M512i(maskAdds16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAdds16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskAdds16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAdds16: Add packed 16-bit integers in 'a' and 'b' using saturation, and
@@ -1372,10 +1372,10 @@ func maskAdds16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_maskz_adds_epi16'.
 // Requires AVX512BW.
 func MaskzAdds16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAdds16(uint32(k), a, b))
+	return M512i(maskzAdds16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAdds16(k uint32, a M512i, b M512i) M512i
+func maskzAdds16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Adds8: Add packed 8-bit integers in 'a' and 'b' using saturation, and store
@@ -1390,10 +1390,10 @@ func maskzAdds16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_adds_epi8'.
 // Requires AVX512BW.
 func Adds8(a M512i, b M512i) M512i {
-	return M512i(adds8(a, b))
+	return M512i(adds8([64]byte(a), [64]byte(b)))
 }
 
-func adds8(a M512i, b M512i) M512i
+func adds8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAdds8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
@@ -1413,10 +1413,10 @@ func adds8(a M512i, b M512i) M512i
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_mask_adds_epi8'.
 // Requires AVX512BW.
 func MaskAdds8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAdds8(src, uint64(k), a, b))
+	return M512i(maskAdds8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAdds8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskAdds8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAdds8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
@@ -1436,10 +1436,10 @@ func maskAdds8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_maskz_adds_epi8'.
 // Requires AVX512BW.
 func MaskzAdds8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAdds8(uint64(k), a, b))
+	return M512i(maskzAdds8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAdds8(k uint64, a M512i, b M512i) M512i
+func maskzAdds8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // AddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
@@ -1454,10 +1454,10 @@ func maskzAdds8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_adds_epu16'.
 // Requires AVX512BW.
 func AddsEpu16(a M512i, b M512i) M512i {
-	return M512i(addsEpu16(a, b))
+	return M512i(addsEpu16([64]byte(a), [64]byte(b)))
 }
 
-func addsEpu16(a M512i, b M512i) M512i
+func addsEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
@@ -1477,10 +1477,10 @@ func addsEpu16(a M512i, b M512i) M512i
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_mask_adds_epu16'.
 // Requires AVX512BW.
 func MaskAddsEpu16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAddsEpu16(src, uint32(k), a, b))
+	return M512i(maskAddsEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddsEpu16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskAddsEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
@@ -1500,10 +1500,10 @@ func maskAddsEpu16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_maskz_adds_epu16'.
 // Requires AVX512BW.
 func MaskzAddsEpu16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAddsEpu16(uint32(k), a, b))
+	return M512i(maskzAddsEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddsEpu16(k uint32, a M512i, b M512i) M512i
+func maskzAddsEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // AddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
@@ -1518,10 +1518,10 @@ func maskzAddsEpu16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_adds_epu8'.
 // Requires AVX512BW.
 func AddsEpu8(a M512i, b M512i) M512i {
-	return M512i(addsEpu8(a, b))
+	return M512i(addsEpu8([64]byte(a), [64]byte(b)))
 }
 
-func addsEpu8(a M512i, b M512i) M512i
+func addsEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
@@ -1541,10 +1541,10 @@ func addsEpu8(a M512i, b M512i) M512i
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_mask_adds_epu8'.
 // Requires AVX512BW.
 func MaskAddsEpu8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAddsEpu8(src, uint64(k), a, b))
+	return M512i(maskAddsEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddsEpu8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskAddsEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
@@ -1564,10 +1564,10 @@ func maskAddsEpu8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_maskz_adds_epu8'.
 // Requires AVX512BW.
 func MaskzAddsEpu8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAddsEpu8(uint64(k), a, b))
+	return M512i(maskzAddsEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddsEpu8(k uint64, a M512i, b M512i) M512i
+func maskzAddsEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Addsetc32: Performs element-by-element addition of packed 32-bit integer
@@ -1584,10 +1584,10 @@ func maskzAddsEpu8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_addsetc_epi32'.
 // Requires KNCNI.
 func Addsetc32(v2 M512i, v3 M512i, k2_res Mmask16) M512i {
-	return M512i(addsetc32(v2, v3, uint16(k2_res)))
+	return M512i(addsetc32([64]byte(v2), [64]byte(v3), uint16(k2_res)))
 }
 
-func addsetc32(v2 M512i, v3 M512i, k2_res uint16) M512i
+func addsetc32(v2 [64]byte, v3 [64]byte, k2_res uint16) [64]byte
 
 
 // MaskAddsetc32: Performs element-by-element addition of packed 32-bit integer
@@ -1609,10 +1609,10 @@ func addsetc32(v2 M512i, v3 M512i, k2_res uint16) M512i
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_mask_addsetc_epi32'.
 // Requires KNCNI.
 func MaskAddsetc32(v2 M512i, k Mmask16, k_old Mmask16, v3 M512i, k2_res Mmask16) M512i {
-	return M512i(maskAddsetc32(v2, uint16(k), uint16(k_old), v3, uint16(k2_res)))
+	return M512i(maskAddsetc32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(k2_res)))
 }
 
-func maskAddsetc32(v2 M512i, k uint16, k_old uint16, v3 M512i, k2_res uint16) M512i
+func maskAddsetc32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, k2_res uint16) [64]byte
 
 
 // Addsets32: Performs an element-by-element addition of packed 32-bit integer
@@ -1629,10 +1629,10 @@ func maskAddsetc32(v2 M512i, k uint16, k_old uint16, v3 M512i, k2_res uint16) M5
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_addsets_epi32'.
 // Requires KNCNI.
 func Addsets32(v2 M512i, v3 M512i, sign Mmask16) M512i {
-	return M512i(addsets32(v2, v3, uint16(sign)))
+	return M512i(addsets32([64]byte(v2), [64]byte(v3), uint16(sign)))
 }
 
-func addsets32(v2 M512i, v3 M512i, sign uint16) M512i
+func addsets32(v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
 
 
 // MaskAddsets32: Performs an element-by-element addition of packed 32-bit
@@ -1654,10 +1654,10 @@ func addsets32(v2 M512i, v3 M512i, sign uint16) M512i
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_mask_addsets_epi32'.
 // Requires KNCNI.
 func MaskAddsets32(src M512i, k Mmask16, v2 M512i, v3 M512i, sign Mmask16) M512i {
-	return M512i(maskAddsets32(src, uint16(k), v2, v3, uint16(sign)))
+	return M512i(maskAddsets32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3), uint16(sign)))
 }
 
-func maskAddsets32(src M512i, k uint16, v2 M512i, v3 M512i, sign uint16) M512i
+func maskAddsets32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
 
 
 // AddsetsPs: Performs an element-by-element addition of packed
@@ -1779,10 +1779,10 @@ func maskAddsetsRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float3
 // Instruction: 'VALIGND'. Intrinsic: '_mm512_alignr_epi32'.
 // Requires KNCNI.
 func Alignr32(a M512i, b M512i, count int) M512i {
-	return M512i(alignr32(a, b, count))
+	return M512i(alignr32([64]byte(a), [64]byte(b), count))
 }
 
-func alignr32(a M512i, b M512i, count int) M512i
+func alignr32(a [64]byte, b [64]byte, count int) [64]byte
 
 
 // MaskAlignr32: Concatenate 'a' and 'b' into a 128-byte immediate result,
@@ -1806,10 +1806,10 @@ func alignr32(a M512i, b M512i, count int) M512i
 // Instruction: 'VALIGND'. Intrinsic: '_mm512_mask_alignr_epi32'.
 // Requires KNCNI.
 func MaskAlignr32(src M512i, k Mmask16, a M512i, b M512i, count int) M512i {
-	return M512i(maskAlignr32(src, uint16(k), a, b, count))
+	return M512i(maskAlignr32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskAlignr32(src M512i, k uint16, a M512i, b M512i, count int) M512i
+func maskAlignr32(src [64]byte, k uint16, a [64]byte, b [64]byte, count int) [64]byte
 
 
 // MaskzAlignr32: Concatenate 'a' and 'b' into a 128-byte immediate result,
@@ -1833,10 +1833,10 @@ func maskAlignr32(src M512i, k uint16, a M512i, b M512i, count int) M512i
 // Instruction: 'VALIGND'. Intrinsic: '_mm512_maskz_alignr_epi32'.
 // Requires AVX512F.
 func MaskzAlignr32(k Mmask16, a M512i, b M512i, count int) M512i {
-	return M512i(maskzAlignr32(uint16(k), a, b, count))
+	return M512i(maskzAlignr32(uint16(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskzAlignr32(k uint16, a M512i, b M512i, count int) M512i
+func maskzAlignr32(k uint16, a [64]byte, b [64]byte, count int) [64]byte
 
 
 // Alignr64: Concatenate 'a' and 'b' into a 128-byte immediate result, shift
@@ -1852,10 +1852,10 @@ func maskzAlignr32(k uint16, a M512i, b M512i, count int) M512i
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm512_alignr_epi64'.
 // Requires AVX512F.
 func Alignr64(a M512i, b M512i, count int) M512i {
-	return M512i(alignr64(a, b, count))
+	return M512i(alignr64([64]byte(a), [64]byte(b), count))
 }
 
-func alignr64(a M512i, b M512i, count int) M512i
+func alignr64(a [64]byte, b [64]byte, count int) [64]byte
 
 
 // MaskAlignr64: Concatenate 'a' and 'b' into a 128-byte immediate result,
@@ -1879,10 +1879,10 @@ func alignr64(a M512i, b M512i, count int) M512i
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm512_mask_alignr_epi64'.
 // Requires AVX512F.
 func MaskAlignr64(src M512i, k Mmask8, a M512i, b M512i, count int) M512i {
-	return M512i(maskAlignr64(src, uint8(k), a, b, count))
+	return M512i(maskAlignr64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskAlignr64(src M512i, k uint8, a M512i, b M512i, count int) M512i
+func maskAlignr64(src [64]byte, k uint8, a [64]byte, b [64]byte, count int) [64]byte
 
 
 // MaskzAlignr64: Concatenate 'a' and 'b' into a 128-byte immediate result,
@@ -1906,10 +1906,10 @@ func maskAlignr64(src M512i, k uint8, a M512i, b M512i, count int) M512i
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm512_maskz_alignr_epi64'.
 // Requires AVX512F.
 func MaskzAlignr64(k Mmask8, a M512i, b M512i, count int) M512i {
-	return M512i(maskzAlignr64(uint8(k), a, b, count))
+	return M512i(maskzAlignr64(uint8(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskzAlignr64(k uint8, a M512i, b M512i, count int) M512i
+func maskzAlignr64(k uint8, a [64]byte, b [64]byte, count int) [64]byte
 
 
 // Alignr8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a 32-byte
@@ -1926,10 +1926,10 @@ func maskzAlignr64(k uint8, a M512i, b M512i, count int) M512i
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_alignr_epi8'.
 // Requires AVX512BW.
 func Alignr8(a M512i, b M512i, count int) M512i {
-	return M512i(alignr8(a, b, count))
+	return M512i(alignr8([64]byte(a), [64]byte(b), count))
 }
 
-func alignr8(a M512i, b M512i, count int) M512i
+func alignr8(a [64]byte, b [64]byte, count int) [64]byte
 
 
 // MaskAlignr8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
@@ -1956,10 +1956,10 @@ func alignr8(a M512i, b M512i, count int) M512i
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_mask_alignr_epi8'.
 // Requires AVX512BW.
 func MaskAlignr8(src M512i, k Mmask64, a M512i, b M512i, count int) M512i {
-	return M512i(maskAlignr8(src, uint64(k), a, b, count))
+	return M512i(maskAlignr8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskAlignr8(src M512i, k uint64, a M512i, b M512i, count int) M512i
+func maskAlignr8(src [64]byte, k uint64, a [64]byte, b [64]byte, count int) [64]byte
 
 
 // MaskzAlignr8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
@@ -1986,10 +1986,10 @@ func maskAlignr8(src M512i, k uint64, a M512i, b M512i, count int) M512i
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_maskz_alignr_epi8'.
 // Requires AVX512BW.
 func MaskzAlignr8(k Mmask64, a M512i, b M512i, count int) M512i {
-	return M512i(maskzAlignr8(uint64(k), a, b, count))
+	return M512i(maskzAlignr8(uint64(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskzAlignr8(k uint64, a M512i, b M512i, count int) M512i
+func maskzAlignr8(k uint64, a [64]byte, b [64]byte, count int) [64]byte
 
 
 // And32: Compute the bitwise AND of packed 32-bit integers in 'a' and 'b', and
@@ -2004,10 +2004,10 @@ func maskzAlignr8(k uint64, a M512i, b M512i, count int) M512i
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_and_epi32'.
 // Requires KNCNI.
 func And32(a M512i, b M512i) M512i {
-	return M512i(and32(a, b))
+	return M512i(and32([64]byte(a), [64]byte(b)))
 }
 
-func and32(a M512i, b M512i) M512i
+func and32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAnd32: Performs element-by-element bitwise AND between packed 32-bit
@@ -2028,10 +2028,10 @@ func and32(a M512i, b M512i) M512i
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_mask_and_epi32'.
 // Requires KNCNI.
 func MaskAnd32(src M512i, k Mmask16, v2 M512i, v3 M512i) M512i {
-	return M512i(maskAnd32(src, uint16(k), v2, v3))
+	return M512i(maskAnd32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3)))
 }
 
-func maskAnd32(src M512i, k uint16, v2 M512i, v3 M512i) M512i
+func maskAnd32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
 
 
 // MaskzAnd32: Compute the bitwise AND of packed 32-bit integers in 'a' and
@@ -2051,10 +2051,10 @@ func maskAnd32(src M512i, k uint16, v2 M512i, v3 M512i) M512i
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_maskz_and_epi32'.
 // Requires AVX512F.
 func MaskzAnd32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzAnd32(uint16(k), a, b))
+	return M512i(maskzAnd32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAnd32(k uint16, a M512i, b M512i) M512i
+func maskzAnd32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // And64: Compute the bitwise AND of 512 bits (composed of packed 64-bit
@@ -2066,10 +2066,10 @@ func maskzAnd32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_and_epi64'.
 // Requires KNCNI.
 func And64(a M512i, b M512i) M512i {
-	return M512i(and64(a, b))
+	return M512i(and64([64]byte(a), [64]byte(b)))
 }
 
-func and64(a M512i, b M512i) M512i
+func and64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAnd64: Compute the bitwise AND of packed 64-bit integers in 'a' and 'b',
@@ -2089,10 +2089,10 @@ func and64(a M512i, b M512i) M512i
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_mask_and_epi64'.
 // Requires KNCNI.
 func MaskAnd64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskAnd64(src, uint8(k), a, b))
+	return M512i(maskAnd64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAnd64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskAnd64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAnd64: Compute the bitwise AND of packed 64-bit integers in 'a' and
@@ -2112,10 +2112,10 @@ func maskAnd64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_maskz_and_epi64'.
 // Requires AVX512F.
 func MaskzAnd64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzAnd64(uint8(k), a, b))
+	return M512i(maskzAnd64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAnd64(k uint8, a M512i, b M512i) M512i
+func maskzAnd64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // AndPd: Compute the bitwise AND of packed double-precision (64-bit)
@@ -2259,10 +2259,10 @@ func maskzAndPs(k uint16, a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_and_si512'.
 // Requires KNCNI.
 func AndSi512(a M512i, b M512i) M512i {
-	return M512i(andSi512(a, b))
+	return M512i(andSi512([64]byte(a), [64]byte(b)))
 }
 
-func andSi512(a M512i, b M512i) M512i
+func andSi512(a [64]byte, b [64]byte) [64]byte
 
 
 // Andnot32: Compute the bitwise AND NOT of packed 32-bit integers in 'a' and
@@ -2277,10 +2277,10 @@ func andSi512(a M512i, b M512i) M512i
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_andnot_epi32'.
 // Requires KNCNI.
 func Andnot32(a M512i, b M512i) M512i {
-	return M512i(andnot32(a, b))
+	return M512i(andnot32([64]byte(a), [64]byte(b)))
 }
 
-func andnot32(a M512i, b M512i) M512i
+func andnot32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAndnot32: Compute the bitwise AND NOT of packed 32-bit integers in 'a'
@@ -2300,10 +2300,10 @@ func andnot32(a M512i, b M512i) M512i
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_mask_andnot_epi32'.
 // Requires KNCNI.
 func MaskAndnot32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskAndnot32(src, uint16(k), a, b))
+	return M512i(maskAndnot32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAndnot32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskAndnot32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAndnot32: Compute the bitwise AND NOT of packed 32-bit integers in 'a'
@@ -2323,10 +2323,10 @@ func maskAndnot32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_maskz_andnot_epi32'.
 // Requires AVX512F.
 func MaskzAndnot32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzAndnot32(uint16(k), a, b))
+	return M512i(maskzAndnot32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAndnot32(k uint16, a M512i, b M512i) M512i
+func maskzAndnot32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Andnot64: Compute the bitwise AND NOT of 512 bits (composed of packed 64-bit
@@ -2338,10 +2338,10 @@ func maskzAndnot32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm512_andnot_epi64'.
 // Requires KNCNI.
 func Andnot64(a M512i, b M512i) M512i {
-	return M512i(andnot64(a, b))
+	return M512i(andnot64([64]byte(a), [64]byte(b)))
 }
 
-func andnot64(a M512i, b M512i) M512i
+func andnot64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAndnot64: Compute the bitwise AND NOT of packed 64-bit integers in 'a'
@@ -2361,10 +2361,10 @@ func andnot64(a M512i, b M512i) M512i
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm512_mask_andnot_epi64'.
 // Requires KNCNI.
 func MaskAndnot64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskAndnot64(src, uint8(k), a, b))
+	return M512i(maskAndnot64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAndnot64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskAndnot64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAndnot64: Compute the bitwise AND NOT of packed 64-bit integers in 'a'
@@ -2384,10 +2384,10 @@ func maskAndnot64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm512_maskz_andnot_epi64'.
 // Requires AVX512F.
 func MaskzAndnot64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzAndnot64(uint8(k), a, b))
+	return M512i(maskzAndnot64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAndnot64(k uint8, a M512i, b M512i) M512i
+func maskzAndnot64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // AndnotPd: Compute the bitwise AND NOT of packed double-precision (64-bit)
@@ -2531,10 +2531,10 @@ func maskzAndnotPs(k uint16, a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_andnot_si512'.
 // Requires KNCNI.
 func AndnotSi512(a M512i, b M512i) M512i {
-	return M512i(andnotSi512(a, b))
+	return M512i(andnotSi512([64]byte(a), [64]byte(b)))
 }
 
-func andnotSi512(a M512i, b M512i) M512i
+func andnotSi512(a [64]byte, b [64]byte) [64]byte
 
 
 // AsinPd: Compute the inverse sine of packed double-precision (64-bit)
@@ -2979,10 +2979,10 @@ func maskAtanhPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_avg_epu16'.
 // Requires AVX512BW.
 func AvgEpu16(a M512i, b M512i) M512i {
-	return M512i(avgEpu16(a, b))
+	return M512i(avgEpu16([64]byte(a), [64]byte(b)))
 }
 
-func avgEpu16(a M512i, b M512i) M512i
+func avgEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and
@@ -3002,10 +3002,10 @@ func avgEpu16(a M512i, b M512i) M512i
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_mask_avg_epu16'.
 // Requires AVX512BW.
 func MaskAvgEpu16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAvgEpu16(src, uint32(k), a, b))
+	return M512i(maskAvgEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAvgEpu16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskAvgEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and
@@ -3025,10 +3025,10 @@ func maskAvgEpu16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_maskz_avg_epu16'.
 // Requires AVX512BW.
 func MaskzAvgEpu16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAvgEpu16(uint32(k), a, b))
+	return M512i(maskzAvgEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAvgEpu16(k uint32, a M512i, b M512i) M512i
+func maskzAvgEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // AvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -3043,10 +3043,10 @@ func maskzAvgEpu16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_avg_epu8'.
 // Requires AVX512BW.
 func AvgEpu8(a M512i, b M512i) M512i {
-	return M512i(avgEpu8(a, b))
+	return M512i(avgEpu8([64]byte(a), [64]byte(b)))
 }
 
-func avgEpu8(a M512i, b M512i) M512i
+func avgEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
@@ -3066,10 +3066,10 @@ func avgEpu8(a M512i, b M512i) M512i
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_mask_avg_epu8'.
 // Requires AVX512BW.
 func MaskAvgEpu8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAvgEpu8(src, uint64(k), a, b))
+	return M512i(maskAvgEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAvgEpu8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskAvgEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzAvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
@@ -3089,10 +3089,10 @@ func maskAvgEpu8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_maskz_avg_epu8'.
 // Requires AVX512BW.
 func MaskzAvgEpu8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAvgEpu8(uint64(k), a, b))
+	return M512i(maskzAvgEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAvgEpu8(k uint64, a M512i, b M512i) M512i
+func maskzAvgEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBlend16: Blend packed 16-bit integers from 'a' and 'b' using control
@@ -3111,10 +3111,10 @@ func maskzAvgEpu8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPBLENDMW'. Intrinsic: '_mm512_mask_blend_epi16'.
 // Requires AVX512BW.
 func MaskBlend16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskBlend16(uint32(k), a, b))
+	return M512i(maskBlend16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlend16(k uint32, a M512i, b M512i) M512i
+func maskBlend16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBlend32: Blend packed 32-bit integers from 'a' and 'b' using control
@@ -3133,10 +3133,10 @@ func maskBlend16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPBLENDMD'. Intrinsic: '_mm512_mask_blend_epi32'.
 // Requires KNCNI.
 func MaskBlend32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskBlend32(uint16(k), a, b))
+	return M512i(maskBlend32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlend32(k uint16, a M512i, b M512i) M512i
+func maskBlend32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBlend64: Blend packed 64-bit integers from 'a' and 'b' using control
@@ -3155,10 +3155,10 @@ func maskBlend32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPBLENDMQ'. Intrinsic: '_mm512_mask_blend_epi64'.
 // Requires KNCNI.
 func MaskBlend64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskBlend64(uint8(k), a, b))
+	return M512i(maskBlend64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlend64(k uint8, a M512i, b M512i) M512i
+func maskBlend64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBlend8: Blend packed 8-bit integers from 'a' and 'b' using control mask
@@ -3177,10 +3177,10 @@ func maskBlend64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPBLENDMB'. Intrinsic: '_mm512_mask_blend_epi8'.
 // Requires AVX512BW.
 func MaskBlend8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskBlend8(uint64(k), a, b))
+	return M512i(maskBlend8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlend8(k uint64, a M512i, b M512i) M512i
+func maskBlend8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBlendPd: Blend packed double-precision (64-bit) floating-point elements
@@ -3580,10 +3580,10 @@ func maskzBroadcastF64x4(k uint8, a [4]float64) [8]float64
 // Instruction: 'VBROADCASTI32X2'. Intrinsic: '_mm_broadcast_i32x2'.
 // Requires AVX512DQ.
 func BroadcastI32x2(a M128i) M128i {
-	return M128i(broadcastI32x2(a))
+	return M128i(broadcastI32x2([16]byte(a)))
 }
 
-func broadcastI32x2(a M128i) M128i
+func broadcastI32x2(a [16]byte) [16]byte
 
 
 // MaskBroadcastI32x2: Broadcast the lower 2 packed 32-bit integers from 'a' to
@@ -3604,10 +3604,10 @@ func broadcastI32x2(a M128i) M128i
 // Instruction: 'VBROADCASTI32X2'. Intrinsic: '_mm_mask_broadcast_i32x2'.
 // Requires AVX512DQ.
 func MaskBroadcastI32x2(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskBroadcastI32x2(src, uint8(k), a))
+	return M128i(maskBroadcastI32x2([16]byte(src), uint8(k), [16]byte(a)))
 }
 
-func maskBroadcastI32x2(src M128i, k uint8, a M128i) M128i
+func maskBroadcastI32x2(src [16]byte, k uint8, a [16]byte) [16]byte
 
 
 // MaskzBroadcastI32x2: Broadcast the lower 2 packed 32-bit integers from 'a'
@@ -3628,10 +3628,10 @@ func maskBroadcastI32x2(src M128i, k uint8, a M128i) M128i
 // Instruction: 'VBROADCASTI32X2'. Intrinsic: '_mm_maskz_broadcast_i32x2'.
 // Requires AVX512DQ.
 func MaskzBroadcastI32x2(k Mmask8, a M128i) M128i {
-	return M128i(maskzBroadcastI32x2(uint8(k), a))
+	return M128i(maskzBroadcastI32x2(uint8(k), [16]byte(a)))
 }
 
-func maskzBroadcastI32x2(k uint8, a M128i) M128i
+func maskzBroadcastI32x2(k uint8, a [16]byte) [16]byte
 
 
 // BroadcastI32x21: Broadcast the lower 2 packed 32-bit integers from 'a' to
@@ -3647,10 +3647,10 @@ func maskzBroadcastI32x2(k uint8, a M128i) M128i
 // Instruction: 'VBROADCASTI32X2'. Intrinsic: '_mm512_broadcast_i32x2'.
 // Requires AVX512DQ.
 func BroadcastI32x21(a M128i) M512i {
-	return M512i(broadcastI32x21(a))
+	return M512i(broadcastI32x21([16]byte(a)))
 }
 
-func broadcastI32x21(a M128i) M512i
+func broadcastI32x21(a [16]byte) [64]byte
 
 
 // MaskBroadcastI32x21: Broadcast the lower 2 packed 32-bit integers from 'a'
@@ -3671,10 +3671,10 @@ func broadcastI32x21(a M128i) M512i
 // Instruction: 'VBROADCASTI32X2'. Intrinsic: '_mm512_mask_broadcast_i32x2'.
 // Requires AVX512DQ.
 func MaskBroadcastI32x21(src M512i, k Mmask16, a M128i) M512i {
-	return M512i(maskBroadcastI32x21(src, uint16(k), a))
+	return M512i(maskBroadcastI32x21([64]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskBroadcastI32x21(src M512i, k uint16, a M128i) M512i
+func maskBroadcastI32x21(src [64]byte, k uint16, a [16]byte) [64]byte
 
 
 // MaskzBroadcastI32x21: Broadcast the lower 2 packed 32-bit integers from 'a'
@@ -3695,10 +3695,10 @@ func maskBroadcastI32x21(src M512i, k uint16, a M128i) M512i
 // Instruction: 'VBROADCASTI32X2'. Intrinsic: '_mm512_maskz_broadcast_i32x2'.
 // Requires AVX512DQ.
 func MaskzBroadcastI32x21(k Mmask16, a M128i) M512i {
-	return M512i(maskzBroadcastI32x21(uint16(k), a))
+	return M512i(maskzBroadcastI32x21(uint16(k), [16]byte(a)))
 }
 
-func maskzBroadcastI32x21(k uint16, a M128i) M512i
+func maskzBroadcastI32x21(k uint16, a [16]byte) [64]byte
 
 
 // BroadcastI32x4: Broadcast the 4 packed 32-bit integers from 'a' to all
@@ -3714,10 +3714,10 @@ func maskzBroadcastI32x21(k uint16, a M128i) M512i
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm512_broadcast_i32x4'.
 // Requires AVX512F.
 func BroadcastI32x4(a M128i) M512i {
-	return M512i(broadcastI32x4(a))
+	return M512i(broadcastI32x4([16]byte(a)))
 }
 
-func broadcastI32x4(a M128i) M512i
+func broadcastI32x4(a [16]byte) [64]byte
 
 
 // MaskBroadcastI32x4: Broadcast the 4 packed 32-bit integers from 'a' to all
@@ -3738,10 +3738,10 @@ func broadcastI32x4(a M128i) M512i
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm512_mask_broadcast_i32x4'.
 // Requires AVX512F.
 func MaskBroadcastI32x4(src M512i, k Mmask16, a M128i) M512i {
-	return M512i(maskBroadcastI32x4(src, uint16(k), a))
+	return M512i(maskBroadcastI32x4([64]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskBroadcastI32x4(src M512i, k uint16, a M128i) M512i
+func maskBroadcastI32x4(src [64]byte, k uint16, a [16]byte) [64]byte
 
 
 // MaskzBroadcastI32x4: Broadcast the 4 packed 32-bit integers from 'a' to all
@@ -3762,10 +3762,10 @@ func maskBroadcastI32x4(src M512i, k uint16, a M128i) M512i
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm512_maskz_broadcast_i32x4'.
 // Requires AVX512F.
 func MaskzBroadcastI32x4(k Mmask16, a M128i) M512i {
-	return M512i(maskzBroadcastI32x4(uint16(k), a))
+	return M512i(maskzBroadcastI32x4(uint16(k), [16]byte(a)))
 }
 
-func maskzBroadcastI32x4(k uint16, a M128i) M512i
+func maskzBroadcastI32x4(k uint16, a [16]byte) [64]byte
 
 
 // BroadcastI32x8: Broadcast the 8 packed 32-bit integers from 'a' to all
@@ -3781,10 +3781,10 @@ func maskzBroadcastI32x4(k uint16, a M128i) M512i
 // Instruction: 'VBROADCASTI32X8'. Intrinsic: '_mm512_broadcast_i32x8'.
 // Requires AVX512DQ.
 func BroadcastI32x8(a M256i) M512i {
-	return M512i(broadcastI32x8(a))
+	return M512i(broadcastI32x8([32]byte(a)))
 }
 
-func broadcastI32x8(a M256i) M512i
+func broadcastI32x8(a [32]byte) [64]byte
 
 
 // MaskBroadcastI32x8: Broadcast the 8 packed 32-bit integers from 'a' to all
@@ -3805,10 +3805,10 @@ func broadcastI32x8(a M256i) M512i
 // Instruction: 'VBROADCASTI32X8'. Intrinsic: '_mm512_mask_broadcast_i32x8'.
 // Requires AVX512DQ.
 func MaskBroadcastI32x8(src M512i, k Mmask16, a M256i) M512i {
-	return M512i(maskBroadcastI32x8(src, uint16(k), a))
+	return M512i(maskBroadcastI32x8([64]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskBroadcastI32x8(src M512i, k uint16, a M256i) M512i
+func maskBroadcastI32x8(src [64]byte, k uint16, a [32]byte) [64]byte
 
 
 // MaskzBroadcastI32x8: Broadcast the 8 packed 32-bit integers from 'a' to all
@@ -3829,10 +3829,10 @@ func maskBroadcastI32x8(src M512i, k uint16, a M256i) M512i
 // Instruction: 'VBROADCASTI32X8'. Intrinsic: '_mm512_maskz_broadcast_i32x8'.
 // Requires AVX512DQ.
 func MaskzBroadcastI32x8(k Mmask16, a M256i) M512i {
-	return M512i(maskzBroadcastI32x8(uint16(k), a))
+	return M512i(maskzBroadcastI32x8(uint16(k), [32]byte(a)))
 }
 
-func maskzBroadcastI32x8(k uint16, a M256i) M512i
+func maskzBroadcastI32x8(k uint16, a [32]byte) [64]byte
 
 
 // BroadcastI64x2: Broadcast the 2 packed 64-bit integers from 'a' to all
@@ -3848,10 +3848,10 @@ func maskzBroadcastI32x8(k uint16, a M256i) M512i
 // Instruction: 'VBROADCASTI64X2'. Intrinsic: '_mm512_broadcast_i64x2'.
 // Requires AVX512DQ.
 func BroadcastI64x2(a M128i) M512i {
-	return M512i(broadcastI64x2(a))
+	return M512i(broadcastI64x2([16]byte(a)))
 }
 
-func broadcastI64x2(a M128i) M512i
+func broadcastI64x2(a [16]byte) [64]byte
 
 
 // MaskBroadcastI64x2: Broadcast the 2 packed 64-bit integers from 'a' to all
@@ -3872,10 +3872,10 @@ func broadcastI64x2(a M128i) M512i
 // Instruction: 'VBROADCASTI64X2'. Intrinsic: '_mm512_mask_broadcast_i64x2'.
 // Requires AVX512DQ.
 func MaskBroadcastI64x2(src M512i, k Mmask8, a M128i) M512i {
-	return M512i(maskBroadcastI64x2(src, uint8(k), a))
+	return M512i(maskBroadcastI64x2([64]byte(src), uint8(k), [16]byte(a)))
 }
 
-func maskBroadcastI64x2(src M512i, k uint8, a M128i) M512i
+func maskBroadcastI64x2(src [64]byte, k uint8, a [16]byte) [64]byte
 
 
 // MaskzBroadcastI64x2: Broadcast the 2 packed 64-bit integers from 'a' to all
@@ -3896,10 +3896,10 @@ func maskBroadcastI64x2(src M512i, k uint8, a M128i) M512i
 // Instruction: 'VBROADCASTI64X2'. Intrinsic: '_mm512_maskz_broadcast_i64x2'.
 // Requires AVX512DQ.
 func MaskzBroadcastI64x2(k Mmask8, a M128i) M512i {
-	return M512i(maskzBroadcastI64x2(uint8(k), a))
+	return M512i(maskzBroadcastI64x2(uint8(k), [16]byte(a)))
 }
 
-func maskzBroadcastI64x2(k uint8, a M128i) M512i
+func maskzBroadcastI64x2(k uint8, a [16]byte) [64]byte
 
 
 // BroadcastI64x4: Broadcast the 4 packed 64-bit integers from 'a' to all
@@ -3915,10 +3915,10 @@ func maskzBroadcastI64x2(k uint8, a M128i) M512i
 // Instruction: 'VBROADCASTI64X4'. Intrinsic: '_mm512_broadcast_i64x4'.
 // Requires AVX512F.
 func BroadcastI64x4(a M256i) M512i {
-	return M512i(broadcastI64x4(a))
+	return M512i(broadcastI64x4([32]byte(a)))
 }
 
-func broadcastI64x4(a M256i) M512i
+func broadcastI64x4(a [32]byte) [64]byte
 
 
 // MaskBroadcastI64x4: Broadcast the 4 packed 64-bit integers from 'a' to all
@@ -3939,10 +3939,10 @@ func broadcastI64x4(a M256i) M512i
 // Instruction: 'VBROADCASTI64X4'. Intrinsic: '_mm512_mask_broadcast_i64x4'.
 // Requires AVX512F.
 func MaskBroadcastI64x4(src M512i, k Mmask8, a M256i) M512i {
-	return M512i(maskBroadcastI64x4(src, uint8(k), a))
+	return M512i(maskBroadcastI64x4([64]byte(src), uint8(k), [32]byte(a)))
 }
 
-func maskBroadcastI64x4(src M512i, k uint8, a M256i) M512i
+func maskBroadcastI64x4(src [64]byte, k uint8, a [32]byte) [64]byte
 
 
 // MaskzBroadcastI64x4: Broadcast the 4 packed 64-bit integers from 'a' to all
@@ -3963,10 +3963,10 @@ func maskBroadcastI64x4(src M512i, k uint8, a M256i) M512i
 // Instruction: 'VBROADCASTI64X4'. Intrinsic: '_mm512_maskz_broadcast_i64x4'.
 // Requires AVX512F.
 func MaskzBroadcastI64x4(k Mmask8, a M256i) M512i {
-	return M512i(maskzBroadcastI64x4(uint8(k), a))
+	return M512i(maskzBroadcastI64x4(uint8(k), [32]byte(a)))
 }
 
-func maskzBroadcastI64x4(k uint8, a M256i) M512i
+func maskzBroadcastI64x4(k uint8, a [32]byte) [64]byte
 
 
 // Broadcastb8: Broadcast the low packed 8-bit integer from 'a' to all elements
@@ -3981,10 +3981,10 @@ func maskzBroadcastI64x4(k uint8, a M256i) M512i
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_broadcastb_epi8'.
 // Requires AVX512BW.
 func Broadcastb8(a M128i) M512i {
-	return M512i(broadcastb8(a))
+	return M512i(broadcastb8([16]byte(a)))
 }
 
-func broadcastb8(a M128i) M512i
+func broadcastb8(a [16]byte) [64]byte
 
 
 // MaskBroadcastb8: Broadcast the low packed 8-bit integer from 'a' to all
@@ -4004,10 +4004,10 @@ func broadcastb8(a M128i) M512i
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_mask_broadcastb_epi8'.
 // Requires AVX512BW.
 func MaskBroadcastb8(src M512i, k Mmask64, a M128i) M512i {
-	return M512i(maskBroadcastb8(src, uint64(k), a))
+	return M512i(maskBroadcastb8([64]byte(src), uint64(k), [16]byte(a)))
 }
 
-func maskBroadcastb8(src M512i, k uint64, a M128i) M512i
+func maskBroadcastb8(src [64]byte, k uint64, a [16]byte) [64]byte
 
 
 // MaskzBroadcastb8: Broadcast the low packed 8-bit integer from 'a' to all
@@ -4027,10 +4027,10 @@ func maskBroadcastb8(src M512i, k uint64, a M128i) M512i
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_maskz_broadcastb_epi8'.
 // Requires AVX512BW.
 func MaskzBroadcastb8(k Mmask64, a M128i) M512i {
-	return M512i(maskzBroadcastb8(uint64(k), a))
+	return M512i(maskzBroadcastb8(uint64(k), [16]byte(a)))
 }
 
-func maskzBroadcastb8(k uint64, a M128i) M512i
+func maskzBroadcastb8(k uint64, a [16]byte) [64]byte
 
 
 // Broadcastd32: Broadcast the low packed 32-bit integer from 'a' to all
@@ -4045,10 +4045,10 @@ func maskzBroadcastb8(k uint64, a M128i) M512i
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_broadcastd_epi32'.
 // Requires AVX512F.
 func Broadcastd32(a M128i) M512i {
-	return M512i(broadcastd32(a))
+	return M512i(broadcastd32([16]byte(a)))
 }
 
-func broadcastd32(a M128i) M512i
+func broadcastd32(a [16]byte) [64]byte
 
 
 // MaskBroadcastd32: Broadcast the low packed 32-bit integer from 'a' to all
@@ -4068,10 +4068,10 @@ func broadcastd32(a M128i) M512i
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_mask_broadcastd_epi32'.
 // Requires AVX512F.
 func MaskBroadcastd32(src M512i, k Mmask16, a M128i) M512i {
-	return M512i(maskBroadcastd32(src, uint16(k), a))
+	return M512i(maskBroadcastd32([64]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskBroadcastd32(src M512i, k uint16, a M128i) M512i
+func maskBroadcastd32(src [64]byte, k uint16, a [16]byte) [64]byte
 
 
 // MaskzBroadcastd32: Broadcast the low packed 32-bit integer from 'a' to all
@@ -4091,10 +4091,10 @@ func maskBroadcastd32(src M512i, k uint16, a M128i) M512i
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_maskz_broadcastd_epi32'.
 // Requires AVX512F.
 func MaskzBroadcastd32(k Mmask16, a M128i) M512i {
-	return M512i(maskzBroadcastd32(uint16(k), a))
+	return M512i(maskzBroadcastd32(uint16(k), [16]byte(a)))
 }
 
-func maskzBroadcastd32(k uint16, a M128i) M512i
+func maskzBroadcastd32(k uint16, a [16]byte) [64]byte
 
 
 // Broadcastmb64: Broadcast the low 8-bits from input mask 'k' to all 64-bit
@@ -4112,7 +4112,7 @@ func Broadcastmb64(k Mmask8) M512i {
 	return M512i(broadcastmb64(uint8(k)))
 }
 
-func broadcastmb64(k uint8) M512i
+func broadcastmb64(k uint8) [64]byte
 
 
 // Broadcastmw32: Broadcast the low 16-bits from input mask 'k' to all 32-bit
@@ -4130,7 +4130,7 @@ func Broadcastmw32(k Mmask16) M512i {
 	return M512i(broadcastmw32(uint16(k)))
 }
 
-func broadcastmw32(k uint16) M512i
+func broadcastmw32(k uint16) [64]byte
 
 
 // Broadcastq64: Broadcast the low packed 64-bit integer from 'a' to all
@@ -4145,10 +4145,10 @@ func broadcastmw32(k uint16) M512i
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_broadcastq_epi64'.
 // Requires AVX512F.
 func Broadcastq64(a M128i) M512i {
-	return M512i(broadcastq64(a))
+	return M512i(broadcastq64([16]byte(a)))
 }
 
-func broadcastq64(a M128i) M512i
+func broadcastq64(a [16]byte) [64]byte
 
 
 // MaskBroadcastq64: Broadcast the low packed 64-bit integer from 'a' to all
@@ -4168,10 +4168,10 @@ func broadcastq64(a M128i) M512i
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_mask_broadcastq_epi64'.
 // Requires AVX512F.
 func MaskBroadcastq64(src M512i, k Mmask8, a M128i) M512i {
-	return M512i(maskBroadcastq64(src, uint8(k), a))
+	return M512i(maskBroadcastq64([64]byte(src), uint8(k), [16]byte(a)))
 }
 
-func maskBroadcastq64(src M512i, k uint8, a M128i) M512i
+func maskBroadcastq64(src [64]byte, k uint8, a [16]byte) [64]byte
 
 
 // MaskzBroadcastq64: Broadcast the low packed 64-bit integer from 'a' to all
@@ -4191,10 +4191,10 @@ func maskBroadcastq64(src M512i, k uint8, a M128i) M512i
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_maskz_broadcastq_epi64'.
 // Requires AVX512F.
 func MaskzBroadcastq64(k Mmask8, a M128i) M512i {
-	return M512i(maskzBroadcastq64(uint8(k), a))
+	return M512i(maskzBroadcastq64(uint8(k), [16]byte(a)))
 }
 
-func maskzBroadcastq64(k uint8, a M128i) M512i
+func maskzBroadcastq64(k uint8, a [16]byte) [64]byte
 
 
 // BroadcastsdPd: Broadcast the low double-precision (64-bit) floating-point
@@ -4337,10 +4337,10 @@ func maskzBroadcastssPs(k uint16, a [4]float32) [16]float32
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_broadcastw_epi16'.
 // Requires AVX512BW.
 func Broadcastw16(a M128i) M512i {
-	return M512i(broadcastw16(a))
+	return M512i(broadcastw16([16]byte(a)))
 }
 
-func broadcastw16(a M128i) M512i
+func broadcastw16(a [16]byte) [64]byte
 
 
 // MaskBroadcastw16: Broadcast the low packed 16-bit integer from 'a' to all
@@ -4360,10 +4360,10 @@ func broadcastw16(a M128i) M512i
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_mask_broadcastw_epi16'.
 // Requires AVX512BW.
 func MaskBroadcastw16(src M512i, k Mmask32, a M128i) M512i {
-	return M512i(maskBroadcastw16(src, uint32(k), a))
+	return M512i(maskBroadcastw16([64]byte(src), uint32(k), [16]byte(a)))
 }
 
-func maskBroadcastw16(src M512i, k uint32, a M128i) M512i
+func maskBroadcastw16(src [64]byte, k uint32, a [16]byte) [64]byte
 
 
 // MaskzBroadcastw16: Broadcast the low packed 16-bit integer from 'a' to all
@@ -4383,10 +4383,10 @@ func maskBroadcastw16(src M512i, k uint32, a M128i) M512i
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_maskz_broadcastw_epi16'.
 // Requires AVX512BW.
 func MaskzBroadcastw16(k Mmask32, a M128i) M512i {
-	return M512i(maskzBroadcastw16(uint32(k), a))
+	return M512i(maskzBroadcastw16(uint32(k), [16]byte(a)))
 }
 
-func maskzBroadcastw16(k uint32, a M128i) M512i
+func maskzBroadcastw16(k uint32, a [16]byte) [64]byte
 
 
 // Bslli128: Shift 128-bit lanes in 'a' left by 'imm8' bytes while shifting in
@@ -4405,10 +4405,10 @@ func maskzBroadcastw16(k uint32, a M128i) M512i
 // Instruction: 'VPSLLDQ'. Intrinsic: '_mm512_bslli_epi128'.
 // Requires AVX512BW.
 func Bslli128(a M512i, imm8 int) M512i {
-	return M512i(bslli128(a, imm8))
+	return M512i(bslli128([64]byte(a), imm8))
 }
 
-func bslli128(a M512i, imm8 int) M512i
+func bslli128(a [64]byte, imm8 int) [64]byte
 
 
 // Bsrli128: Shift 128-bit lanes in 'a' right by 'imm8' bytes while shifting in
@@ -4427,10 +4427,10 @@ func bslli128(a M512i, imm8 int) M512i
 // Instruction: 'VPSRLDQ'. Intrinsic: '_mm512_bsrli_epi128'.
 // Requires AVX512BW.
 func Bsrli128(a M512i, imm8 int) M512i {
-	return M512i(bsrli128(a, imm8))
+	return M512i(bsrli128([64]byte(a), imm8))
 }
 
-func bsrli128(a M512i, imm8 int) M512i
+func bsrli128(a [64]byte, imm8 int) [64]byte
 
 
 // CastpdPs: Cast vector of type __m512d to type __m512.
@@ -4460,7 +4460,7 @@ func CastpdSi512(a M512d) M512i {
 	return M512i(castpdSi512([8]float64(a)))
 }
 
-func castpdSi512(a [8]float64) M512i
+func castpdSi512(a [8]float64) [64]byte
 
 
 // Castpd128Pd512: Cast vector of type __m128d to type __m512d; the upper 384
@@ -4552,7 +4552,7 @@ func CastpsSi512(a M512) M512i {
 	return M512i(castpsSi512([16]float32(a)))
 }
 
-func castpsSi512(a [16]float32) M512i
+func castpsSi512(a [16]float32) [64]byte
 
 
 // Castps128Ps512: Cast vector of type __m128 to type __m512; the upper 384
@@ -4627,10 +4627,10 @@ func castps512Ps256(a [16]float32) [8]float32
 // Instruction: ''. Intrinsic: '_mm512_castsi128_si512'.
 // Requires AVX512F.
 func Castsi128Si512(a M128i) M512i {
-	return M512i(castsi128Si512(a))
+	return M512i(castsi128Si512([16]byte(a)))
 }
 
-func castsi128Si512(a M128i) M512i
+func castsi128Si512(a [16]byte) [64]byte
 
 
 // Castsi256Si512: Cast vector of type __m256i to type __m512i; the upper 256
@@ -4643,10 +4643,10 @@ func castsi128Si512(a M128i) M512i
 // Instruction: ''. Intrinsic: '_mm512_castsi256_si512'.
 // Requires AVX512F.
 func Castsi256Si512(a M256i) M512i {
-	return M512i(castsi256Si512(a))
+	return M512i(castsi256Si512([32]byte(a)))
 }
 
-func castsi256Si512(a M256i) M512i
+func castsi256Si512(a [32]byte) [64]byte
 
 
 // Castsi512Pd: Cast vector of type __m512i to type __m512d.
@@ -4658,10 +4658,10 @@ func castsi256Si512(a M256i) M512i
 // Instruction: ''. Intrinsic: '_mm512_castsi512_pd'.
 // Requires KNCNI.
 func Castsi512Pd(a M512i) M512d {
-	return M512d(castsi512Pd(a))
+	return M512d(castsi512Pd([64]byte(a)))
 }
 
-func castsi512Pd(a M512i) [8]float64
+func castsi512Pd(a [64]byte) [8]float64
 
 
 // Castsi512Ps: Cast vector of type __m512i to type __m512.
@@ -4673,10 +4673,10 @@ func castsi512Pd(a M512i) [8]float64
 // Instruction: ''. Intrinsic: '_mm512_castsi512_ps'.
 // Requires KNCNI.
 func Castsi512Ps(a M512i) M512 {
-	return M512(castsi512Ps(a))
+	return M512(castsi512Ps([64]byte(a)))
 }
 
-func castsi512Ps(a M512i) [16]float32
+func castsi512Ps(a [64]byte) [16]float32
 
 
 // Castsi512Si128: Cast vector of type __m512i to type __m128i.
@@ -4688,10 +4688,10 @@ func castsi512Ps(a M512i) [16]float32
 // Instruction: ''. Intrinsic: '_mm512_castsi512_si128'.
 // Requires AVX512F.
 func Castsi512Si128(a M512i) M128i {
-	return M128i(castsi512Si128(a))
+	return M128i(castsi512Si128([64]byte(a)))
 }
 
-func castsi512Si128(a M512i) M128i
+func castsi512Si128(a [64]byte) [16]byte
 
 
 // Castsi512Si256: Cast vector of type __m512i to type __m256i.
@@ -4703,10 +4703,10 @@ func castsi512Si128(a M512i) M128i
 // Instruction: ''. Intrinsic: '_mm512_castsi512_si256'.
 // Requires AVX512F.
 func Castsi512Si256(a M512i) M256i {
-	return M256i(castsi512Si256(a))
+	return M256i(castsi512Si256([64]byte(a)))
 }
 
-func castsi512Si256(a M512i) M256i
+func castsi512Si256(a [64]byte) [32]byte
 
 
 // CbrtPd: Compute the cube root of packed double-precision (64-bit)
@@ -5074,10 +5074,10 @@ func maskCeilPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmp_epi16_mask'.
 // Requires AVX512BW.
 func Cmp16Mask(a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(cmp16Mask(a, b, imm8))
+	return Mmask32(cmp16Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmp16Mask(a M512i, b M512i, imm8 int) uint32
+func cmp16Mask(a [64]byte, b [64]byte, imm8 int) uint32
 
 
 // MaskCmp16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
@@ -5108,10 +5108,10 @@ func cmp16Mask(a M512i, b M512i, imm8 int) uint32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmp_epi16_mask'.
 // Requires AVX512BW.
 func MaskCmp16Mask(k1 Mmask32, a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(maskCmp16Mask(uint32(k1), a, b, imm8))
+	return Mmask32(maskCmp16Mask(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmp16Mask(k1 uint32, a M512i, b M512i, imm8 int) uint32
+func maskCmp16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 
 
 // Cmp32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
@@ -5137,10 +5137,10 @@ func maskCmp16Mask(k1 uint32, a M512i, b M512i, imm8 int) uint32
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmp_epi32_mask'.
 // Requires KNCNI.
 func Cmp32Mask(a M512i, b M512i, imm8 uint8) Mmask16 {
-	return Mmask16(cmp32Mask(a, b, imm8))
+	return Mmask16(cmp32Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmp32Mask(a M512i, b M512i, imm8 uint8) uint16
+func cmp32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
 // MaskCmp32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
@@ -5171,10 +5171,10 @@ func cmp32Mask(a M512i, b M512i, imm8 uint8) uint16
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmp_epi32_mask'.
 // Requires KNCNI.
 func MaskCmp32Mask(k1 Mmask16, a M512i, b M512i, imm8 uint8) Mmask16 {
-	return Mmask16(maskCmp32Mask(uint16(k1), a, b, imm8))
+	return Mmask16(maskCmp32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmp32Mask(k1 uint16, a M512i, b M512i, imm8 uint8) uint16
+func maskCmp32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
 // Cmp64Mask: Compare packed 64-bit integers in 'a' and 'b' based on the
@@ -5200,10 +5200,10 @@ func maskCmp32Mask(k1 uint16, a M512i, b M512i, imm8 uint8) uint16
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmp_epi64_mask'.
 // Requires AVX512F.
 func Cmp64Mask(a M512i, b M512i, imm8 uint8) Mmask8 {
-	return Mmask8(cmp64Mask(a, b, imm8))
+	return Mmask8(cmp64Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmp64Mask(a M512i, b M512i, imm8 uint8) uint8
+func cmp64Mask(a [64]byte, b [64]byte, imm8 uint8) uint8
 
 
 // MaskCmp64Mask: Compare packed 64-bit integers in 'a' and 'b' based on the
@@ -5234,10 +5234,10 @@ func cmp64Mask(a M512i, b M512i, imm8 uint8) uint8
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmp_epi64_mask'.
 // Requires AVX512F.
 func MaskCmp64Mask(k1 Mmask8, a M512i, b M512i, imm8 uint8) Mmask8 {
-	return Mmask8(maskCmp64Mask(uint8(k1), a, b, imm8))
+	return Mmask8(maskCmp64Mask(uint8(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmp64Mask(k1 uint8, a M512i, b M512i, imm8 uint8) uint8
+func maskCmp64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 uint8) uint8
 
 
 // Cmp8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
@@ -5263,10 +5263,10 @@ func maskCmp64Mask(k1 uint8, a M512i, b M512i, imm8 uint8) uint8
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmp_epi8_mask'.
 // Requires AVX512BW.
 func Cmp8Mask(a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(cmp8Mask(a, b, imm8))
+	return Mmask64(cmp8Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmp8Mask(a M512i, b M512i, imm8 int) uint64
+func cmp8Mask(a [64]byte, b [64]byte, imm8 int) uint64
 
 
 // MaskCmp8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
@@ -5297,10 +5297,10 @@ func cmp8Mask(a M512i, b M512i, imm8 int) uint64
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmp_epi8_mask'.
 // Requires AVX512BW.
 func MaskCmp8Mask(k1 Mmask64, a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(maskCmp8Mask(uint64(k1), a, b, imm8))
+	return Mmask64(maskCmp8Mask(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmp8Mask(k1 uint64, a M512i, b M512i, imm8 int) uint64
+func maskCmp8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
 
 
 // CmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' based
@@ -5326,10 +5326,10 @@ func maskCmp8Mask(k1 uint64, a M512i, b M512i, imm8 int) uint64
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmp_epu16_mask'.
 // Requires AVX512BW.
 func CmpEpu16Mask(a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(cmpEpu16Mask(a, b, imm8))
+	return Mmask32(cmpEpu16Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpu16Mask(a M512i, b M512i, imm8 int) uint32
+func cmpEpu16Mask(a [64]byte, b [64]byte, imm8 int) uint32
 
 
 // MaskCmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -5360,10 +5360,10 @@ func cmpEpu16Mask(a M512i, b M512i, imm8 int) uint32
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmp_epu16_mask'.
 // Requires AVX512BW.
 func MaskCmpEpu16Mask(k1 Mmask32, a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(maskCmpEpu16Mask(uint32(k1), a, b, imm8))
+	return Mmask32(maskCmpEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpu16Mask(k1 uint32, a M512i, b M512i, imm8 int) uint32
+func maskCmpEpu16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 
 
 // CmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' based
@@ -5389,10 +5389,10 @@ func maskCmpEpu16Mask(k1 uint32, a M512i, b M512i, imm8 int) uint32
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmp_epu32_mask'.
 // Requires KNCNI.
 func CmpEpu32Mask(a M512i, b M512i, imm8 uint8) Mmask16 {
-	return Mmask16(cmpEpu32Mask(a, b, imm8))
+	return Mmask16(cmpEpu32Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpu32Mask(a M512i, b M512i, imm8 uint8) uint16
+func cmpEpu32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
 // MaskCmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -5423,10 +5423,10 @@ func cmpEpu32Mask(a M512i, b M512i, imm8 uint8) uint16
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmp_epu32_mask'.
 // Requires KNCNI.
 func MaskCmpEpu32Mask(k1 Mmask16, a M512i, b M512i, imm8 uint8) Mmask16 {
-	return Mmask16(maskCmpEpu32Mask(uint16(k1), a, b, imm8))
+	return Mmask16(maskCmpEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpu32Mask(k1 uint16, a M512i, b M512i, imm8 uint8) uint16
+func maskCmpEpu32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
 // CmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' based
@@ -5452,10 +5452,10 @@ func maskCmpEpu32Mask(k1 uint16, a M512i, b M512i, imm8 uint8) uint16
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmp_epu64_mask'.
 // Requires AVX512F.
 func CmpEpu64Mask(a M512i, b M512i, imm8 uint8) Mmask8 {
-	return Mmask8(cmpEpu64Mask(a, b, imm8))
+	return Mmask8(cmpEpu64Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpu64Mask(a M512i, b M512i, imm8 uint8) uint8
+func cmpEpu64Mask(a [64]byte, b [64]byte, imm8 uint8) uint8
 
 
 // MaskCmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -5486,10 +5486,10 @@ func cmpEpu64Mask(a M512i, b M512i, imm8 uint8) uint8
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmp_epu64_mask'.
 // Requires AVX512F.
 func MaskCmpEpu64Mask(k1 Mmask8, a M512i, b M512i, imm8 uint8) Mmask8 {
-	return Mmask8(maskCmpEpu64Mask(uint8(k1), a, b, imm8))
+	return Mmask8(maskCmpEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpu64Mask(k1 uint8, a M512i, b M512i, imm8 uint8) uint8
+func maskCmpEpu64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 uint8) uint8
 
 
 // CmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based on
@@ -5515,10 +5515,10 @@ func maskCmpEpu64Mask(k1 uint8, a M512i, b M512i, imm8 uint8) uint8
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmp_epu8_mask'.
 // Requires AVX512BW.
 func CmpEpu8Mask(a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(cmpEpu8Mask(a, b, imm8))
+	return Mmask64(cmpEpu8Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpu8Mask(a M512i, b M512i, imm8 int) uint64
+func cmpEpu8Mask(a [64]byte, b [64]byte, imm8 int) uint64
 
 
 // MaskCmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based
@@ -5549,10 +5549,10 @@ func cmpEpu8Mask(a M512i, b M512i, imm8 int) uint64
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmp_epu8_mask'.
 // Requires AVX512BW.
 func MaskCmpEpu8Mask(k1 Mmask64, a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(maskCmpEpu8Mask(uint64(k1), a, b, imm8))
+	return Mmask64(maskCmpEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpu8Mask(k1 uint64, a M512i, b M512i, imm8 int) uint64
+func maskCmpEpu8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
 
 
 // CmpPdMask: Compare packed double-precision (64-bit) floating-point elements
@@ -6015,10 +6015,10 @@ func maskCmpRoundPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int, sae i
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpeq_epi16_mask'.
 // Requires AVX512BW.
 func Cmpeq16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpeq16Mask(a, b))
+	return Mmask32(cmpeq16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeq16Mask(a M512i, b M512i) uint32
+func cmpeq16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpeq16Mask: Compare packed 16-bit integers in 'a' and 'b' for equality,
@@ -6038,10 +6038,10 @@ func cmpeq16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpeq_epi16_mask'.
 // Requires AVX512BW.
 func MaskCmpeq16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpeq16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpeq16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeq16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpeq16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Cmpeq32Mask: Compare packed 32-bit integers in 'a' and 'b' for equality, and
@@ -6056,10 +6056,10 @@ func maskCmpeq16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPEQD'. Intrinsic: '_mm512_cmpeq_epi32_mask'.
 // Requires KNCNI.
 func Cmpeq32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpeq32Mask(a, b))
+	return Mmask16(cmpeq32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeq32Mask(a M512i, b M512i) uint16
+func cmpeq32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpeq32Mask: Compare packed 32-bit integers in 'a' and 'b' for equality,
@@ -6079,10 +6079,10 @@ func cmpeq32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPEQD'. Intrinsic: '_mm512_mask_cmpeq_epi32_mask'.
 // Requires KNCNI.
 func MaskCmpeq32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpeq32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpeq32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeq32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpeq32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Cmpeq64Mask: Compare packed 64-bit integers in 'a' and 'b' for equality, and
@@ -6097,10 +6097,10 @@ func maskCmpeq32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPEQQ'. Intrinsic: '_mm512_cmpeq_epi64_mask'.
 // Requires AVX512F.
 func Cmpeq64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpeq64Mask(a, b))
+	return Mmask8(cmpeq64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeq64Mask(a M512i, b M512i) uint8
+func cmpeq64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpeq64Mask: Compare packed 64-bit integers in 'a' and 'b' for equality,
@@ -6120,10 +6120,10 @@ func cmpeq64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPEQQ'. Intrinsic: '_mm512_mask_cmpeq_epi64_mask'.
 // Requires AVX512F.
 func MaskCmpeq64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpeq64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpeq64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeq64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpeq64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Cmpeq8Mask: Compare packed 8-bit integers in 'a' and 'b' for equality, and
@@ -6138,10 +6138,10 @@ func maskCmpeq64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpeq_epi8_mask'.
 // Requires AVX512BW.
 func Cmpeq8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpeq8Mask(a, b))
+	return Mmask64(cmpeq8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeq8Mask(a M512i, b M512i) uint64
+func cmpeq8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpeq8Mask: Compare packed 8-bit integers in 'a' and 'b' for equality,
@@ -6161,10 +6161,10 @@ func cmpeq8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpeq_epi8_mask'.
 // Requires AVX512BW.
 func MaskCmpeq8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpeq8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpeq8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeq8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpeq8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpeqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -6179,10 +6179,10 @@ func maskCmpeq8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpeq_epu16_mask'.
 // Requires AVX512BW.
 func CmpeqEpu16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpeqEpu16Mask(a, b))
+	return Mmask32(cmpeqEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpu16Mask(a M512i, b M512i) uint32
+func cmpeqEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpeqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -6202,10 +6202,10 @@ func cmpeqEpu16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpeq_epu16_mask'.
 // Requires AVX512BW.
 func MaskCmpeqEpu16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpeqEpu16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpeqEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpu16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpeqEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpeqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
@@ -6220,10 +6220,10 @@ func maskCmpeqEpu16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpeq_epu32_mask'.
 // Requires KNCNI.
 func CmpeqEpu32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpeqEpu32Mask(a, b))
+	return Mmask16(cmpeqEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpu32Mask(a M512i, b M512i) uint16
+func cmpeqEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpeqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -6243,10 +6243,10 @@ func cmpeqEpu32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpeq_epu32_mask'.
 // Requires KNCNI.
 func MaskCmpeqEpu32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpeqEpu32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpeqEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpu32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpeqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // CmpeqEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' for
@@ -6261,10 +6261,10 @@ func maskCmpeqEpu32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpeq_epu64_mask'.
 // Requires AVX512F.
 func CmpeqEpu64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpeqEpu64Mask(a, b))
+	return Mmask8(cmpeqEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpu64Mask(a M512i, b M512i) uint8
+func cmpeqEpu64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpeqEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -6284,10 +6284,10 @@ func cmpeqEpu64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpeq_epu64_mask'.
 // Requires AVX512F.
 func MaskCmpeqEpu64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpeqEpu64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpeqEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpu64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpeqEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // CmpeqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -6302,10 +6302,10 @@ func maskCmpeqEpu64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpeq_epu8_mask'.
 // Requires AVX512BW.
 func CmpeqEpu8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpeqEpu8Mask(a, b))
+	return Mmask64(cmpeqEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpu8Mask(a M512i, b M512i) uint64
+func cmpeqEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpeqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -6325,10 +6325,10 @@ func cmpeqEpu8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpeq_epu8_mask'.
 // Requires AVX512BW.
 func MaskCmpeqEpu8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpeqEpu8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpeqEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpu8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpeqEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpeqPdMask: Compare packed double-precision (64-bit) floating-point
@@ -6430,10 +6430,10 @@ func maskCmpeqPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpge_epi16_mask'.
 // Requires AVX512BW.
 func Cmpge16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpge16Mask(a, b))
+	return Mmask32(cmpge16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpge16Mask(a M512i, b M512i) uint32
+func cmpge16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpge16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -6454,10 +6454,10 @@ func cmpge16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpge_epi16_mask'.
 // Requires AVX512BW.
 func MaskCmpge16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpge16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpge16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpge16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpge16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Cmpge32Mask: Compare packed 32-bit integers in 'a' and 'b' for
@@ -6472,10 +6472,10 @@ func maskCmpge16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmpge_epi32_mask'.
 // Requires KNCNI.
 func Cmpge32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpge32Mask(a, b))
+	return Mmask16(cmpge32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpge32Mask(a M512i, b M512i) uint16
+func cmpge32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpge32Mask: Compare packed 32-bit integers in 'a' and 'b' for
@@ -6496,10 +6496,10 @@ func cmpge32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmpge_epi32_mask'.
 // Requires KNCNI.
 func MaskCmpge32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpge32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpge32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpge32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpge32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Cmpge64Mask: Compare packed 64-bit integers in 'a' and 'b' for
@@ -6514,10 +6514,10 @@ func maskCmpge32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmpge_epi64_mask'.
 // Requires AVX512F.
 func Cmpge64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpge64Mask(a, b))
+	return Mmask8(cmpge64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpge64Mask(a M512i, b M512i) uint8
+func cmpge64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpge64Mask: Compare packed 64-bit integers in 'a' and 'b' for
@@ -6538,10 +6538,10 @@ func cmpge64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmpge_epi64_mask'.
 // Requires AVX512F.
 func MaskCmpge64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpge64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpge64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpge64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpge64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Cmpge8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -6556,10 +6556,10 @@ func maskCmpge64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpge_epi8_mask'.
 // Requires AVX512BW.
 func Cmpge8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpge8Mask(a, b))
+	return Mmask64(cmpge8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpge8Mask(a M512i, b M512i) uint64
+func cmpge8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpge8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -6580,10 +6580,10 @@ func cmpge8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpge_epi8_mask'.
 // Requires AVX512BW.
 func MaskCmpge8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpge8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpge8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpge8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpge8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpgeEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -6598,10 +6598,10 @@ func maskCmpge8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpge_epu16_mask'.
 // Requires AVX512BW.
 func CmpgeEpu16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpgeEpu16Mask(a, b))
+	return Mmask32(cmpgeEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpu16Mask(a M512i, b M512i) uint32
+func cmpgeEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpgeEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -6622,10 +6622,10 @@ func cmpgeEpu16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpge_epu16_mask'.
 // Requires AVX512BW.
 func MaskCmpgeEpu16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpgeEpu16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpgeEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpu16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpgeEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpgeEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
@@ -6640,10 +6640,10 @@ func maskCmpgeEpu16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpge_epu32_mask'.
 // Requires KNCNI.
 func CmpgeEpu32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpgeEpu32Mask(a, b))
+	return Mmask16(cmpgeEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpu32Mask(a M512i, b M512i) uint16
+func cmpgeEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpgeEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -6664,10 +6664,10 @@ func cmpgeEpu32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpge_epu32_mask'.
 // Requires KNCNI.
 func MaskCmpgeEpu32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpgeEpu32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpgeEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpu32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpgeEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // CmpgeEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' for
@@ -6682,10 +6682,10 @@ func maskCmpgeEpu32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpge_epu64_mask'.
 // Requires AVX512F.
 func CmpgeEpu64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpgeEpu64Mask(a, b))
+	return Mmask8(cmpgeEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpu64Mask(a M512i, b M512i) uint8
+func cmpgeEpu64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpgeEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -6706,10 +6706,10 @@ func cmpgeEpu64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpge_epu64_mask'.
 // Requires AVX512F.
 func MaskCmpgeEpu64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpgeEpu64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpgeEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpu64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpgeEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // CmpgeEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -6724,10 +6724,10 @@ func maskCmpgeEpu64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpge_epu8_mask'.
 // Requires AVX512BW.
 func CmpgeEpu8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpgeEpu8Mask(a, b))
+	return Mmask64(cmpgeEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpu8Mask(a M512i, b M512i) uint64
+func cmpgeEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpgeEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -6748,10 +6748,10 @@ func cmpgeEpu8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpge_epu8_mask'.
 // Requires AVX512BW.
 func MaskCmpgeEpu8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpgeEpu8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpgeEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpu8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpgeEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // Cmpgt16Mask: Compare packed 16-bit integers in 'a' and 'b' for greater-than,
@@ -6766,10 +6766,10 @@ func maskCmpgeEpu8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpgt_epi16_mask'.
 // Requires AVX512BW.
 func Cmpgt16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpgt16Mask(a, b))
+	return Mmask32(cmpgt16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgt16Mask(a M512i, b M512i) uint32
+func cmpgt16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpgt16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -6789,10 +6789,10 @@ func cmpgt16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpgt_epi16_mask'.
 // Requires AVX512BW.
 func MaskCmpgt16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpgt16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpgt16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgt16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpgt16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Cmpgt32Mask: Compare packed 32-bit integers in 'a' and 'b' for greater-than,
@@ -6807,10 +6807,10 @@ func maskCmpgt16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPGTD'. Intrinsic: '_mm512_cmpgt_epi32_mask'.
 // Requires KNCNI.
 func Cmpgt32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpgt32Mask(a, b))
+	return Mmask16(cmpgt32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgt32Mask(a M512i, b M512i) uint16
+func cmpgt32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpgt32Mask: Compare packed 32-bit integers in 'a' and 'b' for
@@ -6830,10 +6830,10 @@ func cmpgt32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPGTD'. Intrinsic: '_mm512_mask_cmpgt_epi32_mask'.
 // Requires KNCNI.
 func MaskCmpgt32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpgt32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpgt32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgt32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpgt32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Cmpgt64Mask: Compare packed 64-bit integers in 'a' and 'b' for greater-than,
@@ -6848,10 +6848,10 @@ func maskCmpgt32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPGTQ'. Intrinsic: '_mm512_cmpgt_epi64_mask'.
 // Requires AVX512F.
 func Cmpgt64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpgt64Mask(a, b))
+	return Mmask8(cmpgt64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgt64Mask(a M512i, b M512i) uint8
+func cmpgt64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpgt64Mask: Compare packed 64-bit integers in 'a' and 'b' for
@@ -6871,10 +6871,10 @@ func cmpgt64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPGTQ'. Intrinsic: '_mm512_mask_cmpgt_epi64_mask'.
 // Requires AVX512F.
 func MaskCmpgt64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpgt64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpgt64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgt64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpgt64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Cmpgt8Mask: Compare packed 8-bit integers in 'a' and 'b' for greater-than,
@@ -6889,10 +6889,10 @@ func maskCmpgt64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpgt_epi8_mask'.
 // Requires AVX512BW.
 func Cmpgt8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpgt8Mask(a, b))
+	return Mmask64(cmpgt8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgt8Mask(a M512i, b M512i) uint64
+func cmpgt8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpgt8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -6912,10 +6912,10 @@ func cmpgt8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpgt_epi8_mask'.
 // Requires AVX512BW.
 func MaskCmpgt8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpgt8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpgt8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgt8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpgt8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpgtEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -6930,10 +6930,10 @@ func maskCmpgt8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpgt_epu16_mask'.
 // Requires AVX512BW.
 func CmpgtEpu16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpgtEpu16Mask(a, b))
+	return Mmask32(cmpgtEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpu16Mask(a M512i, b M512i) uint32
+func cmpgtEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpgtEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -6953,10 +6953,10 @@ func cmpgtEpu16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpgt_epu16_mask'.
 // Requires AVX512BW.
 func MaskCmpgtEpu16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpgtEpu16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpgtEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpu16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpgtEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpgtEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
@@ -6971,10 +6971,10 @@ func maskCmpgtEpu16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpgt_epu32_mask'.
 // Requires KNCNI.
 func CmpgtEpu32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpgtEpu32Mask(a, b))
+	return Mmask16(cmpgtEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpu32Mask(a M512i, b M512i) uint16
+func cmpgtEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpgtEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -6994,10 +6994,10 @@ func cmpgtEpu32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpgt_epu32_mask'.
 // Requires KNCNI.
 func MaskCmpgtEpu32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpgtEpu32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpgtEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpu32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpgtEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // CmpgtEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' for
@@ -7012,10 +7012,10 @@ func maskCmpgtEpu32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpgt_epu64_mask'.
 // Requires AVX512F.
 func CmpgtEpu64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpgtEpu64Mask(a, b))
+	return Mmask8(cmpgtEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpu64Mask(a M512i, b M512i) uint8
+func cmpgtEpu64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpgtEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -7035,10 +7035,10 @@ func cmpgtEpu64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpgt_epu64_mask'.
 // Requires AVX512F.
 func MaskCmpgtEpu64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpgtEpu64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpgtEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpu64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpgtEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // CmpgtEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -7053,10 +7053,10 @@ func maskCmpgtEpu64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpgt_epu8_mask'.
 // Requires AVX512BW.
 func CmpgtEpu8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpgtEpu8Mask(a, b))
+	return Mmask64(cmpgtEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpu8Mask(a M512i, b M512i) uint64
+func cmpgtEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpgtEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -7076,10 +7076,10 @@ func cmpgtEpu8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpgt_epu8_mask'.
 // Requires AVX512BW.
 func MaskCmpgtEpu8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpgtEpu8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpgtEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpu8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpgtEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // Cmple16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -7094,10 +7094,10 @@ func maskCmpgtEpu8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmple_epi16_mask'.
 // Requires AVX512BW.
 func Cmple16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmple16Mask(a, b))
+	return Mmask32(cmple16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmple16Mask(a M512i, b M512i) uint32
+func cmple16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmple16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -7117,10 +7117,10 @@ func cmple16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmple_epi16_mask'.
 // Requires AVX512BW.
 func MaskCmple16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmple16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmple16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmple16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmple16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Cmple32Mask: Compare packed 32-bit integers in 'a' and 'b' for
@@ -7135,10 +7135,10 @@ func maskCmple16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmple_epi32_mask'.
 // Requires KNCNI.
 func Cmple32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmple32Mask(a, b))
+	return Mmask16(cmple32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmple32Mask(a M512i, b M512i) uint16
+func cmple32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmple32Mask: Compare packed 32-bit integers in 'a' and 'b' for
@@ -7158,10 +7158,10 @@ func cmple32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmple_epi32_mask'.
 // Requires KNCNI.
 func MaskCmple32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmple32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmple32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmple32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmple32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Cmple64Mask: Compare packed 64-bit integers in 'a' and 'b' for
@@ -7176,10 +7176,10 @@ func maskCmple32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmple_epi64_mask'.
 // Requires AVX512F.
 func Cmple64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmple64Mask(a, b))
+	return Mmask8(cmple64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmple64Mask(a M512i, b M512i) uint8
+func cmple64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmple64Mask: Compare packed 64-bit integers in 'a' and 'b' for
@@ -7199,10 +7199,10 @@ func cmple64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmple_epi64_mask'.
 // Requires AVX512F.
 func MaskCmple64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmple64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmple64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmple64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmple64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Cmple8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -7217,10 +7217,10 @@ func maskCmple64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmple_epi8_mask'.
 // Requires AVX512BW.
 func Cmple8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmple8Mask(a, b))
+	return Mmask64(cmple8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmple8Mask(a M512i, b M512i) uint64
+func cmple8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmple8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -7240,10 +7240,10 @@ func cmple8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmple_epi8_mask'.
 // Requires AVX512BW.
 func MaskCmple8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmple8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmple8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmple8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmple8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpleEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -7258,10 +7258,10 @@ func maskCmple8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmple_epu16_mask'.
 // Requires AVX512BW.
 func CmpleEpu16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpleEpu16Mask(a, b))
+	return Mmask32(cmpleEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpu16Mask(a M512i, b M512i) uint32
+func cmpleEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpleEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -7282,10 +7282,10 @@ func cmpleEpu16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmple_epu16_mask'.
 // Requires AVX512BW.
 func MaskCmpleEpu16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpleEpu16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpleEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpu16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpleEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpleEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
@@ -7300,10 +7300,10 @@ func maskCmpleEpu16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmple_epu32_mask'.
 // Requires KNCNI.
 func CmpleEpu32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpleEpu32Mask(a, b))
+	return Mmask16(cmpleEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpu32Mask(a M512i, b M512i) uint16
+func cmpleEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpleEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -7323,10 +7323,10 @@ func cmpleEpu32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmple_epu32_mask'.
 // Requires KNCNI.
 func MaskCmpleEpu32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpleEpu32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpleEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpu32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpleEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // CmpleEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' for
@@ -7341,10 +7341,10 @@ func maskCmpleEpu32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmple_epu64_mask'.
 // Requires AVX512F.
 func CmpleEpu64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpleEpu64Mask(a, b))
+	return Mmask8(cmpleEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpu64Mask(a M512i, b M512i) uint8
+func cmpleEpu64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpleEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -7365,10 +7365,10 @@ func cmpleEpu64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmple_epu64_mask'.
 // Requires AVX512F.
 func MaskCmpleEpu64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpleEpu64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpleEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpu64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpleEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // CmpleEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -7383,10 +7383,10 @@ func maskCmpleEpu64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmple_epu8_mask'.
 // Requires AVX512BW.
 func CmpleEpu8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpleEpu8Mask(a, b))
+	return Mmask64(cmpleEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpu8Mask(a M512i, b M512i) uint64
+func cmpleEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpleEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -7406,10 +7406,10 @@ func cmpleEpu8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmple_epu8_mask'.
 // Requires AVX512BW.
 func MaskCmpleEpu8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpleEpu8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpleEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpu8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpleEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmplePdMask: Compare packed double-precision (64-bit) floating-point
@@ -7510,10 +7510,10 @@ func maskCmplePsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmplt_epi16_mask'.
 // Requires AVX512BW.
 func Cmplt16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmplt16Mask(a, b))
+	return Mmask32(cmplt16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmplt16Mask(a M512i, b M512i) uint32
+func cmplt16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmplt16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -7533,10 +7533,10 @@ func cmplt16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmplt_epi16_mask'.
 // Requires AVX512BW.
 func MaskCmplt16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmplt16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmplt16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmplt16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmplt16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Cmplt32Mask: Compare packed 32-bit integers in 'a' and 'b' for less-than,
@@ -7551,10 +7551,10 @@ func maskCmplt16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPLTD'. Intrinsic: '_mm512_cmplt_epi32_mask'.
 // Requires KNCNI.
 func Cmplt32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmplt32Mask(a, b))
+	return Mmask16(cmplt32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmplt32Mask(a M512i, b M512i) uint16
+func cmplt32Mask(a [64]byte, b [64]byte) uint16
 
 
 // Cmplt32Mask1: Compare packed 32-bit integers in 'a' and 'b' for less-than,
@@ -7569,10 +7569,10 @@ func cmplt32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmplt_epi32_mask'.
 // Requires AVX512F.
 func Cmplt32Mask1(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmplt32Mask1(a, b))
+	return Mmask16(cmplt32Mask1([64]byte(a), [64]byte(b)))
 }
 
-func cmplt32Mask1(a M512i, b M512i) uint16
+func cmplt32Mask1(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmplt32Mask: Compare packed 32-bit integers in 'a' and 'b' for
@@ -7592,10 +7592,10 @@ func cmplt32Mask1(a M512i, b M512i) uint16
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmplt_epi32_mask'.
 // Requires AVX512F.
 func MaskCmplt32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmplt32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmplt32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmplt32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmplt32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // MaskCmplt32Mask1: Compare packed 32-bit integers in 'a' and 'b' for
@@ -7615,10 +7615,10 @@ func maskCmplt32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPLTD'. Intrinsic: '_mm512_mask_cmplt_epi32_mask'.
 // Requires KNCNI.
 func MaskCmplt32Mask1(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmplt32Mask1(uint16(k1), a, b))
+	return Mmask16(maskCmplt32Mask1(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmplt32Mask1(k1 uint16, a M512i, b M512i) uint16
+func maskCmplt32Mask1(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Cmplt64Mask: Compare packed 64-bit integers in 'a' and 'b' for less-than,
@@ -7633,10 +7633,10 @@ func maskCmplt32Mask1(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmplt_epi64_mask'.
 // Requires AVX512F.
 func Cmplt64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmplt64Mask(a, b))
+	return Mmask8(cmplt64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmplt64Mask(a M512i, b M512i) uint8
+func cmplt64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmplt64Mask: Compare packed 64-bit integers in 'a' and 'b' for
@@ -7656,10 +7656,10 @@ func cmplt64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmplt_epi64_mask'.
 // Requires AVX512F.
 func MaskCmplt64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmplt64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmplt64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmplt64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmplt64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Cmplt8Mask: Compare packed 8-bit integers in 'a' and 'b' for less-than, and
@@ -7674,10 +7674,10 @@ func maskCmplt64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmplt_epi8_mask'.
 // Requires AVX512BW.
 func Cmplt8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmplt8Mask(a, b))
+	return Mmask64(cmplt8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmplt8Mask(a M512i, b M512i) uint64
+func cmplt8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmplt8Mask: Compare packed 8-bit integers in 'a' and 'b' for less-than,
@@ -7697,10 +7697,10 @@ func cmplt8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmplt_epi8_mask'.
 // Requires AVX512BW.
 func MaskCmplt8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmplt8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmplt8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmplt8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmplt8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpltEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -7715,10 +7715,10 @@ func maskCmplt8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmplt_epu16_mask'.
 // Requires AVX512BW.
 func CmpltEpu16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpltEpu16Mask(a, b))
+	return Mmask32(cmpltEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpu16Mask(a M512i, b M512i) uint32
+func cmpltEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpltEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -7738,10 +7738,10 @@ func cmpltEpu16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmplt_epu16_mask'.
 // Requires AVX512BW.
 func MaskCmpltEpu16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpltEpu16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpltEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpu16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpltEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpltEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
@@ -7756,10 +7756,10 @@ func maskCmpltEpu16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmplt_epu32_mask'.
 // Requires KNCNI.
 func CmpltEpu32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpltEpu32Mask(a, b))
+	return Mmask16(cmpltEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpu32Mask(a M512i, b M512i) uint16
+func cmpltEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpltEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -7780,10 +7780,10 @@ func cmpltEpu32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmplt_epu32_mask'.
 // Requires KNCNI.
 func MaskCmpltEpu32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpltEpu32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpltEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpu32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpltEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // CmpltEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' for
@@ -7798,10 +7798,10 @@ func maskCmpltEpu32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmplt_epu64_mask'.
 // Requires AVX512F.
 func CmpltEpu64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpltEpu64Mask(a, b))
+	return Mmask8(cmpltEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpu64Mask(a M512i, b M512i) uint8
+func cmpltEpu64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpltEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -7821,10 +7821,10 @@ func cmpltEpu64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmplt_epu64_mask'.
 // Requires AVX512F.
 func MaskCmpltEpu64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpltEpu64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpltEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpu64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpltEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // CmpltEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -7839,10 +7839,10 @@ func maskCmpltEpu64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmplt_epu8_mask'.
 // Requires AVX512BW.
 func CmpltEpu8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpltEpu8Mask(a, b))
+	return Mmask64(cmpltEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpu8Mask(a M512i, b M512i) uint64
+func cmpltEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpltEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -7862,10 +7862,10 @@ func cmpltEpu8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmplt_epu8_mask'.
 // Requires AVX512BW.
 func MaskCmpltEpu8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpltEpu8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpltEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpu8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpltEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpltPdMask: Compare packed double-precision (64-bit) floating-point
@@ -7966,10 +7966,10 @@ func maskCmpltPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpneq_epi16_mask'.
 // Requires AVX512BW.
 func Cmpneq16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpneq16Mask(a, b))
+	return Mmask32(cmpneq16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneq16Mask(a M512i, b M512i) uint32
+func cmpneq16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpneq16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -7989,10 +7989,10 @@ func cmpneq16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpneq_epi16_mask'.
 // Requires AVX512BW.
 func MaskCmpneq16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpneq16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpneq16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneq16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpneq16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Cmpneq32Mask: Compare packed 32-bit integers in 'a' and 'b' for not-equal,
@@ -8007,10 +8007,10 @@ func maskCmpneq16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmpneq_epi32_mask'.
 // Requires KNCNI.
 func Cmpneq32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpneq32Mask(a, b))
+	return Mmask16(cmpneq32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneq32Mask(a M512i, b M512i) uint16
+func cmpneq32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpneq32Mask: Compare packed 32-bit integers in 'a' and 'b' for
@@ -8030,10 +8030,10 @@ func cmpneq32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmpneq_epi32_mask'.
 // Requires KNCNI.
 func MaskCmpneq32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpneq32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpneq32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneq32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpneq32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Cmpneq64Mask: Compare packed 64-bit integers in 'a' and 'b' for not-equal,
@@ -8048,10 +8048,10 @@ func maskCmpneq32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmpneq_epi64_mask'.
 // Requires AVX512F.
 func Cmpneq64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpneq64Mask(a, b))
+	return Mmask8(cmpneq64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneq64Mask(a M512i, b M512i) uint8
+func cmpneq64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpneq64Mask: Compare packed 64-bit integers in 'a' and 'b' for
@@ -8071,10 +8071,10 @@ func cmpneq64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmpneq_epi64_mask'.
 // Requires AVX512F.
 func MaskCmpneq64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpneq64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpneq64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneq64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpneq64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Cmpneq8Mask: Compare packed 8-bit integers in 'a' and 'b' for not-equal, and
@@ -8089,10 +8089,10 @@ func maskCmpneq64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpneq_epi8_mask'.
 // Requires AVX512BW.
 func Cmpneq8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpneq8Mask(a, b))
+	return Mmask64(cmpneq8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneq8Mask(a M512i, b M512i) uint64
+func cmpneq8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpneq8Mask: Compare packed 8-bit integers in 'a' and 'b' for not-equal,
@@ -8112,10 +8112,10 @@ func cmpneq8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpneq_epi8_mask'.
 // Requires AVX512BW.
 func MaskCmpneq8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpneq8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpneq8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneq8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpneq8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpneqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -8130,10 +8130,10 @@ func maskCmpneq8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpneq_epu16_mask'.
 // Requires AVX512BW.
 func CmpneqEpu16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpneqEpu16Mask(a, b))
+	return Mmask32(cmpneqEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpu16Mask(a M512i, b M512i) uint32
+func cmpneqEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskCmpneqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -8153,10 +8153,10 @@ func cmpneqEpu16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpneq_epu16_mask'.
 // Requires AVX512BW.
 func MaskCmpneqEpu16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpneqEpu16Mask(uint32(k1), a, b))
+	return Mmask32(maskCmpneqEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpu16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskCmpneqEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpneqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
@@ -8171,10 +8171,10 @@ func maskCmpneqEpu16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpneq_epu32_mask'.
 // Requires KNCNI.
 func CmpneqEpu32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(cmpneqEpu32Mask(a, b))
+	return Mmask16(cmpneqEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpu32Mask(a M512i, b M512i) uint16
+func cmpneqEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskCmpneqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -8194,10 +8194,10 @@ func cmpneqEpu32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpneq_epu32_mask'.
 // Requires KNCNI.
 func MaskCmpneqEpu32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskCmpneqEpu32Mask(uint16(k1), a, b))
+	return Mmask16(maskCmpneqEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpu32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskCmpneqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // CmpneqEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' for
@@ -8212,10 +8212,10 @@ func maskCmpneqEpu32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpneq_epu64_mask'.
 // Requires AVX512F.
 func CmpneqEpu64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(cmpneqEpu64Mask(a, b))
+	return Mmask8(cmpneqEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpu64Mask(a M512i, b M512i) uint8
+func cmpneqEpu64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskCmpneqEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -8235,10 +8235,10 @@ func cmpneqEpu64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpneq_epu64_mask'.
 // Requires AVX512F.
 func MaskCmpneqEpu64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskCmpneqEpu64Mask(uint8(k1), a, b))
+	return Mmask8(maskCmpneqEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpu64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskCmpneqEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // CmpneqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -8253,10 +8253,10 @@ func maskCmpneqEpu64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpneq_epu8_mask'.
 // Requires AVX512BW.
 func CmpneqEpu8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpneqEpu8Mask(a, b))
+	return Mmask64(cmpneqEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpu8Mask(a M512i, b M512i) uint64
+func cmpneqEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskCmpneqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
@@ -8276,10 +8276,10 @@ func cmpneqEpu8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpneq_epu8_mask'.
 // Requires AVX512BW.
 func MaskCmpneqEpu8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpneqEpu8Mask(uint64(k1), a, b))
+	return Mmask64(maskCmpneqEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpu8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskCmpneqEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpneqPdMask: Compare packed double-precision (64-bit) floating-point
@@ -8731,10 +8731,10 @@ func maskCmpunordPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm512_mask_compress_epi32'.
 // Requires AVX512F.
 func MaskCompress32(src M512i, k Mmask16, a M512i) M512i {
-	return M512i(maskCompress32(src, uint16(k), a))
+	return M512i(maskCompress32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskCompress32(src M512i, k uint16, a M512i) M512i
+func maskCompress32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
 // MaskzCompress32: Contiguously store the active 32-bit integers in 'a' (those
@@ -8756,10 +8756,10 @@ func maskCompress32(src M512i, k uint16, a M512i) M512i
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm512_maskz_compress_epi32'.
 // Requires AVX512F.
 func MaskzCompress32(k Mmask16, a M512i) M512i {
-	return M512i(maskzCompress32(uint16(k), a))
+	return M512i(maskzCompress32(uint16(k), [64]byte(a)))
 }
 
-func maskzCompress32(k uint16, a M512i) M512i
+func maskzCompress32(k uint16, a [64]byte) [64]byte
 
 
 // MaskCompress64: Contiguously store the active 64-bit integers in 'a' (those
@@ -8781,10 +8781,10 @@ func maskzCompress32(k uint16, a M512i) M512i
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm512_mask_compress_epi64'.
 // Requires AVX512F.
 func MaskCompress64(src M512i, k Mmask8, a M512i) M512i {
-	return M512i(maskCompress64(src, uint8(k), a))
+	return M512i(maskCompress64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCompress64(src M512i, k uint8, a M512i) M512i
+func maskCompress64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
 // MaskzCompress64: Contiguously store the active 64-bit integers in 'a' (those
@@ -8806,10 +8806,10 @@ func maskCompress64(src M512i, k uint8, a M512i) M512i
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm512_maskz_compress_epi64'.
 // Requires AVX512F.
 func MaskzCompress64(k Mmask8, a M512i) M512i {
-	return M512i(maskzCompress64(uint8(k), a))
+	return M512i(maskzCompress64(uint8(k), [64]byte(a)))
 }
 
-func maskzCompress64(k uint8, a M512i) M512i
+func maskzCompress64(k uint8, a [64]byte) [64]byte
 
 
 // MaskCompressPd: Contiguously store the active double-precision (64-bit)
@@ -8929,10 +8929,10 @@ func maskzCompressPs(k uint16, a [16]float32) [16]float32
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm512_mask_compressstoreu_epi32'.
 // Requires AVX512F.
 func MaskCompressstoreu32(base_addr uintptr, k Mmask16, a M512i)  {
-	maskCompressstoreu32(uintptr(base_addr), uint16(k), a)
+	maskCompressstoreu32(uintptr(base_addr), uint16(k), [64]byte(a))
 }
 
-func maskCompressstoreu32(base_addr uintptr, k uint16, a M512i) 
+func maskCompressstoreu32(base_addr uintptr, k uint16, a [64]byte) 
 
 
 // MaskCompressstoreu64: Contiguously store the active 64-bit integers in 'a'
@@ -8952,10 +8952,10 @@ func maskCompressstoreu32(base_addr uintptr, k uint16, a M512i)
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm512_mask_compressstoreu_epi64'.
 // Requires AVX512F.
 func MaskCompressstoreu64(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCompressstoreu64(uintptr(base_addr), uint8(k), a)
+	maskCompressstoreu64(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCompressstoreu64(base_addr uintptr, k uint8, a M512i) 
+func maskCompressstoreu64(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskCompressstoreuPd: Contiguously store the active double-precision
@@ -9021,10 +9021,10 @@ func maskCompressstoreuPs(base_addr uintptr, k uint16, a [16]float32)
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm512_conflict_epi32'.
 // Requires AVX512CD.
 func Conflict32(a M512i) M512i {
-	return M512i(conflict32(a))
+	return M512i(conflict32([64]byte(a)))
 }
 
-func conflict32(a M512i) M512i
+func conflict32(a [64]byte) [64]byte
 
 
 // MaskConflict32: Test each 32-bit element of 'a' for equality with all other
@@ -9049,10 +9049,10 @@ func conflict32(a M512i) M512i
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm512_mask_conflict_epi32'.
 // Requires AVX512CD.
 func MaskConflict32(src M512i, k Mmask16, a M512i) M512i {
-	return M512i(maskConflict32(src, uint16(k), a))
+	return M512i(maskConflict32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskConflict32(src M512i, k uint16, a M512i) M512i
+func maskConflict32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
 // MaskzConflict32: Test each 32-bit element of 'a' for equality with all other
@@ -9077,10 +9077,10 @@ func maskConflict32(src M512i, k uint16, a M512i) M512i
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm512_maskz_conflict_epi32'.
 // Requires AVX512CD.
 func MaskzConflict32(k Mmask16, a M512i) M512i {
-	return M512i(maskzConflict32(uint16(k), a))
+	return M512i(maskzConflict32(uint16(k), [64]byte(a)))
 }
 
-func maskzConflict32(k uint16, a M512i) M512i
+func maskzConflict32(k uint16, a [64]byte) [64]byte
 
 
 // Conflict64: Test each 64-bit element of 'a' for equality with all other
@@ -9100,10 +9100,10 @@ func maskzConflict32(k uint16, a M512i) M512i
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm512_conflict_epi64'.
 // Requires AVX512CD.
 func Conflict64(a M512i) M512i {
-	return M512i(conflict64(a))
+	return M512i(conflict64([64]byte(a)))
 }
 
-func conflict64(a M512i) M512i
+func conflict64(a [64]byte) [64]byte
 
 
 // MaskConflict64: Test each 64-bit element of 'a' for equality with all other
@@ -9128,10 +9128,10 @@ func conflict64(a M512i) M512i
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm512_mask_conflict_epi64'.
 // Requires AVX512CD.
 func MaskConflict64(src M512i, k Mmask8, a M512i) M512i {
-	return M512i(maskConflict64(src, uint8(k), a))
+	return M512i(maskConflict64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskConflict64(src M512i, k uint8, a M512i) M512i
+func maskConflict64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
 // MaskzConflict64: Test each 64-bit element of 'a' for equality with all other
@@ -9156,10 +9156,10 @@ func maskConflict64(src M512i, k uint8, a M512i) M512i
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm512_maskz_conflict_epi64'.
 // Requires AVX512CD.
 func MaskzConflict64(k Mmask8, a M512i) M512i {
-	return M512i(maskzConflict64(uint8(k), a))
+	return M512i(maskzConflict64(uint8(k), [64]byte(a)))
 }
 
-func maskzConflict64(k uint8, a M512i) M512i
+func maskzConflict64(k uint8, a [64]byte) [64]byte
 
 
 // CosPd: Compute the cosine of packed double-precision (64-bit) floating-point
@@ -9438,10 +9438,10 @@ func maskCoshPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_cvt_roundepi32_ps'.
 // Requires AVX512F.
 func CvtRoundepi32Ps(a M512i, rounding int) M512 {
-	return M512(cvtRoundepi32Ps(a, rounding))
+	return M512(cvtRoundepi32Ps([64]byte(a), rounding))
 }
 
-func cvtRoundepi32Ps(a M512i, rounding int) [16]float32
+func cvtRoundepi32Ps(a [64]byte, rounding int) [16]float32
 
 
 // MaskCvtRoundepi32Ps: Convert packed 32-bit integers in 'a' to packed
@@ -9469,10 +9469,10 @@ func cvtRoundepi32Ps(a M512i, rounding int) [16]float32
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_mask_cvt_roundepi32_ps'.
 // Requires AVX512F.
 func MaskCvtRoundepi32Ps(src M512, k Mmask16, a M512i, rounding int) M512 {
-	return M512(maskCvtRoundepi32Ps([16]float32(src), uint16(k), a, rounding))
+	return M512(maskCvtRoundepi32Ps([16]float32(src), uint16(k), [64]byte(a), rounding))
 }
 
-func maskCvtRoundepi32Ps(src [16]float32, k uint16, a M512i, rounding int) [16]float32
+func maskCvtRoundepi32Ps(src [16]float32, k uint16, a [64]byte, rounding int) [16]float32
 
 
 // MaskzCvtRoundepi32Ps: Convert packed 32-bit integers in 'a' to packed
@@ -9500,10 +9500,10 @@ func maskCvtRoundepi32Ps(src [16]float32, k uint16, a M512i, rounding int) [16]f
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_maskz_cvt_roundepi32_ps'.
 // Requires AVX512F.
 func MaskzCvtRoundepi32Ps(k Mmask16, a M512i, rounding int) M512 {
-	return M512(maskzCvtRoundepi32Ps(uint16(k), a, rounding))
+	return M512(maskzCvtRoundepi32Ps(uint16(k), [64]byte(a), rounding))
 }
 
-func maskzCvtRoundepi32Ps(k uint16, a M512i, rounding int) [16]float32
+func maskzCvtRoundepi32Ps(k uint16, a [64]byte, rounding int) [16]float32
 
 
 // CvtRoundepi64Pd: Convert packed 64-bit integers in 'a' to packed
@@ -9526,10 +9526,10 @@ func maskzCvtRoundepi32Ps(k uint16, a M512i, rounding int) [16]float32
 // Instruction: 'VCVTQQ2PD'. Intrinsic: '_mm512_cvt_roundepi64_pd'.
 // Requires AVX512DQ.
 func CvtRoundepi64Pd(a M512i, rounding int) M512d {
-	return M512d(cvtRoundepi64Pd(a, rounding))
+	return M512d(cvtRoundepi64Pd([64]byte(a), rounding))
 }
 
-func cvtRoundepi64Pd(a M512i, rounding int) [8]float64
+func cvtRoundepi64Pd(a [64]byte, rounding int) [8]float64
 
 
 // MaskCvtRoundepi64Pd: Convert packed 64-bit integers in 'a' to packed
@@ -9557,10 +9557,10 @@ func cvtRoundepi64Pd(a M512i, rounding int) [8]float64
 // Instruction: 'VCVTQQ2PD'. Intrinsic: '_mm512_mask_cvt_roundepi64_pd'.
 // Requires AVX512DQ.
 func MaskCvtRoundepi64Pd(src M512d, k Mmask8, a M512i, rounding int) M512d {
-	return M512d(maskCvtRoundepi64Pd([8]float64(src), uint8(k), a, rounding))
+	return M512d(maskCvtRoundepi64Pd([8]float64(src), uint8(k), [64]byte(a), rounding))
 }
 
-func maskCvtRoundepi64Pd(src [8]float64, k uint8, a M512i, rounding int) [8]float64
+func maskCvtRoundepi64Pd(src [8]float64, k uint8, a [64]byte, rounding int) [8]float64
 
 
 // MaskzCvtRoundepi64Pd: Convert packed 64-bit integers in 'a' to packed
@@ -9588,10 +9588,10 @@ func maskCvtRoundepi64Pd(src [8]float64, k uint8, a M512i, rounding int) [8]floa
 // Instruction: 'VCVTQQ2PD'. Intrinsic: '_mm512_maskz_cvt_roundepi64_pd'.
 // Requires AVX512DQ.
 func MaskzCvtRoundepi64Pd(k Mmask8, a M512i, rounding int) M512d {
-	return M512d(maskzCvtRoundepi64Pd(uint8(k), a, rounding))
+	return M512d(maskzCvtRoundepi64Pd(uint8(k), [64]byte(a), rounding))
 }
 
-func maskzCvtRoundepi64Pd(k uint8, a M512i, rounding int) [8]float64
+func maskzCvtRoundepi64Pd(k uint8, a [64]byte, rounding int) [8]float64
 
 
 // CvtRoundepi64Ps: Convert packed 64-bit integers in 'a' to packed
@@ -9615,10 +9615,10 @@ func maskzCvtRoundepi64Pd(k uint8, a M512i, rounding int) [8]float64
 // Instruction: 'VCVTQQ2PS'. Intrinsic: '_mm512_cvt_roundepi64_ps'.
 // Requires AVX512DQ.
 func CvtRoundepi64Ps(a M512i, rounding int) M256 {
-	return M256(cvtRoundepi64Ps(a, rounding))
+	return M256(cvtRoundepi64Ps([64]byte(a), rounding))
 }
 
-func cvtRoundepi64Ps(a M512i, rounding int) [8]float32
+func cvtRoundepi64Ps(a [64]byte, rounding int) [8]float32
 
 
 // MaskCvtRoundepi64Ps: Convert packed 64-bit integers in 'a' to packed
@@ -9647,10 +9647,10 @@ func cvtRoundepi64Ps(a M512i, rounding int) [8]float32
 // Instruction: 'VCVTQQ2PS'. Intrinsic: '_mm512_mask_cvt_roundepi64_ps'.
 // Requires AVX512DQ.
 func MaskCvtRoundepi64Ps(src M256, k Mmask8, a M512i, rounding int) M256 {
-	return M256(maskCvtRoundepi64Ps([8]float32(src), uint8(k), a, rounding))
+	return M256(maskCvtRoundepi64Ps([8]float32(src), uint8(k), [64]byte(a), rounding))
 }
 
-func maskCvtRoundepi64Ps(src [8]float32, k uint8, a M512i, rounding int) [8]float32
+func maskCvtRoundepi64Ps(src [8]float32, k uint8, a [64]byte, rounding int) [8]float32
 
 
 // MaskzCvtRoundepi64Ps: Convert packed 64-bit integers in 'a' to packed
@@ -9679,10 +9679,10 @@ func maskCvtRoundepi64Ps(src [8]float32, k uint8, a M512i, rounding int) [8]floa
 // Instruction: 'VCVTQQ2PS'. Intrinsic: '_mm512_maskz_cvt_roundepi64_ps'.
 // Requires AVX512DQ.
 func MaskzCvtRoundepi64Ps(k Mmask8, a M512i, rounding int) M256 {
-	return M256(maskzCvtRoundepi64Ps(uint8(k), a, rounding))
+	return M256(maskzCvtRoundepi64Ps(uint8(k), [64]byte(a), rounding))
 }
 
-func maskzCvtRoundepi64Ps(k uint8, a M512i, rounding int) [8]float32
+func maskzCvtRoundepi64Ps(k uint8, a [64]byte, rounding int) [8]float32
 
 
 // CvtRoundepu32Ps: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -9705,10 +9705,10 @@ func maskzCvtRoundepi64Ps(k uint8, a M512i, rounding int) [8]float32
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_cvt_roundepu32_ps'.
 // Requires AVX512F.
 func CvtRoundepu32Ps(a M512i, rounding int) M512 {
-	return M512(cvtRoundepu32Ps(a, rounding))
+	return M512(cvtRoundepu32Ps([64]byte(a), rounding))
 }
 
-func cvtRoundepu32Ps(a M512i, rounding int) [16]float32
+func cvtRoundepu32Ps(a [64]byte, rounding int) [16]float32
 
 
 // MaskCvtRoundepu32Ps: Convert packed unsigned 32-bit integers in 'a' to
@@ -9736,10 +9736,10 @@ func cvtRoundepu32Ps(a M512i, rounding int) [16]float32
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_mask_cvt_roundepu32_ps'.
 // Requires AVX512F.
 func MaskCvtRoundepu32Ps(src M512, k Mmask16, a M512i, rounding int) M512 {
-	return M512(maskCvtRoundepu32Ps([16]float32(src), uint16(k), a, rounding))
+	return M512(maskCvtRoundepu32Ps([16]float32(src), uint16(k), [64]byte(a), rounding))
 }
 
-func maskCvtRoundepu32Ps(src [16]float32, k uint16, a M512i, rounding int) [16]float32
+func maskCvtRoundepu32Ps(src [16]float32, k uint16, a [64]byte, rounding int) [16]float32
 
 
 // MaskzCvtRoundepu32Ps: Convert packed unsigned 32-bit integers in 'a' to
@@ -9767,10 +9767,10 @@ func maskCvtRoundepu32Ps(src [16]float32, k uint16, a M512i, rounding int) [16]f
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_maskz_cvt_roundepu32_ps'.
 // Requires AVX512F.
 func MaskzCvtRoundepu32Ps(k Mmask16, a M512i, rounding int) M512 {
-	return M512(maskzCvtRoundepu32Ps(uint16(k), a, rounding))
+	return M512(maskzCvtRoundepu32Ps(uint16(k), [64]byte(a), rounding))
 }
 
-func maskzCvtRoundepu32Ps(k uint16, a M512i, rounding int) [16]float32
+func maskzCvtRoundepu32Ps(k uint16, a [64]byte, rounding int) [16]float32
 
 
 // CvtRoundepu64Pd: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -9793,10 +9793,10 @@ func maskzCvtRoundepu32Ps(k uint16, a M512i, rounding int) [16]float32
 // Instruction: 'VCVTUQQ2PD'. Intrinsic: '_mm512_cvt_roundepu64_pd'.
 // Requires AVX512DQ.
 func CvtRoundepu64Pd(a M512i, rounding int) M512d {
-	return M512d(cvtRoundepu64Pd(a, rounding))
+	return M512d(cvtRoundepu64Pd([64]byte(a), rounding))
 }
 
-func cvtRoundepu64Pd(a M512i, rounding int) [8]float64
+func cvtRoundepu64Pd(a [64]byte, rounding int) [8]float64
 
 
 // MaskCvtRoundepu64Pd: Convert packed unsigned 64-bit integers in 'a' to
@@ -9824,10 +9824,10 @@ func cvtRoundepu64Pd(a M512i, rounding int) [8]float64
 // Instruction: 'VCVTUQQ2PD'. Intrinsic: '_mm512_mask_cvt_roundepu64_pd'.
 // Requires AVX512DQ.
 func MaskCvtRoundepu64Pd(src M512d, k Mmask8, a M512i, rounding int) M512d {
-	return M512d(maskCvtRoundepu64Pd([8]float64(src), uint8(k), a, rounding))
+	return M512d(maskCvtRoundepu64Pd([8]float64(src), uint8(k), [64]byte(a), rounding))
 }
 
-func maskCvtRoundepu64Pd(src [8]float64, k uint8, a M512i, rounding int) [8]float64
+func maskCvtRoundepu64Pd(src [8]float64, k uint8, a [64]byte, rounding int) [8]float64
 
 
 // MaskzCvtRoundepu64Pd: Convert packed unsigned 64-bit integers in 'a' to
@@ -9855,10 +9855,10 @@ func maskCvtRoundepu64Pd(src [8]float64, k uint8, a M512i, rounding int) [8]floa
 // Instruction: 'VCVTUQQ2PD'. Intrinsic: '_mm512_maskz_cvt_roundepu64_pd'.
 // Requires AVX512DQ.
 func MaskzCvtRoundepu64Pd(k Mmask8, a M512i, rounding int) M512d {
-	return M512d(maskzCvtRoundepu64Pd(uint8(k), a, rounding))
+	return M512d(maskzCvtRoundepu64Pd(uint8(k), [64]byte(a), rounding))
 }
 
-func maskzCvtRoundepu64Pd(k uint8, a M512i, rounding int) [8]float64
+func maskzCvtRoundepu64Pd(k uint8, a [64]byte, rounding int) [8]float64
 
 
 // CvtRoundepu64Ps: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -9882,10 +9882,10 @@ func maskzCvtRoundepu64Pd(k uint8, a M512i, rounding int) [8]float64
 // Instruction: 'VCVTUQQ2PS'. Intrinsic: '_mm512_cvt_roundepu64_ps'.
 // Requires AVX512DQ.
 func CvtRoundepu64Ps(a M512i, rounding int) M256 {
-	return M256(cvtRoundepu64Ps(a, rounding))
+	return M256(cvtRoundepu64Ps([64]byte(a), rounding))
 }
 
-func cvtRoundepu64Ps(a M512i, rounding int) [8]float32
+func cvtRoundepu64Ps(a [64]byte, rounding int) [8]float32
 
 
 // MaskCvtRoundepu64Ps: Convert packed unsigned 64-bit integers in 'a' to
@@ -9914,10 +9914,10 @@ func cvtRoundepu64Ps(a M512i, rounding int) [8]float32
 // Instruction: 'VCVTUQQ2PS'. Intrinsic: '_mm512_mask_cvt_roundepu64_ps'.
 // Requires AVX512DQ.
 func MaskCvtRoundepu64Ps(src M256, k Mmask8, a M512i, rounding int) M256 {
-	return M256(maskCvtRoundepu64Ps([8]float32(src), uint8(k), a, rounding))
+	return M256(maskCvtRoundepu64Ps([8]float32(src), uint8(k), [64]byte(a), rounding))
 }
 
-func maskCvtRoundepu64Ps(src [8]float32, k uint8, a M512i, rounding int) [8]float32
+func maskCvtRoundepu64Ps(src [8]float32, k uint8, a [64]byte, rounding int) [8]float32
 
 
 // MaskzCvtRoundepu64Ps: Convert packed unsigned 64-bit integers in 'a' to
@@ -9946,10 +9946,10 @@ func maskCvtRoundepu64Ps(src [8]float32, k uint8, a M512i, rounding int) [8]floa
 // Instruction: 'VCVTUQQ2PS'. Intrinsic: '_mm512_maskz_cvt_roundepu64_ps'.
 // Requires AVX512DQ.
 func MaskzCvtRoundepu64Ps(k Mmask8, a M512i, rounding int) M256 {
-	return M256(maskzCvtRoundepu64Ps(uint8(k), a, rounding))
+	return M256(maskzCvtRoundepu64Ps(uint8(k), [64]byte(a), rounding))
 }
 
-func maskzCvtRoundepu64Ps(k uint8, a M512i, rounding int) [8]float32
+func maskzCvtRoundepu64Ps(k uint8, a [64]byte, rounding int) [8]float32
 
 
 // CvtRoundpd32: Convert packed double-precision (64-bit) floating-point
@@ -9975,7 +9975,7 @@ func CvtRoundpd32(a M512d, rounding int) M256i {
 	return M256i(cvtRoundpd32([8]float64(a), rounding))
 }
 
-func cvtRoundpd32(a [8]float64, rounding int) M256i
+func cvtRoundpd32(a [8]float64, rounding int) [32]byte
 
 
 // MaskCvtRoundpd32: Convert packed double-precision (64-bit) floating-point
@@ -10004,10 +10004,10 @@ func cvtRoundpd32(a [8]float64, rounding int) M256i
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_mask_cvt_roundpd_epi32'.
 // Requires AVX512F.
 func MaskCvtRoundpd32(src M256i, k Mmask8, a M512d, rounding int) M256i {
-	return M256i(maskCvtRoundpd32(src, uint8(k), [8]float64(a), rounding))
+	return M256i(maskCvtRoundpd32([32]byte(src), uint8(k), [8]float64(a), rounding))
 }
 
-func maskCvtRoundpd32(src M256i, k uint8, a [8]float64, rounding int) M256i
+func maskCvtRoundpd32(src [32]byte, k uint8, a [8]float64, rounding int) [32]byte
 
 
 // MaskzCvtRoundpd32: Convert packed double-precision (64-bit) floating-point
@@ -10039,7 +10039,7 @@ func MaskzCvtRoundpd32(k Mmask8, a M512d, rounding int) M256i {
 	return M256i(maskzCvtRoundpd32(uint8(k), [8]float64(a), rounding))
 }
 
-func maskzCvtRoundpd32(k uint8, a [8]float64, rounding int) M256i
+func maskzCvtRoundpd32(k uint8, a [8]float64, rounding int) [32]byte
 
 
 // CvtRoundpd64: Convert packed double-precision (64-bit) floating-point
@@ -10064,7 +10064,7 @@ func CvtRoundpd64(a M512d, rounding int) M512i {
 	return M512i(cvtRoundpd64([8]float64(a), rounding))
 }
 
-func cvtRoundpd64(a [8]float64, rounding int) M512i
+func cvtRoundpd64(a [8]float64, rounding int) [64]byte
 
 
 // MaskCvtRoundpd64: Convert packed double-precision (64-bit) floating-point
@@ -10092,10 +10092,10 @@ func cvtRoundpd64(a [8]float64, rounding int) M512i
 // Instruction: 'VCVTPD2QQ'. Intrinsic: '_mm512_mask_cvt_roundpd_epi64'.
 // Requires AVX512DQ.
 func MaskCvtRoundpd64(src M512i, k Mmask8, a M512d, rounding int) M512i {
-	return M512i(maskCvtRoundpd64(src, uint8(k), [8]float64(a), rounding))
+	return M512i(maskCvtRoundpd64([64]byte(src), uint8(k), [8]float64(a), rounding))
 }
 
-func maskCvtRoundpd64(src M512i, k uint8, a [8]float64, rounding int) M512i
+func maskCvtRoundpd64(src [64]byte, k uint8, a [8]float64, rounding int) [64]byte
 
 
 // MaskzCvtRoundpd64: Convert packed double-precision (64-bit) floating-point
@@ -10126,7 +10126,7 @@ func MaskzCvtRoundpd64(k Mmask8, a M512d, rounding int) M512i {
 	return M512i(maskzCvtRoundpd64(uint8(k), [8]float64(a), rounding))
 }
 
-func maskzCvtRoundpd64(k uint8, a [8]float64, rounding int) M512i
+func maskzCvtRoundpd64(k uint8, a [8]float64, rounding int) [64]byte
 
 
 // CvtRoundpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -10153,7 +10153,7 @@ func CvtRoundpdEpu32(a M512d, rounding int) M256i {
 	return M256i(cvtRoundpdEpu32([8]float64(a), rounding))
 }
 
-func cvtRoundpdEpu32(a [8]float64, rounding int) M256i
+func cvtRoundpdEpu32(a [8]float64, rounding int) [32]byte
 
 
 // MaskCvtRoundpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -10182,10 +10182,10 @@ func cvtRoundpdEpu32(a [8]float64, rounding int) M256i
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_mask_cvt_roundpd_epu32'.
 // Requires AVX512F.
 func MaskCvtRoundpdEpu32(src M256i, k Mmask8, a M512d, rounding int) M256i {
-	return M256i(maskCvtRoundpdEpu32(src, uint8(k), [8]float64(a), rounding))
+	return M256i(maskCvtRoundpdEpu32([32]byte(src), uint8(k), [8]float64(a), rounding))
 }
 
-func maskCvtRoundpdEpu32(src M256i, k uint8, a [8]float64, rounding int) M256i
+func maskCvtRoundpdEpu32(src [32]byte, k uint8, a [8]float64, rounding int) [32]byte
 
 
 // MaskzCvtRoundpdEpu32: Convert packed double-precision (64-bit)
@@ -10217,7 +10217,7 @@ func MaskzCvtRoundpdEpu32(k Mmask8, a M512d, rounding int) M256i {
 	return M256i(maskzCvtRoundpdEpu32(uint8(k), [8]float64(a), rounding))
 }
 
-func maskzCvtRoundpdEpu32(k uint8, a [8]float64, rounding int) M256i
+func maskzCvtRoundpdEpu32(k uint8, a [8]float64, rounding int) [32]byte
 
 
 // CvtRoundpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -10243,7 +10243,7 @@ func CvtRoundpdEpu64(a M512d, rounding int) M512i {
 	return M512i(cvtRoundpdEpu64([8]float64(a), rounding))
 }
 
-func cvtRoundpdEpu64(a [8]float64, rounding int) M512i
+func cvtRoundpdEpu64(a [8]float64, rounding int) [64]byte
 
 
 // MaskCvtRoundpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -10271,10 +10271,10 @@ func cvtRoundpdEpu64(a [8]float64, rounding int) M512i
 // Instruction: 'VCVTPD2UQQ'. Intrinsic: '_mm512_mask_cvt_roundpd_epu64'.
 // Requires AVX512DQ.
 func MaskCvtRoundpdEpu64(src M512i, k Mmask8, a M512d, rounding int) M512i {
-	return M512i(maskCvtRoundpdEpu64(src, uint8(k), [8]float64(a), rounding))
+	return M512i(maskCvtRoundpdEpu64([64]byte(src), uint8(k), [8]float64(a), rounding))
 }
 
-func maskCvtRoundpdEpu64(src M512i, k uint8, a [8]float64, rounding int) M512i
+func maskCvtRoundpdEpu64(src [64]byte, k uint8, a [8]float64, rounding int) [64]byte
 
 
 // MaskzCvtRoundpdEpu64: Convert packed double-precision (64-bit)
@@ -10305,7 +10305,7 @@ func MaskzCvtRoundpdEpu64(k Mmask8, a M512d, rounding int) M512i {
 	return M512i(maskzCvtRoundpdEpu64(uint8(k), [8]float64(a), rounding))
 }
 
-func maskzCvtRoundpdEpu64(k uint8, a [8]float64, rounding int) M512i
+func maskzCvtRoundpdEpu64(k uint8, a [8]float64, rounding int) [64]byte
 
 
 // CvtRoundpdPs: Convert packed double-precision (64-bit) floating-point
@@ -10477,10 +10477,10 @@ func maskCvtRoundpdPslo(src [16]float32, k uint8, v2 [8]float64, rounding int) [
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_cvt_roundph_ps'.
 // Requires AVX512F.
 func CvtRoundphPs(a M256i, sae int) M512 {
-	return M512(cvtRoundphPs(a, sae))
+	return M512(cvtRoundphPs([32]byte(a), sae))
 }
 
-func cvtRoundphPs(a M256i, sae int) [16]float32
+func cvtRoundphPs(a [32]byte, sae int) [16]float32
 
 
 // MaskCvtRoundphPs: Convert packed half-precision (16-bit) floating-point
@@ -10503,10 +10503,10 @@ func cvtRoundphPs(a M256i, sae int) [16]float32
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_mask_cvt_roundph_ps'.
 // Requires AVX512F.
 func MaskCvtRoundphPs(src M512, k Mmask16, a M256i, sae int) M512 {
-	return M512(maskCvtRoundphPs([16]float32(src), uint16(k), a, sae))
+	return M512(maskCvtRoundphPs([16]float32(src), uint16(k), [32]byte(a), sae))
 }
 
-func maskCvtRoundphPs(src [16]float32, k uint16, a M256i, sae int) [16]float32
+func maskCvtRoundphPs(src [16]float32, k uint16, a [32]byte, sae int) [16]float32
 
 
 // MaskzCvtRoundphPs: Convert packed half-precision (16-bit) floating-point
@@ -10529,10 +10529,10 @@ func maskCvtRoundphPs(src [16]float32, k uint16, a M256i, sae int) [16]float32
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_maskz_cvt_roundph_ps'.
 // Requires AVX512F.
 func MaskzCvtRoundphPs(k Mmask16, a M256i, sae int) M512 {
-	return M512(maskzCvtRoundphPs(uint16(k), a, sae))
+	return M512(maskzCvtRoundphPs(uint16(k), [32]byte(a), sae))
 }
 
-func maskzCvtRoundphPs(k uint16, a M256i, sae int) [16]float32
+func maskzCvtRoundphPs(k uint16, a [32]byte, sae int) [16]float32
 
 
 // CvtRoundps32: Convert packed single-precision (32-bit) floating-point
@@ -10557,7 +10557,7 @@ func CvtRoundps32(a M512, rounding int) M512i {
 	return M512i(cvtRoundps32([16]float32(a), rounding))
 }
 
-func cvtRoundps32(a [16]float32, rounding int) M512i
+func cvtRoundps32(a [16]float32, rounding int) [64]byte
 
 
 // MaskCvtRoundps32: Convert packed single-precision (32-bit) floating-point
@@ -10585,10 +10585,10 @@ func cvtRoundps32(a [16]float32, rounding int) M512i
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_mask_cvt_roundps_epi32'.
 // Requires AVX512F.
 func MaskCvtRoundps32(src M512i, k Mmask16, a M512, rounding int) M512i {
-	return M512i(maskCvtRoundps32(src, uint16(k), [16]float32(a), rounding))
+	return M512i(maskCvtRoundps32([64]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskCvtRoundps32(src M512i, k uint16, a [16]float32, rounding int) M512i
+func maskCvtRoundps32(src [64]byte, k uint16, a [16]float32, rounding int) [64]byte
 
 
 // MaskzCvtRoundps32: Convert packed single-precision (32-bit) floating-point
@@ -10619,7 +10619,7 @@ func MaskzCvtRoundps32(k Mmask16, a M512, rounding int) M512i {
 	return M512i(maskzCvtRoundps32(uint16(k), [16]float32(a), rounding))
 }
 
-func maskzCvtRoundps32(k uint16, a [16]float32, rounding int) M512i
+func maskzCvtRoundps32(k uint16, a [16]float32, rounding int) [64]byte
 
 
 // CvtRoundps64: Convert packed single-precision (32-bit) floating-point
@@ -10645,7 +10645,7 @@ func CvtRoundps64(a M256, rounding int) M512i {
 	return M512i(cvtRoundps64([8]float32(a), rounding))
 }
 
-func cvtRoundps64(a [8]float32, rounding int) M512i
+func cvtRoundps64(a [8]float32, rounding int) [64]byte
 
 
 // MaskCvtRoundps64: Convert packed single-precision (32-bit) floating-point
@@ -10674,10 +10674,10 @@ func cvtRoundps64(a [8]float32, rounding int) M512i
 // Instruction: 'VCVTPS2QQ'. Intrinsic: '_mm512_mask_cvt_roundps_epi64'.
 // Requires AVX512DQ.
 func MaskCvtRoundps64(src M512i, k Mmask8, a M256, rounding int) M512i {
-	return M512i(maskCvtRoundps64(src, uint8(k), [8]float32(a), rounding))
+	return M512i(maskCvtRoundps64([64]byte(src), uint8(k), [8]float32(a), rounding))
 }
 
-func maskCvtRoundps64(src M512i, k uint8, a [8]float32, rounding int) M512i
+func maskCvtRoundps64(src [64]byte, k uint8, a [8]float32, rounding int) [64]byte
 
 
 // MaskzCvtRoundps64: Convert packed single-precision (32-bit) floating-point
@@ -10709,7 +10709,7 @@ func MaskzCvtRoundps64(k Mmask8, a M256, rounding int) M512i {
 	return M512i(maskzCvtRoundps64(uint8(k), [8]float32(a), rounding))
 }
 
-func maskzCvtRoundps64(k uint8, a [8]float32, rounding int) M512i
+func maskzCvtRoundps64(k uint8, a [8]float32, rounding int) [64]byte
 
 
 // CvtRoundpsEpu32: Convert packed single-precision (32-bit) floating-point
@@ -10735,7 +10735,7 @@ func CvtRoundpsEpu32(a M512, rounding int) M512i {
 	return M512i(cvtRoundpsEpu32([16]float32(a), rounding))
 }
 
-func cvtRoundpsEpu32(a [16]float32, rounding int) M512i
+func cvtRoundpsEpu32(a [16]float32, rounding int) [64]byte
 
 
 // MaskCvtRoundpsEpu32: Convert packed single-precision (32-bit) floating-point
@@ -10763,10 +10763,10 @@ func cvtRoundpsEpu32(a [16]float32, rounding int) M512i
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_mask_cvt_roundps_epu32'.
 // Requires AVX512F.
 func MaskCvtRoundpsEpu32(src M512i, k Mmask16, a M512, rounding int) M512i {
-	return M512i(maskCvtRoundpsEpu32(src, uint16(k), [16]float32(a), rounding))
+	return M512i(maskCvtRoundpsEpu32([64]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskCvtRoundpsEpu32(src M512i, k uint16, a [16]float32, rounding int) M512i
+func maskCvtRoundpsEpu32(src [64]byte, k uint16, a [16]float32, rounding int) [64]byte
 
 
 // MaskzCvtRoundpsEpu32: Convert packed single-precision (32-bit)
@@ -10797,7 +10797,7 @@ func MaskzCvtRoundpsEpu32(k Mmask16, a M512, rounding int) M512i {
 	return M512i(maskzCvtRoundpsEpu32(uint16(k), [16]float32(a), rounding))
 }
 
-func maskzCvtRoundpsEpu32(k uint16, a [16]float32, rounding int) M512i
+func maskzCvtRoundpsEpu32(k uint16, a [16]float32, rounding int) [64]byte
 
 
 // CvtRoundpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -10824,7 +10824,7 @@ func CvtRoundpsEpu64(a M256, rounding int) M512i {
 	return M512i(cvtRoundpsEpu64([8]float32(a), rounding))
 }
 
-func cvtRoundpsEpu64(a [8]float32, rounding int) M512i
+func cvtRoundpsEpu64(a [8]float32, rounding int) [64]byte
 
 
 // MaskCvtRoundpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -10853,10 +10853,10 @@ func cvtRoundpsEpu64(a [8]float32, rounding int) M512i
 // Instruction: 'VCVTPS2UQQ'. Intrinsic: '_mm512_mask_cvt_roundps_epu64'.
 // Requires AVX512DQ.
 func MaskCvtRoundpsEpu64(src M512i, k Mmask8, a M256, rounding int) M512i {
-	return M512i(maskCvtRoundpsEpu64(src, uint8(k), [8]float32(a), rounding))
+	return M512i(maskCvtRoundpsEpu64([64]byte(src), uint8(k), [8]float32(a), rounding))
 }
 
-func maskCvtRoundpsEpu64(src M512i, k uint8, a [8]float32, rounding int) M512i
+func maskCvtRoundpsEpu64(src [64]byte, k uint8, a [8]float32, rounding int) [64]byte
 
 
 // MaskzCvtRoundpsEpu64: Convert packed single-precision (32-bit)
@@ -10888,7 +10888,7 @@ func MaskzCvtRoundpsEpu64(k Mmask8, a M256, rounding int) M512i {
 	return M512i(maskzCvtRoundpsEpu64(uint8(k), [8]float32(a), rounding))
 }
 
-func maskzCvtRoundpsEpu64(k uint8, a [8]float32, rounding int) M512i
+func maskzCvtRoundpsEpu64(k uint8, a [8]float32, rounding int) [64]byte
 
 
 // CvtRoundpsPd: Convert packed single-precision (32-bit) floating-point
@@ -10988,7 +10988,7 @@ func CvtRoundpsPh(a M512, rounding int) M256i {
 	return M256i(cvtRoundpsPh([16]float32(a), rounding))
 }
 
-func cvtRoundpsPh(a [16]float32, rounding int) M256i
+func cvtRoundpsPh(a [16]float32, rounding int) [32]byte
 
 
 // MaskCvtRoundpsPh: Convert packed single-precision (32-bit) floating-point
@@ -11017,10 +11017,10 @@ func cvtRoundpsPh(a [16]float32, rounding int) M256i
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_mask_cvt_roundps_ph'.
 // Requires AVX512F.
 func MaskCvtRoundpsPh(src M256i, k Mmask16, a M512, rounding int) M256i {
-	return M256i(maskCvtRoundpsPh(src, uint16(k), [16]float32(a), rounding))
+	return M256i(maskCvtRoundpsPh([32]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskCvtRoundpsPh(src M256i, k uint16, a [16]float32, rounding int) M256i
+func maskCvtRoundpsPh(src [32]byte, k uint16, a [16]float32, rounding int) [32]byte
 
 
 // MaskzCvtRoundpsPh: Convert packed single-precision (32-bit) floating-point
@@ -11052,7 +11052,7 @@ func MaskzCvtRoundpsPh(k Mmask16, a M512, rounding int) M256i {
 	return M256i(maskzCvtRoundpsPh(uint16(k), [16]float32(a), rounding))
 }
 
-func maskzCvtRoundpsPh(k uint16, a [16]float32, rounding int) M256i
+func maskzCvtRoundpsPh(k uint16, a [16]float32, rounding int) [32]byte
 
 
 // Cvtepi1632: Sign extend packed 16-bit integers in 'a' to packed 32-bit
@@ -11068,10 +11068,10 @@ func maskzCvtRoundpsPh(k uint16, a [16]float32, rounding int) M256i
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm512_cvtepi16_epi32'.
 // Requires AVX512F.
 func Cvtepi1632(a M256i) M512i {
-	return M512i(cvtepi1632(a))
+	return M512i(cvtepi1632([32]byte(a)))
 }
 
-func cvtepi1632(a M256i) M512i
+func cvtepi1632(a [32]byte) [64]byte
 
 
 // MaskCvtepi1632: Sign extend packed 16-bit integers in 'a' to packed 32-bit
@@ -11092,10 +11092,10 @@ func cvtepi1632(a M256i) M512i
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm512_mask_cvtepi16_epi32'.
 // Requires AVX512F.
 func MaskCvtepi1632(src M512i, k Mmask16, a M256i) M512i {
-	return M512i(maskCvtepi1632(src, uint16(k), a))
+	return M512i(maskCvtepi1632([64]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskCvtepi1632(src M512i, k uint16, a M256i) M512i
+func maskCvtepi1632(src [64]byte, k uint16, a [32]byte) [64]byte
 
 
 // MaskzCvtepi1632: Sign extend packed 16-bit integers in 'a' to packed 32-bit
@@ -11116,10 +11116,10 @@ func maskCvtepi1632(src M512i, k uint16, a M256i) M512i
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm512_maskz_cvtepi16_epi32'.
 // Requires AVX512F.
 func MaskzCvtepi1632(k Mmask16, a M256i) M512i {
-	return M512i(maskzCvtepi1632(uint16(k), a))
+	return M512i(maskzCvtepi1632(uint16(k), [32]byte(a)))
 }
 
-func maskzCvtepi1632(k uint16, a M256i) M512i
+func maskzCvtepi1632(k uint16, a [32]byte) [64]byte
 
 
 // Cvtepi1664: Sign extend packed 16-bit integers in 'a' to packed 64-bit
@@ -11135,10 +11135,10 @@ func maskzCvtepi1632(k uint16, a M256i) M512i
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm512_cvtepi16_epi64'.
 // Requires AVX512F.
 func Cvtepi1664(a M128i) M512i {
-	return M512i(cvtepi1664(a))
+	return M512i(cvtepi1664([16]byte(a)))
 }
 
-func cvtepi1664(a M128i) M512i
+func cvtepi1664(a [16]byte) [64]byte
 
 
 // MaskCvtepi1664: Sign extend packed 16-bit integers in 'a' to packed 64-bit
@@ -11159,10 +11159,10 @@ func cvtepi1664(a M128i) M512i
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm512_mask_cvtepi16_epi64'.
 // Requires AVX512F.
 func MaskCvtepi1664(src M512i, k Mmask8, a M128i) M512i {
-	return M512i(maskCvtepi1664(src, uint8(k), a))
+	return M512i(maskCvtepi1664([64]byte(src), uint8(k), [16]byte(a)))
 }
 
-func maskCvtepi1664(src M512i, k uint8, a M128i) M512i
+func maskCvtepi1664(src [64]byte, k uint8, a [16]byte) [64]byte
 
 
 // MaskzCvtepi1664: Sign extend packed 16-bit integers in 'a' to packed 64-bit
@@ -11183,10 +11183,10 @@ func maskCvtepi1664(src M512i, k uint8, a M128i) M512i
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm512_maskz_cvtepi16_epi64'.
 // Requires AVX512F.
 func MaskzCvtepi1664(k Mmask8, a M128i) M512i {
-	return M512i(maskzCvtepi1664(uint8(k), a))
+	return M512i(maskzCvtepi1664(uint8(k), [16]byte(a)))
 }
 
-func maskzCvtepi1664(k uint8, a M128i) M512i
+func maskzCvtepi1664(k uint8, a [16]byte) [64]byte
 
 
 // Cvtepi168: Convert packed 16-bit integers in 'a' to packed 8-bit integers
@@ -11202,10 +11202,10 @@ func maskzCvtepi1664(k uint8, a M128i) M512i
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_cvtepi16_epi8'.
 // Requires AVX512BW.
 func Cvtepi168(a M512i) M256i {
-	return M256i(cvtepi168(a))
+	return M256i(cvtepi168([64]byte(a)))
 }
 
-func cvtepi168(a M512i) M256i
+func cvtepi168(a [64]byte) [32]byte
 
 
 // MaskCvtepi168: Convert packed 16-bit integers in 'a' to packed 8-bit
@@ -11226,10 +11226,10 @@ func cvtepi168(a M512i) M256i
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_mask_cvtepi16_epi8'.
 // Requires AVX512BW.
 func MaskCvtepi168(src M256i, k Mmask32, a M512i) M256i {
-	return M256i(maskCvtepi168(src, uint32(k), a))
+	return M256i(maskCvtepi168([32]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskCvtepi168(src M256i, k uint32, a M512i) M256i
+func maskCvtepi168(src [32]byte, k uint32, a [64]byte) [32]byte
 
 
 // MaskzCvtepi168: Convert packed 16-bit integers in 'a' to packed 8-bit
@@ -11250,10 +11250,10 @@ func maskCvtepi168(src M256i, k uint32, a M512i) M256i
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_maskz_cvtepi16_epi8'.
 // Requires AVX512BW.
 func MaskzCvtepi168(k Mmask32, a M512i) M256i {
-	return M256i(maskzCvtepi168(uint32(k), a))
+	return M256i(maskzCvtepi168(uint32(k), [64]byte(a)))
 }
 
-func maskzCvtepi168(k uint32, a M512i) M256i
+func maskzCvtepi168(k uint32, a [64]byte) [32]byte
 
 
 // MaskCvtepi16Storeu8: Convert packed 16-bit integers in 'a' to packed 8-bit
@@ -11272,10 +11272,10 @@ func maskzCvtepi168(k uint32, a M512i) M256i
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_mask_cvtepi16_storeu_epi8'.
 // Requires AVX512BW.
 func MaskCvtepi16Storeu8(base_addr uintptr, k Mmask32, a M512i)  {
-	maskCvtepi16Storeu8(uintptr(base_addr), uint32(k), a)
+	maskCvtepi16Storeu8(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
-func maskCvtepi16Storeu8(base_addr uintptr, k uint32, a M512i) 
+func maskCvtepi16Storeu8(base_addr uintptr, k uint32, a [64]byte) 
 
 
 // Cvtepi3216: Convert packed 32-bit integers in 'a' to packed 16-bit integers
@@ -11291,10 +11291,10 @@ func maskCvtepi16Storeu8(base_addr uintptr, k uint32, a M512i)
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm512_cvtepi32_epi16'.
 // Requires AVX512F.
 func Cvtepi3216(a M512i) M256i {
-	return M256i(cvtepi3216(a))
+	return M256i(cvtepi3216([64]byte(a)))
 }
 
-func cvtepi3216(a M512i) M256i
+func cvtepi3216(a [64]byte) [32]byte
 
 
 // MaskCvtepi3216: Convert packed 32-bit integers in 'a' to packed 16-bit
@@ -11315,10 +11315,10 @@ func cvtepi3216(a M512i) M256i
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm512_mask_cvtepi32_epi16'.
 // Requires AVX512F.
 func MaskCvtepi3216(src M256i, k Mmask16, a M512i) M256i {
-	return M256i(maskCvtepi3216(src, uint16(k), a))
+	return M256i(maskCvtepi3216([32]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtepi3216(src M256i, k uint16, a M512i) M256i
+func maskCvtepi3216(src [32]byte, k uint16, a [64]byte) [32]byte
 
 
 // MaskzCvtepi3216: Convert packed 32-bit integers in 'a' to packed 16-bit
@@ -11339,10 +11339,10 @@ func maskCvtepi3216(src M256i, k uint16, a M512i) M256i
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm512_maskz_cvtepi32_epi16'.
 // Requires AVX512F.
 func MaskzCvtepi3216(k Mmask16, a M512i) M256i {
-	return M256i(maskzCvtepi3216(uint16(k), a))
+	return M256i(maskzCvtepi3216(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtepi3216(k uint16, a M512i) M256i
+func maskzCvtepi3216(k uint16, a [64]byte) [32]byte
 
 
 // Cvtepi3264: Sign extend packed 32-bit integers in 'a' to packed 64-bit
@@ -11358,10 +11358,10 @@ func maskzCvtepi3216(k uint16, a M512i) M256i
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm512_cvtepi32_epi64'.
 // Requires AVX512F.
 func Cvtepi3264(a M256i) M512i {
-	return M512i(cvtepi3264(a))
+	return M512i(cvtepi3264([32]byte(a)))
 }
 
-func cvtepi3264(a M256i) M512i
+func cvtepi3264(a [32]byte) [64]byte
 
 
 // MaskCvtepi3264: Sign extend packed 32-bit integers in 'a' to packed 64-bit
@@ -11382,10 +11382,10 @@ func cvtepi3264(a M256i) M512i
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm512_mask_cvtepi32_epi64'.
 // Requires AVX512F.
 func MaskCvtepi3264(src M512i, k Mmask8, a M256i) M512i {
-	return M512i(maskCvtepi3264(src, uint8(k), a))
+	return M512i(maskCvtepi3264([64]byte(src), uint8(k), [32]byte(a)))
 }
 
-func maskCvtepi3264(src M512i, k uint8, a M256i) M512i
+func maskCvtepi3264(src [64]byte, k uint8, a [32]byte) [64]byte
 
 
 // MaskzCvtepi3264: Sign extend packed 32-bit integers in 'a' to packed 64-bit
@@ -11406,10 +11406,10 @@ func maskCvtepi3264(src M512i, k uint8, a M256i) M512i
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm512_maskz_cvtepi32_epi64'.
 // Requires AVX512F.
 func MaskzCvtepi3264(k Mmask8, a M256i) M512i {
-	return M512i(maskzCvtepi3264(uint8(k), a))
+	return M512i(maskzCvtepi3264(uint8(k), [32]byte(a)))
 }
 
-func maskzCvtepi3264(k uint8, a M256i) M512i
+func maskzCvtepi3264(k uint8, a [32]byte) [64]byte
 
 
 // Cvtepi328: Convert packed 32-bit integers in 'a' to packed 8-bit integers
@@ -11425,10 +11425,10 @@ func maskzCvtepi3264(k uint8, a M256i) M512i
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm512_cvtepi32_epi8'.
 // Requires AVX512F.
 func Cvtepi328(a M512i) M128i {
-	return M128i(cvtepi328(a))
+	return M128i(cvtepi328([64]byte(a)))
 }
 
-func cvtepi328(a M512i) M128i
+func cvtepi328(a [64]byte) [16]byte
 
 
 // MaskCvtepi328: Convert packed 32-bit integers in 'a' to packed 8-bit
@@ -11449,10 +11449,10 @@ func cvtepi328(a M512i) M128i
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm512_mask_cvtepi32_epi8'.
 // Requires AVX512F.
 func MaskCvtepi328(src M128i, k Mmask16, a M512i) M128i {
-	return M128i(maskCvtepi328(src, uint16(k), a))
+	return M128i(maskCvtepi328([16]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtepi328(src M128i, k uint16, a M512i) M128i
+func maskCvtepi328(src [16]byte, k uint16, a [64]byte) [16]byte
 
 
 // MaskzCvtepi328: Convert packed 32-bit integers in 'a' to packed 8-bit
@@ -11473,10 +11473,10 @@ func maskCvtepi328(src M128i, k uint16, a M512i) M128i
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm512_maskz_cvtepi32_epi8'.
 // Requires AVX512F.
 func MaskzCvtepi328(k Mmask16, a M512i) M128i {
-	return M128i(maskzCvtepi328(uint16(k), a))
+	return M128i(maskzCvtepi328(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtepi328(k uint16, a M512i) M128i
+func maskzCvtepi328(k uint16, a [64]byte) [16]byte
 
 
 // Cvtepi32Pd: Convert packed 32-bit integers in 'a' to packed double-precision
@@ -11492,10 +11492,10 @@ func maskzCvtepi328(k uint16, a M512i) M128i
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_cvtepi32_pd'.
 // Requires AVX512F.
 func Cvtepi32Pd(a M256i) M512d {
-	return M512d(cvtepi32Pd(a))
+	return M512d(cvtepi32Pd([32]byte(a)))
 }
 
-func cvtepi32Pd(a M256i) [8]float64
+func cvtepi32Pd(a [32]byte) [8]float64
 
 
 // MaskCvtepi32Pd: Convert packed 32-bit integers in 'a' to packed
@@ -11517,10 +11517,10 @@ func cvtepi32Pd(a M256i) [8]float64
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_mask_cvtepi32_pd'.
 // Requires AVX512F.
 func MaskCvtepi32Pd(src M512d, k Mmask8, a M256i) M512d {
-	return M512d(maskCvtepi32Pd([8]float64(src), uint8(k), a))
+	return M512d(maskCvtepi32Pd([8]float64(src), uint8(k), [32]byte(a)))
 }
 
-func maskCvtepi32Pd(src [8]float64, k uint8, a M256i) [8]float64
+func maskCvtepi32Pd(src [8]float64, k uint8, a [32]byte) [8]float64
 
 
 // MaskzCvtepi32Pd: Convert packed 32-bit integers in 'a' to packed
@@ -11542,10 +11542,10 @@ func maskCvtepi32Pd(src [8]float64, k uint8, a M256i) [8]float64
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_maskz_cvtepi32_pd'.
 // Requires AVX512F.
 func MaskzCvtepi32Pd(k Mmask8, a M256i) M512d {
-	return M512d(maskzCvtepi32Pd(uint8(k), a))
+	return M512d(maskzCvtepi32Pd(uint8(k), [32]byte(a)))
 }
 
-func maskzCvtepi32Pd(k uint8, a M256i) [8]float64
+func maskzCvtepi32Pd(k uint8, a [32]byte) [8]float64
 
 
 // Cvtepi32Ps: Convert packed 32-bit integers in 'a' to packed single-precision
@@ -11560,10 +11560,10 @@ func maskzCvtepi32Pd(k uint8, a M256i) [8]float64
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_cvtepi32_ps'.
 // Requires AVX512F.
 func Cvtepi32Ps(a M512i) M512 {
-	return M512(cvtepi32Ps(a))
+	return M512(cvtepi32Ps([64]byte(a)))
 }
 
-func cvtepi32Ps(a M512i) [16]float32
+func cvtepi32Ps(a [64]byte) [16]float32
 
 
 // MaskCvtepi32Ps: Convert packed 32-bit integers in 'a' to packed
@@ -11584,10 +11584,10 @@ func cvtepi32Ps(a M512i) [16]float32
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_mask_cvtepi32_ps'.
 // Requires AVX512F.
 func MaskCvtepi32Ps(src M512, k Mmask16, a M512i) M512 {
-	return M512(maskCvtepi32Ps([16]float32(src), uint16(k), a))
+	return M512(maskCvtepi32Ps([16]float32(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtepi32Ps(src [16]float32, k uint16, a M512i) [16]float32
+func maskCvtepi32Ps(src [16]float32, k uint16, a [64]byte) [16]float32
 
 
 // MaskzCvtepi32Ps: Convert packed 32-bit integers in 'a' to packed
@@ -11608,10 +11608,10 @@ func maskCvtepi32Ps(src [16]float32, k uint16, a M512i) [16]float32
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_maskz_cvtepi32_ps'.
 // Requires AVX512F.
 func MaskzCvtepi32Ps(k Mmask16, a M512i) M512 {
-	return M512(maskzCvtepi32Ps(uint16(k), a))
+	return M512(maskzCvtepi32Ps(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtepi32Ps(k uint16, a M512i) [16]float32
+func maskzCvtepi32Ps(k uint16, a [64]byte) [16]float32
 
 
 // MaskCvtepi32Storeu16: Convert packed 32-bit integers in 'a' to packed 16-bit
@@ -11629,10 +11629,10 @@ func maskzCvtepi32Ps(k uint16, a M512i) [16]float32
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm512_mask_cvtepi32_storeu_epi16'.
 // Requires AVX512F.
 func MaskCvtepi32Storeu16(base_addr uintptr, k Mmask16, a M512i)  {
-	maskCvtepi32Storeu16(uintptr(base_addr), uint16(k), a)
+	maskCvtepi32Storeu16(uintptr(base_addr), uint16(k), [64]byte(a))
 }
 
-func maskCvtepi32Storeu16(base_addr uintptr, k uint16, a M512i) 
+func maskCvtepi32Storeu16(base_addr uintptr, k uint16, a [64]byte) 
 
 
 // MaskCvtepi32Storeu8: Convert packed 32-bit integers in 'a' to packed 8-bit
@@ -11650,10 +11650,10 @@ func maskCvtepi32Storeu16(base_addr uintptr, k uint16, a M512i)
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm512_mask_cvtepi32_storeu_epi8'.
 // Requires AVX512F.
 func MaskCvtepi32Storeu8(base_addr uintptr, k Mmask16, a M512i)  {
-	maskCvtepi32Storeu8(uintptr(base_addr), uint16(k), a)
+	maskCvtepi32Storeu8(uintptr(base_addr), uint16(k), [64]byte(a))
 }
 
-func maskCvtepi32Storeu8(base_addr uintptr, k uint16, a M512i) 
+func maskCvtepi32Storeu8(base_addr uintptr, k uint16, a [64]byte) 
 
 
 // Cvtepi32loPd: Performs element-by-element conversion of the lower half of
@@ -11670,10 +11670,10 @@ func maskCvtepi32Storeu8(base_addr uintptr, k uint16, a M512i)
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_cvtepi32lo_pd'.
 // Requires KNCNI.
 func Cvtepi32loPd(v2 M512i) M512d {
-	return M512d(cvtepi32loPd(v2))
+	return M512d(cvtepi32loPd([64]byte(v2)))
 }
 
-func cvtepi32loPd(v2 M512i) [8]float64
+func cvtepi32loPd(v2 [64]byte) [8]float64
 
 
 // MaskCvtepi32loPd: Performs element-by-element conversion of the lower half
@@ -11696,10 +11696,10 @@ func cvtepi32loPd(v2 M512i) [8]float64
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_mask_cvtepi32lo_pd'.
 // Requires KNCNI.
 func MaskCvtepi32loPd(src M512d, k Mmask8, v2 M512i) M512d {
-	return M512d(maskCvtepi32loPd([8]float64(src), uint8(k), v2))
+	return M512d(maskCvtepi32loPd([8]float64(src), uint8(k), [64]byte(v2)))
 }
 
-func maskCvtepi32loPd(src [8]float64, k uint8, v2 M512i) [8]float64
+func maskCvtepi32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
 
 
 // Cvtepi6416: Convert packed 64-bit integers in 'a' to packed 16-bit integers
@@ -11715,10 +11715,10 @@ func maskCvtepi32loPd(src [8]float64, k uint8, v2 M512i) [8]float64
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm512_cvtepi64_epi16'.
 // Requires AVX512F.
 func Cvtepi6416(a M512i) M128i {
-	return M128i(cvtepi6416(a))
+	return M128i(cvtepi6416([64]byte(a)))
 }
 
-func cvtepi6416(a M512i) M128i
+func cvtepi6416(a [64]byte) [16]byte
 
 
 // MaskCvtepi6416: Convert packed 64-bit integers in 'a' to packed 16-bit
@@ -11739,10 +11739,10 @@ func cvtepi6416(a M512i) M128i
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm512_mask_cvtepi64_epi16'.
 // Requires AVX512F.
 func MaskCvtepi6416(src M128i, k Mmask8, a M512i) M128i {
-	return M128i(maskCvtepi6416(src, uint8(k), a))
+	return M128i(maskCvtepi6416([16]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtepi6416(src M128i, k uint8, a M512i) M128i
+func maskCvtepi6416(src [16]byte, k uint8, a [64]byte) [16]byte
 
 
 // MaskzCvtepi6416: Convert packed 64-bit integers in 'a' to packed 16-bit
@@ -11763,10 +11763,10 @@ func maskCvtepi6416(src M128i, k uint8, a M512i) M128i
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm512_maskz_cvtepi64_epi16'.
 // Requires AVX512F.
 func MaskzCvtepi6416(k Mmask8, a M512i) M128i {
-	return M128i(maskzCvtepi6416(uint8(k), a))
+	return M128i(maskzCvtepi6416(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtepi6416(k uint8, a M512i) M128i
+func maskzCvtepi6416(k uint8, a [64]byte) [16]byte
 
 
 // Cvtepi6432: Convert packed 64-bit integers in 'a' to packed 32-bit integers
@@ -11782,10 +11782,10 @@ func maskzCvtepi6416(k uint8, a M512i) M128i
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm512_cvtepi64_epi32'.
 // Requires AVX512F.
 func Cvtepi6432(a M512i) M256i {
-	return M256i(cvtepi6432(a))
+	return M256i(cvtepi6432([64]byte(a)))
 }
 
-func cvtepi6432(a M512i) M256i
+func cvtepi6432(a [64]byte) [32]byte
 
 
 // MaskCvtepi6432: Convert packed 64-bit integers in 'a' to packed 32-bit
@@ -11806,10 +11806,10 @@ func cvtepi6432(a M512i) M256i
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm512_mask_cvtepi64_epi32'.
 // Requires AVX512F.
 func MaskCvtepi6432(src M256i, k Mmask8, a M512i) M256i {
-	return M256i(maskCvtepi6432(src, uint8(k), a))
+	return M256i(maskCvtepi6432([32]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtepi6432(src M256i, k uint8, a M512i) M256i
+func maskCvtepi6432(src [32]byte, k uint8, a [64]byte) [32]byte
 
 
 // MaskzCvtepi6432: Convert packed 64-bit integers in 'a' to packed 32-bit
@@ -11830,10 +11830,10 @@ func maskCvtepi6432(src M256i, k uint8, a M512i) M256i
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm512_maskz_cvtepi64_epi32'.
 // Requires AVX512F.
 func MaskzCvtepi6432(k Mmask8, a M512i) M256i {
-	return M256i(maskzCvtepi6432(uint8(k), a))
+	return M256i(maskzCvtepi6432(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtepi6432(k uint8, a M512i) M256i
+func maskzCvtepi6432(k uint8, a [64]byte) [32]byte
 
 
 // Cvtepi648: Convert packed 64-bit integers in 'a' to packed 8-bit integers
@@ -11849,10 +11849,10 @@ func maskzCvtepi6432(k uint8, a M512i) M256i
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm512_cvtepi64_epi8'.
 // Requires AVX512F.
 func Cvtepi648(a M512i) M128i {
-	return M128i(cvtepi648(a))
+	return M128i(cvtepi648([64]byte(a)))
 }
 
-func cvtepi648(a M512i) M128i
+func cvtepi648(a [64]byte) [16]byte
 
 
 // MaskCvtepi648: Convert packed 64-bit integers in 'a' to packed 8-bit
@@ -11873,10 +11873,10 @@ func cvtepi648(a M512i) M128i
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm512_mask_cvtepi64_epi8'.
 // Requires AVX512F.
 func MaskCvtepi648(src M128i, k Mmask8, a M512i) M128i {
-	return M128i(maskCvtepi648(src, uint8(k), a))
+	return M128i(maskCvtepi648([16]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtepi648(src M128i, k uint8, a M512i) M128i
+func maskCvtepi648(src [16]byte, k uint8, a [64]byte) [16]byte
 
 
 // MaskzCvtepi648: Convert packed 64-bit integers in 'a' to packed 8-bit
@@ -11897,10 +11897,10 @@ func maskCvtepi648(src M128i, k uint8, a M512i) M128i
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm512_maskz_cvtepi64_epi8'.
 // Requires AVX512F.
 func MaskzCvtepi648(k Mmask8, a M512i) M128i {
-	return M128i(maskzCvtepi648(uint8(k), a))
+	return M128i(maskzCvtepi648(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtepi648(k uint8, a M512i) M128i
+func maskzCvtepi648(k uint8, a [64]byte) [16]byte
 
 
 // Cvtepi64Pd: Convert packed 64-bit integers in 'a' to packed double-precision
@@ -11915,10 +11915,10 @@ func maskzCvtepi648(k uint8, a M512i) M128i
 // Instruction: 'VCVTQQ2PD'. Intrinsic: '_mm512_cvtepi64_pd'.
 // Requires AVX512DQ.
 func Cvtepi64Pd(a M512i) M512d {
-	return M512d(cvtepi64Pd(a))
+	return M512d(cvtepi64Pd([64]byte(a)))
 }
 
-func cvtepi64Pd(a M512i) [8]float64
+func cvtepi64Pd(a [64]byte) [8]float64
 
 
 // MaskCvtepi64Pd: Convert packed 64-bit integers in 'a' to packed
@@ -11939,10 +11939,10 @@ func cvtepi64Pd(a M512i) [8]float64
 // Instruction: 'VCVTQQ2PD'. Intrinsic: '_mm512_mask_cvtepi64_pd'.
 // Requires AVX512DQ.
 func MaskCvtepi64Pd(src M512d, k Mmask8, a M512i) M512d {
-	return M512d(maskCvtepi64Pd([8]float64(src), uint8(k), a))
+	return M512d(maskCvtepi64Pd([8]float64(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtepi64Pd(src [8]float64, k uint8, a M512i) [8]float64
+func maskCvtepi64Pd(src [8]float64, k uint8, a [64]byte) [8]float64
 
 
 // MaskzCvtepi64Pd: Convert packed 64-bit integers in 'a' to packed
@@ -11963,10 +11963,10 @@ func maskCvtepi64Pd(src [8]float64, k uint8, a M512i) [8]float64
 // Instruction: 'VCVTQQ2PD'. Intrinsic: '_mm512_maskz_cvtepi64_pd'.
 // Requires AVX512DQ.
 func MaskzCvtepi64Pd(k Mmask8, a M512i) M512d {
-	return M512d(maskzCvtepi64Pd(uint8(k), a))
+	return M512d(maskzCvtepi64Pd(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtepi64Pd(k uint8, a M512i) [8]float64
+func maskzCvtepi64Pd(k uint8, a [64]byte) [8]float64
 
 
 // Cvtepi64Ps: Convert packed 64-bit integers in 'a' to packed single-precision
@@ -11982,10 +11982,10 @@ func maskzCvtepi64Pd(k uint8, a M512i) [8]float64
 // Instruction: 'VCVTQQ2PS'. Intrinsic: '_mm512_cvtepi64_ps'.
 // Requires AVX512DQ.
 func Cvtepi64Ps(a M512i) M256 {
-	return M256(cvtepi64Ps(a))
+	return M256(cvtepi64Ps([64]byte(a)))
 }
 
-func cvtepi64Ps(a M512i) [8]float32
+func cvtepi64Ps(a [64]byte) [8]float32
 
 
 // MaskCvtepi64Ps: Convert packed 64-bit integers in 'a' to packed
@@ -12007,10 +12007,10 @@ func cvtepi64Ps(a M512i) [8]float32
 // Instruction: 'VCVTQQ2PS'. Intrinsic: '_mm512_mask_cvtepi64_ps'.
 // Requires AVX512DQ.
 func MaskCvtepi64Ps(src M256, k Mmask8, a M512i) M256 {
-	return M256(maskCvtepi64Ps([8]float32(src), uint8(k), a))
+	return M256(maskCvtepi64Ps([8]float32(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtepi64Ps(src [8]float32, k uint8, a M512i) [8]float32
+func maskCvtepi64Ps(src [8]float32, k uint8, a [64]byte) [8]float32
 
 
 // MaskzCvtepi64Ps: Convert packed 64-bit integers in 'a' to packed
@@ -12032,10 +12032,10 @@ func maskCvtepi64Ps(src [8]float32, k uint8, a M512i) [8]float32
 // Instruction: 'VCVTQQ2PS'. Intrinsic: '_mm512_maskz_cvtepi64_ps'.
 // Requires AVX512DQ.
 func MaskzCvtepi64Ps(k Mmask8, a M512i) M256 {
-	return M256(maskzCvtepi64Ps(uint8(k), a))
+	return M256(maskzCvtepi64Ps(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtepi64Ps(k uint8, a M512i) [8]float32
+func maskzCvtepi64Ps(k uint8, a [64]byte) [8]float32
 
 
 // MaskCvtepi64Storeu16: Convert packed 64-bit integers in 'a' to packed 16-bit
@@ -12053,10 +12053,10 @@ func maskzCvtepi64Ps(k uint8, a M512i) [8]float32
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm512_mask_cvtepi64_storeu_epi16'.
 // Requires AVX512F.
 func MaskCvtepi64Storeu16(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtepi64Storeu16(uintptr(base_addr), uint8(k), a)
+	maskCvtepi64Storeu16(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtepi64Storeu16(base_addr uintptr, k uint8, a M512i) 
+func maskCvtepi64Storeu16(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskCvtepi64Storeu32: Convert packed 64-bit integers in 'a' to packed 32-bit
@@ -12074,10 +12074,10 @@ func maskCvtepi64Storeu16(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm512_mask_cvtepi64_storeu_epi32'.
 // Requires AVX512F.
 func MaskCvtepi64Storeu32(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtepi64Storeu32(uintptr(base_addr), uint8(k), a)
+	maskCvtepi64Storeu32(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtepi64Storeu32(base_addr uintptr, k uint8, a M512i) 
+func maskCvtepi64Storeu32(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskCvtepi64Storeu8: Convert packed 64-bit integers in 'a' to packed 8-bit
@@ -12095,10 +12095,10 @@ func maskCvtepi64Storeu32(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm512_mask_cvtepi64_storeu_epi8'.
 // Requires AVX512F.
 func MaskCvtepi64Storeu8(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtepi64Storeu8(uintptr(base_addr), uint8(k), a)
+	maskCvtepi64Storeu8(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtepi64Storeu8(base_addr uintptr, k uint8, a M512i) 
+func maskCvtepi64Storeu8(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // Cvtepi816: Sign extend packed 8-bit integers in 'a' to packed 16-bit
@@ -12114,10 +12114,10 @@ func maskCvtepi64Storeu8(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_cvtepi8_epi16'.
 // Requires AVX512BW.
 func Cvtepi816(a M256i) M512i {
-	return M512i(cvtepi816(a))
+	return M512i(cvtepi816([32]byte(a)))
 }
 
-func cvtepi816(a M256i) M512i
+func cvtepi816(a [32]byte) [64]byte
 
 
 // MaskCvtepi816: Sign extend packed 8-bit integers in 'a' to packed 16-bit
@@ -12138,10 +12138,10 @@ func cvtepi816(a M256i) M512i
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_mask_cvtepi8_epi16'.
 // Requires AVX512BW.
 func MaskCvtepi816(src M512i, k Mmask32, a M256i) M512i {
-	return M512i(maskCvtepi816(src, uint32(k), a))
+	return M512i(maskCvtepi816([64]byte(src), uint32(k), [32]byte(a)))
 }
 
-func maskCvtepi816(src M512i, k uint32, a M256i) M512i
+func maskCvtepi816(src [64]byte, k uint32, a [32]byte) [64]byte
 
 
 // MaskzCvtepi816: Sign extend packed 8-bit integers in 'a' to packed 16-bit
@@ -12162,10 +12162,10 @@ func maskCvtepi816(src M512i, k uint32, a M256i) M512i
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_maskz_cvtepi8_epi16'.
 // Requires AVX512BW.
 func MaskzCvtepi816(k Mmask32, a M256i) M512i {
-	return M512i(maskzCvtepi816(uint32(k), a))
+	return M512i(maskzCvtepi816(uint32(k), [32]byte(a)))
 }
 
-func maskzCvtepi816(k uint32, a M256i) M512i
+func maskzCvtepi816(k uint32, a [32]byte) [64]byte
 
 
 // Cvtepi832: Sign extend packed 8-bit integers in 'a' to packed 32-bit
@@ -12181,10 +12181,10 @@ func maskzCvtepi816(k uint32, a M256i) M512i
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm512_cvtepi8_epi32'.
 // Requires AVX512F.
 func Cvtepi832(a M128i) M512i {
-	return M512i(cvtepi832(a))
+	return M512i(cvtepi832([16]byte(a)))
 }
 
-func cvtepi832(a M128i) M512i
+func cvtepi832(a [16]byte) [64]byte
 
 
 // MaskCvtepi832: Sign extend packed 8-bit integers in 'a' to packed 32-bit
@@ -12205,10 +12205,10 @@ func cvtepi832(a M128i) M512i
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm512_mask_cvtepi8_epi32'.
 // Requires AVX512F.
 func MaskCvtepi832(src M512i, k Mmask16, a M128i) M512i {
-	return M512i(maskCvtepi832(src, uint16(k), a))
+	return M512i(maskCvtepi832([64]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskCvtepi832(src M512i, k uint16, a M128i) M512i
+func maskCvtepi832(src [64]byte, k uint16, a [16]byte) [64]byte
 
 
 // MaskzCvtepi832: Sign extend packed 8-bit integers in 'a' to packed 32-bit
@@ -12229,10 +12229,10 @@ func maskCvtepi832(src M512i, k uint16, a M128i) M512i
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm512_maskz_cvtepi8_epi32'.
 // Requires AVX512F.
 func MaskzCvtepi832(k Mmask16, a M128i) M512i {
-	return M512i(maskzCvtepi832(uint16(k), a))
+	return M512i(maskzCvtepi832(uint16(k), [16]byte(a)))
 }
 
-func maskzCvtepi832(k uint16, a M128i) M512i
+func maskzCvtepi832(k uint16, a [16]byte) [64]byte
 
 
 // Cvtepi864: Sign extend packed 8-bit integers in the low 8 bytes of 'a' to
@@ -12248,10 +12248,10 @@ func maskzCvtepi832(k uint16, a M128i) M512i
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm512_cvtepi8_epi64'.
 // Requires AVX512F.
 func Cvtepi864(a M128i) M512i {
-	return M512i(cvtepi864(a))
+	return M512i(cvtepi864([16]byte(a)))
 }
 
-func cvtepi864(a M128i) M512i
+func cvtepi864(a [16]byte) [64]byte
 
 
 // MaskCvtepi864: Sign extend packed 8-bit integers in the low 8 bytes of 'a'
@@ -12273,10 +12273,10 @@ func cvtepi864(a M128i) M512i
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm512_mask_cvtepi8_epi64'.
 // Requires AVX512F.
 func MaskCvtepi864(src M512i, k Mmask8, a M128i) M512i {
-	return M512i(maskCvtepi864(src, uint8(k), a))
+	return M512i(maskCvtepi864([64]byte(src), uint8(k), [16]byte(a)))
 }
 
-func maskCvtepi864(src M512i, k uint8, a M128i) M512i
+func maskCvtepi864(src [64]byte, k uint8, a [16]byte) [64]byte
 
 
 // MaskzCvtepi864: Sign extend packed 8-bit integers in the low 8 bytes of 'a'
@@ -12297,10 +12297,10 @@ func maskCvtepi864(src M512i, k uint8, a M128i) M512i
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm512_maskz_cvtepi8_epi64'.
 // Requires AVX512F.
 func MaskzCvtepi864(k Mmask8, a M128i) M512i {
-	return M512i(maskzCvtepi864(uint8(k), a))
+	return M512i(maskzCvtepi864(uint8(k), [16]byte(a)))
 }
 
-func maskzCvtepi864(k uint8, a M128i) M512i
+func maskzCvtepi864(k uint8, a [16]byte) [64]byte
 
 
 // Cvtepu1632: Zero extend packed unsigned 16-bit integers in 'a' to packed
@@ -12316,10 +12316,10 @@ func maskzCvtepi864(k uint8, a M128i) M512i
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm512_cvtepu16_epi32'.
 // Requires AVX512F.
 func Cvtepu1632(a M256i) M512i {
-	return M512i(cvtepu1632(a))
+	return M512i(cvtepu1632([32]byte(a)))
 }
 
-func cvtepu1632(a M256i) M512i
+func cvtepu1632(a [32]byte) [64]byte
 
 
 // MaskCvtepu1632: Zero extend packed unsigned 16-bit integers in 'a' to packed
@@ -12340,10 +12340,10 @@ func cvtepu1632(a M256i) M512i
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm512_mask_cvtepu16_epi32'.
 // Requires AVX512F.
 func MaskCvtepu1632(src M512i, k Mmask16, a M256i) M512i {
-	return M512i(maskCvtepu1632(src, uint16(k), a))
+	return M512i(maskCvtepu1632([64]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskCvtepu1632(src M512i, k uint16, a M256i) M512i
+func maskCvtepu1632(src [64]byte, k uint16, a [32]byte) [64]byte
 
 
 // MaskzCvtepu1632: Zero extend packed unsigned 16-bit integers in 'a' to
@@ -12364,10 +12364,10 @@ func maskCvtepu1632(src M512i, k uint16, a M256i) M512i
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm512_maskz_cvtepu16_epi32'.
 // Requires AVX512F.
 func MaskzCvtepu1632(k Mmask16, a M256i) M512i {
-	return M512i(maskzCvtepu1632(uint16(k), a))
+	return M512i(maskzCvtepu1632(uint16(k), [32]byte(a)))
 }
 
-func maskzCvtepu1632(k uint16, a M256i) M512i
+func maskzCvtepu1632(k uint16, a [32]byte) [64]byte
 
 
 // Cvtepu1664: Zero extend packed unsigned 16-bit integers in 'a' to packed
@@ -12383,10 +12383,10 @@ func maskzCvtepu1632(k uint16, a M256i) M512i
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm512_cvtepu16_epi64'.
 // Requires AVX512F.
 func Cvtepu1664(a M128i) M512i {
-	return M512i(cvtepu1664(a))
+	return M512i(cvtepu1664([16]byte(a)))
 }
 
-func cvtepu1664(a M128i) M512i
+func cvtepu1664(a [16]byte) [64]byte
 
 
 // MaskCvtepu1664: Zero extend packed unsigned 16-bit integers in 'a' to packed
@@ -12407,10 +12407,10 @@ func cvtepu1664(a M128i) M512i
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm512_mask_cvtepu16_epi64'.
 // Requires AVX512F.
 func MaskCvtepu1664(src M512i, k Mmask8, a M128i) M512i {
-	return M512i(maskCvtepu1664(src, uint8(k), a))
+	return M512i(maskCvtepu1664([64]byte(src), uint8(k), [16]byte(a)))
 }
 
-func maskCvtepu1664(src M512i, k uint8, a M128i) M512i
+func maskCvtepu1664(src [64]byte, k uint8, a [16]byte) [64]byte
 
 
 // MaskzCvtepu1664: Zero extend packed unsigned 16-bit integers in 'a' to
@@ -12431,10 +12431,10 @@ func maskCvtepu1664(src M512i, k uint8, a M128i) M512i
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm512_maskz_cvtepu16_epi64'.
 // Requires AVX512F.
 func MaskzCvtepu1664(k Mmask8, a M128i) M512i {
-	return M512i(maskzCvtepu1664(uint8(k), a))
+	return M512i(maskzCvtepu1664(uint8(k), [16]byte(a)))
 }
 
-func maskzCvtepu1664(k uint8, a M128i) M512i
+func maskzCvtepu1664(k uint8, a [16]byte) [64]byte
 
 
 // Cvtepu3264: Zero extend packed unsigned 32-bit integers in 'a' to packed
@@ -12450,10 +12450,10 @@ func maskzCvtepu1664(k uint8, a M128i) M512i
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm512_cvtepu32_epi64'.
 // Requires AVX512F.
 func Cvtepu3264(a M256i) M512i {
-	return M512i(cvtepu3264(a))
+	return M512i(cvtepu3264([32]byte(a)))
 }
 
-func cvtepu3264(a M256i) M512i
+func cvtepu3264(a [32]byte) [64]byte
 
 
 // MaskCvtepu3264: Zero extend packed unsigned 32-bit integers in 'a' to packed
@@ -12474,10 +12474,10 @@ func cvtepu3264(a M256i) M512i
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm512_mask_cvtepu32_epi64'.
 // Requires AVX512F.
 func MaskCvtepu3264(src M512i, k Mmask8, a M256i) M512i {
-	return M512i(maskCvtepu3264(src, uint8(k), a))
+	return M512i(maskCvtepu3264([64]byte(src), uint8(k), [32]byte(a)))
 }
 
-func maskCvtepu3264(src M512i, k uint8, a M256i) M512i
+func maskCvtepu3264(src [64]byte, k uint8, a [32]byte) [64]byte
 
 
 // MaskzCvtepu3264: Zero extend packed unsigned 32-bit integers in 'a' to
@@ -12498,10 +12498,10 @@ func maskCvtepu3264(src M512i, k uint8, a M256i) M512i
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm512_maskz_cvtepu32_epi64'.
 // Requires AVX512F.
 func MaskzCvtepu3264(k Mmask8, a M256i) M512i {
-	return M512i(maskzCvtepu3264(uint8(k), a))
+	return M512i(maskzCvtepu3264(uint8(k), [32]byte(a)))
 }
 
-func maskzCvtepu3264(k uint8, a M256i) M512i
+func maskzCvtepu3264(k uint8, a [32]byte) [64]byte
 
 
 // Cvtepu32Pd: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -12518,10 +12518,10 @@ func maskzCvtepu3264(k uint8, a M256i) M512i
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_cvtepu32_pd'.
 // Requires AVX512F.
 func Cvtepu32Pd(a M256i) M512d {
-	return M512d(cvtepu32Pd(a))
+	return M512d(cvtepu32Pd([32]byte(a)))
 }
 
-func cvtepu32Pd(a M256i) [8]float64
+func cvtepu32Pd(a [32]byte) [8]float64
 
 
 // MaskCvtepu32Pd: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -12543,10 +12543,10 @@ func cvtepu32Pd(a M256i) [8]float64
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_mask_cvtepu32_pd'.
 // Requires AVX512F.
 func MaskCvtepu32Pd(src M512d, k Mmask8, a M256i) M512d {
-	return M512d(maskCvtepu32Pd([8]float64(src), uint8(k), a))
+	return M512d(maskCvtepu32Pd([8]float64(src), uint8(k), [32]byte(a)))
 }
 
-func maskCvtepu32Pd(src [8]float64, k uint8, a M256i) [8]float64
+func maskCvtepu32Pd(src [8]float64, k uint8, a [32]byte) [8]float64
 
 
 // MaskzCvtepu32Pd: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -12568,10 +12568,10 @@ func maskCvtepu32Pd(src [8]float64, k uint8, a M256i) [8]float64
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_maskz_cvtepu32_pd'.
 // Requires AVX512F.
 func MaskzCvtepu32Pd(k Mmask8, a M256i) M512d {
-	return M512d(maskzCvtepu32Pd(uint8(k), a))
+	return M512d(maskzCvtepu32Pd(uint8(k), [32]byte(a)))
 }
 
-func maskzCvtepu32Pd(k uint8, a M256i) [8]float64
+func maskzCvtepu32Pd(k uint8, a [32]byte) [8]float64
 
 
 // Cvtepu32Ps: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -12587,10 +12587,10 @@ func maskzCvtepu32Pd(k uint8, a M256i) [8]float64
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_cvtepu32_ps'.
 // Requires AVX512F.
 func Cvtepu32Ps(a M512i) M512 {
-	return M512(cvtepu32Ps(a))
+	return M512(cvtepu32Ps([64]byte(a)))
 }
 
-func cvtepu32Ps(a M512i) [16]float32
+func cvtepu32Ps(a [64]byte) [16]float32
 
 
 // MaskCvtepu32Ps: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -12611,10 +12611,10 @@ func cvtepu32Ps(a M512i) [16]float32
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_mask_cvtepu32_ps'.
 // Requires AVX512F.
 func MaskCvtepu32Ps(src M512, k Mmask16, a M512i) M512 {
-	return M512(maskCvtepu32Ps([16]float32(src), uint16(k), a))
+	return M512(maskCvtepu32Ps([16]float32(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtepu32Ps(src [16]float32, k uint16, a M512i) [16]float32
+func maskCvtepu32Ps(src [16]float32, k uint16, a [64]byte) [16]float32
 
 
 // MaskzCvtepu32Ps: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -12635,10 +12635,10 @@ func maskCvtepu32Ps(src [16]float32, k uint16, a M512i) [16]float32
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_maskz_cvtepu32_ps'.
 // Requires AVX512F.
 func MaskzCvtepu32Ps(k Mmask16, a M512i) M512 {
-	return M512(maskzCvtepu32Ps(uint16(k), a))
+	return M512(maskzCvtepu32Ps(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtepu32Ps(k uint16, a M512i) [16]float32
+func maskzCvtepu32Ps(k uint16, a [64]byte) [16]float32
 
 
 // Cvtepu32loPd: Performs element-by-element conversion of the lower half of
@@ -12655,10 +12655,10 @@ func maskzCvtepu32Ps(k uint16, a M512i) [16]float32
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_cvtepu32lo_pd'.
 // Requires KNCNI.
 func Cvtepu32loPd(v2 M512i) M512d {
-	return M512d(cvtepu32loPd(v2))
+	return M512d(cvtepu32loPd([64]byte(v2)))
 }
 
-func cvtepu32loPd(v2 M512i) [8]float64
+func cvtepu32loPd(v2 [64]byte) [8]float64
 
 
 // MaskCvtepu32loPd: Performs element-by-element conversion of the lower half
@@ -12681,10 +12681,10 @@ func cvtepu32loPd(v2 M512i) [8]float64
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_mask_cvtepu32lo_pd'.
 // Requires KNCNI.
 func MaskCvtepu32loPd(src M512d, k Mmask8, v2 M512i) M512d {
-	return M512d(maskCvtepu32loPd([8]float64(src), uint8(k), v2))
+	return M512d(maskCvtepu32loPd([8]float64(src), uint8(k), [64]byte(v2)))
 }
 
-func maskCvtepu32loPd(src [8]float64, k uint8, v2 M512i) [8]float64
+func maskCvtepu32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
 
 
 // Cvtepu64Pd: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -12700,10 +12700,10 @@ func maskCvtepu32loPd(src [8]float64, k uint8, v2 M512i) [8]float64
 // Instruction: 'VCVTUQQ2PD'. Intrinsic: '_mm512_cvtepu64_pd'.
 // Requires AVX512DQ.
 func Cvtepu64Pd(a M512i) M512d {
-	return M512d(cvtepu64Pd(a))
+	return M512d(cvtepu64Pd([64]byte(a)))
 }
 
-func cvtepu64Pd(a M512i) [8]float64
+func cvtepu64Pd(a [64]byte) [8]float64
 
 
 // MaskCvtepu64Pd: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -12724,10 +12724,10 @@ func cvtepu64Pd(a M512i) [8]float64
 // Instruction: 'VCVTUQQ2PD'. Intrinsic: '_mm512_mask_cvtepu64_pd'.
 // Requires AVX512DQ.
 func MaskCvtepu64Pd(src M512d, k Mmask8, a M512i) M512d {
-	return M512d(maskCvtepu64Pd([8]float64(src), uint8(k), a))
+	return M512d(maskCvtepu64Pd([8]float64(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtepu64Pd(src [8]float64, k uint8, a M512i) [8]float64
+func maskCvtepu64Pd(src [8]float64, k uint8, a [64]byte) [8]float64
 
 
 // MaskzCvtepu64Pd: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -12748,10 +12748,10 @@ func maskCvtepu64Pd(src [8]float64, k uint8, a M512i) [8]float64
 // Instruction: 'VCVTUQQ2PD'. Intrinsic: '_mm512_maskz_cvtepu64_pd'.
 // Requires AVX512DQ.
 func MaskzCvtepu64Pd(k Mmask8, a M512i) M512d {
-	return M512d(maskzCvtepu64Pd(uint8(k), a))
+	return M512d(maskzCvtepu64Pd(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtepu64Pd(k uint8, a M512i) [8]float64
+func maskzCvtepu64Pd(k uint8, a [64]byte) [8]float64
 
 
 // Cvtepu64Ps: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -12768,10 +12768,10 @@ func maskzCvtepu64Pd(k uint8, a M512i) [8]float64
 // Instruction: 'VCVTUQQ2PS'. Intrinsic: '_mm512_cvtepu64_ps'.
 // Requires AVX512DQ.
 func Cvtepu64Ps(a M512i) M256 {
-	return M256(cvtepu64Ps(a))
+	return M256(cvtepu64Ps([64]byte(a)))
 }
 
-func cvtepu64Ps(a M512i) [8]float32
+func cvtepu64Ps(a [64]byte) [8]float32
 
 
 // MaskCvtepu64Ps: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -12793,10 +12793,10 @@ func cvtepu64Ps(a M512i) [8]float32
 // Instruction: 'VCVTUQQ2PS'. Intrinsic: '_mm512_mask_cvtepu64_ps'.
 // Requires AVX512DQ.
 func MaskCvtepu64Ps(src M256, k Mmask8, a M512i) M256 {
-	return M256(maskCvtepu64Ps([8]float32(src), uint8(k), a))
+	return M256(maskCvtepu64Ps([8]float32(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtepu64Ps(src [8]float32, k uint8, a M512i) [8]float32
+func maskCvtepu64Ps(src [8]float32, k uint8, a [64]byte) [8]float32
 
 
 // MaskzCvtepu64Ps: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -12818,10 +12818,10 @@ func maskCvtepu64Ps(src [8]float32, k uint8, a M512i) [8]float32
 // Instruction: 'VCVTUQQ2PS'. Intrinsic: '_mm512_maskz_cvtepu64_ps'.
 // Requires AVX512DQ.
 func MaskzCvtepu64Ps(k Mmask8, a M512i) M256 {
-	return M256(maskzCvtepu64Ps(uint8(k), a))
+	return M256(maskzCvtepu64Ps(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtepu64Ps(k uint8, a M512i) [8]float32
+func maskzCvtepu64Ps(k uint8, a [64]byte) [8]float32
 
 
 // Cvtepu816: Zero extend packed unsigned 8-bit integers in 'a' to packed
@@ -12837,10 +12837,10 @@ func maskzCvtepu64Ps(k uint8, a M512i) [8]float32
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_cvtepu8_epi16'.
 // Requires AVX512BW.
 func Cvtepu816(a M256i) M512i {
-	return M512i(cvtepu816(a))
+	return M512i(cvtepu816([32]byte(a)))
 }
 
-func cvtepu816(a M256i) M512i
+func cvtepu816(a [32]byte) [64]byte
 
 
 // MaskCvtepu816: Zero extend packed unsigned 8-bit integers in 'a' to packed
@@ -12861,10 +12861,10 @@ func cvtepu816(a M256i) M512i
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_mask_cvtepu8_epi16'.
 // Requires AVX512BW.
 func MaskCvtepu816(src M512i, k Mmask32, a M256i) M512i {
-	return M512i(maskCvtepu816(src, uint32(k), a))
+	return M512i(maskCvtepu816([64]byte(src), uint32(k), [32]byte(a)))
 }
 
-func maskCvtepu816(src M512i, k uint32, a M256i) M512i
+func maskCvtepu816(src [64]byte, k uint32, a [32]byte) [64]byte
 
 
 // MaskzCvtepu816: Zero extend packed unsigned 8-bit integers in 'a' to packed
@@ -12885,10 +12885,10 @@ func maskCvtepu816(src M512i, k uint32, a M256i) M512i
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_maskz_cvtepu8_epi16'.
 // Requires AVX512BW.
 func MaskzCvtepu816(k Mmask32, a M256i) M512i {
-	return M512i(maskzCvtepu816(uint32(k), a))
+	return M512i(maskzCvtepu816(uint32(k), [32]byte(a)))
 }
 
-func maskzCvtepu816(k uint32, a M256i) M512i
+func maskzCvtepu816(k uint32, a [32]byte) [64]byte
 
 
 // Cvtepu832: Zero extend packed unsigned 8-bit integers in 'a' to packed
@@ -12904,10 +12904,10 @@ func maskzCvtepu816(k uint32, a M256i) M512i
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm512_cvtepu8_epi32'.
 // Requires AVX512F.
 func Cvtepu832(a M128i) M512i {
-	return M512i(cvtepu832(a))
+	return M512i(cvtepu832([16]byte(a)))
 }
 
-func cvtepu832(a M128i) M512i
+func cvtepu832(a [16]byte) [64]byte
 
 
 // MaskCvtepu832: Zero extend packed unsigned 8-bit integers in 'a' to packed
@@ -12928,10 +12928,10 @@ func cvtepu832(a M128i) M512i
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm512_mask_cvtepu8_epi32'.
 // Requires AVX512F.
 func MaskCvtepu832(src M512i, k Mmask16, a M128i) M512i {
-	return M512i(maskCvtepu832(src, uint16(k), a))
+	return M512i(maskCvtepu832([64]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskCvtepu832(src M512i, k uint16, a M128i) M512i
+func maskCvtepu832(src [64]byte, k uint16, a [16]byte) [64]byte
 
 
 // MaskzCvtepu832: Zero extend packed unsigned 8-bit integers in 'a' to packed
@@ -12952,10 +12952,10 @@ func maskCvtepu832(src M512i, k uint16, a M128i) M512i
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm512_maskz_cvtepu8_epi32'.
 // Requires AVX512F.
 func MaskzCvtepu832(k Mmask16, a M128i) M512i {
-	return M512i(maskzCvtepu832(uint16(k), a))
+	return M512i(maskzCvtepu832(uint16(k), [16]byte(a)))
 }
 
-func maskzCvtepu832(k uint16, a M128i) M512i
+func maskzCvtepu832(k uint16, a [16]byte) [64]byte
 
 
 // Cvtepu864: Zero extend packed unsigned 8-bit integers in the low 8 byte sof
@@ -12971,10 +12971,10 @@ func maskzCvtepu832(k uint16, a M128i) M512i
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm512_cvtepu8_epi64'.
 // Requires AVX512F.
 func Cvtepu864(a M128i) M512i {
-	return M512i(cvtepu864(a))
+	return M512i(cvtepu864([16]byte(a)))
 }
 
-func cvtepu864(a M128i) M512i
+func cvtepu864(a [16]byte) [64]byte
 
 
 // MaskCvtepu864: Zero extend packed unsigned 8-bit integers in the low 8 bytes
@@ -12996,10 +12996,10 @@ func cvtepu864(a M128i) M512i
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm512_mask_cvtepu8_epi64'.
 // Requires AVX512F.
 func MaskCvtepu864(src M512i, k Mmask8, a M128i) M512i {
-	return M512i(maskCvtepu864(src, uint8(k), a))
+	return M512i(maskCvtepu864([64]byte(src), uint8(k), [16]byte(a)))
 }
 
-func maskCvtepu864(src M512i, k uint8, a M128i) M512i
+func maskCvtepu864(src [64]byte, k uint8, a [16]byte) [64]byte
 
 
 // MaskzCvtepu864: Zero extend packed unsigned 8-bit integers in the low 8
@@ -13021,10 +13021,10 @@ func maskCvtepu864(src M512i, k uint8, a M128i) M512i
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm512_maskz_cvtepu8_epi64'.
 // Requires AVX512F.
 func MaskzCvtepu864(k Mmask8, a M128i) M512i {
-	return M512i(maskzCvtepu864(uint8(k), a))
+	return M512i(maskzCvtepu864(uint8(k), [16]byte(a)))
 }
 
-func maskzCvtepu864(k uint8, a M128i) M512i
+func maskzCvtepu864(k uint8, a [16]byte) [64]byte
 
 
 // CvtfxpntRoundAdjustepi32Ps: Performs element-by-element conversion of packed
@@ -13058,10 +13058,10 @@ func maskzCvtepu864(k uint8, a M128i) M512i
 // Instruction: 'VCVTFXPNTDQ2PS'. Intrinsic: '_mm512_cvtfxpnt_round_adjustepi32_ps'.
 // Requires KNCNI.
 func CvtfxpntRoundAdjustepi32Ps(v2 M512i, rounding int, expadj MMEXPADJENUM) M512 {
-	return M512(cvtfxpntRoundAdjustepi32Ps(v2, rounding, expadj))
+	return M512(cvtfxpntRoundAdjustepi32Ps([64]byte(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustepi32Ps(v2 M512i, rounding int, expadj MMEXPADJENUM) [16]float32
+func cvtfxpntRoundAdjustepi32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
 // CvtfxpntRoundAdjustepu32Ps: Performs element-by-element conversion of packed
@@ -13095,10 +13095,10 @@ func cvtfxpntRoundAdjustepi32Ps(v2 M512i, rounding int, expadj MMEXPADJENUM) [16
 // Instruction: 'VCVTFXPNTUDQ2PS'. Intrinsic: '_mm512_cvtfxpnt_round_adjustepu32_ps'.
 // Requires KNCNI.
 func CvtfxpntRoundAdjustepu32Ps(v2 M512i, rounding int, expadj MMEXPADJENUM) M512 {
-	return M512(cvtfxpntRoundAdjustepu32Ps(v2, rounding, expadj))
+	return M512(cvtfxpntRoundAdjustepu32Ps([64]byte(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustepu32Ps(v2 M512i, rounding int, expadj MMEXPADJENUM) [16]float32
+func cvtfxpntRoundAdjustepu32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
 // MaskCvtfxpntRoundAdjustepu32Ps: Performs element-by-element conversion of
@@ -13137,10 +13137,10 @@ func cvtfxpntRoundAdjustepu32Ps(v2 M512i, rounding int, expadj MMEXPADJENUM) [16
 // Instruction: 'VCVTFXPNTUDQ2PS'. Intrinsic: '_mm512_mask_cvtfxpnt_round_adjustepu32_ps'.
 // Requires KNCNI.
 func MaskCvtfxpntRoundAdjustepu32Ps(src M512, k Mmask16, v2 M512i, rounding int, expadj MMEXPADJENUM) M512 {
-	return M512(maskCvtfxpntRoundAdjustepu32Ps([16]float32(src), uint16(k), v2, rounding, expadj))
+	return M512(maskCvtfxpntRoundAdjustepu32Ps([16]float32(src), uint16(k), [64]byte(v2), rounding, expadj))
 }
 
-func maskCvtfxpntRoundAdjustepu32Ps(src [16]float32, k uint16, v2 M512i, rounding int, expadj MMEXPADJENUM) [16]float32
+func maskCvtfxpntRoundAdjustepu32Ps(src [16]float32, k uint16, v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
 // CvtfxpntRoundAdjustps32: Performs element-by-element conversion of packed
@@ -13177,7 +13177,7 @@ func CvtfxpntRoundAdjustps32(v2 M512, rounding int, expadj MMEXPADJENUM) M512i {
 	return M512i(cvtfxpntRoundAdjustps32([16]float32(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustps32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) M512i
+func cvtfxpntRoundAdjustps32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) [64]byte
 
 
 // CvtfxpntRoundAdjustpsEpu32: Performs element-by-element conversion of packed
@@ -13214,7 +13214,7 @@ func CvtfxpntRoundAdjustpsEpu32(v2 M512, rounding int, expadj MMEXPADJENUM) M512
 	return M512i(cvtfxpntRoundAdjustpsEpu32([16]float32(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustpsEpu32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) M512i
+func cvtfxpntRoundAdjustpsEpu32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) [64]byte
 
 
 // CvtfxpntRoundpd32lo: Performs an element-by-element conversion of elements
@@ -13242,7 +13242,7 @@ func CvtfxpntRoundpd32lo(v2 M512d, rounding int) M512i {
 	return M512i(cvtfxpntRoundpd32lo([8]float64(v2), rounding))
 }
 
-func cvtfxpntRoundpd32lo(v2 [8]float64, rounding int) M512i
+func cvtfxpntRoundpd32lo(v2 [8]float64, rounding int) [64]byte
 
 
 // MaskCvtfxpntRoundpd32lo: Performs an element-by-element conversion of
@@ -13272,10 +13272,10 @@ func cvtfxpntRoundpd32lo(v2 [8]float64, rounding int) M512i
 // Instruction: 'VCVTFXPNTPD2DQ'. Intrinsic: '_mm512_mask_cvtfxpnt_roundpd_epi32lo'.
 // Requires KNCNI.
 func MaskCvtfxpntRoundpd32lo(src M512i, k Mmask8, v2 M512d, rounding int) M512i {
-	return M512i(maskCvtfxpntRoundpd32lo(src, uint8(k), [8]float64(v2), rounding))
+	return M512i(maskCvtfxpntRoundpd32lo([64]byte(src), uint8(k), [8]float64(v2), rounding))
 }
 
-func maskCvtfxpntRoundpd32lo(src M512i, k uint8, v2 [8]float64, rounding int) M512i
+func maskCvtfxpntRoundpd32lo(src [64]byte, k uint8, v2 [8]float64, rounding int) [64]byte
 
 
 // CvtfxpntRoundpdEpu32lo: Performs element-by-element conversion of packed
@@ -13303,7 +13303,7 @@ func CvtfxpntRoundpdEpu32lo(v2 M512d, rounding int) M512i {
 	return M512i(cvtfxpntRoundpdEpu32lo([8]float64(v2), rounding))
 }
 
-func cvtfxpntRoundpdEpu32lo(v2 [8]float64, rounding int) M512i
+func cvtfxpntRoundpdEpu32lo(v2 [8]float64, rounding int) [64]byte
 
 
 // MaskCvtfxpntRoundpdEpu32lo: Performs element-by-element conversion of packed
@@ -13334,10 +13334,10 @@ func cvtfxpntRoundpdEpu32lo(v2 [8]float64, rounding int) M512i
 // Instruction: 'VCVTFXPNTPD2UDQ'. Intrinsic: '_mm512_mask_cvtfxpnt_roundpd_epu32lo'.
 // Requires KNCNI.
 func MaskCvtfxpntRoundpdEpu32lo(src M512i, k Mmask8, v2 M512d, rounding int) M512i {
-	return M512i(maskCvtfxpntRoundpdEpu32lo(src, uint8(k), [8]float64(v2), rounding))
+	return M512i(maskCvtfxpntRoundpdEpu32lo([64]byte(src), uint8(k), [8]float64(v2), rounding))
 }
 
-func maskCvtfxpntRoundpdEpu32lo(src M512i, k uint8, v2 [8]float64, rounding int) M512i
+func maskCvtfxpntRoundpdEpu32lo(src [64]byte, k uint8, v2 [8]float64, rounding int) [64]byte
 
 
 // Cvtpd32: Convert packed double-precision (64-bit) floating-point elements in
@@ -13356,7 +13356,7 @@ func Cvtpd32(a M512d) M256i {
 	return M256i(cvtpd32([8]float64(a)))
 }
 
-func cvtpd32(a [8]float64) M256i
+func cvtpd32(a [8]float64) [32]byte
 
 
 // MaskCvtpd32: Convert packed double-precision (64-bit) floating-point
@@ -13378,10 +13378,10 @@ func cvtpd32(a [8]float64) M256i
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_mask_cvtpd_epi32'.
 // Requires AVX512F.
 func MaskCvtpd32(src M256i, k Mmask8, a M512d) M256i {
-	return M256i(maskCvtpd32(src, uint8(k), [8]float64(a)))
+	return M256i(maskCvtpd32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvtpd32(src M256i, k uint8, a [8]float64) M256i
+func maskCvtpd32(src [32]byte, k uint8, a [8]float64) [32]byte
 
 
 // MaskzCvtpd32: Convert packed double-precision (64-bit) floating-point
@@ -13406,7 +13406,7 @@ func MaskzCvtpd32(k Mmask8, a M512d) M256i {
 	return M256i(maskzCvtpd32(uint8(k), [8]float64(a)))
 }
 
-func maskzCvtpd32(k uint8, a [8]float64) M256i
+func maskzCvtpd32(k uint8, a [8]float64) [32]byte
 
 
 // Cvtpd64: Convert packed double-precision (64-bit) floating-point elements in
@@ -13424,7 +13424,7 @@ func Cvtpd64(a M512d) M512i {
 	return M512i(cvtpd64([8]float64(a)))
 }
 
-func cvtpd64(a [8]float64) M512i
+func cvtpd64(a [8]float64) [64]byte
 
 
 // MaskCvtpd64: Convert packed double-precision (64-bit) floating-point
@@ -13445,10 +13445,10 @@ func cvtpd64(a [8]float64) M512i
 // Instruction: 'VCVTPD2QQ'. Intrinsic: '_mm512_mask_cvtpd_epi64'.
 // Requires AVX512DQ.
 func MaskCvtpd64(src M512i, k Mmask8, a M512d) M512i {
-	return M512i(maskCvtpd64(src, uint8(k), [8]float64(a)))
+	return M512i(maskCvtpd64([64]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvtpd64(src M512i, k uint8, a [8]float64) M512i
+func maskCvtpd64(src [64]byte, k uint8, a [8]float64) [64]byte
 
 
 // MaskzCvtpd64: Convert packed double-precision (64-bit) floating-point
@@ -13472,7 +13472,7 @@ func MaskzCvtpd64(k Mmask8, a M512d) M512i {
 	return M512i(maskzCvtpd64(uint8(k), [8]float64(a)))
 }
 
-func maskzCvtpd64(k uint8, a [8]float64) M512i
+func maskzCvtpd64(k uint8, a [8]float64) [64]byte
 
 
 // CvtpdEpu32: Convert packed double-precision (64-bit) floating-point elements
@@ -13491,7 +13491,7 @@ func CvtpdEpu32(a M512d) M256i {
 	return M256i(cvtpdEpu32([8]float64(a)))
 }
 
-func cvtpdEpu32(a [8]float64) M256i
+func cvtpdEpu32(a [8]float64) [32]byte
 
 
 // MaskCvtpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -13513,10 +13513,10 @@ func cvtpdEpu32(a [8]float64) M256i
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_mask_cvtpd_epu32'.
 // Requires AVX512F.
 func MaskCvtpdEpu32(src M256i, k Mmask8, a M512d) M256i {
-	return M256i(maskCvtpdEpu32(src, uint8(k), [8]float64(a)))
+	return M256i(maskCvtpdEpu32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvtpdEpu32(src M256i, k uint8, a [8]float64) M256i
+func maskCvtpdEpu32(src [32]byte, k uint8, a [8]float64) [32]byte
 
 
 // MaskzCvtpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -13541,7 +13541,7 @@ func MaskzCvtpdEpu32(k Mmask8, a M512d) M256i {
 	return M256i(maskzCvtpdEpu32(uint8(k), [8]float64(a)))
 }
 
-func maskzCvtpdEpu32(k uint8, a [8]float64) M256i
+func maskzCvtpdEpu32(k uint8, a [8]float64) [32]byte
 
 
 // CvtpdEpu64: Convert packed double-precision (64-bit) floating-point elements
@@ -13559,7 +13559,7 @@ func CvtpdEpu64(a M512d) M512i {
 	return M512i(cvtpdEpu64([8]float64(a)))
 }
 
-func cvtpdEpu64(a [8]float64) M512i
+func cvtpdEpu64(a [8]float64) [64]byte
 
 
 // MaskCvtpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -13580,10 +13580,10 @@ func cvtpdEpu64(a [8]float64) M512i
 // Instruction: 'VCVTPD2UQQ'. Intrinsic: '_mm512_mask_cvtpd_epu64'.
 // Requires AVX512DQ.
 func MaskCvtpdEpu64(src M512i, k Mmask8, a M512d) M512i {
-	return M512i(maskCvtpdEpu64(src, uint8(k), [8]float64(a)))
+	return M512i(maskCvtpdEpu64([64]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvtpdEpu64(src M512i, k uint8, a [8]float64) M512i
+func maskCvtpdEpu64(src [64]byte, k uint8, a [8]float64) [64]byte
 
 
 // MaskzCvtpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -13607,7 +13607,7 @@ func MaskzCvtpdEpu64(k Mmask8, a M512d) M512i {
 	return M512i(maskzCvtpdEpu64(uint8(k), [8]float64(a)))
 }
 
-func maskzCvtpdEpu64(k uint8, a [8]float64) M512i
+func maskzCvtpdEpu64(k uint8, a [8]float64) [64]byte
 
 
 // CvtpdPs: Convert packed double-precision (64-bit) floating-point elements in
@@ -13743,10 +13743,10 @@ func maskCvtpdPslo(src [16]float32, k uint8, v2 [8]float64) [16]float32
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_cvtph_ps'.
 // Requires AVX512F.
 func CvtphPs(a M256i) M512 {
-	return M512(cvtphPs(a))
+	return M512(cvtphPs([32]byte(a)))
 }
 
-func cvtphPs(a M256i) [16]float32
+func cvtphPs(a [32]byte) [16]float32
 
 
 // MaskCvtphPs: Convert packed half-precision (16-bit) floating-point elements
@@ -13768,10 +13768,10 @@ func cvtphPs(a M256i) [16]float32
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_mask_cvtph_ps'.
 // Requires AVX512F.
 func MaskCvtphPs(src M512, k Mmask16, a M256i) M512 {
-	return M512(maskCvtphPs([16]float32(src), uint16(k), a))
+	return M512(maskCvtphPs([16]float32(src), uint16(k), [32]byte(a)))
 }
 
-func maskCvtphPs(src [16]float32, k uint16, a M256i) [16]float32
+func maskCvtphPs(src [16]float32, k uint16, a [32]byte) [16]float32
 
 
 // MaskzCvtphPs: Convert packed half-precision (16-bit) floating-point elements
@@ -13793,10 +13793,10 @@ func maskCvtphPs(src [16]float32, k uint16, a M256i) [16]float32
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_maskz_cvtph_ps'.
 // Requires AVX512F.
 func MaskzCvtphPs(k Mmask16, a M256i) M512 {
-	return M512(maskzCvtphPs(uint16(k), a))
+	return M512(maskzCvtphPs(uint16(k), [32]byte(a)))
 }
 
-func maskzCvtphPs(k uint16, a M256i) [16]float32
+func maskzCvtphPs(k uint16, a [32]byte) [16]float32
 
 
 // Cvtps32: Convert packed single-precision (32-bit) floating-point elements in
@@ -13814,7 +13814,7 @@ func Cvtps32(a M512) M512i {
 	return M512i(cvtps32([16]float32(a)))
 }
 
-func cvtps32(a [16]float32) M512i
+func cvtps32(a [16]float32) [64]byte
 
 
 // MaskCvtps32: Convert packed single-precision (32-bit) floating-point
@@ -13835,10 +13835,10 @@ func cvtps32(a [16]float32) M512i
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_mask_cvtps_epi32'.
 // Requires AVX512F.
 func MaskCvtps32(src M512i, k Mmask16, a M512) M512i {
-	return M512i(maskCvtps32(src, uint16(k), [16]float32(a)))
+	return M512i(maskCvtps32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
-func maskCvtps32(src M512i, k uint16, a [16]float32) M512i
+func maskCvtps32(src [64]byte, k uint16, a [16]float32) [64]byte
 
 
 // MaskzCvtps32: Convert packed single-precision (32-bit) floating-point
@@ -13862,7 +13862,7 @@ func MaskzCvtps32(k Mmask16, a M512) M512i {
 	return M512i(maskzCvtps32(uint16(k), [16]float32(a)))
 }
 
-func maskzCvtps32(k uint16, a [16]float32) M512i
+func maskzCvtps32(k uint16, a [16]float32) [64]byte
 
 
 // Cvtps64: Convert packed single-precision (32-bit) floating-point elements in
@@ -13881,7 +13881,7 @@ func Cvtps64(a M256) M512i {
 	return M512i(cvtps64([8]float32(a)))
 }
 
-func cvtps64(a [8]float32) M512i
+func cvtps64(a [8]float32) [64]byte
 
 
 // MaskCvtps64: Convert packed single-precision (32-bit) floating-point
@@ -13903,10 +13903,10 @@ func cvtps64(a [8]float32) M512i
 // Instruction: 'VCVTPS2QQ'. Intrinsic: '_mm512_mask_cvtps_epi64'.
 // Requires AVX512DQ.
 func MaskCvtps64(src M512i, k Mmask8, a M256) M512i {
-	return M512i(maskCvtps64(src, uint8(k), [8]float32(a)))
+	return M512i(maskCvtps64([64]byte(src), uint8(k), [8]float32(a)))
 }
 
-func maskCvtps64(src M512i, k uint8, a [8]float32) M512i
+func maskCvtps64(src [64]byte, k uint8, a [8]float32) [64]byte
 
 
 // MaskzCvtps64: Convert packed single-precision (32-bit) floating-point
@@ -13931,7 +13931,7 @@ func MaskzCvtps64(k Mmask8, a M256) M512i {
 	return M512i(maskzCvtps64(uint8(k), [8]float32(a)))
 }
 
-func maskzCvtps64(k uint8, a [8]float32) M512i
+func maskzCvtps64(k uint8, a [8]float32) [64]byte
 
 
 // CvtpsEpu32: Convert packed single-precision (32-bit) floating-point elements
@@ -13949,7 +13949,7 @@ func CvtpsEpu32(a M512) M512i {
 	return M512i(cvtpsEpu32([16]float32(a)))
 }
 
-func cvtpsEpu32(a [16]float32) M512i
+func cvtpsEpu32(a [16]float32) [64]byte
 
 
 // MaskCvtpsEpu32: Convert packed single-precision (32-bit) floating-point
@@ -13970,10 +13970,10 @@ func cvtpsEpu32(a [16]float32) M512i
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_mask_cvtps_epu32'.
 // Requires AVX512F.
 func MaskCvtpsEpu32(src M512i, k Mmask16, a M512) M512i {
-	return M512i(maskCvtpsEpu32(src, uint16(k), [16]float32(a)))
+	return M512i(maskCvtpsEpu32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
-func maskCvtpsEpu32(src M512i, k uint16, a [16]float32) M512i
+func maskCvtpsEpu32(src [64]byte, k uint16, a [16]float32) [64]byte
 
 
 // MaskzCvtpsEpu32: Convert packed single-precision (32-bit) floating-point
@@ -13997,7 +13997,7 @@ func MaskzCvtpsEpu32(k Mmask16, a M512) M512i {
 	return M512i(maskzCvtpsEpu32(uint16(k), [16]float32(a)))
 }
 
-func maskzCvtpsEpu32(k uint16, a [16]float32) M512i
+func maskzCvtpsEpu32(k uint16, a [16]float32) [64]byte
 
 
 // CvtpsEpu64: Convert packed single-precision (32-bit) floating-point elements
@@ -14016,7 +14016,7 @@ func CvtpsEpu64(a M256) M512i {
 	return M512i(cvtpsEpu64([8]float32(a)))
 }
 
-func cvtpsEpu64(a [8]float32) M512i
+func cvtpsEpu64(a [8]float32) [64]byte
 
 
 // MaskCvtpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -14038,10 +14038,10 @@ func cvtpsEpu64(a [8]float32) M512i
 // Instruction: 'VCVTPS2UQQ'. Intrinsic: '_mm512_mask_cvtps_epu64'.
 // Requires AVX512DQ.
 func MaskCvtpsEpu64(src M512i, k Mmask8, a M256) M512i {
-	return M512i(maskCvtpsEpu64(src, uint8(k), [8]float32(a)))
+	return M512i(maskCvtpsEpu64([64]byte(src), uint8(k), [8]float32(a)))
 }
 
-func maskCvtpsEpu64(src M512i, k uint8, a [8]float32) M512i
+func maskCvtpsEpu64(src [64]byte, k uint8, a [8]float32) [64]byte
 
 
 // MaskzCvtpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -14066,7 +14066,7 @@ func MaskzCvtpsEpu64(k Mmask8, a M256) M512i {
 	return M512i(maskzCvtpsEpu64(uint8(k), [8]float32(a)))
 }
 
-func maskzCvtpsEpu64(k uint8, a [8]float32) M512i
+func maskzCvtpsEpu64(k uint8, a [8]float32) [64]byte
 
 
 // CvtpsPd: Convert packed single-precision (32-bit) floating-point elements in
@@ -14163,7 +14163,7 @@ func CvtpsPh(a M512, rounding int) M256i {
 	return M256i(cvtpsPh([16]float32(a), rounding))
 }
 
-func cvtpsPh(a [16]float32, rounding int) M256i
+func cvtpsPh(a [16]float32, rounding int) [32]byte
 
 
 // MaskCvtpsPh: Convert packed single-precision (32-bit) floating-point
@@ -14192,10 +14192,10 @@ func cvtpsPh(a [16]float32, rounding int) M256i
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_mask_cvtps_ph'.
 // Requires AVX512F.
 func MaskCvtpsPh(src M256i, k Mmask16, a M512, rounding int) M256i {
-	return M256i(maskCvtpsPh(src, uint16(k), [16]float32(a), rounding))
+	return M256i(maskCvtpsPh([32]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskCvtpsPh(src M256i, k uint16, a [16]float32, rounding int) M256i
+func maskCvtpsPh(src [32]byte, k uint16, a [16]float32, rounding int) [32]byte
 
 
 // MaskzCvtpsPh: Convert packed single-precision (32-bit) floating-point
@@ -14227,7 +14227,7 @@ func MaskzCvtpsPh(k Mmask16, a M512, rounding int) M256i {
 	return M256i(maskzCvtpsPh(uint16(k), [16]float32(a), rounding))
 }
 
-func maskzCvtpsPh(k uint16, a [16]float32, rounding int) M256i
+func maskzCvtpsPh(k uint16, a [16]float32, rounding int) [32]byte
 
 
 // CvtpsloPd: Performs element-by-element conversion of the lower half of
@@ -14290,10 +14290,10 @@ func maskCvtpsloPd(src [8]float64, k uint8, v2 [16]float32) [8]float64
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_cvtsepi16_epi8'.
 // Requires AVX512BW.
 func Cvtsepi168(a M512i) M256i {
-	return M256i(cvtsepi168(a))
+	return M256i(cvtsepi168([64]byte(a)))
 }
 
-func cvtsepi168(a M512i) M256i
+func cvtsepi168(a [64]byte) [32]byte
 
 
 // MaskCvtsepi168: Convert packed 16-bit integers in 'a' to packed 8-bit
@@ -14315,10 +14315,10 @@ func cvtsepi168(a M512i) M256i
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_mask_cvtsepi16_epi8'.
 // Requires AVX512BW.
 func MaskCvtsepi168(src M256i, k Mmask32, a M512i) M256i {
-	return M256i(maskCvtsepi168(src, uint32(k), a))
+	return M256i(maskCvtsepi168([32]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskCvtsepi168(src M256i, k uint32, a M512i) M256i
+func maskCvtsepi168(src [32]byte, k uint32, a [64]byte) [32]byte
 
 
 // MaskzCvtsepi168: Convert packed 16-bit integers in 'a' to packed 8-bit
@@ -14340,10 +14340,10 @@ func maskCvtsepi168(src M256i, k uint32, a M512i) M256i
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_maskz_cvtsepi16_epi8'.
 // Requires AVX512BW.
 func MaskzCvtsepi168(k Mmask32, a M512i) M256i {
-	return M256i(maskzCvtsepi168(uint32(k), a))
+	return M256i(maskzCvtsepi168(uint32(k), [64]byte(a)))
 }
 
-func maskzCvtsepi168(k uint32, a M512i) M256i
+func maskzCvtsepi168(k uint32, a [64]byte) [32]byte
 
 
 // MaskCvtsepi16Storeu8: Convert packed 16-bit integers in 'a' to packed 8-bit
@@ -14363,10 +14363,10 @@ func maskzCvtsepi168(k uint32, a M512i) M256i
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_mask_cvtsepi16_storeu_epi8'.
 // Requires AVX512BW.
 func MaskCvtsepi16Storeu8(base_addr uintptr, k Mmask32, a M512i)  {
-	maskCvtsepi16Storeu8(uintptr(base_addr), uint32(k), a)
+	maskCvtsepi16Storeu8(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
-func maskCvtsepi16Storeu8(base_addr uintptr, k uint32, a M512i) 
+func maskCvtsepi16Storeu8(base_addr uintptr, k uint32, a [64]byte) 
 
 
 // Cvtsepi3216: Convert packed 32-bit integers in 'a' to packed 16-bit integers
@@ -14382,10 +14382,10 @@ func maskCvtsepi16Storeu8(base_addr uintptr, k uint32, a M512i)
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_cvtsepi32_epi16'.
 // Requires AVX512F.
 func Cvtsepi3216(a M512i) M256i {
-	return M256i(cvtsepi3216(a))
+	return M256i(cvtsepi3216([64]byte(a)))
 }
 
-func cvtsepi3216(a M512i) M256i
+func cvtsepi3216(a [64]byte) [32]byte
 
 
 // MaskCvtsepi3216: Convert packed 32-bit integers in 'a' to packed 16-bit
@@ -14407,10 +14407,10 @@ func cvtsepi3216(a M512i) M256i
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_mask_cvtsepi32_epi16'.
 // Requires AVX512F.
 func MaskCvtsepi3216(src M256i, k Mmask16, a M512i) M256i {
-	return M256i(maskCvtsepi3216(src, uint16(k), a))
+	return M256i(maskCvtsepi3216([32]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtsepi3216(src M256i, k uint16, a M512i) M256i
+func maskCvtsepi3216(src [32]byte, k uint16, a [64]byte) [32]byte
 
 
 // MaskzCvtsepi3216: Convert packed 32-bit integers in 'a' to packed 16-bit
@@ -14432,10 +14432,10 @@ func maskCvtsepi3216(src M256i, k uint16, a M512i) M256i
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_maskz_cvtsepi32_epi16'.
 // Requires AVX512F.
 func MaskzCvtsepi3216(k Mmask16, a M512i) M256i {
-	return M256i(maskzCvtsepi3216(uint16(k), a))
+	return M256i(maskzCvtsepi3216(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtsepi3216(k uint16, a M512i) M256i
+func maskzCvtsepi3216(k uint16, a [64]byte) [32]byte
 
 
 // Cvtsepi328: Convert packed 32-bit integers in 'a' to packed 8-bit integers
@@ -14451,10 +14451,10 @@ func maskzCvtsepi3216(k uint16, a M512i) M256i
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_cvtsepi32_epi8'.
 // Requires AVX512F.
 func Cvtsepi328(a M512i) M128i {
-	return M128i(cvtsepi328(a))
+	return M128i(cvtsepi328([64]byte(a)))
 }
 
-func cvtsepi328(a M512i) M128i
+func cvtsepi328(a [64]byte) [16]byte
 
 
 // MaskCvtsepi328: Convert packed 32-bit integers in 'a' to packed 8-bit
@@ -14476,10 +14476,10 @@ func cvtsepi328(a M512i) M128i
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_mask_cvtsepi32_epi8'.
 // Requires AVX512F.
 func MaskCvtsepi328(src M128i, k Mmask16, a M512i) M128i {
-	return M128i(maskCvtsepi328(src, uint16(k), a))
+	return M128i(maskCvtsepi328([16]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtsepi328(src M128i, k uint16, a M512i) M128i
+func maskCvtsepi328(src [16]byte, k uint16, a [64]byte) [16]byte
 
 
 // MaskzCvtsepi328: Convert packed 32-bit integers in 'a' to packed 8-bit
@@ -14501,10 +14501,10 @@ func maskCvtsepi328(src M128i, k uint16, a M512i) M128i
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_maskz_cvtsepi32_epi8'.
 // Requires AVX512F.
 func MaskzCvtsepi328(k Mmask16, a M512i) M128i {
-	return M128i(maskzCvtsepi328(uint16(k), a))
+	return M128i(maskzCvtsepi328(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtsepi328(k uint16, a M512i) M128i
+func maskzCvtsepi328(k uint16, a [64]byte) [16]byte
 
 
 // MaskCvtsepi32Storeu16: Convert packed 32-bit integers in 'a' to packed
@@ -14523,10 +14523,10 @@ func maskzCvtsepi328(k uint16, a M512i) M128i
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_mask_cvtsepi32_storeu_epi16'.
 // Requires AVX512F.
 func MaskCvtsepi32Storeu16(base_addr uintptr, k Mmask16, a M512i)  {
-	maskCvtsepi32Storeu16(uintptr(base_addr), uint16(k), a)
+	maskCvtsepi32Storeu16(uintptr(base_addr), uint16(k), [64]byte(a))
 }
 
-func maskCvtsepi32Storeu16(base_addr uintptr, k uint16, a M512i) 
+func maskCvtsepi32Storeu16(base_addr uintptr, k uint16, a [64]byte) 
 
 
 // MaskCvtsepi32Storeu8: Convert packed 32-bit integers in 'a' to packed 8-bit
@@ -14545,10 +14545,10 @@ func maskCvtsepi32Storeu16(base_addr uintptr, k uint16, a M512i)
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_mask_cvtsepi32_storeu_epi8'.
 // Requires AVX512F.
 func MaskCvtsepi32Storeu8(base_addr uintptr, k Mmask16, a M512i)  {
-	maskCvtsepi32Storeu8(uintptr(base_addr), uint16(k), a)
+	maskCvtsepi32Storeu8(uintptr(base_addr), uint16(k), [64]byte(a))
 }
 
-func maskCvtsepi32Storeu8(base_addr uintptr, k uint16, a M512i) 
+func maskCvtsepi32Storeu8(base_addr uintptr, k uint16, a [64]byte) 
 
 
 // Cvtsepi6416: Convert packed 64-bit integers in 'a' to packed 16-bit integers
@@ -14564,10 +14564,10 @@ func maskCvtsepi32Storeu8(base_addr uintptr, k uint16, a M512i)
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_cvtsepi64_epi16'.
 // Requires AVX512F.
 func Cvtsepi6416(a M512i) M128i {
-	return M128i(cvtsepi6416(a))
+	return M128i(cvtsepi6416([64]byte(a)))
 }
 
-func cvtsepi6416(a M512i) M128i
+func cvtsepi6416(a [64]byte) [16]byte
 
 
 // MaskCvtsepi6416: Convert packed 64-bit integers in 'a' to packed 16-bit
@@ -14589,10 +14589,10 @@ func cvtsepi6416(a M512i) M128i
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_mask_cvtsepi64_epi16'.
 // Requires AVX512F.
 func MaskCvtsepi6416(src M128i, k Mmask8, a M512i) M128i {
-	return M128i(maskCvtsepi6416(src, uint8(k), a))
+	return M128i(maskCvtsepi6416([16]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtsepi6416(src M128i, k uint8, a M512i) M128i
+func maskCvtsepi6416(src [16]byte, k uint8, a [64]byte) [16]byte
 
 
 // MaskzCvtsepi6416: Convert packed 64-bit integers in 'a' to packed 16-bit
@@ -14614,10 +14614,10 @@ func maskCvtsepi6416(src M128i, k uint8, a M512i) M128i
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_maskz_cvtsepi64_epi16'.
 // Requires AVX512F.
 func MaskzCvtsepi6416(k Mmask8, a M512i) M128i {
-	return M128i(maskzCvtsepi6416(uint8(k), a))
+	return M128i(maskzCvtsepi6416(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtsepi6416(k uint8, a M512i) M128i
+func maskzCvtsepi6416(k uint8, a [64]byte) [16]byte
 
 
 // Cvtsepi6432: Convert packed 64-bit integers in 'a' to packed 32-bit integers
@@ -14633,10 +14633,10 @@ func maskzCvtsepi6416(k uint8, a M512i) M128i
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_cvtsepi64_epi32'.
 // Requires AVX512F.
 func Cvtsepi6432(a M512i) M256i {
-	return M256i(cvtsepi6432(a))
+	return M256i(cvtsepi6432([64]byte(a)))
 }
 
-func cvtsepi6432(a M512i) M256i
+func cvtsepi6432(a [64]byte) [32]byte
 
 
 // MaskCvtsepi6432: Convert packed 64-bit integers in 'a' to packed 32-bit
@@ -14658,10 +14658,10 @@ func cvtsepi6432(a M512i) M256i
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_mask_cvtsepi64_epi32'.
 // Requires AVX512F.
 func MaskCvtsepi6432(src M256i, k Mmask8, a M512i) M256i {
-	return M256i(maskCvtsepi6432(src, uint8(k), a))
+	return M256i(maskCvtsepi6432([32]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtsepi6432(src M256i, k uint8, a M512i) M256i
+func maskCvtsepi6432(src [32]byte, k uint8, a [64]byte) [32]byte
 
 
 // MaskzCvtsepi6432: Convert packed 64-bit integers in 'a' to packed 32-bit
@@ -14683,10 +14683,10 @@ func maskCvtsepi6432(src M256i, k uint8, a M512i) M256i
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_maskz_cvtsepi64_epi32'.
 // Requires AVX512F.
 func MaskzCvtsepi6432(k Mmask8, a M512i) M256i {
-	return M256i(maskzCvtsepi6432(uint8(k), a))
+	return M256i(maskzCvtsepi6432(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtsepi6432(k uint8, a M512i) M256i
+func maskzCvtsepi6432(k uint8, a [64]byte) [32]byte
 
 
 // Cvtsepi648: Convert packed 64-bit integers in 'a' to packed 8-bit integers
@@ -14702,10 +14702,10 @@ func maskzCvtsepi6432(k uint8, a M512i) M256i
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_cvtsepi64_epi8'.
 // Requires AVX512F.
 func Cvtsepi648(a M512i) M128i {
-	return M128i(cvtsepi648(a))
+	return M128i(cvtsepi648([64]byte(a)))
 }
 
-func cvtsepi648(a M512i) M128i
+func cvtsepi648(a [64]byte) [16]byte
 
 
 // MaskCvtsepi648: Convert packed 64-bit integers in 'a' to packed 8-bit
@@ -14727,10 +14727,10 @@ func cvtsepi648(a M512i) M128i
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_mask_cvtsepi64_epi8'.
 // Requires AVX512F.
 func MaskCvtsepi648(src M128i, k Mmask8, a M512i) M128i {
-	return M128i(maskCvtsepi648(src, uint8(k), a))
+	return M128i(maskCvtsepi648([16]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtsepi648(src M128i, k uint8, a M512i) M128i
+func maskCvtsepi648(src [16]byte, k uint8, a [64]byte) [16]byte
 
 
 // MaskzCvtsepi648: Convert packed 64-bit integers in 'a' to packed 8-bit
@@ -14752,10 +14752,10 @@ func maskCvtsepi648(src M128i, k uint8, a M512i) M128i
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_maskz_cvtsepi64_epi8'.
 // Requires AVX512F.
 func MaskzCvtsepi648(k Mmask8, a M512i) M128i {
-	return M128i(maskzCvtsepi648(uint8(k), a))
+	return M128i(maskzCvtsepi648(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtsepi648(k uint8, a M512i) M128i
+func maskzCvtsepi648(k uint8, a [64]byte) [16]byte
 
 
 // MaskCvtsepi64Storeu16: Convert packed 64-bit integers in 'a' to packed
@@ -14774,10 +14774,10 @@ func maskzCvtsepi648(k uint8, a M512i) M128i
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_mask_cvtsepi64_storeu_epi16'.
 // Requires AVX512F.
 func MaskCvtsepi64Storeu16(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtsepi64Storeu16(uintptr(base_addr), uint8(k), a)
+	maskCvtsepi64Storeu16(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtsepi64Storeu16(base_addr uintptr, k uint8, a M512i) 
+func maskCvtsepi64Storeu16(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskCvtsepi64Storeu32: Convert packed 64-bit integers in 'a' to packed
@@ -14796,10 +14796,10 @@ func maskCvtsepi64Storeu16(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_mask_cvtsepi64_storeu_epi32'.
 // Requires AVX512F.
 func MaskCvtsepi64Storeu32(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtsepi64Storeu32(uintptr(base_addr), uint8(k), a)
+	maskCvtsepi64Storeu32(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtsepi64Storeu32(base_addr uintptr, k uint8, a M512i) 
+func maskCvtsepi64Storeu32(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskCvtsepi64Storeu8: Convert packed 64-bit integers in 'a' to packed 8-bit
@@ -14818,10 +14818,10 @@ func maskCvtsepi64Storeu32(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_mask_cvtsepi64_storeu_epi8'.
 // Requires AVX512F.
 func MaskCvtsepi64Storeu8(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtsepi64Storeu8(uintptr(base_addr), uint8(k), a)
+	maskCvtsepi64Storeu8(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtsepi64Storeu8(base_addr uintptr, k uint8, a M512i) 
+func maskCvtsepi64Storeu8(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // CvttRoundpd32: Convert packed double-precision (64-bit) floating-point
@@ -14842,7 +14842,7 @@ func CvttRoundpd32(a M512d, sae int) M256i {
 	return M256i(cvttRoundpd32([8]float64(a), sae))
 }
 
-func cvttRoundpd32(a [8]float64, sae int) M256i
+func cvttRoundpd32(a [8]float64, sae int) [32]byte
 
 
 // MaskCvttRoundpd32: Convert packed double-precision (64-bit) floating-point
@@ -14865,10 +14865,10 @@ func cvttRoundpd32(a [8]float64, sae int) M256i
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_mask_cvtt_roundpd_epi32'.
 // Requires AVX512F.
 func MaskCvttRoundpd32(src M256i, k Mmask8, a M512d, sae int) M256i {
-	return M256i(maskCvttRoundpd32(src, uint8(k), [8]float64(a), sae))
+	return M256i(maskCvttRoundpd32([32]byte(src), uint8(k), [8]float64(a), sae))
 }
 
-func maskCvttRoundpd32(src M256i, k uint8, a [8]float64, sae int) M256i
+func maskCvttRoundpd32(src [32]byte, k uint8, a [8]float64, sae int) [32]byte
 
 
 // MaskzCvttRoundpd32: Convert packed double-precision (64-bit) floating-point
@@ -14894,7 +14894,7 @@ func MaskzCvttRoundpd32(k Mmask8, a M512d, sae int) M256i {
 	return M256i(maskzCvttRoundpd32(uint8(k), [8]float64(a), sae))
 }
 
-func maskzCvttRoundpd32(k uint8, a [8]float64, sae int) M256i
+func maskzCvttRoundpd32(k uint8, a [8]float64, sae int) [32]byte
 
 
 // CvttRoundpd64: Convert packed double-precision (64-bit) floating-point
@@ -14914,7 +14914,7 @@ func CvttRoundpd64(a M512d, sae int) M512i {
 	return M512i(cvttRoundpd64([8]float64(a), sae))
 }
 
-func cvttRoundpd64(a [8]float64, sae int) M512i
+func cvttRoundpd64(a [8]float64, sae int) [64]byte
 
 
 // MaskCvttRoundpd64: Convert packed double-precision (64-bit) floating-point
@@ -14936,10 +14936,10 @@ func cvttRoundpd64(a [8]float64, sae int) M512i
 // Instruction: 'VCVTTPD2QQ'. Intrinsic: '_mm512_mask_cvtt_roundpd_epi64'.
 // Requires AVX512DQ.
 func MaskCvttRoundpd64(src M512i, k Mmask8, a M512d, sae int) M512i {
-	return M512i(maskCvttRoundpd64(src, uint8(k), [8]float64(a), sae))
+	return M512i(maskCvttRoundpd64([64]byte(src), uint8(k), [8]float64(a), sae))
 }
 
-func maskCvttRoundpd64(src M512i, k uint8, a [8]float64, sae int) M512i
+func maskCvttRoundpd64(src [64]byte, k uint8, a [8]float64, sae int) [64]byte
 
 
 // MaskzCvttRoundpd64: Convert packed double-precision (64-bit) floating-point
@@ -14964,7 +14964,7 @@ func MaskzCvttRoundpd64(k Mmask8, a M512d, sae int) M512i {
 	return M512i(maskzCvttRoundpd64(uint8(k), [8]float64(a), sae))
 }
 
-func maskzCvttRoundpd64(k uint8, a [8]float64, sae int) M512i
+func maskzCvttRoundpd64(k uint8, a [8]float64, sae int) [64]byte
 
 
 // CvttRoundpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -14985,7 +14985,7 @@ func CvttRoundpdEpu32(a M512d, sae int) M256i {
 	return M256i(cvttRoundpdEpu32([8]float64(a), sae))
 }
 
-func cvttRoundpdEpu32(a [8]float64, sae int) M256i
+func cvttRoundpdEpu32(a [8]float64, sae int) [32]byte
 
 
 // MaskCvttRoundpdEpu32: Convert packed double-precision (64-bit)
@@ -15008,10 +15008,10 @@ func cvttRoundpdEpu32(a [8]float64, sae int) M256i
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_mask_cvtt_roundpd_epu32'.
 // Requires AVX512F.
 func MaskCvttRoundpdEpu32(src M256i, k Mmask8, a M512d, sae int) M256i {
-	return M256i(maskCvttRoundpdEpu32(src, uint8(k), [8]float64(a), sae))
+	return M256i(maskCvttRoundpdEpu32([32]byte(src), uint8(k), [8]float64(a), sae))
 }
 
-func maskCvttRoundpdEpu32(src M256i, k uint8, a [8]float64, sae int) M256i
+func maskCvttRoundpdEpu32(src [32]byte, k uint8, a [8]float64, sae int) [32]byte
 
 
 // MaskzCvttRoundpdEpu32: Convert packed double-precision (64-bit)
@@ -15037,7 +15037,7 @@ func MaskzCvttRoundpdEpu32(k Mmask8, a M512d, sae int) M256i {
 	return M256i(maskzCvttRoundpdEpu32(uint8(k), [8]float64(a), sae))
 }
 
-func maskzCvttRoundpdEpu32(k uint8, a [8]float64, sae int) M256i
+func maskzCvttRoundpdEpu32(k uint8, a [8]float64, sae int) [32]byte
 
 
 // CvttRoundpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -15057,7 +15057,7 @@ func CvttRoundpdEpu64(a M512d, sae int) M512i {
 	return M512i(cvttRoundpdEpu64([8]float64(a), sae))
 }
 
-func cvttRoundpdEpu64(a [8]float64, sae int) M512i
+func cvttRoundpdEpu64(a [8]float64, sae int) [64]byte
 
 
 // MaskCvttRoundpdEpu64: Convert packed double-precision (64-bit)
@@ -15079,10 +15079,10 @@ func cvttRoundpdEpu64(a [8]float64, sae int) M512i
 // Instruction: 'VCVTTPD2UQQ'. Intrinsic: '_mm512_mask_cvtt_roundpd_epu64'.
 // Requires AVX512DQ.
 func MaskCvttRoundpdEpu64(src M512i, k Mmask8, a M512d, sae int) M512i {
-	return M512i(maskCvttRoundpdEpu64(src, uint8(k), [8]float64(a), sae))
+	return M512i(maskCvttRoundpdEpu64([64]byte(src), uint8(k), [8]float64(a), sae))
 }
 
-func maskCvttRoundpdEpu64(src M512i, k uint8, a [8]float64, sae int) M512i
+func maskCvttRoundpdEpu64(src [64]byte, k uint8, a [8]float64, sae int) [64]byte
 
 
 // MaskzCvttRoundpdEpu64: Convert packed double-precision (64-bit)
@@ -15107,7 +15107,7 @@ func MaskzCvttRoundpdEpu64(k Mmask8, a M512d, sae int) M512i {
 	return M512i(maskzCvttRoundpdEpu64(uint8(k), [8]float64(a), sae))
 }
 
-func maskzCvttRoundpdEpu64(k uint8, a [8]float64, sae int) M512i
+func maskzCvttRoundpdEpu64(k uint8, a [8]float64, sae int) [64]byte
 
 
 // CvttRoundps32: Convert packed single-precision (32-bit) floating-point
@@ -15127,7 +15127,7 @@ func CvttRoundps32(a M512, sae int) M512i {
 	return M512i(cvttRoundps32([16]float32(a), sae))
 }
 
-func cvttRoundps32(a [16]float32, sae int) M512i
+func cvttRoundps32(a [16]float32, sae int) [64]byte
 
 
 // MaskCvttRoundps32: Convert packed single-precision (32-bit) floating-point
@@ -15149,10 +15149,10 @@ func cvttRoundps32(a [16]float32, sae int) M512i
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_mask_cvtt_roundps_epi32'.
 // Requires AVX512F.
 func MaskCvttRoundps32(src M512i, k Mmask16, a M512, sae int) M512i {
-	return M512i(maskCvttRoundps32(src, uint16(k), [16]float32(a), sae))
+	return M512i(maskCvttRoundps32([64]byte(src), uint16(k), [16]float32(a), sae))
 }
 
-func maskCvttRoundps32(src M512i, k uint16, a [16]float32, sae int) M512i
+func maskCvttRoundps32(src [64]byte, k uint16, a [16]float32, sae int) [64]byte
 
 
 // MaskzCvttRoundps32: Convert packed single-precision (32-bit) floating-point
@@ -15177,7 +15177,7 @@ func MaskzCvttRoundps32(k Mmask16, a M512, sae int) M512i {
 	return M512i(maskzCvttRoundps32(uint16(k), [16]float32(a), sae))
 }
 
-func maskzCvttRoundps32(k uint16, a [16]float32, sae int) M512i
+func maskzCvttRoundps32(k uint16, a [16]float32, sae int) [64]byte
 
 
 // CvttRoundps64: Convert packed single-precision (32-bit) floating-point
@@ -15198,7 +15198,7 @@ func CvttRoundps64(a M256, sae int) M512i {
 	return M512i(cvttRoundps64([8]float32(a), sae))
 }
 
-func cvttRoundps64(a [8]float32, sae int) M512i
+func cvttRoundps64(a [8]float32, sae int) [64]byte
 
 
 // MaskCvttRoundps64: Convert packed single-precision (32-bit) floating-point
@@ -15221,10 +15221,10 @@ func cvttRoundps64(a [8]float32, sae int) M512i
 // Instruction: 'VCVTTPS2QQ'. Intrinsic: '_mm512_mask_cvtt_roundps_epi64'.
 // Requires AVX512DQ.
 func MaskCvttRoundps64(src M512i, k Mmask8, a M256, sae int) M512i {
-	return M512i(maskCvttRoundps64(src, uint8(k), [8]float32(a), sae))
+	return M512i(maskCvttRoundps64([64]byte(src), uint8(k), [8]float32(a), sae))
 }
 
-func maskCvttRoundps64(src M512i, k uint8, a [8]float32, sae int) M512i
+func maskCvttRoundps64(src [64]byte, k uint8, a [8]float32, sae int) [64]byte
 
 
 // MaskzCvttRoundps64: Convert packed single-precision (32-bit) floating-point
@@ -15250,7 +15250,7 @@ func MaskzCvttRoundps64(k Mmask8, a M256, sae int) M512i {
 	return M512i(maskzCvttRoundps64(uint8(k), [8]float32(a), sae))
 }
 
-func maskzCvttRoundps64(k uint8, a [8]float32, sae int) M512i
+func maskzCvttRoundps64(k uint8, a [8]float32, sae int) [64]byte
 
 
 // CvttRoundpsEpu32: Convert packed single-precision (32-bit) floating-point
@@ -15270,7 +15270,7 @@ func CvttRoundpsEpu32(a M512, sae int) M512i {
 	return M512i(cvttRoundpsEpu32([16]float32(a), sae))
 }
 
-func cvttRoundpsEpu32(a [16]float32, sae int) M512i
+func cvttRoundpsEpu32(a [16]float32, sae int) [64]byte
 
 
 // MaskCvttRoundpsEpu32: Convert packed single-precision (32-bit)
@@ -15292,10 +15292,10 @@ func cvttRoundpsEpu32(a [16]float32, sae int) M512i
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_mask_cvtt_roundps_epu32'.
 // Requires AVX512F.
 func MaskCvttRoundpsEpu32(src M512i, k Mmask16, a M512, sae int) M512i {
-	return M512i(maskCvttRoundpsEpu32(src, uint16(k), [16]float32(a), sae))
+	return M512i(maskCvttRoundpsEpu32([64]byte(src), uint16(k), [16]float32(a), sae))
 }
 
-func maskCvttRoundpsEpu32(src M512i, k uint16, a [16]float32, sae int) M512i
+func maskCvttRoundpsEpu32(src [64]byte, k uint16, a [16]float32, sae int) [64]byte
 
 
 // MaskzCvttRoundpsEpu32: Convert packed single-precision (32-bit)
@@ -15320,7 +15320,7 @@ func MaskzCvttRoundpsEpu32(k Mmask16, a M512, sae int) M512i {
 	return M512i(maskzCvttRoundpsEpu32(uint16(k), [16]float32(a), sae))
 }
 
-func maskzCvttRoundpsEpu32(k uint16, a [16]float32, sae int) M512i
+func maskzCvttRoundpsEpu32(k uint16, a [16]float32, sae int) [64]byte
 
 
 // CvttRoundpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -15341,7 +15341,7 @@ func CvttRoundpsEpu64(a M256, sae int) M512i {
 	return M512i(cvttRoundpsEpu64([8]float32(a), sae))
 }
 
-func cvttRoundpsEpu64(a [8]float32, sae int) M512i
+func cvttRoundpsEpu64(a [8]float32, sae int) [64]byte
 
 
 // MaskCvttRoundpsEpu64: Convert packed single-precision (32-bit)
@@ -15364,10 +15364,10 @@ func cvttRoundpsEpu64(a [8]float32, sae int) M512i
 // Instruction: 'VCVTTPS2UQQ'. Intrinsic: '_mm512_mask_cvtt_roundps_epu64'.
 // Requires AVX512DQ.
 func MaskCvttRoundpsEpu64(src M512i, k Mmask8, a M256, sae int) M512i {
-	return M512i(maskCvttRoundpsEpu64(src, uint8(k), [8]float32(a), sae))
+	return M512i(maskCvttRoundpsEpu64([64]byte(src), uint8(k), [8]float32(a), sae))
 }
 
-func maskCvttRoundpsEpu64(src M512i, k uint8, a [8]float32, sae int) M512i
+func maskCvttRoundpsEpu64(src [64]byte, k uint8, a [8]float32, sae int) [64]byte
 
 
 // MaskzCvttRoundpsEpu64: Convert packed single-precision (32-bit)
@@ -15393,7 +15393,7 @@ func MaskzCvttRoundpsEpu64(k Mmask8, a M256, sae int) M512i {
 	return M512i(maskzCvttRoundpsEpu64(uint8(k), [8]float32(a), sae))
 }
 
-func maskzCvttRoundpsEpu64(k uint8, a [8]float32, sae int) M512i
+func maskzCvttRoundpsEpu64(k uint8, a [8]float32, sae int) [64]byte
 
 
 // Cvttpd32: Convert packed double-precision (64-bit) floating-point elements
@@ -15413,7 +15413,7 @@ func Cvttpd32(a M512d) M256i {
 	return M256i(cvttpd32([8]float64(a)))
 }
 
-func cvttpd32(a [8]float64) M256i
+func cvttpd32(a [8]float64) [32]byte
 
 
 // MaskCvttpd32: Convert packed double-precision (64-bit) floating-point
@@ -15435,10 +15435,10 @@ func cvttpd32(a [8]float64) M256i
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_mask_cvttpd_epi32'.
 // Requires AVX512F.
 func MaskCvttpd32(src M256i, k Mmask8, a M512d) M256i {
-	return M256i(maskCvttpd32(src, uint8(k), [8]float64(a)))
+	return M256i(maskCvttpd32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvttpd32(src M256i, k uint8, a [8]float64) M256i
+func maskCvttpd32(src [32]byte, k uint8, a [8]float64) [32]byte
 
 
 // MaskzCvttpd32: Convert packed double-precision (64-bit) floating-point
@@ -15463,7 +15463,7 @@ func MaskzCvttpd32(k Mmask8, a M512d) M256i {
 	return M256i(maskzCvttpd32(uint8(k), [8]float64(a)))
 }
 
-func maskzCvttpd32(k uint8, a [8]float64) M256i
+func maskzCvttpd32(k uint8, a [8]float64) [32]byte
 
 
 // Cvttpd64: Convert packed double-precision (64-bit) floating-point elements
@@ -15482,7 +15482,7 @@ func Cvttpd64(a M512d) M512i {
 	return M512i(cvttpd64([8]float64(a)))
 }
 
-func cvttpd64(a [8]float64) M512i
+func cvttpd64(a [8]float64) [64]byte
 
 
 // MaskCvttpd64: Convert packed double-precision (64-bit) floating-point
@@ -15503,10 +15503,10 @@ func cvttpd64(a [8]float64) M512i
 // Instruction: 'VCVTTPD2QQ'. Intrinsic: '_mm512_mask_cvttpd_epi64'.
 // Requires AVX512DQ.
 func MaskCvttpd64(src M512i, k Mmask8, a M512d) M512i {
-	return M512i(maskCvttpd64(src, uint8(k), [8]float64(a)))
+	return M512i(maskCvttpd64([64]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvttpd64(src M512i, k uint8, a [8]float64) M512i
+func maskCvttpd64(src [64]byte, k uint8, a [8]float64) [64]byte
 
 
 // MaskzCvttpd64: Convert packed double-precision (64-bit) floating-point
@@ -15530,7 +15530,7 @@ func MaskzCvttpd64(k Mmask8, a M512d) M512i {
 	return M512i(maskzCvttpd64(uint8(k), [8]float64(a)))
 }
 
-func maskzCvttpd64(k uint8, a [8]float64) M512i
+func maskzCvttpd64(k uint8, a [8]float64) [64]byte
 
 
 // CvttpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -15550,7 +15550,7 @@ func CvttpdEpu32(a M512d) M256i {
 	return M256i(cvttpdEpu32([8]float64(a)))
 }
 
-func cvttpdEpu32(a [8]float64) M256i
+func cvttpdEpu32(a [8]float64) [32]byte
 
 
 // MaskCvttpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -15572,10 +15572,10 @@ func cvttpdEpu32(a [8]float64) M256i
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_mask_cvttpd_epu32'.
 // Requires AVX512F.
 func MaskCvttpdEpu32(src M256i, k Mmask8, a M512d) M256i {
-	return M256i(maskCvttpdEpu32(src, uint8(k), [8]float64(a)))
+	return M256i(maskCvttpdEpu32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvttpdEpu32(src M256i, k uint8, a [8]float64) M256i
+func maskCvttpdEpu32(src [32]byte, k uint8, a [8]float64) [32]byte
 
 
 // MaskzCvttpdEpu32: Convert packed double-precision (64-bit) floating-point
@@ -15600,7 +15600,7 @@ func MaskzCvttpdEpu32(k Mmask8, a M512d) M256i {
 	return M256i(maskzCvttpdEpu32(uint8(k), [8]float64(a)))
 }
 
-func maskzCvttpdEpu32(k uint8, a [8]float64) M256i
+func maskzCvttpdEpu32(k uint8, a [8]float64) [32]byte
 
 
 // CvttpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -15619,7 +15619,7 @@ func CvttpdEpu64(a M512d) M512i {
 	return M512i(cvttpdEpu64([8]float64(a)))
 }
 
-func cvttpdEpu64(a [8]float64) M512i
+func cvttpdEpu64(a [8]float64) [64]byte
 
 
 // MaskCvttpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -15640,10 +15640,10 @@ func cvttpdEpu64(a [8]float64) M512i
 // Instruction: 'VCVTTPD2UQQ'. Intrinsic: '_mm512_mask_cvttpd_epu64'.
 // Requires AVX512DQ.
 func MaskCvttpdEpu64(src M512i, k Mmask8, a M512d) M512i {
-	return M512i(maskCvttpdEpu64(src, uint8(k), [8]float64(a)))
+	return M512i(maskCvttpdEpu64([64]byte(src), uint8(k), [8]float64(a)))
 }
 
-func maskCvttpdEpu64(src M512i, k uint8, a [8]float64) M512i
+func maskCvttpdEpu64(src [64]byte, k uint8, a [8]float64) [64]byte
 
 
 // MaskzCvttpdEpu64: Convert packed double-precision (64-bit) floating-point
@@ -15667,7 +15667,7 @@ func MaskzCvttpdEpu64(k Mmask8, a M512d) M512i {
 	return M512i(maskzCvttpdEpu64(uint8(k), [8]float64(a)))
 }
 
-func maskzCvttpdEpu64(k uint8, a [8]float64) M512i
+func maskzCvttpdEpu64(k uint8, a [8]float64) [64]byte
 
 
 // Cvttps32: Convert packed single-precision (32-bit) floating-point elements
@@ -15686,7 +15686,7 @@ func Cvttps32(a M512) M512i {
 	return M512i(cvttps32([16]float32(a)))
 }
 
-func cvttps32(a [16]float32) M512i
+func cvttps32(a [16]float32) [64]byte
 
 
 // MaskCvttps32: Convert packed single-precision (32-bit) floating-point
@@ -15707,10 +15707,10 @@ func cvttps32(a [16]float32) M512i
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_mask_cvttps_epi32'.
 // Requires AVX512F.
 func MaskCvttps32(src M512i, k Mmask16, a M512) M512i {
-	return M512i(maskCvttps32(src, uint16(k), [16]float32(a)))
+	return M512i(maskCvttps32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
-func maskCvttps32(src M512i, k uint16, a [16]float32) M512i
+func maskCvttps32(src [64]byte, k uint16, a [16]float32) [64]byte
 
 
 // MaskzCvttps32: Convert packed single-precision (32-bit) floating-point
@@ -15734,7 +15734,7 @@ func MaskzCvttps32(k Mmask16, a M512) M512i {
 	return M512i(maskzCvttps32(uint16(k), [16]float32(a)))
 }
 
-func maskzCvttps32(k uint16, a [16]float32) M512i
+func maskzCvttps32(k uint16, a [16]float32) [64]byte
 
 
 // Cvttps64: Convert packed single-precision (32-bit) floating-point elements
@@ -15754,7 +15754,7 @@ func Cvttps64(a M256) M512i {
 	return M512i(cvttps64([8]float32(a)))
 }
 
-func cvttps64(a [8]float32) M512i
+func cvttps64(a [8]float32) [64]byte
 
 
 // MaskCvttps64: Convert packed single-precision (32-bit) floating-point
@@ -15776,10 +15776,10 @@ func cvttps64(a [8]float32) M512i
 // Instruction: 'VCVTTPS2QQ'. Intrinsic: '_mm512_mask_cvttps_epi64'.
 // Requires AVX512DQ.
 func MaskCvttps64(src M512i, k Mmask8, a M256) M512i {
-	return M512i(maskCvttps64(src, uint8(k), [8]float32(a)))
+	return M512i(maskCvttps64([64]byte(src), uint8(k), [8]float32(a)))
 }
 
-func maskCvttps64(src M512i, k uint8, a [8]float32) M512i
+func maskCvttps64(src [64]byte, k uint8, a [8]float32) [64]byte
 
 
 // MaskzCvttps64: Convert packed single-precision (32-bit) floating-point
@@ -15804,7 +15804,7 @@ func MaskzCvttps64(k Mmask8, a M256) M512i {
 	return M512i(maskzCvttps64(uint8(k), [8]float32(a)))
 }
 
-func maskzCvttps64(k uint8, a [8]float32) M512i
+func maskzCvttps64(k uint8, a [8]float32) [64]byte
 
 
 // CvttpsEpu32: Convert packed single-precision (32-bit) floating-point
@@ -15823,7 +15823,7 @@ func CvttpsEpu32(a M512) M512i {
 	return M512i(cvttpsEpu32([16]float32(a)))
 }
 
-func cvttpsEpu32(a [16]float32) M512i
+func cvttpsEpu32(a [16]float32) [64]byte
 
 
 // MaskCvttpsEpu32: Convert packed double-precision (32-bit) floating-point
@@ -15844,10 +15844,10 @@ func cvttpsEpu32(a [16]float32) M512i
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_mask_cvttps_epu32'.
 // Requires AVX512F.
 func MaskCvttpsEpu32(src M512i, k Mmask16, a M512) M512i {
-	return M512i(maskCvttpsEpu32(src, uint16(k), [16]float32(a)))
+	return M512i(maskCvttpsEpu32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
-func maskCvttpsEpu32(src M512i, k uint16, a [16]float32) M512i
+func maskCvttpsEpu32(src [64]byte, k uint16, a [16]float32) [64]byte
 
 
 // MaskzCvttpsEpu32: Convert packed double-precision (32-bit) floating-point
@@ -15871,7 +15871,7 @@ func MaskzCvttpsEpu32(k Mmask16, a M512) M512i {
 	return M512i(maskzCvttpsEpu32(uint16(k), [16]float32(a)))
 }
 
-func maskzCvttpsEpu32(k uint16, a [16]float32) M512i
+func maskzCvttpsEpu32(k uint16, a [16]float32) [64]byte
 
 
 // CvttpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -15891,7 +15891,7 @@ func CvttpsEpu64(a M256) M512i {
 	return M512i(cvttpsEpu64([8]float32(a)))
 }
 
-func cvttpsEpu64(a [8]float32) M512i
+func cvttpsEpu64(a [8]float32) [64]byte
 
 
 // MaskCvttpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -15913,10 +15913,10 @@ func cvttpsEpu64(a [8]float32) M512i
 // Instruction: 'VCVTTPS2UQQ'. Intrinsic: '_mm512_mask_cvttps_epu64'.
 // Requires AVX512DQ.
 func MaskCvttpsEpu64(src M512i, k Mmask8, a M256) M512i {
-	return M512i(maskCvttpsEpu64(src, uint8(k), [8]float32(a)))
+	return M512i(maskCvttpsEpu64([64]byte(src), uint8(k), [8]float32(a)))
 }
 
-func maskCvttpsEpu64(src M512i, k uint8, a [8]float32) M512i
+func maskCvttpsEpu64(src [64]byte, k uint8, a [8]float32) [64]byte
 
 
 // MaskzCvttpsEpu64: Convert packed single-precision (32-bit) floating-point
@@ -15941,7 +15941,7 @@ func MaskzCvttpsEpu64(k Mmask8, a M256) M512i {
 	return M512i(maskzCvttpsEpu64(uint8(k), [8]float32(a)))
 }
 
-func maskzCvttpsEpu64(k uint8, a [8]float32) M512i
+func maskzCvttpsEpu64(k uint8, a [8]float32) [64]byte
 
 
 // Cvtusepi168: Convert packed unsigned 16-bit integers in 'a' to packed
@@ -15958,10 +15958,10 @@ func maskzCvttpsEpu64(k uint8, a [8]float32) M512i
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_cvtusepi16_epi8'.
 // Requires AVX512BW.
 func Cvtusepi168(a M512i) M256i {
-	return M256i(cvtusepi168(a))
+	return M256i(cvtusepi168([64]byte(a)))
 }
 
-func cvtusepi168(a M512i) M256i
+func cvtusepi168(a [64]byte) [32]byte
 
 
 // MaskCvtusepi168: Convert packed unsigned 16-bit integers in 'a' to packed
@@ -15983,10 +15983,10 @@ func cvtusepi168(a M512i) M256i
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_mask_cvtusepi16_epi8'.
 // Requires AVX512BW.
 func MaskCvtusepi168(src M256i, k Mmask32, a M512i) M256i {
-	return M256i(maskCvtusepi168(src, uint32(k), a))
+	return M256i(maskCvtusepi168([32]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskCvtusepi168(src M256i, k uint32, a M512i) M256i
+func maskCvtusepi168(src [32]byte, k uint32, a [64]byte) [32]byte
 
 
 // MaskzCvtusepi168: Convert packed unsigned 16-bit integers in 'a' to packed
@@ -16008,10 +16008,10 @@ func maskCvtusepi168(src M256i, k uint32, a M512i) M256i
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_maskz_cvtusepi16_epi8'.
 // Requires AVX512BW.
 func MaskzCvtusepi168(k Mmask32, a M512i) M256i {
-	return M256i(maskzCvtusepi168(uint32(k), a))
+	return M256i(maskzCvtusepi168(uint32(k), [64]byte(a)))
 }
 
-func maskzCvtusepi168(k uint32, a M512i) M256i
+func maskzCvtusepi168(k uint32, a [64]byte) [32]byte
 
 
 // MaskCvtusepi16Storeu8: Convert packed unsigned 16-bit integers in 'a' to
@@ -16031,10 +16031,10 @@ func maskzCvtusepi168(k uint32, a M512i) M256i
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_mask_cvtusepi16_storeu_epi8'.
 // Requires AVX512BW.
 func MaskCvtusepi16Storeu8(base_addr uintptr, k Mmask32, a M512i)  {
-	maskCvtusepi16Storeu8(uintptr(base_addr), uint32(k), a)
+	maskCvtusepi16Storeu8(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
-func maskCvtusepi16Storeu8(base_addr uintptr, k uint32, a M512i) 
+func maskCvtusepi16Storeu8(base_addr uintptr, k uint32, a [64]byte) 
 
 
 // Cvtusepi3216: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -16051,10 +16051,10 @@ func maskCvtusepi16Storeu8(base_addr uintptr, k uint32, a M512i)
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_cvtusepi32_epi16'.
 // Requires AVX512F.
 func Cvtusepi3216(a M512i) M256i {
-	return M256i(cvtusepi3216(a))
+	return M256i(cvtusepi3216([64]byte(a)))
 }
 
-func cvtusepi3216(a M512i) M256i
+func cvtusepi3216(a [64]byte) [32]byte
 
 
 // MaskCvtusepi3216: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -16076,10 +16076,10 @@ func cvtusepi3216(a M512i) M256i
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_mask_cvtusepi32_epi16'.
 // Requires AVX512F.
 func MaskCvtusepi3216(src M256i, k Mmask16, a M512i) M256i {
-	return M256i(maskCvtusepi3216(src, uint16(k), a))
+	return M256i(maskCvtusepi3216([32]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtusepi3216(src M256i, k uint16, a M512i) M256i
+func maskCvtusepi3216(src [32]byte, k uint16, a [64]byte) [32]byte
 
 
 // MaskzCvtusepi3216: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -16101,10 +16101,10 @@ func maskCvtusepi3216(src M256i, k uint16, a M512i) M256i
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_maskz_cvtusepi32_epi16'.
 // Requires AVX512F.
 func MaskzCvtusepi3216(k Mmask16, a M512i) M256i {
-	return M256i(maskzCvtusepi3216(uint16(k), a))
+	return M256i(maskzCvtusepi3216(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtusepi3216(k uint16, a M512i) M256i
+func maskzCvtusepi3216(k uint16, a [64]byte) [32]byte
 
 
 // Cvtusepi328: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -16121,10 +16121,10 @@ func maskzCvtusepi3216(k uint16, a M512i) M256i
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_cvtusepi32_epi8'.
 // Requires AVX512F.
 func Cvtusepi328(a M512i) M128i {
-	return M128i(cvtusepi328(a))
+	return M128i(cvtusepi328([64]byte(a)))
 }
 
-func cvtusepi328(a M512i) M128i
+func cvtusepi328(a [64]byte) [16]byte
 
 
 // MaskCvtusepi328: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -16146,10 +16146,10 @@ func cvtusepi328(a M512i) M128i
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_mask_cvtusepi32_epi8'.
 // Requires AVX512F.
 func MaskCvtusepi328(src M128i, k Mmask16, a M512i) M128i {
-	return M128i(maskCvtusepi328(src, uint16(k), a))
+	return M128i(maskCvtusepi328([16]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskCvtusepi328(src M128i, k uint16, a M512i) M128i
+func maskCvtusepi328(src [16]byte, k uint16, a [64]byte) [16]byte
 
 
 // MaskzCvtusepi328: Convert packed unsigned 32-bit integers in 'a' to packed
@@ -16171,10 +16171,10 @@ func maskCvtusepi328(src M128i, k uint16, a M512i) M128i
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_maskz_cvtusepi32_epi8'.
 // Requires AVX512F.
 func MaskzCvtusepi328(k Mmask16, a M512i) M128i {
-	return M128i(maskzCvtusepi328(uint16(k), a))
+	return M128i(maskzCvtusepi328(uint16(k), [64]byte(a)))
 }
 
-func maskzCvtusepi328(k uint16, a M512i) M128i
+func maskzCvtusepi328(k uint16, a [64]byte) [16]byte
 
 
 // MaskCvtusepi32Storeu16: Convert packed unsigned 32-bit integers in 'a' to
@@ -16193,10 +16193,10 @@ func maskzCvtusepi328(k uint16, a M512i) M128i
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_mask_cvtusepi32_storeu_epi16'.
 // Requires AVX512F.
 func MaskCvtusepi32Storeu16(base_addr uintptr, k Mmask16, a M512i)  {
-	maskCvtusepi32Storeu16(uintptr(base_addr), uint16(k), a)
+	maskCvtusepi32Storeu16(uintptr(base_addr), uint16(k), [64]byte(a))
 }
 
-func maskCvtusepi32Storeu16(base_addr uintptr, k uint16, a M512i) 
+func maskCvtusepi32Storeu16(base_addr uintptr, k uint16, a [64]byte) 
 
 
 // MaskCvtusepi32Storeu8: Convert packed unsigned 32-bit integers in 'a' to
@@ -16215,10 +16215,10 @@ func maskCvtusepi32Storeu16(base_addr uintptr, k uint16, a M512i)
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_mask_cvtusepi32_storeu_epi8'.
 // Requires AVX512F.
 func MaskCvtusepi32Storeu8(base_addr uintptr, k Mmask16, a M512i)  {
-	maskCvtusepi32Storeu8(uintptr(base_addr), uint16(k), a)
+	maskCvtusepi32Storeu8(uintptr(base_addr), uint16(k), [64]byte(a))
 }
 
-func maskCvtusepi32Storeu8(base_addr uintptr, k uint16, a M512i) 
+func maskCvtusepi32Storeu8(base_addr uintptr, k uint16, a [64]byte) 
 
 
 // Cvtusepi6416: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16235,10 +16235,10 @@ func maskCvtusepi32Storeu8(base_addr uintptr, k uint16, a M512i)
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_cvtusepi64_epi16'.
 // Requires AVX512F.
 func Cvtusepi6416(a M512i) M128i {
-	return M128i(cvtusepi6416(a))
+	return M128i(cvtusepi6416([64]byte(a)))
 }
 
-func cvtusepi6416(a M512i) M128i
+func cvtusepi6416(a [64]byte) [16]byte
 
 
 // MaskCvtusepi6416: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16260,10 +16260,10 @@ func cvtusepi6416(a M512i) M128i
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_mask_cvtusepi64_epi16'.
 // Requires AVX512F.
 func MaskCvtusepi6416(src M128i, k Mmask8, a M512i) M128i {
-	return M128i(maskCvtusepi6416(src, uint8(k), a))
+	return M128i(maskCvtusepi6416([16]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtusepi6416(src M128i, k uint8, a M512i) M128i
+func maskCvtusepi6416(src [16]byte, k uint8, a [64]byte) [16]byte
 
 
 // MaskzCvtusepi6416: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16285,10 +16285,10 @@ func maskCvtusepi6416(src M128i, k uint8, a M512i) M128i
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_maskz_cvtusepi64_epi16'.
 // Requires AVX512F.
 func MaskzCvtusepi6416(k Mmask8, a M512i) M128i {
-	return M128i(maskzCvtusepi6416(uint8(k), a))
+	return M128i(maskzCvtusepi6416(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtusepi6416(k uint8, a M512i) M128i
+func maskzCvtusepi6416(k uint8, a [64]byte) [16]byte
 
 
 // Cvtusepi6432: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16305,10 +16305,10 @@ func maskzCvtusepi6416(k uint8, a M512i) M128i
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_cvtusepi64_epi32'.
 // Requires AVX512F.
 func Cvtusepi6432(a M512i) M256i {
-	return M256i(cvtusepi6432(a))
+	return M256i(cvtusepi6432([64]byte(a)))
 }
 
-func cvtusepi6432(a M512i) M256i
+func cvtusepi6432(a [64]byte) [32]byte
 
 
 // MaskCvtusepi6432: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16330,10 +16330,10 @@ func cvtusepi6432(a M512i) M256i
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_mask_cvtusepi64_epi32'.
 // Requires AVX512F.
 func MaskCvtusepi6432(src M256i, k Mmask8, a M512i) M256i {
-	return M256i(maskCvtusepi6432(src, uint8(k), a))
+	return M256i(maskCvtusepi6432([32]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtusepi6432(src M256i, k uint8, a M512i) M256i
+func maskCvtusepi6432(src [32]byte, k uint8, a [64]byte) [32]byte
 
 
 // MaskzCvtusepi6432: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16355,10 +16355,10 @@ func maskCvtusepi6432(src M256i, k uint8, a M512i) M256i
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_maskz_cvtusepi64_epi32'.
 // Requires AVX512F.
 func MaskzCvtusepi6432(k Mmask8, a M512i) M256i {
-	return M256i(maskzCvtusepi6432(uint8(k), a))
+	return M256i(maskzCvtusepi6432(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtusepi6432(k uint8, a M512i) M256i
+func maskzCvtusepi6432(k uint8, a [64]byte) [32]byte
 
 
 // Cvtusepi648: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16375,10 +16375,10 @@ func maskzCvtusepi6432(k uint8, a M512i) M256i
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_cvtusepi64_epi8'.
 // Requires AVX512F.
 func Cvtusepi648(a M512i) M128i {
-	return M128i(cvtusepi648(a))
+	return M128i(cvtusepi648([64]byte(a)))
 }
 
-func cvtusepi648(a M512i) M128i
+func cvtusepi648(a [64]byte) [16]byte
 
 
 // MaskCvtusepi648: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16400,10 +16400,10 @@ func cvtusepi648(a M512i) M128i
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_mask_cvtusepi64_epi8'.
 // Requires AVX512F.
 func MaskCvtusepi648(src M128i, k Mmask8, a M512i) M128i {
-	return M128i(maskCvtusepi648(src, uint8(k), a))
+	return M128i(maskCvtusepi648([16]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskCvtusepi648(src M128i, k uint8, a M512i) M128i
+func maskCvtusepi648(src [16]byte, k uint8, a [64]byte) [16]byte
 
 
 // MaskzCvtusepi648: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -16425,10 +16425,10 @@ func maskCvtusepi648(src M128i, k uint8, a M512i) M128i
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_maskz_cvtusepi64_epi8'.
 // Requires AVX512F.
 func MaskzCvtusepi648(k Mmask8, a M512i) M128i {
-	return M128i(maskzCvtusepi648(uint8(k), a))
+	return M128i(maskzCvtusepi648(uint8(k), [64]byte(a)))
 }
 
-func maskzCvtusepi648(k uint8, a M512i) M128i
+func maskzCvtusepi648(k uint8, a [64]byte) [16]byte
 
 
 // MaskCvtusepi64Storeu16: Convert packed unsigned 64-bit integers in 'a' to
@@ -16447,10 +16447,10 @@ func maskzCvtusepi648(k uint8, a M512i) M128i
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_mask_cvtusepi64_storeu_epi16'.
 // Requires AVX512F.
 func MaskCvtusepi64Storeu16(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtusepi64Storeu16(uintptr(base_addr), uint8(k), a)
+	maskCvtusepi64Storeu16(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtusepi64Storeu16(base_addr uintptr, k uint8, a M512i) 
+func maskCvtusepi64Storeu16(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskCvtusepi64Storeu32: Convert packed unsigned 64-bit integers in 'a' to
@@ -16469,10 +16469,10 @@ func maskCvtusepi64Storeu16(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_mask_cvtusepi64_storeu_epi32'.
 // Requires AVX512F.
 func MaskCvtusepi64Storeu32(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtusepi64Storeu32(uintptr(base_addr), uint8(k), a)
+	maskCvtusepi64Storeu32(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtusepi64Storeu32(base_addr uintptr, k uint8, a M512i) 
+func maskCvtusepi64Storeu32(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskCvtusepi64Storeu8: Convert packed unsigned 64-bit integers in 'a' to
@@ -16491,10 +16491,10 @@ func maskCvtusepi64Storeu32(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_mask_cvtusepi64_storeu_epi8'.
 // Requires AVX512F.
 func MaskCvtusepi64Storeu8(base_addr uintptr, k Mmask8, a M512i)  {
-	maskCvtusepi64Storeu8(uintptr(base_addr), uint8(k), a)
+	maskCvtusepi64Storeu8(uintptr(base_addr), uint8(k), [64]byte(a))
 }
 
-func maskCvtusepi64Storeu8(base_addr uintptr, k uint8, a M512i) 
+func maskCvtusepi64Storeu8(base_addr uintptr, k uint8, a [64]byte) 
 
 
 // DbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets of
@@ -16534,10 +16534,10 @@ func maskCvtusepi64Storeu8(base_addr uintptr, k uint8, a M512i)
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_dbsad_epu8'.
 // Requires AVX512BW.
 func DbsadEpu8(a M512i, b M512i, imm8 int) M512i {
-	return M512i(dbsadEpu8(a, b, imm8))
+	return M512i(dbsadEpu8([64]byte(a), [64]byte(b), imm8))
 }
 
-func dbsadEpu8(a M512i, b M512i, imm8 int) M512i
+func dbsadEpu8(a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskDbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets
@@ -16587,10 +16587,10 @@ func dbsadEpu8(a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_mask_dbsad_epu8'.
 // Requires AVX512BW.
 func MaskDbsadEpu8(src M512i, k Mmask32, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskDbsadEpu8(src, uint32(k), a, b, imm8))
+	return M512i(maskDbsadEpu8([64]byte(src), uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskDbsadEpu8(src M512i, k uint32, a M512i, b M512i, imm8 int) M512i
+func maskDbsadEpu8(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskzDbsadEpu8: Compute the sum of absolute differences (SADs) of
@@ -16640,10 +16640,10 @@ func maskDbsadEpu8(src M512i, k uint32, a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_maskz_dbsad_epu8'.
 // Requires AVX512BW.
 func MaskzDbsadEpu8(k Mmask32, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskzDbsadEpu8(uint32(k), a, b, imm8))
+	return M512i(maskzDbsadEpu8(uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskzDbsadEpu8(k uint32, a M512i, b M512i, imm8 int) M512i
+func maskzDbsadEpu8(k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // Div16: Divide packed 16-bit integers in 'a' by packed elements in 'b', and
@@ -16658,10 +16658,10 @@ func maskzDbsadEpu8(k uint32, a M512i, b M512i, imm8 int) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epi16'.
 // Requires AVX512F.
 func Div16(a M512i, b M512i) M512i {
-	return M512i(div16(a, b))
+	return M512i(div16([64]byte(a), [64]byte(b)))
 }
 
-func div16(a M512i, b M512i) M512i
+func div16(a [64]byte, b [64]byte) [64]byte
 
 
 // Div32: Divide packed 32-bit integers in 'a' by packed elements in 'b', and
@@ -16676,10 +16676,10 @@ func div16(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epi32'.
 // Requires AVX512F.
 func Div32(a M512i, b M512i) M512i {
-	return M512i(div32(a, b))
+	return M512i(div32([64]byte(a), [64]byte(b)))
 }
 
-func div32(a M512i, b M512i) M512i
+func div32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskDiv32: Divide packed 32-bit integers in 'a' by packed elements in 'b',
@@ -16699,10 +16699,10 @@ func div32(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mask_div_epi32'.
 // Requires AVX512F.
 func MaskDiv32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskDiv32(src, uint16(k), a, b))
+	return M512i(maskDiv32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskDiv32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskDiv32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Div64: Divide packed 64-bit integers in 'a' by packed elements in 'b', and
@@ -16717,10 +16717,10 @@ func maskDiv32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epi64'.
 // Requires AVX512F.
 func Div64(a M512i, b M512i) M512i {
-	return M512i(div64(a, b))
+	return M512i(div64([64]byte(a), [64]byte(b)))
 }
 
-func div64(a M512i, b M512i) M512i
+func div64(a [64]byte, b [64]byte) [64]byte
 
 
 // Div8: Divide packed 8-bit integers in 'a' by packed elements in 'b', and
@@ -16735,10 +16735,10 @@ func div64(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epi8'.
 // Requires AVX512F.
 func Div8(a M512i, b M512i) M512i {
-	return M512i(div8(a, b))
+	return M512i(div8([64]byte(a), [64]byte(b)))
 }
 
-func div8(a M512i, b M512i) M512i
+func div8(a [64]byte, b [64]byte) [64]byte
 
 
 // DivEpu16: Divide packed unsigned 16-bit integers in 'a' by packed elements
@@ -16753,10 +16753,10 @@ func div8(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epu16'.
 // Requires AVX512F.
 func DivEpu16(a M512i, b M512i) M512i {
-	return M512i(divEpu16(a, b))
+	return M512i(divEpu16([64]byte(a), [64]byte(b)))
 }
 
-func divEpu16(a M512i, b M512i) M512i
+func divEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // DivEpu32: Divide packed unsigned 32-bit integers in 'a' by packed elements
@@ -16771,10 +16771,10 @@ func divEpu16(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epu32'.
 // Requires AVX512F.
 func DivEpu32(a M512i, b M512i) M512i {
-	return M512i(divEpu32(a, b))
+	return M512i(divEpu32([64]byte(a), [64]byte(b)))
 }
 
-func divEpu32(a M512i, b M512i) M512i
+func divEpu32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskDivEpu32: Divide packed unsigned 32-bit integers in 'a' by packed
@@ -16795,10 +16795,10 @@ func divEpu32(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mask_div_epu32'.
 // Requires AVX512F.
 func MaskDivEpu32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskDivEpu32(src, uint16(k), a, b))
+	return M512i(maskDivEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskDivEpu32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskDivEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // DivEpu64: Divide packed unsigned 64-bit integers in 'a' by packed elements
@@ -16813,10 +16813,10 @@ func maskDivEpu32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epu64'.
 // Requires AVX512F.
 func DivEpu64(a M512i, b M512i) M512i {
-	return M512i(divEpu64(a, b))
+	return M512i(divEpu64([64]byte(a), [64]byte(b)))
 }
 
-func divEpu64(a M512i, b M512i) M512i
+func divEpu64(a [64]byte, b [64]byte) [64]byte
 
 
 // DivEpu8: Divide packed unsigned 8-bit integers in 'a' by packed elements in
@@ -16831,10 +16831,10 @@ func divEpu64(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_div_epu8'.
 // Requires AVX512F.
 func DivEpu8(a M512i, b M512i) M512i {
-	return M512i(divEpu8(a, b))
+	return M512i(divEpu8([64]byte(a), [64]byte(b)))
 }
 
-func divEpu8(a M512i, b M512i) M512i
+func divEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // DivPd: Divide packed double-precision (64-bit) floating-point elements in
@@ -17752,10 +17752,10 @@ func maskExp2Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VEXP223PS'. Intrinsic: '_mm512_exp223_ps'.
 // Requires KNCNI.
 func Exp223Ps(v2 M512i) M512 {
-	return M512(exp223Ps(v2))
+	return M512(exp223Ps([64]byte(v2)))
 }
 
-func exp223Ps(v2 M512i) [16]float32
+func exp223Ps(v2 [64]byte) [16]float32
 
 
 // MaskExp223Ps: Approximates the base-2 exponent of the packed
@@ -17777,10 +17777,10 @@ func exp223Ps(v2 M512i) [16]float32
 // Instruction: 'VEXP223PS'. Intrinsic: '_mm512_mask_exp223_ps'.
 // Requires KNCNI.
 func MaskExp223Ps(src M512, k Mmask16, v2 M512i) M512 {
-	return M512(maskExp223Ps([16]float32(src), uint16(k), v2))
+	return M512(maskExp223Ps([16]float32(src), uint16(k), [64]byte(v2)))
 }
 
-func maskExp223Ps(src [16]float32, k uint16, v2 M512i) [16]float32
+func maskExp223Ps(src [16]float32, k uint16, v2 [64]byte) [16]float32
 
 
 // Exp2a23Pd: Compute the approximate exponential value of 2 raised to the
@@ -18119,10 +18119,10 @@ func maskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm512_mask_expand_epi32'.
 // Requires AVX512F.
 func MaskExpand32(src M512i, k Mmask16, a M512i) M512i {
-	return M512i(maskExpand32(src, uint16(k), a))
+	return M512i(maskExpand32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskExpand32(src M512i, k uint16, a M512i) M512i
+func maskExpand32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
 // MaskzExpand32: Load contiguous active 32-bit integers from 'a' (those with
@@ -18145,10 +18145,10 @@ func maskExpand32(src M512i, k uint16, a M512i) M512i
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm512_maskz_expand_epi32'.
 // Requires AVX512F.
 func MaskzExpand32(k Mmask16, a M512i) M512i {
-	return M512i(maskzExpand32(uint16(k), a))
+	return M512i(maskzExpand32(uint16(k), [64]byte(a)))
 }
 
-func maskzExpand32(k uint16, a M512i) M512i
+func maskzExpand32(k uint16, a [64]byte) [64]byte
 
 
 // MaskExpand64: Load contiguous active 64-bit integers from 'a' (those with
@@ -18171,10 +18171,10 @@ func maskzExpand32(k uint16, a M512i) M512i
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm512_mask_expand_epi64'.
 // Requires AVX512F.
 func MaskExpand64(src M512i, k Mmask8, a M512i) M512i {
-	return M512i(maskExpand64(src, uint8(k), a))
+	return M512i(maskExpand64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskExpand64(src M512i, k uint8, a M512i) M512i
+func maskExpand64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
 // MaskzExpand64: Load contiguous active 64-bit integers from 'a' (those with
@@ -18197,10 +18197,10 @@ func maskExpand64(src M512i, k uint8, a M512i) M512i
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm512_maskz_expand_epi64'.
 // Requires AVX512F.
 func MaskzExpand64(k Mmask8, a M512i) M512i {
-	return M512i(maskzExpand64(uint8(k), a))
+	return M512i(maskzExpand64(uint8(k), [64]byte(a)))
 }
 
-func maskzExpand64(k uint8, a M512i) M512i
+func maskzExpand64(k uint8, a [64]byte) [64]byte
 
 
 // MaskExpandPd: Load contiguous active double-precision (64-bit)
@@ -18327,10 +18327,10 @@ func maskzExpandPs(k uint16, a [16]float32) [16]float32
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm512_mask_expandloadu_epi32'.
 // Requires AVX512F.
 func MaskExpandloadu32(src M512i, k Mmask16, mem_addr uintptr) M512i {
-	return M512i(maskExpandloadu32(src, uint16(k), uintptr(mem_addr)))
+	return M512i(maskExpandloadu32([64]byte(src), uint16(k), uintptr(mem_addr)))
 }
 
-func maskExpandloadu32(src M512i, k uint16, mem_addr uintptr) M512i
+func maskExpandloadu32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
 
 
 // MaskzExpandloadu32: Load contiguous active 32-bit integers from unaligned
@@ -18356,7 +18356,7 @@ func MaskzExpandloadu32(k Mmask16, mem_addr uintptr) M512i {
 	return M512i(maskzExpandloadu32(uint16(k), uintptr(mem_addr)))
 }
 
-func maskzExpandloadu32(k uint16, mem_addr uintptr) M512i
+func maskzExpandloadu32(k uint16, mem_addr uintptr) [64]byte
 
 
 // MaskExpandloadu64: Load contiguous active 64-bit integers from unaligned
@@ -18379,10 +18379,10 @@ func maskzExpandloadu32(k uint16, mem_addr uintptr) M512i
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm512_mask_expandloadu_epi64'.
 // Requires AVX512F.
 func MaskExpandloadu64(src M512i, k Mmask8, mem_addr uintptr) M512i {
-	return M512i(maskExpandloadu64(src, uint8(k), uintptr(mem_addr)))
+	return M512i(maskExpandloadu64([64]byte(src), uint8(k), uintptr(mem_addr)))
 }
 
-func maskExpandloadu64(src M512i, k uint8, mem_addr uintptr) M512i
+func maskExpandloadu64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
 
 
 // MaskzExpandloadu64: Load contiguous active 64-bit integers from unaligned
@@ -18408,7 +18408,7 @@ func MaskzExpandloadu64(k Mmask8, mem_addr uintptr) M512i {
 	return M512i(maskzExpandloadu64(uint8(k), uintptr(mem_addr)))
 }
 
-func maskzExpandloadu64(k uint8, mem_addr uintptr) M512i
+func maskzExpandloadu64(k uint8, mem_addr uintptr) [64]byte
 
 
 // MaskExpandloaduPd: Load contiguous active double-precision (64-bit)
@@ -18679,7 +18679,7 @@ func Extload32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint in
 	return M512i(extload32(uintptr(mt), conv, bc, hint))
 }
 
-func extload32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) M512i
+func extload32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
 
 
 // MaskExtload32: Depending on 'bc', loads 1, 4, or 16 elements of type and
@@ -18758,10 +18758,10 @@ func extload32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint in
 // Instruction: 'VMOVDQA32, VBROADCASTI32X4, VPBROADCASTD'. Intrinsic: '_mm512_mask_extload_epi32'.
 // Requires KNCNI.
 func MaskExtload32(src M512i, k Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) M512i {
-	return M512i(maskExtload32(src, uint16(k), uintptr(mt), conv, bc, hint))
+	return M512i(maskExtload32([64]byte(src), uint16(k), uintptr(mt), conv, bc, hint))
 }
 
-func maskExtload32(src M512i, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) M512i
+func maskExtload32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
 
 
 // Extload64: Depending on 'bc', loads 1, 4, or 8 elements of type and size
@@ -18802,7 +18802,7 @@ func Extload64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint in
 	return M512i(extload64(uintptr(mt), conv, bc, hint))
 }
 
-func extload64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) M512i
+func extload64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
 
 
 // MaskExtload64: Depending on 'bc', loads 1, 4, or 8 elements of type and size
@@ -18845,10 +18845,10 @@ func extload64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint in
 // Instruction: 'VMOVDQA64, VBROADCASTI64X4, VPBROADCASTQ'. Intrinsic: '_mm512_mask_extload_epi64'.
 // Requires KNCNI.
 func MaskExtload64(src M512i, k Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) M512i {
-	return M512i(maskExtload64(src, uint8(k), uintptr(mt), conv, bc, hint))
+	return M512i(maskExtload64([64]byte(src), uint8(k), uintptr(mt), conv, bc, hint))
 }
 
-func maskExtload64(src M512i, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) M512i
+func maskExtload64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
 
 
 // ExtloadPd: Depending on 'bc', loads 1, 4, or 8 elements of type and size
@@ -19167,10 +19167,10 @@ func maskExtloadPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, b
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_extloadunpackhi_epi32'.
 // Requires KNCNI.
 func Extloadunpackhi32(src M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i {
-	return M512i(extloadunpackhi32(src, uintptr(mt), conv, hint))
+	return M512i(extloadunpackhi32([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackhi32(src M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i
+func extloadunpackhi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
 // MaskExtloadunpackhi32: Loads the high-64-byte-aligned portion of the
@@ -19227,10 +19227,10 @@ func extloadunpackhi32(src M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) 
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_mask_extloadunpackhi_epi32'.
 // Requires KNCNI.
 func MaskExtloadunpackhi32(src M512i, k Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i {
-	return M512i(maskExtloadunpackhi32(src, uint16(k), uintptr(mt), conv, hint))
+	return M512i(maskExtloadunpackhi32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackhi32(src M512i, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i
+func maskExtloadunpackhi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
 // Extloadunpackhi64: Loads the high-64-byte-aligned portion of the quadword
@@ -19275,10 +19275,10 @@ func maskExtloadunpackhi32(src M512i, k uint16, mt uintptr, conv MMUPCONVEPI32EN
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_extloadunpackhi_epi64'.
 // Requires KNCNI.
 func Extloadunpackhi64(src M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i {
-	return M512i(extloadunpackhi64(src, uintptr(mt), conv, hint))
+	return M512i(extloadunpackhi64([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackhi64(src M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i
+func extloadunpackhi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
 // MaskExtloadunpackhi64: Loads the high-64-byte-aligned portion of the
@@ -19327,10 +19327,10 @@ func extloadunpackhi64(src M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) 
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_mask_extloadunpackhi_epi64'.
 // Requires KNCNI.
 func MaskExtloadunpackhi64(src M512i, k Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i {
-	return M512i(maskExtloadunpackhi64(src, uint8(k), uintptr(mt), conv, hint))
+	return M512i(maskExtloadunpackhi64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackhi64(src M512i, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i
+func maskExtloadunpackhi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
 // ExtloadunpackhiPd: Loads the high-64-byte-aligned portion of the quadword
@@ -19601,10 +19601,10 @@ func maskExtloadunpackhiPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVP
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_extloadunpacklo_epi32'.
 // Requires KNCNI.
 func Extloadunpacklo32(src M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i {
-	return M512i(extloadunpacklo32(src, uintptr(mt), conv, hint))
+	return M512i(extloadunpacklo32([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpacklo32(src M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i
+func extloadunpacklo32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
 // MaskExtloadunpacklo32: Loads the low-64-byte-aligned portion of the
@@ -19657,10 +19657,10 @@ func extloadunpacklo32(src M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) 
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_mask_extloadunpacklo_epi32'.
 // Requires KNCNI.
 func MaskExtloadunpacklo32(src M512i, k Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i {
-	return M512i(maskExtloadunpacklo32(src, uint16(k), uintptr(mt), conv, hint))
+	return M512i(maskExtloadunpacklo32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpacklo32(src M512i, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) M512i
+func maskExtloadunpacklo32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
 // Extloadunpacklo64: Loads the low-64-byte-aligned portion of the quadword
@@ -19701,10 +19701,10 @@ func maskExtloadunpacklo32(src M512i, k uint16, mt uintptr, conv MMUPCONVEPI32EN
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_extloadunpacklo_epi64'.
 // Requires KNCNI.
 func Extloadunpacklo64(src M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i {
-	return M512i(extloadunpacklo64(src, uintptr(mt), conv, hint))
+	return M512i(extloadunpacklo64([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpacklo64(src M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i
+func extloadunpacklo64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
 // MaskExtloadunpacklo64: Loads the low-64-byte-aligned portion of the quadword
@@ -19749,10 +19749,10 @@ func extloadunpacklo64(src M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) 
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_mask_extloadunpacklo_epi64'.
 // Requires KNCNI.
 func MaskExtloadunpacklo64(src M512i, k Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i {
-	return M512i(maskExtloadunpacklo64(src, uint8(k), uintptr(mt), conv, hint))
+	return M512i(maskExtloadunpacklo64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpacklo64(src M512i, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) M512i
+func maskExtloadunpacklo64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
 // ExtloadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
@@ -20013,10 +20013,10 @@ func maskExtloadunpackloPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVP
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_extpackstorehi_epi32'.
 // Requires KNCNI.
 func Extpackstorehi32(mt uintptr, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	extpackstorehi32(uintptr(mt), v1, conv, hint)
+	extpackstorehi32(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstorehi32(mt uintptr, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int) 
+func extpackstorehi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
 // MaskExtpackstorehi32: Down-converts and stores packed 32-bit integer
@@ -20076,10 +20076,10 @@ func extpackstorehi32(mt uintptr, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int)
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_mask_extpackstorehi_epi32'.
 // Requires KNCNI.
 func MaskExtpackstorehi32(mt uintptr, k Mmask16, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	maskExtpackstorehi32(uintptr(mt), uint16(k), v1, conv, hint)
+	maskExtpackstorehi32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstorehi32(mt uintptr, k uint16, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int) 
+func maskExtpackstorehi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
 // Extpackstorehi64: Down-converts and stores packed 64-bit integer elements of
@@ -20125,10 +20125,10 @@ func maskExtpackstorehi32(mt uintptr, k uint16, v1 M512i, conv MMDOWNCONVEPI32EN
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_extpackstorehi_epi64'.
 // Requires KNCNI.
 func Extpackstorehi64(mt uintptr, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	extpackstorehi64(uintptr(mt), v1, conv, hint)
+	extpackstorehi64(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstorehi64(mt uintptr, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int) 
+func extpackstorehi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
 // MaskExtpackstorehi64: Down-converts and stores packed 64-bit integer
@@ -20178,10 +20178,10 @@ func extpackstorehi64(mt uintptr, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int)
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_mask_extpackstorehi_epi64'.
 // Requires KNCNI.
 func MaskExtpackstorehi64(mt uintptr, k Mmask8, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	maskExtpackstorehi64(uintptr(mt), uint8(k), v1, conv, hint)
+	maskExtpackstorehi64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstorehi64(mt uintptr, k uint8, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int) 
+func maskExtpackstorehi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
 // ExtpackstorehiPd: Down-converts and stores packed double-precision (64-bit)
@@ -20461,10 +20461,10 @@ func maskExtpackstorehiPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVP
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_extpackstorelo_epi32'.
 // Requires KNCNI.
 func Extpackstorelo32(mt uintptr, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	extpackstorelo32(uintptr(mt), v1, conv, hint)
+	extpackstorelo32(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstorelo32(mt uintptr, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int) 
+func extpackstorelo32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
 // MaskExtpackstorelo32: Down-converts and stores packed 32-bit integer
@@ -20520,10 +20520,10 @@ func extpackstorelo32(mt uintptr, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int)
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_mask_extpackstorelo_epi32'.
 // Requires KNCNI.
 func MaskExtpackstorelo32(mt uintptr, k Mmask16, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	maskExtpackstorelo32(uintptr(mt), uint16(k), v1, conv, hint)
+	maskExtpackstorelo32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstorelo32(mt uintptr, k uint16, v1 M512i, conv MMDOWNCONVEPI32ENUM, hint int) 
+func maskExtpackstorelo32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
 // Extpackstorelo64: Down-converts and stores packed 64-bit integer elements of
@@ -20565,10 +20565,10 @@ func maskExtpackstorelo32(mt uintptr, k uint16, v1 M512i, conv MMDOWNCONVEPI32EN
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_extpackstorelo_epi64'.
 // Requires KNCNI.
 func Extpackstorelo64(mt uintptr, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	extpackstorelo64(uintptr(mt), v1, conv, hint)
+	extpackstorelo64(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstorelo64(mt uintptr, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int) 
+func extpackstorelo64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
 // MaskExtpackstorelo64: Down-converts and stores packed 64-bit integer
@@ -20614,10 +20614,10 @@ func extpackstorelo64(mt uintptr, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int)
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_mask_extpackstorelo_epi64'.
 // Requires KNCNI.
 func MaskExtpackstorelo64(mt uintptr, k Mmask8, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	maskExtpackstorelo64(uintptr(mt), uint8(k), v1, conv, hint)
+	maskExtpackstorelo64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstorelo64(mt uintptr, k uint8, v1 M512i, conv MMDOWNCONVEPI64ENUM, hint int) 
+func maskExtpackstorelo64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
 // ExtpackstoreloPd: Down-converts and stores packed double-precision (64-bit)
@@ -21162,10 +21162,10 @@ func maskzExtractf64x4Pd(k uint8, a [8]float64, imm8 int) [4]float64
 // Instruction: 'VEXTRACTI32X4'. Intrinsic: '_mm512_extracti32x4_epi32'.
 // Requires AVX512F.
 func Extracti32x432(a M512i, imm8 int) M128i {
-	return M128i(extracti32x432(a, imm8))
+	return M128i(extracti32x432([64]byte(a), imm8))
 }
 
-func extracti32x432(a M512i, imm8 int) M128i
+func extracti32x432(a [64]byte, imm8 int) [16]byte
 
 
 // MaskExtracti32x432: Extract 128 bits (composed of 4 packed 32-bit integers)
@@ -21192,10 +21192,10 @@ func extracti32x432(a M512i, imm8 int) M128i
 // Instruction: 'VEXTRACTI32X4'. Intrinsic: '_mm512_mask_extracti32x4_epi32'.
 // Requires AVX512F.
 func MaskExtracti32x432(src M128i, k Mmask8, a M512i, imm8 int) M128i {
-	return M128i(maskExtracti32x432(src, uint8(k), a, imm8))
+	return M128i(maskExtracti32x432([16]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskExtracti32x432(src M128i, k uint8, a M512i, imm8 int) M128i
+func maskExtracti32x432(src [16]byte, k uint8, a [64]byte, imm8 int) [16]byte
 
 
 // MaskzExtracti32x432: Extract 128 bits (composed of 4 packed 32-bit integers)
@@ -21222,10 +21222,10 @@ func maskExtracti32x432(src M128i, k uint8, a M512i, imm8 int) M128i
 // Instruction: 'VEXTRACTI32X4'. Intrinsic: '_mm512_maskz_extracti32x4_epi32'.
 // Requires AVX512F.
 func MaskzExtracti32x432(k Mmask8, a M512i, imm8 int) M128i {
-	return M128i(maskzExtracti32x432(uint8(k), a, imm8))
+	return M128i(maskzExtracti32x432(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzExtracti32x432(k uint8, a M512i, imm8 int) M128i
+func maskzExtracti32x432(k uint8, a [64]byte, imm8 int) [16]byte
 
 
 // Extracti32x832: Extract 256 bits (composed of 8 packed 32-bit integers) from
@@ -21240,10 +21240,10 @@ func maskzExtracti32x432(k uint8, a M512i, imm8 int) M128i
 // Instruction: 'VEXTRACTI32X8'. Intrinsic: '_mm512_extracti32x8_epi32'.
 // Requires AVX512DQ.
 func Extracti32x832(a M512i, imm8 int) M256i {
-	return M256i(extracti32x832(a, imm8))
+	return M256i(extracti32x832([64]byte(a), imm8))
 }
 
-func extracti32x832(a M512i, imm8 int) M256i
+func extracti32x832(a [64]byte, imm8 int) [32]byte
 
 
 // MaskExtracti32x832: Extract 256 bits (composed of 8 packed 32-bit integers)
@@ -21269,10 +21269,10 @@ func extracti32x832(a M512i, imm8 int) M256i
 // Instruction: 'VEXTRACTI32X8'. Intrinsic: '_mm512_mask_extracti32x8_epi32'.
 // Requires AVX512DQ.
 func MaskExtracti32x832(src M256i, k Mmask8, a M512i, imm8 int) M256i {
-	return M256i(maskExtracti32x832(src, uint8(k), a, imm8))
+	return M256i(maskExtracti32x832([32]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskExtracti32x832(src M256i, k uint8, a M512i, imm8 int) M256i
+func maskExtracti32x832(src [32]byte, k uint8, a [64]byte, imm8 int) [32]byte
 
 
 // MaskzExtracti32x832: Extract 256 bits (composed of 8 packed 32-bit integers)
@@ -21298,10 +21298,10 @@ func maskExtracti32x832(src M256i, k uint8, a M512i, imm8 int) M256i
 // Instruction: 'VEXTRACTI32X8'. Intrinsic: '_mm512_maskz_extracti32x8_epi32'.
 // Requires AVX512DQ.
 func MaskzExtracti32x832(k Mmask8, a M512i, imm8 int) M256i {
-	return M256i(maskzExtracti32x832(uint8(k), a, imm8))
+	return M256i(maskzExtracti32x832(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzExtracti32x832(k uint8, a M512i, imm8 int) M256i
+func maskzExtracti32x832(k uint8, a [64]byte, imm8 int) [32]byte
 
 
 // Extracti64x264: Extract 128 bits (composed of 2 packed 64-bit integers) from
@@ -21318,10 +21318,10 @@ func maskzExtracti32x832(k uint8, a M512i, imm8 int) M256i
 // Instruction: 'VEXTRACTI64X2'. Intrinsic: '_mm512_extracti64x2_epi64'.
 // Requires AVX512DQ.
 func Extracti64x264(a M512i, imm8 int) M128i {
-	return M128i(extracti64x264(a, imm8))
+	return M128i(extracti64x264([64]byte(a), imm8))
 }
 
-func extracti64x264(a M512i, imm8 int) M128i
+func extracti64x264(a [64]byte, imm8 int) [16]byte
 
 
 // MaskExtracti64x264: Extract 128 bits (composed of 2 packed 64-bit integers)
@@ -21349,10 +21349,10 @@ func extracti64x264(a M512i, imm8 int) M128i
 // Instruction: 'VEXTRACTI64X2'. Intrinsic: '_mm512_mask_extracti64x2_epi64'.
 // Requires AVX512DQ.
 func MaskExtracti64x264(src M128i, k Mmask8, a M512i, imm8 int) M128i {
-	return M128i(maskExtracti64x264(src, uint8(k), a, imm8))
+	return M128i(maskExtracti64x264([16]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskExtracti64x264(src M128i, k uint8, a M512i, imm8 int) M128i
+func maskExtracti64x264(src [16]byte, k uint8, a [64]byte, imm8 int) [16]byte
 
 
 // MaskzExtracti64x264: Extract 128 bits (composed of 2 packed 64-bit integers)
@@ -21380,10 +21380,10 @@ func maskExtracti64x264(src M128i, k uint8, a M512i, imm8 int) M128i
 // Instruction: 'VEXTRACTI64X2'. Intrinsic: '_mm512_maskz_extracti64x2_epi64'.
 // Requires AVX512DQ.
 func MaskzExtracti64x264(k Mmask8, a M512i, imm8 int) M128i {
-	return M128i(maskzExtracti64x264(uint8(k), a, imm8))
+	return M128i(maskzExtracti64x264(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzExtracti64x264(k uint8, a M512i, imm8 int) M128i
+func maskzExtracti64x264(k uint8, a [64]byte, imm8 int) [16]byte
 
 
 // Extracti64x464: Extract 256 bits (composed of 4 packed 64-bit integers) from
@@ -21398,10 +21398,10 @@ func maskzExtracti64x264(k uint8, a M512i, imm8 int) M128i
 // Instruction: 'VEXTRACTI64X4'. Intrinsic: '_mm512_extracti64x4_epi64'.
 // Requires AVX512F.
 func Extracti64x464(a M512i, imm8 int) M256i {
-	return M256i(extracti64x464(a, imm8))
+	return M256i(extracti64x464([64]byte(a), imm8))
 }
 
-func extracti64x464(a M512i, imm8 int) M256i
+func extracti64x464(a [64]byte, imm8 int) [32]byte
 
 
 // MaskExtracti64x464: Extract 256 bits (composed of 4 packed 64-bit integers)
@@ -21426,10 +21426,10 @@ func extracti64x464(a M512i, imm8 int) M256i
 // Instruction: 'VEXTRACTI64X4'. Intrinsic: '_mm512_mask_extracti64x4_epi64'.
 // Requires AVX512F.
 func MaskExtracti64x464(src M256i, k Mmask8, a M512i, imm8 int) M256i {
-	return M256i(maskExtracti64x464(src, uint8(k), a, imm8))
+	return M256i(maskExtracti64x464([32]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskExtracti64x464(src M256i, k uint8, a M512i, imm8 int) M256i
+func maskExtracti64x464(src [32]byte, k uint8, a [64]byte, imm8 int) [32]byte
 
 
 // MaskzExtracti64x464: Extract 256 bits (composed of 4 packed 64-bit integers)
@@ -21454,10 +21454,10 @@ func maskExtracti64x464(src M256i, k uint8, a M512i, imm8 int) M256i
 // Instruction: 'VEXTRACTI64X4'. Intrinsic: '_mm512_maskz_extracti64x4_epi64'.
 // Requires AVX512F.
 func MaskzExtracti64x464(k Mmask8, a M512i, imm8 int) M256i {
-	return M256i(maskzExtracti64x464(uint8(k), a, imm8))
+	return M256i(maskzExtracti64x464(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzExtracti64x464(k uint8, a M512i, imm8 int) M256i
+func maskzExtracti64x464(k uint8, a [64]byte, imm8 int) [32]byte
 
 
 // Extstore32: Downconverts packed 32-bit integer elements stored in 'v' to a
@@ -21488,10 +21488,10 @@ func maskzExtracti64x464(k uint8, a M512i, imm8 int) M256i
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_extstore_epi32'.
 // Requires KNCNI.
 func Extstore32(mt uintptr, v M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	extstore32(uintptr(mt), v, conv, hint)
+	extstore32(uintptr(mt), [64]byte(v), conv, hint)
 }
 
-func extstore32(mt uintptr, v M512i, conv MMDOWNCONVEPI32ENUM, hint int) 
+func extstore32(mt uintptr, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
 // MaskExtstore32: Downconverts packed 32-bit integer elements stored in 'v' to
@@ -21525,10 +21525,10 @@ func extstore32(mt uintptr, v M512i, conv MMDOWNCONVEPI32ENUM, hint int)
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_extstore_epi32'.
 // Requires KNCNI.
 func MaskExtstore32(mt uintptr, k Mmask16, v M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	maskExtstore32(uintptr(mt), uint16(k), v, conv, hint)
+	maskExtstore32(uintptr(mt), uint16(k), [64]byte(v), conv, hint)
 }
 
-func maskExtstore32(mt uintptr, k uint16, v M512i, conv MMDOWNCONVEPI32ENUM, hint int) 
+func maskExtstore32(mt uintptr, k uint16, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
 // Extstore64: Downconverts packed 64-bit integer elements stored in 'v' to a
@@ -21546,10 +21546,10 @@ func maskExtstore32(mt uintptr, k uint16, v M512i, conv MMDOWNCONVEPI32ENUM, hin
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_extstore_epi64'.
 // Requires KNCNI.
 func Extstore64(mt uintptr, v M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	extstore64(uintptr(mt), v, conv, hint)
+	extstore64(uintptr(mt), [64]byte(v), conv, hint)
 }
 
-func extstore64(mt uintptr, v M512i, conv MMDOWNCONVEPI64ENUM, hint int) 
+func extstore64(mt uintptr, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
 // MaskExtstore64: Downconverts packed 64-bit integer elements stored in 'v' to
@@ -21570,10 +21570,10 @@ func extstore64(mt uintptr, v M512i, conv MMDOWNCONVEPI64ENUM, hint int)
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_extstore_epi64'.
 // Requires KNCNI.
 func MaskExtstore64(mt uintptr, k Mmask8, v M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	maskExtstore64(uintptr(mt), uint8(k), v, conv, hint)
+	maskExtstore64(uintptr(mt), uint8(k), [64]byte(v), conv, hint)
 }
 
-func maskExtstore64(mt uintptr, k uint8, v M512i, conv MMDOWNCONVEPI64ENUM, hint int) 
+func maskExtstore64(mt uintptr, k uint8, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
 // ExtstorePd: Downconverts packed double-precision (64-bit) floating-point
@@ -21773,10 +21773,10 @@ func maskExtstorePs(mt uintptr, k uint16, v [16]float32, conv MMDOWNCONVPSENUM, 
 // Instruction: 'VFIXUPIMMPD'. Intrinsic: '_mm512_fixupimm_pd'.
 // Requires AVX512F.
 func FixupimmPd(a M512d, b M512d, c M512i, imm8 int) M512d {
-	return M512d(fixupimmPd([8]float64(a), [8]float64(b), c, imm8))
+	return M512d(fixupimmPd([8]float64(a), [8]float64(b), [64]byte(c), imm8))
 }
 
-func fixupimmPd(a [8]float64, b [8]float64, c M512i, imm8 int) [8]float64
+func fixupimmPd(a [8]float64, b [8]float64, c [64]byte, imm8 int) [8]float64
 
 
 // MaskFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -21855,10 +21855,10 @@ func fixupimmPd(a [8]float64, b [8]float64, c M512i, imm8 int) [8]float64
 // Instruction: 'VFIXUPIMMPD'. Intrinsic: '_mm512_mask_fixupimm_pd'.
 // Requires AVX512F.
 func MaskFixupimmPd(a M512d, k Mmask8, b M512d, c M512i, imm8 int) M512d {
-	return M512d(maskFixupimmPd([8]float64(a), uint8(k), [8]float64(b), c, imm8))
+	return M512d(maskFixupimmPd([8]float64(a), uint8(k), [8]float64(b), [64]byte(c), imm8))
 }
 
-func maskFixupimmPd(a [8]float64, k uint8, b [8]float64, c M512i, imm8 int) [8]float64
+func maskFixupimmPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 int) [8]float64
 
 
 // MaskzFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -21937,10 +21937,10 @@ func maskFixupimmPd(a [8]float64, k uint8, b [8]float64, c M512i, imm8 int) [8]f
 // Instruction: 'VFIXUPIMMPD'. Intrinsic: '_mm512_maskz_fixupimm_pd'.
 // Requires AVX512F.
 func MaskzFixupimmPd(k Mmask8, a M512d, b M512d, c M512i, imm8 int) M512d {
-	return M512d(maskzFixupimmPd(uint8(k), [8]float64(a), [8]float64(b), c, imm8))
+	return M512d(maskzFixupimmPd(uint8(k), [8]float64(a), [8]float64(b), [64]byte(c), imm8))
 }
 
-func maskzFixupimmPd(k uint8, a [8]float64, b [8]float64, c M512i, imm8 int) [8]float64
+func maskzFixupimmPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 int) [8]float64
 
 
 // FixupimmPs: Fix up packed single-precision (32-bit) floating-point elements
@@ -22013,10 +22013,10 @@ func maskzFixupimmPd(k uint8, a [8]float64, b [8]float64, c M512i, imm8 int) [8]
 // Instruction: 'VFIXUPIMMPS'. Intrinsic: '_mm512_fixupimm_ps'.
 // Requires AVX512F.
 func FixupimmPs(a M512, b M512, c M512i, imm8 int) M512 {
-	return M512(fixupimmPs([16]float32(a), [16]float32(b), c, imm8))
+	return M512(fixupimmPs([16]float32(a), [16]float32(b), [64]byte(c), imm8))
 }
 
-func fixupimmPs(a [16]float32, b [16]float32, c M512i, imm8 int) [16]float32
+func fixupimmPs(a [16]float32, b [16]float32, c [64]byte, imm8 int) [16]float32
 
 
 // MaskFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -22095,10 +22095,10 @@ func fixupimmPs(a [16]float32, b [16]float32, c M512i, imm8 int) [16]float32
 // Instruction: 'VFIXUPIMMPS'. Intrinsic: '_mm512_mask_fixupimm_ps'.
 // Requires AVX512F.
 func MaskFixupimmPs(a M512, k Mmask16, b M512, c M512i, imm8 int) M512 {
-	return M512(maskFixupimmPs([16]float32(a), uint16(k), [16]float32(b), c, imm8))
+	return M512(maskFixupimmPs([16]float32(a), uint16(k), [16]float32(b), [64]byte(c), imm8))
 }
 
-func maskFixupimmPs(a [16]float32, k uint16, b [16]float32, c M512i, imm8 int) [16]float32
+func maskFixupimmPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8 int) [16]float32
 
 
 // MaskzFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -22177,10 +22177,10 @@ func maskFixupimmPs(a [16]float32, k uint16, b [16]float32, c M512i, imm8 int) [
 // Instruction: 'VFIXUPIMMPS'. Intrinsic: '_mm512_maskz_fixupimm_ps'.
 // Requires AVX512F.
 func MaskzFixupimmPs(k Mmask16, a M512, b M512, c M512i, imm8 int) M512 {
-	return M512(maskzFixupimmPs(uint16(k), [16]float32(a), [16]float32(b), c, imm8))
+	return M512(maskzFixupimmPs(uint16(k), [16]float32(a), [16]float32(b), [64]byte(c), imm8))
 }
 
-func maskzFixupimmPs(k uint16, a [16]float32, b [16]float32, c M512i, imm8 int) [16]float32
+func maskzFixupimmPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm8 int) [16]float32
 
 
 // FixupimmRoundPd: Fix up packed double-precision (64-bit) floating-point
@@ -22260,10 +22260,10 @@ func maskzFixupimmPs(k uint16, a [16]float32, b [16]float32, c M512i, imm8 int) 
 // Instruction: 'VFIXUPIMMPD'. Intrinsic: '_mm512_fixupimm_round_pd'.
 // Requires AVX512F.
 func FixupimmRoundPd(a M512d, b M512d, c M512i, imm8 int, rounding int) M512d {
-	return M512d(fixupimmRoundPd([8]float64(a), [8]float64(b), c, imm8, rounding))
+	return M512d(fixupimmRoundPd([8]float64(a), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
-func fixupimmRoundPd(a [8]float64, b [8]float64, c M512i, imm8 int, rounding int) [8]float64
+func fixupimmRoundPd(a [8]float64, b [8]float64, c [64]byte, imm8 int, rounding int) [8]float64
 
 
 // MaskFixupimmRoundPd: Fix up packed double-precision (64-bit) floating-point
@@ -22349,10 +22349,10 @@ func fixupimmRoundPd(a [8]float64, b [8]float64, c M512i, imm8 int, rounding int
 // Instruction: 'VFIXUPIMMPD'. Intrinsic: '_mm512_mask_fixupimm_round_pd'.
 // Requires AVX512F.
 func MaskFixupimmRoundPd(a M512d, k Mmask8, b M512d, c M512i, imm8 int, rounding int) M512d {
-	return M512d(maskFixupimmRoundPd([8]float64(a), uint8(k), [8]float64(b), c, imm8, rounding))
+	return M512d(maskFixupimmRoundPd([8]float64(a), uint8(k), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
-func maskFixupimmRoundPd(a [8]float64, k uint8, b [8]float64, c M512i, imm8 int, rounding int) [8]float64
+func maskFixupimmRoundPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 int, rounding int) [8]float64
 
 
 // MaskzFixupimmRoundPd: Fix up packed double-precision (64-bit) floating-point
@@ -22438,10 +22438,10 @@ func maskFixupimmRoundPd(a [8]float64, k uint8, b [8]float64, c M512i, imm8 int,
 // Instruction: 'VFIXUPIMMPD'. Intrinsic: '_mm512_maskz_fixupimm_round_pd'.
 // Requires AVX512F.
 func MaskzFixupimmRoundPd(k Mmask8, a M512d, b M512d, c M512i, imm8 int, rounding int) M512d {
-	return M512d(maskzFixupimmRoundPd(uint8(k), [8]float64(a), [8]float64(b), c, imm8, rounding))
+	return M512d(maskzFixupimmRoundPd(uint8(k), [8]float64(a), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
-func maskzFixupimmRoundPd(k uint8, a [8]float64, b [8]float64, c M512i, imm8 int, rounding int) [8]float64
+func maskzFixupimmRoundPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 int, rounding int) [8]float64
 
 
 // FixupimmRoundPs: Fix up packed single-precision (32-bit) floating-point
@@ -22521,10 +22521,10 @@ func maskzFixupimmRoundPd(k uint8, a [8]float64, b [8]float64, c M512i, imm8 int
 // Instruction: 'VFIXUPIMMPS'. Intrinsic: '_mm512_fixupimm_round_ps'.
 // Requires AVX512F.
 func FixupimmRoundPs(a M512, b M512, c M512i, imm8 int, rounding int) M512 {
-	return M512(fixupimmRoundPs([16]float32(a), [16]float32(b), c, imm8, rounding))
+	return M512(fixupimmRoundPs([16]float32(a), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
-func fixupimmRoundPs(a [16]float32, b [16]float32, c M512i, imm8 int, rounding int) [16]float32
+func fixupimmRoundPs(a [16]float32, b [16]float32, c [64]byte, imm8 int, rounding int) [16]float32
 
 
 // MaskFixupimmRoundPs: Fix up packed single-precision (32-bit) floating-point
@@ -22610,10 +22610,10 @@ func fixupimmRoundPs(a [16]float32, b [16]float32, c M512i, imm8 int, rounding i
 // Instruction: 'VFIXUPIMMPS'. Intrinsic: '_mm512_mask_fixupimm_round_ps'.
 // Requires AVX512F.
 func MaskFixupimmRoundPs(a M512, k Mmask16, b M512, c M512i, imm8 int, rounding int) M512 {
-	return M512(maskFixupimmRoundPs([16]float32(a), uint16(k), [16]float32(b), c, imm8, rounding))
+	return M512(maskFixupimmRoundPs([16]float32(a), uint16(k), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
-func maskFixupimmRoundPs(a [16]float32, k uint16, b [16]float32, c M512i, imm8 int, rounding int) [16]float32
+func maskFixupimmRoundPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8 int, rounding int) [16]float32
 
 
 // MaskzFixupimmRoundPs: Fix up packed single-precision (32-bit) floating-point
@@ -22699,10 +22699,10 @@ func maskFixupimmRoundPs(a [16]float32, k uint16, b [16]float32, c M512i, imm8 i
 // Instruction: 'VFIXUPIMMPS'. Intrinsic: '_mm512_maskz_fixupimm_round_ps'.
 // Requires AVX512F.
 func MaskzFixupimmRoundPs(k Mmask16, a M512, b M512, c M512i, imm8 int, rounding int) M512 {
-	return M512(maskzFixupimmRoundPs(uint16(k), [16]float32(a), [16]float32(b), c, imm8, rounding))
+	return M512(maskzFixupimmRoundPs(uint16(k), [16]float32(a), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
-func maskzFixupimmRoundPs(k uint16, a [16]float32, b [16]float32, c M512i, imm8 int, rounding int) [16]float32
+func maskzFixupimmRoundPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm8 int, rounding int) [16]float32
 
 
 // FixupnanPd: Fixes up NaN's from packed double-precision (64-bit)
@@ -22719,10 +22719,10 @@ func maskzFixupimmRoundPs(k uint16, a [16]float32, b [16]float32, c M512i, imm8 
 // Instruction: 'VFIXUPNANPD'. Intrinsic: '_mm512_fixupnan_pd'.
 // Requires KNCNI.
 func FixupnanPd(v1 M512d, v2 M512d, v3 M512i) M512d {
-	return M512d(fixupnanPd([8]float64(v1), [8]float64(v2), v3))
+	return M512d(fixupnanPd([8]float64(v1), [8]float64(v2), [64]byte(v3)))
 }
 
-func fixupnanPd(v1 [8]float64, v2 [8]float64, v3 M512i) [8]float64
+func fixupnanPd(v1 [8]float64, v2 [8]float64, v3 [64]byte) [8]float64
 
 
 // MaskFixupnanPd: Fixes up NaN's from packed double-precision (64-bit)
@@ -22742,10 +22742,10 @@ func fixupnanPd(v1 [8]float64, v2 [8]float64, v3 M512i) [8]float64
 // Instruction: 'VFIXUPNANPD'. Intrinsic: '_mm512_mask_fixupnan_pd'.
 // Requires KNCNI.
 func MaskFixupnanPd(v1 M512d, k Mmask8, v2 M512d, v3 M512i) M512d {
-	return M512d(maskFixupnanPd([8]float64(v1), uint8(k), [8]float64(v2), v3))
+	return M512d(maskFixupnanPd([8]float64(v1), uint8(k), [8]float64(v2), [64]byte(v3)))
 }
 
-func maskFixupnanPd(v1 [8]float64, k uint8, v2 [8]float64, v3 M512i) [8]float64
+func maskFixupnanPd(v1 [8]float64, k uint8, v2 [8]float64, v3 [64]byte) [8]float64
 
 
 // FixupnanPs: Fixes up NaN's from packed single-precision (32-bit)
@@ -22762,10 +22762,10 @@ func maskFixupnanPd(v1 [8]float64, k uint8, v2 [8]float64, v3 M512i) [8]float64
 // Instruction: 'VFIXUPNANPS'. Intrinsic: '_mm512_fixupnan_ps'.
 // Requires KNCNI.
 func FixupnanPs(v1 M512, v2 M512, v3 M512i) M512 {
-	return M512(fixupnanPs([16]float32(v1), [16]float32(v2), v3))
+	return M512(fixupnanPs([16]float32(v1), [16]float32(v2), [64]byte(v3)))
 }
 
-func fixupnanPs(v1 [16]float32, v2 [16]float32, v3 M512i) [16]float32
+func fixupnanPs(v1 [16]float32, v2 [16]float32, v3 [64]byte) [16]float32
 
 
 // MaskFixupnanPs: Fixes up NaN's from packed single-precision (32-bit)
@@ -22785,10 +22785,10 @@ func fixupnanPs(v1 [16]float32, v2 [16]float32, v3 M512i) [16]float32
 // Instruction: 'VFIXUPNANPS'. Intrinsic: '_mm512_mask_fixupnan_ps'.
 // Requires KNCNI.
 func MaskFixupnanPs(v1 M512, k Mmask16, v2 M512, v3 M512i) M512 {
-	return M512(maskFixupnanPs([16]float32(v1), uint16(k), [16]float32(v2), v3))
+	return M512(maskFixupnanPs([16]float32(v1), uint16(k), [16]float32(v2), [64]byte(v3)))
 }
 
-func maskFixupnanPs(v1 [16]float32, k uint16, v2 [16]float32, v3 M512i) [16]float32
+func maskFixupnanPs(v1 [16]float32, k uint16, v2 [16]float32, v3 [64]byte) [16]float32
 
 
 // FloorPd: Round the packed double-precision (64-bit) floating-point elements
@@ -22890,10 +22890,10 @@ func maskFloorPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VPMADD231D'. Intrinsic: '_mm512_fmadd_epi32'.
 // Requires KNCNI.
 func Fmadd32(a M512i, b M512i, c M512i) M512i {
-	return M512i(fmadd32(a, b, c))
+	return M512i(fmadd32([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func fmadd32(a M512i, b M512i, c M512i) M512i
+func fmadd32(a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
 // MaskFmadd32: Multiply packed 32-bit integer elements in 'a' and 'b', add the
@@ -22914,10 +22914,10 @@ func fmadd32(a M512i, b M512i, c M512i) M512i
 // Instruction: 'VPMADD231D'. Intrinsic: '_mm512_mask_fmadd_epi32'.
 // Requires KNCNI.
 func MaskFmadd32(a M512i, k Mmask16, b M512i, c M512i) M512i {
-	return M512i(maskFmadd32(a, uint16(k), b, c))
+	return M512i(maskFmadd32([64]byte(a), uint16(k), [64]byte(b), [64]byte(c)))
 }
 
-func maskFmadd32(a M512i, k uint16, b M512i, c M512i) M512i
+func maskFmadd32(a [64]byte, k uint16, b [64]byte, c [64]byte) [64]byte
 
 
 // Mask3Fmadd32: Multiply packed 32-bit integer elements in 'a' and 'b', add
@@ -22938,10 +22938,10 @@ func maskFmadd32(a M512i, k uint16, b M512i, c M512i) M512i
 // Instruction: 'VPMADD231D'. Intrinsic: '_mm512_mask3_fmadd_epi32'.
 // Requires KNCNI.
 func Mask3Fmadd32(a M512i, b M512i, c M512i, k Mmask16) M512i {
-	return M512i(mask3Fmadd32(a, b, c, uint16(k)))
+	return M512i(mask3Fmadd32([64]byte(a), [64]byte(b), [64]byte(c), uint16(k)))
 }
 
-func mask3Fmadd32(a M512i, b M512i, c M512i, k uint16) M512i
+func mask3Fmadd32(a [64]byte, b [64]byte, c [64]byte, k uint16) [64]byte
 
 
 // FmaddPd: Multiply packed double-precision (64-bit) floating-point elements
@@ -23381,10 +23381,10 @@ func maskzFmaddRoundPs(k uint16, a [16]float32, b [16]float32, c [16]float32, ro
 // Instruction: 'VPMADD233D'. Intrinsic: '_mm512_fmadd233_epi32'.
 // Requires KNCNI.
 func Fmadd23332(a M512i, b M512i) M512i {
-	return M512i(fmadd23332(a, b))
+	return M512i(fmadd23332([64]byte(a), [64]byte(b)))
 }
 
-func fmadd23332(a M512i, b M512i) M512i
+func fmadd23332(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskFmadd23332: Multiply packed 32-bit integer elements in each 4-element
@@ -23409,10 +23409,10 @@ func fmadd23332(a M512i, b M512i) M512i
 // Instruction: 'VPMADD233D'. Intrinsic: '_mm512_mask_fmadd233_epi32'.
 // Requires KNCNI.
 func MaskFmadd23332(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskFmadd23332(src, uint16(k), a, b))
+	return M512i(maskFmadd23332([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskFmadd23332(src M512i, k uint16, a M512i, b M512i) M512i
+func maskFmadd23332(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Fmadd233Ps: Performs multiplication between single-precision (32-bit)
@@ -26972,10 +26972,10 @@ func maskHypotPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]fl
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_i32extgather_epi32'.
 // Requires KNCNI.
 func I32extgather32(index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i {
-	return M512i(i32extgather32(index, uintptr(mv), conv, scale, hint))
+	return M512i(i32extgather32([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32extgather32(index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i
+func i32extgather32(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
 // MaskI32extgather32: Up-converts 16 single-precision (32-bit) memory
@@ -27013,10 +27013,10 @@ func i32extgather32(index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, 
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_mask_i32extgather_epi32'.
 // Requires KNCNI.
 func MaskI32extgather32(src M512i, k Mmask16, index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i {
-	return M512i(maskI32extgather32(src, uint16(k), index, uintptr(mv), conv, scale, hint))
+	return M512i(maskI32extgather32([64]byte(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32extgather32(src M512i, k uint16, index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i
+func maskI32extgather32(src [64]byte, k uint16, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
 // I32extgatherPs: Up-converts 16 memory locations starting at location 'mv' at
@@ -27052,10 +27052,10 @@ func maskI32extgather32(src M512i, k uint16, index M512i, mv uintptr, conv MMUPC
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_i32extgather_ps'.
 // Requires KNCNI.
 func I32extgatherPs(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) M512 {
-	return M512(i32extgatherPs(index, uintptr(mv), conv, scale, hint))
+	return M512(i32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32extgatherPs(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func i32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
 // MaskI32extgatherPs: Up-converts 16 single-precision (32-bit) memory
@@ -27096,10 +27096,10 @@ func i32extgatherPs(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hin
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_mask_i32extgather_ps'.
 // Requires KNCNI.
 func MaskI32extgatherPs(src M512, k Mmask16, index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) M512 {
-	return M512(maskI32extgatherPs([16]float32(src), uint16(k), index, uintptr(mv), conv, scale, hint))
+	return M512(maskI32extgatherPs([16]float32(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32extgatherPs(src [16]float32, k uint16, index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func maskI32extgatherPs(src [16]float32, k uint16, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
 // I32extscatter32: Down-converts 16 packed 32-bit integer elements in 'v1'
@@ -27131,10 +27131,10 @@ func maskI32extgatherPs(src [16]float32, k uint16, index M512i, mv uintptr, conv
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_i32extscatter_epi32'.
 // Requires KNCNI.
 func I32extscatter32(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	i32extscatter32(uintptr(mv), index, v1, conv, scale, hint)
+	i32extscatter32(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i32extscatter32(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func i32extscatter32(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
 // MaskI32extscatter32: Down-converts 16 packed 32-bit integer elements in 'v1'
@@ -27170,10 +27170,10 @@ func i32extscatter32(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_mask_i32extscatter_epi32'.
 // Requires KNCNI.
 func MaskI32extscatter32(mv uintptr, k Mmask16, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	maskI32extscatter32(uintptr(mv), uint16(k), index, v1, conv, scale, hint)
+	maskI32extscatter32(uintptr(mv), uint16(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI32extscatter32(mv uintptr, k uint16, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func maskI32extscatter32(mv uintptr, k uint16, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
 // I32extscatterPs: Down-converts 16 packed single-precision (32-bit)
@@ -27209,10 +27209,10 @@ func maskI32extscatter32(mv uintptr, k uint16, index M512i, v1 M512i, conv MMDOW
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_i32extscatter_ps'.
 // Requires KNCNI.
 func I32extscatterPs(mv uintptr, index M512i, v1 M512, conv MMDOWNCONVPSENUM, scale int)  {
-	i32extscatterPs(uintptr(mv), index, [16]float32(v1), conv, scale)
+	i32extscatterPs(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale)
 }
 
-func i32extscatterPs(mv uintptr, index M512i, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int) 
+func i32extscatterPs(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int) 
 
 
 // MaskI32extscatterPs: Down-converts 16 packed single-precision (32-bit)
@@ -27251,10 +27251,10 @@ func i32extscatterPs(mv uintptr, index M512i, v1 [16]float32, conv MMDOWNCONVPSE
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_mask_i32extscatter_ps'.
 // Requires KNCNI.
 func MaskI32extscatterPs(mv uintptr, k Mmask16, index M512i, v1 M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	maskI32extscatterPs(uintptr(mv), uint16(k), index, [16]float32(v1), conv, scale, hint)
+	maskI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
 }
 
-func maskI32extscatterPs(mv uintptr, k uint16, index M512i, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
+func maskI32extscatterPs(mv uintptr, k uint16, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
 
 
 // I32gather32: Gather 32-bit integers from memory using 32-bit indices. 32-bit
@@ -27272,10 +27272,10 @@ func maskI32extscatterPs(mv uintptr, k uint16, index M512i, v1 [16]float32, conv
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_i32gather_epi32'.
 // Requires KNCNI.
 func I32gather32(vindex M512i, base_addr uintptr, scale int) M512i {
-	return M512i(i32gather32(vindex, uintptr(base_addr), scale))
+	return M512i(i32gather32([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i32gather32(vindex M512i, base_addr uintptr, scale int) M512i
+func i32gather32(vindex [64]byte, base_addr uintptr, scale int) [64]byte
 
 
 // MaskI32gather32: Gather 32-bit integers from memory using 32-bit indices.
@@ -27300,10 +27300,10 @@ func i32gather32(vindex M512i, base_addr uintptr, scale int) M512i
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_mask_i32gather_epi32'.
 // Requires KNCNI.
 func MaskI32gather32(src M512i, k Mmask16, vindex M512i, base_addr uintptr, scale int) M512i {
-	return M512i(maskI32gather32(src, uint16(k), vindex, uintptr(base_addr), scale))
+	return M512i(maskI32gather32([64]byte(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI32gather32(src M512i, k uint16, vindex M512i, base_addr uintptr, scale int) M512i
+func maskI32gather32(src [64]byte, k uint16, vindex [64]byte, base_addr uintptr, scale int) [64]byte
 
 
 // I32gather64: Gather 64-bit integers from memory using 32-bit indices. 64-bit
@@ -27322,10 +27322,10 @@ func maskI32gather32(src M512i, k uint16, vindex M512i, base_addr uintptr, scale
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32gather_epi64'.
 // Requires AVX512F.
 func I32gather64(vindex M256i, base_addr uintptr, scale int) M512i {
-	return M512i(i32gather64(vindex, uintptr(base_addr), scale))
+	return M512i(i32gather64([32]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i32gather64(vindex M256i, base_addr uintptr, scale int) M512i
+func i32gather64(vindex [32]byte, base_addr uintptr, scale int) [64]byte
 
 
 // MaskI32gather64: Gather 64-bit integers from memory using 32-bit indices.
@@ -27351,10 +27351,10 @@ func i32gather64(vindex M256i, base_addr uintptr, scale int) M512i
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32gather_epi64'.
 // Requires AVX512F.
 func MaskI32gather64(src M512i, k Mmask8, vindex M256i, base_addr uintptr, scale int) M512i {
-	return M512i(maskI32gather64(src, uint8(k), vindex, uintptr(base_addr), scale))
+	return M512i(maskI32gather64([64]byte(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI32gather64(src M512i, k uint8, vindex M256i, base_addr uintptr, scale int) M512i
+func maskI32gather64(src [64]byte, k uint8, vindex [32]byte, base_addr uintptr, scale int) [64]byte
 
 
 // I32gatherPd: Gather double-precision (64-bit) floating-point elements from
@@ -27373,10 +27373,10 @@ func maskI32gather64(src M512i, k uint8, vindex M256i, base_addr uintptr, scale 
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32gather_pd'.
 // Requires AVX512F.
 func I32gatherPd(vindex M256i, base_addr uintptr, scale int) M512d {
-	return M512d(i32gatherPd(vindex, uintptr(base_addr), scale))
+	return M512d(i32gatherPd([32]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i32gatherPd(vindex M256i, base_addr uintptr, scale int) [8]float64
+func i32gatherPd(vindex [32]byte, base_addr uintptr, scale int) [8]float64
 
 
 // MaskI32gatherPd: Gather double-precision (64-bit) floating-point elements
@@ -27402,10 +27402,10 @@ func i32gatherPd(vindex M256i, base_addr uintptr, scale int) [8]float64
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32gather_pd'.
 // Requires AVX512F.
 func MaskI32gatherPd(src M512d, k Mmask8, vindex M256i, base_addr uintptr, scale int) M512d {
-	return M512d(maskI32gatherPd([8]float64(src), uint8(k), vindex, uintptr(base_addr), scale))
+	return M512d(maskI32gatherPd([8]float64(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI32gatherPd(src [8]float64, k uint8, vindex M256i, base_addr uintptr, scale int) [8]float64
+func maskI32gatherPd(src [8]float64, k uint8, vindex [32]byte, base_addr uintptr, scale int) [8]float64
 
 
 // I32gatherPs: Gather single-precision (32-bit) floating-point elements from
@@ -27423,10 +27423,10 @@ func maskI32gatherPd(src [8]float64, k uint8, vindex M256i, base_addr uintptr, s
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_i32gather_ps'.
 // Requires KNCNI.
 func I32gatherPs(vindex M512i, base_addr uintptr, scale int) M512 {
-	return M512(i32gatherPs(vindex, uintptr(base_addr), scale))
+	return M512(i32gatherPs([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i32gatherPs(vindex M512i, base_addr uintptr, scale int) [16]float32
+func i32gatherPs(vindex [64]byte, base_addr uintptr, scale int) [16]float32
 
 
 // MaskI32gatherPs: Gather single-precision (32-bit) floating-point elements
@@ -27451,10 +27451,10 @@ func i32gatherPs(vindex M512i, base_addr uintptr, scale int) [16]float32
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_mask_i32gather_ps'.
 // Requires KNCNI.
 func MaskI32gatherPs(src M512, k Mmask16, vindex M512i, base_addr uintptr, scale int) M512 {
-	return M512(maskI32gatherPs([16]float32(src), uint16(k), vindex, uintptr(base_addr), scale))
+	return M512(maskI32gatherPs([16]float32(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI32gatherPs(src [16]float32, k uint16, vindex M512i, base_addr uintptr, scale int) [16]float32
+func maskI32gatherPs(src [16]float32, k uint16, vindex [64]byte, base_addr uintptr, scale int) [16]float32
 
 
 // I32loextgather64: Up-converts 8 double-precision (64-bit) memory locations
@@ -27474,10 +27474,10 @@ func maskI32gatherPs(src [16]float32, k uint16, vindex M512i, base_addr uintptr,
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32loextgather_epi64'.
 // Requires KNCNI.
 func I32loextgather64(index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i {
-	return M512i(i32loextgather64(index, uintptr(mv), conv, scale, hint))
+	return M512i(i32loextgather64([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32loextgather64(index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i
+func i32loextgather64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
 // MaskI32loextgather64: Up-converts 8 double-precision (64-bit) memory
@@ -27502,10 +27502,10 @@ func i32loextgather64(index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32loextgather_epi64'.
 // Requires KNCNI.
 func MaskI32loextgather64(src M512i, k Mmask8, index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i {
-	return M512i(maskI32loextgather64(src, uint8(k), index, uintptr(mv), conv, scale, hint))
+	return M512i(maskI32loextgather64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32loextgather64(src M512i, k uint8, index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i
+func maskI32loextgather64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
 // I32loextgatherPd: Up-converts 8 double-precision (64-bit) floating-point
@@ -27525,10 +27525,10 @@ func maskI32loextgather64(src M512i, k uint8, index M512i, mv uintptr, conv MMUP
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32loextgather_pd'.
 // Requires KNCNI.
 func I32loextgatherPd(index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) M512d {
-	return M512d(i32loextgatherPd(index, uintptr(mv), conv, scale, hint))
+	return M512d(i32loextgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32loextgatherPd(index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func i32loextgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
 // MaskI32loextgatherPd: Up-converts 8 double-precision (64-bit) floating-point
@@ -27554,10 +27554,10 @@ func i32loextgatherPd(index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, h
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32loextgather_pd'.
 // Requires KNCNI.
 func MaskI32loextgatherPd(src M512d, k Mmask8, index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) M512d {
-	return M512d(maskI32loextgatherPd([8]float64(src), uint8(k), index, uintptr(mv), conv, scale, hint))
+	return M512d(maskI32loextgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32loextgatherPd(src [8]float64, k uint8, index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func maskI32loextgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
 // I32loextscatter64: Down-converts 8 packed 64-bit integer elements in 'v1'
@@ -27575,10 +27575,10 @@ func maskI32loextgatherPd(src [8]float64, k uint8, index M512i, mv uintptr, conv
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32loextscatter_epi64'.
 // Requires KNCNI.
 func I32loextscatter64(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	i32loextscatter64(uintptr(mv), index, v1, conv, scale, hint)
+	i32loextscatter64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i32loextscatter64(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func i32loextscatter64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
 // MaskI32loextscatter64: Down-converts 8 packed 64-bit integer elements in
@@ -27600,10 +27600,10 @@ func i32loextscatter64(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI64EN
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32loextscatter_epi64'.
 // Requires KNCNI.
 func MaskI32loextscatter64(mv uintptr, k Mmask8, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	maskI32loextscatter64(uintptr(mv), uint8(k), index, v1, conv, scale, hint)
+	maskI32loextscatter64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI32loextscatter64(mv uintptr, k uint8, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func maskI32loextscatter64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
 // I32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
@@ -27622,10 +27622,10 @@ func maskI32loextscatter64(mv uintptr, k uint8, index M512i, v1 M512i, conv MMDO
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32loextscatter_pd'.
 // Requires KNCNI.
 func I32loextscatterPd(mv uintptr, index M512i, v1 M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	i32loextscatterPd(uintptr(mv), index, [8]float64(v1), conv, scale, hint)
+	i32loextscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func i32loextscatterPd(mv uintptr, index M512i, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func i32loextscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
 // MaskI32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
@@ -27647,10 +27647,10 @@ func i32loextscatterPd(mv uintptr, index M512i, v1 [8]float64, conv MMDOWNCONVPD
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32loextscatter_pd'.
 // Requires KNCNI.
 func MaskI32loextscatterPd(mv uintptr, k Mmask8, index M512i, v1 M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	maskI32loextscatterPd(uintptr(mv), uint8(k), index, [8]float64(v1), conv, scale, hint)
+	maskI32loextscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func maskI32loextscatterPd(mv uintptr, k uint8, index M512i, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func maskI32loextscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
 // I32logather64: Loads 8 64-bit integer elements from memory starting at
@@ -27667,10 +27667,10 @@ func maskI32loextscatterPd(mv uintptr, k uint8, index M512i, v1 [8]float64, conv
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32logather_epi64'.
 // Requires KNCNI.
 func I32logather64(index M512i, mv uintptr, scale int) M512i {
-	return M512i(i32logather64(index, uintptr(mv), scale))
+	return M512i(i32logather64([64]byte(index), uintptr(mv), scale))
 }
 
-func i32logather64(index M512i, mv uintptr, scale int) M512i
+func i32logather64(index [64]byte, mv uintptr, scale int) [64]byte
 
 
 // MaskI32logather64: Loads 8 64-bit integer elements from memory starting at
@@ -27692,10 +27692,10 @@ func i32logather64(index M512i, mv uintptr, scale int) M512i
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32logather_epi64'.
 // Requires KNCNI.
 func MaskI32logather64(src M512i, k Mmask8, index M512i, mv uintptr, scale int) M512i {
-	return M512i(maskI32logather64(src, uint8(k), index, uintptr(mv), scale))
+	return M512i(maskI32logather64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
 }
 
-func maskI32logather64(src M512i, k uint8, index M512i, mv uintptr, scale int) M512i
+func maskI32logather64(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
 
 
 // I32logatherPd: Loads 8 double-precision (64-bit) floating-point elements
@@ -27713,10 +27713,10 @@ func maskI32logather64(src M512i, k uint8, index M512i, mv uintptr, scale int) M
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32logather_pd'.
 // Requires KNCNI.
 func I32logatherPd(index M512i, mv uintptr, scale int) M512d {
-	return M512d(i32logatherPd(index, uintptr(mv), scale))
+	return M512d(i32logatherPd([64]byte(index), uintptr(mv), scale))
 }
 
-func i32logatherPd(index M512i, mv uintptr, scale int) [8]float64
+func i32logatherPd(index [64]byte, mv uintptr, scale int) [8]float64
 
 
 // MaskI32logatherPd: Loads 8 double-precision (64-bit) floating-point elements
@@ -27739,10 +27739,10 @@ func i32logatherPd(index M512i, mv uintptr, scale int) [8]float64
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32logather_pd'.
 // Requires KNCNI.
 func MaskI32logatherPd(src M512d, k Mmask8, index M512i, mv uintptr, scale int) M512d {
-	return M512d(maskI32logatherPd([8]float64(src), uint8(k), index, uintptr(mv), scale))
+	return M512d(maskI32logatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), scale))
 }
 
-func maskI32logatherPd(src [8]float64, k uint8, index M512i, mv uintptr, scale int) [8]float64
+func maskI32logatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, scale int) [8]float64
 
 
 // I32loscatter64: Stores 8 packed 64-bit integer elements located in 'v1' and
@@ -27758,10 +27758,10 @@ func maskI32logatherPd(src [8]float64, k uint8, index M512i, mv uintptr, scale i
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32loscatter_epi64'.
 // Requires KNCNI.
 func I32loscatter64(mv uintptr, index M512i, v1 M512i, scale int)  {
-	i32loscatter64(uintptr(mv), index, v1, scale)
+	i32loscatter64(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
 }
 
-func i32loscatter64(mv uintptr, index M512i, v1 M512i, scale int) 
+func i32loscatter64(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
 
 
 // MaskI32loscatter64: Stores 8 packed 64-bit integer elements located in 'v1'
@@ -27780,10 +27780,10 @@ func i32loscatter64(mv uintptr, index M512i, v1 M512i, scale int)
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32loscatter_epi64'.
 // Requires KNCNI.
 func MaskI32loscatter64(mv uintptr, k Mmask8, index M512i, v1 M512i, scale int)  {
-	maskI32loscatter64(uintptr(mv), uint8(k), index, v1, scale)
+	maskI32loscatter64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
 }
 
-func maskI32loscatter64(mv uintptr, k uint8, index M512i, v1 M512i, scale int) 
+func maskI32loscatter64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
 
 
 // I32loscatterPd: Stores 8 packed double-precision (64-bit) floating-point
@@ -27799,10 +27799,10 @@ func maskI32loscatter64(mv uintptr, k uint8, index M512i, v1 M512i, scale int)
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32loscatter_pd'.
 // Requires KNCNI.
 func I32loscatterPd(mv uintptr, index M512i, v1 M512d, scale int)  {
-	i32loscatterPd(uintptr(mv), index, [8]float64(v1), scale)
+	i32loscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), scale)
 }
 
-func i32loscatterPd(mv uintptr, index M512i, v1 [8]float64, scale int) 
+func i32loscatterPd(mv uintptr, index [64]byte, v1 [8]float64, scale int) 
 
 
 // MaskI32loscatterPd: Stores 8 packed double-precision (64-bit) floating-point
@@ -27822,10 +27822,10 @@ func i32loscatterPd(mv uintptr, index M512i, v1 [8]float64, scale int)
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32loscatter_pd'.
 // Requires KNCNI.
 func MaskI32loscatterPd(mv uintptr, k Mmask8, index M512i, v1 M512d, scale int)  {
-	maskI32loscatterPd(uintptr(mv), uint8(k), index, [8]float64(v1), scale)
+	maskI32loscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), scale)
 }
 
-func maskI32loscatterPd(mv uintptr, k uint8, index M512i, v1 [8]float64, scale int) 
+func maskI32loscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, scale int) 
 
 
 // I32scatter32: Scatter 32-bit integers from 'a' into memory using 32-bit
@@ -27841,10 +27841,10 @@ func maskI32loscatterPd(mv uintptr, k uint8, index M512i, v1 [8]float64, scale i
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_i32scatter_epi32'.
 // Requires KNCNI.
 func I32scatter32(base_addr uintptr, vindex M512i, a M512i, scale int)  {
-	i32scatter32(uintptr(base_addr), vindex, a, scale)
+	i32scatter32(uintptr(base_addr), [64]byte(vindex), [64]byte(a), scale)
 }
 
-func i32scatter32(base_addr uintptr, vindex M512i, a M512i, scale int) 
+func i32scatter32(base_addr uintptr, vindex [64]byte, a [64]byte, scale int) 
 
 
 // MaskI32scatter32: Scatter 32-bit integers from 'a' into memory using 32-bit
@@ -27865,10 +27865,10 @@ func i32scatter32(base_addr uintptr, vindex M512i, a M512i, scale int)
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_mask_i32scatter_epi32'.
 // Requires KNCNI.
 func MaskI32scatter32(base_addr uintptr, k Mmask16, vindex M512i, a M512i, scale int)  {
-	maskI32scatter32(uintptr(base_addr), uint16(k), vindex, a, scale)
+	maskI32scatter32(uintptr(base_addr), uint16(k), [64]byte(vindex), [64]byte(a), scale)
 }
 
-func maskI32scatter32(base_addr uintptr, k uint16, vindex M512i, a M512i, scale int) 
+func maskI32scatter32(base_addr uintptr, k uint16, vindex [64]byte, a [64]byte, scale int) 
 
 
 // I32scatter64: Scatter 64-bit integers from 'a' into memory using 32-bit
@@ -27885,10 +27885,10 @@ func maskI32scatter32(base_addr uintptr, k uint16, vindex M512i, a M512i, scale 
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32scatter_epi64'.
 // Requires AVX512F.
 func I32scatter64(base_addr uintptr, vindex M256i, a M512i, scale int)  {
-	i32scatter64(uintptr(base_addr), vindex, a, scale)
+	i32scatter64(uintptr(base_addr), [32]byte(vindex), [64]byte(a), scale)
 }
 
-func i32scatter64(base_addr uintptr, vindex M256i, a M512i, scale int) 
+func i32scatter64(base_addr uintptr, vindex [32]byte, a [64]byte, scale int) 
 
 
 // MaskI32scatter64: Scatter 64-bit integers from 'a' into memory using 32-bit
@@ -27910,10 +27910,10 @@ func i32scatter64(base_addr uintptr, vindex M256i, a M512i, scale int)
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32scatter_epi64'.
 // Requires AVX512F.
 func MaskI32scatter64(base_addr uintptr, k Mmask8, vindex M256i, a M512i, scale int)  {
-	maskI32scatter64(uintptr(base_addr), uint8(k), vindex, a, scale)
+	maskI32scatter64(uintptr(base_addr), uint8(k), [32]byte(vindex), [64]byte(a), scale)
 }
 
-func maskI32scatter64(base_addr uintptr, k uint8, vindex M256i, a M512i, scale int) 
+func maskI32scatter64(base_addr uintptr, k uint8, vindex [32]byte, a [64]byte, scale int) 
 
 
 // I32scatterPd: Scatter double-precision (64-bit) floating-point elements from
@@ -27931,10 +27931,10 @@ func maskI32scatter64(base_addr uintptr, k uint8, vindex M256i, a M512i, scale i
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32scatter_pd'.
 // Requires AVX512F.
 func I32scatterPd(base_addr uintptr, vindex M256i, a M512d, scale int)  {
-	i32scatterPd(uintptr(base_addr), vindex, [8]float64(a), scale)
+	i32scatterPd(uintptr(base_addr), [32]byte(vindex), [8]float64(a), scale)
 }
 
-func i32scatterPd(base_addr uintptr, vindex M256i, a [8]float64, scale int) 
+func i32scatterPd(base_addr uintptr, vindex [32]byte, a [8]float64, scale int) 
 
 
 // MaskI32scatterPd: Scatter double-precision (64-bit) floating-point elements
@@ -27957,10 +27957,10 @@ func i32scatterPd(base_addr uintptr, vindex M256i, a [8]float64, scale int)
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32scatter_pd'.
 // Requires AVX512F.
 func MaskI32scatterPd(base_addr uintptr, k Mmask8, vindex M256i, a M512d, scale int)  {
-	maskI32scatterPd(uintptr(base_addr), uint8(k), vindex, [8]float64(a), scale)
+	maskI32scatterPd(uintptr(base_addr), uint8(k), [32]byte(vindex), [8]float64(a), scale)
 }
 
-func maskI32scatterPd(base_addr uintptr, k uint8, vindex M256i, a [8]float64, scale int) 
+func maskI32scatterPd(base_addr uintptr, k uint8, vindex [32]byte, a [8]float64, scale int) 
 
 
 // I32scatterPs: Scatter single-precision (32-bit) floating-point elements from
@@ -27977,10 +27977,10 @@ func maskI32scatterPd(base_addr uintptr, k uint8, vindex M256i, a [8]float64, sc
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_i32scatter_ps'.
 // Requires KNCNI.
 func I32scatterPs(base_addr uintptr, vindex M512i, a M512, scale int)  {
-	i32scatterPs(uintptr(base_addr), vindex, [16]float32(a), scale)
+	i32scatterPs(uintptr(base_addr), [64]byte(vindex), [16]float32(a), scale)
 }
 
-func i32scatterPs(base_addr uintptr, vindex M512i, a [16]float32, scale int) 
+func i32scatterPs(base_addr uintptr, vindex [64]byte, a [16]float32, scale int) 
 
 
 // MaskI32scatterPs: Scatter single-precision (32-bit) floating-point elements
@@ -28002,10 +28002,10 @@ func i32scatterPs(base_addr uintptr, vindex M512i, a [16]float32, scale int)
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_mask_i32scatter_ps'.
 // Requires KNCNI.
 func MaskI32scatterPs(base_addr uintptr, k Mmask16, vindex M512i, a M512, scale int)  {
-	maskI32scatterPs(uintptr(base_addr), uint16(k), vindex, [16]float32(a), scale)
+	maskI32scatterPs(uintptr(base_addr), uint16(k), [64]byte(vindex), [16]float32(a), scale)
 }
 
-func maskI32scatterPs(base_addr uintptr, k uint16, vindex M512i, a [16]float32, scale int) 
+func maskI32scatterPs(base_addr uintptr, k uint16, vindex [64]byte, a [16]float32, scale int) 
 
 
 // I64extgather32lo: Up-converts 8 single-precision (32-bit) memory locations
@@ -28038,10 +28038,10 @@ func maskI32scatterPs(base_addr uintptr, k uint16, vindex M512i, a [16]float32, 
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_epi32lo'.
 // Requires KNCNI.
 func I64extgather32lo(index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i {
-	return M512i(i64extgather32lo(index, uintptr(mv), conv, scale, hint))
+	return M512i(i64extgather32lo([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgather32lo(index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i
+func i64extgather32lo(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
 // MaskI64extgather32lo: Up-converts 8 single-precision (32-bit) memory
@@ -28080,10 +28080,10 @@ func i64extgather32lo(index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_epi32lo'.
 // Requires KNCNI.
 func MaskI64extgather32lo(src M512i, k Mmask8, index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i {
-	return M512i(maskI64extgather32lo(src, uint8(k), index, uintptr(mv), conv, scale, hint))
+	return M512i(maskI64extgather32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgather32lo(src M512i, k uint8, index M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) M512i
+func maskI64extgather32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
 // I64extgather64: Up-converts 8 double-precision (64-bit) memory locations
@@ -28103,10 +28103,10 @@ func maskI64extgather32lo(src M512i, k uint8, index M512i, mv uintptr, conv MMUP
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_epi64'.
 // Requires KNCNI.
 func I64extgather64(index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i {
-	return M512i(i64extgather64(index, uintptr(mv), conv, scale, hint))
+	return M512i(i64extgather64([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgather64(index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i
+func i64extgather64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
 // MaskI64extgather64: Up-converts 8 double-precision (64-bit) memory locations
@@ -28132,10 +28132,10 @@ func i64extgather64(index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, 
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_epi64'.
 // Requires KNCNI.
 func MaskI64extgather64(src M512i, k Mmask8, index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i {
-	return M512i(maskI64extgather64(src, uint8(k), index, uintptr(mv), conv, scale, hint))
+	return M512i(maskI64extgather64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgather64(src M512i, k uint8, index M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) M512i
+func maskI64extgather64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
 // I64extgatherPd: Up-converts 8 double-precision (64-bit) floating-point
@@ -28156,10 +28156,10 @@ func maskI64extgather64(src M512i, k uint8, index M512i, mv uintptr, conv MMUPCO
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_pd'.
 // Requires KNCNI.
 func I64extgatherPd(index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) M512d {
-	return M512d(i64extgatherPd(index, uintptr(mv), conv, scale, hint))
+	return M512d(i64extgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgatherPd(index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func i64extgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
 // MaskI64extgatherPd: Up-converts 8 double-precision (64-bit) floating-point
@@ -28185,10 +28185,10 @@ func i64extgatherPd(index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hin
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_pd'.
 // Requires KNCNI.
 func MaskI64extgatherPd(src M512d, k Mmask8, index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) M512d {
-	return M512d(maskI64extgatherPd([8]float64(src), uint8(k), index, uintptr(mv), conv, scale, hint))
+	return M512d(maskI64extgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgatherPd(src [8]float64, k uint8, index M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func maskI64extgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
 // I64extgatherPslo: Up-converts 8 memory locations starting at location 'mv'
@@ -28225,10 +28225,10 @@ func maskI64extgatherPd(src [8]float64, k uint8, index M512i, mv uintptr, conv M
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_pslo'.
 // Requires KNCNI.
 func I64extgatherPslo(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) M512 {
-	return M512(i64extgatherPslo(index, uintptr(mv), conv, scale, hint))
+	return M512(i64extgatherPslo([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgatherPslo(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func i64extgatherPslo(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
 // MaskI64extgatherPslo: Up-converts 8 memory locations starting at location
@@ -28270,10 +28270,10 @@ func i64extgatherPslo(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, h
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_pslo'.
 // Requires KNCNI.
 func MaskI64extgatherPslo(src M512, k Mmask8, index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) M512 {
-	return M512(maskI64extgatherPslo([16]float32(src), uint8(k), index, uintptr(mv), conv, scale, hint))
+	return M512(maskI64extgatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgatherPslo(src [16]float32, k uint8, index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func maskI64extgatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
 // I64extscatter32lo: Down-converts the low 8 packed 32-bit integer elements in
@@ -28305,10 +28305,10 @@ func maskI64extgatherPslo(src [16]float32, k uint8, index M512i, mv uintptr, con
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_epi32lo'.
 // Requires KNCNI.
 func I64extscatter32lo(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	i64extscatter32lo(uintptr(mv), index, v1, conv, scale, hint)
+	i64extscatter32lo(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i64extscatter32lo(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func i64extscatter32lo(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
 // MaskI64extscatter32lo: Down-converts the low 8 packed 32-bit integer
@@ -28345,10 +28345,10 @@ func i64extscatter32lo(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI32EN
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_epi32lo'.
 // Requires KNCNI.
 func MaskI64extscatter32lo(mv uintptr, k Mmask8, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	maskI64extscatter32lo(uintptr(mv), uint8(k), index, v1, conv, scale, hint)
+	maskI64extscatter32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI64extscatter32lo(mv uintptr, k uint8, index M512i, v1 M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func maskI64extscatter32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
 // I64extscatter64: Down-converts 8 packed 64-bit integer elements in 'v1'
@@ -28367,10 +28367,10 @@ func maskI64extscatter32lo(mv uintptr, k uint8, index M512i, v1 M512i, conv MMDO
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_epi64'.
 // Requires KNCNI.
 func I64extscatter64(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	i64extscatter64(uintptr(mv), index, v1, conv, scale, hint)
+	i64extscatter64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i64extscatter64(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func i64extscatter64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
 // MaskI64extscatter64: Down-converts 8 packed 64-bit integer elements in 'v1'
@@ -28392,10 +28392,10 @@ func i64extscatter64(mv uintptr, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_epi64'.
 // Requires KNCNI.
 func MaskI64extscatter64(mv uintptr, k Mmask8, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	maskI64extscatter64(uintptr(mv), uint8(k), index, v1, conv, scale, hint)
+	maskI64extscatter64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI64extscatter64(mv uintptr, k uint8, index M512i, v1 M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func maskI64extscatter64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
 // I64extscatterPd: Down-converts 8 packed double-precision (64-bit)
@@ -28416,10 +28416,10 @@ func maskI64extscatter64(mv uintptr, k uint8, index M512i, v1 M512i, conv MMDOWN
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_pd'.
 // Requires KNCNI.
 func I64extscatterPd(mv uintptr, index M512i, v1 M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	i64extscatterPd(uintptr(mv), index, [8]float64(v1), conv, scale, hint)
+	i64extscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func i64extscatterPd(mv uintptr, index M512i, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func i64extscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
 // MaskI64extscatterPd: Down-converts 8 packed double-precision (64-bit)
@@ -28444,10 +28444,10 @@ func i64extscatterPd(mv uintptr, index M512i, v1 [8]float64, conv MMDOWNCONVPDEN
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_pd'.
 // Requires KNCNI.
 func MaskI64extscatterPd(mv uintptr, k Mmask8, index M512i, v1 M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	maskI64extscatterPd(uintptr(mv), uint8(k), index, [8]float64(v1), conv, scale, hint)
+	maskI64extscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func maskI64extscatterPd(mv uintptr, k uint8, index M512i, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func maskI64extscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
 // I64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
@@ -28483,10 +28483,10 @@ func maskI64extscatterPd(mv uintptr, k uint8, index M512i, v1 [8]float64, conv M
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_pslo'.
 // Requires KNCNI.
 func I64extscatterPslo(mv uintptr, index M512i, v1 M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	i64extscatterPslo(uintptr(mv), index, [16]float32(v1), conv, scale, hint)
+	i64extscatterPslo(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale, hint)
 }
 
-func i64extscatterPslo(mv uintptr, index M512i, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
+func i64extscatterPslo(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
 
 
 // MaskI64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
@@ -28525,10 +28525,10 @@ func i64extscatterPslo(mv uintptr, index M512i, v1 [16]float32, conv MMDOWNCONVP
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_pslo'.
 // Requires KNCNI.
 func MaskI64extscatterPslo(mv uintptr, k Mmask8, index M512i, v1 M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	maskI64extscatterPslo(uintptr(mv), uint8(k), index, [16]float32(v1), conv, scale, hint)
+	maskI64extscatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
 }
 
-func maskI64extscatterPslo(mv uintptr, k uint8, index M512i, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
+func maskI64extscatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
 
 
 // I64gather32: Gather 32-bit integers from memory using 64-bit indices. 32-bit
@@ -28547,10 +28547,10 @@ func maskI64extscatterPslo(mv uintptr, k uint8, index M512i, v1 [16]float32, con
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm512_i64gather_epi32'.
 // Requires AVX512F.
 func I64gather32(vindex M512i, base_addr uintptr, scale int) M256i {
-	return M256i(i64gather32(vindex, uintptr(base_addr), scale))
+	return M256i(i64gather32([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i64gather32(vindex M512i, base_addr uintptr, scale int) M256i
+func i64gather32(vindex [64]byte, base_addr uintptr, scale int) [32]byte
 
 
 // MaskI64gather32: Gather 32-bit integers from memory using 64-bit indices.
@@ -28576,10 +28576,10 @@ func i64gather32(vindex M512i, base_addr uintptr, scale int) M256i
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm512_mask_i64gather_epi32'.
 // Requires AVX512F.
 func MaskI64gather32(src M256i, k Mmask8, vindex M512i, base_addr uintptr, scale int) M256i {
-	return M256i(maskI64gather32(src, uint8(k), vindex, uintptr(base_addr), scale))
+	return M256i(maskI64gather32([32]byte(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI64gather32(src M256i, k uint8, vindex M512i, base_addr uintptr, scale int) M256i
+func maskI64gather32(src [32]byte, k uint8, vindex [64]byte, base_addr uintptr, scale int) [32]byte
 
 
 // I64gather32lo: Loads 8 32-bit integer memory locations starting at location
@@ -28596,10 +28596,10 @@ func maskI64gather32(src M256i, k uint8, vindex M512i, base_addr uintptr, scale 
 // Instruction: '...'. Intrinsic: '_mm512_i64gather_epi32lo'.
 // Requires KNCNI.
 func I64gather32lo(index M512i, mv uintptr, scale int) M512i {
-	return M512i(i64gather32lo(index, uintptr(mv), scale))
+	return M512i(i64gather32lo([64]byte(index), uintptr(mv), scale))
 }
 
-func i64gather32lo(index M512i, mv uintptr, scale int) M512i
+func i64gather32lo(index [64]byte, mv uintptr, scale int) [64]byte
 
 
 // MaskI64gather32lo: Loads 8 32-bit integer memory locations starting at
@@ -28621,10 +28621,10 @@ func i64gather32lo(index M512i, mv uintptr, scale int) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64gather_epi32lo'.
 // Requires KNCNI.
 func MaskI64gather32lo(src M512i, k Mmask8, index M512i, mv uintptr, scale int) M512i {
-	return M512i(maskI64gather32lo(src, uint8(k), index, uintptr(mv), scale))
+	return M512i(maskI64gather32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
 }
 
-func maskI64gather32lo(src M512i, k uint8, index M512i, mv uintptr, scale int) M512i
+func maskI64gather32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
 
 
 // I64gather64: Gather 64-bit integers from memory using 64-bit indices. 64-bit
@@ -28642,10 +28642,10 @@ func maskI64gather32lo(src M512i, k uint8, index M512i, mv uintptr, scale int) M
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm512_i64gather_epi64'.
 // Requires AVX512F.
 func I64gather64(vindex M512i, base_addr uintptr, scale int) M512i {
-	return M512i(i64gather64(vindex, uintptr(base_addr), scale))
+	return M512i(i64gather64([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i64gather64(vindex M512i, base_addr uintptr, scale int) M512i
+func i64gather64(vindex [64]byte, base_addr uintptr, scale int) [64]byte
 
 
 // MaskI64gather64: Gather 64-bit integers from memory using 64-bit indices.
@@ -28670,10 +28670,10 @@ func i64gather64(vindex M512i, base_addr uintptr, scale int) M512i
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm512_mask_i64gather_epi64'.
 // Requires AVX512F.
 func MaskI64gather64(src M512i, k Mmask8, vindex M512i, base_addr uintptr, scale int) M512i {
-	return M512i(maskI64gather64(src, uint8(k), vindex, uintptr(base_addr), scale))
+	return M512i(maskI64gather64([64]byte(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI64gather64(src M512i, k uint8, vindex M512i, base_addr uintptr, scale int) M512i
+func maskI64gather64(src [64]byte, k uint8, vindex [64]byte, base_addr uintptr, scale int) [64]byte
 
 
 // I64gatherPd: Gather double-precision (64-bit) floating-point elements from
@@ -28691,10 +28691,10 @@ func maskI64gather64(src M512i, k uint8, vindex M512i, base_addr uintptr, scale 
 // Instruction: 'VGATHERQPD'. Intrinsic: '_mm512_i64gather_pd'.
 // Requires AVX512F.
 func I64gatherPd(vindex M512i, base_addr uintptr, scale int) M512d {
-	return M512d(i64gatherPd(vindex, uintptr(base_addr), scale))
+	return M512d(i64gatherPd([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i64gatherPd(vindex M512i, base_addr uintptr, scale int) [8]float64
+func i64gatherPd(vindex [64]byte, base_addr uintptr, scale int) [8]float64
 
 
 // MaskI64gatherPd: Gather double-precision (64-bit) floating-point elements
@@ -28719,10 +28719,10 @@ func i64gatherPd(vindex M512i, base_addr uintptr, scale int) [8]float64
 // Instruction: 'VGATHERQPD'. Intrinsic: '_mm512_mask_i64gather_pd'.
 // Requires AVX512F.
 func MaskI64gatherPd(src M512d, k Mmask8, vindex M512i, base_addr uintptr, scale int) M512d {
-	return M512d(maskI64gatherPd([8]float64(src), uint8(k), vindex, uintptr(base_addr), scale))
+	return M512d(maskI64gatherPd([8]float64(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI64gatherPd(src [8]float64, k uint8, vindex M512i, base_addr uintptr, scale int) [8]float64
+func maskI64gatherPd(src [8]float64, k uint8, vindex [64]byte, base_addr uintptr, scale int) [8]float64
 
 
 // I64gatherPs: Gather single-precision (32-bit) floating-point elements from
@@ -28741,10 +28741,10 @@ func maskI64gatherPd(src [8]float64, k uint8, vindex M512i, base_addr uintptr, s
 // Instruction: 'VGATHERQPS'. Intrinsic: '_mm512_i64gather_ps'.
 // Requires AVX512F.
 func I64gatherPs(vindex M512i, base_addr uintptr, scale int) M256 {
-	return M256(i64gatherPs(vindex, uintptr(base_addr), scale))
+	return M256(i64gatherPs([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i64gatherPs(vindex M512i, base_addr uintptr, scale int) [8]float32
+func i64gatherPs(vindex [64]byte, base_addr uintptr, scale int) [8]float32
 
 
 // MaskI64gatherPs: Gather single-precision (32-bit) floating-point elements
@@ -28770,10 +28770,10 @@ func i64gatherPs(vindex M512i, base_addr uintptr, scale int) [8]float32
 // Instruction: 'VGATHERQPS'. Intrinsic: '_mm512_mask_i64gather_ps'.
 // Requires AVX512F.
 func MaskI64gatherPs(src M256, k Mmask8, vindex M512i, base_addr uintptr, scale int) M256 {
-	return M256(maskI64gatherPs([8]float32(src), uint8(k), vindex, uintptr(base_addr), scale))
+	return M256(maskI64gatherPs([8]float32(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI64gatherPs(src [8]float32, k uint8, vindex M512i, base_addr uintptr, scale int) [8]float32
+func maskI64gatherPs(src [8]float32, k uint8, vindex [64]byte, base_addr uintptr, scale int) [8]float32
 
 
 // I64gatherPslo: Loads 8 single-precision (32-bit) floating-point memory
@@ -28790,10 +28790,10 @@ func maskI64gatherPs(src [8]float32, k uint8, vindex M512i, base_addr uintptr, s
 // Instruction: '...'. Intrinsic: '_mm512_i64gather_pslo'.
 // Requires KNCNI.
 func I64gatherPslo(index M512i, mv uintptr, scale int) M512 {
-	return M512(i64gatherPslo(index, uintptr(mv), scale))
+	return M512(i64gatherPslo([64]byte(index), uintptr(mv), scale))
 }
 
-func i64gatherPslo(index M512i, mv uintptr, scale int) [16]float32
+func i64gatherPslo(index [64]byte, mv uintptr, scale int) [16]float32
 
 
 // MaskI64gatherPslo: Loads 8 single-precision (32-bit) floating-point memory
@@ -28815,10 +28815,10 @@ func i64gatherPslo(index M512i, mv uintptr, scale int) [16]float32
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64gather_pslo'.
 // Requires KNCNI.
 func MaskI64gatherPslo(src M512, k Mmask8, index M512i, mv uintptr, scale int) M512 {
-	return M512(maskI64gatherPslo([16]float32(src), uint8(k), index, uintptr(mv), scale))
+	return M512(maskI64gatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), scale))
 }
 
-func maskI64gatherPslo(src [16]float32, k uint8, index M512i, mv uintptr, scale int) [16]float32
+func maskI64gatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, scale int) [16]float32
 
 
 // I64scatter32: Scatter 32-bit integers from 'a' into memory using 64-bit
@@ -28835,10 +28835,10 @@ func maskI64gatherPslo(src [16]float32, k uint8, index M512i, mv uintptr, scale 
 // Instruction: 'VPSCATTERQD'. Intrinsic: '_mm512_i64scatter_epi32'.
 // Requires AVX512F.
 func I64scatter32(base_addr uintptr, vindex M512i, a M256i, scale int)  {
-	i64scatter32(uintptr(base_addr), vindex, a, scale)
+	i64scatter32(uintptr(base_addr), [64]byte(vindex), [32]byte(a), scale)
 }
 
-func i64scatter32(base_addr uintptr, vindex M512i, a M256i, scale int) 
+func i64scatter32(base_addr uintptr, vindex [64]byte, a [32]byte, scale int) 
 
 
 // MaskI64scatter32: Scatter 32-bit integers from 'a' into memory using 64-bit
@@ -28860,10 +28860,10 @@ func i64scatter32(base_addr uintptr, vindex M512i, a M256i, scale int)
 // Instruction: 'VPSCATTERQD'. Intrinsic: '_mm512_mask_i64scatter_epi32'.
 // Requires AVX512F.
 func MaskI64scatter32(base_addr uintptr, k Mmask8, vindex M512i, a M256i, scale int)  {
-	maskI64scatter32(uintptr(base_addr), uint8(k), vindex, a, scale)
+	maskI64scatter32(uintptr(base_addr), uint8(k), [64]byte(vindex), [32]byte(a), scale)
 }
 
-func maskI64scatter32(base_addr uintptr, k uint8, vindex M512i, a M256i, scale int) 
+func maskI64scatter32(base_addr uintptr, k uint8, vindex [64]byte, a [32]byte, scale int) 
 
 
 // I64scatter32lo: Stores 8 packed 32-bit integer elements in 'v1' in memory
@@ -28879,10 +28879,10 @@ func maskI64scatter32(base_addr uintptr, k uint8, vindex M512i, a M256i, scale i
 // Instruction: '...'. Intrinsic: '_mm512_i64scatter_epi32lo'.
 // Requires KNCNI.
 func I64scatter32lo(mv uintptr, index M512i, v1 M512i, scale int)  {
-	i64scatter32lo(uintptr(mv), index, v1, scale)
+	i64scatter32lo(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
 }
 
-func i64scatter32lo(mv uintptr, index M512i, v1 M512i, scale int) 
+func i64scatter32lo(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
 
 
 // MaskI64scatter32lo: Stores 8 packed 32-bit integer elements in 'v1' in
@@ -28901,10 +28901,10 @@ func i64scatter32lo(mv uintptr, index M512i, v1 M512i, scale int)
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64scatter_epi32lo'.
 // Requires KNCNI.
 func MaskI64scatter32lo(mv uintptr, k Mmask8, index M512i, v1 M512i, scale int)  {
-	maskI64scatter32lo(uintptr(mv), uint8(k), index, v1, scale)
+	maskI64scatter32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
 }
 
-func maskI64scatter32lo(mv uintptr, k uint8, index M512i, v1 M512i, scale int) 
+func maskI64scatter32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
 
 
 // I64scatter64: Scatter 64-bit integers from 'a' into memory using 64-bit
@@ -28920,10 +28920,10 @@ func maskI64scatter32lo(mv uintptr, k uint8, index M512i, v1 M512i, scale int)
 // Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm512_i64scatter_epi64'.
 // Requires AVX512F.
 func I64scatter64(base_addr uintptr, vindex M512i, a M512i, scale int)  {
-	i64scatter64(uintptr(base_addr), vindex, a, scale)
+	i64scatter64(uintptr(base_addr), [64]byte(vindex), [64]byte(a), scale)
 }
 
-func i64scatter64(base_addr uintptr, vindex M512i, a M512i, scale int) 
+func i64scatter64(base_addr uintptr, vindex [64]byte, a [64]byte, scale int) 
 
 
 // MaskI64scatter64: Scatter 64-bit integers from 'a' into memory using 64-bit
@@ -28944,10 +28944,10 @@ func i64scatter64(base_addr uintptr, vindex M512i, a M512i, scale int)
 // Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm512_mask_i64scatter_epi64'.
 // Requires AVX512F.
 func MaskI64scatter64(base_addr uintptr, k Mmask8, vindex M512i, a M512i, scale int)  {
-	maskI64scatter64(uintptr(base_addr), uint8(k), vindex, a, scale)
+	maskI64scatter64(uintptr(base_addr), uint8(k), [64]byte(vindex), [64]byte(a), scale)
 }
 
-func maskI64scatter64(base_addr uintptr, k uint8, vindex M512i, a M512i, scale int) 
+func maskI64scatter64(base_addr uintptr, k uint8, vindex [64]byte, a [64]byte, scale int) 
 
 
 // I64scatterPd: Scatter double-precision (64-bit) floating-point elements from
@@ -28964,10 +28964,10 @@ func maskI64scatter64(base_addr uintptr, k uint8, vindex M512i, a M512i, scale i
 // Instruction: 'VSCATTERQPD'. Intrinsic: '_mm512_i64scatter_pd'.
 // Requires AVX512F.
 func I64scatterPd(base_addr uintptr, vindex M512i, a M512d, scale int)  {
-	i64scatterPd(uintptr(base_addr), vindex, [8]float64(a), scale)
+	i64scatterPd(uintptr(base_addr), [64]byte(vindex), [8]float64(a), scale)
 }
 
-func i64scatterPd(base_addr uintptr, vindex M512i, a [8]float64, scale int) 
+func i64scatterPd(base_addr uintptr, vindex [64]byte, a [8]float64, scale int) 
 
 
 // MaskI64scatterPd: Scatter double-precision (64-bit) floating-point elements
@@ -28989,10 +28989,10 @@ func i64scatterPd(base_addr uintptr, vindex M512i, a [8]float64, scale int)
 // Instruction: 'VSCATTERQPD'. Intrinsic: '_mm512_mask_i64scatter_pd'.
 // Requires AVX512F.
 func MaskI64scatterPd(base_addr uintptr, k Mmask8, vindex M512i, a M512d, scale int)  {
-	maskI64scatterPd(uintptr(base_addr), uint8(k), vindex, [8]float64(a), scale)
+	maskI64scatterPd(uintptr(base_addr), uint8(k), [64]byte(vindex), [8]float64(a), scale)
 }
 
-func maskI64scatterPd(base_addr uintptr, k uint8, vindex M512i, a [8]float64, scale int) 
+func maskI64scatterPd(base_addr uintptr, k uint8, vindex [64]byte, a [8]float64, scale int) 
 
 
 // I64scatterPs: Scatter single-precision (32-bit) floating-point elements from
@@ -29011,10 +29011,10 @@ func maskI64scatterPd(base_addr uintptr, k uint8, vindex M512i, a [8]float64, sc
 // Instruction: 'VSCATTERQPS'. Intrinsic: '_mm512_i64scatter_ps'.
 // Requires AVX512F.
 func I64scatterPs(base_addr uintptr, vindex M512i, a M256, scale int)  {
-	i64scatterPs(uintptr(base_addr), vindex, [8]float32(a), scale)
+	i64scatterPs(uintptr(base_addr), [64]byte(vindex), [8]float32(a), scale)
 }
 
-func i64scatterPs(base_addr uintptr, vindex M512i, a [8]float32, scale int) 
+func i64scatterPs(base_addr uintptr, vindex [64]byte, a [8]float32, scale int) 
 
 
 // MaskI64scatterPs: Scatter single-precision (32-bit) floating-point elements
@@ -29037,10 +29037,10 @@ func i64scatterPs(base_addr uintptr, vindex M512i, a [8]float32, scale int)
 // Instruction: 'VSCATTERQPS'. Intrinsic: '_mm512_mask_i64scatter_ps'.
 // Requires AVX512F.
 func MaskI64scatterPs(base_addr uintptr, k Mmask8, vindex M512i, a M256, scale int)  {
-	maskI64scatterPs(uintptr(base_addr), uint8(k), vindex, [8]float32(a), scale)
+	maskI64scatterPs(uintptr(base_addr), uint8(k), [64]byte(vindex), [8]float32(a), scale)
 }
 
-func maskI64scatterPs(base_addr uintptr, k uint8, vindex M512i, a [8]float32, scale int) 
+func maskI64scatterPs(base_addr uintptr, k uint8, vindex [64]byte, a [8]float32, scale int) 
 
 
 // I64scatterPslo: Stores 8 packed single-precision (32-bit) floating-point
@@ -29056,10 +29056,10 @@ func maskI64scatterPs(base_addr uintptr, k uint8, vindex M512i, a [8]float32, sc
 // Instruction: '...'. Intrinsic: '_mm512_i64scatter_pslo'.
 // Requires KNCNI.
 func I64scatterPslo(mv uintptr, index M512i, v M512, scale int)  {
-	i64scatterPslo(uintptr(mv), index, [16]float32(v), scale)
+	i64scatterPslo(uintptr(mv), [64]byte(index), [16]float32(v), scale)
 }
 
-func i64scatterPslo(mv uintptr, index M512i, v [16]float32, scale int) 
+func i64scatterPslo(mv uintptr, index [64]byte, v [16]float32, scale int) 
 
 
 // MaskI64scatterPslo: Stores 8 packed single-precision (32-bit) floating-point
@@ -29079,10 +29079,10 @@ func i64scatterPslo(mv uintptr, index M512i, v [16]float32, scale int)
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64scatter_pslo'.
 // Requires KNCNI.
 func MaskI64scatterPslo(mv uintptr, k Mmask8, index M512i, v1 M512, scale int)  {
-	maskI64scatterPslo(uintptr(mv), uint8(k), index, [16]float32(v1), scale)
+	maskI64scatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), scale)
 }
 
-func maskI64scatterPslo(mv uintptr, k uint8, index M512i, v1 [16]float32, scale int) 
+func maskI64scatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, scale int) 
 
 
 // Insertf32x4: Copy 'a' to 'dst', then insert 128 bits (composed of 4 packed
@@ -29432,10 +29432,10 @@ func maskzInsertf64x4(k uint8, a [8]float64, b [4]float64, imm8 int) [8]float64
 // Instruction: 'VINSERTI32X4'. Intrinsic: '_mm512_inserti32x4'.
 // Requires AVX512F.
 func Inserti32x4(a M512i, b M128i, imm8 int) M512i {
-	return M512i(inserti32x4(a, b, imm8))
+	return M512i(inserti32x4([64]byte(a), [16]byte(b), imm8))
 }
 
-func inserti32x4(a M512i, b M128i, imm8 int) M512i
+func inserti32x4(a [64]byte, b [16]byte, imm8 int) [64]byte
 
 
 // MaskInserti32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -29463,10 +29463,10 @@ func inserti32x4(a M512i, b M128i, imm8 int) M512i
 // Instruction: 'VINSERTI32X4'. Intrinsic: '_mm512_mask_inserti32x4'.
 // Requires AVX512F.
 func MaskInserti32x4(src M512i, k Mmask16, a M512i, b M128i, imm8 int) M512i {
-	return M512i(maskInserti32x4(src, uint16(k), a, b, imm8))
+	return M512i(maskInserti32x4([64]byte(src), uint16(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func maskInserti32x4(src M512i, k uint16, a M512i, b M128i, imm8 int) M512i
+func maskInserti32x4(src [64]byte, k uint16, a [64]byte, b [16]byte, imm8 int) [64]byte
 
 
 // MaskzInserti32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -29494,10 +29494,10 @@ func maskInserti32x4(src M512i, k uint16, a M512i, b M128i, imm8 int) M512i
 // Instruction: 'VINSERTI32X4'. Intrinsic: '_mm512_maskz_inserti32x4'.
 // Requires AVX512F.
 func MaskzInserti32x4(k Mmask16, a M512i, b M128i, imm8 int) M512i {
-	return M512i(maskzInserti32x4(uint16(k), a, b, imm8))
+	return M512i(maskzInserti32x4(uint16(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func maskzInserti32x4(k uint16, a M512i, b M128i, imm8 int) M512i
+func maskzInserti32x4(k uint16, a [64]byte, b [16]byte, imm8 int) [64]byte
 
 
 // Inserti32x8: Copy 'a' to 'dst', then insert 256 bits (composed of 8 packed
@@ -29513,10 +29513,10 @@ func maskzInserti32x4(k uint16, a M512i, b M128i, imm8 int) M512i
 // Instruction: 'VINSERTI32X8'. Intrinsic: '_mm512_inserti32x8'.
 // Requires AVX512DQ.
 func Inserti32x8(a M512i, b M256i, imm8 int) M512i {
-	return M512i(inserti32x8(a, b, imm8))
+	return M512i(inserti32x8([64]byte(a), [32]byte(b), imm8))
 }
 
-func inserti32x8(a M512i, b M256i, imm8 int) M512i
+func inserti32x8(a [64]byte, b [32]byte, imm8 int) [64]byte
 
 
 // MaskInserti32x8: Copy 'a' to 'tmp', then insert 256 bits (composed of 8
@@ -29542,10 +29542,10 @@ func inserti32x8(a M512i, b M256i, imm8 int) M512i
 // Instruction: 'VINSERTI32X8'. Intrinsic: '_mm512_mask_inserti32x8'.
 // Requires AVX512DQ.
 func MaskInserti32x8(src M512i, k Mmask16, a M512i, b M256i, imm8 int) M512i {
-	return M512i(maskInserti32x8(src, uint16(k), a, b, imm8))
+	return M512i(maskInserti32x8([64]byte(src), uint16(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func maskInserti32x8(src M512i, k uint16, a M512i, b M256i, imm8 int) M512i
+func maskInserti32x8(src [64]byte, k uint16, a [64]byte, b [32]byte, imm8 int) [64]byte
 
 
 // MaskzInserti32x8: Copy 'a' to 'tmp', then insert 256 bits (composed of 8
@@ -29571,10 +29571,10 @@ func maskInserti32x8(src M512i, k uint16, a M512i, b M256i, imm8 int) M512i
 // Instruction: 'VINSERTI32X8'. Intrinsic: '_mm512_maskz_inserti32x8'.
 // Requires AVX512DQ.
 func MaskzInserti32x8(k Mmask16, a M512i, b M256i, imm8 int) M512i {
-	return M512i(maskzInserti32x8(uint16(k), a, b, imm8))
+	return M512i(maskzInserti32x8(uint16(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func maskzInserti32x8(k uint16, a M512i, b M256i, imm8 int) M512i
+func maskzInserti32x8(k uint16, a [64]byte, b [32]byte, imm8 int) [64]byte
 
 
 // Inserti64x2: Copy 'a' to 'dst', then insert 128 bits (composed of 2 packed
@@ -29592,10 +29592,10 @@ func maskzInserti32x8(k uint16, a M512i, b M256i, imm8 int) M512i
 // Instruction: 'VINSERTI64X2'. Intrinsic: '_mm512_inserti64x2'.
 // Requires AVX512DQ.
 func Inserti64x2(a M512i, b M128i, imm8 int) M512i {
-	return M512i(inserti64x2(a, b, imm8))
+	return M512i(inserti64x2([64]byte(a), [16]byte(b), imm8))
 }
 
-func inserti64x2(a M512i, b M128i, imm8 int) M512i
+func inserti64x2(a [64]byte, b [16]byte, imm8 int) [64]byte
 
 
 // MaskInserti64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -29623,10 +29623,10 @@ func inserti64x2(a M512i, b M128i, imm8 int) M512i
 // Instruction: 'VINSERTI64X2'. Intrinsic: '_mm512_mask_inserti64x2'.
 // Requires AVX512DQ.
 func MaskInserti64x2(src M512i, k Mmask8, a M512i, b M128i, imm8 int) M512i {
-	return M512i(maskInserti64x2(src, uint8(k), a, b, imm8))
+	return M512i(maskInserti64x2([64]byte(src), uint8(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func maskInserti64x2(src M512i, k uint8, a M512i, b M128i, imm8 int) M512i
+func maskInserti64x2(src [64]byte, k uint8, a [64]byte, b [16]byte, imm8 int) [64]byte
 
 
 // MaskzInserti64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -29654,10 +29654,10 @@ func maskInserti64x2(src M512i, k uint8, a M512i, b M128i, imm8 int) M512i
 // Instruction: 'VINSERTI64X2'. Intrinsic: '_mm512_maskz_inserti64x2'.
 // Requires AVX512DQ.
 func MaskzInserti64x2(k Mmask8, a M512i, b M128i, imm8 int) M512i {
-	return M512i(maskzInserti64x2(uint8(k), a, b, imm8))
+	return M512i(maskzInserti64x2(uint8(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func maskzInserti64x2(k uint8, a M512i, b M128i, imm8 int) M512i
+func maskzInserti64x2(k uint8, a [64]byte, b [16]byte, imm8 int) [64]byte
 
 
 // Inserti64x4: Copy 'a' to 'dst', then insert 256 bits (composed of 4 packed
@@ -29673,10 +29673,10 @@ func maskzInserti64x2(k uint8, a M512i, b M128i, imm8 int) M512i
 // Instruction: 'VINSERTI64X4'. Intrinsic: '_mm512_inserti64x4'.
 // Requires AVX512F.
 func Inserti64x4(a M512i, b M256i, imm8 int) M512i {
-	return M512i(inserti64x4(a, b, imm8))
+	return M512i(inserti64x4([64]byte(a), [32]byte(b), imm8))
 }
 
-func inserti64x4(a M512i, b M256i, imm8 int) M512i
+func inserti64x4(a [64]byte, b [32]byte, imm8 int) [64]byte
 
 
 // MaskInserti64x4: Copy 'a' to 'tmp', then insert 256 bits (composed of 4
@@ -29702,10 +29702,10 @@ func inserti64x4(a M512i, b M256i, imm8 int) M512i
 // Instruction: 'VINSERTI64X4'. Intrinsic: '_mm512_mask_inserti64x4'.
 // Requires AVX512F.
 func MaskInserti64x4(src M512i, k Mmask8, a M512i, b M256i, imm8 int) M512i {
-	return M512i(maskInserti64x4(src, uint8(k), a, b, imm8))
+	return M512i(maskInserti64x4([64]byte(src), uint8(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func maskInserti64x4(src M512i, k uint8, a M512i, b M256i, imm8 int) M512i
+func maskInserti64x4(src [64]byte, k uint8, a [64]byte, b [32]byte, imm8 int) [64]byte
 
 
 // MaskzInserti64x4: Copy 'a' to 'tmp', then insert 256 bits (composed of 4
@@ -29731,10 +29731,10 @@ func maskInserti64x4(src M512i, k uint8, a M512i, b M256i, imm8 int) M512i
 // Instruction: 'VINSERTI64X4'. Intrinsic: '_mm512_maskz_inserti64x4'.
 // Requires AVX512F.
 func MaskzInserti64x4(k Mmask8, a M512i, b M256i, imm8 int) M512i {
-	return M512i(maskzInserti64x4(uint8(k), a, b, imm8))
+	return M512i(maskzInserti64x4(uint8(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func maskzInserti64x4(k uint8, a M512i, b M256i, imm8 int) M512i
+func maskzInserti64x4(k uint8, a [64]byte, b [32]byte, imm8 int) [64]byte
 
 
 // Int2mask: Converts integer 'mask' into bitmask, storing the result in 'dst'. 
@@ -30302,7 +30302,7 @@ func Load32(mem_addr uintptr) M512i {
 	return M512i(load32(uintptr(mem_addr)))
 }
 
-func load32(mem_addr uintptr) M512i
+func load32(mem_addr uintptr) [64]byte
 
 
 // MaskLoad32: Load packed 32-bit integers from memory into 'dst' using
@@ -30324,10 +30324,10 @@ func load32(mem_addr uintptr) M512i
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_load_epi32'.
 // Requires KNCNI.
 func MaskLoad32(src M512i, k Mmask16, mem_addr uintptr) M512i {
-	return M512i(maskLoad32(src, uint16(k), uintptr(mem_addr)))
+	return M512i(maskLoad32([64]byte(src), uint16(k), uintptr(mem_addr)))
 }
 
-func maskLoad32(src M512i, k uint16, mem_addr uintptr) M512i
+func maskLoad32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
 
 
 // MaskzLoad32: Load packed 32-bit integers from memory into 'dst' using
@@ -30352,7 +30352,7 @@ func MaskzLoad32(k Mmask16, mem_addr uintptr) M512i {
 	return M512i(maskzLoad32(uint16(k), uintptr(mem_addr)))
 }
 
-func maskzLoad32(k uint16, mem_addr uintptr) M512i
+func maskzLoad32(k uint16, mem_addr uintptr) [64]byte
 
 
 // Load64: Load 512-bits (composed of 8 packed 64-bit integers) from memory
@@ -30369,7 +30369,7 @@ func Load64(mem_addr uintptr) M512i {
 	return M512i(load64(uintptr(mem_addr)))
 }
 
-func load64(mem_addr uintptr) M512i
+func load64(mem_addr uintptr) [64]byte
 
 
 // MaskLoad64: Load packed 64-bit integers from memory into 'dst' using
@@ -30391,10 +30391,10 @@ func load64(mem_addr uintptr) M512i
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_load_epi64'.
 // Requires KNCNI.
 func MaskLoad64(src M512i, k Mmask8, mem_addr uintptr) M512i {
-	return M512i(maskLoad64(src, uint8(k), uintptr(mem_addr)))
+	return M512i(maskLoad64([64]byte(src), uint8(k), uintptr(mem_addr)))
 }
 
-func maskLoad64(src M512i, k uint8, mem_addr uintptr) M512i
+func maskLoad64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
 
 
 // MaskzLoad64: Load packed 64-bit integers from memory into 'dst' using
@@ -30419,7 +30419,7 @@ func MaskzLoad64(k Mmask8, mem_addr uintptr) M512i {
 	return M512i(maskzLoad64(uint8(k), uintptr(mem_addr)))
 }
 
-func maskzLoad64(k uint8, mem_addr uintptr) M512i
+func maskzLoad64(k uint8, mem_addr uintptr) [64]byte
 
 
 // LoadPd: Load 512-bits (composed of 8 packed double-precision (64-bit)
@@ -30565,7 +30565,7 @@ func LoadSi512(mem_addr uintptr) M512i {
 	return M512i(loadSi512(uintptr(mem_addr)))
 }
 
-func loadSi512(mem_addr uintptr) M512i
+func loadSi512(mem_addr uintptr) [64]byte
 
 
 // MaskLoadu16: Load packed 16-bit integers from memory into 'dst' using
@@ -30586,10 +30586,10 @@ func loadSi512(mem_addr uintptr) M512i
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_loadu_epi16'.
 // Requires AVX512BW.
 func MaskLoadu16(src M512i, k Mmask32, mem_addr uintptr) M512i {
-	return M512i(maskLoadu16(src, uint32(k), uintptr(mem_addr)))
+	return M512i(maskLoadu16([64]byte(src), uint32(k), uintptr(mem_addr)))
 }
 
-func maskLoadu16(src M512i, k uint32, mem_addr uintptr) M512i
+func maskLoadu16(src [64]byte, k uint32, mem_addr uintptr) [64]byte
 
 
 // MaskzLoadu16: Load packed 16-bit integers from memory into 'dst' using
@@ -30613,7 +30613,7 @@ func MaskzLoadu16(k Mmask32, mem_addr uintptr) M512i {
 	return M512i(maskzLoadu16(uint32(k), uintptr(mem_addr)))
 }
 
-func maskzLoadu16(k uint32, mem_addr uintptr) M512i
+func maskzLoadu16(k uint32, mem_addr uintptr) [64]byte
 
 
 // MaskLoadu32: Load packed 32-bit integers from memory into 'dst' using
@@ -30634,10 +30634,10 @@ func maskzLoadu16(k uint32, mem_addr uintptr) M512i
 // Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_mask_loadu_epi32'.
 // Requires AVX512F.
 func MaskLoadu32(src M512i, k Mmask16, mem_addr uintptr) M512i {
-	return M512i(maskLoadu32(src, uint16(k), uintptr(mem_addr)))
+	return M512i(maskLoadu32([64]byte(src), uint16(k), uintptr(mem_addr)))
 }
 
-func maskLoadu32(src M512i, k uint16, mem_addr uintptr) M512i
+func maskLoadu32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
 
 
 // MaskzLoadu32: Load packed 32-bit integers from memory into 'dst' using
@@ -30661,7 +30661,7 @@ func MaskzLoadu32(k Mmask16, mem_addr uintptr) M512i {
 	return M512i(maskzLoadu32(uint16(k), uintptr(mem_addr)))
 }
 
-func maskzLoadu32(k uint16, mem_addr uintptr) M512i
+func maskzLoadu32(k uint16, mem_addr uintptr) [64]byte
 
 
 // MaskLoadu64: Load packed 64-bit integers from memory into 'dst' using
@@ -30682,10 +30682,10 @@ func maskzLoadu32(k uint16, mem_addr uintptr) M512i
 // Instruction: 'VMOVDQU64'. Intrinsic: '_mm512_mask_loadu_epi64'.
 // Requires AVX512F.
 func MaskLoadu64(src M512i, k Mmask8, mem_addr uintptr) M512i {
-	return M512i(maskLoadu64(src, uint8(k), uintptr(mem_addr)))
+	return M512i(maskLoadu64([64]byte(src), uint8(k), uintptr(mem_addr)))
 }
 
-func maskLoadu64(src M512i, k uint8, mem_addr uintptr) M512i
+func maskLoadu64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
 
 
 // MaskzLoadu64: Load packed 64-bit integers from memory into 'dst' using
@@ -30709,7 +30709,7 @@ func MaskzLoadu64(k Mmask8, mem_addr uintptr) M512i {
 	return M512i(maskzLoadu64(uint8(k), uintptr(mem_addr)))
 }
 
-func maskzLoadu64(k uint8, mem_addr uintptr) M512i
+func maskzLoadu64(k uint8, mem_addr uintptr) [64]byte
 
 
 // MaskLoadu8: Load packed 8-bit integers from memory into 'dst' using
@@ -30730,10 +30730,10 @@ func maskzLoadu64(k uint8, mem_addr uintptr) M512i
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_loadu_epi8'.
 // Requires AVX512BW.
 func MaskLoadu8(src M512i, k Mmask64, mem_addr uintptr) M512i {
-	return M512i(maskLoadu8(src, uint64(k), uintptr(mem_addr)))
+	return M512i(maskLoadu8([64]byte(src), uint64(k), uintptr(mem_addr)))
 }
 
-func maskLoadu8(src M512i, k uint64, mem_addr uintptr) M512i
+func maskLoadu8(src [64]byte, k uint64, mem_addr uintptr) [64]byte
 
 
 // MaskzLoadu8: Load packed 8-bit integers from memory into 'dst' using
@@ -30757,7 +30757,7 @@ func MaskzLoadu8(k Mmask64, mem_addr uintptr) M512i {
 	return M512i(maskzLoadu8(uint64(k), uintptr(mem_addr)))
 }
 
-func maskzLoadu8(k uint64, mem_addr uintptr) M512i
+func maskzLoadu8(k uint64, mem_addr uintptr) [64]byte
 
 
 // LoaduPd: Load 512-bits (composed of 8 packed double-precision (64-bit)
@@ -30900,7 +30900,7 @@ func LoaduSi512(mem_addr uintptr) M512i {
 	return M512i(loaduSi512(uintptr(mem_addr)))
 }
 
-func loaduSi512(mem_addr uintptr) M512i
+func loaduSi512(mem_addr uintptr) [64]byte
 
 
 // Loadunpackhi32: Loads the high-64-byte-aligned portion of the
@@ -30932,10 +30932,10 @@ func loaduSi512(mem_addr uintptr) M512i
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_loadunpackhi_epi32'.
 // Requires KNCNI.
 func Loadunpackhi32(src M512i, mt uintptr) M512i {
-	return M512i(loadunpackhi32(src, uintptr(mt)))
+	return M512i(loadunpackhi32([64]byte(src), uintptr(mt)))
 }
 
-func loadunpackhi32(src M512i, mt uintptr) M512i
+func loadunpackhi32(src [64]byte, mt uintptr) [64]byte
 
 
 // MaskLoadunpackhi32: Loads the high-64-byte-aligned portion of the
@@ -30971,10 +30971,10 @@ func loadunpackhi32(src M512i, mt uintptr) M512i
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_mask_loadunpackhi_epi32'.
 // Requires KNCNI.
 func MaskLoadunpackhi32(src M512i, k Mmask16, mt uintptr) M512i {
-	return M512i(maskLoadunpackhi32(src, uint16(k), uintptr(mt)))
+	return M512i(maskLoadunpackhi32([64]byte(src), uint16(k), uintptr(mt)))
 }
 
-func maskLoadunpackhi32(src M512i, k uint16, mt uintptr) M512i
+func maskLoadunpackhi32(src [64]byte, k uint16, mt uintptr) [64]byte
 
 
 // Loadunpackhi64: Loads the high-64-byte-aligned portion of the quadword
@@ -31005,10 +31005,10 @@ func maskLoadunpackhi32(src M512i, k uint16, mt uintptr) M512i
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_loadunpackhi_epi64'.
 // Requires KNCNI.
 func Loadunpackhi64(src M512i, mt uintptr) M512i {
-	return M512i(loadunpackhi64(src, uintptr(mt)))
+	return M512i(loadunpackhi64([64]byte(src), uintptr(mt)))
 }
 
-func loadunpackhi64(src M512i, mt uintptr) M512i
+func loadunpackhi64(src [64]byte, mt uintptr) [64]byte
 
 
 // MaskLoadunpackhi64: Loads the high-64-byte-aligned portion of the quadword
@@ -31043,10 +31043,10 @@ func loadunpackhi64(src M512i, mt uintptr) M512i
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_mask_loadunpackhi_epi64'.
 // Requires KNCNI.
 func MaskLoadunpackhi64(src M512i, k Mmask8, mt uintptr) M512i {
-	return M512i(maskLoadunpackhi64(src, uint8(k), uintptr(mt)))
+	return M512i(maskLoadunpackhi64([64]byte(src), uint8(k), uintptr(mt)))
 }
 
-func maskLoadunpackhi64(src M512i, k uint8, mt uintptr) M512i
+func maskLoadunpackhi64(src [64]byte, k uint8, mt uintptr) [64]byte
 
 
 // LoadunpackhiPd: Loads the high-64-byte-aligned portion of the quadword
@@ -31221,10 +31221,10 @@ func maskLoadunpackhiPs(src [16]float32, k uint16, mt uintptr) [16]float32
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_loadunpacklo_epi32'.
 // Requires KNCNI.
 func Loadunpacklo32(src M512i, mt uintptr) M512i {
-	return M512i(loadunpacklo32(src, uintptr(mt)))
+	return M512i(loadunpacklo32([64]byte(src), uintptr(mt)))
 }
 
-func loadunpacklo32(src M512i, mt uintptr) M512i
+func loadunpacklo32(src [64]byte, mt uintptr) [64]byte
 
 
 // MaskLoadunpacklo32: Loads the low-64-byte-aligned portion of the
@@ -31255,10 +31255,10 @@ func loadunpacklo32(src M512i, mt uintptr) M512i
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_mask_loadunpacklo_epi32'.
 // Requires KNCNI.
 func MaskLoadunpacklo32(src M512i, k Mmask16, mt uintptr) M512i {
-	return M512i(maskLoadunpacklo32(src, uint16(k), uintptr(mt)))
+	return M512i(maskLoadunpacklo32([64]byte(src), uint16(k), uintptr(mt)))
 }
 
-func maskLoadunpacklo32(src M512i, k uint16, mt uintptr) M512i
+func maskLoadunpacklo32(src [64]byte, k uint16, mt uintptr) [64]byte
 
 
 // Loadunpacklo64: Loads the low-64-byte-aligned portion of the quadword stream
@@ -31285,10 +31285,10 @@ func maskLoadunpacklo32(src M512i, k uint16, mt uintptr) M512i
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_loadunpacklo_epi64'.
 // Requires KNCNI.
 func Loadunpacklo64(src M512i, mt uintptr) M512i {
-	return M512i(loadunpacklo64(src, uintptr(mt)))
+	return M512i(loadunpacklo64([64]byte(src), uintptr(mt)))
 }
 
-func loadunpacklo64(src M512i, mt uintptr) M512i
+func loadunpacklo64(src [64]byte, mt uintptr) [64]byte
 
 
 // MaskLoadunpacklo64: Loads the low-64-byte-aligned portion of the quadword
@@ -31319,10 +31319,10 @@ func loadunpacklo64(src M512i, mt uintptr) M512i
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_mask_loadunpacklo_epi64'.
 // Requires KNCNI.
 func MaskLoadunpacklo64(src M512i, k Mmask8, mt uintptr) M512i {
-	return M512i(maskLoadunpacklo64(src, uint8(k), uintptr(mt)))
+	return M512i(maskLoadunpacklo64([64]byte(src), uint8(k), uintptr(mt)))
 }
 
-func maskLoadunpacklo64(src M512i, k uint8, mt uintptr) M512i
+func maskLoadunpacklo64(src [64]byte, k uint8, mt uintptr) [64]byte
 
 
 // LoadunpackloPd: Loads the low-64-byte-aligned portion of the quadword stream
@@ -31944,10 +31944,10 @@ func maskLogbPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm512_lzcnt_epi32'.
 // Requires AVX512CD.
 func Lzcnt32(a M512i) M512i {
-	return M512i(lzcnt32(a))
+	return M512i(lzcnt32([64]byte(a)))
 }
 
-func lzcnt32(a M512i) M512i
+func lzcnt32(a [64]byte) [64]byte
 
 
 // MaskLzcnt32: Counts the number of leading zero bits in each packed 32-bit
@@ -31972,10 +31972,10 @@ func lzcnt32(a M512i) M512i
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm512_mask_lzcnt_epi32'.
 // Requires AVX512CD.
 func MaskLzcnt32(src M512i, k Mmask16, a M512i) M512i {
-	return M512i(maskLzcnt32(src, uint16(k), a))
+	return M512i(maskLzcnt32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskLzcnt32(src M512i, k uint16, a M512i) M512i
+func maskLzcnt32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
 // MaskzLzcnt32: Counts the number of leading zero bits in each packed 32-bit
@@ -32000,10 +32000,10 @@ func maskLzcnt32(src M512i, k uint16, a M512i) M512i
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm512_maskz_lzcnt_epi32'.
 // Requires AVX512CD.
 func MaskzLzcnt32(k Mmask16, a M512i) M512i {
-	return M512i(maskzLzcnt32(uint16(k), a))
+	return M512i(maskzLzcnt32(uint16(k), [64]byte(a)))
 }
 
-func maskzLzcnt32(k uint16, a M512i) M512i
+func maskzLzcnt32(k uint16, a [64]byte) [64]byte
 
 
 // Lzcnt64: Counts the number of leading zero bits in each packed 64-bit
@@ -32023,10 +32023,10 @@ func maskzLzcnt32(k uint16, a M512i) M512i
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm512_lzcnt_epi64'.
 // Requires AVX512CD.
 func Lzcnt64(a M512i) M512i {
-	return M512i(lzcnt64(a))
+	return M512i(lzcnt64([64]byte(a)))
 }
 
-func lzcnt64(a M512i) M512i
+func lzcnt64(a [64]byte) [64]byte
 
 
 // MaskLzcnt64: Counts the number of leading zero bits in each packed 64-bit
@@ -32051,10 +32051,10 @@ func lzcnt64(a M512i) M512i
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm512_mask_lzcnt_epi64'.
 // Requires AVX512CD.
 func MaskLzcnt64(src M512i, k Mmask8, a M512i) M512i {
-	return M512i(maskLzcnt64(src, uint8(k), a))
+	return M512i(maskLzcnt64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskLzcnt64(src M512i, k uint8, a M512i) M512i
+func maskLzcnt64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
 // MaskzLzcnt64: Counts the number of leading zero bits in each packed 64-bit
@@ -32079,10 +32079,10 @@ func maskLzcnt64(src M512i, k uint8, a M512i) M512i
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm512_maskz_lzcnt_epi64'.
 // Requires AVX512CD.
 func MaskzLzcnt64(k Mmask8, a M512i) M512i {
-	return M512i(maskzLzcnt64(uint8(k), a))
+	return M512i(maskzLzcnt64(uint8(k), [64]byte(a)))
 }
 
-func maskzLzcnt64(k uint8, a M512i) M512i
+func maskzLzcnt64(k uint8, a [64]byte) [64]byte
 
 
 // Madd16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -32098,10 +32098,10 @@ func maskzLzcnt64(k uint8, a M512i) M512i
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_madd_epi16'.
 // Requires AVX512BW.
 func Madd16(a M512i, b M512i) M512i {
-	return M512i(madd16(a, b))
+	return M512i(madd16([64]byte(a), [64]byte(b)))
 }
 
-func madd16(a M512i, b M512i) M512i
+func madd16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMadd16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -32123,10 +32123,10 @@ func madd16(a M512i, b M512i) M512i
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_mask_madd_epi16'.
 // Requires AVX512BW.
 func MaskMadd16(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMadd16(src, uint16(k), a, b))
+	return M512i(maskMadd16([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMadd16(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMadd16(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMadd16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -32147,10 +32147,10 @@ func maskMadd16(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_maskz_madd_epi16'.
 // Requires AVX512BW.
 func MaskzMadd16(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzMadd16(uint16(k), a, b))
+	return M512i(maskzMadd16(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMadd16(k uint16, a M512i, b M512i) M512i
+func maskzMadd16(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Madd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -32168,10 +32168,10 @@ func maskzMadd16(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_madd52hi_epu64'.
 // Requires AVX512IFMA52.
 func Madd52hiEpu64(a M512i, b M512i, c M512i) M512i {
-	return M512i(madd52hiEpu64(a, b, c))
+	return M512i(madd52hiEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func madd52hiEpu64(a M512i, b M512i, c M512i) M512i
+func madd52hiEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
 // MaskMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -32195,10 +32195,10 @@ func madd52hiEpu64(a M512i, b M512i, c M512i) M512i
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_mask_madd52hi_epu64'.
 // Requires AVX512IFMA52.
 func MaskMadd52hiEpu64(a M512i, k Mmask8, b M512i, c M512i) M512i {
-	return M512i(maskMadd52hiEpu64(a, uint8(k), b, c))
+	return M512i(maskMadd52hiEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
 }
 
-func maskMadd52hiEpu64(a M512i, k uint8, b M512i, c M512i) M512i
+func maskMadd52hiEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 
 
 // MaskzMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -32222,10 +32222,10 @@ func maskMadd52hiEpu64(a M512i, k uint8, b M512i, c M512i) M512i
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_maskz_madd52hi_epu64'.
 // Requires AVX512IFMA52.
 func MaskzMadd52hiEpu64(k Mmask8, a M512i, b M512i, c M512i) M512i {
-	return M512i(maskzMadd52hiEpu64(uint8(k), a, b, c))
+	return M512i(maskzMadd52hiEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func maskzMadd52hiEpu64(k uint8, a M512i, b M512i, c M512i) M512i
+func maskzMadd52hiEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
 // Madd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -32243,10 +32243,10 @@ func maskzMadd52hiEpu64(k uint8, a M512i, b M512i, c M512i) M512i
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_madd52lo_epu64'.
 // Requires AVX512IFMA52.
 func Madd52loEpu64(a M512i, b M512i, c M512i) M512i {
-	return M512i(madd52loEpu64(a, b, c))
+	return M512i(madd52loEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func madd52loEpu64(a M512i, b M512i, c M512i) M512i
+func madd52loEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
 // MaskMadd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -32270,10 +32270,10 @@ func madd52loEpu64(a M512i, b M512i, c M512i) M512i
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_mask_madd52lo_epu64'.
 // Requires AVX512IFMA52.
 func MaskMadd52loEpu64(a M512i, k Mmask8, b M512i, c M512i) M512i {
-	return M512i(maskMadd52loEpu64(a, uint8(k), b, c))
+	return M512i(maskMadd52loEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
 }
 
-func maskMadd52loEpu64(a M512i, k uint8, b M512i, c M512i) M512i
+func maskMadd52loEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 
 
 // MaskzMadd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -32297,10 +32297,10 @@ func maskMadd52loEpu64(a M512i, k uint8, b M512i, c M512i) M512i
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_maskz_madd52lo_epu64'.
 // Requires AVX512IFMA52.
 func MaskzMadd52loEpu64(k Mmask8, a M512i, b M512i, c M512i) M512i {
-	return M512i(maskzMadd52loEpu64(uint8(k), a, b, c))
+	return M512i(maskzMadd52loEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func maskzMadd52loEpu64(k uint8, a M512i, b M512i, c M512i) M512i
+func maskzMadd52loEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
 // Maddubs16: Vertically multiply each unsigned 8-bit integer from 'a' with the
@@ -32317,10 +32317,10 @@ func maskzMadd52loEpu64(k uint8, a M512i, b M512i, c M512i) M512i
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_maddubs_epi16'.
 // Requires AVX512BW.
 func Maddubs16(a M512i, b M512i) M512i {
-	return M512i(maddubs16(a, b))
+	return M512i(maddubs16([64]byte(a), [64]byte(b)))
 }
 
-func maddubs16(a M512i, b M512i) M512i
+func maddubs16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaddubs16: Multiply packed unsigned 8-bit integers in 'a' by packed
@@ -32342,10 +32342,10 @@ func maddubs16(a M512i, b M512i) M512i
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_mask_maddubs_epi16'.
 // Requires AVX512BW.
 func MaskMaddubs16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMaddubs16(src, uint32(k), a, b))
+	return M512i(maskMaddubs16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaddubs16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMaddubs16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMaddubs16: Multiply packed unsigned 8-bit integers in 'a' by packed
@@ -32367,10 +32367,10 @@ func maskMaddubs16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_maskz_maddubs_epi16'.
 // Requires AVX512BW.
 func MaskzMaddubs16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMaddubs16(uint32(k), a, b))
+	return M512i(maskzMaddubs16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaddubs16(k uint32, a M512i, b M512i) M512i
+func maskzMaddubs16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Mask2int: Converts bit mask 'k1' into an integer value, storing the results
@@ -32408,10 +32408,10 @@ func mask2int(k1 uint16) int
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_mask_max_epi16'.
 // Requires AVX512BW.
 func MaskMax16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMax16(src, uint32(k), a, b))
+	return M512i(maskMax16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMax16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMax16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMax16: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -32435,10 +32435,10 @@ func maskMax16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_maskz_max_epi16'.
 // Requires AVX512BW.
 func MaskzMax16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMax16(uint32(k), a, b))
+	return M512i(maskzMax16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMax16(k uint32, a M512i, b M512i) M512i
+func maskzMax16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Max16: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -32457,10 +32457,10 @@ func maskzMax16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_max_epi16'.
 // Requires AVX512BW.
 func Max16(a M512i, b M512i) M512i {
-	return M512i(max16(a, b))
+	return M512i(max16([64]byte(a), [64]byte(b)))
 }
 
-func max16(a M512i, b M512i) M512i
+func max16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMax32: Compare packed 32-bit integers in 'a' and 'b', and store packed
@@ -32484,10 +32484,10 @@ func max16(a M512i, b M512i) M512i
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm512_mask_max_epi32'.
 // Requires KNCNI.
 func MaskMax32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMax32(src, uint16(k), a, b))
+	return M512i(maskMax32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMax32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMax32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMax32: Compare packed 32-bit integers in 'a' and 'b', and store packed
@@ -32511,10 +32511,10 @@ func maskMax32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm512_maskz_max_epi32'.
 // Requires AVX512F.
 func MaskzMax32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzMax32(uint16(k), a, b))
+	return M512i(maskzMax32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMax32(k uint16, a M512i, b M512i) M512i
+func maskzMax32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Max32: Compare packed 32-bit integers in 'a' and 'b', and store packed
@@ -32533,10 +32533,10 @@ func maskzMax32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm512_max_epi32'.
 // Requires KNCNI.
 func Max32(a M512i, b M512i) M512i {
-	return M512i(max32(a, b))
+	return M512i(max32([64]byte(a), [64]byte(b)))
 }
 
-func max32(a M512i, b M512i) M512i
+func max32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMax64: Compare packed 64-bit integers in 'a' and 'b', and store packed
@@ -32560,10 +32560,10 @@ func max32(a M512i, b M512i) M512i
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm512_mask_max_epi64'.
 // Requires AVX512F.
 func MaskMax64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMax64(src, uint8(k), a, b))
+	return M512i(maskMax64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMax64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMax64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMax64: Compare packed 64-bit integers in 'a' and 'b', and store packed
@@ -32587,10 +32587,10 @@ func maskMax64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm512_maskz_max_epi64'.
 // Requires AVX512F.
 func MaskzMax64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzMax64(uint8(k), a, b))
+	return M512i(maskzMax64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMax64(k uint8, a M512i, b M512i) M512i
+func maskzMax64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Max64: Compare packed 64-bit integers in 'a' and 'b', and store packed
@@ -32609,10 +32609,10 @@ func maskzMax64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm512_max_epi64'.
 // Requires AVX512F.
 func Max64(a M512i, b M512i) M512i {
-	return M512i(max64(a, b))
+	return M512i(max64([64]byte(a), [64]byte(b)))
 }
 
-func max64(a M512i, b M512i) M512i
+func max64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMax8: Compare packed 8-bit integers in 'a' and 'b', and store packed
@@ -32636,10 +32636,10 @@ func max64(a M512i, b M512i) M512i
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_mask_max_epi8'.
 // Requires AVX512BW.
 func MaskMax8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMax8(src, uint64(k), a, b))
+	return M512i(maskMax8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMax8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskMax8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMax8: Compare packed 8-bit integers in 'a' and 'b', and store packed
@@ -32663,10 +32663,10 @@ func maskMax8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_maskz_max_epi8'.
 // Requires AVX512BW.
 func MaskzMax8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMax8(uint64(k), a, b))
+	return M512i(maskzMax8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMax8(k uint64, a M512i, b M512i) M512i
+func maskzMax8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Max8: Compare packed 8-bit integers in 'a' and 'b', and store packed maximum
@@ -32685,10 +32685,10 @@ func maskzMax8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_max_epi8'.
 // Requires AVX512BW.
 func Max8(a M512i, b M512i) M512i {
-	return M512i(max8(a, b))
+	return M512i(max8([64]byte(a), [64]byte(b)))
 }
 
-func max8(a M512i, b M512i) M512i
+func max8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
@@ -32712,10 +32712,10 @@ func max8(a M512i, b M512i) M512i
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_mask_max_epu16'.
 // Requires AVX512BW.
 func MaskMaxEpu16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpu16(src, uint32(k), a, b))
+	return M512i(maskMaxEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpu16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMaxEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
@@ -32739,10 +32739,10 @@ func maskMaxEpu16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_maskz_max_epu16'.
 // Requires AVX512BW.
 func MaskzMaxEpu16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpu16(uint32(k), a, b))
+	return M512i(maskzMaxEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpu16(k uint32, a M512i, b M512i) M512i
+func maskzMaxEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and store
@@ -32761,10 +32761,10 @@ func maskzMaxEpu16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_max_epu16'.
 // Requires AVX512BW.
 func MaxEpu16(a M512i, b M512i) M512i {
-	return M512i(maxEpu16(a, b))
+	return M512i(maxEpu16([64]byte(a), [64]byte(b)))
 }
 
-func maxEpu16(a M512i, b M512i) M512i
+func maxEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
@@ -32788,10 +32788,10 @@ func maxEpu16(a M512i, b M512i) M512i
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm512_mask_max_epu32'.
 // Requires KNCNI.
 func MaskMaxEpu32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpu32(src, uint16(k), a, b))
+	return M512i(maskMaxEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpu32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMaxEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
@@ -32815,10 +32815,10 @@ func maskMaxEpu32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm512_maskz_max_epu32'.
 // Requires AVX512F.
 func MaskzMaxEpu32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpu32(uint16(k), a, b))
+	return M512i(maskzMaxEpu32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpu32(k uint16, a M512i, b M512i) M512i
+func maskzMaxEpu32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and store
@@ -32837,10 +32837,10 @@ func maskzMaxEpu32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm512_max_epu32'.
 // Requires KNCNI.
 func MaxEpu32(a M512i, b M512i) M512i {
-	return M512i(maxEpu32(a, b))
+	return M512i(maxEpu32([64]byte(a), [64]byte(b)))
 }
 
-func maxEpu32(a M512i, b M512i) M512i
+func maxEpu32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpu64: Compare packed unsigned 64-bit integers in 'a' and 'b', and
@@ -32864,10 +32864,10 @@ func maxEpu32(a M512i, b M512i) M512i
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm512_mask_max_epu64'.
 // Requires AVX512F.
 func MaskMaxEpu64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpu64(src, uint8(k), a, b))
+	return M512i(maskMaxEpu64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpu64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMaxEpu64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMaxEpu64: Compare packed unsigned 64-bit integers in 'a' and 'b', and
@@ -32891,10 +32891,10 @@ func maskMaxEpu64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm512_maskz_max_epu64'.
 // Requires AVX512F.
 func MaskzMaxEpu64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpu64(uint8(k), a, b))
+	return M512i(maskzMaxEpu64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpu64(k uint8, a M512i, b M512i) M512i
+func maskzMaxEpu64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaxEpu64: Compare packed unsigned 64-bit integers in 'a' and 'b', and store
@@ -32913,10 +32913,10 @@ func maskzMaxEpu64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm512_max_epu64'.
 // Requires AVX512F.
 func MaxEpu64(a M512i, b M512i) M512i {
-	return M512i(maxEpu64(a, b))
+	return M512i(maxEpu64([64]byte(a), [64]byte(b)))
 }
 
-func maxEpu64(a M512i, b M512i) M512i
+func maxEpu64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
@@ -32940,10 +32940,10 @@ func maxEpu64(a M512i, b M512i) M512i
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_mask_max_epu8'.
 // Requires AVX512BW.
 func MaskMaxEpu8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpu8(src, uint64(k), a, b))
+	return M512i(maskMaxEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpu8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskMaxEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
@@ -32967,10 +32967,10 @@ func maskMaxEpu8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_maskz_max_epu8'.
 // Requires AVX512BW.
 func MaskzMaxEpu8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpu8(uint64(k), a, b))
+	return M512i(maskzMaxEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpu8(k uint64, a M512i, b M512i) M512i
+func maskzMaxEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -32989,10 +32989,10 @@ func maskzMaxEpu8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_max_epu8'.
 // Requires AVX512BW.
 func MaxEpu8(a M512i, b M512i) M512i {
-	return M512i(maxEpu8(a, b))
+	return M512i(maxEpu8([64]byte(a), [64]byte(b)))
 }
 
-func maxEpu8(a M512i, b M512i) M512i
+func maxEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxPd: Compare packed double-precision (64-bit) floating-point elements
@@ -33325,10 +33325,10 @@ func maxabsPs(a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_mask_min_epi16'.
 // Requires AVX512BW.
 func MaskMin16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMin16(src, uint32(k), a, b))
+	return M512i(maskMin16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMin16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMin16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMin16: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -33352,10 +33352,10 @@ func maskMin16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_maskz_min_epi16'.
 // Requires AVX512BW.
 func MaskzMin16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMin16(uint32(k), a, b))
+	return M512i(maskzMin16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMin16(k uint32, a M512i, b M512i) M512i
+func maskzMin16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Min16: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -33374,10 +33374,10 @@ func maskzMin16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_min_epi16'.
 // Requires AVX512BW.
 func Min16(a M512i, b M512i) M512i {
-	return M512i(min16(a, b))
+	return M512i(min16([64]byte(a), [64]byte(b)))
 }
 
-func min16(a M512i, b M512i) M512i
+func min16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMin32: Compare packed 32-bit integers in 'a' and 'b', and store packed
@@ -33401,10 +33401,10 @@ func min16(a M512i, b M512i) M512i
 // Instruction: 'VPMINSD'. Intrinsic: '_mm512_mask_min_epi32'.
 // Requires KNCNI.
 func MaskMin32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMin32(src, uint16(k), a, b))
+	return M512i(maskMin32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMin32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMin32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMin32: Compare packed 32-bit integers in 'a' and 'b', and store packed
@@ -33428,10 +33428,10 @@ func maskMin32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMINSD'. Intrinsic: '_mm512_maskz_min_epi32'.
 // Requires AVX512F.
 func MaskzMin32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzMin32(uint16(k), a, b))
+	return M512i(maskzMin32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMin32(k uint16, a M512i, b M512i) M512i
+func maskzMin32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Min32: Compare packed 32-bit integers in 'a' and 'b', and store packed
@@ -33450,10 +33450,10 @@ func maskzMin32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMINSD'. Intrinsic: '_mm512_min_epi32'.
 // Requires KNCNI.
 func Min32(a M512i, b M512i) M512i {
-	return M512i(min32(a, b))
+	return M512i(min32([64]byte(a), [64]byte(b)))
 }
 
-func min32(a M512i, b M512i) M512i
+func min32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMin64: Compare packed 64-bit integers in 'a' and 'b', and store packed
@@ -33477,10 +33477,10 @@ func min32(a M512i, b M512i) M512i
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm512_mask_min_epi64'.
 // Requires AVX512F.
 func MaskMin64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMin64(src, uint8(k), a, b))
+	return M512i(maskMin64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMin64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMin64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMin64: Compare packed 64-bit integers in 'a' and 'b', and store packed
@@ -33504,10 +33504,10 @@ func maskMin64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm512_maskz_min_epi64'.
 // Requires AVX512F.
 func MaskzMin64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzMin64(uint8(k), a, b))
+	return M512i(maskzMin64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMin64(k uint8, a M512i, b M512i) M512i
+func maskzMin64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Min64: Compare packed 64-bit integers in 'a' and 'b', and store packed
@@ -33526,10 +33526,10 @@ func maskzMin64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm512_min_epi64'.
 // Requires AVX512F.
 func Min64(a M512i, b M512i) M512i {
-	return M512i(min64(a, b))
+	return M512i(min64([64]byte(a), [64]byte(b)))
 }
 
-func min64(a M512i, b M512i) M512i
+func min64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMin8: Compare packed 8-bit integers in 'a' and 'b', and store packed
@@ -33553,10 +33553,10 @@ func min64(a M512i, b M512i) M512i
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_mask_min_epi8'.
 // Requires AVX512BW.
 func MaskMin8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMin8(src, uint64(k), a, b))
+	return M512i(maskMin8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMin8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskMin8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMin8: Compare packed 8-bit integers in 'a' and 'b', and store packed
@@ -33580,10 +33580,10 @@ func maskMin8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_maskz_min_epi8'.
 // Requires AVX512BW.
 func MaskzMin8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMin8(uint64(k), a, b))
+	return M512i(maskzMin8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMin8(k uint64, a M512i, b M512i) M512i
+func maskzMin8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Min8: Compare packed 8-bit integers in 'a' and 'b', and store packed minimum
@@ -33602,10 +33602,10 @@ func maskzMin8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_min_epi8'.
 // Requires AVX512BW.
 func Min8(a M512i, b M512i) M512i {
-	return M512i(min8(a, b))
+	return M512i(min8([64]byte(a), [64]byte(b)))
 }
 
-func min8(a M512i, b M512i) M512i
+func min8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
@@ -33629,10 +33629,10 @@ func min8(a M512i, b M512i) M512i
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_mask_min_epu16'.
 // Requires AVX512BW.
 func MaskMinEpu16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMinEpu16(src, uint32(k), a, b))
+	return M512i(maskMinEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpu16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMinEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
@@ -33656,10 +33656,10 @@ func maskMinEpu16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_maskz_min_epu16'.
 // Requires AVX512BW.
 func MaskzMinEpu16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpu16(uint32(k), a, b))
+	return M512i(maskzMinEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpu16(k uint32, a M512i, b M512i) M512i
+func maskzMinEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and store
@@ -33678,10 +33678,10 @@ func maskzMinEpu16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_min_epu16'.
 // Requires AVX512BW.
 func MinEpu16(a M512i, b M512i) M512i {
-	return M512i(minEpu16(a, b))
+	return M512i(minEpu16([64]byte(a), [64]byte(b)))
 }
 
-func minEpu16(a M512i, b M512i) M512i
+func minEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
@@ -33705,10 +33705,10 @@ func minEpu16(a M512i, b M512i) M512i
 // Instruction: 'VPMINUD'. Intrinsic: '_mm512_mask_min_epu32'.
 // Requires KNCNI.
 func MaskMinEpu32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMinEpu32(src, uint16(k), a, b))
+	return M512i(maskMinEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpu32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMinEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
@@ -33732,10 +33732,10 @@ func maskMinEpu32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMINUD'. Intrinsic: '_mm512_maskz_min_epu32'.
 // Requires AVX512F.
 func MaskzMinEpu32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpu32(uint16(k), a, b))
+	return M512i(maskzMinEpu32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpu32(k uint16, a M512i, b M512i) M512i
+func maskzMinEpu32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and store
@@ -33754,10 +33754,10 @@ func maskzMinEpu32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMINUD'. Intrinsic: '_mm512_min_epu32'.
 // Requires KNCNI.
 func MinEpu32(a M512i, b M512i) M512i {
-	return M512i(minEpu32(a, b))
+	return M512i(minEpu32([64]byte(a), [64]byte(b)))
 }
 
-func minEpu32(a M512i, b M512i) M512i
+func minEpu32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpu64: Compare packed unsigned 64-bit integers in 'a' and 'b', and
@@ -33781,10 +33781,10 @@ func minEpu32(a M512i, b M512i) M512i
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm512_mask_min_epu64'.
 // Requires AVX512F.
 func MaskMinEpu64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMinEpu64(src, uint8(k), a, b))
+	return M512i(maskMinEpu64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpu64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMinEpu64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMinEpu64: Compare packed unsigned 64-bit integers in 'a' and 'b', and
@@ -33808,10 +33808,10 @@ func maskMinEpu64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm512_maskz_min_epu64'.
 // Requires AVX512F.
 func MaskzMinEpu64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpu64(uint8(k), a, b))
+	return M512i(maskzMinEpu64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpu64(k uint8, a M512i, b M512i) M512i
+func maskzMinEpu64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MinEpu64: Compare packed unsigned 64-bit integers in 'a' and 'b', and store
@@ -33830,10 +33830,10 @@ func maskzMinEpu64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm512_min_epu64'.
 // Requires AVX512F.
 func MinEpu64(a M512i, b M512i) M512i {
-	return M512i(minEpu64(a, b))
+	return M512i(minEpu64([64]byte(a), [64]byte(b)))
 }
 
-func minEpu64(a M512i, b M512i) M512i
+func minEpu64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
@@ -33857,10 +33857,10 @@ func minEpu64(a M512i, b M512i) M512i
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_mask_min_epu8'.
 // Requires AVX512BW.
 func MaskMinEpu8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMinEpu8(src, uint64(k), a, b))
+	return M512i(maskMinEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpu8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskMinEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
@@ -33884,10 +33884,10 @@ func maskMinEpu8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_maskz_min_epu8'.
 // Requires AVX512BW.
 func MaskzMinEpu8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpu8(uint64(k), a, b))
+	return M512i(maskzMinEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpu8(k uint64, a M512i, b M512i) M512i
+func maskzMinEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -33906,10 +33906,10 @@ func maskzMinEpu8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_min_epu8'.
 // Requires AVX512BW.
 func MinEpu8(a M512i, b M512i) M512i {
-	return M512i(minEpu8(a, b))
+	return M512i(minEpu8([64]byte(a), [64]byte(b)))
 }
 
-func minEpu8(a M512i, b M512i) M512i
+func minEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinPd: Compare packed double-precision (64-bit) floating-point elements
@@ -34195,10 +34195,10 @@ func minRoundPs(a [16]float32, b [16]float32, sae int) [16]float32
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_mov_epi16'.
 // Requires AVX512BW.
 func MaskMov16(src M512i, k Mmask32, a M512i) M512i {
-	return M512i(maskMov16(src, uint32(k), a))
+	return M512i(maskMov16([64]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskMov16(src M512i, k uint32, a M512i) M512i
+func maskMov16(src [64]byte, k uint32, a [64]byte) [64]byte
 
 
 // MaskzMov16: Move packed 16-bit integers from 'a' into 'dst' using zeromask
@@ -34217,10 +34217,10 @@ func maskMov16(src M512i, k uint32, a M512i) M512i
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_maskz_mov_epi16'.
 // Requires AVX512BW.
 func MaskzMov16(k Mmask32, a M512i) M512i {
-	return M512i(maskzMov16(uint32(k), a))
+	return M512i(maskzMov16(uint32(k), [64]byte(a)))
 }
 
-func maskzMov16(k uint32, a M512i) M512i
+func maskzMov16(k uint32, a [64]byte) [64]byte
 
 
 // MaskMov32: Move packed 32-bit integers from 'a' to 'dst' using writemask 'k'
@@ -34239,10 +34239,10 @@ func maskzMov16(k uint32, a M512i) M512i
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_mov_epi32'.
 // Requires KNCNI.
 func MaskMov32(src M512i, k Mmask16, a M512i) M512i {
-	return M512i(maskMov32(src, uint16(k), a))
+	return M512i(maskMov32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskMov32(src M512i, k uint16, a M512i) M512i
+func maskMov32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
 // MaskzMov32: Move packed 32-bit integers from 'a' into 'dst' using zeromask
@@ -34261,10 +34261,10 @@ func maskMov32(src M512i, k uint16, a M512i) M512i
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_maskz_mov_epi32'.
 // Requires AVX512F.
 func MaskzMov32(k Mmask16, a M512i) M512i {
-	return M512i(maskzMov32(uint16(k), a))
+	return M512i(maskzMov32(uint16(k), [64]byte(a)))
 }
 
-func maskzMov32(k uint16, a M512i) M512i
+func maskzMov32(k uint16, a [64]byte) [64]byte
 
 
 // MaskMov64: Move packed 64-bit integers from 'a' to 'dst' using writemask 'k'
@@ -34283,10 +34283,10 @@ func maskzMov32(k uint16, a M512i) M512i
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_mov_epi64'.
 // Requires KNCNI.
 func MaskMov64(src M512i, k Mmask8, a M512i) M512i {
-	return M512i(maskMov64(src, uint8(k), a))
+	return M512i(maskMov64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskMov64(src M512i, k uint8, a M512i) M512i
+func maskMov64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
 // MaskzMov64: Move packed 64-bit integers from 'a' into 'dst' using zeromask
@@ -34305,10 +34305,10 @@ func maskMov64(src M512i, k uint8, a M512i) M512i
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_maskz_mov_epi64'.
 // Requires AVX512F.
 func MaskzMov64(k Mmask8, a M512i) M512i {
-	return M512i(maskzMov64(uint8(k), a))
+	return M512i(maskzMov64(uint8(k), [64]byte(a)))
 }
 
-func maskzMov64(k uint8, a M512i) M512i
+func maskzMov64(k uint8, a [64]byte) [64]byte
 
 
 // MaskMov8: Move packed 8-bit integers from 'a' into 'dst' using writemask 'k'
@@ -34327,10 +34327,10 @@ func maskzMov64(k uint8, a M512i) M512i
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_mov_epi8'.
 // Requires AVX512BW.
 func MaskMov8(src M512i, k Mmask64, a M512i) M512i {
-	return M512i(maskMov8(src, uint64(k), a))
+	return M512i(maskMov8([64]byte(src), uint64(k), [64]byte(a)))
 }
 
-func maskMov8(src M512i, k uint64, a M512i) M512i
+func maskMov8(src [64]byte, k uint64, a [64]byte) [64]byte
 
 
 // MaskzMov8: Move packed 8-bit integers from 'a' into 'dst' using zeromask 'k'
@@ -34349,10 +34349,10 @@ func maskMov8(src M512i, k uint64, a M512i) M512i
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_maskz_mov_epi8'.
 // Requires AVX512BW.
 func MaskzMov8(k Mmask64, a M512i) M512i {
-	return M512i(maskzMov8(uint64(k), a))
+	return M512i(maskzMov8(uint64(k), [64]byte(a)))
 }
 
-func maskzMov8(k uint64, a M512i) M512i
+func maskzMov8(k uint64, a [64]byte) [64]byte
 
 
 // MaskMovPd: Move packed double-precision (64-bit) floating-point elements
@@ -34769,10 +34769,10 @@ func moveldupPs(a [16]float32) [16]float32
 // Instruction: 'VPMOVW2M'. Intrinsic: '_mm_movepi16_mask'.
 // Requires AVX512BW.
 func Movepi16Mask(a M128i) Mmask8 {
-	return Mmask8(movepi16Mask(a))
+	return Mmask8(movepi16Mask([16]byte(a)))
 }
 
-func movepi16Mask(a M128i) uint8
+func movepi16Mask(a [16]byte) uint8
 
 
 // Movepi16Mask1: Set each bit of mask register 'k' based on the most
@@ -34791,10 +34791,10 @@ func movepi16Mask(a M128i) uint8
 // Instruction: 'VPMOVW2M'. Intrinsic: '_mm512_movepi16_mask'.
 // Requires AVX512BW.
 func Movepi16Mask1(a M512i) Mmask32 {
-	return Mmask32(movepi16Mask1(a))
+	return Mmask32(movepi16Mask1([64]byte(a)))
 }
 
-func movepi16Mask1(a M512i) uint32
+func movepi16Mask1(a [64]byte) uint32
 
 
 // Movepi32Mask: Set each bit of mask register 'k' based on the most
@@ -34813,10 +34813,10 @@ func movepi16Mask1(a M512i) uint32
 // Instruction: 'VPMOVD2M'. Intrinsic: '_mm_movepi32_mask'.
 // Requires AVX512DQ.
 func Movepi32Mask(a M128i) Mmask8 {
-	return Mmask8(movepi32Mask(a))
+	return Mmask8(movepi32Mask([16]byte(a)))
 }
 
-func movepi32Mask(a M128i) uint8
+func movepi32Mask(a [16]byte) uint8
 
 
 // Movepi32Mask1: Set each bit of mask register 'k' based on the most
@@ -34835,10 +34835,10 @@ func movepi32Mask(a M128i) uint8
 // Instruction: 'VPMOVD2M'. Intrinsic: '_mm512_movepi32_mask'.
 // Requires AVX512DQ.
 func Movepi32Mask1(a M512i) Mmask16 {
-	return Mmask16(movepi32Mask1(a))
+	return Mmask16(movepi32Mask1([64]byte(a)))
 }
 
-func movepi32Mask1(a M512i) uint16
+func movepi32Mask1(a [64]byte) uint16
 
 
 // Movepi64Mask: Set each bit of mask register 'k' based on the most
@@ -34857,10 +34857,10 @@ func movepi32Mask1(a M512i) uint16
 // Instruction: 'VPMOVQ2M'. Intrinsic: '_mm_movepi64_mask'.
 // Requires AVX512DQ.
 func Movepi64Mask(a M128i) Mmask8 {
-	return Mmask8(movepi64Mask(a))
+	return Mmask8(movepi64Mask([16]byte(a)))
 }
 
-func movepi64Mask(a M128i) uint8
+func movepi64Mask(a [16]byte) uint8
 
 
 // Movepi64Mask1: Set each bit of mask register 'k' based on the most
@@ -34879,10 +34879,10 @@ func movepi64Mask(a M128i) uint8
 // Instruction: 'VPMOVQ2M'. Intrinsic: '_mm512_movepi64_mask'.
 // Requires AVX512DQ.
 func Movepi64Mask1(a M512i) Mmask8 {
-	return Mmask8(movepi64Mask1(a))
+	return Mmask8(movepi64Mask1([64]byte(a)))
 }
 
-func movepi64Mask1(a M512i) uint8
+func movepi64Mask1(a [64]byte) uint8
 
 
 // Movepi8Mask: Set each bit of mask register 'k' based on the most significant
@@ -34901,10 +34901,10 @@ func movepi64Mask1(a M512i) uint8
 // Instruction: 'VPMOVB2M'. Intrinsic: '_mm_movepi8_mask'.
 // Requires AVX512BW.
 func Movepi8Mask(a M128i) Mmask16 {
-	return Mmask16(movepi8Mask(a))
+	return Mmask16(movepi8Mask([16]byte(a)))
 }
 
-func movepi8Mask(a M128i) uint16
+func movepi8Mask(a [16]byte) uint16
 
 
 // Movepi8Mask1: Set each bit of mask register 'k' based on the most
@@ -34923,10 +34923,10 @@ func movepi8Mask(a M128i) uint16
 // Instruction: 'VPMOVB2M'. Intrinsic: '_mm512_movepi8_mask'.
 // Requires AVX512BW.
 func Movepi8Mask1(a M512i) Mmask64 {
-	return Mmask64(movepi8Mask1(a))
+	return Mmask64(movepi8Mask1([64]byte(a)))
 }
 
-func movepi8Mask1(a M512i) uint64
+func movepi8Mask1(a [64]byte) uint64
 
 
 // Movm16: Set each packed 16-bit integer in 'dst' to all ones or all zeros
@@ -34948,7 +34948,7 @@ func Movm16(k Mmask32) M512i {
 	return M512i(movm16(uint32(k)))
 }
 
-func movm16(k uint32) M512i
+func movm16(k uint32) [64]byte
 
 
 // Movm32: Set each packed 32-bit integer in 'dst' to all ones or all zeros
@@ -34970,7 +34970,7 @@ func Movm32(k Mmask16) M512i {
 	return M512i(movm32(uint16(k)))
 }
 
-func movm32(k uint16) M512i
+func movm32(k uint16) [64]byte
 
 
 // Movm64: Set each packed 64-bit integer in 'dst' to all ones or all zeros
@@ -34992,7 +34992,7 @@ func Movm64(k Mmask8) M512i {
 	return M512i(movm64(uint8(k)))
 }
 
-func movm64(k uint8) M512i
+func movm64(k uint8) [64]byte
 
 
 // Movm8: Set each packed 8-bit integer in 'dst' to all ones or all zeros based
@@ -35014,7 +35014,7 @@ func Movm8(k Mmask64) M512i {
 	return M512i(movm8(uint64(k)))
 }
 
-func movm8(k uint64) M512i
+func movm8(k uint64) [64]byte
 
 
 // MaskMul32: Multiply the low 32-bit integers from each packed 64-bit element
@@ -35035,10 +35035,10 @@ func movm8(k uint64) M512i
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm512_mask_mul_epi32'.
 // Requires AVX512F.
 func MaskMul32(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMul32(src, uint8(k), a, b))
+	return M512i(maskMul32([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMul32(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMul32(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMul32: Multiply the low 32-bit integers from each packed 64-bit element
@@ -35058,10 +35058,10 @@ func maskMul32(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm512_maskz_mul_epi32'.
 // Requires AVX512F.
 func MaskzMul32(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzMul32(uint8(k), a, b))
+	return M512i(maskzMul32(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMul32(k uint8, a M512i, b M512i) M512i
+func maskzMul32(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Mul32: Multiply the low 32-bit integers from each packed 64-bit element in
@@ -35076,10 +35076,10 @@ func maskzMul32(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm512_mul_epi32'.
 // Requires AVX512F.
 func Mul32(a M512i, b M512i) M512i {
-	return M512i(mul32(a, b))
+	return M512i(mul32([64]byte(a), [64]byte(b)))
 }
 
-func mul32(a M512i, b M512i) M512i
+func mul32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulEpu32: Multiply the low unsigned 32-bit integers from each packed
@@ -35100,10 +35100,10 @@ func mul32(a M512i, b M512i) M512i
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm512_mask_mul_epu32'.
 // Requires AVX512F.
 func MaskMulEpu32(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMulEpu32(src, uint8(k), a, b))
+	return M512i(maskMulEpu32([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulEpu32(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMulEpu32(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMulEpu32: Multiply the low unsigned 32-bit integers from each packed
@@ -35124,10 +35124,10 @@ func maskMulEpu32(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm512_maskz_mul_epu32'.
 // Requires AVX512F.
 func MaskzMulEpu32(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzMulEpu32(uint8(k), a, b))
+	return M512i(maskzMulEpu32(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulEpu32(k uint8, a M512i, b M512i) M512i
+func maskzMulEpu32(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MulEpu32: Multiply the low unsigned 32-bit integers from each packed 64-bit
@@ -35142,10 +35142,10 @@ func maskzMulEpu32(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm512_mul_epu32'.
 // Requires AVX512F.
 func MulEpu32(a M512i, b M512i) M512i {
-	return M512i(mulEpu32(a, b))
+	return M512i(mulEpu32([64]byte(a), [64]byte(b)))
 }
 
-func mulEpu32(a M512i, b M512i) M512i
+func mulEpu32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulPd: Multiply packed double-precision (64-bit) floating-point elements
@@ -35465,10 +35465,10 @@ func mulRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_mask_mulhi_epi16'.
 // Requires AVX512BW.
 func MaskMulhi16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMulhi16(src, uint32(k), a, b))
+	return M512i(maskMulhi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhi16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMulhi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMulhi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -35490,10 +35490,10 @@ func maskMulhi16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_maskz_mulhi_epi16'.
 // Requires AVX512BW.
 func MaskzMulhi16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMulhi16(uint32(k), a, b))
+	return M512i(maskzMulhi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulhi16(k uint32, a M512i, b M512i) M512i
+func maskzMulhi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Mulhi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -35510,10 +35510,10 @@ func maskzMulhi16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_mulhi_epi16'.
 // Requires AVX512BW.
 func Mulhi16(a M512i, b M512i) M512i {
-	return M512i(mulhi16(a, b))
+	return M512i(mulhi16([64]byte(a), [64]byte(b)))
 }
 
-func mulhi16(a M512i, b M512i) M512i
+func mulhi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulhi32: Performs element-by-element multiplication between packed
@@ -35534,10 +35534,10 @@ func mulhi16(a M512i, b M512i) M512i
 // Instruction: 'VPMULHD'. Intrinsic: '_mm512_mask_mulhi_epi32'.
 // Requires KNCNI.
 func MaskMulhi32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMulhi32(src, uint16(k), a, b))
+	return M512i(maskMulhi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhi32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMulhi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Mulhi32: Performs element-by-element multiplication between packed 32-bit
@@ -35553,10 +35553,10 @@ func maskMulhi32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMULHD'. Intrinsic: '_mm512_mulhi_epi32'.
 // Requires KNCNI.
 func Mulhi32(a M512i, b M512i) M512i {
-	return M512i(mulhi32(a, b))
+	return M512i(mulhi32([64]byte(a), [64]byte(b)))
 }
 
-func mulhi32(a M512i, b M512i) M512i
+func mulhi32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
@@ -35578,10 +35578,10 @@ func mulhi32(a M512i, b M512i) M512i
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_mask_mulhi_epu16'.
 // Requires AVX512BW.
 func MaskMulhiEpu16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMulhiEpu16(src, uint32(k), a, b))
+	return M512i(maskMulhiEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhiEpu16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMulhiEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and
@@ -35603,10 +35603,10 @@ func maskMulhiEpu16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_maskz_mulhi_epu16'.
 // Requires AVX512BW.
 func MaskzMulhiEpu16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMulhiEpu16(uint32(k), a, b))
+	return M512i(maskzMulhiEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulhiEpu16(k uint32, a M512i, b M512i) M512i
+func maskzMulhiEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
@@ -35623,10 +35623,10 @@ func maskzMulhiEpu16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_mulhi_epu16'.
 // Requires AVX512BW.
 func MulhiEpu16(a M512i, b M512i) M512i {
-	return M512i(mulhiEpu16(a, b))
+	return M512i(mulhiEpu16([64]byte(a), [64]byte(b)))
 }
 
-func mulhiEpu16(a M512i, b M512i) M512i
+func mulhiEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulhiEpu32: Performs element-by-element multiplication between packed
@@ -35647,10 +35647,10 @@ func mulhiEpu16(a M512i, b M512i) M512i
 // Instruction: 'VPMULHUD'. Intrinsic: '_mm512_mask_mulhi_epu32'.
 // Requires KNCNI.
 func MaskMulhiEpu32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMulhiEpu32(src, uint16(k), a, b))
+	return M512i(maskMulhiEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhiEpu32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMulhiEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MulhiEpu32: Performs element-by-element multiplication between packed
@@ -35666,10 +35666,10 @@ func maskMulhiEpu32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMULHUD'. Intrinsic: '_mm512_mulhi_epu32'.
 // Requires KNCNI.
 func MulhiEpu32(a M512i, b M512i) M512i {
-	return M512i(mulhiEpu32(a, b))
+	return M512i(mulhiEpu32([64]byte(a), [64]byte(b)))
 }
 
-func mulhiEpu32(a M512i, b M512i) M512i
+func mulhiEpu32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulhrs16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -35692,10 +35692,10 @@ func mulhiEpu32(a M512i, b M512i) M512i
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_mask_mulhrs_epi16'.
 // Requires AVX512BW.
 func MaskMulhrs16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMulhrs16(src, uint32(k), a, b))
+	return M512i(maskMulhrs16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhrs16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMulhrs16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMulhrs16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -35718,10 +35718,10 @@ func maskMulhrs16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_maskz_mulhrs_epi16'.
 // Requires AVX512BW.
 func MaskzMulhrs16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMulhrs16(uint32(k), a, b))
+	return M512i(maskzMulhrs16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulhrs16(k uint32, a M512i, b M512i) M512i
+func maskzMulhrs16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Mulhrs16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -35739,10 +35739,10 @@ func maskzMulhrs16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_mulhrs_epi16'.
 // Requires AVX512BW.
 func Mulhrs16(a M512i, b M512i) M512i {
-	return M512i(mulhrs16(a, b))
+	return M512i(mulhrs16([64]byte(a), [64]byte(b)))
 }
 
-func mulhrs16(a M512i, b M512i) M512i
+func mulhrs16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMullo16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -35764,10 +35764,10 @@ func mulhrs16(a M512i, b M512i) M512i
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_mask_mullo_epi16'.
 // Requires AVX512BW.
 func MaskMullo16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMullo16(src, uint32(k), a, b))
+	return M512i(maskMullo16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMullo16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskMullo16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMullo16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -35789,10 +35789,10 @@ func maskMullo16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_maskz_mullo_epi16'.
 // Requires AVX512BW.
 func MaskzMullo16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMullo16(uint32(k), a, b))
+	return M512i(maskzMullo16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMullo16(k uint32, a M512i, b M512i) M512i
+func maskzMullo16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Mullo16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -35809,10 +35809,10 @@ func maskzMullo16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_mullo_epi16'.
 // Requires AVX512BW.
 func Mullo16(a M512i, b M512i) M512i {
-	return M512i(mullo16(a, b))
+	return M512i(mullo16([64]byte(a), [64]byte(b)))
 }
 
-func mullo16(a M512i, b M512i) M512i
+func mullo16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMullo32: Multiply the packed 32-bit integers in 'a' and 'b', producing
@@ -35834,10 +35834,10 @@ func mullo16(a M512i, b M512i) M512i
 // Instruction: 'VPMULLD'. Intrinsic: '_mm512_mask_mullo_epi32'.
 // Requires KNCNI.
 func MaskMullo32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMullo32(src, uint16(k), a, b))
+	return M512i(maskMullo32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMullo32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskMullo32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMullo32: Multiply the packed 32-bit integers in 'a' and 'b', producing
@@ -35859,10 +35859,10 @@ func maskMullo32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMULLD'. Intrinsic: '_mm512_maskz_mullo_epi32'.
 // Requires AVX512F.
 func MaskzMullo32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzMullo32(uint16(k), a, b))
+	return M512i(maskzMullo32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMullo32(k uint16, a M512i, b M512i) M512i
+func maskzMullo32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Mullo32: Multiply the packed 32-bit integers in 'a' and 'b', producing
@@ -35879,10 +35879,10 @@ func maskzMullo32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPMULLD'. Intrinsic: '_mm512_mullo_epi32'.
 // Requires KNCNI.
 func Mullo32(a M512i, b M512i) M512i {
-	return M512i(mullo32(a, b))
+	return M512i(mullo32([64]byte(a), [64]byte(b)))
 }
 
-func mullo32(a M512i, b M512i) M512i
+func mullo32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMullo64: Multiply the packed 64-bit integers in 'a' and 'b', producing
@@ -35904,10 +35904,10 @@ func mullo32(a M512i, b M512i) M512i
 // Instruction: 'VPMULLQ'. Intrinsic: '_mm512_mask_mullo_epi64'.
 // Requires AVX512DQ.
 func MaskMullo64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMullo64(src, uint8(k), a, b))
+	return M512i(maskMullo64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMullo64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMullo64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMullo64: Multiply the packed 64-bit integers in 'a' and 'b', producing
@@ -35929,10 +35929,10 @@ func maskMullo64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMULLQ'. Intrinsic: '_mm512_maskz_mullo_epi64'.
 // Requires AVX512DQ.
 func MaskzMullo64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzMullo64(uint8(k), a, b))
+	return M512i(maskzMullo64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMullo64(k uint8, a M512i, b M512i) M512i
+func maskzMullo64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Mullo64: Multiply the packed 64-bit integers in 'a' and 'b', producing
@@ -35949,10 +35949,10 @@ func maskzMullo64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPMULLQ'. Intrinsic: '_mm512_mullo_epi64'.
 // Requires AVX512DQ.
 func Mullo64(a M512i, b M512i) M512i {
-	return M512i(mullo64(a, b))
+	return M512i(mullo64([64]byte(a), [64]byte(b)))
 }
 
-func mullo64(a M512i, b M512i) M512i
+func mullo64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMullox64: Multiplies elements in packed 64-bit integer vectors 'a' and
@@ -35973,10 +35973,10 @@ func mullo64(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mask_mullox_epi64'.
 // Requires AVX512F.
 func MaskMullox64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskMullox64(src, uint8(k), a, b))
+	return M512i(maskMullox64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMullox64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskMullox64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Mullox64: Multiplies elements in packed 64-bit integer vectors 'a' and 'b'
@@ -35991,10 +35991,10 @@ func maskMullox64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mullox_epi64'.
 // Requires AVX512F.
 func Mullox64(a M512i, b M512i) M512i {
-	return M512i(mullox64(a, b))
+	return M512i(mullox64([64]byte(a), [64]byte(b)))
 }
 
-func mullox64(a M512i, b M512i) M512i
+func mullox64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMultishift64Epi8: For each 64-bit element in 'b', select 8 unaligned
@@ -36023,10 +36023,10 @@ func mullox64(a M512i, b M512i) M512i
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_mask_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
 func MaskMultishift64Epi8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMultishift64Epi8(src, uint64(k), a, b))
+	return M512i(maskMultishift64Epi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMultishift64Epi8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskMultishift64Epi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzMultishift64Epi8: For each 64-bit element in 'b', select 8 unaligned
@@ -36055,10 +36055,10 @@ func maskMultishift64Epi8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_maskz_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
 func MaskzMultishift64Epi8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMultishift64Epi8(uint64(k), a, b))
+	return M512i(maskzMultishift64Epi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMultishift64Epi8(k uint64, a M512i, b M512i) M512i
+func maskzMultishift64Epi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Multishift64Epi8: For each 64-bit element in 'b', select 8 unaligned bytes
@@ -36082,10 +36082,10 @@ func maskzMultishift64Epi8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
 func Multishift64Epi8(a M512i, b M512i) M512i {
-	return M512i(multishift64Epi8(a, b))
+	return M512i(multishift64Epi8([64]byte(a), [64]byte(b)))
 }
 
-func multishift64Epi8(a M512i, b M512i) M512i
+func multishift64Epi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskNearbyintPd: Rounds each packed double-precision (64-bit) floating-point
@@ -36191,10 +36191,10 @@ func nearbyintPs(a [16]float32) [16]float32
 // Instruction: 'VPORD'. Intrinsic: '_mm512_mask_or_epi32'.
 // Requires KNCNI.
 func MaskOr32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskOr32(src, uint16(k), a, b))
+	return M512i(maskOr32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskOr32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskOr32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzOr32: Compute the bitwise OR of packed 32-bit integers in 'a' and 'b',
@@ -36214,10 +36214,10 @@ func maskOr32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPORD'. Intrinsic: '_mm512_maskz_or_epi32'.
 // Requires AVX512F.
 func MaskzOr32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzOr32(uint16(k), a, b))
+	return M512i(maskzOr32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzOr32(k uint16, a M512i, b M512i) M512i
+func maskzOr32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Or32: Compute the bitwise OR of packed 32-bit integers in 'a' and 'b', and
@@ -36232,10 +36232,10 @@ func maskzOr32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPORD'. Intrinsic: '_mm512_or_epi32'.
 // Requires KNCNI.
 func Or32(a M512i, b M512i) M512i {
-	return M512i(or32(a, b))
+	return M512i(or32([64]byte(a), [64]byte(b)))
 }
 
-func or32(a M512i, b M512i) M512i
+func or32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskOr64: Compute the bitwise OR of packed 64-bit integers in 'a' and 'b',
@@ -36255,10 +36255,10 @@ func or32(a M512i, b M512i) M512i
 // Instruction: 'VPORQ'. Intrinsic: '_mm512_mask_or_epi64'.
 // Requires KNCNI.
 func MaskOr64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskOr64(src, uint8(k), a, b))
+	return M512i(maskOr64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskOr64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskOr64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzOr64: Compute the bitwise OR of packed 64-bit integers in 'a' and 'b',
@@ -36278,10 +36278,10 @@ func maskOr64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPORQ'. Intrinsic: '_mm512_maskz_or_epi64'.
 // Requires AVX512F.
 func MaskzOr64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzOr64(uint8(k), a, b))
+	return M512i(maskzOr64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzOr64(k uint8, a M512i, b M512i) M512i
+func maskzOr64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Or64: Compute the bitwise OR of packed 64-bit integers in 'a' and 'b', and
@@ -36296,10 +36296,10 @@ func maskzOr64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPORQ'. Intrinsic: '_mm512_or_epi64'.
 // Requires KNCNI.
 func Or64(a M512i, b M512i) M512i {
-	return M512i(or64(a, b))
+	return M512i(or64([64]byte(a), [64]byte(b)))
 }
 
-func or64(a M512i, b M512i) M512i
+func or64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskOrPd: Compute the bitwise OR of packed double-precision (64-bit)
@@ -36443,10 +36443,10 @@ func orPs(a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VPORD'. Intrinsic: '_mm512_or_si512'.
 // Requires KNCNI.
 func OrSi512(a M512i, b M512i) M512i {
-	return M512i(orSi512(a, b))
+	return M512i(orSi512([64]byte(a), [64]byte(b)))
 }
 
-func orSi512(a M512i, b M512i) M512i
+func orSi512(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPacks16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -36532,10 +36532,10 @@ func orSi512(a M512i, b M512i) M512i
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_mask_packs_epi16'.
 // Requires AVX512BW.
 func MaskPacks16(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskPacks16(src, uint64(k), a, b))
+	return M512i(maskPacks16([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPacks16(src M512i, k uint64, a M512i, b M512i) M512i
+func maskPacks16(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzPacks16: Convert packed 16-bit integers from 'a' and 'b' to packed
@@ -36621,10 +36621,10 @@ func maskPacks16(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_maskz_packs_epi16'.
 // Requires AVX512BW.
 func MaskzPacks16(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzPacks16(uint64(k), a, b))
+	return M512i(maskzPacks16(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPacks16(k uint64, a M512i, b M512i) M512i
+func maskzPacks16(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Packs16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -36699,10 +36699,10 @@ func maskzPacks16(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_packs_epi16'.
 // Requires AVX512BW.
 func Packs16(a M512i, b M512i) M512i {
-	return M512i(packs16(a, b))
+	return M512i(packs16([64]byte(a), [64]byte(b)))
 }
 
-func packs16(a M512i, b M512i) M512i
+func packs16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPacks32: Convert packed 32-bit integers from 'a' and 'b' to packed
@@ -36756,10 +36756,10 @@ func packs16(a M512i, b M512i) M512i
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_mask_packs_epi32'.
 // Requires AVX512BW.
 func MaskPacks32(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskPacks32(src, uint32(k), a, b))
+	return M512i(maskPacks32([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPacks32(src M512i, k uint32, a M512i, b M512i) M512i
+func maskPacks32(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzPacks32: Convert packed 32-bit integers from 'a' and 'b' to packed
@@ -36813,10 +36813,10 @@ func maskPacks32(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_maskz_packs_epi32'.
 // Requires AVX512BW.
 func MaskzPacks32(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzPacks32(uint32(k), a, b))
+	return M512i(maskzPacks32(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPacks32(k uint32, a M512i, b M512i) M512i
+func maskzPacks32(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Packs32: Convert packed 32-bit integers from 'a' and 'b' to packed 16-bit
@@ -36859,10 +36859,10 @@ func maskzPacks32(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_packs_epi32'.
 // Requires AVX512BW.
 func Packs32(a M512i, b M512i) M512i {
-	return M512i(packs32(a, b))
+	return M512i(packs32([64]byte(a), [64]byte(b)))
 }
 
-func packs32(a M512i, b M512i) M512i
+func packs32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPackstorehi32: Stores packed 32-bit integer elements of 'v1' into a
@@ -36893,10 +36893,10 @@ func packs32(a M512i, b M512i) M512i
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_mask_packstorehi_epi32'.
 // Requires KNCNI.
 func MaskPackstorehi32(mt uintptr, k Mmask16, v1 M512i)  {
-	maskPackstorehi32(uintptr(mt), uint16(k), v1)
+	maskPackstorehi32(uintptr(mt), uint16(k), [64]byte(v1))
 }
 
-func maskPackstorehi32(mt uintptr, k uint16, v1 M512i) 
+func maskPackstorehi32(mt uintptr, k uint16, v1 [64]byte) 
 
 
 // Packstorehi32: Stores packed 32-bit integer elements of 'v1' into a
@@ -36923,10 +36923,10 @@ func maskPackstorehi32(mt uintptr, k uint16, v1 M512i)
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_packstorehi_epi32'.
 // Requires KNCNI.
 func Packstorehi32(mt uintptr, v1 M512i)  {
-	packstorehi32(uintptr(mt), v1)
+	packstorehi32(uintptr(mt), [64]byte(v1))
 }
 
-func packstorehi32(mt uintptr, v1 M512i) 
+func packstorehi32(mt uintptr, v1 [64]byte) 
 
 
 // MaskPackstorehi64: Stores packed 64-bit integer elements of 'v1' into a
@@ -36957,10 +36957,10 @@ func packstorehi32(mt uintptr, v1 M512i)
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_mask_packstorehi_epi64'.
 // Requires KNCNI.
 func MaskPackstorehi64(mt uintptr, k Mmask8, v1 M512i)  {
-	maskPackstorehi64(uintptr(mt), uint8(k), v1)
+	maskPackstorehi64(uintptr(mt), uint8(k), [64]byte(v1))
 }
 
-func maskPackstorehi64(mt uintptr, k uint8, v1 M512i) 
+func maskPackstorehi64(mt uintptr, k uint8, v1 [64]byte) 
 
 
 // Packstorehi64: Stores packed 64-bit integer elements of 'v1' into a quadword
@@ -36987,10 +36987,10 @@ func maskPackstorehi64(mt uintptr, k uint8, v1 M512i)
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_packstorehi_epi64'.
 // Requires KNCNI.
 func Packstorehi64(mt uintptr, v1 M512i)  {
-	packstorehi64(uintptr(mt), v1)
+	packstorehi64(uintptr(mt), [64]byte(v1))
 }
 
-func packstorehi64(mt uintptr, v1 M512i) 
+func packstorehi64(mt uintptr, v1 [64]byte) 
 
 
 // MaskPackstorehiPd: Stores packed double-precision (64-bit) floating-point
@@ -37149,10 +37149,10 @@ func packstorehiPs(mt uintptr, v1 [16]float32)
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_mask_packstorelo_epi32'.
 // Requires KNCNI.
 func MaskPackstorelo32(mt uintptr, k Mmask16, v1 M512i)  {
-	maskPackstorelo32(uintptr(mt), uint16(k), v1)
+	maskPackstorelo32(uintptr(mt), uint16(k), [64]byte(v1))
 }
 
-func maskPackstorelo32(mt uintptr, k uint16, v1 M512i) 
+func maskPackstorelo32(mt uintptr, k uint16, v1 [64]byte) 
 
 
 // Packstorelo32: Stores packed 32-bit integer elements of 'v1' into a
@@ -37175,10 +37175,10 @@ func maskPackstorelo32(mt uintptr, k uint16, v1 M512i)
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_packstorelo_epi32'.
 // Requires KNCNI.
 func Packstorelo32(mt uintptr, v1 M512i)  {
-	packstorelo32(uintptr(mt), v1)
+	packstorelo32(uintptr(mt), [64]byte(v1))
 }
 
-func packstorelo32(mt uintptr, v1 M512i) 
+func packstorelo32(mt uintptr, v1 [64]byte) 
 
 
 // MaskPackstorelo64: Stores packed 64-bit integer elements of 'v1' into a
@@ -37205,10 +37205,10 @@ func packstorelo32(mt uintptr, v1 M512i)
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_mask_packstorelo_epi64'.
 // Requires KNCNI.
 func MaskPackstorelo64(mt uintptr, k Mmask8, v1 M512i)  {
-	maskPackstorelo64(uintptr(mt), uint8(k), v1)
+	maskPackstorelo64(uintptr(mt), uint8(k), [64]byte(v1))
 }
 
-func maskPackstorelo64(mt uintptr, k uint8, v1 M512i) 
+func maskPackstorelo64(mt uintptr, k uint8, v1 [64]byte) 
 
 
 // Packstorelo64: Stores packed 64-bit integer elements of 'v1' into a quadword
@@ -37231,10 +37231,10 @@ func maskPackstorelo64(mt uintptr, k uint8, v1 M512i)
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_packstorelo_epi64'.
 // Requires KNCNI.
 func Packstorelo64(mt uintptr, v1 M512i)  {
-	packstorelo64(uintptr(mt), v1)
+	packstorelo64(uintptr(mt), [64]byte(v1))
 }
 
-func packstorelo64(mt uintptr, v1 M512i) 
+func packstorelo64(mt uintptr, v1 [64]byte) 
 
 
 // MaskPackstoreloPd: Stores packed double-precision (64-bit) floating-point
@@ -37436,10 +37436,10 @@ func packstoreloPs(mt uintptr, v1 [16]float32)
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_mask_packus_epi16'.
 // Requires AVX512BW.
 func MaskPackus16(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskPackus16(src, uint64(k), a, b))
+	return M512i(maskPackus16([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPackus16(src M512i, k uint64, a M512i, b M512i) M512i
+func maskPackus16(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzPackus16: Convert packed 16-bit integers from 'a' and 'b' to packed
@@ -37525,10 +37525,10 @@ func maskPackus16(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_maskz_packus_epi16'.
 // Requires AVX512BW.
 func MaskzPackus16(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzPackus16(uint64(k), a, b))
+	return M512i(maskzPackus16(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPackus16(k uint64, a M512i, b M512i) M512i
+func maskzPackus16(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Packus16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -37603,10 +37603,10 @@ func maskzPackus16(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_packus_epi16'.
 // Requires AVX512BW.
 func Packus16(a M512i, b M512i) M512i {
-	return M512i(packus16(a, b))
+	return M512i(packus16([64]byte(a), [64]byte(b)))
 }
 
-func packus16(a M512i, b M512i) M512i
+func packus16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPackus32: Convert packed 32-bit integers from 'a' and 'b' to packed
@@ -37660,10 +37660,10 @@ func packus16(a M512i, b M512i) M512i
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_mask_packus_epi32'.
 // Requires AVX512BW.
 func MaskPackus32(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskPackus32(src, uint32(k), a, b))
+	return M512i(maskPackus32([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPackus32(src M512i, k uint32, a M512i, b M512i) M512i
+func maskPackus32(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzPackus32: Convert packed 32-bit integers from 'a' and 'b' to packed
@@ -37717,10 +37717,10 @@ func maskPackus32(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_maskz_packus_epi32'.
 // Requires AVX512BW.
 func MaskzPackus32(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzPackus32(uint32(k), a, b))
+	return M512i(maskzPackus32(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPackus32(k uint32, a M512i, b M512i) M512i
+func maskzPackus32(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Packus32: Convert packed 32-bit integers from 'a' and 'b' to packed 16-bit
@@ -37763,10 +37763,10 @@ func maskzPackus32(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_packus_epi32'.
 // Requires AVX512BW.
 func Packus32(a M512i, b M512i) M512i {
-	return M512i(packus32(a, b))
+	return M512i(packus32([64]byte(a), [64]byte(b)))
 }
 
-func packus32(a M512i, b M512i) M512i
+func packus32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPermutePd: Shuffle double-precision (64-bit) floating-point elements in
@@ -38054,10 +38054,10 @@ func permutePs(a [16]float32, imm8 int) [16]float32
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_mask_permute4f128_epi32'.
 // Requires KNCNI.
 func MaskPermute4f12832(src M512i, k Mmask16, a M512i, imm8 MMPERMENUM) M512i {
-	return M512i(maskPermute4f12832(src, uint16(k), a, imm8))
+	return M512i(maskPermute4f12832([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskPermute4f12832(src M512i, k uint16, a M512i, imm8 MMPERMENUM) M512i
+func maskPermute4f12832(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
 // Permute4f12832: Permutes 128-bit blocks of the packed 32-bit integer vector
@@ -38083,10 +38083,10 @@ func maskPermute4f12832(src M512i, k uint16, a M512i, imm8 MMPERMENUM) M512i
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_permute4f128_epi32'.
 // Requires KNCNI.
 func Permute4f12832(a M512i, imm8 MMPERMENUM) M512i {
-	return M512i(permute4f12832(a, imm8))
+	return M512i(permute4f12832([64]byte(a), imm8))
 }
 
-func permute4f12832(a M512i, imm8 MMPERMENUM) M512i
+func permute4f12832(a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
 // MaskPermute4f128Ps: Permutes 128-bit blocks of the packed single-precision
@@ -38180,10 +38180,10 @@ func permute4f128Ps(a [16]float32, imm8 MMPERMENUM) [16]float32
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_mask_permutevar_epi32'.
 // Requires KNCNI.
 func MaskPermutevar32(src M512i, k Mmask16, idx M512i, a M512i) M512i {
-	return M512i(maskPermutevar32(src, uint16(k), idx, a))
+	return M512i(maskPermutevar32([64]byte(src), uint16(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutevar32(src M512i, k uint16, idx M512i, a M512i) M512i
+func maskPermutevar32(src [64]byte, k uint16, idx [64]byte, a [64]byte) [64]byte
 
 
 // Permutevar32: Shuffle 32-bit integers in 'a' across lanes using the
@@ -38203,10 +38203,10 @@ func maskPermutevar32(src M512i, k uint16, idx M512i, a M512i) M512i
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_permutevar_epi32'.
 // Requires KNCNI.
 func Permutevar32(idx M512i, a M512i) M512i {
-	return M512i(permutevar32(idx, a))
+	return M512i(permutevar32([64]byte(idx), [64]byte(a)))
 }
 
-func permutevar32(idx M512i, a M512i) M512i
+func permutevar32(idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskPermutevarPd: Shuffle double-precision (64-bit) floating-point elements
@@ -38243,10 +38243,10 @@ func permutevar32(idx M512i, a M512i) M512i
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm512_mask_permutevar_pd'.
 // Requires AVX512F.
 func MaskPermutevarPd(src M512d, k Mmask8, a M512d, b M512i) M512d {
-	return M512d(maskPermutevarPd([8]float64(src), uint8(k), [8]float64(a), b))
+	return M512d(maskPermutevarPd([8]float64(src), uint8(k), [8]float64(a), [64]byte(b)))
 }
 
-func maskPermutevarPd(src [8]float64, k uint8, a [8]float64, b M512i) [8]float64
+func maskPermutevarPd(src [8]float64, k uint8, a [8]float64, b [64]byte) [8]float64
 
 
 // MaskzPermutevarPd: Shuffle double-precision (64-bit) floating-point elements
@@ -38283,10 +38283,10 @@ func maskPermutevarPd(src [8]float64, k uint8, a [8]float64, b M512i) [8]float64
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm512_maskz_permutevar_pd'.
 // Requires AVX512F.
 func MaskzPermutevarPd(k Mmask8, a M512d, b M512i) M512d {
-	return M512d(maskzPermutevarPd(uint8(k), [8]float64(a), b))
+	return M512d(maskzPermutevarPd(uint8(k), [8]float64(a), [64]byte(b)))
 }
 
-func maskzPermutevarPd(k uint8, a [8]float64, b M512i) [8]float64
+func maskzPermutevarPd(k uint8, a [8]float64, b [64]byte) [8]float64
 
 
 // PermutevarPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -38314,10 +38314,10 @@ func maskzPermutevarPd(k uint8, a [8]float64, b M512i) [8]float64
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm512_permutevar_pd'.
 // Requires AVX512F.
 func PermutevarPd(a M512d, b M512i) M512d {
-	return M512d(permutevarPd([8]float64(a), b))
+	return M512d(permutevarPd([8]float64(a), [64]byte(b)))
 }
 
-func permutevarPd(a [8]float64, b M512i) [8]float64
+func permutevarPd(a [8]float64, b [64]byte) [8]float64
 
 
 // MaskPermutevarPs: Shuffle single-precision (32-bit) floating-point elements
@@ -38364,10 +38364,10 @@ func permutevarPd(a [8]float64, b M512i) [8]float64
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm512_mask_permutevar_ps'.
 // Requires AVX512F.
 func MaskPermutevarPs(src M512, k Mmask16, a M512, b M512i) M512 {
-	return M512(maskPermutevarPs([16]float32(src), uint16(k), [16]float32(a), b))
+	return M512(maskPermutevarPs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b)))
 }
 
-func maskPermutevarPs(src [16]float32, k uint16, a [16]float32, b M512i) [16]float32
+func maskPermutevarPs(src [16]float32, k uint16, a [16]float32, b [64]byte) [16]float32
 
 
 // MaskzPermutevarPs: Shuffle single-precision (32-bit) floating-point elements
@@ -38414,10 +38414,10 @@ func maskPermutevarPs(src [16]float32, k uint16, a [16]float32, b M512i) [16]flo
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm512_maskz_permutevar_ps'.
 // Requires AVX512F.
 func MaskzPermutevarPs(k Mmask16, a M512, b M512i) M512 {
-	return M512(maskzPermutevarPs(uint16(k), [16]float32(a), b))
+	return M512(maskzPermutevarPs(uint16(k), [16]float32(a), [64]byte(b)))
 }
 
-func maskzPermutevarPs(k uint16, a [16]float32, b M512i) [16]float32
+func maskzPermutevarPs(k uint16, a [16]float32, b [64]byte) [16]float32
 
 
 // PermutevarPs: Shuffle single-precision (32-bit) floating-point elements in
@@ -38455,10 +38455,10 @@ func maskzPermutevarPs(k uint16, a [16]float32, b M512i) [16]float32
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm512_permutevar_ps'.
 // Requires AVX512F.
 func PermutevarPs(a M512, b M512i) M512 {
-	return M512(permutevarPs([16]float32(a), b))
+	return M512(permutevarPs([16]float32(a), [64]byte(b)))
 }
 
-func permutevarPs(a [16]float32, b M512i) [16]float32
+func permutevarPs(a [16]float32, b [64]byte) [16]float32
 
 
 // MaskPermutex64: Shuffle 64-bit integers in 'a' within 256-bit lanes using
@@ -38496,10 +38496,10 @@ func permutevarPs(a [16]float32, b M512i) [16]float32
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_mask_permutex_epi64'.
 // Requires AVX512F.
 func MaskPermutex64(src M512i, k Mmask8, a M512i, imm8 int) M512i {
-	return M512i(maskPermutex64(src, uint8(k), a, imm8))
+	return M512i(maskPermutex64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskPermutex64(src M512i, k uint8, a M512i, imm8 int) M512i
+func maskPermutex64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
 
 
 // MaskzPermutex64: Shuffle 64-bit integers in 'a' within 256-bit lanes using
@@ -38537,10 +38537,10 @@ func maskPermutex64(src M512i, k uint8, a M512i, imm8 int) M512i
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_maskz_permutex_epi64'.
 // Requires AVX512F.
 func MaskzPermutex64(k Mmask8, a M512i, imm8 int) M512i {
-	return M512i(maskzPermutex64(uint8(k), a, imm8))
+	return M512i(maskzPermutex64(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzPermutex64(k uint8, a M512i, imm8 int) M512i
+func maskzPermutex64(k uint8, a [64]byte, imm8 int) [64]byte
 
 
 // Permutex64: Shuffle 64-bit integers in 'a' within 256-bit lanes using the
@@ -38569,10 +38569,10 @@ func maskzPermutex64(k uint8, a M512i, imm8 int) M512i
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_permutex_epi64'.
 // Requires AVX512F.
 func Permutex64(a M512i, imm8 int) M512i {
-	return M512i(permutex64(a, imm8))
+	return M512i(permutex64([64]byte(a), imm8))
 }
 
-func permutex64(a M512i, imm8 int) M512i
+func permutex64(a [64]byte, imm8 int) [64]byte
 
 
 // MaskPermutexPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -38711,10 +38711,10 @@ func permutexPd(a [8]float64, imm8 int) [8]float64
 // Instruction: 'VPERMT2W'. Intrinsic: '_mm512_mask_permutex2var_epi16'.
 // Requires AVX512BW.
 func MaskPermutex2var16(a M512i, k Mmask32, idx M512i, b M512i) M512i {
-	return M512i(maskPermutex2var16(a, uint32(k), idx, b))
+	return M512i(maskPermutex2var16([64]byte(a), uint32(k), [64]byte(idx), [64]byte(b)))
 }
 
-func maskPermutex2var16(a M512i, k uint32, idx M512i, b M512i) M512i
+func maskPermutex2var16(a [64]byte, k uint32, idx [64]byte, b [64]byte) [64]byte
 
 
 // Mask2Permutex2var16: Shuffle 16-bit integers in 'a' and 'b' across lanes
@@ -38736,10 +38736,10 @@ func maskPermutex2var16(a M512i, k uint32, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2W'. Intrinsic: '_mm512_mask2_permutex2var_epi16'.
 // Requires AVX512BW.
 func Mask2Permutex2var16(a M512i, idx M512i, k Mmask32, b M512i) M512i {
-	return M512i(mask2Permutex2var16(a, idx, uint32(k), b))
+	return M512i(mask2Permutex2var16([64]byte(a), [64]byte(idx), uint32(k), [64]byte(b)))
 }
 
-func mask2Permutex2var16(a M512i, idx M512i, k uint32, b M512i) M512i
+func mask2Permutex2var16(a [64]byte, idx [64]byte, k uint32, b [64]byte) [64]byte
 
 
 // MaskzPermutex2var16: Shuffle 16-bit integers in 'a' and 'b' across lanes
@@ -38761,10 +38761,10 @@ func mask2Permutex2var16(a M512i, idx M512i, k uint32, b M512i) M512i
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm512_maskz_permutex2var_epi16'.
 // Requires AVX512BW.
 func MaskzPermutex2var16(k Mmask32, a M512i, idx M512i, b M512i) M512i {
-	return M512i(maskzPermutex2var16(uint32(k), a, idx, b))
+	return M512i(maskzPermutex2var16(uint32(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func maskzPermutex2var16(k uint32, a M512i, idx M512i, b M512i) M512i
+func maskzPermutex2var16(k uint32, a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // Permutex2var16: Shuffle 16-bit integers in 'a' and 'b' across lanes using
@@ -38781,10 +38781,10 @@ func maskzPermutex2var16(k uint32, a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm512_permutex2var_epi16'.
 // Requires AVX512BW.
 func Permutex2var16(a M512i, idx M512i, b M512i) M512i {
-	return M512i(permutex2var16(a, idx, b))
+	return M512i(permutex2var16([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func permutex2var16(a M512i, idx M512i, b M512i) M512i
+func permutex2var16(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // MaskPermutex2var32: Shuffle 32-bit integers in 'a' and 'b' across lanes
@@ -38806,10 +38806,10 @@ func permutex2var16(a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMT2D'. Intrinsic: '_mm512_mask_permutex2var_epi32'.
 // Requires AVX512F.
 func MaskPermutex2var32(a M512i, k Mmask16, idx M512i, b M512i) M512i {
-	return M512i(maskPermutex2var32(a, uint16(k), idx, b))
+	return M512i(maskPermutex2var32([64]byte(a), uint16(k), [64]byte(idx), [64]byte(b)))
 }
 
-func maskPermutex2var32(a M512i, k uint16, idx M512i, b M512i) M512i
+func maskPermutex2var32(a [64]byte, k uint16, idx [64]byte, b [64]byte) [64]byte
 
 
 // Mask2Permutex2var32: Shuffle 32-bit integers in 'a' and 'b' across lanes
@@ -38831,10 +38831,10 @@ func maskPermutex2var32(a M512i, k uint16, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2D'. Intrinsic: '_mm512_mask2_permutex2var_epi32'.
 // Requires AVX512F.
 func Mask2Permutex2var32(a M512i, idx M512i, k Mmask16, b M512i) M512i {
-	return M512i(mask2Permutex2var32(a, idx, uint16(k), b))
+	return M512i(mask2Permutex2var32([64]byte(a), [64]byte(idx), uint16(k), [64]byte(b)))
 }
 
-func mask2Permutex2var32(a M512i, idx M512i, k uint16, b M512i) M512i
+func mask2Permutex2var32(a [64]byte, idx [64]byte, k uint16, b [64]byte) [64]byte
 
 
 // MaskzPermutex2var32: Shuffle 32-bit integers in 'a' and 'b' across lanes
@@ -38856,10 +38856,10 @@ func mask2Permutex2var32(a M512i, idx M512i, k uint16, b M512i) M512i
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm512_maskz_permutex2var_epi32'.
 // Requires AVX512F.
 func MaskzPermutex2var32(k Mmask16, a M512i, idx M512i, b M512i) M512i {
-	return M512i(maskzPermutex2var32(uint16(k), a, idx, b))
+	return M512i(maskzPermutex2var32(uint16(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func maskzPermutex2var32(k uint16, a M512i, idx M512i, b M512i) M512i
+func maskzPermutex2var32(k uint16, a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // Permutex2var32: Shuffle 32-bit integers in 'a' and 'b' across lanes using
@@ -38876,10 +38876,10 @@ func maskzPermutex2var32(k uint16, a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm512_permutex2var_epi32'.
 // Requires AVX512F.
 func Permutex2var32(a M512i, idx M512i, b M512i) M512i {
-	return M512i(permutex2var32(a, idx, b))
+	return M512i(permutex2var32([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func permutex2var32(a M512i, idx M512i, b M512i) M512i
+func permutex2var32(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // MaskPermutex2var64: Shuffle 64-bit integers in 'a' and 'b' across lanes
@@ -38901,10 +38901,10 @@ func permutex2var32(a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMT2Q'. Intrinsic: '_mm512_mask_permutex2var_epi64'.
 // Requires AVX512F.
 func MaskPermutex2var64(a M512i, k Mmask8, idx M512i, b M512i) M512i {
-	return M512i(maskPermutex2var64(a, uint8(k), idx, b))
+	return M512i(maskPermutex2var64([64]byte(a), uint8(k), [64]byte(idx), [64]byte(b)))
 }
 
-func maskPermutex2var64(a M512i, k uint8, idx M512i, b M512i) M512i
+func maskPermutex2var64(a [64]byte, k uint8, idx [64]byte, b [64]byte) [64]byte
 
 
 // Mask2Permutex2var64: Shuffle 64-bit integers in 'a' and 'b' across lanes
@@ -38926,10 +38926,10 @@ func maskPermutex2var64(a M512i, k uint8, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2Q'. Intrinsic: '_mm512_mask2_permutex2var_epi64'.
 // Requires AVX512F.
 func Mask2Permutex2var64(a M512i, idx M512i, k Mmask8, b M512i) M512i {
-	return M512i(mask2Permutex2var64(a, idx, uint8(k), b))
+	return M512i(mask2Permutex2var64([64]byte(a), [64]byte(idx), uint8(k), [64]byte(b)))
 }
 
-func mask2Permutex2var64(a M512i, idx M512i, k uint8, b M512i) M512i
+func mask2Permutex2var64(a [64]byte, idx [64]byte, k uint8, b [64]byte) [64]byte
 
 
 // MaskzPermutex2var64: Shuffle 64-bit integers in 'a' and 'b' across lanes
@@ -38951,10 +38951,10 @@ func mask2Permutex2var64(a M512i, idx M512i, k uint8, b M512i) M512i
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm512_maskz_permutex2var_epi64'.
 // Requires AVX512F.
 func MaskzPermutex2var64(k Mmask8, a M512i, idx M512i, b M512i) M512i {
-	return M512i(maskzPermutex2var64(uint8(k), a, idx, b))
+	return M512i(maskzPermutex2var64(uint8(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func maskzPermutex2var64(k uint8, a M512i, idx M512i, b M512i) M512i
+func maskzPermutex2var64(k uint8, a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // Permutex2var64: Shuffle 64-bit integers in 'a' and 'b' across lanes using
@@ -38971,10 +38971,10 @@ func maskzPermutex2var64(k uint8, a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm512_permutex2var_epi64'.
 // Requires AVX512F.
 func Permutex2var64(a M512i, idx M512i, b M512i) M512i {
-	return M512i(permutex2var64(a, idx, b))
+	return M512i(permutex2var64([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func permutex2var64(a M512i, idx M512i, b M512i) M512i
+func permutex2var64(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // MaskPermutex2var8: Shuffle 8-bit integers in 'a' and 'b' across lanes using
@@ -38996,10 +38996,10 @@ func permutex2var64(a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMT2B'. Intrinsic: '_mm512_mask_permutex2var_epi8'.
 // Requires AVX512VBMI.
 func MaskPermutex2var8(a M512i, k Mmask64, idx M512i, b M512i) M512i {
-	return M512i(maskPermutex2var8(a, uint64(k), idx, b))
+	return M512i(maskPermutex2var8([64]byte(a), uint64(k), [64]byte(idx), [64]byte(b)))
 }
 
-func maskPermutex2var8(a M512i, k uint64, idx M512i, b M512i) M512i
+func maskPermutex2var8(a [64]byte, k uint64, idx [64]byte, b [64]byte) [64]byte
 
 
 // Mask2Permutex2var8: Shuffle 8-bit integers in 'a' and 'b' across lanes using
@@ -39021,10 +39021,10 @@ func maskPermutex2var8(a M512i, k uint64, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_mask2_permutex2var_epi8'.
 // Requires AVX512VBMI.
 func Mask2Permutex2var8(a M512i, idx M512i, k Mmask64, b M512i) M512i {
-	return M512i(mask2Permutex2var8(a, idx, uint64(k), b))
+	return M512i(mask2Permutex2var8([64]byte(a), [64]byte(idx), uint64(k), [64]byte(b)))
 }
 
-func mask2Permutex2var8(a M512i, idx M512i, k uint64, b M512i) M512i
+func mask2Permutex2var8(a [64]byte, idx [64]byte, k uint64, b [64]byte) [64]byte
 
 
 // MaskzPermutex2var8: Shuffle 8-bit integers in 'a' and 'b' across lanes using
@@ -39046,10 +39046,10 @@ func mask2Permutex2var8(a M512i, idx M512i, k uint64, b M512i) M512i
 // Instruction: 'VPERMI2B, VPERMT2B'. Intrinsic: '_mm512_maskz_permutex2var_epi8'.
 // Requires AVX512VBMI.
 func MaskzPermutex2var8(k Mmask64, a M512i, idx M512i, b M512i) M512i {
-	return M512i(maskzPermutex2var8(uint64(k), a, idx, b))
+	return M512i(maskzPermutex2var8(uint64(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func maskzPermutex2var8(k uint64, a M512i, idx M512i, b M512i) M512i
+func maskzPermutex2var8(k uint64, a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // Permutex2var8: Shuffle 8-bit integers in 'a' and 'b' across lanes using the
@@ -39065,10 +39065,10 @@ func maskzPermutex2var8(k uint64, a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_permutex2var_epi8'.
 // Requires AVX512VBMI.
 func Permutex2var8(a M512i, idx M512i, b M512i) M512i {
-	return M512i(permutex2var8(a, idx, b))
+	return M512i(permutex2var8([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func permutex2var8(a M512i, idx M512i, b M512i) M512i
+func permutex2var8(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // MaskPermutex2varPd: Shuffle double-precision (64-bit) floating-point
@@ -39090,10 +39090,10 @@ func permutex2var8(a M512i, idx M512i, b M512i) M512i
 // Instruction: 'VPERMT2PD'. Intrinsic: '_mm512_mask_permutex2var_pd'.
 // Requires AVX512F.
 func MaskPermutex2varPd(a M512d, k Mmask8, idx M512i, b M512d) M512d {
-	return M512d(maskPermutex2varPd([8]float64(a), uint8(k), idx, [8]float64(b)))
+	return M512d(maskPermutex2varPd([8]float64(a), uint8(k), [64]byte(idx), [8]float64(b)))
 }
 
-func maskPermutex2varPd(a [8]float64, k uint8, idx M512i, b [8]float64) [8]float64
+func maskPermutex2varPd(a [8]float64, k uint8, idx [64]byte, b [8]float64) [8]float64
 
 
 // Mask2Permutex2varPd: Shuffle double-precision (64-bit) floating-point
@@ -39115,10 +39115,10 @@ func maskPermutex2varPd(a [8]float64, k uint8, idx M512i, b [8]float64) [8]float
 // Instruction: 'VPERMI2PD'. Intrinsic: '_mm512_mask2_permutex2var_pd'.
 // Requires AVX512F.
 func Mask2Permutex2varPd(a M512d, idx M512i, k Mmask8, b M512d) M512d {
-	return M512d(mask2Permutex2varPd([8]float64(a), idx, uint8(k), [8]float64(b)))
+	return M512d(mask2Permutex2varPd([8]float64(a), [64]byte(idx), uint8(k), [8]float64(b)))
 }
 
-func mask2Permutex2varPd(a [8]float64, idx M512i, k uint8, b [8]float64) [8]float64
+func mask2Permutex2varPd(a [8]float64, idx [64]byte, k uint8, b [8]float64) [8]float64
 
 
 // MaskzPermutex2varPd: Shuffle double-precision (64-bit) floating-point
@@ -39140,10 +39140,10 @@ func mask2Permutex2varPd(a [8]float64, idx M512i, k uint8, b [8]float64) [8]floa
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm512_maskz_permutex2var_pd'.
 // Requires AVX512F.
 func MaskzPermutex2varPd(k Mmask8, a M512d, idx M512i, b M512d) M512d {
-	return M512d(maskzPermutex2varPd(uint8(k), [8]float64(a), idx, [8]float64(b)))
+	return M512d(maskzPermutex2varPd(uint8(k), [8]float64(a), [64]byte(idx), [8]float64(b)))
 }
 
-func maskzPermutex2varPd(k uint8, a [8]float64, idx M512i, b [8]float64) [8]float64
+func maskzPermutex2varPd(k uint8, a [8]float64, idx [64]byte, b [8]float64) [8]float64
 
 
 // Permutex2varPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -39160,10 +39160,10 @@ func maskzPermutex2varPd(k uint8, a [8]float64, idx M512i, b [8]float64) [8]floa
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm512_permutex2var_pd'.
 // Requires AVX512F.
 func Permutex2varPd(a M512d, idx M512i, b M512d) M512d {
-	return M512d(permutex2varPd([8]float64(a), idx, [8]float64(b)))
+	return M512d(permutex2varPd([8]float64(a), [64]byte(idx), [8]float64(b)))
 }
 
-func permutex2varPd(a [8]float64, idx M512i, b [8]float64) [8]float64
+func permutex2varPd(a [8]float64, idx [64]byte, b [8]float64) [8]float64
 
 
 // MaskPermutex2varPs: Shuffle single-precision (32-bit) floating-point
@@ -39185,10 +39185,10 @@ func permutex2varPd(a [8]float64, idx M512i, b [8]float64) [8]float64
 // Instruction: 'VPERMT2PS'. Intrinsic: '_mm512_mask_permutex2var_ps'.
 // Requires AVX512F.
 func MaskPermutex2varPs(a M512, k Mmask16, idx M512i, b M512) M512 {
-	return M512(maskPermutex2varPs([16]float32(a), uint16(k), idx, [16]float32(b)))
+	return M512(maskPermutex2varPs([16]float32(a), uint16(k), [64]byte(idx), [16]float32(b)))
 }
 
-func maskPermutex2varPs(a [16]float32, k uint16, idx M512i, b [16]float32) [16]float32
+func maskPermutex2varPs(a [16]float32, k uint16, idx [64]byte, b [16]float32) [16]float32
 
 
 // Mask2Permutex2varPs: Shuffle single-precision (32-bit) floating-point
@@ -39210,10 +39210,10 @@ func maskPermutex2varPs(a [16]float32, k uint16, idx M512i, b [16]float32) [16]f
 // Instruction: 'VPERMI2PS'. Intrinsic: '_mm512_mask2_permutex2var_ps'.
 // Requires AVX512F.
 func Mask2Permutex2varPs(a M512, idx M512i, k Mmask16, b M512) M512 {
-	return M512(mask2Permutex2varPs([16]float32(a), idx, uint16(k), [16]float32(b)))
+	return M512(mask2Permutex2varPs([16]float32(a), [64]byte(idx), uint16(k), [16]float32(b)))
 }
 
-func mask2Permutex2varPs(a [16]float32, idx M512i, k uint16, b [16]float32) [16]float32
+func mask2Permutex2varPs(a [16]float32, idx [64]byte, k uint16, b [16]float32) [16]float32
 
 
 // MaskzPermutex2varPs: Shuffle single-precision (32-bit) floating-point
@@ -39235,10 +39235,10 @@ func mask2Permutex2varPs(a [16]float32, idx M512i, k uint16, b [16]float32) [16]
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm512_maskz_permutex2var_ps'.
 // Requires AVX512F.
 func MaskzPermutex2varPs(k Mmask16, a M512, idx M512i, b M512) M512 {
-	return M512(maskzPermutex2varPs(uint16(k), [16]float32(a), idx, [16]float32(b)))
+	return M512(maskzPermutex2varPs(uint16(k), [16]float32(a), [64]byte(idx), [16]float32(b)))
 }
 
-func maskzPermutex2varPs(k uint16, a [16]float32, idx M512i, b [16]float32) [16]float32
+func maskzPermutex2varPs(k uint16, a [16]float32, idx [64]byte, b [16]float32) [16]float32
 
 
 // Permutex2varPs: Shuffle single-precision (32-bit) floating-point elements in
@@ -39255,10 +39255,10 @@ func maskzPermutex2varPs(k uint16, a [16]float32, idx M512i, b [16]float32) [16]
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm512_permutex2var_ps'.
 // Requires AVX512F.
 func Permutex2varPs(a M512, idx M512i, b M512) M512 {
-	return M512(permutex2varPs([16]float32(a), idx, [16]float32(b)))
+	return M512(permutex2varPs([16]float32(a), [64]byte(idx), [16]float32(b)))
 }
 
-func permutex2varPs(a [16]float32, idx M512i, b [16]float32) [16]float32
+func permutex2varPs(a [16]float32, idx [64]byte, b [16]float32) [16]float32
 
 
 // MaskPermutexvar16: Shuffle 16-bit integers in 'a' across lanes using the
@@ -39280,10 +39280,10 @@ func permutex2varPs(a [16]float32, idx M512i, b [16]float32) [16]float32
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_mask_permutexvar_epi16'.
 // Requires AVX512BW.
 func MaskPermutexvar16(src M512i, k Mmask32, idx M512i, a M512i) M512i {
-	return M512i(maskPermutexvar16(src, uint32(k), idx, a))
+	return M512i(maskPermutexvar16([64]byte(src), uint32(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutexvar16(src M512i, k uint32, idx M512i, a M512i) M512i
+func maskPermutexvar16(src [64]byte, k uint32, idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskzPermutexvar16: Shuffle 16-bit integers in 'a' across lanes using the
@@ -39304,10 +39304,10 @@ func maskPermutexvar16(src M512i, k uint32, idx M512i, a M512i) M512i
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_maskz_permutexvar_epi16'.
 // Requires AVX512BW.
 func MaskzPermutexvar16(k Mmask32, idx M512i, a M512i) M512i {
-	return M512i(maskzPermutexvar16(uint32(k), idx, a))
+	return M512i(maskzPermutexvar16(uint32(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskzPermutexvar16(k uint32, idx M512i, a M512i) M512i
+func maskzPermutexvar16(k uint32, idx [64]byte, a [64]byte) [64]byte
 
 
 // Permutexvar16: Shuffle 16-bit integers in 'a' across lanes using the
@@ -39323,10 +39323,10 @@ func maskzPermutexvar16(k uint32, idx M512i, a M512i) M512i
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_permutexvar_epi16'.
 // Requires AVX512BW.
 func Permutexvar16(idx M512i, a M512i) M512i {
-	return M512i(permutexvar16(idx, a))
+	return M512i(permutexvar16([64]byte(idx), [64]byte(a)))
 }
 
-func permutexvar16(idx M512i, a M512i) M512i
+func permutexvar16(idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskPermutexvar32: Shuffle 32-bit integers in 'a' across lanes using the
@@ -39348,10 +39348,10 @@ func permutexvar16(idx M512i, a M512i) M512i
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_mask_permutexvar_epi32'.
 // Requires AVX512F.
 func MaskPermutexvar32(src M512i, k Mmask16, idx M512i, a M512i) M512i {
-	return M512i(maskPermutexvar32(src, uint16(k), idx, a))
+	return M512i(maskPermutexvar32([64]byte(src), uint16(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutexvar32(src M512i, k uint16, idx M512i, a M512i) M512i
+func maskPermutexvar32(src [64]byte, k uint16, idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskzPermutexvar32: Shuffle 32-bit integers in 'a' across lanes using the
@@ -39372,10 +39372,10 @@ func maskPermutexvar32(src M512i, k uint16, idx M512i, a M512i) M512i
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_maskz_permutexvar_epi32'.
 // Requires AVX512F.
 func MaskzPermutexvar32(k Mmask16, idx M512i, a M512i) M512i {
-	return M512i(maskzPermutexvar32(uint16(k), idx, a))
+	return M512i(maskzPermutexvar32(uint16(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskzPermutexvar32(k uint16, idx M512i, a M512i) M512i
+func maskzPermutexvar32(k uint16, idx [64]byte, a [64]byte) [64]byte
 
 
 // Permutexvar32: Shuffle 32-bit integers in 'a' across lanes using the
@@ -39391,10 +39391,10 @@ func maskzPermutexvar32(k uint16, idx M512i, a M512i) M512i
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_permutexvar_epi32'.
 // Requires AVX512F.
 func Permutexvar32(idx M512i, a M512i) M512i {
-	return M512i(permutexvar32(idx, a))
+	return M512i(permutexvar32([64]byte(idx), [64]byte(a)))
 }
 
-func permutexvar32(idx M512i, a M512i) M512i
+func permutexvar32(idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskPermutexvar64: Shuffle 64-bit integers in 'a' across lanes using the
@@ -39416,10 +39416,10 @@ func permutexvar32(idx M512i, a M512i) M512i
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_mask_permutexvar_epi64'.
 // Requires AVX512F.
 func MaskPermutexvar64(src M512i, k Mmask8, idx M512i, a M512i) M512i {
-	return M512i(maskPermutexvar64(src, uint8(k), idx, a))
+	return M512i(maskPermutexvar64([64]byte(src), uint8(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutexvar64(src M512i, k uint8, idx M512i, a M512i) M512i
+func maskPermutexvar64(src [64]byte, k uint8, idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskzPermutexvar64: Shuffle 64-bit integers in 'a' across lanes using the
@@ -39440,10 +39440,10 @@ func maskPermutexvar64(src M512i, k uint8, idx M512i, a M512i) M512i
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_maskz_permutexvar_epi64'.
 // Requires AVX512F.
 func MaskzPermutexvar64(k Mmask8, idx M512i, a M512i) M512i {
-	return M512i(maskzPermutexvar64(uint8(k), idx, a))
+	return M512i(maskzPermutexvar64(uint8(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskzPermutexvar64(k uint8, idx M512i, a M512i) M512i
+func maskzPermutexvar64(k uint8, idx [64]byte, a [64]byte) [64]byte
 
 
 // Permutexvar64: Shuffle 64-bit integers in 'a' across lanes using the
@@ -39459,10 +39459,10 @@ func maskzPermutexvar64(k uint8, idx M512i, a M512i) M512i
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_permutexvar_epi64'.
 // Requires AVX512F.
 func Permutexvar64(idx M512i, a M512i) M512i {
-	return M512i(permutexvar64(idx, a))
+	return M512i(permutexvar64([64]byte(idx), [64]byte(a)))
 }
 
-func permutexvar64(idx M512i, a M512i) M512i
+func permutexvar64(idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskPermutexvar8: Shuffle 8-bit integers in 'a' across lanes using the
@@ -39484,10 +39484,10 @@ func permutexvar64(idx M512i, a M512i) M512i
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_mask_permutexvar_epi8'.
 // Requires AVX512VBMI.
 func MaskPermutexvar8(src M512i, k Mmask64, idx M512i, a M512i) M512i {
-	return M512i(maskPermutexvar8(src, uint64(k), idx, a))
+	return M512i(maskPermutexvar8([64]byte(src), uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutexvar8(src M512i, k uint64, idx M512i, a M512i) M512i
+func maskPermutexvar8(src [64]byte, k uint64, idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskzPermutexvar8: Shuffle 8-bit integers in 'a' across lanes using the
@@ -39508,10 +39508,10 @@ func maskPermutexvar8(src M512i, k uint64, idx M512i, a M512i) M512i
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_maskz_permutexvar_epi8'.
 // Requires AVX512VBMI.
 func MaskzPermutexvar8(k Mmask64, idx M512i, a M512i) M512i {
-	return M512i(maskzPermutexvar8(uint64(k), idx, a))
+	return M512i(maskzPermutexvar8(uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskzPermutexvar8(k uint64, idx M512i, a M512i) M512i
+func maskzPermutexvar8(k uint64, idx [64]byte, a [64]byte) [64]byte
 
 
 // Permutexvar8: Shuffle 8-bit integers in 'a' across lanes using the
@@ -39527,10 +39527,10 @@ func maskzPermutexvar8(k uint64, idx M512i, a M512i) M512i
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_permutexvar_epi8'.
 // Requires AVX512VBMI.
 func Permutexvar8(idx M512i, a M512i) M512i {
-	return M512i(permutexvar8(idx, a))
+	return M512i(permutexvar8([64]byte(idx), [64]byte(a)))
 }
 
-func permutexvar8(idx M512i, a M512i) M512i
+func permutexvar8(idx [64]byte, a [64]byte) [64]byte
 
 
 // MaskPermutexvarPd: Shuffle double-precision (64-bit) floating-point elements
@@ -39552,10 +39552,10 @@ func permutexvar8(idx M512i, a M512i) M512i
 // Instruction: 'VPERMPD'. Intrinsic: '_mm512_mask_permutexvar_pd'.
 // Requires AVX512F.
 func MaskPermutexvarPd(src M512d, k Mmask8, idx M512i, a M512d) M512d {
-	return M512d(maskPermutexvarPd([8]float64(src), uint8(k), idx, [8]float64(a)))
+	return M512d(maskPermutexvarPd([8]float64(src), uint8(k), [64]byte(idx), [8]float64(a)))
 }
 
-func maskPermutexvarPd(src [8]float64, k uint8, idx M512i, a [8]float64) [8]float64
+func maskPermutexvarPd(src [8]float64, k uint8, idx [64]byte, a [8]float64) [8]float64
 
 
 // MaskzPermutexvarPd: Shuffle double-precision (64-bit) floating-point
@@ -39577,10 +39577,10 @@ func maskPermutexvarPd(src [8]float64, k uint8, idx M512i, a [8]float64) [8]floa
 // Instruction: 'VPERMPD'. Intrinsic: '_mm512_maskz_permutexvar_pd'.
 // Requires AVX512F.
 func MaskzPermutexvarPd(k Mmask8, idx M512i, a M512d) M512d {
-	return M512d(maskzPermutexvarPd(uint8(k), idx, [8]float64(a)))
+	return M512d(maskzPermutexvarPd(uint8(k), [64]byte(idx), [8]float64(a)))
 }
 
-func maskzPermutexvarPd(k uint8, idx M512i, a [8]float64) [8]float64
+func maskzPermutexvarPd(k uint8, idx [64]byte, a [8]float64) [8]float64
 
 
 // PermutexvarPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -39597,10 +39597,10 @@ func maskzPermutexvarPd(k uint8, idx M512i, a [8]float64) [8]float64
 // Instruction: 'VPERMPD'. Intrinsic: '_mm512_permutexvar_pd'.
 // Requires AVX512F.
 func PermutexvarPd(idx M512i, a M512d) M512d {
-	return M512d(permutexvarPd(idx, [8]float64(a)))
+	return M512d(permutexvarPd([64]byte(idx), [8]float64(a)))
 }
 
-func permutexvarPd(idx M512i, a [8]float64) [8]float64
+func permutexvarPd(idx [64]byte, a [8]float64) [8]float64
 
 
 // MaskPermutexvarPs: Shuffle single-precision (32-bit) floating-point elements
@@ -39622,10 +39622,10 @@ func permutexvarPd(idx M512i, a [8]float64) [8]float64
 // Instruction: 'VPERMPS'. Intrinsic: '_mm512_mask_permutexvar_ps'.
 // Requires AVX512F.
 func MaskPermutexvarPs(src M512, k Mmask16, idx M512i, a M512) M512 {
-	return M512(maskPermutexvarPs([16]float32(src), uint16(k), idx, [16]float32(a)))
+	return M512(maskPermutexvarPs([16]float32(src), uint16(k), [64]byte(idx), [16]float32(a)))
 }
 
-func maskPermutexvarPs(src [16]float32, k uint16, idx M512i, a [16]float32) [16]float32
+func maskPermutexvarPs(src [16]float32, k uint16, idx [64]byte, a [16]float32) [16]float32
 
 
 // MaskzPermutexvarPs: Shuffle single-precision (32-bit) floating-point
@@ -39647,10 +39647,10 @@ func maskPermutexvarPs(src [16]float32, k uint16, idx M512i, a [16]float32) [16]
 // Instruction: 'VPERMPS'. Intrinsic: '_mm512_maskz_permutexvar_ps'.
 // Requires AVX512F.
 func MaskzPermutexvarPs(k Mmask16, idx M512i, a M512) M512 {
-	return M512(maskzPermutexvarPs(uint16(k), idx, [16]float32(a)))
+	return M512(maskzPermutexvarPs(uint16(k), [64]byte(idx), [16]float32(a)))
 }
 
-func maskzPermutexvarPs(k uint16, idx M512i, a [16]float32) [16]float32
+func maskzPermutexvarPs(k uint16, idx [64]byte, a [16]float32) [16]float32
 
 
 // PermutexvarPs: Shuffle single-precision (32-bit) floating-point elements in
@@ -39666,10 +39666,10 @@ func maskzPermutexvarPs(k uint16, idx M512i, a [16]float32) [16]float32
 // Instruction: 'VPERMPS'. Intrinsic: '_mm512_permutexvar_ps'.
 // Requires AVX512F.
 func PermutexvarPs(idx M512i, a M512) M512 {
-	return M512(permutexvarPs(idx, [16]float32(a)))
+	return M512(permutexvarPs([64]byte(idx), [16]float32(a)))
 }
 
-func permutexvarPs(idx M512i, a [16]float32) [16]float32
+func permutexvarPs(idx [64]byte, a [16]float32) [16]float32
 
 
 // MaskPowPd: Compute the exponential value of packed double-precision (64-bit)
@@ -39784,10 +39784,10 @@ func powPs(a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32extgather_ps'.
 // Requires KNCNI.
 func MaskPrefetchI32extgatherPs(index M512i, k Mmask16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
-	maskPrefetchI32extgatherPs(index, uint16(k), uintptr(mv), conv, scale, hint)
+	maskPrefetchI32extgatherPs([64]byte(index), uint16(k), uintptr(mv), conv, scale, hint)
 }
 
-func maskPrefetchI32extgatherPs(index M512i, k uint16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
+func maskPrefetchI32extgatherPs(index [64]byte, k uint16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
 // PrefetchI32extgatherPs: Prefetches a set of 16 single-precision (32-bit)
@@ -39812,10 +39812,10 @@ func maskPrefetchI32extgatherPs(index M512i, k uint16, mv uintptr, conv MMUPCONV
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_prefetch_i32extgather_ps'.
 // Requires KNCNI.
 func PrefetchI32extgatherPs(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
-	prefetchI32extgatherPs(index, uintptr(mv), conv, scale, hint)
+	prefetchI32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint)
 }
 
-func prefetchI32extgatherPs(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
+func prefetchI32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
 // MaskPrefetchI32extscatterPs: Prefetches a set of 16 single-precision
@@ -39843,10 +39843,10 @@ func prefetchI32extgatherPs(index M512i, mv uintptr, conv MMUPCONVPSENUM, scale 
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32extscatter_ps'.
 // Requires KNCNI.
 func MaskPrefetchI32extscatterPs(mv uintptr, k Mmask16, index M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
-	maskPrefetchI32extscatterPs(uintptr(mv), uint16(k), index, conv, scale, hint)
+	maskPrefetchI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), conv, scale, hint)
 }
 
-func maskPrefetchI32extscatterPs(mv uintptr, k uint16, index M512i, conv MMUPCONVPSENUM, scale int, hint int) 
+func maskPrefetchI32extscatterPs(mv uintptr, k uint16, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
 // PrefetchI32extscatterPs: Prefetches a set of 16 single-precision (32-bit)
@@ -39875,10 +39875,10 @@ func maskPrefetchI32extscatterPs(mv uintptr, k uint16, index M512i, conv MMUPCON
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_prefetch_i32extscatter_ps'.
 // Requires KNCNI.
 func PrefetchI32extscatterPs(mv uintptr, index M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
-	prefetchI32extscatterPs(uintptr(mv), index, conv, scale, hint)
+	prefetchI32extscatterPs(uintptr(mv), [64]byte(index), conv, scale, hint)
 }
 
-func prefetchI32extscatterPs(mv uintptr, index M512i, conv MMUPCONVPSENUM, scale int, hint int) 
+func prefetchI32extscatterPs(mv uintptr, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
 // MaskPrefetchI32gatherPd: Prefetch double-precision (64-bit) floating-point
@@ -39900,10 +39900,10 @@ func prefetchI32extscatterPs(mv uintptr, index M512i, conv MMUPCONVPSENUM, scale
 // Instruction: 'VGATHERPF0DPD, VGATHERPF1DPD'. Intrinsic: '_mm512_mask_prefetch_i32gather_pd'.
 // Requires AVX512PF.
 func MaskPrefetchI32gatherPd(vindex M256i, mask Mmask8, base_addr uintptr, scale int, hint int)  {
-	maskPrefetchI32gatherPd(vindex, uint8(mask), uintptr(base_addr), scale, hint)
+	maskPrefetchI32gatherPd([32]byte(vindex), uint8(mask), uintptr(base_addr), scale, hint)
 }
 
-func maskPrefetchI32gatherPd(vindex M256i, mask uint8, base_addr uintptr, scale int, hint int) 
+func maskPrefetchI32gatherPd(vindex [32]byte, mask uint8, base_addr uintptr, scale int, hint int) 
 
 
 // PrefetchI32gatherPd: Prefetch double-precision (64-bit) floating-point
@@ -39922,10 +39922,10 @@ func maskPrefetchI32gatherPd(vindex M256i, mask uint8, base_addr uintptr, scale 
 // Instruction: 'VGATHERPF0DPD, VGATHERPF1DPD'. Intrinsic: '_mm512_prefetch_i32gather_pd'.
 // Requires AVX512PF.
 func PrefetchI32gatherPd(vindex M256i, base_addr uintptr, scale int, hint int)  {
-	prefetchI32gatherPd(vindex, uintptr(base_addr), scale, hint)
+	prefetchI32gatherPd([32]byte(vindex), uintptr(base_addr), scale, hint)
 }
 
-func prefetchI32gatherPd(vindex M256i, base_addr uintptr, scale int, hint int) 
+func prefetchI32gatherPd(vindex [32]byte, base_addr uintptr, scale int, hint int) 
 
 
 // MaskPrefetchI32gatherPs: Prefetch single-precision (32-bit) floating-point
@@ -39947,10 +39947,10 @@ func prefetchI32gatherPd(vindex M256i, base_addr uintptr, scale int, hint int)
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32gather_ps'.
 // Requires KNCNI.
 func MaskPrefetchI32gatherPs(vindex M512i, mask Mmask16, base_addr uintptr, scale int, hint int)  {
-	maskPrefetchI32gatherPs(vindex, uint16(mask), uintptr(base_addr), scale, hint)
+	maskPrefetchI32gatherPs([64]byte(vindex), uint16(mask), uintptr(base_addr), scale, hint)
 }
 
-func maskPrefetchI32gatherPs(vindex M512i, mask uint16, base_addr uintptr, scale int, hint int) 
+func maskPrefetchI32gatherPs(vindex [64]byte, mask uint16, base_addr uintptr, scale int, hint int) 
 
 
 // PrefetchI32gatherPs: Prefetches 16 single-precision (32-bit) floating-point
@@ -39969,10 +39969,10 @@ func maskPrefetchI32gatherPs(vindex M512i, mask uint16, base_addr uintptr, scale
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_prefetch_i32gather_ps'.
 // Requires KNCNI.
 func PrefetchI32gatherPs(index M512i, mv uintptr, scale int, hint int)  {
-	prefetchI32gatherPs(index, uintptr(mv), scale, hint)
+	prefetchI32gatherPs([64]byte(index), uintptr(mv), scale, hint)
 }
 
-func prefetchI32gatherPs(index M512i, mv uintptr, scale int, hint int) 
+func prefetchI32gatherPs(index [64]byte, mv uintptr, scale int, hint int) 
 
 
 // MaskPrefetchI32scatterPd: Prefetch double-precision (64-bit) floating-point
@@ -39994,10 +39994,10 @@ func prefetchI32gatherPs(index M512i, mv uintptr, scale int, hint int)
 // Instruction: 'VSCATTERPF0DPD, VSCATTERPF1DPD'. Intrinsic: '_mm512_mask_prefetch_i32scatter_pd'.
 // Requires AVX512PF.
 func MaskPrefetchI32scatterPd(base_addr uintptr, mask Mmask8, vinde M256i, scale int, hint int)  {
-	maskPrefetchI32scatterPd(uintptr(base_addr), uint8(mask), vinde, scale, hint)
+	maskPrefetchI32scatterPd(uintptr(base_addr), uint8(mask), [32]byte(vinde), scale, hint)
 }
 
-func maskPrefetchI32scatterPd(base_addr uintptr, mask uint8, vinde M256i, scale int, hint int) 
+func maskPrefetchI32scatterPd(base_addr uintptr, mask uint8, vinde [32]byte, scale int, hint int) 
 
 
 // PrefetchI32scatterPd: Prefetch double-precision (64-bit) floating-point
@@ -40016,10 +40016,10 @@ func maskPrefetchI32scatterPd(base_addr uintptr, mask uint8, vinde M256i, scale 
 // Instruction: 'VSCATTERPF0DPD, VSCATTERPF1DPD'. Intrinsic: '_mm512_prefetch_i32scatter_pd'.
 // Requires AVX512PF.
 func PrefetchI32scatterPd(base_addr uintptr, vindex M256i, scale int, hint int)  {
-	prefetchI32scatterPd(uintptr(base_addr), vindex, scale, hint)
+	prefetchI32scatterPd(uintptr(base_addr), [32]byte(vindex), scale, hint)
 }
 
-func prefetchI32scatterPd(base_addr uintptr, vindex M256i, scale int, hint int) 
+func prefetchI32scatterPd(base_addr uintptr, vindex [32]byte, scale int, hint int) 
 
 
 // MaskPrefetchI32scatterPs: Prefetches 16 single-precision (32-bit)
@@ -40044,10 +40044,10 @@ func prefetchI32scatterPd(base_addr uintptr, vindex M256i, scale int, hint int)
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32scatter_ps'.
 // Requires KNCNI.
 func MaskPrefetchI32scatterPs(mv uintptr, k Mmask16, index M512i, scale int, hint int)  {
-	maskPrefetchI32scatterPs(uintptr(mv), uint16(k), index, scale, hint)
+	maskPrefetchI32scatterPs(uintptr(mv), uint16(k), [64]byte(index), scale, hint)
 }
 
-func maskPrefetchI32scatterPs(mv uintptr, k uint16, index M512i, scale int, hint int) 
+func maskPrefetchI32scatterPs(mv uintptr, k uint16, index [64]byte, scale int, hint int) 
 
 
 // PrefetchI32scatterPs: Prefetches 16 single-precision (32-bit) floating-point
@@ -40070,10 +40070,10 @@ func maskPrefetchI32scatterPs(mv uintptr, k uint16, index M512i, scale int, hint
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_prefetch_i32scatter_ps'.
 // Requires KNCNI.
 func PrefetchI32scatterPs(mv uintptr, index M512i, scale int, hint int)  {
-	prefetchI32scatterPs(uintptr(mv), index, scale, hint)
+	prefetchI32scatterPs(uintptr(mv), [64]byte(index), scale, hint)
 }
 
-func prefetchI32scatterPs(mv uintptr, index M512i, scale int, hint int) 
+func prefetchI32scatterPs(mv uintptr, index [64]byte, scale int, hint int) 
 
 
 // MaskPrefetchI64gatherPd: Prefetch double-precision (64-bit) floating-point
@@ -40096,10 +40096,10 @@ func prefetchI32scatterPs(mv uintptr, index M512i, scale int, hint int)
 // Instruction: 'VGATHERPF0QPD, VGATHERPF1QPD'. Intrinsic: '_mm512_mask_prefetch_i64gather_pd'.
 // Requires AVX512PF.
 func MaskPrefetchI64gatherPd(vindex M512i, mask Mmask8, base_addr uintptr, scale int, hint int)  {
-	maskPrefetchI64gatherPd(vindex, uint8(mask), uintptr(base_addr), scale, hint)
+	maskPrefetchI64gatherPd([64]byte(vindex), uint8(mask), uintptr(base_addr), scale, hint)
 }
 
-func maskPrefetchI64gatherPd(vindex M512i, mask uint8, base_addr uintptr, scale int, hint int) 
+func maskPrefetchI64gatherPd(vindex [64]byte, mask uint8, base_addr uintptr, scale int, hint int) 
 
 
 // PrefetchI64gatherPd: Prefetch double-precision (64-bit) floating-point
@@ -40118,10 +40118,10 @@ func maskPrefetchI64gatherPd(vindex M512i, mask uint8, base_addr uintptr, scale 
 // Instruction: 'VGATHERPF0QPD, VGATHERPF1QPD'. Intrinsic: '_mm512_prefetch_i64gather_pd'.
 // Requires AVX512PF.
 func PrefetchI64gatherPd(vindex M512i, base_addr uintptr, scale int, hint int)  {
-	prefetchI64gatherPd(vindex, uintptr(base_addr), scale, hint)
+	prefetchI64gatherPd([64]byte(vindex), uintptr(base_addr), scale, hint)
 }
 
-func prefetchI64gatherPd(vindex M512i, base_addr uintptr, scale int, hint int) 
+func prefetchI64gatherPd(vindex [64]byte, base_addr uintptr, scale int, hint int) 
 
 
 // MaskPrefetchI64gatherPs: Prefetch single-precision (32-bit) floating-point
@@ -40143,10 +40143,10 @@ func prefetchI64gatherPd(vindex M512i, base_addr uintptr, scale int, hint int)
 // Instruction: 'VGATHERPF0QPS, VGATHERPF1QPS'. Intrinsic: '_mm512_mask_prefetch_i64gather_ps'.
 // Requires AVX512PF.
 func MaskPrefetchI64gatherPs(vindex M512i, mask Mmask8, base_addr uintptr, scale int, hint int)  {
-	maskPrefetchI64gatherPs(vindex, uint8(mask), uintptr(base_addr), scale, hint)
+	maskPrefetchI64gatherPs([64]byte(vindex), uint8(mask), uintptr(base_addr), scale, hint)
 }
 
-func maskPrefetchI64gatherPs(vindex M512i, mask uint8, base_addr uintptr, scale int, hint int) 
+func maskPrefetchI64gatherPs(vindex [64]byte, mask uint8, base_addr uintptr, scale int, hint int) 
 
 
 // PrefetchI64gatherPs: Prefetch single-precision (32-bit) floating-point
@@ -40165,10 +40165,10 @@ func maskPrefetchI64gatherPs(vindex M512i, mask uint8, base_addr uintptr, scale 
 // Instruction: 'VGATHERPF0QPS, VGATHERPF1QPS'. Intrinsic: '_mm512_prefetch_i64gather_ps'.
 // Requires AVX512PF.
 func PrefetchI64gatherPs(vindex M512i, base_addr uintptr, scale int, hint int)  {
-	prefetchI64gatherPs(vindex, uintptr(base_addr), scale, hint)
+	prefetchI64gatherPs([64]byte(vindex), uintptr(base_addr), scale, hint)
 }
 
-func prefetchI64gatherPs(vindex M512i, base_addr uintptr, scale int, hint int) 
+func prefetchI64gatherPs(vindex [64]byte, base_addr uintptr, scale int, hint int) 
 
 
 // MaskPrefetchI64scatterPd: Prefetch double-precision (64-bit) floating-point
@@ -40190,10 +40190,10 @@ func prefetchI64gatherPs(vindex M512i, base_addr uintptr, scale int, hint int)
 // Instruction: 'VSCATTERPF0QPD, VSCATTERPF1QPD'. Intrinsic: '_mm512_mask_prefetch_i64scatter_pd'.
 // Requires AVX512PF.
 func MaskPrefetchI64scatterPd(base_addr uintptr, mask Mmask8, vindex M512i, scale int, hint int)  {
-	maskPrefetchI64scatterPd(uintptr(base_addr), uint8(mask), vindex, scale, hint)
+	maskPrefetchI64scatterPd(uintptr(base_addr), uint8(mask), [64]byte(vindex), scale, hint)
 }
 
-func maskPrefetchI64scatterPd(base_addr uintptr, mask uint8, vindex M512i, scale int, hint int) 
+func maskPrefetchI64scatterPd(base_addr uintptr, mask uint8, vindex [64]byte, scale int, hint int) 
 
 
 // PrefetchI64scatterPd: Prefetch double-precision (64-bit) floating-point
@@ -40212,10 +40212,10 @@ func maskPrefetchI64scatterPd(base_addr uintptr, mask uint8, vindex M512i, scale
 // Instruction: 'VSCATTERPF0QPD, VSCATTERPF1QPD'. Intrinsic: '_mm512_prefetch_i64scatter_pd'.
 // Requires AVX512PF.
 func PrefetchI64scatterPd(base_addr uintptr, vindex M512i, scale int, hint int)  {
-	prefetchI64scatterPd(uintptr(base_addr), vindex, scale, hint)
+	prefetchI64scatterPd(uintptr(base_addr), [64]byte(vindex), scale, hint)
 }
 
-func prefetchI64scatterPd(base_addr uintptr, vindex M512i, scale int, hint int) 
+func prefetchI64scatterPd(base_addr uintptr, vindex [64]byte, scale int, hint int) 
 
 
 // MaskPrefetchI64scatterPs: Prefetch single-precision (32-bit) floating-point
@@ -40237,10 +40237,10 @@ func prefetchI64scatterPd(base_addr uintptr, vindex M512i, scale int, hint int)
 // Instruction: 'VSCATTERPF0QPS, VSCATTERPF1QPS'. Intrinsic: '_mm512_mask_prefetch_i64scatter_ps'.
 // Requires AVX512PF.
 func MaskPrefetchI64scatterPs(base_addr uintptr, mask Mmask8, vindex M512i, scale int, hint int)  {
-	maskPrefetchI64scatterPs(uintptr(base_addr), uint8(mask), vindex, scale, hint)
+	maskPrefetchI64scatterPs(uintptr(base_addr), uint8(mask), [64]byte(vindex), scale, hint)
 }
 
-func maskPrefetchI64scatterPs(base_addr uintptr, mask uint8, vindex M512i, scale int, hint int) 
+func maskPrefetchI64scatterPs(base_addr uintptr, mask uint8, vindex [64]byte, scale int, hint int) 
 
 
 // PrefetchI64scatterPs: Prefetch single-precision (32-bit) floating-point
@@ -40258,10 +40258,10 @@ func maskPrefetchI64scatterPs(base_addr uintptr, mask uint8, vindex M512i, scale
 // Instruction: 'VSCATTERPF0QPS, VSCATTERPF1QPS'. Intrinsic: '_mm512_prefetch_i64scatter_ps'.
 // Requires AVX512PF.
 func PrefetchI64scatterPs(base_addr uintptr, vindex M512i, scale int, hint int)  {
-	prefetchI64scatterPs(uintptr(base_addr), vindex, scale, hint)
+	prefetchI64scatterPs(uintptr(base_addr), [64]byte(vindex), scale, hint)
 }
 
-func prefetchI64scatterPs(base_addr uintptr, vindex M512i, scale int, hint int) 
+func prefetchI64scatterPs(base_addr uintptr, vindex [64]byte, scale int, hint int) 
 
 
 // MaskRangePd: Calculate the max, min, absolute max, or absolute min
@@ -41438,10 +41438,10 @@ func recipPs(a [16]float32) [16]float32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_epi32'.
 // Requires KNCNI.
 func MaskReduceAdd32(k Mmask16, a M512i) int {
-	return int(maskReduceAdd32(uint16(k), a))
+	return int(maskReduceAdd32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceAdd32(k uint16, a M512i) int
+func maskReduceAdd32(k uint16, a [64]byte) int
 
 
 // ReduceAdd32: Reduce the packed 32-bit integers in 'a' by addition. Returns
@@ -41457,10 +41457,10 @@ func maskReduceAdd32(k uint16, a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_epi32'.
 // Requires KNCNI.
 func ReduceAdd32(a M512i) int {
-	return int(reduceAdd32(a))
+	return int(reduceAdd32([64]byte(a)))
 }
 
-func reduceAdd32(a M512i) int
+func reduceAdd32(a [64]byte) int
 
 
 // MaskReduceAdd64: Reduce the packed 64-bit integers in 'a' by addition using
@@ -41478,10 +41478,10 @@ func reduceAdd32(a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_epi64'.
 // Requires KNCNI.
 func MaskReduceAdd64(k Mmask8, a M512i) int64 {
-	return int64(maskReduceAdd64(uint8(k), a))
+	return int64(maskReduceAdd64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceAdd64(k uint8, a M512i) int64
+func maskReduceAdd64(k uint8, a [64]byte) int64
 
 
 // ReduceAdd64: Reduce the packed 64-bit integers in 'a' by addition. Returns
@@ -41497,10 +41497,10 @@ func maskReduceAdd64(k uint8, a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_epi64'.
 // Requires KNCNI.
 func ReduceAdd64(a M512i) int64 {
-	return int64(reduceAdd64(a))
+	return int64(reduceAdd64([64]byte(a)))
 }
 
-func reduceAdd64(a M512i) int64
+func reduceAdd64(a [64]byte) int64
 
 
 // MaskReduceAddPd: Reduce the packed double-precision (64-bit) floating-point
@@ -41600,10 +41600,10 @@ func reduceAddPs(a [16]float32) float32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_and_epi32'.
 // Requires KNCNI.
 func MaskReduceAnd32(k Mmask16, a M512i) int {
-	return int(maskReduceAnd32(uint16(k), a))
+	return int(maskReduceAnd32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceAnd32(k uint16, a M512i) int
+func maskReduceAnd32(k uint16, a [64]byte) int
 
 
 // ReduceAnd32: Reduce the packed 32-bit integers in 'a' by bitwise AND.
@@ -41619,10 +41619,10 @@ func maskReduceAnd32(k uint16, a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_reduce_and_epi32'.
 // Requires KNCNI.
 func ReduceAnd32(a M512i) int {
-	return int(reduceAnd32(a))
+	return int(reduceAnd32([64]byte(a)))
 }
 
-func reduceAnd32(a M512i) int
+func reduceAnd32(a [64]byte) int
 
 
 // MaskReduceAnd64: Reduce the packed 64-bit integers in 'a' by bitwise AND
@@ -41640,10 +41640,10 @@ func reduceAnd32(a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_and_epi64'.
 // Requires KNCNI.
 func MaskReduceAnd64(k Mmask8, a M512i) int64 {
-	return int64(maskReduceAnd64(uint8(k), a))
+	return int64(maskReduceAnd64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceAnd64(k uint8, a M512i) int64
+func maskReduceAnd64(k uint8, a [64]byte) int64
 
 
 // ReduceAnd64: Reduce the packed 64-bit integers in 'a' by bitwise AND.
@@ -41659,10 +41659,10 @@ func maskReduceAnd64(k uint8, a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_and_epi64'.
 // Requires KNCNI.
 func ReduceAnd64(a M512i) int64 {
-	return int64(reduceAnd64(a))
+	return int64(reduceAnd64([64]byte(a)))
 }
 
-func reduceAnd64(a M512i) int64
+func reduceAnd64(a [64]byte) int64
 
 
 // MaskReduceGmaxPd: Determines the maximum element of the packed
@@ -41860,10 +41860,10 @@ func reduceGminPs(a [16]float32) float32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epi32'.
 // Requires KNCNI.
 func MaskReduceMax32(k Mmask16, a M512i) int {
-	return int(maskReduceMax32(uint16(k), a))
+	return int(maskReduceMax32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMax32(k uint16, a M512i) int
+func maskReduceMax32(k uint16, a [64]byte) int
 
 
 // ReduceMax32: Reduce the packed 32-bit integers in 'a' by maximum. Returns
@@ -41879,10 +41879,10 @@ func maskReduceMax32(k uint16, a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epi32'.
 // Requires KNCNI.
 func ReduceMax32(a M512i) int {
-	return int(reduceMax32(a))
+	return int(reduceMax32([64]byte(a)))
 }
 
-func reduceMax32(a M512i) int
+func reduceMax32(a [64]byte) int
 
 
 // MaskReduceMax64: Reduce the packed 64-bit integers in 'a' by maximum using
@@ -41900,10 +41900,10 @@ func reduceMax32(a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epi64'.
 // Requires KNCNI.
 func MaskReduceMax64(k Mmask8, a M512i) int64 {
-	return int64(maskReduceMax64(uint8(k), a))
+	return int64(maskReduceMax64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMax64(k uint8, a M512i) int64
+func maskReduceMax64(k uint8, a [64]byte) int64
 
 
 // ReduceMax64: Reduce the packed 64-bit integers in 'a' by maximum. Returns
@@ -41919,10 +41919,10 @@ func maskReduceMax64(k uint8, a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epi64'.
 // Requires KNCNI.
 func ReduceMax64(a M512i) int64 {
-	return int64(reduceMax64(a))
+	return int64(reduceMax64([64]byte(a)))
 }
 
-func reduceMax64(a M512i) int64
+func reduceMax64(a [64]byte) int64
 
 
 // MaskReduceMaxEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
@@ -41940,10 +41940,10 @@ func reduceMax64(a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epu32'.
 // Requires KNCNI.
 func MaskReduceMaxEpu32(k Mmask16, a M512i) uint32 {
-	return uint32(maskReduceMaxEpu32(uint16(k), a))
+	return uint32(maskReduceMaxEpu32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMaxEpu32(k uint16, a M512i) uint32
+func maskReduceMaxEpu32(k uint16, a [64]byte) uint32
 
 
 // ReduceMaxEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
@@ -41959,10 +41959,10 @@ func maskReduceMaxEpu32(k uint16, a M512i) uint32
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epu32'.
 // Requires KNCNI.
 func ReduceMaxEpu32(a M512i) uint32 {
-	return uint32(reduceMaxEpu32(a))
+	return uint32(reduceMaxEpu32([64]byte(a)))
 }
 
-func reduceMaxEpu32(a M512i) uint32
+func reduceMaxEpu32(a [64]byte) uint32
 
 
 // MaskReduceMaxEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
@@ -41980,10 +41980,10 @@ func reduceMaxEpu32(a M512i) uint32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epu64'.
 // Requires KNCNI.
 func MaskReduceMaxEpu64(k Mmask8, a M512i) uint64 {
-	return uint64(maskReduceMaxEpu64(uint8(k), a))
+	return uint64(maskReduceMaxEpu64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMaxEpu64(k uint8, a M512i) uint64
+func maskReduceMaxEpu64(k uint8, a [64]byte) uint64
 
 
 // ReduceMaxEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
@@ -41999,10 +41999,10 @@ func maskReduceMaxEpu64(k uint8, a M512i) uint64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epu64'.
 // Requires KNCNI.
 func ReduceMaxEpu64(a M512i) uint64 {
-	return uint64(reduceMaxEpu64(a))
+	return uint64(reduceMaxEpu64([64]byte(a)))
 }
 
-func reduceMaxEpu64(a M512i) uint64
+func reduceMaxEpu64(a [64]byte) uint64
 
 
 // MaskReduceMaxPd: Reduce the packed double-precision (64-bit) floating-point
@@ -42102,10 +42102,10 @@ func reduceMaxPs(a [16]float32) float32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epi32'.
 // Requires KNCNI.
 func MaskReduceMin32(k Mmask16, a M512i) int {
-	return int(maskReduceMin32(uint16(k), a))
+	return int(maskReduceMin32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMin32(k uint16, a M512i) int
+func maskReduceMin32(k uint16, a [64]byte) int
 
 
 // ReduceMin32: Reduce the packed 32-bit integers in 'a' by minimum. Returns
@@ -42121,10 +42121,10 @@ func maskReduceMin32(k uint16, a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epi32'.
 // Requires KNCNI.
 func ReduceMin32(a M512i) int {
-	return int(reduceMin32(a))
+	return int(reduceMin32([64]byte(a)))
 }
 
-func reduceMin32(a M512i) int
+func reduceMin32(a [64]byte) int
 
 
 // MaskReduceMin64: Reduce the packed 64-bit integers in 'a' by maximum using
@@ -42142,10 +42142,10 @@ func reduceMin32(a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epi64'.
 // Requires KNCNI.
 func MaskReduceMin64(k Mmask8, a M512i) int64 {
-	return int64(maskReduceMin64(uint8(k), a))
+	return int64(maskReduceMin64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMin64(k uint8, a M512i) int64
+func maskReduceMin64(k uint8, a [64]byte) int64
 
 
 // ReduceMin64: Reduce the packed 64-bit integers in 'a' by minimum. Returns
@@ -42161,10 +42161,10 @@ func maskReduceMin64(k uint8, a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epi64'.
 // Requires KNCNI.
 func ReduceMin64(a M512i) int64 {
-	return int64(reduceMin64(a))
+	return int64(reduceMin64([64]byte(a)))
 }
 
-func reduceMin64(a M512i) int64
+func reduceMin64(a [64]byte) int64
 
 
 // MaskReduceMinEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
@@ -42182,10 +42182,10 @@ func reduceMin64(a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epu32'.
 // Requires KNCNI.
 func MaskReduceMinEpu32(k Mmask16, a M512i) uint32 {
-	return uint32(maskReduceMinEpu32(uint16(k), a))
+	return uint32(maskReduceMinEpu32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMinEpu32(k uint16, a M512i) uint32
+func maskReduceMinEpu32(k uint16, a [64]byte) uint32
 
 
 // ReduceMinEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
@@ -42201,10 +42201,10 @@ func maskReduceMinEpu32(k uint16, a M512i) uint32
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epu32'.
 // Requires KNCNI.
 func ReduceMinEpu32(a M512i) uint32 {
-	return uint32(reduceMinEpu32(a))
+	return uint32(reduceMinEpu32([64]byte(a)))
 }
 
-func reduceMinEpu32(a M512i) uint32
+func reduceMinEpu32(a [64]byte) uint32
 
 
 // MaskReduceMinEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
@@ -42222,10 +42222,10 @@ func reduceMinEpu32(a M512i) uint32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epu64'.
 // Requires KNCNI.
 func MaskReduceMinEpu64(k Mmask8, a M512i) uint64 {
-	return uint64(maskReduceMinEpu64(uint8(k), a))
+	return uint64(maskReduceMinEpu64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMinEpu64(k uint8, a M512i) uint64
+func maskReduceMinEpu64(k uint8, a [64]byte) uint64
 
 
 // ReduceMinEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
@@ -42241,10 +42241,10 @@ func maskReduceMinEpu64(k uint8, a M512i) uint64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epu64'.
 // Requires KNCNI.
 func ReduceMinEpu64(a M512i) uint64 {
-	return uint64(reduceMinEpu64(a))
+	return uint64(reduceMinEpu64([64]byte(a)))
 }
 
-func reduceMinEpu64(a M512i) uint64
+func reduceMinEpu64(a [64]byte) uint64
 
 
 // MaskReduceMinPd: Reduce the packed double-precision (64-bit) floating-point
@@ -42344,10 +42344,10 @@ func reduceMinPs(a [16]float32) float32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_epi32'.
 // Requires KNCNI.
 func MaskReduceMul32(k Mmask16, a M512i) int {
-	return int(maskReduceMul32(uint16(k), a))
+	return int(maskReduceMul32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMul32(k uint16, a M512i) int
+func maskReduceMul32(k uint16, a [64]byte) int
 
 
 // ReduceMul32: Reduce the packed 32-bit integers in 'a' by multiplication.
@@ -42363,10 +42363,10 @@ func maskReduceMul32(k uint16, a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_epi32'.
 // Requires KNCNI.
 func ReduceMul32(a M512i) int {
-	return int(reduceMul32(a))
+	return int(reduceMul32([64]byte(a)))
 }
 
-func reduceMul32(a M512i) int
+func reduceMul32(a [64]byte) int
 
 
 // MaskReduceMul64: Reduce the packed 64-bit integers in 'a' by multiplication
@@ -42384,10 +42384,10 @@ func reduceMul32(a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_epi64'.
 // Requires KNCNI.
 func MaskReduceMul64(k Mmask8, a M512i) int64 {
-	return int64(maskReduceMul64(uint8(k), a))
+	return int64(maskReduceMul64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMul64(k uint8, a M512i) int64
+func maskReduceMul64(k uint8, a [64]byte) int64
 
 
 // ReduceMul64: Reduce the packed 64-bit integers in 'a' by multiplication.
@@ -42403,10 +42403,10 @@ func maskReduceMul64(k uint8, a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_epi64'.
 // Requires KNCNI.
 func ReduceMul64(a M512i) int64 {
-	return int64(reduceMul64(a))
+	return int64(reduceMul64([64]byte(a)))
 }
 
-func reduceMul64(a M512i) int64
+func reduceMul64(a [64]byte) int64
 
 
 // MaskReduceMulPd: Reduce the packed double-precision (64-bit) floating-point
@@ -42508,10 +42508,10 @@ func reduceMulPs(a [16]float32) float32
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_or_epi32'.
 // Requires KNCNI.
 func MaskReduceOr32(k Mmask16, a M512i) int {
-	return int(maskReduceOr32(uint16(k), a))
+	return int(maskReduceOr32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceOr32(k uint16, a M512i) int
+func maskReduceOr32(k uint16, a [64]byte) int
 
 
 // ReduceOr32: Reduce the packed 32-bit integers in 'a' by bitwise OR. Returns
@@ -42527,10 +42527,10 @@ func maskReduceOr32(k uint16, a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_reduce_or_epi32'.
 // Requires KNCNI.
 func ReduceOr32(a M512i) int {
-	return int(reduceOr32(a))
+	return int(reduceOr32([64]byte(a)))
 }
 
-func reduceOr32(a M512i) int
+func reduceOr32(a [64]byte) int
 
 
 // MaskReduceOr64: Reduce the packed 64-bit integers in 'a' by bitwise OR using
@@ -42548,10 +42548,10 @@ func reduceOr32(a M512i) int
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_or_epi64'.
 // Requires KNCNI.
 func MaskReduceOr64(k Mmask8, a M512i) int64 {
-	return int64(maskReduceOr64(uint8(k), a))
+	return int64(maskReduceOr64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceOr64(k uint8, a M512i) int64
+func maskReduceOr64(k uint8, a [64]byte) int64
 
 
 // ReduceOr64: Reduce the packed 64-bit integers in 'a' by bitwise OR. Returns
@@ -42567,10 +42567,10 @@ func maskReduceOr64(k uint8, a M512i) int64
 // Instruction: '...'. Intrinsic: '_mm512_reduce_or_epi64'.
 // Requires KNCNI.
 func ReduceOr64(a M512i) int64 {
-	return int64(reduceOr64(a))
+	return int64(reduceOr64([64]byte(a)))
 }
 
-func reduceOr64(a M512i) int64
+func reduceOr64(a [64]byte) int64
 
 
 // MaskReducePd: Extract the reduced argument of packed double-precision
@@ -43045,10 +43045,10 @@ func reduceRoundPs(a [16]float32, imm8 int, rounding int) [16]float32
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi16'.
 // Requires AVX512F.
 func Rem16(a M512i, b M512i) M512i {
-	return M512i(rem16(a, b))
+	return M512i(rem16([64]byte(a), [64]byte(b)))
 }
 
-func rem16(a M512i, b M512i) M512i
+func rem16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskRem32: Divide packed 32-bit integers in 'a' by packed elements in 'b',
@@ -43069,10 +43069,10 @@ func rem16(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mask_rem_epi32'.
 // Requires AVX512F.
 func MaskRem32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskRem32(src, uint16(k), a, b))
+	return M512i(maskRem32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskRem32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskRem32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Rem32: Divide packed 32-bit integers in 'a' by packed elements in 'b', and
@@ -43087,10 +43087,10 @@ func maskRem32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi32'.
 // Requires AVX512F.
 func Rem32(a M512i, b M512i) M512i {
-	return M512i(rem32(a, b))
+	return M512i(rem32([64]byte(a), [64]byte(b)))
 }
 
-func rem32(a M512i, b M512i) M512i
+func rem32(a [64]byte, b [64]byte) [64]byte
 
 
 // Rem64: Divide packed 64-bit integers in 'a' by packed elements in 'b', and
@@ -43105,10 +43105,10 @@ func rem32(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi64'.
 // Requires AVX512F.
 func Rem64(a M512i, b M512i) M512i {
-	return M512i(rem64(a, b))
+	return M512i(rem64([64]byte(a), [64]byte(b)))
 }
 
-func rem64(a M512i, b M512i) M512i
+func rem64(a [64]byte, b [64]byte) [64]byte
 
 
 // Rem8: Divide packed 8-bit integers in 'a' by packed elements in 'b', and
@@ -43123,10 +43123,10 @@ func rem64(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi8'.
 // Requires AVX512F.
 func Rem8(a M512i, b M512i) M512i {
-	return M512i(rem8(a, b))
+	return M512i(rem8([64]byte(a), [64]byte(b)))
 }
 
-func rem8(a M512i, b M512i) M512i
+func rem8(a [64]byte, b [64]byte) [64]byte
 
 
 // RemEpu16: Divide packed unsigned 16-bit integers in 'a' by packed elements
@@ -43142,10 +43142,10 @@ func rem8(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu16'.
 // Requires AVX512F.
 func RemEpu16(a M512i, b M512i) M512i {
-	return M512i(remEpu16(a, b))
+	return M512i(remEpu16([64]byte(a), [64]byte(b)))
 }
 
-func remEpu16(a M512i, b M512i) M512i
+func remEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskRemEpu32: Divide packed unsigned 32-bit integers in 'a' by packed
@@ -43166,10 +43166,10 @@ func remEpu16(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mask_rem_epu32'.
 // Requires AVX512F.
 func MaskRemEpu32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskRemEpu32(src, uint16(k), a, b))
+	return M512i(maskRemEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskRemEpu32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskRemEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // RemEpu32: Divide packed unsigned 32-bit integers in 'a' by packed elements
@@ -43185,10 +43185,10 @@ func maskRemEpu32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu32'.
 // Requires AVX512F.
 func RemEpu32(a M512i, b M512i) M512i {
-	return M512i(remEpu32(a, b))
+	return M512i(remEpu32([64]byte(a), [64]byte(b)))
 }
 
-func remEpu32(a M512i, b M512i) M512i
+func remEpu32(a [64]byte, b [64]byte) [64]byte
 
 
 // RemEpu64: Divide packed unsigned 64-bit integers in 'a' by packed elements
@@ -43204,10 +43204,10 @@ func remEpu32(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu64'.
 // Requires AVX512F.
 func RemEpu64(a M512i, b M512i) M512i {
-	return M512i(remEpu64(a, b))
+	return M512i(remEpu64([64]byte(a), [64]byte(b)))
 }
 
-func remEpu64(a M512i, b M512i) M512i
+func remEpu64(a [64]byte, b [64]byte) [64]byte
 
 
 // RemEpu8: Divide packed unsigned 8-bit integers in 'a' by packed elements in
@@ -43222,10 +43222,10 @@ func remEpu64(a M512i, b M512i) M512i
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu8'.
 // Requires AVX512F.
 func RemEpu8(a M512i, b M512i) M512i {
-	return M512i(remEpu8(a, b))
+	return M512i(remEpu8([64]byte(a), [64]byte(b)))
 }
 
-func remEpu8(a M512i, b M512i) M512i
+func remEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskRintPd: Rounds the packed double-precision (64-bit) floating-point
@@ -43334,10 +43334,10 @@ func rintPs(a [16]float32) [16]float32
 // Instruction: 'VPROLD'. Intrinsic: '_mm512_mask_rol_epi32'.
 // Requires AVX512F.
 func MaskRol32(src M512i, k Mmask16, a M512i, imm8 int) M512i {
-	return M512i(maskRol32(src, uint16(k), a, imm8))
+	return M512i(maskRol32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskRol32(src M512i, k uint16, a M512i, imm8 int) M512i
+func maskRol32(src [64]byte, k uint16, a [64]byte, imm8 int) [64]byte
 
 
 // MaskzRol32: Rotate the bits in each packed 32-bit integer in 'a' to the left
@@ -43362,10 +43362,10 @@ func maskRol32(src M512i, k uint16, a M512i, imm8 int) M512i
 // Instruction: 'VPROLD'. Intrinsic: '_mm512_maskz_rol_epi32'.
 // Requires AVX512F.
 func MaskzRol32(k Mmask16, a M512i, imm8 int) M512i {
-	return M512i(maskzRol32(uint16(k), a, imm8))
+	return M512i(maskzRol32(uint16(k), [64]byte(a), imm8))
 }
 
-func maskzRol32(k uint16, a M512i, imm8 int) M512i
+func maskzRol32(k uint16, a [64]byte, imm8 int) [64]byte
 
 
 // Rol32: Rotate the bits in each packed 32-bit integer in 'a' to the left by
@@ -43384,10 +43384,10 @@ func maskzRol32(k uint16, a M512i, imm8 int) M512i
 // Instruction: 'VPROLD'. Intrinsic: '_mm512_rol_epi32'.
 // Requires AVX512F.
 func Rol32(a M512i, imm8 int) M512i {
-	return M512i(rol32(a, imm8))
+	return M512i(rol32([64]byte(a), imm8))
 }
 
-func rol32(a M512i, imm8 int) M512i
+func rol32(a [64]byte, imm8 int) [64]byte
 
 
 // MaskRol64: Rotate the bits in each packed 64-bit integer in 'a' to the left
@@ -43412,10 +43412,10 @@ func rol32(a M512i, imm8 int) M512i
 // Instruction: 'VPROLQ'. Intrinsic: '_mm512_mask_rol_epi64'.
 // Requires AVX512F.
 func MaskRol64(src M512i, k Mmask8, a M512i, imm8 int) M512i {
-	return M512i(maskRol64(src, uint8(k), a, imm8))
+	return M512i(maskRol64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskRol64(src M512i, k uint8, a M512i, imm8 int) M512i
+func maskRol64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
 
 
 // MaskzRol64: Rotate the bits in each packed 64-bit integer in 'a' to the left
@@ -43440,10 +43440,10 @@ func maskRol64(src M512i, k uint8, a M512i, imm8 int) M512i
 // Instruction: 'VPROLQ'. Intrinsic: '_mm512_maskz_rol_epi64'.
 // Requires AVX512F.
 func MaskzRol64(k Mmask8, a M512i, imm8 int) M512i {
-	return M512i(maskzRol64(uint8(k), a, imm8))
+	return M512i(maskzRol64(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzRol64(k uint8, a M512i, imm8 int) M512i
+func maskzRol64(k uint8, a [64]byte, imm8 int) [64]byte
 
 
 // Rol64: Rotate the bits in each packed 64-bit integer in 'a' to the left by
@@ -43462,10 +43462,10 @@ func maskzRol64(k uint8, a M512i, imm8 int) M512i
 // Instruction: 'VPROLQ'. Intrinsic: '_mm512_rol_epi64'.
 // Requires AVX512F.
 func Rol64(a M512i, imm8 int) M512i {
-	return M512i(rol64(a, imm8))
+	return M512i(rol64([64]byte(a), imm8))
 }
 
-func rol64(a M512i, imm8 int) M512i
+func rol64(a [64]byte, imm8 int) [64]byte
 
 
 // MaskRolv32: Rotate the bits in each packed 32-bit integer in 'a' to the left
@@ -43490,10 +43490,10 @@ func rol64(a M512i, imm8 int) M512i
 // Instruction: 'VPROLVD'. Intrinsic: '_mm512_mask_rolv_epi32'.
 // Requires AVX512F.
 func MaskRolv32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskRolv32(src, uint16(k), a, b))
+	return M512i(maskRolv32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskRolv32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskRolv32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzRolv32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43518,10 +43518,10 @@ func maskRolv32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPROLVD'. Intrinsic: '_mm512_maskz_rolv_epi32'.
 // Requires AVX512F.
 func MaskzRolv32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzRolv32(uint16(k), a, b))
+	return M512i(maskzRolv32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzRolv32(k uint16, a M512i, b M512i) M512i
+func maskzRolv32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Rolv32: Rotate the bits in each packed 32-bit integer in 'a' to the left by
@@ -43541,10 +43541,10 @@ func maskzRolv32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPROLVD'. Intrinsic: '_mm512_rolv_epi32'.
 // Requires AVX512F.
 func Rolv32(a M512i, b M512i) M512i {
-	return M512i(rolv32(a, b))
+	return M512i(rolv32([64]byte(a), [64]byte(b)))
 }
 
-func rolv32(a M512i, b M512i) M512i
+func rolv32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskRolv64: Rotate the bits in each packed 64-bit integer in 'a' to the left
@@ -43569,10 +43569,10 @@ func rolv32(a M512i, b M512i) M512i
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm512_mask_rolv_epi64'.
 // Requires AVX512F.
 func MaskRolv64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskRolv64(src, uint8(k), a, b))
+	return M512i(maskRolv64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskRolv64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskRolv64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzRolv64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43597,10 +43597,10 @@ func maskRolv64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm512_maskz_rolv_epi64'.
 // Requires AVX512F.
 func MaskzRolv64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzRolv64(uint8(k), a, b))
+	return M512i(maskzRolv64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzRolv64(k uint8, a M512i, b M512i) M512i
+func maskzRolv64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Rolv64: Rotate the bits in each packed 64-bit integer in 'a' to the left by
@@ -43620,10 +43620,10 @@ func maskzRolv64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm512_rolv_epi64'.
 // Requires AVX512F.
 func Rolv64(a M512i, b M512i) M512i {
-	return M512i(rolv64(a, b))
+	return M512i(rolv64([64]byte(a), [64]byte(b)))
 }
 
-func rolv64(a M512i, b M512i) M512i
+func rolv64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskRor32: Rotate the bits in each packed 32-bit integer in 'a' to the right
@@ -43648,10 +43648,10 @@ func rolv64(a M512i, b M512i) M512i
 // Instruction: 'VPRORD'. Intrinsic: '_mm512_mask_ror_epi32'.
 // Requires AVX512F.
 func MaskRor32(src M512i, k Mmask16, a M512i, imm8 int) M512i {
-	return M512i(maskRor32(src, uint16(k), a, imm8))
+	return M512i(maskRor32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskRor32(src M512i, k uint16, a M512i, imm8 int) M512i
+func maskRor32(src [64]byte, k uint16, a [64]byte, imm8 int) [64]byte
 
 
 // MaskzRor32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43676,10 +43676,10 @@ func maskRor32(src M512i, k uint16, a M512i, imm8 int) M512i
 // Instruction: 'VPRORD'. Intrinsic: '_mm512_maskz_ror_epi32'.
 // Requires AVX512F.
 func MaskzRor32(k Mmask16, a M512i, imm8 int) M512i {
-	return M512i(maskzRor32(uint16(k), a, imm8))
+	return M512i(maskzRor32(uint16(k), [64]byte(a), imm8))
 }
 
-func maskzRor32(k uint16, a M512i, imm8 int) M512i
+func maskzRor32(k uint16, a [64]byte, imm8 int) [64]byte
 
 
 // Ror32: Rotate the bits in each packed 32-bit integer in 'a' to the right by
@@ -43698,10 +43698,10 @@ func maskzRor32(k uint16, a M512i, imm8 int) M512i
 // Instruction: 'VPRORD'. Intrinsic: '_mm512_ror_epi32'.
 // Requires AVX512F.
 func Ror32(a M512i, imm8 int) M512i {
-	return M512i(ror32(a, imm8))
+	return M512i(ror32([64]byte(a), imm8))
 }
 
-func ror32(a M512i, imm8 int) M512i
+func ror32(a [64]byte, imm8 int) [64]byte
 
 
 // MaskRor64: Rotate the bits in each packed 64-bit integer in 'a' to the right
@@ -43726,10 +43726,10 @@ func ror32(a M512i, imm8 int) M512i
 // Instruction: 'VPRORQ'. Intrinsic: '_mm512_mask_ror_epi64'.
 // Requires AVX512F.
 func MaskRor64(src M512i, k Mmask8, a M512i, imm8 int) M512i {
-	return M512i(maskRor64(src, uint8(k), a, imm8))
+	return M512i(maskRor64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskRor64(src M512i, k uint8, a M512i, imm8 int) M512i
+func maskRor64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
 
 
 // MaskzRor64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43754,10 +43754,10 @@ func maskRor64(src M512i, k uint8, a M512i, imm8 int) M512i
 // Instruction: 'VPRORQ'. Intrinsic: '_mm512_maskz_ror_epi64'.
 // Requires AVX512F.
 func MaskzRor64(k Mmask8, a M512i, imm8 int) M512i {
-	return M512i(maskzRor64(uint8(k), a, imm8))
+	return M512i(maskzRor64(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzRor64(k uint8, a M512i, imm8 int) M512i
+func maskzRor64(k uint8, a [64]byte, imm8 int) [64]byte
 
 
 // Ror64: Rotate the bits in each packed 64-bit integer in 'a' to the right by
@@ -43776,10 +43776,10 @@ func maskzRor64(k uint8, a M512i, imm8 int) M512i
 // Instruction: 'VPRORQ'. Intrinsic: '_mm512_ror_epi64'.
 // Requires AVX512F.
 func Ror64(a M512i, imm8 int) M512i {
-	return M512i(ror64(a, imm8))
+	return M512i(ror64([64]byte(a), imm8))
 }
 
-func ror64(a M512i, imm8 int) M512i
+func ror64(a [64]byte, imm8 int) [64]byte
 
 
 // MaskRorv32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43804,10 +43804,10 @@ func ror64(a M512i, imm8 int) M512i
 // Instruction: 'VPRORVD'. Intrinsic: '_mm512_mask_rorv_epi32'.
 // Requires AVX512F.
 func MaskRorv32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskRorv32(src, uint16(k), a, b))
+	return M512i(maskRorv32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskRorv32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskRorv32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzRorv32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43832,10 +43832,10 @@ func maskRorv32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPRORVD'. Intrinsic: '_mm512_maskz_rorv_epi32'.
 // Requires AVX512F.
 func MaskzRorv32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzRorv32(uint16(k), a, b))
+	return M512i(maskzRorv32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzRorv32(k uint16, a M512i, b M512i) M512i
+func maskzRorv32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Rorv32: Rotate the bits in each packed 32-bit integer in 'a' to the right by
@@ -43855,10 +43855,10 @@ func maskzRorv32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPRORVD'. Intrinsic: '_mm512_rorv_epi32'.
 // Requires AVX512F.
 func Rorv32(a M512i, b M512i) M512i {
-	return M512i(rorv32(a, b))
+	return M512i(rorv32([64]byte(a), [64]byte(b)))
 }
 
-func rorv32(a M512i, b M512i) M512i
+func rorv32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskRorv64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43883,10 +43883,10 @@ func rorv32(a M512i, b M512i) M512i
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm512_mask_rorv_epi64'.
 // Requires AVX512F.
 func MaskRorv64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskRorv64(src, uint8(k), a, b))
+	return M512i(maskRorv64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskRorv64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskRorv64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzRorv64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43911,10 +43911,10 @@ func maskRorv64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm512_maskz_rorv_epi64'.
 // Requires AVX512F.
 func MaskzRorv64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzRorv64(uint8(k), a, b))
+	return M512i(maskzRorv64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzRorv64(k uint8, a M512i, b M512i) M512i
+func maskzRorv64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Rorv64: Rotate the bits in each packed 64-bit integer in 'a' to the right by
@@ -43934,10 +43934,10 @@ func maskzRorv64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm512_rorv_epi64'.
 // Requires AVX512F.
 func Rorv64(a M512i, b M512i) M512i {
-	return M512i(rorv64(a, b))
+	return M512i(rorv64([64]byte(a), [64]byte(b)))
 }
 
-func rorv64(a M512i, b M512i) M512i
+func rorv64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskRoundPs: Round the packed single-precision (32-bit) floating-point
@@ -45303,10 +45303,10 @@ func rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
 // Instruction: 'VPSADBW'. Intrinsic: '_mm512_sad_epu8'.
 // Requires AVX512BW.
 func SadEpu8(a M512i, b M512i) M512i {
-	return M512i(sadEpu8(a, b))
+	return M512i(sadEpu8([64]byte(a), [64]byte(b)))
 }
 
-func sadEpu8(a M512i, b M512i) M512i
+func sadEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSbb32: Performs element-by-element three-input subtraction of packed
@@ -45330,10 +45330,10 @@ func sadEpu8(a M512i, b M512i) M512i
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_mask_sbb_epi32'.
 // Requires KNCNI.
 func MaskSbb32(v2 M512i, k1 Mmask16, k2 Mmask16, v3 M512i, borrow Mmask16) M512i {
-	return M512i(maskSbb32(v2, uint16(k1), uint16(k2), v3, uint16(borrow)))
+	return M512i(maskSbb32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSbb32(v2 M512i, k1 uint16, k2 uint16, v3 M512i, borrow uint16) M512i
+func maskSbb32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
 // Sbb32: Performs element-by-element three-input subtraction of packed 32-bit
@@ -45352,10 +45352,10 @@ func maskSbb32(v2 M512i, k1 uint16, k2 uint16, v3 M512i, borrow uint16) M512i
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_sbb_epi32'.
 // Requires KNCNI.
 func Sbb32(v2 M512i, k Mmask16, v3 M512i, borrow Mmask16) M512i {
-	return M512i(sbb32(v2, uint16(k), v3, uint16(borrow)))
+	return M512i(sbb32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
 }
 
-func sbb32(v2 M512i, k uint16, v3 M512i, borrow uint16) M512i
+func sbb32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
 // MaskSbbr32: Performs element-by-element three-input subtraction of packed
@@ -45379,10 +45379,10 @@ func sbb32(v2 M512i, k uint16, v3 M512i, borrow uint16) M512i
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_mask_sbbr_epi32'.
 // Requires KNCNI.
 func MaskSbbr32(v2 M512i, k1 Mmask16, k2 Mmask16, v3 M512i, borrow Mmask16) M512i {
-	return M512i(maskSbbr32(v2, uint16(k1), uint16(k2), v3, uint16(borrow)))
+	return M512i(maskSbbr32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSbbr32(v2 M512i, k1 uint16, k2 uint16, v3 M512i, borrow uint16) M512i
+func maskSbbr32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
 // Sbbr32: Performs element-by-element three-input subtraction of packed 32-bit
@@ -45401,10 +45401,10 @@ func maskSbbr32(v2 M512i, k1 uint16, k2 uint16, v3 M512i, borrow uint16) M512i
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_sbbr_epi32'.
 // Requires KNCNI.
 func Sbbr32(v2 M512i, k Mmask16, v3 M512i, borrow Mmask16) M512i {
-	return M512i(sbbr32(v2, uint16(k), v3, uint16(borrow)))
+	return M512i(sbbr32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
 }
 
-func sbbr32(v2 M512i, k uint16, v3 M512i, borrow uint16) M512i
+func sbbr32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
 // MaskScalePs: Scales each single-precision (32-bit) floating-point element in
@@ -45426,10 +45426,10 @@ func sbbr32(v2 M512i, k uint16, v3 M512i, borrow uint16) M512i
 // Instruction: 'VSCALEPS'. Intrinsic: '_mm512_mask_scale_ps'.
 // Requires KNCNI.
 func MaskScalePs(src M512, k Mmask16, a M512, b M512i) M512 {
-	return M512(maskScalePs([16]float32(src), uint16(k), [16]float32(a), b))
+	return M512(maskScalePs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b)))
 }
 
-func maskScalePs(src [16]float32, k uint16, a [16]float32, b M512i) [16]float32
+func maskScalePs(src [16]float32, k uint16, a [16]float32, b [64]byte) [16]float32
 
 
 // ScalePs: Scales each single-precision (32-bit) floating-point element in 'a'
@@ -45445,10 +45445,10 @@ func maskScalePs(src [16]float32, k uint16, a [16]float32, b M512i) [16]float32
 // Instruction: 'VSCALEPS'. Intrinsic: '_mm512_scale_ps'.
 // Requires KNCNI.
 func ScalePs(a M512, b M512i) M512 {
-	return M512(scalePs([16]float32(a), b))
+	return M512(scalePs([16]float32(a), [64]byte(b)))
 }
 
-func scalePs(a [16]float32, b M512i) [16]float32
+func scalePs(a [16]float32, b [64]byte) [16]float32
 
 
 // MaskScaleRoundPs: Scales each single-precision (32-bit) floating-point
@@ -45477,10 +45477,10 @@ func scalePs(a [16]float32, b M512i) [16]float32
 // Instruction: 'VSCALEPS'. Intrinsic: '_mm512_mask_scale_round_ps'.
 // Requires KNCNI.
 func MaskScaleRoundPs(src M512, k Mmask16, a M512, b M512i, rounding int) M512 {
-	return M512(maskScaleRoundPs([16]float32(src), uint16(k), [16]float32(a), b, rounding))
+	return M512(maskScaleRoundPs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b), rounding))
 }
 
-func maskScaleRoundPs(src [16]float32, k uint16, a [16]float32, b M512i, rounding int) [16]float32
+func maskScaleRoundPs(src [16]float32, k uint16, a [16]float32, b [64]byte, rounding int) [16]float32
 
 
 // ScaleRoundPs: Scales each single-precision (32-bit) floating-point element
@@ -45504,10 +45504,10 @@ func maskScaleRoundPs(src [16]float32, k uint16, a [16]float32, b M512i, roundin
 // Instruction: '...'. Intrinsic: '_mm512_scale_round_ps'.
 // Requires KNCNI.
 func ScaleRoundPs(a M512, b M512i, rounding int) M512 {
-	return M512(scaleRoundPs([16]float32(a), b, rounding))
+	return M512(scaleRoundPs([16]float32(a), [64]byte(b), rounding))
 }
 
-func scaleRoundPs(a [16]float32, b M512i, rounding int) [16]float32
+func scaleRoundPs(a [16]float32, b [64]byte, rounding int) [16]float32
 
 
 // MaskScalefPd: Scale the packed double-precision (64-bit) floating-point
@@ -46154,7 +46154,7 @@ func Set32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int,
 	return M512i(set32(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func set32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) M512i
+func set32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [64]byte
 
 
 // Set64: Set packed 64-bit integers in 'dst' with the supplied values. 
@@ -46175,7 +46175,7 @@ func Set64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64,
 	return M512i(set64(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func set64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) M512i
+func set64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) [64]byte
 
 
 // SetPd: Set packed double-precision (64-bit) floating-point elements in 'dst'
@@ -46247,10 +46247,10 @@ func setPs(e15 float32, e14 float32, e13 float32, e12 float32, e11 float32, e10 
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_mask_set1_epi16'.
 // Requires AVX512BW.
 func MaskSet116(src M512i, k Mmask32, a int16) M512i {
-	return M512i(maskSet116(src, uint32(k), a))
+	return M512i(maskSet116([64]byte(src), uint32(k), a))
 }
 
-func maskSet116(src M512i, k uint32, a int16) M512i
+func maskSet116(src [64]byte, k uint32, a int16) [64]byte
 
 
 // MaskzSet116: Broadcast the low packed 16-bit integer from 'a' to all
@@ -46273,7 +46273,7 @@ func MaskzSet116(k Mmask32, a int16) M512i {
 	return M512i(maskzSet116(uint32(k), a))
 }
 
-func maskzSet116(k uint32, a int16) M512i
+func maskzSet116(k uint32, a int16) [64]byte
 
 
 // Set116: Broadcast the low packed 16-bit integer from 'a' to all all elements
@@ -46291,7 +46291,7 @@ func Set116(a int16) M512i {
 	return M512i(set116(a))
 }
 
-func set116(a int16) M512i
+func set116(a int16) [64]byte
 
 
 // MaskSet132: Broadcast 32-bit integer 'a' to all elements of 'dst' using
@@ -46311,10 +46311,10 @@ func set116(a int16) M512i
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_mask_set1_epi32'.
 // Requires AVX512F.
 func MaskSet132(src M512i, k Mmask16, a int) M512i {
-	return M512i(maskSet132(src, uint16(k), a))
+	return M512i(maskSet132([64]byte(src), uint16(k), a))
 }
 
-func maskSet132(src M512i, k uint16, a int) M512i
+func maskSet132(src [64]byte, k uint16, a int) [64]byte
 
 
 // MaskzSet132: Broadcast 32-bit integer 'a' to all elements of 'dst' using
@@ -46337,7 +46337,7 @@ func MaskzSet132(k Mmask16, a int) M512i {
 	return M512i(maskzSet132(uint16(k), a))
 }
 
-func maskzSet132(k uint16, a int) M512i
+func maskzSet132(k uint16, a int) [64]byte
 
 
 // Set132: Broadcast 32-bit integer 'a' to all elements of 'dst'. 
@@ -46354,7 +46354,7 @@ func Set132(a int) M512i {
 	return M512i(set132(a))
 }
 
-func set132(a int) M512i
+func set132(a int) [64]byte
 
 
 // MaskSet164: Broadcast 64-bit integer 'a' to all elements of 'dst' using
@@ -46374,10 +46374,10 @@ func set132(a int) M512i
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_mask_set1_epi64'.
 // Requires AVX512F.
 func MaskSet164(src M512i, k Mmask8, a int64) M512i {
-	return M512i(maskSet164(src, uint8(k), a))
+	return M512i(maskSet164([64]byte(src), uint8(k), a))
 }
 
-func maskSet164(src M512i, k uint8, a int64) M512i
+func maskSet164(src [64]byte, k uint8, a int64) [64]byte
 
 
 // MaskzSet164: Broadcast 64-bit integer 'a' to all elements of 'dst' using
@@ -46400,7 +46400,7 @@ func MaskzSet164(k Mmask8, a int64) M512i {
 	return M512i(maskzSet164(uint8(k), a))
 }
 
-func maskzSet164(k uint8, a int64) M512i
+func maskzSet164(k uint8, a int64) [64]byte
 
 
 // Set164: Broadcast 64-bit integer 'a' to all elements of 'dst'. 
@@ -46417,7 +46417,7 @@ func Set164(a int64) M512i {
 	return M512i(set164(a))
 }
 
-func set164(a int64) M512i
+func set164(a int64) [64]byte
 
 
 // MaskSet18: Broadcast 8-bit integer 'a' to all elements of 'dst' using
@@ -46437,10 +46437,10 @@ func set164(a int64) M512i
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_mask_set1_epi8'.
 // Requires AVX512BW.
 func MaskSet18(src M512i, k Mmask64, a byte) M512i {
-	return M512i(maskSet18(src, uint64(k), a))
+	return M512i(maskSet18([64]byte(src), uint64(k), a))
 }
 
-func maskSet18(src M512i, k uint64, a byte) M512i
+func maskSet18(src [64]byte, k uint64, a byte) [64]byte
 
 
 // MaskzSet18: Broadcast 8-bit integer 'a' to all elements of 'dst' using
@@ -46463,7 +46463,7 @@ func MaskzSet18(k Mmask64, a byte) M512i {
 	return M512i(maskzSet18(uint64(k), a))
 }
 
-func maskzSet18(k uint64, a byte) M512i
+func maskzSet18(k uint64, a byte) [64]byte
 
 
 // Set18: Broadcast 8-bit integer 'a' to all elements of 'dst'. 
@@ -46480,7 +46480,7 @@ func Set18(a byte) M512i {
 	return M512i(set18(a))
 }
 
-func set18(a byte) M512i
+func set18(a byte) [64]byte
 
 
 // Set1Pd: Broadcast double-precision (64-bit) floating-point value 'a' to all
@@ -46546,7 +46546,7 @@ func Set432(d int, c int, b int, a int) M512i {
 	return M512i(set432(d, c, b, a))
 }
 
-func set432(d int, c int, b int, a int) M512i
+func set432(d int, c int, b int, a int) [64]byte
 
 
 // Set464: Set packed 64-bit integers in 'dst' with the repeated 4 element
@@ -46568,7 +46568,7 @@ func Set464(d int64, c int64, b int64, a int64) M512i {
 	return M512i(set464(d, c, b, a))
 }
 
-func set464(d int64, c int64, b int64, a int64) M512i
+func set464(d int64, c int64, b int64, a int64) [64]byte
 
 
 // Set4Pd: Set packed double-precision (64-bit) floating-point elements in
@@ -46650,7 +46650,7 @@ func Setr32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int
 	return M512i(setr32(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setr32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) M512i
+func setr32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [64]byte
 
 
 // Setr64: Set packed 64-bit integers in 'dst' with the supplied values in
@@ -46672,7 +46672,7 @@ func Setr64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64
 	return M512i(setr64(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setr64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) M512i
+func setr64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) [64]byte
 
 
 // SetrPd: Set packed double-precision (64-bit) floating-point elements in
@@ -46754,7 +46754,7 @@ func Setr432(d int, c int, b int, a int) M512i {
 	return M512i(setr432(d, c, b, a))
 }
 
-func setr432(d int, c int, b int, a int) M512i
+func setr432(d int, c int, b int, a int) [64]byte
 
 
 // Setr464: Set packed 64-bit integers in 'dst' with the repeated 4 element
@@ -46776,7 +46776,7 @@ func Setr464(d int64, c int64, b int64, a int64) M512i {
 	return M512i(setr464(d, c, b, a))
 }
 
-func setr464(d int64, c int64, b int64, a int64) M512i
+func setr464(d int64, c int64, b int64, a int64) [64]byte
 
 
 // Setr4Pd: Set packed double-precision (64-bit) floating-point elements in
@@ -46854,7 +46854,7 @@ func Setzero32() M512i {
 	return M512i(setzero32())
 }
 
-func setzero32() M512i
+func setzero32() [64]byte
 
 
 // SetzeroPd: Return vector of type __m512d with all elements set to zero. 
@@ -46893,7 +46893,7 @@ func SetzeroSi512() M512i {
 	return M512i(setzeroSi512())
 }
 
-func setzeroSi512() M512i
+func setzeroSi512() [64]byte
 
 
 // MaskShuffle32: Shuffle 32-bit integers in 'a' within 128-bit lanes using the
@@ -46939,10 +46939,10 @@ func setzeroSi512() M512i
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm512_mask_shuffle_epi32'.
 // Requires KNCNI.
 func MaskShuffle32(src M512i, k Mmask16, a M512i, imm8 MMPERMENUM) M512i {
-	return M512i(maskShuffle32(src, uint16(k), a, imm8))
+	return M512i(maskShuffle32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskShuffle32(src M512i, k uint16, a M512i, imm8 MMPERMENUM) M512i
+func maskShuffle32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
 // MaskzShuffle32: Shuffle 32-bit integers in 'a' within 128-bit lanes using
@@ -46988,10 +46988,10 @@ func maskShuffle32(src M512i, k uint16, a M512i, imm8 MMPERMENUM) M512i
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm512_maskz_shuffle_epi32'.
 // Requires AVX512F.
 func MaskzShuffle32(k Mmask16, a M512i, imm8 MMPERMENUM) M512i {
-	return M512i(maskzShuffle32(uint16(k), a, imm8))
+	return M512i(maskzShuffle32(uint16(k), [64]byte(a), imm8))
 }
 
-func maskzShuffle32(k uint16, a M512i, imm8 MMPERMENUM) M512i
+func maskzShuffle32(k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
 // Shuffle32: Shuffle 32-bit integers in 'a' within 128-bit lanes using the
@@ -47028,10 +47028,10 @@ func maskzShuffle32(k uint16, a M512i, imm8 MMPERMENUM) M512i
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm512_shuffle_epi32'.
 // Requires KNCNI.
 func Shuffle32(a M512i, imm8 MMPERMENUM) M512i {
-	return M512i(shuffle32(a, imm8))
+	return M512i(shuffle32([64]byte(a), imm8))
 }
 
-func shuffle32(a M512i, imm8 MMPERMENUM) M512i
+func shuffle32(a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
 // MaskShuffle8: Shuffle 8-bit integers in 'a' within 128-bit lanes using the
@@ -47057,10 +47057,10 @@ func shuffle32(a M512i, imm8 MMPERMENUM) M512i
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_mask_shuffle_epi8'.
 // Requires AVX512BW.
 func MaskShuffle8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskShuffle8(src, uint64(k), a, b))
+	return M512i(maskShuffle8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskShuffle8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskShuffle8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzShuffle8: Shuffle packed 8-bit integers in 'a' according to shuffle
@@ -47086,10 +47086,10 @@ func maskShuffle8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_maskz_shuffle_epi8'.
 // Requires AVX512BW.
 func MaskzShuffle8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzShuffle8(uint64(k), a, b))
+	return M512i(maskzShuffle8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzShuffle8(k uint64, a M512i, b M512i) M512i
+func maskzShuffle8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Shuffle8: Shuffle packed 8-bit integers in 'a' according to shuffle control
@@ -47110,10 +47110,10 @@ func maskzShuffle8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_shuffle_epi8'.
 // Requires AVX512BW.
 func Shuffle8(a M512i, b M512i) M512i {
-	return M512i(shuffle8(a, b))
+	return M512i(shuffle8([64]byte(a), [64]byte(b)))
 }
 
-func shuffle8(a M512i, b M512i) M512i
+func shuffle8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskShuffleF32x4: Shuffle 128-bits (composed of 4 single-precision (32-bit)
@@ -47363,10 +47363,10 @@ func shuffleF64x2(a [8]float64, b [8]float64, imm8 int) [8]float64
 // Instruction: 'VSHUFI32X4'. Intrinsic: '_mm512_mask_shuffle_i32x4'.
 // Requires AVX512F.
 func MaskShuffleI32x4(src M512i, k Mmask16, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskShuffleI32x4(src, uint16(k), a, b, imm8))
+	return M512i(maskShuffleI32x4([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskShuffleI32x4(src M512i, k uint16, a M512i, b M512i, imm8 int) M512i
+func maskShuffleI32x4(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskzShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers) selected
@@ -47401,10 +47401,10 @@ func maskShuffleI32x4(src M512i, k uint16, a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VSHUFI32X4'. Intrinsic: '_mm512_maskz_shuffle_i32x4'.
 // Requires AVX512F.
 func MaskzShuffleI32x4(k Mmask16, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskzShuffleI32x4(uint16(k), a, b, imm8))
+	return M512i(maskzShuffleI32x4(uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskzShuffleI32x4(k uint16, a M512i, b M512i, imm8 int) M512i
+func maskzShuffleI32x4(k uint16, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // ShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers) selected by
@@ -47429,10 +47429,10 @@ func maskzShuffleI32x4(k uint16, a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VSHUFI32X4'. Intrinsic: '_mm512_shuffle_i32x4'.
 // Requires AVX512F.
 func ShuffleI32x4(a M512i, b M512i, imm8 int) M512i {
-	return M512i(shuffleI32x4(a, b, imm8))
+	return M512i(shuffleI32x4([64]byte(a), [64]byte(b), imm8))
 }
 
-func shuffleI32x4(a M512i, b M512i, imm8 int) M512i
+func shuffleI32x4(a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers) selected
@@ -47468,10 +47468,10 @@ func shuffleI32x4(a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VSHUFI64X2'. Intrinsic: '_mm512_mask_shuffle_i64x2'.
 // Requires AVX512F.
 func MaskShuffleI64x2(src M512i, k Mmask8, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskShuffleI64x2(src, uint8(k), a, b, imm8))
+	return M512i(maskShuffleI64x2([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskShuffleI64x2(src M512i, k uint8, a M512i, b M512i, imm8 int) M512i
+func maskShuffleI64x2(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskzShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers) selected
@@ -47506,10 +47506,10 @@ func maskShuffleI64x2(src M512i, k uint8, a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VSHUFI64X2'. Intrinsic: '_mm512_maskz_shuffle_i64x2'.
 // Requires AVX512F.
 func MaskzShuffleI64x2(k Mmask8, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskzShuffleI64x2(uint8(k), a, b, imm8))
+	return M512i(maskzShuffleI64x2(uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskzShuffleI64x2(k uint8, a M512i, b M512i, imm8 int) M512i
+func maskzShuffleI64x2(k uint8, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // ShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers) selected by
@@ -47534,10 +47534,10 @@ func maskzShuffleI64x2(k uint8, a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VSHUFI64X2'. Intrinsic: '_mm512_shuffle_i64x2'.
 // Requires AVX512F.
 func ShuffleI64x2(a M512i, b M512i, imm8 int) M512i {
-	return M512i(shuffleI64x2(a, b, imm8))
+	return M512i(shuffleI64x2([64]byte(a), [64]byte(b), imm8))
 }
 
-func shuffleI64x2(a M512i, b M512i, imm8 int) M512i
+func shuffleI64x2(a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskShufflePd: Shuffle double-precision (64-bit) floating-point elements
@@ -47811,10 +47811,10 @@ func shufflePs(a [16]float32, b [16]float32, imm8 int) [16]float32
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_mask_shufflehi_epi16'.
 // Requires AVX512BW.
 func MaskShufflehi16(src M512i, k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskShufflehi16(src, uint32(k), a, imm8))
+	return M512i(maskShufflehi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskShufflehi16(src M512i, k uint32, a M512i, imm8 int) M512i
+func maskShufflehi16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 
 
 // MaskzShufflehi16: Shuffle 16-bit integers in the high 64 bits of 128-bit
@@ -47857,10 +47857,10 @@ func maskShufflehi16(src M512i, k uint32, a M512i, imm8 int) M512i
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_maskz_shufflehi_epi16'.
 // Requires AVX512BW.
 func MaskzShufflehi16(k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskzShufflehi16(uint32(k), a, imm8))
+	return M512i(maskzShufflehi16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzShufflehi16(k uint32, a M512i, imm8 int) M512i
+func maskzShufflehi16(k uint32, a [64]byte, imm8 int) [64]byte
 
 
 // Shufflehi16: Shuffle 16-bit integers in the high 64 bits of 128-bit lanes of
@@ -47893,10 +47893,10 @@ func maskzShufflehi16(k uint32, a M512i, imm8 int) M512i
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_shufflehi_epi16'.
 // Requires AVX512BW.
 func Shufflehi16(a M512i, imm8 int) M512i {
-	return M512i(shufflehi16(a, imm8))
+	return M512i(shufflehi16([64]byte(a), imm8))
 }
 
-func shufflehi16(a M512i, imm8 int) M512i
+func shufflehi16(a [64]byte, imm8 int) [64]byte
 
 
 // MaskShufflelo16: Shuffle 16-bit integers in the low 64 bits of 128-bit lanes
@@ -47939,10 +47939,10 @@ func shufflehi16(a M512i, imm8 int) M512i
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_mask_shufflelo_epi16'.
 // Requires AVX512BW.
 func MaskShufflelo16(src M512i, k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskShufflelo16(src, uint32(k), a, imm8))
+	return M512i(maskShufflelo16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskShufflelo16(src M512i, k uint32, a M512i, imm8 int) M512i
+func maskShufflelo16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 
 
 // MaskzShufflelo16: Shuffle 16-bit integers in the low 64 bits of 128-bit
@@ -47985,10 +47985,10 @@ func maskShufflelo16(src M512i, k uint32, a M512i, imm8 int) M512i
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_maskz_shufflelo_epi16'.
 // Requires AVX512BW.
 func MaskzShufflelo16(k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskzShufflelo16(uint32(k), a, imm8))
+	return M512i(maskzShufflelo16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzShufflelo16(k uint32, a M512i, imm8 int) M512i
+func maskzShufflelo16(k uint32, a [64]byte, imm8 int) [64]byte
 
 
 // Shufflelo16: Shuffle 16-bit integers in the low 64 bits of 128-bit lanes of
@@ -48021,10 +48021,10 @@ func maskzShufflelo16(k uint32, a M512i, imm8 int) M512i
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_shufflelo_epi16'.
 // Requires AVX512BW.
 func Shufflelo16(a M512i, imm8 int) M512i {
-	return M512i(shufflelo16(a, imm8))
+	return M512i(shufflelo16([64]byte(a), imm8))
 }
 
-func shufflelo16(a M512i, imm8 int) M512i
+func shufflelo16(a [64]byte, imm8 int) [64]byte
 
 
 // MaskSinPd: Compute the sine of packed double-precision (64-bit)
@@ -48402,10 +48402,10 @@ func sinhPs(a [16]float32) [16]float32
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_mask_sll_epi16'.
 // Requires AVX512BW.
 func MaskSll16(src M512i, k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskSll16(src, uint32(k), a, count))
+	return M512i(maskSll16([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSll16(src M512i, k uint32, a M512i, count M128i) M512i
+func maskSll16(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSll16: Shift packed 16-bit integers in 'a' left by 'count' while
@@ -48429,10 +48429,10 @@ func maskSll16(src M512i, k uint32, a M512i, count M128i) M512i
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_maskz_sll_epi16'.
 // Requires AVX512BW.
 func MaskzSll16(k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskzSll16(uint32(k), a, count))
+	return M512i(maskzSll16(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSll16(k uint32, a M512i, count M128i) M512i
+func maskzSll16(k uint32, a [64]byte, count [16]byte) [64]byte
 
 
 // Sll16: Shift packed 16-bit integers in 'a' left by 'count' while shifting in
@@ -48451,10 +48451,10 @@ func maskzSll16(k uint32, a M512i, count M128i) M512i
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_sll_epi16'.
 // Requires AVX512BW.
 func Sll16(a M512i, count M128i) M512i {
-	return M512i(sll16(a, count))
+	return M512i(sll16([64]byte(a), [16]byte(count)))
 }
 
-func sll16(a M512i, count M128i) M512i
+func sll16(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSll32: Shift packed 32-bit integers in 'a' left by 'count' while
@@ -48478,10 +48478,10 @@ func sll16(a M512i, count M128i) M512i
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_mask_sll_epi32'.
 // Requires AVX512F.
 func MaskSll32(src M512i, k Mmask16, a M512i, count M128i) M512i {
-	return M512i(maskSll32(src, uint16(k), a, count))
+	return M512i(maskSll32([64]byte(src), uint16(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSll32(src M512i, k uint16, a M512i, count M128i) M512i
+func maskSll32(src [64]byte, k uint16, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSll32: Shift packed 32-bit integers in 'a' left by 'count' while
@@ -48505,10 +48505,10 @@ func maskSll32(src M512i, k uint16, a M512i, count M128i) M512i
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_maskz_sll_epi32'.
 // Requires AVX512F.
 func MaskzSll32(k Mmask16, a M512i, count M128i) M512i {
-	return M512i(maskzSll32(uint16(k), a, count))
+	return M512i(maskzSll32(uint16(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSll32(k uint16, a M512i, count M128i) M512i
+func maskzSll32(k uint16, a [64]byte, count [16]byte) [64]byte
 
 
 // Sll32: Shift packed 32-bit integers in 'a' left by 'count' while shifting in
@@ -48527,10 +48527,10 @@ func maskzSll32(k uint16, a M512i, count M128i) M512i
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_sll_epi32'.
 // Requires AVX512F.
 func Sll32(a M512i, count M128i) M512i {
-	return M512i(sll32(a, count))
+	return M512i(sll32([64]byte(a), [16]byte(count)))
 }
 
-func sll32(a M512i, count M128i) M512i
+func sll32(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSll64: Shift packed 64-bit integers in 'a' left by 'count' while
@@ -48554,10 +48554,10 @@ func sll32(a M512i, count M128i) M512i
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_mask_sll_epi64'.
 // Requires AVX512F.
 func MaskSll64(src M512i, k Mmask8, a M512i, count M128i) M512i {
-	return M512i(maskSll64(src, uint8(k), a, count))
+	return M512i(maskSll64([64]byte(src), uint8(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSll64(src M512i, k uint8, a M512i, count M128i) M512i
+func maskSll64(src [64]byte, k uint8, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSll64: Shift packed 64-bit integers in 'a' left by 'count' while
@@ -48581,10 +48581,10 @@ func maskSll64(src M512i, k uint8, a M512i, count M128i) M512i
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_maskz_sll_epi64'.
 // Requires AVX512F.
 func MaskzSll64(k Mmask8, a M512i, count M128i) M512i {
-	return M512i(maskzSll64(uint8(k), a, count))
+	return M512i(maskzSll64(uint8(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSll64(k uint8, a M512i, count M128i) M512i
+func maskzSll64(k uint8, a [64]byte, count [16]byte) [64]byte
 
 
 // Sll64: Shift packed 64-bit integers in 'a' left by 'count' while shifting in
@@ -48603,10 +48603,10 @@ func maskzSll64(k uint8, a M512i, count M128i) M512i
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_sll_epi64'.
 // Requires AVX512F.
 func Sll64(a M512i, count M128i) M512i {
-	return M512i(sll64(a, count))
+	return M512i(sll64([64]byte(a), [16]byte(count)))
 }
 
-func sll64(a M512i, count M128i) M512i
+func sll64(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSlli16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -48630,10 +48630,10 @@ func sll64(a M512i, count M128i) M512i
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_mask_slli_epi16'.
 // Requires AVX512BW.
 func MaskSlli16(src M512i, k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskSlli16(src, uint32(k), a, imm8))
+	return M512i(maskSlli16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskSlli16(src M512i, k uint32, a M512i, imm8 uint32) M512i
+func maskSlli16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSlli16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -48657,10 +48657,10 @@ func maskSlli16(src M512i, k uint32, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_maskz_slli_epi16'.
 // Requires AVX512BW.
 func MaskzSlli16(k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSlli16(uint32(k), a, imm8))
+	return M512i(maskzSlli16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzSlli16(k uint32, a M512i, imm8 uint32) M512i
+func maskzSlli16(k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
 // Slli16: Shift packed 16-bit integers in 'a' left by 'imm8' while shifting in
@@ -48679,10 +48679,10 @@ func maskzSlli16(k uint32, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_slli_epi16'.
 // Requires AVX512BW.
 func Slli16(a M512i, imm8 uint32) M512i {
-	return M512i(slli16(a, imm8))
+	return M512i(slli16([64]byte(a), imm8))
 }
 
-func slli16(a M512i, imm8 uint32) M512i
+func slli16(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSlli32: Shift packed 32-bit integers in 'a' left by 'imm8' while
@@ -48706,10 +48706,10 @@ func slli16(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_mask_slli_epi32'.
 // Requires KNCNI.
 func MaskSlli32(src M512i, k Mmask16, a M512i, imm8 uint32) M512i {
-	return M512i(maskSlli32(src, uint16(k), a, imm8))
+	return M512i(maskSlli32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskSlli32(src M512i, k uint16, a M512i, imm8 uint32) M512i
+func maskSlli32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSlli32: Shift packed 32-bit integers in 'a' left by 'imm8' while
@@ -48733,10 +48733,10 @@ func maskSlli32(src M512i, k uint16, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_maskz_slli_epi32'.
 // Requires AVX512F.
 func MaskzSlli32(k Mmask16, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSlli32(uint16(k), a, imm8))
+	return M512i(maskzSlli32(uint16(k), [64]byte(a), imm8))
 }
 
-func maskzSlli32(k uint16, a M512i, imm8 uint32) M512i
+func maskzSlli32(k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
 // Slli32: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting in
@@ -48755,10 +48755,10 @@ func maskzSlli32(k uint16, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_slli_epi32'.
 // Requires KNCNI.
 func Slli32(a M512i, imm8 uint32) M512i {
-	return M512i(slli32(a, imm8))
+	return M512i(slli32([64]byte(a), imm8))
 }
 
-func slli32(a M512i, imm8 uint32) M512i
+func slli32(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSlli64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -48782,10 +48782,10 @@ func slli32(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_mask_slli_epi64'.
 // Requires AVX512F.
 func MaskSlli64(src M512i, k Mmask8, a M512i, imm8 uint32) M512i {
-	return M512i(maskSlli64(src, uint8(k), a, imm8))
+	return M512i(maskSlli64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskSlli64(src M512i, k uint8, a M512i, imm8 uint32) M512i
+func maskSlli64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSlli64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -48809,10 +48809,10 @@ func maskSlli64(src M512i, k uint8, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_maskz_slli_epi64'.
 // Requires AVX512F.
 func MaskzSlli64(k Mmask8, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSlli64(uint8(k), a, imm8))
+	return M512i(maskzSlli64(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzSlli64(k uint8, a M512i, imm8 uint32) M512i
+func maskzSlli64(k uint8, a [64]byte, imm8 uint32) [64]byte
 
 
 // Slli64: Shift packed 64-bit integers in 'a' left by 'imm8' while shifting in
@@ -48831,10 +48831,10 @@ func maskzSlli64(k uint8, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_slli_epi64'.
 // Requires AVX512F.
 func Slli64(a M512i, imm8 uint32) M512i {
-	return M512i(slli64(a, imm8))
+	return M512i(slli64([64]byte(a), imm8))
 }
 
-func slli64(a M512i, imm8 uint32) M512i
+func slli64(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSllv16: Shift packed 16-bit integers in 'a' left by the amount specified
@@ -48855,10 +48855,10 @@ func slli64(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_mask_sllv_epi16'.
 // Requires AVX512BW.
 func MaskSllv16(src M512i, k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskSllv16(src, uint32(k), a, count))
+	return M512i(maskSllv16([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSllv16(src M512i, k uint32, a M512i, count M512i) M512i
+func maskSllv16(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSllv16: Shift packed 16-bit integers in 'a' left by the amount
@@ -48879,10 +48879,10 @@ func maskSllv16(src M512i, k uint32, a M512i, count M512i) M512i
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_maskz_sllv_epi16'.
 // Requires AVX512BW.
 func MaskzSllv16(k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskzSllv16(uint32(k), a, count))
+	return M512i(maskzSllv16(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSllv16(k uint32, a M512i, count M512i) M512i
+func maskzSllv16(k uint32, a [64]byte, count [64]byte) [64]byte
 
 
 // Sllv16: Shift packed 16-bit integers in 'a' left by the amount specified by
@@ -48902,10 +48902,10 @@ func maskzSllv16(k uint32, a M512i, count M512i) M512i
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_sllv_epi16'.
 // Requires AVX512BW.
 func Sllv16(a M512i, count M512i) M512i {
-	return M512i(sllv16(a, count))
+	return M512i(sllv16([64]byte(a), [64]byte(count)))
 }
 
-func sllv16(a M512i, count M512i) M512i
+func sllv16(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSllv32: Shift packed 32-bit integers in 'a' left by the amount specified
@@ -48926,10 +48926,10 @@ func sllv16(a M512i, count M512i) M512i
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm512_mask_sllv_epi32'.
 // Requires KNCNI.
 func MaskSllv32(src M512i, k Mmask16, a M512i, count M512i) M512i {
-	return M512i(maskSllv32(src, uint16(k), a, count))
+	return M512i(maskSllv32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSllv32(src M512i, k uint16, a M512i, count M512i) M512i
+func maskSllv32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSllv32: Shift packed 32-bit integers in 'a' left by the amount
@@ -48950,10 +48950,10 @@ func maskSllv32(src M512i, k uint16, a M512i, count M512i) M512i
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm512_maskz_sllv_epi32'.
 // Requires AVX512F.
 func MaskzSllv32(k Mmask16, a M512i, count M512i) M512i {
-	return M512i(maskzSllv32(uint16(k), a, count))
+	return M512i(maskzSllv32(uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSllv32(k uint16, a M512i, count M512i) M512i
+func maskzSllv32(k uint16, a [64]byte, count [64]byte) [64]byte
 
 
 // Sllv32: Shift packed 32-bit integers in 'a' left by the amount specified by
@@ -48969,10 +48969,10 @@ func maskzSllv32(k uint16, a M512i, count M512i) M512i
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm512_sllv_epi32'.
 // Requires KNCNI.
 func Sllv32(a M512i, count M512i) M512i {
-	return M512i(sllv32(a, count))
+	return M512i(sllv32([64]byte(a), [64]byte(count)))
 }
 
-func sllv32(a M512i, count M512i) M512i
+func sllv32(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSllv64: Shift packed 64-bit integers in 'a' left by the amount specified
@@ -48993,10 +48993,10 @@ func sllv32(a M512i, count M512i) M512i
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm512_mask_sllv_epi64'.
 // Requires AVX512F.
 func MaskSllv64(src M512i, k Mmask8, a M512i, count M512i) M512i {
-	return M512i(maskSllv64(src, uint8(k), a, count))
+	return M512i(maskSllv64([64]byte(src), uint8(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSllv64(src M512i, k uint8, a M512i, count M512i) M512i
+func maskSllv64(src [64]byte, k uint8, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSllv64: Shift packed 64-bit integers in 'a' left by the amount
@@ -49017,10 +49017,10 @@ func maskSllv64(src M512i, k uint8, a M512i, count M512i) M512i
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm512_maskz_sllv_epi64'.
 // Requires AVX512F.
 func MaskzSllv64(k Mmask8, a M512i, count M512i) M512i {
-	return M512i(maskzSllv64(uint8(k), a, count))
+	return M512i(maskzSllv64(uint8(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSllv64(k uint8, a M512i, count M512i) M512i
+func maskzSllv64(k uint8, a [64]byte, count [64]byte) [64]byte
 
 
 // Sllv64: Shift packed 64-bit integers in 'a' left by the amount specified by
@@ -49036,10 +49036,10 @@ func maskzSllv64(k uint8, a M512i, count M512i) M512i
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm512_sllv_epi64'.
 // Requires AVX512F.
 func Sllv64(a M512i, count M512i) M512i {
-	return M512i(sllv64(a, count))
+	return M512i(sllv64([64]byte(a), [64]byte(count)))
 }
 
-func sllv64(a M512i, count M512i) M512i
+func sllv64(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSqrtPd: Compute the square root of packed double-precision (64-bit)
@@ -49369,10 +49369,10 @@ func sqrtRoundPs(a [16]float32, rounding int) [16]float32
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_mask_sra_epi16'.
 // Requires AVX512BW.
 func MaskSra16(src M512i, k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskSra16(src, uint32(k), a, count))
+	return M512i(maskSra16([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSra16(src M512i, k uint32, a M512i, count M128i) M512i
+func maskSra16(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSra16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -49396,10 +49396,10 @@ func maskSra16(src M512i, k uint32, a M512i, count M128i) M512i
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_maskz_sra_epi16'.
 // Requires AVX512BW.
 func MaskzSra16(k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskzSra16(uint32(k), a, count))
+	return M512i(maskzSra16(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSra16(k uint32, a M512i, count M128i) M512i
+func maskzSra16(k uint32, a [64]byte, count [16]byte) [64]byte
 
 
 // Sra16: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -49418,10 +49418,10 @@ func maskzSra16(k uint32, a M512i, count M128i) M512i
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_sra_epi16'.
 // Requires AVX512BW.
 func Sra16(a M512i, count M128i) M512i {
-	return M512i(sra16(a, count))
+	return M512i(sra16([64]byte(a), [16]byte(count)))
 }
 
-func sra16(a M512i, count M128i) M512i
+func sra16(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSra32: Shift packed 32-bit integers in 'a' right by 'count' while
@@ -49445,10 +49445,10 @@ func sra16(a M512i, count M128i) M512i
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_mask_sra_epi32'.
 // Requires AVX512F.
 func MaskSra32(src M512i, k Mmask16, a M512i, count M128i) M512i {
-	return M512i(maskSra32(src, uint16(k), a, count))
+	return M512i(maskSra32([64]byte(src), uint16(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSra32(src M512i, k uint16, a M512i, count M128i) M512i
+func maskSra32(src [64]byte, k uint16, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSra32: Shift packed 32-bit integers in 'a' right by 'count' while
@@ -49472,10 +49472,10 @@ func maskSra32(src M512i, k uint16, a M512i, count M128i) M512i
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_maskz_sra_epi32'.
 // Requires AVX512F.
 func MaskzSra32(k Mmask16, a M512i, count M128i) M512i {
-	return M512i(maskzSra32(uint16(k), a, count))
+	return M512i(maskzSra32(uint16(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSra32(k uint16, a M512i, count M128i) M512i
+func maskzSra32(k uint16, a [64]byte, count [16]byte) [64]byte
 
 
 // Sra32: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -49494,10 +49494,10 @@ func maskzSra32(k uint16, a M512i, count M128i) M512i
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_sra_epi32'.
 // Requires AVX512F.
 func Sra32(a M512i, count M128i) M512i {
-	return M512i(sra32(a, count))
+	return M512i(sra32([64]byte(a), [16]byte(count)))
 }
 
-func sra32(a M512i, count M128i) M512i
+func sra32(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSra64: Shift packed 64-bit integers in 'a' right by 'count' while
@@ -49521,10 +49521,10 @@ func sra32(a M512i, count M128i) M512i
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_mask_sra_epi64'.
 // Requires AVX512F.
 func MaskSra64(src M512i, k Mmask8, a M512i, count M128i) M512i {
-	return M512i(maskSra64(src, uint8(k), a, count))
+	return M512i(maskSra64([64]byte(src), uint8(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSra64(src M512i, k uint8, a M512i, count M128i) M512i
+func maskSra64(src [64]byte, k uint8, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSra64: Shift packed 64-bit integers in 'a' right by 'count' while
@@ -49548,10 +49548,10 @@ func maskSra64(src M512i, k uint8, a M512i, count M128i) M512i
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_maskz_sra_epi64'.
 // Requires AVX512F.
 func MaskzSra64(k Mmask8, a M512i, count M128i) M512i {
-	return M512i(maskzSra64(uint8(k), a, count))
+	return M512i(maskzSra64(uint8(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSra64(k uint8, a M512i, count M128i) M512i
+func maskzSra64(k uint8, a [64]byte, count [16]byte) [64]byte
 
 
 // Sra64: Shift packed 64-bit integers in 'a' right by 'count' while shifting
@@ -49570,10 +49570,10 @@ func maskzSra64(k uint8, a M512i, count M128i) M512i
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_sra_epi64'.
 // Requires AVX512F.
 func Sra64(a M512i, count M128i) M512i {
-	return M512i(sra64(a, count))
+	return M512i(sra64([64]byte(a), [16]byte(count)))
 }
 
-func sra64(a M512i, count M128i) M512i
+func sra64(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSrai16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -49597,10 +49597,10 @@ func sra64(a M512i, count M128i) M512i
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_mask_srai_epi16'.
 // Requires AVX512BW.
 func MaskSrai16(src M512i, k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskSrai16(src, uint32(k), a, imm8))
+	return M512i(maskSrai16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskSrai16(src M512i, k uint32, a M512i, imm8 uint32) M512i
+func maskSrai16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSrai16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -49624,10 +49624,10 @@ func maskSrai16(src M512i, k uint32, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_maskz_srai_epi16'.
 // Requires AVX512BW.
 func MaskzSrai16(k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSrai16(uint32(k), a, imm8))
+	return M512i(maskzSrai16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzSrai16(k uint32, a M512i, imm8 uint32) M512i
+func maskzSrai16(k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
 // Srai16: Shift packed 16-bit integers in 'a' right by 'imm8' while shifting
@@ -49646,10 +49646,10 @@ func maskzSrai16(k uint32, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_srai_epi16'.
 // Requires AVX512BW.
 func Srai16(a M512i, imm8 uint32) M512i {
-	return M512i(srai16(a, imm8))
+	return M512i(srai16([64]byte(a), imm8))
 }
 
-func srai16(a M512i, imm8 uint32) M512i
+func srai16(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSrai32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -49673,10 +49673,10 @@ func srai16(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_mask_srai_epi32'.
 // Requires KNCNI.
 func MaskSrai32(src M512i, k Mmask16, a M512i, imm8 uint32) M512i {
-	return M512i(maskSrai32(src, uint16(k), a, imm8))
+	return M512i(maskSrai32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskSrai32(src M512i, k uint16, a M512i, imm8 uint32) M512i
+func maskSrai32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSrai32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -49700,10 +49700,10 @@ func maskSrai32(src M512i, k uint16, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_maskz_srai_epi32'.
 // Requires AVX512F.
 func MaskzSrai32(k Mmask16, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSrai32(uint16(k), a, imm8))
+	return M512i(maskzSrai32(uint16(k), [64]byte(a), imm8))
 }
 
-func maskzSrai32(k uint16, a M512i, imm8 uint32) M512i
+func maskzSrai32(k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
 // Srai32: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -49722,10 +49722,10 @@ func maskzSrai32(k uint16, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_srai_epi32'.
 // Requires KNCNI.
 func Srai32(a M512i, imm8 uint32) M512i {
-	return M512i(srai32(a, imm8))
+	return M512i(srai32([64]byte(a), imm8))
 }
 
-func srai32(a M512i, imm8 uint32) M512i
+func srai32(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSrai64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -49749,10 +49749,10 @@ func srai32(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_mask_srai_epi64'.
 // Requires AVX512F.
 func MaskSrai64(src M512i, k Mmask8, a M512i, imm8 uint32) M512i {
-	return M512i(maskSrai64(src, uint8(k), a, imm8))
+	return M512i(maskSrai64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskSrai64(src M512i, k uint8, a M512i, imm8 uint32) M512i
+func maskSrai64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSrai64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -49776,10 +49776,10 @@ func maskSrai64(src M512i, k uint8, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_maskz_srai_epi64'.
 // Requires AVX512F.
 func MaskzSrai64(k Mmask8, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSrai64(uint8(k), a, imm8))
+	return M512i(maskzSrai64(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzSrai64(k uint8, a M512i, imm8 uint32) M512i
+func maskzSrai64(k uint8, a [64]byte, imm8 uint32) [64]byte
 
 
 // Srai64: Shift packed 64-bit integers in 'a' right by 'imm8' while shifting
@@ -49798,10 +49798,10 @@ func maskzSrai64(k uint8, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_srai_epi64'.
 // Requires AVX512F.
 func Srai64(a M512i, imm8 uint32) M512i {
-	return M512i(srai64(a, imm8))
+	return M512i(srai64([64]byte(a), imm8))
 }
 
-func srai64(a M512i, imm8 uint32) M512i
+func srai64(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSrav16: Shift packed 16-bit integers in 'a' right by the amount
@@ -49822,10 +49822,10 @@ func srai64(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_mask_srav_epi16'.
 // Requires AVX512BW.
 func MaskSrav16(src M512i, k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskSrav16(src, uint32(k), a, count))
+	return M512i(maskSrav16([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrav16(src M512i, k uint32, a M512i, count M512i) M512i
+func maskSrav16(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSrav16: Shift packed 16-bit integers in 'a' right by the amount
@@ -49846,10 +49846,10 @@ func maskSrav16(src M512i, k uint32, a M512i, count M512i) M512i
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_maskz_srav_epi16'.
 // Requires AVX512BW.
 func MaskzSrav16(k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskzSrav16(uint32(k), a, count))
+	return M512i(maskzSrav16(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSrav16(k uint32, a M512i, count M512i) M512i
+func maskzSrav16(k uint32, a [64]byte, count [64]byte) [64]byte
 
 
 // Srav16: Shift packed 16-bit integers in 'a' right by the amount specified by
@@ -49865,10 +49865,10 @@ func maskzSrav16(k uint32, a M512i, count M512i) M512i
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_srav_epi16'.
 // Requires AVX512BW.
 func Srav16(a M512i, count M512i) M512i {
-	return M512i(srav16(a, count))
+	return M512i(srav16([64]byte(a), [64]byte(count)))
 }
 
-func srav16(a M512i, count M512i) M512i
+func srav16(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSrav32: Shift packed 32-bit integers in 'a' right by the amount
@@ -49889,10 +49889,10 @@ func srav16(a M512i, count M512i) M512i
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm512_mask_srav_epi32'.
 // Requires KNCNI.
 func MaskSrav32(src M512i, k Mmask16, a M512i, count M512i) M512i {
-	return M512i(maskSrav32(src, uint16(k), a, count))
+	return M512i(maskSrav32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrav32(src M512i, k uint16, a M512i, count M512i) M512i
+func maskSrav32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSrav32: Shift packed 32-bit integers in 'a' right by the amount
@@ -49913,10 +49913,10 @@ func maskSrav32(src M512i, k uint16, a M512i, count M512i) M512i
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm512_maskz_srav_epi32'.
 // Requires AVX512F.
 func MaskzSrav32(k Mmask16, a M512i, count M512i) M512i {
-	return M512i(maskzSrav32(uint16(k), a, count))
+	return M512i(maskzSrav32(uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSrav32(k uint16, a M512i, count M512i) M512i
+func maskzSrav32(k uint16, a [64]byte, count [64]byte) [64]byte
 
 
 // Srav32: Shift packed 32-bit integers in 'a' right by the amount specified by
@@ -49932,10 +49932,10 @@ func maskzSrav32(k uint16, a M512i, count M512i) M512i
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm512_srav_epi32'.
 // Requires KNCNI.
 func Srav32(a M512i, count M512i) M512i {
-	return M512i(srav32(a, count))
+	return M512i(srav32([64]byte(a), [64]byte(count)))
 }
 
-func srav32(a M512i, count M512i) M512i
+func srav32(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSrav64: Shift packed 64-bit integers in 'a' right by the amount
@@ -49956,10 +49956,10 @@ func srav32(a M512i, count M512i) M512i
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm512_mask_srav_epi64'.
 // Requires AVX512F.
 func MaskSrav64(src M512i, k Mmask8, a M512i, count M512i) M512i {
-	return M512i(maskSrav64(src, uint8(k), a, count))
+	return M512i(maskSrav64([64]byte(src), uint8(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrav64(src M512i, k uint8, a M512i, count M512i) M512i
+func maskSrav64(src [64]byte, k uint8, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSrav64: Shift packed 64-bit integers in 'a' right by the amount
@@ -49980,10 +49980,10 @@ func maskSrav64(src M512i, k uint8, a M512i, count M512i) M512i
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm512_maskz_srav_epi64'.
 // Requires AVX512F.
 func MaskzSrav64(k Mmask8, a M512i, count M512i) M512i {
-	return M512i(maskzSrav64(uint8(k), a, count))
+	return M512i(maskzSrav64(uint8(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSrav64(k uint8, a M512i, count M512i) M512i
+func maskzSrav64(k uint8, a [64]byte, count [64]byte) [64]byte
 
 
 // Srav64: Shift packed 64-bit integers in 'a' right by the amount specified by
@@ -49999,10 +49999,10 @@ func maskzSrav64(k uint8, a M512i, count M512i) M512i
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm512_srav_epi64'.
 // Requires AVX512F.
 func Srav64(a M512i, count M512i) M512i {
-	return M512i(srav64(a, count))
+	return M512i(srav64([64]byte(a), [64]byte(count)))
 }
 
-func srav64(a M512i, count M512i) M512i
+func srav64(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSrl16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -50026,10 +50026,10 @@ func srav64(a M512i, count M512i) M512i
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_mask_srl_epi16'.
 // Requires AVX512BW.
 func MaskSrl16(src M512i, k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskSrl16(src, uint32(k), a, count))
+	return M512i(maskSrl16([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSrl16(src M512i, k uint32, a M512i, count M128i) M512i
+func maskSrl16(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSrl16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -50053,10 +50053,10 @@ func maskSrl16(src M512i, k uint32, a M512i, count M128i) M512i
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_maskz_srl_epi16'.
 // Requires AVX512BW.
 func MaskzSrl16(k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskzSrl16(uint32(k), a, count))
+	return M512i(maskzSrl16(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSrl16(k uint32, a M512i, count M128i) M512i
+func maskzSrl16(k uint32, a [64]byte, count [16]byte) [64]byte
 
 
 // Srl16: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -50075,10 +50075,10 @@ func maskzSrl16(k uint32, a M512i, count M128i) M512i
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_srl_epi16'.
 // Requires AVX512BW.
 func Srl16(a M512i, count M128i) M512i {
-	return M512i(srl16(a, count))
+	return M512i(srl16([64]byte(a), [16]byte(count)))
 }
 
-func srl16(a M512i, count M128i) M512i
+func srl16(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSrl32: Shift packed 32-bit integers in 'a' right by 'count' while
@@ -50102,10 +50102,10 @@ func srl16(a M512i, count M128i) M512i
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_mask_srl_epi32'.
 // Requires AVX512F.
 func MaskSrl32(src M512i, k Mmask16, a M512i, count M128i) M512i {
-	return M512i(maskSrl32(src, uint16(k), a, count))
+	return M512i(maskSrl32([64]byte(src), uint16(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSrl32(src M512i, k uint16, a M512i, count M128i) M512i
+func maskSrl32(src [64]byte, k uint16, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSrl32: Shift packed 32-bit integers in 'a' right by 'count' while
@@ -50129,10 +50129,10 @@ func maskSrl32(src M512i, k uint16, a M512i, count M128i) M512i
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_maskz_srl_epi32'.
 // Requires AVX512F.
 func MaskzSrl32(k Mmask16, a M512i, count M128i) M512i {
-	return M512i(maskzSrl32(uint16(k), a, count))
+	return M512i(maskzSrl32(uint16(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSrl32(k uint16, a M512i, count M128i) M512i
+func maskzSrl32(k uint16, a [64]byte, count [16]byte) [64]byte
 
 
 // Srl32: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -50151,10 +50151,10 @@ func maskzSrl32(k uint16, a M512i, count M128i) M512i
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_srl_epi32'.
 // Requires AVX512F.
 func Srl32(a M512i, count M128i) M512i {
-	return M512i(srl32(a, count))
+	return M512i(srl32([64]byte(a), [16]byte(count)))
 }
 
-func srl32(a M512i, count M128i) M512i
+func srl32(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSrl64: Shift packed 64-bit integers in 'a' right by 'count' while
@@ -50178,10 +50178,10 @@ func srl32(a M512i, count M128i) M512i
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_mask_srl_epi64'.
 // Requires AVX512F.
 func MaskSrl64(src M512i, k Mmask8, a M512i, count M128i) M512i {
-	return M512i(maskSrl64(src, uint8(k), a, count))
+	return M512i(maskSrl64([64]byte(src), uint8(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSrl64(src M512i, k uint8, a M512i, count M128i) M512i
+func maskSrl64(src [64]byte, k uint8, a [64]byte, count [16]byte) [64]byte
 
 
 // MaskzSrl64: Shift packed 64-bit integers in 'a' right by 'count' while
@@ -50205,10 +50205,10 @@ func maskSrl64(src M512i, k uint8, a M512i, count M128i) M512i
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_maskz_srl_epi64'.
 // Requires AVX512F.
 func MaskzSrl64(k Mmask8, a M512i, count M128i) M512i {
-	return M512i(maskzSrl64(uint8(k), a, count))
+	return M512i(maskzSrl64(uint8(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSrl64(k uint8, a M512i, count M128i) M512i
+func maskzSrl64(k uint8, a [64]byte, count [16]byte) [64]byte
 
 
 // Srl64: Shift packed 64-bit integers in 'a' right by 'count' while shifting
@@ -50227,10 +50227,10 @@ func maskzSrl64(k uint8, a M512i, count M128i) M512i
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_srl_epi64'.
 // Requires AVX512F.
 func Srl64(a M512i, count M128i) M512i {
-	return M512i(srl64(a, count))
+	return M512i(srl64([64]byte(a), [16]byte(count)))
 }
 
-func srl64(a M512i, count M128i) M512i
+func srl64(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSrli16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -50254,10 +50254,10 @@ func srl64(a M512i, count M128i) M512i
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_mask_srli_epi16'.
 // Requires AVX512BW.
 func MaskSrli16(src M512i, k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskSrli16(src, uint32(k), a, imm8))
+	return M512i(maskSrli16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskSrli16(src M512i, k uint32, a M512i, imm8 uint32) M512i
+func maskSrli16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSrli16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -50281,10 +50281,10 @@ func maskSrli16(src M512i, k uint32, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_maskz_srli_epi16'.
 // Requires AVX512BW.
 func MaskzSrli16(k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskzSrli16(uint32(k), a, imm8))
+	return M512i(maskzSrli16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzSrli16(k uint32, a M512i, imm8 int) M512i
+func maskzSrli16(k uint32, a [64]byte, imm8 int) [64]byte
 
 
 // Srli16: Shift packed 16-bit integers in 'a' right by 'imm8' while shifting
@@ -50303,10 +50303,10 @@ func maskzSrli16(k uint32, a M512i, imm8 int) M512i
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_srli_epi16'.
 // Requires AVX512BW.
 func Srli16(a M512i, imm8 uint32) M512i {
-	return M512i(srli16(a, imm8))
+	return M512i(srli16([64]byte(a), imm8))
 }
 
-func srli16(a M512i, imm8 uint32) M512i
+func srli16(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSrli32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -50330,10 +50330,10 @@ func srli16(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_mask_srli_epi32'.
 // Requires KNCNI.
 func MaskSrli32(src M512i, k Mmask16, a M512i, imm8 uint32) M512i {
-	return M512i(maskSrli32(src, uint16(k), a, imm8))
+	return M512i(maskSrli32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskSrli32(src M512i, k uint16, a M512i, imm8 uint32) M512i
+func maskSrli32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSrli32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -50357,10 +50357,10 @@ func maskSrli32(src M512i, k uint16, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_maskz_srli_epi32'.
 // Requires AVX512F.
 func MaskzSrli32(k Mmask16, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSrli32(uint16(k), a, imm8))
+	return M512i(maskzSrli32(uint16(k), [64]byte(a), imm8))
 }
 
-func maskzSrli32(k uint16, a M512i, imm8 uint32) M512i
+func maskzSrli32(k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
 // Srli32: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -50379,10 +50379,10 @@ func maskzSrli32(k uint16, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_srli_epi32'.
 // Requires KNCNI.
 func Srli32(a M512i, imm8 uint32) M512i {
-	return M512i(srli32(a, imm8))
+	return M512i(srli32([64]byte(a), imm8))
 }
 
-func srli32(a M512i, imm8 uint32) M512i
+func srli32(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSrli64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -50406,10 +50406,10 @@ func srli32(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_mask_srli_epi64'.
 // Requires AVX512F.
 func MaskSrli64(src M512i, k Mmask8, a M512i, imm8 uint32) M512i {
-	return M512i(maskSrli64(src, uint8(k), a, imm8))
+	return M512i(maskSrli64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func maskSrli64(src M512i, k uint8, a M512i, imm8 uint32) M512i
+func maskSrli64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskzSrli64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -50433,10 +50433,10 @@ func maskSrli64(src M512i, k uint8, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_maskz_srli_epi64'.
 // Requires AVX512F.
 func MaskzSrli64(k Mmask8, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSrli64(uint8(k), a, imm8))
+	return M512i(maskzSrli64(uint8(k), [64]byte(a), imm8))
 }
 
-func maskzSrli64(k uint8, a M512i, imm8 uint32) M512i
+func maskzSrli64(k uint8, a [64]byte, imm8 uint32) [64]byte
 
 
 // Srli64: Shift packed 64-bit integers in 'a' right by 'imm8' while shifting
@@ -50455,10 +50455,10 @@ func maskzSrli64(k uint8, a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_srli_epi64'.
 // Requires AVX512F.
 func Srli64(a M512i, imm8 uint32) M512i {
-	return M512i(srli64(a, imm8))
+	return M512i(srli64([64]byte(a), imm8))
 }
 
-func srli64(a M512i, imm8 uint32) M512i
+func srli64(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSrlv16: Shift packed 16-bit integers in 'a' right by the amount
@@ -50479,10 +50479,10 @@ func srli64(a M512i, imm8 uint32) M512i
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_mask_srlv_epi16'.
 // Requires AVX512BW.
 func MaskSrlv16(src M512i, k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskSrlv16(src, uint32(k), a, count))
+	return M512i(maskSrlv16([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrlv16(src M512i, k uint32, a M512i, count M512i) M512i
+func maskSrlv16(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSrlv16: Shift packed 16-bit integers in 'a' right by the amount
@@ -50503,10 +50503,10 @@ func maskSrlv16(src M512i, k uint32, a M512i, count M512i) M512i
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_maskz_srlv_epi16'.
 // Requires AVX512BW.
 func MaskzSrlv16(k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskzSrlv16(uint32(k), a, count))
+	return M512i(maskzSrlv16(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSrlv16(k uint32, a M512i, count M512i) M512i
+func maskzSrlv16(k uint32, a [64]byte, count [64]byte) [64]byte
 
 
 // Srlv16: Shift packed 16-bit integers in 'a' right by the amount specified by
@@ -50526,10 +50526,10 @@ func maskzSrlv16(k uint32, a M512i, count M512i) M512i
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_srlv_epi16'.
 // Requires AVX512BW.
 func Srlv16(a M512i, count M512i) M512i {
-	return M512i(srlv16(a, count))
+	return M512i(srlv16([64]byte(a), [64]byte(count)))
 }
 
-func srlv16(a M512i, count M512i) M512i
+func srlv16(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSrlv32: Shift packed 32-bit integers in 'a' right by the amount
@@ -50550,10 +50550,10 @@ func srlv16(a M512i, count M512i) M512i
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm512_mask_srlv_epi32'.
 // Requires KNCNI.
 func MaskSrlv32(src M512i, k Mmask16, a M512i, count M512i) M512i {
-	return M512i(maskSrlv32(src, uint16(k), a, count))
+	return M512i(maskSrlv32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrlv32(src M512i, k uint16, a M512i, count M512i) M512i
+func maskSrlv32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSrlv32: Shift packed 32-bit integers in 'a' right by the amount
@@ -50574,10 +50574,10 @@ func maskSrlv32(src M512i, k uint16, a M512i, count M512i) M512i
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm512_maskz_srlv_epi32'.
 // Requires AVX512F.
 func MaskzSrlv32(k Mmask16, a M512i, count M512i) M512i {
-	return M512i(maskzSrlv32(uint16(k), a, count))
+	return M512i(maskzSrlv32(uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSrlv32(k uint16, a M512i, count M512i) M512i
+func maskzSrlv32(k uint16, a [64]byte, count [64]byte) [64]byte
 
 
 // Srlv32: Shift packed 32-bit integers in 'a' right by the amount specified by
@@ -50593,10 +50593,10 @@ func maskzSrlv32(k uint16, a M512i, count M512i) M512i
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm512_srlv_epi32'.
 // Requires KNCNI.
 func Srlv32(a M512i, count M512i) M512i {
-	return M512i(srlv32(a, count))
+	return M512i(srlv32([64]byte(a), [64]byte(count)))
 }
 
-func srlv32(a M512i, count M512i) M512i
+func srlv32(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSrlv64: Shift packed 64-bit integers in 'a' right by the amount
@@ -50617,10 +50617,10 @@ func srlv32(a M512i, count M512i) M512i
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm512_mask_srlv_epi64'.
 // Requires AVX512F.
 func MaskSrlv64(src M512i, k Mmask8, a M512i, count M512i) M512i {
-	return M512i(maskSrlv64(src, uint8(k), a, count))
+	return M512i(maskSrlv64([64]byte(src), uint8(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrlv64(src M512i, k uint8, a M512i, count M512i) M512i
+func maskSrlv64(src [64]byte, k uint8, a [64]byte, count [64]byte) [64]byte
 
 
 // MaskzSrlv64: Shift packed 64-bit integers in 'a' right by the amount
@@ -50641,10 +50641,10 @@ func maskSrlv64(src M512i, k uint8, a M512i, count M512i) M512i
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm512_maskz_srlv_epi64'.
 // Requires AVX512F.
 func MaskzSrlv64(k Mmask8, a M512i, count M512i) M512i {
-	return M512i(maskzSrlv64(uint8(k), a, count))
+	return M512i(maskzSrlv64(uint8(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSrlv64(k uint8, a M512i, count M512i) M512i
+func maskzSrlv64(k uint8, a [64]byte, count [64]byte) [64]byte
 
 
 // Srlv64: Shift packed 64-bit integers in 'a' right by the amount specified by
@@ -50660,10 +50660,10 @@ func maskzSrlv64(k uint8, a M512i, count M512i) M512i
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm512_srlv_epi64'.
 // Requires AVX512F.
 func Srlv64(a M512i, count M512i) M512i {
-	return M512i(srlv64(a, count))
+	return M512i(srlv64([64]byte(a), [64]byte(count)))
 }
 
-func srlv64(a M512i, count M512i) M512i
+func srlv64(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskStore32: Store packed 32-bit integers from 'a' into memory using
@@ -50681,10 +50681,10 @@ func srlv64(a M512i, count M512i) M512i
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_store_epi32'.
 // Requires KNCNI.
 func MaskStore32(mem_addr uintptr, k Mmask16, a M512i)  {
-	maskStore32(uintptr(mem_addr), uint16(k), a)
+	maskStore32(uintptr(mem_addr), uint16(k), [64]byte(a))
 }
 
-func maskStore32(mem_addr uintptr, k uint16, a M512i) 
+func maskStore32(mem_addr uintptr, k uint16, a [64]byte) 
 
 
 // Store32: Store 512-bits (composed of 16 packed 32-bit integers) from 'a'
@@ -50697,10 +50697,10 @@ func maskStore32(mem_addr uintptr, k uint16, a M512i)
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_store_epi32'.
 // Requires KNCNI.
 func Store32(mem_addr uintptr, a M512i)  {
-	store32(uintptr(mem_addr), a)
+	store32(uintptr(mem_addr), [64]byte(a))
 }
 
-func store32(mem_addr uintptr, a M512i) 
+func store32(mem_addr uintptr, a [64]byte) 
 
 
 // MaskStore64: Store packed 64-bit integers from 'a' into memory using
@@ -50718,10 +50718,10 @@ func store32(mem_addr uintptr, a M512i)
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_store_epi64'.
 // Requires KNCNI.
 func MaskStore64(mem_addr uintptr, k Mmask8, a M512i)  {
-	maskStore64(uintptr(mem_addr), uint8(k), a)
+	maskStore64(uintptr(mem_addr), uint8(k), [64]byte(a))
 }
 
-func maskStore64(mem_addr uintptr, k uint8, a M512i) 
+func maskStore64(mem_addr uintptr, k uint8, a [64]byte) 
 
 
 // Store64: Store 512-bits (composed of 8 packed 64-bit integers) from 'a' into
@@ -50734,10 +50734,10 @@ func maskStore64(mem_addr uintptr, k uint8, a M512i)
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_store_epi64'.
 // Requires KNCNI.
 func Store64(mem_addr uintptr, a M512i)  {
-	store64(uintptr(mem_addr), a)
+	store64(uintptr(mem_addr), [64]byte(a))
 }
 
-func store64(mem_addr uintptr, a M512i) 
+func store64(mem_addr uintptr, a [64]byte) 
 
 
 // MaskStorePd: Store packed double-precision (64-bit) floating-point elements
@@ -50823,10 +50823,10 @@ func storePs(mem_addr uintptr, a [16]float32)
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_store_si512'.
 // Requires KNCNI.
 func StoreSi512(mem_addr uintptr, a M512i)  {
-	storeSi512(uintptr(mem_addr), a)
+	storeSi512(uintptr(mem_addr), [64]byte(a))
 }
 
-func storeSi512(mem_addr uintptr, a M512i) 
+func storeSi512(mem_addr uintptr, a [64]byte) 
 
 
 // StorenrPd: Stores packed double-precision (64-bit) floating-point elements
@@ -50922,10 +50922,10 @@ func storenrngoPs(mt uintptr, v [16]float32)
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_storeu_epi16'.
 // Requires AVX512BW.
 func MaskStoreu16(mem_addr uintptr, k Mmask32, a M512i)  {
-	maskStoreu16(uintptr(mem_addr), uint32(k), a)
+	maskStoreu16(uintptr(mem_addr), uint32(k), [64]byte(a))
 }
 
-func maskStoreu16(mem_addr uintptr, k uint32, a M512i) 
+func maskStoreu16(mem_addr uintptr, k uint32, a [64]byte) 
 
 
 // MaskStoreu32: Store packed 32-bit integers from 'a' into memory using
@@ -50942,10 +50942,10 @@ func maskStoreu16(mem_addr uintptr, k uint32, a M512i)
 // Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_mask_storeu_epi32'.
 // Requires AVX512F.
 func MaskStoreu32(mem_addr uintptr, k Mmask16, a M512i)  {
-	maskStoreu32(uintptr(mem_addr), uint16(k), a)
+	maskStoreu32(uintptr(mem_addr), uint16(k), [64]byte(a))
 }
 
-func maskStoreu32(mem_addr uintptr, k uint16, a M512i) 
+func maskStoreu32(mem_addr uintptr, k uint16, a [64]byte) 
 
 
 // MaskStoreu64: Store packed 64-bit integers from 'a' into memory using
@@ -50962,10 +50962,10 @@ func maskStoreu32(mem_addr uintptr, k uint16, a M512i)
 // Instruction: 'VMOVDQU64'. Intrinsic: '_mm512_mask_storeu_epi64'.
 // Requires AVX512F.
 func MaskStoreu64(mem_addr uintptr, k Mmask8, a M512i)  {
-	maskStoreu64(uintptr(mem_addr), uint8(k), a)
+	maskStoreu64(uintptr(mem_addr), uint8(k), [64]byte(a))
 }
 
-func maskStoreu64(mem_addr uintptr, k uint8, a M512i) 
+func maskStoreu64(mem_addr uintptr, k uint8, a [64]byte) 
 
 
 // MaskStoreu8: Store packed 8-bit integers from 'a' into memory using
@@ -50982,10 +50982,10 @@ func maskStoreu64(mem_addr uintptr, k uint8, a M512i)
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_storeu_epi8'.
 // Requires AVX512BW.
 func MaskStoreu8(mem_addr uintptr, k Mmask64, a M512i)  {
-	maskStoreu8(uintptr(mem_addr), uint64(k), a)
+	maskStoreu8(uintptr(mem_addr), uint64(k), [64]byte(a))
 }
 
-func maskStoreu8(mem_addr uintptr, k uint64, a M512i) 
+func maskStoreu8(mem_addr uintptr, k uint64, a [64]byte) 
 
 
 // MaskStoreuPd: Store packed double-precision (64-bit) floating-point elements
@@ -51066,10 +51066,10 @@ func storeuPs(mem_addr uintptr, a [16]float32)
 // Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_storeu_si512'.
 // Requires AVX512F.
 func StoreuSi512(mem_addr uintptr, a M512i)  {
-	storeuSi512(uintptr(mem_addr), a)
+	storeuSi512(uintptr(mem_addr), [64]byte(a))
 }
 
-func storeuSi512(mem_addr uintptr, a M512i) 
+func storeuSi512(mem_addr uintptr, a [64]byte) 
 
 
 // StreamLoadSi512: Load 512-bits of integer data from memory into 'dst' using
@@ -51086,7 +51086,7 @@ func StreamLoadSi512(mem_addr uintptr) M512i {
 	return M512i(streamLoadSi512(uintptr(mem_addr)))
 }
 
-func streamLoadSi512(mem_addr uintptr) M512i
+func streamLoadSi512(mem_addr uintptr) [64]byte
 
 
 // StreamPd: Store 512-bits (composed of 8 packed double-precision (64-bit)
@@ -51133,10 +51133,10 @@ func streamPs(mem_addr uintptr, a [16]float32)
 // Instruction: 'VMOVNTDQA'. Intrinsic: '_mm512_stream_si512'.
 // Requires AVX512F.
 func StreamSi512(mem_addr uintptr, a M512i)  {
-	streamSi512(uintptr(mem_addr), a)
+	streamSi512(uintptr(mem_addr), [64]byte(a))
 }
 
-func streamSi512(mem_addr uintptr, a M512i) 
+func streamSi512(mem_addr uintptr, a [64]byte) 
 
 
 // MaskSub16: Subtract packed 16-bit integers in 'b' from packed 16-bit
@@ -51156,10 +51156,10 @@ func streamSi512(mem_addr uintptr, a M512i)
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_mask_sub_epi16'.
 // Requires AVX512BW.
 func MaskSub16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskSub16(src, uint32(k), a, b))
+	return M512i(maskSub16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSub16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskSub16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSub16: Subtract packed 16-bit integers in 'b' from packed 16-bit
@@ -51179,10 +51179,10 @@ func maskSub16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_maskz_sub_epi16'.
 // Requires AVX512BW.
 func MaskzSub16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzSub16(uint32(k), a, b))
+	return M512i(maskzSub16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSub16(k uint32, a M512i, b M512i) M512i
+func maskzSub16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Sub16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers in
@@ -51197,10 +51197,10 @@ func maskzSub16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_sub_epi16'.
 // Requires AVX512BW.
 func Sub16(a M512i, b M512i) M512i {
-	return M512i(sub16(a, b))
+	return M512i(sub16([64]byte(a), [64]byte(b)))
 }
 
-func sub16(a M512i, b M512i) M512i
+func sub16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSub32: Subtract packed 32-bit integers in 'b' from packed 32-bit
@@ -51220,10 +51220,10 @@ func sub16(a M512i, b M512i) M512i
 // Instruction: 'VPSUBD'. Intrinsic: '_mm512_mask_sub_epi32'.
 // Requires KNCNI.
 func MaskSub32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskSub32(src, uint16(k), a, b))
+	return M512i(maskSub32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSub32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskSub32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSub32: Subtract packed 32-bit integers in 'b' from packed 32-bit
@@ -51243,10 +51243,10 @@ func maskSub32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPSUBD'. Intrinsic: '_mm512_maskz_sub_epi32'.
 // Requires AVX512F.
 func MaskzSub32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzSub32(uint16(k), a, b))
+	return M512i(maskzSub32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSub32(k uint16, a M512i, b M512i) M512i
+func maskzSub32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Sub32: Subtract packed 32-bit integers in 'b' from packed 32-bit integers in
@@ -51261,10 +51261,10 @@ func maskzSub32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPSUBD'. Intrinsic: '_mm512_sub_epi32'.
 // Requires KNCNI.
 func Sub32(a M512i, b M512i) M512i {
-	return M512i(sub32(a, b))
+	return M512i(sub32([64]byte(a), [64]byte(b)))
 }
 
-func sub32(a M512i, b M512i) M512i
+func sub32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSub64: Subtract packed 64-bit integers in 'b' from packed 64-bit
@@ -51284,10 +51284,10 @@ func sub32(a M512i, b M512i) M512i
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm512_mask_sub_epi64'.
 // Requires AVX512F.
 func MaskSub64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskSub64(src, uint8(k), a, b))
+	return M512i(maskSub64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSub64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskSub64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSub64: Subtract packed 64-bit integers in 'b' from packed 64-bit
@@ -51307,10 +51307,10 @@ func maskSub64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm512_maskz_sub_epi64'.
 // Requires AVX512F.
 func MaskzSub64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzSub64(uint8(k), a, b))
+	return M512i(maskzSub64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSub64(k uint8, a M512i, b M512i) M512i
+func maskzSub64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Sub64: Subtract packed 64-bit integers in 'b' from packed 64-bit integers in
@@ -51325,10 +51325,10 @@ func maskzSub64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm512_sub_epi64'.
 // Requires AVX512F.
 func Sub64(a M512i, b M512i) M512i {
-	return M512i(sub64(a, b))
+	return M512i(sub64([64]byte(a), [64]byte(b)))
 }
 
-func sub64(a M512i, b M512i) M512i
+func sub64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSub8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers
@@ -51348,10 +51348,10 @@ func sub64(a M512i, b M512i) M512i
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_mask_sub_epi8'.
 // Requires AVX512BW.
 func MaskSub8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskSub8(src, uint64(k), a, b))
+	return M512i(maskSub8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSub8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskSub8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSub8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers
@@ -51371,10 +51371,10 @@ func maskSub8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_maskz_sub_epi8'.
 // Requires AVX512BW.
 func MaskzSub8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzSub8(uint64(k), a, b))
+	return M512i(maskzSub8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSub8(k uint64, a M512i, b M512i) M512i
+func maskzSub8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Sub8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -51389,10 +51389,10 @@ func maskzSub8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_sub_epi8'.
 // Requires AVX512BW.
 func Sub8(a M512i, b M512i) M512i {
-	return M512i(sub8(a, b))
+	return M512i(sub8([64]byte(a), [64]byte(b)))
 }
 
-func sub8(a M512i, b M512i) M512i
+func sub8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubPd: Subtract packed double-precision (64-bit) floating-point elements
@@ -51722,10 +51722,10 @@ func subRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 // Instruction: 'VPSUBRD'. Intrinsic: '_mm512_mask_subr_epi32'.
 // Requires KNCNI.
 func MaskSubr32(src M512i, k Mmask16, v2 M512i, v3 M512i) M512i {
-	return M512i(maskSubr32(src, uint16(k), v2, v3))
+	return M512i(maskSubr32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3)))
 }
 
-func maskSubr32(src M512i, k uint16, v2 M512i, v3 M512i) M512i
+func maskSubr32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
 
 
 // Subr32: Performs element-by-element subtraction of packed 32-bit integer
@@ -51740,10 +51740,10 @@ func maskSubr32(src M512i, k uint16, v2 M512i, v3 M512i) M512i
 // Instruction: 'VPSUBRD'. Intrinsic: '_mm512_subr_epi32'.
 // Requires KNCNI.
 func Subr32(v2 M512i, v3 M512i) M512i {
-	return M512i(subr32(v2, v3))
+	return M512i(subr32([64]byte(v2), [64]byte(v3)))
 }
 
-func subr32(v2 M512i, v3 M512i) M512i
+func subr32(v2 [64]byte, v3 [64]byte) [64]byte
 
 
 // MaskSubrPd: Performs element-by-element subtraction of packed
@@ -51969,10 +51969,10 @@ func subrRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_mask_subrsetb_epi32'.
 // Requires KNCNI.
 func MaskSubrsetb32(v2 M512i, k Mmask16, k_old Mmask16, v3 M512i, borrow Mmask16) M512i {
-	return M512i(maskSubrsetb32(v2, uint16(k), uint16(k_old), v3, uint16(borrow)))
+	return M512i(maskSubrsetb32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSubrsetb32(v2 M512i, k uint16, k_old uint16, v3 M512i, borrow uint16) M512i
+func maskSubrsetb32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
 // Subrsetb32: Performs element-by-element subtraction of packed 32-bit integer
@@ -51990,10 +51990,10 @@ func maskSubrsetb32(v2 M512i, k uint16, k_old uint16, v3 M512i, borrow uint16) M
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_subrsetb_epi32'.
 // Requires KNCNI.
 func Subrsetb32(v2 M512i, v3 M512i, borrow Mmask16) M512i {
-	return M512i(subrsetb32(v2, v3, uint16(borrow)))
+	return M512i(subrsetb32([64]byte(v2), [64]byte(v3), uint16(borrow)))
 }
 
-func subrsetb32(v2 M512i, v3 M512i, borrow uint16) M512i
+func subrsetb32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
 
 
 // MaskSubs16: Subtract packed 16-bit integers in 'b' from packed 16-bit
@@ -52014,10 +52014,10 @@ func subrsetb32(v2 M512i, v3 M512i, borrow uint16) M512i
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_mask_subs_epi16'.
 // Requires AVX512BW.
 func MaskSubs16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskSubs16(src, uint32(k), a, b))
+	return M512i(maskSubs16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubs16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskSubs16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSubs16: Subtract packed 16-bit integers in 'b' from packed 16-bit
@@ -52038,10 +52038,10 @@ func maskSubs16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_maskz_subs_epi16'.
 // Requires AVX512BW.
 func MaskzSubs16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzSubs16(uint32(k), a, b))
+	return M512i(maskzSubs16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubs16(k uint32, a M512i, b M512i) M512i
+func maskzSubs16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Subs16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers
@@ -52056,10 +52056,10 @@ func maskzSubs16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_subs_epi16'.
 // Requires AVX512BW.
 func Subs16(a M512i, b M512i) M512i {
-	return M512i(subs16(a, b))
+	return M512i(subs16([64]byte(a), [64]byte(b)))
 }
 
-func subs16(a M512i, b M512i) M512i
+func subs16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubs8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers
@@ -52079,10 +52079,10 @@ func subs16(a M512i, b M512i) M512i
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_mask_subs_epi8'.
 // Requires AVX512BW.
 func MaskSubs8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskSubs8(src, uint64(k), a, b))
+	return M512i(maskSubs8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubs8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskSubs8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSubs8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers
@@ -52102,10 +52102,10 @@ func maskSubs8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_maskz_subs_epi8'.
 // Requires AVX512BW.
 func MaskzSubs8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzSubs8(uint64(k), a, b))
+	return M512i(maskzSubs8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubs8(k uint64, a M512i, b M512i) M512i
+func maskzSubs8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Subs8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -52120,10 +52120,10 @@ func maskzSubs8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_subs_epi8'.
 // Requires AVX512BW.
 func Subs8(a M512i, b M512i) M512i {
-	return M512i(subs8(a, b))
+	return M512i(subs8([64]byte(a), [64]byte(b)))
 }
 
-func subs8(a M512i, b M512i) M512i
+func subs8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
@@ -52144,10 +52144,10 @@ func subs8(a M512i, b M512i) M512i
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_mask_subs_epu16'.
 // Requires AVX512BW.
 func MaskSubsEpu16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskSubsEpu16(src, uint32(k), a, b))
+	return M512i(maskSubsEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubsEpu16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskSubsEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
@@ -52168,10 +52168,10 @@ func maskSubsEpu16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_maskz_subs_epu16'.
 // Requires AVX512BW.
 func MaskzSubsEpu16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzSubsEpu16(uint32(k), a, b))
+	return M512i(maskzSubsEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubsEpu16(k uint32, a M512i, b M512i) M512i
+func maskzSubsEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // SubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
@@ -52187,10 +52187,10 @@ func maskzSubsEpu16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_subs_epu16'.
 // Requires AVX512BW.
 func SubsEpu16(a M512i, b M512i) M512i {
-	return M512i(subsEpu16(a, b))
+	return M512i(subsEpu16([64]byte(a), [64]byte(b)))
 }
 
-func subsEpu16(a M512i, b M512i) M512i
+func subsEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
@@ -52211,10 +52211,10 @@ func subsEpu16(a M512i, b M512i) M512i
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_mask_subs_epu8'.
 // Requires AVX512BW.
 func MaskSubsEpu8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskSubsEpu8(src, uint64(k), a, b))
+	return M512i(maskSubsEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubsEpu8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskSubsEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzSubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
@@ -52235,10 +52235,10 @@ func maskSubsEpu8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_maskz_subs_epu8'.
 // Requires AVX512BW.
 func MaskzSubsEpu8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzSubsEpu8(uint64(k), a, b))
+	return M512i(maskzSubsEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubsEpu8(k uint64, a M512i, b M512i) M512i
+func maskzSubsEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // SubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
@@ -52254,10 +52254,10 @@ func maskzSubsEpu8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_subs_epu8'.
 // Requires AVX512BW.
 func SubsEpu8(a M512i, b M512i) M512i {
-	return M512i(subsEpu8(a, b))
+	return M512i(subsEpu8([64]byte(a), [64]byte(b)))
 }
 
-func subsEpu8(a M512i, b M512i) M512i
+func subsEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubsetb32: Performs element-by-element subtraction of packed 32-bit
@@ -52281,10 +52281,10 @@ func subsEpu8(a M512i, b M512i) M512i
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_mask_subsetb_epi32'.
 // Requires KNCNI.
 func MaskSubsetb32(v2 M512i, k Mmask16, k_old Mmask16, v3 M512i, borrow Mmask16) M512i {
-	return M512i(maskSubsetb32(v2, uint16(k), uint16(k_old), v3, uint16(borrow)))
+	return M512i(maskSubsetb32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSubsetb32(v2 M512i, k uint16, k_old uint16, v3 M512i, borrow uint16) M512i
+func maskSubsetb32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
 // Subsetb32: Performs element-by-element subtraction of packed 32-bit integer
@@ -52301,10 +52301,10 @@ func maskSubsetb32(v2 M512i, k uint16, k_old uint16, v3 M512i, borrow uint16) M5
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_subsetb_epi32'.
 // Requires KNCNI.
 func Subsetb32(v2 M512i, v3 M512i, borrow Mmask16) M512i {
-	return M512i(subsetb32(v2, v3, uint16(borrow)))
+	return M512i(subsetb32([64]byte(v2), [64]byte(v3), uint16(borrow)))
 }
 
-func subsetb32(v2 M512i, v3 M512i, borrow uint16) M512i
+func subsetb32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
 
 
 // MaskSvmlRoundPd: Round the packed double-precision (64-bit) floating-point
@@ -52531,10 +52531,10 @@ func svmlRoundPd(a [8]float64) [8]float64
 // Instruction: '...'. Intrinsic: '_mm512_mask_swizzle_epi32'.
 // Requires KNCNI.
 func MaskSwizzle32(src M512i, k Mmask16, v M512i, s MMSWIZZLEENUM) M512i {
-	return M512i(maskSwizzle32(src, uint16(k), v, s))
+	return M512i(maskSwizzle32([64]byte(src), uint16(k), [64]byte(v), s))
 }
 
-func maskSwizzle32(src M512i, k uint16, v M512i, s MMSWIZZLEENUM) M512i
+func maskSwizzle32(src [64]byte, k uint16, v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
 // Swizzle32: Performs a swizzle transformation of each of the four groups of
@@ -52606,10 +52606,10 @@ func maskSwizzle32(src M512i, k uint16, v M512i, s MMSWIZZLEENUM) M512i
 // Instruction: '...'. Intrinsic: '_mm512_swizzle_epi32'.
 // Requires KNCNI.
 func Swizzle32(v M512i, s MMSWIZZLEENUM) M512i {
-	return M512i(swizzle32(v, s))
+	return M512i(swizzle32([64]byte(v), s))
 }
 
-func swizzle32(v M512i, s MMSWIZZLEENUM) M512i
+func swizzle32(v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
 // MaskSwizzle64: Performs a swizzle transformation of each of the four groups
@@ -52786,10 +52786,10 @@ func swizzle32(v M512i, s MMSWIZZLEENUM) M512i
 // Instruction: '...'. Intrinsic: '_mm512_mask_swizzle_epi64'.
 // Requires KNCNI.
 func MaskSwizzle64(src M512i, k Mmask8, v M512i, s MMSWIZZLEENUM) M512i {
-	return M512i(maskSwizzle64(src, uint8(k), v, s))
+	return M512i(maskSwizzle64([64]byte(src), uint8(k), [64]byte(v), s))
 }
 
-func maskSwizzle64(src M512i, k uint8, v M512i, s MMSWIZZLEENUM) M512i
+func maskSwizzle64(src [64]byte, k uint8, v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
 // Swizzle64: Performs a swizzle transformation of each of the two groups of
@@ -52861,10 +52861,10 @@ func maskSwizzle64(src M512i, k uint8, v M512i, s MMSWIZZLEENUM) M512i
 // Instruction: '...'. Intrinsic: '_mm512_swizzle_epi64'.
 // Requires KNCNI.
 func Swizzle64(v M512i, s MMSWIZZLEENUM) M512i {
-	return M512i(swizzle64(v, s))
+	return M512i(swizzle64([64]byte(v), s))
 }
 
-func swizzle64(v M512i, s MMSWIZZLEENUM) M512i
+func swizzle64(v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
 // MaskSwizzlePd: Performs a swizzle transformation of each of the two groups
@@ -53659,10 +53659,10 @@ func tanhPs(a [16]float32) [16]float32
 // Instruction: 'VPTERNLOGD'. Intrinsic: '_mm512_mask_ternarylogic_epi32'.
 // Requires AVX512F.
 func MaskTernarylogic32(src M512i, k Mmask16, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskTernarylogic32(src, uint16(k), a, b, imm8))
+	return M512i(maskTernarylogic32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskTernarylogic32(src M512i, k uint16, a M512i, b M512i, imm8 int) M512i
+func maskTernarylogic32(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskzTernarylogic32: Bitwise ternary logic that provides the capability to
@@ -53689,10 +53689,10 @@ func maskTernarylogic32(src M512i, k uint16, a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VPTERNLOGD'. Intrinsic: '_mm512_maskz_ternarylogic_epi32'.
 // Requires AVX512F.
 func MaskzTernarylogic32(k Mmask16, a M512i, b M512i, c M512i, imm8 int) M512i {
-	return M512i(maskzTernarylogic32(uint16(k), a, b, c, imm8))
+	return M512i(maskzTernarylogic32(uint16(k), [64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func maskzTernarylogic32(k uint16, a M512i, b M512i, c M512i, imm8 int) M512i
+func maskzTernarylogic32(k uint16, a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
 
 
 // Ternarylogic32: Bitwise ternary logic that provides the capability to
@@ -53714,10 +53714,10 @@ func maskzTernarylogic32(k uint16, a M512i, b M512i, c M512i, imm8 int) M512i
 // Instruction: 'VPTERNLOGD'. Intrinsic: '_mm512_ternarylogic_epi32'.
 // Requires AVX512F.
 func Ternarylogic32(a M512i, b M512i, c M512i, imm8 int) M512i {
-	return M512i(ternarylogic32(a, b, c, imm8))
+	return M512i(ternarylogic32([64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func ternarylogic32(a M512i, b M512i, c M512i, imm8 int) M512i
+func ternarylogic32(a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
 
 
 // MaskTernarylogic64: Bitwise ternary logic that provides the capability to
@@ -53744,10 +53744,10 @@ func ternarylogic32(a M512i, b M512i, c M512i, imm8 int) M512i
 // Instruction: 'VPTERNLOGQ'. Intrinsic: '_mm512_mask_ternarylogic_epi64'.
 // Requires AVX512F.
 func MaskTernarylogic64(src M512i, k Mmask8, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskTernarylogic64(src, uint8(k), a, b, imm8))
+	return M512i(maskTernarylogic64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskTernarylogic64(src M512i, k uint8, a M512i, b M512i, imm8 int) M512i
+func maskTernarylogic64(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
 // MaskzTernarylogic64: Bitwise ternary logic that provides the capability to
@@ -53774,10 +53774,10 @@ func maskTernarylogic64(src M512i, k uint8, a M512i, b M512i, imm8 int) M512i
 // Instruction: 'VPTERNLOGQ'. Intrinsic: '_mm512_maskz_ternarylogic_epi64'.
 // Requires AVX512F.
 func MaskzTernarylogic64(k Mmask8, a M512i, b M512i, c M512i, imm8 int) M512i {
-	return M512i(maskzTernarylogic64(uint8(k), a, b, c, imm8))
+	return M512i(maskzTernarylogic64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func maskzTernarylogic64(k uint8, a M512i, b M512i, c M512i, imm8 int) M512i
+func maskzTernarylogic64(k uint8, a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
 
 
 // Ternarylogic64: Bitwise ternary logic that provides the capability to
@@ -53799,10 +53799,10 @@ func maskzTernarylogic64(k uint8, a M512i, b M512i, c M512i, imm8 int) M512i
 // Instruction: 'VPTERNLOGQ'. Intrinsic: '_mm512_ternarylogic_epi64'.
 // Requires AVX512F.
 func Ternarylogic64(a M512i, b M512i, c M512i, imm8 int) M512i {
-	return M512i(ternarylogic64(a, b, c, imm8))
+	return M512i(ternarylogic64([64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func ternarylogic64(a M512i, b M512i, c M512i, imm8 int) M512i
+func ternarylogic64(a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
 
 
 // MaskTest16Mask: Compute the bitwise AND of packed 16-bit integers in 'a' and
@@ -53823,10 +53823,10 @@ func ternarylogic64(a M512i, b M512i, c M512i, imm8 int) M512i
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm512_mask_test_epi16_mask'.
 // Requires AVX512BW.
 func MaskTest16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskTest16Mask(uint32(k1), a, b))
+	return Mmask32(maskTest16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTest16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskTest16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Test16Mask: Compute the bitwise AND of packed 16-bit integers in 'a' and
@@ -53842,10 +53842,10 @@ func maskTest16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm512_test_epi16_mask'.
 // Requires AVX512BW.
 func Test16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(test16Mask(a, b))
+	return Mmask32(test16Mask([64]byte(a), [64]byte(b)))
 }
 
-func test16Mask(a M512i, b M512i) uint32
+func test16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskTest32Mask: Compute the bitwise AND of packed 32-bit integers in 'a' and
@@ -53866,10 +53866,10 @@ func test16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm512_mask_test_epi32_mask'.
 // Requires KNCNI.
 func MaskTest32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskTest32Mask(uint16(k1), a, b))
+	return Mmask16(maskTest32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTest32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskTest32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Test32Mask: Compute the bitwise AND of packed 32-bit integers in 'a' and
@@ -53885,10 +53885,10 @@ func maskTest32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm512_test_epi32_mask'.
 // Requires KNCNI.
 func Test32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(test32Mask(a, b))
+	return Mmask16(test32Mask([64]byte(a), [64]byte(b)))
 }
 
-func test32Mask(a M512i, b M512i) uint16
+func test32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskTest64Mask: Compute the bitwise AND of packed 64-bit integers in 'a' and
@@ -53909,10 +53909,10 @@ func test32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm512_mask_test_epi64_mask'.
 // Requires AVX512F.
 func MaskTest64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskTest64Mask(uint8(k1), a, b))
+	return Mmask8(maskTest64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTest64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskTest64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Test64Mask: Compute the bitwise AND of packed 64-bit integers in 'a' and
@@ -53928,10 +53928,10 @@ func maskTest64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm512_test_epi64_mask'.
 // Requires AVX512F.
 func Test64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(test64Mask(a, b))
+	return Mmask8(test64Mask([64]byte(a), [64]byte(b)))
 }
 
-func test64Mask(a M512i, b M512i) uint8
+func test64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskTest8Mask: Compute the bitwise AND of packed 8-bit integers in 'a' and
@@ -53952,10 +53952,10 @@ func test64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm512_mask_test_epi8_mask'.
 // Requires AVX512BW.
 func MaskTest8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskTest8Mask(uint64(k1), a, b))
+	return Mmask64(maskTest8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTest8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskTest8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // Test8Mask: Compute the bitwise AND of packed 8-bit integers in 'a' and 'b',
@@ -53971,10 +53971,10 @@ func maskTest8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm512_test_epi8_mask'.
 // Requires AVX512BW.
 func Test8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(test8Mask(a, b))
+	return Mmask64(test8Mask([64]byte(a), [64]byte(b)))
 }
 
-func test8Mask(a M512i, b M512i) uint64
+func test8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskTestn16Mask: Compute the bitwise NAND of packed 16-bit integers in 'a'
@@ -53995,10 +53995,10 @@ func test8Mask(a M512i, b M512i) uint64
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm512_mask_testn_epi16_mask'.
 // Requires AVX512BW.
 func MaskTestn16Mask(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskTestn16Mask(uint32(k1), a, b))
+	return Mmask32(maskTestn16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestn16Mask(k1 uint32, a M512i, b M512i) uint32
+func maskTestn16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // Testn16Mask: Compute the bitwise NAND of packed 16-bit integers in 'a' and
@@ -54014,10 +54014,10 @@ func maskTestn16Mask(k1 uint32, a M512i, b M512i) uint32
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm512_testn_epi16_mask'.
 // Requires AVX512BW.
 func Testn16Mask(a M512i, b M512i) Mmask32 {
-	return Mmask32(testn16Mask(a, b))
+	return Mmask32(testn16Mask([64]byte(a), [64]byte(b)))
 }
 
-func testn16Mask(a M512i, b M512i) uint32
+func testn16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskTestn32Mask: Compute the bitwise NAND of packed 32-bit integers in 'a'
@@ -54038,10 +54038,10 @@ func testn16Mask(a M512i, b M512i) uint32
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm512_mask_testn_epi32_mask'.
 // Requires AVX512F.
 func MaskTestn32Mask(k1 Mmask16, a M512i, b M512i) Mmask16 {
-	return Mmask16(maskTestn32Mask(uint16(k1), a, b))
+	return Mmask16(maskTestn32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestn32Mask(k1 uint16, a M512i, b M512i) uint16
+func maskTestn32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
 // Testn32Mask: Compute the bitwise NAND of packed 32-bit integers in 'a' and
@@ -54057,10 +54057,10 @@ func maskTestn32Mask(k1 uint16, a M512i, b M512i) uint16
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm512_testn_epi32_mask'.
 // Requires AVX512F.
 func Testn32Mask(a M512i, b M512i) Mmask16 {
-	return Mmask16(testn32Mask(a, b))
+	return Mmask16(testn32Mask([64]byte(a), [64]byte(b)))
 }
 
-func testn32Mask(a M512i, b M512i) uint16
+func testn32Mask(a [64]byte, b [64]byte) uint16
 
 
 // MaskTestn64Mask: Compute the bitwise NAND of packed 64-bit integers in 'a'
@@ -54081,10 +54081,10 @@ func testn32Mask(a M512i, b M512i) uint16
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm512_mask_testn_epi64_mask'.
 // Requires AVX512F.
 func MaskTestn64Mask(k1 Mmask8, a M512i, b M512i) Mmask8 {
-	return Mmask8(maskTestn64Mask(uint8(k1), a, b))
+	return Mmask8(maskTestn64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestn64Mask(k1 uint8, a M512i, b M512i) uint8
+func maskTestn64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 
 
 // Testn64Mask: Compute the bitwise NAND of packed 64-bit integers in 'a' and
@@ -54100,10 +54100,10 @@ func maskTestn64Mask(k1 uint8, a M512i, b M512i) uint8
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm512_testn_epi64_mask'.
 // Requires AVX512F.
 func Testn64Mask(a M512i, b M512i) Mmask8 {
-	return Mmask8(testn64Mask(a, b))
+	return Mmask8(testn64Mask([64]byte(a), [64]byte(b)))
 }
 
-func testn64Mask(a M512i, b M512i) uint8
+func testn64Mask(a [64]byte, b [64]byte) uint8
 
 
 // MaskTestn8Mask: Compute the bitwise NAND of packed 8-bit integers in 'a' and
@@ -54124,10 +54124,10 @@ func testn64Mask(a M512i, b M512i) uint8
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm512_mask_testn_epi8_mask'.
 // Requires AVX512BW.
 func MaskTestn8Mask(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskTestn8Mask(uint64(k1), a, b))
+	return Mmask64(maskTestn8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestn8Mask(k1 uint64, a M512i, b M512i) uint64
+func maskTestn8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // Testn8Mask: Compute the bitwise NAND of packed 8-bit integers in 'a' and
@@ -54143,10 +54143,10 @@ func maskTestn8Mask(k1 uint64, a M512i, b M512i) uint64
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm512_testn_epi8_mask'.
 // Requires AVX512BW.
 func Testn8Mask(a M512i, b M512i) Mmask64 {
-	return Mmask64(testn8Mask(a, b))
+	return Mmask64(testn8Mask([64]byte(a), [64]byte(b)))
 }
 
-func testn8Mask(a M512i, b M512i) uint64
+func testn8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskTruncPd: Truncate the packed double-precision (64-bit) floating-point
@@ -54258,7 +54258,7 @@ func Undefined32() M512i {
 	return M512i(undefined32())
 }
 
-func undefined32() M512i
+func undefined32() [64]byte
 
 
 // UndefinedPd: Return vector of type __m512d with undefined elements. 
@@ -54322,10 +54322,10 @@ func undefinedPs() [16]float32
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_mask_unpackhi_epi16'.
 // Requires AVX512BW.
 func MaskUnpackhi16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskUnpackhi16(src, uint32(k), a, b))
+	return M512i(maskUnpackhi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackhi16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskUnpackhi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpackhi16: Unpack and interleave 16-bit integers from the high half of
@@ -54363,10 +54363,10 @@ func maskUnpackhi16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_maskz_unpackhi_epi16'.
 // Requires AVX512BW.
 func MaskzUnpackhi16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackhi16(uint32(k), a, b))
+	return M512i(maskzUnpackhi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackhi16(k uint32, a M512i, b M512i) M512i
+func maskzUnpackhi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpackhi16: Unpack and interleave 16-bit integers from the high half of each
@@ -54393,10 +54393,10 @@ func maskzUnpackhi16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_unpackhi_epi16'.
 // Requires AVX512BW.
 func Unpackhi16(a M512i, b M512i) M512i {
-	return M512i(unpackhi16(a, b))
+	return M512i(unpackhi16([64]byte(a), [64]byte(b)))
 }
 
-func unpackhi16(a M512i, b M512i) M512i
+func unpackhi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackhi32: Unpack and interleave 32-bit integers from the high half of
@@ -54430,10 +54430,10 @@ func unpackhi16(a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm512_mask_unpackhi_epi32'.
 // Requires AVX512F.
 func MaskUnpackhi32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskUnpackhi32(src, uint16(k), a, b))
+	return M512i(maskUnpackhi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackhi32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskUnpackhi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpackhi32: Unpack and interleave 32-bit integers from the high half of
@@ -54467,10 +54467,10 @@ func maskUnpackhi32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm512_maskz_unpackhi_epi32'.
 // Requires AVX512F.
 func MaskzUnpackhi32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackhi32(uint16(k), a, b))
+	return M512i(maskzUnpackhi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackhi32(k uint16, a M512i, b M512i) M512i
+func maskzUnpackhi32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpackhi32: Unpack and interleave 32-bit integers from the high half of each
@@ -54493,10 +54493,10 @@ func maskzUnpackhi32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm512_unpackhi_epi32'.
 // Requires AVX512F.
 func Unpackhi32(a M512i, b M512i) M512i {
-	return M512i(unpackhi32(a, b))
+	return M512i(unpackhi32([64]byte(a), [64]byte(b)))
 }
 
-func unpackhi32(a M512i, b M512i) M512i
+func unpackhi32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackhi64: Unpack and interleave 64-bit integers from the high half of
@@ -54528,10 +54528,10 @@ func unpackhi32(a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm512_mask_unpackhi_epi64'.
 // Requires AVX512F.
 func MaskUnpackhi64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskUnpackhi64(src, uint8(k), a, b))
+	return M512i(maskUnpackhi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackhi64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskUnpackhi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpackhi64: Unpack and interleave 64-bit integers from the high half of
@@ -54563,10 +54563,10 @@ func maskUnpackhi64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm512_maskz_unpackhi_epi64'.
 // Requires AVX512F.
 func MaskzUnpackhi64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackhi64(uint8(k), a, b))
+	return M512i(maskzUnpackhi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackhi64(k uint8, a M512i, b M512i) M512i
+func maskzUnpackhi64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpackhi64: Unpack and interleave 64-bit integers from the high half of each
@@ -54587,10 +54587,10 @@ func maskzUnpackhi64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm512_unpackhi_epi64'.
 // Requires AVX512F.
 func Unpackhi64(a M512i, b M512i) M512i {
-	return M512i(unpackhi64(a, b))
+	return M512i(unpackhi64([64]byte(a), [64]byte(b)))
 }
 
-func unpackhi64(a M512i, b M512i) M512i
+func unpackhi64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackhi8: Unpack and interleave 8-bit integers from the high half of
@@ -54636,10 +54636,10 @@ func unpackhi64(a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_mask_unpackhi_epi8'.
 // Requires AVX512BW.
 func MaskUnpackhi8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskUnpackhi8(src, uint64(k), a, b))
+	return M512i(maskUnpackhi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackhi8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskUnpackhi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpackhi8: Unpack and interleave 8-bit integers from the high half of
@@ -54685,10 +54685,10 @@ func maskUnpackhi8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_maskz_unpackhi_epi8'.
 // Requires AVX512BW.
 func MaskzUnpackhi8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackhi8(uint64(k), a, b))
+	return M512i(maskzUnpackhi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackhi8(k uint64, a M512i, b M512i) M512i
+func maskzUnpackhi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpackhi8: Unpack and interleave 8-bit integers from the high half of each
@@ -54723,10 +54723,10 @@ func maskzUnpackhi8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_unpackhi_epi8'.
 // Requires AVX512BW.
 func Unpackhi8(a M512i, b M512i) M512i {
-	return M512i(unpackhi8(a, b))
+	return M512i(unpackhi8([64]byte(a), [64]byte(b)))
 }
 
-func unpackhi8(a M512i, b M512i) M512i
+func unpackhi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackhiPd: Unpack and interleave double-precision (64-bit)
@@ -54960,10 +54960,10 @@ func unpackhiPs(a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_mask_unpacklo_epi16'.
 // Requires AVX512BW.
 func MaskUnpacklo16(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskUnpacklo16(src, uint32(k), a, b))
+	return M512i(maskUnpacklo16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpacklo16(src M512i, k uint32, a M512i, b M512i) M512i
+func maskUnpacklo16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpacklo16: Unpack and interleave 16-bit integers from the low half of
@@ -55001,10 +55001,10 @@ func maskUnpacklo16(src M512i, k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_maskz_unpacklo_epi16'.
 // Requires AVX512BW.
 func MaskzUnpacklo16(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzUnpacklo16(uint32(k), a, b))
+	return M512i(maskzUnpacklo16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpacklo16(k uint32, a M512i, b M512i) M512i
+func maskzUnpacklo16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpacklo16: Unpack and interleave 16-bit integers from the low half of each
@@ -55031,10 +55031,10 @@ func maskzUnpacklo16(k uint32, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_unpacklo_epi16'.
 // Requires AVX512BW.
 func Unpacklo16(a M512i, b M512i) M512i {
-	return M512i(unpacklo16(a, b))
+	return M512i(unpacklo16([64]byte(a), [64]byte(b)))
 }
 
-func unpacklo16(a M512i, b M512i) M512i
+func unpacklo16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpacklo32: Unpack and interleave 32-bit integers from the low half of
@@ -55068,10 +55068,10 @@ func unpacklo16(a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm512_mask_unpacklo_epi32'.
 // Requires AVX512F.
 func MaskUnpacklo32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskUnpacklo32(src, uint16(k), a, b))
+	return M512i(maskUnpacklo32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpacklo32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskUnpacklo32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpacklo32: Unpack and interleave 32-bit integers from the low half of
@@ -55105,10 +55105,10 @@ func maskUnpacklo32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm512_maskz_unpacklo_epi32'.
 // Requires AVX512F.
 func MaskzUnpacklo32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzUnpacklo32(uint16(k), a, b))
+	return M512i(maskzUnpacklo32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpacklo32(k uint16, a M512i, b M512i) M512i
+func maskzUnpacklo32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpacklo32: Unpack and interleave 32-bit integers from the low half of each
@@ -55131,10 +55131,10 @@ func maskzUnpacklo32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm512_unpacklo_epi32'.
 // Requires AVX512F.
 func Unpacklo32(a M512i, b M512i) M512i {
-	return M512i(unpacklo32(a, b))
+	return M512i(unpacklo32([64]byte(a), [64]byte(b)))
 }
 
-func unpacklo32(a M512i, b M512i) M512i
+func unpacklo32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpacklo64: Unpack and interleave 64-bit integers from the low half of
@@ -55166,10 +55166,10 @@ func unpacklo32(a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm512_mask_unpacklo_epi64'.
 // Requires AVX512F.
 func MaskUnpacklo64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskUnpacklo64(src, uint8(k), a, b))
+	return M512i(maskUnpacklo64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpacklo64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskUnpacklo64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpacklo64: Unpack and interleave 64-bit integers from the low half of
@@ -55201,10 +55201,10 @@ func maskUnpacklo64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm512_maskz_unpacklo_epi64'.
 // Requires AVX512F.
 func MaskzUnpacklo64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzUnpacklo64(uint8(k), a, b))
+	return M512i(maskzUnpacklo64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpacklo64(k uint8, a M512i, b M512i) M512i
+func maskzUnpacklo64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpacklo64: Unpack and interleave 64-bit integers from the low half of each
@@ -55225,10 +55225,10 @@ func maskzUnpacklo64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm512_unpacklo_epi64'.
 // Requires AVX512F.
 func Unpacklo64(a M512i, b M512i) M512i {
-	return M512i(unpacklo64(a, b))
+	return M512i(unpacklo64([64]byte(a), [64]byte(b)))
 }
 
-func unpacklo64(a M512i, b M512i) M512i
+func unpacklo64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpacklo8: Unpack and interleave 8-bit integers from the low half of
@@ -55274,10 +55274,10 @@ func unpacklo64(a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_mask_unpacklo_epi8'.
 // Requires AVX512BW.
 func MaskUnpacklo8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskUnpacklo8(src, uint64(k), a, b))
+	return M512i(maskUnpacklo8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpacklo8(src M512i, k uint64, a M512i, b M512i) M512i
+func maskUnpacklo8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzUnpacklo8: Unpack and interleave 8-bit integers from the low half of
@@ -55323,10 +55323,10 @@ func maskUnpacklo8(src M512i, k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_maskz_unpacklo_epi8'.
 // Requires AVX512BW.
 func MaskzUnpacklo8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzUnpacklo8(uint64(k), a, b))
+	return M512i(maskzUnpacklo8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpacklo8(k uint64, a M512i, b M512i) M512i
+func maskzUnpacklo8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // Unpacklo8: Unpack and interleave 8-bit integers from the low half of each
@@ -55361,10 +55361,10 @@ func maskzUnpacklo8(k uint64, a M512i, b M512i) M512i
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_unpacklo_epi8'.
 // Requires AVX512BW.
 func Unpacklo8(a M512i, b M512i) M512i {
-	return M512i(unpacklo8(a, b))
+	return M512i(unpacklo8([64]byte(a), [64]byte(b)))
 }
 
-func unpacklo8(a M512i, b M512i) M512i
+func unpacklo8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackloPd: Unpack and interleave double-precision (64-bit)
@@ -55580,10 +55580,10 @@ func unpackloPs(a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_mask_xor_epi32'.
 // Requires KNCNI.
 func MaskXor32(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskXor32(src, uint16(k), a, b))
+	return M512i(maskXor32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskXor32(src M512i, k uint16, a M512i, b M512i) M512i
+func maskXor32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzXor32: Compute the bitwise XOR of packed 32-bit integers in 'a' and
@@ -55603,10 +55603,10 @@ func maskXor32(src M512i, k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_maskz_xor_epi32'.
 // Requires AVX512F.
 func MaskzXor32(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzXor32(uint16(k), a, b))
+	return M512i(maskzXor32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzXor32(k uint16, a M512i, b M512i) M512i
+func maskzXor32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // Xor32: Compute the bitwise XOR of packed 32-bit integers in 'a' and 'b', and
@@ -55621,10 +55621,10 @@ func maskzXor32(k uint16, a M512i, b M512i) M512i
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_xor_epi32'.
 // Requires KNCNI.
 func Xor32(a M512i, b M512i) M512i {
-	return M512i(xor32(a, b))
+	return M512i(xor32([64]byte(a), [64]byte(b)))
 }
 
-func xor32(a M512i, b M512i) M512i
+func xor32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskXor64: Compute the bitwise XOR of packed 64-bit integers in 'a' and 'b',
@@ -55644,10 +55644,10 @@ func xor32(a M512i, b M512i) M512i
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_mask_xor_epi64'.
 // Requires KNCNI.
 func MaskXor64(src M512i, k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskXor64(src, uint8(k), a, b))
+	return M512i(maskXor64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskXor64(src M512i, k uint8, a M512i, b M512i) M512i
+func maskXor64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskzXor64: Compute the bitwise XOR of packed 64-bit integers in 'a' and
@@ -55667,10 +55667,10 @@ func maskXor64(src M512i, k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_maskz_xor_epi64'.
 // Requires AVX512F.
 func MaskzXor64(k Mmask8, a M512i, b M512i) M512i {
-	return M512i(maskzXor64(uint8(k), a, b))
+	return M512i(maskzXor64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzXor64(k uint8, a M512i, b M512i) M512i
+func maskzXor64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
 // Xor64: Compute the bitwise XOR of packed 64-bit integers in 'a' and 'b', and
@@ -55685,10 +55685,10 @@ func maskzXor64(k uint8, a M512i, b M512i) M512i
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_xor_epi64'.
 // Requires KNCNI.
 func Xor64(a M512i, b M512i) M512i {
-	return M512i(xor64(a, b))
+	return M512i(xor64([64]byte(a), [64]byte(b)))
 }
 
-func xor64(a M512i, b M512i) M512i
+func xor64(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskXorPd: Compute the bitwise XOR of packed double-precision (64-bit)
@@ -55832,8 +55832,8 @@ func xorPs(a [16]float32, b [16]float32) [16]float32
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_xor_si512'.
 // Requires KNCNI.
 func XorSi512(a M512i, b M512i) M512i {
-	return M512i(xorSi512(a, b))
+	return M512i(xorSi512([64]byte(a), [64]byte(b)))
 }
 
-func xorSi512(a M512i, b M512i) M512i
+func xorSi512(a [64]byte, b [64]byte) [64]byte
 

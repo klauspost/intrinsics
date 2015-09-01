@@ -435,7 +435,7 @@ TEXT ·clflushopt(SB),7,$0
 
 	RET
 
-// func cmpestra(a M128i, la int, b M128i, lb int, imm8 int) int
+// func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 TEXT ·cmpestra(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
@@ -448,7 +448,7 @@ TEXT ·cmpestra(SB),7,$0
 	MOVQ $0, ret+56(FP)
 	RET
 
-// func cmpestrc(a M128i, la int, b M128i, lb int, imm8 int) int
+// func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 TEXT ·cmpestrc(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
@@ -461,7 +461,7 @@ TEXT ·cmpestrc(SB),7,$0
 	MOVQ $0, ret+56(FP)
 	RET
 
-// func cmpestri(a M128i, la int, b M128i, lb int, imm8 int) int
+// func cmpestri(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 TEXT ·cmpestri(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
@@ -474,7 +474,7 @@ TEXT ·cmpestri(SB),7,$0
 	MOVQ $0, ret+56(FP)
 	RET
 
-// func cmpestrm(a M128i, la int, b M128i, lb int, imm8 int) M128i
+// func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 int) [16]byte
 TEXT ·cmpestrm(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
@@ -487,7 +487,7 @@ TEXT ·cmpestrm(SB),7,$0
 	MOVOU X0, ret+56(FP)
 	RET
 
-// func cmpestro(a M128i, la int, b M128i, lb int, imm8 int) int
+// func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 TEXT ·cmpestro(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
@@ -500,7 +500,7 @@ TEXT ·cmpestro(SB),7,$0
 	MOVQ $0, ret+56(FP)
 	RET
 
-// func cmpestrs(a M128i, la int, b M128i, lb int, imm8 int) int
+// func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 TEXT ·cmpestrs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
@@ -513,7 +513,7 @@ TEXT ·cmpestrs(SB),7,$0
 	MOVQ $0, ret+56(FP)
 	RET
 
-// func cmpestrz(a M128i, la int, b M128i, lb int, imm8 int) int
+// func cmpestrz(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 TEXT ·cmpestrz(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
@@ -526,7 +526,7 @@ TEXT ·cmpestrz(SB),7,$0
 	MOVQ $0, ret+56(FP)
 	RET
 
-// func cmpistra(a M128i, b M128i, imm8 int) int
+// func cmpistra(a [16]byte, b [16]byte, imm8 int) int
 TEXT ·cmpistra(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
@@ -537,7 +537,7 @@ TEXT ·cmpistra(SB),7,$0
 	MOVQ $0, ret+40(FP)
 	RET
 
-// func cmpistrc(a M128i, b M128i, imm8 int) int
+// func cmpistrc(a [16]byte, b [16]byte, imm8 int) int
 TEXT ·cmpistrc(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
@@ -548,7 +548,7 @@ TEXT ·cmpistrc(SB),7,$0
 	MOVQ $0, ret+40(FP)
 	RET
 
-// func cmpistri(a M128i, b M128i, imm8 int) int
+// func cmpistri(a [16]byte, b [16]byte, imm8 int) int
 TEXT ·cmpistri(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
@@ -559,7 +559,7 @@ TEXT ·cmpistri(SB),7,$0
 	MOVQ $0, ret+40(FP)
 	RET
 
-// func cmpistrm(a M128i, b M128i, imm8 int) M128i
+// func cmpistrm(a [16]byte, b [16]byte, imm8 int) [16]byte
 TEXT ·cmpistrm(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
@@ -570,7 +570,7 @@ TEXT ·cmpistrm(SB),7,$0
 	MOVOU X0, ret+40(FP)
 	RET
 
-// func cmpistro(a M128i, b M128i, imm8 int) int
+// func cmpistro(a [16]byte, b [16]byte, imm8 int) int
 TEXT ·cmpistro(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
@@ -581,7 +581,7 @@ TEXT ·cmpistro(SB),7,$0
 	MOVQ $0, ret+40(FP)
 	RET
 
-// func cmpistrs(a M128i, b M128i, imm8 int) int
+// func cmpistrs(a [16]byte, b [16]byte, imm8 int) int
 TEXT ·cmpistrs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
@@ -592,7 +592,7 @@ TEXT ·cmpistrs(SB),7,$0
 	MOVQ $0, ret+40(FP)
 	RET
 
-// func cmpistrz(a M128i, b M128i, imm8 int) int
+// func cmpistrz(a [16]byte, b [16]byte, imm8 int) int
 TEXT ·cmpistrz(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
@@ -1195,7 +1195,7 @@ TEXT ·storebeI64(SB),7,$0
 
 	RET
 
-// func testAllOnes(a M128i) int
+// func testAllOnes(a [16]byte) int
 TEXT ·testAllOnes(SB),7,$0
 	MOVOU a+0(FP),X0
 
@@ -1204,7 +1204,7 @@ TEXT ·testAllOnes(SB),7,$0
 	MOVQ $0, ret+16(FP)
 	RET
 
-// func testAllZeros(a M128i, mask M128i) int
+// func testAllZeros(a [16]byte, mask [16]byte) int
 TEXT ·testAllZeros(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU mask+16(FP),X1
@@ -1214,7 +1214,7 @@ TEXT ·testAllZeros(SB),7,$0
 	MOVQ $0, ret+32(FP)
 	RET
 
-// func testMixOnesZeros(a M128i, mask M128i) int
+// func testMixOnesZeros(a [16]byte, mask [16]byte) int
 TEXT ·testMixOnesZeros(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU mask+16(FP),X1
