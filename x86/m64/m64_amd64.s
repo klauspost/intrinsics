@@ -1,5 +1,5 @@
-// func abs16(a M64) M64
-TEXT ·abs16(SB),7,$0
+// func absPi16(a M64) M64
+TEXT ·absPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 
 	//TODO: Code missing
@@ -7,8 +7,8 @@ TEXT ·abs16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func abs32(a M64) M64
-TEXT ·abs32(SB),7,$0
+// func absPi32(a M64) M64
+TEXT ·absPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 
 	//TODO: Code missing
@@ -16,8 +16,8 @@ TEXT ·abs32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func abs8(a M64) M64
-TEXT ·abs8(SB),7,$0
+// func absPi8(a M64) M64
+TEXT ·absPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 
 	//TODO: Code missing
@@ -35,8 +35,8 @@ TEXT ·addSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func alignr8(a M64, b M64, count int) M64
-TEXT ·alignr8(SB),7,$0
+// func alignrPi8(a M64, b M64, count int) M64
+TEXT ·alignrPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 	MOVQ count+16(FP),R10
@@ -66,8 +66,8 @@ TEXT ·avgPu8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvt2ps(a [4]float32, b M64) [4]float32
-TEXT ·cvt2ps(SB),7,$0
+// func cvtPi2ps(a [4]float32, b M64) [4]float32
+TEXT ·cvtPi2ps(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ b+16(FP),M1
 
@@ -76,8 +76,8 @@ TEXT ·cvt2ps(SB),7,$0
 	MOVOU X0, ret+24(FP)
 	RET
 
-// func cvtpd32(a [2]float64) M64
-TEXT ·cvtpd32(SB),7,$0
+// func cvtpdPi32(a [2]float64) M64
+TEXT ·cvtpdPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
 	//TODO: Code missing
@@ -85,8 +85,8 @@ TEXT ·cvtpd32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvtps16(a [4]float32) M64
-TEXT ·cvtps16(SB),7,$0
+// func cvtpsPi16(a [4]float32) M64
+TEXT ·cvtpsPi16(SB),7,$0
 	MOVOU a+0(FP),X0
 
 	//TODO: Code missing
@@ -94,8 +94,8 @@ TEXT ·cvtps16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvtps32(a [4]float32) M64
-TEXT ·cvtps32(SB),7,$0
+// func cvtpsPi32(a [4]float32) M64
+TEXT ·cvtpsPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
 	//TODO: Code missing
@@ -103,8 +103,8 @@ TEXT ·cvtps32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvtps8(a [4]float32) M64
-TEXT ·cvtps8(SB),7,$0
+// func cvtpsPi8(a [4]float32) M64
+TEXT ·cvtpsPi8(SB),7,$0
 	MOVOU a+0(FP),X0
 
 	//TODO: Code missing
@@ -112,8 +112,8 @@ TEXT ·cvtps8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvttpd32(a [2]float64) M64
-TEXT ·cvttpd32(SB),7,$0
+// func cvttpdPi32(a [2]float64) M64
+TEXT ·cvttpdPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
 	//TODO: Code missing
@@ -121,8 +121,8 @@ TEXT ·cvttpd32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvttps32(a [4]float32) M64
-TEXT ·cvttps32(SB),7,$0
+// func cvttpsPi32(a [4]float32) M64
+TEXT ·cvttpsPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
 	//TODO: Code missing
@@ -130,8 +130,8 @@ TEXT ·cvttps32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func extract16(a M64, imm8 int) int
-TEXT ·extract16(SB),7,$0
+// func extractPi16(a M64, imm8 int) int
+TEXT ·extractPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
@@ -140,8 +140,8 @@ TEXT ·extract16(SB),7,$0
 	MOVQ $0, ret+16(FP)
 	RET
 
-// func hadd16(a M64, b M64) M64
-TEXT ·hadd16(SB),7,$0
+// func haddPi16(a M64, b M64) M64
+TEXT ·haddPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -150,8 +150,8 @@ TEXT ·hadd16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func hadd32(a M64, b M64) M64
-TEXT ·hadd32(SB),7,$0
+// func haddPi32(a M64, b M64) M64
+TEXT ·haddPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -160,8 +160,8 @@ TEXT ·hadd32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func hadds16(a M64, b M64) M64
-TEXT ·hadds16(SB),7,$0
+// func haddsPi16(a M64, b M64) M64
+TEXT ·haddsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -170,8 +170,8 @@ TEXT ·hadds16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func hsub16(a M64, b M64) M64
-TEXT ·hsub16(SB),7,$0
+// func hsubPi16(a M64, b M64) M64
+TEXT ·hsubPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -180,8 +180,8 @@ TEXT ·hsub16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func hsub32(a M64, b M64) M64
-TEXT ·hsub32(SB),7,$0
+// func hsubPi32(a M64, b M64) M64
+TEXT ·hsubPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -190,8 +190,8 @@ TEXT ·hsub32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func hsubs16(a M64, b M64) M64
-TEXT ·hsubs16(SB),7,$0
+// func hsubsPi16(a M64, b M64) M64
+TEXT ·hsubsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -200,8 +200,8 @@ TEXT ·hsubs16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func insert16(a M64, i int, imm8 int) M64
-TEXT ·insert16(SB),7,$0
+// func insertPi16(a M64, i int, imm8 int) M64
+TEXT ·insertPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ i+8(FP),R9
 	MOVQ imm8+16(FP),R10
@@ -211,16 +211,16 @@ TEXT ·insert16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func loadh(a [4]float32, mem_addr M64Const) [4]float32
-TEXT ·loadh(SB),7,$0
+// func loadhPi(a [4]float32, mem_addr M64Const) [4]float32
+TEXT ·loadhPi(SB),7,$0
 	// Unimplemented. Unknown size of type M64Const
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func loadl(a [4]float32, mem_addr M64Const) [4]float32
-TEXT ·loadl(SB),7,$0
+// func loadlPi(a [4]float32, mem_addr M64Const) [4]float32
+TEXT ·loadlPi(SB),7,$0
 	// Unimplemented. Unknown size of type M64Const
 	//TODO: Code missing
 
@@ -275,8 +275,8 @@ TEXT ·loaduSi641(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func maddubs16(a M64, b M64) M64
-TEXT ·maddubs16(SB),7,$0
+// func maddubsPi16(a M64, b M64) M64
+TEXT ·maddubsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -305,8 +305,8 @@ TEXT ·mMaskmovq(SB),7,$0
 
 	RET
 
-// func max16(a M64, b M64) M64
-TEXT ·max16(SB),7,$0
+// func maxPi16(a M64, b M64) M64
+TEXT ·maxPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -325,8 +325,8 @@ TEXT ·maxPu8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func min16(a M64, b M64) M64
-TEXT ·min16(SB),7,$0
+// func minPi16(a M64, b M64) M64
+TEXT ·minPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -345,8 +345,8 @@ TEXT ·minPu8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func movemask8(a M64) int
-TEXT ·movemask8(SB),7,$0
+// func movemaskPi8(a M64) int
+TEXT ·movemaskPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 
 	//TODO: Code missing
@@ -354,8 +354,8 @@ TEXT ·movemask8(SB),7,$0
 	MOVQ $0, ret+8(FP)
 	RET
 
-// func movepi6464(a [16]byte) M64
-TEXT ·movepi6464(SB),7,$0
+// func movepi64Pi64(a [16]byte) M64
+TEXT ·movepi64Pi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
 	//TODO: Code missing
@@ -383,8 +383,8 @@ TEXT ·mulhiPu16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mulhrs16(a M64, b M64) M64
-TEXT ·mulhrs16(SB),7,$0
+// func mulhrsPi16(a M64, b M64) M64
+TEXT ·mulhrsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -423,8 +423,8 @@ TEXT ·mPextrw(SB),7,$0
 	MOVQ $0, ret+16(FP)
 	RET
 
-// func mnsrw(a M64, i int, imm8 int) M64
-TEXT ·mnsrw(SB),7,$0
+// func mPinsrw(a M64, i int, imm8 int) M64
+TEXT ·mPinsrw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ i+8(FP),R9
 	MOVQ imm8+16(FP),R10
@@ -523,8 +523,8 @@ TEXT ·sadPu8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func shuffle16(a M64, imm8 int) M64
-TEXT ·shuffle16(SB),7,$0
+// func shufflePi16(a M64, imm8 int) M64
+TEXT ·shufflePi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
@@ -533,8 +533,8 @@ TEXT ·shuffle16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func shuffle8(a M64, b M64) M64
-TEXT ·shuffle8(SB),7,$0
+// func shufflePi8(a M64, b M64) M64
+TEXT ·shufflePi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -543,8 +543,8 @@ TEXT ·shuffle8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sign16(a M64, b M64) M64
-TEXT ·sign16(SB),7,$0
+// func signPi16(a M64, b M64) M64
+TEXT ·signPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -553,8 +553,8 @@ TEXT ·sign16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sign32(a M64, b M64) M64
-TEXT ·sign32(SB),7,$0
+// func signPi32(a M64, b M64) M64
+TEXT ·signPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -563,8 +563,8 @@ TEXT ·sign32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sign8(a M64, b M64) M64
-TEXT ·sign8(SB),7,$0
+// func signPi8(a M64, b M64) M64
+TEXT ·signPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
@@ -573,8 +573,8 @@ TEXT ·sign8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func storeh(mem_addr M64, a [4]float32) 
-TEXT ·storeh(SB),7,$0
+// func storehPi(mem_addr M64, a [4]float32) 
+TEXT ·storehPi(SB),7,$0
 	MOVQ mem_addr+0(FP),M0
 	MOVOU a+8(FP),X1
 
@@ -582,8 +582,8 @@ TEXT ·storeh(SB),7,$0
 
 	RET
 
-// func storel(mem_addr M64, a [4]float32) 
-TEXT ·storel(SB),7,$0
+// func storelPi(mem_addr M64, a [4]float32) 
+TEXT ·storelPi(SB),7,$0
 	MOVQ mem_addr+0(FP),M0
 	MOVOU a+8(FP),X1
 
@@ -633,8 +633,8 @@ TEXT ·storeuSi641(SB),7,$0
 
 	RET
 
-// func stream(mem_addr M64, a M64) 
-TEXT ·stream(SB),7,$0
+// func streamPi(mem_addr M64, a M64) 
+TEXT ·streamPi(SB),7,$0
 	MOVQ mem_addr+0(FP),M0
 	MOVQ a+8(FP),M1
 

@@ -302,12 +302,6 @@ func fixFuncName(in string) string {
 		out = strings.TrimPrefix(out, "m256")
 	}
 	out = strings.TrimPrefix(out, "mm")
-	if strings.Contains(out, "Epi") {
-		out = strings.Replace(out, "Epi", "", 1)
-	}
-	if strings.Contains(out, "Pi") {
-		out = strings.Replace(out, "Pi", "", 1)
-	}
 	out = strings.Title(out)
 	return out
 }

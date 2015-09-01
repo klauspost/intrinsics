@@ -2,7 +2,7 @@ package m64
 
 import . "github.com/klauspost/intrinsics/x86"
 
-// Abs16: Compute the absolute value of packed 16-bit integers in 'a', and
+// AbsPi16: Compute the absolute value of packed 16-bit integers in 'a', and
 // store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -12,14 +12,14 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'PABSW'. Intrinsic: '_mm_abs_pi16'.
 // Requires SSSE3.
-func Abs16(a M64) M64 {
-	return M64(abs16(a))
+func AbsPi16(a M64) M64 {
+	return M64(absPi16(a))
 }
 
-func abs16(a M64) M64
+func absPi16(a M64) M64
 
 
-// Abs32: Compute the absolute value of packed 32-bit integers in 'a', and
+// AbsPi32: Compute the absolute value of packed 32-bit integers in 'a', and
 // store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 1
@@ -29,15 +29,15 @@ func abs16(a M64) M64
 //
 // Instruction: 'PABSD'. Intrinsic: '_mm_abs_pi32'.
 // Requires SSSE3.
-func Abs32(a M64) M64 {
-	return M64(abs32(a))
+func AbsPi32(a M64) M64 {
+	return M64(absPi32(a))
 }
 
-func abs32(a M64) M64
+func absPi32(a M64) M64
 
 
-// Abs8: Compute the absolute value of packed 8-bit integers in 'a', and store
-// the unsigned results in 'dst'. 
+// AbsPi8: Compute the absolute value of packed 8-bit integers in 'a', and
+// store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*8
@@ -46,11 +46,11 @@ func abs32(a M64) M64
 //
 // Instruction: 'PABSB'. Intrinsic: '_mm_abs_pi8'.
 // Requires SSSE3.
-func Abs8(a M64) M64 {
-	return M64(abs8(a))
+func AbsPi8(a M64) M64 {
+	return M64(absPi8(a))
 }
 
-func abs8(a M64) M64
+func absPi8(a M64) M64
 
 
 // AddSi64: Add 64-bit integers 'a' and 'b', and store the result in 'dst'. 
@@ -66,7 +66,7 @@ func AddSi64(a M64, b M64) M64 {
 func addSi64(a M64, b M64) M64
 
 
-// Alignr8: Concatenate 8-byte blocks in 'a' and 'b' into a 16-byte temporary
+// AlignrPi8: Concatenate 8-byte blocks in 'a' and 'b' into a 16-byte temporary
 // result, shift the result right by 'count' bytes, and store the low 16 bytes
 // in 'dst'. 
 //
@@ -75,11 +75,11 @@ func addSi64(a M64, b M64) M64
 //
 // Instruction: 'PALIGNR'. Intrinsic: '_mm_alignr_pi8'.
 // Requires SSSE3.
-func Alignr8(a M64, b M64, count int) M64 {
-	return M64(alignr8(a, b, count))
+func AlignrPi8(a M64, b M64, count int) M64 {
+	return M64(alignrPi8(a, b, count))
 }
 
-func alignr8(a M64, b M64, count int) M64
+func alignrPi8(a M64, b M64, count int) M64
 
 
 // AvgPu16: Average packed unsigned 16-bit integers in 'a' and 'b', and store
@@ -116,7 +116,7 @@ func AvgPu8(a M64, b M64) M64 {
 func avgPu8(a M64, b M64) M64
 
 
-// Cvt2ps: Convert packed 32-bit integers in 'b' to packed single-precision
+// CvtPi2ps: Convert packed 32-bit integers in 'b' to packed single-precision
 // (32-bit) floating-point elements, store the results in the lower 2 elements
 // of 'dst', and copy the upper 2 packed elements from 'a' to the upper
 // elements of 'dst'. 
@@ -128,15 +128,15 @@ func avgPu8(a M64, b M64) M64
 //
 // Instruction: 'CVTPI2PS'. Intrinsic: '_mm_cvt_pi2ps'.
 // Requires SSE.
-func Cvt2ps(a M128, b M64) M128 {
-	return M128(cvt2ps([4]float32(a), b))
+func CvtPi2ps(a M128, b M64) M128 {
+	return M128(cvtPi2ps([4]float32(a), b))
 }
 
-func cvt2ps(a [4]float32, b M64) [4]float32
+func cvtPi2ps(a [4]float32, b M64) [4]float32
 
 
-// Cvtpd32: Convert packed double-precision (64-bit) floating-point elements in
-// 'a' to packed 32-bit integers, and store the results in 'dst'. 
+// CvtpdPi32: Convert packed double-precision (64-bit) floating-point elements
+// in 'a' to packed 32-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 1
 //			i := 32*j
@@ -146,15 +146,15 @@ func cvt2ps(a [4]float32, b M64) [4]float32
 //
 // Instruction: 'CVTPD2PI'. Intrinsic: '_mm_cvtpd_pi32'.
 // Requires SSE2.
-func Cvtpd32(a M128d) M64 {
-	return M64(cvtpd32([2]float64(a)))
+func CvtpdPi32(a M128d) M64 {
+	return M64(cvtpdPi32([2]float64(a)))
 }
 
-func cvtpd32(a [2]float64) M64
+func cvtpdPi32(a [2]float64) M64
 
 
-// Cvtps16: Convert packed single-precision (32-bit) floating-point elements in
-// 'a' to packed 16-bit integers, and store the results in 'dst'. 
+// CvtpsPi16: Convert packed single-precision (32-bit) floating-point elements
+// in 'a' to packed 16-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 16*j
@@ -164,15 +164,15 @@ func cvtpd32(a [2]float64) M64
 //
 // Instruction: '...'. Intrinsic: '_mm_cvtps_pi16'.
 // Requires SSE.
-func Cvtps16(a M128) M64 {
-	return M64(cvtps16([4]float32(a)))
+func CvtpsPi16(a M128) M64 {
+	return M64(cvtpsPi16([4]float32(a)))
 }
 
-func cvtps16(a [4]float32) M64
+func cvtpsPi16(a [4]float32) M64
 
 
-// Cvtps32: Convert packed single-precision (32-bit) floating-point elements in
-// 'a' to packed 32-bit integers, and store the results in 'dst'. 
+// CvtpsPi32: Convert packed single-precision (32-bit) floating-point elements
+// in 'a' to packed 32-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 1
 //			i := 32*j
@@ -181,16 +181,16 @@ func cvtps16(a [4]float32) M64
 //
 // Instruction: 'CVTPS2PI'. Intrinsic: '_mm_cvtps_pi32'.
 // Requires SSE.
-func Cvtps32(a M128) M64 {
-	return M64(cvtps32([4]float32(a)))
+func CvtpsPi32(a M128) M64 {
+	return M64(cvtpsPi32([4]float32(a)))
 }
 
-func cvtps32(a [4]float32) M64
+func cvtpsPi32(a [4]float32) M64
 
 
-// Cvtps8: Convert packed single-precision (32-bit) floating-point elements in
-// 'a' to packed 8-bit integers, and store the results in lower 4 elements of
-// 'dst'. 
+// CvtpsPi8: Convert packed single-precision (32-bit) floating-point elements
+// in 'a' to packed 8-bit integers, and store the results in lower 4 elements
+// of 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 8*j
@@ -200,14 +200,14 @@ func cvtps32(a [4]float32) M64
 //
 // Instruction: '...'. Intrinsic: '_mm_cvtps_pi8'.
 // Requires SSE.
-func Cvtps8(a M128) M64 {
-	return M64(cvtps8([4]float32(a)))
+func CvtpsPi8(a M128) M64 {
+	return M64(cvtpsPi8([4]float32(a)))
 }
 
-func cvtps8(a [4]float32) M64
+func cvtpsPi8(a [4]float32) M64
 
 
-// Cvttpd32: Convert packed double-precision (64-bit) floating-point elements
+// CvttpdPi32: Convert packed double-precision (64-bit) floating-point elements
 // in 'a' to packed 32-bit integers with truncation, and store the results in
 // 'dst'. 
 //
@@ -219,14 +219,14 @@ func cvtps8(a [4]float32) M64
 //
 // Instruction: 'CVTTPD2PI'. Intrinsic: '_mm_cvttpd_pi32'.
 // Requires SSE2.
-func Cvttpd32(a M128d) M64 {
-	return M64(cvttpd32([2]float64(a)))
+func CvttpdPi32(a M128d) M64 {
+	return M64(cvttpdPi32([2]float64(a)))
 }
 
-func cvttpd32(a [2]float64) M64
+func cvttpdPi32(a [2]float64) M64
 
 
-// Cvttps32: Convert packed single-precision (32-bit) floating-point elements
+// CvttpsPi32: Convert packed single-precision (32-bit) floating-point elements
 // in 'a' to packed 32-bit integers with truncation, and store the results in
 // 'dst'. 
 //
@@ -237,14 +237,14 @@ func cvttpd32(a [2]float64) M64
 //
 // Instruction: 'CVTTPS2PI'. Intrinsic: '_mm_cvttps_pi32'.
 // Requires SSE.
-func Cvttps32(a M128) M64 {
-	return M64(cvttps32([4]float32(a)))
+func CvttpsPi32(a M128) M64 {
+	return M64(cvttpsPi32([4]float32(a)))
 }
 
-func cvttps32(a [4]float32) M64
+func cvttpsPi32(a [4]float32) M64
 
 
-// Extract16: Extract a 16-bit integer from 'a', selected with 'imm8', and
+// ExtractPi16: Extract a 16-bit integer from 'a', selected with 'imm8', and
 // store the result in the lower element of 'dst'. 
 //
 //		dst[15:0] := (a[63:0] >> (imm8[1:0] * 16))[15:0]
@@ -252,14 +252,14 @@ func cvttps32(a [4]float32) M64
 //
 // Instruction: 'PEXTRW'. Intrinsic: '_mm_extract_pi16'.
 // Requires SSE.
-func Extract16(a M64, imm8 int) int {
-	return int(extract16(a, imm8))
+func ExtractPi16(a M64, imm8 int) int {
+	return int(extractPi16(a, imm8))
 }
 
-func extract16(a M64, imm8 int) int
+func extractPi16(a M64, imm8 int) int
 
 
-// Hadd16: Horizontally add adjacent pairs of 16-bit integers in 'a' and 'b',
+// HaddPi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and 'b',
 // and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0] := a[31:16] + a[15:0]
@@ -269,14 +269,14 @@ func extract16(a M64, imm8 int) int
 //
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_pi16'.
 // Requires SSSE3.
-func Hadd16(a M64, b M64) M64 {
-	return M64(hadd16(a, b))
+func HaddPi16(a M64, b M64) M64 {
+	return M64(haddPi16(a, b))
 }
 
-func hadd16(a M64, b M64) M64
+func haddPi16(a M64, b M64) M64
 
 
-// Hadd32: Horizontally add adjacent pairs of 32-bit integers in 'a' and 'b',
+// HaddPi32: Horizontally add adjacent pairs of 32-bit integers in 'a' and 'b',
 // and pack the signed 32-bit results in 'dst'. 
 //
 //		dst[31:0] := a[63:32] + a[31:0]
@@ -284,14 +284,14 @@ func hadd16(a M64, b M64) M64
 //
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_pi32'.
 // Requires SSSE3.
-func Hadd32(a M64, b M64) M64 {
-	return M64(hadd32(a, b))
+func HaddPi32(a M64, b M64) M64 {
+	return M64(haddPi32(a, b))
 }
 
-func hadd32(a M64, b M64) M64
+func haddPi32(a M64, b M64) M64
 
 
-// Hadds16: Horizontally add adjacent pairs of 16-bit integers in 'a' and 'b'
+// HaddsPi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and 'b'
 // using saturation, and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0]= Saturate_To_Int16(a[31:16] + a[15:0])
@@ -301,14 +301,14 @@ func hadd32(a M64, b M64) M64
 //
 // Instruction: 'PHADDSW'. Intrinsic: '_mm_hadds_pi16'.
 // Requires SSSE3.
-func Hadds16(a M64, b M64) M64 {
-	return M64(hadds16(a, b))
+func HaddsPi16(a M64, b M64) M64 {
+	return M64(haddsPi16(a, b))
 }
 
-func hadds16(a M64, b M64) M64
+func haddsPi16(a M64, b M64) M64
 
 
-// Hsub16: Horizontally subtract adjacent pairs of 16-bit integers in 'a' and
+// HsubPi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a' and
 // 'b', and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0] := a[15:0] - a[31:16]
@@ -318,14 +318,14 @@ func hadds16(a M64, b M64) M64
 //
 // Instruction: 'PHSUBW'. Intrinsic: '_mm_hsub_pi16'.
 // Requires SSSE3.
-func Hsub16(a M64, b M64) M64 {
-	return M64(hsub16(a, b))
+func HsubPi16(a M64, b M64) M64 {
+	return M64(hsubPi16(a, b))
 }
 
-func hsub16(a M64, b M64) M64
+func hsubPi16(a M64, b M64) M64
 
 
-// Hsub32: Horizontally subtract adjacent pairs of 32-bit integers in 'a' and
+// HsubPi32: Horizontally subtract adjacent pairs of 32-bit integers in 'a' and
 // 'b', and pack the signed 32-bit results in 'dst'. 
 //
 //		dst[31:0] := a[31:0] - a[63:32]
@@ -333,15 +333,15 @@ func hsub16(a M64, b M64) M64
 //
 // Instruction: 'PHSUBD'. Intrinsic: '_mm_hsub_pi32'.
 // Requires SSSE3.
-func Hsub32(a M64, b M64) M64 {
-	return M64(hsub32(a, b))
+func HsubPi32(a M64, b M64) M64 {
+	return M64(hsubPi32(a, b))
 }
 
-func hsub32(a M64, b M64) M64
+func hsubPi32(a M64, b M64) M64
 
 
-// Hsubs16: Horizontally subtract adjacent pairs of 16-bit integers in 'a' and
-// 'b' using saturation, and pack the signed 16-bit results in 'dst'. 
+// HsubsPi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a'
+// and 'b' using saturation, and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0]= Saturate_To_Int16(a[15:0] - a[31:16])
 //		dst[31:16] = Saturate_To_Int16(a[47:32] - a[63:48])
@@ -350,15 +350,15 @@ func hsub32(a M64, b M64) M64
 //
 // Instruction: 'PHSUBSW'. Intrinsic: '_mm_hsubs_pi16'.
 // Requires SSSE3.
-func Hsubs16(a M64, b M64) M64 {
-	return M64(hsubs16(a, b))
+func HsubsPi16(a M64, b M64) M64 {
+	return M64(hsubsPi16(a, b))
 }
 
-func hsubs16(a M64, b M64) M64
+func hsubsPi16(a M64, b M64) M64
 
 
-// Insert16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst' at
-// the location specified by 'imm8'. 
+// InsertPi16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst'
+// at the location specified by 'imm8'. 
 //
 //		dst[63:0] := a[63:0]
 //		sel := imm8[1:0]*16
@@ -366,16 +366,17 @@ func hsubs16(a M64, b M64) M64
 //
 // Instruction: 'PINSRW'. Intrinsic: '_mm_insert_pi16'.
 // Requires SSE.
-func Insert16(a M64, i int, imm8 int) M64 {
-	return M64(insert16(a, i, imm8))
+func InsertPi16(a M64, i int, imm8 int) M64 {
+	return M64(insertPi16(a, i, imm8))
 }
 
-func insert16(a M64, i int, imm8 int) M64
+func insertPi16(a M64, i int, imm8 int) M64
 
 
-// Loadh: Load 2 single-precision (32-bit) floating-point elements from memory
-// into the upper 2 elements of 'dst', and copy the lower 2 elements from 'a'
-// to 'dst'. 'mem_addr' does not need to be aligned on any particular boundary. 
+// LoadhPi: Load 2 single-precision (32-bit) floating-point elements from
+// memory into the upper 2 elements of 'dst', and copy the lower 2 elements
+// from 'a' to 'dst'. 'mem_addr' does not need to be aligned on any particular
+// boundary. 
 //
 //		dst[31:0] := a[31:0]
 //		dst[63:32] := a[63:32]
@@ -384,16 +385,17 @@ func insert16(a M64, i int, imm8 int) M64
 //
 // Instruction: 'MOVHPS'. Intrinsic: '_mm_loadh_pi'.
 // Requires SSE.
-func Loadh(a M128, mem_addr M64Const) M128 {
-	return M128(loadh([4]float32(a), mem_addr))
+func LoadhPi(a M128, mem_addr M64Const) M128 {
+	return M128(loadhPi([4]float32(a), mem_addr))
 }
 
-func loadh(a [4]float32, mem_addr M64Const) [4]float32
+func loadhPi(a [4]float32, mem_addr M64Const) [4]float32
 
 
-// Loadl: Load 2 single-precision (32-bit) floating-point elements from memory
-// into the lower 2 elements of 'dst', and copy the upper 2 elements from 'a'
-// to 'dst'. 'mem_addr' does not need to be aligned on any particular boundary. 
+// LoadlPi: Load 2 single-precision (32-bit) floating-point elements from
+// memory into the lower 2 elements of 'dst', and copy the upper 2 elements
+// from 'a' to 'dst'. 'mem_addr' does not need to be aligned on any particular
+// boundary. 
 //
 //		dst[31:0] := MEM[mem_addr+31:mem_addr]
 //		dst[63:32] := MEM[mem_addr+63:mem_addr+32]
@@ -402,11 +404,11 @@ func loadh(a [4]float32, mem_addr M64Const) [4]float32
 //
 // Instruction: 'MOVLPS'. Intrinsic: '_mm_loadl_pi'.
 // Requires SSE.
-func Loadl(a M128, mem_addr M64Const) M128 {
-	return M128(loadl([4]float32(a), mem_addr))
+func LoadlPi(a M128, mem_addr M64Const) M128 {
+	return M128(loadlPi([4]float32(a), mem_addr))
 }
 
-func loadl(a [4]float32, mem_addr M64Const) [4]float32
+func loadlPi(a [4]float32, mem_addr M64Const) [4]float32
 
 
 // LoaduSi16: Load unaligned 16-bit integer from memory into the first element
@@ -496,10 +498,10 @@ func LoaduSi641(mem_addr uintptr) M128i {
 func loaduSi641(mem_addr uintptr) [16]byte
 
 
-// Maddubs16: Vertically multiply each unsigned 8-bit integer from 'a' with the
-// corresponding signed 8-bit integer from 'b', producing intermediate signed
-// 16-bit integers. Horizontally add adjacent pairs of intermediate signed
-// 16-bit integers, and pack the saturated results in 'dst'. 
+// MaddubsPi16: Vertically multiply each unsigned 8-bit integer from 'a' with
+// the corresponding signed 8-bit integer from 'b', producing intermediate
+// signed 16-bit integers. Horizontally add adjacent pairs of intermediate
+// signed 16-bit integers, and pack the saturated results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*16
@@ -508,11 +510,11 @@ func loaduSi641(mem_addr uintptr) [16]byte
 //
 // Instruction: 'PMADDUBSW'. Intrinsic: '_mm_maddubs_pi16'.
 // Requires SSSE3.
-func Maddubs16(a M64, b M64) M64 {
-	return M64(maddubs16(a, b))
+func MaddubsPi16(a M64, b M64) M64 {
+	return M64(maddubsPi16(a, b))
 }
 
-func maddubs16(a M64, b M64) M64
+func maddubsPi16(a M64, b M64) M64
 
 
 // MaskmoveSi64: Conditionally store 8-bit integer elements from 'a' into
@@ -555,7 +557,7 @@ func MMaskmovq(a M64, mask M64, mem_addr byte)  {
 func mMaskmovq(a M64, mask M64, mem_addr byte) 
 
 
-// Max16: Compare packed 16-bit integers in 'a' and 'b', and store packed
+// MaxPi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
 // maximum values in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -569,11 +571,11 @@ func mMaskmovq(a M64, mask M64, mem_addr byte)
 //
 // Instruction: 'PMAXSW'. Intrinsic: '_mm_max_pi16'.
 // Requires SSE.
-func Max16(a M64, b M64) M64 {
-	return M64(max16(a, b))
+func MaxPi16(a M64, b M64) M64 {
+	return M64(maxPi16(a, b))
 }
 
-func max16(a M64, b M64) M64
+func maxPi16(a M64, b M64) M64
 
 
 // MaxPu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -597,7 +599,7 @@ func MaxPu8(a M64, b M64) M64 {
 func maxPu8(a M64, b M64) M64
 
 
-// Min16: Compare packed 16-bit integers in 'a' and 'b', and store packed
+// MinPi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
 // minimum values in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -611,11 +613,11 @@ func maxPu8(a M64, b M64) M64
 //
 // Instruction: 'PMINSW'. Intrinsic: '_mm_min_pi16'.
 // Requires SSE.
-func Min16(a M64, b M64) M64 {
-	return M64(min16(a, b))
+func MinPi16(a M64, b M64) M64 {
+	return M64(minPi16(a, b))
 }
 
-func min16(a M64, b M64) M64
+func minPi16(a M64, b M64) M64
 
 
 // MinPu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -639,7 +641,7 @@ func MinPu8(a M64, b M64) M64 {
 func minPu8(a M64, b M64) M64
 
 
-// Movemask8: Create mask from the most significant bit of each 8-bit element
+// MovemaskPi8: Create mask from the most significant bit of each 8-bit element
 // in 'a', and store the result in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -650,24 +652,24 @@ func minPu8(a M64, b M64) M64
 //
 // Instruction: 'PMOVMSKB'. Intrinsic: '_mm_movemask_pi8'.
 // Requires SSE.
-func Movemask8(a M64) int {
-	return int(movemask8(a))
+func MovemaskPi8(a M64) int {
+	return int(movemaskPi8(a))
 }
 
-func movemask8(a M64) int
+func movemaskPi8(a M64) int
 
 
-// Movepi6464: Copy the lower 64-bit integer in 'a' to 'dst'. 
+// Movepi64Pi64: Copy the lower 64-bit integer in 'a' to 'dst'. 
 //
 //		dst[63:0] := a[63:0]
 //
 // Instruction: 'MOVDQ2Q'. Intrinsic: '_mm_movepi64_pi64'.
 // Requires SSE2.
-func Movepi6464(a M128i) M64 {
-	return M64(movepi6464([16]byte(a)))
+func Movepi64Pi64(a M128i) M64 {
+	return M64(movepi64Pi64([16]byte(a)))
 }
 
-func movepi6464(a [16]byte) M64
+func movepi64Pi64(a [16]byte) M64
 
 
 // MulSu32: Multiply the low unsigned 32-bit integers from 'a' and 'b', and
@@ -703,7 +705,7 @@ func MulhiPu16(a M64, b M64) M64 {
 func mulhiPu16(a M64, b M64) M64
 
 
-// Mulhrs16: Multiply packed 16-bit integers in 'a' and 'b', producing
+// MulhrsPi16: Multiply packed 16-bit integers in 'a' and 'b', producing
 // intermediate signed 32-bit integers. Truncate each intermediate integer to
 // the 18 most significant bits, round by adding 1, and store bits [16:1] to
 // 'dst'. 
@@ -716,11 +718,11 @@ func mulhiPu16(a M64, b M64) M64
 //
 // Instruction: 'PMULHRSW'. Intrinsic: '_mm_mulhrs_pi16'.
 // Requires SSSE3.
-func Mulhrs16(a M64, b M64) M64 {
-	return M64(mulhrs16(a, b))
+func MulhrsPi16(a M64, b M64) M64 {
+	return M64(mulhrsPi16(a, b))
 }
 
-func mulhrs16(a M64, b M64) M64
+func mulhrsPi16(a M64, b M64) M64
 
 
 // MPavgb: Average packed unsigned 8-bit integers in 'a' and 'b', and store the
@@ -772,7 +774,7 @@ func MPextrw(a M64, imm8 int) int {
 func mPextrw(a M64, imm8 int) int
 
 
-// Mnsrw: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst' at
+// MPinsrw: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst' at
 // the location specified by 'imm8'. 
 //
 //		dst[63:0] := a[63:0]
@@ -781,11 +783,11 @@ func mPextrw(a M64, imm8 int) int
 //
 // Instruction: 'PINSRW'. Intrinsic: '_m_pinsrw'.
 // Requires SSE.
-func Mnsrw(a M64, i int, imm8 int) M64 {
-	return M64(mnsrw(a, i, imm8))
+func MPinsrw(a M64, i int, imm8 int) M64 {
+	return M64(mPinsrw(a, i, imm8))
 }
 
-func mnsrw(a M64, i int, imm8 int) M64
+func mPinsrw(a M64, i int, imm8 int) M64
 
 
 // MPmaxsw: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -980,7 +982,7 @@ func SadPu8(a M64, b M64) M64 {
 func sadPu8(a M64, b M64) M64
 
 
-// Shuffle16: Shuffle 16-bit integers in 'a' using the control in 'imm8', and
+// ShufflePi16: Shuffle 16-bit integers in 'a' using the control in 'imm8', and
 // store the results in 'dst'. 
 //
 //		SELECT4(src, control){
@@ -1000,16 +1002,16 @@ func sadPu8(a M64, b M64) M64
 //
 // Instruction: 'PSHUFW'. Intrinsic: '_mm_shuffle_pi16'.
 // Requires SSE.
-func Shuffle16(a M64, imm8 int) M64 {
-	return M64(shuffle16(a, imm8))
+func ShufflePi16(a M64, imm8 int) M64 {
+	return M64(shufflePi16(a, imm8))
 }
 
-func shuffle16(a M64, imm8 int) M64
+func shufflePi16(a M64, imm8 int) M64
 
 
-// Shuffle8: Shuffle packed 8-bit integers in 'a' according to shuffle control
-// mask in the corresponding 8-bit element of 'b', and store the results in
-// 'dst'. 
+// ShufflePi8: Shuffle packed 8-bit integers in 'a' according to shuffle
+// control mask in the corresponding 8-bit element of 'b', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*8
@@ -1023,14 +1025,14 @@ func shuffle16(a M64, imm8 int) M64
 //
 // Instruction: 'PSHUFB'. Intrinsic: '_mm_shuffle_pi8'.
 // Requires SSSE3.
-func Shuffle8(a M64, b M64) M64 {
-	return M64(shuffle8(a, b))
+func ShufflePi8(a M64, b M64) M64 {
+	return M64(shufflePi8(a, b))
 }
 
-func shuffle8(a M64, b M64) M64
+func shufflePi8(a M64, b M64) M64
 
 
-// Sign16: Negate packed 16-bit integers in 'a' when the corresponding signed
+// SignPi16: Negate packed 16-bit integers in 'a' when the corresponding signed
 // 16-bit integer in 'b' is negative, and store the results in 'dst'. Element
 // in 'dst' are zeroed out when the corresponding element in 'b' is zero. 
 //
@@ -1047,14 +1049,14 @@ func shuffle8(a M64, b M64) M64
 //
 // Instruction: 'PSIGNW'. Intrinsic: '_mm_sign_pi16'.
 // Requires SSSE3.
-func Sign16(a M64, b M64) M64 {
-	return M64(sign16(a, b))
+func SignPi16(a M64, b M64) M64 {
+	return M64(signPi16(a, b))
 }
 
-func sign16(a M64, b M64) M64
+func signPi16(a M64, b M64) M64
 
 
-// Sign32: Negate packed 32-bit integers in 'a' when the corresponding signed
+// SignPi32: Negate packed 32-bit integers in 'a' when the corresponding signed
 // 32-bit integer in 'b' is negative, and store the results in 'dst'. Element
 // in 'dst' are zeroed out when the corresponding element in 'b' is zero. 
 //
@@ -1071,14 +1073,14 @@ func sign16(a M64, b M64) M64
 //
 // Instruction: 'PSIGND'. Intrinsic: '_mm_sign_pi32'.
 // Requires SSSE3.
-func Sign32(a M64, b M64) M64 {
-	return M64(sign32(a, b))
+func SignPi32(a M64, b M64) M64 {
+	return M64(signPi32(a, b))
 }
 
-func sign32(a M64, b M64) M64
+func signPi32(a M64, b M64) M64
 
 
-// Sign8: Negate packed 8-bit integers in 'a' when the corresponding signed
+// SignPi8: Negate packed 8-bit integers in 'a' when the corresponding signed
 // 8-bit integer in 'b' is negative, and store the results in 'dst'. Element in
 // 'dst' are zeroed out when the corresponding element in 'b' is zero. 
 //
@@ -1095,41 +1097,41 @@ func sign32(a M64, b M64) M64
 //
 // Instruction: 'PSIGNB'. Intrinsic: '_mm_sign_pi8'.
 // Requires SSSE3.
-func Sign8(a M64, b M64) M64 {
-	return M64(sign8(a, b))
+func SignPi8(a M64, b M64) M64 {
+	return M64(signPi8(a, b))
 }
 
-func sign8(a M64, b M64) M64
+func signPi8(a M64, b M64) M64
 
 
-// Storeh: Store the upper 2 single-precision (32-bit) floating-point elements
-// from 'a' into memory. 
+// StorehPi: Store the upper 2 single-precision (32-bit) floating-point
+// elements from 'a' into memory. 
 //
 //		MEM[mem_addr+31:mem_addr] := a[95:64]
 //		MEM[mem_addr+63:mem_addr+32] := a[127:96]
 //
 // Instruction: 'MOVHPS'. Intrinsic: '_mm_storeh_pi'.
 // Requires SSE.
-func Storeh(mem_addr M64, a M128)  {
-	storeh(mem_addr, [4]float32(a))
+func StorehPi(mem_addr M64, a M128)  {
+	storehPi(mem_addr, [4]float32(a))
 }
 
-func storeh(mem_addr M64, a [4]float32) 
+func storehPi(mem_addr M64, a [4]float32) 
 
 
-// Storel: Store the lower 2 single-precision (32-bit) floating-point elements
-// from 'a' into memory. 
+// StorelPi: Store the lower 2 single-precision (32-bit) floating-point
+// elements from 'a' into memory. 
 //
 //		MEM[mem_addr+31:mem_addr] := a[31:0]
 //		MEM[mem_addr+63:mem_addr+32] := a[63:32]
 //
 // Instruction: 'MOVLPS'. Intrinsic: '_mm_storel_pi'.
 // Requires SSE.
-func Storel(mem_addr M64, a M128)  {
-	storel(mem_addr, [4]float32(a))
+func StorelPi(mem_addr M64, a M128)  {
+	storelPi(mem_addr, [4]float32(a))
 }
 
-func storel(mem_addr M64, a [4]float32) 
+func storelPi(mem_addr M64, a [4]float32) 
 
 
 // StoreuSi16: Store 16-bit integer from the first element of 'a' into memory.
@@ -1213,18 +1215,18 @@ func StoreuSi641(mem_addr uintptr, a M128i)  {
 func storeuSi641(mem_addr uintptr, a [16]byte) 
 
 
-// Stream: Store 64-bits of integer data from 'a' into memory using a
+// StreamPi: Store 64-bits of integer data from 'a' into memory using a
 // non-temporal memory hint. 
 //
 //		MEM[mem_addr+63:mem_addr] := a[63:0]
 //
 // Instruction: 'MOVNTQ'. Intrinsic: '_mm_stream_pi'.
 // Requires SSE.
-func Stream(mem_addr M64, a M64)  {
-	stream(mem_addr, a)
+func StreamPi(mem_addr M64, a M64)  {
+	streamPi(mem_addr, a)
 }
 
-func stream(mem_addr M64, a M64) 
+func streamPi(mem_addr M64, a M64) 
 
 
 // StreamSi32: Store 32-bit integer 'a' into memory using a non-temporal hint
