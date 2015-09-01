@@ -48,6 +48,9 @@ var m64a, m128a, m256a, m512a, gena *os.File
 
 const genimport = `import . "github.com/klauspost/intrinsics/x86"`
 
+// Downloaded from
+// https://software.intel.com/sites/landingpage/IntrinsicsGuide/#techs=MMX,SSE,SSE2,SSE3,SSSE3,SSE4_1,SSE4_2,AVX,AVX2,FMA,KNC,SVML,Other&avx512techs=AVX512F,AVX512BW,AVX512CD,AVX512DQ,AVX512ER,AVX512IFMA52,AVX512PF,AVX512VBMI
+
 func main() {
 	f, err := os.Open("allintrin.html")
 	if err != nil {
@@ -234,6 +237,9 @@ func getAsmFile(pack string) *os.File {
 }
 
 func getPackage(i Intrinsic) string {
+	if strings.Contains(i.CpuID, "MMX") {
+		return "m64"
+	}
 	in := i.OrgName
 	if strings.HasPrefix(in, "_mm256") {
 		return "m256"
