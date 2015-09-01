@@ -1,0 +1,146 @@
+<div class="intrinsic SSSE3" id="0">
+	<div class="instruction">pabsw</div>
+	<div class="signature">
+		<span class="sig">
+			<span class="rettype">__m128i</span>
+			<span class="name">_mm_abs_epi16</span> (
+			<span class="param_type">__m128i</span>
+			<span class="param_name">a</span>)
+		</span>
+	</div>
+	<div class="details">
+		<h1>Synopsis</h1>
+		<div class="synopsis">
+			<span class="sig">
+				<span class="rettype">__m128i</span>
+				<span class="name">_mm_abs_epi16</span> (
+				<span class="param_type">__m128i</span>
+				<span class="param_name">a</span>)
+			</span>
+			<br>#include "tmmintrin.h"
+			<br>Instruction:
+			<span class="instruction_note" note-type="vexeq-hazard">pabsw</span> xmm, xmm
+			<br>CPUID Flags:
+			<span class="cpuid">SSSE3</span>
+		</div>
+		<h1>Description</h1>
+		<div class="description">Compute the absolute value of packed 16-bit integers in
+			<span class="desc_var a">a</span>, and store the unsigned results in
+			<span class="desc_var dst">dst</span>.
+		</div>
+		<h1>Operation</h1>
+		<div class="operation">FOR j := 0 to 7
+			i := j*16
+			dst[i+15:i] := ABS(a[i+15:i])
+		ENDFOR</div>
+		<br/>
+		<h1>Performance</h1>
+		<table class="performance">
+			<tbody>
+				<tr>
+					<th>Architecture</th>
+					<th>Latency</th>
+					<th>Throughput</th>
+				</tr>
+				<tr>
+					<td>Haswell</td>
+					<td>1</td>
+					<td>0.5</td>
+				</tr>
+				<tr>
+					<td>Ivy Bridge</td>
+					<td>1</td>
+					<td>0.5</td>
+				</tr>
+				<tr>
+					<td>Sandy Bridge</td>
+					<td>1</td>
+					<td>0.5</td>
+				</tr>
+				<tr>
+					<td>Westmere</td>
+					<td>1</td>
+					<td>0.5</td>
+				</tr>
+				<tr>
+					<td>Nehalem</td>
+					<td>1</td>
+					<td>0.5</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<div class="intrinsic SSE" id="1316">
+    <div class="instruction">cvtss2si</div>
+    <div class="signature"><span class="sig"><span class="rettype">int</span> <span class="name">_mm_cvt_ss2si</span> (<span class="param_type">__m128</span> <span class="param_name">a</span>)</span>
+    </div>
+    <div class="details">
+        <h1>Synopsis</h1>
+        <div class="synopsis"><span class="sig"><span class="rettype">int</span> <span class="name">_mm_cvt_ss2si</span> (<span class="param_type">__m128</span> <span class="param_name">a</span>)</span>
+            <br>#include "xmmintrin.h"
+            <br>Instruction: <span class="instruction_note" note-type="vexeq">cvtss2si</span> r32, xmm
+            <br>CPUID Flags: <span class="cpuid">SSE</span>
+        </div>
+        <h1>Description</h1>
+        <div class="description">Convert the lower single-precision (32-bit) floating-point element in <span class="desc_var a">a</span> to a 32-bit integer, and store the result in <span class="desc_var dst">dst</span>.</div>
+        <h1>Operation</h1>
+        <div class="operation">dst[31:0] := Convert_FP32_To_Int32(a[31:0])</div>
+    </div>
+</div>
+<div class="intrinsic SSE4_1" id="1317">
+    <div class="instruction">pmovsxwd</div>
+    <div class="signature"><span class="sig"><span class="rettype">__m128i</span> <span class="name">_mm_cvtepi16_epi32</span> (<span class="param_type">__m128i</span> <span class="param_name">a</span>)</span>
+    </div>
+    <div class="details">
+        <h1>Synopsis</h1>
+        <div class="synopsis"><span class="sig"><span class="rettype">__m128i</span> <span class="name">_mm_cvtepi16_epi32</span> (<span class="param_type">__m128i</span> <span class="param_name">a</span>)</span>
+            <br>#include "smmintrin.h"
+            <br>Instruction: <span class="instruction_note" note-type="vexeq-hazard">pmovsxwd</span> xmm, xmm
+            <br>CPUID Flags: <span class="cpuid">SSE4.1</span>
+        </div>
+        <h1>Description</h1>
+        <div class="description">Sign extend packed 16-bit integers in <span class="desc_var a">a</span> to packed 32-bit integers, and store the results in <span class="desc_var dst">dst</span>.</div>
+        <h1>Operation</h1>
+        <div class="operation">FOR j := 0 to 3 i := 32*j k := 16*j dst[i+31:i] := SignExtend(a[k+15:k]) ENDFOR
+        </div>
+        <br>
+        <h1>Performance</h1>
+        <table class="performance">
+            <tbody>
+                <tr>
+                    <th>Architecture</th>
+                    <th>Latency</th>
+                    <th>Throughput</th>
+                </tr>
+                <tr>
+                    <td>Haswell</td>
+                    <td>1</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>Ivy Bridge</td>
+                    <td>1</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>Sandy Bridge</td>
+                    <td>1</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>Westmere</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Nehalem</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
