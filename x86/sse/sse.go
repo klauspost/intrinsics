@@ -2538,19 +2538,7 @@ func LogbPs(a x86.M128) x86.M128 {
 func logbPs(a [4]float32) [4]float32
 
 
-// Malloc: Allocate 'size' bytes of memory, aligned to the alignment specified
-// in 'align', and return a pointer to the allocated memory. '_mm_free' should
-// be used to free memory that is allocated with '_mm_malloc'. 
-//
-//		
-//
-// Instruction: ''. Intrinsic: '_mm_malloc'.
-// Requires SSE.
-func Malloc(size int, align int)  {
-	malloc(size, align)
-}
-
-func malloc(size int, align int) 
+// Skipped: _mm_malloc. Contains pointer parameter.
 
 
 // MaskmoveSi64: Conditionally store 8-bit integer elements from 'a' into

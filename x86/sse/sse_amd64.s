@@ -1360,15 +1360,6 @@ TEXT ·logbPs(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func malloc(size int, align int) 
-TEXT ·malloc(SB),7,$0
-	MOVQ size+0(FP),R8
-	MOVQ align+8(FP),R9
-
-	// TODO: Code missing
-
-	RET
-
 // func maxPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·maxPi16(SB),7,$0
 	MOVQ a+0(FP),M0

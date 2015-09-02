@@ -324,7 +324,11 @@ func fixType(s string) string {
 
 	switch r {
 	case "void":
-		r = ""
+		if pointer {
+			r = "uintptr"
+		} else {
+			r = ""
+		}
 	case "char", "charConst":
 		r = "byte"
 	case "unsignedChar":
