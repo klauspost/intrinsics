@@ -165,9 +165,9 @@ func TestSSE4(t *testing.T) {
 
 const verySmall = 1e-15
 
-// Float point example
-// If intrinsics where working, this would convert 4 rgb
-// values to HSV.
+// Float point example.
+// If intrinsics where working, this would convert 4 RGB values to HSV.
+// Converted from: https://github.com/rawstudio/rawstudio/blob/master/plugins/dcp/dcp-sse4.c#L74
 func RGBtoHSV(r, g, b x86.M128) (h, s, v x86.M128) {
 	zeroPs := sse.SetzeroPs()
 	smallPs := sse.Set1Ps(verySmall)
@@ -182,13 +182,12 @@ func RGBtoHSV(r, g, b x86.M128) (h, s, v x86.M128) {
 	b = sse.MinPs(sse.MaxPs(b, smallPs), onesPs)
 
 	v = sse.MaxPs(b, sse.MaxPs(r, g))
+	h = zeroPs
 
 	m := sse.MinPs(b, sse.MinPs(r, g))
 	gap := sse.SubPs(v, m)
 	v_mask := sse.CmpeqPs(gap, zeroPs)
 	v = sse.AddPs(v, sse.AndPs(add_v, v_mask))
-
-	h = sse.SetzeroPs()
 
 	// Set gap to one where sat = 0, this will avoid divisions by zero, these values will not be used
 	onesPs = sse.AndPs(onesPs, v_mask)
