@@ -2,6 +2,8 @@ package fma
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // FmaddPd: Multiply packed double-precision (64-bit) floating-point elements
 // in 'a' and 'b', add the intermediate result to packed elements in 'c', and

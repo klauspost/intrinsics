@@ -2,6 +2,8 @@ package rdrand
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Rdrand16Step: Read a hardware generated 16-bit random value and store the
 // result in 'val'. Return 1 if a random value was generated, and 0 otherwise. 

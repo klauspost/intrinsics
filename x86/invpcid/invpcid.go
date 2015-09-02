@@ -2,6 +2,8 @@ package invpcid
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Invpcid: Invalidate mappings in the Translation Lookaside Buffers (TLBs) and
 // paging-structure caches for the processor context identifier (PCID)

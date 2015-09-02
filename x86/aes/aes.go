@@ -2,6 +2,8 @@ package aes
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // AesdecSi128: Perform one round of an AES decryption flow on data (state) in
 // 'a' using the round key in 'RoundKey', and store the result in 'dst'." 

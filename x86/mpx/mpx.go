@@ -2,6 +2,8 @@ package mpx
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // BndChkPtrBounds: Checks if ['q', 'q' + 'size' - 1] is within the lower and
 // upper bounds of 'q' and throws a #BR if not. 

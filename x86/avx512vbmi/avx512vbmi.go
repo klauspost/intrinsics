@@ -2,6 +2,8 @@ package avx512vbmi
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // MaskMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8 unaligned
 // bytes using a byte-granular shift control within the corresponding 64-bit

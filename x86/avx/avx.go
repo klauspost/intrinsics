@@ -2,6 +2,8 @@ package avx
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // AcosPd: Compute the inverse cosine of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 

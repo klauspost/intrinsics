@@ -2,6 +2,8 @@ package xsaveopt
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Xsaveopt: Perform a full or partial save of the enabled processor states to
 // memory at 'mem_addr'. State is saved based on bits [62:0] in 'save_mask' and

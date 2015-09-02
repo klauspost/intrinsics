@@ -2,6 +2,8 @@ package xss
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Xrstors: Perform a full or partial restore of the enabled processor states
 // using the state information stored in memory at 'mem_addr'. xrstors differs

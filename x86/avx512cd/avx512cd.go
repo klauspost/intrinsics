@@ -2,6 +2,8 @@ package avx512cd
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // BroadcastmbEpi64: Broadcast the low 8-bits from input mask 'k' to all 64-bit
 // elements of 'dst'. 

@@ -1,6 +1,7 @@
 // func clflushopt(p uintptr) 
 TEXT ·clflushopt(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ p+0(FP),R8
+
 	//TODO: Code missing
 
 	RET

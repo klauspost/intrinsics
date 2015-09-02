@@ -2,6 +2,8 @@ package rtm
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Xabort: Force an RTM abort. The EAX register is updated to reflect an XABORT
 // instruction caused the abort, and the 'imm8' parameter will be provided in

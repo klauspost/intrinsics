@@ -2,6 +2,8 @@ package avx512f
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // MaskAbsEpi32: Compute the absolute value of packed 32-bit integers in 'a',
 // and store the unsigned results in 'dst' using writemask 'k' (elements are

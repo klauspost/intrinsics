@@ -2,6 +2,8 @@ package xsavec
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Xsavec: Perform a full or partial save of the enabled processor states to
 // memory at 'mem_addr'; xsavec differs from xsave in that it uses compaction

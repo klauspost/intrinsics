@@ -2,6 +2,8 @@ package sha
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Sha1msg1Epu32: Perform an intermediate calculation for the next four SHA1
 // message values (unsigned 32-bit integers) using previous message values from

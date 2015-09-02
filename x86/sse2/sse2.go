@@ -2,6 +2,8 @@ package sse2
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // AddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the results
 // in 'dst'. 

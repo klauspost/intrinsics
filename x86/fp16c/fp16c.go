@@ -2,6 +2,8 @@ package fp16c
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // CvtphPs: Convert packed half-precision (16-bit) floating-point elements in
 // 'a' to packed single-precision (32-bit) floating-point elements, and store

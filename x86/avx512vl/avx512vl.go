@@ -2,6 +2,8 @@ package avx512vl
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // MaskAddPd: Add packed double-precision (64-bit) floating-point elements in
 // 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements

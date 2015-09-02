@@ -2,6 +2,8 @@ package pclmulqdq
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Clmulepi64Si128: Perform a carry-less multiplication of two 64-bit integers,
 // selected from 'a' and 'b' according to 'imm8', and store the results in

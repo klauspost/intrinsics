@@ -2,6 +2,8 @@ package tsc
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Rdtsc: Copy the current 64-bit value of the processor's time-stamp counter
 // into 'dst'. 

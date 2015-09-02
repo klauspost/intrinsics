@@ -2,6 +2,8 @@ package monitor
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Monitor: Arm address monitoring hardware using the address specified in 'p'.
 // A store to an address within the specified address range triggers the

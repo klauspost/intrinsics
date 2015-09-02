@@ -2,6 +2,8 @@ package avx512er
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Exp2a23Pd: Compute the approximate exponential value of 2 raised to the
 // power of packed double-precision (64-bit) floating-point elements in 'a',

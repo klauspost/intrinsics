@@ -2,6 +2,8 @@ package rdseed
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Rdseed16Step: Read a 16-bit NIST SP800-90B and SP800-90C compliant random
 // value and store in 'val'. Return 1 if a random value was generated, and 0

@@ -2,6 +2,8 @@ package rdtscp
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Rdtscp: Copy the current 64-bit value of the processor's time-stamp counter
 // into 'dst', and store the IA32_TSC_AUX MSR (signature value) into memory at

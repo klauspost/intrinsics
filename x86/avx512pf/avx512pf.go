@@ -2,6 +2,8 @@ package avx512pf
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // MaskPrefetchI32gatherPd: Prefetch double-precision (64-bit) floating-point
 // elements from memory using 32-bit indices. 64-bit elements are loaded from

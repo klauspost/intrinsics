@@ -2,6 +2,8 @@ package bmi2
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // BzhiU32: Copy all bits from unsigned 32-bit integer 'a' to 'dst', and reset
 // (set to 0) the high bits in 'dst' starting at 'index'. 

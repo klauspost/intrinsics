@@ -2,6 +2,8 @@ package popcnt
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // PopcntU32: Count the number of bits set to 1 in unsigned 32-bit integer 'a',
 // and return that count in 'dst'. 

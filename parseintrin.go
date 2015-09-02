@@ -173,7 +173,10 @@ func (i Intrinsic) getFiles() pack {
 			panic(err)
 		}
 		p.goFile.WriteString("package " + pk + "\n\n")
-		p.goFile.WriteString(`import . "github.com/klauspost/intrinsics/x86"` + "\n\n")
+		p.goFile.WriteString(`import "github.com/klauspost/intrinsics/x86"` + "\n\n")
+
+		p.goFile.WriteString(`var _ = x86.M64{}  // Make sure we use x86 package` + "\n\n")
+
 		p.asmFile, err = os.Create("x86/" + pk + "/" + pk + "_amd64.s")
 		if err != nil {
 			panic(err)
@@ -312,8 +315,8 @@ func fixType(s string) string {
 	rb := []byte(r)
 	if rb[0] == 'm' {
 		rb[0] = 'M'
+		r = "x86." + string(rb)
 	}
-	r = string(rb)
 
 	switch r {
 	case "void":
@@ -513,7 +516,13 @@ func (in Intrinsic) Finish() {
 }
 
 func (p Param) getSize() int {
-	switch p.Type {
+	t := p.Type
+	tsplit := strings.Split(t, ".")
+	if len(tsplit) > 1 {
+		t = tsplit[1]
+	}
+
+	switch t {
 	case "M64", "M64i":
 		return 8
 	case "M128", "M128i", "M128d":
@@ -522,7 +531,7 @@ func (p Param) getSize() int {
 		return 32
 	case "M512", "M512i", "M512d":
 		return 64
-	case "int", "uint", "int64", "uint64", "float64", "unsafe.Pointer", "Mmask64":
+	case "int", "uint", "int64", "uint64", "float64", "uintptr", "Mmask64":
 		return 8
 	case "int32", "uint32", "float32", "Mmask32":
 		return 4
@@ -535,7 +544,13 @@ func (p Param) getSize() int {
 }
 
 func (p Param) getNative() string {
-	switch p.Type {
+	t := p.Type
+	tsplit := strings.Split(t, ".")
+	if len(tsplit) > 1 {
+		t = tsplit[1]
+	}
+
+	switch t {
 	case "M128":
 		return "[4]float32"
 	case "M256":
@@ -554,8 +569,6 @@ func (p Param) getNative() string {
 		return "[4]float64"
 	case "M512d":
 		return "[8]float64"
-	}
-	switch p.Type {
 	case "Mmask64":
 		return "uint64"
 	case "Mmask32":
@@ -591,7 +604,13 @@ func (p Param) getReg(n int) string {
 	if n > 7 {
 		return ""
 	}
-	switch p.Type {
+	t := p.Type
+	tsplit := strings.Split(t, ".")
+	if len(tsplit) > 1 {
+		t = tsplit[1]
+	}
+
+	switch t {
 	case "M64", "M64i":
 		return "M" + strconv.Itoa(n)
 	case "M128", "M128i", "M128d":
@@ -600,7 +619,7 @@ func (p Param) getReg(n int) string {
 		return "Y" + strconv.Itoa(n)
 	case "M512", "M512i", "M512d":
 		return "Z" + strconv.Itoa(n)
-	case "int", "uint", "int64", "uint64", "float64", "unsafe.Pointer", "Mmask64":
+	case "int", "uint", "int64", "uint64", "float64", "uintptr", "Mmask64":
 		return "R" + strconv.Itoa(8+n)
 	case "int32", "uint32", "float32", "Mmask32":
 		return "R" + strconv.Itoa(8+n)

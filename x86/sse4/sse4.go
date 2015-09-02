@@ -2,6 +2,8 @@ package sse4
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // BlendEpi16: Blend packed 16-bit integers from 'a' and 'b' using control mask
 // 'imm8', and store the results in 'dst'. 

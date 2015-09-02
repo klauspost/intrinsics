@@ -2,6 +2,8 @@ package xsave
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Xgetbv: Copy up to 64-bits from the value of the extended control register
 // (XCR) specified by 'a' into 'dst'. Currently only XFEATURE_ENABLED_MASK XCR

@@ -2,6 +2,8 @@ package adx
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // AddcarryxU32: Add unsigned 32-bit integers 'a' and 'b' with unsigned 8-bit
 // carry-in 'c_in' (carry or overflow flag), and store the unsigned 32-bit

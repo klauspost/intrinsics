@@ -2,6 +2,8 @@ package avx512ifma52
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Madd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
 // element of 'b' and 'c' to form a 104-bit intermediate result. Add the high

@@ -2,6 +2,8 @@ package fsgsbase
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // ReadfsbaseU32: Read the FS segment base register and store the 32-bit result
 // in 'dst'. 

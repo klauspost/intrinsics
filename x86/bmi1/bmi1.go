@@ -2,6 +2,8 @@ package bmi1
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // BextrU32: Extract contiguous bits from unsigned 32-bit integer 'a', and
 // store the result in 'dst'. Extract the number of bits specified by 'len',

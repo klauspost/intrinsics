@@ -2,6 +2,8 @@ package fxsr
 
 import "github.com/klauspost/intrinsics/x86"
 
+var _ = x86.M64{}  // Make sure we use x86 package
+
 
 // Fxrstor: Reload the x87 FPU, MMX technology, XMM, and MXCSR registers from
 // the 512-byte memory image at 'mem_addr'. This data should have been written
