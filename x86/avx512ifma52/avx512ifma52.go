@@ -1,6 +1,6 @@
 package avx512ifma52
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Madd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -17,8 +17,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_madd52hi_epu64'.
 // Requires AVX512IFMA52.
-func Madd52hiEpu64(a M512i, b M512i, c M512i) M512i {
-	return M512i(madd52hiEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
+func Madd52hiEpu64(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(madd52hiEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
 func madd52hiEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
@@ -44,8 +44,8 @@ func madd52hiEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_mask_madd52hi_epu64'.
 // Requires AVX512IFMA52.
-func MaskMadd52hiEpu64(a M512i, k Mmask8, b M512i, c M512i) M512i {
-	return M512i(maskMadd52hiEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
+func MaskMadd52hiEpu64(a x86.M512i, k x86.Mmask8, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(maskMadd52hiEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
 }
 
 func maskMadd52hiEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
@@ -71,8 +71,8 @@ func maskMadd52hiEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_maskz_madd52hi_epu64'.
 // Requires AVX512IFMA52.
-func MaskzMadd52hiEpu64(k Mmask8, a M512i, b M512i, c M512i) M512i {
-	return M512i(maskzMadd52hiEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
+func MaskzMadd52hiEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(maskzMadd52hiEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
 func maskzMadd52hiEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
@@ -92,8 +92,8 @@ func maskzMadd52hiEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_madd52lo_epu64'.
 // Requires AVX512IFMA52.
-func Madd52loEpu64(a M512i, b M512i, c M512i) M512i {
-	return M512i(madd52loEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
+func Madd52loEpu64(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(madd52loEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
 func madd52loEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
@@ -119,8 +119,8 @@ func madd52loEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_mask_madd52lo_epu64'.
 // Requires AVX512IFMA52.
-func MaskMadd52loEpu64(a M512i, k Mmask8, b M512i, c M512i) M512i {
-	return M512i(maskMadd52loEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
+func MaskMadd52loEpu64(a x86.M512i, k x86.Mmask8, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(maskMadd52loEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
 }
 
 func maskMadd52loEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
@@ -146,8 +146,8 @@ func maskMadd52loEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_maskz_madd52lo_epu64'.
 // Requires AVX512IFMA52.
-func MaskzMadd52loEpu64(k Mmask8, a M512i, b M512i, c M512i) M512i {
-	return M512i(maskzMadd52loEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
+func MaskzMadd52loEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(maskzMadd52loEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
 func maskzMadd52loEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte

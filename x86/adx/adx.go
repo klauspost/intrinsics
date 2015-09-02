@@ -1,6 +1,6 @@
 package adx
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // AddcarryxU32: Add unsigned 32-bit integers 'a' and 'b' with unsigned 8-bit

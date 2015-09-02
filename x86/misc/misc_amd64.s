@@ -243,50 +243,56 @@ TEXT ·cvtssSh(SB),7,$0
 
 // func loadbeI16(ptr uintptr) int16
 TEXT ·loadbeI16(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ ptr+0(FP),R8
+
 	//TODO: Code missing
 
-	MOVW $0, ret+0(FP)
+	MOVW $0, ret+8(FP)
 	RET
 
 // func loadbeI32(ptr uintptr) int
 TEXT ·loadbeI32(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ ptr+0(FP),R8
+
 	//TODO: Code missing
 
-	MOVQ $0, ret+0(FP)
+	MOVQ $0, ret+8(FP)
 	RET
 
 // func loadbeI64(ptr uintptr) int64
 TEXT ·loadbeI64(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ ptr+0(FP),R8
+
 	//TODO: Code missing
 
-	MOVQ $0, ret+0(FP)
+	MOVQ $0, ret+8(FP)
 	RET
 
 // func loaduSi16(mem_addr uintptr) [16]byte
 TEXT ·loaduSi16(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ mem_addr+0(FP),R8
+
 	//TODO: Code missing
 
-	MOVOU X0, ret+0(FP)
+	MOVOU X0, ret+8(FP)
 	RET
 
 // func loaduSi32(mem_addr uintptr) [16]byte
 TEXT ·loaduSi32(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ mem_addr+0(FP),R8
+
 	//TODO: Code missing
 
-	MOVOU X0, ret+0(FP)
+	MOVOU X0, ret+8(FP)
 	RET
 
 // func loaduSi64(mem_addr uintptr) [16]byte
 TEXT ·loaduSi64(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ mem_addr+0(FP),R8
+
 	//TODO: Code missing
 
-	MOVOU X0, ret+0(FP)
+	MOVOU X0, ret+8(FP)
 	RET
 
 // func lrotl(a uint32, shift int) uint32
@@ -369,42 +375,54 @@ TEXT ·rotwr(SB),7,$0
 
 // func storebeI16(ptr uintptr, data int16) 
 TEXT ·storebeI16(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ ptr+0(FP),R8
+	MOVW data+8(FP),R9
+
 	//TODO: Code missing
 
 	RET
 
 // func storebeI32(ptr uintptr, data int) 
 TEXT ·storebeI32(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ ptr+0(FP),R8
+	MOVQ data+8(FP),R9
+
 	//TODO: Code missing
 
 	RET
 
 // func storebeI64(ptr uintptr, data int64) 
 TEXT ·storebeI64(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ ptr+0(FP),R8
+	MOVQ data+8(FP),R9
+
 	//TODO: Code missing
 
 	RET
 
 // func storeuSi16(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi16(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ mem_addr+0(FP),R8
+	MOVOU a+8(FP),X1
+
 	//TODO: Code missing
 
 	RET
 
 // func storeuSi32(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi32(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ mem_addr+0(FP),R8
+	MOVOU a+8(FP),X1
+
 	//TODO: Code missing
 
 	RET
 
 // func storeuSi64(mem_addr uintptr, a [16]byte) 
 TEXT ·storeuSi64(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ mem_addr+0(FP),R8
+	MOVOU a+8(FP),X1
+
 	//TODO: Code missing
 
 	RET

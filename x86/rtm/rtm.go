@@ -1,6 +1,6 @@
 package rtm
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Xabort: Force an RTM abort. The EAX register is updated to reflect an XABORT

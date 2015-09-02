@@ -1,6 +1,6 @@
 package invpcid
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Invpcid: Invalidate mappings in the Translation Lookaside Buffers (TLBs) and

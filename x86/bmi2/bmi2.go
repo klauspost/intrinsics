@@ -1,6 +1,6 @@
 package bmi2
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // BzhiU32: Copy all bits from unsigned 32-bit integer 'a' to 'dst', and reset

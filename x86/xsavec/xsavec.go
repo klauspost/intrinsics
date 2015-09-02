@@ -1,6 +1,6 @@
 package xsavec
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Xsavec: Perform a full or partial save of the enabled processor states to

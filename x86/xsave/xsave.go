@@ -1,6 +1,6 @@
 package xsave
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Xgetbv: Copy up to 64-bits from the value of the extended control register

@@ -1,4 +1,4 @@
-// func addPi16(a M64, b M64) M64
+// func addPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·addPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -8,7 +8,7 @@ TEXT ·addPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func addPi32(a M64, b M64) M64
+// func addPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·addPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -18,7 +18,7 @@ TEXT ·addPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func addPi8(a M64, b M64) M64
+// func addPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·addPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -28,7 +28,7 @@ TEXT ·addPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func addsPi16(a M64, b M64) M64
+// func addsPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·addsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -38,7 +38,7 @@ TEXT ·addsPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func addsPi8(a M64, b M64) M64
+// func addsPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·addsPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -48,7 +48,7 @@ TEXT ·addsPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func addsPu16(a M64, b M64) M64
+// func addsPu16(a x86.M64, b x86.M64) x86.M64
 TEXT ·addsPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -58,7 +58,7 @@ TEXT ·addsPu16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func addsPu8(a M64, b M64) M64
+// func addsPu8(a x86.M64, b x86.M64) x86.M64
 TEXT ·addsPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -68,7 +68,7 @@ TEXT ·addsPu8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func andSi64(a M64, b M64) M64
+// func andSi64(a x86.M64, b x86.M64) x86.M64
 TEXT ·andSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -78,7 +78,7 @@ TEXT ·andSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func andnotSi64(a M64, b M64) M64
+// func andnotSi64(a x86.M64, b x86.M64) x86.M64
 TEXT ·andnotSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -88,7 +88,7 @@ TEXT ·andnotSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cmpeqPi16(a M64, b M64) M64
+// func cmpeqPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·cmpeqPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -98,7 +98,7 @@ TEXT ·cmpeqPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cmpeqPi32(a M64, b M64) M64
+// func cmpeqPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·cmpeqPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -108,7 +108,7 @@ TEXT ·cmpeqPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cmpeqPi8(a M64, b M64) M64
+// func cmpeqPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·cmpeqPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -118,7 +118,7 @@ TEXT ·cmpeqPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cmpgtPi16(a M64, b M64) M64
+// func cmpgtPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·cmpgtPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -128,7 +128,7 @@ TEXT ·cmpgtPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cmpgtPi32(a M64, b M64) M64
+// func cmpgtPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·cmpgtPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -138,7 +138,7 @@ TEXT ·cmpgtPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cmpgtPi8(a M64, b M64) M64
+// func cmpgtPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·cmpgtPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -148,7 +148,7 @@ TEXT ·cmpgtPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvtm64Si64(a M64) int64
+// func cvtm64Si64(a x86.M64) int64
 TEXT ·cvtm64Si64(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -157,7 +157,7 @@ TEXT ·cvtm64Si64(SB),7,$0
 	MOVQ $0, ret+8(FP)
 	RET
 
-// func cvtsi32Si64(a int) M64
+// func cvtsi32Si64(a int) x86.M64
 TEXT ·cvtsi32Si64(SB),7,$0
 	MOVQ a+0(FP),R8
 
@@ -166,7 +166,7 @@ TEXT ·cvtsi32Si64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvtsi64M64(a int64) M64
+// func cvtsi64M64(a int64) x86.M64
 TEXT ·cvtsi64M64(SB),7,$0
 	MOVQ a+0(FP),R8
 
@@ -175,7 +175,7 @@ TEXT ·cvtsi64M64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func cvtsi64Si32(a M64) int
+// func cvtsi64Si32(a x86.M64) int
 TEXT ·cvtsi64Si32(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -198,7 +198,7 @@ TEXT ·empty1(SB),7,$0
 
 	RET
 
-// func fromInt(a int) M64
+// func fromInt(a int) x86.M64
 TEXT ·fromInt(SB),7,$0
 	MOVQ a+0(FP),R8
 
@@ -207,7 +207,7 @@ TEXT ·fromInt(SB),7,$0
 	// Return size: 8
 	RET
 
-// func fromInt64(a int64) M64
+// func fromInt64(a int64) x86.M64
 TEXT ·fromInt64(SB),7,$0
 	MOVQ a+0(FP),R8
 
@@ -216,7 +216,7 @@ TEXT ·fromInt64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func maddPi16(a M64, b M64) M64
+// func maddPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·maddPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -226,7 +226,7 @@ TEXT ·maddPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mulhiPi16(a M64, b M64) M64
+// func mulhiPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·mulhiPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -236,7 +236,7 @@ TEXT ·mulhiPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func mulloPi16(a M64, b M64) M64
+// func mulloPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·mulloPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -246,7 +246,7 @@ TEXT ·mulloPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func orSi64(a M64, b M64) M64
+// func orSi64(a x86.M64, b x86.M64) x86.M64
 TEXT ·orSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -256,7 +256,7 @@ TEXT ·orSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func packsPi16(a M64, b M64) M64
+// func packsPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·packsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -266,7 +266,7 @@ TEXT ·packsPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func packsPi32(a M64, b M64) M64
+// func packsPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·packsPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -276,7 +276,7 @@ TEXT ·packsPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func packsPu16(a M64, b M64) M64
+// func packsPu16(a x86.M64, b x86.M64) x86.M64
 TEXT ·packsPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -286,7 +286,7 @@ TEXT ·packsPu16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func packssdw(a M64, b M64) M64
+// func packssdw(a x86.M64, b x86.M64) x86.M64
 TEXT ·packssdw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -296,7 +296,7 @@ TEXT ·packssdw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func packsswb(a M64, b M64) M64
+// func packsswb(a x86.M64, b x86.M64) x86.M64
 TEXT ·packsswb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -306,7 +306,7 @@ TEXT ·packsswb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func packuswb(a M64, b M64) M64
+// func packuswb(a x86.M64, b x86.M64) x86.M64
 TEXT ·packuswb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -316,7 +316,7 @@ TEXT ·packuswb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func paddb(a M64, b M64) M64
+// func paddb(a x86.M64, b x86.M64) x86.M64
 TEXT ·paddb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -326,7 +326,7 @@ TEXT ·paddb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func paddd(a M64, b M64) M64
+// func paddd(a x86.M64, b x86.M64) x86.M64
 TEXT ·paddd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -336,7 +336,7 @@ TEXT ·paddd(SB),7,$0
 	// Return size: 8
 	RET
 
-// func paddsb(a M64, b M64) M64
+// func paddsb(a x86.M64, b x86.M64) x86.M64
 TEXT ·paddsb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -346,7 +346,7 @@ TEXT ·paddsb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func paddsw(a M64, b M64) M64
+// func paddsw(a x86.M64, b x86.M64) x86.M64
 TEXT ·paddsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -356,7 +356,7 @@ TEXT ·paddsw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func paddusb(a M64, b M64) M64
+// func paddusb(a x86.M64, b x86.M64) x86.M64
 TEXT ·paddusb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -366,7 +366,7 @@ TEXT ·paddusb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func paddusw(a M64, b M64) M64
+// func paddusw(a x86.M64, b x86.M64) x86.M64
 TEXT ·paddusw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -376,7 +376,7 @@ TEXT ·paddusw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func paddw(a M64, b M64) M64
+// func paddw(a x86.M64, b x86.M64) x86.M64
 TEXT ·paddw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -386,7 +386,7 @@ TEXT ·paddw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pand(a M64, b M64) M64
+// func pand(a x86.M64, b x86.M64) x86.M64
 TEXT ·pand(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -396,7 +396,7 @@ TEXT ·pand(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pandn(a M64, b M64) M64
+// func pandn(a x86.M64, b x86.M64) x86.M64
 TEXT ·pandn(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -406,7 +406,7 @@ TEXT ·pandn(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pcmpeqb(a M64, b M64) M64
+// func pcmpeqb(a x86.M64, b x86.M64) x86.M64
 TEXT ·pcmpeqb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -416,7 +416,7 @@ TEXT ·pcmpeqb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pcmpeqd(a M64, b M64) M64
+// func pcmpeqd(a x86.M64, b x86.M64) x86.M64
 TEXT ·pcmpeqd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -426,7 +426,7 @@ TEXT ·pcmpeqd(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pcmpeqw(a M64, b M64) M64
+// func pcmpeqw(a x86.M64, b x86.M64) x86.M64
 TEXT ·pcmpeqw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -436,7 +436,7 @@ TEXT ·pcmpeqw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pcmpgtb(a M64, b M64) M64
+// func pcmpgtb(a x86.M64, b x86.M64) x86.M64
 TEXT ·pcmpgtb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -446,7 +446,7 @@ TEXT ·pcmpgtb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pcmpgtd(a M64, b M64) M64
+// func pcmpgtd(a x86.M64, b x86.M64) x86.M64
 TEXT ·pcmpgtd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -456,7 +456,7 @@ TEXT ·pcmpgtd(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pcmpgtw(a M64, b M64) M64
+// func pcmpgtw(a x86.M64, b x86.M64) x86.M64
 TEXT ·pcmpgtw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -466,7 +466,7 @@ TEXT ·pcmpgtw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pmaddwd(a M64, b M64) M64
+// func pmaddwd(a x86.M64, b x86.M64) x86.M64
 TEXT ·pmaddwd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -476,7 +476,7 @@ TEXT ·pmaddwd(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pmulhw(a M64, b M64) M64
+// func pmulhw(a x86.M64, b x86.M64) x86.M64
 TEXT ·pmulhw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -486,7 +486,7 @@ TEXT ·pmulhw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pmullw(a M64, b M64) M64
+// func pmullw(a x86.M64, b x86.M64) x86.M64
 TEXT ·pmullw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -496,7 +496,7 @@ TEXT ·pmullw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func por(a M64, b M64) M64
+// func por(a x86.M64, b x86.M64) x86.M64
 TEXT ·por(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -506,7 +506,7 @@ TEXT ·por(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pslld(a M64, count M64) M64
+// func pslld(a x86.M64, count x86.M64) x86.M64
 TEXT ·pslld(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -516,7 +516,7 @@ TEXT ·pslld(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pslldi(a M64, imm8 int) M64
+// func pslldi(a x86.M64, imm8 int) x86.M64
 TEXT ·pslldi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -526,7 +526,7 @@ TEXT ·pslldi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psllq(a M64, count M64) M64
+// func psllq(a x86.M64, count x86.M64) x86.M64
 TEXT ·psllq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -536,7 +536,7 @@ TEXT ·psllq(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psllqi(a M64, imm8 int) M64
+// func psllqi(a x86.M64, imm8 int) x86.M64
 TEXT ·psllqi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -546,7 +546,7 @@ TEXT ·psllqi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psllw(a M64, count M64) M64
+// func psllw(a x86.M64, count x86.M64) x86.M64
 TEXT ·psllw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -556,7 +556,7 @@ TEXT ·psllw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psllwi(a M64, imm8 int) M64
+// func psllwi(a x86.M64, imm8 int) x86.M64
 TEXT ·psllwi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -566,7 +566,7 @@ TEXT ·psllwi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrad(a M64, count M64) M64
+// func psrad(a x86.M64, count x86.M64) x86.M64
 TEXT ·psrad(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -576,7 +576,7 @@ TEXT ·psrad(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psradi(a M64, imm8 int) M64
+// func psradi(a x86.M64, imm8 int) x86.M64
 TEXT ·psradi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -586,7 +586,7 @@ TEXT ·psradi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psraw(a M64, count M64) M64
+// func psraw(a x86.M64, count x86.M64) x86.M64
 TEXT ·psraw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -596,7 +596,7 @@ TEXT ·psraw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrawi(a M64, imm8 int) M64
+// func psrawi(a x86.M64, imm8 int) x86.M64
 TEXT ·psrawi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -606,7 +606,7 @@ TEXT ·psrawi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrld(a M64, count M64) M64
+// func psrld(a x86.M64, count x86.M64) x86.M64
 TEXT ·psrld(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -616,7 +616,7 @@ TEXT ·psrld(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrldi(a M64, imm8 int) M64
+// func psrldi(a x86.M64, imm8 int) x86.M64
 TEXT ·psrldi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -626,7 +626,7 @@ TEXT ·psrldi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrlq(a M64, count M64) M64
+// func psrlq(a x86.M64, count x86.M64) x86.M64
 TEXT ·psrlq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -636,7 +636,7 @@ TEXT ·psrlq(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrlqi(a M64, imm8 int) M64
+// func psrlqi(a x86.M64, imm8 int) x86.M64
 TEXT ·psrlqi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -646,7 +646,7 @@ TEXT ·psrlqi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrlw(a M64, count M64) M64
+// func psrlw(a x86.M64, count x86.M64) x86.M64
 TEXT ·psrlw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -656,7 +656,7 @@ TEXT ·psrlw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrlwi(a M64, imm8 int) M64
+// func psrlwi(a x86.M64, imm8 int) x86.M64
 TEXT ·psrlwi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -666,7 +666,7 @@ TEXT ·psrlwi(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psubb(a M64, b M64) M64
+// func psubb(a x86.M64, b x86.M64) x86.M64
 TEXT ·psubb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -676,7 +676,7 @@ TEXT ·psubb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psubd(a M64, b M64) M64
+// func psubd(a x86.M64, b x86.M64) x86.M64
 TEXT ·psubd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -686,7 +686,7 @@ TEXT ·psubd(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psubsb(a M64, b M64) M64
+// func psubsb(a x86.M64, b x86.M64) x86.M64
 TEXT ·psubsb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -696,7 +696,7 @@ TEXT ·psubsb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psubsw(a M64, b M64) M64
+// func psubsw(a x86.M64, b x86.M64) x86.M64
 TEXT ·psubsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -706,7 +706,7 @@ TEXT ·psubsw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psubusb(a M64, b M64) M64
+// func psubusb(a x86.M64, b x86.M64) x86.M64
 TEXT ·psubusb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -716,7 +716,7 @@ TEXT ·psubusb(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psubusw(a M64, b M64) M64
+// func psubusw(a x86.M64, b x86.M64) x86.M64
 TEXT ·psubusw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -726,7 +726,7 @@ TEXT ·psubusw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psubw(a M64, b M64) M64
+// func psubw(a x86.M64, b x86.M64) x86.M64
 TEXT ·psubw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -736,7 +736,7 @@ TEXT ·psubw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func punpckhbw(a M64, b M64) M64
+// func punpckhbw(a x86.M64, b x86.M64) x86.M64
 TEXT ·punpckhbw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -746,7 +746,7 @@ TEXT ·punpckhbw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func punpckhdq(a M64, b M64) M64
+// func punpckhdq(a x86.M64, b x86.M64) x86.M64
 TEXT ·punpckhdq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -756,7 +756,7 @@ TEXT ·punpckhdq(SB),7,$0
 	// Return size: 8
 	RET
 
-// func punpckhwd(a M64, b M64) M64
+// func punpckhwd(a x86.M64, b x86.M64) x86.M64
 TEXT ·punpckhwd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -766,7 +766,7 @@ TEXT ·punpckhwd(SB),7,$0
 	// Return size: 8
 	RET
 
-// func punpcklbw(a M64, b M64) M64
+// func punpcklbw(a x86.M64, b x86.M64) x86.M64
 TEXT ·punpcklbw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -776,7 +776,7 @@ TEXT ·punpcklbw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func punpckldq(a M64, b M64) M64
+// func punpckldq(a x86.M64, b x86.M64) x86.M64
 TEXT ·punpckldq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -786,7 +786,7 @@ TEXT ·punpckldq(SB),7,$0
 	// Return size: 8
 	RET
 
-// func punpcklwd(a M64, b M64) M64
+// func punpcklwd(a x86.M64, b x86.M64) x86.M64
 TEXT ·punpcklwd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -796,7 +796,7 @@ TEXT ·punpcklwd(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pxor(a M64, b M64) M64
+// func pxor(a x86.M64, b x86.M64) x86.M64
 TEXT ·pxor(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -806,7 +806,7 @@ TEXT ·pxor(SB),7,$0
 	// Return size: 8
 	RET
 
-// func setPi16(e3 int16, e2 int16, e1 int16, e0 int16) M64
+// func setPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 TEXT ·setPi16(SB),7,$0
 	MOVW e3+0(FP),R8
 	MOVW e2+4(FP),R9
@@ -818,7 +818,7 @@ TEXT ·setPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func setPi32(e1 int, e0 int) M64
+// func setPi32(e1 int, e0 int) x86.M64
 TEXT ·setPi32(SB),7,$0
 	MOVQ e1+0(FP),R8
 	MOVQ e0+8(FP),R9
@@ -828,7 +828,7 @@ TEXT ·setPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func setPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) M64
+// func setPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M64
 TEXT ·setPi8(SB),7,$0
 	MOVB e7+0(FP),R8
 	MOVB e6+4(FP),R9
@@ -844,7 +844,7 @@ TEXT ·setPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func set1Pi16(a int16) M64
+// func set1Pi16(a int16) x86.M64
 TEXT ·set1Pi16(SB),7,$0
 	MOVW a+0(FP),R8
 
@@ -853,7 +853,7 @@ TEXT ·set1Pi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func set1Pi32(a int) M64
+// func set1Pi32(a int) x86.M64
 TEXT ·set1Pi32(SB),7,$0
 	MOVQ a+0(FP),R8
 
@@ -862,7 +862,7 @@ TEXT ·set1Pi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func set1Pi8(a byte) M64
+// func set1Pi8(a byte) x86.M64
 TEXT ·set1Pi8(SB),7,$0
 	MOVB a+0(FP),R8
 
@@ -871,7 +871,7 @@ TEXT ·set1Pi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func setrPi16(e3 int16, e2 int16, e1 int16, e0 int16) M64
+// func setrPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 TEXT ·setrPi16(SB),7,$0
 	MOVW e3+0(FP),R8
 	MOVW e2+4(FP),R9
@@ -883,7 +883,7 @@ TEXT ·setrPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func setrPi32(e1 int, e0 int) M64
+// func setrPi32(e1 int, e0 int) x86.M64
 TEXT ·setrPi32(SB),7,$0
 	MOVQ e1+0(FP),R8
 	MOVQ e0+8(FP),R9
@@ -893,7 +893,7 @@ TEXT ·setrPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func setrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) M64
+// func setrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M64
 TEXT ·setrPi8(SB),7,$0
 	MOVB e7+0(FP),R8
 	MOVB e6+4(FP),R9
@@ -909,7 +909,7 @@ TEXT ·setrPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func setzeroSi64() M64
+// func setzeroSi64() x86.M64
 TEXT ·setzeroSi64(SB),7,$0
 
 	//TODO: Code missing
@@ -917,7 +917,7 @@ TEXT ·setzeroSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sllPi16(a M64, count M64) M64
+// func sllPi16(a x86.M64, count x86.M64) x86.M64
 TEXT ·sllPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -927,7 +927,7 @@ TEXT ·sllPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sllPi32(a M64, count M64) M64
+// func sllPi32(a x86.M64, count x86.M64) x86.M64
 TEXT ·sllPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -937,7 +937,7 @@ TEXT ·sllPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sllSi64(a M64, count M64) M64
+// func sllSi64(a x86.M64, count x86.M64) x86.M64
 TEXT ·sllSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -947,7 +947,7 @@ TEXT ·sllSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func slliPi16(a M64, imm8 int) M64
+// func slliPi16(a x86.M64, imm8 int) x86.M64
 TEXT ·slliPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -957,7 +957,7 @@ TEXT ·slliPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func slliPi32(a M64, imm8 int) M64
+// func slliPi32(a x86.M64, imm8 int) x86.M64
 TEXT ·slliPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -967,7 +967,7 @@ TEXT ·slliPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func slliSi64(a M64, imm8 int) M64
+// func slliSi64(a x86.M64, imm8 int) x86.M64
 TEXT ·slliSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -977,7 +977,7 @@ TEXT ·slliSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sraPi16(a M64, count M64) M64
+// func sraPi16(a x86.M64, count x86.M64) x86.M64
 TEXT ·sraPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -987,7 +987,7 @@ TEXT ·sraPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sraPi32(a M64, count M64) M64
+// func sraPi32(a x86.M64, count x86.M64) x86.M64
 TEXT ·sraPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -997,7 +997,7 @@ TEXT ·sraPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sraiPi16(a M64, imm8 int) M64
+// func sraiPi16(a x86.M64, imm8 int) x86.M64
 TEXT ·sraiPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -1007,7 +1007,7 @@ TEXT ·sraiPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sraiPi32(a M64, imm8 int) M64
+// func sraiPi32(a x86.M64, imm8 int) x86.M64
 TEXT ·sraiPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -1017,7 +1017,7 @@ TEXT ·sraiPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srlPi16(a M64, count M64) M64
+// func srlPi16(a x86.M64, count x86.M64) x86.M64
 TEXT ·srlPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -1027,7 +1027,7 @@ TEXT ·srlPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srlPi32(a M64, count M64) M64
+// func srlPi32(a x86.M64, count x86.M64) x86.M64
 TEXT ·srlPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -1037,7 +1037,7 @@ TEXT ·srlPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srlSi64(a M64, count M64) M64
+// func srlSi64(a x86.M64, count x86.M64) x86.M64
 TEXT ·srlSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
@@ -1047,7 +1047,7 @@ TEXT ·srlSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srliPi16(a M64, imm8 int) M64
+// func srliPi16(a x86.M64, imm8 int) x86.M64
 TEXT ·srliPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -1057,7 +1057,7 @@ TEXT ·srliPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srliPi32(a M64, imm8 int) M64
+// func srliPi32(a x86.M64, imm8 int) x86.M64
 TEXT ·srliPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -1067,7 +1067,7 @@ TEXT ·srliPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srliSi64(a M64, imm8 int) M64
+// func srliSi64(a x86.M64, imm8 int) x86.M64
 TEXT ·srliSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
@@ -1077,7 +1077,7 @@ TEXT ·srliSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func subPi16(a M64, b M64) M64
+// func subPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·subPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1087,7 +1087,7 @@ TEXT ·subPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func subPi32(a M64, b M64) M64
+// func subPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·subPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1097,7 +1097,7 @@ TEXT ·subPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func subPi8(a M64, b M64) M64
+// func subPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·subPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1107,7 +1107,7 @@ TEXT ·subPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func subsPi16(a M64, b M64) M64
+// func subsPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·subsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1117,7 +1117,7 @@ TEXT ·subsPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func subsPi8(a M64, b M64) M64
+// func subsPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·subsPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1127,7 +1127,7 @@ TEXT ·subsPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func subsPu16(a M64, b M64) M64
+// func subsPu16(a x86.M64, b x86.M64) x86.M64
 TEXT ·subsPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1137,7 +1137,7 @@ TEXT ·subsPu16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func subsPu8(a M64, b M64) M64
+// func subsPu8(a x86.M64, b x86.M64) x86.M64
 TEXT ·subsPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1147,7 +1147,7 @@ TEXT ·subsPu8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func toInt(a M64) int
+// func toInt(a x86.M64) int
 TEXT ·toInt(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -1156,7 +1156,7 @@ TEXT ·toInt(SB),7,$0
 	MOVQ $0, ret+8(FP)
 	RET
 
-// func toInt64(a M64) int64
+// func toInt64(a x86.M64) int64
 TEXT ·toInt64(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -1165,7 +1165,7 @@ TEXT ·toInt64(SB),7,$0
 	MOVQ $0, ret+8(FP)
 	RET
 
-// func unpackhiPi16(a M64, b M64) M64
+// func unpackhiPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·unpackhiPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1175,7 +1175,7 @@ TEXT ·unpackhiPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func unpackhiPi32(a M64, b M64) M64
+// func unpackhiPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·unpackhiPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1185,7 +1185,7 @@ TEXT ·unpackhiPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func unpackhiPi8(a M64, b M64) M64
+// func unpackhiPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·unpackhiPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1195,7 +1195,7 @@ TEXT ·unpackhiPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func unpackloPi16(a M64, b M64) M64
+// func unpackloPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·unpackloPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1205,7 +1205,7 @@ TEXT ·unpackloPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func unpackloPi32(a M64, b M64) M64
+// func unpackloPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·unpackloPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1215,7 +1215,7 @@ TEXT ·unpackloPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func unpackloPi8(a M64, b M64) M64
+// func unpackloPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·unpackloPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1225,7 +1225,7 @@ TEXT ·unpackloPi8(SB),7,$0
 	// Return size: 8
 	RET
 
-// func xorSi64(a M64, b M64) M64
+// func xorSi64(a x86.M64, b x86.M64) x86.M64
 TEXT ·xorSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1

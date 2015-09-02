@@ -1,6 +1,6 @@
 package aes
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // AesdecSi128: Perform one round of an AES decryption flow on data (state) in
@@ -14,8 +14,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'AESDEC'. Intrinsic: '_mm_aesdec_si128'.
 // Requires AES.
-func AesdecSi128(a M128i, RoundKey M128i) M128i {
-	return M128i(aesdecSi128([16]byte(a), [16]byte(RoundKey)))
+func AesdecSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+	return x86.M128i(aesdecSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
 func aesdecSi128(a [16]byte, RoundKey [16]byte) [16]byte
@@ -32,8 +32,8 @@ func aesdecSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESDECLAST'. Intrinsic: '_mm_aesdeclast_si128'.
 // Requires AES.
-func AesdeclastSi128(a M128i, RoundKey M128i) M128i {
-	return M128i(aesdeclastSi128([16]byte(a), [16]byte(RoundKey)))
+func AesdeclastSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+	return x86.M128i(aesdeclastSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
 func aesdeclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
@@ -50,8 +50,8 @@ func aesdeclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESENC'. Intrinsic: '_mm_aesenc_si128'.
 // Requires AES.
-func AesencSi128(a M128i, RoundKey M128i) M128i {
-	return M128i(aesencSi128([16]byte(a), [16]byte(RoundKey)))
+func AesencSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+	return x86.M128i(aesencSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
 func aesencSi128(a [16]byte, RoundKey [16]byte) [16]byte
@@ -68,8 +68,8 @@ func aesencSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESENCLAST'. Intrinsic: '_mm_aesenclast_si128'.
 // Requires AES.
-func AesenclastSi128(a M128i, RoundKey M128i) M128i {
-	return M128i(aesenclastSi128([16]byte(a), [16]byte(RoundKey)))
+func AesenclastSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+	return x86.M128i(aesenclastSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
 func aesenclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
@@ -82,8 +82,8 @@ func aesenclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESIMC'. Intrinsic: '_mm_aesimc_si128'.
 // Requires AES.
-func AesimcSi128(a M128i) M128i {
-	return M128i(aesimcSi128([16]byte(a)))
+func AesimcSi128(a x86.M128i) x86.M128i {
+	return x86.M128i(aesimcSi128([16]byte(a)))
 }
 
 func aesimcSi128(a [16]byte) [16]byte
@@ -106,8 +106,8 @@ func aesimcSi128(a [16]byte) [16]byte
 //
 // Instruction: 'AESKEYGENASSIST'. Intrinsic: '_mm_aeskeygenassist_si128'.
 // Requires AES.
-func AeskeygenassistSi128(a M128i, imm8 int) M128i {
-	return M128i(aeskeygenassistSi128([16]byte(a), imm8))
+func AeskeygenassistSi128(a x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(aeskeygenassistSi128([16]byte(a), imm8))
 }
 
 func aeskeygenassistSi128(a [16]byte, imm8 int) [16]byte

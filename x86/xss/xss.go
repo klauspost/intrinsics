@@ -1,6 +1,6 @@
 package xss
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Xrstors: Perform a full or partial restore of the enabled processor states

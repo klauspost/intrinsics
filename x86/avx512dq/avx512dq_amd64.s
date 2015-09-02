@@ -23,7 +23,7 @@ TEXT ·maskzAndPd(SB),7,$0
 
 // func maskAndPd1(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskAndPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -31,7 +31,7 @@ TEXT ·maskAndPd1(SB),7,$0
 
 // func maskzAndPd1(k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskzAndPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -39,7 +39,7 @@ TEXT ·maskzAndPd1(SB),7,$0
 
 // func andPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·andPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -47,7 +47,7 @@ TEXT ·andPd(SB),7,$0
 
 // func maskAndPd2(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskAndPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -55,7 +55,7 @@ TEXT ·maskAndPd2(SB),7,$0
 
 // func maskzAndPd2(k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskzAndPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -86,7 +86,7 @@ TEXT ·maskzAndPs(SB),7,$0
 
 // func maskAndPs1(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskAndPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -94,7 +94,7 @@ TEXT ·maskAndPs1(SB),7,$0
 
 // func maskzAndPs1(k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskzAndPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -102,7 +102,7 @@ TEXT ·maskzAndPs1(SB),7,$0
 
 // func andPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·andPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -110,7 +110,7 @@ TEXT ·andPs(SB),7,$0
 
 // func maskAndPs2(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskAndPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -118,7 +118,7 @@ TEXT ·maskAndPs2(SB),7,$0
 
 // func maskzAndPs2(k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskzAndPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -149,7 +149,7 @@ TEXT ·maskzAndnotPd(SB),7,$0
 
 // func maskAndnotPd1(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskAndnotPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -157,7 +157,7 @@ TEXT ·maskAndnotPd1(SB),7,$0
 
 // func maskzAndnotPd1(k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskzAndnotPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -165,7 +165,7 @@ TEXT ·maskzAndnotPd1(SB),7,$0
 
 // func andnotPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·andnotPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -173,7 +173,7 @@ TEXT ·andnotPd(SB),7,$0
 
 // func maskAndnotPd2(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskAndnotPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -181,7 +181,7 @@ TEXT ·maskAndnotPd2(SB),7,$0
 
 // func maskzAndnotPd2(k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskzAndnotPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -212,7 +212,7 @@ TEXT ·maskzAndnotPs(SB),7,$0
 
 // func maskAndnotPs1(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskAndnotPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -220,7 +220,7 @@ TEXT ·maskAndnotPs1(SB),7,$0
 
 // func maskzAndnotPs1(k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskzAndnotPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -228,7 +228,7 @@ TEXT ·maskzAndnotPs1(SB),7,$0
 
 // func andnotPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·andnotPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -236,7 +236,7 @@ TEXT ·andnotPs(SB),7,$0
 
 // func maskAndnotPs2(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskAndnotPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -244,7 +244,7 @@ TEXT ·maskAndnotPs2(SB),7,$0
 
 // func maskzAndnotPs2(k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskzAndnotPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -261,7 +261,7 @@ TEXT ·broadcastF32x2(SB),7,$0
 
 // func maskBroadcastF32x2(src [8]float32, k uint8, a [4]float32) [8]float32
 TEXT ·maskBroadcastF32x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -288,7 +288,7 @@ TEXT ·broadcastF32x21(SB),7,$0
 
 // func maskBroadcastF32x21(src [16]float32, k uint16, a [4]float32) [16]float32
 TEXT ·maskBroadcastF32x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -306,7 +306,7 @@ TEXT ·maskzBroadcastF32x21(SB),7,$0
 
 // func broadcastF32x8(a [8]float32) [16]float32
 TEXT ·broadcastF32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -314,7 +314,7 @@ TEXT ·broadcastF32x8(SB),7,$0
 
 // func maskBroadcastF32x8(src [16]float32, k uint16, a [8]float32) [16]float32
 TEXT ·maskBroadcastF32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -322,7 +322,7 @@ TEXT ·maskBroadcastF32x8(SB),7,$0
 
 // func maskzBroadcastF32x8(k uint16, a [8]float32) [16]float32
 TEXT ·maskzBroadcastF32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -339,7 +339,7 @@ TEXT ·broadcastF64x2(SB),7,$0
 
 // func maskBroadcastF64x2(src [4]float64, k uint8, a [2]float64) [4]float64
 TEXT ·maskBroadcastF64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -366,7 +366,7 @@ TEXT ·broadcastF64x21(SB),7,$0
 
 // func maskBroadcastF64x21(src [8]float64, k uint8, a [2]float64) [8]float64
 TEXT ·maskBroadcastF64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -423,7 +423,7 @@ TEXT ·broadcastI32x21(SB),7,$0
 
 // func maskBroadcastI32x21(src [32]byte, k uint8, a [16]byte) [32]byte
 TEXT ·maskBroadcastI32x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -450,7 +450,7 @@ TEXT ·broadcastI32x22(SB),7,$0
 
 // func maskBroadcastI32x22(src [64]byte, k uint16, a [16]byte) [64]byte
 TEXT ·maskBroadcastI32x22(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -468,7 +468,7 @@ TEXT ·maskzBroadcastI32x22(SB),7,$0
 
 // func broadcastI32x8(a [32]byte) [64]byte
 TEXT ·broadcastI32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -476,7 +476,7 @@ TEXT ·broadcastI32x8(SB),7,$0
 
 // func maskBroadcastI32x8(src [64]byte, k uint16, a [32]byte) [64]byte
 TEXT ·maskBroadcastI32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -484,7 +484,7 @@ TEXT ·maskBroadcastI32x8(SB),7,$0
 
 // func maskzBroadcastI32x8(k uint16, a [32]byte) [64]byte
 TEXT ·maskzBroadcastI32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -501,7 +501,7 @@ TEXT ·broadcastI64x2(SB),7,$0
 
 // func maskBroadcastI64x2(src [32]byte, k uint8, a [16]byte) [32]byte
 TEXT ·maskBroadcastI64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -528,7 +528,7 @@ TEXT ·broadcastI64x21(SB),7,$0
 
 // func maskBroadcastI64x21(src [64]byte, k uint8, a [16]byte) [64]byte
 TEXT ·maskBroadcastI64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -546,7 +546,7 @@ TEXT ·maskzBroadcastI64x21(SB),7,$0
 
 // func cvtRoundepi64Pd(a [64]byte, rounding int) [8]float64
 TEXT ·cvtRoundepi64Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -554,7 +554,7 @@ TEXT ·cvtRoundepi64Pd(SB),7,$0
 
 // func maskCvtRoundepi64Pd(src [8]float64, k uint8, a [64]byte, rounding int) [8]float64
 TEXT ·maskCvtRoundepi64Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -562,7 +562,7 @@ TEXT ·maskCvtRoundepi64Pd(SB),7,$0
 
 // func maskzCvtRoundepi64Pd(k uint8, a [64]byte, rounding int) [8]float64
 TEXT ·maskzCvtRoundepi64Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -570,7 +570,7 @@ TEXT ·maskzCvtRoundepi64Pd(SB),7,$0
 
 // func cvtRoundepi64Ps(a [64]byte, rounding int) [8]float32
 TEXT ·cvtRoundepi64Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -578,7 +578,7 @@ TEXT ·cvtRoundepi64Ps(SB),7,$0
 
 // func maskCvtRoundepi64Ps(src [8]float32, k uint8, a [64]byte, rounding int) [8]float32
 TEXT ·maskCvtRoundepi64Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -586,7 +586,7 @@ TEXT ·maskCvtRoundepi64Ps(SB),7,$0
 
 // func maskzCvtRoundepi64Ps(k uint8, a [64]byte, rounding int) [8]float32
 TEXT ·maskzCvtRoundepi64Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -594,7 +594,7 @@ TEXT ·maskzCvtRoundepi64Ps(SB),7,$0
 
 // func cvtRoundepu64Pd(a [64]byte, rounding int) [8]float64
 TEXT ·cvtRoundepu64Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -602,7 +602,7 @@ TEXT ·cvtRoundepu64Pd(SB),7,$0
 
 // func maskCvtRoundepu64Pd(src [8]float64, k uint8, a [64]byte, rounding int) [8]float64
 TEXT ·maskCvtRoundepu64Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -610,7 +610,7 @@ TEXT ·maskCvtRoundepu64Pd(SB),7,$0
 
 // func maskzCvtRoundepu64Pd(k uint8, a [64]byte, rounding int) [8]float64
 TEXT ·maskzCvtRoundepu64Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -618,7 +618,7 @@ TEXT ·maskzCvtRoundepu64Pd(SB),7,$0
 
 // func cvtRoundepu64Ps(a [64]byte, rounding int) [8]float32
 TEXT ·cvtRoundepu64Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -626,7 +626,7 @@ TEXT ·cvtRoundepu64Ps(SB),7,$0
 
 // func maskCvtRoundepu64Ps(src [8]float32, k uint8, a [64]byte, rounding int) [8]float32
 TEXT ·maskCvtRoundepu64Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -634,7 +634,7 @@ TEXT ·maskCvtRoundepu64Ps(SB),7,$0
 
 // func maskzCvtRoundepu64Ps(k uint8, a [64]byte, rounding int) [8]float32
 TEXT ·maskzCvtRoundepu64Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -642,7 +642,7 @@ TEXT ·maskzCvtRoundepu64Ps(SB),7,$0
 
 // func cvtRoundpdEpi64(a [8]float64, rounding int) [64]byte
 TEXT ·cvtRoundpdEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -650,7 +650,7 @@ TEXT ·cvtRoundpdEpi64(SB),7,$0
 
 // func maskCvtRoundpdEpi64(src [64]byte, k uint8, a [8]float64, rounding int) [64]byte
 TEXT ·maskCvtRoundpdEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -658,7 +658,7 @@ TEXT ·maskCvtRoundpdEpi64(SB),7,$0
 
 // func maskzCvtRoundpdEpi64(k uint8, a [8]float64, rounding int) [64]byte
 TEXT ·maskzCvtRoundpdEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -666,7 +666,7 @@ TEXT ·maskzCvtRoundpdEpi64(SB),7,$0
 
 // func cvtRoundpdEpu64(a [8]float64, rounding int) [64]byte
 TEXT ·cvtRoundpdEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -674,7 +674,7 @@ TEXT ·cvtRoundpdEpu64(SB),7,$0
 
 // func maskCvtRoundpdEpu64(src [64]byte, k uint8, a [8]float64, rounding int) [64]byte
 TEXT ·maskCvtRoundpdEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -682,7 +682,7 @@ TEXT ·maskCvtRoundpdEpu64(SB),7,$0
 
 // func maskzCvtRoundpdEpu64(k uint8, a [8]float64, rounding int) [64]byte
 TEXT ·maskzCvtRoundpdEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -690,7 +690,7 @@ TEXT ·maskzCvtRoundpdEpu64(SB),7,$0
 
 // func cvtRoundpsEpi64(a [8]float32, rounding int) [64]byte
 TEXT ·cvtRoundpsEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -698,7 +698,7 @@ TEXT ·cvtRoundpsEpi64(SB),7,$0
 
 // func maskCvtRoundpsEpi64(src [64]byte, k uint8, a [8]float32, rounding int) [64]byte
 TEXT ·maskCvtRoundpsEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -706,7 +706,7 @@ TEXT ·maskCvtRoundpsEpi64(SB),7,$0
 
 // func maskzCvtRoundpsEpi64(k uint8, a [8]float32, rounding int) [64]byte
 TEXT ·maskzCvtRoundpsEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -714,7 +714,7 @@ TEXT ·maskzCvtRoundpsEpi64(SB),7,$0
 
 // func cvtRoundpsEpu64(a [8]float32, rounding int) [64]byte
 TEXT ·cvtRoundpsEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -722,7 +722,7 @@ TEXT ·cvtRoundpsEpu64(SB),7,$0
 
 // func maskCvtRoundpsEpu64(src [64]byte, k uint8, a [8]float32, rounding int) [64]byte
 TEXT ·maskCvtRoundpsEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -730,7 +730,7 @@ TEXT ·maskCvtRoundpsEpu64(SB),7,$0
 
 // func maskzCvtRoundpsEpu64(k uint8, a [8]float32, rounding int) [64]byte
 TEXT ·maskzCvtRoundpsEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -768,7 +768,7 @@ TEXT ·maskzCvtepi64Pd(SB),7,$0
 
 // func cvtepi64Pd1(a [32]byte) [4]float64
 TEXT ·cvtepi64Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -776,7 +776,7 @@ TEXT ·cvtepi64Pd1(SB),7,$0
 
 // func maskCvtepi64Pd1(src [4]float64, k uint8, a [32]byte) [4]float64
 TEXT ·maskCvtepi64Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -784,7 +784,7 @@ TEXT ·maskCvtepi64Pd1(SB),7,$0
 
 // func maskzCvtepi64Pd1(k uint8, a [32]byte) [4]float64
 TEXT ·maskzCvtepi64Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -792,7 +792,7 @@ TEXT ·maskzCvtepi64Pd1(SB),7,$0
 
 // func cvtepi64Pd2(a [64]byte) [8]float64
 TEXT ·cvtepi64Pd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -800,7 +800,7 @@ TEXT ·cvtepi64Pd2(SB),7,$0
 
 // func maskCvtepi64Pd2(src [8]float64, k uint8, a [64]byte) [8]float64
 TEXT ·maskCvtepi64Pd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -808,7 +808,7 @@ TEXT ·maskCvtepi64Pd2(SB),7,$0
 
 // func maskzCvtepi64Pd2(k uint8, a [64]byte) [8]float64
 TEXT ·maskzCvtepi64Pd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -846,7 +846,7 @@ TEXT ·maskzCvtepi64Ps(SB),7,$0
 
 // func cvtepi64Ps1(a [32]byte) [4]float32
 TEXT ·cvtepi64Ps1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -854,7 +854,7 @@ TEXT ·cvtepi64Ps1(SB),7,$0
 
 // func maskCvtepi64Ps1(src [4]float32, k uint8, a [32]byte) [4]float32
 TEXT ·maskCvtepi64Ps1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -862,7 +862,7 @@ TEXT ·maskCvtepi64Ps1(SB),7,$0
 
 // func maskzCvtepi64Ps1(k uint8, a [32]byte) [4]float32
 TEXT ·maskzCvtepi64Ps1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -870,7 +870,7 @@ TEXT ·maskzCvtepi64Ps1(SB),7,$0
 
 // func cvtepi64Ps2(a [64]byte) [8]float32
 TEXT ·cvtepi64Ps2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -878,7 +878,7 @@ TEXT ·cvtepi64Ps2(SB),7,$0
 
 // func maskCvtepi64Ps2(src [8]float32, k uint8, a [64]byte) [8]float32
 TEXT ·maskCvtepi64Ps2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -886,7 +886,7 @@ TEXT ·maskCvtepi64Ps2(SB),7,$0
 
 // func maskzCvtepi64Ps2(k uint8, a [64]byte) [8]float32
 TEXT ·maskzCvtepi64Ps2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -924,7 +924,7 @@ TEXT ·maskzCvtepu64Pd(SB),7,$0
 
 // func cvtepu64Pd1(a [32]byte) [4]float64
 TEXT ·cvtepu64Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -932,7 +932,7 @@ TEXT ·cvtepu64Pd1(SB),7,$0
 
 // func maskCvtepu64Pd1(src [4]float64, k uint8, a [32]byte) [4]float64
 TEXT ·maskCvtepu64Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -940,7 +940,7 @@ TEXT ·maskCvtepu64Pd1(SB),7,$0
 
 // func maskzCvtepu64Pd1(k uint8, a [32]byte) [4]float64
 TEXT ·maskzCvtepu64Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -948,7 +948,7 @@ TEXT ·maskzCvtepu64Pd1(SB),7,$0
 
 // func cvtepu64Pd2(a [64]byte) [8]float64
 TEXT ·cvtepu64Pd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -956,7 +956,7 @@ TEXT ·cvtepu64Pd2(SB),7,$0
 
 // func maskCvtepu64Pd2(src [8]float64, k uint8, a [64]byte) [8]float64
 TEXT ·maskCvtepu64Pd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -964,7 +964,7 @@ TEXT ·maskCvtepu64Pd2(SB),7,$0
 
 // func maskzCvtepu64Pd2(k uint8, a [64]byte) [8]float64
 TEXT ·maskzCvtepu64Pd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1002,7 +1002,7 @@ TEXT ·maskzCvtepu64Ps(SB),7,$0
 
 // func cvtepu64Ps1(a [32]byte) [4]float32
 TEXT ·cvtepu64Ps1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1010,7 +1010,7 @@ TEXT ·cvtepu64Ps1(SB),7,$0
 
 // func maskCvtepu64Ps1(src [4]float32, k uint8, a [32]byte) [4]float32
 TEXT ·maskCvtepu64Ps1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1018,7 +1018,7 @@ TEXT ·maskCvtepu64Ps1(SB),7,$0
 
 // func maskzCvtepu64Ps1(k uint8, a [32]byte) [4]float32
 TEXT ·maskzCvtepu64Ps1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1026,7 +1026,7 @@ TEXT ·maskzCvtepu64Ps1(SB),7,$0
 
 // func cvtepu64Ps2(a [64]byte) [8]float32
 TEXT ·cvtepu64Ps2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1034,7 +1034,7 @@ TEXT ·cvtepu64Ps2(SB),7,$0
 
 // func maskCvtepu64Ps2(src [8]float32, k uint8, a [64]byte) [8]float32
 TEXT ·maskCvtepu64Ps2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1042,7 +1042,7 @@ TEXT ·maskCvtepu64Ps2(SB),7,$0
 
 // func maskzCvtepu64Ps2(k uint8, a [64]byte) [8]float32
 TEXT ·maskzCvtepu64Ps2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1080,7 +1080,7 @@ TEXT ·maskzCvtpdEpi64(SB),7,$0
 
 // func cvtpdEpi641(a [4]float64) [32]byte
 TEXT ·cvtpdEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1088,7 +1088,7 @@ TEXT ·cvtpdEpi641(SB),7,$0
 
 // func maskCvtpdEpi641(src [32]byte, k uint8, a [4]float64) [32]byte
 TEXT ·maskCvtpdEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1096,7 +1096,7 @@ TEXT ·maskCvtpdEpi641(SB),7,$0
 
 // func maskzCvtpdEpi641(k uint8, a [4]float64) [32]byte
 TEXT ·maskzCvtpdEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1104,7 +1104,7 @@ TEXT ·maskzCvtpdEpi641(SB),7,$0
 
 // func cvtpdEpi642(a [8]float64) [64]byte
 TEXT ·cvtpdEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1112,7 +1112,7 @@ TEXT ·cvtpdEpi642(SB),7,$0
 
 // func maskCvtpdEpi642(src [64]byte, k uint8, a [8]float64) [64]byte
 TEXT ·maskCvtpdEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1120,7 +1120,7 @@ TEXT ·maskCvtpdEpi642(SB),7,$0
 
 // func maskzCvtpdEpi642(k uint8, a [8]float64) [64]byte
 TEXT ·maskzCvtpdEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1158,7 +1158,7 @@ TEXT ·maskzCvtpdEpu64(SB),7,$0
 
 // func cvtpdEpu641(a [4]float64) [32]byte
 TEXT ·cvtpdEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1166,7 +1166,7 @@ TEXT ·cvtpdEpu641(SB),7,$0
 
 // func maskCvtpdEpu641(src [32]byte, k uint8, a [4]float64) [32]byte
 TEXT ·maskCvtpdEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1174,7 +1174,7 @@ TEXT ·maskCvtpdEpu641(SB),7,$0
 
 // func maskzCvtpdEpu641(k uint8, a [4]float64) [32]byte
 TEXT ·maskzCvtpdEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1182,7 +1182,7 @@ TEXT ·maskzCvtpdEpu641(SB),7,$0
 
 // func cvtpdEpu642(a [8]float64) [64]byte
 TEXT ·cvtpdEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1190,7 +1190,7 @@ TEXT ·cvtpdEpu642(SB),7,$0
 
 // func maskCvtpdEpu642(src [64]byte, k uint8, a [8]float64) [64]byte
 TEXT ·maskCvtpdEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1198,7 +1198,7 @@ TEXT ·maskCvtpdEpu642(SB),7,$0
 
 // func maskzCvtpdEpu642(k uint8, a [8]float64) [64]byte
 TEXT ·maskzCvtpdEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1245,7 +1245,7 @@ TEXT ·cvtpsEpi641(SB),7,$0
 
 // func maskCvtpsEpi641(src [32]byte, k uint8, a [4]float32) [32]byte
 TEXT ·maskCvtpsEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1263,7 +1263,7 @@ TEXT ·maskzCvtpsEpi641(SB),7,$0
 
 // func cvtpsEpi642(a [8]float32) [64]byte
 TEXT ·cvtpsEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1271,7 +1271,7 @@ TEXT ·cvtpsEpi642(SB),7,$0
 
 // func maskCvtpsEpi642(src [64]byte, k uint8, a [8]float32) [64]byte
 TEXT ·maskCvtpsEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1279,7 +1279,7 @@ TEXT ·maskCvtpsEpi642(SB),7,$0
 
 // func maskzCvtpsEpi642(k uint8, a [8]float32) [64]byte
 TEXT ·maskzCvtpsEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1326,7 +1326,7 @@ TEXT ·cvtpsEpu641(SB),7,$0
 
 // func maskCvtpsEpu641(src [32]byte, k uint8, a [4]float32) [32]byte
 TEXT ·maskCvtpsEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1344,7 +1344,7 @@ TEXT ·maskzCvtpsEpu641(SB),7,$0
 
 // func cvtpsEpu642(a [8]float32) [64]byte
 TEXT ·cvtpsEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1352,7 +1352,7 @@ TEXT ·cvtpsEpu642(SB),7,$0
 
 // func maskCvtpsEpu642(src [64]byte, k uint8, a [8]float32) [64]byte
 TEXT ·maskCvtpsEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1360,7 +1360,7 @@ TEXT ·maskCvtpsEpu642(SB),7,$0
 
 // func maskzCvtpsEpu642(k uint8, a [8]float32) [64]byte
 TEXT ·maskzCvtpsEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1368,7 +1368,7 @@ TEXT ·maskzCvtpsEpu642(SB),7,$0
 
 // func cvttRoundpdEpi64(a [8]float64, sae int) [64]byte
 TEXT ·cvttRoundpdEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1376,7 +1376,7 @@ TEXT ·cvttRoundpdEpi64(SB),7,$0
 
 // func maskCvttRoundpdEpi64(src [64]byte, k uint8, a [8]float64, sae int) [64]byte
 TEXT ·maskCvttRoundpdEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1384,7 +1384,7 @@ TEXT ·maskCvttRoundpdEpi64(SB),7,$0
 
 // func maskzCvttRoundpdEpi64(k uint8, a [8]float64, sae int) [64]byte
 TEXT ·maskzCvttRoundpdEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1392,7 +1392,7 @@ TEXT ·maskzCvttRoundpdEpi64(SB),7,$0
 
 // func cvttRoundpdEpu64(a [8]float64, sae int) [64]byte
 TEXT ·cvttRoundpdEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1400,7 +1400,7 @@ TEXT ·cvttRoundpdEpu64(SB),7,$0
 
 // func maskCvttRoundpdEpu64(src [64]byte, k uint8, a [8]float64, sae int) [64]byte
 TEXT ·maskCvttRoundpdEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1408,7 +1408,7 @@ TEXT ·maskCvttRoundpdEpu64(SB),7,$0
 
 // func maskzCvttRoundpdEpu64(k uint8, a [8]float64, sae int) [64]byte
 TEXT ·maskzCvttRoundpdEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1416,7 +1416,7 @@ TEXT ·maskzCvttRoundpdEpu64(SB),7,$0
 
 // func cvttRoundpsEpi64(a [8]float32, sae int) [64]byte
 TEXT ·cvttRoundpsEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1424,7 +1424,7 @@ TEXT ·cvttRoundpsEpi64(SB),7,$0
 
 // func maskCvttRoundpsEpi64(src [64]byte, k uint8, a [8]float32, sae int) [64]byte
 TEXT ·maskCvttRoundpsEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1432,7 +1432,7 @@ TEXT ·maskCvttRoundpsEpi64(SB),7,$0
 
 // func maskzCvttRoundpsEpi64(k uint8, a [8]float32, sae int) [64]byte
 TEXT ·maskzCvttRoundpsEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1440,7 +1440,7 @@ TEXT ·maskzCvttRoundpsEpi64(SB),7,$0
 
 // func cvttRoundpsEpu64(a [8]float32, sae int) [64]byte
 TEXT ·cvttRoundpsEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1448,7 +1448,7 @@ TEXT ·cvttRoundpsEpu64(SB),7,$0
 
 // func maskCvttRoundpsEpu64(src [64]byte, k uint8, a [8]float32, sae int) [64]byte
 TEXT ·maskCvttRoundpsEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1456,7 +1456,7 @@ TEXT ·maskCvttRoundpsEpu64(SB),7,$0
 
 // func maskzCvttRoundpsEpu64(k uint8, a [8]float32, sae int) [64]byte
 TEXT ·maskzCvttRoundpsEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1494,7 +1494,7 @@ TEXT ·maskzCvttpdEpi64(SB),7,$0
 
 // func cvttpdEpi641(a [4]float64) [32]byte
 TEXT ·cvttpdEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1502,7 +1502,7 @@ TEXT ·cvttpdEpi641(SB),7,$0
 
 // func maskCvttpdEpi641(src [32]byte, k uint8, a [4]float64) [32]byte
 TEXT ·maskCvttpdEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1510,7 +1510,7 @@ TEXT ·maskCvttpdEpi641(SB),7,$0
 
 // func maskzCvttpdEpi641(k uint8, a [4]float64) [32]byte
 TEXT ·maskzCvttpdEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1518,7 +1518,7 @@ TEXT ·maskzCvttpdEpi641(SB),7,$0
 
 // func cvttpdEpi642(a [8]float64) [64]byte
 TEXT ·cvttpdEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1526,7 +1526,7 @@ TEXT ·cvttpdEpi642(SB),7,$0
 
 // func maskCvttpdEpi642(src [64]byte, k uint8, a [8]float64) [64]byte
 TEXT ·maskCvttpdEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1534,7 +1534,7 @@ TEXT ·maskCvttpdEpi642(SB),7,$0
 
 // func maskzCvttpdEpi642(k uint8, a [8]float64) [64]byte
 TEXT ·maskzCvttpdEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1572,7 +1572,7 @@ TEXT ·maskzCvttpdEpu64(SB),7,$0
 
 // func cvttpdEpu641(a [4]float64) [32]byte
 TEXT ·cvttpdEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1580,7 +1580,7 @@ TEXT ·cvttpdEpu641(SB),7,$0
 
 // func maskCvttpdEpu641(src [32]byte, k uint8, a [4]float64) [32]byte
 TEXT ·maskCvttpdEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1588,7 +1588,7 @@ TEXT ·maskCvttpdEpu641(SB),7,$0
 
 // func maskzCvttpdEpu641(k uint8, a [4]float64) [32]byte
 TEXT ·maskzCvttpdEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1596,7 +1596,7 @@ TEXT ·maskzCvttpdEpu641(SB),7,$0
 
 // func cvttpdEpu642(a [8]float64) [64]byte
 TEXT ·cvttpdEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1604,7 +1604,7 @@ TEXT ·cvttpdEpu642(SB),7,$0
 
 // func maskCvttpdEpu642(src [64]byte, k uint8, a [8]float64) [64]byte
 TEXT ·maskCvttpdEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1612,7 +1612,7 @@ TEXT ·maskCvttpdEpu642(SB),7,$0
 
 // func maskzCvttpdEpu642(k uint8, a [8]float64) [64]byte
 TEXT ·maskzCvttpdEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1659,7 +1659,7 @@ TEXT ·cvttpsEpi641(SB),7,$0
 
 // func maskCvttpsEpi641(src [32]byte, k uint8, a [4]float32) [32]byte
 TEXT ·maskCvttpsEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1677,7 +1677,7 @@ TEXT ·maskzCvttpsEpi641(SB),7,$0
 
 // func cvttpsEpi642(a [8]float32) [64]byte
 TEXT ·cvttpsEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1685,7 +1685,7 @@ TEXT ·cvttpsEpi642(SB),7,$0
 
 // func maskCvttpsEpi642(src [64]byte, k uint8, a [8]float32) [64]byte
 TEXT ·maskCvttpsEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1693,7 +1693,7 @@ TEXT ·maskCvttpsEpi642(SB),7,$0
 
 // func maskzCvttpsEpi642(k uint8, a [8]float32) [64]byte
 TEXT ·maskzCvttpsEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1740,7 +1740,7 @@ TEXT ·cvttpsEpu641(SB),7,$0
 
 // func maskCvttpsEpu641(src [32]byte, k uint8, a [4]float32) [32]byte
 TEXT ·maskCvttpsEpu641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1758,7 +1758,7 @@ TEXT ·maskzCvttpsEpu641(SB),7,$0
 
 // func cvttpsEpu642(a [8]float32) [64]byte
 TEXT ·cvttpsEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1766,7 +1766,7 @@ TEXT ·cvttpsEpu642(SB),7,$0
 
 // func maskCvttpsEpu642(src [64]byte, k uint8, a [8]float32) [64]byte
 TEXT ·maskCvttpsEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1774,7 +1774,7 @@ TEXT ·maskCvttpsEpu642(SB),7,$0
 
 // func maskzCvttpsEpu642(k uint8, a [8]float32) [64]byte
 TEXT ·maskzCvttpsEpu642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -1782,7 +1782,7 @@ TEXT ·maskzCvttpsEpu642(SB),7,$0
 
 // func extractf32x8Ps(a [16]float32, imm8 int) [8]float32
 TEXT ·extractf32x8Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1790,7 +1790,7 @@ TEXT ·extractf32x8Ps(SB),7,$0
 
 // func maskExtractf32x8Ps(src [8]float32, k uint8, a [16]float32, imm8 int) [8]float32
 TEXT ·maskExtractf32x8Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1798,7 +1798,7 @@ TEXT ·maskExtractf32x8Ps(SB),7,$0
 
 // func maskzExtractf32x8Ps(k uint8, a [16]float32, imm8 int) [8]float32
 TEXT ·maskzExtractf32x8Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1806,7 +1806,7 @@ TEXT ·maskzExtractf32x8Ps(SB),7,$0
 
 // func extractf64x2Pd(a [4]float64, imm8 int) [2]float64
 TEXT ·extractf64x2Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1814,7 +1814,7 @@ TEXT ·extractf64x2Pd(SB),7,$0
 
 // func maskExtractf64x2Pd(src [2]float64, k uint8, a [4]float64, imm8 int) [2]float64
 TEXT ·maskExtractf64x2Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1822,7 +1822,7 @@ TEXT ·maskExtractf64x2Pd(SB),7,$0
 
 // func maskzExtractf64x2Pd(k uint8, a [4]float64, imm8 int) [2]float64
 TEXT ·maskzExtractf64x2Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1830,7 +1830,7 @@ TEXT ·maskzExtractf64x2Pd(SB),7,$0
 
 // func extractf64x2Pd1(a [8]float64, imm8 int) [2]float64
 TEXT ·extractf64x2Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1838,7 +1838,7 @@ TEXT ·extractf64x2Pd1(SB),7,$0
 
 // func maskExtractf64x2Pd1(src [2]float64, k uint8, a [8]float64, imm8 int) [2]float64
 TEXT ·maskExtractf64x2Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1846,7 +1846,7 @@ TEXT ·maskExtractf64x2Pd1(SB),7,$0
 
 // func maskzExtractf64x2Pd1(k uint8, a [8]float64, imm8 int) [2]float64
 TEXT ·maskzExtractf64x2Pd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1854,7 +1854,7 @@ TEXT ·maskzExtractf64x2Pd1(SB),7,$0
 
 // func extracti32x8Epi32(a [64]byte, imm8 int) [32]byte
 TEXT ·extracti32x8Epi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1862,7 +1862,7 @@ TEXT ·extracti32x8Epi32(SB),7,$0
 
 // func maskExtracti32x8Epi32(src [32]byte, k uint8, a [64]byte, imm8 int) [32]byte
 TEXT ·maskExtracti32x8Epi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1870,7 +1870,7 @@ TEXT ·maskExtracti32x8Epi32(SB),7,$0
 
 // func maskzExtracti32x8Epi32(k uint8, a [64]byte, imm8 int) [32]byte
 TEXT ·maskzExtracti32x8Epi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1878,7 +1878,7 @@ TEXT ·maskzExtracti32x8Epi32(SB),7,$0
 
 // func extracti64x2Epi64(a [32]byte, imm8 int) [16]byte
 TEXT ·extracti64x2Epi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1886,7 +1886,7 @@ TEXT ·extracti64x2Epi64(SB),7,$0
 
 // func maskExtracti64x2Epi64(src [16]byte, k uint8, a [32]byte, imm8 int) [16]byte
 TEXT ·maskExtracti64x2Epi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1894,7 +1894,7 @@ TEXT ·maskExtracti64x2Epi64(SB),7,$0
 
 // func maskzExtracti64x2Epi64(k uint8, a [32]byte, imm8 int) [16]byte
 TEXT ·maskzExtracti64x2Epi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1902,7 +1902,7 @@ TEXT ·maskzExtracti64x2Epi64(SB),7,$0
 
 // func extracti64x2Epi641(a [64]byte, imm8 int) [16]byte
 TEXT ·extracti64x2Epi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1910,7 +1910,7 @@ TEXT ·extracti64x2Epi641(SB),7,$0
 
 // func maskExtracti64x2Epi641(src [16]byte, k uint8, a [64]byte, imm8 int) [16]byte
 TEXT ·maskExtracti64x2Epi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1918,7 +1918,7 @@ TEXT ·maskExtracti64x2Epi641(SB),7,$0
 
 // func maskzExtracti64x2Epi641(k uint8, a [64]byte, imm8 int) [16]byte
 TEXT ·maskzExtracti64x2Epi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1947,7 +1947,7 @@ TEXT ·maskFpclassPdMask(SB),7,$0
 
 // func fpclassPdMask1(a [4]float64, imm8 int) uint8
 TEXT ·fpclassPdMask1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -1955,7 +1955,7 @@ TEXT ·fpclassPdMask1(SB),7,$0
 
 // func maskFpclassPdMask1(k1 uint8, a [4]float64, imm8 int) uint8
 TEXT ·maskFpclassPdMask1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -1963,7 +1963,7 @@ TEXT ·maskFpclassPdMask1(SB),7,$0
 
 // func fpclassPdMask2(a [8]float64, imm8 int) uint8
 TEXT ·fpclassPdMask2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -1971,7 +1971,7 @@ TEXT ·fpclassPdMask2(SB),7,$0
 
 // func maskFpclassPdMask2(k1 uint8, a [8]float64, imm8 int) uint8
 TEXT ·maskFpclassPdMask2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -2000,7 +2000,7 @@ TEXT ·maskFpclassPsMask(SB),7,$0
 
 // func fpclassPsMask1(a [8]float32, imm8 int) uint8
 TEXT ·fpclassPsMask1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -2008,7 +2008,7 @@ TEXT ·fpclassPsMask1(SB),7,$0
 
 // func maskFpclassPsMask1(k1 uint8, a [8]float32, imm8 int) uint8
 TEXT ·maskFpclassPsMask1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -2016,7 +2016,7 @@ TEXT ·maskFpclassPsMask1(SB),7,$0
 
 // func fpclassPsMask2(a [16]float32, imm8 int) uint16
 TEXT ·fpclassPsMask2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOVW $0, ret+0(FP)
@@ -2024,7 +2024,7 @@ TEXT ·fpclassPsMask2(SB),7,$0
 
 // func maskFpclassPsMask2(k1 uint16, a [16]float32, imm8 int) uint16
 TEXT ·maskFpclassPsMask2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOVW $0, ret+0(FP)
@@ -2074,7 +2074,7 @@ TEXT ·maskFpclassSsMask(SB),7,$0
 
 // func insertf32x8(a [16]float32, b [8]float32, imm8 int) [16]float32
 TEXT ·insertf32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2082,7 +2082,7 @@ TEXT ·insertf32x8(SB),7,$0
 
 // func maskInsertf32x8(src [16]float32, k uint16, a [16]float32, b [8]float32, imm8 int) [16]float32
 TEXT ·maskInsertf32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2090,7 +2090,7 @@ TEXT ·maskInsertf32x8(SB),7,$0
 
 // func maskzInsertf32x8(k uint16, a [16]float32, b [8]float32, imm8 int) [16]float32
 TEXT ·maskzInsertf32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2098,7 +2098,7 @@ TEXT ·maskzInsertf32x8(SB),7,$0
 
 // func insertf64x2(a [4]float64, b [2]float64, imm8 int) [4]float64
 TEXT ·insertf64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2106,7 +2106,7 @@ TEXT ·insertf64x2(SB),7,$0
 
 // func maskInsertf64x2(src [4]float64, k uint8, a [4]float64, b [2]float64, imm8 int) [4]float64
 TEXT ·maskInsertf64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2114,7 +2114,7 @@ TEXT ·maskInsertf64x2(SB),7,$0
 
 // func maskzInsertf64x2(k uint8, a [4]float64, b [2]float64, imm8 int) [4]float64
 TEXT ·maskzInsertf64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2122,7 +2122,7 @@ TEXT ·maskzInsertf64x2(SB),7,$0
 
 // func insertf64x21(a [8]float64, b [2]float64, imm8 int) [8]float64
 TEXT ·insertf64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2130,7 +2130,7 @@ TEXT ·insertf64x21(SB),7,$0
 
 // func maskInsertf64x21(src [8]float64, k uint8, a [8]float64, b [2]float64, imm8 int) [8]float64
 TEXT ·maskInsertf64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2138,7 +2138,7 @@ TEXT ·maskInsertf64x21(SB),7,$0
 
 // func maskzInsertf64x21(k uint8, a [8]float64, b [2]float64, imm8 int) [8]float64
 TEXT ·maskzInsertf64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2146,7 +2146,7 @@ TEXT ·maskzInsertf64x21(SB),7,$0
 
 // func inserti32x8(a [64]byte, b [32]byte, imm8 int) [64]byte
 TEXT ·inserti32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2154,7 +2154,7 @@ TEXT ·inserti32x8(SB),7,$0
 
 // func maskInserti32x8(src [64]byte, k uint16, a [64]byte, b [32]byte, imm8 int) [64]byte
 TEXT ·maskInserti32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2162,7 +2162,7 @@ TEXT ·maskInserti32x8(SB),7,$0
 
 // func maskzInserti32x8(k uint16, a [64]byte, b [32]byte, imm8 int) [64]byte
 TEXT ·maskzInserti32x8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2170,7 +2170,7 @@ TEXT ·maskzInserti32x8(SB),7,$0
 
 // func inserti64x2(a [32]byte, b [16]byte, imm8 int) [32]byte
 TEXT ·inserti64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2178,7 +2178,7 @@ TEXT ·inserti64x2(SB),7,$0
 
 // func maskInserti64x2(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
 TEXT ·maskInserti64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2186,7 +2186,7 @@ TEXT ·maskInserti64x2(SB),7,$0
 
 // func maskzInserti64x2(k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
 TEXT ·maskzInserti64x2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2194,7 +2194,7 @@ TEXT ·maskzInserti64x2(SB),7,$0
 
 // func inserti64x21(a [64]byte, b [16]byte, imm8 int) [64]byte
 TEXT ·inserti64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2202,7 +2202,7 @@ TEXT ·inserti64x21(SB),7,$0
 
 // func maskInserti64x21(src [64]byte, k uint8, a [64]byte, b [16]byte, imm8 int) [64]byte
 TEXT ·maskInserti64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2210,7 +2210,7 @@ TEXT ·maskInserti64x21(SB),7,$0
 
 // func maskzInserti64x21(k uint8, a [64]byte, b [16]byte, imm8 int) [64]byte
 TEXT ·maskzInserti64x21(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2227,7 +2227,7 @@ TEXT ·movepi32Mask(SB),7,$0
 
 // func movepi32Mask1(a [32]byte) uint8
 TEXT ·movepi32Mask1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -2235,7 +2235,7 @@ TEXT ·movepi32Mask1(SB),7,$0
 
 // func movepi32Mask2(a [64]byte) uint16
 TEXT ·movepi32Mask2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOVW $0, ret+0(FP)
@@ -2252,7 +2252,7 @@ TEXT ·movepi64Mask(SB),7,$0
 
 // func movepi64Mask1(a [32]byte) uint8
 TEXT ·movepi64Mask1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -2260,7 +2260,7 @@ TEXT ·movepi64Mask1(SB),7,$0
 
 // func movepi64Mask2(a [64]byte) uint8
 TEXT ·movepi64Mask2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -2355,7 +2355,7 @@ TEXT ·mulloEpi64(SB),7,$0
 
 // func maskMulloEpi641(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 TEXT ·maskMulloEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2363,7 +2363,7 @@ TEXT ·maskMulloEpi641(SB),7,$0
 
 // func maskzMulloEpi641(k uint8, a [32]byte, b [32]byte) [32]byte
 TEXT ·maskzMulloEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2371,7 +2371,7 @@ TEXT ·maskzMulloEpi641(SB),7,$0
 
 // func mulloEpi641(a [32]byte, b [32]byte) [32]byte
 TEXT ·mulloEpi641(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2379,7 +2379,7 @@ TEXT ·mulloEpi641(SB),7,$0
 
 // func maskMulloEpi642(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 TEXT ·maskMulloEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2387,7 +2387,7 @@ TEXT ·maskMulloEpi642(SB),7,$0
 
 // func maskzMulloEpi642(k uint8, a [64]byte, b [64]byte) [64]byte
 TEXT ·maskzMulloEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2395,7 +2395,7 @@ TEXT ·maskzMulloEpi642(SB),7,$0
 
 // func mulloEpi642(a [64]byte, b [64]byte) [64]byte
 TEXT ·mulloEpi642(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512i
+	// Unimplemented. Unknown MOVE postfix for type x86.M512i
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2426,7 +2426,7 @@ TEXT ·maskzOrPd(SB),7,$0
 
 // func maskOrPd1(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskOrPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2434,7 +2434,7 @@ TEXT ·maskOrPd1(SB),7,$0
 
 // func maskzOrPd1(k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskzOrPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2442,7 +2442,7 @@ TEXT ·maskzOrPd1(SB),7,$0
 
 // func maskOrPd2(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskOrPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2450,7 +2450,7 @@ TEXT ·maskOrPd2(SB),7,$0
 
 // func maskzOrPd2(k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskzOrPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2458,7 +2458,7 @@ TEXT ·maskzOrPd2(SB),7,$0
 
 // func orPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·orPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2489,7 +2489,7 @@ TEXT ·maskzOrPs(SB),7,$0
 
 // func maskOrPs1(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskOrPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2497,7 +2497,7 @@ TEXT ·maskOrPs1(SB),7,$0
 
 // func maskzOrPs1(k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskzOrPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2505,7 +2505,7 @@ TEXT ·maskzOrPs1(SB),7,$0
 
 // func maskOrPs2(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskOrPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2513,7 +2513,7 @@ TEXT ·maskOrPs2(SB),7,$0
 
 // func maskzOrPs2(k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskzOrPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2521,7 +2521,7 @@ TEXT ·maskzOrPs2(SB),7,$0
 
 // func orPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·orPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2565,7 +2565,7 @@ TEXT ·rangePd(SB),7,$0
 
 // func maskRangePd1(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
 TEXT ·maskRangePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2573,7 +2573,7 @@ TEXT ·maskRangePd1(SB),7,$0
 
 // func maskzRangePd1(k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
 TEXT ·maskzRangePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2581,7 +2581,7 @@ TEXT ·maskzRangePd1(SB),7,$0
 
 // func rangePd1(a [4]float64, b [4]float64, imm8 int) [4]float64
 TEXT ·rangePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2589,7 +2589,7 @@ TEXT ·rangePd1(SB),7,$0
 
 // func maskRangePd2(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
 TEXT ·maskRangePd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2597,7 +2597,7 @@ TEXT ·maskRangePd2(SB),7,$0
 
 // func maskzRangePd2(k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
 TEXT ·maskzRangePd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2605,7 +2605,7 @@ TEXT ·maskzRangePd2(SB),7,$0
 
 // func rangePd2(a [8]float64, b [8]float64, imm8 int) [8]float64
 TEXT ·rangePd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2649,7 +2649,7 @@ TEXT ·rangePs(SB),7,$0
 
 // func maskRangePs1(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·maskRangePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2657,7 +2657,7 @@ TEXT ·maskRangePs1(SB),7,$0
 
 // func maskzRangePs1(k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·maskzRangePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2665,7 +2665,7 @@ TEXT ·maskzRangePs1(SB),7,$0
 
 // func rangePs1(a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·rangePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2673,7 +2673,7 @@ TEXT ·rangePs1(SB),7,$0
 
 // func maskRangePs2(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
 TEXT ·maskRangePs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2681,7 +2681,7 @@ TEXT ·maskRangePs2(SB),7,$0
 
 // func maskzRangePs2(k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
 TEXT ·maskzRangePs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2689,7 +2689,7 @@ TEXT ·maskzRangePs2(SB),7,$0
 
 // func rangePs2(a [16]float32, b [16]float32, imm8 int) [16]float32
 TEXT ·rangePs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2697,7 +2697,7 @@ TEXT ·rangePs2(SB),7,$0
 
 // func maskRangeRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 int, rounding int) [8]float64
 TEXT ·maskRangeRoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2705,7 +2705,7 @@ TEXT ·maskRangeRoundPd(SB),7,$0
 
 // func maskzRangeRoundPd(k uint8, a [8]float64, b [8]float64, imm8 int, rounding int) [8]float64
 TEXT ·maskzRangeRoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2713,7 +2713,7 @@ TEXT ·maskzRangeRoundPd(SB),7,$0
 
 // func rangeRoundPd(a [8]float64, b [8]float64, imm8 int, rounding int) [8]float64
 TEXT ·rangeRoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2721,7 +2721,7 @@ TEXT ·rangeRoundPd(SB),7,$0
 
 // func maskRangeRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 int, rounding int) [16]float32
 TEXT ·maskRangeRoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2729,7 +2729,7 @@ TEXT ·maskRangeRoundPs(SB),7,$0
 
 // func maskzRangeRoundPs(k uint16, a [16]float32, b [16]float32, imm8 int, rounding int) [16]float32
 TEXT ·maskzRangeRoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2737,7 +2737,7 @@ TEXT ·maskzRangeRoundPs(SB),7,$0
 
 // func rangeRoundPs(a [16]float32, b [16]float32, imm8 int, rounding int) [16]float32
 TEXT ·rangeRoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2906,7 +2906,7 @@ TEXT ·reducePd(SB),7,$0
 
 // func maskReducePd1(src [4]float64, k uint8, a [4]float64, imm8 int) [4]float64
 TEXT ·maskReducePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2914,7 +2914,7 @@ TEXT ·maskReducePd1(SB),7,$0
 
 // func maskzReducePd1(k uint8, a [4]float64, imm8 int) [4]float64
 TEXT ·maskzReducePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2922,7 +2922,7 @@ TEXT ·maskzReducePd1(SB),7,$0
 
 // func reducePd1(a [4]float64, imm8 int) [4]float64
 TEXT ·reducePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2930,7 +2930,7 @@ TEXT ·reducePd1(SB),7,$0
 
 // func maskReducePd2(src [8]float64, k uint8, a [8]float64, imm8 int) [8]float64
 TEXT ·maskReducePd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2938,7 +2938,7 @@ TEXT ·maskReducePd2(SB),7,$0
 
 // func maskzReducePd2(k uint8, a [8]float64, imm8 int) [8]float64
 TEXT ·maskzReducePd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2946,7 +2946,7 @@ TEXT ·maskzReducePd2(SB),7,$0
 
 // func reducePd2(a [8]float64, imm8 int) [8]float64
 TEXT ·reducePd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -2987,7 +2987,7 @@ TEXT ·reducePs(SB),7,$0
 
 // func maskReducePs1(src [8]float32, k uint8, a [8]float32, imm8 int) [8]float32
 TEXT ·maskReducePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2995,7 +2995,7 @@ TEXT ·maskReducePs1(SB),7,$0
 
 // func maskzReducePs1(k uint8, a [8]float32, imm8 int) [8]float32
 TEXT ·maskzReducePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -3003,7 +3003,7 @@ TEXT ·maskzReducePs1(SB),7,$0
 
 // func reducePs1(a [8]float32, imm8 int) [8]float32
 TEXT ·reducePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -3011,7 +3011,7 @@ TEXT ·reducePs1(SB),7,$0
 
 // func maskReducePs2(src [16]float32, k uint16, a [16]float32, imm8 int) [16]float32
 TEXT ·maskReducePs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3019,7 +3019,7 @@ TEXT ·maskReducePs2(SB),7,$0
 
 // func maskzReducePs2(k uint16, a [16]float32, imm8 int) [16]float32
 TEXT ·maskzReducePs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3027,7 +3027,7 @@ TEXT ·maskzReducePs2(SB),7,$0
 
 // func reducePs2(a [16]float32, imm8 int) [16]float32
 TEXT ·reducePs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3035,7 +3035,7 @@ TEXT ·reducePs2(SB),7,$0
 
 // func maskReduceRoundPd(src [8]float64, k uint8, a [8]float64, imm8 int, rounding int) [8]float64
 TEXT ·maskReduceRoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3043,7 +3043,7 @@ TEXT ·maskReduceRoundPd(SB),7,$0
 
 // func maskzReduceRoundPd(k uint8, a [8]float64, imm8 int, rounding int) [8]float64
 TEXT ·maskzReduceRoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3051,7 +3051,7 @@ TEXT ·maskzReduceRoundPd(SB),7,$0
 
 // func reduceRoundPd(a [8]float64, imm8 int, rounding int) [8]float64
 TEXT ·reduceRoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3059,7 +3059,7 @@ TEXT ·reduceRoundPd(SB),7,$0
 
 // func maskReduceRoundPs(src [16]float32, k uint16, a [16]float32, imm8 int, rounding int) [16]float32
 TEXT ·maskReduceRoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3067,7 +3067,7 @@ TEXT ·maskReduceRoundPs(SB),7,$0
 
 // func maskzReduceRoundPs(k uint16, a [16]float32, imm8 int, rounding int) [16]float32
 TEXT ·maskzReduceRoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3075,7 +3075,7 @@ TEXT ·maskzReduceRoundPs(SB),7,$0
 
 // func reduceRoundPs(a [16]float32, imm8 int, rounding int) [16]float32
 TEXT ·reduceRoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3256,7 +3256,7 @@ TEXT ·maskzXorPd(SB),7,$0
 
 // func maskXorPd1(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskXorPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -3264,7 +3264,7 @@ TEXT ·maskXorPd1(SB),7,$0
 
 // func maskzXorPd1(k uint8, a [4]float64, b [4]float64) [4]float64
 TEXT ·maskzXorPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -3272,7 +3272,7 @@ TEXT ·maskzXorPd1(SB),7,$0
 
 // func maskXorPd2(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskXorPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3280,7 +3280,7 @@ TEXT ·maskXorPd2(SB),7,$0
 
 // func maskzXorPd2(k uint8, a [8]float64, b [8]float64) [8]float64
 TEXT ·maskzXorPd2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3288,7 +3288,7 @@ TEXT ·maskzXorPd2(SB),7,$0
 
 // func xorPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·xorPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512d
+	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3319,7 +3319,7 @@ TEXT ·maskzXorPs(SB),7,$0
 
 // func maskXorPs1(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskXorPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -3327,7 +3327,7 @@ TEXT ·maskXorPs1(SB),7,$0
 
 // func maskzXorPs1(k uint8, a [8]float32, b [8]float32) [8]float32
 TEXT ·maskzXorPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -3335,7 +3335,7 @@ TEXT ·maskzXorPs1(SB),7,$0
 
 // func maskXorPs2(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskXorPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3343,7 +3343,7 @@ TEXT ·maskXorPs2(SB),7,$0
 
 // func maskzXorPs2(k uint16, a [16]float32, b [16]float32) [16]float32
 TEXT ·maskzXorPs2(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
@@ -3351,7 +3351,7 @@ TEXT ·maskzXorPs2(SB),7,$0
 
 // func xorPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·xorPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M512
+	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)

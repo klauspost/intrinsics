@@ -1,6 +1,6 @@
 package sse3
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // AddsubPd: Alternatively add and subtract packed double-precision (64-bit)
@@ -18,8 +18,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'ADDSUBPD'. Intrinsic: '_mm_addsub_pd'.
 // Requires SSE3.
-func AddsubPd(a M128d, b M128d) M128d {
-	return M128d(addsubPd([2]float64(a), [2]float64(b)))
+func AddsubPd(a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(addsubPd([2]float64(a), [2]float64(b)))
 }
 
 func addsubPd(a [2]float64, b [2]float64) [2]float64
@@ -40,8 +40,8 @@ func addsubPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'ADDSUBPS'. Intrinsic: '_mm_addsub_ps'.
 // Requires SSE3.
-func AddsubPs(a M128, b M128) M128 {
-	return M128(addsubPs([4]float32(a), [4]float32(b)))
+func AddsubPs(a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(addsubPs([4]float32(a), [4]float32(b)))
 }
 
 func addsubPs(a [4]float32, b [4]float32) [4]float32
@@ -55,8 +55,8 @@ func addsubPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'HADDPD'. Intrinsic: '_mm_hadd_pd'.
 // Requires SSE3.
-func HaddPd(a M128d, b M128d) M128d {
-	return M128d(haddPd([2]float64(a), [2]float64(b)))
+func HaddPd(a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(haddPd([2]float64(a), [2]float64(b)))
 }
 
 func haddPd(a [2]float64, b [2]float64) [2]float64
@@ -72,8 +72,8 @@ func haddPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'HADDPS'. Intrinsic: '_mm_hadd_ps'.
 // Requires SSE3.
-func HaddPs(a M128, b M128) M128 {
-	return M128(haddPs([4]float32(a), [4]float32(b)))
+func HaddPs(a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(haddPs([4]float32(a), [4]float32(b)))
 }
 
 func haddPs(a [4]float32, b [4]float32) [4]float32
@@ -87,8 +87,8 @@ func haddPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'HSUBPD'. Intrinsic: '_mm_hsub_pd'.
 // Requires SSE3.
-func HsubPd(a M128d, b M128d) M128d {
-	return M128d(hsubPd([2]float64(a), [2]float64(b)))
+func HsubPd(a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(hsubPd([2]float64(a), [2]float64(b)))
 }
 
 func hsubPd(a [2]float64, b [2]float64) [2]float64
@@ -104,8 +104,8 @@ func hsubPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'HSUBPS'. Intrinsic: '_mm_hsub_ps'.
 // Requires SSE3.
-func HsubPs(a M128, b M128) M128 {
-	return M128(hsubPs([4]float32(a), [4]float32(b)))
+func HsubPs(a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(hsubPs([4]float32(a), [4]float32(b)))
 }
 
 func hsubPs(a [4]float32, b [4]float32) [4]float32
@@ -119,11 +119,11 @@ func hsubPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'LDDQU'. Intrinsic: '_mm_lddqu_si128'.
 // Requires SSE3.
-func LddquSi128(mem_addr M128iConst) M128i {
-	return M128i(lddquSi128(mem_addr))
+func LddquSi128(mem_addr x86.M128iConst) x86.M128i {
+	return x86.M128i(lddquSi128(mem_addr))
 }
 
-func lddquSi128(mem_addr M128iConst) [16]byte
+func lddquSi128(mem_addr x86.M128iConst) [16]byte
 
 
 // LoaddupPd: Load a double-precision (64-bit) floating-point element from
@@ -134,8 +134,8 @@ func lddquSi128(mem_addr M128iConst) [16]byte
 //
 // Instruction: 'MOVDDUP'. Intrinsic: '_mm_loaddup_pd'.
 // Requires SSE3.
-func LoaddupPd(mem_addr float64) M128d {
-	return M128d(loaddupPd(mem_addr))
+func LoaddupPd(mem_addr float64) x86.M128d {
+	return x86.M128d(loaddupPd(mem_addr))
 }
 
 func loaddupPd(mem_addr float64) [2]float64
@@ -149,8 +149,8 @@ func loaddupPd(mem_addr float64) [2]float64
 //
 // Instruction: 'MOVDDUP'. Intrinsic: '_mm_movedup_pd'.
 // Requires SSE3.
-func MovedupPd(a M128d) M128d {
-	return M128d(movedupPd([2]float64(a)))
+func MovedupPd(a x86.M128d) x86.M128d {
+	return x86.M128d(movedupPd([2]float64(a)))
 }
 
 func movedupPd(a [2]float64) [2]float64
@@ -166,8 +166,8 @@ func movedupPd(a [2]float64) [2]float64
 //
 // Instruction: 'MOVSHDUP'. Intrinsic: '_mm_movehdup_ps'.
 // Requires SSE3.
-func MovehdupPs(a M128) M128 {
-	return M128(movehdupPs([4]float32(a)))
+func MovehdupPs(a x86.M128) x86.M128 {
+	return x86.M128(movehdupPs([4]float32(a)))
 }
 
 func movehdupPs(a [4]float32) [4]float32
@@ -183,8 +183,8 @@ func movehdupPs(a [4]float32) [4]float32
 //
 // Instruction: 'MOVSLDUP'. Intrinsic: '_mm_moveldup_ps'.
 // Requires SSE3.
-func MoveldupPs(a M128) M128 {
-	return M128(moveldupPs([4]float32(a)))
+func MoveldupPs(a x86.M128) x86.M128 {
+	return x86.M128(moveldupPs([4]float32(a)))
 }
 
 func moveldupPs(a [4]float32) [4]float32

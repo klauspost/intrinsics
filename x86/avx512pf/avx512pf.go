@@ -1,6 +1,6 @@
 package avx512pf
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // MaskPrefetchI32gatherPd: Prefetch double-precision (64-bit) floating-point
@@ -21,7 +21,7 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'VGATHERPF0DPD, VGATHERPF1DPD'. Intrinsic: '_mm512_mask_prefetch_i32gather_pd'.
 // Requires AVX512PF.
-func MaskPrefetchI32gatherPd(vindex M256i, mask Mmask8, base_addr uintptr, scale int, hint int)  {
+func MaskPrefetchI32gatherPd(vindex x86.M256i, mask x86.Mmask8, base_addr uintptr, scale int, hint int)  {
 	maskPrefetchI32gatherPd([32]byte(vindex), uint8(mask), uintptr(base_addr), scale, hint)
 }
 
@@ -43,7 +43,7 @@ func maskPrefetchI32gatherPd(vindex [32]byte, mask uint8, base_addr uintptr, sca
 //
 // Instruction: 'VGATHERPF0DPD, VGATHERPF1DPD'. Intrinsic: '_mm512_prefetch_i32gather_pd'.
 // Requires AVX512PF.
-func PrefetchI32gatherPd(vindex M256i, base_addr uintptr, scale int, hint int)  {
+func PrefetchI32gatherPd(vindex x86.M256i, base_addr uintptr, scale int, hint int)  {
 	prefetchI32gatherPd([32]byte(vindex), uintptr(base_addr), scale, hint)
 }
 
@@ -68,7 +68,7 @@ func prefetchI32gatherPd(vindex [32]byte, base_addr uintptr, scale int, hint int
 //
 // Instruction: 'VSCATTERPF0DPD, VSCATTERPF1DPD'. Intrinsic: '_mm512_mask_prefetch_i32scatter_pd'.
 // Requires AVX512PF.
-func MaskPrefetchI32scatterPd(base_addr uintptr, mask Mmask8, vinde M256i, scale int, hint int)  {
+func MaskPrefetchI32scatterPd(base_addr uintptr, mask x86.Mmask8, vinde x86.M256i, scale int, hint int)  {
 	maskPrefetchI32scatterPd(uintptr(base_addr), uint8(mask), [32]byte(vinde), scale, hint)
 }
 
@@ -90,7 +90,7 @@ func maskPrefetchI32scatterPd(base_addr uintptr, mask uint8, vinde [32]byte, sca
 //
 // Instruction: 'VSCATTERPF0DPD, VSCATTERPF1DPD'. Intrinsic: '_mm512_prefetch_i32scatter_pd'.
 // Requires AVX512PF.
-func PrefetchI32scatterPd(base_addr uintptr, vindex M256i, scale int, hint int)  {
+func PrefetchI32scatterPd(base_addr uintptr, vindex x86.M256i, scale int, hint int)  {
 	prefetchI32scatterPd(uintptr(base_addr), [32]byte(vindex), scale, hint)
 }
 
@@ -116,7 +116,7 @@ func prefetchI32scatterPd(base_addr uintptr, vindex [32]byte, scale int, hint in
 //
 // Instruction: 'VGATHERPF0QPD, VGATHERPF1QPD'. Intrinsic: '_mm512_mask_prefetch_i64gather_pd'.
 // Requires AVX512PF.
-func MaskPrefetchI64gatherPd(vindex M512i, mask Mmask8, base_addr uintptr, scale int, hint int)  {
+func MaskPrefetchI64gatherPd(vindex x86.M512i, mask x86.Mmask8, base_addr uintptr, scale int, hint int)  {
 	maskPrefetchI64gatherPd([64]byte(vindex), uint8(mask), uintptr(base_addr), scale, hint)
 }
 
@@ -138,7 +138,7 @@ func maskPrefetchI64gatherPd(vindex [64]byte, mask uint8, base_addr uintptr, sca
 //
 // Instruction: 'VGATHERPF0QPD, VGATHERPF1QPD'. Intrinsic: '_mm512_prefetch_i64gather_pd'.
 // Requires AVX512PF.
-func PrefetchI64gatherPd(vindex M512i, base_addr uintptr, scale int, hint int)  {
+func PrefetchI64gatherPd(vindex x86.M512i, base_addr uintptr, scale int, hint int)  {
 	prefetchI64gatherPd([64]byte(vindex), uintptr(base_addr), scale, hint)
 }
 
@@ -163,7 +163,7 @@ func prefetchI64gatherPd(vindex [64]byte, base_addr uintptr, scale int, hint int
 //
 // Instruction: 'VGATHERPF0QPS, VGATHERPF1QPS'. Intrinsic: '_mm512_mask_prefetch_i64gather_ps'.
 // Requires AVX512PF.
-func MaskPrefetchI64gatherPs(vindex M512i, mask Mmask8, base_addr uintptr, scale int, hint int)  {
+func MaskPrefetchI64gatherPs(vindex x86.M512i, mask x86.Mmask8, base_addr uintptr, scale int, hint int)  {
 	maskPrefetchI64gatherPs([64]byte(vindex), uint8(mask), uintptr(base_addr), scale, hint)
 }
 
@@ -185,7 +185,7 @@ func maskPrefetchI64gatherPs(vindex [64]byte, mask uint8, base_addr uintptr, sca
 //
 // Instruction: 'VGATHERPF0QPS, VGATHERPF1QPS'. Intrinsic: '_mm512_prefetch_i64gather_ps'.
 // Requires AVX512PF.
-func PrefetchI64gatherPs(vindex M512i, base_addr uintptr, scale int, hint int)  {
+func PrefetchI64gatherPs(vindex x86.M512i, base_addr uintptr, scale int, hint int)  {
 	prefetchI64gatherPs([64]byte(vindex), uintptr(base_addr), scale, hint)
 }
 
@@ -210,7 +210,7 @@ func prefetchI64gatherPs(vindex [64]byte, base_addr uintptr, scale int, hint int
 //
 // Instruction: 'VSCATTERPF0QPD, VSCATTERPF1QPD'. Intrinsic: '_mm512_mask_prefetch_i64scatter_pd'.
 // Requires AVX512PF.
-func MaskPrefetchI64scatterPd(base_addr uintptr, mask Mmask8, vindex M512i, scale int, hint int)  {
+func MaskPrefetchI64scatterPd(base_addr uintptr, mask x86.Mmask8, vindex x86.M512i, scale int, hint int)  {
 	maskPrefetchI64scatterPd(uintptr(base_addr), uint8(mask), [64]byte(vindex), scale, hint)
 }
 
@@ -232,7 +232,7 @@ func maskPrefetchI64scatterPd(base_addr uintptr, mask uint8, vindex [64]byte, sc
 //
 // Instruction: 'VSCATTERPF0QPD, VSCATTERPF1QPD'. Intrinsic: '_mm512_prefetch_i64scatter_pd'.
 // Requires AVX512PF.
-func PrefetchI64scatterPd(base_addr uintptr, vindex M512i, scale int, hint int)  {
+func PrefetchI64scatterPd(base_addr uintptr, vindex x86.M512i, scale int, hint int)  {
 	prefetchI64scatterPd(uintptr(base_addr), [64]byte(vindex), scale, hint)
 }
 
@@ -257,7 +257,7 @@ func prefetchI64scatterPd(base_addr uintptr, vindex [64]byte, scale int, hint in
 //
 // Instruction: 'VSCATTERPF0QPS, VSCATTERPF1QPS'. Intrinsic: '_mm512_mask_prefetch_i64scatter_ps'.
 // Requires AVX512PF.
-func MaskPrefetchI64scatterPs(base_addr uintptr, mask Mmask8, vindex M512i, scale int, hint int)  {
+func MaskPrefetchI64scatterPs(base_addr uintptr, mask x86.Mmask8, vindex x86.M512i, scale int, hint int)  {
 	maskPrefetchI64scatterPs(uintptr(base_addr), uint8(mask), [64]byte(vindex), scale, hint)
 }
 
@@ -278,7 +278,7 @@ func maskPrefetchI64scatterPs(base_addr uintptr, mask uint8, vindex [64]byte, sc
 //
 // Instruction: 'VSCATTERPF0QPS, VSCATTERPF1QPS'. Intrinsic: '_mm512_prefetch_i64scatter_ps'.
 // Requires AVX512PF.
-func PrefetchI64scatterPs(base_addr uintptr, vindex M512i, scale int, hint int)  {
+func PrefetchI64scatterPs(base_addr uintptr, vindex x86.M512i, scale int, hint int)  {
 	prefetchI64scatterPs(uintptr(base_addr), [64]byte(vindex), scale, hint)
 }
 

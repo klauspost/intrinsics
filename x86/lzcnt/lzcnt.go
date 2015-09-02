@@ -1,6 +1,6 @@
 package lzcnt
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // LzcntU32: Count the number of leading zero bits in unsigned 32-bit integer

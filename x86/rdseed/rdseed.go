@@ -1,6 +1,6 @@
 package rdseed
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Rdseed16Step: Read a 16-bit NIST SP800-90B and SP800-90C compliant random

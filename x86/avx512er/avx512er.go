@@ -1,6 +1,6 @@
 package avx512er
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Exp2a23Pd: Compute the approximate exponential value of 2 raised to the
@@ -16,8 +16,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_exp2a23_pd'.
 // Requires AVX512ER.
-func Exp2a23Pd(a M512d) M512d {
-	return M512d(exp2a23Pd([8]float64(a)))
+func Exp2a23Pd(a x86.M512d) x86.M512d {
+	return x86.M512d(exp2a23Pd([8]float64(a)))
 }
 
 func exp2a23Pd(a [8]float64) [8]float64
@@ -41,8 +41,8 @@ func exp2a23Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_mask_exp2a23_pd'.
 // Requires AVX512ER.
-func MaskExp2a23Pd(a M512d, k Mmask8, src M512d) M512d {
-	return M512d(maskExp2a23Pd([8]float64(a), uint8(k), [8]float64(src)))
+func MaskExp2a23Pd(a x86.M512d, k x86.Mmask8, src x86.M512d) x86.M512d {
+	return x86.M512d(maskExp2a23Pd([8]float64(a), uint8(k), [8]float64(src)))
 }
 
 func maskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
@@ -66,8 +66,8 @@ func maskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_maskz_exp2a23_pd'.
 // Requires AVX512ER.
-func MaskzExp2a23Pd(k Mmask8, a M512d) M512d {
-	return M512d(maskzExp2a23Pd(uint8(k), [8]float64(a)))
+func MaskzExp2a23Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(maskzExp2a23Pd(uint8(k), [8]float64(a)))
 }
 
 func maskzExp2a23Pd(k uint8, a [8]float64) [8]float64
@@ -86,8 +86,8 @@ func maskzExp2a23Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_exp2a23_ps'.
 // Requires AVX512ER.
-func Exp2a23Ps(a M512) M512 {
-	return M512(exp2a23Ps([16]float32(a)))
+func Exp2a23Ps(a x86.M512) x86.M512 {
+	return x86.M512(exp2a23Ps([16]float32(a)))
 }
 
 func exp2a23Ps(a [16]float32) [16]float32
@@ -111,8 +111,8 @@ func exp2a23Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_mask_exp2a23_ps'.
 // Requires AVX512ER.
-func MaskExp2a23Ps(src M512, k Mmask16, a M512) M512 {
-	return M512(maskExp2a23Ps([16]float32(src), uint16(k), [16]float32(a)))
+func MaskExp2a23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(maskExp2a23Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
 func maskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
@@ -136,8 +136,8 @@ func maskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_maskz_exp2a23_ps'.
 // Requires AVX512ER.
-func MaskzExp2a23Ps(k Mmask16, a M512) M512 {
-	return M512(maskzExp2a23Ps(uint16(k), [16]float32(a)))
+func MaskzExp2a23Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(maskzExp2a23Ps(uint16(k), [16]float32(a)))
 }
 
 func maskzExp2a23Ps(k uint16, a [16]float32) [16]float32
@@ -162,8 +162,8 @@ func maskzExp2a23Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_exp2a23_round_pd'.
 // Requires AVX512ER.
-func Exp2a23RoundPd(a M512d, rounding int) M512d {
-	return M512d(exp2a23RoundPd([8]float64(a), rounding))
+func Exp2a23RoundPd(a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(exp2a23RoundPd([8]float64(a), rounding))
 }
 
 func exp2a23RoundPd(a [8]float64, rounding int) [8]float64
@@ -193,8 +193,8 @@ func exp2a23RoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_mask_exp2a23_round_pd'.
 // Requires AVX512ER.
-func MaskExp2a23RoundPd(a M512d, k Mmask8, src M512d, rounding int) M512d {
-	return M512d(maskExp2a23RoundPd([8]float64(a), uint8(k), [8]float64(src), rounding))
+func MaskExp2a23RoundPd(a x86.M512d, k x86.Mmask8, src x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(maskExp2a23RoundPd([8]float64(a), uint8(k), [8]float64(src), rounding))
 }
 
 func maskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]float64
@@ -224,8 +224,8 @@ func maskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_maskz_exp2a23_round_pd'.
 // Requires AVX512ER.
-func MaskzExp2a23RoundPd(k Mmask8, a M512d, rounding int) M512d {
-	return M512d(maskzExp2a23RoundPd(uint8(k), [8]float64(a), rounding))
+func MaskzExp2a23RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(maskzExp2a23RoundPd(uint8(k), [8]float64(a), rounding))
 }
 
 func maskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
@@ -250,8 +250,8 @@ func maskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_exp2a23_round_ps'.
 // Requires AVX512ER.
-func Exp2a23RoundPs(a M512, rounding int) M512 {
-	return M512(exp2a23RoundPs([16]float32(a), rounding))
+func Exp2a23RoundPs(a x86.M512, rounding int) x86.M512 {
+	return x86.M512(exp2a23RoundPs([16]float32(a), rounding))
 }
 
 func exp2a23RoundPs(a [16]float32, rounding int) [16]float32
@@ -281,8 +281,8 @@ func exp2a23RoundPs(a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_mask_exp2a23_round_ps'.
 // Requires AVX512ER.
-func MaskExp2a23RoundPs(src M512, k Mmask16, a M512, rounding int) M512 {
-	return M512(maskExp2a23RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+func MaskExp2a23RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(maskExp2a23RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
 func maskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
@@ -312,8 +312,8 @@ func maskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) 
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_maskz_exp2a23_round_ps'.
 // Requires AVX512ER.
-func MaskzExp2a23RoundPs(k Mmask16, a M512, rounding int) M512 {
-	return M512(maskzExp2a23RoundPs(uint16(k), [16]float32(a), rounding))
+func MaskzExp2a23RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(maskzExp2a23RoundPs(uint16(k), [16]float32(a), rounding))
 }
 
 func maskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
@@ -336,8 +336,8 @@ func maskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_mask_rcp28_pd'.
 // Requires AVX512ER.
-func MaskRcp28Pd(src M512d, k Mmask8, a M512d) M512d {
-	return M512d(maskRcp28Pd([8]float64(src), uint8(k), [8]float64(a)))
+func MaskRcp28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(maskRcp28Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
 func maskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
@@ -360,8 +360,8 @@ func maskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_maskz_rcp28_pd'.
 // Requires AVX512ER.
-func MaskzRcp28Pd(k Mmask8, a M512d) M512d {
-	return M512d(maskzRcp28Pd(uint8(k), [8]float64(a)))
+func MaskzRcp28Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(maskzRcp28Pd(uint8(k), [8]float64(a)))
 }
 
 func maskzRcp28Pd(k uint8, a [8]float64) [8]float64
@@ -378,8 +378,8 @@ func maskzRcp28Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_rcp28_pd'.
 // Requires AVX512ER.
-func Rcp28Pd(a M512d) M512d {
-	return M512d(rcp28Pd([8]float64(a)))
+func Rcp28Pd(a x86.M512d) x86.M512d {
+	return x86.M512d(rcp28Pd([8]float64(a)))
 }
 
 func rcp28Pd(a [8]float64) [8]float64
@@ -402,8 +402,8 @@ func rcp28Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_mask_rcp28_ps'.
 // Requires AVX512ER.
-func MaskRcp28Ps(src M512, k Mmask16, a M512) M512 {
-	return M512(maskRcp28Ps([16]float32(src), uint16(k), [16]float32(a)))
+func MaskRcp28Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(maskRcp28Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
 func maskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
@@ -426,8 +426,8 @@ func maskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_maskz_rcp28_ps'.
 // Requires AVX512ER.
-func MaskzRcp28Ps(k Mmask16, a M512) M512 {
-	return M512(maskzRcp28Ps(uint16(k), [16]float32(a)))
+func MaskzRcp28Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(maskzRcp28Ps(uint16(k), [16]float32(a)))
 }
 
 func maskzRcp28Ps(k uint16, a [16]float32) [16]float32
@@ -444,8 +444,8 @@ func maskzRcp28Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_rcp28_ps'.
 // Requires AVX512ER.
-func Rcp28Ps(a M512) M512 {
-	return M512(rcp28Ps([16]float32(a)))
+func Rcp28Ps(a x86.M512) x86.M512 {
+	return x86.M512(rcp28Ps([16]float32(a)))
 }
 
 func rcp28Ps(a [16]float32) [16]float32
@@ -474,8 +474,8 @@ func rcp28Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_mask_rcp28_round_pd'.
 // Requires AVX512ER.
-func MaskRcp28RoundPd(src M512d, k Mmask8, a M512d, rounding int) M512d {
-	return M512d(maskRcp28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
+func MaskRcp28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(maskRcp28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
 }
 
 func maskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
@@ -504,8 +504,8 @@ func maskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]fl
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_maskz_rcp28_round_pd'.
 // Requires AVX512ER.
-func MaskzRcp28RoundPd(k Mmask8, a M512d, rounding int) M512d {
-	return M512d(maskzRcp28RoundPd(uint8(k), [8]float64(a), rounding))
+func MaskzRcp28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(maskzRcp28RoundPd(uint8(k), [8]float64(a), rounding))
 }
 
 func maskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
@@ -528,8 +528,8 @@ func maskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_rcp28_round_pd'.
 // Requires AVX512ER.
-func Rcp28RoundPd(a M512d, rounding int) M512d {
-	return M512d(rcp28RoundPd([8]float64(a), rounding))
+func Rcp28RoundPd(a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(rcp28RoundPd([8]float64(a), rounding))
 }
 
 func rcp28RoundPd(a [8]float64, rounding int) [8]float64
@@ -558,8 +558,8 @@ func rcp28RoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_mask_rcp28_round_ps'.
 // Requires AVX512ER.
-func MaskRcp28RoundPs(src M512, k Mmask16, a M512, rounding int) M512 {
-	return M512(maskRcp28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+func MaskRcp28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(maskRcp28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
 func maskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
@@ -588,8 +588,8 @@ func maskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [1
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_maskz_rcp28_round_ps'.
 // Requires AVX512ER.
-func MaskzRcp28RoundPs(k Mmask16, a M512, rounding int) M512 {
-	return M512(maskzRcp28RoundPs(uint16(k), [16]float32(a), rounding))
+func MaskzRcp28RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(maskzRcp28RoundPs(uint16(k), [16]float32(a), rounding))
 }
 
 func maskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
@@ -612,8 +612,8 @@ func maskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_rcp28_round_ps'.
 // Requires AVX512ER.
-func Rcp28RoundPs(a M512, rounding int) M512 {
-	return M512(rcp28RoundPs([16]float32(a), rounding))
+func Rcp28RoundPs(a x86.M512, rounding int) x86.M512 {
+	return x86.M512(rcp28RoundPs([16]float32(a), rounding))
 }
 
 func rcp28RoundPs(a [16]float32, rounding int) [16]float32
@@ -642,8 +642,8 @@ func rcp28RoundPs(a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_mask_rcp28_round_sd'.
 // Requires AVX512ER.
-func MaskRcp28RoundSd(src M128d, k Mmask8, a M128d, b M128d, rounding int) M128d {
-	return M128d(maskRcp28RoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
+func MaskRcp28RoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+	return x86.M128d(maskRcp28RoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
 func maskRcp28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
@@ -672,8 +672,8 @@ func maskRcp28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, round
 //
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_maskz_rcp28_round_sd'.
 // Requires AVX512ER.
-func MaskzRcp28RoundSd(k Mmask8, a M128d, b M128d, rounding int) M128d {
-	return M128d(maskzRcp28RoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
+func MaskzRcp28RoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+	return x86.M128d(maskzRcp28RoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
 func maskzRcp28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
@@ -697,8 +697,8 @@ func maskzRcp28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]flo
 //
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_rcp28_round_sd'.
 // Requires AVX512ER.
-func Rcp28RoundSd(a M128d, b M128d, rounding int) M128d {
-	return M128d(rcp28RoundSd([2]float64(a), [2]float64(b), rounding))
+func Rcp28RoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+	return x86.M128d(rcp28RoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
 func rcp28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
@@ -727,8 +727,8 @@ func rcp28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_mask_rcp28_round_ss'.
 // Requires AVX512ER.
-func MaskRcp28RoundSs(src M128, k Mmask8, a M128, b M128, rounding int) M128 {
-	return M128(maskRcp28RoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
+func MaskRcp28RoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+	return x86.M128(maskRcp28RoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
 func maskRcp28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
@@ -757,8 +757,8 @@ func maskRcp28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, round
 //
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_maskz_rcp28_round_ss'.
 // Requires AVX512ER.
-func MaskzRcp28RoundSs(k Mmask8, a M128, b M128, rounding int) M128 {
-	return M128(maskzRcp28RoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
+func MaskzRcp28RoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+	return x86.M128(maskzRcp28RoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
 func maskzRcp28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
@@ -782,8 +782,8 @@ func maskzRcp28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]flo
 //
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_rcp28_round_ss'.
 // Requires AVX512ER.
-func Rcp28RoundSs(a M128, b M128, rounding int) M128 {
-	return M128(rcp28RoundSs([4]float32(a), [4]float32(b), rounding))
+func Rcp28RoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+	return x86.M128(rcp28RoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
 func rcp28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
@@ -806,8 +806,8 @@ func rcp28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_mask_rcp28_sd'.
 // Requires AVX512ER.
-func MaskRcp28Sd(src M128d, k Mmask8, a M128d, b M128d) M128d {
-	return M128d(maskRcp28Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
+func MaskRcp28Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(maskRcp28Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
 func maskRcp28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
@@ -830,8 +830,8 @@ func maskRcp28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_maskz_rcp28_sd'.
 // Requires AVX512ER.
-func MaskzRcp28Sd(k Mmask8, a M128d, b M128d) M128d {
-	return M128d(maskzRcp28Sd(uint8(k), [2]float64(a), [2]float64(b)))
+func MaskzRcp28Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(maskzRcp28Sd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
 func maskzRcp28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
@@ -849,8 +849,8 @@ func maskzRcp28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_rcp28_sd'.
 // Requires AVX512ER.
-func Rcp28Sd(a M128d, b M128d) M128d {
-	return M128d(rcp28Sd([2]float64(a), [2]float64(b)))
+func Rcp28Sd(a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(rcp28Sd([2]float64(a), [2]float64(b)))
 }
 
 func rcp28Sd(a [2]float64, b [2]float64) [2]float64
@@ -873,8 +873,8 @@ func rcp28Sd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_mask_rcp28_ss'.
 // Requires AVX512ER.
-func MaskRcp28Ss(src M128, k Mmask8, a M128, b M128) M128 {
-	return M128(maskRcp28Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
+func MaskRcp28Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(maskRcp28Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
 func maskRcp28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
@@ -897,8 +897,8 @@ func maskRcp28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_maskz_rcp28_ss'.
 // Requires AVX512ER.
-func MaskzRcp28Ss(k Mmask8, a M128, b M128) M128 {
-	return M128(maskzRcp28Ss(uint8(k), [4]float32(a), [4]float32(b)))
+func MaskzRcp28Ss(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(maskzRcp28Ss(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
 func maskzRcp28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
@@ -916,8 +916,8 @@ func maskzRcp28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_rcp28_ss'.
 // Requires AVX512ER.
-func Rcp28Ss(a M128, b M128) M128 {
-	return M128(rcp28Ss([4]float32(a), [4]float32(b)))
+func Rcp28Ss(a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(rcp28Ss([4]float32(a), [4]float32(b)))
 }
 
 func rcp28Ss(a [4]float32, b [4]float32) [4]float32
@@ -940,8 +940,8 @@ func rcp28Ss(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_mask_rsqrt28_pd'.
 // Requires AVX512ER.
-func MaskRsqrt28Pd(src M512d, k Mmask8, a M512d) M512d {
-	return M512d(maskRsqrt28Pd([8]float64(src), uint8(k), [8]float64(a)))
+func MaskRsqrt28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(maskRsqrt28Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
 func maskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
@@ -964,8 +964,8 @@ func maskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_maskz_rsqrt28_pd'.
 // Requires AVX512ER.
-func MaskzRsqrt28Pd(k Mmask8, a M512d) M512d {
-	return M512d(maskzRsqrt28Pd(uint8(k), [8]float64(a)))
+func MaskzRsqrt28Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(maskzRsqrt28Pd(uint8(k), [8]float64(a)))
 }
 
 func maskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
@@ -983,8 +983,8 @@ func maskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_rsqrt28_pd'.
 // Requires AVX512ER.
-func Rsqrt28Pd(a M512d) M512d {
-	return M512d(rsqrt28Pd([8]float64(a)))
+func Rsqrt28Pd(a x86.M512d) x86.M512d {
+	return x86.M512d(rsqrt28Pd([8]float64(a)))
 }
 
 func rsqrt28Pd(a [8]float64) [8]float64
@@ -1007,8 +1007,8 @@ func rsqrt28Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_mask_rsqrt28_ps'.
 // Requires AVX512ER.
-func MaskRsqrt28Ps(src M512, k Mmask16, a M512) M512 {
-	return M512(maskRsqrt28Ps([16]float32(src), uint16(k), [16]float32(a)))
+func MaskRsqrt28Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(maskRsqrt28Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
 func maskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
@@ -1031,8 +1031,8 @@ func maskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_maskz_rsqrt28_ps'.
 // Requires AVX512ER.
-func MaskzRsqrt28Ps(k Mmask16, a M512) M512 {
-	return M512(maskzRsqrt28Ps(uint16(k), [16]float32(a)))
+func MaskzRsqrt28Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(maskzRsqrt28Ps(uint16(k), [16]float32(a)))
 }
 
 func maskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
@@ -1050,8 +1050,8 @@ func maskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_rsqrt28_ps'.
 // Requires AVX512ER.
-func Rsqrt28Ps(a M512) M512 {
-	return M512(rsqrt28Ps([16]float32(a)))
+func Rsqrt28Ps(a x86.M512) x86.M512 {
+	return x86.M512(rsqrt28Ps([16]float32(a)))
 }
 
 func rsqrt28Ps(a [16]float32) [16]float32
@@ -1080,8 +1080,8 @@ func rsqrt28Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_mask_rsqrt28_round_pd'.
 // Requires AVX512ER.
-func MaskRsqrt28RoundPd(src M512d, k Mmask8, a M512d, rounding int) M512d {
-	return M512d(maskRsqrt28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
+func MaskRsqrt28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(maskRsqrt28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
 }
 
 func maskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
@@ -1110,8 +1110,8 @@ func maskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_maskz_rsqrt28_round_pd'.
 // Requires AVX512ER.
-func MaskzRsqrt28RoundPd(k Mmask8, a M512d, rounding int) M512d {
-	return M512d(maskzRsqrt28RoundPd(uint8(k), [8]float64(a), rounding))
+func MaskzRsqrt28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(maskzRsqrt28RoundPd(uint8(k), [8]float64(a), rounding))
 }
 
 func maskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
@@ -1135,8 +1135,8 @@ func maskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_rsqrt28_round_pd'.
 // Requires AVX512ER.
-func Rsqrt28RoundPd(a M512d, rounding int) M512d {
-	return M512d(rsqrt28RoundPd([8]float64(a), rounding))
+func Rsqrt28RoundPd(a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(rsqrt28RoundPd([8]float64(a), rounding))
 }
 
 func rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
@@ -1165,8 +1165,8 @@ func rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_mask_rsqrt28_round_ps'.
 // Requires AVX512ER.
-func MaskRsqrt28RoundPs(src M512, k Mmask16, a M512, rounding int) M512 {
-	return M512(maskRsqrt28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+func MaskRsqrt28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(maskRsqrt28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
 func maskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
@@ -1195,8 +1195,8 @@ func maskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) 
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_maskz_rsqrt28_round_ps'.
 // Requires AVX512ER.
-func MaskzRsqrt28RoundPs(k Mmask16, a M512, rounding int) M512 {
-	return M512(maskzRsqrt28RoundPs(uint16(k), [16]float32(a), rounding))
+func MaskzRsqrt28RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(maskzRsqrt28RoundPs(uint16(k), [16]float32(a), rounding))
 }
 
 func maskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
@@ -1220,8 +1220,8 @@ func maskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_rsqrt28_round_ps'.
 // Requires AVX512ER.
-func Rsqrt28RoundPs(a M512, rounding int) M512 {
-	return M512(rsqrt28RoundPs([16]float32(a), rounding))
+func Rsqrt28RoundPs(a x86.M512, rounding int) x86.M512 {
+	return x86.M512(rsqrt28RoundPs([16]float32(a), rounding))
 }
 
 func rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
@@ -1250,8 +1250,8 @@ func rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_mask_rsqrt28_round_sd'.
 // Requires AVX512ER.
-func MaskRsqrt28RoundSd(src M128d, k Mmask8, a M128d, b M128d, rounding int) M128d {
-	return M128d(maskRsqrt28RoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
+func MaskRsqrt28RoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+	return x86.M128d(maskRsqrt28RoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
 func maskRsqrt28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
@@ -1280,8 +1280,8 @@ func maskRsqrt28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, rou
 //
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_maskz_rsqrt28_round_sd'.
 // Requires AVX512ER.
-func MaskzRsqrt28RoundSd(k Mmask8, a M128d, b M128d, rounding int) M128d {
-	return M128d(maskzRsqrt28RoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
+func MaskzRsqrt28RoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+	return x86.M128d(maskzRsqrt28RoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
 func maskzRsqrt28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
@@ -1305,8 +1305,8 @@ func maskzRsqrt28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]f
 //
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_rsqrt28_round_sd'.
 // Requires AVX512ER.
-func Rsqrt28RoundSd(a M128d, b M128d, rounding int) M128d {
-	return M128d(rsqrt28RoundSd([2]float64(a), [2]float64(b), rounding))
+func Rsqrt28RoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+	return x86.M128d(rsqrt28RoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
 func rsqrt28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
@@ -1335,8 +1335,8 @@ func rsqrt28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_mask_rsqrt28_round_ss'.
 // Requires AVX512ER.
-func MaskRsqrt28RoundSs(src M128, k Mmask8, a M128, b M128, rounding int) M128 {
-	return M128(maskRsqrt28RoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
+func MaskRsqrt28RoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+	return x86.M128(maskRsqrt28RoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
 func maskRsqrt28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
@@ -1365,8 +1365,8 @@ func maskRsqrt28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, rou
 //
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_maskz_rsqrt28_round_ss'.
 // Requires AVX512ER.
-func MaskzRsqrt28RoundSs(k Mmask8, a M128, b M128, rounding int) M128 {
-	return M128(maskzRsqrt28RoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
+func MaskzRsqrt28RoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+	return x86.M128(maskzRsqrt28RoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
 func maskzRsqrt28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
@@ -1390,8 +1390,8 @@ func maskzRsqrt28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]f
 //
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_rsqrt28_round_ss'.
 // Requires AVX512ER.
-func Rsqrt28RoundSs(a M128, b M128, rounding int) M128 {
-	return M128(rsqrt28RoundSs([4]float32(a), [4]float32(b), rounding))
+func Rsqrt28RoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+	return x86.M128(rsqrt28RoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
 func rsqrt28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
@@ -1414,8 +1414,8 @@ func rsqrt28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_mask_rsqrt28_sd'.
 // Requires AVX512ER.
-func MaskRsqrt28Sd(src M128d, k Mmask8, a M128d, b M128d) M128d {
-	return M128d(maskRsqrt28Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
+func MaskRsqrt28Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(maskRsqrt28Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
 func maskRsqrt28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
@@ -1438,8 +1438,8 @@ func maskRsqrt28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float
 //
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_maskz_rsqrt28_sd'.
 // Requires AVX512ER.
-func MaskzRsqrt28Sd(k Mmask8, a M128d, b M128d) M128d {
-	return M128d(maskzRsqrt28Sd(uint8(k), [2]float64(a), [2]float64(b)))
+func MaskzRsqrt28Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(maskzRsqrt28Sd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
 func maskzRsqrt28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
@@ -1457,8 +1457,8 @@ func maskzRsqrt28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_rsqrt28_sd'.
 // Requires AVX512ER.
-func Rsqrt28Sd(a M128d, b M128d) M128d {
-	return M128d(rsqrt28Sd([2]float64(a), [2]float64(b)))
+func Rsqrt28Sd(a x86.M128d, b x86.M128d) x86.M128d {
+	return x86.M128d(rsqrt28Sd([2]float64(a), [2]float64(b)))
 }
 
 func rsqrt28Sd(a [2]float64, b [2]float64) [2]float64
@@ -1481,8 +1481,8 @@ func rsqrt28Sd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_mask_rsqrt28_ss'.
 // Requires AVX512ER.
-func MaskRsqrt28Ss(src M128, k Mmask8, a M128, b M128) M128 {
-	return M128(maskRsqrt28Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
+func MaskRsqrt28Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(maskRsqrt28Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
 func maskRsqrt28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
@@ -1505,8 +1505,8 @@ func maskRsqrt28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float
 //
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_maskz_rsqrt28_ss'.
 // Requires AVX512ER.
-func MaskzRsqrt28Ss(k Mmask8, a M128, b M128) M128 {
-	return M128(maskzRsqrt28Ss(uint8(k), [4]float32(a), [4]float32(b)))
+func MaskzRsqrt28Ss(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(maskzRsqrt28Ss(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
 func maskzRsqrt28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
@@ -1524,8 +1524,8 @@ func maskzRsqrt28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_rsqrt28_ss'.
 // Requires AVX512ER.
-func Rsqrt28Ss(a M128, b M128) M128 {
-	return M128(rsqrt28Ss([4]float32(a), [4]float32(b)))
+func Rsqrt28Ss(a x86.M128, b x86.M128) x86.M128 {
+	return x86.M128(rsqrt28Ss([4]float32(a), [4]float32(b)))
 }
 
 func rsqrt28Ss(a [4]float32, b [4]float32) [4]float32

@@ -1,6 +1,6 @@
 package xsaveopt
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Xsaveopt: Perform a full or partial save of the enabled processor states to

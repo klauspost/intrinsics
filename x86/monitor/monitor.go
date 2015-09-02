@@ -1,6 +1,6 @@
 package monitor
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Monitor: Arm address monitoring hardware using the address specified in 'p'.

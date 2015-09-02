@@ -1,6 +1,6 @@
 package avx
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // AcosPd: Compute the inverse cosine of packed double-precision (64-bit)
@@ -14,8 +14,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: '...'. Intrinsic: '_mm256_acos_pd'.
 // Requires AVX.
-func AcosPd(a M256d) M256d {
-	return M256d(acosPd([4]float64(a)))
+func AcosPd(a x86.M256d) x86.M256d {
+	return x86.M256d(acosPd([4]float64(a)))
 }
 
 func acosPd(a [4]float64) [4]float64
@@ -33,8 +33,8 @@ func acosPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_acos_ps'.
 // Requires AVX.
-func AcosPs(a M256) M256 {
-	return M256(acosPs([8]float32(a)))
+func AcosPs(a x86.M256) x86.M256 {
+	return x86.M256(acosPs([8]float32(a)))
 }
 
 func acosPs(a [8]float32) [8]float32
@@ -52,8 +52,8 @@ func acosPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_acosh_pd'.
 // Requires AVX.
-func AcoshPd(a M256d) M256d {
-	return M256d(acoshPd([4]float64(a)))
+func AcoshPd(a x86.M256d) x86.M256d {
+	return x86.M256d(acoshPd([4]float64(a)))
 }
 
 func acoshPd(a [4]float64) [4]float64
@@ -71,8 +71,8 @@ func acoshPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_acosh_ps'.
 // Requires AVX.
-func AcoshPs(a M256) M256 {
-	return M256(acoshPs([8]float32(a)))
+func AcoshPs(a x86.M256) x86.M256 {
+	return x86.M256(acoshPs([8]float32(a)))
 }
 
 func acoshPs(a [8]float32) [8]float32
@@ -89,8 +89,8 @@ func acoshPs(a [8]float32) [8]float32
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm256_add_pd'.
 // Requires AVX.
-func AddPd(a M256d, b M256d) M256d {
-	return M256d(addPd([4]float64(a), [4]float64(b)))
+func AddPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(addPd([4]float64(a), [4]float64(b)))
 }
 
 func addPd(a [4]float64, b [4]float64) [4]float64
@@ -107,8 +107,8 @@ func addPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm256_add_ps'.
 // Requires AVX.
-func AddPs(a M256, b M256) M256 {
-	return M256(addPs([8]float32(a), [8]float32(b)))
+func AddPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(addPs([8]float32(a), [8]float32(b)))
 }
 
 func addPs(a [8]float32, b [8]float32) [8]float32
@@ -130,8 +130,8 @@ func addPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VADDSUBPD'. Intrinsic: '_mm256_addsub_pd'.
 // Requires AVX.
-func AddsubPd(a M256d, b M256d) M256d {
-	return M256d(addsubPd([4]float64(a), [4]float64(b)))
+func AddsubPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(addsubPd([4]float64(a), [4]float64(b)))
 }
 
 func addsubPd(a [4]float64, b [4]float64) [4]float64
@@ -153,8 +153,8 @@ func addsubPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VADDSUBPS'. Intrinsic: '_mm256_addsub_ps'.
 // Requires AVX.
-func AddsubPs(a M256, b M256) M256 {
-	return M256(addsubPs([8]float32(a), [8]float32(b)))
+func AddsubPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(addsubPs([8]float32(a), [8]float32(b)))
 }
 
 func addsubPs(a [8]float32, b [8]float32) [8]float32
@@ -171,8 +171,8 @@ func addsubPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VANDPD'. Intrinsic: '_mm256_and_pd'.
 // Requires AVX.
-func AndPd(a M256d, b M256d) M256d {
-	return M256d(andPd([4]float64(a), [4]float64(b)))
+func AndPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(andPd([4]float64(a), [4]float64(b)))
 }
 
 func andPd(a [4]float64, b [4]float64) [4]float64
@@ -189,8 +189,8 @@ func andPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VANDPS'. Intrinsic: '_mm256_and_ps'.
 // Requires AVX.
-func AndPs(a M256, b M256) M256 {
-	return M256(andPs([8]float32(a), [8]float32(b)))
+func AndPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(andPs([8]float32(a), [8]float32(b)))
 }
 
 func andPs(a [8]float32, b [8]float32) [8]float32
@@ -207,8 +207,8 @@ func andPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VANDNPD'. Intrinsic: '_mm256_andnot_pd'.
 // Requires AVX.
-func AndnotPd(a M256d, b M256d) M256d {
-	return M256d(andnotPd([4]float64(a), [4]float64(b)))
+func AndnotPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(andnotPd([4]float64(a), [4]float64(b)))
 }
 
 func andnotPd(a [4]float64, b [4]float64) [4]float64
@@ -225,8 +225,8 @@ func andnotPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VANDNPS'. Intrinsic: '_mm256_andnot_ps'.
 // Requires AVX.
-func AndnotPs(a M256, b M256) M256 {
-	return M256(andnotPs([8]float32(a), [8]float32(b)))
+func AndnotPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(andnotPs([8]float32(a), [8]float32(b)))
 }
 
 func andnotPs(a [8]float32, b [8]float32) [8]float32
@@ -244,8 +244,8 @@ func andnotPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_asin_pd'.
 // Requires AVX.
-func AsinPd(a M256d) M256d {
-	return M256d(asinPd([4]float64(a)))
+func AsinPd(a x86.M256d) x86.M256d {
+	return x86.M256d(asinPd([4]float64(a)))
 }
 
 func asinPd(a [4]float64) [4]float64
@@ -263,8 +263,8 @@ func asinPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_asin_ps'.
 // Requires AVX.
-func AsinPs(a M256) M256 {
-	return M256(asinPs([8]float32(a)))
+func AsinPs(a x86.M256) x86.M256 {
+	return x86.M256(asinPs([8]float32(a)))
 }
 
 func asinPs(a [8]float32) [8]float32
@@ -282,8 +282,8 @@ func asinPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_asinh_pd'.
 // Requires AVX.
-func AsinhPd(a M256d) M256d {
-	return M256d(asinhPd([4]float64(a)))
+func AsinhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(asinhPd([4]float64(a)))
 }
 
 func asinhPd(a [4]float64) [4]float64
@@ -301,8 +301,8 @@ func asinhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_asinh_ps'.
 // Requires AVX.
-func AsinhPs(a M256) M256 {
-	return M256(asinhPs([8]float32(a)))
+func AsinhPs(a x86.M256) x86.M256 {
+	return x86.M256(asinhPs([8]float32(a)))
 }
 
 func asinhPs(a [8]float32) [8]float32
@@ -320,8 +320,8 @@ func asinhPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan_pd'.
 // Requires AVX.
-func AtanPd(a M256d) M256d {
-	return M256d(atanPd([4]float64(a)))
+func AtanPd(a x86.M256d) x86.M256d {
+	return x86.M256d(atanPd([4]float64(a)))
 }
 
 func atanPd(a [4]float64) [4]float64
@@ -339,8 +339,8 @@ func atanPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan_ps'.
 // Requires AVX.
-func AtanPs(a M256) M256 {
-	return M256(atanPs([8]float32(a)))
+func AtanPs(a x86.M256) x86.M256 {
+	return x86.M256(atanPs([8]float32(a)))
 }
 
 func atanPs(a [8]float32) [8]float32
@@ -358,8 +358,8 @@ func atanPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan2_pd'.
 // Requires AVX.
-func Atan2Pd(a M256d, b M256d) M256d {
-	return M256d(atan2Pd([4]float64(a), [4]float64(b)))
+func Atan2Pd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(atan2Pd([4]float64(a), [4]float64(b)))
 }
 
 func atan2Pd(a [4]float64, b [4]float64) [4]float64
@@ -377,8 +377,8 @@ func atan2Pd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan2_ps'.
 // Requires AVX.
-func Atan2Ps(a M256, b M256) M256 {
-	return M256(atan2Ps([8]float32(a), [8]float32(b)))
+func Atan2Ps(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(atan2Ps([8]float32(a), [8]float32(b)))
 }
 
 func atan2Ps(a [8]float32, b [8]float32) [8]float32
@@ -396,8 +396,8 @@ func atan2Ps(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_atanh_pd'.
 // Requires AVX.
-func AtanhPd(a M256d) M256d {
-	return M256d(atanhPd([4]float64(a)))
+func AtanhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(atanhPd([4]float64(a)))
 }
 
 func atanhPd(a [4]float64) [4]float64
@@ -415,8 +415,8 @@ func atanhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_atanh_ps'.
 // Requires AVX.
-func AtanhPs(a M256) M256 {
-	return M256(atanhPs([8]float32(a)))
+func AtanhPs(a x86.M256) x86.M256 {
+	return x86.M256(atanhPs([8]float32(a)))
 }
 
 func atanhPs(a [8]float32) [8]float32
@@ -437,8 +437,8 @@ func atanhPs(a [8]float32) [8]float32
 //
 // Instruction: 'VBLENDPD'. Intrinsic: '_mm256_blend_pd'.
 // Requires AVX.
-func BlendPd(a M256d, b M256d, imm8 int) M256d {
-	return M256d(blendPd([4]float64(a), [4]float64(b), imm8))
+func BlendPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(blendPd([4]float64(a), [4]float64(b), imm8))
 }
 
 func blendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
@@ -459,8 +459,8 @@ func blendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VBLENDPS'. Intrinsic: '_mm256_blend_ps'.
 // Requires AVX.
-func BlendPs(a M256, b M256, imm8 int) M256 {
-	return M256(blendPs([8]float32(a), [8]float32(b), imm8))
+func BlendPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(blendPs([8]float32(a), [8]float32(b), imm8))
 }
 
 func blendPs(a [8]float32, b [8]float32, imm8 int) [8]float32
@@ -481,8 +481,8 @@ func blendPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VBLENDVPD'. Intrinsic: '_mm256_blendv_pd'.
 // Requires AVX.
-func BlendvPd(a M256d, b M256d, mask M256d) M256d {
-	return M256d(blendvPd([4]float64(a), [4]float64(b), [4]float64(mask)))
+func BlendvPd(a x86.M256d, b x86.M256d, mask x86.M256d) x86.M256d {
+	return x86.M256d(blendvPd([4]float64(a), [4]float64(b), [4]float64(mask)))
 }
 
 func blendvPd(a [4]float64, b [4]float64, mask [4]float64) [4]float64
@@ -503,8 +503,8 @@ func blendvPd(a [4]float64, b [4]float64, mask [4]float64) [4]float64
 //
 // Instruction: 'VBLENDVPS'. Intrinsic: '_mm256_blendv_ps'.
 // Requires AVX.
-func BlendvPs(a M256, b M256, mask M256) M256 {
-	return M256(blendvPs([8]float32(a), [8]float32(b), [8]float32(mask)))
+func BlendvPs(a x86.M256, b x86.M256, mask x86.M256) x86.M256 {
+	return x86.M256(blendvPs([8]float32(a), [8]float32(b), [8]float32(mask)))
 }
 
 func blendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
@@ -520,11 +520,11 @@ func blendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_pd'.
 // Requires AVX.
-func BroadcastPd(mem_addr M128dConst) M256d {
-	return M256d(broadcastPd(mem_addr))
+func BroadcastPd(mem_addr x86.M128dConst) x86.M256d {
+	return x86.M256d(broadcastPd(mem_addr))
 }
 
-func broadcastPd(mem_addr M128dConst) [4]float64
+func broadcastPd(mem_addr x86.M128dConst) [4]float64
 
 
 // BroadcastPs: Broadcast 128 bits from memory (composed of 4 packed
@@ -537,11 +537,11 @@ func broadcastPd(mem_addr M128dConst) [4]float64
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_ps'.
 // Requires AVX.
-func BroadcastPs(mem_addr M128Const) M256 {
-	return M256(broadcastPs(mem_addr))
+func BroadcastPs(mem_addr x86.M128Const) x86.M256 {
+	return x86.M256(broadcastPs(mem_addr))
 }
 
-func broadcastPs(mem_addr M128Const) [8]float32
+func broadcastPs(mem_addr x86.M128Const) [8]float32
 
 
 // BroadcastSd: Broadcast a double-precision (64-bit) floating-point element
@@ -556,8 +556,8 @@ func broadcastPs(mem_addr M128Const) [8]float32
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm256_broadcast_sd'.
 // Requires AVX.
-func BroadcastSd(mem_addr float64) M256d {
-	return M256d(broadcastSd(mem_addr))
+func BroadcastSd(mem_addr float64) x86.M256d {
+	return x86.M256d(broadcastSd(mem_addr))
 }
 
 func broadcastSd(mem_addr float64) [4]float64
@@ -575,8 +575,8 @@ func broadcastSd(mem_addr float64) [4]float64
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm_broadcast_ss'.
 // Requires AVX.
-func BroadcastSs(mem_addr float32) M128 {
-	return M128(broadcastSs(mem_addr))
+func BroadcastSs(mem_addr float32) x86.M128 {
+	return x86.M128(broadcastSs(mem_addr))
 }
 
 func broadcastSs(mem_addr float32) [4]float32
@@ -594,8 +594,8 @@ func broadcastSs(mem_addr float32) [4]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm256_broadcast_ss'.
 // Requires AVX.
-func BroadcastSs1(mem_addr float32) M256 {
-	return M256(broadcastSs1(mem_addr))
+func BroadcastSs1(mem_addr float32) x86.M256 {
+	return x86.M256(broadcastSs1(mem_addr))
 }
 
 func broadcastSs1(mem_addr float32) [8]float32
@@ -609,8 +609,8 @@ func broadcastSs1(mem_addr float32) [8]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd_ps'.
 // Requires AVX.
-func CastpdPs(a M256d) M256 {
-	return M256(castpdPs([4]float64(a)))
+func CastpdPs(a x86.M256d) x86.M256 {
+	return x86.M256(castpdPs([4]float64(a)))
 }
 
 func castpdPs(a [4]float64) [8]float32
@@ -624,8 +624,8 @@ func castpdPs(a [4]float64) [8]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd_si256'.
 // Requires AVX.
-func CastpdSi256(a M256d) M256i {
-	return M256i(castpdSi256([4]float64(a)))
+func CastpdSi256(a x86.M256d) x86.M256i {
+	return x86.M256i(castpdSi256([4]float64(a)))
 }
 
 func castpdSi256(a [4]float64) [32]byte
@@ -640,8 +640,8 @@ func castpdSi256(a [4]float64) [32]byte
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd128_pd256'.
 // Requires AVX.
-func Castpd128Pd256(a M128d) M256d {
-	return M256d(castpd128Pd256([2]float64(a)))
+func Castpd128Pd256(a x86.M128d) x86.M256d {
+	return x86.M256d(castpd128Pd256([2]float64(a)))
 }
 
 func castpd128Pd256(a [2]float64) [4]float64
@@ -655,8 +655,8 @@ func castpd128Pd256(a [2]float64) [4]float64
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd256_pd128'.
 // Requires AVX.
-func Castpd256Pd128(a M256d) M128d {
-	return M128d(castpd256Pd128([4]float64(a)))
+func Castpd256Pd128(a x86.M256d) x86.M128d {
+	return x86.M128d(castpd256Pd128([4]float64(a)))
 }
 
 func castpd256Pd128(a [4]float64) [2]float64
@@ -670,8 +670,8 @@ func castpd256Pd128(a [4]float64) [2]float64
 //
 // Instruction: ''. Intrinsic: '_mm256_castps_pd'.
 // Requires AVX.
-func CastpsPd(a M256) M256d {
-	return M256d(castpsPd([8]float32(a)))
+func CastpsPd(a x86.M256) x86.M256d {
+	return x86.M256d(castpsPd([8]float32(a)))
 }
 
 func castpsPd(a [8]float32) [4]float64
@@ -685,8 +685,8 @@ func castpsPd(a [8]float32) [4]float64
 //
 // Instruction: ''. Intrinsic: '_mm256_castps_si256'.
 // Requires AVX.
-func CastpsSi256(a M256) M256i {
-	return M256i(castpsSi256([8]float32(a)))
+func CastpsSi256(a x86.M256) x86.M256i {
+	return x86.M256i(castpsSi256([8]float32(a)))
 }
 
 func castpsSi256(a [8]float32) [32]byte
@@ -701,8 +701,8 @@ func castpsSi256(a [8]float32) [32]byte
 //
 // Instruction: ''. Intrinsic: '_mm256_castps128_ps256'.
 // Requires AVX.
-func Castps128Ps256(a M128) M256 {
-	return M256(castps128Ps256([4]float32(a)))
+func Castps128Ps256(a x86.M128) x86.M256 {
+	return x86.M256(castps128Ps256([4]float32(a)))
 }
 
 func castps128Ps256(a [4]float32) [8]float32
@@ -716,8 +716,8 @@ func castps128Ps256(a [4]float32) [8]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_castps256_ps128'.
 // Requires AVX.
-func Castps256Ps128(a M256) M128 {
-	return M128(castps256Ps128([8]float32(a)))
+func Castps256Ps128(a x86.M256) x86.M128 {
+	return x86.M128(castps256Ps128([8]float32(a)))
 }
 
 func castps256Ps128(a [8]float32) [4]float32
@@ -732,8 +732,8 @@ func castps256Ps128(a [8]float32) [4]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi128_si256'.
 // Requires AVX.
-func Castsi128Si256(a M128i) M256i {
-	return M256i(castsi128Si256([16]byte(a)))
+func Castsi128Si256(a x86.M128i) x86.M256i {
+	return x86.M256i(castsi128Si256([16]byte(a)))
 }
 
 func castsi128Si256(a [16]byte) [32]byte
@@ -747,8 +747,8 @@ func castsi128Si256(a [16]byte) [32]byte
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi256_pd'.
 // Requires AVX.
-func Castsi256Pd(a M256i) M256d {
-	return M256d(castsi256Pd([32]byte(a)))
+func Castsi256Pd(a x86.M256i) x86.M256d {
+	return x86.M256d(castsi256Pd([32]byte(a)))
 }
 
 func castsi256Pd(a [32]byte) [4]float64
@@ -762,8 +762,8 @@ func castsi256Pd(a [32]byte) [4]float64
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi256_ps'.
 // Requires AVX.
-func Castsi256Ps(a M256i) M256 {
-	return M256(castsi256Ps([32]byte(a)))
+func Castsi256Ps(a x86.M256i) x86.M256 {
+	return x86.M256(castsi256Ps([32]byte(a)))
 }
 
 func castsi256Ps(a [32]byte) [8]float32
@@ -777,8 +777,8 @@ func castsi256Ps(a [32]byte) [8]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi256_si128'.
 // Requires AVX.
-func Castsi256Si128(a M256i) M128i {
-	return M128i(castsi256Si128([32]byte(a)))
+func Castsi256Si128(a x86.M256i) x86.M128i {
+	return x86.M128i(castsi256Si128([32]byte(a)))
 }
 
 func castsi256Si128(a [32]byte) [16]byte
@@ -795,8 +795,8 @@ func castsi256Si128(a [32]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_cbrt_pd'.
 // Requires AVX.
-func CbrtPd(a M256d) M256d {
-	return M256d(cbrtPd([4]float64(a)))
+func CbrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(cbrtPd([4]float64(a)))
 }
 
 func cbrtPd(a [4]float64) [4]float64
@@ -813,8 +813,8 @@ func cbrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cbrt_ps'.
 // Requires AVX.
-func CbrtPs(a M256) M256 {
-	return M256(cbrtPs([8]float32(a)))
+func CbrtPs(a x86.M256) x86.M256 {
+	return x86.M256(cbrtPs([8]float32(a)))
 }
 
 func cbrtPs(a [8]float32) [8]float32
@@ -832,8 +832,8 @@ func cbrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorm_pd'.
 // Requires AVX.
-func CdfnormPd(a M256d) M256d {
-	return M256d(cdfnormPd([4]float64(a)))
+func CdfnormPd(a x86.M256d) x86.M256d {
+	return x86.M256d(cdfnormPd([4]float64(a)))
 }
 
 func cdfnormPd(a [4]float64) [4]float64
@@ -851,8 +851,8 @@ func cdfnormPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorm_ps'.
 // Requires AVX.
-func CdfnormPs(a M256) M256 {
-	return M256(cdfnormPs([8]float32(a)))
+func CdfnormPs(a x86.M256) x86.M256 {
+	return x86.M256(cdfnormPs([8]float32(a)))
 }
 
 func cdfnormPs(a [8]float32) [8]float32
@@ -870,8 +870,8 @@ func cdfnormPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorminv_pd'.
 // Requires AVX.
-func CdfnorminvPd(a M256d) M256d {
-	return M256d(cdfnorminvPd([4]float64(a)))
+func CdfnorminvPd(a x86.M256d) x86.M256d {
+	return x86.M256d(cdfnorminvPd([4]float64(a)))
 }
 
 func cdfnorminvPd(a [4]float64) [4]float64
@@ -889,8 +889,8 @@ func cdfnorminvPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorminv_ps'.
 // Requires AVX.
-func CdfnorminvPs(a M256) M256 {
-	return M256(cdfnorminvPs([8]float32(a)))
+func CdfnorminvPs(a x86.M256) x86.M256 {
+	return x86.M256(cdfnorminvPs([8]float32(a)))
 }
 
 func cdfnorminvPs(a [8]float32) [8]float32
@@ -908,8 +908,8 @@ func cdfnorminvPs(a [8]float32) [8]float32
 //
 // Instruction: 'VROUNDPD'. Intrinsic: '_mm256_ceil_pd'.
 // Requires AVX.
-func CeilPd(a M256d) M256d {
-	return M256d(ceilPd([4]float64(a)))
+func CeilPd(a x86.M256d) x86.M256d {
+	return x86.M256d(ceilPd([4]float64(a)))
 }
 
 func ceilPd(a [4]float64) [4]float64
@@ -927,8 +927,8 @@ func ceilPd(a [4]float64) [4]float64
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm256_ceil_ps'.
 // Requires AVX.
-func CeilPs(a M256) M256 {
-	return M256(ceilPs([8]float32(a)))
+func CeilPs(a x86.M256) x86.M256 {
+	return x86.M256(ceilPs([8]float32(a)))
 }
 
 func ceilPs(a [8]float32) [8]float32
@@ -946,8 +946,8 @@ func ceilPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cexp_ps'.
 // Requires AVX.
-func CexpPs(a M256) M256 {
-	return M256(cexpPs([8]float32(a)))
+func CexpPs(a x86.M256) x86.M256 {
+	return x86.M256(cexpPs([8]float32(a)))
 }
 
 func cexpPs(a [8]float32) [8]float32
@@ -964,8 +964,8 @@ func cexpPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_clog_ps'.
 // Requires AVX.
-func ClogPs(a M256) M256 {
-	return M256(clogPs([8]float32(a)))
+func ClogPs(a x86.M256) x86.M256 {
+	return x86.M256(clogPs([8]float32(a)))
 }
 
 func clogPs(a [8]float32) [8]float32
@@ -1017,8 +1017,8 @@ func clogPs(a [8]float32) [8]float32
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm_cmp_pd'.
 // Requires AVX.
-func CmpPd(a M128d, b M128d, imm8 int) M128d {
-	return M128d(cmpPd([2]float64(a), [2]float64(b), imm8))
+func CmpPd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+	return x86.M128d(cmpPd([2]float64(a), [2]float64(b), imm8))
 }
 
 func cmpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
@@ -1070,8 +1070,8 @@ func cmpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm256_cmp_pd'.
 // Requires AVX.
-func CmpPd1(a M256d, b M256d, imm8 int) M256d {
-	return M256d(cmpPd1([4]float64(a), [4]float64(b), imm8))
+func CmpPd1(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(cmpPd1([4]float64(a), [4]float64(b), imm8))
 }
 
 func cmpPd1(a [4]float64, b [4]float64, imm8 int) [4]float64
@@ -1123,8 +1123,8 @@ func cmpPd1(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm_cmp_ps'.
 // Requires AVX.
-func CmpPs(a M128, b M128, imm8 int) M128 {
-	return M128(cmpPs([4]float32(a), [4]float32(b), imm8))
+func CmpPs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+	return x86.M128(cmpPs([4]float32(a), [4]float32(b), imm8))
 }
 
 func cmpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
@@ -1176,8 +1176,8 @@ func cmpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm256_cmp_ps'.
 // Requires AVX.
-func CmpPs1(a M256, b M256, imm8 int) M256 {
-	return M256(cmpPs1([8]float32(a), [8]float32(b), imm8))
+func CmpPs1(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(cmpPs1([8]float32(a), [8]float32(b), imm8))
 }
 
 func cmpPs1(a [8]float32, b [8]float32, imm8 int) [8]float32
@@ -1229,8 +1229,8 @@ func cmpPs1(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VCMPSD'. Intrinsic: '_mm_cmp_sd'.
 // Requires AVX.
-func CmpSd(a M128d, b M128d, imm8 int) M128d {
-	return M128d(cmpSd([2]float64(a), [2]float64(b), imm8))
+func CmpSd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+	return x86.M128d(cmpSd([2]float64(a), [2]float64(b), imm8))
 }
 
 func cmpSd(a [2]float64, b [2]float64, imm8 int) [2]float64
@@ -1282,8 +1282,8 @@ func cmpSd(a [2]float64, b [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VCMPSS'. Intrinsic: '_mm_cmp_ss'.
 // Requires AVX.
-func CmpSs(a M128, b M128, imm8 int) M128 {
-	return M128(cmpSs([4]float32(a), [4]float32(b), imm8))
+func CmpSs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+	return x86.M128(cmpSs([4]float32(a), [4]float32(b), imm8))
 }
 
 func cmpSs(a [4]float32, b [4]float32, imm8 int) [4]float32
@@ -1300,8 +1300,8 @@ func cmpSs(a [4]float32, b [4]float32, imm8 int) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cos_pd'.
 // Requires AVX.
-func CosPd(a M256d) M256d {
-	return M256d(cosPd([4]float64(a)))
+func CosPd(a x86.M256d) x86.M256d {
+	return x86.M256d(cosPd([4]float64(a)))
 }
 
 func cosPd(a [4]float64) [4]float64
@@ -1318,8 +1318,8 @@ func cosPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cos_ps'.
 // Requires AVX.
-func CosPs(a M256) M256 {
-	return M256(cosPs([8]float32(a)))
+func CosPs(a x86.M256) x86.M256 {
+	return x86.M256(cosPs([8]float32(a)))
 }
 
 func cosPs(a [8]float32) [8]float32
@@ -1337,8 +1337,8 @@ func cosPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosd_pd'.
 // Requires AVX.
-func CosdPd(a M256d) M256d {
-	return M256d(cosdPd([4]float64(a)))
+func CosdPd(a x86.M256d) x86.M256d {
+	return x86.M256d(cosdPd([4]float64(a)))
 }
 
 func cosdPd(a [4]float64) [4]float64
@@ -1356,8 +1356,8 @@ func cosdPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosd_ps'.
 // Requires AVX.
-func CosdPs(a M256) M256 {
-	return M256(cosdPs([8]float32(a)))
+func CosdPs(a x86.M256) x86.M256 {
+	return x86.M256(cosdPs([8]float32(a)))
 }
 
 func cosdPs(a [8]float32) [8]float32
@@ -1375,8 +1375,8 @@ func cosdPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosh_pd'.
 // Requires AVX.
-func CoshPd(a M256d) M256d {
-	return M256d(coshPd([4]float64(a)))
+func CoshPd(a x86.M256d) x86.M256d {
+	return x86.M256d(coshPd([4]float64(a)))
 }
 
 func coshPd(a [4]float64) [4]float64
@@ -1394,8 +1394,8 @@ func coshPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosh_ps'.
 // Requires AVX.
-func CoshPs(a M256) M256 {
-	return M256(coshPs([8]float32(a)))
+func CoshPs(a x86.M256) x86.M256 {
+	return x86.M256(coshPs([8]float32(a)))
 }
 
 func coshPs(a [8]float32) [8]float32
@@ -1412,8 +1412,8 @@ func coshPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_csqrt_ps'.
 // Requires AVX.
-func CsqrtPs(a M256) M256 {
-	return M256(csqrtPs([8]float32(a)))
+func CsqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(csqrtPs([8]float32(a)))
 }
 
 func csqrtPs(a [8]float32) [8]float32
@@ -1431,8 +1431,8 @@ func csqrtPs(a [8]float32) [8]float32
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm256_cvtepi32_pd'.
 // Requires AVX.
-func Cvtepi32Pd(a M128i) M256d {
-	return M256d(cvtepi32Pd([16]byte(a)))
+func Cvtepi32Pd(a x86.M128i) x86.M256d {
+	return x86.M256d(cvtepi32Pd([16]byte(a)))
 }
 
 func cvtepi32Pd(a [16]byte) [4]float64
@@ -1449,8 +1449,8 @@ func cvtepi32Pd(a [16]byte) [4]float64
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm256_cvtepi32_ps'.
 // Requires AVX.
-func Cvtepi32Ps(a M256i) M256 {
-	return M256(cvtepi32Ps([32]byte(a)))
+func Cvtepi32Ps(a x86.M256i) x86.M256 {
+	return x86.M256(cvtepi32Ps([32]byte(a)))
 }
 
 func cvtepi32Ps(a [32]byte) [8]float32
@@ -1468,8 +1468,8 @@ func cvtepi32Ps(a [32]byte) [8]float32
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm256_cvtpd_epi32'.
 // Requires AVX.
-func CvtpdEpi32(a M256d) M128i {
-	return M128i(cvtpdEpi32([4]float64(a)))
+func CvtpdEpi32(a x86.M256d) x86.M128i {
+	return x86.M128i(cvtpdEpi32([4]float64(a)))
 }
 
 func cvtpdEpi32(a [4]float64) [16]byte
@@ -1488,8 +1488,8 @@ func cvtpdEpi32(a [4]float64) [16]byte
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm256_cvtpd_ps'.
 // Requires AVX.
-func CvtpdPs(a M256d) M128 {
-	return M128(cvtpdPs([4]float64(a)))
+func CvtpdPs(a x86.M256d) x86.M128 {
+	return x86.M128(cvtpdPs([4]float64(a)))
 }
 
 func cvtpdPs(a [4]float64) [4]float32
@@ -1506,8 +1506,8 @@ func cvtpdPs(a [4]float64) [4]float32
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm256_cvtps_epi32'.
 // Requires AVX.
-func CvtpsEpi32(a M256) M256i {
-	return M256i(cvtpsEpi32([8]float32(a)))
+func CvtpsEpi32(a x86.M256) x86.M256i {
+	return x86.M256i(cvtpsEpi32([8]float32(a)))
 }
 
 func cvtpsEpi32(a [8]float32) [32]byte
@@ -1526,8 +1526,8 @@ func cvtpsEpi32(a [8]float32) [32]byte
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm256_cvtps_pd'.
 // Requires AVX.
-func CvtpsPd(a M128) M256d {
-	return M256d(cvtpsPd([4]float32(a)))
+func CvtpsPd(a x86.M128) x86.M256d {
+	return x86.M256d(cvtpsPd([4]float32(a)))
 }
 
 func cvtpsPd(a [4]float32) [4]float64
@@ -1546,8 +1546,8 @@ func cvtpsPd(a [4]float32) [4]float64
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm256_cvttpd_epi32'.
 // Requires AVX.
-func CvttpdEpi32(a M256d) M128i {
-	return M128i(cvttpdEpi32([4]float64(a)))
+func CvttpdEpi32(a x86.M256d) x86.M128i {
+	return x86.M128i(cvttpdEpi32([4]float64(a)))
 }
 
 func cvttpdEpi32(a [4]float64) [16]byte
@@ -1565,8 +1565,8 @@ func cvttpdEpi32(a [4]float64) [16]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm256_cvttps_epi32'.
 // Requires AVX.
-func CvttpsEpi32(a M256) M256i {
-	return M256i(cvttpsEpi32([8]float32(a)))
+func CvttpsEpi32(a x86.M256) x86.M256i {
+	return x86.M256i(cvttpsEpi32([8]float32(a)))
 }
 
 func cvttpsEpi32(a [8]float32) [32]byte
@@ -1583,8 +1583,8 @@ func cvttpsEpi32(a [8]float32) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi16'.
 // Requires AVX.
-func DivEpi16(a M256i, b M256i) M256i {
-	return M256i(divEpi16([32]byte(a), [32]byte(b)))
+func DivEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpi16([32]byte(a), [32]byte(b)))
 }
 
 func divEpi16(a [32]byte, b [32]byte) [32]byte
@@ -1601,8 +1601,8 @@ func divEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi32'.
 // Requires AVX.
-func DivEpi32(a M256i, b M256i) M256i {
-	return M256i(divEpi32([32]byte(a), [32]byte(b)))
+func DivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpi32([32]byte(a), [32]byte(b)))
 }
 
 func divEpi32(a [32]byte, b [32]byte) [32]byte
@@ -1619,8 +1619,8 @@ func divEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi64'.
 // Requires AVX.
-func DivEpi64(a M256i, b M256i) M256i {
-	return M256i(divEpi64([32]byte(a), [32]byte(b)))
+func DivEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpi64([32]byte(a), [32]byte(b)))
 }
 
 func divEpi64(a [32]byte, b [32]byte) [32]byte
@@ -1637,8 +1637,8 @@ func divEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi8'.
 // Requires AVX.
-func DivEpi8(a M256i, b M256i) M256i {
-	return M256i(divEpi8([32]byte(a), [32]byte(b)))
+func DivEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpi8([32]byte(a), [32]byte(b)))
 }
 
 func divEpi8(a [32]byte, b [32]byte) [32]byte
@@ -1655,8 +1655,8 @@ func divEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu16'.
 // Requires AVX.
-func DivEpu16(a M256i, b M256i) M256i {
-	return M256i(divEpu16([32]byte(a), [32]byte(b)))
+func DivEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpu16([32]byte(a), [32]byte(b)))
 }
 
 func divEpu16(a [32]byte, b [32]byte) [32]byte
@@ -1673,8 +1673,8 @@ func divEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu32'.
 // Requires AVX.
-func DivEpu32(a M256i, b M256i) M256i {
-	return M256i(divEpu32([32]byte(a), [32]byte(b)))
+func DivEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpu32([32]byte(a), [32]byte(b)))
 }
 
 func divEpu32(a [32]byte, b [32]byte) [32]byte
@@ -1691,8 +1691,8 @@ func divEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu64'.
 // Requires AVX.
-func DivEpu64(a M256i, b M256i) M256i {
-	return M256i(divEpu64([32]byte(a), [32]byte(b)))
+func DivEpu64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpu64([32]byte(a), [32]byte(b)))
 }
 
 func divEpu64(a [32]byte, b [32]byte) [32]byte
@@ -1709,8 +1709,8 @@ func divEpu64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu8'.
 // Requires AVX.
-func DivEpu8(a M256i, b M256i) M256i {
-	return M256i(divEpu8([32]byte(a), [32]byte(b)))
+func DivEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(divEpu8([32]byte(a), [32]byte(b)))
 }
 
 func divEpu8(a [32]byte, b [32]byte) [32]byte
@@ -1727,8 +1727,8 @@ func divEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm256_div_pd'.
 // Requires AVX.
-func DivPd(a M256d, b M256d) M256d {
-	return M256d(divPd([4]float64(a), [4]float64(b)))
+func DivPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(divPd([4]float64(a), [4]float64(b)))
 }
 
 func divPd(a [4]float64, b [4]float64) [4]float64
@@ -1745,8 +1745,8 @@ func divPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm256_div_ps'.
 // Requires AVX.
-func DivPs(a M256, b M256) M256 {
-	return M256(divPs([8]float32(a), [8]float32(b)))
+func DivPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(divPs([8]float32(a), [8]float32(b)))
 }
 
 func divPs(a [8]float32, b [8]float32) [8]float32
@@ -1786,8 +1786,8 @@ func divPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VDPPS'. Intrinsic: '_mm256_dp_ps'.
 // Requires AVX.
-func DpPs(a M256, b M256, imm8 int) M256 {
-	return M256(dpPs([8]float32(a), [8]float32(b), imm8))
+func DpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(dpPs([8]float32(a), [8]float32(b), imm8))
 }
 
 func dpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
@@ -1804,8 +1804,8 @@ func dpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erf_pd'.
 // Requires AVX.
-func ErfPd(a M256d) M256d {
-	return M256d(erfPd([4]float64(a)))
+func ErfPd(a x86.M256d) x86.M256d {
+	return x86.M256d(erfPd([4]float64(a)))
 }
 
 func erfPd(a [4]float64) [4]float64
@@ -1822,8 +1822,8 @@ func erfPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erf_ps'.
 // Requires AVX.
-func ErfPs(a M256) M256 {
-	return M256(erfPs([8]float32(a)))
+func ErfPs(a x86.M256) x86.M256 {
+	return x86.M256(erfPs([8]float32(a)))
 }
 
 func erfPs(a [8]float32) [8]float32
@@ -1840,8 +1840,8 @@ func erfPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfc_pd'.
 // Requires AVX.
-func ErfcPd(a M256d) M256d {
-	return M256d(erfcPd([4]float64(a)))
+func ErfcPd(a x86.M256d) x86.M256d {
+	return x86.M256d(erfcPd([4]float64(a)))
 }
 
 func erfcPd(a [4]float64) [4]float64
@@ -1858,8 +1858,8 @@ func erfcPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfc_ps'.
 // Requires AVX.
-func ErfcPs(a M256) M256 {
-	return M256(erfcPs([8]float32(a)))
+func ErfcPs(a x86.M256) x86.M256 {
+	return x86.M256(erfcPs([8]float32(a)))
 }
 
 func erfcPs(a [8]float32) [8]float32
@@ -1877,8 +1877,8 @@ func erfcPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfcinv_pd'.
 // Requires AVX.
-func ErfcinvPd(a M256d) M256d {
-	return M256d(erfcinvPd([4]float64(a)))
+func ErfcinvPd(a x86.M256d) x86.M256d {
+	return x86.M256d(erfcinvPd([4]float64(a)))
 }
 
 func erfcinvPd(a [4]float64) [4]float64
@@ -1896,8 +1896,8 @@ func erfcinvPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfcinv_ps'.
 // Requires AVX.
-func ErfcinvPs(a M256) M256 {
-	return M256(erfcinvPs([8]float32(a)))
+func ErfcinvPs(a x86.M256) x86.M256 {
+	return x86.M256(erfcinvPs([8]float32(a)))
 }
 
 func erfcinvPs(a [8]float32) [8]float32
@@ -1914,8 +1914,8 @@ func erfcinvPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfinv_pd'.
 // Requires AVX.
-func ErfinvPd(a M256d) M256d {
-	return M256d(erfinvPd([4]float64(a)))
+func ErfinvPd(a x86.M256d) x86.M256d {
+	return x86.M256d(erfinvPd([4]float64(a)))
 }
 
 func erfinvPd(a [4]float64) [4]float64
@@ -1932,8 +1932,8 @@ func erfinvPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfinv_ps'.
 // Requires AVX.
-func ErfinvPs(a M256) M256 {
-	return M256(erfinvPs([8]float32(a)))
+func ErfinvPs(a x86.M256) x86.M256 {
+	return x86.M256(erfinvPs([8]float32(a)))
 }
 
 func erfinvPs(a [8]float32) [8]float32
@@ -1951,8 +1951,8 @@ func erfinvPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp_pd'.
 // Requires AVX.
-func ExpPd(a M256d) M256d {
-	return M256d(expPd([4]float64(a)))
+func ExpPd(a x86.M256d) x86.M256d {
+	return x86.M256d(expPd([4]float64(a)))
 }
 
 func expPd(a [4]float64) [4]float64
@@ -1970,8 +1970,8 @@ func expPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp_ps'.
 // Requires AVX.
-func ExpPs(a M256) M256 {
-	return M256(expPs([8]float32(a)))
+func ExpPs(a x86.M256) x86.M256 {
+	return x86.M256(expPs([8]float32(a)))
 }
 
 func expPs(a [8]float32) [8]float32
@@ -1989,8 +1989,8 @@ func expPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp10_pd'.
 // Requires AVX.
-func Exp10Pd(a M256d) M256d {
-	return M256d(exp10Pd([4]float64(a)))
+func Exp10Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(exp10Pd([4]float64(a)))
 }
 
 func exp10Pd(a [4]float64) [4]float64
@@ -2008,8 +2008,8 @@ func exp10Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp10_ps'.
 // Requires AVX.
-func Exp10Ps(a M256) M256 {
-	return M256(exp10Ps([8]float32(a)))
+func Exp10Ps(a x86.M256) x86.M256 {
+	return x86.M256(exp10Ps([8]float32(a)))
 }
 
 func exp10Ps(a [8]float32) [8]float32
@@ -2027,8 +2027,8 @@ func exp10Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp2_pd'.
 // Requires AVX.
-func Exp2Pd(a M256d) M256d {
-	return M256d(exp2Pd([4]float64(a)))
+func Exp2Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(exp2Pd([4]float64(a)))
 }
 
 func exp2Pd(a [4]float64) [4]float64
@@ -2046,8 +2046,8 @@ func exp2Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp2_ps'.
 // Requires AVX.
-func Exp2Ps(a M256) M256 {
-	return M256(exp2Ps([8]float32(a)))
+func Exp2Ps(a x86.M256) x86.M256 {
+	return x86.M256(exp2Ps([8]float32(a)))
 }
 
 func exp2Ps(a [8]float32) [8]float32
@@ -2065,8 +2065,8 @@ func exp2Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_expm1_pd'.
 // Requires AVX.
-func Expm1Pd(a M256d) M256d {
-	return M256d(expm1Pd([4]float64(a)))
+func Expm1Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(expm1Pd([4]float64(a)))
 }
 
 func expm1Pd(a [4]float64) [4]float64
@@ -2084,8 +2084,8 @@ func expm1Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_expm1_ps'.
 // Requires AVX.
-func Expm1Ps(a M256) M256 {
-	return M256(expm1Ps([8]float32(a)))
+func Expm1Ps(a x86.M256) x86.M256 {
+	return x86.M256(expm1Ps([8]float32(a)))
 }
 
 func expm1Ps(a [8]float32) [8]float32
@@ -2098,7 +2098,7 @@ func expm1Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi16'.
 // Requires AVX.
-func ExtractEpi16(a M256i, index int) int16 {
+func ExtractEpi16(a x86.M256i, index int) int16 {
 	return int16(extractEpi16([32]byte(a), index))
 }
 
@@ -2112,7 +2112,7 @@ func extractEpi16(a [32]byte, index int) int16
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi32'.
 // Requires AVX.
-func ExtractEpi32(a M256i, index int) int32 {
+func ExtractEpi32(a x86.M256i, index int) int32 {
 	return int32(extractEpi32([32]byte(a), index))
 }
 
@@ -2126,7 +2126,7 @@ func extractEpi32(a [32]byte, index int) int32
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi64'.
 // Requires AVX.
-func ExtractEpi64(a M256i, index int) int64 {
+func ExtractEpi64(a x86.M256i, index int) int64 {
 	return int64(extractEpi64([32]byte(a), index))
 }
 
@@ -2140,7 +2140,7 @@ func extractEpi64(a [32]byte, index int) int64
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi8'.
 // Requires AVX.
-func ExtractEpi8(a M256i, index int) int8 {
+func ExtractEpi8(a x86.M256i, index int) int8 {
 	return int8(extractEpi8([32]byte(a), index))
 }
 
@@ -2159,8 +2159,8 @@ func extractEpi8(a [32]byte, index int) int8
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_pd'.
 // Requires AVX.
-func Extractf128Pd(a M256d, imm8 int) M128d {
-	return M128d(extractf128Pd([4]float64(a), imm8))
+func Extractf128Pd(a x86.M256d, imm8 int) x86.M128d {
+	return x86.M128d(extractf128Pd([4]float64(a), imm8))
 }
 
 func extractf128Pd(a [4]float64, imm8 int) [2]float64
@@ -2178,8 +2178,8 @@ func extractf128Pd(a [4]float64, imm8 int) [2]float64
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_ps'.
 // Requires AVX.
-func Extractf128Ps(a M256, imm8 int) M128 {
-	return M128(extractf128Ps([8]float32(a), imm8))
+func Extractf128Ps(a x86.M256, imm8 int) x86.M128 {
+	return x86.M128(extractf128Ps([8]float32(a), imm8))
 }
 
 func extractf128Ps(a [8]float32, imm8 int) [4]float32
@@ -2196,8 +2196,8 @@ func extractf128Ps(a [8]float32, imm8 int) [4]float32
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_si256'.
 // Requires AVX.
-func Extractf128Si256(a M256i, imm8 int) M128i {
-	return M128i(extractf128Si256([32]byte(a), imm8))
+func Extractf128Si256(a x86.M256i, imm8 int) x86.M128i {
+	return x86.M128i(extractf128Si256([32]byte(a), imm8))
 }
 
 func extractf128Si256(a [32]byte, imm8 int) [16]byte
@@ -2215,8 +2215,8 @@ func extractf128Si256(a [32]byte, imm8 int) [16]byte
 //
 // Instruction: 'VROUNDPD'. Intrinsic: '_mm256_floor_pd'.
 // Requires AVX.
-func FloorPd(a M256d) M256d {
-	return M256d(floorPd([4]float64(a)))
+func FloorPd(a x86.M256d) x86.M256d {
+	return x86.M256d(floorPd([4]float64(a)))
 }
 
 func floorPd(a [4]float64) [4]float64
@@ -2234,8 +2234,8 @@ func floorPd(a [4]float64) [4]float64
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm256_floor_ps'.
 // Requires AVX.
-func FloorPs(a M256) M256 {
-	return M256(floorPs([8]float32(a)))
+func FloorPs(a x86.M256) x86.M256 {
+	return x86.M256(floorPs([8]float32(a)))
 }
 
 func floorPs(a [8]float32) [8]float32
@@ -2252,8 +2252,8 @@ func floorPs(a [8]float32) [8]float32
 //
 // Instruction: 'VHADDPD'. Intrinsic: '_mm256_hadd_pd'.
 // Requires AVX.
-func HaddPd(a M256d, b M256d) M256d {
-	return M256d(haddPd([4]float64(a), [4]float64(b)))
+func HaddPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(haddPd([4]float64(a), [4]float64(b)))
 }
 
 func haddPd(a [4]float64, b [4]float64) [4]float64
@@ -2274,8 +2274,8 @@ func haddPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VHADDPS'. Intrinsic: '_mm256_hadd_ps'.
 // Requires AVX.
-func HaddPs(a M256, b M256) M256 {
-	return M256(haddPs([8]float32(a), [8]float32(b)))
+func HaddPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(haddPs([8]float32(a), [8]float32(b)))
 }
 
 func haddPs(a [8]float32, b [8]float32) [8]float32
@@ -2292,8 +2292,8 @@ func haddPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VHSUBPD'. Intrinsic: '_mm256_hsub_pd'.
 // Requires AVX.
-func HsubPd(a M256d, b M256d) M256d {
-	return M256d(hsubPd([4]float64(a), [4]float64(b)))
+func HsubPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(hsubPd([4]float64(a), [4]float64(b)))
 }
 
 func hsubPd(a [4]float64, b [4]float64) [4]float64
@@ -2314,8 +2314,8 @@ func hsubPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VHSUBPS'. Intrinsic: '_mm256_hsub_ps'.
 // Requires AVX.
-func HsubPs(a M256, b M256) M256 {
-	return M256(hsubPs([8]float32(a), [8]float32(b)))
+func HsubPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(hsubPs([8]float32(a), [8]float32(b)))
 }
 
 func hsubPs(a [8]float32, b [8]float32) [8]float32
@@ -2334,8 +2334,8 @@ func hsubPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_hypot_pd'.
 // Requires AVX.
-func HypotPd(a M256d, b M256d) M256d {
-	return M256d(hypotPd([4]float64(a), [4]float64(b)))
+func HypotPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(hypotPd([4]float64(a), [4]float64(b)))
 }
 
 func hypotPd(a [4]float64, b [4]float64) [4]float64
@@ -2354,8 +2354,8 @@ func hypotPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_hypot_ps'.
 // Requires AVX.
-func HypotPs(a M256, b M256) M256 {
-	return M256(hypotPs([8]float32(a), [8]float32(b)))
+func HypotPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(hypotPs([8]float32(a), [8]float32(b)))
 }
 
 func hypotPs(a [8]float32, b [8]float32) [8]float32
@@ -2372,8 +2372,8 @@ func hypotPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_idiv_epi32'.
 // Requires AVX.
-func IdivEpi32(a M256i, b M256i) M256i {
-	return M256i(idivEpi32([32]byte(a), [32]byte(b)))
+func IdivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(idivEpi32([32]byte(a), [32]byte(b)))
 }
 
 func idivEpi32(a [32]byte, b [32]byte) [32]byte
@@ -2392,8 +2392,8 @@ func idivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_idivrem_epi32'.
 // Requires AVX.
-func IdivremEpi32(mem_addr M256i, a M256i, b M256i) M256i {
-	return M256i(idivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
+func IdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(idivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
 }
 
 func idivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
@@ -2408,8 +2408,8 @@ func idivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi16'.
 // Requires AVX.
-func InsertEpi16(a M256i, i int16, index int) M256i {
-	return M256i(insertEpi16([32]byte(a), i, index))
+func InsertEpi16(a x86.M256i, i int16, index int) x86.M256i {
+	return x86.M256i(insertEpi16([32]byte(a), i, index))
 }
 
 func insertEpi16(a [32]byte, i int16, index int) [32]byte
@@ -2424,8 +2424,8 @@ func insertEpi16(a [32]byte, i int16, index int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi32'.
 // Requires AVX.
-func InsertEpi32(a M256i, i int32, index int) M256i {
-	return M256i(insertEpi32([32]byte(a), i, index))
+func InsertEpi32(a x86.M256i, i int32, index int) x86.M256i {
+	return x86.M256i(insertEpi32([32]byte(a), i, index))
 }
 
 func insertEpi32(a [32]byte, i int32, index int) [32]byte
@@ -2440,8 +2440,8 @@ func insertEpi32(a [32]byte, i int32, index int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi64'.
 // Requires AVX.
-func InsertEpi64(a M256i, i int64, index int) M256i {
-	return M256i(insertEpi64([32]byte(a), i, index))
+func InsertEpi64(a x86.M256i, i int64, index int) x86.M256i {
+	return x86.M256i(insertEpi64([32]byte(a), i, index))
 }
 
 func insertEpi64(a [32]byte, i int64, index int) [32]byte
@@ -2456,8 +2456,8 @@ func insertEpi64(a [32]byte, i int64, index int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi8'.
 // Requires AVX.
-func InsertEpi8(a M256i, i int8, index int) M256i {
-	return M256i(insertEpi8([32]byte(a), i, index))
+func InsertEpi8(a x86.M256i, i int8, index int) x86.M256i {
+	return x86.M256i(insertEpi8([32]byte(a), i, index))
 }
 
 func insertEpi8(a [32]byte, i int8, index int) [32]byte
@@ -2476,8 +2476,8 @@ func insertEpi8(a [32]byte, i int8, index int) [32]byte
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_pd'.
 // Requires AVX.
-func Insertf128Pd(a M256d, b M128d, imm8 int) M256d {
-	return M256d(insertf128Pd([4]float64(a), [2]float64(b), imm8))
+func Insertf128Pd(a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
+	return x86.M256d(insertf128Pd([4]float64(a), [2]float64(b), imm8))
 }
 
 func insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
@@ -2496,8 +2496,8 @@ func insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_ps'.
 // Requires AVX.
-func Insertf128Ps(a M256, b M128, imm8 int) M256 {
-	return M256(insertf128Ps([8]float32(a), [4]float32(b), imm8))
+func Insertf128Ps(a x86.M256, b x86.M128, imm8 int) x86.M256 {
+	return x86.M256(insertf128Ps([8]float32(a), [4]float32(b), imm8))
 }
 
 func insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
@@ -2515,8 +2515,8 @@ func insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_si256'.
 // Requires AVX.
-func Insertf128Si256(a M256i, b M128i, imm8 int) M256i {
-	return M256i(insertf128Si256([32]byte(a), [16]byte(b), imm8))
+func Insertf128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+	return x86.M256i(insertf128Si256([32]byte(a), [16]byte(b), imm8))
 }
 
 func insertf128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
@@ -2533,8 +2533,8 @@ func insertf128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_invcbrt_pd'.
 // Requires AVX.
-func InvcbrtPd(a M256d) M256d {
-	return M256d(invcbrtPd([4]float64(a)))
+func InvcbrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(invcbrtPd([4]float64(a)))
 }
 
 func invcbrtPd(a [4]float64) [4]float64
@@ -2551,8 +2551,8 @@ func invcbrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_invcbrt_ps'.
 // Requires AVX.
-func InvcbrtPs(a M256) M256 {
-	return M256(invcbrtPs([8]float32(a)))
+func InvcbrtPs(a x86.M256) x86.M256 {
+	return x86.M256(invcbrtPs([8]float32(a)))
 }
 
 func invcbrtPs(a [8]float32) [8]float32
@@ -2569,8 +2569,8 @@ func invcbrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_invsqrt_pd'.
 // Requires AVX.
-func InvsqrtPd(a M256d) M256d {
-	return M256d(invsqrtPd([4]float64(a)))
+func InvsqrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(invsqrtPd([4]float64(a)))
 }
 
 func invsqrtPd(a [4]float64) [4]float64
@@ -2587,8 +2587,8 @@ func invsqrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_invsqrt_ps'.
 // Requires AVX.
-func InvsqrtPs(a M256) M256 {
-	return M256(invsqrtPs([8]float32(a)))
+func InvsqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(invsqrtPs([8]float32(a)))
 }
 
 func invsqrtPs(a [8]float32) [8]float32
@@ -2605,8 +2605,8 @@ func invsqrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_irem_epi32'.
 // Requires AVX.
-func IremEpi32(a M256i, b M256i) M256i {
-	return M256i(iremEpi32([32]byte(a), [32]byte(b)))
+func IremEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(iremEpi32([32]byte(a), [32]byte(b)))
 }
 
 func iremEpi32(a [32]byte, b [32]byte) [32]byte
@@ -2621,11 +2621,11 @@ func iremEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VLDDQU'. Intrinsic: '_mm256_lddqu_si256'.
 // Requires AVX.
-func LddquSi256(mem_addr M256iConst) M256i {
-	return M256i(lddquSi256(mem_addr))
+func LddquSi256(mem_addr x86.M256iConst) x86.M256i {
+	return x86.M256i(lddquSi256(mem_addr))
 }
 
-func lddquSi256(mem_addr M256iConst) [32]byte
+func lddquSi256(mem_addr x86.M256iConst) [32]byte
 
 
 // LoadPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
@@ -2638,8 +2638,8 @@ func lddquSi256(mem_addr M256iConst) [32]byte
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_load_pd'.
 // Requires AVX.
-func LoadPd(mem_addr float64) M256d {
-	return M256d(loadPd(mem_addr))
+func LoadPd(mem_addr float64) x86.M256d {
+	return x86.M256d(loadPd(mem_addr))
 }
 
 func loadPd(mem_addr float64) [4]float64
@@ -2655,8 +2655,8 @@ func loadPd(mem_addr float64) [4]float64
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_load_ps'.
 // Requires AVX.
-func LoadPs(mem_addr float32) M256 {
-	return M256(loadPs(mem_addr))
+func LoadPs(mem_addr float32) x86.M256 {
+	return x86.M256(loadPs(mem_addr))
 }
 
 func loadPs(mem_addr float32) [8]float32
@@ -2671,11 +2671,11 @@ func loadPs(mem_addr float32) [8]float32
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_load_si256'.
 // Requires AVX.
-func LoadSi256(mem_addr M256iConst) M256i {
-	return M256i(loadSi256(mem_addr))
+func LoadSi256(mem_addr x86.M256iConst) x86.M256i {
+	return x86.M256i(loadSi256(mem_addr))
 }
 
-func loadSi256(mem_addr M256iConst) [32]byte
+func loadSi256(mem_addr x86.M256iConst) [32]byte
 
 
 // LoaduPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
@@ -2687,8 +2687,8 @@ func loadSi256(mem_addr M256iConst) [32]byte
 //
 // Instruction: 'VMOVUPD'. Intrinsic: '_mm256_loadu_pd'.
 // Requires AVX.
-func LoaduPd(mem_addr float64) M256d {
-	return M256d(loaduPd(mem_addr))
+func LoaduPd(mem_addr float64) x86.M256d {
+	return x86.M256d(loaduPd(mem_addr))
 }
 
 func loaduPd(mem_addr float64) [4]float64
@@ -2703,8 +2703,8 @@ func loaduPd(mem_addr float64) [4]float64
 //
 // Instruction: 'VMOVUPS'. Intrinsic: '_mm256_loadu_ps'.
 // Requires AVX.
-func LoaduPs(mem_addr float32) M256 {
-	return M256(loaduPs(mem_addr))
+func LoaduPs(mem_addr float32) x86.M256 {
+	return x86.M256(loaduPs(mem_addr))
 }
 
 func loaduPs(mem_addr float32) [8]float32
@@ -2718,11 +2718,11 @@ func loaduPs(mem_addr float32) [8]float32
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_loadu_si256'.
 // Requires AVX.
-func LoaduSi256(mem_addr M256iConst) M256i {
-	return M256i(loaduSi256(mem_addr))
+func LoaduSi256(mem_addr x86.M256iConst) x86.M256i {
+	return x86.M256i(loaduSi256(mem_addr))
 }
 
-func loaduSi256(mem_addr M256iConst) [32]byte
+func loaduSi256(mem_addr x86.M256iConst) [32]byte
 
 
 // Loadu2M128: Load two 128-bit values (composed of 4 packed single-precision
@@ -2736,8 +2736,8 @@ func loaduSi256(mem_addr M256iConst) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128'.
 // Requires AVX.
-func Loadu2M128(hiaddr float32, loaddr float32) M256 {
-	return M256(loadu2M128(hiaddr, loaddr))
+func Loadu2M128(hiaddr float32, loaddr float32) x86.M256 {
+	return x86.M256(loadu2M128(hiaddr, loaddr))
 }
 
 func loadu2M128(hiaddr float32, loaddr float32) [8]float32
@@ -2754,8 +2754,8 @@ func loadu2M128(hiaddr float32, loaddr float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128d'.
 // Requires AVX.
-func Loadu2M128d(hiaddr float64, loaddr float64) M256d {
-	return M256d(loadu2M128d(hiaddr, loaddr))
+func Loadu2M128d(hiaddr float64, loaddr float64) x86.M256d {
+	return x86.M256d(loadu2M128d(hiaddr, loaddr))
 }
 
 func loadu2M128d(hiaddr float64, loaddr float64) [4]float64
@@ -2771,11 +2771,11 @@ func loadu2M128d(hiaddr float64, loaddr float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128i'.
 // Requires AVX.
-func Loadu2M128i(hiaddr M128iConst, loaddr M128iConst) M256i {
-	return M256i(loadu2M128i(hiaddr, loaddr))
+func Loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) x86.M256i {
+	return x86.M256i(loadu2M128i(hiaddr, loaddr))
 }
 
-func loadu2M128i(hiaddr M128iConst, loaddr M128iConst) [32]byte
+func loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) [32]byte
 
 
 // LogPd: Compute the natural logarithm of packed double-precision (64-bit)
@@ -2789,8 +2789,8 @@ func loadu2M128i(hiaddr M128iConst, loaddr M128iConst) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_log_pd'.
 // Requires AVX.
-func LogPd(a M256d) M256d {
-	return M256d(logPd([4]float64(a)))
+func LogPd(a x86.M256d) x86.M256d {
+	return x86.M256d(logPd([4]float64(a)))
 }
 
 func logPd(a [4]float64) [4]float64
@@ -2807,8 +2807,8 @@ func logPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log_ps'.
 // Requires AVX.
-func LogPs(a M256) M256 {
-	return M256(logPs([8]float32(a)))
+func LogPs(a x86.M256) x86.M256 {
+	return x86.M256(logPs([8]float32(a)))
 }
 
 func logPs(a [8]float32) [8]float32
@@ -2825,8 +2825,8 @@ func logPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_log10_pd'.
 // Requires AVX.
-func Log10Pd(a M256d) M256d {
-	return M256d(log10Pd([4]float64(a)))
+func Log10Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(log10Pd([4]float64(a)))
 }
 
 func log10Pd(a [4]float64) [4]float64
@@ -2843,8 +2843,8 @@ func log10Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log10_ps'.
 // Requires AVX.
-func Log10Ps(a M256) M256 {
-	return M256(log10Ps([8]float32(a)))
+func Log10Ps(a x86.M256) x86.M256 {
+	return x86.M256(log10Ps([8]float32(a)))
 }
 
 func log10Ps(a [8]float32) [8]float32
@@ -2861,8 +2861,8 @@ func log10Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_log1p_pd'.
 // Requires AVX.
-func Log1pPd(a M256d) M256d {
-	return M256d(log1pPd([4]float64(a)))
+func Log1pPd(a x86.M256d) x86.M256d {
+	return x86.M256d(log1pPd([4]float64(a)))
 }
 
 func log1pPd(a [4]float64) [4]float64
@@ -2879,8 +2879,8 @@ func log1pPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log1p_ps'.
 // Requires AVX.
-func Log1pPs(a M256) M256 {
-	return M256(log1pPs([8]float32(a)))
+func Log1pPs(a x86.M256) x86.M256 {
+	return x86.M256(log1pPs([8]float32(a)))
 }
 
 func log1pPs(a [8]float32) [8]float32
@@ -2897,8 +2897,8 @@ func log1pPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_log2_pd'.
 // Requires AVX.
-func Log2Pd(a M256d) M256d {
-	return M256d(log2Pd([4]float64(a)))
+func Log2Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(log2Pd([4]float64(a)))
 }
 
 func log2Pd(a [4]float64) [4]float64
@@ -2915,8 +2915,8 @@ func log2Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log2_ps'.
 // Requires AVX.
-func Log2Ps(a M256) M256 {
-	return M256(log2Ps([8]float32(a)))
+func Log2Ps(a x86.M256) x86.M256 {
+	return x86.M256(log2Ps([8]float32(a)))
 }
 
 func log2Ps(a [8]float32) [8]float32
@@ -2935,8 +2935,8 @@ func log2Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_logb_pd'.
 // Requires AVX.
-func LogbPd(a M256d) M256d {
-	return M256d(logbPd([4]float64(a)))
+func LogbPd(a x86.M256d) x86.M256d {
+	return x86.M256d(logbPd([4]float64(a)))
 }
 
 func logbPd(a [4]float64) [4]float64
@@ -2955,8 +2955,8 @@ func logbPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_logb_ps'.
 // Requires AVX.
-func LogbPs(a M256) M256 {
-	return M256(logbPs([8]float32(a)))
+func LogbPs(a x86.M256) x86.M256 {
+	return x86.M256(logbPs([8]float32(a)))
 }
 
 func logbPs(a [8]float32) [8]float32
@@ -2978,8 +2978,8 @@ func logbPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm_maskload_pd'.
 // Requires AVX.
-func MaskloadPd(mem_addr float64, mask M128i) M128d {
-	return M128d(maskloadPd(mem_addr, [16]byte(mask)))
+func MaskloadPd(mem_addr float64, mask x86.M128i) x86.M128d {
+	return x86.M128d(maskloadPd(mem_addr, [16]byte(mask)))
 }
 
 func maskloadPd(mem_addr float64, mask [16]byte) [2]float64
@@ -3001,8 +3001,8 @@ func maskloadPd(mem_addr float64, mask [16]byte) [2]float64
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm256_maskload_pd'.
 // Requires AVX.
-func MaskloadPd1(mem_addr float64, mask M256i) M256d {
-	return M256d(maskloadPd1(mem_addr, [32]byte(mask)))
+func MaskloadPd1(mem_addr float64, mask x86.M256i) x86.M256d {
+	return x86.M256d(maskloadPd1(mem_addr, [32]byte(mask)))
 }
 
 func maskloadPd1(mem_addr float64, mask [32]byte) [4]float64
@@ -3024,8 +3024,8 @@ func maskloadPd1(mem_addr float64, mask [32]byte) [4]float64
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm_maskload_ps'.
 // Requires AVX.
-func MaskloadPs(mem_addr float32, mask M128i) M128 {
-	return M128(maskloadPs(mem_addr, [16]byte(mask)))
+func MaskloadPs(mem_addr float32, mask x86.M128i) x86.M128 {
+	return x86.M128(maskloadPs(mem_addr, [16]byte(mask)))
 }
 
 func maskloadPs(mem_addr float32, mask [16]byte) [4]float32
@@ -3047,8 +3047,8 @@ func maskloadPs(mem_addr float32, mask [16]byte) [4]float32
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm256_maskload_ps'.
 // Requires AVX.
-func MaskloadPs1(mem_addr float32, mask M256i) M256 {
-	return M256(maskloadPs1(mem_addr, [32]byte(mask)))
+func MaskloadPs1(mem_addr float32, mask x86.M256i) x86.M256 {
+	return x86.M256(maskloadPs1(mem_addr, [32]byte(mask)))
 }
 
 func maskloadPs1(mem_addr float32, mask [32]byte) [8]float32
@@ -3066,7 +3066,7 @@ func maskloadPs1(mem_addr float32, mask [32]byte) [8]float32
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm_maskstore_pd'.
 // Requires AVX.
-func MaskstorePd(mem_addr float64, mask M128i, a M128d)  {
+func MaskstorePd(mem_addr float64, mask x86.M128i, a x86.M128d)  {
 	maskstorePd(mem_addr, [16]byte(mask), [2]float64(a))
 }
 
@@ -3085,7 +3085,7 @@ func maskstorePd(mem_addr float64, mask [16]byte, a [2]float64)
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm256_maskstore_pd'.
 // Requires AVX.
-func MaskstorePd1(mem_addr float64, mask M256i, a M256d)  {
+func MaskstorePd1(mem_addr float64, mask x86.M256i, a x86.M256d)  {
 	maskstorePd1(mem_addr, [32]byte(mask), [4]float64(a))
 }
 
@@ -3104,7 +3104,7 @@ func maskstorePd1(mem_addr float64, mask [32]byte, a [4]float64)
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm_maskstore_ps'.
 // Requires AVX.
-func MaskstorePs(mem_addr float32, mask M128i, a M128)  {
+func MaskstorePs(mem_addr float32, mask x86.M128i, a x86.M128)  {
 	maskstorePs(mem_addr, [16]byte(mask), [4]float32(a))
 }
 
@@ -3123,7 +3123,7 @@ func maskstorePs(mem_addr float32, mask [16]byte, a [4]float32)
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm256_maskstore_ps'.
 // Requires AVX.
-func MaskstorePs1(mem_addr float32, mask M256i, a M256)  {
+func MaskstorePs1(mem_addr float32, mask x86.M256i, a x86.M256)  {
 	maskstorePs1(mem_addr, [32]byte(mask), [8]float32(a))
 }
 
@@ -3141,8 +3141,8 @@ func maskstorePs1(mem_addr float32, mask [32]byte, a [8]float32)
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm256_max_pd'.
 // Requires AVX.
-func MaxPd(a M256d, b M256d) M256d {
-	return M256d(maxPd([4]float64(a), [4]float64(b)))
+func MaxPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(maxPd([4]float64(a), [4]float64(b)))
 }
 
 func maxPd(a [4]float64, b [4]float64) [4]float64
@@ -3159,8 +3159,8 @@ func maxPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm256_max_ps'.
 // Requires AVX.
-func MaxPs(a M256, b M256) M256 {
-	return M256(maxPs([8]float32(a), [8]float32(b)))
+func MaxPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(maxPs([8]float32(a), [8]float32(b)))
 }
 
 func maxPs(a [8]float32, b [8]float32) [8]float32
@@ -3177,8 +3177,8 @@ func maxPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm256_min_pd'.
 // Requires AVX.
-func MinPd(a M256d, b M256d) M256d {
-	return M256d(minPd([4]float64(a), [4]float64(b)))
+func MinPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(minPd([4]float64(a), [4]float64(b)))
 }
 
 func minPd(a [4]float64, b [4]float64) [4]float64
@@ -3195,8 +3195,8 @@ func minPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm256_min_ps'.
 // Requires AVX.
-func MinPs(a M256, b M256) M256 {
-	return M256(minPs([8]float32(a), [8]float32(b)))
+func MinPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(minPs([8]float32(a), [8]float32(b)))
 }
 
 func minPs(a [8]float32, b [8]float32) [8]float32
@@ -3213,8 +3213,8 @@ func minPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm256_movedup_pd'.
 // Requires AVX.
-func MovedupPd(a M256d) M256d {
-	return M256d(movedupPd([4]float64(a)))
+func MovedupPd(a x86.M256d) x86.M256d {
+	return x86.M256d(movedupPd([4]float64(a)))
 }
 
 func movedupPd(a [4]float64) [4]float64
@@ -3235,8 +3235,8 @@ func movedupPd(a [4]float64) [4]float64
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm256_movehdup_ps'.
 // Requires AVX.
-func MovehdupPs(a M256) M256 {
-	return M256(movehdupPs([8]float32(a)))
+func MovehdupPs(a x86.M256) x86.M256 {
+	return x86.M256(movehdupPs([8]float32(a)))
 }
 
 func movehdupPs(a [8]float32) [8]float32
@@ -3257,8 +3257,8 @@ func movehdupPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm256_moveldup_ps'.
 // Requires AVX.
-func MoveldupPs(a M256) M256 {
-	return M256(moveldupPs([8]float32(a)))
+func MoveldupPs(a x86.M256) x86.M256 {
+	return x86.M256(moveldupPs([8]float32(a)))
 }
 
 func moveldupPs(a [8]float32) [8]float32
@@ -3280,7 +3280,7 @@ func moveldupPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVMSKPD'. Intrinsic: '_mm256_movemask_pd'.
 // Requires AVX.
-func MovemaskPd(a M256d) int {
+func MovemaskPd(a x86.M256d) int {
 	return int(movemaskPd([4]float64(a)))
 }
 
@@ -3303,7 +3303,7 @@ func movemaskPd(a [4]float64) int
 //
 // Instruction: 'VMOVMSKPS'. Intrinsic: '_mm256_movemask_ps'.
 // Requires AVX.
-func MovemaskPs(a M256) int {
+func MovemaskPs(a x86.M256) int {
 	return int(movemaskPs([8]float32(a)))
 }
 
@@ -3321,8 +3321,8 @@ func movemaskPs(a [8]float32) int
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm256_mul_pd'.
 // Requires AVX.
-func MulPd(a M256d, b M256d) M256d {
-	return M256d(mulPd([4]float64(a), [4]float64(b)))
+func MulPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(mulPd([4]float64(a), [4]float64(b)))
 }
 
 func mulPd(a [4]float64, b [4]float64) [4]float64
@@ -3339,8 +3339,8 @@ func mulPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm256_mul_ps'.
 // Requires AVX.
-func MulPs(a M256, b M256) M256 {
-	return M256(mulPs([8]float32(a), [8]float32(b)))
+func MulPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(mulPs([8]float32(a), [8]float32(b)))
 }
 
 func mulPs(a [8]float32, b [8]float32) [8]float32
@@ -3357,8 +3357,8 @@ func mulPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VORPD'. Intrinsic: '_mm256_or_pd'.
 // Requires AVX.
-func OrPd(a M256d, b M256d) M256d {
-	return M256d(orPd([4]float64(a), [4]float64(b)))
+func OrPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(orPd([4]float64(a), [4]float64(b)))
 }
 
 func orPd(a [4]float64, b [4]float64) [4]float64
@@ -3375,8 +3375,8 @@ func orPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VORPS'. Intrinsic: '_mm256_or_ps'.
 // Requires AVX.
-func OrPs(a M256, b M256) M256 {
-	return M256(orPs([8]float32(a), [8]float32(b)))
+func OrPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(orPs([8]float32(a), [8]float32(b)))
 }
 
 func orPs(a [8]float32, b [8]float32) [8]float32
@@ -3393,8 +3393,8 @@ func orPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm_permute_pd'.
 // Requires AVX.
-func PermutePd(a M128d, imm8 int) M128d {
-	return M128d(permutePd([2]float64(a), imm8))
+func PermutePd(a x86.M128d, imm8 int) x86.M128d {
+	return x86.M128d(permutePd([2]float64(a), imm8))
 }
 
 func permutePd(a [2]float64, imm8 int) [2]float64
@@ -3416,8 +3416,8 @@ func permutePd(a [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm256_permute_pd'.
 // Requires AVX.
-func PermutePd1(a M256d, imm8 int) M256d {
-	return M256d(permutePd1([4]float64(a), imm8))
+func PermutePd1(a x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(permutePd1([4]float64(a), imm8))
 }
 
 func permutePd1(a [4]float64, imm8 int) [4]float64
@@ -3444,8 +3444,8 @@ func permutePd1(a [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm_permute_ps'.
 // Requires AVX.
-func PermutePs(a M128, imm8 int) M128 {
-	return M128(permutePs([4]float32(a), imm8))
+func PermutePs(a x86.M128, imm8 int) x86.M128 {
+	return x86.M128(permutePs([4]float32(a), imm8))
 }
 
 func permutePs(a [4]float32, imm8 int) [4]float32
@@ -3477,8 +3477,8 @@ func permutePs(a [4]float32, imm8 int) [4]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm256_permute_ps'.
 // Requires AVX.
-func PermutePs1(a M256, imm8 int) M256 {
-	return M256(permutePs1([8]float32(a), imm8))
+func PermutePs1(a x86.M256, imm8 int) x86.M256 {
+	return x86.M256(permutePs1([8]float32(a), imm8))
 }
 
 func permutePs1(a [8]float32, imm8 int) [8]float32
@@ -3507,8 +3507,8 @@ func permutePs1(a [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_pd'.
 // Requires AVX.
-func Permute2f128Pd(a M256d, b M256d, imm8 int) M256d {
-	return M256d(permute2f128Pd([4]float64(a), [4]float64(b), imm8))
+func Permute2f128Pd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(permute2f128Pd([4]float64(a), [4]float64(b), imm8))
 }
 
 func permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
@@ -3537,8 +3537,8 @@ func permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_ps'.
 // Requires AVX.
-func Permute2f128Ps(a M256, b M256, imm8 int) M256 {
-	return M256(permute2f128Ps([8]float32(a), [8]float32(b), imm8))
+func Permute2f128Ps(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(permute2f128Ps([8]float32(a), [8]float32(b), imm8))
 }
 
 func permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
@@ -3566,8 +3566,8 @@ func permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_si256'.
 // Requires AVX.
-func Permute2f128Si256(a M256i, b M256i, imm8 int) M256i {
-	return M256i(permute2f128Si256([32]byte(a), [32]byte(b), imm8))
+func Permute2f128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(permute2f128Si256([32]byte(a), [32]byte(b), imm8))
 }
 
 func permute2f128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
@@ -3584,8 +3584,8 @@ func permute2f128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm_permutevar_pd'.
 // Requires AVX.
-func PermutevarPd(a M128d, b M128i) M128d {
-	return M128d(permutevarPd([2]float64(a), [16]byte(b)))
+func PermutevarPd(a x86.M128d, b x86.M128i) x86.M128d {
+	return x86.M128d(permutevarPd([2]float64(a), [16]byte(b)))
 }
 
 func permutevarPd(a [2]float64, b [16]byte) [2]float64
@@ -3607,8 +3607,8 @@ func permutevarPd(a [2]float64, b [16]byte) [2]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm256_permutevar_pd'.
 // Requires AVX.
-func PermutevarPd1(a M256d, b M256i) M256d {
-	return M256d(permutevarPd1([4]float64(a), [32]byte(b)))
+func PermutevarPd1(a x86.M256d, b x86.M256i) x86.M256d {
+	return x86.M256d(permutevarPd1([4]float64(a), [32]byte(b)))
 }
 
 func permutevarPd1(a [4]float64, b [32]byte) [4]float64
@@ -3635,8 +3635,8 @@ func permutevarPd1(a [4]float64, b [32]byte) [4]float64
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm_permutevar_ps'.
 // Requires AVX.
-func PermutevarPs(a M128, b M128i) M128 {
-	return M128(permutevarPs([4]float32(a), [16]byte(b)))
+func PermutevarPs(a x86.M128, b x86.M128i) x86.M128 {
+	return x86.M128(permutevarPs([4]float32(a), [16]byte(b)))
 }
 
 func permutevarPs(a [4]float32, b [16]byte) [4]float32
@@ -3668,8 +3668,8 @@ func permutevarPs(a [4]float32, b [16]byte) [4]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm256_permutevar_ps'.
 // Requires AVX.
-func PermutevarPs1(a M256, b M256i) M256 {
-	return M256(permutevarPs1([8]float32(a), [32]byte(b)))
+func PermutevarPs1(a x86.M256, b x86.M256i) x86.M256 {
+	return x86.M256(permutevarPs1([8]float32(a), [32]byte(b)))
 }
 
 func permutevarPs1(a [8]float32, b [32]byte) [8]float32
@@ -3687,8 +3687,8 @@ func permutevarPs1(a [8]float32, b [32]byte) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_pow_pd'.
 // Requires AVX.
-func PowPd(a M256d, b M256d) M256d {
-	return M256d(powPd([4]float64(a), [4]float64(b)))
+func PowPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(powPd([4]float64(a), [4]float64(b)))
 }
 
 func powPd(a [4]float64, b [4]float64) [4]float64
@@ -3706,8 +3706,8 @@ func powPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_pow_ps'.
 // Requires AVX.
-func PowPs(a M256, b M256) M256 {
-	return M256(powPs([8]float32(a), [8]float32(b)))
+func PowPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(powPs([8]float32(a), [8]float32(b)))
 }
 
 func powPs(a [8]float32, b [8]float32) [8]float32
@@ -3725,8 +3725,8 @@ func powPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VRCPPS'. Intrinsic: '_mm256_rcp_ps'.
 // Requires AVX.
-func RcpPs(a M256) M256 {
-	return M256(rcpPs([8]float32(a)))
+func RcpPs(a x86.M256) x86.M256 {
+	return x86.M256(rcpPs([8]float32(a)))
 }
 
 func rcpPs(a [8]float32) [8]float32
@@ -3743,8 +3743,8 @@ func rcpPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi16'.
 // Requires AVX.
-func RemEpi16(a M256i, b M256i) M256i {
-	return M256i(remEpi16([32]byte(a), [32]byte(b)))
+func RemEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpi16([32]byte(a), [32]byte(b)))
 }
 
 func remEpi16(a [32]byte, b [32]byte) [32]byte
@@ -3761,8 +3761,8 @@ func remEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi32'.
 // Requires AVX.
-func RemEpi32(a M256i, b M256i) M256i {
-	return M256i(remEpi32([32]byte(a), [32]byte(b)))
+func RemEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpi32([32]byte(a), [32]byte(b)))
 }
 
 func remEpi32(a [32]byte, b [32]byte) [32]byte
@@ -3779,8 +3779,8 @@ func remEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi64'.
 // Requires AVX.
-func RemEpi64(a M256i, b M256i) M256i {
-	return M256i(remEpi64([32]byte(a), [32]byte(b)))
+func RemEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpi64([32]byte(a), [32]byte(b)))
 }
 
 func remEpi64(a [32]byte, b [32]byte) [32]byte
@@ -3797,8 +3797,8 @@ func remEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi8'.
 // Requires AVX.
-func RemEpi8(a M256i, b M256i) M256i {
-	return M256i(remEpi8([32]byte(a), [32]byte(b)))
+func RemEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpi8([32]byte(a), [32]byte(b)))
 }
 
 func remEpi8(a [32]byte, b [32]byte) [32]byte
@@ -3816,8 +3816,8 @@ func remEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu16'.
 // Requires AVX.
-func RemEpu16(a M256i, b M256i) M256i {
-	return M256i(remEpu16([32]byte(a), [32]byte(b)))
+func RemEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpu16([32]byte(a), [32]byte(b)))
 }
 
 func remEpu16(a [32]byte, b [32]byte) [32]byte
@@ -3835,8 +3835,8 @@ func remEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu32'.
 // Requires AVX.
-func RemEpu32(a M256i, b M256i) M256i {
-	return M256i(remEpu32([32]byte(a), [32]byte(b)))
+func RemEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpu32([32]byte(a), [32]byte(b)))
 }
 
 func remEpu32(a [32]byte, b [32]byte) [32]byte
@@ -3854,8 +3854,8 @@ func remEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu64'.
 // Requires AVX.
-func RemEpu64(a M256i, b M256i) M256i {
-	return M256i(remEpu64([32]byte(a), [32]byte(b)))
+func RemEpu64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpu64([32]byte(a), [32]byte(b)))
 }
 
 func remEpu64(a [32]byte, b [32]byte) [32]byte
@@ -3872,8 +3872,8 @@ func remEpu64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu8'.
 // Requires AVX.
-func RemEpu8(a M256i, b M256i) M256i {
-	return M256i(remEpu8([32]byte(a), [32]byte(b)))
+func RemEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(remEpu8([32]byte(a), [32]byte(b)))
 }
 
 func remEpu8(a [32]byte, b [32]byte) [32]byte
@@ -3898,8 +3898,8 @@ func remEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VROUNDPD'. Intrinsic: '_mm256_round_pd'.
 // Requires AVX.
-func RoundPd(a M256d, rounding int) M256d {
-	return M256d(roundPd([4]float64(a), rounding))
+func RoundPd(a x86.M256d, rounding int) x86.M256d {
+	return x86.M256d(roundPd([4]float64(a), rounding))
 }
 
 func roundPd(a [4]float64, rounding int) [4]float64
@@ -3924,8 +3924,8 @@ func roundPd(a [4]float64, rounding int) [4]float64
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm256_round_ps'.
 // Requires AVX.
-func RoundPs(a M256, rounding int) M256 {
-	return M256(roundPs([8]float32(a), rounding))
+func RoundPs(a x86.M256, rounding int) x86.M256 {
+	return x86.M256(roundPs([8]float32(a), rounding))
 }
 
 func roundPs(a [8]float32, rounding int) [8]float32
@@ -3944,8 +3944,8 @@ func roundPs(a [8]float32, rounding int) [8]float32
 //
 // Instruction: 'VRSQRTPS'. Intrinsic: '_mm256_rsqrt_ps'.
 // Requires AVX.
-func RsqrtPs(a M256) M256 {
-	return M256(rsqrtPs([8]float32(a)))
+func RsqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(rsqrtPs([8]float32(a)))
 }
 
 func rsqrtPs(a [8]float32) [8]float32
@@ -3973,8 +3973,8 @@ func rsqrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi16'.
 // Requires AVX.
-func SetEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) M256i {
-	return M256i(setEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func SetEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M256i {
+	return x86.M256i(setEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [32]byte
@@ -3994,8 +3994,8 @@ func setEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, 
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi32'.
 // Requires AVX.
-func SetEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) M256i {
-	return M256i(setEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
+func SetEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M256i {
+	return x86.M256i(setEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
@@ -4011,8 +4011,8 @@ func setEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [3
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi64x'.
 // Requires AVX.
-func SetEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) M256i {
-	return M256i(setEpi64x(e3, e2, e1, e0))
+func SetEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) x86.M256i {
+	return x86.M256i(setEpi64x(e3, e2, e1, e0))
 }
 
 func setEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
@@ -4057,8 +4057,8 @@ func setEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi8'.
 // Requires AVX.
-func SetEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) M256i {
-	return M256i(setEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func SetEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M256i {
+	return x86.M256i(setEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [32]byte
@@ -4072,8 +4072,8 @@ func setEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byt
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_set_m128'.
 // Requires AVX.
-func SetM128(hi M128, lo M128) M256 {
-	return M256(setM128([4]float32(hi), [4]float32(lo)))
+func SetM128(hi x86.M128, lo x86.M128) x86.M256 {
+	return x86.M256(setM128([4]float32(hi), [4]float32(lo)))
 }
 
 func setM128(hi [4]float32, lo [4]float32) [8]float32
@@ -4087,8 +4087,8 @@ func setM128(hi [4]float32, lo [4]float32) [8]float32
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_set_m128d'.
 // Requires AVX.
-func SetM128d(hi M128d, lo M128d) M256d {
-	return M256d(setM128d([2]float64(hi), [2]float64(lo)))
+func SetM128d(hi x86.M128d, lo x86.M128d) x86.M256d {
+	return x86.M256d(setM128d([2]float64(hi), [2]float64(lo)))
 }
 
 func setM128d(hi [2]float64, lo [2]float64) [4]float64
@@ -4102,8 +4102,8 @@ func setM128d(hi [2]float64, lo [2]float64) [4]float64
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_set_m128i'.
 // Requires AVX.
-func SetM128i(hi M128i, lo M128i) M256i {
-	return M256i(setM128i([16]byte(hi), [16]byte(lo)))
+func SetM128i(hi x86.M128i, lo x86.M128i) x86.M256i {
+	return x86.M256i(setM128i([16]byte(hi), [16]byte(lo)))
 }
 
 func setM128i(hi [16]byte, lo [16]byte) [32]byte
@@ -4120,8 +4120,8 @@ func setM128i(hi [16]byte, lo [16]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_pd'.
 // Requires AVX.
-func SetPd(e3 float64, e2 float64, e1 float64, e0 float64) M256d {
-	return M256d(setPd(e3, e2, e1, e0))
+func SetPd(e3 float64, e2 float64, e1 float64, e0 float64) x86.M256d {
+	return x86.M256d(setPd(e3, e2, e1, e0))
 }
 
 func setPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
@@ -4142,8 +4142,8 @@ func setPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_ps'.
 // Requires AVX.
-func SetPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) M256 {
-	return M256(setPs(e7, e6, e5, e4, e3, e2, e1, e0))
+func SetPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M256 {
+	return x86.M256(setPs(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) [8]float32
@@ -4160,8 +4160,8 @@ func setPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float3
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi16'.
 // Requires AVX.
-func Set1Epi16(a int16) M256i {
-	return M256i(set1Epi16(a))
+func Set1Epi16(a int16) x86.M256i {
+	return x86.M256i(set1Epi16(a))
 }
 
 func set1Epi16(a int16) [32]byte
@@ -4178,8 +4178,8 @@ func set1Epi16(a int16) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi32'.
 // Requires AVX.
-func Set1Epi32(a int) M256i {
-	return M256i(set1Epi32(a))
+func Set1Epi32(a int) x86.M256i {
+	return x86.M256i(set1Epi32(a))
 }
 
 func set1Epi32(a int) [32]byte
@@ -4196,8 +4196,8 @@ func set1Epi32(a int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi64x'.
 // Requires AVX.
-func Set1Epi64x(a int64) M256i {
-	return M256i(set1Epi64x(a))
+func Set1Epi64x(a int64) x86.M256i {
+	return x86.M256i(set1Epi64x(a))
 }
 
 func set1Epi64x(a int64) [32]byte
@@ -4214,8 +4214,8 @@ func set1Epi64x(a int64) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi8'.
 // Requires AVX.
-func Set1Epi8(a byte) M256i {
-	return M256i(set1Epi8(a))
+func Set1Epi8(a byte) x86.M256i {
+	return x86.M256i(set1Epi8(a))
 }
 
 func set1Epi8(a byte) [32]byte
@@ -4232,8 +4232,8 @@ func set1Epi8(a byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_pd'.
 // Requires AVX.
-func Set1Pd(a float64) M256d {
-	return M256d(set1Pd(a))
+func Set1Pd(a float64) x86.M256d {
+	return x86.M256d(set1Pd(a))
 }
 
 func set1Pd(a float64) [4]float64
@@ -4250,8 +4250,8 @@ func set1Pd(a float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_ps'.
 // Requires AVX.
-func Set1Ps(a float32) M256 {
-	return M256(set1Ps(a))
+func Set1Ps(a float32) x86.M256 {
+	return x86.M256(set1Ps(a))
 }
 
 func set1Ps(a float32) [8]float32
@@ -4280,8 +4280,8 @@ func set1Ps(a float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi16'.
 // Requires AVX.
-func SetrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) M256i {
-	return M256i(setrEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func SetrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M256i {
+	return x86.M256i(setrEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [32]byte
@@ -4302,8 +4302,8 @@ func setrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16,
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi32'.
 // Requires AVX.
-func SetrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) M256i {
-	return M256i(setrEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
+func SetrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M256i {
+	return x86.M256i(setrEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
@@ -4320,8 +4320,8 @@ func setrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi64x'.
 // Requires AVX.
-func SetrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) M256i {
-	return M256i(setrEpi64x(e3, e2, e1, e0))
+func SetrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) x86.M256i {
+	return x86.M256i(setrEpi64x(e3, e2, e1, e0))
 }
 
 func setrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
@@ -4366,8 +4366,8 @@ func setrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi8'.
 // Requires AVX.
-func SetrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) M256i {
-	return M256i(setrEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func SetrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M256i {
+	return x86.M256i(setrEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [32]byte
@@ -4381,8 +4381,8 @@ func setrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 by
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_setr_m128'.
 // Requires AVX.
-func SetrM128(lo M128, hi M128) M256 {
-	return M256(setrM128([4]float32(lo), [4]float32(hi)))
+func SetrM128(lo x86.M128, hi x86.M128) x86.M256 {
+	return x86.M256(setrM128([4]float32(lo), [4]float32(hi)))
 }
 
 func setrM128(lo [4]float32, hi [4]float32) [8]float32
@@ -4396,8 +4396,8 @@ func setrM128(lo [4]float32, hi [4]float32) [8]float32
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_setr_m128d'.
 // Requires AVX.
-func SetrM128d(lo M128d, hi M128d) M256d {
-	return M256d(setrM128d([2]float64(lo), [2]float64(hi)))
+func SetrM128d(lo x86.M128d, hi x86.M128d) x86.M256d {
+	return x86.M256d(setrM128d([2]float64(lo), [2]float64(hi)))
 }
 
 func setrM128d(lo [2]float64, hi [2]float64) [4]float64
@@ -4411,8 +4411,8 @@ func setrM128d(lo [2]float64, hi [2]float64) [4]float64
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_setr_m128i'.
 // Requires AVX.
-func SetrM128i(lo M128i, hi M128i) M256i {
-	return M256i(setrM128i([16]byte(lo), [16]byte(hi)))
+func SetrM128i(lo x86.M128i, hi x86.M128i) x86.M256i {
+	return x86.M256i(setrM128i([16]byte(lo), [16]byte(hi)))
 }
 
 func setrM128i(lo [16]byte, hi [16]byte) [32]byte
@@ -4429,8 +4429,8 @@ func setrM128i(lo [16]byte, hi [16]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_pd'.
 // Requires AVX.
-func SetrPd(e3 float64, e2 float64, e1 float64, e0 float64) M256d {
-	return M256d(setrPd(e3, e2, e1, e0))
+func SetrPd(e3 float64, e2 float64, e1 float64, e0 float64) x86.M256d {
+	return x86.M256d(setrPd(e3, e2, e1, e0))
 }
 
 func setrPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
@@ -4451,8 +4451,8 @@ func setrPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_ps'.
 // Requires AVX.
-func SetrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) M256 {
-	return M256(setrPs(e7, e6, e5, e4, e3, e2, e1, e0))
+func SetrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M256 {
+	return x86.M256(setrPs(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
 func setrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) [8]float32
@@ -4464,8 +4464,8 @@ func setrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float
 //
 // Instruction: 'VXORPD'. Intrinsic: '_mm256_setzero_pd'.
 // Requires AVX.
-func SetzeroPd() M256d {
-	return M256d(setzeroPd())
+func SetzeroPd() x86.M256d {
+	return x86.M256d(setzeroPd())
 }
 
 func setzeroPd() [4]float64
@@ -4477,8 +4477,8 @@ func setzeroPd() [4]float64
 //
 // Instruction: 'VXORPS'. Intrinsic: '_mm256_setzero_ps'.
 // Requires AVX.
-func SetzeroPs() M256 {
-	return M256(setzeroPs())
+func SetzeroPs() x86.M256 {
+	return x86.M256(setzeroPs())
 }
 
 func setzeroPs() [8]float32
@@ -4490,8 +4490,8 @@ func setzeroPs() [8]float32
 //
 // Instruction: 'VPXOR'. Intrinsic: '_mm256_setzero_si256'.
 // Requires AVX.
-func SetzeroSi256() M256i {
-	return M256i(setzeroSi256())
+func SetzeroSi256() x86.M256i {
+	return x86.M256i(setzeroSi256())
 }
 
 func setzeroSi256() [32]byte
@@ -4508,8 +4508,8 @@ func setzeroSi256() [32]byte
 //
 // Instruction: 'VSHUFPD'. Intrinsic: '_mm256_shuffle_pd'.
 // Requires AVX.
-func ShufflePd(a M256d, b M256d, imm8 int) M256d {
-	return M256d(shufflePd([4]float64(a), [4]float64(b), imm8))
+func ShufflePd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(shufflePd([4]float64(a), [4]float64(b), imm8))
 }
 
 func shufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
@@ -4541,8 +4541,8 @@ func shufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VSHUFPS'. Intrinsic: '_mm256_shuffle_ps'.
 // Requires AVX.
-func ShufflePs(a M256, b M256, imm8 int) M256 {
-	return M256(shufflePs([8]float32(a), [8]float32(b), imm8))
+func ShufflePs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(shufflePs([8]float32(a), [8]float32(b), imm8))
 }
 
 func shufflePs(a [8]float32, b [8]float32, imm8 int) [8]float32
@@ -4559,8 +4559,8 @@ func shufflePs(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sin_pd'.
 // Requires AVX.
-func SinPd(a M256d) M256d {
-	return M256d(sinPd([4]float64(a)))
+func SinPd(a x86.M256d) x86.M256d {
+	return x86.M256d(sinPd([4]float64(a)))
 }
 
 func sinPd(a [4]float64) [4]float64
@@ -4577,8 +4577,8 @@ func sinPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sin_ps'.
 // Requires AVX.
-func SinPs(a M256) M256 {
-	return M256(sinPs([8]float32(a)))
+func SinPs(a x86.M256) x86.M256 {
+	return x86.M256(sinPs([8]float32(a)))
 }
 
 func sinPs(a [8]float32) [8]float32
@@ -4597,8 +4597,8 @@ func sinPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_pd'.
 // Requires AVX.
-func SincosPd(mem_addr M256d, a M256d) M256d {
-	return M256d(sincosPd([4]float64(mem_addr), [4]float64(a)))
+func SincosPd(mem_addr x86.M256d, a x86.M256d) x86.M256d {
+	return x86.M256d(sincosPd([4]float64(mem_addr), [4]float64(a)))
 }
 
 func sincosPd(mem_addr [4]float64, a [4]float64) [4]float64
@@ -4617,8 +4617,8 @@ func sincosPd(mem_addr [4]float64, a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_ps'.
 // Requires AVX.
-func SincosPs(mem_addr M256, a M256) M256 {
-	return M256(sincosPs([8]float32(mem_addr), [8]float32(a)))
+func SincosPs(mem_addr x86.M256, a x86.M256) x86.M256 {
+	return x86.M256(sincosPs([8]float32(mem_addr), [8]float32(a)))
 }
 
 func sincosPs(mem_addr [8]float32, a [8]float32) [8]float32
@@ -4635,8 +4635,8 @@ func sincosPs(mem_addr [8]float32, a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sind_pd'.
 // Requires AVX.
-func SindPd(a M256d) M256d {
-	return M256d(sindPd([4]float64(a)))
+func SindPd(a x86.M256d) x86.M256d {
+	return x86.M256d(sindPd([4]float64(a)))
 }
 
 func sindPd(a [4]float64) [4]float64
@@ -4653,8 +4653,8 @@ func sindPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sind_ps'.
 // Requires AVX.
-func SindPs(a M256) M256 {
-	return M256(sindPs([8]float32(a)))
+func SindPs(a x86.M256) x86.M256 {
+	return x86.M256(sindPs([8]float32(a)))
 }
 
 func sindPs(a [8]float32) [8]float32
@@ -4672,8 +4672,8 @@ func sindPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sinh_pd'.
 // Requires AVX.
-func SinhPd(a M256d) M256d {
-	return M256d(sinhPd([4]float64(a)))
+func SinhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(sinhPd([4]float64(a)))
 }
 
 func sinhPd(a [4]float64) [4]float64
@@ -4691,8 +4691,8 @@ func sinhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sinh_ps'.
 // Requires AVX.
-func SinhPs(a M256) M256 {
-	return M256(sinhPs([8]float32(a)))
+func SinhPs(a x86.M256) x86.M256 {
+	return x86.M256(sinhPs([8]float32(a)))
 }
 
 func sinhPs(a [8]float32) [8]float32
@@ -4709,8 +4709,8 @@ func sinhPs(a [8]float32) [8]float32
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm256_sqrt_pd'.
 // Requires AVX.
-func SqrtPd(a M256d) M256d {
-	return M256d(sqrtPd([4]float64(a)))
+func SqrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(sqrtPd([4]float64(a)))
 }
 
 func sqrtPd(a [4]float64) [4]float64
@@ -4727,8 +4727,8 @@ func sqrtPd(a [4]float64) [4]float64
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm256_sqrt_ps'.
 // Requires AVX.
-func SqrtPs(a M256) M256 {
-	return M256(sqrtPs([8]float32(a)))
+func SqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(sqrtPs([8]float32(a)))
 }
 
 func sqrtPs(a [8]float32) [8]float32
@@ -4743,7 +4743,7 @@ func sqrtPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_store_pd'.
 // Requires AVX.
-func StorePd(mem_addr float64, a M256d)  {
+func StorePd(mem_addr float64, a x86.M256d)  {
 	storePd(mem_addr, [4]float64(a))
 }
 
@@ -4759,7 +4759,7 @@ func storePd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_store_ps'.
 // Requires AVX.
-func StorePs(mem_addr float32, a M256)  {
+func StorePs(mem_addr float32, a x86.M256)  {
 	storePs(mem_addr, [8]float32(a))
 }
 
@@ -4774,7 +4774,7 @@ func storePs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_store_si256'.
 // Requires AVX.
-func StoreSi256(mem_addr M256i, a M256i)  {
+func StoreSi256(mem_addr x86.M256i, a x86.M256i)  {
 	storeSi256([32]byte(mem_addr), [32]byte(a))
 }
 
@@ -4789,7 +4789,7 @@ func storeSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: 'VMOVUPD'. Intrinsic: '_mm256_storeu_pd'.
 // Requires AVX.
-func StoreuPd(mem_addr float64, a M256d)  {
+func StoreuPd(mem_addr float64, a x86.M256d)  {
 	storeuPd(mem_addr, [4]float64(a))
 }
 
@@ -4804,7 +4804,7 @@ func storeuPd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVUPS'. Intrinsic: '_mm256_storeu_ps'.
 // Requires AVX.
-func StoreuPs(mem_addr float32, a M256)  {
+func StoreuPs(mem_addr float32, a x86.M256)  {
 	storeuPs(mem_addr, [8]float32(a))
 }
 
@@ -4818,7 +4818,7 @@ func storeuPs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_storeu_si256'.
 // Requires AVX.
-func StoreuSi256(mem_addr M256i, a M256i)  {
+func StoreuSi256(mem_addr x86.M256i, a x86.M256i)  {
 	storeuSi256([32]byte(mem_addr), [32]byte(a))
 }
 
@@ -4835,7 +4835,7 @@ func storeuSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128'.
 // Requires AVX.
-func Storeu2M128(hiaddr float32, loaddr float32, a M256)  {
+func Storeu2M128(hiaddr float32, loaddr float32, a x86.M256)  {
 	storeu2M128(hiaddr, loaddr, [8]float32(a))
 }
 
@@ -4852,7 +4852,7 @@ func storeu2M128(hiaddr float32, loaddr float32, a [8]float32)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128d'.
 // Requires AVX.
-func Storeu2M128d(hiaddr float64, loaddr float64, a M256d)  {
+func Storeu2M128d(hiaddr float64, loaddr float64, a x86.M256d)  {
 	storeu2M128d(hiaddr, loaddr, [4]float64(a))
 }
 
@@ -4868,7 +4868,7 @@ func storeu2M128d(hiaddr float64, loaddr float64, a [4]float64)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128i'.
 // Requires AVX.
-func Storeu2M128i(hiaddr M128i, loaddr M128i, a M256i)  {
+func Storeu2M128i(hiaddr x86.M128i, loaddr x86.M128i, a x86.M256i)  {
 	storeu2M128i([16]byte(hiaddr), [16]byte(loaddr), [32]byte(a))
 }
 
@@ -4885,7 +4885,7 @@ func storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte)
 //
 // Instruction: 'VMOVNTPD'. Intrinsic: '_mm256_stream_pd'.
 // Requires AVX.
-func StreamPd(mem_addr float64, a M256d)  {
+func StreamPd(mem_addr float64, a x86.M256d)  {
 	streamPd(mem_addr, [4]float64(a))
 }
 
@@ -4902,7 +4902,7 @@ func streamPd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVNTPS'. Intrinsic: '_mm256_stream_ps'.
 // Requires AVX.
-func StreamPs(mem_addr float32, a M256)  {
+func StreamPs(mem_addr float32, a x86.M256)  {
 	streamPs(mem_addr, [8]float32(a))
 }
 
@@ -4918,7 +4918,7 @@ func streamPs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVNTDQ'. Intrinsic: '_mm256_stream_si256'.
 // Requires AVX.
-func StreamSi256(mem_addr M256i, a M256i)  {
+func StreamSi256(mem_addr x86.M256i, a x86.M256i)  {
 	streamSi256([32]byte(mem_addr), [32]byte(a))
 }
 
@@ -4937,8 +4937,8 @@ func streamSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm256_sub_pd'.
 // Requires AVX.
-func SubPd(a M256d, b M256d) M256d {
-	return M256d(subPd([4]float64(a), [4]float64(b)))
+func SubPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(subPd([4]float64(a), [4]float64(b)))
 }
 
 func subPd(a [4]float64, b [4]float64) [4]float64
@@ -4956,8 +4956,8 @@ func subPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm256_sub_ps'.
 // Requires AVX.
-func SubPs(a M256, b M256) M256 {
-	return M256(subPs([8]float32(a), [8]float32(b)))
+func SubPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(subPs([8]float32(a), [8]float32(b)))
 }
 
 func subPs(a [8]float32, b [8]float32) [8]float32
@@ -4976,8 +4976,8 @@ func subPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_ceil_pd'.
 // Requires AVX.
-func SvmlCeilPd(a M256d) M256d {
-	return M256d(svmlCeilPd([4]float64(a)))
+func SvmlCeilPd(a x86.M256d) x86.M256d {
+	return x86.M256d(svmlCeilPd([4]float64(a)))
 }
 
 func svmlCeilPd(a [4]float64) [4]float64
@@ -4996,8 +4996,8 @@ func svmlCeilPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_ceil_ps'.
 // Requires AVX.
-func SvmlCeilPs(a M256) M256 {
-	return M256(svmlCeilPs([8]float32(a)))
+func SvmlCeilPs(a x86.M256) x86.M256 {
+	return x86.M256(svmlCeilPs([8]float32(a)))
 }
 
 func svmlCeilPs(a [8]float32) [8]float32
@@ -5016,8 +5016,8 @@ func svmlCeilPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_floor_pd'.
 // Requires AVX.
-func SvmlFloorPd(a M256d) M256d {
-	return M256d(svmlFloorPd([4]float64(a)))
+func SvmlFloorPd(a x86.M256d) x86.M256d {
+	return x86.M256d(svmlFloorPd([4]float64(a)))
 }
 
 func svmlFloorPd(a [4]float64) [4]float64
@@ -5036,8 +5036,8 @@ func svmlFloorPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_floor_ps'.
 // Requires AVX.
-func SvmlFloorPs(a M256) M256 {
-	return M256(svmlFloorPs([8]float32(a)))
+func SvmlFloorPs(a x86.M256) x86.M256 {
+	return x86.M256(svmlFloorPs([8]float32(a)))
 }
 
 func svmlFloorPs(a [8]float32) [8]float32
@@ -5056,8 +5056,8 @@ func svmlFloorPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_round_pd'.
 // Requires AVX.
-func SvmlRoundPd(a M256d) M256d {
-	return M256d(svmlRoundPd([4]float64(a)))
+func SvmlRoundPd(a x86.M256d) x86.M256d {
+	return x86.M256d(svmlRoundPd([4]float64(a)))
 }
 
 func svmlRoundPd(a [4]float64) [4]float64
@@ -5076,8 +5076,8 @@ func svmlRoundPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_round_ps'.
 // Requires AVX.
-func SvmlRoundPs(a M256) M256 {
-	return M256(svmlRoundPs([8]float32(a)))
+func SvmlRoundPs(a x86.M256) x86.M256 {
+	return x86.M256(svmlRoundPs([8]float32(a)))
 }
 
 func svmlRoundPs(a [8]float32) [8]float32
@@ -5095,8 +5095,8 @@ func svmlRoundPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_sqrt_pd'.
 // Requires AVX.
-func SvmlSqrtPd(a M256d) M256d {
-	return M256d(svmlSqrtPd([4]float64(a)))
+func SvmlSqrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(svmlSqrtPd([4]float64(a)))
 }
 
 func svmlSqrtPd(a [4]float64) [4]float64
@@ -5114,8 +5114,8 @@ func svmlSqrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_sqrt_ps'.
 // Requires AVX.
-func SvmlSqrtPs(a M256) M256 {
-	return M256(svmlSqrtPs([8]float32(a)))
+func SvmlSqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(svmlSqrtPs([8]float32(a)))
 }
 
 func svmlSqrtPs(a [8]float32) [8]float32
@@ -5133,8 +5133,8 @@ func svmlSqrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_tan_pd'.
 // Requires AVX.
-func TanPd(a M256d) M256d {
-	return M256d(tanPd([4]float64(a)))
+func TanPd(a x86.M256d) x86.M256d {
+	return x86.M256d(tanPd([4]float64(a)))
 }
 
 func tanPd(a [4]float64) [4]float64
@@ -5152,8 +5152,8 @@ func tanPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_tan_ps'.
 // Requires AVX.
-func TanPs(a M256) M256 {
-	return M256(tanPs([8]float32(a)))
+func TanPs(a x86.M256) x86.M256 {
+	return x86.M256(tanPs([8]float32(a)))
 }
 
 func tanPs(a [8]float32) [8]float32
@@ -5171,8 +5171,8 @@ func tanPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_tand_pd'.
 // Requires AVX.
-func TandPd(a M256d) M256d {
-	return M256d(tandPd([4]float64(a)))
+func TandPd(a x86.M256d) x86.M256d {
+	return x86.M256d(tandPd([4]float64(a)))
 }
 
 func tandPd(a [4]float64) [4]float64
@@ -5190,8 +5190,8 @@ func tandPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_tand_ps'.
 // Requires AVX.
-func TandPs(a M256) M256 {
-	return M256(tandPs([8]float32(a)))
+func TandPs(a x86.M256) x86.M256 {
+	return x86.M256(tandPs([8]float32(a)))
 }
 
 func tandPs(a [8]float32) [8]float32
@@ -5209,8 +5209,8 @@ func tandPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_tanh_pd'.
 // Requires AVX.
-func TanhPd(a M256d) M256d {
-	return M256d(tanhPd([4]float64(a)))
+func TanhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(tanhPd([4]float64(a)))
 }
 
 func tanhPd(a [4]float64) [4]float64
@@ -5228,8 +5228,8 @@ func tanhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_tanh_ps'.
 // Requires AVX.
-func TanhPs(a M256) M256 {
-	return M256(tanhPs([8]float32(a)))
+func TanhPs(a x86.M256) x86.M256 {
+	return x86.M256(tanhPs([8]float32(a)))
 }
 
 func tanhPs(a [8]float32) [8]float32
@@ -5259,7 +5259,7 @@ func tanhPs(a [8]float32) [8]float32
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm_testc_pd'.
 // Requires AVX.
-func TestcPd(a M128d, b M128d) int {
+func TestcPd(a x86.M128d, b x86.M128d) int {
 	return int(testcPd([2]float64(a), [2]float64(b)))
 }
 
@@ -5290,7 +5290,7 @@ func testcPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testc_pd'.
 // Requires AVX.
-func TestcPd1(a M256d, b M256d) int {
+func TestcPd1(a x86.M256d, b x86.M256d) int {
 	return int(testcPd1([4]float64(a), [4]float64(b)))
 }
 
@@ -5321,7 +5321,7 @@ func testcPd1(a [4]float64, b [4]float64) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm_testc_ps'.
 // Requires AVX.
-func TestcPs(a M128, b M128) int {
+func TestcPs(a x86.M128, b x86.M128) int {
 	return int(testcPs([4]float32(a), [4]float32(b)))
 }
 
@@ -5352,7 +5352,7 @@ func testcPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testc_ps'.
 // Requires AVX.
-func TestcPs1(a M256, b M256) int {
+func TestcPs1(a x86.M256, b x86.M256) int {
 	return int(testcPs1([8]float32(a), [8]float32(b)))
 }
 
@@ -5378,7 +5378,7 @@ func testcPs1(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testc_si256'.
 // Requires AVX.
-func TestcSi256(a M256i, b M256i) int {
+func TestcSi256(a x86.M256i, b x86.M256i) int {
 	return int(testcSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -5414,7 +5414,7 @@ func testcSi256(a [32]byte, b [32]byte) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm_testnzc_pd'.
 // Requires AVX.
-func TestnzcPd(a M128d, b M128d) int {
+func TestnzcPd(a x86.M128d, b x86.M128d) int {
 	return int(testnzcPd([2]float64(a), [2]float64(b)))
 }
 
@@ -5450,7 +5450,7 @@ func testnzcPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testnzc_pd'.
 // Requires AVX.
-func TestnzcPd1(a M256d, b M256d) int {
+func TestnzcPd1(a x86.M256d, b x86.M256d) int {
 	return int(testnzcPd1([4]float64(a), [4]float64(b)))
 }
 
@@ -5486,7 +5486,7 @@ func testnzcPd1(a [4]float64, b [4]float64) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm_testnzc_ps'.
 // Requires AVX.
-func TestnzcPs(a M128, b M128) int {
+func TestnzcPs(a x86.M128, b x86.M128) int {
 	return int(testnzcPs([4]float32(a), [4]float32(b)))
 }
 
@@ -5522,7 +5522,7 @@ func testnzcPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testnzc_ps'.
 // Requires AVX.
-func TestnzcPs1(a M256, b M256) int {
+func TestnzcPs1(a x86.M256, b x86.M256) int {
 	return int(testnzcPs1([8]float32(a), [8]float32(b)))
 }
 
@@ -5553,7 +5553,7 @@ func testnzcPs1(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testnzc_si256'.
 // Requires AVX.
-func TestnzcSi256(a M256i, b M256i) int {
+func TestnzcSi256(a x86.M256i, b x86.M256i) int {
 	return int(testnzcSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -5584,7 +5584,7 @@ func testnzcSi256(a [32]byte, b [32]byte) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm_testz_pd'.
 // Requires AVX.
-func TestzPd(a M128d, b M128d) int {
+func TestzPd(a x86.M128d, b x86.M128d) int {
 	return int(testzPd([2]float64(a), [2]float64(b)))
 }
 
@@ -5615,7 +5615,7 @@ func testzPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testz_pd'.
 // Requires AVX.
-func TestzPd1(a M256d, b M256d) int {
+func TestzPd1(a x86.M256d, b x86.M256d) int {
 	return int(testzPd1([4]float64(a), [4]float64(b)))
 }
 
@@ -5646,7 +5646,7 @@ func testzPd1(a [4]float64, b [4]float64) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm_testz_ps'.
 // Requires AVX.
-func TestzPs(a M128, b M128) int {
+func TestzPs(a x86.M128, b x86.M128) int {
 	return int(testzPs([4]float32(a), [4]float32(b)))
 }
 
@@ -5677,7 +5677,7 @@ func testzPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testz_ps'.
 // Requires AVX.
-func TestzPs1(a M256, b M256) int {
+func TestzPs1(a x86.M256, b x86.M256) int {
 	return int(testzPs1([8]float32(a), [8]float32(b)))
 }
 
@@ -5703,7 +5703,7 @@ func testzPs1(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testz_si256'.
 // Requires AVX.
-func TestzSi256(a M256i, b M256i) int {
+func TestzSi256(a x86.M256i, b x86.M256i) int {
 	return int(testzSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -5723,8 +5723,8 @@ func testzSi256(a [32]byte, b [32]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm256_trunc_pd'.
 // Requires AVX.
-func TruncPd(a M256d) M256d {
-	return M256d(truncPd([4]float64(a)))
+func TruncPd(a x86.M256d) x86.M256d {
+	return x86.M256d(truncPd([4]float64(a)))
 }
 
 func truncPd(a [4]float64) [4]float64
@@ -5743,8 +5743,8 @@ func truncPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_trunc_ps'.
 // Requires AVX.
-func TruncPs(a M256) M256 {
-	return M256(truncPs([8]float32(a)))
+func TruncPs(a x86.M256) x86.M256 {
+	return x86.M256(truncPs([8]float32(a)))
 }
 
 func truncPs(a [8]float32) [8]float32
@@ -5761,8 +5761,8 @@ func truncPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_udiv_epi32'.
 // Requires AVX.
-func UdivEpi32(a M256i, b M256i) M256i {
-	return M256i(udivEpi32([32]byte(a), [32]byte(b)))
+func UdivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(udivEpi32([32]byte(a), [32]byte(b)))
 }
 
 func udivEpi32(a [32]byte, b [32]byte) [32]byte
@@ -5781,8 +5781,8 @@ func udivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_udivrem_epi32'.
 // Requires AVX.
-func UdivremEpi32(mem_addr M256i, a M256i, b M256i) M256i {
-	return M256i(udivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
+func UdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(udivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
 }
 
 func udivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
@@ -5794,8 +5794,8 @@ func udivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: ''. Intrinsic: '_mm_undefined_pd'.
 // Requires AVX.
-func UndefinedPd() M128d {
-	return M128d(undefinedPd())
+func UndefinedPd() x86.M128d {
+	return x86.M128d(undefinedPd())
 }
 
 func undefinedPd() [2]float64
@@ -5807,8 +5807,8 @@ func undefinedPd() [2]float64
 //
 // Instruction: ''. Intrinsic: '_mm256_undefined_pd'.
 // Requires AVX.
-func UndefinedPd1() M256d {
-	return M256d(undefinedPd1())
+func UndefinedPd1() x86.M256d {
+	return x86.M256d(undefinedPd1())
 }
 
 func undefinedPd1() [4]float64
@@ -5820,8 +5820,8 @@ func undefinedPd1() [4]float64
 //
 // Instruction: ''. Intrinsic: '_mm_undefined_ps'.
 // Requires AVX.
-func UndefinedPs() M128 {
-	return M128(undefinedPs())
+func UndefinedPs() x86.M128 {
+	return x86.M128(undefinedPs())
 }
 
 func undefinedPs() [4]float32
@@ -5833,8 +5833,8 @@ func undefinedPs() [4]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_undefined_ps'.
 // Requires AVX.
-func UndefinedPs1() M256 {
-	return M256(undefinedPs1())
+func UndefinedPs1() x86.M256 {
+	return x86.M256(undefinedPs1())
 }
 
 func undefinedPs1() [8]float32
@@ -5846,8 +5846,8 @@ func undefinedPs1() [8]float32
 //
 // Instruction: ''. Intrinsic: '_mm_undefined_si128'.
 // Requires AVX.
-func UndefinedSi128() M128i {
-	return M128i(undefinedSi128())
+func UndefinedSi128() x86.M128i {
+	return x86.M128i(undefinedSi128())
 }
 
 func undefinedSi128() [16]byte
@@ -5859,8 +5859,8 @@ func undefinedSi128() [16]byte
 //
 // Instruction: ''. Intrinsic: '_mm256_undefined_si256'.
 // Requires AVX.
-func UndefinedSi256() M256i {
-	return M256i(undefinedSi256())
+func UndefinedSi256() x86.M256i {
+	return x86.M256i(undefinedSi256())
 }
 
 func undefinedSi256() [32]byte
@@ -5882,8 +5882,8 @@ func undefinedSi256() [32]byte
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm256_unpackhi_pd'.
 // Requires AVX.
-func UnpackhiPd(a M256d, b M256d) M256d {
-	return M256d(unpackhiPd([4]float64(a), [4]float64(b)))
+func UnpackhiPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(unpackhiPd([4]float64(a), [4]float64(b)))
 }
 
 func unpackhiPd(a [4]float64, b [4]float64) [4]float64
@@ -5907,8 +5907,8 @@ func unpackhiPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm256_unpackhi_ps'.
 // Requires AVX.
-func UnpackhiPs(a M256, b M256) M256 {
-	return M256(unpackhiPs([8]float32(a), [8]float32(b)))
+func UnpackhiPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(unpackhiPs([8]float32(a), [8]float32(b)))
 }
 
 func unpackhiPs(a [8]float32, b [8]float32) [8]float32
@@ -5930,8 +5930,8 @@ func unpackhiPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm256_unpacklo_pd'.
 // Requires AVX.
-func UnpackloPd(a M256d, b M256d) M256d {
-	return M256d(unpackloPd([4]float64(a), [4]float64(b)))
+func UnpackloPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(unpackloPd([4]float64(a), [4]float64(b)))
 }
 
 func unpackloPd(a [4]float64, b [4]float64) [4]float64
@@ -5955,8 +5955,8 @@ func unpackloPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm256_unpacklo_ps'.
 // Requires AVX.
-func UnpackloPs(a M256, b M256) M256 {
-	return M256(unpackloPs([8]float32(a), [8]float32(b)))
+func UnpackloPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(unpackloPs([8]float32(a), [8]float32(b)))
 }
 
 func unpackloPs(a [8]float32, b [8]float32) [8]float32
@@ -5974,8 +5974,8 @@ func unpackloPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_urem_epi32'.
 // Requires AVX.
-func UremEpi32(a M256i, b M256i) M256i {
-	return M256i(uremEpi32([32]byte(a), [32]byte(b)))
+func UremEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(uremEpi32([32]byte(a), [32]byte(b)))
 }
 
 func uremEpi32(a [32]byte, b [32]byte) [32]byte
@@ -5992,8 +5992,8 @@ func uremEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VXORPD'. Intrinsic: '_mm256_xor_pd'.
 // Requires AVX.
-func XorPd(a M256d, b M256d) M256d {
-	return M256d(xorPd([4]float64(a), [4]float64(b)))
+func XorPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(xorPd([4]float64(a), [4]float64(b)))
 }
 
 func xorPd(a [4]float64, b [4]float64) [4]float64
@@ -6010,8 +6010,8 @@ func xorPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VXORPS'. Intrinsic: '_mm256_xor_ps'.
 // Requires AVX.
-func XorPs(a M256, b M256) M256 {
-	return M256(xorPs([8]float32(a), [8]float32(b)))
+func XorPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(xorPs([8]float32(a), [8]float32(b)))
 }
 
 func xorPs(a [8]float32, b [8]float32) [8]float32

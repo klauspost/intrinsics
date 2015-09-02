@@ -1,6 +1,6 @@
 package avx512bw
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // MaskAbsEpi16: Compute the absolute value of packed 16-bit integers in 'a',
@@ -19,8 +19,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm_mask_abs_epi16'.
 // Requires AVX512BW.
-func MaskAbsEpi16(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskAbsEpi16([16]byte(src), uint8(k), [16]byte(a)))
+func MaskAbsEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskAbsEpi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskAbsEpi16(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -42,8 +42,8 @@ func maskAbsEpi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm_maskz_abs_epi16'.
 // Requires AVX512BW.
-func MaskzAbsEpi16(k Mmask8, a M128i) M128i {
-	return M128i(maskzAbsEpi16(uint8(k), [16]byte(a)))
+func MaskzAbsEpi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzAbsEpi16(uint8(k), [16]byte(a)))
 }
 
 func maskzAbsEpi16(k uint8, a [16]byte) [16]byte
@@ -65,8 +65,8 @@ func maskzAbsEpi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm256_mask_abs_epi16'.
 // Requires AVX512BW.
-func MaskAbsEpi161(src M256i, k Mmask16, a M256i) M256i {
-	return M256i(maskAbsEpi161([32]byte(src), uint16(k), [32]byte(a)))
+func MaskAbsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(maskAbsEpi161([32]byte(src), uint16(k), [32]byte(a)))
 }
 
 func maskAbsEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
@@ -88,8 +88,8 @@ func maskAbsEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm256_maskz_abs_epi16'.
 // Requires AVX512BW.
-func MaskzAbsEpi161(k Mmask16, a M256i) M256i {
-	return M256i(maskzAbsEpi161(uint16(k), [32]byte(a)))
+func MaskzAbsEpi161(k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(maskzAbsEpi161(uint16(k), [32]byte(a)))
 }
 
 func maskzAbsEpi161(k uint16, a [32]byte) [32]byte
@@ -106,8 +106,8 @@ func maskzAbsEpi161(k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_abs_epi16'.
 // Requires AVX512BW.
-func AbsEpi16(a M512i) M512i {
-	return M512i(absEpi16([64]byte(a)))
+func AbsEpi16(a x86.M512i) x86.M512i {
+	return x86.M512i(absEpi16([64]byte(a)))
 }
 
 func absEpi16(a [64]byte) [64]byte
@@ -129,8 +129,8 @@ func absEpi16(a [64]byte) [64]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_mask_abs_epi16'.
 // Requires AVX512BW.
-func MaskAbsEpi162(src M512i, k Mmask32, a M512i) M512i {
-	return M512i(maskAbsEpi162([64]byte(src), uint32(k), [64]byte(a)))
+func MaskAbsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(maskAbsEpi162([64]byte(src), uint32(k), [64]byte(a)))
 }
 
 func maskAbsEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
@@ -152,8 +152,8 @@ func maskAbsEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_maskz_abs_epi16'.
 // Requires AVX512BW.
-func MaskzAbsEpi162(k Mmask32, a M512i) M512i {
-	return M512i(maskzAbsEpi162(uint32(k), [64]byte(a)))
+func MaskzAbsEpi162(k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(maskzAbsEpi162(uint32(k), [64]byte(a)))
 }
 
 func maskzAbsEpi162(k uint32, a [64]byte) [64]byte
@@ -175,8 +175,8 @@ func maskzAbsEpi162(k uint32, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm_mask_abs_epi8'.
 // Requires AVX512BW.
-func MaskAbsEpi8(src M128i, k Mmask16, a M128i) M128i {
-	return M128i(maskAbsEpi8([16]byte(src), uint16(k), [16]byte(a)))
+func MaskAbsEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i) x86.M128i {
+	return x86.M128i(maskAbsEpi8([16]byte(src), uint16(k), [16]byte(a)))
 }
 
 func maskAbsEpi8(src [16]byte, k uint16, a [16]byte) [16]byte
@@ -198,8 +198,8 @@ func maskAbsEpi8(src [16]byte, k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm_maskz_abs_epi8'.
 // Requires AVX512BW.
-func MaskzAbsEpi8(k Mmask16, a M128i) M128i {
-	return M128i(maskzAbsEpi8(uint16(k), [16]byte(a)))
+func MaskzAbsEpi8(k x86.Mmask16, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzAbsEpi8(uint16(k), [16]byte(a)))
 }
 
 func maskzAbsEpi8(k uint16, a [16]byte) [16]byte
@@ -221,8 +221,8 @@ func maskzAbsEpi8(k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm256_mask_abs_epi8'.
 // Requires AVX512BW.
-func MaskAbsEpi81(src M256i, k Mmask32, a M256i) M256i {
-	return M256i(maskAbsEpi81([32]byte(src), uint32(k), [32]byte(a)))
+func MaskAbsEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(maskAbsEpi81([32]byte(src), uint32(k), [32]byte(a)))
 }
 
 func maskAbsEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
@@ -244,8 +244,8 @@ func maskAbsEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm256_maskz_abs_epi8'.
 // Requires AVX512BW.
-func MaskzAbsEpi81(k Mmask32, a M256i) M256i {
-	return M256i(maskzAbsEpi81(uint32(k), [32]byte(a)))
+func MaskzAbsEpi81(k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(maskzAbsEpi81(uint32(k), [32]byte(a)))
 }
 
 func maskzAbsEpi81(k uint32, a [32]byte) [32]byte
@@ -262,8 +262,8 @@ func maskzAbsEpi81(k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_abs_epi8'.
 // Requires AVX512BW.
-func AbsEpi8(a M512i) M512i {
-	return M512i(absEpi8([64]byte(a)))
+func AbsEpi8(a x86.M512i) x86.M512i {
+	return x86.M512i(absEpi8([64]byte(a)))
 }
 
 func absEpi8(a [64]byte) [64]byte
@@ -285,8 +285,8 @@ func absEpi8(a [64]byte) [64]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_mask_abs_epi8'.
 // Requires AVX512BW.
-func MaskAbsEpi82(src M512i, k Mmask64, a M512i) M512i {
-	return M512i(maskAbsEpi82([64]byte(src), uint64(k), [64]byte(a)))
+func MaskAbsEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(maskAbsEpi82([64]byte(src), uint64(k), [64]byte(a)))
 }
 
 func maskAbsEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
@@ -308,8 +308,8 @@ func maskAbsEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_maskz_abs_epi8'.
 // Requires AVX512BW.
-func MaskzAbsEpi82(k Mmask64, a M512i) M512i {
-	return M512i(maskzAbsEpi82(uint64(k), [64]byte(a)))
+func MaskzAbsEpi82(k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(maskzAbsEpi82(uint64(k), [64]byte(a)))
 }
 
 func maskzAbsEpi82(k uint64, a [64]byte) [64]byte
@@ -331,8 +331,8 @@ func maskzAbsEpi82(k uint64, a [64]byte) [64]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm_mask_add_epi16'.
 // Requires AVX512BW.
-func MaskAddEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskAddEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskAddEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAddEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAddEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -354,8 +354,8 @@ func maskAddEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm_maskz_add_epi16'.
 // Requires AVX512BW.
-func MaskzAddEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzAddEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzAddEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAddEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -377,8 +377,8 @@ func maskzAddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm256_mask_add_epi16'.
 // Requires AVX512BW.
-func MaskAddEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskAddEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskAddEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAddEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAddEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -400,8 +400,8 @@ func maskAddEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm256_maskz_add_epi16'.
 // Requires AVX512BW.
-func MaskzAddEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzAddEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzAddEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAddEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAddEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -418,8 +418,8 @@ func maskzAddEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_add_epi16'.
 // Requires AVX512BW.
-func AddEpi16(a M512i, b M512i) M512i {
-	return M512i(addEpi16([64]byte(a), [64]byte(b)))
+func AddEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(addEpi16([64]byte(a), [64]byte(b)))
 }
 
 func addEpi16(a [64]byte, b [64]byte) [64]byte
@@ -441,8 +441,8 @@ func addEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_mask_add_epi16'.
 // Requires AVX512BW.
-func MaskAddEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAddEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskAddEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAddEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAddEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -464,8 +464,8 @@ func maskAddEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_maskz_add_epi16'.
 // Requires AVX512BW.
-func MaskzAddEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAddEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzAddEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAddEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAddEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -487,8 +487,8 @@ func maskzAddEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm_mask_add_epi8'.
 // Requires AVX512BW.
-func MaskAddEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskAddEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskAddEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAddEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAddEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -510,8 +510,8 @@ func maskAddEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm_maskz_add_epi8'.
 // Requires AVX512BW.
-func MaskzAddEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzAddEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzAddEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAddEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAddEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -533,8 +533,8 @@ func maskzAddEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm256_mask_add_epi8'.
 // Requires AVX512BW.
-func MaskAddEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskAddEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskAddEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAddEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAddEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -556,8 +556,8 @@ func maskAddEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm256_maskz_add_epi8'.
 // Requires AVX512BW.
-func MaskzAddEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzAddEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzAddEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAddEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAddEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -574,8 +574,8 @@ func maskzAddEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_add_epi8'.
 // Requires AVX512BW.
-func AddEpi8(a M512i, b M512i) M512i {
-	return M512i(addEpi8([64]byte(a), [64]byte(b)))
+func AddEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(addEpi8([64]byte(a), [64]byte(b)))
 }
 
 func addEpi8(a [64]byte, b [64]byte) [64]byte
@@ -597,8 +597,8 @@ func addEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_mask_add_epi8'.
 // Requires AVX512BW.
-func MaskAddEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAddEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskAddEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAddEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAddEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -620,8 +620,8 @@ func maskAddEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_maskz_add_epi8'.
 // Requires AVX512BW.
-func MaskzAddEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAddEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzAddEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAddEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAddEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -643,8 +643,8 @@ func maskzAddEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm_mask_adds_epi16'.
 // Requires AVX512BW.
-func MaskAddsEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskAddsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskAddsEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAddsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAddsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -666,8 +666,8 @@ func maskAddsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm_maskz_adds_epi16'.
 // Requires AVX512BW.
-func MaskzAddsEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzAddsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzAddsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAddsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAddsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -689,8 +689,8 @@ func maskzAddsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm256_mask_adds_epi16'.
 // Requires AVX512BW.
-func MaskAddsEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskAddsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskAddsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAddsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAddsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -712,8 +712,8 @@ func maskAddsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm256_maskz_adds_epi16'.
 // Requires AVX512BW.
-func MaskzAddsEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzAddsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzAddsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAddsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAddsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -730,8 +730,8 @@ func maskzAddsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_adds_epi16'.
 // Requires AVX512BW.
-func AddsEpi16(a M512i, b M512i) M512i {
-	return M512i(addsEpi16([64]byte(a), [64]byte(b)))
+func AddsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(addsEpi16([64]byte(a), [64]byte(b)))
 }
 
 func addsEpi16(a [64]byte, b [64]byte) [64]byte
@@ -753,8 +753,8 @@ func addsEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_mask_adds_epi16'.
 // Requires AVX512BW.
-func MaskAddsEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAddsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskAddsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAddsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAddsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -776,8 +776,8 @@ func maskAddsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_maskz_adds_epi16'.
 // Requires AVX512BW.
-func MaskzAddsEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAddsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzAddsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAddsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAddsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -799,8 +799,8 @@ func maskzAddsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm_mask_adds_epi8'.
 // Requires AVX512BW.
-func MaskAddsEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskAddsEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskAddsEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAddsEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAddsEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -822,8 +822,8 @@ func maskAddsEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm_maskz_adds_epi8'.
 // Requires AVX512BW.
-func MaskzAddsEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzAddsEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzAddsEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAddsEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAddsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -845,8 +845,8 @@ func maskzAddsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm256_mask_adds_epi8'.
 // Requires AVX512BW.
-func MaskAddsEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskAddsEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskAddsEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAddsEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAddsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -868,8 +868,8 @@ func maskAddsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm256_maskz_adds_epi8'.
 // Requires AVX512BW.
-func MaskzAddsEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzAddsEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzAddsEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAddsEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAddsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -886,8 +886,8 @@ func maskzAddsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_adds_epi8'.
 // Requires AVX512BW.
-func AddsEpi8(a M512i, b M512i) M512i {
-	return M512i(addsEpi8([64]byte(a), [64]byte(b)))
+func AddsEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(addsEpi8([64]byte(a), [64]byte(b)))
 }
 
 func addsEpi8(a [64]byte, b [64]byte) [64]byte
@@ -909,8 +909,8 @@ func addsEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_mask_adds_epi8'.
 // Requires AVX512BW.
-func MaskAddsEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAddsEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskAddsEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAddsEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAddsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -932,8 +932,8 @@ func maskAddsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_maskz_adds_epi8'.
 // Requires AVX512BW.
-func MaskzAddsEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAddsEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzAddsEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAddsEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAddsEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -955,8 +955,8 @@ func maskzAddsEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm_mask_adds_epu16'.
 // Requires AVX512BW.
-func MaskAddsEpu16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskAddsEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskAddsEpu16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAddsEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAddsEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -978,8 +978,8 @@ func maskAddsEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm_maskz_adds_epu16'.
 // Requires AVX512BW.
-func MaskzAddsEpu16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzAddsEpu16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzAddsEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAddsEpu16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAddsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -1001,8 +1001,8 @@ func maskzAddsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm256_mask_adds_epu16'.
 // Requires AVX512BW.
-func MaskAddsEpu161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskAddsEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskAddsEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAddsEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAddsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -1024,8 +1024,8 @@ func maskAddsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm256_maskz_adds_epu16'.
 // Requires AVX512BW.
-func MaskzAddsEpu161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzAddsEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzAddsEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAddsEpu161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAddsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -1042,8 +1042,8 @@ func maskzAddsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_adds_epu16'.
 // Requires AVX512BW.
-func AddsEpu16(a M512i, b M512i) M512i {
-	return M512i(addsEpu16([64]byte(a), [64]byte(b)))
+func AddsEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(addsEpu16([64]byte(a), [64]byte(b)))
 }
 
 func addsEpu16(a [64]byte, b [64]byte) [64]byte
@@ -1065,8 +1065,8 @@ func addsEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_mask_adds_epu16'.
 // Requires AVX512BW.
-func MaskAddsEpu162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAddsEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskAddsEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAddsEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAddsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -1088,8 +1088,8 @@ func maskAddsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_maskz_adds_epu16'.
 // Requires AVX512BW.
-func MaskzAddsEpu162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAddsEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzAddsEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAddsEpu162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAddsEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -1111,8 +1111,8 @@ func maskzAddsEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm_mask_adds_epu8'.
 // Requires AVX512BW.
-func MaskAddsEpu8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskAddsEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskAddsEpu8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAddsEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAddsEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -1134,8 +1134,8 @@ func maskAddsEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm_maskz_adds_epu8'.
 // Requires AVX512BW.
-func MaskzAddsEpu8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzAddsEpu8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzAddsEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAddsEpu8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAddsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -1157,8 +1157,8 @@ func maskzAddsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm256_mask_adds_epu8'.
 // Requires AVX512BW.
-func MaskAddsEpu81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskAddsEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskAddsEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAddsEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAddsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -1180,8 +1180,8 @@ func maskAddsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm256_maskz_adds_epu8'.
 // Requires AVX512BW.
-func MaskzAddsEpu81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzAddsEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzAddsEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAddsEpu81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAddsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -1198,8 +1198,8 @@ func maskzAddsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_adds_epu8'.
 // Requires AVX512BW.
-func AddsEpu8(a M512i, b M512i) M512i {
-	return M512i(addsEpu8([64]byte(a), [64]byte(b)))
+func AddsEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(addsEpu8([64]byte(a), [64]byte(b)))
 }
 
 func addsEpu8(a [64]byte, b [64]byte) [64]byte
@@ -1221,8 +1221,8 @@ func addsEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_mask_adds_epu8'.
 // Requires AVX512BW.
-func MaskAddsEpu82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAddsEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskAddsEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAddsEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAddsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -1244,8 +1244,8 @@ func maskAddsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_maskz_adds_epu8'.
 // Requires AVX512BW.
-func MaskzAddsEpu82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAddsEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzAddsEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAddsEpu82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAddsEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -1270,8 +1270,8 @@ func maskzAddsEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm_mask_alignr_epi8'.
 // Requires AVX512BW.
-func MaskAlignrEpi8(src M128i, k Mmask16, a M128i, b M128i, count int) M128i {
-	return M128i(maskAlignrEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b), count))
+func MaskAlignrEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i, count int) x86.M128i {
+	return x86.M128i(maskAlignrEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b), count))
 }
 
 func maskAlignrEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte, count int) [16]byte
@@ -1296,8 +1296,8 @@ func maskAlignrEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte, count int) [
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm_maskz_alignr_epi8'.
 // Requires AVX512BW.
-func MaskzAlignrEpi8(k Mmask16, a M128i, b M128i, count int) M128i {
-	return M128i(maskzAlignrEpi8(uint16(k), [16]byte(a), [16]byte(b), count))
+func MaskzAlignrEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i, count int) x86.M128i {
+	return x86.M128i(maskzAlignrEpi8(uint16(k), [16]byte(a), [16]byte(b), count))
 }
 
 func maskzAlignrEpi8(k uint16, a [16]byte, b [16]byte, count int) [16]byte
@@ -1326,8 +1326,8 @@ func maskzAlignrEpi8(k uint16, a [16]byte, b [16]byte, count int) [16]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm256_mask_alignr_epi8'.
 // Requires AVX512BW.
-func MaskAlignrEpi81(src M256i, k Mmask32, a M256i, b M256i, count int) M256i {
-	return M256i(maskAlignrEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b), count))
+func MaskAlignrEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(maskAlignrEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b), count))
 }
 
 func maskAlignrEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte, count int) [32]byte
@@ -1356,8 +1356,8 @@ func maskAlignrEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte, count int) 
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm256_maskz_alignr_epi8'.
 // Requires AVX512BW.
-func MaskzAlignrEpi81(k Mmask32, a M256i, b M256i, count int) M256i {
-	return M256i(maskzAlignrEpi81(uint32(k), [32]byte(a), [32]byte(b), count))
+func MaskzAlignrEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(maskzAlignrEpi81(uint32(k), [32]byte(a), [32]byte(b), count))
 }
 
 func maskzAlignrEpi81(k uint32, a [32]byte, b [32]byte, count int) [32]byte
@@ -1376,8 +1376,8 @@ func maskzAlignrEpi81(k uint32, a [32]byte, b [32]byte, count int) [32]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_alignr_epi8'.
 // Requires AVX512BW.
-func AlignrEpi8(a M512i, b M512i, count int) M512i {
-	return M512i(alignrEpi8([64]byte(a), [64]byte(b), count))
+func AlignrEpi8(a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(alignrEpi8([64]byte(a), [64]byte(b), count))
 }
 
 func alignrEpi8(a [64]byte, b [64]byte, count int) [64]byte
@@ -1406,8 +1406,8 @@ func alignrEpi8(a [64]byte, b [64]byte, count int) [64]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_mask_alignr_epi8'.
 // Requires AVX512BW.
-func MaskAlignrEpi82(src M512i, k Mmask64, a M512i, b M512i, count int) M512i {
-	return M512i(maskAlignrEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b), count))
+func MaskAlignrEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(maskAlignrEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b), count))
 }
 
 func maskAlignrEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte, count int) [64]byte
@@ -1436,8 +1436,8 @@ func maskAlignrEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte, count int) 
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_maskz_alignr_epi8'.
 // Requires AVX512BW.
-func MaskzAlignrEpi82(k Mmask64, a M512i, b M512i, count int) M512i {
-	return M512i(maskzAlignrEpi82(uint64(k), [64]byte(a), [64]byte(b), count))
+func MaskzAlignrEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(maskzAlignrEpi82(uint64(k), [64]byte(a), [64]byte(b), count))
 }
 
 func maskzAlignrEpi82(k uint64, a [64]byte, b [64]byte, count int) [64]byte
@@ -1459,8 +1459,8 @@ func maskzAlignrEpi82(k uint64, a [64]byte, b [64]byte, count int) [64]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm_mask_avg_epu16'.
 // Requires AVX512BW.
-func MaskAvgEpu16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskAvgEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskAvgEpu16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAvgEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAvgEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -1482,8 +1482,8 @@ func maskAvgEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm_maskz_avg_epu16'.
 // Requires AVX512BW.
-func MaskzAvgEpu16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzAvgEpu16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzAvgEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAvgEpu16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAvgEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -1505,8 +1505,8 @@ func maskzAvgEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm256_mask_avg_epu16'.
 // Requires AVX512BW.
-func MaskAvgEpu161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskAvgEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskAvgEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAvgEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAvgEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -1528,8 +1528,8 @@ func maskAvgEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm256_maskz_avg_epu16'.
 // Requires AVX512BW.
-func MaskzAvgEpu161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzAvgEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzAvgEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAvgEpu161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAvgEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -1546,8 +1546,8 @@ func maskzAvgEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_avg_epu16'.
 // Requires AVX512BW.
-func AvgEpu16(a M512i, b M512i) M512i {
-	return M512i(avgEpu16([64]byte(a), [64]byte(b)))
+func AvgEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(avgEpu16([64]byte(a), [64]byte(b)))
 }
 
 func avgEpu16(a [64]byte, b [64]byte) [64]byte
@@ -1569,8 +1569,8 @@ func avgEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_mask_avg_epu16'.
 // Requires AVX512BW.
-func MaskAvgEpu162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskAvgEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskAvgEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAvgEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAvgEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -1592,8 +1592,8 @@ func maskAvgEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_maskz_avg_epu16'.
 // Requires AVX512BW.
-func MaskzAvgEpu162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzAvgEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzAvgEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAvgEpu162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAvgEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -1615,8 +1615,8 @@ func maskzAvgEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm_mask_avg_epu8'.
 // Requires AVX512BW.
-func MaskAvgEpu8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskAvgEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskAvgEpu8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskAvgEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskAvgEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -1638,8 +1638,8 @@ func maskAvgEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm_maskz_avg_epu8'.
 // Requires AVX512BW.
-func MaskzAvgEpu8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzAvgEpu8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzAvgEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzAvgEpu8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzAvgEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -1661,8 +1661,8 @@ func maskzAvgEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm256_mask_avg_epu8'.
 // Requires AVX512BW.
-func MaskAvgEpu81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskAvgEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskAvgEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskAvgEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskAvgEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -1684,8 +1684,8 @@ func maskAvgEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm256_maskz_avg_epu8'.
 // Requires AVX512BW.
-func MaskzAvgEpu81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzAvgEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzAvgEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzAvgEpu81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzAvgEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -1702,8 +1702,8 @@ func maskzAvgEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_avg_epu8'.
 // Requires AVX512BW.
-func AvgEpu8(a M512i, b M512i) M512i {
-	return M512i(avgEpu8([64]byte(a), [64]byte(b)))
+func AvgEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(avgEpu8([64]byte(a), [64]byte(b)))
 }
 
 func avgEpu8(a [64]byte, b [64]byte) [64]byte
@@ -1725,8 +1725,8 @@ func avgEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_mask_avg_epu8'.
 // Requires AVX512BW.
-func MaskAvgEpu82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskAvgEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskAvgEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskAvgEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskAvgEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -1748,8 +1748,8 @@ func maskAvgEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_maskz_avg_epu8'.
 // Requires AVX512BW.
-func MaskzAvgEpu82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzAvgEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzAvgEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzAvgEpu82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzAvgEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -1770,8 +1770,8 @@ func maskzAvgEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPBLENDMW'. Intrinsic: '_mm_mask_blend_epi16'.
 // Requires AVX512BW.
-func MaskBlendEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskBlendEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskBlendEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskBlendEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskBlendEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -1792,8 +1792,8 @@ func maskBlendEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPBLENDMW'. Intrinsic: '_mm256_mask_blend_epi16'.
 // Requires AVX512BW.
-func MaskBlendEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskBlendEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskBlendEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskBlendEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskBlendEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -1814,8 +1814,8 @@ func maskBlendEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPBLENDMW'. Intrinsic: '_mm512_mask_blend_epi16'.
 // Requires AVX512BW.
-func MaskBlendEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskBlendEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskBlendEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskBlendEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskBlendEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -1836,8 +1836,8 @@ func maskBlendEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPBLENDMB'. Intrinsic: '_mm_mask_blend_epi8'.
 // Requires AVX512BW.
-func MaskBlendEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskBlendEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskBlendEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskBlendEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskBlendEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -1858,8 +1858,8 @@ func maskBlendEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPBLENDMB'. Intrinsic: '_mm256_mask_blend_epi8'.
 // Requires AVX512BW.
-func MaskBlendEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskBlendEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskBlendEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskBlendEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskBlendEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -1880,8 +1880,8 @@ func maskBlendEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPBLENDMB'. Intrinsic: '_mm512_mask_blend_epi8'.
 // Requires AVX512BW.
-func MaskBlendEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskBlendEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskBlendEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskBlendEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskBlendEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -1903,8 +1903,8 @@ func maskBlendEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm_mask_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskBroadcastbEpi8(src M128i, k Mmask16, a M128i) M128i {
-	return M128i(maskBroadcastbEpi8([16]byte(src), uint16(k), [16]byte(a)))
+func MaskBroadcastbEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i) x86.M128i {
+	return x86.M128i(maskBroadcastbEpi8([16]byte(src), uint16(k), [16]byte(a)))
 }
 
 func maskBroadcastbEpi8(src [16]byte, k uint16, a [16]byte) [16]byte
@@ -1926,8 +1926,8 @@ func maskBroadcastbEpi8(src [16]byte, k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm_maskz_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskzBroadcastbEpi8(k Mmask16, a M128i) M128i {
-	return M128i(maskzBroadcastbEpi8(uint16(k), [16]byte(a)))
+func MaskzBroadcastbEpi8(k x86.Mmask16, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzBroadcastbEpi8(uint16(k), [16]byte(a)))
 }
 
 func maskzBroadcastbEpi8(k uint16, a [16]byte) [16]byte
@@ -1949,8 +1949,8 @@ func maskzBroadcastbEpi8(k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_mask_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskBroadcastbEpi81(src M256i, k Mmask32, a M128i) M256i {
-	return M256i(maskBroadcastbEpi81([32]byte(src), uint32(k), [16]byte(a)))
+func MaskBroadcastbEpi81(src x86.M256i, k x86.Mmask32, a x86.M128i) x86.M256i {
+	return x86.M256i(maskBroadcastbEpi81([32]byte(src), uint32(k), [16]byte(a)))
 }
 
 func maskBroadcastbEpi81(src [32]byte, k uint32, a [16]byte) [32]byte
@@ -1972,8 +1972,8 @@ func maskBroadcastbEpi81(src [32]byte, k uint32, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_maskz_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskzBroadcastbEpi81(k Mmask32, a M128i) M256i {
-	return M256i(maskzBroadcastbEpi81(uint32(k), [16]byte(a)))
+func MaskzBroadcastbEpi81(k x86.Mmask32, a x86.M128i) x86.M256i {
+	return x86.M256i(maskzBroadcastbEpi81(uint32(k), [16]byte(a)))
 }
 
 func maskzBroadcastbEpi81(k uint32, a [16]byte) [32]byte
@@ -1990,8 +1990,8 @@ func maskzBroadcastbEpi81(k uint32, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_broadcastb_epi8'.
 // Requires AVX512BW.
-func BroadcastbEpi8(a M128i) M512i {
-	return M512i(broadcastbEpi8([16]byte(a)))
+func BroadcastbEpi8(a x86.M128i) x86.M512i {
+	return x86.M512i(broadcastbEpi8([16]byte(a)))
 }
 
 func broadcastbEpi8(a [16]byte) [64]byte
@@ -2013,8 +2013,8 @@ func broadcastbEpi8(a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_mask_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskBroadcastbEpi82(src M512i, k Mmask64, a M128i) M512i {
-	return M512i(maskBroadcastbEpi82([64]byte(src), uint64(k), [16]byte(a)))
+func MaskBroadcastbEpi82(src x86.M512i, k x86.Mmask64, a x86.M128i) x86.M512i {
+	return x86.M512i(maskBroadcastbEpi82([64]byte(src), uint64(k), [16]byte(a)))
 }
 
 func maskBroadcastbEpi82(src [64]byte, k uint64, a [16]byte) [64]byte
@@ -2036,8 +2036,8 @@ func maskBroadcastbEpi82(src [64]byte, k uint64, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_maskz_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskzBroadcastbEpi82(k Mmask64, a M128i) M512i {
-	return M512i(maskzBroadcastbEpi82(uint64(k), [16]byte(a)))
+func MaskzBroadcastbEpi82(k x86.Mmask64, a x86.M128i) x86.M512i {
+	return x86.M512i(maskzBroadcastbEpi82(uint64(k), [16]byte(a)))
 }
 
 func maskzBroadcastbEpi82(k uint64, a [16]byte) [64]byte
@@ -2059,8 +2059,8 @@ func maskzBroadcastbEpi82(k uint64, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm_mask_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskBroadcastwEpi16(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskBroadcastwEpi16([16]byte(src), uint8(k), [16]byte(a)))
+func MaskBroadcastwEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskBroadcastwEpi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskBroadcastwEpi16(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -2082,8 +2082,8 @@ func maskBroadcastwEpi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm_maskz_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskzBroadcastwEpi16(k Mmask8, a M128i) M128i {
-	return M128i(maskzBroadcastwEpi16(uint8(k), [16]byte(a)))
+func MaskzBroadcastwEpi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzBroadcastwEpi16(uint8(k), [16]byte(a)))
 }
 
 func maskzBroadcastwEpi16(k uint8, a [16]byte) [16]byte
@@ -2105,8 +2105,8 @@ func maskzBroadcastwEpi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_mask_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskBroadcastwEpi161(src M256i, k Mmask16, a M128i) M256i {
-	return M256i(maskBroadcastwEpi161([32]byte(src), uint16(k), [16]byte(a)))
+func MaskBroadcastwEpi161(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(maskBroadcastwEpi161([32]byte(src), uint16(k), [16]byte(a)))
 }
 
 func maskBroadcastwEpi161(src [32]byte, k uint16, a [16]byte) [32]byte
@@ -2128,8 +2128,8 @@ func maskBroadcastwEpi161(src [32]byte, k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_maskz_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskzBroadcastwEpi161(k Mmask16, a M128i) M256i {
-	return M256i(maskzBroadcastwEpi161(uint16(k), [16]byte(a)))
+func MaskzBroadcastwEpi161(k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(maskzBroadcastwEpi161(uint16(k), [16]byte(a)))
 }
 
 func maskzBroadcastwEpi161(k uint16, a [16]byte) [32]byte
@@ -2146,8 +2146,8 @@ func maskzBroadcastwEpi161(k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_broadcastw_epi16'.
 // Requires AVX512BW.
-func BroadcastwEpi16(a M128i) M512i {
-	return M512i(broadcastwEpi16([16]byte(a)))
+func BroadcastwEpi16(a x86.M128i) x86.M512i {
+	return x86.M512i(broadcastwEpi16([16]byte(a)))
 }
 
 func broadcastwEpi16(a [16]byte) [64]byte
@@ -2169,8 +2169,8 @@ func broadcastwEpi16(a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_mask_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskBroadcastwEpi162(src M512i, k Mmask32, a M128i) M512i {
-	return M512i(maskBroadcastwEpi162([64]byte(src), uint32(k), [16]byte(a)))
+func MaskBroadcastwEpi162(src x86.M512i, k x86.Mmask32, a x86.M128i) x86.M512i {
+	return x86.M512i(maskBroadcastwEpi162([64]byte(src), uint32(k), [16]byte(a)))
 }
 
 func maskBroadcastwEpi162(src [64]byte, k uint32, a [16]byte) [64]byte
@@ -2192,8 +2192,8 @@ func maskBroadcastwEpi162(src [64]byte, k uint32, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_maskz_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskzBroadcastwEpi162(k Mmask32, a M128i) M512i {
-	return M512i(maskzBroadcastwEpi162(uint32(k), [16]byte(a)))
+func MaskzBroadcastwEpi162(k x86.Mmask32, a x86.M128i) x86.M512i {
+	return x86.M512i(maskzBroadcastwEpi162(uint32(k), [16]byte(a)))
 }
 
 func maskzBroadcastwEpi162(k uint32, a [16]byte) [64]byte
@@ -2214,8 +2214,8 @@ func maskzBroadcastwEpi162(k uint32, a [16]byte) [64]byte
 //
 // Instruction: 'VPSLLDQ'. Intrinsic: '_mm512_bslli_epi128'.
 // Requires AVX512BW.
-func BslliEpi128(a M512i, imm8 int) M512i {
-	return M512i(bslliEpi128([64]byte(a), imm8))
+func BslliEpi128(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(bslliEpi128([64]byte(a), imm8))
 }
 
 func bslliEpi128(a [64]byte, imm8 int) [64]byte
@@ -2236,8 +2236,8 @@ func bslliEpi128(a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSRLDQ'. Intrinsic: '_mm512_bsrli_epi128'.
 // Requires AVX512BW.
-func BsrliEpi128(a M512i, imm8 int) M512i {
-	return M512i(bsrliEpi128([64]byte(a), imm8))
+func BsrliEpi128(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(bsrliEpi128([64]byte(a), imm8))
 }
 
 func bsrliEpi128(a [64]byte, imm8 int) [64]byte
@@ -2265,8 +2265,8 @@ func bsrliEpi128(a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_cmp_epi16_mask'.
 // Requires AVX512BW.
-func CmpEpi16Mask(a M128i, b M128i, imm8 int) Mmask8 {
-	return Mmask8(cmpEpi16Mask([16]byte(a), [16]byte(b), imm8))
+func CmpEpi16Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+	return x86.Mmask8(cmpEpi16Mask([16]byte(a), [16]byte(b), imm8))
 }
 
 func cmpEpi16Mask(a [16]byte, b [16]byte, imm8 int) uint8
@@ -2299,8 +2299,8 @@ func cmpEpi16Mask(a [16]byte, b [16]byte, imm8 int) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_mask_cmp_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi16Mask(k1 Mmask8, a M128i, b M128i, imm8 int) Mmask8 {
-	return Mmask8(maskCmpEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
+func MaskCmpEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+	return x86.Mmask8(maskCmpEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
 func maskCmpEpi16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
@@ -2328,8 +2328,8 @@ func maskCmpEpi16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmp_epi16_mask'.
 // Requires AVX512BW.
-func CmpEpi16Mask1(a M256i, b M256i, imm8 int) Mmask16 {
-	return Mmask16(cmpEpi16Mask1([32]byte(a), [32]byte(b), imm8))
+func CmpEpi16Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(cmpEpi16Mask1([32]byte(a), [32]byte(b), imm8))
 }
 
 func cmpEpi16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
@@ -2362,8 +2362,8 @@ func cmpEpi16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmp_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi16Mask1(k1 Mmask16, a M256i, b M256i, imm8 int) Mmask16 {
-	return Mmask16(maskCmpEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b), imm8))
+func MaskCmpEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(maskCmpEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
 func maskCmpEpi16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
@@ -2391,8 +2391,8 @@ func maskCmpEpi16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmp_epi16_mask'.
 // Requires AVX512BW.
-func CmpEpi16Mask2(a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(cmpEpi16Mask2([64]byte(a), [64]byte(b), imm8))
+func CmpEpi16Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(cmpEpi16Mask2([64]byte(a), [64]byte(b), imm8))
 }
 
 func cmpEpi16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
@@ -2425,8 +2425,8 @@ func cmpEpi16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmp_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi16Mask2(k1 Mmask32, a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(maskCmpEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b), imm8))
+func MaskCmpEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(maskCmpEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
 func maskCmpEpi16Mask2(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
@@ -2454,8 +2454,8 @@ func maskCmpEpi16Mask2(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_cmp_epi8_mask'.
 // Requires AVX512BW.
-func CmpEpi8Mask(a M128i, b M128i, imm8 int) Mmask16 {
-	return Mmask16(cmpEpi8Mask([16]byte(a), [16]byte(b), imm8))
+func CmpEpi8Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(cmpEpi8Mask([16]byte(a), [16]byte(b), imm8))
 }
 
 func cmpEpi8Mask(a [16]byte, b [16]byte, imm8 int) uint16
@@ -2488,8 +2488,8 @@ func cmpEpi8Mask(a [16]byte, b [16]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_mask_cmp_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi8Mask(k1 Mmask16, a M128i, b M128i, imm8 int) Mmask16 {
-	return Mmask16(maskCmpEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b), imm8))
+func MaskCmpEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(maskCmpEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
 func maskCmpEpi8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
@@ -2517,8 +2517,8 @@ func maskCmpEpi8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmp_epi8_mask'.
 // Requires AVX512BW.
-func CmpEpi8Mask1(a M256i, b M256i, imm8 int) Mmask32 {
-	return Mmask32(cmpEpi8Mask1([32]byte(a), [32]byte(b), imm8))
+func CmpEpi8Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(cmpEpi8Mask1([32]byte(a), [32]byte(b), imm8))
 }
 
 func cmpEpi8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
@@ -2551,8 +2551,8 @@ func cmpEpi8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmp_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi8Mask1(k1 Mmask32, a M256i, b M256i, imm8 int) Mmask32 {
-	return Mmask32(maskCmpEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b), imm8))
+func MaskCmpEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(maskCmpEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
 func maskCmpEpi8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
@@ -2580,8 +2580,8 @@ func maskCmpEpi8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmp_epi8_mask'.
 // Requires AVX512BW.
-func CmpEpi8Mask2(a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(cmpEpi8Mask2([64]byte(a), [64]byte(b), imm8))
+func CmpEpi8Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(cmpEpi8Mask2([64]byte(a), [64]byte(b), imm8))
 }
 
 func cmpEpi8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
@@ -2614,8 +2614,8 @@ func cmpEpi8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmp_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi8Mask2(k1 Mmask64, a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(maskCmpEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b), imm8))
+func MaskCmpEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(maskCmpEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
 func maskCmpEpi8Mask2(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
@@ -2643,8 +2643,8 @@ func maskCmpEpi8Mask2(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_cmp_epu16_mask'.
 // Requires AVX512BW.
-func CmpEpu16Mask(a M128i, b M128i, imm8 int) Mmask8 {
-	return Mmask8(cmpEpu16Mask([16]byte(a), [16]byte(b), imm8))
+func CmpEpu16Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+	return x86.Mmask8(cmpEpu16Mask([16]byte(a), [16]byte(b), imm8))
 }
 
 func cmpEpu16Mask(a [16]byte, b [16]byte, imm8 int) uint8
@@ -2677,8 +2677,8 @@ func cmpEpu16Mask(a [16]byte, b [16]byte, imm8 int) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_mask_cmp_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu16Mask(k1 Mmask8, a M128i, b M128i, imm8 int) Mmask8 {
-	return Mmask8(maskCmpEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
+func MaskCmpEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+	return x86.Mmask8(maskCmpEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
 func maskCmpEpu16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
@@ -2706,8 +2706,8 @@ func maskCmpEpu16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmp_epu16_mask'.
 // Requires AVX512BW.
-func CmpEpu16Mask1(a M256i, b M256i, imm8 int) Mmask16 {
-	return Mmask16(cmpEpu16Mask1([32]byte(a), [32]byte(b), imm8))
+func CmpEpu16Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(cmpEpu16Mask1([32]byte(a), [32]byte(b), imm8))
 }
 
 func cmpEpu16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
@@ -2740,8 +2740,8 @@ func cmpEpu16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmp_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu16Mask1(k1 Mmask16, a M256i, b M256i, imm8 int) Mmask16 {
-	return Mmask16(maskCmpEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b), imm8))
+func MaskCmpEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(maskCmpEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
 func maskCmpEpu16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
@@ -2769,8 +2769,8 @@ func maskCmpEpu16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmp_epu16_mask'.
 // Requires AVX512BW.
-func CmpEpu16Mask2(a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(cmpEpu16Mask2([64]byte(a), [64]byte(b), imm8))
+func CmpEpu16Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(cmpEpu16Mask2([64]byte(a), [64]byte(b), imm8))
 }
 
 func cmpEpu16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
@@ -2803,8 +2803,8 @@ func cmpEpu16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmp_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu16Mask2(k1 Mmask32, a M512i, b M512i, imm8 int) Mmask32 {
-	return Mmask32(maskCmpEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b), imm8))
+func MaskCmpEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(maskCmpEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
 func maskCmpEpu16Mask2(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
@@ -2832,8 +2832,8 @@ func maskCmpEpu16Mask2(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_cmp_epu8_mask'.
 // Requires AVX512BW.
-func CmpEpu8Mask(a M128i, b M128i, imm8 int) Mmask16 {
-	return Mmask16(cmpEpu8Mask([16]byte(a), [16]byte(b), imm8))
+func CmpEpu8Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(cmpEpu8Mask([16]byte(a), [16]byte(b), imm8))
 }
 
 func cmpEpu8Mask(a [16]byte, b [16]byte, imm8 int) uint16
@@ -2866,8 +2866,8 @@ func cmpEpu8Mask(a [16]byte, b [16]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_mask_cmp_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu8Mask(k1 Mmask16, a M128i, b M128i, imm8 int) Mmask16 {
-	return Mmask16(maskCmpEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b), imm8))
+func MaskCmpEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(maskCmpEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
 func maskCmpEpu8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
@@ -2895,8 +2895,8 @@ func maskCmpEpu8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmp_epu8_mask'.
 // Requires AVX512BW.
-func CmpEpu8Mask1(a M256i, b M256i, imm8 int) Mmask32 {
-	return Mmask32(cmpEpu8Mask1([32]byte(a), [32]byte(b), imm8))
+func CmpEpu8Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(cmpEpu8Mask1([32]byte(a), [32]byte(b), imm8))
 }
 
 func cmpEpu8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
@@ -2929,8 +2929,8 @@ func cmpEpu8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmp_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu8Mask1(k1 Mmask32, a M256i, b M256i, imm8 int) Mmask32 {
-	return Mmask32(maskCmpEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b), imm8))
+func MaskCmpEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(maskCmpEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
 func maskCmpEpu8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
@@ -2958,8 +2958,8 @@ func maskCmpEpu8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmp_epu8_mask'.
 // Requires AVX512BW.
-func CmpEpu8Mask2(a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(cmpEpu8Mask2([64]byte(a), [64]byte(b), imm8))
+func CmpEpu8Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(cmpEpu8Mask2([64]byte(a), [64]byte(b), imm8))
 }
 
 func cmpEpu8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
@@ -2992,8 +2992,8 @@ func cmpEpu8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmp_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu8Mask2(k1 Mmask64, a M512i, b M512i, imm8 int) Mmask64 {
-	return Mmask64(maskCmpEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b), imm8))
+func MaskCmpEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(maskCmpEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
 func maskCmpEpu8Mask2(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
@@ -3010,8 +3010,8 @@ func maskCmpEpu8Mask2(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func CmpeqEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpeqEpi16Mask([16]byte(a), [16]byte(b)))
+func CmpeqEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpeqEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpeqEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -3033,8 +3033,8 @@ func cmpeqEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_mask_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpeqEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpeqEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpeqEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpeqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -3051,8 +3051,8 @@ func maskCmpeqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func CmpeqEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpeqEpi16Mask1([32]byte(a), [32]byte(b)))
+func CmpeqEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpeqEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpeqEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -3074,8 +3074,8 @@ func cmpeqEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpeqEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpeqEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpeqEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpeqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -3092,8 +3092,8 @@ func maskCmpeqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func CmpeqEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpeqEpi16Mask2([64]byte(a), [64]byte(b)))
+func CmpeqEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpeqEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpeqEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -3115,8 +3115,8 @@ func cmpeqEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpeqEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpeqEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpeqEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpeqEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -3133,8 +3133,8 @@ func maskCmpeqEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func CmpeqEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpeqEpi8Mask([16]byte(a), [16]byte(b)))
+func CmpeqEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpeqEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpeqEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -3156,8 +3156,8 @@ func cmpeqEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_mask_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpeqEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpeqEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpeqEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpeqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -3174,8 +3174,8 @@ func maskCmpeqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func CmpeqEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpeqEpi8Mask1([32]byte(a), [32]byte(b)))
+func CmpeqEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpeqEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpeqEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -3197,8 +3197,8 @@ func cmpeqEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpeqEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpeqEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpeqEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpeqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -3215,8 +3215,8 @@ func maskCmpeqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func CmpeqEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpeqEpi8Mask2([64]byte(a), [64]byte(b)))
+func CmpeqEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpeqEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpeqEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -3238,8 +3238,8 @@ func cmpeqEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpeqEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpeqEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpeqEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpeqEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -3256,8 +3256,8 @@ func maskCmpeqEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func CmpeqEpu16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpeqEpu16Mask([16]byte(a), [16]byte(b)))
+func CmpeqEpu16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpeqEpu16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpeqEpu16Mask(a [16]byte, b [16]byte) uint8
@@ -3279,8 +3279,8 @@ func cmpeqEpu16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_mask_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpeqEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpeqEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpeqEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpeqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -3297,8 +3297,8 @@ func maskCmpeqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func CmpeqEpu16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpeqEpu16Mask1([32]byte(a), [32]byte(b)))
+func CmpeqEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpeqEpu16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpeqEpu16Mask1(a [32]byte, b [32]byte) uint16
@@ -3320,8 +3320,8 @@ func cmpeqEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpeqEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpeqEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpeqEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpeqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -3338,8 +3338,8 @@ func maskCmpeqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func CmpeqEpu16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpeqEpu16Mask2([64]byte(a), [64]byte(b)))
+func CmpeqEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpeqEpu16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpeqEpu16Mask2(a [64]byte, b [64]byte) uint32
@@ -3361,8 +3361,8 @@ func cmpeqEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpeqEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpeqEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpeqEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpeqEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -3379,8 +3379,8 @@ func maskCmpeqEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func CmpeqEpu8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpeqEpu8Mask([16]byte(a), [16]byte(b)))
+func CmpeqEpu8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpeqEpu8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpeqEpu8Mask(a [16]byte, b [16]byte) uint16
@@ -3402,8 +3402,8 @@ func cmpeqEpu8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_mask_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpeqEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpeqEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpeqEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpeqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -3420,8 +3420,8 @@ func maskCmpeqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func CmpeqEpu8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpeqEpu8Mask1([32]byte(a), [32]byte(b)))
+func CmpeqEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpeqEpu8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpeqEpu8Mask1(a [32]byte, b [32]byte) uint32
@@ -3443,8 +3443,8 @@ func cmpeqEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpeqEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpeqEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpeqEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpeqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -3461,8 +3461,8 @@ func maskCmpeqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func CmpeqEpu8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpeqEpu8Mask2([64]byte(a), [64]byte(b)))
+func CmpeqEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpeqEpu8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpeqEpu8Mask2(a [64]byte, b [64]byte) uint64
@@ -3484,8 +3484,8 @@ func cmpeqEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpeqEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpeqEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpeqEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpeqEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -3502,8 +3502,8 @@ func maskCmpeqEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func CmpgeEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpgeEpi16Mask([16]byte(a), [16]byte(b)))
+func CmpgeEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpgeEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgeEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -3526,8 +3526,8 @@ func cmpgeEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_mask_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpgeEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgeEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpgeEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgeEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -3544,8 +3544,8 @@ func maskCmpgeEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func CmpgeEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpgeEpi16Mask1([32]byte(a), [32]byte(b)))
+func CmpgeEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpgeEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgeEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -3568,8 +3568,8 @@ func cmpgeEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpgeEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgeEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgeEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgeEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -3586,8 +3586,8 @@ func maskCmpgeEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func CmpgeEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpgeEpi16Mask2([64]byte(a), [64]byte(b)))
+func CmpgeEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpgeEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgeEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -3610,8 +3610,8 @@ func cmpgeEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpgeEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgeEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgeEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgeEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -3628,8 +3628,8 @@ func maskCmpgeEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func CmpgeEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpgeEpi8Mask([16]byte(a), [16]byte(b)))
+func CmpgeEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpgeEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgeEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -3652,8 +3652,8 @@ func cmpgeEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_mask_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpgeEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgeEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgeEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgeEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -3670,8 +3670,8 @@ func maskCmpgeEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func CmpgeEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpgeEpi8Mask1([32]byte(a), [32]byte(b)))
+func CmpgeEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpgeEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgeEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -3694,8 +3694,8 @@ func cmpgeEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpgeEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgeEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgeEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgeEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -3712,8 +3712,8 @@ func maskCmpgeEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func CmpgeEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpgeEpi8Mask2([64]byte(a), [64]byte(b)))
+func CmpgeEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpgeEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgeEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -3736,8 +3736,8 @@ func cmpgeEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpgeEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgeEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpgeEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgeEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -3754,8 +3754,8 @@ func maskCmpgeEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func CmpgeEpu16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpgeEpu16Mask([16]byte(a), [16]byte(b)))
+func CmpgeEpu16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpgeEpu16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgeEpu16Mask(a [16]byte, b [16]byte) uint8
@@ -3778,8 +3778,8 @@ func cmpgeEpu16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_mask_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpgeEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgeEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpgeEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgeEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -3796,8 +3796,8 @@ func maskCmpgeEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func CmpgeEpu16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpgeEpu16Mask1([32]byte(a), [32]byte(b)))
+func CmpgeEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpgeEpu16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgeEpu16Mask1(a [32]byte, b [32]byte) uint16
@@ -3820,8 +3820,8 @@ func cmpgeEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpgeEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgeEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgeEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgeEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -3838,8 +3838,8 @@ func maskCmpgeEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func CmpgeEpu16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpgeEpu16Mask2([64]byte(a), [64]byte(b)))
+func CmpgeEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpgeEpu16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgeEpu16Mask2(a [64]byte, b [64]byte) uint32
@@ -3862,8 +3862,8 @@ func cmpgeEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpgeEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgeEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgeEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgeEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -3880,8 +3880,8 @@ func maskCmpgeEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func CmpgeEpu8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpgeEpu8Mask([16]byte(a), [16]byte(b)))
+func CmpgeEpu8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpgeEpu8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgeEpu8Mask(a [16]byte, b [16]byte) uint16
@@ -3904,8 +3904,8 @@ func cmpgeEpu8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_mask_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpgeEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgeEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgeEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgeEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -3922,8 +3922,8 @@ func maskCmpgeEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func CmpgeEpu8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpgeEpu8Mask1([32]byte(a), [32]byte(b)))
+func CmpgeEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpgeEpu8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgeEpu8Mask1(a [32]byte, b [32]byte) uint32
@@ -3946,8 +3946,8 @@ func cmpgeEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpgeEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgeEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgeEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgeEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -3964,8 +3964,8 @@ func maskCmpgeEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func CmpgeEpu8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpgeEpu8Mask2([64]byte(a), [64]byte(b)))
+func CmpgeEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpgeEpu8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgeEpu8Mask2(a [64]byte, b [64]byte) uint64
@@ -3988,8 +3988,8 @@ func cmpgeEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpgeEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgeEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpgeEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgeEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -4006,8 +4006,8 @@ func maskCmpgeEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func CmpgtEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpgtEpi16Mask([16]byte(a), [16]byte(b)))
+func CmpgtEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpgtEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgtEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -4029,8 +4029,8 @@ func cmpgtEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_mask_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpgtEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgtEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpgtEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgtEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -4047,8 +4047,8 @@ func maskCmpgtEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func CmpgtEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpgtEpi16Mask1([32]byte(a), [32]byte(b)))
+func CmpgtEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpgtEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgtEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -4070,8 +4070,8 @@ func cmpgtEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpgtEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgtEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgtEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgtEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -4088,8 +4088,8 @@ func maskCmpgtEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func CmpgtEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpgtEpi16Mask2([64]byte(a), [64]byte(b)))
+func CmpgtEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpgtEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgtEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -4111,8 +4111,8 @@ func cmpgtEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpgtEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgtEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgtEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgtEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -4129,8 +4129,8 @@ func maskCmpgtEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func CmpgtEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpgtEpi8Mask([16]byte(a), [16]byte(b)))
+func CmpgtEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpgtEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgtEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -4152,8 +4152,8 @@ func cmpgtEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_mask_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpgtEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgtEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgtEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgtEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -4170,8 +4170,8 @@ func maskCmpgtEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func CmpgtEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpgtEpi8Mask1([32]byte(a), [32]byte(b)))
+func CmpgtEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpgtEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgtEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -4193,8 +4193,8 @@ func cmpgtEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpgtEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgtEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgtEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgtEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -4211,8 +4211,8 @@ func maskCmpgtEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func CmpgtEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpgtEpi8Mask2([64]byte(a), [64]byte(b)))
+func CmpgtEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpgtEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgtEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -4234,8 +4234,8 @@ func cmpgtEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpgtEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgtEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpgtEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgtEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -4252,8 +4252,8 @@ func maskCmpgtEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func CmpgtEpu16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpgtEpu16Mask([16]byte(a), [16]byte(b)))
+func CmpgtEpu16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpgtEpu16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgtEpu16Mask(a [16]byte, b [16]byte) uint8
@@ -4275,8 +4275,8 @@ func cmpgtEpu16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_mask_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpgtEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgtEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpgtEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgtEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -4293,8 +4293,8 @@ func maskCmpgtEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func CmpgtEpu16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpgtEpu16Mask1([32]byte(a), [32]byte(b)))
+func CmpgtEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpgtEpu16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgtEpu16Mask1(a [32]byte, b [32]byte) uint16
@@ -4316,8 +4316,8 @@ func cmpgtEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpgtEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgtEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgtEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgtEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -4334,8 +4334,8 @@ func maskCmpgtEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func CmpgtEpu16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpgtEpu16Mask2([64]byte(a), [64]byte(b)))
+func CmpgtEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpgtEpu16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgtEpu16Mask2(a [64]byte, b [64]byte) uint32
@@ -4357,8 +4357,8 @@ func cmpgtEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpgtEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgtEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgtEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgtEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -4375,8 +4375,8 @@ func maskCmpgtEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func CmpgtEpu8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpgtEpu8Mask([16]byte(a), [16]byte(b)))
+func CmpgtEpu8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpgtEpu8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpgtEpu8Mask(a [16]byte, b [16]byte) uint16
@@ -4398,8 +4398,8 @@ func cmpgtEpu8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_mask_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpgtEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpgtEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpgtEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpgtEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -4416,8 +4416,8 @@ func maskCmpgtEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func CmpgtEpu8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpgtEpu8Mask1([32]byte(a), [32]byte(b)))
+func CmpgtEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpgtEpu8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpgtEpu8Mask1(a [32]byte, b [32]byte) uint32
@@ -4439,8 +4439,8 @@ func cmpgtEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpgtEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpgtEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpgtEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpgtEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -4457,8 +4457,8 @@ func maskCmpgtEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func CmpgtEpu8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpgtEpu8Mask2([64]byte(a), [64]byte(b)))
+func CmpgtEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpgtEpu8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpgtEpu8Mask2(a [64]byte, b [64]byte) uint64
@@ -4480,8 +4480,8 @@ func cmpgtEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpgtEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpgtEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpgtEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpgtEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -4498,8 +4498,8 @@ func maskCmpgtEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_cmple_epi16_mask'.
 // Requires AVX512BW.
-func CmpleEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpleEpi16Mask([16]byte(a), [16]byte(b)))
+func CmpleEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpleEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpleEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -4521,8 +4521,8 @@ func cmpleEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_mask_cmple_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpleEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpleEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpleEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpleEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -4539,8 +4539,8 @@ func maskCmpleEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmple_epi16_mask'.
 // Requires AVX512BW.
-func CmpleEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpleEpi16Mask1([32]byte(a), [32]byte(b)))
+func CmpleEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpleEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpleEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -4562,8 +4562,8 @@ func cmpleEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmple_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpleEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpleEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpleEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpleEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -4580,8 +4580,8 @@ func maskCmpleEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmple_epi16_mask'.
 // Requires AVX512BW.
-func CmpleEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpleEpi16Mask2([64]byte(a), [64]byte(b)))
+func CmpleEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpleEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpleEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -4603,8 +4603,8 @@ func cmpleEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmple_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpleEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpleEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpleEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpleEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -4621,8 +4621,8 @@ func maskCmpleEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_cmple_epi8_mask'.
 // Requires AVX512BW.
-func CmpleEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpleEpi8Mask([16]byte(a), [16]byte(b)))
+func CmpleEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpleEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpleEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -4644,8 +4644,8 @@ func cmpleEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_mask_cmple_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpleEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpleEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpleEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpleEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -4662,8 +4662,8 @@ func maskCmpleEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmple_epi8_mask'.
 // Requires AVX512BW.
-func CmpleEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpleEpi8Mask1([32]byte(a), [32]byte(b)))
+func CmpleEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpleEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpleEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -4685,8 +4685,8 @@ func cmpleEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmple_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpleEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpleEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpleEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpleEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -4703,8 +4703,8 @@ func maskCmpleEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmple_epi8_mask'.
 // Requires AVX512BW.
-func CmpleEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpleEpi8Mask2([64]byte(a), [64]byte(b)))
+func CmpleEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpleEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpleEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -4726,8 +4726,8 @@ func cmpleEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmple_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpleEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpleEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpleEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpleEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -4744,8 +4744,8 @@ func maskCmpleEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_cmple_epu16_mask'.
 // Requires AVX512BW.
-func CmpleEpu16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpleEpu16Mask([16]byte(a), [16]byte(b)))
+func CmpleEpu16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpleEpu16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpleEpu16Mask(a [16]byte, b [16]byte) uint8
@@ -4768,8 +4768,8 @@ func cmpleEpu16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_mask_cmple_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpleEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpleEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpleEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpleEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -4786,8 +4786,8 @@ func maskCmpleEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmple_epu16_mask'.
 // Requires AVX512BW.
-func CmpleEpu16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpleEpu16Mask1([32]byte(a), [32]byte(b)))
+func CmpleEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpleEpu16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpleEpu16Mask1(a [32]byte, b [32]byte) uint16
@@ -4810,8 +4810,8 @@ func cmpleEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmple_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpleEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpleEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpleEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpleEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -4828,8 +4828,8 @@ func maskCmpleEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmple_epu16_mask'.
 // Requires AVX512BW.
-func CmpleEpu16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpleEpu16Mask2([64]byte(a), [64]byte(b)))
+func CmpleEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpleEpu16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpleEpu16Mask2(a [64]byte, b [64]byte) uint32
@@ -4852,8 +4852,8 @@ func cmpleEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmple_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpleEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpleEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpleEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpleEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -4870,8 +4870,8 @@ func maskCmpleEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_cmple_epu8_mask'.
 // Requires AVX512BW.
-func CmpleEpu8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpleEpu8Mask([16]byte(a), [16]byte(b)))
+func CmpleEpu8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpleEpu8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpleEpu8Mask(a [16]byte, b [16]byte) uint16
@@ -4893,8 +4893,8 @@ func cmpleEpu8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_mask_cmple_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpleEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpleEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpleEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpleEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -4911,8 +4911,8 @@ func maskCmpleEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmple_epu8_mask'.
 // Requires AVX512BW.
-func CmpleEpu8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpleEpu8Mask1([32]byte(a), [32]byte(b)))
+func CmpleEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpleEpu8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpleEpu8Mask1(a [32]byte, b [32]byte) uint32
@@ -4935,8 +4935,8 @@ func cmpleEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmple_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpleEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpleEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpleEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpleEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -4953,8 +4953,8 @@ func maskCmpleEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmple_epu8_mask'.
 // Requires AVX512BW.
-func CmpleEpu8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpleEpu8Mask2([64]byte(a), [64]byte(b)))
+func CmpleEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpleEpu8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpleEpu8Mask2(a [64]byte, b [64]byte) uint64
@@ -4977,8 +4977,8 @@ func cmpleEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmple_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpleEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpleEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpleEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpleEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -4995,8 +4995,8 @@ func maskCmpleEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func CmpltEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpltEpi16Mask([16]byte(a), [16]byte(b)))
+func CmpltEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpltEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpltEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -5018,8 +5018,8 @@ func cmpltEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_mask_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpltEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpltEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpltEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpltEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -5036,8 +5036,8 @@ func maskCmpltEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func CmpltEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpltEpi16Mask1([32]byte(a), [32]byte(b)))
+func CmpltEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpltEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpltEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -5059,8 +5059,8 @@ func cmpltEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpltEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpltEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpltEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpltEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -5077,8 +5077,8 @@ func maskCmpltEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func CmpltEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpltEpi16Mask2([64]byte(a), [64]byte(b)))
+func CmpltEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpltEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpltEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -5100,8 +5100,8 @@ func cmpltEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpltEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpltEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpltEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpltEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -5118,8 +5118,8 @@ func maskCmpltEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func CmpltEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpltEpi8Mask([16]byte(a), [16]byte(b)))
+func CmpltEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpltEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpltEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -5141,8 +5141,8 @@ func cmpltEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_mask_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpltEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpltEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpltEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpltEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -5159,8 +5159,8 @@ func maskCmpltEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func CmpltEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpltEpi8Mask1([32]byte(a), [32]byte(b)))
+func CmpltEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpltEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpltEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -5182,8 +5182,8 @@ func cmpltEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpltEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpltEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpltEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpltEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -5200,8 +5200,8 @@ func maskCmpltEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func CmpltEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpltEpi8Mask2([64]byte(a), [64]byte(b)))
+func CmpltEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpltEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpltEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -5223,8 +5223,8 @@ func cmpltEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpltEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpltEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpltEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpltEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -5241,8 +5241,8 @@ func maskCmpltEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func CmpltEpu16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpltEpu16Mask([16]byte(a), [16]byte(b)))
+func CmpltEpu16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpltEpu16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpltEpu16Mask(a [16]byte, b [16]byte) uint8
@@ -5264,8 +5264,8 @@ func cmpltEpu16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_mask_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpltEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpltEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpltEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpltEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -5282,8 +5282,8 @@ func maskCmpltEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func CmpltEpu16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpltEpu16Mask1([32]byte(a), [32]byte(b)))
+func CmpltEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpltEpu16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpltEpu16Mask1(a [32]byte, b [32]byte) uint16
@@ -5305,8 +5305,8 @@ func cmpltEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpltEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpltEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpltEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpltEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -5323,8 +5323,8 @@ func maskCmpltEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func CmpltEpu16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpltEpu16Mask2([64]byte(a), [64]byte(b)))
+func CmpltEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpltEpu16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpltEpu16Mask2(a [64]byte, b [64]byte) uint32
@@ -5346,8 +5346,8 @@ func cmpltEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpltEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpltEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpltEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpltEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -5364,8 +5364,8 @@ func maskCmpltEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func CmpltEpu8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpltEpu8Mask([16]byte(a), [16]byte(b)))
+func CmpltEpu8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpltEpu8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpltEpu8Mask(a [16]byte, b [16]byte) uint16
@@ -5387,8 +5387,8 @@ func cmpltEpu8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_mask_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpltEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpltEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpltEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpltEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -5405,8 +5405,8 @@ func maskCmpltEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func CmpltEpu8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpltEpu8Mask1([32]byte(a), [32]byte(b)))
+func CmpltEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpltEpu8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpltEpu8Mask1(a [32]byte, b [32]byte) uint32
@@ -5428,8 +5428,8 @@ func cmpltEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpltEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpltEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpltEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpltEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -5446,8 +5446,8 @@ func maskCmpltEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func CmpltEpu8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpltEpu8Mask2([64]byte(a), [64]byte(b)))
+func CmpltEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpltEpu8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpltEpu8Mask2(a [64]byte, b [64]byte) uint64
@@ -5469,8 +5469,8 @@ func cmpltEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpltEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpltEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpltEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpltEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -5487,8 +5487,8 @@ func maskCmpltEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func CmpneqEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpneqEpi16Mask([16]byte(a), [16]byte(b)))
+func CmpneqEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpneqEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpneqEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -5510,8 +5510,8 @@ func cmpneqEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm_mask_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpneqEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpneqEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpneqEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpneqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -5528,8 +5528,8 @@ func maskCmpneqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func CmpneqEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpneqEpi16Mask1([32]byte(a), [32]byte(b)))
+func CmpneqEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpneqEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpneqEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -5551,8 +5551,8 @@ func cmpneqEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpneqEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpneqEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpneqEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpneqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -5569,8 +5569,8 @@ func maskCmpneqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func CmpneqEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpneqEpi16Mask2([64]byte(a), [64]byte(b)))
+func CmpneqEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpneqEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpneqEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -5592,8 +5592,8 @@ func cmpneqEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpneqEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpneqEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpneqEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpneqEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -5610,8 +5610,8 @@ func maskCmpneqEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func CmpneqEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpneqEpi8Mask([16]byte(a), [16]byte(b)))
+func CmpneqEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpneqEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpneqEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -5633,8 +5633,8 @@ func cmpneqEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm_mask_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpneqEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpneqEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpneqEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpneqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -5651,8 +5651,8 @@ func maskCmpneqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func CmpneqEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpneqEpi8Mask1([32]byte(a), [32]byte(b)))
+func CmpneqEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpneqEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpneqEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -5674,8 +5674,8 @@ func cmpneqEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpneqEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpneqEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpneqEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpneqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -5692,8 +5692,8 @@ func maskCmpneqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func CmpneqEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpneqEpi8Mask2([64]byte(a), [64]byte(b)))
+func CmpneqEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpneqEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpneqEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -5715,8 +5715,8 @@ func cmpneqEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpneqEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpneqEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpneqEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpneqEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -5733,8 +5733,8 @@ func maskCmpneqEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func CmpneqEpu16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(cmpneqEpu16Mask([16]byte(a), [16]byte(b)))
+func CmpneqEpu16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(cmpneqEpu16Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpneqEpu16Mask(a [16]byte, b [16]byte) uint8
@@ -5756,8 +5756,8 @@ func cmpneqEpu16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm_mask_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskCmpneqEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpneqEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskCmpneqEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpneqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -5774,8 +5774,8 @@ func maskCmpneqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func CmpneqEpu16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(cmpneqEpu16Mask1([32]byte(a), [32]byte(b)))
+func CmpneqEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(cmpneqEpu16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpneqEpu16Mask1(a [32]byte, b [32]byte) uint16
@@ -5797,8 +5797,8 @@ func cmpneqEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskCmpneqEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpneqEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpneqEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpneqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -5815,8 +5815,8 @@ func maskCmpneqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func CmpneqEpu16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(cmpneqEpu16Mask2([64]byte(a), [64]byte(b)))
+func CmpneqEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(cmpneqEpu16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpneqEpu16Mask2(a [64]byte, b [64]byte) uint32
@@ -5838,8 +5838,8 @@ func cmpneqEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskCmpneqEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpneqEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpneqEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpneqEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -5856,8 +5856,8 @@ func maskCmpneqEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func CmpneqEpu8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(cmpneqEpu8Mask([16]byte(a), [16]byte(b)))
+func CmpneqEpu8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(cmpneqEpu8Mask([16]byte(a), [16]byte(b)))
 }
 
 func cmpneqEpu8Mask(a [16]byte, b [16]byte) uint16
@@ -5879,8 +5879,8 @@ func cmpneqEpu8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm_mask_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskCmpneqEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskCmpneqEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskCmpneqEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskCmpneqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -5897,8 +5897,8 @@ func maskCmpneqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func CmpneqEpu8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(cmpneqEpu8Mask1([32]byte(a), [32]byte(b)))
+func CmpneqEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(cmpneqEpu8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func cmpneqEpu8Mask1(a [32]byte, b [32]byte) uint32
@@ -5920,8 +5920,8 @@ func cmpneqEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskCmpneqEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskCmpneqEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskCmpneqEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskCmpneqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -5938,8 +5938,8 @@ func maskCmpneqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func CmpneqEpu8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(cmpneqEpu8Mask2([64]byte(a), [64]byte(b)))
+func CmpneqEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(cmpneqEpu8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func cmpneqEpu8Mask2(a [64]byte, b [64]byte) uint64
@@ -5961,8 +5961,8 @@ func cmpneqEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskCmpneqEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskCmpneqEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskCmpneqEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskCmpneqEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -5980,8 +5980,8 @@ func maskCmpneqEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm_cvtepi16_epi8'.
 // Requires AVX512BW.
-func Cvtepi16Epi8(a M128i) M128i {
-	return M128i(cvtepi16Epi8([16]byte(a)))
+func Cvtepi16Epi8(a x86.M128i) x86.M128i {
+	return x86.M128i(cvtepi16Epi8([16]byte(a)))
 }
 
 func cvtepi16Epi8(a [16]byte) [16]byte
@@ -6004,8 +6004,8 @@ func cvtepi16Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm_mask_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16Epi8(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskCvtepi16Epi8([16]byte(src), uint8(k), [16]byte(a)))
+func MaskCvtepi16Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskCvtepi16Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskCvtepi16Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -6028,8 +6028,8 @@ func maskCvtepi16Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm_maskz_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtepi16Epi8(k Mmask8, a M128i) M128i {
-	return M128i(maskzCvtepi16Epi8(uint8(k), [16]byte(a)))
+func MaskzCvtepi16Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzCvtepi16Epi8(uint8(k), [16]byte(a)))
 }
 
 func maskzCvtepi16Epi8(k uint8, a [16]byte) [16]byte
@@ -6047,8 +6047,8 @@ func maskzCvtepi16Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_cvtepi16_epi8'.
 // Requires AVX512BW.
-func Cvtepi16Epi81(a M256i) M128i {
-	return M128i(cvtepi16Epi81([32]byte(a)))
+func Cvtepi16Epi81(a x86.M256i) x86.M128i {
+	return x86.M128i(cvtepi16Epi81([32]byte(a)))
 }
 
 func cvtepi16Epi81(a [32]byte) [16]byte
@@ -6071,8 +6071,8 @@ func cvtepi16Epi81(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_mask_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16Epi81(src M128i, k Mmask16, a M256i) M128i {
-	return M128i(maskCvtepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
+func MaskCvtepi16Epi81(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(maskCvtepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
 }
 
 func maskCvtepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
@@ -6095,8 +6095,8 @@ func maskCvtepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_maskz_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtepi16Epi81(k Mmask16, a M256i) M128i {
-	return M128i(maskzCvtepi16Epi81(uint16(k), [32]byte(a)))
+func MaskzCvtepi16Epi81(k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(maskzCvtepi16Epi81(uint16(k), [32]byte(a)))
 }
 
 func maskzCvtepi16Epi81(k uint16, a [32]byte) [16]byte
@@ -6114,8 +6114,8 @@ func maskzCvtepi16Epi81(k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_cvtepi16_epi8'.
 // Requires AVX512BW.
-func Cvtepi16Epi82(a M512i) M256i {
-	return M256i(cvtepi16Epi82([64]byte(a)))
+func Cvtepi16Epi82(a x86.M512i) x86.M256i {
+	return x86.M256i(cvtepi16Epi82([64]byte(a)))
 }
 
 func cvtepi16Epi82(a [64]byte) [32]byte
@@ -6138,8 +6138,8 @@ func cvtepi16Epi82(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_mask_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16Epi82(src M256i, k Mmask32, a M512i) M256i {
-	return M256i(maskCvtepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
+func MaskCvtepi16Epi82(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(maskCvtepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
 }
 
 func maskCvtepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
@@ -6162,8 +6162,8 @@ func maskCvtepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_maskz_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtepi16Epi82(k Mmask32, a M512i) M256i {
-	return M256i(maskzCvtepi16Epi82(uint32(k), [64]byte(a)))
+func MaskzCvtepi16Epi82(k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(maskzCvtepi16Epi82(uint32(k), [64]byte(a)))
 }
 
 func maskzCvtepi16Epi82(k uint32, a [64]byte) [32]byte
@@ -6185,7 +6185,7 @@ func maskzCvtepi16Epi82(k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm_mask_cvtepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16StoreuEpi8(base_addr uintptr, k Mmask8, a M128i)  {
+func MaskCvtepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 	maskCvtepi16StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
 }
 
@@ -6208,7 +6208,7 @@ func maskCvtepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_mask_cvtepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16StoreuEpi81(base_addr uintptr, k Mmask16, a M256i)  {
+func MaskCvtepi16StoreuEpi81(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
 	maskCvtepi16StoreuEpi81(uintptr(base_addr), uint16(k), [32]byte(a))
 }
 
@@ -6231,7 +6231,7 @@ func maskCvtepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_mask_cvtepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16StoreuEpi82(base_addr uintptr, k Mmask32, a M512i)  {
+func MaskCvtepi16StoreuEpi82(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
 	maskCvtepi16StoreuEpi82(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
@@ -6255,8 +6255,8 @@ func maskCvtepi16StoreuEpi82(base_addr uintptr, k uint32, a [64]byte)
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm_mask_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepi8Epi16(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskCvtepi8Epi16([16]byte(src), uint8(k), [16]byte(a)))
+func MaskCvtepi8Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskCvtepi8Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskCvtepi8Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -6279,8 +6279,8 @@ func maskCvtepi8Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm_maskz_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepi8Epi16(k Mmask8, a M128i) M128i {
-	return M128i(maskzCvtepi8Epi16(uint8(k), [16]byte(a)))
+func MaskzCvtepi8Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzCvtepi8Epi16(uint8(k), [16]byte(a)))
 }
 
 func maskzCvtepi8Epi16(k uint8, a [16]byte) [16]byte
@@ -6303,8 +6303,8 @@ func maskzCvtepi8Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm256_mask_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepi8Epi161(src M256i, k Mmask16, a M128i) M256i {
-	return M256i(maskCvtepi8Epi161([32]byte(src), uint16(k), [16]byte(a)))
+func MaskCvtepi8Epi161(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(maskCvtepi8Epi161([32]byte(src), uint16(k), [16]byte(a)))
 }
 
 func maskCvtepi8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
@@ -6327,8 +6327,8 @@ func maskCvtepi8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm256_maskz_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepi8Epi161(k Mmask16, a M128i) M256i {
-	return M256i(maskzCvtepi8Epi161(uint16(k), [16]byte(a)))
+func MaskzCvtepi8Epi161(k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(maskzCvtepi8Epi161(uint16(k), [16]byte(a)))
 }
 
 func maskzCvtepi8Epi161(k uint16, a [16]byte) [32]byte
@@ -6346,8 +6346,8 @@ func maskzCvtepi8Epi161(k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_cvtepi8_epi16'.
 // Requires AVX512BW.
-func Cvtepi8Epi16(a M256i) M512i {
-	return M512i(cvtepi8Epi16([32]byte(a)))
+func Cvtepi8Epi16(a x86.M256i) x86.M512i {
+	return x86.M512i(cvtepi8Epi16([32]byte(a)))
 }
 
 func cvtepi8Epi16(a [32]byte) [64]byte
@@ -6370,8 +6370,8 @@ func cvtepi8Epi16(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_mask_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepi8Epi162(src M512i, k Mmask32, a M256i) M512i {
-	return M512i(maskCvtepi8Epi162([64]byte(src), uint32(k), [32]byte(a)))
+func MaskCvtepi8Epi162(src x86.M512i, k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(maskCvtepi8Epi162([64]byte(src), uint32(k), [32]byte(a)))
 }
 
 func maskCvtepi8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
@@ -6394,8 +6394,8 @@ func maskCvtepi8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_maskz_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepi8Epi162(k Mmask32, a M256i) M512i {
-	return M512i(maskzCvtepi8Epi162(uint32(k), [32]byte(a)))
+func MaskzCvtepi8Epi162(k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(maskzCvtepi8Epi162(uint32(k), [32]byte(a)))
 }
 
 func maskzCvtepi8Epi162(k uint32, a [32]byte) [64]byte
@@ -6418,8 +6418,8 @@ func maskzCvtepi8Epi162(k uint32, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm_mask_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepu8Epi16(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskCvtepu8Epi16([16]byte(src), uint8(k), [16]byte(a)))
+func MaskCvtepu8Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskCvtepu8Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskCvtepu8Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -6442,8 +6442,8 @@ func maskCvtepu8Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm_maskz_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepu8Epi16(k Mmask8, a M128i) M128i {
-	return M128i(maskzCvtepu8Epi16(uint8(k), [16]byte(a)))
+func MaskzCvtepu8Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzCvtepu8Epi16(uint8(k), [16]byte(a)))
 }
 
 func maskzCvtepu8Epi16(k uint8, a [16]byte) [16]byte
@@ -6466,8 +6466,8 @@ func maskzCvtepu8Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm256_mask_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepu8Epi161(src M256i, k Mmask16, a M128i) M256i {
-	return M256i(maskCvtepu8Epi161([32]byte(src), uint16(k), [16]byte(a)))
+func MaskCvtepu8Epi161(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(maskCvtepu8Epi161([32]byte(src), uint16(k), [16]byte(a)))
 }
 
 func maskCvtepu8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
@@ -6490,8 +6490,8 @@ func maskCvtepu8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm256_maskz_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepu8Epi161(k Mmask16, a M128i) M256i {
-	return M256i(maskzCvtepu8Epi161(uint16(k), [16]byte(a)))
+func MaskzCvtepu8Epi161(k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(maskzCvtepu8Epi161(uint16(k), [16]byte(a)))
 }
 
 func maskzCvtepu8Epi161(k uint16, a [16]byte) [32]byte
@@ -6509,8 +6509,8 @@ func maskzCvtepu8Epi161(k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_cvtepu8_epi16'.
 // Requires AVX512BW.
-func Cvtepu8Epi16(a M256i) M512i {
-	return M512i(cvtepu8Epi16([32]byte(a)))
+func Cvtepu8Epi16(a x86.M256i) x86.M512i {
+	return x86.M512i(cvtepu8Epi16([32]byte(a)))
 }
 
 func cvtepu8Epi16(a [32]byte) [64]byte
@@ -6533,8 +6533,8 @@ func cvtepu8Epi16(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_mask_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepu8Epi162(src M512i, k Mmask32, a M256i) M512i {
-	return M512i(maskCvtepu8Epi162([64]byte(src), uint32(k), [32]byte(a)))
+func MaskCvtepu8Epi162(src x86.M512i, k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(maskCvtepu8Epi162([64]byte(src), uint32(k), [32]byte(a)))
 }
 
 func maskCvtepu8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
@@ -6557,8 +6557,8 @@ func maskCvtepu8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_maskz_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepu8Epi162(k Mmask32, a M256i) M512i {
-	return M512i(maskzCvtepu8Epi162(uint32(k), [32]byte(a)))
+func MaskzCvtepu8Epi162(k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(maskzCvtepu8Epi162(uint32(k), [32]byte(a)))
 }
 
 func maskzCvtepu8Epi162(k uint32, a [32]byte) [64]byte
@@ -6576,8 +6576,8 @@ func maskzCvtepu8Epi162(k uint32, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func Cvtsepi16Epi8(a M128i) M128i {
-	return M128i(cvtsepi16Epi8([16]byte(a)))
+func Cvtsepi16Epi8(a x86.M128i) x86.M128i {
+	return x86.M128i(cvtsepi16Epi8([16]byte(a)))
 }
 
 func cvtsepi16Epi8(a [16]byte) [16]byte
@@ -6601,8 +6601,8 @@ func cvtsepi16Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm_mask_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16Epi8(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskCvtsepi16Epi8([16]byte(src), uint8(k), [16]byte(a)))
+func MaskCvtsepi16Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskCvtsepi16Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskCvtsepi16Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -6626,8 +6626,8 @@ func maskCvtsepi16Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm_maskz_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtsepi16Epi8(k Mmask8, a M128i) M128i {
-	return M128i(maskzCvtsepi16Epi8(uint8(k), [16]byte(a)))
+func MaskzCvtsepi16Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzCvtsepi16Epi8(uint8(k), [16]byte(a)))
 }
 
 func maskzCvtsepi16Epi8(k uint8, a [16]byte) [16]byte
@@ -6645,8 +6645,8 @@ func maskzCvtsepi16Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func Cvtsepi16Epi81(a M256i) M128i {
-	return M128i(cvtsepi16Epi81([32]byte(a)))
+func Cvtsepi16Epi81(a x86.M256i) x86.M128i {
+	return x86.M128i(cvtsepi16Epi81([32]byte(a)))
 }
 
 func cvtsepi16Epi81(a [32]byte) [16]byte
@@ -6670,8 +6670,8 @@ func cvtsepi16Epi81(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_mask_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16Epi81(src M128i, k Mmask16, a M256i) M128i {
-	return M128i(maskCvtsepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
+func MaskCvtsepi16Epi81(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(maskCvtsepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
 }
 
 func maskCvtsepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
@@ -6695,8 +6695,8 @@ func maskCvtsepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_maskz_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtsepi16Epi81(k Mmask16, a M256i) M128i {
-	return M128i(maskzCvtsepi16Epi81(uint16(k), [32]byte(a)))
+func MaskzCvtsepi16Epi81(k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(maskzCvtsepi16Epi81(uint16(k), [32]byte(a)))
 }
 
 func maskzCvtsepi16Epi81(k uint16, a [32]byte) [16]byte
@@ -6714,8 +6714,8 @@ func maskzCvtsepi16Epi81(k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func Cvtsepi16Epi82(a M512i) M256i {
-	return M256i(cvtsepi16Epi82([64]byte(a)))
+func Cvtsepi16Epi82(a x86.M512i) x86.M256i {
+	return x86.M256i(cvtsepi16Epi82([64]byte(a)))
 }
 
 func cvtsepi16Epi82(a [64]byte) [32]byte
@@ -6739,8 +6739,8 @@ func cvtsepi16Epi82(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_mask_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16Epi82(src M256i, k Mmask32, a M512i) M256i {
-	return M256i(maskCvtsepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
+func MaskCvtsepi16Epi82(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(maskCvtsepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
 }
 
 func maskCvtsepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
@@ -6764,8 +6764,8 @@ func maskCvtsepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_maskz_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtsepi16Epi82(k Mmask32, a M512i) M256i {
-	return M256i(maskzCvtsepi16Epi82(uint32(k), [64]byte(a)))
+func MaskzCvtsepi16Epi82(k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(maskzCvtsepi16Epi82(uint32(k), [64]byte(a)))
 }
 
 func maskzCvtsepi16Epi82(k uint32, a [64]byte) [32]byte
@@ -6787,7 +6787,7 @@ func maskzCvtsepi16Epi82(k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm_mask_cvtsepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16StoreuEpi8(base_addr uintptr, k Mmask8, a M128i)  {
+func MaskCvtsepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 	maskCvtsepi16StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
 }
 
@@ -6810,7 +6810,7 @@ func maskCvtsepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_mask_cvtsepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16StoreuEpi81(base_addr uintptr, k Mmask16, a M256i)  {
+func MaskCvtsepi16StoreuEpi81(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
 	maskCvtsepi16StoreuEpi81(uintptr(base_addr), uint16(k), [32]byte(a))
 }
 
@@ -6833,7 +6833,7 @@ func maskCvtsepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_mask_cvtsepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16StoreuEpi82(base_addr uintptr, k Mmask32, a M512i)  {
+func MaskCvtsepi16StoreuEpi82(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
 	maskCvtsepi16StoreuEpi82(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
@@ -6853,8 +6853,8 @@ func maskCvtsepi16StoreuEpi82(base_addr uintptr, k uint32, a [64]byte)
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func Cvtusepi16Epi8(a M128i) M128i {
-	return M128i(cvtusepi16Epi8([16]byte(a)))
+func Cvtusepi16Epi8(a x86.M128i) x86.M128i {
+	return x86.M128i(cvtusepi16Epi8([16]byte(a)))
 }
 
 func cvtusepi16Epi8(a [16]byte) [16]byte
@@ -6878,8 +6878,8 @@ func cvtusepi16Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm_mask_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16Epi8(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskCvtusepi16Epi8([16]byte(src), uint8(k), [16]byte(a)))
+func MaskCvtusepi16Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskCvtusepi16Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskCvtusepi16Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -6903,8 +6903,8 @@ func maskCvtusepi16Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm_maskz_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtusepi16Epi8(k Mmask8, a M128i) M128i {
-	return M128i(maskzCvtusepi16Epi8(uint8(k), [16]byte(a)))
+func MaskzCvtusepi16Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzCvtusepi16Epi8(uint8(k), [16]byte(a)))
 }
 
 func maskzCvtusepi16Epi8(k uint8, a [16]byte) [16]byte
@@ -6923,8 +6923,8 @@ func maskzCvtusepi16Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func Cvtusepi16Epi81(a M256i) M128i {
-	return M128i(cvtusepi16Epi81([32]byte(a)))
+func Cvtusepi16Epi81(a x86.M256i) x86.M128i {
+	return x86.M128i(cvtusepi16Epi81([32]byte(a)))
 }
 
 func cvtusepi16Epi81(a [32]byte) [16]byte
@@ -6948,8 +6948,8 @@ func cvtusepi16Epi81(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_mask_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16Epi81(src M128i, k Mmask16, a M256i) M128i {
-	return M128i(maskCvtusepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
+func MaskCvtusepi16Epi81(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(maskCvtusepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
 }
 
 func maskCvtusepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
@@ -6973,8 +6973,8 @@ func maskCvtusepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_maskz_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtusepi16Epi81(k Mmask16, a M256i) M128i {
-	return M128i(maskzCvtusepi16Epi81(uint16(k), [32]byte(a)))
+func MaskzCvtusepi16Epi81(k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(maskzCvtusepi16Epi81(uint16(k), [32]byte(a)))
 }
 
 func maskzCvtusepi16Epi81(k uint16, a [32]byte) [16]byte
@@ -6993,8 +6993,8 @@ func maskzCvtusepi16Epi81(k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func Cvtusepi16Epi82(a M512i) M256i {
-	return M256i(cvtusepi16Epi82([64]byte(a)))
+func Cvtusepi16Epi82(a x86.M512i) x86.M256i {
+	return x86.M256i(cvtusepi16Epi82([64]byte(a)))
 }
 
 func cvtusepi16Epi82(a [64]byte) [32]byte
@@ -7018,8 +7018,8 @@ func cvtusepi16Epi82(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_mask_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16Epi82(src M256i, k Mmask32, a M512i) M256i {
-	return M256i(maskCvtusepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
+func MaskCvtusepi16Epi82(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(maskCvtusepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
 }
 
 func maskCvtusepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
@@ -7043,8 +7043,8 @@ func maskCvtusepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_maskz_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtusepi16Epi82(k Mmask32, a M512i) M256i {
-	return M256i(maskzCvtusepi16Epi82(uint32(k), [64]byte(a)))
+func MaskzCvtusepi16Epi82(k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(maskzCvtusepi16Epi82(uint32(k), [64]byte(a)))
 }
 
 func maskzCvtusepi16Epi82(k uint32, a [64]byte) [32]byte
@@ -7066,7 +7066,7 @@ func maskzCvtusepi16Epi82(k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm_mask_cvtusepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16StoreuEpi8(base_addr uintptr, k Mmask8, a M128i)  {
+func MaskCvtusepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 	maskCvtusepi16StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
 }
 
@@ -7089,7 +7089,7 @@ func maskCvtusepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_mask_cvtusepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16StoreuEpi81(base_addr uintptr, k Mmask16, a M256i)  {
+func MaskCvtusepi16StoreuEpi81(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
 	maskCvtusepi16StoreuEpi81(uintptr(base_addr), uint16(k), [32]byte(a))
 }
 
@@ -7112,7 +7112,7 @@ func maskCvtusepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_mask_cvtusepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16StoreuEpi82(base_addr uintptr, k Mmask32, a M512i)  {
+func MaskCvtusepi16StoreuEpi82(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
 	maskCvtusepi16StoreuEpi82(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
@@ -7152,8 +7152,8 @@ func maskCvtusepi16StoreuEpi82(base_addr uintptr, k uint32, a [64]byte)
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm_dbsad_epu8'.
 // Requires AVX512BW.
-func DbsadEpu8(a M128i, b M128i, imm8 int) M128i {
-	return M128i(dbsadEpu8([16]byte(a), [16]byte(b), imm8))
+func DbsadEpu8(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(dbsadEpu8([16]byte(a), [16]byte(b), imm8))
 }
 
 func dbsadEpu8(a [16]byte, b [16]byte, imm8 int) [16]byte
@@ -7201,8 +7201,8 @@ func dbsadEpu8(a [16]byte, b [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm_mask_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskDbsadEpu8(src M128i, k Mmask8, a M128i, b M128i, imm8 int) M128i {
-	return M128i(maskDbsadEpu8([16]byte(src), uint8(k), [16]byte(a), [16]byte(b), imm8))
+func MaskDbsadEpu8(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskDbsadEpu8([16]byte(src), uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
 func maskDbsadEpu8(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
@@ -7250,8 +7250,8 @@ func maskDbsadEpu8(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 int) [16]
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm_maskz_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskzDbsadEpu8(k Mmask8, a M128i, b M128i, imm8 int) M128i {
-	return M128i(maskzDbsadEpu8(uint8(k), [16]byte(a), [16]byte(b), imm8))
+func MaskzDbsadEpu8(k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskzDbsadEpu8(uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
 func maskzDbsadEpu8(k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
@@ -7293,8 +7293,8 @@ func maskzDbsadEpu8(k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm256_dbsad_epu8'.
 // Requires AVX512BW.
-func DbsadEpu81(a M256i, b M256i, imm8 int) M256i {
-	return M256i(dbsadEpu81([32]byte(a), [32]byte(b), imm8))
+func DbsadEpu81(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(dbsadEpu81([32]byte(a), [32]byte(b), imm8))
 }
 
 func dbsadEpu81(a [32]byte, b [32]byte, imm8 int) [32]byte
@@ -7346,8 +7346,8 @@ func dbsadEpu81(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm256_mask_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskDbsadEpu81(src M256i, k Mmask16, a M256i, b M256i, imm8 int) M256i {
-	return M256i(maskDbsadEpu81([32]byte(src), uint16(k), [32]byte(a), [32]byte(b), imm8))
+func MaskDbsadEpu81(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskDbsadEpu81([32]byte(src), uint16(k), [32]byte(a), [32]byte(b), imm8))
 }
 
 func maskDbsadEpu81(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
@@ -7399,8 +7399,8 @@ func maskDbsadEpu81(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 int) [3
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm256_maskz_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskzDbsadEpu81(k Mmask16, a M256i, b M256i, imm8 int) M256i {
-	return M256i(maskzDbsadEpu81(uint16(k), [32]byte(a), [32]byte(b), imm8))
+func MaskzDbsadEpu81(k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskzDbsadEpu81(uint16(k), [32]byte(a), [32]byte(b), imm8))
 }
 
 func maskzDbsadEpu81(k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
@@ -7442,8 +7442,8 @@ func maskzDbsadEpu81(k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_dbsad_epu8'.
 // Requires AVX512BW.
-func DbsadEpu82(a M512i, b M512i, imm8 int) M512i {
-	return M512i(dbsadEpu82([64]byte(a), [64]byte(b), imm8))
+func DbsadEpu82(a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(dbsadEpu82([64]byte(a), [64]byte(b), imm8))
 }
 
 func dbsadEpu82(a [64]byte, b [64]byte, imm8 int) [64]byte
@@ -7495,8 +7495,8 @@ func dbsadEpu82(a [64]byte, b [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_mask_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskDbsadEpu82(src M512i, k Mmask32, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskDbsadEpu82([64]byte(src), uint32(k), [64]byte(a), [64]byte(b), imm8))
+func MaskDbsadEpu82(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(maskDbsadEpu82([64]byte(src), uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
 func maskDbsadEpu82(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
@@ -7548,8 +7548,8 @@ func maskDbsadEpu82(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int) [6
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_maskz_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskzDbsadEpu82(k Mmask32, a M512i, b M512i, imm8 int) M512i {
-	return M512i(maskzDbsadEpu82(uint32(k), [64]byte(a), [64]byte(b), imm8))
+func MaskzDbsadEpu82(k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(maskzDbsadEpu82(uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
 func maskzDbsadEpu82(k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
@@ -7564,8 +7564,8 @@ func maskzDbsadEpu82(k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'KUNPCKDQ'. Intrinsic: '_mm512_kunpackd'.
 // Requires AVX512BW.
-func Kunpackd(a Mmask64, b Mmask64) Mmask64 {
-	return Mmask64(kunpackd(uint64(a), uint64(b)))
+func Kunpackd(a x86.Mmask64, b x86.Mmask64) x86.Mmask64 {
+	return x86.Mmask64(kunpackd(uint64(a), uint64(b)))
 }
 
 func kunpackd(a uint64, b uint64) uint64
@@ -7580,8 +7580,8 @@ func kunpackd(a uint64, b uint64) uint64
 //
 // Instruction: 'KUNPCKWD'. Intrinsic: '_mm512_kunpackw'.
 // Requires AVX512BW.
-func Kunpackw(a Mmask32, b Mmask32) Mmask32 {
-	return Mmask32(kunpackw(uint32(a), uint32(b)))
+func Kunpackw(a x86.Mmask32, b x86.Mmask32) x86.Mmask32 {
+	return x86.Mmask32(kunpackw(uint32(a), uint32(b)))
 }
 
 func kunpackw(a uint32, b uint32) uint32
@@ -7604,8 +7604,8 @@ func kunpackw(a uint32, b uint32) uint32
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm_mask_loadu_epi16'.
 // Requires AVX512BW.
-func MaskLoaduEpi16(src M128i, k Mmask8, mem_addr uintptr) M128i {
-	return M128i(maskLoaduEpi16([16]byte(src), uint8(k), uintptr(mem_addr)))
+func MaskLoaduEpi16(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
+	return x86.M128i(maskLoaduEpi16([16]byte(src), uint8(k), uintptr(mem_addr)))
 }
 
 func maskLoaduEpi16(src [16]byte, k uint8, mem_addr uintptr) [16]byte
@@ -7628,8 +7628,8 @@ func maskLoaduEpi16(src [16]byte, k uint8, mem_addr uintptr) [16]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm_maskz_loadu_epi16'.
 // Requires AVX512BW.
-func MaskzLoaduEpi16(k Mmask8, mem_addr uintptr) M128i {
-	return M128i(maskzLoaduEpi16(uint8(k), uintptr(mem_addr)))
+func MaskzLoaduEpi16(k x86.Mmask8, mem_addr uintptr) x86.M128i {
+	return x86.M128i(maskzLoaduEpi16(uint8(k), uintptr(mem_addr)))
 }
 
 func maskzLoaduEpi16(k uint8, mem_addr uintptr) [16]byte
@@ -7652,8 +7652,8 @@ func maskzLoaduEpi16(k uint8, mem_addr uintptr) [16]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_loadu_epi16'.
 // Requires AVX512BW.
-func MaskLoaduEpi161(src M256i, k Mmask16, mem_addr uintptr) M256i {
-	return M256i(maskLoaduEpi161([32]byte(src), uint16(k), uintptr(mem_addr)))
+func MaskLoaduEpi161(src x86.M256i, k x86.Mmask16, mem_addr uintptr) x86.M256i {
+	return x86.M256i(maskLoaduEpi161([32]byte(src), uint16(k), uintptr(mem_addr)))
 }
 
 func maskLoaduEpi161(src [32]byte, k uint16, mem_addr uintptr) [32]byte
@@ -7676,8 +7676,8 @@ func maskLoaduEpi161(src [32]byte, k uint16, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_maskz_loadu_epi16'.
 // Requires AVX512BW.
-func MaskzLoaduEpi161(k Mmask16, mem_addr uintptr) M256i {
-	return M256i(maskzLoaduEpi161(uint16(k), uintptr(mem_addr)))
+func MaskzLoaduEpi161(k x86.Mmask16, mem_addr uintptr) x86.M256i {
+	return x86.M256i(maskzLoaduEpi161(uint16(k), uintptr(mem_addr)))
 }
 
 func maskzLoaduEpi161(k uint16, mem_addr uintptr) [32]byte
@@ -7700,8 +7700,8 @@ func maskzLoaduEpi161(k uint16, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_loadu_epi16'.
 // Requires AVX512BW.
-func MaskLoaduEpi162(src M512i, k Mmask32, mem_addr uintptr) M512i {
-	return M512i(maskLoaduEpi162([64]byte(src), uint32(k), uintptr(mem_addr)))
+func MaskLoaduEpi162(src x86.M512i, k x86.Mmask32, mem_addr uintptr) x86.M512i {
+	return x86.M512i(maskLoaduEpi162([64]byte(src), uint32(k), uintptr(mem_addr)))
 }
 
 func maskLoaduEpi162(src [64]byte, k uint32, mem_addr uintptr) [64]byte
@@ -7724,8 +7724,8 @@ func maskLoaduEpi162(src [64]byte, k uint32, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_maskz_loadu_epi16'.
 // Requires AVX512BW.
-func MaskzLoaduEpi162(k Mmask32, mem_addr uintptr) M512i {
-	return M512i(maskzLoaduEpi162(uint32(k), uintptr(mem_addr)))
+func MaskzLoaduEpi162(k x86.Mmask32, mem_addr uintptr) x86.M512i {
+	return x86.M512i(maskzLoaduEpi162(uint32(k), uintptr(mem_addr)))
 }
 
 func maskzLoaduEpi162(k uint32, mem_addr uintptr) [64]byte
@@ -7748,8 +7748,8 @@ func maskzLoaduEpi162(k uint32, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm_mask_loadu_epi8'.
 // Requires AVX512BW.
-func MaskLoaduEpi8(src M128i, k Mmask16, mem_addr uintptr) M128i {
-	return M128i(maskLoaduEpi8([16]byte(src), uint16(k), uintptr(mem_addr)))
+func MaskLoaduEpi8(src x86.M128i, k x86.Mmask16, mem_addr uintptr) x86.M128i {
+	return x86.M128i(maskLoaduEpi8([16]byte(src), uint16(k), uintptr(mem_addr)))
 }
 
 func maskLoaduEpi8(src [16]byte, k uint16, mem_addr uintptr) [16]byte
@@ -7772,8 +7772,8 @@ func maskLoaduEpi8(src [16]byte, k uint16, mem_addr uintptr) [16]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm_maskz_loadu_epi8'.
 // Requires AVX512BW.
-func MaskzLoaduEpi8(k Mmask16, mem_addr uintptr) M128i {
-	return M128i(maskzLoaduEpi8(uint16(k), uintptr(mem_addr)))
+func MaskzLoaduEpi8(k x86.Mmask16, mem_addr uintptr) x86.M128i {
+	return x86.M128i(maskzLoaduEpi8(uint16(k), uintptr(mem_addr)))
 }
 
 func maskzLoaduEpi8(k uint16, mem_addr uintptr) [16]byte
@@ -7796,8 +7796,8 @@ func maskzLoaduEpi8(k uint16, mem_addr uintptr) [16]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_loadu_epi8'.
 // Requires AVX512BW.
-func MaskLoaduEpi81(src M256i, k Mmask32, mem_addr uintptr) M256i {
-	return M256i(maskLoaduEpi81([32]byte(src), uint32(k), uintptr(mem_addr)))
+func MaskLoaduEpi81(src x86.M256i, k x86.Mmask32, mem_addr uintptr) x86.M256i {
+	return x86.M256i(maskLoaduEpi81([32]byte(src), uint32(k), uintptr(mem_addr)))
 }
 
 func maskLoaduEpi81(src [32]byte, k uint32, mem_addr uintptr) [32]byte
@@ -7820,8 +7820,8 @@ func maskLoaduEpi81(src [32]byte, k uint32, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_maskz_loadu_epi8'.
 // Requires AVX512BW.
-func MaskzLoaduEpi81(k Mmask32, mem_addr uintptr) M256i {
-	return M256i(maskzLoaduEpi81(uint32(k), uintptr(mem_addr)))
+func MaskzLoaduEpi81(k x86.Mmask32, mem_addr uintptr) x86.M256i {
+	return x86.M256i(maskzLoaduEpi81(uint32(k), uintptr(mem_addr)))
 }
 
 func maskzLoaduEpi81(k uint32, mem_addr uintptr) [32]byte
@@ -7844,8 +7844,8 @@ func maskzLoaduEpi81(k uint32, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_loadu_epi8'.
 // Requires AVX512BW.
-func MaskLoaduEpi82(src M512i, k Mmask64, mem_addr uintptr) M512i {
-	return M512i(maskLoaduEpi82([64]byte(src), uint64(k), uintptr(mem_addr)))
+func MaskLoaduEpi82(src x86.M512i, k x86.Mmask64, mem_addr uintptr) x86.M512i {
+	return x86.M512i(maskLoaduEpi82([64]byte(src), uint64(k), uintptr(mem_addr)))
 }
 
 func maskLoaduEpi82(src [64]byte, k uint64, mem_addr uintptr) [64]byte
@@ -7868,8 +7868,8 @@ func maskLoaduEpi82(src [64]byte, k uint64, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_maskz_loadu_epi8'.
 // Requires AVX512BW.
-func MaskzLoaduEpi82(k Mmask64, mem_addr uintptr) M512i {
-	return M512i(maskzLoaduEpi82(uint64(k), uintptr(mem_addr)))
+func MaskzLoaduEpi82(k x86.Mmask64, mem_addr uintptr) x86.M512i {
+	return x86.M512i(maskzLoaduEpi82(uint64(k), uintptr(mem_addr)))
 }
 
 func maskzLoaduEpi82(k uint64, mem_addr uintptr) [64]byte
@@ -7893,8 +7893,8 @@ func maskzLoaduEpi82(k uint64, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm_mask_madd_epi16'.
 // Requires AVX512BW.
-func MaskMaddEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMaddEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMaddEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMaddEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMaddEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -7917,8 +7917,8 @@ func maskMaddEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm_maskz_madd_epi16'.
 // Requires AVX512BW.
-func MaskzMaddEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMaddEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMaddEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMaddEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMaddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -7942,8 +7942,8 @@ func maskzMaddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm256_mask_madd_epi16'.
 // Requires AVX512BW.
-func MaskMaddEpi161(src M256i, k Mmask8, a M256i, b M256i) M256i {
-	return M256i(maskMaddEpi161([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
+func MaskMaddEpi161(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMaddEpi161([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMaddEpi161(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
@@ -7966,8 +7966,8 @@ func maskMaddEpi161(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm256_maskz_madd_epi16'.
 // Requires AVX512BW.
-func MaskzMaddEpi161(k Mmask8, a M256i, b M256i) M256i {
-	return M256i(maskzMaddEpi161(uint8(k), [32]byte(a), [32]byte(b)))
+func MaskzMaddEpi161(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMaddEpi161(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMaddEpi161(k uint8, a [32]byte, b [32]byte) [32]byte
@@ -7985,8 +7985,8 @@ func maskzMaddEpi161(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_madd_epi16'.
 // Requires AVX512BW.
-func MaddEpi16(a M512i, b M512i) M512i {
-	return M512i(maddEpi16([64]byte(a), [64]byte(b)))
+func MaddEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maddEpi16([64]byte(a), [64]byte(b)))
 }
 
 func maddEpi16(a [64]byte, b [64]byte) [64]byte
@@ -8010,8 +8010,8 @@ func maddEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_mask_madd_epi16'.
 // Requires AVX512BW.
-func MaskMaddEpi162(src M512i, k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskMaddEpi162([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func MaskMaddEpi162(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMaddEpi162([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMaddEpi162(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
@@ -8034,8 +8034,8 @@ func maskMaddEpi162(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_maskz_madd_epi16'.
 // Requires AVX512BW.
-func MaskzMaddEpi162(k Mmask16, a M512i, b M512i) M512i {
-	return M512i(maskzMaddEpi162(uint16(k), [64]byte(a), [64]byte(b)))
+func MaskzMaddEpi162(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMaddEpi162(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMaddEpi162(k uint16, a [64]byte, b [64]byte) [64]byte
@@ -8059,8 +8059,8 @@ func maskzMaddEpi162(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm_mask_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskMaddubsEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMaddubsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMaddubsEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMaddubsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMaddubsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -8084,8 +8084,8 @@ func maskMaddubsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm_maskz_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskzMaddubsEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMaddubsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMaddubsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMaddubsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMaddubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -8109,8 +8109,8 @@ func maskzMaddubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm256_mask_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskMaddubsEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMaddubsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMaddubsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMaddubsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMaddubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -8134,8 +8134,8 @@ func maskMaddubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm256_maskz_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskzMaddubsEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMaddubsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMaddubsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMaddubsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMaddubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -8154,8 +8154,8 @@ func maskzMaddubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_maddubs_epi16'.
 // Requires AVX512BW.
-func MaddubsEpi16(a M512i, b M512i) M512i {
-	return M512i(maddubsEpi16([64]byte(a), [64]byte(b)))
+func MaddubsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maddubsEpi16([64]byte(a), [64]byte(b)))
 }
 
 func maddubsEpi16(a [64]byte, b [64]byte) [64]byte
@@ -8179,8 +8179,8 @@ func maddubsEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_mask_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskMaddubsEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMaddubsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMaddubsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMaddubsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMaddubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -8204,8 +8204,8 @@ func maskMaddubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_maskz_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskzMaddubsEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMaddubsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMaddubsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMaddubsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMaddubsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -8231,8 +8231,8 @@ func maskzMaddubsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm_mask_max_epi16'.
 // Requires AVX512BW.
-func MaskMaxEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMaxEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMaxEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMaxEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMaxEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -8258,8 +8258,8 @@ func maskMaxEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm_maskz_max_epi16'.
 // Requires AVX512BW.
-func MaskzMaxEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMaxEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMaxEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMaxEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMaxEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -8285,8 +8285,8 @@ func maskzMaxEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm256_mask_max_epi16'.
 // Requires AVX512BW.
-func MaskMaxEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMaxEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMaxEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMaxEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMaxEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -8312,8 +8312,8 @@ func maskMaxEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm256_maskz_max_epi16'.
 // Requires AVX512BW.
-func MaskzMaxEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMaxEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMaxEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMaxEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMaxEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -8339,8 +8339,8 @@ func maskzMaxEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_mask_max_epi16'.
 // Requires AVX512BW.
-func MaskMaxEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMaxEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMaxEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMaxEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -8366,8 +8366,8 @@ func maskMaxEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_maskz_max_epi16'.
 // Requires AVX512BW.
-func MaskzMaxEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMaxEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMaxEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMaxEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -8388,8 +8388,8 @@ func maskzMaxEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_max_epi16'.
 // Requires AVX512BW.
-func MaxEpi16(a M512i, b M512i) M512i {
-	return M512i(maxEpi16([64]byte(a), [64]byte(b)))
+func MaxEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maxEpi16([64]byte(a), [64]byte(b)))
 }
 
 func maxEpi16(a [64]byte, b [64]byte) [64]byte
@@ -8415,8 +8415,8 @@ func maxEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm_mask_max_epi8'.
 // Requires AVX512BW.
-func MaskMaxEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskMaxEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskMaxEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMaxEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMaxEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -8442,8 +8442,8 @@ func maskMaxEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm_maskz_max_epi8'.
 // Requires AVX512BW.
-func MaskzMaxEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzMaxEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzMaxEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMaxEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMaxEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -8469,8 +8469,8 @@ func maskzMaxEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm256_mask_max_epi8'.
 // Requires AVX512BW.
-func MaskMaxEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskMaxEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskMaxEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMaxEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMaxEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -8496,8 +8496,8 @@ func maskMaxEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm256_maskz_max_epi8'.
 // Requires AVX512BW.
-func MaskzMaxEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzMaxEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzMaxEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMaxEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMaxEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -8523,8 +8523,8 @@ func maskzMaxEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_mask_max_epi8'.
 // Requires AVX512BW.
-func MaskMaxEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskMaxEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMaxEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMaxEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -8550,8 +8550,8 @@ func maskMaxEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_maskz_max_epi8'.
 // Requires AVX512BW.
-func MaskzMaxEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzMaxEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMaxEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMaxEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -8572,8 +8572,8 @@ func maskzMaxEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_max_epi8'.
 // Requires AVX512BW.
-func MaxEpi8(a M512i, b M512i) M512i {
-	return M512i(maxEpi8([64]byte(a), [64]byte(b)))
+func MaxEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maxEpi8([64]byte(a), [64]byte(b)))
 }
 
 func maxEpi8(a [64]byte, b [64]byte) [64]byte
@@ -8599,8 +8599,8 @@ func maxEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm_mask_max_epu16'.
 // Requires AVX512BW.
-func MaskMaxEpu16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMaxEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMaxEpu16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMaxEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMaxEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -8626,8 +8626,8 @@ func maskMaxEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm_maskz_max_epu16'.
 // Requires AVX512BW.
-func MaskzMaxEpu16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMaxEpu16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMaxEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMaxEpu16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMaxEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -8653,8 +8653,8 @@ func maskzMaxEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm256_mask_max_epu16'.
 // Requires AVX512BW.
-func MaskMaxEpu161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMaxEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMaxEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMaxEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMaxEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -8680,8 +8680,8 @@ func maskMaxEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm256_maskz_max_epu16'.
 // Requires AVX512BW.
-func MaskzMaxEpu161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMaxEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMaxEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMaxEpu161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMaxEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -8707,8 +8707,8 @@ func maskzMaxEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_mask_max_epu16'.
 // Requires AVX512BW.
-func MaskMaxEpu162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMaxEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMaxEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMaxEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -8734,8 +8734,8 @@ func maskMaxEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_maskz_max_epu16'.
 // Requires AVX512BW.
-func MaskzMaxEpu162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMaxEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMaxEpu162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMaxEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -8756,8 +8756,8 @@ func maskzMaxEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_max_epu16'.
 // Requires AVX512BW.
-func MaxEpu16(a M512i, b M512i) M512i {
-	return M512i(maxEpu16([64]byte(a), [64]byte(b)))
+func MaxEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maxEpu16([64]byte(a), [64]byte(b)))
 }
 
 func maxEpu16(a [64]byte, b [64]byte) [64]byte
@@ -8783,8 +8783,8 @@ func maxEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm_mask_max_epu8'.
 // Requires AVX512BW.
-func MaskMaxEpu8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskMaxEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskMaxEpu8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMaxEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMaxEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -8810,8 +8810,8 @@ func maskMaxEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm_maskz_max_epu8'.
 // Requires AVX512BW.
-func MaskzMaxEpu8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzMaxEpu8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzMaxEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMaxEpu8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMaxEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -8837,8 +8837,8 @@ func maskzMaxEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm256_mask_max_epu8'.
 // Requires AVX512BW.
-func MaskMaxEpu81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskMaxEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskMaxEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMaxEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMaxEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -8864,8 +8864,8 @@ func maskMaxEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm256_maskz_max_epu8'.
 // Requires AVX512BW.
-func MaskzMaxEpu81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzMaxEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzMaxEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMaxEpu81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMaxEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -8891,8 +8891,8 @@ func maskzMaxEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_mask_max_epu8'.
 // Requires AVX512BW.
-func MaskMaxEpu82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMaxEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskMaxEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMaxEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMaxEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -8918,8 +8918,8 @@ func maskMaxEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_maskz_max_epu8'.
 // Requires AVX512BW.
-func MaskzMaxEpu82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMaxEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzMaxEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMaxEpu82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMaxEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -8940,8 +8940,8 @@ func maskzMaxEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_max_epu8'.
 // Requires AVX512BW.
-func MaxEpu8(a M512i, b M512i) M512i {
-	return M512i(maxEpu8([64]byte(a), [64]byte(b)))
+func MaxEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maxEpu8([64]byte(a), [64]byte(b)))
 }
 
 func maxEpu8(a [64]byte, b [64]byte) [64]byte
@@ -8967,8 +8967,8 @@ func maxEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm_mask_min_epi16'.
 // Requires AVX512BW.
-func MaskMinEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMinEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMinEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMinEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMinEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -8994,8 +8994,8 @@ func maskMinEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm_maskz_min_epi16'.
 // Requires AVX512BW.
-func MaskzMinEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMinEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMinEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMinEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMinEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -9021,8 +9021,8 @@ func maskzMinEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm256_mask_min_epi16'.
 // Requires AVX512BW.
-func MaskMinEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMinEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMinEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMinEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMinEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -9048,8 +9048,8 @@ func maskMinEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm256_maskz_min_epi16'.
 // Requires AVX512BW.
-func MaskzMinEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMinEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMinEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMinEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMinEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -9075,8 +9075,8 @@ func maskzMinEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_mask_min_epi16'.
 // Requires AVX512BW.
-func MaskMinEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMinEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMinEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMinEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMinEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -9102,8 +9102,8 @@ func maskMinEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_maskz_min_epi16'.
 // Requires AVX512BW.
-func MaskzMinEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMinEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMinEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMinEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -9124,8 +9124,8 @@ func maskzMinEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_min_epi16'.
 // Requires AVX512BW.
-func MinEpi16(a M512i, b M512i) M512i {
-	return M512i(minEpi16([64]byte(a), [64]byte(b)))
+func MinEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(minEpi16([64]byte(a), [64]byte(b)))
 }
 
 func minEpi16(a [64]byte, b [64]byte) [64]byte
@@ -9151,8 +9151,8 @@ func minEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm_mask_min_epi8'.
 // Requires AVX512BW.
-func MaskMinEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskMinEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskMinEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMinEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMinEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -9178,8 +9178,8 @@ func maskMinEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm_maskz_min_epi8'.
 // Requires AVX512BW.
-func MaskzMinEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzMinEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzMinEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMinEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMinEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -9205,8 +9205,8 @@ func maskzMinEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm256_mask_min_epi8'.
 // Requires AVX512BW.
-func MaskMinEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskMinEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskMinEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMinEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMinEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -9232,8 +9232,8 @@ func maskMinEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm256_maskz_min_epi8'.
 // Requires AVX512BW.
-func MaskzMinEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzMinEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzMinEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMinEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMinEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -9259,8 +9259,8 @@ func maskzMinEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_mask_min_epi8'.
 // Requires AVX512BW.
-func MaskMinEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMinEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskMinEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMinEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMinEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -9286,8 +9286,8 @@ func maskMinEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_maskz_min_epi8'.
 // Requires AVX512BW.
-func MaskzMinEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzMinEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMinEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMinEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -9308,8 +9308,8 @@ func maskzMinEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_min_epi8'.
 // Requires AVX512BW.
-func MinEpi8(a M512i, b M512i) M512i {
-	return M512i(minEpi8([64]byte(a), [64]byte(b)))
+func MinEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(minEpi8([64]byte(a), [64]byte(b)))
 }
 
 func minEpi8(a [64]byte, b [64]byte) [64]byte
@@ -9335,8 +9335,8 @@ func minEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm_mask_min_epu16'.
 // Requires AVX512BW.
-func MaskMinEpu16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMinEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMinEpu16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMinEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMinEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -9362,8 +9362,8 @@ func maskMinEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm_maskz_min_epu16'.
 // Requires AVX512BW.
-func MaskzMinEpu16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMinEpu16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMinEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMinEpu16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMinEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -9389,8 +9389,8 @@ func maskzMinEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm256_mask_min_epu16'.
 // Requires AVX512BW.
-func MaskMinEpu161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMinEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMinEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMinEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMinEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -9416,8 +9416,8 @@ func maskMinEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm256_maskz_min_epu16'.
 // Requires AVX512BW.
-func MaskzMinEpu161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMinEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMinEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMinEpu161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMinEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -9443,8 +9443,8 @@ func maskzMinEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_mask_min_epu16'.
 // Requires AVX512BW.
-func MaskMinEpu162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMinEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMinEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMinEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMinEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -9470,8 +9470,8 @@ func maskMinEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_maskz_min_epu16'.
 // Requires AVX512BW.
-func MaskzMinEpu162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMinEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMinEpu162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMinEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -9492,8 +9492,8 @@ func maskzMinEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_min_epu16'.
 // Requires AVX512BW.
-func MinEpu16(a M512i, b M512i) M512i {
-	return M512i(minEpu16([64]byte(a), [64]byte(b)))
+func MinEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(minEpu16([64]byte(a), [64]byte(b)))
 }
 
 func minEpu16(a [64]byte, b [64]byte) [64]byte
@@ -9519,8 +9519,8 @@ func minEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm_mask_min_epu8'.
 // Requires AVX512BW.
-func MaskMinEpu8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskMinEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskMinEpu8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMinEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMinEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -9546,8 +9546,8 @@ func maskMinEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm_maskz_min_epu8'.
 // Requires AVX512BW.
-func MaskzMinEpu8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzMinEpu8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzMinEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMinEpu8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMinEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -9573,8 +9573,8 @@ func maskzMinEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm256_mask_min_epu8'.
 // Requires AVX512BW.
-func MaskMinEpu81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskMinEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskMinEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMinEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMinEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -9600,8 +9600,8 @@ func maskMinEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm256_maskz_min_epu8'.
 // Requires AVX512BW.
-func MaskzMinEpu81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzMinEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzMinEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMinEpu81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMinEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -9627,8 +9627,8 @@ func maskzMinEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_mask_min_epu8'.
 // Requires AVX512BW.
-func MaskMinEpu82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMinEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskMinEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMinEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMinEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -9654,8 +9654,8 @@ func maskMinEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_maskz_min_epu8'.
 // Requires AVX512BW.
-func MaskzMinEpu82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMinEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzMinEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMinEpu82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMinEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -9676,8 +9676,8 @@ func maskzMinEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_min_epu8'.
 // Requires AVX512BW.
-func MinEpu8(a M512i, b M512i) M512i {
-	return M512i(minEpu8([64]byte(a), [64]byte(b)))
+func MinEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(minEpu8([64]byte(a), [64]byte(b)))
 }
 
 func minEpu8(a [64]byte, b [64]byte) [64]byte
@@ -9699,8 +9699,8 @@ func minEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm_mask_mov_epi16'.
 // Requires AVX512BW.
-func MaskMovEpi16(src M128i, k Mmask8, a M128i) M128i {
-	return M128i(maskMovEpi16([16]byte(src), uint8(k), [16]byte(a)))
+func MaskMovEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskMovEpi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
 func maskMovEpi16(src [16]byte, k uint8, a [16]byte) [16]byte
@@ -9722,8 +9722,8 @@ func maskMovEpi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm_maskz_mov_epi16'.
 // Requires AVX512BW.
-func MaskzMovEpi16(k Mmask8, a M128i) M128i {
-	return M128i(maskzMovEpi16(uint8(k), [16]byte(a)))
+func MaskzMovEpi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzMovEpi16(uint8(k), [16]byte(a)))
 }
 
 func maskzMovEpi16(k uint8, a [16]byte) [16]byte
@@ -9745,8 +9745,8 @@ func maskzMovEpi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_mov_epi16'.
 // Requires AVX512BW.
-func MaskMovEpi161(src M256i, k Mmask16, a M256i) M256i {
-	return M256i(maskMovEpi161([32]byte(src), uint16(k), [32]byte(a)))
+func MaskMovEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(maskMovEpi161([32]byte(src), uint16(k), [32]byte(a)))
 }
 
 func maskMovEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
@@ -9768,8 +9768,8 @@ func maskMovEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_maskz_mov_epi16'.
 // Requires AVX512BW.
-func MaskzMovEpi161(k Mmask16, a M256i) M256i {
-	return M256i(maskzMovEpi161(uint16(k), [32]byte(a)))
+func MaskzMovEpi161(k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(maskzMovEpi161(uint16(k), [32]byte(a)))
 }
 
 func maskzMovEpi161(k uint16, a [32]byte) [32]byte
@@ -9791,8 +9791,8 @@ func maskzMovEpi161(k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_mov_epi16'.
 // Requires AVX512BW.
-func MaskMovEpi162(src M512i, k Mmask32, a M512i) M512i {
-	return M512i(maskMovEpi162([64]byte(src), uint32(k), [64]byte(a)))
+func MaskMovEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(maskMovEpi162([64]byte(src), uint32(k), [64]byte(a)))
 }
 
 func maskMovEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
@@ -9814,8 +9814,8 @@ func maskMovEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_maskz_mov_epi16'.
 // Requires AVX512BW.
-func MaskzMovEpi162(k Mmask32, a M512i) M512i {
-	return M512i(maskzMovEpi162(uint32(k), [64]byte(a)))
+func MaskzMovEpi162(k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(maskzMovEpi162(uint32(k), [64]byte(a)))
 }
 
 func maskzMovEpi162(k uint32, a [64]byte) [64]byte
@@ -9837,8 +9837,8 @@ func maskzMovEpi162(k uint32, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm_mask_mov_epi8'.
 // Requires AVX512BW.
-func MaskMovEpi8(src M128i, k Mmask16, a M128i) M128i {
-	return M128i(maskMovEpi8([16]byte(src), uint16(k), [16]byte(a)))
+func MaskMovEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i) x86.M128i {
+	return x86.M128i(maskMovEpi8([16]byte(src), uint16(k), [16]byte(a)))
 }
 
 func maskMovEpi8(src [16]byte, k uint16, a [16]byte) [16]byte
@@ -9859,8 +9859,8 @@ func maskMovEpi8(src [16]byte, k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm_maskz_mov_epi8'.
 // Requires AVX512BW.
-func MaskzMovEpi8(k Mmask16, a M128i) M128i {
-	return M128i(maskzMovEpi8(uint16(k), [16]byte(a)))
+func MaskzMovEpi8(k x86.Mmask16, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzMovEpi8(uint16(k), [16]byte(a)))
 }
 
 func maskzMovEpi8(k uint16, a [16]byte) [16]byte
@@ -9882,8 +9882,8 @@ func maskzMovEpi8(k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_mov_epi8'.
 // Requires AVX512BW.
-func MaskMovEpi81(src M256i, k Mmask32, a M256i) M256i {
-	return M256i(maskMovEpi81([32]byte(src), uint32(k), [32]byte(a)))
+func MaskMovEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(maskMovEpi81([32]byte(src), uint32(k), [32]byte(a)))
 }
 
 func maskMovEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
@@ -9904,8 +9904,8 @@ func maskMovEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_maskz_mov_epi8'.
 // Requires AVX512BW.
-func MaskzMovEpi81(k Mmask32, a M256i) M256i {
-	return M256i(maskzMovEpi81(uint32(k), [32]byte(a)))
+func MaskzMovEpi81(k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(maskzMovEpi81(uint32(k), [32]byte(a)))
 }
 
 func maskzMovEpi81(k uint32, a [32]byte) [32]byte
@@ -9927,8 +9927,8 @@ func maskzMovEpi81(k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_mov_epi8'.
 // Requires AVX512BW.
-func MaskMovEpi82(src M512i, k Mmask64, a M512i) M512i {
-	return M512i(maskMovEpi82([64]byte(src), uint64(k), [64]byte(a)))
+func MaskMovEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(maskMovEpi82([64]byte(src), uint64(k), [64]byte(a)))
 }
 
 func maskMovEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
@@ -9949,8 +9949,8 @@ func maskMovEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_maskz_mov_epi8'.
 // Requires AVX512BW.
-func MaskzMovEpi82(k Mmask64, a M512i) M512i {
-	return M512i(maskzMovEpi82(uint64(k), [64]byte(a)))
+func MaskzMovEpi82(k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(maskzMovEpi82(uint64(k), [64]byte(a)))
 }
 
 func maskzMovEpi82(k uint64, a [64]byte) [64]byte
@@ -9971,8 +9971,8 @@ func maskzMovEpi82(k uint64, a [64]byte) [64]byte
 //
 // Instruction: 'VPMOVW2M'. Intrinsic: '_mm_movepi16_mask'.
 // Requires AVX512BW.
-func Movepi16Mask(a M128i) Mmask8 {
-	return Mmask8(movepi16Mask([16]byte(a)))
+func Movepi16Mask(a x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(movepi16Mask([16]byte(a)))
 }
 
 func movepi16Mask(a [16]byte) uint8
@@ -9993,8 +9993,8 @@ func movepi16Mask(a [16]byte) uint8
 //
 // Instruction: 'VPMOVW2M'. Intrinsic: '_mm256_movepi16_mask'.
 // Requires AVX512BW.
-func Movepi16Mask1(a M256i) Mmask16 {
-	return Mmask16(movepi16Mask1([32]byte(a)))
+func Movepi16Mask1(a x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(movepi16Mask1([32]byte(a)))
 }
 
 func movepi16Mask1(a [32]byte) uint16
@@ -10015,8 +10015,8 @@ func movepi16Mask1(a [32]byte) uint16
 //
 // Instruction: 'VPMOVW2M'. Intrinsic: '_mm512_movepi16_mask'.
 // Requires AVX512BW.
-func Movepi16Mask2(a M512i) Mmask32 {
-	return Mmask32(movepi16Mask2([64]byte(a)))
+func Movepi16Mask2(a x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(movepi16Mask2([64]byte(a)))
 }
 
 func movepi16Mask2(a [64]byte) uint32
@@ -10037,8 +10037,8 @@ func movepi16Mask2(a [64]byte) uint32
 //
 // Instruction: 'VPMOVB2M'. Intrinsic: '_mm_movepi8_mask'.
 // Requires AVX512BW.
-func Movepi8Mask(a M128i) Mmask16 {
-	return Mmask16(movepi8Mask([16]byte(a)))
+func Movepi8Mask(a x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(movepi8Mask([16]byte(a)))
 }
 
 func movepi8Mask(a [16]byte) uint16
@@ -10059,8 +10059,8 @@ func movepi8Mask(a [16]byte) uint16
 //
 // Instruction: 'VPMOVB2M'. Intrinsic: '_mm256_movepi8_mask'.
 // Requires AVX512BW.
-func Movepi8Mask1(a M256i) Mmask32 {
-	return Mmask32(movepi8Mask1([32]byte(a)))
+func Movepi8Mask1(a x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(movepi8Mask1([32]byte(a)))
 }
 
 func movepi8Mask1(a [32]byte) uint32
@@ -10081,8 +10081,8 @@ func movepi8Mask1(a [32]byte) uint32
 //
 // Instruction: 'VPMOVB2M'. Intrinsic: '_mm512_movepi8_mask'.
 // Requires AVX512BW.
-func Movepi8Mask2(a M512i) Mmask64 {
-	return Mmask64(movepi8Mask2([64]byte(a)))
+func Movepi8Mask2(a x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(movepi8Mask2([64]byte(a)))
 }
 
 func movepi8Mask2(a [64]byte) uint64
@@ -10103,8 +10103,8 @@ func movepi8Mask2(a [64]byte) uint64
 //
 // Instruction: 'VPMOVM2W'. Intrinsic: '_mm_movm_epi16'.
 // Requires AVX512BW.
-func MovmEpi16(k Mmask8) M128i {
-	return M128i(movmEpi16(uint8(k)))
+func MovmEpi16(k x86.Mmask8) x86.M128i {
+	return x86.M128i(movmEpi16(uint8(k)))
 }
 
 func movmEpi16(k uint8) [16]byte
@@ -10125,8 +10125,8 @@ func movmEpi16(k uint8) [16]byte
 //
 // Instruction: 'VPMOVM2W'. Intrinsic: '_mm256_movm_epi16'.
 // Requires AVX512BW.
-func MovmEpi161(k Mmask16) M256i {
-	return M256i(movmEpi161(uint16(k)))
+func MovmEpi161(k x86.Mmask16) x86.M256i {
+	return x86.M256i(movmEpi161(uint16(k)))
 }
 
 func movmEpi161(k uint16) [32]byte
@@ -10147,8 +10147,8 @@ func movmEpi161(k uint16) [32]byte
 //
 // Instruction: 'VPMOVM2W'. Intrinsic: '_mm512_movm_epi16'.
 // Requires AVX512BW.
-func MovmEpi162(k Mmask32) M512i {
-	return M512i(movmEpi162(uint32(k)))
+func MovmEpi162(k x86.Mmask32) x86.M512i {
+	return x86.M512i(movmEpi162(uint32(k)))
 }
 
 func movmEpi162(k uint32) [64]byte
@@ -10169,8 +10169,8 @@ func movmEpi162(k uint32) [64]byte
 //
 // Instruction: 'VPMOVM2B'. Intrinsic: '_mm256_movm_epi8'.
 // Requires AVX512BW.
-func MovmEpi8(k Mmask32) M256i {
-	return M256i(movmEpi8(uint32(k)))
+func MovmEpi8(k x86.Mmask32) x86.M256i {
+	return x86.M256i(movmEpi8(uint32(k)))
 }
 
 func movmEpi8(k uint32) [32]byte
@@ -10191,8 +10191,8 @@ func movmEpi8(k uint32) [32]byte
 //
 // Instruction: 'VPMOVM2B'. Intrinsic: '_mm512_movm_epi8'.
 // Requires AVX512BW.
-func MovmEpi81(k Mmask64) M512i {
-	return M512i(movmEpi81(uint64(k)))
+func MovmEpi81(k x86.Mmask64) x86.M512i {
+	return x86.M512i(movmEpi81(uint64(k)))
 }
 
 func movmEpi81(k uint64) [64]byte
@@ -10216,8 +10216,8 @@ func movmEpi81(k uint64) [64]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm_mask_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskMulhiEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMulhiEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMulhiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMulhiEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMulhiEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10241,8 +10241,8 @@ func maskMulhiEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm_maskz_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskzMulhiEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMulhiEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMulhiEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMulhiEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMulhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10266,8 +10266,8 @@ func maskzMulhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm256_mask_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskMulhiEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMulhiEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMulhiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMulhiEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMulhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10291,8 +10291,8 @@ func maskMulhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm256_maskz_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskzMulhiEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMulhiEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMulhiEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMulhiEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMulhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10316,8 +10316,8 @@ func maskzMulhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_mask_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskMulhiEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMulhiEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMulhiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMulhiEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMulhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10341,8 +10341,8 @@ func maskMulhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_maskz_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskzMulhiEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMulhiEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMulhiEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMulhiEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMulhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10361,8 +10361,8 @@ func maskzMulhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_mulhi_epi16'.
 // Requires AVX512BW.
-func MulhiEpi16(a M512i, b M512i) M512i {
-	return M512i(mulhiEpi16([64]byte(a), [64]byte(b)))
+func MulhiEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(mulhiEpi16([64]byte(a), [64]byte(b)))
 }
 
 func mulhiEpi16(a [64]byte, b [64]byte) [64]byte
@@ -10386,8 +10386,8 @@ func mulhiEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm_mask_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskMulhiEpu16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMulhiEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMulhiEpu16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMulhiEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMulhiEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10411,8 +10411,8 @@ func maskMulhiEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm_maskz_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskzMulhiEpu16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMulhiEpu16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMulhiEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMulhiEpu16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMulhiEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10436,8 +10436,8 @@ func maskzMulhiEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm256_mask_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskMulhiEpu161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMulhiEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMulhiEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMulhiEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMulhiEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10461,8 +10461,8 @@ func maskMulhiEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm256_maskz_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskzMulhiEpu161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMulhiEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMulhiEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMulhiEpu161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMulhiEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10486,8 +10486,8 @@ func maskzMulhiEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_mask_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskMulhiEpu162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMulhiEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMulhiEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMulhiEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMulhiEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10511,8 +10511,8 @@ func maskMulhiEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_maskz_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskzMulhiEpu162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMulhiEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMulhiEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMulhiEpu162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMulhiEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10531,8 +10531,8 @@ func maskzMulhiEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_mulhi_epu16'.
 // Requires AVX512BW.
-func MulhiEpu16(a M512i, b M512i) M512i {
-	return M512i(mulhiEpu16([64]byte(a), [64]byte(b)))
+func MulhiEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(mulhiEpu16([64]byte(a), [64]byte(b)))
 }
 
 func mulhiEpu16(a [64]byte, b [64]byte) [64]byte
@@ -10557,8 +10557,8 @@ func mulhiEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm_mask_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskMulhrsEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMulhrsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMulhrsEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMulhrsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMulhrsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10583,8 +10583,8 @@ func maskMulhrsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm_maskz_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskzMulhrsEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMulhrsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMulhrsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMulhrsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMulhrsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10609,8 +10609,8 @@ func maskzMulhrsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm256_mask_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskMulhrsEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMulhrsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMulhrsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMulhrsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMulhrsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10635,8 +10635,8 @@ func maskMulhrsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm256_maskz_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskzMulhrsEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMulhrsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMulhrsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMulhrsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMulhrsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10661,8 +10661,8 @@ func maskzMulhrsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_mask_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskMulhrsEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMulhrsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMulhrsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMulhrsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMulhrsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10687,8 +10687,8 @@ func maskMulhrsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_maskz_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskzMulhrsEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMulhrsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMulhrsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMulhrsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMulhrsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10708,8 +10708,8 @@ func maskzMulhrsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_mulhrs_epi16'.
 // Requires AVX512BW.
-func MulhrsEpi16(a M512i, b M512i) M512i {
-	return M512i(mulhrsEpi16([64]byte(a), [64]byte(b)))
+func MulhrsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(mulhrsEpi16([64]byte(a), [64]byte(b)))
 }
 
 func mulhrsEpi16(a [64]byte, b [64]byte) [64]byte
@@ -10733,8 +10733,8 @@ func mulhrsEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm_mask_mullo_epi16'.
 // Requires AVX512BW.
-func MaskMulloEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskMulloEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskMulloEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskMulloEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskMulloEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10758,8 +10758,8 @@ func maskMulloEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm_maskz_mullo_epi16'.
 // Requires AVX512BW.
-func MaskzMulloEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzMulloEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzMulloEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzMulloEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzMulloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -10783,8 +10783,8 @@ func maskzMulloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm256_mask_mullo_epi16'.
 // Requires AVX512BW.
-func MaskMulloEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskMulloEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskMulloEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskMulloEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskMulloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10808,8 +10808,8 @@ func maskMulloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm256_maskz_mullo_epi16'.
 // Requires AVX512BW.
-func MaskzMulloEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzMulloEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzMulloEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzMulloEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzMulloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -10833,8 +10833,8 @@ func maskzMulloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_mask_mullo_epi16'.
 // Requires AVX512BW.
-func MaskMulloEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskMulloEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskMulloEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMulloEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMulloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10858,8 +10858,8 @@ func maskMulloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_maskz_mullo_epi16'.
 // Requires AVX512BW.
-func MaskzMulloEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzMulloEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzMulloEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMulloEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMulloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -10878,8 +10878,8 @@ func maskzMulloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_mullo_epi16'.
 // Requires AVX512BW.
-func MulloEpi16(a M512i, b M512i) M512i {
-	return M512i(mulloEpi16([64]byte(a), [64]byte(b)))
+func MulloEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(mulloEpi16([64]byte(a), [64]byte(b)))
 }
 
 func mulloEpi16(a [64]byte, b [64]byte) [64]byte
@@ -10919,8 +10919,8 @@ func mulloEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm_mask_packs_epi16'.
 // Requires AVX512BW.
-func MaskPacksEpi16(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskPacksEpi16([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskPacksEpi16(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskPacksEpi16([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskPacksEpi16(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -10960,8 +10960,8 @@ func maskPacksEpi16(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm_maskz_packs_epi16'.
 // Requires AVX512BW.
-func MaskzPacksEpi16(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzPacksEpi16(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzPacksEpi16(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzPacksEpi16(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzPacksEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -11017,8 +11017,8 @@ func maskzPacksEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm256_mask_packs_epi16'.
 // Requires AVX512BW.
-func MaskPacksEpi161(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskPacksEpi161([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskPacksEpi161(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskPacksEpi161([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskPacksEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -11074,8 +11074,8 @@ func maskPacksEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm256_maskz_packs_epi16'.
 // Requires AVX512BW.
-func MaskzPacksEpi161(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzPacksEpi161(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzPacksEpi161(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzPacksEpi161(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzPacksEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -11163,8 +11163,8 @@ func maskzPacksEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_mask_packs_epi16'.
 // Requires AVX512BW.
-func MaskPacksEpi162(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskPacksEpi162([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskPacksEpi162(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskPacksEpi162([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskPacksEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -11252,8 +11252,8 @@ func maskPacksEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_maskz_packs_epi16'.
 // Requires AVX512BW.
-func MaskzPacksEpi162(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzPacksEpi162(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzPacksEpi162(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzPacksEpi162(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzPacksEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -11330,8 +11330,8 @@ func maskzPacksEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_packs_epi16'.
 // Requires AVX512BW.
-func PacksEpi16(a M512i, b M512i) M512i {
-	return M512i(packsEpi16([64]byte(a), [64]byte(b)))
+func PacksEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(packsEpi16([64]byte(a), [64]byte(b)))
 }
 
 func packsEpi16(a [64]byte, b [64]byte) [64]byte
@@ -11363,8 +11363,8 @@ func packsEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm_mask_packs_epi32'.
 // Requires AVX512BW.
-func MaskPacksEpi32(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskPacksEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskPacksEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskPacksEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskPacksEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -11396,8 +11396,8 @@ func maskPacksEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm_maskz_packs_epi32'.
 // Requires AVX512BW.
-func MaskzPacksEpi32(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzPacksEpi32(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzPacksEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzPacksEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzPacksEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -11437,8 +11437,8 @@ func maskzPacksEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm256_mask_packs_epi32'.
 // Requires AVX512BW.
-func MaskPacksEpi321(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskPacksEpi321([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskPacksEpi321(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskPacksEpi321([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskPacksEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -11478,8 +11478,8 @@ func maskPacksEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm256_maskz_packs_epi32'.
 // Requires AVX512BW.
-func MaskzPacksEpi321(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzPacksEpi321(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzPacksEpi321(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzPacksEpi321(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzPacksEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -11535,8 +11535,8 @@ func maskzPacksEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_mask_packs_epi32'.
 // Requires AVX512BW.
-func MaskPacksEpi322(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskPacksEpi322([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskPacksEpi322(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskPacksEpi322([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskPacksEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -11592,8 +11592,8 @@ func maskPacksEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_maskz_packs_epi32'.
 // Requires AVX512BW.
-func MaskzPacksEpi322(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzPacksEpi322(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzPacksEpi322(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzPacksEpi322(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzPacksEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -11638,8 +11638,8 @@ func maskzPacksEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_packs_epi32'.
 // Requires AVX512BW.
-func PacksEpi32(a M512i, b M512i) M512i {
-	return M512i(packsEpi32([64]byte(a), [64]byte(b)))
+func PacksEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(packsEpi32([64]byte(a), [64]byte(b)))
 }
 
 func packsEpi32(a [64]byte, b [64]byte) [64]byte
@@ -11679,8 +11679,8 @@ func packsEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm_mask_packus_epi16'.
 // Requires AVX512BW.
-func MaskPackusEpi16(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskPackusEpi16([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskPackusEpi16(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskPackusEpi16([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskPackusEpi16(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -11720,8 +11720,8 @@ func maskPackusEpi16(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm_maskz_packus_epi16'.
 // Requires AVX512BW.
-func MaskzPackusEpi16(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzPackusEpi16(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzPackusEpi16(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzPackusEpi16(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzPackusEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -11777,8 +11777,8 @@ func maskzPackusEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm256_mask_packus_epi16'.
 // Requires AVX512BW.
-func MaskPackusEpi161(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskPackusEpi161([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskPackusEpi161(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskPackusEpi161([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskPackusEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -11834,8 +11834,8 @@ func maskPackusEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm256_maskz_packus_epi16'.
 // Requires AVX512BW.
-func MaskzPackusEpi161(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzPackusEpi161(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzPackusEpi161(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzPackusEpi161(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzPackusEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -11923,8 +11923,8 @@ func maskzPackusEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_mask_packus_epi16'.
 // Requires AVX512BW.
-func MaskPackusEpi162(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskPackusEpi162([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskPackusEpi162(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskPackusEpi162([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskPackusEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -12012,8 +12012,8 @@ func maskPackusEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_maskz_packus_epi16'.
 // Requires AVX512BW.
-func MaskzPackusEpi162(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzPackusEpi162(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzPackusEpi162(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzPackusEpi162(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzPackusEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -12090,8 +12090,8 @@ func maskzPackusEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_packus_epi16'.
 // Requires AVX512BW.
-func PackusEpi16(a M512i, b M512i) M512i {
-	return M512i(packusEpi16([64]byte(a), [64]byte(b)))
+func PackusEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(packusEpi16([64]byte(a), [64]byte(b)))
 }
 
 func packusEpi16(a [64]byte, b [64]byte) [64]byte
@@ -12123,8 +12123,8 @@ func packusEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm_mask_packus_epi32'.
 // Requires AVX512BW.
-func MaskPackusEpi32(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskPackusEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskPackusEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskPackusEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskPackusEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -12156,8 +12156,8 @@ func maskPackusEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm_maskz_packus_epi32'.
 // Requires AVX512BW.
-func MaskzPackusEpi32(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzPackusEpi32(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzPackusEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzPackusEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzPackusEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -12197,8 +12197,8 @@ func maskzPackusEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm256_mask_packus_epi32'.
 // Requires AVX512BW.
-func MaskPackusEpi321(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskPackusEpi321([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskPackusEpi321(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskPackusEpi321([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskPackusEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -12238,8 +12238,8 @@ func maskPackusEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm256_maskz_packus_epi32'.
 // Requires AVX512BW.
-func MaskzPackusEpi321(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzPackusEpi321(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzPackusEpi321(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzPackusEpi321(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzPackusEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -12295,8 +12295,8 @@ func maskzPackusEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_mask_packus_epi32'.
 // Requires AVX512BW.
-func MaskPackusEpi322(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskPackusEpi322([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskPackusEpi322(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskPackusEpi322([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskPackusEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -12352,8 +12352,8 @@ func maskPackusEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_maskz_packus_epi32'.
 // Requires AVX512BW.
-func MaskzPackusEpi322(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzPackusEpi322(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzPackusEpi322(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzPackusEpi322(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzPackusEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -12398,8 +12398,8 @@ func maskzPackusEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_packus_epi32'.
 // Requires AVX512BW.
-func PackusEpi32(a M512i, b M512i) M512i {
-	return M512i(packusEpi32([64]byte(a), [64]byte(b)))
+func PackusEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(packusEpi32([64]byte(a), [64]byte(b)))
 }
 
 func packusEpi32(a [64]byte, b [64]byte) [64]byte
@@ -12423,8 +12423,8 @@ func packusEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMT2W'. Intrinsic: '_mm_mask_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskPermutex2varEpi16(a M128i, k Mmask8, idx M128i, b M128i) M128i {
-	return M128i(maskPermutex2varEpi16([16]byte(a), uint8(k), [16]byte(idx), [16]byte(b)))
+func MaskPermutex2varEpi16(a x86.M128i, k x86.Mmask8, idx x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskPermutex2varEpi16([16]byte(a), uint8(k), [16]byte(idx), [16]byte(b)))
 }
 
 func maskPermutex2varEpi16(a [16]byte, k uint8, idx [16]byte, b [16]byte) [16]byte
@@ -12448,8 +12448,8 @@ func maskPermutex2varEpi16(a [16]byte, k uint8, idx [16]byte, b [16]byte) [16]by
 //
 // Instruction: 'VPERMI2W'. Intrinsic: '_mm_mask2_permutex2var_epi16'.
 // Requires AVX512BW.
-func Mask2Permutex2varEpi16(a M128i, idx M128i, k Mmask8, b M128i) M128i {
-	return M128i(mask2Permutex2varEpi16([16]byte(a), [16]byte(idx), uint8(k), [16]byte(b)))
+func Mask2Permutex2varEpi16(a x86.M128i, idx x86.M128i, k x86.Mmask8, b x86.M128i) x86.M128i {
+	return x86.M128i(mask2Permutex2varEpi16([16]byte(a), [16]byte(idx), uint8(k), [16]byte(b)))
 }
 
 func mask2Permutex2varEpi16(a [16]byte, idx [16]byte, k uint8, b [16]byte) [16]byte
@@ -12473,8 +12473,8 @@ func mask2Permutex2varEpi16(a [16]byte, idx [16]byte, k uint8, b [16]byte) [16]b
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm_maskz_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskzPermutex2varEpi16(k Mmask8, a M128i, idx M128i, b M128i) M128i {
-	return M128i(maskzPermutex2varEpi16(uint8(k), [16]byte(a), [16]byte(idx), [16]byte(b)))
+func MaskzPermutex2varEpi16(k x86.Mmask8, a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzPermutex2varEpi16(uint8(k), [16]byte(a), [16]byte(idx), [16]byte(b)))
 }
 
 func maskzPermutex2varEpi16(k uint8, a [16]byte, idx [16]byte, b [16]byte) [16]byte
@@ -12492,8 +12492,8 @@ func maskzPermutex2varEpi16(k uint8, a [16]byte, idx [16]byte, b [16]byte) [16]b
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm_permutex2var_epi16'.
 // Requires AVX512BW.
-func Permutex2varEpi16(a M128i, idx M128i, b M128i) M128i {
-	return M128i(permutex2varEpi16([16]byte(a), [16]byte(idx), [16]byte(b)))
+func Permutex2varEpi16(a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(permutex2varEpi16([16]byte(a), [16]byte(idx), [16]byte(b)))
 }
 
 func permutex2varEpi16(a [16]byte, idx [16]byte, b [16]byte) [16]byte
@@ -12517,8 +12517,8 @@ func permutex2varEpi16(a [16]byte, idx [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPERMT2W'. Intrinsic: '_mm256_mask_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskPermutex2varEpi161(a M256i, k Mmask16, idx M256i, b M256i) M256i {
-	return M256i(maskPermutex2varEpi161([32]byte(a), uint16(k), [32]byte(idx), [32]byte(b)))
+func MaskPermutex2varEpi161(a x86.M256i, k x86.Mmask16, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskPermutex2varEpi161([32]byte(a), uint16(k), [32]byte(idx), [32]byte(b)))
 }
 
 func maskPermutex2varEpi161(a [32]byte, k uint16, idx [32]byte, b [32]byte) [32]byte
@@ -12542,8 +12542,8 @@ func maskPermutex2varEpi161(a [32]byte, k uint16, idx [32]byte, b [32]byte) [32]
 //
 // Instruction: 'VPERMI2W'. Intrinsic: '_mm256_mask2_permutex2var_epi16'.
 // Requires AVX512BW.
-func Mask2Permutex2varEpi161(a M256i, idx M256i, k Mmask16, b M256i) M256i {
-	return M256i(mask2Permutex2varEpi161([32]byte(a), [32]byte(idx), uint16(k), [32]byte(b)))
+func Mask2Permutex2varEpi161(a x86.M256i, idx x86.M256i, k x86.Mmask16, b x86.M256i) x86.M256i {
+	return x86.M256i(mask2Permutex2varEpi161([32]byte(a), [32]byte(idx), uint16(k), [32]byte(b)))
 }
 
 func mask2Permutex2varEpi161(a [32]byte, idx [32]byte, k uint16, b [32]byte) [32]byte
@@ -12567,8 +12567,8 @@ func mask2Permutex2varEpi161(a [32]byte, idx [32]byte, k uint16, b [32]byte) [32
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm256_maskz_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskzPermutex2varEpi161(k Mmask16, a M256i, idx M256i, b M256i) M256i {
-	return M256i(maskzPermutex2varEpi161(uint16(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
+func MaskzPermutex2varEpi161(k x86.Mmask16, a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzPermutex2varEpi161(uint16(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
 func maskzPermutex2varEpi161(k uint16, a [32]byte, idx [32]byte, b [32]byte) [32]byte
@@ -12587,8 +12587,8 @@ func maskzPermutex2varEpi161(k uint16, a [32]byte, idx [32]byte, b [32]byte) [32
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm256_permutex2var_epi16'.
 // Requires AVX512BW.
-func Permutex2varEpi161(a M256i, idx M256i, b M256i) M256i {
-	return M256i(permutex2varEpi161([32]byte(a), [32]byte(idx), [32]byte(b)))
+func Permutex2varEpi161(a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(permutex2varEpi161([32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
 func permutex2varEpi161(a [32]byte, idx [32]byte, b [32]byte) [32]byte
@@ -12612,8 +12612,8 @@ func permutex2varEpi161(a [32]byte, idx [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPERMT2W'. Intrinsic: '_mm512_mask_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskPermutex2varEpi162(a M512i, k Mmask32, idx M512i, b M512i) M512i {
-	return M512i(maskPermutex2varEpi162([64]byte(a), uint32(k), [64]byte(idx), [64]byte(b)))
+func MaskPermutex2varEpi162(a x86.M512i, k x86.Mmask32, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskPermutex2varEpi162([64]byte(a), uint32(k), [64]byte(idx), [64]byte(b)))
 }
 
 func maskPermutex2varEpi162(a [64]byte, k uint32, idx [64]byte, b [64]byte) [64]byte
@@ -12637,8 +12637,8 @@ func maskPermutex2varEpi162(a [64]byte, k uint32, idx [64]byte, b [64]byte) [64]
 //
 // Instruction: 'VPERMI2W'. Intrinsic: '_mm512_mask2_permutex2var_epi16'.
 // Requires AVX512BW.
-func Mask2Permutex2varEpi162(a M512i, idx M512i, k Mmask32, b M512i) M512i {
-	return M512i(mask2Permutex2varEpi162([64]byte(a), [64]byte(idx), uint32(k), [64]byte(b)))
+func Mask2Permutex2varEpi162(a x86.M512i, idx x86.M512i, k x86.Mmask32, b x86.M512i) x86.M512i {
+	return x86.M512i(mask2Permutex2varEpi162([64]byte(a), [64]byte(idx), uint32(k), [64]byte(b)))
 }
 
 func mask2Permutex2varEpi162(a [64]byte, idx [64]byte, k uint32, b [64]byte) [64]byte
@@ -12662,8 +12662,8 @@ func mask2Permutex2varEpi162(a [64]byte, idx [64]byte, k uint32, b [64]byte) [64
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm512_maskz_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskzPermutex2varEpi162(k Mmask32, a M512i, idx M512i, b M512i) M512i {
-	return M512i(maskzPermutex2varEpi162(uint32(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
+func MaskzPermutex2varEpi162(k x86.Mmask32, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzPermutex2varEpi162(uint32(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
 func maskzPermutex2varEpi162(k uint32, a [64]byte, idx [64]byte, b [64]byte) [64]byte
@@ -12682,8 +12682,8 @@ func maskzPermutex2varEpi162(k uint32, a [64]byte, idx [64]byte, b [64]byte) [64
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm512_permutex2var_epi16'.
 // Requires AVX512BW.
-func Permutex2varEpi162(a M512i, idx M512i, b M512i) M512i {
-	return M512i(permutex2varEpi162([64]byte(a), [64]byte(idx), [64]byte(b)))
+func Permutex2varEpi162(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(permutex2varEpi162([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
 func permutex2varEpi162(a [64]byte, idx [64]byte, b [64]byte) [64]byte
@@ -12706,8 +12706,8 @@ func permutex2varEpi162(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm_mask_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskPermutexvarEpi16(src M128i, k Mmask8, idx M128i, a M128i) M128i {
-	return M128i(maskPermutexvarEpi16([16]byte(src), uint8(k), [16]byte(idx), [16]byte(a)))
+func MaskPermutexvarEpi16(src x86.M128i, k x86.Mmask8, idx x86.M128i, a x86.M128i) x86.M128i {
+	return x86.M128i(maskPermutexvarEpi16([16]byte(src), uint8(k), [16]byte(idx), [16]byte(a)))
 }
 
 func maskPermutexvarEpi16(src [16]byte, k uint8, idx [16]byte, a [16]byte) [16]byte
@@ -12730,8 +12730,8 @@ func maskPermutexvarEpi16(src [16]byte, k uint8, idx [16]byte, a [16]byte) [16]b
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm_maskz_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskzPermutexvarEpi16(k Mmask8, idx M128i, a M128i) M128i {
-	return M128i(maskzPermutexvarEpi16(uint8(k), [16]byte(idx), [16]byte(a)))
+func MaskzPermutexvarEpi16(k x86.Mmask8, idx x86.M128i, a x86.M128i) x86.M128i {
+	return x86.M128i(maskzPermutexvarEpi16(uint8(k), [16]byte(idx), [16]byte(a)))
 }
 
 func maskzPermutexvarEpi16(k uint8, idx [16]byte, a [16]byte) [16]byte
@@ -12749,8 +12749,8 @@ func maskzPermutexvarEpi16(k uint8, idx [16]byte, a [16]byte) [16]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm_permutexvar_epi16'.
 // Requires AVX512BW.
-func PermutexvarEpi16(idx M128i, a M128i) M128i {
-	return M128i(permutexvarEpi16([16]byte(idx), [16]byte(a)))
+func PermutexvarEpi16(idx x86.M128i, a x86.M128i) x86.M128i {
+	return x86.M128i(permutexvarEpi16([16]byte(idx), [16]byte(a)))
 }
 
 func permutexvarEpi16(idx [16]byte, a [16]byte) [16]byte
@@ -12774,8 +12774,8 @@ func permutexvarEpi16(idx [16]byte, a [16]byte) [16]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm256_mask_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskPermutexvarEpi161(src M256i, k Mmask16, idx M256i, a M256i) M256i {
-	return M256i(maskPermutexvarEpi161([32]byte(src), uint16(k), [32]byte(idx), [32]byte(a)))
+func MaskPermutexvarEpi161(src x86.M256i, k x86.Mmask16, idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(maskPermutexvarEpi161([32]byte(src), uint16(k), [32]byte(idx), [32]byte(a)))
 }
 
 func maskPermutexvarEpi161(src [32]byte, k uint16, idx [32]byte, a [32]byte) [32]byte
@@ -12799,8 +12799,8 @@ func maskPermutexvarEpi161(src [32]byte, k uint16, idx [32]byte, a [32]byte) [32
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm256_maskz_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskzPermutexvarEpi161(k Mmask16, idx M256i, a M256i) M256i {
-	return M256i(maskzPermutexvarEpi161(uint16(k), [32]byte(idx), [32]byte(a)))
+func MaskzPermutexvarEpi161(k x86.Mmask16, idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(maskzPermutexvarEpi161(uint16(k), [32]byte(idx), [32]byte(a)))
 }
 
 func maskzPermutexvarEpi161(k uint16, idx [32]byte, a [32]byte) [32]byte
@@ -12818,8 +12818,8 @@ func maskzPermutexvarEpi161(k uint16, idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm256_permutexvar_epi16'.
 // Requires AVX512BW.
-func PermutexvarEpi161(idx M256i, a M256i) M256i {
-	return M256i(permutexvarEpi161([32]byte(idx), [32]byte(a)))
+func PermutexvarEpi161(idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(permutexvarEpi161([32]byte(idx), [32]byte(a)))
 }
 
 func permutexvarEpi161(idx [32]byte, a [32]byte) [32]byte
@@ -12843,8 +12843,8 @@ func permutexvarEpi161(idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_mask_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskPermutexvarEpi162(src M512i, k Mmask32, idx M512i, a M512i) M512i {
-	return M512i(maskPermutexvarEpi162([64]byte(src), uint32(k), [64]byte(idx), [64]byte(a)))
+func MaskPermutexvarEpi162(src x86.M512i, k x86.Mmask32, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(maskPermutexvarEpi162([64]byte(src), uint32(k), [64]byte(idx), [64]byte(a)))
 }
 
 func maskPermutexvarEpi162(src [64]byte, k uint32, idx [64]byte, a [64]byte) [64]byte
@@ -12868,8 +12868,8 @@ func maskPermutexvarEpi162(src [64]byte, k uint32, idx [64]byte, a [64]byte) [64
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_maskz_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskzPermutexvarEpi162(k Mmask32, idx M512i, a M512i) M512i {
-	return M512i(maskzPermutexvarEpi162(uint32(k), [64]byte(idx), [64]byte(a)))
+func MaskzPermutexvarEpi162(k x86.Mmask32, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(maskzPermutexvarEpi162(uint32(k), [64]byte(idx), [64]byte(a)))
 }
 
 func maskzPermutexvarEpi162(k uint32, idx [64]byte, a [64]byte) [64]byte
@@ -12887,8 +12887,8 @@ func maskzPermutexvarEpi162(k uint32, idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_permutexvar_epi16'.
 // Requires AVX512BW.
-func PermutexvarEpi162(idx M512i, a M512i) M512i {
-	return M512i(permutexvarEpi162([64]byte(idx), [64]byte(a)))
+func PermutexvarEpi162(idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(permutexvarEpi162([64]byte(idx), [64]byte(a)))
 }
 
 func permutexvarEpi162(idx [64]byte, a [64]byte) [64]byte
@@ -12912,8 +12912,8 @@ func permutexvarEpi162(idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPSADBW'. Intrinsic: '_mm512_sad_epu8'.
 // Requires AVX512BW.
-func SadEpu8(a M512i, b M512i) M512i {
-	return M512i(sadEpu8([64]byte(a), [64]byte(b)))
+func SadEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(sadEpu8([64]byte(a), [64]byte(b)))
 }
 
 func sadEpu8(a [64]byte, b [64]byte) [64]byte
@@ -12935,8 +12935,8 @@ func sadEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm_mask_set1_epi16'.
 // Requires AVX512BW.
-func MaskSet1Epi16(src M128i, k Mmask8, a int16) M128i {
-	return M128i(maskSet1Epi16([16]byte(src), uint8(k), a))
+func MaskSet1Epi16(src x86.M128i, k x86.Mmask8, a int16) x86.M128i {
+	return x86.M128i(maskSet1Epi16([16]byte(src), uint8(k), a))
 }
 
 func maskSet1Epi16(src [16]byte, k uint8, a int16) [16]byte
@@ -12958,8 +12958,8 @@ func maskSet1Epi16(src [16]byte, k uint8, a int16) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm_maskz_set1_epi16'.
 // Requires AVX512BW.
-func MaskzSet1Epi16(k Mmask8, a int16) M128i {
-	return M128i(maskzSet1Epi16(uint8(k), a))
+func MaskzSet1Epi16(k x86.Mmask8, a int16) x86.M128i {
+	return x86.M128i(maskzSet1Epi16(uint8(k), a))
 }
 
 func maskzSet1Epi16(k uint8, a int16) [16]byte
@@ -12981,8 +12981,8 @@ func maskzSet1Epi16(k uint8, a int16) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_mask_set1_epi16'.
 // Requires AVX512BW.
-func MaskSet1Epi161(src M256i, k Mmask16, a int16) M256i {
-	return M256i(maskSet1Epi161([32]byte(src), uint16(k), a))
+func MaskSet1Epi161(src x86.M256i, k x86.Mmask16, a int16) x86.M256i {
+	return x86.M256i(maskSet1Epi161([32]byte(src), uint16(k), a))
 }
 
 func maskSet1Epi161(src [32]byte, k uint16, a int16) [32]byte
@@ -13004,8 +13004,8 @@ func maskSet1Epi161(src [32]byte, k uint16, a int16) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_maskz_set1_epi16'.
 // Requires AVX512BW.
-func MaskzSet1Epi161(k Mmask16, a int16) M256i {
-	return M256i(maskzSet1Epi161(uint16(k), a))
+func MaskzSet1Epi161(k x86.Mmask16, a int16) x86.M256i {
+	return x86.M256i(maskzSet1Epi161(uint16(k), a))
 }
 
 func maskzSet1Epi161(k uint16, a int16) [32]byte
@@ -13027,8 +13027,8 @@ func maskzSet1Epi161(k uint16, a int16) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_mask_set1_epi16'.
 // Requires AVX512BW.
-func MaskSet1Epi162(src M512i, k Mmask32, a int16) M512i {
-	return M512i(maskSet1Epi162([64]byte(src), uint32(k), a))
+func MaskSet1Epi162(src x86.M512i, k x86.Mmask32, a int16) x86.M512i {
+	return x86.M512i(maskSet1Epi162([64]byte(src), uint32(k), a))
 }
 
 func maskSet1Epi162(src [64]byte, k uint32, a int16) [64]byte
@@ -13050,8 +13050,8 @@ func maskSet1Epi162(src [64]byte, k uint32, a int16) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_maskz_set1_epi16'.
 // Requires AVX512BW.
-func MaskzSet1Epi162(k Mmask32, a int16) M512i {
-	return M512i(maskzSet1Epi162(uint32(k), a))
+func MaskzSet1Epi162(k x86.Mmask32, a int16) x86.M512i {
+	return x86.M512i(maskzSet1Epi162(uint32(k), a))
 }
 
 func maskzSet1Epi162(k uint32, a int16) [64]byte
@@ -13073,8 +13073,8 @@ func maskzSet1Epi162(k uint32, a int16) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm_mask_set1_epi8'.
 // Requires AVX512BW.
-func MaskSet1Epi8(src M128i, k Mmask16, a byte) M128i {
-	return M128i(maskSet1Epi8([16]byte(src), uint16(k), a))
+func MaskSet1Epi8(src x86.M128i, k x86.Mmask16, a byte) x86.M128i {
+	return x86.M128i(maskSet1Epi8([16]byte(src), uint16(k), a))
 }
 
 func maskSet1Epi8(src [16]byte, k uint16, a byte) [16]byte
@@ -13096,8 +13096,8 @@ func maskSet1Epi8(src [16]byte, k uint16, a byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm_maskz_set1_epi8'.
 // Requires AVX512BW.
-func MaskzSet1Epi8(k Mmask16, a byte) M128i {
-	return M128i(maskzSet1Epi8(uint16(k), a))
+func MaskzSet1Epi8(k x86.Mmask16, a byte) x86.M128i {
+	return x86.M128i(maskzSet1Epi8(uint16(k), a))
 }
 
 func maskzSet1Epi8(k uint16, a byte) [16]byte
@@ -13119,8 +13119,8 @@ func maskzSet1Epi8(k uint16, a byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_mask_set1_epi8'.
 // Requires AVX512BW.
-func MaskSet1Epi81(src M256i, k Mmask32, a byte) M256i {
-	return M256i(maskSet1Epi81([32]byte(src), uint32(k), a))
+func MaskSet1Epi81(src x86.M256i, k x86.Mmask32, a byte) x86.M256i {
+	return x86.M256i(maskSet1Epi81([32]byte(src), uint32(k), a))
 }
 
 func maskSet1Epi81(src [32]byte, k uint32, a byte) [32]byte
@@ -13142,8 +13142,8 @@ func maskSet1Epi81(src [32]byte, k uint32, a byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_maskz_set1_epi8'.
 // Requires AVX512BW.
-func MaskzSet1Epi81(k Mmask32, a byte) M256i {
-	return M256i(maskzSet1Epi81(uint32(k), a))
+func MaskzSet1Epi81(k x86.Mmask32, a byte) x86.M256i {
+	return x86.M256i(maskzSet1Epi81(uint32(k), a))
 }
 
 func maskzSet1Epi81(k uint32, a byte) [32]byte
@@ -13165,8 +13165,8 @@ func maskzSet1Epi81(k uint32, a byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_mask_set1_epi8'.
 // Requires AVX512BW.
-func MaskSet1Epi82(src M512i, k Mmask64, a byte) M512i {
-	return M512i(maskSet1Epi82([64]byte(src), uint64(k), a))
+func MaskSet1Epi82(src x86.M512i, k x86.Mmask64, a byte) x86.M512i {
+	return x86.M512i(maskSet1Epi82([64]byte(src), uint64(k), a))
 }
 
 func maskSet1Epi82(src [64]byte, k uint64, a byte) [64]byte
@@ -13188,8 +13188,8 @@ func maskSet1Epi82(src [64]byte, k uint64, a byte) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_maskz_set1_epi8'.
 // Requires AVX512BW.
-func MaskzSet1Epi82(k Mmask64, a byte) M512i {
-	return M512i(maskzSet1Epi82(uint64(k), a))
+func MaskzSet1Epi82(k x86.Mmask64, a byte) x86.M512i {
+	return x86.M512i(maskzSet1Epi82(uint64(k), a))
 }
 
 func maskzSet1Epi82(k uint64, a byte) [64]byte
@@ -13217,8 +13217,8 @@ func maskzSet1Epi82(k uint64, a byte) [64]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm_mask_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskShuffleEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskShuffleEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskShuffleEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskShuffleEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskShuffleEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -13246,8 +13246,8 @@ func maskShuffleEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm_maskz_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskzShuffleEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzShuffleEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzShuffleEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzShuffleEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzShuffleEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -13275,8 +13275,8 @@ func maskzShuffleEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm256_mask_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskShuffleEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskShuffleEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskShuffleEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskShuffleEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskShuffleEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -13304,8 +13304,8 @@ func maskShuffleEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm256_maskz_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskzShuffleEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzShuffleEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzShuffleEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzShuffleEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzShuffleEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -13333,8 +13333,8 @@ func maskzShuffleEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_mask_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskShuffleEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskShuffleEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskShuffleEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskShuffleEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskShuffleEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -13362,8 +13362,8 @@ func maskShuffleEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_maskz_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskzShuffleEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzShuffleEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzShuffleEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzShuffleEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzShuffleEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -13386,8 +13386,8 @@ func maskzShuffleEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_shuffle_epi8'.
 // Requires AVX512BW.
-func ShuffleEpi8(a M512i, b M512i) M512i {
-	return M512i(shuffleEpi8([64]byte(a), [64]byte(b)))
+func ShuffleEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(shuffleEpi8([64]byte(a), [64]byte(b)))
 }
 
 func shuffleEpi8(a [64]byte, b [64]byte) [64]byte
@@ -13416,8 +13416,8 @@ func shuffleEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm_mask_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskShufflehiEpi16(src M128i, k Mmask8, a M128i, imm8 int) M128i {
-	return M128i(maskShufflehiEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
+func MaskShufflehiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskShufflehiEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
 func maskShufflehiEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
@@ -13446,8 +13446,8 @@ func maskShufflehiEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm_maskz_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskzShufflehiEpi16(k Mmask8, a M128i, imm8 int) M128i {
-	return M128i(maskzShufflehiEpi16(uint8(k), [16]byte(a), imm8))
+func MaskzShufflehiEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskzShufflehiEpi16(uint8(k), [16]byte(a), imm8))
 }
 
 func maskzShufflehiEpi16(k uint8, a [16]byte, imm8 int) [16]byte
@@ -13482,8 +13482,8 @@ func maskzShufflehiEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm256_mask_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskShufflehiEpi161(src M256i, k Mmask16, a M256i, imm8 int) M256i {
-	return M256i(maskShufflehiEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func MaskShufflehiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskShufflehiEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
 func maskShufflehiEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
@@ -13518,8 +13518,8 @@ func maskShufflehiEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm256_maskz_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskzShufflehiEpi161(k Mmask16, a M256i, imm8 int) M256i {
-	return M256i(maskzShufflehiEpi161(uint16(k), [32]byte(a), imm8))
+func MaskzShufflehiEpi161(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskzShufflehiEpi161(uint16(k), [32]byte(a), imm8))
 }
 
 func maskzShufflehiEpi161(k uint16, a [32]byte, imm8 int) [32]byte
@@ -13564,8 +13564,8 @@ func maskzShufflehiEpi161(k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_mask_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskShufflehiEpi162(src M512i, k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskShufflehiEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func MaskShufflehiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(maskShufflehiEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
 func maskShufflehiEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
@@ -13610,8 +13610,8 @@ func maskShufflehiEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_maskz_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskzShufflehiEpi162(k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskzShufflehiEpi162(uint32(k), [64]byte(a), imm8))
+func MaskzShufflehiEpi162(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(maskzShufflehiEpi162(uint32(k), [64]byte(a), imm8))
 }
 
 func maskzShufflehiEpi162(k uint32, a [64]byte, imm8 int) [64]byte
@@ -13646,8 +13646,8 @@ func maskzShufflehiEpi162(k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_shufflehi_epi16'.
 // Requires AVX512BW.
-func ShufflehiEpi16(a M512i, imm8 int) M512i {
-	return M512i(shufflehiEpi16([64]byte(a), imm8))
+func ShufflehiEpi16(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(shufflehiEpi16([64]byte(a), imm8))
 }
 
 func shufflehiEpi16(a [64]byte, imm8 int) [64]byte
@@ -13676,8 +13676,8 @@ func shufflehiEpi16(a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm_mask_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskShuffleloEpi16(src M128i, k Mmask8, a M128i, imm8 int) M128i {
-	return M128i(maskShuffleloEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
+func MaskShuffleloEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskShuffleloEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
 func maskShuffleloEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
@@ -13706,8 +13706,8 @@ func maskShuffleloEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm_maskz_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskzShuffleloEpi16(k Mmask8, a M128i, imm8 int) M128i {
-	return M128i(maskzShuffleloEpi16(uint8(k), [16]byte(a), imm8))
+func MaskzShuffleloEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskzShuffleloEpi16(uint8(k), [16]byte(a), imm8))
 }
 
 func maskzShuffleloEpi16(k uint8, a [16]byte, imm8 int) [16]byte
@@ -13742,8 +13742,8 @@ func maskzShuffleloEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm256_mask_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskShuffleloEpi161(src M256i, k Mmask16, a M256i, imm8 int) M256i {
-	return M256i(maskShuffleloEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func MaskShuffleloEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskShuffleloEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
 func maskShuffleloEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
@@ -13778,8 +13778,8 @@ func maskShuffleloEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm256_maskz_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskzShuffleloEpi161(k Mmask16, a M256i, imm8 int) M256i {
-	return M256i(maskzShuffleloEpi161(uint16(k), [32]byte(a), imm8))
+func MaskzShuffleloEpi161(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskzShuffleloEpi161(uint16(k), [32]byte(a), imm8))
 }
 
 func maskzShuffleloEpi161(k uint16, a [32]byte, imm8 int) [32]byte
@@ -13824,8 +13824,8 @@ func maskzShuffleloEpi161(k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_mask_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskShuffleloEpi162(src M512i, k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskShuffleloEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func MaskShuffleloEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(maskShuffleloEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
 func maskShuffleloEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
@@ -13870,8 +13870,8 @@ func maskShuffleloEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_maskz_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskzShuffleloEpi162(k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskzShuffleloEpi162(uint32(k), [64]byte(a), imm8))
+func MaskzShuffleloEpi162(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(maskzShuffleloEpi162(uint32(k), [64]byte(a), imm8))
 }
 
 func maskzShuffleloEpi162(k uint32, a [64]byte, imm8 int) [64]byte
@@ -13906,8 +13906,8 @@ func maskzShuffleloEpi162(k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_shufflelo_epi16'.
 // Requires AVX512BW.
-func ShuffleloEpi16(a M512i, imm8 int) M512i {
-	return M512i(shuffleloEpi16([64]byte(a), imm8))
+func ShuffleloEpi16(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(shuffleloEpi16([64]byte(a), imm8))
 }
 
 func shuffleloEpi16(a [64]byte, imm8 int) [64]byte
@@ -13933,8 +13933,8 @@ func shuffleloEpi16(a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm_mask_sll_epi16'.
 // Requires AVX512BW.
-func MaskSllEpi16(src M128i, k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskSllEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
+func MaskSllEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskSllEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskSllEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
@@ -13960,8 +13960,8 @@ func maskSllEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm_maskz_sll_epi16'.
 // Requires AVX512BW.
-func MaskzSllEpi16(k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskzSllEpi16(uint8(k), [16]byte(a), [16]byte(count)))
+func MaskzSllEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskzSllEpi16(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskzSllEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
@@ -13987,8 +13987,8 @@ func maskzSllEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_mask_sll_epi16'.
 // Requires AVX512BW.
-func MaskSllEpi161(src M256i, k Mmask16, a M256i, count M128i) M256i {
-	return M256i(maskSllEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
+func MaskSllEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(maskSllEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
 }
 
 func maskSllEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
@@ -14014,8 +14014,8 @@ func maskSllEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_maskz_sll_epi16'.
 // Requires AVX512BW.
-func MaskzSllEpi161(k Mmask16, a M256i, count M128i) M256i {
-	return M256i(maskzSllEpi161(uint16(k), [32]byte(a), [16]byte(count)))
+func MaskzSllEpi161(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(maskzSllEpi161(uint16(k), [32]byte(a), [16]byte(count)))
 }
 
 func maskzSllEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
@@ -14041,8 +14041,8 @@ func maskzSllEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_mask_sll_epi16'.
 // Requires AVX512BW.
-func MaskSllEpi162(src M512i, k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskSllEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
+func MaskSllEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(maskSllEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
 func maskSllEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
@@ -14068,8 +14068,8 @@ func maskSllEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_maskz_sll_epi16'.
 // Requires AVX512BW.
-func MaskzSllEpi162(k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskzSllEpi162(uint32(k), [64]byte(a), [16]byte(count)))
+func MaskzSllEpi162(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(maskzSllEpi162(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
 func maskzSllEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
@@ -14090,8 +14090,8 @@ func maskzSllEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_sll_epi16'.
 // Requires AVX512BW.
-func SllEpi16(a M512i, count M128i) M512i {
-	return M512i(sllEpi16([64]byte(a), [16]byte(count)))
+func SllEpi16(a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(sllEpi16([64]byte(a), [16]byte(count)))
 }
 
 func sllEpi16(a [64]byte, count [16]byte) [64]byte
@@ -14117,8 +14117,8 @@ func sllEpi16(a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm_mask_slli_epi16'.
 // Requires AVX512BW.
-func MaskSlliEpi16(src M128i, k Mmask8, a M128i, imm8 uint32) M128i {
-	return M128i(maskSlliEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
+func MaskSlliEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+	return x86.M128i(maskSlliEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
 func maskSlliEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
@@ -14144,8 +14144,8 @@ func maskSlliEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm_maskz_slli_epi16'.
 // Requires AVX512BW.
-func MaskzSlliEpi16(k Mmask8, a M128i, imm8 uint32) M128i {
-	return M128i(maskzSlliEpi16(uint8(k), [16]byte(a), imm8))
+func MaskzSlliEpi16(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+	return x86.M128i(maskzSlliEpi16(uint8(k), [16]byte(a), imm8))
 }
 
 func maskzSlliEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
@@ -14171,8 +14171,8 @@ func maskzSlliEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_mask_slli_epi16'.
 // Requires AVX512BW.
-func MaskSlliEpi161(src M256i, k Mmask16, a M256i, imm8 uint32) M256i {
-	return M256i(maskSlliEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func MaskSlliEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(maskSlliEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
 func maskSlliEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
@@ -14198,8 +14198,8 @@ func maskSlliEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_maskz_slli_epi16'.
 // Requires AVX512BW.
-func MaskzSlliEpi161(k Mmask16, a M256i, imm8 uint32) M256i {
-	return M256i(maskzSlliEpi161(uint16(k), [32]byte(a), imm8))
+func MaskzSlliEpi161(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(maskzSlliEpi161(uint16(k), [32]byte(a), imm8))
 }
 
 func maskzSlliEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
@@ -14225,8 +14225,8 @@ func maskzSlliEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_mask_slli_epi16'.
 // Requires AVX512BW.
-func MaskSlliEpi162(src M512i, k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskSlliEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func MaskSlliEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(maskSlliEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
 func maskSlliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
@@ -14252,8 +14252,8 @@ func maskSlliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_maskz_slli_epi16'.
 // Requires AVX512BW.
-func MaskzSlliEpi162(k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSlliEpi162(uint32(k), [64]byte(a), imm8))
+func MaskzSlliEpi162(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(maskzSlliEpi162(uint32(k), [64]byte(a), imm8))
 }
 
 func maskzSlliEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
@@ -14274,8 +14274,8 @@ func maskzSlliEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_slli_epi16'.
 // Requires AVX512BW.
-func SlliEpi16(a M512i, imm8 uint32) M512i {
-	return M512i(slliEpi16([64]byte(a), imm8))
+func SlliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(slliEpi16([64]byte(a), imm8))
 }
 
 func slliEpi16(a [64]byte, imm8 uint32) [64]byte
@@ -14298,8 +14298,8 @@ func slliEpi16(a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm_mask_sllv_epi16'.
 // Requires AVX512BW.
-func MaskSllvEpi16(src M128i, k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskSllvEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
+func MaskSllvEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskSllvEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskSllvEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
@@ -14322,8 +14322,8 @@ func maskSllvEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm_maskz_sllv_epi16'.
 // Requires AVX512BW.
-func MaskzSllvEpi16(k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskzSllvEpi16(uint8(k), [16]byte(a), [16]byte(count)))
+func MaskzSllvEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskzSllvEpi16(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskzSllvEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
@@ -14345,8 +14345,8 @@ func maskzSllvEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm_sllv_epi16'.
 // Requires AVX512BW.
-func SllvEpi16(a M128i, count M128i) M128i {
-	return M128i(sllvEpi16([16]byte(a), [16]byte(count)))
+func SllvEpi16(a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(sllvEpi16([16]byte(a), [16]byte(count)))
 }
 
 func sllvEpi16(a [16]byte, count [16]byte) [16]byte
@@ -14369,8 +14369,8 @@ func sllvEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm256_mask_sllv_epi16'.
 // Requires AVX512BW.
-func MaskSllvEpi161(src M256i, k Mmask16, a M256i, count M256i) M256i {
-	return M256i(maskSllvEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
+func MaskSllvEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(maskSllvEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
 }
 
 func maskSllvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
@@ -14393,8 +14393,8 @@ func maskSllvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm256_maskz_sllv_epi16'.
 // Requires AVX512BW.
-func MaskzSllvEpi161(k Mmask16, a M256i, count M256i) M256i {
-	return M256i(maskzSllvEpi161(uint16(k), [32]byte(a), [32]byte(count)))
+func MaskzSllvEpi161(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(maskzSllvEpi161(uint16(k), [32]byte(a), [32]byte(count)))
 }
 
 func maskzSllvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
@@ -14416,8 +14416,8 @@ func maskzSllvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm256_sllv_epi16'.
 // Requires AVX512BW.
-func SllvEpi161(a M256i, count M256i) M256i {
-	return M256i(sllvEpi161([32]byte(a), [32]byte(count)))
+func SllvEpi161(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(sllvEpi161([32]byte(a), [32]byte(count)))
 }
 
 func sllvEpi161(a [32]byte, count [32]byte) [32]byte
@@ -14440,8 +14440,8 @@ func sllvEpi161(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_mask_sllv_epi16'.
 // Requires AVX512BW.
-func MaskSllvEpi162(src M512i, k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskSllvEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
+func MaskSllvEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(maskSllvEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
 func maskSllvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
@@ -14464,8 +14464,8 @@ func maskSllvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_maskz_sllv_epi16'.
 // Requires AVX512BW.
-func MaskzSllvEpi162(k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskzSllvEpi162(uint32(k), [64]byte(a), [64]byte(count)))
+func MaskzSllvEpi162(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(maskzSllvEpi162(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
 func maskzSllvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
@@ -14487,8 +14487,8 @@ func maskzSllvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_sllv_epi16'.
 // Requires AVX512BW.
-func SllvEpi162(a M512i, count M512i) M512i {
-	return M512i(sllvEpi162([64]byte(a), [64]byte(count)))
+func SllvEpi162(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(sllvEpi162([64]byte(a), [64]byte(count)))
 }
 
 func sllvEpi162(a [64]byte, count [64]byte) [64]byte
@@ -14514,8 +14514,8 @@ func sllvEpi162(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm_mask_sra_epi16'.
 // Requires AVX512BW.
-func MaskSraEpi16(src M128i, k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskSraEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
+func MaskSraEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskSraEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskSraEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
@@ -14541,8 +14541,8 @@ func maskSraEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm_maskz_sra_epi16'.
 // Requires AVX512BW.
-func MaskzSraEpi16(k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskzSraEpi16(uint8(k), [16]byte(a), [16]byte(count)))
+func MaskzSraEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskzSraEpi16(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskzSraEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
@@ -14568,8 +14568,8 @@ func maskzSraEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_mask_sra_epi16'.
 // Requires AVX512BW.
-func MaskSraEpi161(src M256i, k Mmask16, a M256i, count M128i) M256i {
-	return M256i(maskSraEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
+func MaskSraEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(maskSraEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
 }
 
 func maskSraEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
@@ -14595,8 +14595,8 @@ func maskSraEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_maskz_sra_epi16'.
 // Requires AVX512BW.
-func MaskzSraEpi161(k Mmask16, a M256i, count M128i) M256i {
-	return M256i(maskzSraEpi161(uint16(k), [32]byte(a), [16]byte(count)))
+func MaskzSraEpi161(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(maskzSraEpi161(uint16(k), [32]byte(a), [16]byte(count)))
 }
 
 func maskzSraEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
@@ -14622,8 +14622,8 @@ func maskzSraEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_mask_sra_epi16'.
 // Requires AVX512BW.
-func MaskSraEpi162(src M512i, k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskSraEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
+func MaskSraEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(maskSraEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
 func maskSraEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
@@ -14649,8 +14649,8 @@ func maskSraEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_maskz_sra_epi16'.
 // Requires AVX512BW.
-func MaskzSraEpi162(k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskzSraEpi162(uint32(k), [64]byte(a), [16]byte(count)))
+func MaskzSraEpi162(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(maskzSraEpi162(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
 func maskzSraEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
@@ -14671,8 +14671,8 @@ func maskzSraEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_sra_epi16'.
 // Requires AVX512BW.
-func SraEpi16(a M512i, count M128i) M512i {
-	return M512i(sraEpi16([64]byte(a), [16]byte(count)))
+func SraEpi16(a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(sraEpi16([64]byte(a), [16]byte(count)))
 }
 
 func sraEpi16(a [64]byte, count [16]byte) [64]byte
@@ -14698,8 +14698,8 @@ func sraEpi16(a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm_mask_srai_epi16'.
 // Requires AVX512BW.
-func MaskSraiEpi16(src M128i, k Mmask8, a M128i, imm8 uint32) M128i {
-	return M128i(maskSraiEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
+func MaskSraiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+	return x86.M128i(maskSraiEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
 func maskSraiEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
@@ -14725,8 +14725,8 @@ func maskSraiEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm_maskz_srai_epi16'.
 // Requires AVX512BW.
-func MaskzSraiEpi16(k Mmask8, a M128i, imm8 uint32) M128i {
-	return M128i(maskzSraiEpi16(uint8(k), [16]byte(a), imm8))
+func MaskzSraiEpi16(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+	return x86.M128i(maskzSraiEpi16(uint8(k), [16]byte(a), imm8))
 }
 
 func maskzSraiEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
@@ -14752,8 +14752,8 @@ func maskzSraiEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_mask_srai_epi16'.
 // Requires AVX512BW.
-func MaskSraiEpi161(src M256i, k Mmask16, a M256i, imm8 uint32) M256i {
-	return M256i(maskSraiEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func MaskSraiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(maskSraiEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
 func maskSraiEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
@@ -14779,8 +14779,8 @@ func maskSraiEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_maskz_srai_epi16'.
 // Requires AVX512BW.
-func MaskzSraiEpi161(k Mmask16, a M256i, imm8 uint32) M256i {
-	return M256i(maskzSraiEpi161(uint16(k), [32]byte(a), imm8))
+func MaskzSraiEpi161(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(maskzSraiEpi161(uint16(k), [32]byte(a), imm8))
 }
 
 func maskzSraiEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
@@ -14806,8 +14806,8 @@ func maskzSraiEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_mask_srai_epi16'.
 // Requires AVX512BW.
-func MaskSraiEpi162(src M512i, k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskSraiEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func MaskSraiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(maskSraiEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
 func maskSraiEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
@@ -14833,8 +14833,8 @@ func maskSraiEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_maskz_srai_epi16'.
 // Requires AVX512BW.
-func MaskzSraiEpi162(k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskzSraiEpi162(uint32(k), [64]byte(a), imm8))
+func MaskzSraiEpi162(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(maskzSraiEpi162(uint32(k), [64]byte(a), imm8))
 }
 
 func maskzSraiEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
@@ -14855,8 +14855,8 @@ func maskzSraiEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_srai_epi16'.
 // Requires AVX512BW.
-func SraiEpi16(a M512i, imm8 uint32) M512i {
-	return M512i(sraiEpi16([64]byte(a), imm8))
+func SraiEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(sraiEpi16([64]byte(a), imm8))
 }
 
 func sraiEpi16(a [64]byte, imm8 uint32) [64]byte
@@ -14879,8 +14879,8 @@ func sraiEpi16(a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm_mask_srav_epi16'.
 // Requires AVX512BW.
-func MaskSravEpi16(src M128i, k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskSravEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
+func MaskSravEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskSravEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskSravEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
@@ -14903,8 +14903,8 @@ func maskSravEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm_maskz_srav_epi16'.
 // Requires AVX512BW.
-func MaskzSravEpi16(k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskzSravEpi16(uint8(k), [16]byte(a), [16]byte(count)))
+func MaskzSravEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskzSravEpi16(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskzSravEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
@@ -14922,8 +14922,8 @@ func maskzSravEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm_srav_epi16'.
 // Requires AVX512BW.
-func SravEpi16(a M128i, count M128i) M128i {
-	return M128i(sravEpi16([16]byte(a), [16]byte(count)))
+func SravEpi16(a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(sravEpi16([16]byte(a), [16]byte(count)))
 }
 
 func sravEpi16(a [16]byte, count [16]byte) [16]byte
@@ -14946,8 +14946,8 @@ func sravEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm256_mask_srav_epi16'.
 // Requires AVX512BW.
-func MaskSravEpi161(src M256i, k Mmask16, a M256i, count M256i) M256i {
-	return M256i(maskSravEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
+func MaskSravEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(maskSravEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
 }
 
 func maskSravEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
@@ -14970,8 +14970,8 @@ func maskSravEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm256_maskz_srav_epi16'.
 // Requires AVX512BW.
-func MaskzSravEpi161(k Mmask16, a M256i, count M256i) M256i {
-	return M256i(maskzSravEpi161(uint16(k), [32]byte(a), [32]byte(count)))
+func MaskzSravEpi161(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(maskzSravEpi161(uint16(k), [32]byte(a), [32]byte(count)))
 }
 
 func maskzSravEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
@@ -14989,8 +14989,8 @@ func maskzSravEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm256_srav_epi16'.
 // Requires AVX512BW.
-func SravEpi161(a M256i, count M256i) M256i {
-	return M256i(sravEpi161([32]byte(a), [32]byte(count)))
+func SravEpi161(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(sravEpi161([32]byte(a), [32]byte(count)))
 }
 
 func sravEpi161(a [32]byte, count [32]byte) [32]byte
@@ -15013,8 +15013,8 @@ func sravEpi161(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_mask_srav_epi16'.
 // Requires AVX512BW.
-func MaskSravEpi162(src M512i, k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskSravEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
+func MaskSravEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(maskSravEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
 func maskSravEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
@@ -15037,8 +15037,8 @@ func maskSravEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_maskz_srav_epi16'.
 // Requires AVX512BW.
-func MaskzSravEpi162(k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskzSravEpi162(uint32(k), [64]byte(a), [64]byte(count)))
+func MaskzSravEpi162(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(maskzSravEpi162(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
 func maskzSravEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
@@ -15056,8 +15056,8 @@ func maskzSravEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_srav_epi16'.
 // Requires AVX512BW.
-func SravEpi162(a M512i, count M512i) M512i {
-	return M512i(sravEpi162([64]byte(a), [64]byte(count)))
+func SravEpi162(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(sravEpi162([64]byte(a), [64]byte(count)))
 }
 
 func sravEpi162(a [64]byte, count [64]byte) [64]byte
@@ -15083,8 +15083,8 @@ func sravEpi162(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm_mask_srl_epi16'.
 // Requires AVX512BW.
-func MaskSrlEpi16(src M128i, k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskSrlEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
+func MaskSrlEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskSrlEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskSrlEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
@@ -15110,8 +15110,8 @@ func maskSrlEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm_maskz_srl_epi16'.
 // Requires AVX512BW.
-func MaskzSrlEpi16(k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskzSrlEpi16(uint8(k), [16]byte(a), [16]byte(count)))
+func MaskzSrlEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskzSrlEpi16(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskzSrlEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
@@ -15137,8 +15137,8 @@ func maskzSrlEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_mask_srl_epi16'.
 // Requires AVX512BW.
-func MaskSrlEpi161(src M256i, k Mmask16, a M256i, count M128i) M256i {
-	return M256i(maskSrlEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
+func MaskSrlEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(maskSrlEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
 }
 
 func maskSrlEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
@@ -15164,8 +15164,8 @@ func maskSrlEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_maskz_srl_epi16'.
 // Requires AVX512BW.
-func MaskzSrlEpi161(k Mmask16, a M256i, count M128i) M256i {
-	return M256i(maskzSrlEpi161(uint16(k), [32]byte(a), [16]byte(count)))
+func MaskzSrlEpi161(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(maskzSrlEpi161(uint16(k), [32]byte(a), [16]byte(count)))
 }
 
 func maskzSrlEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
@@ -15191,8 +15191,8 @@ func maskzSrlEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_mask_srl_epi16'.
 // Requires AVX512BW.
-func MaskSrlEpi162(src M512i, k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskSrlEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
+func MaskSrlEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(maskSrlEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
 func maskSrlEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
@@ -15218,8 +15218,8 @@ func maskSrlEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_maskz_srl_epi16'.
 // Requires AVX512BW.
-func MaskzSrlEpi162(k Mmask32, a M512i, count M128i) M512i {
-	return M512i(maskzSrlEpi162(uint32(k), [64]byte(a), [16]byte(count)))
+func MaskzSrlEpi162(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(maskzSrlEpi162(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
 func maskzSrlEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
@@ -15240,8 +15240,8 @@ func maskzSrlEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_srl_epi16'.
 // Requires AVX512BW.
-func SrlEpi16(a M512i, count M128i) M512i {
-	return M512i(srlEpi16([64]byte(a), [16]byte(count)))
+func SrlEpi16(a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(srlEpi16([64]byte(a), [16]byte(count)))
 }
 
 func srlEpi16(a [64]byte, count [16]byte) [64]byte
@@ -15267,8 +15267,8 @@ func srlEpi16(a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm_mask_srli_epi16'.
 // Requires AVX512BW.
-func MaskSrliEpi16(src M128i, k Mmask8, a M128i, imm8 int) M128i {
-	return M128i(maskSrliEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
+func MaskSrliEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskSrliEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
 func maskSrliEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
@@ -15294,8 +15294,8 @@ func maskSrliEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm_maskz_srli_epi16'.
 // Requires AVX512BW.
-func MaskzSrliEpi16(k Mmask8, a M128i, imm8 int) M128i {
-	return M128i(maskzSrliEpi16(uint8(k), [16]byte(a), imm8))
+func MaskzSrliEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(maskzSrliEpi16(uint8(k), [16]byte(a), imm8))
 }
 
 func maskzSrliEpi16(k uint8, a [16]byte, imm8 int) [16]byte
@@ -15321,8 +15321,8 @@ func maskzSrliEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_mask_srli_epi16'.
 // Requires AVX512BW.
-func MaskSrliEpi161(src M256i, k Mmask16, a M256i, imm8 int) M256i {
-	return M256i(maskSrliEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func MaskSrliEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskSrliEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
 func maskSrliEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
@@ -15348,8 +15348,8 @@ func maskSrliEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_maskz_srli_epi16'.
 // Requires AVX512BW.
-func MaskzSrliEpi161(k Mmask16, a M256i, imm8 int) M256i {
-	return M256i(maskzSrliEpi161(uint16(k), [32]byte(a), imm8))
+func MaskzSrliEpi161(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(maskzSrliEpi161(uint16(k), [32]byte(a), imm8))
 }
 
 func maskzSrliEpi161(k uint16, a [32]byte, imm8 int) [32]byte
@@ -15375,8 +15375,8 @@ func maskzSrliEpi161(k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_mask_srli_epi16'.
 // Requires AVX512BW.
-func MaskSrliEpi162(src M512i, k Mmask32, a M512i, imm8 uint32) M512i {
-	return M512i(maskSrliEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func MaskSrliEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(maskSrliEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
 func maskSrliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
@@ -15402,8 +15402,8 @@ func maskSrliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_maskz_srli_epi16'.
 // Requires AVX512BW.
-func MaskzSrliEpi162(k Mmask32, a M512i, imm8 int) M512i {
-	return M512i(maskzSrliEpi162(uint32(k), [64]byte(a), imm8))
+func MaskzSrliEpi162(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(maskzSrliEpi162(uint32(k), [64]byte(a), imm8))
 }
 
 func maskzSrliEpi162(k uint32, a [64]byte, imm8 int) [64]byte
@@ -15424,8 +15424,8 @@ func maskzSrliEpi162(k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_srli_epi16'.
 // Requires AVX512BW.
-func SrliEpi16(a M512i, imm8 uint32) M512i {
-	return M512i(srliEpi16([64]byte(a), imm8))
+func SrliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(srliEpi16([64]byte(a), imm8))
 }
 
 func srliEpi16(a [64]byte, imm8 uint32) [64]byte
@@ -15448,8 +15448,8 @@ func srliEpi16(a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm_mask_srlv_epi16'.
 // Requires AVX512BW.
-func MaskSrlvEpi16(src M128i, k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskSrlvEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
+func MaskSrlvEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskSrlvEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskSrlvEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
@@ -15472,8 +15472,8 @@ func maskSrlvEpi16(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm_maskz_srlv_epi16'.
 // Requires AVX512BW.
-func MaskzSrlvEpi16(k Mmask8, a M128i, count M128i) M128i {
-	return M128i(maskzSrlvEpi16(uint8(k), [16]byte(a), [16]byte(count)))
+func MaskzSrlvEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(maskzSrlvEpi16(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
 func maskzSrlvEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
@@ -15495,8 +15495,8 @@ func maskzSrlvEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm_srlv_epi16'.
 // Requires AVX512BW.
-func SrlvEpi16(a M128i, count M128i) M128i {
-	return M128i(srlvEpi16([16]byte(a), [16]byte(count)))
+func SrlvEpi16(a x86.M128i, count x86.M128i) x86.M128i {
+	return x86.M128i(srlvEpi16([16]byte(a), [16]byte(count)))
 }
 
 func srlvEpi16(a [16]byte, count [16]byte) [16]byte
@@ -15519,8 +15519,8 @@ func srlvEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm256_mask_srlv_epi16'.
 // Requires AVX512BW.
-func MaskSrlvEpi161(src M256i, k Mmask16, a M256i, count M256i) M256i {
-	return M256i(maskSrlvEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
+func MaskSrlvEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(maskSrlvEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
 }
 
 func maskSrlvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
@@ -15543,8 +15543,8 @@ func maskSrlvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm256_maskz_srlv_epi16'.
 // Requires AVX512BW.
-func MaskzSrlvEpi161(k Mmask16, a M256i, count M256i) M256i {
-	return M256i(maskzSrlvEpi161(uint16(k), [32]byte(a), [32]byte(count)))
+func MaskzSrlvEpi161(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(maskzSrlvEpi161(uint16(k), [32]byte(a), [32]byte(count)))
 }
 
 func maskzSrlvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
@@ -15566,8 +15566,8 @@ func maskzSrlvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm256_srlv_epi16'.
 // Requires AVX512BW.
-func SrlvEpi161(a M256i, count M256i) M256i {
-	return M256i(srlvEpi161([32]byte(a), [32]byte(count)))
+func SrlvEpi161(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(srlvEpi161([32]byte(a), [32]byte(count)))
 }
 
 func srlvEpi161(a [32]byte, count [32]byte) [32]byte
@@ -15590,8 +15590,8 @@ func srlvEpi161(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_mask_srlv_epi16'.
 // Requires AVX512BW.
-func MaskSrlvEpi162(src M512i, k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskSrlvEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
+func MaskSrlvEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(maskSrlvEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
 func maskSrlvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
@@ -15614,8 +15614,8 @@ func maskSrlvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_maskz_srlv_epi16'.
 // Requires AVX512BW.
-func MaskzSrlvEpi162(k Mmask32, a M512i, count M512i) M512i {
-	return M512i(maskzSrlvEpi162(uint32(k), [64]byte(a), [64]byte(count)))
+func MaskzSrlvEpi162(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(maskzSrlvEpi162(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
 func maskzSrlvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
@@ -15637,8 +15637,8 @@ func maskzSrlvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_srlv_epi16'.
 // Requires AVX512BW.
-func SrlvEpi162(a M512i, count M512i) M512i {
-	return M512i(srlvEpi162([64]byte(a), [64]byte(count)))
+func SrlvEpi162(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(srlvEpi162([64]byte(a), [64]byte(count)))
 }
 
 func srlvEpi162(a [64]byte, count [64]byte) [64]byte
@@ -15658,7 +15658,7 @@ func srlvEpi162(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm_mask_storeu_epi16'.
 // Requires AVX512BW.
-func MaskStoreuEpi16(mem_addr uintptr, k Mmask8, a M128i)  {
+func MaskStoreuEpi16(mem_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 	maskStoreuEpi16(uintptr(mem_addr), uint8(k), [16]byte(a))
 }
 
@@ -15679,7 +15679,7 @@ func maskStoreuEpi16(mem_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_storeu_epi16'.
 // Requires AVX512BW.
-func MaskStoreuEpi161(mem_addr uintptr, k Mmask16, a M256i)  {
+func MaskStoreuEpi161(mem_addr uintptr, k x86.Mmask16, a x86.M256i)  {
 	maskStoreuEpi161(uintptr(mem_addr), uint16(k), [32]byte(a))
 }
 
@@ -15700,7 +15700,7 @@ func maskStoreuEpi161(mem_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_storeu_epi16'.
 // Requires AVX512BW.
-func MaskStoreuEpi162(mem_addr uintptr, k Mmask32, a M512i)  {
+func MaskStoreuEpi162(mem_addr uintptr, k x86.Mmask32, a x86.M512i)  {
 	maskStoreuEpi162(uintptr(mem_addr), uint32(k), [64]byte(a))
 }
 
@@ -15720,7 +15720,7 @@ func maskStoreuEpi162(mem_addr uintptr, k uint32, a [64]byte)
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm_mask_storeu_epi8'.
 // Requires AVX512BW.
-func MaskStoreuEpi8(mem_addr uintptr, k Mmask16, a M128i)  {
+func MaskStoreuEpi8(mem_addr uintptr, k x86.Mmask16, a x86.M128i)  {
 	maskStoreuEpi8(uintptr(mem_addr), uint16(k), [16]byte(a))
 }
 
@@ -15740,7 +15740,7 @@ func maskStoreuEpi8(mem_addr uintptr, k uint16, a [16]byte)
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_storeu_epi8'.
 // Requires AVX512BW.
-func MaskStoreuEpi81(mem_addr uintptr, k Mmask32, a M256i)  {
+func MaskStoreuEpi81(mem_addr uintptr, k x86.Mmask32, a x86.M256i)  {
 	maskStoreuEpi81(uintptr(mem_addr), uint32(k), [32]byte(a))
 }
 
@@ -15760,7 +15760,7 @@ func maskStoreuEpi81(mem_addr uintptr, k uint32, a [32]byte)
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_storeu_epi8'.
 // Requires AVX512BW.
-func MaskStoreuEpi82(mem_addr uintptr, k Mmask64, a M512i)  {
+func MaskStoreuEpi82(mem_addr uintptr, k x86.Mmask64, a x86.M512i)  {
 	maskStoreuEpi82(uintptr(mem_addr), uint64(k), [64]byte(a))
 }
 
@@ -15783,8 +15783,8 @@ func maskStoreuEpi82(mem_addr uintptr, k uint64, a [64]byte)
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm_mask_sub_epi16'.
 // Requires AVX512BW.
-func MaskSubEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskSubEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskSubEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskSubEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskSubEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -15806,8 +15806,8 @@ func maskSubEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm_maskz_sub_epi16'.
 // Requires AVX512BW.
-func MaskzSubEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzSubEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzSubEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzSubEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzSubEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -15829,8 +15829,8 @@ func maskzSubEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm256_mask_sub_epi16'.
 // Requires AVX512BW.
-func MaskSubEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskSubEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskSubEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskSubEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskSubEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -15852,8 +15852,8 @@ func maskSubEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm256_maskz_sub_epi16'.
 // Requires AVX512BW.
-func MaskzSubEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzSubEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzSubEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzSubEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzSubEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -15875,8 +15875,8 @@ func maskzSubEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_mask_sub_epi16'.
 // Requires AVX512BW.
-func MaskSubEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskSubEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskSubEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskSubEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskSubEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -15898,8 +15898,8 @@ func maskSubEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_maskz_sub_epi16'.
 // Requires AVX512BW.
-func MaskzSubEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzSubEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzSubEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzSubEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzSubEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -15916,8 +15916,8 @@ func maskzSubEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_sub_epi16'.
 // Requires AVX512BW.
-func SubEpi16(a M512i, b M512i) M512i {
-	return M512i(subEpi16([64]byte(a), [64]byte(b)))
+func SubEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(subEpi16([64]byte(a), [64]byte(b)))
 }
 
 func subEpi16(a [64]byte, b [64]byte) [64]byte
@@ -15939,8 +15939,8 @@ func subEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm_mask_sub_epi8'.
 // Requires AVX512BW.
-func MaskSubEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskSubEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskSubEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskSubEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskSubEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -15962,8 +15962,8 @@ func maskSubEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm_maskz_sub_epi8'.
 // Requires AVX512BW.
-func MaskzSubEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzSubEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzSubEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzSubEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzSubEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -15985,8 +15985,8 @@ func maskzSubEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm256_mask_sub_epi8'.
 // Requires AVX512BW.
-func MaskSubEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskSubEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskSubEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskSubEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskSubEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -16008,8 +16008,8 @@ func maskSubEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm256_maskz_sub_epi8'.
 // Requires AVX512BW.
-func MaskzSubEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzSubEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzSubEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzSubEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzSubEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -16031,8 +16031,8 @@ func maskzSubEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_mask_sub_epi8'.
 // Requires AVX512BW.
-func MaskSubEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskSubEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskSubEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskSubEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskSubEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -16054,8 +16054,8 @@ func maskSubEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_maskz_sub_epi8'.
 // Requires AVX512BW.
-func MaskzSubEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzSubEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzSubEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzSubEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzSubEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -16072,8 +16072,8 @@ func maskzSubEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_sub_epi8'.
 // Requires AVX512BW.
-func SubEpi8(a M512i, b M512i) M512i {
-	return M512i(subEpi8([64]byte(a), [64]byte(b)))
+func SubEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(subEpi8([64]byte(a), [64]byte(b)))
 }
 
 func subEpi8(a [64]byte, b [64]byte) [64]byte
@@ -16096,8 +16096,8 @@ func subEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm_mask_subs_epi16'.
 // Requires AVX512BW.
-func MaskSubsEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskSubsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskSubsEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskSubsEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskSubsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -16120,8 +16120,8 @@ func maskSubsEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm_maskz_subs_epi16'.
 // Requires AVX512BW.
-func MaskzSubsEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzSubsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzSubsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzSubsEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzSubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -16144,8 +16144,8 @@ func maskzSubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm256_mask_subs_epi16'.
 // Requires AVX512BW.
-func MaskSubsEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskSubsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskSubsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskSubsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskSubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -16168,8 +16168,8 @@ func maskSubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm256_maskz_subs_epi16'.
 // Requires AVX512BW.
-func MaskzSubsEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzSubsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzSubsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzSubsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzSubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -16192,8 +16192,8 @@ func maskzSubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_mask_subs_epi16'.
 // Requires AVX512BW.
-func MaskSubsEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskSubsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskSubsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskSubsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskSubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -16216,8 +16216,8 @@ func maskSubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_maskz_subs_epi16'.
 // Requires AVX512BW.
-func MaskzSubsEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzSubsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzSubsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzSubsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzSubsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -16234,8 +16234,8 @@ func maskzSubsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_subs_epi16'.
 // Requires AVX512BW.
-func SubsEpi16(a M512i, b M512i) M512i {
-	return M512i(subsEpi16([64]byte(a), [64]byte(b)))
+func SubsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(subsEpi16([64]byte(a), [64]byte(b)))
 }
 
 func subsEpi16(a [64]byte, b [64]byte) [64]byte
@@ -16258,8 +16258,8 @@ func subsEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm_mask_subs_epi8'.
 // Requires AVX512BW.
-func MaskSubsEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskSubsEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskSubsEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskSubsEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskSubsEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -16282,8 +16282,8 @@ func maskSubsEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm_maskz_subs_epi8'.
 // Requires AVX512BW.
-func MaskzSubsEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzSubsEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzSubsEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzSubsEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzSubsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -16306,8 +16306,8 @@ func maskzSubsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm256_mask_subs_epi8'.
 // Requires AVX512BW.
-func MaskSubsEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskSubsEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskSubsEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskSubsEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskSubsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -16330,8 +16330,8 @@ func maskSubsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm256_maskz_subs_epi8'.
 // Requires AVX512BW.
-func MaskzSubsEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzSubsEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzSubsEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzSubsEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzSubsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -16354,8 +16354,8 @@ func maskzSubsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_mask_subs_epi8'.
 // Requires AVX512BW.
-func MaskSubsEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskSubsEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskSubsEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskSubsEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskSubsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -16378,8 +16378,8 @@ func maskSubsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_maskz_subs_epi8'.
 // Requires AVX512BW.
-func MaskzSubsEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzSubsEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzSubsEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzSubsEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzSubsEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -16396,8 +16396,8 @@ func maskzSubsEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_subs_epi8'.
 // Requires AVX512BW.
-func SubsEpi8(a M512i, b M512i) M512i {
-	return M512i(subsEpi8([64]byte(a), [64]byte(b)))
+func SubsEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(subsEpi8([64]byte(a), [64]byte(b)))
 }
 
 func subsEpi8(a [64]byte, b [64]byte) [64]byte
@@ -16420,8 +16420,8 @@ func subsEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm_mask_subs_epu16'.
 // Requires AVX512BW.
-func MaskSubsEpu16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskSubsEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskSubsEpu16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskSubsEpu16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskSubsEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -16444,8 +16444,8 @@ func maskSubsEpu16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm_maskz_subs_epu16'.
 // Requires AVX512BW.
-func MaskzSubsEpu16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzSubsEpu16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzSubsEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzSubsEpu16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzSubsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -16468,8 +16468,8 @@ func maskzSubsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm256_mask_subs_epu16'.
 // Requires AVX512BW.
-func MaskSubsEpu161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskSubsEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskSubsEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskSubsEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskSubsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -16492,8 +16492,8 @@ func maskSubsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm256_maskz_subs_epu16'.
 // Requires AVX512BW.
-func MaskzSubsEpu161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzSubsEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzSubsEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzSubsEpu161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzSubsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -16516,8 +16516,8 @@ func maskzSubsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_mask_subs_epu16'.
 // Requires AVX512BW.
-func MaskSubsEpu162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskSubsEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskSubsEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskSubsEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskSubsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -16540,8 +16540,8 @@ func maskSubsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_maskz_subs_epu16'.
 // Requires AVX512BW.
-func MaskzSubsEpu162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzSubsEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzSubsEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzSubsEpu162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzSubsEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -16559,8 +16559,8 @@ func maskzSubsEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_subs_epu16'.
 // Requires AVX512BW.
-func SubsEpu16(a M512i, b M512i) M512i {
-	return M512i(subsEpu16([64]byte(a), [64]byte(b)))
+func SubsEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(subsEpu16([64]byte(a), [64]byte(b)))
 }
 
 func subsEpu16(a [64]byte, b [64]byte) [64]byte
@@ -16583,8 +16583,8 @@ func subsEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm_mask_subs_epu8'.
 // Requires AVX512BW.
-func MaskSubsEpu8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskSubsEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskSubsEpu8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskSubsEpu8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskSubsEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -16607,8 +16607,8 @@ func maskSubsEpu8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm_maskz_subs_epu8'.
 // Requires AVX512BW.
-func MaskzSubsEpu8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzSubsEpu8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzSubsEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzSubsEpu8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzSubsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -16631,8 +16631,8 @@ func maskzSubsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm256_mask_subs_epu8'.
 // Requires AVX512BW.
-func MaskSubsEpu81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskSubsEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskSubsEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskSubsEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskSubsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -16655,8 +16655,8 @@ func maskSubsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm256_maskz_subs_epu8'.
 // Requires AVX512BW.
-func MaskzSubsEpu81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzSubsEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzSubsEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzSubsEpu81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzSubsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -16679,8 +16679,8 @@ func maskzSubsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_mask_subs_epu8'.
 // Requires AVX512BW.
-func MaskSubsEpu82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskSubsEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskSubsEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskSubsEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskSubsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -16703,8 +16703,8 @@ func maskSubsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_maskz_subs_epu8'.
 // Requires AVX512BW.
-func MaskzSubsEpu82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzSubsEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzSubsEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzSubsEpu82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzSubsEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -16722,8 +16722,8 @@ func maskzSubsEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_subs_epu8'.
 // Requires AVX512BW.
-func SubsEpu8(a M512i, b M512i) M512i {
-	return M512i(subsEpu8([64]byte(a), [64]byte(b)))
+func SubsEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(subsEpu8([64]byte(a), [64]byte(b)))
 }
 
 func subsEpu8(a [64]byte, b [64]byte) [64]byte
@@ -16746,8 +16746,8 @@ func subsEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm_mask_test_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskTestEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskTestEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskTestEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskTestEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -16765,8 +16765,8 @@ func maskTestEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm_test_epi16_mask'.
 // Requires AVX512BW.
-func TestEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(testEpi16Mask([16]byte(a), [16]byte(b)))
+func TestEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(testEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func testEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -16789,8 +16789,8 @@ func testEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm256_mask_test_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskTestEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskTestEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskTestEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskTestEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -16808,8 +16808,8 @@ func maskTestEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm256_test_epi16_mask'.
 // Requires AVX512BW.
-func TestEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(testEpi16Mask1([32]byte(a), [32]byte(b)))
+func TestEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(testEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func testEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -16832,8 +16832,8 @@ func testEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm512_mask_test_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskTestEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskTestEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskTestEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskTestEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -16851,8 +16851,8 @@ func maskTestEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm512_test_epi16_mask'.
 // Requires AVX512BW.
-func TestEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(testEpi16Mask2([64]byte(a), [64]byte(b)))
+func TestEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(testEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func testEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -16875,8 +16875,8 @@ func testEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm_mask_test_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskTestEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskTestEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskTestEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskTestEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -16894,8 +16894,8 @@ func maskTestEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm_test_epi8_mask'.
 // Requires AVX512BW.
-func TestEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(testEpi8Mask([16]byte(a), [16]byte(b)))
+func TestEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(testEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func testEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -16918,8 +16918,8 @@ func testEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm256_mask_test_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskTestEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskTestEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskTestEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskTestEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -16937,8 +16937,8 @@ func maskTestEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm256_test_epi8_mask'.
 // Requires AVX512BW.
-func TestEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(testEpi8Mask1([32]byte(a), [32]byte(b)))
+func TestEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(testEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func testEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -16961,8 +16961,8 @@ func testEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm512_mask_test_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskTestEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskTestEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskTestEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskTestEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -16980,8 +16980,8 @@ func maskTestEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm512_test_epi8_mask'.
 // Requires AVX512BW.
-func TestEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(testEpi8Mask2([64]byte(a), [64]byte(b)))
+func TestEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(testEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func testEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -17004,8 +17004,8 @@ func testEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm_mask_testn_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi16Mask(k1 Mmask8, a M128i, b M128i) Mmask8 {
-	return Mmask8(maskTestnEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
+func MaskTestnEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(maskTestnEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskTestnEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
@@ -17023,8 +17023,8 @@ func maskTestnEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm_testn_epi16_mask'.
 // Requires AVX512BW.
-func TestnEpi16Mask(a M128i, b M128i) Mmask8 {
-	return Mmask8(testnEpi16Mask([16]byte(a), [16]byte(b)))
+func TestnEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+	return x86.Mmask8(testnEpi16Mask([16]byte(a), [16]byte(b)))
 }
 
 func testnEpi16Mask(a [16]byte, b [16]byte) uint8
@@ -17047,8 +17047,8 @@ func testnEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm256_mask_testn_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi16Mask1(k1 Mmask16, a M256i, b M256i) Mmask16 {
-	return Mmask16(maskTestnEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func MaskTestnEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(maskTestnEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskTestnEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
@@ -17066,8 +17066,8 @@ func maskTestnEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm256_testn_epi16_mask'.
 // Requires AVX512BW.
-func TestnEpi16Mask1(a M256i, b M256i) Mmask16 {
-	return Mmask16(testnEpi16Mask1([32]byte(a), [32]byte(b)))
+func TestnEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(testnEpi16Mask1([32]byte(a), [32]byte(b)))
 }
 
 func testnEpi16Mask1(a [32]byte, b [32]byte) uint16
@@ -17090,8 +17090,8 @@ func testnEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm512_mask_testn_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi16Mask2(k1 Mmask32, a M512i, b M512i) Mmask32 {
-	return Mmask32(maskTestnEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func MaskTestnEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(maskTestnEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskTestnEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
@@ -17109,8 +17109,8 @@ func maskTestnEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm512_testn_epi16_mask'.
 // Requires AVX512BW.
-func TestnEpi16Mask2(a M512i, b M512i) Mmask32 {
-	return Mmask32(testnEpi16Mask2([64]byte(a), [64]byte(b)))
+func TestnEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(testnEpi16Mask2([64]byte(a), [64]byte(b)))
 }
 
 func testnEpi16Mask2(a [64]byte, b [64]byte) uint32
@@ -17133,8 +17133,8 @@ func testnEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm_mask_testn_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi8Mask(k1 Mmask16, a M128i, b M128i) Mmask16 {
-	return Mmask16(maskTestnEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
+func MaskTestnEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(maskTestnEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b)))
 }
 
 func maskTestnEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
@@ -17152,8 +17152,8 @@ func maskTestnEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm_testn_epi8_mask'.
 // Requires AVX512BW.
-func TestnEpi8Mask(a M128i, b M128i) Mmask16 {
-	return Mmask16(testnEpi8Mask([16]byte(a), [16]byte(b)))
+func TestnEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
+	return x86.Mmask16(testnEpi8Mask([16]byte(a), [16]byte(b)))
 }
 
 func testnEpi8Mask(a [16]byte, b [16]byte) uint16
@@ -17176,8 +17176,8 @@ func testnEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm256_mask_testn_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi8Mask1(k1 Mmask32, a M256i, b M256i) Mmask32 {
-	return Mmask32(maskTestnEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func MaskTestnEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(maskTestnEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
 func maskTestnEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
@@ -17195,8 +17195,8 @@ func maskTestnEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm256_testn_epi8_mask'.
 // Requires AVX512BW.
-func TestnEpi8Mask1(a M256i, b M256i) Mmask32 {
-	return Mmask32(testnEpi8Mask1([32]byte(a), [32]byte(b)))
+func TestnEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(testnEpi8Mask1([32]byte(a), [32]byte(b)))
 }
 
 func testnEpi8Mask1(a [32]byte, b [32]byte) uint32
@@ -17219,8 +17219,8 @@ func testnEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm512_mask_testn_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi8Mask2(k1 Mmask64, a M512i, b M512i) Mmask64 {
-	return Mmask64(maskTestnEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func MaskTestnEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(maskTestnEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
 func maskTestnEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
@@ -17238,8 +17238,8 @@ func maskTestnEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm512_testn_epi8_mask'.
 // Requires AVX512BW.
-func TestnEpi8Mask2(a M512i, b M512i) Mmask64 {
-	return Mmask64(testnEpi8Mask2([64]byte(a), [64]byte(b)))
+func TestnEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(testnEpi8Mask2([64]byte(a), [64]byte(b)))
 }
 
 func testnEpi8Mask2(a [64]byte, b [64]byte) uint64
@@ -17275,8 +17275,8 @@ func testnEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm_mask_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskUnpackhiEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskUnpackhiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskUnpackhiEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskUnpackhiEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -17312,8 +17312,8 @@ func maskUnpackhiEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm_maskz_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzUnpackhiEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzUnpackhiEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzUnpackhiEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzUnpackhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -17351,8 +17351,8 @@ func maskzUnpackhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm256_mask_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskUnpackhiEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskUnpackhiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskUnpackhiEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskUnpackhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -17390,8 +17390,8 @@ func maskUnpackhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm256_maskz_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzUnpackhiEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzUnpackhiEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzUnpackhiEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzUnpackhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -17431,8 +17431,8 @@ func maskzUnpackhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_mask_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskUnpackhiEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskUnpackhiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskUnpackhiEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskUnpackhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -17472,8 +17472,8 @@ func maskUnpackhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_maskz_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackhiEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzUnpackhiEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzUnpackhiEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzUnpackhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -17502,8 +17502,8 @@ func maskzUnpackhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_unpackhi_epi16'.
 // Requires AVX512BW.
-func UnpackhiEpi16(a M512i, b M512i) M512i {
-	return M512i(unpackhiEpi16([64]byte(a), [64]byte(b)))
+func UnpackhiEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(unpackhiEpi16([64]byte(a), [64]byte(b)))
 }
 
 func unpackhiEpi16(a [64]byte, b [64]byte) [64]byte
@@ -17547,8 +17547,8 @@ func unpackhiEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm_mask_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskUnpackhiEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskUnpackhiEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskUnpackhiEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskUnpackhiEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -17592,8 +17592,8 @@ func maskUnpackhiEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm_maskz_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzUnpackhiEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzUnpackhiEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzUnpackhiEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzUnpackhiEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -17639,8 +17639,8 @@ func maskzUnpackhiEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm256_mask_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskUnpackhiEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskUnpackhiEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskUnpackhiEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskUnpackhiEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -17686,8 +17686,8 @@ func maskUnpackhiEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm256_maskz_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzUnpackhiEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzUnpackhiEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzUnpackhiEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzUnpackhiEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -17735,8 +17735,8 @@ func maskzUnpackhiEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_mask_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskUnpackhiEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskUnpackhiEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskUnpackhiEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskUnpackhiEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -17784,8 +17784,8 @@ func maskUnpackhiEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_maskz_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackhiEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzUnpackhiEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzUnpackhiEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzUnpackhiEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -17822,8 +17822,8 @@ func maskzUnpackhiEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_unpackhi_epi8'.
 // Requires AVX512BW.
-func UnpackhiEpi8(a M512i, b M512i) M512i {
-	return M512i(unpackhiEpi8([64]byte(a), [64]byte(b)))
+func UnpackhiEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(unpackhiEpi8([64]byte(a), [64]byte(b)))
 }
 
 func unpackhiEpi8(a [64]byte, b [64]byte) [64]byte
@@ -17859,8 +17859,8 @@ func unpackhiEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm_mask_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskUnpackloEpi16(src M128i, k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskUnpackloEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
+func MaskUnpackloEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskUnpackloEpi16([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskUnpackloEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -17896,8 +17896,8 @@ func maskUnpackloEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm_maskz_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi16(k Mmask8, a M128i, b M128i) M128i {
-	return M128i(maskzUnpackloEpi16(uint8(k), [16]byte(a), [16]byte(b)))
+func MaskzUnpackloEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzUnpackloEpi16(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzUnpackloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
@@ -17935,8 +17935,8 @@ func maskzUnpackloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm256_mask_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskUnpackloEpi161(src M256i, k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskUnpackloEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func MaskUnpackloEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskUnpackloEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskUnpackloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
@@ -17974,8 +17974,8 @@ func maskUnpackloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm256_maskz_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi161(k Mmask16, a M256i, b M256i) M256i {
-	return M256i(maskzUnpackloEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func MaskzUnpackloEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzUnpackloEpi161(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzUnpackloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
@@ -18015,8 +18015,8 @@ func maskzUnpackloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_mask_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskUnpackloEpi162(src M512i, k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskUnpackloEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func MaskUnpackloEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskUnpackloEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskUnpackloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
@@ -18056,8 +18056,8 @@ func maskUnpackloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_maskz_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi162(k Mmask32, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackloEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func MaskzUnpackloEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzUnpackloEpi162(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzUnpackloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
@@ -18086,8 +18086,8 @@ func maskzUnpackloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_unpacklo_epi16'.
 // Requires AVX512BW.
-func UnpackloEpi16(a M512i, b M512i) M512i {
-	return M512i(unpackloEpi16([64]byte(a), [64]byte(b)))
+func UnpackloEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(unpackloEpi16([64]byte(a), [64]byte(b)))
 }
 
 func unpackloEpi16(a [64]byte, b [64]byte) [64]byte
@@ -18131,8 +18131,8 @@ func unpackloEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm_mask_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskUnpackloEpi8(src M128i, k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskUnpackloEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
+func MaskUnpackloEpi8(src x86.M128i, k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskUnpackloEpi8([16]byte(src), uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskUnpackloEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
@@ -18176,8 +18176,8 @@ func maskUnpackloEpi8(src [16]byte, k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm_maskz_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi8(k Mmask16, a M128i, b M128i) M128i {
-	return M128i(maskzUnpackloEpi8(uint16(k), [16]byte(a), [16]byte(b)))
+func MaskzUnpackloEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
+	return x86.M128i(maskzUnpackloEpi8(uint16(k), [16]byte(a), [16]byte(b)))
 }
 
 func maskzUnpackloEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
@@ -18223,8 +18223,8 @@ func maskzUnpackloEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm256_mask_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskUnpackloEpi81(src M256i, k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskUnpackloEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func MaskUnpackloEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskUnpackloEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskUnpackloEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
@@ -18270,8 +18270,8 @@ func maskUnpackloEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm256_maskz_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi81(k Mmask32, a M256i, b M256i) M256i {
-	return M256i(maskzUnpackloEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func MaskzUnpackloEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(maskzUnpackloEpi81(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
 func maskzUnpackloEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
@@ -18319,8 +18319,8 @@ func maskzUnpackloEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_mask_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskUnpackloEpi82(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskUnpackloEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskUnpackloEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskUnpackloEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskUnpackloEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -18368,8 +18368,8 @@ func maskUnpackloEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_maskz_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi82(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzUnpackloEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzUnpackloEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzUnpackloEpi82(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzUnpackloEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -18406,8 +18406,8 @@ func maskzUnpackloEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_unpacklo_epi8'.
 // Requires AVX512BW.
-func UnpackloEpi8(a M512i, b M512i) M512i {
-	return M512i(unpackloEpi8([64]byte(a), [64]byte(b)))
+func UnpackloEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(unpackloEpi8([64]byte(a), [64]byte(b)))
 }
 
 func unpackloEpi8(a [64]byte, b [64]byte) [64]byte

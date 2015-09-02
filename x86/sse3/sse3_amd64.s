@@ -58,9 +58,9 @@ TEXT ·hsubPs(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func lddquSi128(mem_addr M128iConst) [16]byte
+// func lddquSi128(mem_addr x86.M128iConst) [16]byte
 TEXT ·lddquSi128(SB),7,$0
-	// Unimplemented. Unknown size of type M128iConst
+	// Unimplemented. Unknown size of type x86.M128iConst
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)

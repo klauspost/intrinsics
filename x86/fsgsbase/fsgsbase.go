@@ -1,6 +1,6 @@
 package fsgsbase
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // ReadfsbaseU32: Read the FS segment base register and store the 32-bit result

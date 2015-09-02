@@ -1,6 +1,6 @@
 package rdrand
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Rdrand16Step: Read a hardware generated 16-bit random value and store the

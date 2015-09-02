@@ -1,6 +1,6 @@
 package pclmulqdq
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Clmulepi64Si128: Perform a carry-less multiplication of two 64-bit integers,
@@ -36,8 +36,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'PCLMULQDQ'. Intrinsic: '_mm_clmulepi64_si128'.
 // Requires PCLMULQDQ.
-func Clmulepi64Si128(a M128i, b M128i, imm8 int) M128i {
-	return M128i(clmulepi64Si128([16]byte(a), [16]byte(b), imm8))
+func Clmulepi64Si128(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+	return x86.M128i(clmulepi64Si128([16]byte(a), [16]byte(b), imm8))
 }
 
 func clmulepi64Si128(a [16]byte, b [16]byte, imm8 int) [16]byte

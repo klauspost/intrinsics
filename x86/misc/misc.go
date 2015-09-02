@@ -1,6 +1,6 @@
 package misc
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // AddcarryU32: Add unsigned 32-bit integers 'a' and 'b' with unsigned 8-bit
@@ -502,8 +502,8 @@ func loadbeI64(ptr uintptr) int64
 //		dst[MAX:16] := 0
 //
 // Instruction: 'MOVZWL+MOVD'. Intrinsic: '_mm_loadu_si16'.
-func LoaduSi16(mem_addr uintptr) M128i {
-	return M128i(loaduSi16(uintptr(mem_addr)))
+func LoaduSi16(mem_addr uintptr) x86.M128i {
+	return x86.M128i(loaduSi16(uintptr(mem_addr)))
 }
 
 func loaduSi16(mem_addr uintptr) [16]byte
@@ -516,8 +516,8 @@ func loaduSi16(mem_addr uintptr) [16]byte
 //		dst[MAX:32] := 0
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_loadu_si32'.
-func LoaduSi32(mem_addr uintptr) M128i {
-	return M128i(loaduSi32(uintptr(mem_addr)))
+func LoaduSi32(mem_addr uintptr) x86.M128i {
+	return x86.M128i(loaduSi32(uintptr(mem_addr)))
 }
 
 func loaduSi32(mem_addr uintptr) [16]byte
@@ -530,8 +530,8 @@ func loaduSi32(mem_addr uintptr) [16]byte
 //		dst[MAX:64] := 0
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_loadu_si64'.
-func LoaduSi64(mem_addr uintptr) M128i {
-	return M128i(loaduSi64(uintptr(mem_addr)))
+func LoaduSi64(mem_addr uintptr) x86.M128i {
+	return x86.M128i(loaduSi64(uintptr(mem_addr)))
 }
 
 func loaduSi64(mem_addr uintptr) [16]byte
@@ -776,7 +776,7 @@ func storebeI64(ptr uintptr, data int64)
 //		MEM[mem_addr+15:mem_addr] := a[15:0]
 //
 // Instruction: 'MOVD+MOVW'. Intrinsic: '_mm_storeu_si16'.
-func StoreuSi16(mem_addr uintptr, a M128i)  {
+func StoreuSi16(mem_addr uintptr, a x86.M128i)  {
 	storeuSi16(uintptr(mem_addr), [16]byte(a))
 }
 
@@ -789,7 +789,7 @@ func storeuSi16(mem_addr uintptr, a [16]byte)
 //		MEM[mem_addr+31:mem_addr] := a[31:0]
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_storeu_si32'.
-func StoreuSi32(mem_addr uintptr, a M128i)  {
+func StoreuSi32(mem_addr uintptr, a x86.M128i)  {
 	storeuSi32(uintptr(mem_addr), [16]byte(a))
 }
 
@@ -802,7 +802,7 @@ func storeuSi32(mem_addr uintptr, a [16]byte)
 //		MEM[mem_addr+63:mem_addr] := a[63:0]
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_storeu_si64'.
-func StoreuSi64(mem_addr uintptr, a M128i)  {
+func StoreuSi64(mem_addr uintptr, a x86.M128i)  {
 	storeuSi64(uintptr(mem_addr), [16]byte(a))
 }
 

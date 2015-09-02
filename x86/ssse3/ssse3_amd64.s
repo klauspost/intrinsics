@@ -25,7 +25,7 @@ TEXT ·absEpi8(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func absPi16(a M64) M64
+// func absPi16(a x86.M64) x86.M64
 TEXT ·absPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -34,7 +34,7 @@ TEXT ·absPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func absPi32(a M64) M64
+// func absPi32(a x86.M64) x86.M64
 TEXT ·absPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -43,7 +43,7 @@ TEXT ·absPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func absPi8(a M64) M64
+// func absPi8(a x86.M64) x86.M64
 TEXT ·absPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -63,7 +63,7 @@ TEXT ·alignrEpi8(SB),7,$0
 	MOVOU X0, ret+40(FP)
 	RET
 
-// func alignrPi8(a M64, b M64, count int) M64
+// func alignrPi8(a x86.M64, b x86.M64, count int) x86.M64
 TEXT ·alignrPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -94,7 +94,7 @@ TEXT ·haddEpi32(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func haddPi16(a M64, b M64) M64
+// func haddPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·haddPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -104,7 +104,7 @@ TEXT ·haddPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func haddPi32(a M64, b M64) M64
+// func haddPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·haddPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -124,7 +124,7 @@ TEXT ·haddsEpi16(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func haddsPi16(a M64, b M64) M64
+// func haddsPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·haddsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -154,7 +154,7 @@ TEXT ·hsubEpi32(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func hsubPi16(a M64, b M64) M64
+// func hsubPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·hsubPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -164,7 +164,7 @@ TEXT ·hsubPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func hsubPi32(a M64, b M64) M64
+// func hsubPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·hsubPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -184,7 +184,7 @@ TEXT ·hsubsEpi16(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func hsubsPi16(a M64, b M64) M64
+// func hsubsPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·hsubsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -204,7 +204,7 @@ TEXT ·maddubsEpi16(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func maddubsPi16(a M64, b M64) M64
+// func maddubsPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·maddubsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -224,7 +224,7 @@ TEXT ·mulhrsEpi16(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func mulhrsPi16(a M64, b M64) M64
+// func mulhrsPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·mulhrsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -244,7 +244,7 @@ TEXT ·shuffleEpi8(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func shufflePi8(a M64, b M64) M64
+// func shufflePi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·shufflePi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -284,7 +284,7 @@ TEXT ·signEpi8(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func signPi16(a M64, b M64) M64
+// func signPi16(a x86.M64, b x86.M64) x86.M64
 TEXT ·signPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -294,7 +294,7 @@ TEXT ·signPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func signPi32(a M64, b M64) M64
+// func signPi32(a x86.M64, b x86.M64) x86.M64
 TEXT ·signPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -304,7 +304,7 @@ TEXT ·signPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func signPi8(a M64, b M64) M64
+// func signPi8(a x86.M64, b x86.M64) x86.M64
 TEXT ·signPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1

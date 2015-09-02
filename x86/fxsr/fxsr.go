@@ -1,6 +1,6 @@
 package fxsr
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Fxrstor: Reload the x87 FPU, MMX technology, XMM, and MXCSR registers from

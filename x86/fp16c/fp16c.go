@@ -1,6 +1,6 @@
 package fp16c
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // CvtphPs: Convert packed half-precision (16-bit) floating-point elements in
@@ -16,8 +16,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm_cvtph_ps'.
 // Requires FP16C.
-func CvtphPs(a M128i) M128 {
-	return M128(cvtphPs([16]byte(a)))
+func CvtphPs(a x86.M128i) x86.M128 {
+	return x86.M128(cvtphPs([16]byte(a)))
 }
 
 func cvtphPs(a [16]byte) [4]float32
@@ -36,8 +36,8 @@ func cvtphPs(a [16]byte) [4]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm256_cvtph_ps'.
 // Requires FP16C.
-func CvtphPs1(a M128i) M256 {
-	return M256(cvtphPs1([16]byte(a)))
+func CvtphPs1(a x86.M128i) x86.M256 {
+	return x86.M256(cvtphPs1([16]byte(a)))
 }
 
 func cvtphPs1(a [16]byte) [8]float32
@@ -63,8 +63,8 @@ func cvtphPs1(a [16]byte) [8]float32
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm_cvtps_ph'.
 // Requires FP16C.
-func CvtpsPh(a M128, rounding int) M128i {
-	return M128i(cvtpsPh([4]float32(a), rounding))
+func CvtpsPh(a x86.M128, rounding int) x86.M128i {
+	return x86.M128i(cvtpsPh([4]float32(a), rounding))
 }
 
 func cvtpsPh(a [4]float32, rounding int) [16]byte
@@ -90,8 +90,8 @@ func cvtpsPh(a [4]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm256_cvtps_ph'.
 // Requires FP16C.
-func CvtpsPh1(a M256, rounding int) M128i {
-	return M128i(cvtpsPh1([8]float32(a), rounding))
+func CvtpsPh1(a x86.M256, rounding int) x86.M128i {
+	return x86.M128i(cvtpsPh1([8]float32(a), rounding))
 }
 
 func cvtpsPh1(a [8]float32, rounding int) [16]byte

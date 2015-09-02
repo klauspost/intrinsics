@@ -11,7 +11,7 @@ TEXT ·fmaddPd(SB),7,$0
 
 // func fmaddPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
 TEXT ·fmaddPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -30,7 +30,7 @@ TEXT ·fmaddPs(SB),7,$0
 
 // func fmaddPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
 TEXT ·fmaddPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -71,7 +71,7 @@ TEXT ·fmaddsubPd(SB),7,$0
 
 // func fmaddsubPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
 TEXT ·fmaddsubPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -90,7 +90,7 @@ TEXT ·fmaddsubPs(SB),7,$0
 
 // func fmaddsubPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
 TEXT ·fmaddsubPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -109,7 +109,7 @@ TEXT ·fmsubPd(SB),7,$0
 
 // func fmsubPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
 TEXT ·fmsubPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -128,7 +128,7 @@ TEXT ·fmsubPs(SB),7,$0
 
 // func fmsubPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
 TEXT ·fmsubPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -169,7 +169,7 @@ TEXT ·fmsubaddPd(SB),7,$0
 
 // func fmsubaddPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
 TEXT ·fmsubaddPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -188,7 +188,7 @@ TEXT ·fmsubaddPs(SB),7,$0
 
 // func fmsubaddPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
 TEXT ·fmsubaddPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -207,7 +207,7 @@ TEXT ·fnmaddPd(SB),7,$0
 
 // func fnmaddPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
 TEXT ·fnmaddPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -226,7 +226,7 @@ TEXT ·fnmaddPs(SB),7,$0
 
 // func fnmaddPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
 TEXT ·fnmaddPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -267,7 +267,7 @@ TEXT ·fnmsubPd(SB),7,$0
 
 // func fnmsubPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
 TEXT ·fnmsubPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -286,7 +286,7 @@ TEXT ·fnmsubPs(SB),7,$0
 
 // func fnmsubPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
 TEXT ·fnmsubPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)

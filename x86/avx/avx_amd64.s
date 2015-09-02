@@ -1,6 +1,6 @@
 // func acosPd(a [4]float64) [4]float64
 TEXT ·acosPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -8,7 +8,7 @@ TEXT ·acosPd(SB),7,$0
 
 // func acosPs(a [8]float32) [8]float32
 TEXT ·acosPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -16,7 +16,7 @@ TEXT ·acosPs(SB),7,$0
 
 // func acoshPd(a [4]float64) [4]float64
 TEXT ·acoshPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -24,7 +24,7 @@ TEXT ·acoshPd(SB),7,$0
 
 // func acoshPs(a [8]float32) [8]float32
 TEXT ·acoshPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -32,7 +32,7 @@ TEXT ·acoshPs(SB),7,$0
 
 // func addPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·addPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -40,7 +40,7 @@ TEXT ·addPd(SB),7,$0
 
 // func addPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·addPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -48,7 +48,7 @@ TEXT ·addPs(SB),7,$0
 
 // func addsubPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·addsubPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -56,7 +56,7 @@ TEXT ·addsubPd(SB),7,$0
 
 // func addsubPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·addsubPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -64,7 +64,7 @@ TEXT ·addsubPs(SB),7,$0
 
 // func andPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·andPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -72,7 +72,7 @@ TEXT ·andPd(SB),7,$0
 
 // func andPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·andPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -80,7 +80,7 @@ TEXT ·andPs(SB),7,$0
 
 // func andnotPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·andnotPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -88,7 +88,7 @@ TEXT ·andnotPd(SB),7,$0
 
 // func andnotPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·andnotPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -96,7 +96,7 @@ TEXT ·andnotPs(SB),7,$0
 
 // func asinPd(a [4]float64) [4]float64
 TEXT ·asinPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -104,7 +104,7 @@ TEXT ·asinPd(SB),7,$0
 
 // func asinPs(a [8]float32) [8]float32
 TEXT ·asinPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -112,7 +112,7 @@ TEXT ·asinPs(SB),7,$0
 
 // func asinhPd(a [4]float64) [4]float64
 TEXT ·asinhPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -120,7 +120,7 @@ TEXT ·asinhPd(SB),7,$0
 
 // func asinhPs(a [8]float32) [8]float32
 TEXT ·asinhPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -128,7 +128,7 @@ TEXT ·asinhPs(SB),7,$0
 
 // func atanPd(a [4]float64) [4]float64
 TEXT ·atanPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -136,7 +136,7 @@ TEXT ·atanPd(SB),7,$0
 
 // func atanPs(a [8]float32) [8]float32
 TEXT ·atanPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -144,7 +144,7 @@ TEXT ·atanPs(SB),7,$0
 
 // func atan2Pd(a [4]float64, b [4]float64) [4]float64
 TEXT ·atan2Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -152,7 +152,7 @@ TEXT ·atan2Pd(SB),7,$0
 
 // func atan2Ps(a [8]float32, b [8]float32) [8]float32
 TEXT ·atan2Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -160,7 +160,7 @@ TEXT ·atan2Ps(SB),7,$0
 
 // func atanhPd(a [4]float64) [4]float64
 TEXT ·atanhPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -168,7 +168,7 @@ TEXT ·atanhPd(SB),7,$0
 
 // func atanhPs(a [8]float32) [8]float32
 TEXT ·atanhPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -176,7 +176,7 @@ TEXT ·atanhPs(SB),7,$0
 
 // func blendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 TEXT ·blendPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -184,7 +184,7 @@ TEXT ·blendPd(SB),7,$0
 
 // func blendPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·blendPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -192,7 +192,7 @@ TEXT ·blendPs(SB),7,$0
 
 // func blendvPd(a [4]float64, b [4]float64, mask [4]float64) [4]float64
 TEXT ·blendvPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -200,23 +200,23 @@ TEXT ·blendvPd(SB),7,$0
 
 // func blendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
 TEXT ·blendvPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func broadcastPd(mem_addr M128dConst) [4]float64
+// func broadcastPd(mem_addr x86.M128dConst) [4]float64
 TEXT ·broadcastPd(SB),7,$0
-	// Unimplemented. Unknown size of type M128dConst
+	// Unimplemented. Unknown size of type x86.M128dConst
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func broadcastPs(mem_addr M128Const) [8]float32
+// func broadcastPs(mem_addr x86.M128Const) [8]float32
 TEXT ·broadcastPs(SB),7,$0
-	// Unimplemented. Unknown size of type M128Const
+	// Unimplemented. Unknown size of type x86.M128Const
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -251,7 +251,7 @@ TEXT ·broadcastSs1(SB),7,$0
 
 // func castpdPs(a [4]float64) [8]float32
 TEXT ·castpdPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -259,7 +259,7 @@ TEXT ·castpdPs(SB),7,$0
 
 // func castpdSi256(a [4]float64) [32]byte
 TEXT ·castpdSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -276,7 +276,7 @@ TEXT ·castpd128Pd256(SB),7,$0
 
 // func castpd256Pd128(a [4]float64) [2]float64
 TEXT ·castpd256Pd128(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -284,7 +284,7 @@ TEXT ·castpd256Pd128(SB),7,$0
 
 // func castpsPd(a [8]float32) [4]float64
 TEXT ·castpsPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -292,7 +292,7 @@ TEXT ·castpsPd(SB),7,$0
 
 // func castpsSi256(a [8]float32) [32]byte
 TEXT ·castpsSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -309,7 +309,7 @@ TEXT ·castps128Ps256(SB),7,$0
 
 // func castps256Ps128(a [8]float32) [4]float32
 TEXT ·castps256Ps128(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -326,7 +326,7 @@ TEXT ·castsi128Si256(SB),7,$0
 
 // func castsi256Pd(a [32]byte) [4]float64
 TEXT ·castsi256Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -334,7 +334,7 @@ TEXT ·castsi256Pd(SB),7,$0
 
 // func castsi256Ps(a [32]byte) [8]float32
 TEXT ·castsi256Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -342,7 +342,7 @@ TEXT ·castsi256Ps(SB),7,$0
 
 // func castsi256Si128(a [32]byte) [16]byte
 TEXT ·castsi256Si128(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -350,7 +350,7 @@ TEXT ·castsi256Si128(SB),7,$0
 
 // func cbrtPd(a [4]float64) [4]float64
 TEXT ·cbrtPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -358,7 +358,7 @@ TEXT ·cbrtPd(SB),7,$0
 
 // func cbrtPs(a [8]float32) [8]float32
 TEXT ·cbrtPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -366,7 +366,7 @@ TEXT ·cbrtPs(SB),7,$0
 
 // func cdfnormPd(a [4]float64) [4]float64
 TEXT ·cdfnormPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -374,7 +374,7 @@ TEXT ·cdfnormPd(SB),7,$0
 
 // func cdfnormPs(a [8]float32) [8]float32
 TEXT ·cdfnormPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -382,7 +382,7 @@ TEXT ·cdfnormPs(SB),7,$0
 
 // func cdfnorminvPd(a [4]float64) [4]float64
 TEXT ·cdfnorminvPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -390,7 +390,7 @@ TEXT ·cdfnorminvPd(SB),7,$0
 
 // func cdfnorminvPs(a [8]float32) [8]float32
 TEXT ·cdfnorminvPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -398,7 +398,7 @@ TEXT ·cdfnorminvPs(SB),7,$0
 
 // func ceilPd(a [4]float64) [4]float64
 TEXT ·ceilPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -406,7 +406,7 @@ TEXT ·ceilPd(SB),7,$0
 
 // func ceilPs(a [8]float32) [8]float32
 TEXT ·ceilPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -414,7 +414,7 @@ TEXT ·ceilPs(SB),7,$0
 
 // func cexpPs(a [8]float32) [8]float32
 TEXT ·cexpPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -422,7 +422,7 @@ TEXT ·cexpPs(SB),7,$0
 
 // func clogPs(a [8]float32) [8]float32
 TEXT ·clogPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -441,7 +441,7 @@ TEXT ·cmpPd(SB),7,$0
 
 // func cmpPd1(a [4]float64, b [4]float64, imm8 int) [4]float64
 TEXT ·cmpPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -460,7 +460,7 @@ TEXT ·cmpPs(SB),7,$0
 
 // func cmpPs1(a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·cmpPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -490,7 +490,7 @@ TEXT ·cmpSs(SB),7,$0
 
 // func cosPd(a [4]float64) [4]float64
 TEXT ·cosPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -498,7 +498,7 @@ TEXT ·cosPd(SB),7,$0
 
 // func cosPs(a [8]float32) [8]float32
 TEXT ·cosPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -506,7 +506,7 @@ TEXT ·cosPs(SB),7,$0
 
 // func cosdPd(a [4]float64) [4]float64
 TEXT ·cosdPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -514,7 +514,7 @@ TEXT ·cosdPd(SB),7,$0
 
 // func cosdPs(a [8]float32) [8]float32
 TEXT ·cosdPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -522,7 +522,7 @@ TEXT ·cosdPs(SB),7,$0
 
 // func coshPd(a [4]float64) [4]float64
 TEXT ·coshPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -530,7 +530,7 @@ TEXT ·coshPd(SB),7,$0
 
 // func coshPs(a [8]float32) [8]float32
 TEXT ·coshPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -538,7 +538,7 @@ TEXT ·coshPs(SB),7,$0
 
 // func csqrtPs(a [8]float32) [8]float32
 TEXT ·csqrtPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -555,7 +555,7 @@ TEXT ·cvtepi32Pd(SB),7,$0
 
 // func cvtepi32Ps(a [32]byte) [8]float32
 TEXT ·cvtepi32Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -563,7 +563,7 @@ TEXT ·cvtepi32Ps(SB),7,$0
 
 // func cvtpdEpi32(a [4]float64) [16]byte
 TEXT ·cvtpdEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -571,7 +571,7 @@ TEXT ·cvtpdEpi32(SB),7,$0
 
 // func cvtpdPs(a [4]float64) [4]float32
 TEXT ·cvtpdPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -579,7 +579,7 @@ TEXT ·cvtpdPs(SB),7,$0
 
 // func cvtpsEpi32(a [8]float32) [32]byte
 TEXT ·cvtpsEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -596,7 +596,7 @@ TEXT ·cvtpsPd(SB),7,$0
 
 // func cvttpdEpi32(a [4]float64) [16]byte
 TEXT ·cvttpdEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -604,7 +604,7 @@ TEXT ·cvttpdEpi32(SB),7,$0
 
 // func cvttpsEpi32(a [8]float32) [32]byte
 TEXT ·cvttpsEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -612,7 +612,7 @@ TEXT ·cvttpsEpi32(SB),7,$0
 
 // func divEpi16(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpi16(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -620,7 +620,7 @@ TEXT ·divEpi16(SB),7,$0
 
 // func divEpi32(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -628,7 +628,7 @@ TEXT ·divEpi32(SB),7,$0
 
 // func divEpi64(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -636,7 +636,7 @@ TEXT ·divEpi64(SB),7,$0
 
 // func divEpi8(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpi8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -644,7 +644,7 @@ TEXT ·divEpi8(SB),7,$0
 
 // func divEpu16(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpu16(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -652,7 +652,7 @@ TEXT ·divEpu16(SB),7,$0
 
 // func divEpu32(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpu32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -660,7 +660,7 @@ TEXT ·divEpu32(SB),7,$0
 
 // func divEpu64(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -668,7 +668,7 @@ TEXT ·divEpu64(SB),7,$0
 
 // func divEpu8(a [32]byte, b [32]byte) [32]byte
 TEXT ·divEpu8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -676,7 +676,7 @@ TEXT ·divEpu8(SB),7,$0
 
 // func divPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·divPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -684,7 +684,7 @@ TEXT ·divPd(SB),7,$0
 
 // func divPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·divPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -692,7 +692,7 @@ TEXT ·divPs(SB),7,$0
 
 // func dpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·dpPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -700,7 +700,7 @@ TEXT ·dpPs(SB),7,$0
 
 // func erfPd(a [4]float64) [4]float64
 TEXT ·erfPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -708,7 +708,7 @@ TEXT ·erfPd(SB),7,$0
 
 // func erfPs(a [8]float32) [8]float32
 TEXT ·erfPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -716,7 +716,7 @@ TEXT ·erfPs(SB),7,$0
 
 // func erfcPd(a [4]float64) [4]float64
 TEXT ·erfcPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -724,7 +724,7 @@ TEXT ·erfcPd(SB),7,$0
 
 // func erfcPs(a [8]float32) [8]float32
 TEXT ·erfcPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -732,7 +732,7 @@ TEXT ·erfcPs(SB),7,$0
 
 // func erfcinvPd(a [4]float64) [4]float64
 TEXT ·erfcinvPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -740,7 +740,7 @@ TEXT ·erfcinvPd(SB),7,$0
 
 // func erfcinvPs(a [8]float32) [8]float32
 TEXT ·erfcinvPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -748,7 +748,7 @@ TEXT ·erfcinvPs(SB),7,$0
 
 // func erfinvPd(a [4]float64) [4]float64
 TEXT ·erfinvPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -756,7 +756,7 @@ TEXT ·erfinvPd(SB),7,$0
 
 // func erfinvPs(a [8]float32) [8]float32
 TEXT ·erfinvPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -764,7 +764,7 @@ TEXT ·erfinvPs(SB),7,$0
 
 // func expPd(a [4]float64) [4]float64
 TEXT ·expPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -772,7 +772,7 @@ TEXT ·expPd(SB),7,$0
 
 // func expPs(a [8]float32) [8]float32
 TEXT ·expPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -780,7 +780,7 @@ TEXT ·expPs(SB),7,$0
 
 // func exp10Pd(a [4]float64) [4]float64
 TEXT ·exp10Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -788,7 +788,7 @@ TEXT ·exp10Pd(SB),7,$0
 
 // func exp10Ps(a [8]float32) [8]float32
 TEXT ·exp10Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -796,7 +796,7 @@ TEXT ·exp10Ps(SB),7,$0
 
 // func exp2Pd(a [4]float64) [4]float64
 TEXT ·exp2Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -804,7 +804,7 @@ TEXT ·exp2Pd(SB),7,$0
 
 // func exp2Ps(a [8]float32) [8]float32
 TEXT ·exp2Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -812,7 +812,7 @@ TEXT ·exp2Ps(SB),7,$0
 
 // func expm1Pd(a [4]float64) [4]float64
 TEXT ·expm1Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -820,7 +820,7 @@ TEXT ·expm1Pd(SB),7,$0
 
 // func expm1Ps(a [8]float32) [8]float32
 TEXT ·expm1Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -828,7 +828,7 @@ TEXT ·expm1Ps(SB),7,$0
 
 // func extractEpi16(a [32]byte, index int) int16
 TEXT ·extractEpi16(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVW $0, ret+0(FP)
@@ -836,7 +836,7 @@ TEXT ·extractEpi16(SB),7,$0
 
 // func extractEpi32(a [32]byte, index int) int32
 TEXT ·extractEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVL $0, ret+0(FP)
@@ -844,7 +844,7 @@ TEXT ·extractEpi32(SB),7,$0
 
 // func extractEpi64(a [32]byte, index int) int64
 TEXT ·extractEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -852,7 +852,7 @@ TEXT ·extractEpi64(SB),7,$0
 
 // func extractEpi8(a [32]byte, index int) int8
 TEXT ·extractEpi8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVB $0, ret+0(FP)
@@ -860,7 +860,7 @@ TEXT ·extractEpi8(SB),7,$0
 
 // func extractf128Pd(a [4]float64, imm8 int) [2]float64
 TEXT ·extractf128Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -868,7 +868,7 @@ TEXT ·extractf128Pd(SB),7,$0
 
 // func extractf128Ps(a [8]float32, imm8 int) [4]float32
 TEXT ·extractf128Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -876,7 +876,7 @@ TEXT ·extractf128Ps(SB),7,$0
 
 // func extractf128Si256(a [32]byte, imm8 int) [16]byte
 TEXT ·extractf128Si256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -884,7 +884,7 @@ TEXT ·extractf128Si256(SB),7,$0
 
 // func floorPd(a [4]float64) [4]float64
 TEXT ·floorPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -892,7 +892,7 @@ TEXT ·floorPd(SB),7,$0
 
 // func floorPs(a [8]float32) [8]float32
 TEXT ·floorPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -900,7 +900,7 @@ TEXT ·floorPs(SB),7,$0
 
 // func haddPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·haddPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -908,7 +908,7 @@ TEXT ·haddPd(SB),7,$0
 
 // func haddPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·haddPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -916,7 +916,7 @@ TEXT ·haddPs(SB),7,$0
 
 // func hsubPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·hsubPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -924,7 +924,7 @@ TEXT ·hsubPd(SB),7,$0
 
 // func hsubPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·hsubPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -932,7 +932,7 @@ TEXT ·hsubPs(SB),7,$0
 
 // func hypotPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·hypotPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -940,7 +940,7 @@ TEXT ·hypotPd(SB),7,$0
 
 // func hypotPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·hypotPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -948,7 +948,7 @@ TEXT ·hypotPs(SB),7,$0
 
 // func idivEpi32(a [32]byte, b [32]byte) [32]byte
 TEXT ·idivEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -956,7 +956,7 @@ TEXT ·idivEpi32(SB),7,$0
 
 // func idivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
 TEXT ·idivremEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -964,7 +964,7 @@ TEXT ·idivremEpi32(SB),7,$0
 
 // func insertEpi16(a [32]byte, i int16, index int) [32]byte
 TEXT ·insertEpi16(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -972,7 +972,7 @@ TEXT ·insertEpi16(SB),7,$0
 
 // func insertEpi32(a [32]byte, i int32, index int) [32]byte
 TEXT ·insertEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -980,7 +980,7 @@ TEXT ·insertEpi32(SB),7,$0
 
 // func insertEpi64(a [32]byte, i int64, index int) [32]byte
 TEXT ·insertEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -988,7 +988,7 @@ TEXT ·insertEpi64(SB),7,$0
 
 // func insertEpi8(a [32]byte, i int8, index int) [32]byte
 TEXT ·insertEpi8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -996,7 +996,7 @@ TEXT ·insertEpi8(SB),7,$0
 
 // func insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
 TEXT ·insertf128Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1004,7 +1004,7 @@ TEXT ·insertf128Pd(SB),7,$0
 
 // func insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
 TEXT ·insertf128Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1012,7 +1012,7 @@ TEXT ·insertf128Ps(SB),7,$0
 
 // func insertf128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
 TEXT ·insertf128Si256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1020,7 +1020,7 @@ TEXT ·insertf128Si256(SB),7,$0
 
 // func invcbrtPd(a [4]float64) [4]float64
 TEXT ·invcbrtPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1028,7 +1028,7 @@ TEXT ·invcbrtPd(SB),7,$0
 
 // func invcbrtPs(a [8]float32) [8]float32
 TEXT ·invcbrtPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1036,7 +1036,7 @@ TEXT ·invcbrtPs(SB),7,$0
 
 // func invsqrtPd(a [4]float64) [4]float64
 TEXT ·invsqrtPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1044,7 +1044,7 @@ TEXT ·invsqrtPd(SB),7,$0
 
 // func invsqrtPs(a [8]float32) [8]float32
 TEXT ·invsqrtPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1052,15 +1052,15 @@ TEXT ·invsqrtPs(SB),7,$0
 
 // func iremEpi32(a [32]byte, b [32]byte) [32]byte
 TEXT ·iremEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func lddquSi256(mem_addr M256iConst) [32]byte
+// func lddquSi256(mem_addr x86.M256iConst) [32]byte
 TEXT ·lddquSi256(SB),7,$0
-	// Unimplemented. Unknown size of type M256iConst
+	// Unimplemented. Unknown size of type x86.M256iConst
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1084,9 +1084,9 @@ TEXT ·loadPs(SB),7,$0
 	MOV Y0, ret+4(FP)
 	RET
 
-// func loadSi256(mem_addr M256iConst) [32]byte
+// func loadSi256(mem_addr x86.M256iConst) [32]byte
 TEXT ·loadSi256(SB),7,$0
-	// Unimplemented. Unknown size of type M256iConst
+	// Unimplemented. Unknown size of type x86.M256iConst
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1110,9 +1110,9 @@ TEXT ·loaduPs(SB),7,$0
 	MOV Y0, ret+4(FP)
 	RET
 
-// func loaduSi256(mem_addr M256iConst) [32]byte
+// func loaduSi256(mem_addr x86.M256iConst) [32]byte
 TEXT ·loaduSi256(SB),7,$0
-	// Unimplemented. Unknown size of type M256iConst
+	// Unimplemented. Unknown size of type x86.M256iConst
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1138,9 +1138,9 @@ TEXT ·loadu2M128d(SB),7,$0
 	MOV Y0, ret+16(FP)
 	RET
 
-// func loadu2M128i(hiaddr M128iConst, loaddr M128iConst) [32]byte
+// func loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) [32]byte
 TEXT ·loadu2M128i(SB),7,$0
-	// Unimplemented. Unknown size of type M128iConst
+	// Unimplemented. Unknown size of type x86.M128iConst
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1148,7 +1148,7 @@ TEXT ·loadu2M128i(SB),7,$0
 
 // func logPd(a [4]float64) [4]float64
 TEXT ·logPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1156,7 +1156,7 @@ TEXT ·logPd(SB),7,$0
 
 // func logPs(a [8]float32) [8]float32
 TEXT ·logPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1164,7 +1164,7 @@ TEXT ·logPs(SB),7,$0
 
 // func log10Pd(a [4]float64) [4]float64
 TEXT ·log10Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1172,7 +1172,7 @@ TEXT ·log10Pd(SB),7,$0
 
 // func log10Ps(a [8]float32) [8]float32
 TEXT ·log10Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1180,7 +1180,7 @@ TEXT ·log10Ps(SB),7,$0
 
 // func log1pPd(a [4]float64) [4]float64
 TEXT ·log1pPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1188,7 +1188,7 @@ TEXT ·log1pPd(SB),7,$0
 
 // func log1pPs(a [8]float32) [8]float32
 TEXT ·log1pPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1196,7 +1196,7 @@ TEXT ·log1pPs(SB),7,$0
 
 // func log2Pd(a [4]float64) [4]float64
 TEXT ·log2Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1204,7 +1204,7 @@ TEXT ·log2Pd(SB),7,$0
 
 // func log2Ps(a [8]float32) [8]float32
 TEXT ·log2Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1212,7 +1212,7 @@ TEXT ·log2Ps(SB),7,$0
 
 // func logbPd(a [4]float64) [4]float64
 TEXT ·logbPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1220,7 +1220,7 @@ TEXT ·logbPd(SB),7,$0
 
 // func logbPs(a [8]float32) [8]float32
 TEXT ·logbPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1238,7 +1238,7 @@ TEXT ·maskloadPd(SB),7,$0
 
 // func maskloadPd1(mem_addr float64, mask [32]byte) [4]float64
 TEXT ·maskloadPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1256,7 +1256,7 @@ TEXT ·maskloadPs(SB),7,$0
 
 // func maskloadPs1(mem_addr float32, mask [32]byte) [8]float32
 TEXT ·maskloadPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1274,7 +1274,7 @@ TEXT ·maskstorePd(SB),7,$0
 
 // func maskstorePd1(mem_addr float64, mask [32]byte, a [4]float64) 
 TEXT ·maskstorePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	RET
@@ -1291,14 +1291,14 @@ TEXT ·maskstorePs(SB),7,$0
 
 // func maskstorePs1(mem_addr float32, mask [32]byte, a [8]float32) 
 TEXT ·maskstorePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	RET
 
 // func maxPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·maxPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1306,7 +1306,7 @@ TEXT ·maxPd(SB),7,$0
 
 // func maxPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·maxPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1314,7 +1314,7 @@ TEXT ·maxPs(SB),7,$0
 
 // func minPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·minPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1322,7 +1322,7 @@ TEXT ·minPd(SB),7,$0
 
 // func minPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·minPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1330,7 +1330,7 @@ TEXT ·minPs(SB),7,$0
 
 // func movedupPd(a [4]float64) [4]float64
 TEXT ·movedupPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1338,7 +1338,7 @@ TEXT ·movedupPd(SB),7,$0
 
 // func movehdupPs(a [8]float32) [8]float32
 TEXT ·movehdupPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1346,7 +1346,7 @@ TEXT ·movehdupPs(SB),7,$0
 
 // func moveldupPs(a [8]float32) [8]float32
 TEXT ·moveldupPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1354,7 +1354,7 @@ TEXT ·moveldupPs(SB),7,$0
 
 // func movemaskPd(a [4]float64) int
 TEXT ·movemaskPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -1362,7 +1362,7 @@ TEXT ·movemaskPd(SB),7,$0
 
 // func movemaskPs(a [8]float32) int
 TEXT ·movemaskPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -1370,7 +1370,7 @@ TEXT ·movemaskPs(SB),7,$0
 
 // func mulPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·mulPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1378,7 +1378,7 @@ TEXT ·mulPd(SB),7,$0
 
 // func mulPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·mulPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1386,7 +1386,7 @@ TEXT ·mulPs(SB),7,$0
 
 // func orPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·orPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1394,7 +1394,7 @@ TEXT ·orPd(SB),7,$0
 
 // func orPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·orPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1412,7 +1412,7 @@ TEXT ·permutePd(SB),7,$0
 
 // func permutePd1(a [4]float64, imm8 int) [4]float64
 TEXT ·permutePd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1430,7 +1430,7 @@ TEXT ·permutePs(SB),7,$0
 
 // func permutePs1(a [8]float32, imm8 int) [8]float32
 TEXT ·permutePs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1438,7 +1438,7 @@ TEXT ·permutePs1(SB),7,$0
 
 // func permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
 TEXT ·permute2f128Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1446,7 +1446,7 @@ TEXT ·permute2f128Pd(SB),7,$0
 
 // func permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·permute2f128Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1454,7 +1454,7 @@ TEXT ·permute2f128Ps(SB),7,$0
 
 // func permute2f128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
 TEXT ·permute2f128Si256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1472,7 +1472,7 @@ TEXT ·permutevarPd(SB),7,$0
 
 // func permutevarPd1(a [4]float64, b [32]byte) [4]float64
 TEXT ·permutevarPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1490,7 +1490,7 @@ TEXT ·permutevarPs(SB),7,$0
 
 // func permutevarPs1(a [8]float32, b [32]byte) [8]float32
 TEXT ·permutevarPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1498,7 +1498,7 @@ TEXT ·permutevarPs1(SB),7,$0
 
 // func powPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·powPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1506,7 +1506,7 @@ TEXT ·powPd(SB),7,$0
 
 // func powPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·powPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1514,7 +1514,7 @@ TEXT ·powPs(SB),7,$0
 
 // func rcpPs(a [8]float32) [8]float32
 TEXT ·rcpPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1522,7 +1522,7 @@ TEXT ·rcpPs(SB),7,$0
 
 // func remEpi16(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpi16(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1530,7 +1530,7 @@ TEXT ·remEpi16(SB),7,$0
 
 // func remEpi32(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1538,7 +1538,7 @@ TEXT ·remEpi32(SB),7,$0
 
 // func remEpi64(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpi64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1546,7 +1546,7 @@ TEXT ·remEpi64(SB),7,$0
 
 // func remEpi8(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpi8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1554,7 +1554,7 @@ TEXT ·remEpi8(SB),7,$0
 
 // func remEpu16(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpu16(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1562,7 +1562,7 @@ TEXT ·remEpu16(SB),7,$0
 
 // func remEpu32(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpu32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1570,7 +1570,7 @@ TEXT ·remEpu32(SB),7,$0
 
 // func remEpu64(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpu64(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1578,7 +1578,7 @@ TEXT ·remEpu64(SB),7,$0
 
 // func remEpu8(a [32]byte, b [32]byte) [32]byte
 TEXT ·remEpu8(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1586,7 +1586,7 @@ TEXT ·remEpu8(SB),7,$0
 
 // func roundPd(a [4]float64, rounding int) [4]float64
 TEXT ·roundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1594,7 +1594,7 @@ TEXT ·roundPd(SB),7,$0
 
 // func roundPs(a [8]float32, rounding int) [8]float32
 TEXT ·roundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1602,7 +1602,7 @@ TEXT ·roundPs(SB),7,$0
 
 // func rsqrtPs(a [8]float32) [8]float32
 TEXT ·rsqrtPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1892,7 +1892,7 @@ TEXT ·setzeroSi256(SB),7,$0
 
 // func shufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
 TEXT ·shufflePd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1900,7 +1900,7 @@ TEXT ·shufflePd(SB),7,$0
 
 // func shufflePs(a [8]float32, b [8]float32, imm8 int) [8]float32
 TEXT ·shufflePs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1908,7 +1908,7 @@ TEXT ·shufflePs(SB),7,$0
 
 // func sinPd(a [4]float64) [4]float64
 TEXT ·sinPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1916,7 +1916,7 @@ TEXT ·sinPd(SB),7,$0
 
 // func sinPs(a [8]float32) [8]float32
 TEXT ·sinPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1924,7 +1924,7 @@ TEXT ·sinPs(SB),7,$0
 
 // func sincosPd(mem_addr [4]float64, a [4]float64) [4]float64
 TEXT ·sincosPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1932,7 +1932,7 @@ TEXT ·sincosPd(SB),7,$0
 
 // func sincosPs(mem_addr [8]float32, a [8]float32) [8]float32
 TEXT ·sincosPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1940,7 +1940,7 @@ TEXT ·sincosPs(SB),7,$0
 
 // func sindPd(a [4]float64) [4]float64
 TEXT ·sindPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1948,7 +1948,7 @@ TEXT ·sindPd(SB),7,$0
 
 // func sindPs(a [8]float32) [8]float32
 TEXT ·sindPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1956,7 +1956,7 @@ TEXT ·sindPs(SB),7,$0
 
 // func sinhPd(a [4]float64) [4]float64
 TEXT ·sinhPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1964,7 +1964,7 @@ TEXT ·sinhPd(SB),7,$0
 
 // func sinhPs(a [8]float32) [8]float32
 TEXT ·sinhPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1972,7 +1972,7 @@ TEXT ·sinhPs(SB),7,$0
 
 // func sqrtPd(a [4]float64) [4]float64
 TEXT ·sqrtPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1980,7 +1980,7 @@ TEXT ·sqrtPd(SB),7,$0
 
 // func sqrtPs(a [8]float32) [8]float32
 TEXT ·sqrtPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -1988,91 +1988,91 @@ TEXT ·sqrtPs(SB),7,$0
 
 // func storePd(mem_addr float64, a [4]float64) 
 TEXT ·storePd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	RET
 
 // func storePs(mem_addr float32, a [8]float32) 
 TEXT ·storePs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	RET
 
 // func storeSi256(mem_addr [32]byte, a [32]byte) 
 TEXT ·storeSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	RET
 
 // func storeuPd(mem_addr float64, a [4]float64) 
 TEXT ·storeuPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	RET
 
 // func storeuPs(mem_addr float32, a [8]float32) 
 TEXT ·storeuPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	RET
 
 // func storeuSi256(mem_addr [32]byte, a [32]byte) 
 TEXT ·storeuSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	RET
 
 // func storeu2M128(hiaddr float32, loaddr float32, a [8]float32) 
 TEXT ·storeu2M128(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	RET
 
 // func storeu2M128d(hiaddr float64, loaddr float64, a [4]float64) 
 TEXT ·storeu2M128d(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	RET
 
 // func storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte) 
 TEXT ·storeu2M128i(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	RET
 
 // func streamPd(mem_addr float64, a [4]float64) 
 TEXT ·streamPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	RET
 
 // func streamPs(mem_addr float32, a [8]float32) 
 TEXT ·streamPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	RET
 
 // func streamSi256(mem_addr [32]byte, a [32]byte) 
 TEXT ·streamSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	RET
 
 // func subPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·subPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2080,7 +2080,7 @@ TEXT ·subPd(SB),7,$0
 
 // func subPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·subPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2088,7 +2088,7 @@ TEXT ·subPs(SB),7,$0
 
 // func svmlCeilPd(a [4]float64) [4]float64
 TEXT ·svmlCeilPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2096,7 +2096,7 @@ TEXT ·svmlCeilPd(SB),7,$0
 
 // func svmlCeilPs(a [8]float32) [8]float32
 TEXT ·svmlCeilPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2104,7 +2104,7 @@ TEXT ·svmlCeilPs(SB),7,$0
 
 // func svmlFloorPd(a [4]float64) [4]float64
 TEXT ·svmlFloorPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2112,7 +2112,7 @@ TEXT ·svmlFloorPd(SB),7,$0
 
 // func svmlFloorPs(a [8]float32) [8]float32
 TEXT ·svmlFloorPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2120,7 +2120,7 @@ TEXT ·svmlFloorPs(SB),7,$0
 
 // func svmlRoundPd(a [4]float64) [4]float64
 TEXT ·svmlRoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2128,7 +2128,7 @@ TEXT ·svmlRoundPd(SB),7,$0
 
 // func svmlRoundPs(a [8]float32) [8]float32
 TEXT ·svmlRoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2136,7 +2136,7 @@ TEXT ·svmlRoundPs(SB),7,$0
 
 // func svmlSqrtPd(a [4]float64) [4]float64
 TEXT ·svmlSqrtPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2144,7 +2144,7 @@ TEXT ·svmlSqrtPd(SB),7,$0
 
 // func svmlSqrtPs(a [8]float32) [8]float32
 TEXT ·svmlSqrtPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2152,7 +2152,7 @@ TEXT ·svmlSqrtPs(SB),7,$0
 
 // func tanPd(a [4]float64) [4]float64
 TEXT ·tanPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2160,7 +2160,7 @@ TEXT ·tanPd(SB),7,$0
 
 // func tanPs(a [8]float32) [8]float32
 TEXT ·tanPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2168,7 +2168,7 @@ TEXT ·tanPs(SB),7,$0
 
 // func tandPd(a [4]float64) [4]float64
 TEXT ·tandPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2176,7 +2176,7 @@ TEXT ·tandPd(SB),7,$0
 
 // func tandPs(a [8]float32) [8]float32
 TEXT ·tandPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2184,7 +2184,7 @@ TEXT ·tandPs(SB),7,$0
 
 // func tanhPd(a [4]float64) [4]float64
 TEXT ·tanhPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2192,7 +2192,7 @@ TEXT ·tanhPd(SB),7,$0
 
 // func tanhPs(a [8]float32) [8]float32
 TEXT ·tanhPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2210,7 +2210,7 @@ TEXT ·testcPd(SB),7,$0
 
 // func testcPd1(a [4]float64, b [4]float64) int
 TEXT ·testcPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2228,7 +2228,7 @@ TEXT ·testcPs(SB),7,$0
 
 // func testcPs1(a [8]float32, b [8]float32) int
 TEXT ·testcPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2236,7 +2236,7 @@ TEXT ·testcPs1(SB),7,$0
 
 // func testcSi256(a [32]byte, b [32]byte) int
 TEXT ·testcSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2254,7 +2254,7 @@ TEXT ·testnzcPd(SB),7,$0
 
 // func testnzcPd1(a [4]float64, b [4]float64) int
 TEXT ·testnzcPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2272,7 +2272,7 @@ TEXT ·testnzcPs(SB),7,$0
 
 // func testnzcPs1(a [8]float32, b [8]float32) int
 TEXT ·testnzcPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2280,7 +2280,7 @@ TEXT ·testnzcPs1(SB),7,$0
 
 // func testnzcSi256(a [32]byte, b [32]byte) int
 TEXT ·testnzcSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2298,7 +2298,7 @@ TEXT ·testzPd(SB),7,$0
 
 // func testzPd1(a [4]float64, b [4]float64) int
 TEXT ·testzPd1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2316,7 +2316,7 @@ TEXT ·testzPs(SB),7,$0
 
 // func testzPs1(a [8]float32, b [8]float32) int
 TEXT ·testzPs1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2324,7 +2324,7 @@ TEXT ·testzPs1(SB),7,$0
 
 // func testzSi256(a [32]byte, b [32]byte) int
 TEXT ·testzSi256(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
@@ -2332,7 +2332,7 @@ TEXT ·testzSi256(SB),7,$0
 
 // func truncPd(a [4]float64) [4]float64
 TEXT ·truncPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2340,7 +2340,7 @@ TEXT ·truncPd(SB),7,$0
 
 // func truncPs(a [8]float32) [8]float32
 TEXT ·truncPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2348,7 +2348,7 @@ TEXT ·truncPs(SB),7,$0
 
 // func udivEpi32(a [32]byte, b [32]byte) [32]byte
 TEXT ·udivEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2356,7 +2356,7 @@ TEXT ·udivEpi32(SB),7,$0
 
 // func udivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
 TEXT ·udivremEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2412,7 +2412,7 @@ TEXT ·undefinedSi256(SB),7,$0
 
 // func unpackhiPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·unpackhiPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2420,7 +2420,7 @@ TEXT ·unpackhiPd(SB),7,$0
 
 // func unpackhiPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·unpackhiPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2428,7 +2428,7 @@ TEXT ·unpackhiPs(SB),7,$0
 
 // func unpackloPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·unpackloPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2436,7 +2436,7 @@ TEXT ·unpackloPd(SB),7,$0
 
 // func unpackloPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·unpackloPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2444,7 +2444,7 @@ TEXT ·unpackloPs(SB),7,$0
 
 // func uremEpi32(a [32]byte, b [32]byte) [32]byte
 TEXT ·uremEpi32(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256i
+	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2452,7 +2452,7 @@ TEXT ·uremEpi32(SB),7,$0
 
 // func xorPd(a [4]float64, b [4]float64) [4]float64
 TEXT ·xorPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256d
+	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
@@ -2460,7 +2460,7 @@ TEXT ·xorPd(SB),7,$0
 
 // func xorPs(a [8]float32, b [8]float32) [8]float32
 TEXT ·xorPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)

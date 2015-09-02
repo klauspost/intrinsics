@@ -1,6 +1,6 @@
 package avx512vbmi
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // MaskMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8 unaligned
@@ -28,8 +28,8 @@ import . "github.com/klauspost/intrinsics/x86"
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_mask_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func MaskMultishiftEpi64Epi8(src M512i, k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskMultishiftEpi64Epi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func MaskMultishiftEpi64Epi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskMultishiftEpi64Epi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskMultishiftEpi64Epi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
@@ -60,8 +60,8 @@ func maskMultishiftEpi64Epi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_maskz_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func MaskzMultishiftEpi64Epi8(k Mmask64, a M512i, b M512i) M512i {
-	return M512i(maskzMultishiftEpi64Epi8(uint64(k), [64]byte(a), [64]byte(b)))
+func MaskzMultishiftEpi64Epi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzMultishiftEpi64Epi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
 func maskzMultishiftEpi64Epi8(k uint64, a [64]byte, b [64]byte) [64]byte
@@ -87,8 +87,8 @@ func maskzMultishiftEpi64Epi8(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func MultishiftEpi64Epi8(a M512i, b M512i) M512i {
-	return M512i(multishiftEpi64Epi8([64]byte(a), [64]byte(b)))
+func MultishiftEpi64Epi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(multishiftEpi64Epi8([64]byte(a), [64]byte(b)))
 }
 
 func multishiftEpi64Epi8(a [64]byte, b [64]byte) [64]byte
@@ -112,8 +112,8 @@ func multishiftEpi64Epi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMT2B'. Intrinsic: '_mm512_mask_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func MaskPermutex2varEpi8(a M512i, k Mmask64, idx M512i, b M512i) M512i {
-	return M512i(maskPermutex2varEpi8([64]byte(a), uint64(k), [64]byte(idx), [64]byte(b)))
+func MaskPermutex2varEpi8(a x86.M512i, k x86.Mmask64, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskPermutex2varEpi8([64]byte(a), uint64(k), [64]byte(idx), [64]byte(b)))
 }
 
 func maskPermutex2varEpi8(a [64]byte, k uint64, idx [64]byte, b [64]byte) [64]byte
@@ -137,8 +137,8 @@ func maskPermutex2varEpi8(a [64]byte, k uint64, idx [64]byte, b [64]byte) [64]by
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_mask2_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func Mask2Permutex2varEpi8(a M512i, idx M512i, k Mmask64, b M512i) M512i {
-	return M512i(mask2Permutex2varEpi8([64]byte(a), [64]byte(idx), uint64(k), [64]byte(b)))
+func Mask2Permutex2varEpi8(a x86.M512i, idx x86.M512i, k x86.Mmask64, b x86.M512i) x86.M512i {
+	return x86.M512i(mask2Permutex2varEpi8([64]byte(a), [64]byte(idx), uint64(k), [64]byte(b)))
 }
 
 func mask2Permutex2varEpi8(a [64]byte, idx [64]byte, k uint64, b [64]byte) [64]byte
@@ -162,8 +162,8 @@ func mask2Permutex2varEpi8(a [64]byte, idx [64]byte, k uint64, b [64]byte) [64]b
 //
 // Instruction: 'VPERMI2B, VPERMT2B'. Intrinsic: '_mm512_maskz_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func MaskzPermutex2varEpi8(k Mmask64, a M512i, idx M512i, b M512i) M512i {
-	return M512i(maskzPermutex2varEpi8(uint64(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
+func MaskzPermutex2varEpi8(k x86.Mmask64, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(maskzPermutex2varEpi8(uint64(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
 func maskzPermutex2varEpi8(k uint64, a [64]byte, idx [64]byte, b [64]byte) [64]byte
@@ -182,8 +182,8 @@ func maskzPermutex2varEpi8(k uint64, a [64]byte, idx [64]byte, b [64]byte) [64]b
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func Permutex2varEpi8(a M512i, idx M512i, b M512i) M512i {
-	return M512i(permutex2varEpi8([64]byte(a), [64]byte(idx), [64]byte(b)))
+func Permutex2varEpi8(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(permutex2varEpi8([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
 func permutex2varEpi8(a [64]byte, idx [64]byte, b [64]byte) [64]byte
@@ -207,8 +207,8 @@ func permutex2varEpi8(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_mask_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func MaskPermutexvarEpi8(src M512i, k Mmask64, idx M512i, a M512i) M512i {
-	return M512i(maskPermutexvarEpi8([64]byte(src), uint64(k), [64]byte(idx), [64]byte(a)))
+func MaskPermutexvarEpi8(src x86.M512i, k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(maskPermutexvarEpi8([64]byte(src), uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
 func maskPermutexvarEpi8(src [64]byte, k uint64, idx [64]byte, a [64]byte) [64]byte
@@ -231,8 +231,8 @@ func maskPermutexvarEpi8(src [64]byte, k uint64, idx [64]byte, a [64]byte) [64]b
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_maskz_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func MaskzPermutexvarEpi8(k Mmask64, idx M512i, a M512i) M512i {
-	return M512i(maskzPermutexvarEpi8(uint64(k), [64]byte(idx), [64]byte(a)))
+func MaskzPermutexvarEpi8(k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(maskzPermutexvarEpi8(uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
 func maskzPermutexvarEpi8(k uint64, idx [64]byte, a [64]byte) [64]byte
@@ -250,8 +250,8 @@ func maskzPermutexvarEpi8(k uint64, idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func PermutexvarEpi8(idx M512i, a M512i) M512i {
-	return M512i(permutexvarEpi8([64]byte(idx), [64]byte(a)))
+func PermutexvarEpi8(idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(permutexvarEpi8([64]byte(idx), [64]byte(a)))
 }
 
 func permutexvarEpi8(idx [64]byte, a [64]byte) [64]byte

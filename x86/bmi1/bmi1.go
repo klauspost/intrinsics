@@ -1,6 +1,6 @@
 package bmi1
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // BextrU32: Extract contiguous bits from unsigned 32-bit integer 'a', and

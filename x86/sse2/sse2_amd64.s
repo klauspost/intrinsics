@@ -33,7 +33,7 @@ TEXT ·addEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	PADDB X1, X0
+	//TODO: Code missing
 
 	MOVOU X0, ret+32(FP)
 	RET
@@ -58,7 +58,7 @@ TEXT ·addSd(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func addSi64(a M64, b M64) M64
+// func addSi64(a x86.M64, b x86.M64) x86.M64
 TEXT ·addSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -244,7 +244,8 @@ TEXT ·castsi128Ps(SB),7,$0
 
 // func clflush(p uintptr) 
 TEXT ·clflush(SB),7,$0
-	// Unimplemented. Unknown size of type uintptr
+	MOVQ p+0(FP),R8
+
 	//TODO: Code missing
 
 	RET
@@ -666,7 +667,7 @@ TEXT ·cvtpdEpi32(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func cvtpdPi32(a [2]float64) M64
+// func cvtpdPi32(a [2]float64) x86.M64
 TEXT ·cvtpdPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
@@ -684,7 +685,7 @@ TEXT ·cvtpdPs(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func cvtpi32Pd(a M64) [2]float64
+// func cvtpi32Pd(a x86.M64) [2]float64
 TEXT ·cvtpi32Pd(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -860,7 +861,7 @@ TEXT ·cvttpdEpi32(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func cvttpdPi32(a [2]float64) M64
+// func cvttpdPi32(a [2]float64) x86.M64
 TEXT ·cvttpdPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
@@ -980,9 +981,9 @@ TEXT ·loadSd(SB),7,$0
 	MOVOU X0, ret+8(FP)
 	RET
 
-// func loadSi128(mem_addr M128iConst) [16]byte
+// func loadSi128(mem_addr x86.M128iConst) [16]byte
 TEXT ·loadSi128(SB),7,$0
-	// Unimplemented. Unknown size of type M128iConst
+	// Unimplemented. Unknown size of type x86.M128iConst
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1007,9 +1008,9 @@ TEXT ·loadhPd(SB),7,$0
 	MOVOU X0, ret+24(FP)
 	RET
 
-// func loadlEpi64(mem_addr M128iConst) [16]byte
+// func loadlEpi64(mem_addr x86.M128iConst) [16]byte
 TEXT ·loadlEpi64(SB),7,$0
-	// Unimplemented. Unknown size of type M128iConst
+	// Unimplemented. Unknown size of type x86.M128iConst
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1043,9 +1044,9 @@ TEXT ·loaduPd(SB),7,$0
 	MOVOU X0, ret+8(FP)
 	RET
 
-// func loaduSi128(mem_addr M128iConst) [16]byte
+// func loaduSi128(mem_addr x86.M128iConst) [16]byte
 TEXT ·loaduSi128(SB),7,$0
-	// Unimplemented. Unknown size of type M128iConst
+	// Unimplemented. Unknown size of type x86.M128iConst
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)
@@ -1195,7 +1196,7 @@ TEXT ·movemaskPd(SB),7,$0
 	MOVQ $0, ret+16(FP)
 	RET
 
-// func movepi64Pi64(a [16]byte) M64
+// func movepi64Pi64(a [16]byte) x86.M64
 TEXT ·movepi64Pi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
@@ -1204,7 +1205,7 @@ TEXT ·movepi64Pi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func movpi64Epi64(a M64) [16]byte
+// func movpi64Epi64(a x86.M64) [16]byte
 TEXT ·movpi64Epi64(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -1243,7 +1244,7 @@ TEXT ·mulSd(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func mulSu32(a M64, b M64) M64
+// func mulSu32(a x86.M64, b x86.M64) x86.M64
 TEXT ·mulSu32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
@@ -1378,7 +1379,7 @@ TEXT ·setEpi32(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func setEpi64(e1 M64, e0 M64) [16]byte
+// func setEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 TEXT ·setEpi64(SB),7,$0
 	MOVQ e1+0(FP),M0
 	MOVQ e0+8(FP),M1
@@ -1452,7 +1453,7 @@ TEXT ·set1Epi32(SB),7,$0
 	MOVOU X0, ret+8(FP)
 	RET
 
-// func set1Epi64(a M64) [16]byte
+// func set1Epi64(a x86.M64) [16]byte
 TEXT ·set1Epi64(SB),7,$0
 	MOVQ a+0(FP),M0
 
@@ -1516,7 +1517,7 @@ TEXT ·setrEpi32(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func setrEpi64(e1 M64, e0 M64) [16]byte
+// func setrEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 TEXT ·setrEpi64(SB),7,$0
 	MOVQ e1+0(FP),M0
 	MOVQ e0+8(FP),M1
@@ -1995,7 +1996,7 @@ TEXT ·subSd(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func subSi64(a M64, b M64) M64
+// func subSi64(a x86.M64, b x86.M64) x86.M64
 TEXT ·subSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1

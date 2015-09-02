@@ -1,6 +1,6 @@
 package rdtscp
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Rdtscp: Copy the current 64-bit value of the processor's time-stamp counter

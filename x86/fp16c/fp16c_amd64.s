@@ -28,7 +28,7 @@ TEXT ·cvtpsPh(SB),7,$0
 
 // func cvtpsPh1(a [8]float32, rounding int) [16]byte
 TEXT ·cvtpsPh1(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type M256
+	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOVOU X0, ret+0(FP)

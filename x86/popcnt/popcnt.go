@@ -1,6 +1,6 @@
 package popcnt
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // PopcntU32: Count the number of bits set to 1 in unsigned 32-bit integer 'a',

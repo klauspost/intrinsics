@@ -1,6 +1,6 @@
 package mpx
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // BndChkPtrBounds: Checks if ['q', 'q' + 'size' - 1] is within the lower and

@@ -1,6 +1,6 @@
 package prefetchwt1
 
-import . "github.com/klauspost/intrinsics/x86"
+import "github.com/klauspost/intrinsics/x86"
 
 
 // Prefetch: Fetch the line of data from memory that contains address 'p' to a
