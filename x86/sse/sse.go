@@ -2028,17 +2028,7 @@ func ExtractPi16(a x86.M64, imm8 int) int {
 func extractPi16(a x86.M64, imm8 int) int
 
 
-// Free: Free aligned memory that was allocated with '_mm_malloc'. 
-//
-//		
-//
-// Instruction: ''. Intrinsic: '_mm_free'.
-// Requires SSE.
-func Free(mem_addr uintptr)  {
-	free(uintptr(mem_addr))
-}
-
-func free(mem_addr uintptr) 
+// Skipped: _mm_free. Contains pointer parameter.
 
 
 // MMGETEXCEPTIONMASK: Macro: Get the exception mask bits from the MXCSR
@@ -2189,12 +2179,11 @@ func idivEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_idivrem_epi32'.
 // Requires SSE.
-func IdivremEpi32(mem_addr x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
-	return x86.M128i(idivremEpi32([16]byte(mem_addr), [16]byte(a), [16]byte(b)))
+// FIXME: Will likely need to be reworked.
+func IdivremEpi32(mem_addr *x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func idivremEpi32(mem_addr [16]byte, a [16]byte, b [16]byte) [16]byte
-
 
 // InsertPi16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst'
 // at the location specified by 'imm8'. 
@@ -2302,70 +2291,16 @@ func IremEpi32(a x86.M128i, b x86.M128i) x86.M128i {
 func iremEpi32(a [16]byte, b [16]byte) [16]byte
 
 
-// LoadPs: Load 128-bits (composed of 4 packed single-precision (32-bit)
-// floating-point elements) from memory into 'dst'.
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[127:0] := MEM[mem_addr+127:mem_addr]
-//
-// Instruction: 'MOVAPS'. Intrinsic: '_mm_load_ps'.
-// Requires SSE.
-func LoadPs(mem_addr float32) x86.M128 {
-	return x86.M128(loadPs(mem_addr))
-}
-
-func loadPs(mem_addr float32) [4]float32
+// Skipped: _mm_load_ps. Contains pointer parameter.
 
 
-// LoadPs1: Load a single-precision (32-bit) floating-point element from memory
-// into all elements of 'dst'. 
-//
-//		dst[31:0] := MEM[mem_addr+31:mem_addr]
-//		dst[63:32] := MEM[mem_addr+31:mem_addr]
-//		dst[95:64] := MEM[mem_addr+31:mem_addr]
-//		dst[127:96] := MEM[mem_addr+31:mem_addr]
-//
-// Instruction: '...'. Intrinsic: '_mm_load_ps1'.
-// Requires SSE.
-func LoadPs1(mem_addr float32) x86.M128 {
-	return x86.M128(loadPs1(mem_addr))
-}
-
-func loadPs1(mem_addr float32) [4]float32
+// Skipped: _mm_load_ps1. Contains pointer parameter.
 
 
-// LoadSs: Load a single-precision (32-bit) floating-point element from memory
-// into the lower of 'dst', and zero the upper 3 elements. 'mem_addr' does not
-// need to be aligned on any particular boundary. 
-//
-//		dst[31:0] := MEM[mem_addr+31:mem_addr]
-//		dst[127:32] := 0
-//
-// Instruction: 'MOVSS'. Intrinsic: '_mm_load_ss'.
-// Requires SSE.
-func LoadSs(mem_addr float32) x86.M128 {
-	return x86.M128(loadSs(mem_addr))
-}
-
-func loadSs(mem_addr float32) [4]float32
+// Skipped: _mm_load_ss. Contains pointer parameter.
 
 
-// Load1Ps: Load a single-precision (32-bit) floating-point element from memory
-// into all elements of 'dst'. 
-//
-//		dst[31:0] := MEM[mem_addr+31:mem_addr]
-//		dst[63:32] := MEM[mem_addr+31:mem_addr]
-//		dst[95:64] := MEM[mem_addr+31:mem_addr]
-//		dst[127:96] := MEM[mem_addr+31:mem_addr]
-//
-// Instruction: '...'. Intrinsic: '_mm_load1_ps'.
-// Requires SSE.
-func Load1Ps(mem_addr float32) x86.M128 {
-	return x86.M128(load1Ps(mem_addr))
-}
-
-func load1Ps(mem_addr float32) [4]float32
+// Skipped: _mm_load1_ps. Contains pointer parameter.
 
 
 // LoadhPi: Load 2 single-precision (32-bit) floating-point elements from
@@ -2380,12 +2315,11 @@ func load1Ps(mem_addr float32) [4]float32
 //
 // Instruction: 'MOVHPS'. Intrinsic: '_mm_loadh_pi'.
 // Requires SSE.
-func LoadhPi(a x86.M128, mem_addr x86.M64Const) x86.M128 {
-	return x86.M128(loadhPi([4]float32(a), mem_addr))
+// FIXME: Will likely need to be reworked.
+func LoadhPi(a x86.M128, mem_addr *x86.M64Const) x86.M128 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128{}
 }
-
-func loadhPi(a [4]float32, mem_addr x86.M64Const) [4]float32
-
 
 // LoadlPi: Load 2 single-precision (32-bit) floating-point elements from
 // memory into the lower 2 elements of 'dst', and copy the upper 2 elements
@@ -2399,89 +2333,25 @@ func loadhPi(a [4]float32, mem_addr x86.M64Const) [4]float32
 //
 // Instruction: 'MOVLPS'. Intrinsic: '_mm_loadl_pi'.
 // Requires SSE.
-func LoadlPi(a x86.M128, mem_addr x86.M64Const) x86.M128 {
-	return x86.M128(loadlPi([4]float32(a), mem_addr))
+// FIXME: Will likely need to be reworked.
+func LoadlPi(a x86.M128, mem_addr *x86.M64Const) x86.M128 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128{}
 }
 
-func loadlPi(a [4]float32, mem_addr x86.M64Const) [4]float32
+// Skipped: _mm_loadr_ps. Contains pointer parameter.
 
 
-// LoadrPs: Load 4 single-precision (32-bit) floating-point elements from
-// memory into 'dst' in reverse order. mem_addr must be aligned on a 16-byte
-// boundary or a general-protection exception may be generated. 
-//
-//		dst[31:0] := MEM[mem_addr+127:mem_addr+96]
-//		dst[63:32] := MEM[mem_addr+95:mem_addr+64]
-//		dst[95:64] := MEM[mem_addr+63:mem_addr+32]
-//		dst[127:96] := MEM[mem_addr+31:mem_addr]
-//
-// Instruction: '...'. Intrinsic: '_mm_loadr_ps'.
-// Requires SSE.
-func LoadrPs(mem_addr float32) x86.M128 {
-	return x86.M128(loadrPs(mem_addr))
-}
-
-func loadrPs(mem_addr float32) [4]float32
+// Skipped: _mm_loadu_ps. Contains pointer parameter.
 
 
-// LoaduPs: Load 128-bits (composed of 4 packed single-precision (32-bit)
-// floating-point elements) from memory into 'dst'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		dst[127:0] := MEM[mem_addr+127:mem_addr]
-//
-// Instruction: 'MOVUPS'. Intrinsic: '_mm_loadu_ps'.
-// Requires SSE.
-func LoaduPs(mem_addr float32) x86.M128 {
-	return x86.M128(loaduPs(mem_addr))
-}
-
-func loaduPs(mem_addr float32) [4]float32
+// Skipped: _mm_loadu_si16. Contains pointer parameter.
 
 
-// LoaduSi16: Load unaligned 16-bit integer from memory into the first element
-// of 'dst'. 
-//
-//		dst[15:0] := MEM[mem_addr+15:mem_addr]
-//		dst[MAX:16] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm_loadu_si16'.
-// Requires SSE.
-func LoaduSi16(mem_addr uintptr) x86.M128i {
-	return x86.M128i(loaduSi16(uintptr(mem_addr)))
-}
-
-func loaduSi16(mem_addr uintptr) [16]byte
+// Skipped: _mm_loadu_si32. Contains pointer parameter.
 
 
-// LoaduSi32: Load unaligned 32-bit integer from memory into the first element
-// of 'dst'. 
-//
-//		dst[31:0] := MEM[mem_addr+31:mem_addr]
-//		dst[MAX:32] := 0
-//
-// Instruction: 'MOVD'. Intrinsic: '_mm_loadu_si32'.
-// Requires SSE.
-func LoaduSi32(mem_addr uintptr) x86.M128i {
-	return x86.M128i(loaduSi32(uintptr(mem_addr)))
-}
-
-func loaduSi32(mem_addr uintptr) [16]byte
-
-
-// LoaduSi64: Load unaligned 64-bit integer from memory into the first element
-// of 'dst'. 
-//
-//		dst[63:0] := MEM[mem_addr+63:mem_addr]
-//		dst[MAX:64] := 0
-//
-// Instruction: 'MOVQ'. Intrinsic: '_mm_loadu_si64'.
-// Requires SSE.
-func LoaduSi64(mem_addr uintptr) x86.M128i {
-	return x86.M128i(loaduSi64(uintptr(mem_addr)))
-}
-
-func loaduSi64(mem_addr uintptr) [16]byte
+// Skipped: _mm_loadu_si64. Contains pointer parameter.
 
 
 // LogPd: Compute the natural logarithm of packed double-precision (64-bit)
@@ -2696,12 +2566,11 @@ func malloc(size int, align int)
 //
 // Instruction: 'MASKMOVQ'. Intrinsic: '_mm_maskmove_si64'.
 // Requires SSE.
-func MaskmoveSi64(a x86.M64, mask x86.M64, mem_addr byte)  {
-	maskmoveSi64(a, mask, mem_addr)
+// FIXME: Will likely need to be reworked.
+func MaskmoveSi64(a x86.M64, mask x86.M64, mem_addr *byte)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func maskmoveSi64(a x86.M64, mask x86.M64, mem_addr byte) 
-
 
 // Maskmovq: Conditionally store 8-bit integer elements from 'a' into memory
 // using 'mask' (elements are not stored when the highest bit is not set in the
@@ -2716,12 +2585,11 @@ func maskmoveSi64(a x86.M64, mask x86.M64, mem_addr byte)
 //
 // Instruction: 'MASKMOVQ'. Intrinsic: '_m_maskmovq'.
 // Requires SSE.
-func Maskmovq(a x86.M64, mask x86.M64, mem_addr byte)  {
-	maskmovq(a, mask, mem_addr)
+// FIXME: Will likely need to be reworked.
+func Maskmovq(a x86.M64, mask x86.M64, mem_addr *byte)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func maskmovq(a x86.M64, mask x86.M64, mem_addr byte) 
-
 
 // MaxPi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
 // maximum values in 'dst'. 
@@ -3268,12 +3136,11 @@ func powPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'PREFETCHNTA, PREFETCHT0, PREFETCHT1, PREFETCHT2'. Intrinsic: '_mm_prefetch'.
 // Requires SSE.
-func Prefetch(p byte, i int)  {
-	prefetch(p, i)
+// FIXME: Will likely need to be reworked.
+func Prefetch(p *byte, i int)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func prefetch(p byte, i int) 
-
 
 // Psadbw: Compute the absolute differences of packed unsigned 8-bit integers
 // in 'a' and 'b', then horizontally sum each consecutive 8 differences to
@@ -3861,12 +3728,11 @@ func sinPs(a [4]float32) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm_sincos_pd'.
 // Requires SSE.
-func SincosPd(mem_addr x86.M128d, a x86.M128d) x86.M128d {
-	return x86.M128d(sincosPd([2]float64(mem_addr), [2]float64(a)))
+// FIXME: Will likely need to be reworked.
+func SincosPd(mem_addr *x86.M128d, a x86.M128d) x86.M128d {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128d{}
 }
-
-func sincosPd(mem_addr [2]float64, a [2]float64) [2]float64
-
 
 // SincosPs: Compute the sine and cosine of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in radians, store the sine in
@@ -3881,12 +3747,11 @@ func sincosPd(mem_addr [2]float64, a [2]float64) [2]float64
 //
 // Instruction: '...'. Intrinsic: '_mm_sincos_ps'.
 // Requires SSE.
-func SincosPs(mem_addr x86.M128, a x86.M128) x86.M128 {
-	return x86.M128(sincosPs([4]float32(mem_addr), [4]float32(a)))
+// FIXME: Will likely need to be reworked.
+func SincosPs(mem_addr *x86.M128, a x86.M128) x86.M128 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128{}
 }
-
-func sincosPs(mem_addr [4]float32, a [4]float32) [4]float32
-
 
 // SindPd: Compute the sine of packed double-precision (64-bit) floating-point
 // elements in 'a' expressed in degrees, and store the results in 'dst'. 
@@ -4005,12 +3870,11 @@ func sqrtSs(a [4]float32) [4]float32
 //
 // Instruction: 'MOVAPS'. Intrinsic: '_mm_store_ps'.
 // Requires SSE.
-func StorePs(mem_addr float32, a x86.M128)  {
-	storePs(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StorePs(mem_addr *float32, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func storePs(mem_addr float32, a [4]float32) 
-
 
 // StorePs1: Store the lower single-precision (32-bit) floating-point element
 // from 'a' into 4 contiguous elements in memory. 'mem_addr' must be aligned on
@@ -4023,12 +3887,11 @@ func storePs(mem_addr float32, a [4]float32)
 //
 // Instruction: '...'. Intrinsic: '_mm_store_ps1'.
 // Requires SSE.
-func StorePs1(mem_addr float32, a x86.M128)  {
-	storePs1(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StorePs1(mem_addr *float32, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func storePs1(mem_addr float32, a [4]float32) 
-
 
 // StoreSs: Store the lower single-precision (32-bit) floating-point element
 // from 'a' into memory. 'mem_addr' does not need to be aligned on any
@@ -4038,12 +3901,11 @@ func storePs1(mem_addr float32, a [4]float32)
 //
 // Instruction: 'MOVSS'. Intrinsic: '_mm_store_ss'.
 // Requires SSE.
-func StoreSs(mem_addr float32, a x86.M128)  {
-	storeSs(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StoreSs(mem_addr *float32, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func storeSs(mem_addr float32, a [4]float32) 
-
 
 // Store1Ps: Store the lower single-precision (32-bit) floating-point element
 // from 'a' into 4 contiguous elements in memory. 'mem_addr' must be aligned on
@@ -4056,12 +3918,11 @@ func storeSs(mem_addr float32, a [4]float32)
 //
 // Instruction: '...'. Intrinsic: '_mm_store1_ps'.
 // Requires SSE.
-func Store1Ps(mem_addr float32, a x86.M128)  {
-	store1Ps(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func Store1Ps(mem_addr *float32, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func store1Ps(mem_addr float32, a [4]float32) 
-
 
 // StorehPi: Store the upper 2 single-precision (32-bit) floating-point
 // elements from 'a' into memory. 
@@ -4071,12 +3932,11 @@ func store1Ps(mem_addr float32, a [4]float32)
 //
 // Instruction: 'MOVHPS'. Intrinsic: '_mm_storeh_pi'.
 // Requires SSE.
-func StorehPi(mem_addr x86.M64, a x86.M128)  {
-	storehPi(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StorehPi(mem_addr *x86.M64, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func storehPi(mem_addr x86.M64, a [4]float32) 
-
 
 // StorelPi: Store the lower 2 single-precision (32-bit) floating-point
 // elements from 'a' into memory. 
@@ -4086,12 +3946,11 @@ func storehPi(mem_addr x86.M64, a [4]float32)
 //
 // Instruction: 'MOVLPS'. Intrinsic: '_mm_storel_pi'.
 // Requires SSE.
-func StorelPi(mem_addr x86.M64, a x86.M128)  {
-	storelPi(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StorelPi(mem_addr *x86.M64, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func storelPi(mem_addr x86.M64, a [4]float32) 
-
 
 // StorerPs: Store 4 single-precision (32-bit) floating-point elements from 'a'
 // into memory in reverse order.
@@ -4105,12 +3964,11 @@ func storelPi(mem_addr x86.M64, a [4]float32)
 //
 // Instruction: '...'. Intrinsic: '_mm_storer_ps'.
 // Requires SSE.
-func StorerPs(mem_addr float32, a x86.M128)  {
-	storerPs(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StorerPs(mem_addr *float32, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func storerPs(mem_addr float32, a [4]float32) 
-
 
 // StoreuPs: Store 128-bits (composed of 4 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory.
@@ -4120,53 +3978,19 @@ func storerPs(mem_addr float32, a [4]float32)
 //
 // Instruction: 'MOVUPS'. Intrinsic: '_mm_storeu_ps'.
 // Requires SSE.
-func StoreuPs(mem_addr float32, a x86.M128)  {
-	storeuPs(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StoreuPs(mem_addr *float32, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
 
-func storeuPs(mem_addr float32, a [4]float32) 
+// Skipped: _mm_storeu_si16. Contains pointer parameter.
 
 
-// StoreuSi16: Store 16-bit integer from the first element of 'a' into memory.
-// 'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+15:mem_addr] := a[15:0]
-//
-// Instruction: '...'. Intrinsic: '_mm_storeu_si16'.
-// Requires SSE.
-func StoreuSi16(mem_addr uintptr, a x86.M128i)  {
-	storeuSi16(uintptr(mem_addr), [16]byte(a))
-}
-
-func storeuSi16(mem_addr uintptr, a [16]byte) 
+// Skipped: _mm_storeu_si32. Contains pointer parameter.
 
 
-// StoreuSi32: Store 32-bit integer from the first element of 'a' into memory.
-// 'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+31:mem_addr] := a[31:0]
-//
-// Instruction: 'MOVD'. Intrinsic: '_mm_storeu_si32'.
-// Requires SSE.
-func StoreuSi32(mem_addr uintptr, a x86.M128i)  {
-	storeuSi32(uintptr(mem_addr), [16]byte(a))
-}
-
-func storeuSi32(mem_addr uintptr, a [16]byte) 
-
-
-// StoreuSi64: Store 64-bit integer from the first element of 'a' into memory.
-// 'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+63:mem_addr] := a[63:0]
-//
-// Instruction: 'MOVQ'. Intrinsic: '_mm_storeu_si64'.
-// Requires SSE.
-func StoreuSi64(mem_addr uintptr, a x86.M128i)  {
-	storeuSi64(uintptr(mem_addr), [16]byte(a))
-}
-
-func storeuSi64(mem_addr uintptr, a [16]byte) 
+// Skipped: _mm_storeu_si64. Contains pointer parameter.
 
 
 // StreamPi: Store 64-bits of integer data from 'a' into memory using a
@@ -4176,12 +4000,11 @@ func storeuSi64(mem_addr uintptr, a [16]byte)
 //
 // Instruction: 'MOVNTQ'. Intrinsic: '_mm_stream_pi'.
 // Requires SSE.
-func StreamPi(mem_addr x86.M64, a x86.M64)  {
-	streamPi(mem_addr, a)
+// FIXME: Will likely need to be reworked.
+func StreamPi(mem_addr *x86.M64, a x86.M64)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func streamPi(mem_addr x86.M64, a x86.M64) 
-
 
 // StreamPs: Store 128-bits (composed of 4 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory using a non-temporal memory
@@ -4193,12 +4016,11 @@ func streamPi(mem_addr x86.M64, a x86.M64)
 //
 // Instruction: 'MOVNTPS'. Intrinsic: '_mm_stream_ps'.
 // Requires SSE.
-func StreamPs(mem_addr float32, a x86.M128)  {
-	streamPs(mem_addr, [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func StreamPs(mem_addr *float32, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func streamPs(mem_addr float32, a [4]float32) 
-
 
 // SubPs: Subtract packed single-precision (32-bit) floating-point elements in
 // 'b' from packed single-precision (32-bit) floating-point elements in 'a',
@@ -4692,12 +4514,11 @@ func udivEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_udivrem_epi32'.
 // Requires SSE.
-func UdivremEpi32(mem_addr x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
-	return x86.M128i(udivremEpi32([16]byte(mem_addr), [16]byte(a), [16]byte(b)))
+// FIXME: Will likely need to be reworked.
+func UdivremEpi32(mem_addr *x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func udivremEpi32(mem_addr [16]byte, a [16]byte, b [16]byte) [16]byte
-
 
 // UnpackhiPs: Unpack and interleave single-precision (32-bit) floating-point
 // elements from the high half 'a' and 'b', and store the results in 'dst'. 

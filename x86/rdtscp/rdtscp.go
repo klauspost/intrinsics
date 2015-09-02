@@ -14,9 +14,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDTSCP'. Intrinsic: '__rdtscp'.
 // Requires RDTSCP.
-func Rdtscp(mem_addr uint32) uint64 {
-	return uint64(rdtscp(mem_addr))
+// FIXME: Will likely need to be reworked.
+func Rdtscp(mem_addr *uint32) uint64 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func rdtscp(mem_addr uint32) uint64
-

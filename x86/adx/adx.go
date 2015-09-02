@@ -13,12 +13,11 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'ADCX, ADOX'. Intrinsic: '_addcarryx_u32'.
 // Requires ADX.
-func AddcarryxU32(c_in uint8, a uint32, b uint32, out uint32) uint8 {
-	return uint8(addcarryxU32(c_in, a, b, out))
+// FIXME: Will likely need to be reworked.
+func AddcarryxU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func addcarryxU32(c_in uint8, a uint32, b uint32, out uint32) uint8
-
 
 // AddcarryxU64: Add unsigned 64-bit integers 'a' and 'b' with unsigned 8-bit
 // carry-in 'c_in' (carry or overflow flag), and store the unsigned 64-bit
@@ -28,9 +27,8 @@ func addcarryxU32(c_in uint8, a uint32, b uint32, out uint32) uint8
 //
 // Instruction: 'ADCX, ADOX'. Intrinsic: '_addcarryx_u64'.
 // Requires ADX.
-func AddcarryxU64(c_in uint8, a uint64, b uint64, out uint64) uint8 {
-	return uint8(addcarryxU64(c_in, a, b, out))
+// FIXME: Will likely need to be reworked.
+func AddcarryxU64(c_in uint8, a uint64, b uint64, out *uint64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func addcarryxU64(c_in uint8, a uint64, b uint64, out uint64) uint8
-

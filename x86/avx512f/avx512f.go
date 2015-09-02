@@ -8565,280 +8565,40 @@ func M512MaskzCompressPs(k x86.Mmask16, a x86.M512) x86.M512 {
 func m512MaskzCompressPs(k uint16, a [16]float32) [16]float32
 
 
-// MaskCompressstoreuEpi32: Contiguously store the active 32-bit integers in
-// 'a' (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		size := 32
-//		m := base_addr
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+31:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm_mask_compressstoreu_epi32'.
-// Requires AVX512F.
-func MaskCompressstoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCompressstoreuEpi32(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCompressstoreuEpi32(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_compressstoreu_epi32. Contains pointer parameter.
 
 
-// M256MaskCompressstoreuEpi32: Contiguously store the active 32-bit integers
-// in 'a' (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		size := 32
-//		m := base_addr
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+31:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm256_mask_compressstoreu_epi32'.
-// Requires AVX512F.
-func M256MaskCompressstoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCompressstoreuEpi32(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCompressstoreuEpi32(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_compressstoreu_epi32. Contains pointer parameter.
 
 
-// M512MaskCompressstoreuEpi32: Contiguously store the active 32-bit integers
-// in 'a' (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		size := 32
-//		m := base_addr
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+31:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm512_mask_compressstoreu_epi32'.
-// Requires AVX512F.
-func M512MaskCompressstoreuEpi32(base_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskCompressstoreuEpi32(uintptr(base_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskCompressstoreuEpi32(base_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_compressstoreu_epi32. Contains pointer parameter.
 
 
-// MaskCompressstoreuEpi64: Contiguously store the active 64-bit integers in
-// 'a' (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		size := 64
-//		m := base_addr
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+63:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm_mask_compressstoreu_epi64'.
-// Requires AVX512F.
-func MaskCompressstoreuEpi64(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCompressstoreuEpi64(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCompressstoreuEpi64(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_compressstoreu_epi64. Contains pointer parameter.
 
 
-// M256MaskCompressstoreuEpi64: Contiguously store the active 64-bit integers
-// in 'a' (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		size := 64
-//		m := base_addr
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+63:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm256_mask_compressstoreu_epi64'.
-// Requires AVX512F.
-func M256MaskCompressstoreuEpi64(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCompressstoreuEpi64(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCompressstoreuEpi64(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_compressstoreu_epi64. Contains pointer parameter.
 
 
-// M512MaskCompressstoreuEpi64: Contiguously store the active 64-bit integers
-// in 'a' (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		size := 64
-//		m := base_addr
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+63:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm512_mask_compressstoreu_epi64'.
-// Requires AVX512F.
-func M512MaskCompressstoreuEpi64(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCompressstoreuEpi64(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCompressstoreuEpi64(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_compressstoreu_epi64. Contains pointer parameter.
 
 
-// MaskCompressstoreuPd: Contiguously store the active double-precision
-// (64-bit) floating-point elements in 'a' (those with their respective bit set
-// in writemask 'k') to unaligned memory at 'base_addr'. 
-//
-//		size := 64
-//		m := base_addr
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+63:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm_mask_compressstoreu_pd'.
-// Requires AVX512F.
-func MaskCompressstoreuPd(base_addr uintptr, k x86.Mmask8, a x86.M128d)  {
-	maskCompressstoreuPd(uintptr(base_addr), uint8(k), [2]float64(a))
-}
-
-func maskCompressstoreuPd(base_addr uintptr, k uint8, a [2]float64) 
+// Skipped: _mm_mask_compressstoreu_pd. Contains pointer parameter.
 
 
-// M256MaskCompressstoreuPd: Contiguously store the active double-precision
-// (64-bit) floating-point elements in 'a' (those with their respective bit set
-// in writemask 'k') to unaligned memory at 'base_addr'. 
-//
-//		size := 64
-//		m := base_addr
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+63:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm256_mask_compressstoreu_pd'.
-// Requires AVX512F.
-func M256MaskCompressstoreuPd(base_addr uintptr, k x86.Mmask8, a x86.M256d)  {
-	m256MaskCompressstoreuPd(uintptr(base_addr), uint8(k), [4]float64(a))
-}
-
-func m256MaskCompressstoreuPd(base_addr uintptr, k uint8, a [4]float64) 
+// Skipped: _mm256_mask_compressstoreu_pd. Contains pointer parameter.
 
 
-// M512MaskCompressstoreuPd: Contiguously store the active double-precision
-// (64-bit) floating-point elements in 'a' (those with their respective bit set
-// in writemask 'k') to unaligned memory at 'base_addr'. 
-//
-//		size := 64
-//		m := base_addr
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+63:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm512_mask_compressstoreu_pd'.
-// Requires AVX512F.
-func M512MaskCompressstoreuPd(base_addr uintptr, k x86.Mmask8, a x86.M512d)  {
-	m512MaskCompressstoreuPd(uintptr(base_addr), uint8(k), [8]float64(a))
-}
-
-func m512MaskCompressstoreuPd(base_addr uintptr, k uint8, a [8]float64) 
+// Skipped: _mm512_mask_compressstoreu_pd. Contains pointer parameter.
 
 
-// MaskCompressstoreuPs: Contiguously store the active single-precision
-// (32-bit) floating-point elements in 'a' (those with their respective bit set
-// in writemask 'k') to unaligned memory at 'base_addr'. 
-//
-//		size := 32
-//		m := base_addr
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+31:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm_mask_compressstoreu_ps'.
-// Requires AVX512F.
-func MaskCompressstoreuPs(base_addr uintptr, k x86.Mmask8, a x86.M128)  {
-	maskCompressstoreuPs(uintptr(base_addr), uint8(k), [4]float32(a))
-}
-
-func maskCompressstoreuPs(base_addr uintptr, k uint8, a [4]float32) 
+// Skipped: _mm_mask_compressstoreu_ps. Contains pointer parameter.
 
 
-// M256MaskCompressstoreuPs: Contiguously store the active single-precision
-// (32-bit) floating-point elements in 'a' (those with their respective bit set
-// in writemask 'k') to unaligned memory at 'base_addr'. 
-//
-//		size := 32
-//		m := base_addr
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+31:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm256_mask_compressstoreu_ps'.
-// Requires AVX512F.
-func M256MaskCompressstoreuPs(base_addr uintptr, k x86.Mmask8, a x86.M256)  {
-	m256MaskCompressstoreuPs(uintptr(base_addr), uint8(k), [8]float32(a))
-}
-
-func m256MaskCompressstoreuPs(base_addr uintptr, k uint8, a [8]float32) 
+// Skipped: _mm256_mask_compressstoreu_ps. Contains pointer parameter.
 
 
-// M512MaskCompressstoreuPs: Contiguously store the active single-precision
-// (32-bit) floating-point elements in 'a' (those with their respective bit set
-// in writemask 'k') to unaligned memory at 'base_addr'. 
-//
-//		size := 32
-//		m := base_addr
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[m+size-1:m] := a[i+31:i]
-//				m := m + size
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm512_mask_compressstoreu_ps'.
-// Requires AVX512F.
-func M512MaskCompressstoreuPs(base_addr uintptr, k x86.Mmask16, a x86.M512)  {
-	m512MaskCompressstoreuPs(uintptr(base_addr), uint16(k), [16]float32(a))
-}
-
-func m512MaskCompressstoreuPs(base_addr uintptr, k uint16, a [16]float32) 
+// Skipped: _mm512_mask_compressstoreu_ps. Contains pointer parameter.
 
 
 // M512CosPd: Compute the cosine of packed double-precision (64-bit)
@@ -11960,140 +11720,22 @@ func M512MaskzCvtepi32Ps(k x86.Mmask16, a x86.M512i) x86.M512 {
 func m512MaskzCvtepi32Ps(k uint16, a [64]byte) [16]float32
 
 
-// MaskCvtepi32StoreuEpi16: Convert packed 32-bit integers in 'a' to packed
-// 16-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Truncate_Int32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVDW'. Intrinsic: '_mm_mask_cvtepi32_storeu_epi16'.
-// Requires AVX512F.
-func MaskCvtepi32StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtepi32StoreuEpi16(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtepi32StoreuEpi16(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtepi32_storeu_epi16. Contains pointer parameter.
 
 
-// M256MaskCvtepi32StoreuEpi16: Convert packed 32-bit integers in 'a' to packed
-// 16-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Truncate_Int32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVDW'. Intrinsic: '_mm256_mask_cvtepi32_storeu_epi16'.
-// Requires AVX512F.
-func M256MaskCvtepi32StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtepi32StoreuEpi16(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtepi32StoreuEpi16(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtepi32_storeu_epi16. Contains pointer parameter.
 
 
-// M512MaskCvtepi32StoreuEpi16: Convert packed 32-bit integers in 'a' to packed
-// 16-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Truncate_Int32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVDW'. Intrinsic: '_mm512_mask_cvtepi32_storeu_epi16'.
-// Requires AVX512F.
-func M512MaskCvtepi32StoreuEpi16(base_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskCvtepi32StoreuEpi16(uintptr(base_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskCvtepi32StoreuEpi16(base_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_cvtepi32_storeu_epi16. Contains pointer parameter.
 
 
-// MaskCvtepi32StoreuEpi8: Convert packed 32-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVDB'. Intrinsic: '_mm_mask_cvtepi32_storeu_epi8'.
-// Requires AVX512F.
-func MaskCvtepi32StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtepi32StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtepi32StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtepi32_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtepi32StoreuEpi8: Convert packed 32-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVDB'. Intrinsic: '_mm256_mask_cvtepi32_storeu_epi8'.
-// Requires AVX512F.
-func M256MaskCvtepi32StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtepi32StoreuEpi8(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtepi32StoreuEpi8(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtepi32_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtepi32StoreuEpi8: Convert packed 32-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVDB'. Intrinsic: '_mm512_mask_cvtepi32_storeu_epi8'.
-// Requires AVX512F.
-func M512MaskCvtepi32StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskCvtepi32StoreuEpi8(uintptr(base_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskCvtepi32StoreuEpi8(base_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_cvtepi32_storeu_epi8. Contains pointer parameter.
 
 
 // Cvtepi64Epi16: Convert packed 64-bit integers in 'a' to packed 16-bit
@@ -12707,208 +12349,31 @@ func M512MaskzCvtepi64Epi8(k x86.Mmask8, a x86.M512i) x86.M128i {
 func m512MaskzCvtepi64Epi8(k uint8, a [64]byte) [16]byte
 
 
-// MaskCvtepi64StoreuEpi16: Convert packed 64-bit integers in 'a' to packed
-// 16-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Truncate_Int64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVQW'. Intrinsic: '_mm_mask_cvtepi64_storeu_epi16'.
-// Requires AVX512F.
-func MaskCvtepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtepi64StoreuEpi16(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtepi64StoreuEpi16(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtepi64_storeu_epi16. Contains pointer parameter.
 
 
-// M256MaskCvtepi64StoreuEpi16: Convert packed 64-bit integers in 'a' to packed
-// 16-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Truncate_Int64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVQW'. Intrinsic: '_mm256_mask_cvtepi64_storeu_epi16'.
-// Requires AVX512F.
-func M256MaskCvtepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtepi64StoreuEpi16(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtepi64StoreuEpi16(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtepi64_storeu_epi16. Contains pointer parameter.
 
 
-// M512MaskCvtepi64StoreuEpi16: Convert packed 64-bit integers in 'a' to packed
-// 16-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Truncate_Int64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVQW'. Intrinsic: '_mm512_mask_cvtepi64_storeu_epi16'.
-// Requires AVX512F.
-func M512MaskCvtepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtepi64StoreuEpi16(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtepi64StoreuEpi16(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtepi64_storeu_epi16. Contains pointer parameter.
 
 
-// MaskCvtepi64StoreuEpi32: Convert packed 64-bit integers in 'a' to packed
-// 32-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Truncate_Int64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVQD'. Intrinsic: '_mm_mask_cvtepi64_storeu_epi32'.
-// Requires AVX512F.
-func MaskCvtepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtepi64StoreuEpi32(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtepi64StoreuEpi32(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtepi64_storeu_epi32. Contains pointer parameter.
 
 
-// M256MaskCvtepi64StoreuEpi32: Convert packed 64-bit integers in 'a' to packed
-// 32-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Truncate_Int64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVQD'. Intrinsic: '_mm256_mask_cvtepi64_storeu_epi32'.
-// Requires AVX512F.
-func M256MaskCvtepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtepi64StoreuEpi32(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtepi64StoreuEpi32(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtepi64_storeu_epi32. Contains pointer parameter.
 
 
-// M512MaskCvtepi64StoreuEpi32: Convert packed 64-bit integers in 'a' to packed
-// 32-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Truncate_Int64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVQD'. Intrinsic: '_mm512_mask_cvtepi64_storeu_epi32'.
-// Requires AVX512F.
-func M512MaskCvtepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtepi64StoreuEpi32(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtepi64StoreuEpi32(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtepi64_storeu_epi32. Contains pointer parameter.
 
 
-// MaskCvtepi64StoreuEpi8: Convert packed 64-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVQB'. Intrinsic: '_mm_mask_cvtepi64_storeu_epi8'.
-// Requires AVX512F.
-func MaskCvtepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtepi64StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtepi64StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtepi64_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtepi64StoreuEpi8: Convert packed 64-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVQB'. Intrinsic: '_mm256_mask_cvtepi64_storeu_epi8'.
-// Requires AVX512F.
-func M256MaskCvtepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtepi64StoreuEpi8(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtepi64StoreuEpi8(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtepi64_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtepi64StoreuEpi8: Convert packed 64-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVQB'. Intrinsic: '_mm512_mask_cvtepi64_storeu_epi8'.
-// Requires AVX512F.
-func M512MaskCvtepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtepi64StoreuEpi8(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtepi64StoreuEpi8(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtepi64_storeu_epi8. Contains pointer parameter.
 
 
 // MaskCvtepi8Epi32: Sign extend packed 8-bit integers in the low 4 bytes of
@@ -16304,140 +15769,22 @@ func M512MaskzCvtsepi32Epi8(k x86.Mmask16, a x86.M512i) x86.M128i {
 func m512MaskzCvtsepi32Epi8(k uint16, a [64]byte) [16]byte
 
 
-// MaskCvtsepi32StoreuEpi16: Convert packed 32-bit integers in 'a' to packed
-// 16-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_Int32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVSDW'. Intrinsic: '_mm_mask_cvtsepi32_storeu_epi16'.
-// Requires AVX512F.
-func MaskCvtsepi32StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtsepi32StoreuEpi16(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtsepi32StoreuEpi16(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtsepi32_storeu_epi16. Contains pointer parameter.
 
 
-// M256MaskCvtsepi32StoreuEpi16: Convert packed 32-bit integers in 'a' to
-// packed 16-bit integers with signed saturation, and store the active results
-// (those with their respective bit set in writemask 'k') to unaligned memory
-// at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_Int32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVSDW'. Intrinsic: '_mm256_mask_cvtsepi32_storeu_epi16'.
-// Requires AVX512F.
-func M256MaskCvtsepi32StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtsepi32StoreuEpi16(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtsepi32StoreuEpi16(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtsepi32_storeu_epi16. Contains pointer parameter.
 
 
-// M512MaskCvtsepi32StoreuEpi16: Convert packed 32-bit integers in 'a' to
-// packed 16-bit integers with signed saturation, and store the active results
-// (those with their respective bit set in writemask 'k') to unaligned memory
-// at 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_Int32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_mask_cvtsepi32_storeu_epi16'.
-// Requires AVX512F.
-func M512MaskCvtsepi32StoreuEpi16(base_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskCvtsepi32StoreuEpi16(uintptr(base_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskCvtsepi32StoreuEpi16(base_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_cvtsepi32_storeu_epi16. Contains pointer parameter.
 
 
-// MaskCvtsepi32StoreuEpi8: Convert packed 32-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVSDB'. Intrinsic: '_mm_mask_cvtsepi32_storeu_epi8'.
-// Requires AVX512F.
-func MaskCvtsepi32StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtsepi32StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtsepi32StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtsepi32_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtsepi32StoreuEpi8: Convert packed 32-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVSDB'. Intrinsic: '_mm256_mask_cvtsepi32_storeu_epi8'.
-// Requires AVX512F.
-func M256MaskCvtsepi32StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtsepi32StoreuEpi8(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtsepi32StoreuEpi8(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtsepi32_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtsepi32StoreuEpi8: Convert packed 32-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_mask_cvtsepi32_storeu_epi8'.
-// Requires AVX512F.
-func M512MaskCvtsepi32StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskCvtsepi32StoreuEpi8(uintptr(base_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskCvtsepi32StoreuEpi8(base_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_cvtsepi32_storeu_epi8. Contains pointer parameter.
 
 
 // Cvtsepi64Epi16: Convert packed 64-bit integers in 'a' to packed 16-bit
@@ -17061,208 +16408,31 @@ func M512MaskzCvtsepi64Epi8(k x86.Mmask8, a x86.M512i) x86.M128i {
 func m512MaskzCvtsepi64Epi8(k uint8, a [64]byte) [16]byte
 
 
-// MaskCvtsepi64StoreuEpi16: Convert packed 64-bit integers in 'a' to packed
-// 16-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_Int64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVSQW'. Intrinsic: '_mm_mask_cvtsepi64_storeu_epi16'.
-// Requires AVX512F.
-func MaskCvtsepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtsepi64StoreuEpi16(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtsepi64StoreuEpi16(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtsepi64_storeu_epi16. Contains pointer parameter.
 
 
-// M256MaskCvtsepi64StoreuEpi16: Convert packed 64-bit integers in 'a' to
-// packed 16-bit integers with signed saturation, and store the active results
-// (those with their respective bit set in writemask 'k') to unaligned memory
-// at 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_Int64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVSQW'. Intrinsic: '_mm256_mask_cvtsepi64_storeu_epi16'.
-// Requires AVX512F.
-func M256MaskCvtsepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtsepi64StoreuEpi16(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtsepi64StoreuEpi16(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtsepi64_storeu_epi16. Contains pointer parameter.
 
 
-// M512MaskCvtsepi64StoreuEpi16: Convert packed 64-bit integers in 'a' to
-// packed 16-bit integers with signed saturation, and store the active results
-// (those with their respective bit set in writemask 'k') to unaligned memory
-// at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_Int64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_mask_cvtsepi64_storeu_epi16'.
-// Requires AVX512F.
-func M512MaskCvtsepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtsepi64StoreuEpi16(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtsepi64StoreuEpi16(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtsepi64_storeu_epi16. Contains pointer parameter.
 
 
-// MaskCvtsepi64StoreuEpi32: Convert packed 64-bit integers in 'a' to packed
-// 32-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Saturate_Int64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVSQD'. Intrinsic: '_mm_mask_cvtsepi64_storeu_epi32'.
-// Requires AVX512F.
-func MaskCvtsepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtsepi64StoreuEpi32(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtsepi64StoreuEpi32(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtsepi64_storeu_epi32. Contains pointer parameter.
 
 
-// M256MaskCvtsepi64StoreuEpi32: Convert packed 64-bit integers in 'a' to
-// packed 32-bit integers with signed saturation, and store the active results
-// (those with their respective bit set in writemask 'k') to unaligned memory
-// at 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Saturate_Int64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVSQD'. Intrinsic: '_mm256_mask_cvtsepi64_storeu_epi32'.
-// Requires AVX512F.
-func M256MaskCvtsepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtsepi64StoreuEpi32(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtsepi64StoreuEpi32(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtsepi64_storeu_epi32. Contains pointer parameter.
 
 
-// M512MaskCvtsepi64StoreuEpi32: Convert packed 64-bit integers in 'a' to
-// packed 32-bit integers with signed saturation, and store the active results
-// (those with their respective bit set in writemask 'k') to unaligned memory
-// at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Saturate_Int64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_mask_cvtsepi64_storeu_epi32'.
-// Requires AVX512F.
-func M512MaskCvtsepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtsepi64StoreuEpi32(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtsepi64StoreuEpi32(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtsepi64_storeu_epi32. Contains pointer parameter.
 
 
-// MaskCvtsepi64StoreuEpi8: Convert packed 64-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:16] := 0
-//
-// Instruction: 'VPMOVSQB'. Intrinsic: '_mm_mask_cvtsepi64_storeu_epi8'.
-// Requires AVX512F.
-func MaskCvtsepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtsepi64StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtsepi64StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtsepi64_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtsepi64StoreuEpi8: Convert packed 64-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVSQB'. Intrinsic: '_mm256_mask_cvtsepi64_storeu_epi8'.
-// Requires AVX512F.
-func M256MaskCvtsepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtsepi64StoreuEpi8(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtsepi64StoreuEpi8(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtsepi64_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtsepi64StoreuEpi8: Convert packed 64-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_mask_cvtsepi64_storeu_epi8'.
-// Requires AVX512F.
-func M512MaskCvtsepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtsepi64StoreuEpi8(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtsepi64StoreuEpi8(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtsepi64_storeu_epi8. Contains pointer parameter.
 
 
 // CvtssI32: Convert the lower single-precision (32-bit) floating-point element
@@ -19271,140 +18441,22 @@ func M512MaskzCvtusepi32Epi8(k x86.Mmask16, a x86.M512i) x86.M128i {
 func m512MaskzCvtusepi32Epi8(k uint16, a [64]byte) [16]byte
 
 
-// MaskCvtusepi32StoreuEpi16: Convert packed unsigned 32-bit integers in 'a' to
-// packed unsigned 16-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_UnsignedInt32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVUSDW'. Intrinsic: '_mm_mask_cvtusepi32_storeu_epi16'.
-// Requires AVX512F.
-func MaskCvtusepi32StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtusepi32StoreuEpi16(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtusepi32StoreuEpi16(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtusepi32_storeu_epi16. Contains pointer parameter.
 
 
-// M256MaskCvtusepi32StoreuEpi16: Convert packed unsigned 32-bit integers in
-// 'a' to packed unsigned 16-bit integers with unsigned saturation, and store
-// the active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_UnsignedInt32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVUSDW'. Intrinsic: '_mm256_mask_cvtusepi32_storeu_epi16'.
-// Requires AVX512F.
-func M256MaskCvtusepi32StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtusepi32StoreuEpi16(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtusepi32StoreuEpi16(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtusepi32_storeu_epi16. Contains pointer parameter.
 
 
-// M512MaskCvtusepi32StoreuEpi16: Convert packed unsigned 32-bit integers in
-// 'a' to packed 16-bit integers with unsigned saturation, and store the active
-// results (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 32*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_UnsignedInt32_To_Int16(a[i+31:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_mask_cvtusepi32_storeu_epi16'.
-// Requires AVX512F.
-func M512MaskCvtusepi32StoreuEpi16(base_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskCvtusepi32StoreuEpi16(uintptr(base_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskCvtusepi32StoreuEpi16(base_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_cvtusepi32_storeu_epi16. Contains pointer parameter.
 
 
-// MaskCvtusepi32StoreuEpi8: Convert packed unsigned 32-bit integers in 'a' to
-// packed unsigned 8-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVUSDB'. Intrinsic: '_mm_mask_cvtusepi32_storeu_epi8'.
-// Requires AVX512F.
-func MaskCvtusepi32StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtusepi32StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtusepi32StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtusepi32_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtusepi32StoreuEpi8: Convert packed unsigned 32-bit integers in 'a'
-// to packed unsigned 8-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVUSDB'. Intrinsic: '_mm256_mask_cvtusepi32_storeu_epi8'.
-// Requires AVX512F.
-func M256MaskCvtusepi32StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtusepi32StoreuEpi8(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtusepi32StoreuEpi8(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtusepi32_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtusepi32StoreuEpi8: Convert packed unsigned 32-bit integers in 'a'
-// to packed 8-bit integers with unsigned saturation, and store the active
-// results (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 32*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt32_To_Int8(a[i+31:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_mask_cvtusepi32_storeu_epi8'.
-// Requires AVX512F.
-func M512MaskCvtusepi32StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskCvtusepi32StoreuEpi8(uintptr(base_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskCvtusepi32StoreuEpi8(base_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_cvtusepi32_storeu_epi8. Contains pointer parameter.
 
 
 // Cvtusepi64Epi16: Convert packed unsigned 64-bit integers in 'a' to packed
@@ -20037,208 +19089,31 @@ func M512MaskzCvtusepi64Epi8(k x86.Mmask8, a x86.M512i) x86.M128i {
 func m512MaskzCvtusepi64Epi8(k uint8, a [64]byte) [16]byte
 
 
-// MaskCvtusepi64StoreuEpi16: Convert packed unsigned 64-bit integers in 'a' to
-// packed unsigned 16-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_UnsignedInt64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVUSQW'. Intrinsic: '_mm_mask_cvtusepi64_storeu_epi16'.
-// Requires AVX512F.
-func MaskCvtusepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtusepi64StoreuEpi16(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtusepi64StoreuEpi16(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtusepi64_storeu_epi16. Contains pointer parameter.
 
 
-// M256MaskCvtusepi64StoreuEpi16: Convert packed unsigned 64-bit integers in
-// 'a' to packed unsigned 16-bit integers with unsigned saturation, and store
-// the active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_UnsignedInt64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVUSQW'. Intrinsic: '_mm256_mask_cvtusepi64_storeu_epi16'.
-// Requires AVX512F.
-func M256MaskCvtusepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtusepi64StoreuEpi16(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtusepi64StoreuEpi16(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtusepi64_storeu_epi16. Contains pointer parameter.
 
 
-// M512MaskCvtusepi64StoreuEpi16: Convert packed unsigned 64-bit integers in
-// 'a' to packed 16-bit integers with unsigned saturation, and store the active
-// results (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 16*j
-//			IF k[j]
-//				MEM[base_addr+l+15:base_addr+l] := Saturate_UnsignedInt64_To_Int16(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_mask_cvtusepi64_storeu_epi16'.
-// Requires AVX512F.
-func M512MaskCvtusepi64StoreuEpi16(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtusepi64StoreuEpi16(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtusepi64StoreuEpi16(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtusepi64_storeu_epi16. Contains pointer parameter.
 
 
-// MaskCvtusepi64StoreuEpi32: Convert packed unsigned 64-bit integers in 'a' to
-// packed unsigned 32-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Saturate_UnsignedInt64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVUSQD'. Intrinsic: '_mm_mask_cvtusepi64_storeu_epi32'.
-// Requires AVX512F.
-func MaskCvtusepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtusepi64StoreuEpi32(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtusepi64StoreuEpi32(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtusepi64_storeu_epi32. Contains pointer parameter.
 
 
-// M256MaskCvtusepi64StoreuEpi32: Convert packed unsigned 64-bit integers in
-// 'a' to packed unsigned 32-bit integers with unsigned saturation, and store
-// the active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Saturate_UnsignedInt64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVUSQD'. Intrinsic: '_mm256_mask_cvtusepi64_storeu_epi32'.
-// Requires AVX512F.
-func M256MaskCvtusepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtusepi64StoreuEpi32(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtusepi64StoreuEpi32(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtusepi64_storeu_epi32. Contains pointer parameter.
 
 
-// M512MaskCvtusepi64StoreuEpi32: Convert packed unsigned 64-bit integers in
-// 'a' to packed 32-bit integers with unsigned saturation, and store the active
-// results (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 32*j
-//			IF k[j]
-//				MEM[base_addr+l+31:base_addr+l] := Saturate_UnsignedInt64_To_Int32(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_mask_cvtusepi64_storeu_epi32'.
-// Requires AVX512F.
-func M512MaskCvtusepi64StoreuEpi32(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtusepi64StoreuEpi32(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtusepi64StoreuEpi32(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtusepi64_storeu_epi32. Contains pointer parameter.
 
 
-// MaskCvtusepi64StoreuEpi8: Convert packed unsigned 64-bit integers in 'a' to
-// packed unsigned 8-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 1
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:16] := 0
-//
-// Instruction: 'VPMOVUSQB'. Intrinsic: '_mm_mask_cvtusepi64_storeu_epi8'.
-// Requires AVX512F.
-func MaskCvtusepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtusepi64StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtusepi64StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtusepi64_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtusepi64StoreuEpi8: Convert packed unsigned 64-bit integers in 'a'
-// to packed unsigned 8-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 3
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:32] := 0
-//
-// Instruction: 'VPMOVUSQB'. Intrinsic: '_mm256_mask_cvtusepi64_storeu_epi8'.
-// Requires AVX512F.
-func M256MaskCvtusepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskCvtusepi64StoreuEpi8(uintptr(base_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskCvtusepi64StoreuEpi8(base_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_cvtusepi64_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtusepi64StoreuEpi8: Convert packed unsigned 64-bit integers in 'a'
-// to packed 8-bit integers with unsigned saturation, and store the active
-// results (those with their respective bit set in writemask 'k') to unaligned
-// memory at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 64*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt64_To_Int8(a[i+63:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_mask_cvtusepi64_storeu_epi8'.
-// Requires AVX512F.
-func M512MaskCvtusepi64StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskCvtusepi64StoreuEpi8(uintptr(base_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskCvtusepi64StoreuEpi8(base_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_cvtusepi64_storeu_epi8. Contains pointer parameter.
 
 
 // M512DivEpi16: Divide packed 16-bit integers in 'a' by packed elements in
@@ -22414,640 +21289,76 @@ func M512MaskzExpandPs(k x86.Mmask16, a x86.M512) x86.M512 {
 func m512MaskzExpandPs(k uint16, a [16]float32) [16]float32
 
 
-// MaskExpandloaduEpi32: Load contiguous active 32-bit integers from unaligned
-// memory at 'mem_addr' (those with their respective bit set in mask 'k'), and
-// store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPEXPANDD'. Intrinsic: '_mm_mask_expandloadu_epi32'.
-// Requires AVX512F.
-func MaskExpandloaduEpi32(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskExpandloaduEpi32([16]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskExpandloaduEpi32(src [16]byte, k uint8, mem_addr uintptr) [16]byte
-
-
-// MaskzExpandloaduEpi32: Load contiguous active 32-bit integers from unaligned
-// memory at 'mem_addr' (those with their respective bit set in mask 'k'), and
-// store the results in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPEXPANDD'. Intrinsic: '_mm_maskz_expandloadu_epi32'.
-// Requires AVX512F.
-func MaskzExpandloaduEpi32(k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzExpandloaduEpi32(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzExpandloaduEpi32(k uint8, mem_addr uintptr) [16]byte
-
-
-// M256MaskExpandloaduEpi32: Load contiguous active 32-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPEXPANDD'. Intrinsic: '_mm256_mask_expandloadu_epi32'.
-// Requires AVX512F.
-func M256MaskExpandloaduEpi32(src x86.M256i, k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskExpandloaduEpi32([32]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskExpandloaduEpi32(src [32]byte, k uint8, mem_addr uintptr) [32]byte
-
-
-// M256MaskzExpandloaduEpi32: Load contiguous active 32-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPEXPANDD'. Intrinsic: '_mm256_maskz_expandloadu_epi32'.
-// Requires AVX512F.
-func M256MaskzExpandloaduEpi32(k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzExpandloaduEpi32(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzExpandloaduEpi32(k uint8, mem_addr uintptr) [32]byte
-
-
-// M512MaskExpandloaduEpi32: Load contiguous active 32-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPEXPANDD'. Intrinsic: '_mm512_mask_expandloadu_epi32'.
-// Requires AVX512F.
-func M512MaskExpandloaduEpi32(src x86.M512i, k x86.Mmask16, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskExpandloaduEpi32([64]byte(src), uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskExpandloaduEpi32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
-
-
-// M512MaskzExpandloaduEpi32: Load contiguous active 32-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPEXPANDD'. Intrinsic: '_mm512_maskz_expandloadu_epi32'.
-// Requires AVX512F.
-func M512MaskzExpandloaduEpi32(k x86.Mmask16, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzExpandloaduEpi32(uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskzExpandloaduEpi32(k uint16, mem_addr uintptr) [64]byte
-
-
-// MaskExpandloaduEpi64: Load contiguous active 64-bit integers from unaligned
-// memory at 'mem_addr' (those with their respective bit set in mask 'k'), and
-// store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPEXPANDQ'. Intrinsic: '_mm_mask_expandloadu_epi64'.
-// Requires AVX512F.
-func MaskExpandloaduEpi64(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskExpandloaduEpi64([16]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskExpandloaduEpi64(src [16]byte, k uint8, mem_addr uintptr) [16]byte
-
-
-// MaskzExpandloaduEpi64: Load contiguous active 64-bit integers from unaligned
-// memory at 'mem_addr' (those with their respective bit set in mask 'k'), and
-// store the results in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPEXPANDQ'. Intrinsic: '_mm_maskz_expandloadu_epi64'.
-// Requires AVX512F.
-func MaskzExpandloaduEpi64(k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzExpandloaduEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzExpandloaduEpi64(k uint8, mem_addr uintptr) [16]byte
-
-
-// M256MaskExpandloaduEpi64: Load contiguous active 64-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPEXPANDQ'. Intrinsic: '_mm256_mask_expandloadu_epi64'.
-// Requires AVX512F.
-func M256MaskExpandloaduEpi64(src x86.M256i, k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskExpandloaduEpi64([32]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskExpandloaduEpi64(src [32]byte, k uint8, mem_addr uintptr) [32]byte
-
-
-// M256MaskzExpandloaduEpi64: Load contiguous active 64-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPEXPANDQ'. Intrinsic: '_mm256_maskz_expandloadu_epi64'.
-// Requires AVX512F.
-func M256MaskzExpandloaduEpi64(k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzExpandloaduEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzExpandloaduEpi64(k uint8, mem_addr uintptr) [32]byte
-
-
-// M512MaskExpandloaduEpi64: Load contiguous active 64-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPEXPANDQ'. Intrinsic: '_mm512_mask_expandloadu_epi64'.
-// Requires AVX512F.
-func M512MaskExpandloaduEpi64(src x86.M512i, k x86.Mmask8, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskExpandloaduEpi64([64]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskExpandloaduEpi64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
-
-
-// M512MaskzExpandloaduEpi64: Load contiguous active 64-bit integers from
-// unaligned memory at 'mem_addr' (those with their respective bit set in mask
-// 'k'), and store the results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPEXPANDQ'. Intrinsic: '_mm512_maskz_expandloadu_epi64'.
-// Requires AVX512F.
-func M512MaskzExpandloaduEpi64(k x86.Mmask8, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzExpandloaduEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskzExpandloaduEpi64(k uint8, mem_addr uintptr) [64]byte
-
-
-// MaskExpandloaduPd: Load contiguous active double-precision (64-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VEXPANDPD'. Intrinsic: '_mm_mask_expandloadu_pd'.
-// Requires AVX512F.
-func MaskExpandloaduPd(src x86.M128d, k x86.Mmask8, mem_addr uintptr) x86.M128d {
-	return x86.M128d(maskExpandloaduPd([2]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskExpandloaduPd(src [2]float64, k uint8, mem_addr uintptr) [2]float64
-
-
-// MaskzExpandloaduPd: Load contiguous active double-precision (64-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-//
-//		m := 0
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VEXPANDPD'. Intrinsic: '_mm_maskz_expandloadu_pd'.
-// Requires AVX512F.
-func MaskzExpandloaduPd(k x86.Mmask8, mem_addr uintptr) x86.M128d {
-	return x86.M128d(maskzExpandloaduPd(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzExpandloaduPd(k uint8, mem_addr uintptr) [2]float64
-
-
-// M256MaskExpandloaduPd: Load contiguous active double-precision (64-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VEXPANDPD'. Intrinsic: '_mm256_mask_expandloadu_pd'.
-// Requires AVX512F.
-func M256MaskExpandloaduPd(src x86.M256d, k x86.Mmask8, mem_addr uintptr) x86.M256d {
-	return x86.M256d(m256MaskExpandloaduPd([4]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskExpandloaduPd(src [4]float64, k uint8, mem_addr uintptr) [4]float64
-
-
-// M256MaskzExpandloaduPd: Load contiguous active double-precision (64-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VEXPANDPD'. Intrinsic: '_mm256_maskz_expandloadu_pd'.
-// Requires AVX512F.
-func M256MaskzExpandloaduPd(k x86.Mmask8, mem_addr uintptr) x86.M256d {
-	return x86.M256d(m256MaskzExpandloaduPd(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzExpandloaduPd(k uint8, mem_addr uintptr) [4]float64
-
-
-// M512MaskExpandloaduPd: Load contiguous active double-precision (64-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VEXPANDPD'. Intrinsic: '_mm512_mask_expandloadu_pd'.
-// Requires AVX512F.
-func M512MaskExpandloaduPd(src x86.M512d, k x86.Mmask8, mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512MaskExpandloaduPd([8]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskExpandloaduPd(src [8]float64, k uint8, mem_addr uintptr) [8]float64
-
-
-// M512MaskzExpandloaduPd: Load contiguous active double-precision (64-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+m+63:mem_addr+m]
-//				m := m + 64
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VEXPANDPD'. Intrinsic: '_mm512_maskz_expandloadu_pd'.
-// Requires AVX512F.
-func M512MaskzExpandloaduPd(k x86.Mmask8, mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512MaskzExpandloaduPd(uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskzExpandloaduPd(k uint8, mem_addr uintptr) [8]float64
-
-
-// MaskExpandloaduPs: Load contiguous active single-precision (32-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VEXPANDPS'. Intrinsic: '_mm_mask_expandloadu_ps'.
-// Requires AVX512F.
-func MaskExpandloaduPs(src x86.M128, k x86.Mmask8, mem_addr uintptr) x86.M128 {
-	return x86.M128(maskExpandloaduPs([4]float32(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskExpandloaduPs(src [4]float32, k uint8, mem_addr uintptr) [4]float32
-
-
-// MaskzExpandloaduPs: Load contiguous active single-precision (32-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-//
-//		m := 0
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VEXPANDPS'. Intrinsic: '_mm_maskz_expandloadu_ps'.
-// Requires AVX512F.
-func MaskzExpandloaduPs(k x86.Mmask8, mem_addr uintptr) x86.M128 {
-	return x86.M128(maskzExpandloaduPs(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzExpandloaduPs(k uint8, mem_addr uintptr) [4]float32
-
-
-// M256MaskExpandloaduPs: Load contiguous active single-precision (32-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VEXPANDPS'. Intrinsic: '_mm256_mask_expandloadu_ps'.
-// Requires AVX512F.
-func M256MaskExpandloaduPs(src x86.M256, k x86.Mmask8, mem_addr uintptr) x86.M256 {
-	return x86.M256(m256MaskExpandloaduPs([8]float32(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskExpandloaduPs(src [8]float32, k uint8, mem_addr uintptr) [8]float32
-
-
-// M256MaskzExpandloaduPs: Load contiguous active single-precision (32-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-//
-//		m := 0
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VEXPANDPS'. Intrinsic: '_mm256_maskz_expandloadu_ps'.
-// Requires AVX512F.
-func M256MaskzExpandloaduPs(k x86.Mmask8, mem_addr uintptr) x86.M256 {
-	return x86.M256(m256MaskzExpandloaduPs(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzExpandloaduPs(k uint8, mem_addr uintptr) [8]float32
-
-
-// M512MaskExpandloaduPs: Load contiguous active single-precision (32-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-//
-//		m := 0
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VEXPANDPS'. Intrinsic: '_mm512_mask_expandloadu_ps'.
-// Requires AVX512F.
-func M512MaskExpandloaduPs(src x86.M512, k x86.Mmask16, mem_addr uintptr) x86.M512 {
-	return x86.M512(m512MaskExpandloaduPs([16]float32(src), uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskExpandloaduPs(src [16]float32, k uint16, mem_addr uintptr) [16]float32
-
-
-// M512MaskzExpandloaduPs: Load contiguous active single-precision (32-bit)
-// floating-point elements from unaligned memory at 'mem_addr' (those with
-// their respective bit set in mask 'k'), and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-//
-//		m := 0
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+m+31:mem_addr+m]
-//				m := m + 32
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VEXPANDPS'. Intrinsic: '_mm512_maskz_expandloadu_ps'.
-// Requires AVX512F.
-func M512MaskzExpandloaduPs(k x86.Mmask16, mem_addr uintptr) x86.M512 {
-	return x86.M512(m512MaskzExpandloaduPs(uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskzExpandloaduPs(k uint16, mem_addr uintptr) [16]float32
+// Skipped: _mm_mask_expandloadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_expandloadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_expandloadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_expandloadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_expandloadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_expandloadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_expandloadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_expandloadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_expandloadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_expandloadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_expandloadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_expandloadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_expandloadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_expandloadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_expandloadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_expandloadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_expandloadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_expandloadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_expandloadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_expandloadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_expandloadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_expandloadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_expandloadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_expandloadu_ps. Contains pointer parameter.
 
 
 // M512Expm1Pd: Compute the exponential value of 'e' raised to the power of
@@ -32994,1768 +31305,220 @@ func M512MaskHypotPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M5
 func m512MaskHypotPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// MmaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit
-// indices. 32-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPGATHERDD'. Intrinsic: '_mm_mmask_i32gather_epi32'.
-// Requires AVX512F.
-func MmaskI32gatherEpi32(src x86.M128i, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128i {
-	return x86.M128i(mmaskI32gatherEpi32([16]byte(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI32gatherEpi32(src [16]byte, k uint8, vindex [16]byte, base_addr uintptr, scale int) [16]byte
-
-
-// M256MmaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit
-// indices. 32-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPGATHERDD'. Intrinsic: '_mm256_mmask_i32gather_epi32'.
-// Requires AVX512F.
-func M256MmaskI32gatherEpi32(src x86.M256i, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M256i {
-	return x86.M256i(m256MmaskI32gatherEpi32([32]byte(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI32gatherEpi32(src [32]byte, k uint8, vindex [32]byte, base_addr uintptr, scale int) [32]byte
-
-
-// MmaskI32gatherEpi64: Gather 64-bit integers from memory using 32-bit
-// indices. 64-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			m := j*32
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm_mmask_i32gather_epi64'.
-// Requires AVX512F.
-func MmaskI32gatherEpi64(src x86.M128i, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128i {
-	return x86.M128i(mmaskI32gatherEpi64([16]byte(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI32gatherEpi64(src [16]byte, k uint8, vindex [16]byte, base_addr uintptr, scale int) [16]byte
-
-
-// M256MmaskI32gatherEpi64: Gather 64-bit integers from memory using 32-bit
-// indices. 64-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			m := j*32
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm256_mmask_i32gather_epi64'.
-// Requires AVX512F.
-func M256MmaskI32gatherEpi64(src x86.M256i, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M256i {
-	return x86.M256i(m256MmaskI32gatherEpi64([32]byte(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI32gatherEpi64(src [32]byte, k uint8, vindex [16]byte, base_addr uintptr, scale int) [32]byte
-
-
-// M512I32gatherEpi64: Gather 64-bit integers from memory using 32-bit indices.
-// 64-bit elements are loaded from addresses starting at 'base_addr' and offset
-// by each 32-bit element in 'vindex' (each index is scaled by the factor in
-// 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
-// or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			m := j*32
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32gather_epi64'.
-// Requires AVX512F.
-func M512I32gatherEpi64(vindex x86.M256i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(m512I32gatherEpi64([32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I32gatherEpi64(vindex [32]byte, base_addr uintptr, scale int) [64]byte
-
-
-// M512MaskI32gatherEpi64: Gather 64-bit integers from memory using 32-bit
-// indices. 64-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			m := j*32
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32gather_epi64'.
-// Requires AVX512F.
-func M512MaskI32gatherEpi64(src x86.M512i, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(m512MaskI32gatherEpi64([64]byte(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI32gatherEpi64(src [64]byte, k uint8, vindex [32]byte, base_addr uintptr, scale int) [64]byte
-
-
-// MmaskI32gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 32-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			m := j*32
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm_mmask_i32gather_pd'.
-// Requires AVX512F.
-func MmaskI32gatherPd(src x86.M128d, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128d {
-	return x86.M128d(mmaskI32gatherPd([2]float64(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI32gatherPd(src [2]float64, k uint8, vindex [16]byte, base_addr uintptr, scale int) [2]float64
-
-
-// M256MmaskI32gatherPd: Gather double-precision (64-bit) floating-point
-// elements from memory using 32-bit indices. 64-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			m := j*32
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm256_mmask_i32gather_pd'.
-// Requires AVX512F.
-func M256MmaskI32gatherPd(src x86.M256d, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M256d {
-	return x86.M256d(m256MmaskI32gatherPd([4]float64(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI32gatherPd(src [4]float64, k uint8, vindex [16]byte, base_addr uintptr, scale int) [4]float64
-
-
-// M512I32gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 32-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			m := j*32
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32gather_pd'.
-// Requires AVX512F.
-func M512I32gatherPd(vindex x86.M256i, base_addr uintptr, scale int) x86.M512d {
-	return x86.M512d(m512I32gatherPd([32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I32gatherPd(vindex [32]byte, base_addr uintptr, scale int) [8]float64
-
-
-// M512MaskI32gatherPd: Gather double-precision (64-bit) floating-point
-// elements from memory using 32-bit indices. 64-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			m := j*32
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32gather_pd'.
-// Requires AVX512F.
-func M512MaskI32gatherPd(src x86.M512d, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M512d {
-	return x86.M512d(m512MaskI32gatherPd([8]float64(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI32gatherPd(src [8]float64, k uint8, vindex [32]byte, base_addr uintptr, scale int) [8]float64
-
-
-// MmaskI32gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 32-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm_mmask_i32gather_ps'.
-// Requires AVX512F.
-func MmaskI32gatherPs(src x86.M128, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128 {
-	return x86.M128(mmaskI32gatherPs([4]float32(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI32gatherPs(src [4]float32, k uint8, vindex [16]byte, base_addr uintptr, scale int) [4]float32
-
-
-// M256MmaskI32gatherPs: Gather single-precision (32-bit) floating-point
-// elements from memory using 32-bit indices. 32-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm256_mmask_i32gather_ps'.
-// Requires AVX512F.
-func M256MmaskI32gatherPs(src x86.M256, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M256 {
-	return x86.M256(m256MmaskI32gatherPs([8]float32(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI32gatherPs(src [8]float32, k uint8, vindex [32]byte, base_addr uintptr, scale int) [8]float32
-
-
-// I32scatterEpi32: Scatter 32-bit integers from 'a' into memory using 32-bit
-// indices. 32-bit elements are stored at addresses starting at 'base_addr' and
-// offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm_i32scatter_epi32'.
-// Requires AVX512F.
-func I32scatterEpi32(base_addr uintptr, vindex x86.M128i, a x86.M128i, scale int)  {
-	i32scatterEpi32(uintptr(base_addr), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func i32scatterEpi32(base_addr uintptr, vindex [16]byte, a [16]byte, scale int) 
-
-
-// MaskI32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 32-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm_mask_i32scatter_epi32'.
-// Requires AVX512F.
-func MaskI32scatterEpi32(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128i, scale int)  {
-	maskI32scatterEpi32(uintptr(base_addr), uint8(k), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func maskI32scatterEpi32(base_addr uintptr, k uint8, vindex [16]byte, a [16]byte, scale int) 
-
-
-// M256I32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 32-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm256_i32scatter_epi32'.
-// Requires AVX512F.
-func M256I32scatterEpi32(base_addr uintptr, vindex x86.M256i, a x86.M256i, scale int)  {
-	m256I32scatterEpi32(uintptr(base_addr), [32]byte(vindex), [32]byte(a), scale)
-}
-
-func m256I32scatterEpi32(base_addr uintptr, vindex [32]byte, a [32]byte, scale int) 
-
-
-// M256MaskI32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 32-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm256_mask_i32scatter_epi32'.
-// Requires AVX512F.
-func M256MaskI32scatterEpi32(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M256i, scale int)  {
-	m256MaskI32scatterEpi32(uintptr(base_addr), uint8(k), [32]byte(vindex), [32]byte(a), scale)
-}
-
-func m256MaskI32scatterEpi32(base_addr uintptr, k uint8, vindex [32]byte, a [32]byte, scale int) 
-
-
-// I32scatterEpi64: Scatter 64-bit integers from 'a' into memory using 32-bit
-// indices. 64-bit elements are stored at addresses starting at 'base_addr' and
-// offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			l := j*32
-//			MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm_i32scatter_epi64'.
-// Requires AVX512F.
-func I32scatterEpi64(base_addr uintptr, vindex x86.M128i, a x86.M128i, scale int)  {
-	i32scatterEpi64(uintptr(base_addr), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func i32scatterEpi64(base_addr uintptr, vindex [16]byte, a [16]byte, scale int) 
-
-
-// MaskI32scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 32-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			l := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm_mask_i32scatter_epi64'.
-// Requires AVX512F.
-func MaskI32scatterEpi64(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128i, scale int)  {
-	maskI32scatterEpi64(uintptr(base_addr), uint8(k), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func maskI32scatterEpi64(base_addr uintptr, k uint8, vindex [16]byte, a [16]byte, scale int) 
-
-
-// M256I32scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 32-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			l := j*32
-//			MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm256_i32scatter_epi64'.
-// Requires AVX512F.
-func M256I32scatterEpi64(base_addr uintptr, vindex x86.M128i, a x86.M256i, scale int)  {
-	m256I32scatterEpi64(uintptr(base_addr), [16]byte(vindex), [32]byte(a), scale)
-}
-
-func m256I32scatterEpi64(base_addr uintptr, vindex [16]byte, a [32]byte, scale int) 
-
-
-// M256MaskI32scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 32-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			l := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm256_mask_i32scatter_epi64'.
-// Requires AVX512F.
-func M256MaskI32scatterEpi64(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M256i, scale int)  {
-	m256MaskI32scatterEpi64(uintptr(base_addr), uint8(k), [16]byte(vindex), [32]byte(a), scale)
-}
-
-func m256MaskI32scatterEpi64(base_addr uintptr, k uint8, vindex [16]byte, a [32]byte, scale int) 
-
-
-// M512I32scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 32-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			l := j*32
-//			MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32scatter_epi64'.
-// Requires AVX512F.
-func M512I32scatterEpi64(base_addr uintptr, vindex x86.M256i, a x86.M512i, scale int)  {
-	m512I32scatterEpi64(uintptr(base_addr), [32]byte(vindex), [64]byte(a), scale)
-}
-
-func m512I32scatterEpi64(base_addr uintptr, vindex [32]byte, a [64]byte, scale int) 
-
-
-// M512MaskI32scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 32-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			l := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32scatter_epi64'.
-// Requires AVX512F.
-func M512MaskI32scatterEpi64(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M512i, scale int)  {
-	m512MaskI32scatterEpi64(uintptr(base_addr), uint8(k), [32]byte(vindex), [64]byte(a), scale)
-}
-
-func m512MaskI32scatterEpi64(base_addr uintptr, k uint8, vindex [32]byte, a [64]byte, scale int) 
-
-
-// I32scatterPd: Scatter double-precision (64-bit) floating-point elements from
-// 'a' into memory using 32-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			l := j*32
-//			MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm_i32scatter_pd'.
-// Requires AVX512F.
-func I32scatterPd(base_addr uintptr, vindex x86.M128i, a x86.M128d, scale int)  {
-	i32scatterPd(uintptr(base_addr), [16]byte(vindex), [2]float64(a), scale)
-}
-
-func i32scatterPd(base_addr uintptr, vindex [16]byte, a [2]float64, scale int) 
-
-
-// MaskI32scatterPd: Scatter double-precision (64-bit) floating-point elements
-// from 'a' into memory using 32-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			l := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm_mask_i32scatter_pd'.
-// Requires AVX512F.
-func MaskI32scatterPd(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128d, scale int)  {
-	maskI32scatterPd(uintptr(base_addr), uint8(k), [16]byte(vindex), [2]float64(a), scale)
-}
-
-func maskI32scatterPd(base_addr uintptr, k uint8, vindex [16]byte, a [2]float64, scale int) 
-
-
-// M256I32scatterPd: Scatter double-precision (64-bit) floating-point elements
-// from 'a' into memory using 32-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			l := j*32
-//			MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm256_i32scatter_pd'.
-// Requires AVX512F.
-func M256I32scatterPd(base_addr uintptr, vindex x86.M128i, a x86.M256d, scale int)  {
-	m256I32scatterPd(uintptr(base_addr), [16]byte(vindex), [4]float64(a), scale)
-}
-
-func m256I32scatterPd(base_addr uintptr, vindex [16]byte, a [4]float64, scale int) 
-
-
-// M256MaskI32scatterPd: Scatter double-precision (64-bit) floating-point
-// elements from 'a' into memory using 32-bit indices. 64-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 32-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			l := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm256_mask_i32scatter_pd'.
-// Requires AVX512F.
-func M256MaskI32scatterPd(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M256d, scale int)  {
-	m256MaskI32scatterPd(uintptr(base_addr), uint8(k), [16]byte(vindex), [4]float64(a), scale)
-}
-
-func m256MaskI32scatterPd(base_addr uintptr, k uint8, vindex [16]byte, a [4]float64, scale int) 
-
-
-// M512I32scatterPd: Scatter double-precision (64-bit) floating-point elements
-// from 'a' into memory using 32-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			l := j*32
-//			MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32scatter_pd'.
-// Requires AVX512F.
-func M512I32scatterPd(base_addr uintptr, vindex x86.M256i, a x86.M512d, scale int)  {
-	m512I32scatterPd(uintptr(base_addr), [32]byte(vindex), [8]float64(a), scale)
-}
-
-func m512I32scatterPd(base_addr uintptr, vindex [32]byte, a [8]float64, scale int) 
-
-
-// M512MaskI32scatterPd: Scatter double-precision (64-bit) floating-point
-// elements from 'a' into memory using 32-bit indices. 64-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 32-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			l := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+31:l])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32scatter_pd'.
-// Requires AVX512F.
-func M512MaskI32scatterPd(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M512d, scale int)  {
-	m512MaskI32scatterPd(uintptr(base_addr), uint8(k), [32]byte(vindex), [8]float64(a), scale)
-}
-
-func m512MaskI32scatterPd(base_addr uintptr, k uint8, vindex [32]byte, a [8]float64, scale int) 
-
-
-// I32scatterPs: Scatter single-precision (32-bit) floating-point elements from
-// 'a' into memory using 32-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm_i32scatter_ps'.
-// Requires AVX512F.
-func I32scatterPs(base_addr uintptr, vindex x86.M128i, a x86.M128, scale int)  {
-	i32scatterPs(uintptr(base_addr), [16]byte(vindex), [4]float32(a), scale)
-}
-
-func i32scatterPs(base_addr uintptr, vindex [16]byte, a [4]float32, scale int) 
-
-
-// MaskI32scatterPs: Scatter single-precision (32-bit) floating-point elements
-// from 'a' into memory using 32-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm_mask_i32scatter_ps'.
-// Requires AVX512F.
-func MaskI32scatterPs(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128, scale int)  {
-	maskI32scatterPs(uintptr(base_addr), uint8(k), [16]byte(vindex), [4]float32(a), scale)
-}
-
-func maskI32scatterPs(base_addr uintptr, k uint8, vindex [16]byte, a [4]float32, scale int) 
-
-
-// M256I32scatterPs: Scatter single-precision (32-bit) floating-point elements
-// from 'a' into memory using 32-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm256_i32scatter_ps'.
-// Requires AVX512F.
-func M256I32scatterPs(base_addr uintptr, vindex x86.M256i, a x86.M256, scale int)  {
-	m256I32scatterPs(uintptr(base_addr), [32]byte(vindex), [8]float32(a), scale)
-}
-
-func m256I32scatterPs(base_addr uintptr, vindex [32]byte, a [8]float32, scale int) 
-
-
-// M256MaskI32scatterPs: Scatter single-precision (32-bit) floating-point
-// elements from 'a' into memory using 32-bit indices. 32-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 32-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm256_mask_i32scatter_ps'.
-// Requires AVX512F.
-func M256MaskI32scatterPs(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M256, scale int)  {
-	m256MaskI32scatterPs(uintptr(base_addr), uint8(k), [32]byte(vindex), [8]float32(a), scale)
-}
-
-func m256MaskI32scatterPs(base_addr uintptr, k uint8, vindex [32]byte, a [8]float32, scale int) 
-
-
-// MmaskI64gatherEpi32: Gather 32-bit integers from memory using 64-bit
-// indices. 32-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			m := j*64
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPGATHERQD'. Intrinsic: '_mm_mmask_i64gather_epi32'.
-// Requires AVX512F.
-func MmaskI64gatherEpi32(src x86.M128i, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128i {
-	return x86.M128i(mmaskI64gatherEpi32([16]byte(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI64gatherEpi32(src [16]byte, k uint8, vindex [16]byte, base_addr uintptr, scale int) [16]byte
-
-
-// M256MmaskI64gatherEpi32: Gather 32-bit integers from memory using 64-bit
-// indices. 32-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			m := j*64
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPGATHERQD'. Intrinsic: '_mm256_mmask_i64gather_epi32'.
-// Requires AVX512F.
-func M256MmaskI64gatherEpi32(src x86.M128i, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M128i {
-	return x86.M128i(m256MmaskI64gatherEpi32([16]byte(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI64gatherEpi32(src [16]byte, k uint8, vindex [32]byte, base_addr uintptr, scale int) [16]byte
-
-
-// M512I64gatherEpi32: Gather 32-bit integers from memory using 64-bit indices.
-// 32-bit elements are loaded from addresses starting at 'base_addr' and offset
-// by each 64-bit element in 'vindex' (each index is scaled by the factor in
-// 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
-// or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			m := j*64
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPGATHERQD'. Intrinsic: '_mm512_i64gather_epi32'.
-// Requires AVX512F.
-func M512I64gatherEpi32(vindex x86.M512i, base_addr uintptr, scale int) x86.M256i {
-	return x86.M256i(m512I64gatherEpi32([64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I64gatherEpi32(vindex [64]byte, base_addr uintptr, scale int) [32]byte
-
-
-// M512MaskI64gatherEpi32: Gather 32-bit integers from memory using 64-bit
-// indices. 32-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			m := j*64
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPGATHERQD'. Intrinsic: '_mm512_mask_i64gather_epi32'.
-// Requires AVX512F.
-func M512MaskI64gatherEpi32(src x86.M256i, k x86.Mmask8, vindex x86.M512i, base_addr uintptr, scale int) x86.M256i {
-	return x86.M256i(m512MaskI64gatherEpi32([32]byte(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI64gatherEpi32(src [32]byte, k uint8, vindex [64]byte, base_addr uintptr, scale int) [32]byte
-
-
-// MmaskI64gatherEpi64: Gather 64-bit integers from memory using 64-bit
-// indices. 64-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPGATHERQQ'. Intrinsic: '_mm_mmask_i64gather_epi64'.
-// Requires AVX512F.
-func MmaskI64gatherEpi64(src x86.M128i, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128i {
-	return x86.M128i(mmaskI64gatherEpi64([16]byte(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI64gatherEpi64(src [16]byte, k uint8, vindex [16]byte, base_addr uintptr, scale int) [16]byte
-
-
-// M256MmaskI64gatherEpi64: Gather 64-bit integers from memory using 64-bit
-// indices. 64-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPGATHERQQ'. Intrinsic: '_mm256_mmask_i64gather_epi64'.
-// Requires AVX512F.
-func M256MmaskI64gatherEpi64(src x86.M256i, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M256i {
-	return x86.M256i(m256MmaskI64gatherEpi64([32]byte(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI64gatherEpi64(src [32]byte, k uint8, vindex [32]byte, base_addr uintptr, scale int) [32]byte
-
-
-// M512I64gatherEpi64: Gather 64-bit integers from memory using 64-bit indices.
-// 64-bit elements are loaded from addresses starting at 'base_addr' and offset
-// by each 64-bit element in 'vindex' (each index is scaled by the factor in
-// 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
-// or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERQQ'. Intrinsic: '_mm512_i64gather_epi64'.
-// Requires AVX512F.
-func M512I64gatherEpi64(vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(m512I64gatherEpi64([64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I64gatherEpi64(vindex [64]byte, base_addr uintptr, scale int) [64]byte
-
-
-// M512MaskI64gatherEpi64: Gather 64-bit integers from memory using 64-bit
-// indices. 64-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERQQ'. Intrinsic: '_mm512_mask_i64gather_epi64'.
-// Requires AVX512F.
-func M512MaskI64gatherEpi64(src x86.M512i, k x86.Mmask8, vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(m512MaskI64gatherEpi64([64]byte(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI64gatherEpi64(src [64]byte, k uint8, vindex [64]byte, base_addr uintptr, scale int) [64]byte
-
-
-// MmaskI64gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 64-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm_mmask_i64gather_pd'.
-// Requires AVX512F.
-func MmaskI64gatherPd(src x86.M128d, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128d {
-	return x86.M128d(mmaskI64gatherPd([2]float64(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI64gatherPd(src [2]float64, k uint8, vindex [16]byte, base_addr uintptr, scale int) [2]float64
-
-
-// M256MmaskI64gatherPd: Gather double-precision (64-bit) floating-point
-// elements from memory using 64-bit indices. 64-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm256_mmask_i64gather_pd'.
-// Requires AVX512F.
-func M256MmaskI64gatherPd(src x86.M256d, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M256d {
-	return x86.M256d(m256MmaskI64gatherPd([4]float64(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI64gatherPd(src [4]float64, k uint8, vindex [32]byte, base_addr uintptr, scale int) [4]float64
-
-
-// M512I64gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 64-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm512_i64gather_pd'.
-// Requires AVX512F.
-func M512I64gatherPd(vindex x86.M512i, base_addr uintptr, scale int) x86.M512d {
-	return x86.M512d(m512I64gatherPd([64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I64gatherPd(vindex [64]byte, base_addr uintptr, scale int) [8]float64
-
-
-// M512MaskI64gatherPd: Gather double-precision (64-bit) floating-point
-// elements from memory using 64-bit indices. 64-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm512_mask_i64gather_pd'.
-// Requires AVX512F.
-func M512MaskI64gatherPd(src x86.M512d, k x86.Mmask8, vindex x86.M512i, base_addr uintptr, scale int) x86.M512d {
-	return x86.M512d(m512MaskI64gatherPd([8]float64(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI64gatherPd(src [8]float64, k uint8, vindex [64]byte, base_addr uintptr, scale int) [8]float64
-
-
-// MmaskI64gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 64-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			m := j*64
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm_mmask_i64gather_ps'.
-// Requires AVX512F.
-func MmaskI64gatherPs(src x86.M128, k x86.Mmask8, vindex x86.M128i, base_addr uintptr, scale int) x86.M128 {
-	return x86.M128(mmaskI64gatherPs([4]float32(src), uint8(k), [16]byte(vindex), uintptr(base_addr), scale))
-}
-
-func mmaskI64gatherPs(src [4]float32, k uint8, vindex [16]byte, base_addr uintptr, scale int) [4]float32
-
-
-// M256MmaskI64gatherPs: Gather single-precision (32-bit) floating-point
-// elements from memory using 64-bit indices. 32-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			m := j*64
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm256_mmask_i64gather_ps'.
-// Requires AVX512F.
-func M256MmaskI64gatherPs(src x86.M128, k x86.Mmask8, vindex x86.M256i, base_addr uintptr, scale int) x86.M128 {
-	return x86.M128(m256MmaskI64gatherPs([4]float32(src), uint8(k), [32]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m256MmaskI64gatherPs(src [4]float32, k uint8, vindex [32]byte, base_addr uintptr, scale int) [4]float32
-
-
-// M512I64gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 64-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			m := j*64
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm512_i64gather_ps'.
-// Requires AVX512F.
-func M512I64gatherPs(vindex x86.M512i, base_addr uintptr, scale int) x86.M256 {
-	return x86.M256(m512I64gatherPs([64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I64gatherPs(vindex [64]byte, base_addr uintptr, scale int) [8]float32
-
-
-// M512MaskI64gatherPs: Gather single-precision (32-bit) floating-point
-// elements from memory using 64-bit indices. 32-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			m := j*64
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm512_mask_i64gather_ps'.
-// Requires AVX512F.
-func M512MaskI64gatherPs(src x86.M256, k x86.Mmask8, vindex x86.M512i, base_addr uintptr, scale int) x86.M256 {
-	return x86.M256(m512MaskI64gatherPs([8]float32(src), uint8(k), [64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI64gatherPs(src [8]float32, k uint8, vindex [64]byte, base_addr uintptr, scale int) [8]float32
-
-
-// I64scatterEpi32: Scatter 32-bit integers from 'a' into memory using 64-bit
-// indices. 32-bit elements are stored at addresses starting at 'base_addr' and
-// offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			l := j*64
-//			MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERQD'. Intrinsic: '_mm_i64scatter_epi32'.
-// Requires AVX512F.
-func I64scatterEpi32(base_addr uintptr, vindex x86.M128i, a x86.M128i, scale int)  {
-	i64scatterEpi32(uintptr(base_addr), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func i64scatterEpi32(base_addr uintptr, vindex [16]byte, a [16]byte, scale int) 
-
-
-// MaskI64scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 64-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			l := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//
-// Instruction: 'VPSCATTERQD'. Intrinsic: '_mm_mask_i64scatter_epi32'.
-// Requires AVX512F.
-func MaskI64scatterEpi32(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128i, scale int)  {
-	maskI64scatterEpi32(uintptr(base_addr), uint8(k), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func maskI64scatterEpi32(base_addr uintptr, k uint8, vindex [16]byte, a [16]byte, scale int) 
-
-
-// M256I64scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 64-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			l := j*64
-//			MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERQD'. Intrinsic: '_mm256_i64scatter_epi32'.
-// Requires AVX512F.
-func M256I64scatterEpi32(base_addr uintptr, vindex x86.M256i, a x86.M128i, scale int)  {
-	m256I64scatterEpi32(uintptr(base_addr), [32]byte(vindex), [16]byte(a), scale)
-}
-
-func m256I64scatterEpi32(base_addr uintptr, vindex [32]byte, a [16]byte, scale int) 
-
-
-// M256MaskI64scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 64-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			l := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VPSCATTERQD'. Intrinsic: '_mm256_mask_i64scatter_epi32'.
-// Requires AVX512F.
-func M256MaskI64scatterEpi32(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M128i, scale int)  {
-	m256MaskI64scatterEpi32(uintptr(base_addr), uint8(k), [32]byte(vindex), [16]byte(a), scale)
-}
-
-func m256MaskI64scatterEpi32(base_addr uintptr, k uint8, vindex [32]byte, a [16]byte, scale int) 
-
-
-// M512I64scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 64-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			l := j*64
-//			MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERQD'. Intrinsic: '_mm512_i64scatter_epi32'.
-// Requires AVX512F.
-func M512I64scatterEpi32(base_addr uintptr, vindex x86.M512i, a x86.M256i, scale int)  {
-	m512I64scatterEpi32(uintptr(base_addr), [64]byte(vindex), [32]byte(a), scale)
-}
-
-func m512I64scatterEpi32(base_addr uintptr, vindex [64]byte, a [32]byte, scale int) 
-
-
-// M512MaskI64scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 64-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			l := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VPSCATTERQD'. Intrinsic: '_mm512_mask_i64scatter_epi32'.
-// Requires AVX512F.
-func M512MaskI64scatterEpi32(base_addr uintptr, k x86.Mmask8, vindex x86.M512i, a x86.M256i, scale int)  {
-	m512MaskI64scatterEpi32(uintptr(base_addr), uint8(k), [64]byte(vindex), [32]byte(a), scale)
-}
-
-func m512MaskI64scatterEpi32(base_addr uintptr, k uint8, vindex [64]byte, a [32]byte, scale int) 
-
-
-// I64scatterEpi64: Scatter 64-bit integers from 'a' into memory using 64-bit
-// indices. 64-bit elements are stored at addresses starting at 'base_addr' and
-// offset by each 64-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm_i64scatter_epi64'.
-// Requires AVX512F.
-func I64scatterEpi64(base_addr uintptr, vindex x86.M128i, a x86.M128i, scale int)  {
-	i64scatterEpi64(uintptr(base_addr), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func i64scatterEpi64(base_addr uintptr, vindex [16]byte, a [16]byte, scale int) 
-
-
-// MaskI64scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 64-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//
-// Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm_mask_i64scatter_epi64'.
-// Requires AVX512F.
-func MaskI64scatterEpi64(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128i, scale int)  {
-	maskI64scatterEpi64(uintptr(base_addr), uint8(k), [16]byte(vindex), [16]byte(a), scale)
-}
-
-func maskI64scatterEpi64(base_addr uintptr, k uint8, vindex [16]byte, a [16]byte, scale int) 
-
-
-// M256I64scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 64-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm256_i64scatter_epi64'.
-// Requires AVX512F.
-func M256I64scatterEpi64(base_addr uintptr, vindex x86.M256i, a x86.M256i, scale int)  {
-	m256I64scatterEpi64(uintptr(base_addr), [32]byte(vindex), [32]byte(a), scale)
-}
-
-func m256I64scatterEpi64(base_addr uintptr, vindex [32]byte, a [32]byte, scale int) 
-
-
-// M256MaskI64scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 64-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm256_mask_i64scatter_epi64'.
-// Requires AVX512F.
-func M256MaskI64scatterEpi64(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M256i, scale int)  {
-	m256MaskI64scatterEpi64(uintptr(base_addr), uint8(k), [32]byte(vindex), [32]byte(a), scale)
-}
-
-func m256MaskI64scatterEpi64(base_addr uintptr, k uint8, vindex [32]byte, a [32]byte, scale int) 
-
-
-// M512I64scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 64-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm512_i64scatter_epi64'.
-// Requires AVX512F.
-func M512I64scatterEpi64(base_addr uintptr, vindex x86.M512i, a x86.M512i, scale int)  {
-	m512I64scatterEpi64(uintptr(base_addr), [64]byte(vindex), [64]byte(a), scale)
-}
-
-func m512I64scatterEpi64(base_addr uintptr, vindex [64]byte, a [64]byte, scale int) 
-
-
-// M512MaskI64scatterEpi64: Scatter 64-bit integers from 'a' into memory using
-// 64-bit indices. 64-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 64-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VPSCATTERQQ'. Intrinsic: '_mm512_mask_i64scatter_epi64'.
-// Requires AVX512F.
-func M512MaskI64scatterEpi64(base_addr uintptr, k x86.Mmask8, vindex x86.M512i, a x86.M512i, scale int)  {
-	m512MaskI64scatterEpi64(uintptr(base_addr), uint8(k), [64]byte(vindex), [64]byte(a), scale)
-}
-
-func m512MaskI64scatterEpi64(base_addr uintptr, k uint8, vindex [64]byte, a [64]byte, scale int) 
-
-
-// I64scatterPd: Scatter double-precision (64-bit) floating-point elements from
-// 'a' into memory using 64-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERQPD'. Intrinsic: '_mm_i64scatter_pd'.
-// Requires AVX512F.
-func I64scatterPd(base_addr uintptr, vindex x86.M128i, a x86.M128d, scale int)  {
-	i64scatterPd(uintptr(base_addr), [16]byte(vindex), [2]float64(a), scale)
-}
-
-func i64scatterPd(base_addr uintptr, vindex [16]byte, a [2]float64, scale int) 
-
-
-// MaskI64scatterPd: Scatter double-precision (64-bit) floating-point elements
-// from 'a' into memory using 64-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//
-// Instruction: 'VSCATTERQPD'. Intrinsic: '_mm_mask_i64scatter_pd'.
-// Requires AVX512F.
-func MaskI64scatterPd(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128d, scale int)  {
-	maskI64scatterPd(uintptr(base_addr), uint8(k), [16]byte(vindex), [2]float64(a), scale)
-}
-
-func maskI64scatterPd(base_addr uintptr, k uint8, vindex [16]byte, a [2]float64, scale int) 
-
-
-// M256I64scatterPd: Scatter double-precision (64-bit) floating-point elements
-// from 'a' into memory using 64-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERQPD'. Intrinsic: '_mm256_i64scatter_pd'.
-// Requires AVX512F.
-func M256I64scatterPd(base_addr uintptr, vindex x86.M256i, a x86.M256d, scale int)  {
-	m256I64scatterPd(uintptr(base_addr), [32]byte(vindex), [4]float64(a), scale)
-}
-
-func m256I64scatterPd(base_addr uintptr, vindex [32]byte, a [4]float64, scale int) 
-
-
-// M256MaskI64scatterPd: Scatter double-precision (64-bit) floating-point
-// elements from 'a' into memory using 64-bit indices. 64-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 64-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VSCATTERQPD'. Intrinsic: '_mm256_mask_i64scatter_pd'.
-// Requires AVX512F.
-func M256MaskI64scatterPd(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M256d, scale int)  {
-	m256MaskI64scatterPd(uintptr(base_addr), uint8(k), [32]byte(vindex), [4]float64(a), scale)
-}
-
-func m256MaskI64scatterPd(base_addr uintptr, k uint8, vindex [32]byte, a [4]float64, scale int) 
-
-
-// M512I64scatterPd: Scatter double-precision (64-bit) floating-point elements
-// from 'a' into memory using 64-bit indices. 64-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERQPD'. Intrinsic: '_mm512_i64scatter_pd'.
-// Requires AVX512F.
-func M512I64scatterPd(base_addr uintptr, vindex x86.M512i, a x86.M512d, scale int)  {
-	m512I64scatterPd(uintptr(base_addr), [64]byte(vindex), [8]float64(a), scale)
-}
-
-func m512I64scatterPd(base_addr uintptr, vindex [64]byte, a [8]float64, scale int) 
-
-
-// M512MaskI64scatterPd: Scatter double-precision (64-bit) floating-point
-// elements from 'a' into memory using 64-bit indices. 64-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 64-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+63:i])*scale] := a[i+63:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VSCATTERQPD'. Intrinsic: '_mm512_mask_i64scatter_pd'.
-// Requires AVX512F.
-func M512MaskI64scatterPd(base_addr uintptr, k x86.Mmask8, vindex x86.M512i, a x86.M512d, scale int)  {
-	m512MaskI64scatterPd(uintptr(base_addr), uint8(k), [64]byte(vindex), [8]float64(a), scale)
-}
-
-func m512MaskI64scatterPd(base_addr uintptr, k uint8, vindex [64]byte, a [8]float64, scale int) 
-
-
-// I64scatterPs: Scatter single-precision (32-bit) floating-point elements from
-// 'a' into memory using 64-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			l := j*64
-//			MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERQPS'. Intrinsic: '_mm_i64scatter_ps'.
-// Requires AVX512F.
-func I64scatterPs(base_addr uintptr, vindex x86.M128i, a x86.M128, scale int)  {
-	i64scatterPs(uintptr(base_addr), [16]byte(vindex), [4]float32(a), scale)
-}
-
-func i64scatterPs(base_addr uintptr, vindex [16]byte, a [4]float32, scale int) 
-
-
-// MaskI64scatterPs: Scatter single-precision (32-bit) floating-point elements
-// from 'a' into memory using 64-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			l := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:2] := 0
-//
-// Instruction: 'VSCATTERQPS'. Intrinsic: '_mm_mask_i64scatter_ps'.
-// Requires AVX512F.
-func MaskI64scatterPs(base_addr uintptr, k x86.Mmask8, vindex x86.M128i, a x86.M128, scale int)  {
-	maskI64scatterPs(uintptr(base_addr), uint8(k), [16]byte(vindex), [4]float32(a), scale)
-}
-
-func maskI64scatterPs(base_addr uintptr, k uint8, vindex [16]byte, a [4]float32, scale int) 
-
-
-// M256I64scatterPs: Scatter single-precision (32-bit) floating-point elements
-// from 'a' into memory using 64-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			l := j*64
-//			MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERQPS'. Intrinsic: '_mm256_i64scatter_ps'.
-// Requires AVX512F.
-func M256I64scatterPs(base_addr uintptr, vindex x86.M256i, a x86.M128, scale int)  {
-	m256I64scatterPs(uintptr(base_addr), [32]byte(vindex), [4]float32(a), scale)
-}
-
-func m256I64scatterPs(base_addr uintptr, vindex [32]byte, a [4]float32, scale int) 
-
-
-// M256MaskI64scatterPs: Scatter single-precision (32-bit) floating-point
-// elements from 'a' into memory using 64-bit indices. 32-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 64-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			l := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:4] := 0
-//
-// Instruction: 'VSCATTERQPS'. Intrinsic: '_mm256_mask_i64scatter_ps'.
-// Requires AVX512F.
-func M256MaskI64scatterPs(base_addr uintptr, k x86.Mmask8, vindex x86.M256i, a x86.M128, scale int)  {
-	m256MaskI64scatterPs(uintptr(base_addr), uint8(k), [32]byte(vindex), [4]float32(a), scale)
-}
-
-func m256MaskI64scatterPs(base_addr uintptr, k uint8, vindex [32]byte, a [4]float32, scale int) 
-
-
-// M512I64scatterPs: Scatter single-precision (32-bit) floating-point elements
-// from 'a' into memory using 64-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			l := j*64
-//			MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERQPS'. Intrinsic: '_mm512_i64scatter_ps'.
-// Requires AVX512F.
-func M512I64scatterPs(base_addr uintptr, vindex x86.M512i, a x86.M256, scale int)  {
-	m512I64scatterPs(uintptr(base_addr), [64]byte(vindex), [8]float32(a), scale)
-}
-
-func m512I64scatterPs(base_addr uintptr, vindex [64]byte, a [8]float32, scale int) 
-
-
-// M512MaskI64scatterPs: Scatter single-precision (32-bit) floating-point
-// elements from 'a' into memory using 64-bit indices. 32-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 64-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			l := j*64
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[l+63:l])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:8] := 0
-//
-// Instruction: 'VSCATTERQPS'. Intrinsic: '_mm512_mask_i64scatter_ps'.
-// Requires AVX512F.
-func M512MaskI64scatterPs(base_addr uintptr, k x86.Mmask8, vindex x86.M512i, a x86.M256, scale int)  {
-	m512MaskI64scatterPs(uintptr(base_addr), uint8(k), [64]byte(vindex), [8]float32(a), scale)
-}
-
-func m512MaskI64scatterPs(base_addr uintptr, k uint8, vindex [64]byte, a [8]float32, scale int) 
+// Skipped: _mm_mmask_i32gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i32gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_mmask_i32gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i32gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_mmask_i32gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i32gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_mmask_i32gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i32gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm_i32scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i32scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_i32scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i32scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_i32scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i32scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_i32scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i32scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_i32scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i32scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_i32scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i32scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_i32scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i32scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_i32scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i32scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm_mmask_i64gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i64gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_mmask_i64gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i64gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64gather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_mmask_i64gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i64gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64gather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_mmask_i64gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_mmask_i64gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm_i64scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i64scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_i64scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i64scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_i64scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i64scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_i64scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i64scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64scatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_i64scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i64scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_i64scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i64scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64scatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_i64scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_i64scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_i64scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_i64scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64scatter_ps. Contains pointer parameter.
 
 
 // M256Insertf32x4: Copy 'a' to 'dst', then insert 128 bits (composed of 4
@@ -35482,496 +32245,64 @@ func M512Kxor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
 func m512Kxor(a uint16, b uint16) uint16
 
 
-// MaskLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm_mask_load_epi32'.
-// Requires AVX512F.
-func MaskLoadEpi32(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskLoadEpi32([16]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoadEpi32(src [16]byte, k uint8, mem_addr uintptr) [16]byte
+// Skipped: _mm_mask_load_epi32. Contains pointer parameter.
 
 
-// MaskzLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm_maskz_load_epi32'.
-// Requires AVX512F.
-func MaskzLoadEpi32(k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzLoadEpi32(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoadEpi32(k uint8, mem_addr uintptr) [16]byte
+// Skipped: _mm_maskz_load_epi32. Contains pointer parameter.
 
 
-// M256MaskLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm256_mask_load_epi32'.
-// Requires AVX512F.
-func M256MaskLoadEpi32(src x86.M256i, k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskLoadEpi32([32]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoadEpi32(src [32]byte, k uint8, mem_addr uintptr) [32]byte
+// Skipped: _mm256_mask_load_epi32. Contains pointer parameter.
 
 
-// M256MaskzLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm256_maskz_load_epi32'.
-// Requires AVX512F.
-func M256MaskzLoadEpi32(k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzLoadEpi32(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoadEpi32(k uint8, mem_addr uintptr) [32]byte
+// Skipped: _mm256_maskz_load_epi32. Contains pointer parameter.
 
 
-// M512MaskzLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_maskz_load_epi32'.
-// Requires AVX512F.
-func M512MaskzLoadEpi32(k x86.Mmask16, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzLoadEpi32(uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoadEpi32(k uint16, mem_addr uintptr) [64]byte
+// Skipped: _mm512_maskz_load_epi32. Contains pointer parameter.
 
 
-// MaskLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm_mask_load_epi64'.
-// Requires AVX512F.
-func MaskLoadEpi64(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskLoadEpi64([16]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoadEpi64(src [16]byte, k uint8, mem_addr uintptr) [16]byte
+// Skipped: _mm_mask_load_epi64. Contains pointer parameter.
 
 
-// MaskzLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm_maskz_load_epi64'.
-// Requires AVX512F.
-func MaskzLoadEpi64(k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzLoadEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoadEpi64(k uint8, mem_addr uintptr) [16]byte
+// Skipped: _mm_maskz_load_epi64. Contains pointer parameter.
 
 
-// M256MaskLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm256_mask_load_epi64'.
-// Requires AVX512F.
-func M256MaskLoadEpi64(src x86.M256i, k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskLoadEpi64([32]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoadEpi64(src [32]byte, k uint8, mem_addr uintptr) [32]byte
+// Skipped: _mm256_mask_load_epi64. Contains pointer parameter.
 
 
-// M256MaskzLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm256_maskz_load_epi64'.
-// Requires AVX512F.
-func M256MaskzLoadEpi64(k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzLoadEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoadEpi64(k uint8, mem_addr uintptr) [32]byte
+// Skipped: _mm256_maskz_load_epi64. Contains pointer parameter.
 
 
-// M512MaskzLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_maskz_load_epi64'.
-// Requires AVX512F.
-func M512MaskzLoadEpi64(k x86.Mmask8, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzLoadEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoadEpi64(k uint8, mem_addr uintptr) [64]byte
+// Skipped: _mm512_maskz_load_epi64. Contains pointer parameter.
 
 
-// MaskLoadPd: Load packed double-precision (64-bit) floating-point elements
-// from memory into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 16-byte boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm_mask_load_pd'.
-// Requires AVX512F.
-func MaskLoadPd(src x86.M128d, k x86.Mmask8, mem_addr uintptr) x86.M128d {
-	return x86.M128d(maskLoadPd([2]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoadPd(src [2]float64, k uint8, mem_addr uintptr) [2]float64
+// Skipped: _mm_mask_load_pd. Contains pointer parameter.
 
 
-// MaskzLoadPd: Load packed double-precision (64-bit) floating-point elements
-// from memory into 'dst' using zeromask 'k' (elements are zeroed out when the
-// corresponding mask bit is not set). 'mem_addr' must be aligned on a 16-byte
-// boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm_maskz_load_pd'.
-// Requires AVX512F.
-func MaskzLoadPd(k x86.Mmask8, mem_addr uintptr) x86.M128d {
-	return x86.M128d(maskzLoadPd(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoadPd(k uint8, mem_addr uintptr) [2]float64
+// Skipped: _mm_maskz_load_pd. Contains pointer parameter.
 
 
-// M256MaskLoadPd: Load packed double-precision (64-bit) floating-point
-// elements from memory into 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 'mem_addr' must be
-// aligned on a 32-byte boundary or a general-protection exception may be
-// generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm256_mask_load_pd'.
-// Requires AVX512F.
-func M256MaskLoadPd(src x86.M256d, k x86.Mmask8, mem_addr uintptr) x86.M256d {
-	return x86.M256d(m256MaskLoadPd([4]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoadPd(src [4]float64, k uint8, mem_addr uintptr) [4]float64
+// Skipped: _mm256_mask_load_pd. Contains pointer parameter.
 
 
-// M256MaskzLoadPd: Load packed double-precision (64-bit) floating-point
-// elements from memory into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 32-byte boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm256_maskz_load_pd'.
-// Requires AVX512F.
-func M256MaskzLoadPd(k x86.Mmask8, mem_addr uintptr) x86.M256d {
-	return x86.M256d(m256MaskzLoadPd(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoadPd(k uint8, mem_addr uintptr) [4]float64
+// Skipped: _mm256_maskz_load_pd. Contains pointer parameter.
 
 
-// M512MaskzLoadPd: Load packed double-precision (64-bit) floating-point
-// elements from memory into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 64-byte boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm512_maskz_load_pd'.
-// Requires AVX512F.
-func M512MaskzLoadPd(k x86.Mmask8, mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512MaskzLoadPd(uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoadPd(k uint8, mem_addr uintptr) [8]float64
+// Skipped: _mm512_maskz_load_pd. Contains pointer parameter.
 
 
-// MaskLoadPs: Load packed single-precision (32-bit) floating-point elements
-// from memory into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 16-byte boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm_mask_load_ps'.
-// Requires AVX512F.
-func MaskLoadPs(src x86.M128, k x86.Mmask8, mem_addr uintptr) x86.M128 {
-	return x86.M128(maskLoadPs([4]float32(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoadPs(src [4]float32, k uint8, mem_addr uintptr) [4]float32
+// Skipped: _mm_mask_load_ps. Contains pointer parameter.
 
 
-// MaskzLoadPs: Load packed single-precision (32-bit) floating-point elements
-// from memory into 'dst' using zeromask 'k' (elements are zeroed out when the
-// corresponding mask bit is not set). 'mem_addr' must be aligned on a 16-byte
-// boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm_maskz_load_ps'.
-// Requires AVX512F.
-func MaskzLoadPs(k x86.Mmask8, mem_addr uintptr) x86.M128 {
-	return x86.M128(maskzLoadPs(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoadPs(k uint8, mem_addr uintptr) [4]float32
+// Skipped: _mm_maskz_load_ps. Contains pointer parameter.
 
 
-// M256MaskLoadPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 'mem_addr' must be
-// aligned on a 32-byte boundary or a general-protection exception may be
-// generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm256_mask_load_ps'.
-// Requires AVX512F.
-func M256MaskLoadPs(src x86.M256, k x86.Mmask8, mem_addr uintptr) x86.M256 {
-	return x86.M256(m256MaskLoadPs([8]float32(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoadPs(src [8]float32, k uint8, mem_addr uintptr) [8]float32
+// Skipped: _mm256_mask_load_ps. Contains pointer parameter.
 
 
-// M256MaskzLoadPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 32-byte boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm256_maskz_load_ps'.
-// Requires AVX512F.
-func M256MaskzLoadPs(k x86.Mmask8, mem_addr uintptr) x86.M256 {
-	return x86.M256(m256MaskzLoadPs(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoadPs(k uint8, mem_addr uintptr) [8]float32
+// Skipped: _mm256_maskz_load_ps. Contains pointer parameter.
 
 
-// M512MaskzLoadPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 64-byte boundary or a general-protection exception may be generated. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm512_maskz_load_ps'.
-// Requires AVX512F.
-func M512MaskzLoadPs(k x86.Mmask16, mem_addr uintptr) x86.M512 {
-	return x86.M512(m512MaskzLoadPs(uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoadPs(k uint16, mem_addr uintptr) [16]float32
+// Skipped: _mm512_maskz_load_ps. Contains pointer parameter.
 
 
 // MaskLoadSd: Load a double-precision (64-bit) floating-point element from
@@ -35989,12 +32320,11 @@ func m512MaskzLoadPs(k uint16, mem_addr uintptr) [16]float32
 //
 // Instruction: 'VMOVSD'. Intrinsic: '_mm_mask_load_sd'.
 // Requires AVX512F.
-func MaskLoadSd(src x86.M128d, k x86.Mmask8, mem_addr float64) x86.M128d {
-	return x86.M128d(maskLoadSd([2]float64(src), uint8(k), mem_addr))
+// FIXME: Will likely need to be reworked.
+func MaskLoadSd(src x86.M128d, k x86.Mmask8, mem_addr *float64) x86.M128d {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128d{}
 }
-
-func maskLoadSd(src [2]float64, k uint8, mem_addr float64) [2]float64
-
 
 // MaskzLoadSd: Load a double-precision (64-bit) floating-point element from
 // memory into the lower element of 'dst' using zeromask 'k' (the element is
@@ -36011,12 +32341,11 @@ func maskLoadSd(src [2]float64, k uint8, mem_addr float64) [2]float64
 //
 // Instruction: 'VMOVSD'. Intrinsic: '_mm_maskz_load_sd'.
 // Requires AVX512F.
-func MaskzLoadSd(k x86.Mmask8, mem_addr float64) x86.M128d {
-	return x86.M128d(maskzLoadSd(uint8(k), mem_addr))
+// FIXME: Will likely need to be reworked.
+func MaskzLoadSd(k x86.Mmask8, mem_addr *float64) x86.M128d {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128d{}
 }
-
-func maskzLoadSd(k uint8, mem_addr float64) [2]float64
-
 
 // MaskLoadSs: Load a single-precision (32-bit) floating-point element from
 // memory into the lower element of 'dst' using writemask 'k' (the element is
@@ -36033,12 +32362,11 @@ func maskzLoadSd(k uint8, mem_addr float64) [2]float64
 //
 // Instruction: 'VMOVSS'. Intrinsic: '_mm_mask_load_ss'.
 // Requires AVX512F.
-func MaskLoadSs(src x86.M128, k x86.Mmask8, mem_addr float32) x86.M128 {
-	return x86.M128(maskLoadSs([4]float32(src), uint8(k), mem_addr))
+// FIXME: Will likely need to be reworked.
+func MaskLoadSs(src x86.M128, k x86.Mmask8, mem_addr *float32) x86.M128 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128{}
 }
-
-func maskLoadSs(src [4]float32, k uint8, mem_addr float32) [4]float32
-
 
 // MaskzLoadSs: Load a single-precision (32-bit) floating-point element from
 // memory into the lower element of 'dst' using zeromask 'k' (the element is
@@ -36055,634 +32383,91 @@ func maskLoadSs(src [4]float32, k uint8, mem_addr float32) [4]float32
 //
 // Instruction: 'VMOVSS'. Intrinsic: '_mm_maskz_load_ss'.
 // Requires AVX512F.
-func MaskzLoadSs(k x86.Mmask8, mem_addr float32) x86.M128 {
-	return x86.M128(maskzLoadSs(uint8(k), mem_addr))
+// FIXME: Will likely need to be reworked.
+func MaskzLoadSs(k x86.Mmask8, mem_addr *float32) x86.M128 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128{}
 }
 
-func maskzLoadSs(k uint8, mem_addr float32) [4]float32
-
-
-// MaskLoaduEpi32: Load packed 32-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm_mask_loadu_epi32'.
-// Requires AVX512F.
-func MaskLoaduEpi32(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskLoaduEpi32([16]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoaduEpi32(src [16]byte, k uint8, mem_addr uintptr) [16]byte
-
-
-// MaskzLoaduEpi32: Load packed 32-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm_maskz_loadu_epi32'.
-// Requires AVX512F.
-func MaskzLoaduEpi32(k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzLoaduEpi32(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoaduEpi32(k uint8, mem_addr uintptr) [16]byte
-
-
-// M256MaskLoaduEpi32: Load packed 32-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm256_mask_loadu_epi32'.
-// Requires AVX512F.
-func M256MaskLoaduEpi32(src x86.M256i, k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskLoaduEpi32([32]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoaduEpi32(src [32]byte, k uint8, mem_addr uintptr) [32]byte
-
-
-// M256MaskzLoaduEpi32: Load packed 32-bit integers from memory into 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm256_maskz_loadu_epi32'.
-// Requires AVX512F.
-func M256MaskzLoaduEpi32(k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzLoaduEpi32(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoaduEpi32(k uint8, mem_addr uintptr) [32]byte
-
-
-// M512MaskLoaduEpi32: Load packed 32-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_mask_loadu_epi32'.
-// Requires AVX512F.
-func M512MaskLoaduEpi32(src x86.M512i, k x86.Mmask16, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoaduEpi32([64]byte(src), uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoaduEpi32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
-
-
-// M512MaskzLoaduEpi32: Load packed 32-bit integers from memory into 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_maskz_loadu_epi32'.
-// Requires AVX512F.
-func M512MaskzLoaduEpi32(k x86.Mmask16, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzLoaduEpi32(uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoaduEpi32(k uint16, mem_addr uintptr) [64]byte
-
-
-// MaskLoaduEpi64: Load packed 64-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm_mask_loadu_epi64'.
-// Requires AVX512F.
-func MaskLoaduEpi64(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskLoaduEpi64([16]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoaduEpi64(src [16]byte, k uint8, mem_addr uintptr) [16]byte
-
-
-// MaskzLoaduEpi64: Load packed 64-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm_maskz_loadu_epi64'.
-// Requires AVX512F.
-func MaskzLoaduEpi64(k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzLoaduEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoaduEpi64(k uint8, mem_addr uintptr) [16]byte
-
-
-// M256MaskLoaduEpi64: Load packed 64-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm256_mask_loadu_epi64'.
-// Requires AVX512F.
-func M256MaskLoaduEpi64(src x86.M256i, k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskLoaduEpi64([32]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoaduEpi64(src [32]byte, k uint8, mem_addr uintptr) [32]byte
-
-
-// M256MaskzLoaduEpi64: Load packed 64-bit integers from memory into 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm256_maskz_loadu_epi64'.
-// Requires AVX512F.
-func M256MaskzLoaduEpi64(k x86.Mmask8, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzLoaduEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoaduEpi64(k uint8, mem_addr uintptr) [32]byte
-
-
-// M512MaskLoaduEpi64: Load packed 64-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm512_mask_loadu_epi64'.
-// Requires AVX512F.
-func M512MaskLoaduEpi64(src x86.M512i, k x86.Mmask8, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoaduEpi64([64]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoaduEpi64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
-
-
-// M512MaskzLoaduEpi64: Load packed 64-bit integers from memory into 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm512_maskz_loadu_epi64'.
-// Requires AVX512F.
-func M512MaskzLoaduEpi64(k x86.Mmask8, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzLoaduEpi64(uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoaduEpi64(k uint8, mem_addr uintptr) [64]byte
-
-
-// MaskLoaduPd: Load packed double-precision (64-bit) floating-point elements
-// from memoy into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm_mask_loadu_pd'.
-// Requires AVX512F.
-func MaskLoaduPd(src x86.M128d, k x86.Mmask8, mem_addr uintptr) x86.M128d {
-	return x86.M128d(maskLoaduPd([2]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoaduPd(src [2]float64, k uint8, mem_addr uintptr) [2]float64
-
-
-// MaskzLoaduPd: Load packed double-precision (64-bit) floating-point elements
-// from memoy into 'dst' using zeromask 'k' (elements are zeroed out when the
-// corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm_maskz_loadu_pd'.
-// Requires AVX512F.
-func MaskzLoaduPd(k x86.Mmask8, mem_addr uintptr) x86.M128d {
-	return x86.M128d(maskzLoaduPd(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoaduPd(k uint8, mem_addr uintptr) [2]float64
-
-
-// M256MaskLoaduPd: Load packed double-precision (64-bit) floating-point
-// elements from memoy into 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm256_mask_loadu_pd'.
-// Requires AVX512F.
-func M256MaskLoaduPd(src x86.M256d, k x86.Mmask8, mem_addr uintptr) x86.M256d {
-	return x86.M256d(m256MaskLoaduPd([4]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoaduPd(src [4]float64, k uint8, mem_addr uintptr) [4]float64
-
-
-// M256MaskzLoaduPd: Load packed double-precision (64-bit) floating-point
-// elements from memoy into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm256_maskz_loadu_pd'.
-// Requires AVX512F.
-func M256MaskzLoaduPd(k x86.Mmask8, mem_addr uintptr) x86.M256d {
-	return x86.M256d(m256MaskzLoaduPd(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoaduPd(k uint8, mem_addr uintptr) [4]float64
-
-
-// M512LoaduPd: Load 512-bits (composed of 8 packed double-precision (64-bit)
-// floating-point elements) from memory into 'dst'. 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm512_loadu_pd'.
-// Requires AVX512F.
-func M512LoaduPd(mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512LoaduPd(uintptr(mem_addr)))
-}
-
-func m512LoaduPd(mem_addr uintptr) [8]float64
-
-
-// M512MaskLoaduPd: Load packed double-precision (64-bit) floating-point
-// elements from memoy into 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm512_mask_loadu_pd'.
-// Requires AVX512F.
-func M512MaskLoaduPd(src x86.M512d, k x86.Mmask8, mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512MaskLoaduPd([8]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoaduPd(src [8]float64, k uint8, mem_addr uintptr) [8]float64
-
-
-// M512MaskzLoaduPd: Load packed double-precision (64-bit) floating-point
-// elements from memoy into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm512_maskz_loadu_pd'.
-// Requires AVX512F.
-func M512MaskzLoaduPd(k x86.Mmask8, mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512MaskzLoaduPd(uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoaduPd(k uint8, mem_addr uintptr) [8]float64
-
-
-// MaskLoaduPs: Load packed single-precision (32-bit) floating-point elements
-// from memory into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm_mask_loadu_ps'.
-// Requires AVX512F.
-func MaskLoaduPs(src x86.M128, k x86.Mmask8, mem_addr uintptr) x86.M128 {
-	return x86.M128(maskLoaduPs([4]float32(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoaduPs(src [4]float32, k uint8, mem_addr uintptr) [4]float32
-
-
-// MaskzLoaduPs: Load packed single-precision (32-bit) floating-point elements
-// from memory into 'dst' using zeromask 'k' (elements are zeroed out when the
-// corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm_maskz_loadu_ps'.
-// Requires AVX512F.
-func MaskzLoaduPs(k x86.Mmask8, mem_addr uintptr) x86.M128 {
-	return x86.M128(maskzLoaduPs(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoaduPs(k uint8, mem_addr uintptr) [4]float32
-
-
-// M256MaskLoaduPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm256_mask_loadu_ps'.
-// Requires AVX512F.
-func M256MaskLoaduPs(src x86.M256, k x86.Mmask8, mem_addr uintptr) x86.M256 {
-	return x86.M256(m256MaskLoaduPs([8]float32(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoaduPs(src [8]float32, k uint8, mem_addr uintptr) [8]float32
-
-
-// M256MaskzLoaduPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm256_maskz_loadu_ps'.
-// Requires AVX512F.
-func M256MaskzLoaduPs(k x86.Mmask8, mem_addr uintptr) x86.M256 {
-	return x86.M256(m256MaskzLoaduPs(uint8(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoaduPs(k uint8, mem_addr uintptr) [8]float32
-
-
-// M512LoaduPs: Load 512-bits (composed of 16 packed single-precision (32-bit)
-// floating-point elements) from memory into 'dst'. 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm512_loadu_ps'.
-// Requires AVX512F.
-func M512LoaduPs(mem_addr uintptr) x86.M512 {
-	return x86.M512(m512LoaduPs(uintptr(mem_addr)))
-}
-
-func m512LoaduPs(mem_addr uintptr) [16]float32
-
-
-// M512MaskLoaduPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm512_mask_loadu_ps'.
-// Requires AVX512F.
-func M512MaskLoaduPs(src x86.M512, k x86.Mmask16, mem_addr uintptr) x86.M512 {
-	return x86.M512(m512MaskLoaduPs([16]float32(src), uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoaduPs(src [16]float32, k uint16, mem_addr uintptr) [16]float32
-
-
-// M512MaskzLoaduPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm512_maskz_loadu_ps'.
-// Requires AVX512F.
-func M512MaskzLoaduPs(k x86.Mmask16, mem_addr uintptr) x86.M512 {
-	return x86.M512(m512MaskzLoaduPs(uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoaduPs(k uint16, mem_addr uintptr) [16]float32
-
-
-// M512LoaduSi512: Load 512-bits of integer data from memory into 'dst'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_loadu_si512'.
-// Requires AVX512F.
-func M512LoaduSi512(mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512LoaduSi512(uintptr(mem_addr)))
-}
-
-func m512LoaduSi512(mem_addr uintptr) [64]byte
+// Skipped: _mm_mask_loadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_loadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_loadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_loadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_loadu_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_loadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_loadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_loadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_loadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_loadu_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_loadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_loadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_loadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_loadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_loadu_pd. Contains pointer parameter.
+
+
+// Skipped: _mm_mask_loadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm_maskz_loadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_mask_loadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm256_maskz_loadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_maskz_loadu_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadu_si512. Contains pointer parameter.
 
 
 // M512LogPd: Compute the natural logarithm of packed double-precision (64-bit)
@@ -55102,12 +50887,11 @@ func m512SinPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sincos_pd'.
 // Requires AVX512F.
-func M512MaskSincosPd(cos_res x86.M512d, sin_src x86.M512d, cos_src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(m512MaskSincosPd([8]float64(cos_res), [8]float64(sin_src), [8]float64(cos_src), uint8(k), [8]float64(a)))
+// FIXME: Will likely need to be reworked.
+func M512MaskSincosPd(cos_res *x86.M512d, sin_src x86.M512d, cos_src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512d{}
 }
-
-func m512MaskSincosPd(cos_res [8]float64, sin_src [8]float64, cos_src [8]float64, k uint8, a [8]float64) [8]float64
-
 
 // M512SincosPd: Computes the sine and cosine of the packed double-precision
 // (64-bit) floating-point elements in 'a' and stores the results of the sine
@@ -55123,12 +50907,11 @@ func m512MaskSincosPd(cos_res [8]float64, sin_src [8]float64, cos_src [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_sincos_pd'.
 // Requires AVX512F.
-func M512SincosPd(cos_res x86.M512d, a x86.M512d) x86.M512d {
-	return x86.M512d(m512SincosPd([8]float64(cos_res), [8]float64(a)))
+// FIXME: Will likely need to be reworked.
+func M512SincosPd(cos_res *x86.M512d, a x86.M512d) x86.M512d {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512d{}
 }
-
-func m512SincosPd(cos_res [8]float64, a [8]float64) [8]float64
-
 
 // M512MaskSincosPs: Computes the sine and cosine of the packed
 // single-precision (32-bit) floating-point elements in 'a' and stores the
@@ -55152,12 +50935,11 @@ func m512SincosPd(cos_res [8]float64, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sincos_ps'.
 // Requires AVX512F.
-func M512MaskSincosPs(cos_res x86.M512, sin_src x86.M512, cos_src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(m512MaskSincosPs([16]float32(cos_res), [16]float32(sin_src), [16]float32(cos_src), uint16(k), [16]float32(a)))
+// FIXME: Will likely need to be reworked.
+func M512MaskSincosPs(cos_res *x86.M512, sin_src x86.M512, cos_src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512{}
 }
-
-func m512MaskSincosPs(cos_res [16]float32, sin_src [16]float32, cos_src [16]float32, k uint16, a [16]float32) [16]float32
-
 
 // M512SincosPs: Computes the sine and cosine of the packed single-precision
 // (32-bit) floating-point elements in 'a' and stores the results of the sine
@@ -55173,12 +50955,11 @@ func m512MaskSincosPs(cos_res [16]float32, sin_src [16]float32, cos_src [16]floa
 //
 // Instruction: '...'. Intrinsic: '_mm512_sincos_ps'.
 // Requires AVX512F.
-func M512SincosPs(cos_res x86.M512, a x86.M512) x86.M512 {
-	return x86.M512(m512SincosPs([16]float32(cos_res), [16]float32(a)))
+// FIXME: Will likely need to be reworked.
+func M512SincosPs(cos_res *x86.M512, a x86.M512) x86.M512 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512{}
 }
-
-func m512SincosPs(cos_res [16]float32, a [16]float32) [16]float32
-
 
 // M512MaskSindPd: Compute the sine of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in degrees, and store the results
@@ -59146,172 +54927,28 @@ func M512SrlvEpi64(a x86.M512i, count x86.M512i) x86.M512i {
 func m512SrlvEpi64(a [64]byte, count [64]byte) [64]byte
 
 
-// MaskStoreEpi32: Store packed 32-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm_mask_store_epi32'.
-// Requires AVX512F.
-func MaskStoreEpi32(mem_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskStoreEpi32(uintptr(mem_addr), uint8(k), [16]byte(a))
-}
-
-func maskStoreEpi32(mem_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_store_epi32. Contains pointer parameter.
 
 
-// M256MaskStoreEpi32: Store packed 32-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm256_mask_store_epi32'.
-// Requires AVX512F.
-func M256MaskStoreEpi32(mem_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskStoreEpi32(uintptr(mem_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskStoreEpi32(mem_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_store_epi32. Contains pointer parameter.
 
 
-// MaskStoreEpi64: Store packed 64-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm_mask_store_epi64'.
-// Requires AVX512F.
-func MaskStoreEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskStoreEpi64(uintptr(mem_addr), uint8(k), [16]byte(a))
-}
-
-func maskStoreEpi64(mem_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_store_epi64. Contains pointer parameter.
 
 
-// M256MaskStoreEpi64: Store packed 64-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm256_mask_store_epi64'.
-// Requires AVX512F.
-func M256MaskStoreEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskStoreEpi64(uintptr(mem_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskStoreEpi64(mem_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm256_mask_store_epi64. Contains pointer parameter.
 
 
-// MaskStorePd: Store packed double-precision (64-bit) floating-point elements
-// from 'a' into memory using writemask 'k'.
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm_mask_store_pd'.
-// Requires AVX512F.
-func MaskStorePd(mem_addr uintptr, k x86.Mmask8, a x86.M128d)  {
-	maskStorePd(uintptr(mem_addr), uint8(k), [2]float64(a))
-}
-
-func maskStorePd(mem_addr uintptr, k uint8, a [2]float64) 
+// Skipped: _mm_mask_store_pd. Contains pointer parameter.
 
 
-// M256MaskStorePd: Store packed double-precision (64-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm256_mask_store_pd'.
-// Requires AVX512F.
-func M256MaskStorePd(mem_addr uintptr, k x86.Mmask8, a x86.M256d)  {
-	m256MaskStorePd(uintptr(mem_addr), uint8(k), [4]float64(a))
-}
-
-func m256MaskStorePd(mem_addr uintptr, k uint8, a [4]float64) 
+// Skipped: _mm256_mask_store_pd. Contains pointer parameter.
 
 
-// MaskStorePs: Store packed single-precision (32-bit) floating-point elements
-// from 'a' into memory using writemask 'k'.
-// 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm_mask_store_ps'.
-// Requires AVX512F.
-func MaskStorePs(mem_addr uintptr, k x86.Mmask8, a x86.M128)  {
-	maskStorePs(uintptr(mem_addr), uint8(k), [4]float32(a))
-}
-
-func maskStorePs(mem_addr uintptr, k uint8, a [4]float32) 
+// Skipped: _mm_mask_store_ps. Contains pointer parameter.
 
 
-// M256MaskStorePs: Store packed single-precision (32-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm256_mask_store_ps'.
-// Requires AVX512F.
-func M256MaskStorePs(mem_addr uintptr, k x86.Mmask8, a x86.M256)  {
-	m256MaskStorePs(uintptr(mem_addr), uint8(k), [8]float32(a))
-}
-
-func m256MaskStorePs(mem_addr uintptr, k uint8, a [8]float32) 
+// Skipped: _mm256_mask_store_ps. Contains pointer parameter.
 
 
 // MaskStoreSd: Store the lower double-precision (64-bit) floating-point
@@ -59325,12 +54962,11 @@ func m256MaskStorePs(mem_addr uintptr, k uint8, a [8]float32)
 //
 // Instruction: 'VMOVSD'. Intrinsic: '_mm_mask_store_sd'.
 // Requires AVX512F.
-func MaskStoreSd(mem_addr float64, k x86.Mmask8, a x86.M128d)  {
-	maskStoreSd(mem_addr, uint8(k), [2]float64(a))
+// FIXME: Will likely need to be reworked.
+func MaskStoreSd(mem_addr *float64, k x86.Mmask8, a x86.M128d)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func maskStoreSd(mem_addr float64, k uint8, a [2]float64) 
-
 
 // MaskStoreSs: Store the lower single-precision (32-bit) floating-point
 // element from 'a' into memory using writemask 'k'.
@@ -59343,362 +54979,67 @@ func maskStoreSd(mem_addr float64, k uint8, a [2]float64)
 //
 // Instruction: 'VMOVSS'. Intrinsic: '_mm_mask_store_ss'.
 // Requires AVX512F.
-func MaskStoreSs(mem_addr float32, k x86.Mmask8, a x86.M128)  {
-	maskStoreSs(mem_addr, uint8(k), [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func MaskStoreSs(mem_addr *float32, k x86.Mmask8, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
 
-func maskStoreSs(mem_addr float32, k uint8, a [4]float32) 
+// Skipped: _mm_mask_storeu_epi32. Contains pointer parameter.
 
 
-// MaskStoreuEpi32: Store packed 32-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm_mask_storeu_epi32'.
-// Requires AVX512F.
-func MaskStoreuEpi32(mem_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskStoreuEpi32(uintptr(mem_addr), uint8(k), [16]byte(a))
-}
-
-func maskStoreuEpi32(mem_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm256_mask_storeu_epi32. Contains pointer parameter.
 
 
-// M256MaskStoreuEpi32: Store packed 32-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm256_mask_storeu_epi32'.
-// Requires AVX512F.
-func M256MaskStoreuEpi32(mem_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskStoreuEpi32(uintptr(mem_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskStoreuEpi32(mem_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm512_mask_storeu_epi32. Contains pointer parameter.
 
 
-// M512MaskStoreuEpi32: Store packed 32-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_mask_storeu_epi32'.
-// Requires AVX512F.
-func M512MaskStoreuEpi32(mem_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskStoreuEpi32(uintptr(mem_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskStoreuEpi32(mem_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm_mask_storeu_epi64. Contains pointer parameter.
 
 
-// MaskStoreuEpi64: Store packed 64-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm_mask_storeu_epi64'.
-// Requires AVX512F.
-func MaskStoreuEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskStoreuEpi64(uintptr(mem_addr), uint8(k), [16]byte(a))
-}
-
-func maskStoreuEpi64(mem_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm256_mask_storeu_epi64. Contains pointer parameter.
 
 
-// M256MaskStoreuEpi64: Store packed 64-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm256_mask_storeu_epi64'.
-// Requires AVX512F.
-func M256MaskStoreuEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M256i)  {
-	m256MaskStoreuEpi64(uintptr(mem_addr), uint8(k), [32]byte(a))
-}
-
-func m256MaskStoreuEpi64(mem_addr uintptr, k uint8, a [32]byte) 
+// Skipped: _mm512_mask_storeu_epi64. Contains pointer parameter.
 
 
-// M512MaskStoreuEpi64: Store packed 64-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU64'. Intrinsic: '_mm512_mask_storeu_epi64'.
-// Requires AVX512F.
-func M512MaskStoreuEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskStoreuEpi64(uintptr(mem_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskStoreuEpi64(mem_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm_mask_storeu_pd. Contains pointer parameter.
 
 
-// MaskStoreuPd: Store packed double-precision (64-bit) floating-point elements
-// from 'a' into memory using writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm_mask_storeu_pd'.
-// Requires AVX512F.
-func MaskStoreuPd(mem_addr uintptr, k x86.Mmask8, a x86.M128d)  {
-	maskStoreuPd(uintptr(mem_addr), uint8(k), [2]float64(a))
-}
-
-func maskStoreuPd(mem_addr uintptr, k uint8, a [2]float64) 
+// Skipped: _mm256_mask_storeu_pd. Contains pointer parameter.
 
 
-// M256MaskStoreuPd: Store packed double-precision (64-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm256_mask_storeu_pd'.
-// Requires AVX512F.
-func M256MaskStoreuPd(mem_addr uintptr, k x86.Mmask8, a x86.M256d)  {
-	m256MaskStoreuPd(uintptr(mem_addr), uint8(k), [4]float64(a))
-}
-
-func m256MaskStoreuPd(mem_addr uintptr, k uint8, a [4]float64) 
+// Skipped: _mm512_mask_storeu_pd. Contains pointer parameter.
 
 
-// M512MaskStoreuPd: Store packed double-precision (64-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm512_mask_storeu_pd'.
-// Requires AVX512F.
-func M512MaskStoreuPd(mem_addr uintptr, k x86.Mmask8, a x86.M512d)  {
-	m512MaskStoreuPd(uintptr(mem_addr), uint8(k), [8]float64(a))
-}
-
-func m512MaskStoreuPd(mem_addr uintptr, k uint8, a [8]float64) 
+// Skipped: _mm512_storeu_pd. Contains pointer parameter.
 
 
-// M512StoreuPd: Store 512-bits (composed of 8 packed double-precision (64-bit)
-// floating-point elements) from 'a' into memory. 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm512_storeu_pd'.
-// Requires AVX512F.
-func M512StoreuPd(mem_addr uintptr, a x86.M512d)  {
-	m512StoreuPd(uintptr(mem_addr), [8]float64(a))
-}
-
-func m512StoreuPd(mem_addr uintptr, a [8]float64) 
+// Skipped: _mm_mask_storeu_ps. Contains pointer parameter.
 
 
-// MaskStoreuPs: Store packed single-precision (32-bit) floating-point elements
-// from 'a' into memory using writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm_mask_storeu_ps'.
-// Requires AVX512F.
-func MaskStoreuPs(mem_addr uintptr, k x86.Mmask8, a x86.M128)  {
-	maskStoreuPs(uintptr(mem_addr), uint8(k), [4]float32(a))
-}
-
-func maskStoreuPs(mem_addr uintptr, k uint8, a [4]float32) 
+// Skipped: _mm256_mask_storeu_ps. Contains pointer parameter.
 
 
-// M256MaskStoreuPs: Store packed single-precision (32-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm256_mask_storeu_ps'.
-// Requires AVX512F.
-func M256MaskStoreuPs(mem_addr uintptr, k x86.Mmask8, a x86.M256)  {
-	m256MaskStoreuPs(uintptr(mem_addr), uint8(k), [8]float32(a))
-}
-
-func m256MaskStoreuPs(mem_addr uintptr, k uint8, a [8]float32) 
+// Skipped: _mm512_mask_storeu_ps. Contains pointer parameter.
 
 
-// M512MaskStoreuPs: Store packed single-precision (32-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm512_mask_storeu_ps'.
-// Requires AVX512F.
-func M512MaskStoreuPs(mem_addr uintptr, k x86.Mmask16, a x86.M512)  {
-	m512MaskStoreuPs(uintptr(mem_addr), uint16(k), [16]float32(a))
-}
-
-func m512MaskStoreuPs(mem_addr uintptr, k uint16, a [16]float32) 
+// Skipped: _mm512_storeu_ps. Contains pointer parameter.
 
 
-// M512StoreuPs: Store 512-bits (composed of 16 packed single-precision
-// (32-bit) floating-point elements) from 'a' into memory. 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm512_storeu_ps'.
-// Requires AVX512F.
-func M512StoreuPs(mem_addr uintptr, a x86.M512)  {
-	m512StoreuPs(uintptr(mem_addr), [16]float32(a))
-}
-
-func m512StoreuPs(mem_addr uintptr, a [16]float32) 
+// Skipped: _mm512_storeu_si512. Contains pointer parameter.
 
 
-// M512StoreuSi512: Store 512-bits of integer data from 'a' into memory.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVDQU32'. Intrinsic: '_mm512_storeu_si512'.
-// Requires AVX512F.
-func M512StoreuSi512(mem_addr uintptr, a x86.M512i)  {
-	m512StoreuSi512(uintptr(mem_addr), [64]byte(a))
-}
-
-func m512StoreuSi512(mem_addr uintptr, a [64]byte) 
+// Skipped: _mm512_stream_load_si512. Contains pointer parameter.
 
 
-// M512StreamLoadSi512: Load 512-bits of integer data from memory into 'dst'
-// using a non-temporal memory hint. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVNTDQA'. Intrinsic: '_mm512_stream_load_si512'.
-// Requires AVX512F.
-func M512StreamLoadSi512(mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512StreamLoadSi512(uintptr(mem_addr)))
-}
-
-func m512StreamLoadSi512(mem_addr uintptr) [64]byte
+// Skipped: _mm512_stream_pd. Contains pointer parameter.
 
 
-// M512StreamPd: Store 512-bits (composed of 8 packed double-precision (64-bit)
-// floating-point elements) from 'a' into memory using a non-temporal memory
-// hint. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVNTPD'. Intrinsic: '_mm512_stream_pd'.
-// Requires AVX512F.
-func M512StreamPd(mem_addr uintptr, a x86.M512d)  {
-	m512StreamPd(uintptr(mem_addr), [8]float64(a))
-}
-
-func m512StreamPd(mem_addr uintptr, a [8]float64) 
+// Skipped: _mm512_stream_ps. Contains pointer parameter.
 
 
-// M512StreamPs: Store 512-bits (composed of 16 packed single-precision
-// (32-bit) floating-point elements) from 'a' into memory using a non-temporal
-// memory hint. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVNTPS'. Intrinsic: '_mm512_stream_ps'.
-// Requires AVX512F.
-func M512StreamPs(mem_addr uintptr, a x86.M512)  {
-	m512StreamPs(uintptr(mem_addr), [16]float32(a))
-}
-
-func m512StreamPs(mem_addr uintptr, a [16]float32) 
-
-
-// M512StreamSi512: Store 512-bits of integer data from 'a' into memory using a
-// non-temporal memory hint. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVNTDQA'. Intrinsic: '_mm512_stream_si512'.
-// Requires AVX512F.
-func M512StreamSi512(mem_addr uintptr, a x86.M512i)  {
-	m512StreamSi512(uintptr(mem_addr), [64]byte(a))
-}
-
-func m512StreamSi512(mem_addr uintptr, a [64]byte) 
+// Skipped: _mm512_stream_si512. Contains pointer parameter.
 
 
 // MaskSubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit

@@ -1143,14 +1143,6 @@ TEXT ·extractPi16(SB),7,$0
 	MOVQ $0, ret+16(FP)
 	RET
 
-// func free(mem_addr uintptr) 
-TEXT ·free(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing
-
-	RET
-
 // func mMGETEXCEPTIONMASK() uint32
 TEXT ·mMGETEXCEPTIONMASK(SB),7,$0
 
@@ -1221,17 +1213,6 @@ TEXT ·idivEpi32(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func idivremEpi32(mem_addr [16]byte, a [16]byte, b [16]byte) [16]byte
-TEXT ·idivremEpi32(SB),7,$0
-	MOVOU mem_addr+0(FP),X0
-	MOVOU a+16(FP),X1
-	MOVOU b+32(FP),X2
-
-	// TODO: Code missing
-
-	MOVOU X2, ret+48(FP)
-	RET
-
 // func insertPi16(a x86.M64, i int, imm8 int) x86.M64
 TEXT ·insertPi16(SB),7,$0
 	MOVQ a+0(FP),M0
@@ -1287,112 +1268,6 @@ TEXT ·iremEpi32(SB),7,$0
 	// TODO: Code missing
 
 	MOVOU X1, ret+32(FP)
-	RET
-
-// func loadPs(mem_addr float32) [4]float32
-TEXT ·loadPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// MOVAPS R8
-
-	MOVOU X0, ret+4(FP)
-	RET
-
-// func loadPs1(mem_addr float32) [4]float32
-TEXT ·loadPs1(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing
-
-	MOVOU X0, ret+4(FP)
-	RET
-
-// func loadSs(mem_addr float32) [4]float32
-TEXT ·loadSs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// MOVSS R8
-
-	MOVOU X0, ret+4(FP)
-	RET
-
-// func load1Ps(mem_addr float32) [4]float32
-TEXT ·load1Ps(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing
-
-	MOVOU X0, ret+4(FP)
-	RET
-
-// func loadhPi(a [4]float32, mem_addr x86.M64Const) [4]float32
-TEXT ·loadhPi(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M64Const
-
-	// TODO: Code missing - could be:
-	// MOVHPS X0, 
-
-	MOVOU X1, ret+0(FP)
-	RET
-
-// func loadlPi(a [4]float32, mem_addr x86.M64Const) [4]float32
-TEXT ·loadlPi(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M64Const
-
-	// TODO: Code missing - could be:
-	// MOVLPS X0, 
-
-	MOVOU X1, ret+0(FP)
-	RET
-
-// func loadrPs(mem_addr float32) [4]float32
-TEXT ·loadrPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing
-
-	MOVOU X0, ret+4(FP)
-	RET
-
-// func loaduPs(mem_addr float32) [4]float32
-TEXT ·loaduPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// MOVUPS R8
-
-	MOVOU X0, ret+4(FP)
-	RET
-
-// func loaduSi16(mem_addr uintptr) [16]byte
-TEXT ·loaduSi16(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing
-
-	MOVOU X0, ret+8(FP)
-	RET
-
-// func loaduSi32(mem_addr uintptr) [16]byte
-TEXT ·loaduSi32(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// MOVD R8
-
-	MOVOU X0, ret+8(FP)
-	RET
-
-// func loaduSi64(mem_addr uintptr) [16]byte
-TEXT ·loaduSi64(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// MOVQ R8
-
-	MOVOU X0, ret+8(FP)
 	RET
 
 // func logPd(a [2]float64) [2]float64
@@ -1491,26 +1366,6 @@ TEXT ·malloc(SB),7,$0
 	MOVQ align+8(FP),R9
 
 	// TODO: Code missing
-
-	RET
-
-// func maskmoveSi64(a x86.M64, mask x86.M64, mem_addr byte) 
-TEXT ·maskmoveSi64(SB),7,$0
-	MOVQ a+0(FP),M0
-	MOVQ mask+8(FP),M1
-	MOVB mem_addr+16(FP),R10
-
-	// TODO: Code missing - uses instrunction: MASKMOVQ
-
-	RET
-
-// func maskmovq(a x86.M64, mask x86.M64, mem_addr byte) 
-TEXT ·maskmovq(SB),7,$0
-	MOVQ a+0(FP),M0
-	MOVQ mask+8(FP),M1
-	MOVB mem_addr+16(FP),R10
-
-	// TODO: Code missing - uses instrunction: MASKMOVQ
 
 	RET
 
@@ -1828,16 +1683,6 @@ TEXT ·powPs(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func prefetch(p byte, i int) 
-TEXT ·prefetch(SB),7,$0
-	MOVB p+0(FP),R8
-	MOVQ i+4(FP),R9
-
-	// TODO: Code missing - could be:
-	// PREFETCHNTA, PREFETCHT0, PREFETCHT1, PREFETCHT2 R8, R9
-
-	RET
-
 // func psadbw(a x86.M64, b x86.M64) x86.M64
 TEXT ·psadbw(SB),7,$0
 	MOVQ a+0(FP),M0
@@ -2138,26 +1983,6 @@ TEXT ·sinPs(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func sincosPd(mem_addr [2]float64, a [2]float64) [2]float64
-TEXT ·sincosPd(SB),7,$0
-	MOVOU mem_addr+0(FP),X0
-	MOVOU a+16(FP),X1
-
-	// TODO: Code missing
-
-	MOVOU X1, ret+32(FP)
-	RET
-
-// func sincosPs(mem_addr [4]float32, a [4]float32) [4]float32
-TEXT ·sincosPs(SB),7,$0
-	MOVOU mem_addr+0(FP),X0
-	MOVOU a+16(FP),X1
-
-	// TODO: Code missing
-
-	MOVOU X1, ret+32(FP)
-	RET
-
 // func sindPd(a [2]float64) [2]float64
 TEXT ·sindPd(SB),7,$0
 	MOVOU a+0(FP),X0
@@ -2212,132 +2037,6 @@ TEXT ·sqrtSs(SB),7,$0
 	// SQRTSS X0, X0
 
 	MOVOU X0, ret+16(FP)
-	RET
-
-// func storePs(mem_addr float32, a [4]float32) 
-TEXT ·storePs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU a+4(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVAPS R8, X1
-
-	RET
-
-// func storePs1(mem_addr float32, a [4]float32) 
-TEXT ·storePs1(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU a+4(FP),X1
-
-	// TODO: Code missing
-
-	RET
-
-// func storeSs(mem_addr float32, a [4]float32) 
-TEXT ·storeSs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU a+4(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVSS R8, X1
-
-	RET
-
-// func store1Ps(mem_addr float32, a [4]float32) 
-TEXT ·store1Ps(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU a+4(FP),X1
-
-	// TODO: Code missing
-
-	RET
-
-// func storehPi(mem_addr x86.M64, a [4]float32) 
-TEXT ·storehPi(SB),7,$0
-	MOVQ mem_addr+0(FP),M0
-	MOVOU a+8(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVHPS M0, X1
-
-	RET
-
-// func storelPi(mem_addr x86.M64, a [4]float32) 
-TEXT ·storelPi(SB),7,$0
-	MOVQ mem_addr+0(FP),M0
-	MOVOU a+8(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVLPS M0, X1
-
-	RET
-
-// func storerPs(mem_addr float32, a [4]float32) 
-TEXT ·storerPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU a+4(FP),X1
-
-	// TODO: Code missing
-
-	RET
-
-// func storeuPs(mem_addr float32, a [4]float32) 
-TEXT ·storeuPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU a+4(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVUPS R8, X1
-
-	RET
-
-// func storeuSi16(mem_addr uintptr, a [16]byte) 
-TEXT ·storeuSi16(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-	MOVOU a+8(FP),X1
-
-	// TODO: Code missing
-
-	RET
-
-// func storeuSi32(mem_addr uintptr, a [16]byte) 
-TEXT ·storeuSi32(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-	MOVOU a+8(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVD R8, X1
-
-	RET
-
-// func storeuSi64(mem_addr uintptr, a [16]byte) 
-TEXT ·storeuSi64(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-	MOVOU a+8(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVQ R8, X1
-
-	RET
-
-// func streamPi(mem_addr x86.M64, a x86.M64) 
-TEXT ·streamPi(SB),7,$0
-	MOVQ mem_addr+0(FP),M0
-	MOVQ a+8(FP),M1
-
-	// TODO: Code missing - could be:
-	// MOVNTQ M0, M1
-
-	RET
-
-// func streamPs(mem_addr float32, a [4]float32) 
-TEXT ·streamPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU a+4(FP),X1
-
-	// TODO: Code missing - could be:
-	// MOVNTPS R8, X1
-
 	RET
 
 // func subPs(a [4]float32, b [4]float32) [4]float32
@@ -2591,17 +2290,6 @@ TEXT ·udivEpi32(SB),7,$0
 	// TODO: Code missing
 
 	MOVOU X1, ret+32(FP)
-	RET
-
-// func udivremEpi32(mem_addr [16]byte, a [16]byte, b [16]byte) [16]byte
-TEXT ·udivremEpi32(SB),7,$0
-	MOVOU mem_addr+0(FP),X0
-	MOVOU a+16(FP),X1
-	MOVOU b+32(FP),X2
-
-	// TODO: Code missing
-
-	MOVOU X2, ret+48(FP)
 	RET
 
 // func unpackhiPs(a [4]float32, b [4]float32) [4]float32

@@ -6173,73 +6173,13 @@ func M512MaskzCvtepi16Epi8(k x86.Mmask32, a x86.M512i) x86.M256i {
 func m512MaskzCvtepi16Epi8(k uint32, a [64]byte) [32]byte
 
 
-// MaskCvtepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVWB'. Intrinsic: '_mm_mask_cvtepi16_storeu_epi8'.
-// Requires AVX512BW.
-func MaskCvtepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtepi16StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtepi16_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVWB'. Intrinsic: '_mm256_mask_cvtepi16_storeu_epi8'.
-// Requires AVX512BW.
-func M256MaskCvtepi16StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	m256MaskCvtepi16StoreuEpi8(uintptr(base_addr), uint16(k), [32]byte(a))
-}
-
-func m256MaskCvtepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
+// Skipped: _mm256_mask_cvtepi16_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
-// 8-bit integers with truncation, and store the active results (those with
-// their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 31
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Truncate_Int16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPMOVWB'. Intrinsic: '_mm512_mask_cvtepi16_storeu_epi8'.
-// Requires AVX512BW.
-func M512MaskCvtepi16StoreuEpi8(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	m512MaskCvtepi16StoreuEpi8(uintptr(base_addr), uint32(k), [64]byte(a))
-}
-
-func m512MaskCvtepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
+// Skipped: _mm512_mask_cvtepi16_storeu_epi8. Contains pointer parameter.
 
 
 // MaskCvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed 16-bit
@@ -6775,73 +6715,13 @@ func M512MaskzCvtsepi16Epi8(k x86.Mmask32, a x86.M512i) x86.M256i {
 func m512MaskzCvtsepi16Epi8(k uint32, a [64]byte) [32]byte
 
 
-// MaskCvtsepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVSWB'. Intrinsic: '_mm_mask_cvtsepi16_storeu_epi8'.
-// Requires AVX512BW.
-func MaskCvtsepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtsepi16StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtsepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtsepi16_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtsepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_mask_cvtsepi16_storeu_epi8'.
-// Requires AVX512BW.
-func M256MaskCvtsepi16StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	m256MaskCvtsepi16StoreuEpi8(uintptr(base_addr), uint16(k), [32]byte(a))
-}
-
-func m256MaskCvtsepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
+// Skipped: _mm256_mask_cvtsepi16_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtsepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
-// 8-bit integers with signed saturation, and store the active results (those
-// with their respective bit set in writemask 'k') to unaligned memory at
-// 'base_addr'. 
-//
-//		FOR j := 0 to 31
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_Int16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_mask_cvtsepi16_storeu_epi8'.
-// Requires AVX512BW.
-func M512MaskCvtsepi16StoreuEpi8(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	m512MaskCvtsepi16StoreuEpi8(uintptr(base_addr), uint32(k), [64]byte(a))
-}
-
-func m512MaskCvtsepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
+// Skipped: _mm512_mask_cvtsepi16_storeu_epi8. Contains pointer parameter.
 
 
 // Cvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to packed
@@ -7054,73 +6934,13 @@ func M512MaskzCvtusepi16Epi8(k x86.Mmask32, a x86.M512i) x86.M256i {
 func m512MaskzCvtusepi16Epi8(k uint32, a [64]byte) [32]byte
 
 
-// MaskCvtusepi16StoreuEpi8: Convert packed unsigned 16-bit integers in 'a' to
-// packed unsigned 8-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 7
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VPMOVUSWB'. Intrinsic: '_mm_mask_cvtusepi16_storeu_epi8'.
-// Requires AVX512BW.
-func MaskCvtusepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskCvtusepi16StoreuEpi8(uintptr(base_addr), uint8(k), [16]byte(a))
-}
-
-func maskCvtusepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_cvtusepi16_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskCvtusepi16StoreuEpi8: Convert packed unsigned 16-bit integers in 'a'
-// to packed unsigned 8-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 15
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_mask_cvtusepi16_storeu_epi8'.
-// Requires AVX512BW.
-func M256MaskCvtusepi16StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	m256MaskCvtusepi16StoreuEpi8(uintptr(base_addr), uint16(k), [32]byte(a))
-}
-
-func m256MaskCvtusepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
+// Skipped: _mm256_mask_cvtusepi16_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskCvtusepi16StoreuEpi8: Convert packed unsigned 16-bit integers in 'a'
-// to packed unsigned 8-bit integers with unsigned saturation, and store the
-// active results (those with their respective bit set in writemask 'k') to
-// unaligned memory at 'base_addr'. 
-//
-//		FOR j := 0 to 31
-//			i := 16*j
-//			l := 8*j
-//			IF k[j]
-//				MEM[base_addr+l+7:base_addr+l] := Saturate_UnsignedInt16_To_Int8(a[i+15:i])
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_mask_cvtusepi16_storeu_epi8'.
-// Requires AVX512BW.
-func M512MaskCvtusepi16StoreuEpi8(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	m512MaskCvtusepi16StoreuEpi8(uintptr(base_addr), uint32(k), [64]byte(a))
-}
-
-func m512MaskCvtusepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
+// Skipped: _mm512_mask_cvtusepi16_storeu_epi8. Contains pointer parameter.
 
 
 // DbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets of
@@ -7591,292 +7411,40 @@ func M512Kunpackw(a x86.Mmask32, b x86.Mmask32) x86.Mmask32 {
 func m512Kunpackw(a uint32, b uint32) uint32
 
 
-// MaskLoaduEpi16: Load packed 16-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*16
-//			IF k[j]
-//				dst[i+15:i] := MEM[mem_addr+i+15:mem_addr+i]
-//			ELSE
-//				dst[i+15:i] := src[i+15:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm_mask_loadu_epi16'.
-// Requires AVX512BW.
-func MaskLoaduEpi16(src x86.M128i, k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskLoaduEpi16([16]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func maskLoaduEpi16(src [16]byte, k uint8, mem_addr uintptr) [16]byte
+// Skipped: _mm_mask_loadu_epi16. Contains pointer parameter.
 
 
-// MaskzLoaduEpi16: Load packed 16-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*16
-//			IF k[j]
-//				dst[i+15:i] := MEM[mem_addr+i+15:mem_addr+i]
-//			ELSE
-//				dst[i+15:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm_maskz_loadu_epi16'.
-// Requires AVX512BW.
-func MaskzLoaduEpi16(k x86.Mmask8, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzLoaduEpi16(uint8(k), uintptr(mem_addr)))
-}
-
-func maskzLoaduEpi16(k uint8, mem_addr uintptr) [16]byte
+// Skipped: _mm_maskz_loadu_epi16. Contains pointer parameter.
 
 
-// M256MaskLoaduEpi16: Load packed 16-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*16
-//			IF k[j]
-//				dst[i+15:i] := MEM[mem_addr+i+15:mem_addr+i]
-//			ELSE
-//				dst[i+15:i] := src[i+15:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_loadu_epi16'.
-// Requires AVX512BW.
-func M256MaskLoaduEpi16(src x86.M256i, k x86.Mmask16, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskLoaduEpi16([32]byte(src), uint16(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoaduEpi16(src [32]byte, k uint16, mem_addr uintptr) [32]byte
+// Skipped: _mm256_mask_loadu_epi16. Contains pointer parameter.
 
 
-// M256MaskzLoaduEpi16: Load packed 16-bit integers from memory into 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*16
-//			IF k[j]
-//				dst[i+15:i] := MEM[mem_addr+i+15:mem_addr+i]
-//			ELSE
-//				dst[i+15:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_maskz_loadu_epi16'.
-// Requires AVX512BW.
-func M256MaskzLoaduEpi16(k x86.Mmask16, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzLoaduEpi16(uint16(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoaduEpi16(k uint16, mem_addr uintptr) [32]byte
+// Skipped: _mm256_maskz_loadu_epi16. Contains pointer parameter.
 
 
-// M512MaskLoaduEpi16: Load packed 16-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 31
-//			i := j*16
-//			IF k[j]
-//				dst[i+15:i] := MEM[mem_addr+i+15:mem_addr+i]
-//			ELSE
-//				dst[i+15:i] := src[i+15:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_loadu_epi16'.
-// Requires AVX512BW.
-func M512MaskLoaduEpi16(src x86.M512i, k x86.Mmask32, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoaduEpi16([64]byte(src), uint32(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoaduEpi16(src [64]byte, k uint32, mem_addr uintptr) [64]byte
+// Skipped: _mm512_mask_loadu_epi16. Contains pointer parameter.
 
 
-// M512MaskzLoaduEpi16: Load packed 16-bit integers from memory into 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 31
-//			i := j*16
-//			IF k[j]
-//				dst[i+15:i] := MEM[mem_addr+i+15:mem_addr+i]
-//			ELSE
-//				dst[i+15:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_maskz_loadu_epi16'.
-// Requires AVX512BW.
-func M512MaskzLoaduEpi16(k x86.Mmask32, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzLoaduEpi16(uint32(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoaduEpi16(k uint32, mem_addr uintptr) [64]byte
+// Skipped: _mm512_maskz_loadu_epi16. Contains pointer parameter.
 
 
-// MaskLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*8
-//			IF k[j]
-//				dst[i+7:i] := MEM[mem_addr+i+7:mem_addr+i]
-//			ELSE
-//				dst[i+7:i] := src[i+7:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm_mask_loadu_epi8'.
-// Requires AVX512BW.
-func MaskLoaduEpi8(src x86.M128i, k x86.Mmask16, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskLoaduEpi8([16]byte(src), uint16(k), uintptr(mem_addr)))
-}
-
-func maskLoaduEpi8(src [16]byte, k uint16, mem_addr uintptr) [16]byte
+// Skipped: _mm_mask_loadu_epi8. Contains pointer parameter.
 
 
-// MaskzLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*8
-//			IF k[j]
-//				dst[i+7:i] := MEM[mem_addr+i+7:mem_addr+i]
-//			ELSE
-//				dst[i+7:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm_maskz_loadu_epi8'.
-// Requires AVX512BW.
-func MaskzLoaduEpi8(k x86.Mmask16, mem_addr uintptr) x86.M128i {
-	return x86.M128i(maskzLoaduEpi8(uint16(k), uintptr(mem_addr)))
-}
-
-func maskzLoaduEpi8(k uint16, mem_addr uintptr) [16]byte
+// Skipped: _mm_maskz_loadu_epi8. Contains pointer parameter.
 
 
-// M256MaskLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 31
-//			i := j*8
-//			IF k[j]
-//				dst[i+7:i] := MEM[mem_addr+i+7:mem_addr+i]
-//			ELSE
-//				dst[i+7:i] := src[i+7:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_loadu_epi8'.
-// Requires AVX512BW.
-func M256MaskLoaduEpi8(src x86.M256i, k x86.Mmask32, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskLoaduEpi8([32]byte(src), uint32(k), uintptr(mem_addr)))
-}
-
-func m256MaskLoaduEpi8(src [32]byte, k uint32, mem_addr uintptr) [32]byte
+// Skipped: _mm256_mask_loadu_epi8. Contains pointer parameter.
 
 
-// M256MaskzLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 31
-//			i := j*8
-//			IF k[j]
-//				dst[i+7:i] := MEM[mem_addr+i+7:mem_addr+i]
-//			ELSE
-//				dst[i+7:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_maskz_loadu_epi8'.
-// Requires AVX512BW.
-func M256MaskzLoaduEpi8(k x86.Mmask32, mem_addr uintptr) x86.M256i {
-	return x86.M256i(m256MaskzLoaduEpi8(uint32(k), uintptr(mem_addr)))
-}
-
-func m256MaskzLoaduEpi8(k uint32, mem_addr uintptr) [32]byte
+// Skipped: _mm256_maskz_loadu_epi8. Contains pointer parameter.
 
 
-// M512MaskLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 63
-//			i := j*8
-//			IF k[j]
-//				dst[i+7:i] := MEM[mem_addr+i+7:mem_addr+i]
-//			ELSE
-//				dst[i+7:i] := src[i+7:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_loadu_epi8'.
-// Requires AVX512BW.
-func M512MaskLoaduEpi8(src x86.M512i, k x86.Mmask64, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoaduEpi8([64]byte(src), uint64(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoaduEpi8(src [64]byte, k uint64, mem_addr uintptr) [64]byte
+// Skipped: _mm512_mask_loadu_epi8. Contains pointer parameter.
 
 
-// M512MaskzLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 63
-//			i := j*8
-//			IF k[j]
-//				dst[i+7:i] := MEM[mem_addr+i+7:mem_addr+i]
-//			ELSE
-//				dst[i+7:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_maskz_loadu_epi8'.
-// Requires AVX512BW.
-func M512MaskzLoaduEpi8(k x86.Mmask64, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskzLoaduEpi8(uint64(k), uintptr(mem_addr)))
-}
-
-func m512MaskzLoaduEpi8(k uint64, mem_addr uintptr) [64]byte
+// Skipped: _mm512_maskz_loadu_epi8. Contains pointer parameter.
 
 
 // MaskMaddEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -15650,127 +15218,22 @@ func M512SrlvEpi16(a x86.M512i, count x86.M512i) x86.M512i {
 func m512SrlvEpi16(a [64]byte, count [64]byte) [64]byte
 
 
-// MaskStoreuEpi16: Store packed 16-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 7
-//			i := j*16
-//			IF k[j]
-//				MEM[mem_addr+i+15:mem_addr+i] := a[i+15:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm_mask_storeu_epi16'.
-// Requires AVX512BW.
-func MaskStoreuEpi16(mem_addr uintptr, k x86.Mmask8, a x86.M128i)  {
-	maskStoreuEpi16(uintptr(mem_addr), uint8(k), [16]byte(a))
-}
-
-func maskStoreuEpi16(mem_addr uintptr, k uint8, a [16]byte) 
+// Skipped: _mm_mask_storeu_epi16. Contains pointer parameter.
 
 
-// M256MaskStoreuEpi16: Store packed 16-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*16
-//			IF k[j]
-//				MEM[mem_addr+i+15:mem_addr+i] := a[i+15:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_storeu_epi16'.
-// Requires AVX512BW.
-func M256MaskStoreuEpi16(mem_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	m256MaskStoreuEpi16(uintptr(mem_addr), uint16(k), [32]byte(a))
-}
-
-func m256MaskStoreuEpi16(mem_addr uintptr, k uint16, a [32]byte) 
+// Skipped: _mm256_mask_storeu_epi16. Contains pointer parameter.
 
 
-// M512MaskStoreuEpi16: Store packed 16-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 31
-//			i := j*16
-//			IF k[j]
-//				MEM[mem_addr+i+15:mem_addr+i] := a[i+15:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_storeu_epi16'.
-// Requires AVX512BW.
-func M512MaskStoreuEpi16(mem_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	m512MaskStoreuEpi16(uintptr(mem_addr), uint32(k), [64]byte(a))
-}
-
-func m512MaskStoreuEpi16(mem_addr uintptr, k uint32, a [64]byte) 
+// Skipped: _mm512_mask_storeu_epi16. Contains pointer parameter.
 
 
-// MaskStoreuEpi8: Store packed 8-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 15
-//			i := j*8
-//			IF k[j]
-//				MEM[mem_addr+i+7:mem_addr+i] := a[i+7:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm_mask_storeu_epi8'.
-// Requires AVX512BW.
-func MaskStoreuEpi8(mem_addr uintptr, k x86.Mmask16, a x86.M128i)  {
-	maskStoreuEpi8(uintptr(mem_addr), uint16(k), [16]byte(a))
-}
-
-func maskStoreuEpi8(mem_addr uintptr, k uint16, a [16]byte) 
+// Skipped: _mm_mask_storeu_epi8. Contains pointer parameter.
 
 
-// M256MaskStoreuEpi8: Store packed 8-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 31
-//			i := j*8
-//			IF k[j]
-//				MEM[mem_addr+i+7:mem_addr+i] := a[i+7:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_storeu_epi8'.
-// Requires AVX512BW.
-func M256MaskStoreuEpi8(mem_addr uintptr, k x86.Mmask32, a x86.M256i)  {
-	m256MaskStoreuEpi8(uintptr(mem_addr), uint32(k), [32]byte(a))
-}
-
-func m256MaskStoreuEpi8(mem_addr uintptr, k uint32, a [32]byte) 
+// Skipped: _mm256_mask_storeu_epi8. Contains pointer parameter.
 
 
-// M512MaskStoreuEpi8: Store packed 8-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		FOR j := 0 to 63
-//			i := j*8
-//			IF k[j]
-//				MEM[mem_addr+i+7:mem_addr+i] := a[i+7:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_storeu_epi8'.
-// Requires AVX512BW.
-func M512MaskStoreuEpi8(mem_addr uintptr, k x86.Mmask64, a x86.M512i)  {
-	m512MaskStoreuEpi8(uintptr(mem_addr), uint64(k), [64]byte(a))
-}
-
-func m512MaskStoreuEpi8(mem_addr uintptr, k uint64, a [64]byte) 
+// Skipped: _mm512_mask_storeu_epi8. Contains pointer parameter.
 
 
 // MaskSubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit

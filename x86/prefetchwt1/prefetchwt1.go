@@ -12,9 +12,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'PREFETCHWT1'. Intrinsic: '_mm_prefetch'.
 // Requires PREFETCHWT1.
-func Prefetch(p byte, i int)  {
-	prefetch(p, i)
+// FIXME: Will likely need to be reworked.
+func Prefetch(p *byte, i int)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func prefetch(p byte, i int) 
-

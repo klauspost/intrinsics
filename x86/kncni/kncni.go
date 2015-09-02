@@ -102,12 +102,11 @@ func m512MaskAbsPs(src [16]float32, k uint16, v2 [16]float32) [16]float32
 //
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_adc_epi32'.
 // Requires KNCNI.
-func M512AdcEpi32(v2 x86.M512i, k2 x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(m512AdcEpi32([64]byte(v2), uint16(k2), [64]byte(v3), uint16(k2_res)))
+// FIXME: Will likely need to be reworked.
+func M512AdcEpi32(v2 x86.M512i, k2 x86.Mmask16, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512AdcEpi32(v2 [64]byte, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
-
 
 // M512MaskAdcEpi32: Performs element-by-element addition of packed 32-bit
 // integers in 'v2' and 'v3' and the corresponding bit in 'k2', storing the
@@ -128,12 +127,11 @@ func m512AdcEpi32(v2 [64]byte, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
 //
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_mask_adc_epi32'.
 // Requires KNCNI.
-func M512MaskAdcEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(m512MaskAdcEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(k2_res)))
+// FIXME: Will likely need to be reworked.
+func M512MaskAdcEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512MaskAdcEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
-
 
 // M512AddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the
 // results in 'dst'. 
@@ -581,12 +579,11 @@ func m512MaskAddnRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float
 //
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_addsetc_epi32'.
 // Requires KNCNI.
-func M512AddsetcEpi32(v2 x86.M512i, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(m512AddsetcEpi32([64]byte(v2), [64]byte(v3), uint16(k2_res)))
+// FIXME: Will likely need to be reworked.
+func M512AddsetcEpi32(v2 x86.M512i, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512AddsetcEpi32(v2 [64]byte, v3 [64]byte, k2_res uint16) [64]byte
-
 
 // M512MaskAddsetcEpi32: Performs element-by-element addition of packed 32-bit
 // integer elements in 'v2' and 'v3', storing the resultant carry in 'k2_res'
@@ -607,12 +604,11 @@ func m512AddsetcEpi32(v2 [64]byte, v3 [64]byte, k2_res uint16) [64]byte
 //
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_mask_addsetc_epi32'.
 // Requires KNCNI.
-func M512MaskAddsetcEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(m512MaskAddsetcEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(k2_res)))
+// FIXME: Will likely need to be reworked.
+func M512MaskAddsetcEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512MaskAddsetcEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, k2_res uint16) [64]byte
-
 
 // M512AddsetsEpi32: Performs an element-by-element addition of packed 32-bit
 // integer elements in 'v2' and 'v3', storing the results in 'dst' and the sign
@@ -627,12 +623,11 @@ func m512MaskAddsetcEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, k2_r
 //
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_addsets_epi32'.
 // Requires KNCNI.
-func M512AddsetsEpi32(v2 x86.M512i, v3 x86.M512i, sign x86.Mmask16) x86.M512i {
-	return x86.M512i(m512AddsetsEpi32([64]byte(v2), [64]byte(v3), uint16(sign)))
+// FIXME: Will likely need to be reworked.
+func M512AddsetsEpi32(v2 x86.M512i, v3 x86.M512i, sign *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512AddsetsEpi32(v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
-
 
 // M512MaskAddsetsEpi32: Performs an element-by-element addition of packed
 // 32-bit integer elements in 'v2' and 'v3', storing the results in 'dst' and
@@ -653,12 +648,11 @@ func m512AddsetsEpi32(v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
 //
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_mask_addsets_epi32'.
 // Requires KNCNI.
-func M512MaskAddsetsEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i, sign x86.Mmask16) x86.M512i {
-	return x86.M512i(m512MaskAddsetsEpi32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3), uint16(sign)))
+// FIXME: Will likely need to be reworked.
+func M512MaskAddsetsEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i, sign *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512MaskAddsetsEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
-
 
 // M512AddsetsPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
@@ -673,12 +667,11 @@ func m512MaskAddsetsEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte, sign
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_addsets_ps'.
 // Requires KNCNI.
-func M512AddsetsPs(v2 x86.M512, v3 x86.M512, sign x86.Mmask16) x86.M512 {
-	return x86.M512(m512AddsetsPs([16]float32(v2), [16]float32(v3), uint16(sign)))
+// FIXME: Will likely need to be reworked.
+func M512AddsetsPs(v2 x86.M512, v3 x86.M512, sign *x86.Mmask16) x86.M512 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512{}
 }
-
-func m512AddsetsPs(v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
-
 
 // M512MaskAddsetsPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
@@ -699,12 +692,11 @@ func m512AddsetsPs(v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_mask_addsets_ps'.
 // Requires KNCNI.
-func M512MaskAddsetsPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign x86.Mmask16) x86.M512 {
-	return x86.M512(m512MaskAddsetsPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), uint16(sign)))
+// FIXME: Will likely need to be reworked.
+func M512MaskAddsetsPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign *x86.Mmask16) x86.M512 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512{}
 }
-
-func m512MaskAddsetsPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
-
 
 // M512AddsetsRoundPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
@@ -726,12 +718,11 @@ func m512MaskAddsetsPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_addsets_round_ps'.
 // Requires KNCNI.
-func M512AddsetsRoundPs(v2 x86.M512, v3 x86.M512, sign x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(m512AddsetsRoundPs([16]float32(v2), [16]float32(v3), uint16(sign), rounding))
+// FIXME: Will likely need to be reworked.
+func M512AddsetsRoundPs(v2 x86.M512, v3 x86.M512, sign *x86.Mmask16, rounding int) x86.M512 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512{}
 }
-
-func m512AddsetsRoundPs(v2 [16]float32, v3 [16]float32, sign uint16, rounding int) [16]float32
-
 
 // M512MaskAddsetsRoundPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
@@ -759,12 +750,11 @@ func m512AddsetsRoundPs(v2 [16]float32, v3 [16]float32, sign uint16, rounding in
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_mask_addsets_round_ps'.
 // Requires KNCNI.
-func M512MaskAddsetsRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(m512MaskAddsetsRoundPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), uint16(sign), rounding))
+// FIXME: Will likely need to be reworked.
+func M512MaskAddsetsRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign *x86.Mmask16, rounding int) x86.M512 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512{}
 }
-
-func m512MaskAddsetsRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, sign uint16, rounding int) [16]float32
-
 
 // M512AlignrEpi32: Concatenate 'a' and 'b' into a 128-byte immediate result,
 // shift the result right by 'count' 32-bit elements, and store the low 64
@@ -1181,18 +1171,7 @@ func M512Castsi512Ps(a x86.M512i) x86.M512 {
 func m512Castsi512Ps(a [64]byte) [16]float32
 
 
-// Clevict: Evicts the cache line containing the address 'ptr' from cache level
-// 'level' (can be either 0 or 1). 
-//
-//		CacheLineEvict(ptr, level)
-//
-// Instruction: 'CLEVICT0, CLEVICT1'. Intrinsic: '_mm_clevict'.
-// Requires KNCNI.
-func Clevict(ptr uintptr, level int)  {
-	clevict(uintptr(ptr), level)
-}
-
-func clevict(ptr uintptr, level int) 
+// Skipped: _mm_clevict. Contains pointer parameter.
 
 
 // M512CmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
@@ -3621,2476 +3600,148 @@ func M512MaskExp223Ps(src x86.M512, k x86.Mmask16, v2 x86.M512i) x86.M512 {
 func m512MaskExp223Ps(src [16]float32, k uint16, v2 [64]byte) [16]float32
 
 
-// M512ExtloadEpi32: Depending on 'bc', loads 1, 4, or 16 elements of type and
-// size determined by 'conv' from memory address 'mt' and converts all elements
-// to 32-bit integer elements, storing the results in 'dst'. 'hint' indicates
-// to the processor whether the data is non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			CASE bc OF
-//			_MM_BROADCAST32_NONE:
-//				CASE conv OF
-//				_MM_UPCONV_EPI32_NONE:
-//					n	 := j*32
-//					dst[i+31:i] := addr[n+31:n]
-//				_MM_UPCONV_EPI32_UINT8:
-//					n	 := j*8
-//					dst[i+31:i] := UInt8ToInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_SINT8:
-//					n	 := j*8
-//					dst[i+31:i] := SInt8ToInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_UINT16:
-//					n	 := j*16
-//					dst[i+31:i] := UInt16ToInt32(addr[n+15:n])
-//				_MM_UPCONV_EPI32_SINT16:
-//					n	 := j*16
-//					dst[i+31:i] := SInt16ToInt32(addr[n+15:n])
-//				ESAC
-//			_MM_BROADCAST_1X16:
-//				CASE conv OF
-//				_MM_UPCONV_EPI32_NONE:
-//					n	 := j*32
-//					dst[i+31:i] := addr[31:0]
-//				_MM_UPCONV_EPI32_UINT8:
-//					n	 := j*8
-//					dst[i+31:i] := UInt8ToInt32(addr[7:0])
-//				_MM_UPCONV_EPI32_SINT8:
-//					n	 := j*8
-//					dst[i+31:i] := SInt8ToInt32(addr[7:0])
-//				_MM_UPCONV_EPI32_UINT16:
-//					n	 := j*16
-//					dst[i+31:i] := UInt16ToInt32(addr[15:0])
-//				_MM_UPCONV_EPI32_SINT16:
-//					n	 := j*16
-//					dst[i+31:i] := SInt16ToInt32(addr[15:0])
-//				ESAC
-//			_MM_BROADCAST_4X16:
-//				mod := j%4
-//				CASE conv OF
-//				_MM_UPCONV_EPI32_NONE:
-//					n := mod*32
-//					dst[i+31:i] := addr[n+31:n]
-//				_MM_UPCONV_EPI32_UINT8:
-//					n := mod*8
-//					dst[i+31:i] := UInt8ToInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_SINT8:
-//					n := mod*8
-//					dst[i+31:i] := SInt8ToInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_UINT16:
-//					n := mod*16
-//					dst[i+31:i] := UInt16ToInt32(addr[n+15:n])
-//				_MM_UPCONV_EPI32_SINT16:
-//					n := mod*16
-//					dst[i+31:i] := SInt16ToInt32(addr[n+15:n])
-//				ESAC
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA32, VBROADCASTI32X4, VPBROADCASTD'. Intrinsic: '_mm512_extload_epi32'.
-// Requires KNCNI.
-func M512ExtloadEpi32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) x86.M512i {
-	return x86.M512i(m512ExtloadEpi32(uintptr(mt), conv, bc, hint))
-}
-
-func m512ExtloadEpi32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
-
-
-// M512MaskExtloadEpi32: Depending on 'bc', loads 1, 4, or 16 elements of type
-// and size determined by 'conv' from memory address 'mt' and converts all
-// elements to 32-bit integer elements, storing the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 'hint' indicates to the processor whether the data is
-// non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				CASE bc OF
-//				_MM_BROADCAST32_NONE:
-//					CASE conv OF
-//					_MM_UPCONV_EPI32_NONE:
-//						n	 := j*32
-//						dst[i+31:i] := addr[n+31:n]
-//					_MM_UPCONV_EPI32_UINT8:
-//						n	 := j*8
-//						dst[i+31:i] := UInt8ToInt32(addr[n+7:n])
-//					_MM_UPCONV_EPI32_SINT8:
-//						n	 := j*8
-//						dst[i+31:i] := SInt8ToInt32(addr[n+7:n])
-//					_MM_UPCONV_EPI32_UINT16:
-//						n	 := j*16
-//						dst[i+31:i] := UInt16ToInt32(addr[n+15:n])
-//					_MM_UPCONV_EPI32_SINT16:
-//						n	 := j*16
-//						dst[i+31:i] := SInt16ToInt32(addr[n+15:n])
-//					ESAC
-//				_MM_BROADCAST_1X16:
-//					CASE conv OF
-//					_MM_UPCONV_EPI32_NONE:
-//						n	 := j*32
-//						dst[i+31:i] := addr[31:0]
-//					_MM_UPCONV_EPI32_UINT8:
-//						n	 := j*8
-//						dst[i+31:i] := UInt8ToInt32(addr[7:0])
-//					_MM_UPCONV_EPI32_SINT8:
-//						n	 := j*8
-//						dst[i+31:i] := SInt8ToInt32(addr[7:0])
-//					_MM_UPCONV_EPI32_UINT16:
-//						n	 := j*16
-//						dst[i+31:i] := UInt16ToInt32(addr[15:0])
-//					_MM_UPCONV_EPI32_SINT16:
-//						n	 := j*16
-//						dst[i+31:i] := SInt16ToInt32(addr[15:0])
-//					ESAC
-//				_MM_BROADCAST_4X16:
-//					mod := j%4
-//					CASE conv OF
-//					_MM_UPCONV_EPI32_NONE:
-//						n := mod*32
-//						dst[i+31:i] := addr[n+31:n]
-//					_MM_UPCONV_EPI32_UINT8:
-//						n := mod*8
-//						dst[i+31:i] := UInt8ToInt32(addr[n+7:n])
-//					_MM_UPCONV_EPI32_SINT8:
-//						n := mod*8
-//						dst[i+31:i] := SInt8ToInt32(addr[n+7:n])
-//					_MM_UPCONV_EPI32_UINT16:
-//						n := mod*16
-//						dst[i+31:i] := UInt16ToInt32(addr[n+15:n])
-//					_MM_UPCONV_EPI32_SINT16:
-//						n := mod*16
-//						dst[i+31:i] := SInt16ToInt32(addr[n+15:n])
-//					ESAC
-//				ESAC
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA32, VBROADCASTI32X4, VPBROADCASTD'. Intrinsic: '_mm512_mask_extload_epi32'.
-// Requires KNCNI.
-func M512MaskExtloadEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) x86.M512i {
-	return x86.M512i(m512MaskExtloadEpi32([64]byte(src), uint16(k), uintptr(mt), conv, bc, hint))
-}
-
-func m512MaskExtloadEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
-
-
-// M512ExtloadEpi64: Depending on 'bc', loads 1, 4, or 8 elements of type and
-// size determined by 'conv' from memory address 'mt' and converts all elements
-// to 64-bit integer elements, storing the results in 'dst'. 'hint' indicates
-// to the processor whether the data is non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			CASE bc OF
-//			_MM_BROADCAST64_NONE:
-//				CASE conv OF
-//				_MM_UPCONV_EPI64_NONE:
-//					n := j*64
-//					dst[i+63:i] := addr[n+63:n]
-//				ESAC
-//			_MM_BROADCAST_1X8:
-//				CASE conv OF
-//				_MM_UPCONV_EPI64_NONE:
-//					n := j*64
-//					dst[i+63:i] := addr[63:0]
-//				ESAC
-//			_MM_BROADCAST_4X8:
-//				mod := j%4
-//				CASE conv OF
-//				_MM_UPCONV_EPI64_NONE:
-//					n := mod*64
-//					dst[i+63:i] := addr[n+63:n]
-//				ESAC
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA64, VBROADCASTI64X4, VPBROADCASTQ'. Intrinsic: '_mm512_extload_epi64'.
-// Requires KNCNI.
-func M512ExtloadEpi64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) x86.M512i {
-	return x86.M512i(m512ExtloadEpi64(uintptr(mt), conv, bc, hint))
-}
-
-func m512ExtloadEpi64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
-
-
-// M512MaskExtloadEpi64: Depending on 'bc', loads 1, 4, or 8 elements of type
-// and size determined by 'conv' from memory address 'mt' and converts all
-// elements to 64-bit integer elements, storing the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 'hint' indicates to the processor whether the data is
-// non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				CASE bc OF
-//				_MM_BROADCAST64_NONE:
-//					CASE conv OF
-//					_MM_UPCONV_EPI64_NONE:
-//						n := j*64
-//						dst[i+63:i] := addr[n+63:n]
-//					ESAC
-//				_MM_BROADCAST_1X8:
-//					CASE conv OF
-//					_MM_UPCONV_EPI64_NONE:
-//						n := j*64
-//						dst[i+63:i] := addr[63:0]
-//					ESAC
-//				_MM_BROADCAST_4X8:
-//					mod := j%4
-//					CASE conv OF
-//					_MM_UPCONV_EPI64_NONE:
-//						n := mod*64
-//						dst[i+63:i] := addr[n+63:n]
-//					ESAC
-//				ESAC
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA64, VBROADCASTI64X4, VPBROADCASTQ'. Intrinsic: '_mm512_mask_extload_epi64'.
-// Requires KNCNI.
-func M512MaskExtloadEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) x86.M512i {
-	return x86.M512i(m512MaskExtloadEpi64([64]byte(src), uint8(k), uintptr(mt), conv, bc, hint))
-}
-
-func m512MaskExtloadEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
-
-
-// M512ExtloadPd: Depending on 'bc', loads 1, 4, or 8 elements of type and size
-// determined by 'conv' from memory address 'mt' and converts all elements to
-// double-precision (64-bit) floating-point elements, storing the results in
-// 'dst'. 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			CASE bc OF
-//			_MM_BROADCAST64_NONE:
-//				CASE conv OF
-//				_MM_UPCONV_PD_NONE:
-//					n := j*64
-//					dst[i+63:i] := addr[n+63:n]
-//				ESAC
-//			_MM_BROADCAST_1X8:
-//				CASE conv OF
-//				_MM_UPCONV_PD_NONE:
-//					n := j*64
-//					dst[i+63:i] := addr[63:0]
-//				ESAC
-//			_MM_BROADCAST_4X8:
-//				mod := j%4
-//				CASE conv OF
-//				_MM_UPCONV_PD_NONE:
-//					n := mod*64
-//					dst[i+63:i] := addr[n+63:n]
-//				ESAC
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPD, VBROADCASTF64X4, VBROADCASTSD'. Intrinsic: '_mm512_extload_pd'.
-// Requires KNCNI.
-func M512ExtloadPd(mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) x86.M512d {
-	return x86.M512d(m512ExtloadPd(uintptr(mt), conv, bc, hint))
-}
-
-func m512ExtloadPd(mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) [8]float64
-
-
-// M512MaskExtloadPd: Depending on 'bc', loads 1, 4, or 8 elements of type and
-// size determined by 'conv' from memory address 'mt' and converts all elements
-// to double-precision (64-bit) floating-point elements, storing the results in
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 'hint' indicates to the processor
-// whether the data is non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				CASE bc OF
-//				_MM_BROADCAST64_NONE:
-//					CASE conv OF
-//					_MM_UPCONV_PD_NONE:
-//						n := j*64
-//						dst[i+63:i] := addr[n+63:n]
-//					ESAC
-//				_MM_BROADCAST_1X8:
-//					CASE conv OF
-//					_MM_UPCONV_PD_NONE:
-//						n := j*64
-//						dst[i+63:i] := addr[63:0]
-//					ESAC
-//				_MM_BROADCAST_4X8:
-//					mod := j%4
-//					CASE conv OF
-//					_MM_UPCONV_PD_NONE:
-//						n := mod*64
-//						dst[i+63:i] := addr[n+63:n]
-//					ESAC
-//				ESAC
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPD, VBROADCASTF64X4, VBROADCASTSD'. Intrinsic: '_mm512_mask_extload_pd'.
-// Requires KNCNI.
-func M512MaskExtloadPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) x86.M512d {
-	return x86.M512d(m512MaskExtloadPd([8]float64(src), uint8(k), uintptr(mt), conv, bc, hint))
-}
-
-func m512MaskExtloadPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) [8]float64
-
-
-// M512ExtloadPs: Depending on 'bc', loads 1, 4, or 16 elements of type and
-// size determined by 'conv' from memory address 'mt' and converts all elements
-// to single-precision (32-bit) floating-point elements, storing the results in
-// 'dst'. 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			CASE bc OF
-//			_MM_BROADCAST32_NONE:
-//				CASE conv OF
-//				_MM_UPCONV_PS_NONE:
-//					n	 := j*32
-//					dst[i+31:i] := addr[n+31:n]
-//				_MM_UPCONV_PS_FLOAT16:
-//					n	 := j*16
-//					dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_UINT8:
-//					n	 := j*8
-//					dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_SINT8:
-//					n	 := j*8
-//					dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_UINT16:
-//					n	 := j*16
-//					dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_SINT16:
-//					n	 := j*16
-//					dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//				ESAC
-//			_MM_BROADCAST_1X16:
-//				CASE conv OF
-//				_MM_UPCONV_PS_NONE:
-//					n	 := j*32
-//					dst[i+31:i] := addr[31:0]
-//				_MM_UPCONV_PS_FLOAT16:
-//					n	 := j*16
-//					dst[i+31:i] := Float16ToFloat32(addr[15:0])
-//				_MM_UPCONV_PS_UINT8:
-//					n	 := j*8
-//					dst[i+31:i] := UInt8ToFloat32(addr[7:0])
-//				_MM_UPCONV_PS_SINT8:
-//					n	 := j*8
-//					dst[i+31:i] := SInt8ToFloat32(addr[7:0])
-//				_MM_UPCONV_PS_UINT16:
-//					n	 := j*16
-//					dst[i+31:i] := UInt16ToFloat32(addr[15:0])
-//				_MM_UPCONV_PS_SINT16:
-//					n	 := j*16
-//					dst[i+31:i] := SInt16ToFloat32(addr[15:0])
-//				ESAC
-//			_MM_BROADCAST_4X16:
-//				mod := j%4
-//				CASE conv OF
-//				_MM_UPCONV_PS_NONE:
-//					n := mod*32
-//					dst[i+31:i] := addr[n+31:n]
-//				_MM_UPCONV_PS_FLOAT16:
-//					n := mod*16
-//					dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_UINT8:
-//					n := mod*8
-//					dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_SINT8:
-//					n := mod*8
-//					dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_UINT16:
-//					n := mod*16
-//					dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_SINT16:
-//					n := mod*16
-//					dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//				ESAC
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPS, VBROADCASTF32X4, VBROADCASTSS'. Intrinsic: '_mm512_extload_ps'.
-// Requires KNCNI.
-func M512ExtloadPs(mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) x86.M512 {
-	return x86.M512(m512ExtloadPs(uintptr(mt), conv, bc, hint))
-}
-
-func m512ExtloadPs(mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) [16]float32
-
-
-// M512MaskExtloadPs: Depending on 'bc', loads 1, 4, or 16 elements of type and
-// size determined by 'conv' from memory address 'mt' and converts all elements
-// to single-precision (32-bit) floating-point elements, storing the results in
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 'hint' indicates to the processor
-// whether the data is non-temporal. 
-//
-//		addr = MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				CASE bc OF
-//				_MM_BROADCAST32_NONE:
-//					CASE conv OF
-//					_MM_UPCONV_PS_NONE:
-//						n	 := j*32
-//						dst[i+31:i] := addr[n+31:n]
-//					_MM_UPCONV_PS_FLOAT16:
-//						n	 := j*16
-//						dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//					_MM_UPCONV_PS_UINT8:
-//						n	 := j*8
-//						dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//					_MM_UPCONV_PS_SINT8:
-//						n	 := j*8
-//						dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//					_MM_UPCONV_PS_UINT16:
-//						n	 := j*16
-//						dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//					_MM_UPCONV_PS_SINT16:
-//						n	 := j*16
-//						dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//					ESAC
-//				_MM_BROADCAST_1X16:
-//					CASE conv OF
-//					_MM_UPCONV_PS_NONE:
-//						n	 := j*32
-//						dst[i+31:i] := addr[31:0]
-//					_MM_UPCONV_PS_FLOAT16:
-//						n	 := j*16
-//						dst[i+31:i] := Float16ToFloat32(addr[15:0])
-//					_MM_UPCONV_PS_UINT8:
-//						n	 := j*8
-//						dst[i+31:i] := UInt8ToFloat32(addr[7:0])
-//					_MM_UPCONV_PS_SINT8:
-//						n	 := j*8
-//						dst[i+31:i] := SInt8ToFloat32(addr[7:0])
-//					_MM_UPCONV_PS_UINT16:
-//						n	 := j*16
-//						dst[i+31:i] := UInt16ToFloat32(addr[15:0])
-//					_MM_UPCONV_PS_SINT16:
-//						n	 := j*16
-//						dst[i+31:i] := SInt16ToFloat32(addr[15:0])
-//					ESAC
-//				_MM_BROADCAST_4X16:
-//					mod := j%4
-//					CASE conv OF
-//					_MM_UPCONV_PS_NONE:
-//						n := mod*32
-//						dst[i+31:i] := addr[n+31:n]
-//					_MM_UPCONV_PS_FLOAT16:
-//						n := mod*16
-//						dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//					_MM_UPCONV_PS_UINT8:
-//						n := mod*8
-//						dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//					_MM_UPCONV_PS_SINT8:
-//						n := mod*8
-//						dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//					_MM_UPCONV_PS_UINT16:
-//						n := mod*16
-//						dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//					_MM_UPCONV_PS_SINT16:
-//						n := mod*16
-//						dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//					ESAC
-//				ESAC
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPS, VBROADCASTF32X4, VBROADCASTSS'. Intrinsic: '_mm512_mask_extload_ps'.
-// Requires KNCNI.
-func M512MaskExtloadPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) x86.M512 {
-	return x86.M512(m512MaskExtloadPs([16]float32(src), uint16(k), uintptr(mt), conv, bc, hint))
-}
-
-func m512MaskExtloadPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) [16]float32
-
-
-// M512ExtloadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt-64,
-// up-converted depending on the value of 'conv', and expanded into packed
-// 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
-// Only those converted doublewords that occur at or after the first
-// 64-byte-aligned address following (mt-64) are loaded. Elements in the
-// resulting vector that do not map to those doublewords are taken from 'src'.
-// 'hint' indicates to the processor whether the loaded data is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt16ToInt32(MEM[addr + 2*offset])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt16ToInt32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*upSize % 64) == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*32
-//				dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_extloadunpackhi_epi32'.
-// Requires KNCNI.
-func M512ExtloadunpackhiEpi32(src x86.M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(m512ExtloadunpackhiEpi32([64]byte(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackhiEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
-
-
-// M512MaskExtloadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt-64,
-// up-converted depending on the value of 'conv', and expanded into packed
-// 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
-// Only those converted doublewords that occur at or after the first
-// 64-byte-aligned address following (mt-64) are loaded. Elements in the
-// resulting vector that do not map to those doublewords are taken from 'src'.
-// 'hint' indicates to the processor whether the loaded data is non-temporal.
-// Elements are copied to 'dst' according to element selector 'k' (elements are
-// skipped when the corresponding mask bit is not set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt16ToInt32(MEM[addr + 2*offset])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt16ToInt32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*upSize % 64) == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*32
-//					dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_mask_extloadunpackhi_epi32'.
-// Requires KNCNI.
-func M512MaskExtloadunpackhiEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(m512MaskExtloadunpackhiEpi32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackhiEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
-
-
-// M512ExtloadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt-64, up-converted
-// depending on the value of 'conv', and expanded into packed 64-bit integers
-// in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
-// converted quadwords that occur at or after the first 64-byte-aligned address
-// following (mt-64) are loaded. Elements in the resulting vector that do not
-// map to those quadwords are taken from 'src'. 'hint' indicates to the
-// processor whether the loaded data is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*upSize) == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*64
-//				dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_extloadunpackhi_epi64'.
-// Requires KNCNI.
-func M512ExtloadunpackhiEpi64(src x86.M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(m512ExtloadunpackhiEpi64([64]byte(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackhiEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
-
-
-// M512MaskExtloadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt-64, up-converted
-// depending on the value of 'conv', and expanded into packed 64-bit integers
-// in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
-// converted quadwords that occur at or after the first 64-byte-aligned address
-// following (mt-64) are loaded. Elements in the resulting vector that do not
-// map to those quadwords are taken from 'src'. 'hint' indicates to the
-// processor whether the loaded data is non-temporal. Elements are copied to
-// 'dst' according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*upSize) == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*64
-//					dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_mask_extloadunpackhi_epi64'.
-// Requires KNCNI.
-func M512MaskExtloadunpackhiEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(m512MaskExtloadunpackhiEpi64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackhiEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
-
-
-// M512ExtloadunpackhiPd: Loads the high-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt-64, up-converted
-// depending on the value of 'conv', and expanded into packed double-precision
-// (64-bit) floating-point values in 'dst'. The initial values of 'dst' are
-// copied from 'src'. Only those converted quadwords that occur at or after the
-// first 64-byte-aligned address following (mt-64) are loaded. Elements in the
-// resulting vector that do not map to those quadwords are taken from 'src'.
-// 'hint' indicates to the processor whether the loaded data is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE: RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*upSize) % 64 == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*64
-//				dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_extloadunpackhi_pd'.
-// Requires KNCNI.
-func M512ExtloadunpackhiPd(src x86.M512d, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(m512ExtloadunpackhiPd([8]float64(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackhiPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
-
-
-// M512MaskExtloadunpackhiPd: Loads the high-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt-64, up-converted
-// depending on the value of 'conv', and expanded into packed double-precision
-// (64-bit) floating-point values in 'dst'. The initial values of 'dst' are
-// copied from 'src'. Only those converted quadwords that occur at or after the
-// first 64-byte-aligned address following (mt-64) are loaded. Elements in the
-// resulting vector that do not map to those quadwords are taken from 'src'.
-// 'hint' indicates to the processor whether the loaded data is non-temporal.
-// Elements are copied to 'dst' according to element selector 'k' (elements are
-// skipped when the corresponding mask bit is not set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE: RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*upSize) % 64 == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*64
-//					dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_mask_extloadunpackhi_pd'.
-// Requires KNCNI.
-func M512MaskExtloadunpackhiPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(m512MaskExtloadunpackhiPd([8]float64(src), uint8(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackhiPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
-
-
-// M512ExtloadunpackhiPs: Loads the high-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt-64,
-// up-converted depending on the value of 'conv', and expanded into packed
-// single-precision (32-bit) floating-point elements in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted quadwords that
-// occur at or after the first 64-byte-aligned address following (mt-64) are
-// loaded. Elements in the resulting vector that do not map to those quadwords
-// are taken from 'src'. 'hint' indicates to the processor whether the loaded
-// data is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:	   RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float16ToFloat32(MEM[addr + 4*offset])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt16ToFloat32(MEM[addr + 2*offset])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt16ToFloat32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:	   RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*upSize % 64) == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*32
-//				dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_extloadunpackhi_ps'.
-// Requires KNCNI.
-func M512ExtloadunpackhiPs(src x86.M512, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(m512ExtloadunpackhiPs([16]float32(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackhiPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
-
-
-// M512MaskExtloadunpackhiPs: Loads the high-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt-64,
-// up-converted depending on the value of 'conv', and expanded into packed
-// single-precision (32-bit) floating-point elements in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted quadwords that
-// occur at or after the first 64-byte-aligned address following (mt-64) are
-// loaded. Elements in the resulting vector that do not map to those quadwords
-// are taken from 'src'. 'hint' indicates to the processor whether the loaded
-// data is non-temporal. Elements are copied to 'dst' according to element
-// selector 'k' (elements are skipped when the corresponding mask bit is not
-// set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:	   RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float16ToFloat32(MEM[addr + 4*offset])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt16ToFloat32(MEM[addr + 2*offset])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt16ToFloat32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:	   RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*upSize % 64) == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*32
-//					dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_mask_extloadunpackhi_ps'.
-// Requires KNCNI.
-func M512MaskExtloadunpackhiPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(m512MaskExtloadunpackhiPs([16]float32(src), uint16(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackhiPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
-
-
-// M512ExtloadunpackloEpi32: Loads the low-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt,
-// up-converted depending on the value of 'conv', and expanded into packed
-// 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
-// Only those converted doublewords that occur before first 64-byte-aligned
-// address following 'mt' are loaded. Elements in the resulting vector that do
-// not map to those doublewords are taken from 'src'. 'hint' indicates to the
-// processor whether the loaded data is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt16ToInt32(MEM[addr + 2*offset])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt16ToInt32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//			loadOffset := loadOffset + 1
-//			IF (mt + loadOffset * upSize) % 64 == 0
-//				break
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_extloadunpacklo_epi32'.
-// Requires KNCNI.
-func M512ExtloadunpackloEpi32(src x86.M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(m512ExtloadunpackloEpi32([64]byte(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackloEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
-
-
-// M512MaskExtloadunpackloEpi32: Loads the low-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt,
-// up-converted depending on the value of 'conv', and expanded into packed
-// 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
-// Only those converted doublewords that occur before first 64-byte-aligned
-// address following 'mt' are loaded. Elements in the resulting vector that do
-// not map to those doublewords are taken from 'src'. 'hint' indicates to the
-// processor whether the loaded data is non-temporal. Elements are copied to
-// 'dst' according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt8ToInt32(MEM[addr + offset])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt16ToInt32(MEM[addr + 2*offset])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt16ToInt32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 15
-//			IF k[j]
-//				i := j*32
-//				dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//				loadOffset := loadOffset + 1
-//				IF (mt + loadOffset * upSize) % 64 == 0
-//					break
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_mask_extloadunpacklo_epi32'.
-// Requires KNCNI.
-func M512MaskExtloadunpackloEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(m512MaskExtloadunpackloEpi32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackloEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
-
-
-// M512ExtloadunpackloEpi64: Loads the low-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt, up-converted
-// depending on the value of 'conv', and expanded into packed 64-bit integers
-// in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
-// converted quad that occur before first 64-byte-aligned address following
-// 'mt' are loaded. Elements in the resulting vector that do not map to those
-// quadwords are taken from 'src'. 'hint' indicates to the processor whether
-// the loaded data is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//			loadOffset := loadOffset + 1
-//			IF (addr + loadOffset*upSize % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_extloadunpacklo_epi64'.
-// Requires KNCNI.
-func M512ExtloadunpackloEpi64(src x86.M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(m512ExtloadunpackloEpi64([64]byte(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackloEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
-
-
-// M512MaskExtloadunpackloEpi64: Loads the low-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt, up-converted
-// depending on the value of 'conv', and expanded into packed 64-bit integers
-// in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
-// converted quadwords that occur before first 64-byte-aligned address
-// following 'mt' are loaded. Elements in the resulting vector that do not map
-// to those quadwords are taken from 'src'. 'hint' indicates to the processor
-// whether the loaded data is non-temporal. Elements are copied to 'dst'
-// according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE:   RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			IF k[j]
-//				i := j*64
-//				dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//				loadOffset := loadOffset + 1
-//				IF (addr + loadOffset*upSize % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_mask_extloadunpacklo_epi64'.
-// Requires KNCNI.
-func M512MaskExtloadunpackloEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(m512MaskExtloadunpackloEpi64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackloEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
-
-
-// M512ExtloadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt, up-converted depending on the
-// value of 'conv', and expanded into packed double-precision (64-bit)
-// floating-point elements in 'dst'. The initial values of 'dst' are copied
-// from 'src'. Only those converted quad that occur before first
-// 64-byte-aligned address following 'mt' are loaded. Elements in the resulting
-// vector that do not map to those quadwords are taken from 'src'. 'hint'
-// indicates to the processor whether the loaded data is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE:	RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE:	RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//			loadOffset := loadOffset + 1
-//			IF (mt + loadOffset * upSize) % 64 == 0
-//				break
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_extloadunpacklo_pd'.
-// Requires KNCNI.
-func M512ExtloadunpackloPd(src x86.M512d, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(m512ExtloadunpackloPd([8]float64(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackloPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
-
-
-// M512MaskExtloadunpackloPd: Loads the low-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt, up-converted
-// depending on the value of 'conv', and expanded into packed double-precision
-// (64-bit) floating-point elements in 'dst'. The initial values of 'dst' are
-// copied from 'src'. Only those converted quad that occur before first
-// 64-byte-aligned address following 'mt' are loaded. Elements in the resulting
-// vector that do not map to those quadwords are taken from 'src'. 'hint'
-// indicates to the processor whether the loaded data is non-temporal. Elements
-// are copied to 'dst' according to element selector 'k' (elemenst are skipped
-// when the corresponding mask bit is not set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE:	RETURN MEM[addr + 8*offset]
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE:	RETURN 8
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			IF k[j]
-//				i := j*64
-//				dst[i+63:i] := UPCONVERT(addr, loadOffset, conv)
-//				loadOffset := loadOffset + 1
-//				IF (mt + loadOffset * upSize) % 64 == 0
-//					break
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_mask_extloadunpacklo_pd'.
-// Requires KNCNI.
-func M512MaskExtloadunpackloPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(m512MaskExtloadunpackloPd([8]float64(src), uint8(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackloPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
-
-
-// M512ExtloadunpackloPs: Loads the low-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt,
-// up-converted depending on the value of 'conv', and expanded into packed
-// single-precision (32-bit) floating-point elements in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted doublewords that
-// occur before first 64-byte-aligned address following 'mt' are loaded.
-// Elements in the resulting vector that do not map to those doublewords are
-// taken from 'src'. 'hint' indicates to the processor whether the loaded data
-// is non-temporal. 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:	   RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float16ToFloat32(MEM[addr + 4*offset])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt16ToFloat32(MEM[addr + 2*offset])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt16ToFloat32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:	   RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//			loadOffset := loadOffset + 1
-//			IF (mt + loadOffset * upSize) % 64 == 0
-//				break
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_extloadunpacklo_ps'.
-// Requires KNCNI.
-func M512ExtloadunpackloPs(src x86.M512, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(m512ExtloadunpackloPs([16]float32(src), uintptr(mt), conv, hint))
-}
-
-func m512ExtloadunpackloPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
-
-
-// M512MaskExtloadunpackloPs: Loads the low-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt,
-// up-converted depending on the value of 'conv', and expanded into packed
-// single-precision (32-bit) floating-point elements in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted doublewords that
-// occur before first 64-byte-aligned address following 'mt' are loaded.
-// Elements in the resulting vector that do not map to those doublewords are
-// taken from 'src'. 'hint' indicates to the processor whether the loaded data
-// is non-temporal. Elements are copied to 'dst' according to element selector
-// 'k' (elements are skipped when the corresponding mask bit is not set). 
-//
-//		UPCONVERT(address, offset, convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:    RETURN MEM[addr + 4*offset]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float16ToFloat32(MEM[addr + 4*offset])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt8ToFloat32(MEM[addr + offset])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt16ToFloat32(MEM[addr + 2*offset])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt16ToFloat32(MEM[addr + 2*offset])
-//			ESAC
-//		}
-//		
-//		UPCONVERTSIZE(convertTo) {
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:	   RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		upSize := UPCONVERTSIZE(conv)
-//		addr = MEM[mt]
-//		FOR j := 0 to 15
-//			IF k[j]
-//				i := j*32
-//				dst[i+31:i] := UPCONVERT(addr, loadOffset, conv)
-//				loadOffset := loadOffset + 1
-//				IF (mt + loadOffset * upSize) % 64 == 0
-//					break
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_mask_extloadunpacklo_ps'.
-// Requires KNCNI.
-func M512MaskExtloadunpackloPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(m512MaskExtloadunpackloPs([16]float32(src), uint16(k), uintptr(mt), conv, hint))
-}
-
-func m512MaskExtloadunpackloPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
-
-
-// M512ExtpackstorehiEpi32: Down-converts and stores packed 32-bit integer
-// elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
-// logically mapped starting address (mt-64), storing the high-64-byte elements
-// of that stream (those elemetns of the stream that map at or after the first
-// 64-byte-aligned address following (m5-64)). 'hint' indicates to the
-// processor whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN element[i+31:i]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*32
-//				tmp := DOWNCONVERT(v1[i+31:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				4: MEM[storeAddr] := tmp[31:0]
-//				2: MEM[storeAddr] := tmp[15:0]
-//				1: MEM[storeAddr] := tmp[7:0]
-//				ESAC
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_extpackstorehi_epi32'.
-// Requires KNCNI.
-func M512ExtpackstorehiEpi32(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	m512ExtpackstorehiEpi32(uintptr(mt), [64]byte(v1), conv, hint)
-}
-
-func m512ExtpackstorehiEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
-
-
-// M512MaskExtpackstorehiEpi32: Down-converts and stores packed 32-bit integer
-// elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
-// logically mapped starting address (mt-64), storing the high-64-byte elements
-// of that stream (those elemetns of the stream that map at or after the first
-// 64-byte-aligned address following (m5-64)). 'hint' indicates to the
-// processor whether the data is non-temporal. Elements are stored to memory
-// according to element selector 'k' (elements are skipped when the
-// corresonding mask bit is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN element[i+31:i]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*32
-//					tmp := DOWNCONVERT(v1[i+31:i], conv)
-//					storeAddr := addr + storeOffset * downSize
-//					CASE downSize OF
-//					4: MEM[storeAddr] := tmp[31:0]
-//					2: MEM[storeAddr] := tmp[15:0]
-//					1: MEM[storeAddr] := tmp[7:0]
-//					ESAC
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_mask_extpackstorehi_epi32'.
-// Requires KNCNI.
-func M512MaskExtpackstorehiEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	m512MaskExtpackstorehiEpi32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
-}
-
-func m512MaskExtpackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
-
-
-// M512ExtpackstorehiEpi64: Down-converts and stores packed 64-bit integer
-// elements of 'v1' into a quadword stream according to 'conv' at a logically
-// mapped starting address (mt-64), storing the high-64-byte elements of that
-// stream (those elemetns of the stream that map at or after the first
-// 64-byte-aligned address following (m5-64)). 'hint' indicates to the
-// processor whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*64
-//				tmp := DOWNCONVERT(v1[i+63:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				8: MEM[storeAddr] := tmp[63:0]
-//				ESAC
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_extpackstorehi_epi64'.
-// Requires KNCNI.
-func M512ExtpackstorehiEpi64(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	m512ExtpackstorehiEpi64(uintptr(mt), [64]byte(v1), conv, hint)
-}
-
-func m512ExtpackstorehiEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
-
-
-// M512MaskExtpackstorehiEpi64: Down-converts and stores packed 64-bit integer
-// elements of 'v1' into a quadword stream according to 'conv' at a logically
-// mapped starting address (mt-64), storing the high-64-byte elements of that
-// stream (those elemetns of the stream that map at or after the first
-// 64-byte-aligned address following (mt-64)). 'hint' indicates to the
-// processor whether the data is non-temporal. Elements are stored to memory
-// according to element selector 'k' (elements are skipped when the
-// corresonding mask bit is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*64
-//					tmp := DOWNCONVERT(v1[i+63:i], conv)
-//					storeAddr := addr + storeOffset * downSize
-//					CASE downSize OF
-//					8: MEM[storeAddr] := tmp[63:0]
-//					ESAC
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_mask_extpackstorehi_epi64'.
-// Requires KNCNI.
-func M512MaskExtpackstorehiEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	m512MaskExtpackstorehiEpi64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
-}
-
-func m512MaskExtpackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
-
-
-// M512ExtpackstorehiPd: Down-converts and stores packed double-precision
-// (64-bit) floating-point elements of 'v1' into a quadword stream according to
-// 'conv' at a logically mapped starting address (mt-64), storing the
-// high-64-byte elements of that stream (those elemetns of the stream that map
-// at or after the first 64-byte-aligned address following (m5-64)). 'hint'
-// indicates to the processor whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*64
-//				tmp := DOWNCONVERT(v1[i+63:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				8: MEM[storeAddr] := tmp[63:0]
-//				ESAC
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_extpackstorehi_pd'.
-// Requires KNCNI.
-func M512ExtpackstorehiPd(mt uintptr, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	m512ExtpackstorehiPd(uintptr(mt), [8]float64(v1), conv, hint)
-}
-
-func m512ExtpackstorehiPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
-
-
-// M512MaskExtpackstorehiPd: Down-converts and stores packed double-precision
-// (64-bit) floating-point elements of 'v1' into a quadword stream according to
-// 'conv' at a logically mapped starting address (mt-64), storing the
-// high-64-byte elements of that stream (those elemetns of the stream that map
-// at or after the first 64-byte-aligned address following (m5-64)). 'hint'
-// indicates to the processor whether the data is non-temporal. Elements are
-// stored to memory according to element selector 'k' (elements are skipped
-// when the corresponding mask bit is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*64
-//					tmp := DOWNCONVERT(v1[i+63:i], conv)
-//					storeAddr := addr + storeOffset * downSize
-//					CASE downSize OF
-//					8: MEM[storeAddr] := tmp[63:0]
-//					ESAC
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_mask_extpackstorehi_pd'.
-// Requires KNCNI.
-func M512MaskExtpackstorehiPd(mt uintptr, k x86.Mmask8, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	m512MaskExtpackstorehiPd(uintptr(mt), uint8(k), [8]float64(v1), conv, hint)
-}
-
-func m512MaskExtpackstorehiPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
-
-
-// M512ExtpackstorehiPs: Down-converts and stores packed single-precision
-// (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
-// according to 'conv' at a logically mapped starting address (mt-64), storing
-// the high-64-byte elements of that stream (those elemetns of the stream that
-// map at or after the first 64-byte-aligned address following (m5-64)). 'hint'
-// indicates to the processor whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:	   RETURN element[i+31:i]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float32ToFloat16(element[i+31:i])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:	   RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*32
-//				tmp := DOWNCONVERT(v1[i+31:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				4: MEM[storeAddr] := tmp[31:0]
-//				2: MEM[storeAddr] := tmp[15:0]
-//				1: MEM[storeAddr] := tmp[7:0]
-//				ESAC
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_extpackstorehi_ps'.
-// Requires KNCNI.
-func M512ExtpackstorehiPs(mt uintptr, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	m512ExtpackstorehiPs(uintptr(mt), [16]float32(v1), conv, hint)
-}
-
-func m512ExtpackstorehiPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
-
-
-// M512MaskExtpackstorehiPs: Down-converts and stores packed single-precision
-// (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
-// according to 'conv' at a logically mapped starting address (mt-64), storing
-// the high-64-byte elements of that stream (those elemetns of the stream that
-// map at or after the first 64-byte-aligned address following (m5-64)). 'hint'
-// indicates to the processor whether the data is non-temporal. Elements are
-// stored to memory according to element selector 'k' (elements are skipped
-// when the corresponding mask bit is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:	   RETURN element[i+31:i]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float32ToFloat16(element[i+31:i])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:    RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*downSize) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*32
-//					tmp := DOWNCONVERT(v1[i+31:i], conv)
-//					storeAddr := addr + storeOffset * downSize
-//					CASE downSize OF
-//					4: MEM[storeAddr] := tmp[31:0]
-//					2: MEM[storeAddr] := tmp[15:0]
-//					1: MEM[storeAddr] := tmp[7:0]
-//					ESAC
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_mask_extpackstorehi_ps'.
-// Requires KNCNI.
-func M512MaskExtpackstorehiPs(mt uintptr, k x86.Mmask16, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	m512MaskExtpackstorehiPs(uintptr(mt), uint16(k), [16]float32(v1), conv, hint)
-}
-
-func m512MaskExtpackstorehiPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
-
-
-// M512ExtpackstoreloEpi32: Down-converts and stores packed 32-bit integer
-// elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
-// logically mapped starting address 'mt', storing the low-64-byte elements of
-// that stream (those elements of the stream that map before the first
-// 64-byte-aligned address follwing 'mt'). 'hint' indicates to the processor
-// whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN element[i+31:i]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			tmp := DOWNCONVERT(v1[i+31:i], conv)
-//			storeAddr := addr + storeOffset * downSize
-//			CASE downSize OF
-//			4: MEM[storeAddr] := tmp[31:0]
-//			2: MEM[storeAddr] := tmp[15:0]
-//			1: MEM[storeAddr] := tmp[7:0]
-//			ESAC
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset * downSize) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_extpackstorelo_epi32'.
-// Requires KNCNI.
-func M512ExtpackstoreloEpi32(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	m512ExtpackstoreloEpi32(uintptr(mt), [64]byte(v1), conv, hint)
-}
-
-func m512ExtpackstoreloEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
-
-
-// M512MaskExtpackstoreloEpi32: Down-converts and stores packed 32-bit integer
-// elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
-// logically mapped starting address 'mt', storing the low-64-byte elements of
-// that stream (those elements of the stream that map before the first
-// 64-byte-aligned address follwing 'mt'). 'hint' indicates to the processor
-// whether the data is non-temporal. Elements are written to memory according
-// to element selector 'k' (elements are skipped when the corresponding mask
-// bit is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN element[i+31:i]
-//			_MM_UPCONV_EPI32_UINT8:  RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT8:  RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_EPI32_UINT16: RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_EPI32_SINT16: RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI32_NONE:   RETURN 4
-//			_MM_UPCONV_EPI32_UINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_SINT8:  RETURN 1
-//			_MM_UPCONV_EPI32_UINT16: RETURN 2
-//			_MM_UPCONV_EPI32_SINT16: RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 15
-//			IF k[j]
-//				i := j*32
-//				tmp := DOWNCONVERT(v1[i+31:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				4: MEM[storeAddr] := tmp[31:0]
-//				2: MEM[storeAddr] := tmp[15:0]
-//				1: MEM[storeAddr] := tmp[7:0]
-//				ESAC
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset * downSize) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_mask_extpackstorelo_epi32'.
-// Requires KNCNI.
-func M512MaskExtpackstoreloEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	m512MaskExtpackstoreloEpi32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
-}
-
-func m512MaskExtpackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
-
-
-// M512ExtpackstoreloEpi64: Down-converts and stores packed 64-bit integer
-// elements of 'v1' into a quadword stream according to 'conv' at a logically
-// mapped starting address 'mt', storing the low-64-byte elements of that
-// stream (those elements of the stream that map before the first
-// 64-byte-aligned address follwing 'mt'). 'hint' indicates to the processor
-// whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*63
-//			tmp := DOWNCONVERT(v1[i+63:i], conv)
-//			storeAddr := addr + storeOffset * downSize
-//			CASE downSize OF
-//			8: MEM[storeAddr] := tmp[63:0]
-//			ESAC
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset * downSize) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_extpackstorelo_epi64'.
-// Requires KNCNI.
-func M512ExtpackstoreloEpi64(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	m512ExtpackstoreloEpi64(uintptr(mt), [64]byte(v1), conv, hint)
-}
-
-func m512ExtpackstoreloEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
-
-
-// M512MaskExtpackstoreloEpi64: Down-converts and stores packed 64-bit integer
-// elements of 'v1' into a quadword stream according to 'conv' at a logically
-// mapped starting address 'mt', storing the low-64-byte elements of that
-// stream (those elements of the stream that map before the first
-// 64-byte-aligned address follwing 'mt'). 'hint' indicates to the processor
-// whether the data is non-temporal. Elements are stored to memory according to
-// element selector 'k' (elements are skipped whent he corresponding mask bit
-// is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_EPI64_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			IF k[j]
-//				i := j*63
-//				tmp := DOWNCONVERT(v1[i+63:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				8: MEM[storeAddr] := tmp[63:0]
-//				ESAC
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset * downSize) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_mask_extpackstorelo_epi64'.
-// Requires KNCNI.
-func M512MaskExtpackstoreloEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	m512MaskExtpackstoreloEpi64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
-}
-
-func m512MaskExtpackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
-
-
-// M512ExtpackstoreloPd: Down-converts and stores packed double-precision
-// (64-bit) floating-point elements of 'v1' into a quadword stream according to
-// 'conv' at a logically mapped starting address 'mt', storing the low-64-byte
-// elements of that stream (those elements of the stream that map before the
-// first 64-byte-aligned address follwing 'mt'). 'hint' indicates to the
-// processor whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*63
-//			tmp := DOWNCONVERT(v1[i+63:i], conv)
-//			storeAddr := addr + storeOffset * downSize
-//			CASE downSize OF
-//			8: MEM[storeAddr] := tmp[63:0]
-//			ESAC
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset * downSize) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_extpackstorelo_pd'.
-// Requires KNCNI.
-func M512ExtpackstoreloPd(mt uintptr, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	m512ExtpackstoreloPd(uintptr(mt), [8]float64(v1), conv, hint)
-}
-
-func m512ExtpackstoreloPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
-
-
-// M512MaskExtpackstoreloPd: Down-converts and stores packed double-precision
-// (64-bit) floating-point elements of 'v1' into a quadword stream according to
-// 'conv' at a logically mapped starting address 'mt', storing the low-64-byte
-// elements of that stream (those elements of the stream that map before the
-// first 64-byte-aligned address follwing 'mt'). 'hint' indicates to the
-// processor whether the data is non-temporal. Elements are stored to memory
-// according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN element[i+63:i]
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PD_NONE: RETURN 8
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 7
-//			IF k[j]
-//				i := j*63
-//				tmp := DOWNCONVERT(v1[i+63:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				8: MEM[storeAddr] := tmp[63:0]
-//				ESAC
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset * downSize) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_mask_extpackstorelo_pd'.
-// Requires KNCNI.
-func M512MaskExtpackstoreloPd(mt uintptr, k x86.Mmask8, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	m512MaskExtpackstoreloPd(uintptr(mt), uint8(k), [8]float64(v1), conv, hint)
-}
-
-func m512MaskExtpackstoreloPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
-
-
-// M512ExtpackstoreloPs: Down-converts and stores packed single-precision
-// (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
-// according to 'conv' at a logically mapped starting address 'mt', storing the
-// low-64-byte elements of that stream (those elements of the stream that map
-// before the first 64-byte-aligned address follwing 'mt'). 'hint' indicates to
-// the processor whether the data is non-temporal. 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:	   RETURN element[i+31:i]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float32ToFloat16(element[i+31:i])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:	   RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			tmp := DOWNCONVERT(v1[i+31:i], conv)
-//			storeAddr := addr + storeOffset * downSize
-//			CASE downSize OF
-//			4: MEM[storeAddr] := tmp[31:0]
-//			2: MEM[storeAddr] := tmp[15:0]
-//			1: MEM[storeAddr] := tmp[7:0]
-//			ESAC
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset * downSize) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_extpackstorelo_ps'.
-// Requires KNCNI.
-func M512ExtpackstoreloPs(mt uintptr, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	m512ExtpackstoreloPs(uintptr(mt), [16]float32(v1), conv, hint)
-}
-
-func m512ExtpackstoreloPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
-
-
-// M512MaskExtpackstoreloPs: Down-converts and stores packed single-precision
-// (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
-// according to 'conv' at a logically mapped starting address 'mt', storing the
-// low-64-byte elements of that stream (those elements of the stream that map
-// before the first 64-byte-aligned address follwing 'mt'). 'hint' indicates to
-// the processor whether the data is non-temporal. Elements are stored to
-// memory according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		DOWNCONVERT(element, convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:	   RETURN element[i+31:i]
-//			_MM_UPCONV_PS_FLOAT16: RETURN Float32ToFloat16(element[i+31:i])
-//			_MM_UPCONV_PS_UINT8:   RETURN UInt32ToUInt8(element[i+31:i])
-//			_MM_UPCONV_PS_SINT8:   RETURN SInt32ToSInt8(element[i+31:i])
-//			_MM_UPCONV_PS_UINT16:  RETURN UInt32ToUInt16(element[i+31:i])
-//			_MM_UPCONV_PS_SINT16:  RETURN SInt32ToSInt16(element[i+31:i])
-//			ESAC
-//		}
-//		
-//		DOWNCONVERTSIZE(convertTo) {
-//			CASE converTo OF
-//			_MM_UPCONV_PS_NONE:    RETURN 4
-//			_MM_UPCONV_PS_FLOAT16: RETURN 2
-//			_MM_UPCONV_PS_UINT8:   RETURN 1
-//			_MM_UPCONV_PS_SINT8:   RETURN 1
-//			_MM_UPCONV_PS_UINT16:  RETURN 2
-//			_MM_UPCONV_PS_SINT16:  RETURN 2
-//			ESAC
-//		}
-//		
-//		storeOffset := 0
-//		downSize := DOWNCONVERTSIZE(conv)
-//		addr = mt
-//		FOR j := 0 to 15
-//			IF k[j]
-//				i := j*32
-//				tmp := DOWNCONVERT(v1[i+31:i], conv)
-//				storeAddr := addr + storeOffset * downSize
-//				CASE downSize OF
-//				4: MEM[storeAddr] := tmp[31:0]
-//				2: MEM[storeAddr] := tmp[15:0]
-//				1: MEM[storeAddr] := tmp[7:0]
-//				ESAC
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset * downSize) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_mask_extpackstorelo_ps'.
-// Requires KNCNI.
-func M512MaskExtpackstoreloPs(mt uintptr, k x86.Mmask16, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	m512MaskExtpackstoreloPs(uintptr(mt), uint16(k), [16]float32(v1), conv, hint)
-}
-
-func m512MaskExtpackstoreloPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
-
-
-// M512ExtstoreEpi32: Downconverts packed 32-bit integer elements stored in 'v'
-// to a smaller type depending on 'conv' and stores them in memory location
-// 'mt'. 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			CASE conv OF
-//			_MM_DOWNCONV_EPI32_NONE:
-//				addr[i+31:i] := v[i+31:i]
-//			_MM_DOWNCONV_EPI32_UINT8:
-//				n := j*8
-//				addr[n+7:n] := Int32ToUInt8(v[i+31:i])
-//			_MM_DOWNCONV_EPI32_SINT8:
-//				n := j*8
-//				addr[n+7:n] := Int32ToSInt8(v[i+31:i])
-//			_MM_DOWNCONV_EPI32_UINT16:
-//				n := j*16
-//				addr[n+15:n] := Int32ToUInt16(v[i+31:i])
-//			_MM_DOWNCONV_EPI32_SINT16:
-//				n := j*16
-//				addr[n+15:n] := Int32ToSInt16(v[i+31:i])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_extstore_epi32'.
-// Requires KNCNI.
-func M512ExtstoreEpi32(mt uintptr, v x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	m512ExtstoreEpi32(uintptr(mt), [64]byte(v), conv, hint)
-}
-
-func m512ExtstoreEpi32(mt uintptr, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
-
-
-// M512MaskExtstoreEpi32: Downconverts packed 32-bit integer elements stored in
-// 'v' to a smaller type depending on 'conv' and stores them in memory location
-// 'mt' (elements in 'mt' are unaltered when the corresponding mask bit is not
-// set). 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_DOWNCONV_EPI32_NONE:
-//					addr[i+31:i] := v[i+31:i]
-//				_MM_DOWNCONV_EPI32_UINT8:
-//					n := j*8
-//					addr[n+7:n] := Int32ToUInt8(v[i+31:i])
-//				_MM_DOWNCONV_EPI32_SINT8:
-//					n := j*8
-//					addr[n+7:n] := Int32ToSInt8(v[i+31:i])
-//				_MM_DOWNCONV_EPI32_UINT16:
-//					n := j*16
-//					addr[n+15:n] := Int32ToUInt16(v[i+31:i])
-//				_MM_DOWNCONV_EPI32_SINT16:
-//					n := j*16
-//					addr[n+15:n] := Int32ToSInt16(v[i+31:i])
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_extstore_epi32'.
-// Requires KNCNI.
-func M512MaskExtstoreEpi32(mt uintptr, k x86.Mmask16, v x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	m512MaskExtstoreEpi32(uintptr(mt), uint16(k), [64]byte(v), conv, hint)
-}
-
-func m512MaskExtstoreEpi32(mt uintptr, k uint16, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
-
-
-// M512ExtstoreEpi64: Downconverts packed 64-bit integer elements stored in 'v'
-// to a smaller type depending on 'conv' and stores them in memory location
-// 'mt'. 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_EPI64_NONE: addr[i+63:i] := v[i+63:i]
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_extstore_epi64'.
-// Requires KNCNI.
-func M512ExtstoreEpi64(mt uintptr, v x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	m512ExtstoreEpi64(uintptr(mt), [64]byte(v), conv, hint)
-}
-
-func m512ExtstoreEpi64(mt uintptr, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
-
-
-// M512MaskExtstoreEpi64: Downconverts packed 64-bit integer elements stored in
-// 'v' to a smaller type depending on 'conv' and stores them in memory location
-// 'mt' (elements in 'mt' are unaltered when the corresponding mask bit is not
-// set). 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				CASE conv OF
-//				_MM_DOWNCONV_EPI64_NONE: addr[i+63:i] := v[i+63:i]
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_extstore_epi64'.
-// Requires KNCNI.
-func M512MaskExtstoreEpi64(mt uintptr, k x86.Mmask8, v x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	m512MaskExtstoreEpi64(uintptr(mt), uint8(k), [64]byte(v), conv, hint)
-}
-
-func m512MaskExtstoreEpi64(mt uintptr, k uint8, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
-
-
-// M512ExtstorePd: Downconverts packed double-precision (64-bit) floating-point
-// elements stored in 'v' to a smaller type depending on 'conv' and stores them
-// in memory location 'mt'. 'hint' indicates to the processor whether the data
-// is non-temporal. 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_PS_NONE:
-//				addr[i+63:i] := v[i+63:i]
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm512_extstore_pd'.
-// Requires KNCNI.
-func M512ExtstorePd(mt uintptr, v x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	m512ExtstorePd(uintptr(mt), [8]float64(v), conv, hint)
-}
-
-func m512ExtstorePd(mt uintptr, v [8]float64, conv MMDOWNCONVPDENUM, hint int) 
-
-
-// M512MaskExtstorePd: Downconverts packed double-precision (64-bit)
-// floating-point elements stored in 'v' to a smaller type depending on 'conv'
-// and stores them in memory location 'mt' (elements in 'mt' are unaltered when
-// the corresponding mask bit is not set). 'hint' indicates to the processor
-// whether the data is non-temporal. 
-//
-//		addr := MEM[mt]		
-//		FOR j := 0 to 7
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_PD_NONE:
-//				IF k[j]
-//					mt[i+63:i] := v[i+63:i]
-//				FI
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm512_mask_extstore_pd'.
-// Requires KNCNI.
-func M512MaskExtstorePd(mt uintptr, k x86.Mmask8, v x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	m512MaskExtstorePd(uintptr(mt), uint8(k), [8]float64(v), conv, hint)
-}
-
-func m512MaskExtstorePd(mt uintptr, k uint8, v [8]float64, conv MMDOWNCONVPDENUM, hint int) 
-
-
-// M512ExtstorePs: Downconverts packed single-precision (32-bit) floating-point
-// elements stored in 'v' to a smaller type depending on 'conv' and stores them
-// in memory location 'mt'. 'hint' indicates to the processor whether the data
-// is non-temporal. 
-//
-//		addr := MEM[mt]		
-//		FOR j := 0 to 15
-//			i := j*32
-//			CASE conv OF
-//			_MM_DOWNCONV_PS_NONE:
-//				addr[i+31:i] := v[i+31:i]
-//			_MM_DOWNCONV_PS_FLOAT16:
-//				n := j*16
-//				addr[n+15:n] := Float32ToFloat16(v[i+31:i])
-//			_MM_DOWNCONV_PS_UINT8:
-//				n := j*8
-//				addr[n+7:n] := Float32ToUInt8(v[i+31:i])
-//			_MM_DOWNCONV_PS_SINT8:
-//				n := j*8
-//				addr[n+7:n] := Float32ToSInt8(v[i+31:i])
-//			_MM_DOWNCONV_PS_UINT16:
-//				n := j*16
-//				addr[n+15:n] := Float32ToUInt16(v[i+31:i])
-//			_MM_DOWNCONV_PS_SINT16:
-//				n := j*16
-//				addr[n+15:n] := Float32ToSInt16(v[i+31:i])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm512_extstore_ps'.
-// Requires KNCNI.
-func M512ExtstorePs(mt uintptr, v x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	m512ExtstorePs(uintptr(mt), [16]float32(v), conv, hint)
-}
-
-func m512ExtstorePs(mt uintptr, v [16]float32, conv MMDOWNCONVPSENUM, hint int) 
-
-
-// M512MaskExtstorePs: Downconverts packed single-precision (32-bit)
-// floating-point elements stored in 'v' to a smaller type depending on 'conv'
-// and stores them in memory location 'mt' using writemask 'k' (elements are
-// not written to memory when the corresponding mask bit is not set). 'hint'
-// indicates to the processor whether the data is non-temporal. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_DOWNCONV_PS_NONE:
-//					mt[i+31:i] := v[i+31:i]
-//				_MM_DOWNCONV_PS_FLOAT16:
-//					n := j*16
-//					mt[n+15:n] := Float32ToFloat16(v[i+31:i])
-//				_MM_DOWNCONV_PS_UINT8:
-//					n := j*8
-//					mt[n+7:n] := Float32ToUInt8(v[i+31:i])
-//				_MM_DOWNCONV_PS_SINT8:
-//					n := j*8
-//					mt[n+7:n] := Float32ToSInt8(v[i+31:i])
-//				_MM_DOWNCONV_PS_UINT16:
-//					n := j*16
-//					mt[n+15:n] := Float32ToUInt16(v[i+31:i])
-//				_MM_DOWNCONV_PS_SINT16:
-//					n := j*16
-//					mt[n+15:n] := Float32ToSInt16(v[i+31:i])
-//				ESAC
-//			 FI
-//		ENDFOR
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm512_mask_extstore_ps'.
-// Requires KNCNI.
-func M512MaskExtstorePs(mt uintptr, k x86.Mmask16, v x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	m512MaskExtstorePs(uintptr(mt), uint16(k), [16]float32(v), conv, hint)
-}
-
-func m512MaskExtstorePs(mt uintptr, k uint16, v [16]float32, conv MMDOWNCONVPSENUM, hint int) 
+// Skipped: _mm512_extload_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extload_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_extload_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extload_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_extload_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extload_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_extload_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extload_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpackhi_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpackhi_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpackhi_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpackhi_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpackhi_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpackhi_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpackhi_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpackhi_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpacklo_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpacklo_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpacklo_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpacklo_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpacklo_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpacklo_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_extloadunpacklo_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extloadunpacklo_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorehi_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorehi_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorehi_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorehi_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorehi_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorehi_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorehi_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorehi_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorelo_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorelo_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorelo_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorelo_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorelo_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorelo_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_extpackstorelo_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extpackstorelo_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_extstore_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extstore_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_extstore_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extstore_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_extstore_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extstore_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_extstore_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_extstore_ps. Contains pointer parameter.
 
 
 // M512FixupnanPd: Fixes up NaN's from packed double-precision (64-bit)
@@ -8355,1577 +6006,172 @@ func M512MaskGminPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M51
 func m512MaskGminPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// M512I32extgatherEpi32: Up-converts 16 memory locations starting at location
-// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'
-// using 'conv' to 32-bit integer elements and stores them in 'dst'. 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:
-//				dst[i+31:i] := addr[i+31:i]
-//			_MM_UPCONV_EPI32_UINT8:
-//				n := j*7
-//				dst[i+31:i] := UInt8ToUInt32(addr[n+7:n])
-//			_MM_UPCONV_EPI32_SINT8:
-//				n := j*7
-//				dst[i+31:i] := Int8ToInt32(addr[n+7:n])
-//			_MM_UPCONV_EPI32_UINT16:
-//				n := j*16
-//				dst[i+31:i] := UInt16ToUInt32(addr[n+15:n])
-//			_MM_UPCONV_EPI32_SINT16:
-//				n := j*16
-//				dst[i+31:i] := Int16ToInt32(addr[n+15:n])
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_i32extgather_epi32'.
-// Requires KNCNI.
-func M512I32extgatherEpi32(index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512I32extgatherEpi32([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I32extgatherEpi32(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
-
-
-// M512MaskI32extgatherEpi32: Up-converts 16 single-precision (32-bit) memory
-// locations starting at location 'mv' at packed 32-bit integer indices stored
-// in 'index' scaled by 'scale' using 'conv' to 32-bit integer elements and
-// stores them in 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_UPCONV_EPI32_NONE:
-//					dst[i+31:i] := addr[i+31:i]
-//				_MM_UPCONV_EPI32_UINT8:
-//					n := j*7
-//					dst[i+31:i] := UInt8ToUInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_SINT8:
-//					n := j*7
-//					dst[i+31:i] := Int8ToInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_UINT16:
-//					n := j*16
-//					dst[i+31:i] := UInt16ToUInt32(addr[n+15:n])
-//				_MM_UPCONV_EPI32_SINT16:
-//					n := j*16
-//					dst[i+31:i] := Int16ToInt32(addr[n+15:n])
-//				ESAC
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_mask_i32extgather_epi32'.
-// Requires KNCNI.
-func M512MaskI32extgatherEpi32(src x86.M512i, k x86.Mmask16, index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512MaskI32extgatherEpi32([64]byte(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI32extgatherEpi32(src [64]byte, k uint16, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
-
-
-// M512I32extgatherPs: Up-converts 16 memory locations starting at location
-// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'
-// using 'conv' to single-precision (32-bit) floating-point elements and stores
-// them in 'dst'. 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:
-//				dst[i+31:i] := addr[i+31:i]
-//			_MM_UPCONV_PS_FLOAT16:
-//				n := j*16
-//				dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//			_MM_UPCONV_PS_UINT8:
-//				n := j*8
-//				dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//			_MM_UPCONV_PS_SINT8:
-//				n := j*8
-//				dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//			_MM_UPCONV_PS_UINT16:
-//				n := j*16
-//				dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//			_MM_UPCONV_PS_SINT16:
-//				n := j*16
-//				dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_i32extgather_ps'.
-// Requires KNCNI.
-func M512I32extgatherPs(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(m512I32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
-
-
-// M512MaskI32extgatherPs: Up-converts 16 single-precision (32-bit) memory
-// locations starting at location 'mv' at packed 32-bit integer indices stored
-// in 'index' scaled by 'scale' using 'conv' to single-precision (32-bit)
-// floating-point elements and stores them in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_UPCONV_PS_NONE:
-//					dst[i+31:i] := addr[i+31:i]
-//				_MM_UPCONV_PS_FLOAT16:
-//					n := j*16
-//					dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_UINT8:
-//					n := j*8
-//					dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_SINT8:
-//					n := j*8
-//					dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_UINT16:
-//					n := j*16
-//					dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_SINT16:
-//					n := j*16
-//					dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//				ESAC
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_mask_i32extgather_ps'.
-// Requires KNCNI.
-func M512MaskI32extgatherPs(src x86.M512, k x86.Mmask16, index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(m512MaskI32extgatherPs([16]float32(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI32extgatherPs(src [16]float32, k uint16, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
-
-
-// M512I32extscatterEpi32: Down-converts 16 packed 32-bit integer elements in
-// 'v1' using 'conv' and stores them in memory locations starting at location
-// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'.
-// 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE conv OF
-//			_MM_DOWNCONV_EPI32_NONE:
-//				addr[i+31:i] := v1[i+31:i]
-//			_MM_DOWNCONV_EPI32_UINT8:
-//				n := j*8
-//				addr[n+7:n] := UInt32ToUInt8(v1[i+31:i])
-//			_MM_DOWNCONV_EPI32_SINT8:
-//				n := j*8
-//				addr[n+7:n] := SInt32ToSInt8(v1[i+31:i])
-//			_MM_DOWNCONV_EPI32_UINT16:
-//				n := j*16
-//				addr[n+15:n] := UInt32ToUInt16(v1[i+31:i])
-//			_MM_DOWNCONV_EPI32_SINT16:
-//				n := j*16
-//				addr[n+15:n] := SInt32ToSInt16(v1[n+15:n])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_i32extscatter_epi32'.
-// Requires KNCNI.
-func M512I32extscatterEpi32(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	m512I32extscatterEpi32(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512I32extscatterEpi32(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
-
-
-// M512MaskI32extscatterEpi32: Down-converts 16 packed 32-bit integer elements
-// in 'v1' using 'conv' and stores them in memory locations starting at
-// location 'mv' at packed 32-bit integer indices stored in 'index' scaled by
-// 'scale'. Elements are written using writemask 'k' (elements are only written
-// when the corresponding mask bit is set; otherwise, elements are left
-// unchanged in memory). 'hint' indicates to the processor whether the data is
-// non-temporal. 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_DOWNCONV_EPI32_NONE:
-//					addr[i+31:i] := v1[i+31:i]
-//				_MM_DOWNCONV_EPI32_UINT8:
-//					n := j*8
-//					addr[n+7:n] := UInt32ToUInt8(v1[i+31:i])
-//				_MM_DOWNCONV_EPI32_SINT8:
-//					n := j*8
-//					addr[n+7:n] := SInt32ToSInt8(v1[i+31:i])
-//				_MM_DOWNCONV_EPI32_UINT16:
-//					n := j*16
-//					addr[n+15:n] := UInt32ToUInt16(v1[i+31:i])
-//				_MM_DOWNCONV_EPI32_SINT16:
-//					n := j*16
-//					addr[n+15:n] := SInt32ToSInt16(v1[n+15:n])
-//				ESAC
-//			FI 
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_mask_i32extscatter_epi32'.
-// Requires KNCNI.
-func M512MaskI32extscatterEpi32(mv uintptr, k x86.Mmask16, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	m512MaskI32extscatterEpi32(uintptr(mv), uint16(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512MaskI32extscatterEpi32(mv uintptr, k uint16, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
-
-
-// M512I32extscatterPs: Down-converts 16 packed single-precision (32-bit)
-// floating-point elements in 'v1' and stores them in memory locations starting
-// at location 'mv' at packed 32-bit integer indices stored in 'index' scaled
-// by 'scale' using 'conv'. 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE conv OF
-//			_MM_DOWNCONV_PS_NONE:
-//				n := j*32
-//				addr[i+31:i] := v1[n+31:n]
-//			_MM_DOWNCONV_PS_FLOAT16:
-//				i := j*16
-//				addr[i+15:i] := Float32ToFloat16(v1[n+31:n])
-//			_MM_DOWNCONV_PS_UINT8:
-//				i := j*8
-//				addr[i+7:i] := Float32ToUInt8(v1[n+31:n])
-//			_MM_DOWNCONV_PS_SINT8:
-//				i := j*8
-//				addr[i+7:i] := Float32ToSInt8(v1[n+31:n])
-//			_MM_DOWNCONV_PS_UINT16:
-//				i := j*8
-//				addr[i+15:i] := Float32ToUInt16(v1[n+31:n])
-//			_MM_DOWNCONV_PS_SINT16:
-//				i := j*8
-//				addr[i+15:i] := Float32ToSInt16(v1[n+31:n])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_i32extscatter_ps'.
-// Requires KNCNI.
-func M512I32extscatterPs(mv uintptr, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int)  {
-	m512I32extscatterPs(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale)
-}
-
-func m512I32extscatterPs(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int) 
-
-
-// M512MaskI32extscatterPs: Down-converts 16 packed single-precision (32-bit)
-// floating-point elements in 'v1' according to 'conv' and stores them in
-// memory locations starting at location 'mv' at packed 32-bit integer indices
-// stored in 'index' scaled by 'scale' using writemask 'k' (elements are
-// written only when the corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				CASE conv OF
-//				_MM_DOWNCONV_PS_NONE:
-//					n := j*32
-//					addr[i+31:i] := v1[n+31:n]
-//				_MM_DOWNCONV_PS_FLOAT16:
-//					i := j*16
-//					addr[i+15:i] := Float32ToFloat16(v1[n+31:n])
-//				_MM_DOWNCONV_PS_UINT8:
-//					i := j*8
-//					addr[i+7:i] := Float32ToUInt8(v1[n+31:n])
-//				_MM_DOWNCONV_PS_SINT8:
-//					i := j*8
-//					addr[i+7:i] := Float32ToSInt8(v1[n+31:n])
-//				_MM_DOWNCONV_PS_UINT16:
-//					i := j*8
-//					addr[i+15:i] := Float32ToUInt16(v1[n+31:n])
-//				_MM_DOWNCONV_PS_SINT16:
-//					i := j*8
-//					addr[i+15:i] := Float32ToSInt16(v1[n+31:n])
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_mask_i32extscatter_ps'.
-// Requires KNCNI.
-func M512MaskI32extscatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	m512MaskI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
-}
-
-func m512MaskI32extscatterPs(mv uintptr, k uint16, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
-
-
-// M512I32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
-// 32-bit elements are loaded from addresses starting at 'base_addr' and offset
-// by each 32-bit element in 'vindex' (each index is scaled by the factor in
-// 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
-// or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_i32gather_epi32'.
-// Requires KNCNI.
-func M512I32gatherEpi32(vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(m512I32gatherEpi32([64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I32gatherEpi32(vindex [64]byte, base_addr uintptr, scale int) [64]byte
-
-
-// M512MaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit
-// indices. 32-bit elements are loaded from addresses starting at 'base_addr'
-// and offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:16] := 0
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_mask_i32gather_epi32'.
-// Requires KNCNI.
-func M512MaskI32gatherEpi32(src x86.M512i, k x86.Mmask16, vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(m512MaskI32gatherEpi32([64]byte(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI32gatherEpi32(src [64]byte, k uint16, vindex [64]byte, base_addr uintptr, scale int) [64]byte
-
-
-// M512I32gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 32-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_i32gather_ps'.
-// Requires KNCNI.
-func M512I32gatherPs(vindex x86.M512i, base_addr uintptr, scale int) x86.M512 {
-	return x86.M512(m512I32gatherPs([64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512I32gatherPs(vindex [64]byte, base_addr uintptr, scale int) [16]float32
-
-
-// M512MaskI32gatherPs: Gather single-precision (32-bit) floating-point
-// elements from memory using 32-bit indices. 32-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				k[j] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		k[MAX:16] := 0
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_mask_i32gather_ps'.
-// Requires KNCNI.
-func M512MaskI32gatherPs(src x86.M512, k x86.Mmask16, vindex x86.M512i, base_addr uintptr, scale int) x86.M512 {
-	return x86.M512(m512MaskI32gatherPs([16]float32(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
-}
-
-func m512MaskI32gatherPs(src [16]float32, k uint16, vindex [64]byte, base_addr uintptr, scale int) [16]float32
-
-
-// M512I32loextgatherEpi64: Up-converts 8 double-precision (64-bit) memory
-// locations starting at location 'mv' at packed 32-bit integer indices stored
-// in the lower half of 'index' scaled by 'scale' using 'conv' to 64-bit
-// integer elements and stores them in 'dst'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE: dst[i+63:i] := addr[i+63:i]
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32loextgather_epi64'.
-// Requires KNCNI.
-func M512I32loextgatherEpi64(index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512I32loextgatherEpi64([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I32loextgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
-
-
-// M512MaskI32loextgatherEpi64: Up-converts 8 double-precision (64-bit) memory
-// locations starting at location 'mv' at packed 32-bit integer indices stored
-// in the lower half of 'index' scaled by 'scale' using 'conv' to 64-bit
-// integer elements and stores them in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			IF k[j]
-//				CASE conv OF
-//				_MM_UPCONV_EPI64_NONE: dst[i+63:i] := addr[i+63:i]
-//				ESAC
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32loextgather_epi64'.
-// Requires KNCNI.
-func M512MaskI32loextgatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512MaskI32loextgatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI32loextgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
-
-
-// M512I32loextgatherPd: Up-converts 8 double-precision (64-bit) floating-point
-// elements in memory locations starting at location 'mv' at packed 32-bit
-// integer indices stored in the lower half of 'index' scaled by 'scale' using
-// 'conv' to 64-bit floating-point elements and stores them in 'dst'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE: dst[i+63:i] := addr[i+63:i]
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32loextgather_pd'.
-// Requires KNCNI.
-func M512I32loextgatherPd(index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(m512I32loextgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I32loextgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
-
-
-// M512MaskI32loextgatherPd: Up-converts 8 double-precision (64-bit)
-// floating-point elements in memory locations starting at location 'mv' at
-// packed 32-bit integer indices stored in the lower half of 'index' scaled by
-// 'scale' using 'conv' to 64-bit floating-point elements and stores them in
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			IF k[j]
-//				CASE conv OF
-//				_MM_UPCONV_PD_NONE: dst[i+63:i] := addr[i+63:i]
-//				ESAC
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32loextgather_pd'.
-// Requires KNCNI.
-func M512MaskI32loextgatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(m512MaskI32loextgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI32loextgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
-
-
-// M512I32loextscatterEpi64: Down-converts 8 packed 64-bit integer elements in
-// 'v1' and stores them in memory locations starting at location 'mv' at packed
-// 32-bit integer indices stored in 'index' scaled by 'scale' using 'conv'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_EPI64_NONE: addr[i+63:i] := v1[i+63:i]
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32loextscatter_epi64'.
-// Requires KNCNI.
-func M512I32loextscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	m512I32loextscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512I32loextscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
-
-
-// M512MaskI32loextscatterEpi64: Down-converts 8 packed 64-bit integer elements
-// in 'v1' and stores them in memory locations starting at location 'mv' at
-// packed 32-bit integer indices stored in 'index' scaled by 'scale' using
-// 'conv'. Only those elements whose corresponding mask bit is set in writemask
-// 'k' are written to memory. 
-//
-//		FOR j := 0 to 7
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				i := j*64
-//				CASE conv OF
-//				_MM_DOWNCONV_EPI64_NONE: addr[i+63:i] := v1[i+63:i]
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32loextscatter_epi64'.
-// Requires KNCNI.
-func M512MaskI32loextscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	m512MaskI32loextscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512MaskI32loextscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
-
-
-// M512I32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
-// floating-point elements in 'v1' and stores them in memory locations starting
-// at location 'mv' at packed 32-bit integer indices stored in 'index' scaled
-// by 'scale' using 'conv'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_PD_NONE: addr[i+63:i] := v1[i+63:i]
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32loextscatter_pd'.
-// Requires KNCNI.
-func M512I32loextscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	m512I32loextscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
-}
-
-func m512I32loextscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
-
-
-// M512MaskI32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
-// floating-point elements in 'v1' and stores them in memory locations starting
-// at location 'mv' at packed 32-bit integer indices stored in 'index' scaled
-// by 'scale' using 'conv'. Only those elements whose corresponding mask bit is
-// set in writemask 'k' are written to memory. 
-//
-//		FOR j := 0 to 7
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				i := j*64
-//				CASE conv OF
-//				_MM_DOWNCONV_PD_NONE: addr[i+63:i] := v1[i+63:i]
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32loextscatter_pd'.
-// Requires KNCNI.
-func M512MaskI32loextscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	m512MaskI32loextscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
-}
-
-func m512MaskI32loextscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
-
-
-// M512I32logatherEpi64: Loads 8 64-bit integer elements from memory starting
-// at location 'mv' at packed 32-bit integer indices stored in the lower half
-// of 'index' scaled by 'scale' and stores them in 'dst'. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			addr := MEM[mv + index[j] * scale]
-//			dst[i+63:i] := addr[i+63:i]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32logather_epi64'.
-// Requires KNCNI.
-func M512I32logatherEpi64(index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(m512I32logatherEpi64([64]byte(index), uintptr(mv), scale))
-}
-
-func m512I32logatherEpi64(index [64]byte, mv uintptr, scale int) [64]byte
-
-
-// M512MaskI32logatherEpi64: Loads 8 64-bit integer elements from memory
-// starting at location 'mv' at packed 32-bit integer indices stored in the
-// lower half of 'index' scaled by 'scale' and stores them in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				dst[i+63:i] := addr[i+63:i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32logather_epi64'.
-// Requires KNCNI.
-func M512MaskI32logatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(m512MaskI32logatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
-}
-
-func m512MaskI32logatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
-
-
-// M512I32logatherPd: Loads 8 double-precision (64-bit) floating-point elements
-// stored at memory locations starting at location 'mv' at packed 32-bit
-// integer indices stored in the lower half of 'index' scaled by 'scale' them
-// in 'dst'. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			addr := MEM[mv + index[j] * scale]
-//			dst[i+63:i] := addr[i+63:i]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32logather_pd'.
-// Requires KNCNI.
-func M512I32logatherPd(index x86.M512i, mv uintptr, scale int) x86.M512d {
-	return x86.M512d(m512I32logatherPd([64]byte(index), uintptr(mv), scale))
-}
-
-func m512I32logatherPd(index [64]byte, mv uintptr, scale int) [8]float64
-
-
-// M512MaskI32logatherPd: Loads 8 double-precision (64-bit) floating-point
-// elements from memory starting at location 'mv' at packed 32-bit integer
-// indices stored in the lower half of 'index' scaled by 'scale' into 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				dst[i+63:i] := addr[i+63:i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32logather_pd'.
-// Requires KNCNI.
-func M512MaskI32logatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512d {
-	return x86.M512d(m512MaskI32logatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), scale))
-}
-
-func m512MaskI32logatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, scale int) [8]float64
-
-
-// M512I32loscatterEpi64: Stores 8 packed 64-bit integer elements located in
-// 'v1' and stores them in memory locations starting at location 'mv' at packed
-// 32-bit integer indices stored in 'index' scaled by 'scale'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			addr[i+63:i] := v1[k+63:j]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32loscatter_epi64'.
-// Requires KNCNI.
-func M512I32loscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, scale int)  {
-	m512I32loscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
-}
-
-func m512I32loscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
-
-
-// M512MaskI32loscatterEpi64: Stores 8 packed 64-bit integer elements located
-// in 'v1' and stores them in memory locations starting at location 'mv' at
-// packed 32-bit integer indices stored in 'index' scaled by 'scale' using
-// writemask 'k' (elements whose corresponding mask bit is not set are not
-// written to memory). 
-//
-//		FOR j := 0 to 7
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				addr[i+63:i] := v1[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32loscatter_epi64'.
-// Requires KNCNI.
-func M512MaskI32loscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, scale int)  {
-	m512MaskI32loscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
-}
-
-func m512MaskI32loscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
-
-
-// M512I32loscatterPd: Stores 8 packed double-precision (64-bit) floating-point
-// elements in 'v1' and to memory locations starting at location 'mv' at packed
-// 32-bit integer indices stored in 'index' scaled by 'scale'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			addr[i+63:i] := v1[k+63:j]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32loscatter_pd'.
-// Requires KNCNI.
-func M512I32loscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, scale int)  {
-	m512I32loscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), scale)
-}
-
-func m512I32loscatterPd(mv uintptr, index [64]byte, v1 [8]float64, scale int) 
-
-
-// M512MaskI32loscatterPd: Stores 8 packed double-precision (64-bit)
-// floating-point elements in 'v1' to memory locations starting at location
-// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'.
-// Only those elements whose corresponding mask bit is set in writemask 'k' are
-// written to memory. 
-//
-//		FOR j := 0 to 7
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				i := j*64
-//				addr[i+63:i] := v1[k+63:j]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32loscatter_pd'.
-// Requires KNCNI.
-func M512MaskI32loscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, scale int)  {
-	m512MaskI32loscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), scale)
-}
-
-func m512MaskI32loscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, scale int) 
-
-
-// M512I32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 32-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_i32scatter_epi32'.
-// Requires KNCNI.
-func M512I32scatterEpi32(base_addr uintptr, vindex x86.M512i, a x86.M512i, scale int)  {
-	m512I32scatterEpi32(uintptr(base_addr), [64]byte(vindex), [64]byte(a), scale)
-}
-
-func m512I32scatterEpi32(base_addr uintptr, vindex [64]byte, a [64]byte, scale int) 
-
-
-// M512MaskI32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
-// 32-bit indices. 32-bit elements are stored at addresses starting at
-// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
-// scaled by the factor in 'scale') subject to mask 'k' (elements are not
-// stored when the corresponding mask bit is not set). 'scale' should be 1, 2,
-// 4 or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:16] := 0
-//
-// Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_mask_i32scatter_epi32'.
-// Requires KNCNI.
-func M512MaskI32scatterEpi32(base_addr uintptr, k x86.Mmask16, vindex x86.M512i, a x86.M512i, scale int)  {
-	m512MaskI32scatterEpi32(uintptr(base_addr), uint16(k), [64]byte(vindex), [64]byte(a), scale)
-}
-
-func m512MaskI32scatterEpi32(base_addr uintptr, k uint16, vindex [64]byte, a [64]byte, scale int) 
-
-
-// M512I32scatterPs: Scatter single-precision (32-bit) floating-point elements
-// from 'a' into memory using 32-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
-// 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_i32scatter_ps'.
-// Requires KNCNI.
-func M512I32scatterPs(base_addr uintptr, vindex x86.M512i, a x86.M512, scale int)  {
-	m512I32scatterPs(uintptr(base_addr), [64]byte(vindex), [16]float32(a), scale)
-}
-
-func m512I32scatterPs(base_addr uintptr, vindex [64]byte, a [16]float32, scale int) 
-
-
-// M512MaskI32scatterPs: Scatter single-precision (32-bit) floating-point
-// elements from 'a' into memory using 32-bit indices. 32-bit elements are
-// stored at addresses starting at 'base_addr' and offset by each 32-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale') subject
-// to mask 'k' (elements are not stored when the corresponding mask bit is not
-// set). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[base_addr + SignExtend(vindex[i+31:i])*scale] := a[i+31:i]
-//				k[j] := 0
-//			FI
-//		ENDFOR
-//		k[MAX:16] := 0
-//
-// Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_mask_i32scatter_ps'.
-// Requires KNCNI.
-func M512MaskI32scatterPs(base_addr uintptr, k x86.Mmask16, vindex x86.M512i, a x86.M512, scale int)  {
-	m512MaskI32scatterPs(uintptr(base_addr), uint16(k), [64]byte(vindex), [16]float32(a), scale)
-}
-
-func m512MaskI32scatterPs(base_addr uintptr, k uint16, vindex [64]byte, a [16]float32, scale int) 
-
-
-// M512I64extgatherEpi32lo: Up-converts 8 single-precision (32-bit) memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale' using 'conv' to 32-bit integer elements and
-// stores them in 'dst'. 'hint' indicates to the processor whether the data is
-// non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE conv OF
-//			_MM_UPCONV_EPI32_NONE:
-//				dst[i+31:i] := addr[i+31:i]
-//			_MM_UPCONV_EPI32_UINT8:
-//				n := j*8
-//				dst[i+31:i] := UInt8ToInt32(addr[n+7:n])
-//			_MM_UPCONV_EPI32_SINT8:
-//				n := j*8
-//				dst[i+31:i] := SInt8ToInt32(addr[n+7:n])
-//			_MM_UPCONV_EPI32_UINT16:
-//				n := j*16
-//				dst[i+31:i] := UInt16ToInt32(addr[n+15:n])
-//			_MM_UPCONV_EPI32_SINT16:
-//				n := j*16
-//				dst[i+31:i] := SInt16ToInt32(addr[n+15:n])
-//			ESAC
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extgather_epi32lo'.
-// Requires KNCNI.
-func M512I64extgatherEpi32lo(index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512I64extgatherEpi32lo([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I64extgatherEpi32lo(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
-
-
-// M512MaskI64extgatherEpi32lo: Up-converts 8 single-precision (32-bit) memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale' using 'conv' to 32-bit integer elements and
-// stores them in 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'hint' indicates to the
-// processor whether the data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_UPCONV_EPI32_NONE:
-//					dst[i+31:i] := addr[i+31:i]
-//				_MM_UPCONV_EPI32_UINT8:
-//					n := j*8
-//					dst[i+31:i] := UInt8ToInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_SINT8:
-//					n := j*8
-//					dst[i+31:i] := SInt8ToInt32(addr[n+7:n])
-//				_MM_UPCONV_EPI32_UINT16:
-//					n := j*16
-//					dst[i+31:i] := UInt16ToInt32(addr[n+15:n])
-//				_MM_UPCONV_EPI32_SINT16:
-//					n := j*16
-//					dst[i+31:i] := SInt16ToInt32(addr[n+15:n])
-//				ESAC
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_epi32lo'.
-// Requires KNCNI.
-func M512MaskI64extgatherEpi32lo(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512MaskI64extgatherEpi32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI64extgatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
-
-
-// M512I64extgatherEpi64: Up-converts 8 double-precision (64-bit) memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale' using 'conv' to 64-bit integer elements and
-// stores them in 'dst'. 'hint' indicates to the processor whether the load is
-// non-temporal. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			addr := MEM[mv + index[j] * scale]
-//			CASE conv OF
-//			_MM_UPCONV_EPI64_NONE: dst[i+63:i] := addr[i+63:i]
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extgather_epi64'.
-// Requires KNCNI.
-func M512I64extgatherEpi64(index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512I64extgatherEpi64([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I64extgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
-
-
-// M512MaskI64extgatherEpi64: Up-converts 8 double-precision (64-bit) memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale' using 'conv' to 64-bit integer elements and
-// stores them in 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'hint' indicates to the
-// processor whether the load is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				CASE conv OF
-//				_MM_UPCONV_EPI64_NONE: dst[i+63:i] := addr[i+63:i]
-//				ESAC
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_epi64'.
-// Requires KNCNI.
-func M512MaskI64extgatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(m512MaskI64extgatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI64extgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
-
-
-// M512I64extgatherPd: Up-converts 8 double-precision (64-bit) floating-point
-// elements stored in memory starting at location 'mv' at packed 64-bit integer
-// indices stored in 'index' scaled by 'scale' using 'conv' to 64-bit
-// floating-point elements and stores them in 'dst'. 'hint' indicates to the
-// processor whether the data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_UPCONV_PD_NONE: dst[i+63:i] := addr[i+63:i]
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extgather_pd'.
-// Requires KNCNI.
-func M512I64extgatherPd(index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(m512I64extgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I64extgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
-
-
-// M512MaskI64extgatherPd: Up-converts 8 double-precision (64-bit)
-// floating-point elements stored in memory starting at location 'mv' at packed
-// 64-bit integer indices stored in 'index' scaled by 'scale' using 'conv' to
-// 64-bit floating-point elements and stores them in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set).
-// 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			IF k[j]
-//				CASE conv OF
-//				_MM_UPCONV_PD_NONE: dst[i+63:i] := addr[i+63:i]
-//				ESAC
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_pd'.
-// Requires KNCNI.
-func M512MaskI64extgatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(m512MaskI64extgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI64extgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
-
-
-// M512I64extgatherPslo: Up-converts 8 memory locations starting at location
-// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'
-// using 'conv' to single-precision (32-bit) floating-point elements and stores
-// them in the lower half of 'dst'. 'hint' indicates to the processor whether
-// the load is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE conv OF
-//			_MM_UPCONV_PS_NONE:
-//				dst[i+31:i] := addr[i+31:i]
-//			_MM_UPCONV_PS_FLOAT16:
-//				n := j*16
-//				dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//			_MM_UPCONV_PS_UINT8:
-//				n := j*8
-//				dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//			_MM_UPCONV_PS_SINT8:
-//				n := j*8
-//				dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//			_MM_UPCONV_PS_UINT16:
-//				n := j*16
-//				dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//			_MM_UPCONV_PS_SINT16:
-//				n := j*16
-//				dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//			ESAC
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extgather_pslo'.
-// Requires KNCNI.
-func M512I64extgatherPslo(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(m512I64extgatherPslo([64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512I64extgatherPslo(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
-
-
-// M512MaskI64extgatherPslo: Up-converts 8 memory locations starting at
-// location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
-// 'scale' using 'conv' to single-precision (32-bit) floating-point elements
-// and stores them in the lower half of 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 'hint'
-// indicates to the processor whether the load is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_UPCONV_PS_NONE:
-//					dst[i+31:i] := addr[i+31:i]
-//				_MM_UPCONV_PS_FLOAT16:
-//					n := j*16
-//					dst[i+31:i] := Float16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_UINT8:
-//					n := j*8
-//					dst[i+31:i] := UInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_SINT8:
-//					n := j*8
-//					dst[i+31:i] := SInt8ToFloat32(addr[n+7:n])
-//				_MM_UPCONV_PS_UINT16:
-//					n := j*16
-//					dst[i+31:i] := UInt16ToFloat32(addr[n+15:n])
-//				_MM_UPCONV_PS_SINT16:
-//					n := j*16
-//					dst[i+31:i] := SInt16ToFloat32(addr[n+15:n])
-//				ESAC
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_pslo'.
-// Requires KNCNI.
-func M512MaskI64extgatherPslo(src x86.M512, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(m512MaskI64extgatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
-}
-
-func m512MaskI64extgatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
-
-
-// M512I64extscatterEpi32lo: Down-converts the low 8 packed 32-bit integer
-// elements in 'v1' using 'conv' and stores them in memory locations starting
-// at location 'mv' at packed 64-bit integer indices stored in 'index' scaled
-// by 'scale'. 'hint' indicates to the processor whether the data is
-// non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_EPI32_NONE:
-//				addr[i+31:i] := v1[i+31:i]
-//			_MM_DOWNCONV_EPI32_UINT8:
-//				n := j*8
-//				addr[n+7:n] := UInt32ToUInt8(v1[i+31:i])
-//			_MM_DOWNCONV_EPI32_SINT8:
-//				n := j*8
-//				addr[n+7:n] := SInt32ToSInt8(v1[i+31:i])
-//			_MM_DOWNCONV_EPI32_UINT16:
-//				n := j*16
-//				addr[n+15:n] := UInt32ToUInt16(v1[i+31:i])
-//			_MM_DOWNCONV_EPI32_SINT16:
-//				n := j*16
-//				addr[n+15:n] := SInt32ToSInt16(v1[n+15:n])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extscatter_epi32lo'.
-// Requires KNCNI.
-func M512I64extscatterEpi32lo(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	m512I64extscatterEpi32lo(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512I64extscatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
-
-
-// M512MaskI64extscatterEpi32lo: Down-converts the low 8 packed 32-bit integer
-// elements in 'v1' using 'conv' and stores them in memory locations starting
-// at location 'mv' at packed 64-bit integer indices stored in 'index' scaled
-// by 'scale'. Elements are written to memory using writemask 'k' (elements are
-// only written when the corresponding mask bit is set; otherwise, the memory
-// location is left unchanged). 'hint' indicates to the processor whether the
-// data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			IF k[j]
-//				CASE conv OF
-//				_MM_DOWNCONV_EPI32_NONE:
-//					addr[i+31:i] := v1[i+31:i]
-//				_MM_DOWNCONV_EPI32_UINT8:
-//					n := j*8
-//					addr[n+7:n] := UInt32ToUInt8(v1[i+31:i])
-//				_MM_DOWNCONV_EPI32_SINT8:
-//					n := j*8
-//					addr[n+7:n] := SInt32ToSInt8(v1[i+31:i])
-//				_MM_DOWNCONV_EPI32_UINT16:
-//					n := j*16
-//					addr[n+15:n] := UInt32ToUInt16(v1[i+31:i])
-//				_MM_DOWNCONV_EPI32_SINT16:
-//					n := j*16
-//					addr[n+15:n] := SInt32ToSInt16(v1[n+15:n])
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_epi32lo'.
-// Requires KNCNI.
-func M512MaskI64extscatterEpi32lo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	m512MaskI64extscatterEpi32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512MaskI64extscatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
-
-
-// M512I64extscatterEpi64: Down-converts 8 packed 64-bit integer elements in
-// 'v1' using 'conv' and stores them in memory locations starting at location
-// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'.
-// 'hint' indicates to the processor whether the load is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_EPI64_NONE: addr[i+63:i] := v1[i+63:i]
-//			ESAC
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extscatter_epi64'.
-// Requires KNCNI.
-func M512I64extscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	m512I64extscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512I64extscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
-
-
-// M512MaskI64extscatterEpi64: Down-converts 8 packed 64-bit integer elements
-// in 'v1' using 'conv' and stores them in memory locations starting at
-// location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
-// 'scale'. Only those elements whose corresponding mask bit is set in
-// writemask 'k' are written to memory. 
-//
-//		FOR j := 0 to 7
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				i := j*64
-//				CASE conv OF
-//				_MM_DOWNCONV_EPI64_NONE: addr[i+63:i] := v1[i+63:i]
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_epi64'.
-// Requires KNCNI.
-func M512MaskI64extscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	m512MaskI64extscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
-}
-
-func m512MaskI64extscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
-
-
-// M512I64extscatterPd: Down-converts 8 packed double-precision (64-bit)
-// floating-point elements in 'v1' using 'conv' and stores them in memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale'. 'hint' indicates to the processor whether the
-// data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			CASE conv OF
-//			_MM_DOWNCONV_EPI64_NONE:
-//				addr[i+63:i] := v1[i+63:i]
-//			ESAC
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extscatter_pd'.
-// Requires KNCNI.
-func M512I64extscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	m512I64extscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
-}
-
-func m512I64extscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
-
-
-// M512MaskI64extscatterPd: Down-converts 8 packed double-precision (64-bit)
-// floating-point elements in 'v1' using 'conv' and stores them in memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale'. Elements are written to memory using writemask
-// 'k' (elements are not stored to memory when the corresponding mask bit is
-// not set; the memory location is left unchagned). 'hint' indicates to the
-// processor whether the data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*64
-//			IF k[j]
-//				CASE conv OF
-//				_MM_DOWNCONV_EPI64_NONE:
-//					addr[i+63:i] := v1[i+63:i]
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_pd'.
-// Requires KNCNI.
-func M512MaskI64extscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	m512MaskI64extscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
-}
-
-func m512MaskI64extscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
-
-
-// M512I64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
-// floating-point elements in 'v1' using 'conv' and stores them in memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale'. 'hint' indicates to the processor whether the
-// data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE conv OF
-//			_MM_DOWNCONV_PS_NONE:
-//				addr[i+31:i] := v1[i+31:i]
-//			_MM_DOWNCONV_PS_FLOAT16:
-//				n := j*16
-//				addr[n+15:n] := Float32ToFloat16(v1[i+31:i])
-//			_MM_DOWNCONV_PS_UINT8:
-//				n := j*8
-//				addr[n+7:n] := Float32ToUInt8(v1[i+31:i])
-//			_MM_DOWNCONV_PS_SINT8:
-//				n := j*8
-//				addr[n+7:n] := Float32ToSInt8(v1[i+31:i])
-//			_MM_DOWNCONV_PS_UINT16:
-//				n := j*16
-//				addr[n+15:n] := Float32ToUInt16(v1[i+31:i])
-//			_MM_DOWNCONV_PS_SINT16:
-//				n := j*16
-//				addr[n+15:n] := Float32ToSInt16(v1[i+31:i])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64extscatter_pslo'.
-// Requires KNCNI.
-func M512I64extscatterPslo(mv uintptr, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	m512I64extscatterPslo(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale, hint)
-}
-
-func m512I64extscatterPslo(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
-
-
-// M512MaskI64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
-// floating-point elements in 'v1' using 'conv' and stores them in memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale'. Elements are only written when the
-// corresponding mask bit is set in 'k'; otherwise, elements are unchanged in
-// memory. 'hint' indicates to the processor whether the data is non-temporal. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			IF k[j]
-//				CASE conv OF
-//				_MM_DOWNCONV_PS_NONE:
-//					addr[i+31:i] := v[i+31:i]
-//				_MM_DOWNCONV_PS_FLOAT16:
-//					n := j*16
-//					addr[n+15:n] := Float32ToFloat16(v1[i+31:i])
-//				_MM_DOWNCONV_PS_UINT8:
-//					n := j*8
-//					addr[n+7:n] := Float32ToUInt8(v1[i+31:i])
-//				_MM_DOWNCONV_PS_SINT8:
-//					n := j*8
-//					addr[n+7:n] := Float32ToSInt8(v1[i+31:i])
-//				_MM_DOWNCONV_PS_UINT16:
-//					n := j*16
-//					addr[n+15:n] := Float32ToUInt16(v1[i+31:i])
-//				_MM_DOWNCONV_PS_SINT16:
-//					n := j*16
-//					addr[n+15:n] := Float32ToSInt16(v1[i+31:i])
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_pslo'.
-// Requires KNCNI.
-func M512MaskI64extscatterPslo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	m512MaskI64extscatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
-}
-
-func m512MaskI64extscatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
-
-
-// M512I64gatherEpi32lo: Loads 8 32-bit integer memory locations starting at
-// location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
-// 'scale' to 'dst'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			dst[i+31:i] := addr[i+31:i]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64gather_epi32lo'.
-// Requires KNCNI.
-func M512I64gatherEpi32lo(index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(m512I64gatherEpi32lo([64]byte(index), uintptr(mv), scale))
-}
-
-func m512I64gatherEpi32lo(index [64]byte, mv uintptr, scale int) [64]byte
-
-
-// M512MaskI64gatherEpi32lo: Loads 8 32-bit integer memory locations starting
-// at location 'mv' at packed 64-bit integer indices stored in 'index' scaled
-// by 'scale' to 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				dst[i+31:i] := addr[i+31:i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64gather_epi32lo'.
-// Requires KNCNI.
-func M512MaskI64gatherEpi32lo(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(m512MaskI64gatherEpi32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
-}
-
-func m512MaskI64gatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
-
-
-// M512I64gatherPslo: Loads 8 single-precision (32-bit) floating-point memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale' to 'dst'. 
-//
-//		FOR j := 0 to 7
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			dst[i+31:i] := addr[i+31:i]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64gather_pslo'.
-// Requires KNCNI.
-func M512I64gatherPslo(index x86.M512i, mv uintptr, scale int) x86.M512 {
-	return x86.M512(m512I64gatherPslo([64]byte(index), uintptr(mv), scale))
-}
-
-func m512I64gatherPslo(index [64]byte, mv uintptr, scale int) [16]float32
-
-
-// M512MaskI64gatherPslo: Loads 8 single-precision (32-bit) floating-point
-// memory locations starting at location 'mv' at packed 64-bit integer indices
-// stored in 'index' scaled by 'scale' to 'dst' using writemask 'k' (elements
-// are copied from 'src' when the corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				dst[i+31:i] := addr[i+31:i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64gather_pslo'.
-// Requires KNCNI.
-func M512MaskI64gatherPslo(src x86.M512, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512 {
-	return x86.M512(m512MaskI64gatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), scale))
-}
-
-func m512MaskI64gatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, scale int) [16]float32
-
-
-// M512I64scatterEpi32lo: Stores 8 packed 32-bit integer elements in 'v1' in
-// memory locations starting at location 'mv' at packed 64-bit integer indices
-// stored in 'index' scaled by 'scale'. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			addr := MEM[mv + index[j] * scale]
-//			addr[i+31:i] := v1[i+31:i]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64scatter_epi32lo'.
-// Requires KNCNI.
-func M512I64scatterEpi32lo(mv uintptr, index x86.M512i, v1 x86.M512i, scale int)  {
-	m512I64scatterEpi32lo(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
-}
-
-func m512I64scatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
-
-
-// M512MaskI64scatterEpi32lo: Stores 8 packed 32-bit integer elements in 'v1'
-// in memory locations starting at location 'mv' at packed 64-bit integer
-// indices stored in 'index' scaled by 'scale' using writemask 'k' (elements
-// are only written to memory when the corresponding mask bit is set). 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				addr[i+31:i] := v1[i+31:i]
-//			FI	
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64scatter_epi32lo'.
-// Requires KNCNI.
-func M512MaskI64scatterEpi32lo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, scale int)  {
-	m512MaskI64scatterEpi32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
-}
-
-func m512MaskI64scatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
-
-
-// M512I64scatterPslo: Stores 8 packed single-precision (32-bit) floating-point
-// elements in 'v' in memory locations starting at location 'mv' at packed
-// 64-bit integer indices stored in 'index' scaled by 'scale'. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			addr := MEM[mv + index[j] * scale]
-//			addr[i+31:i] := v[i+31:i]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_i64scatter_pslo'.
-// Requires KNCNI.
-func M512I64scatterPslo(mv uintptr, index x86.M512i, v x86.M512, scale int)  {
-	m512I64scatterPslo(uintptr(mv), [64]byte(index), [16]float32(v), scale)
-}
-
-func m512I64scatterPslo(mv uintptr, index [64]byte, v [16]float32, scale int) 
-
-
-// M512MaskI64scatterPslo: Stores 8 packed single-precision (32-bit)
-// floating-point elements in 'v1' in memory locations starting at location
-// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'
-// using writemask 'k' (elements are only written to memory when the
-// corresponding mask bit is set). 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				addr[i+31:i] := v1[i+31:i]
-//			FI	
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_mm512_mask_i64scatter_pslo'.
-// Requires KNCNI.
-func M512MaskI64scatterPslo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512, scale int)  {
-	m512MaskI64scatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), scale)
-}
-
-func m512MaskI64scatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, scale int) 
+// Skipped: _mm512_i32extgather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32extgather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32extgather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32extgather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32extscatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32extscatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32extscatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32extscatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32gather_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32gather_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32loextgather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32loextgather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32loextgather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32loextgather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32loextscatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32loextscatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32loextscatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32loextscatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32logather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32logather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32logather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32logather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32loscatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32loscatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32loscatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32loscatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32scatter_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_i32scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i32scatter_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extgather_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extgather_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extgather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extgather_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extgather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extgather_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extgather_pslo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extgather_pslo. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extscatter_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extscatter_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extscatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extscatter_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extscatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extscatter_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64extscatter_pslo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64extscatter_pslo. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64gather_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64gather_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64gather_pslo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64gather_pslo. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64scatter_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64scatter_epi32lo. Contains pointer parameter.
+
+
+// Skipped: _mm512_i64scatter_pslo. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_i64scatter_pslo. Contains pointer parameter.
 
 
 // M512Int2mask: Converts integer 'mask' into bitmask, storing the result in
@@ -10211,741 +6457,79 @@ func M512Kxor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
 func m512Kxor(a uint16, b uint16) uint16
 
 
-// M512LoadEpi32: Load 512-bits (composed of 16 packed 32-bit integers) from
-// memory into 'dst'. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_load_epi32'.
-// Requires KNCNI.
-func M512LoadEpi32(mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512LoadEpi32(uintptr(mem_addr)))
-}
-
-func m512LoadEpi32(mem_addr uintptr) [64]byte
-
-
-// M512MaskLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set).
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_load_epi32'.
-// Requires KNCNI.
-func M512MaskLoadEpi32(src x86.M512i, k x86.Mmask16, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoadEpi32([64]byte(src), uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoadEpi32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
-
-
-// M512LoadEpi64: Load 512-bits (composed of 8 packed 64-bit integers) from
-// memory into 'dst'. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_load_epi64'.
-// Requires KNCNI.
-func M512LoadEpi64(mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512LoadEpi64(uintptr(mem_addr)))
-}
-
-func m512LoadEpi64(mem_addr uintptr) [64]byte
-
-
-// M512MaskLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_load_epi64'.
-// Requires KNCNI.
-func M512MaskLoadEpi64(src x86.M512i, k x86.Mmask8, mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoadEpi64([64]byte(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoadEpi64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
-
-
-// M512LoadPd: Load 512-bits (composed of 8 packed double-precision (64-bit)
-// floating-point elements) from memory into 'dst'. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm512_load_pd'.
-// Requires KNCNI.
-func M512LoadPd(mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512LoadPd(uintptr(mem_addr)))
-}
-
-func m512LoadPd(mem_addr uintptr) [8]float64
-
-
-// M512MaskLoadPd: Load packed double-precision (64-bit) floating-point
-// elements from memory into 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 'mem_addr' must be
-// aligned on a 64-byte boundary or a general-protection exception may be
-// generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm512_mask_load_pd'.
-// Requires KNCNI.
-func M512MaskLoadPd(src x86.M512d, k x86.Mmask8, mem_addr uintptr) x86.M512d {
-	return x86.M512d(m512MaskLoadPd([8]float64(src), uint8(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoadPd(src [8]float64, k uint8, mem_addr uintptr) [8]float64
-
-
-// M512LoadPs: Load 512-bits (composed of 16 packed single-precision (32-bit)
-// floating-point elements) from memory into 'dst'. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm512_load_ps'.
-// Requires KNCNI.
-func M512LoadPs(mem_addr uintptr) x86.M512 {
-	return x86.M512(m512LoadPs(uintptr(mem_addr)))
-}
-
-func m512LoadPs(mem_addr uintptr) [16]float32
-
-
-// M512MaskLoadPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 'mem_addr' must be
-// aligned on a 64-byte boundary or a general-protection exception may be
-// generated. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm512_mask_load_ps'.
-// Requires KNCNI.
-func M512MaskLoadPs(src x86.M512, k x86.Mmask16, mem_addr uintptr) x86.M512 {
-	return x86.M512(m512MaskLoadPs([16]float32(src), uint16(k), uintptr(mem_addr)))
-}
-
-func m512MaskLoadPs(src [16]float32, k uint16, mem_addr uintptr) [16]float32
-
-
-// M512LoadSi512: Load 512-bits of integer data from memory into 'dst'. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[511:0] := MEM[mem_addr+511:mem_addr]
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_load_si512'.
-// Requires KNCNI.
-func M512LoadSi512(mem_addr uintptr) x86.M512i {
-	return x86.M512i(m512LoadSi512(uintptr(mem_addr)))
-}
-
-func m512LoadSi512(mem_addr uintptr) [64]byte
-
-
-// M512LoadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt-64 and
-// expands them into packed 32-bit integers in 'dst'. The initial values of
-// 'dst' are copied from 'src'. Only those converted doublewords that occur at
-// or after the first 64-byte-aligned address following (mt-64) are loaded.
-// Elements in the resulting vector that do not map to those doublewords are
-// taken from 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*4 % 64) == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*32
-//				tmp := MEM[addr + loadOffset*4]
-//				dst[i+31:i] := tmp[i+31:i]
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_loadunpackhi_epi32'.
-// Requires KNCNI.
-func M512LoadunpackhiEpi32(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(m512LoadunpackhiEpi32([64]byte(src), uintptr(mt)))
-}
-
-func m512LoadunpackhiEpi32(src [64]byte, mt uintptr) [64]byte
-
-
-// M512MaskLoadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt-64 and
-// expands them into packed 32-bit integers in 'dst'. The initial values of
-// 'dst' are copied from 'src'. Only those converted doublewords that occur at
-// or after the first 64-byte-aligned address following (mt-64) are loaded.
-// Elements in the resulting vector that do not map to those doublewords are
-// taken from 'src'. Elements are loaded from memory according to element
-// selector 'k' (elements are skipped when the corresponding mask bit is not
-// set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*4 % 64) == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*32
-//					tmp := MEM[addr + loadOffset*4]
-//					dst[i+31:i] := tmp[i+31:i]
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_mask_loadunpackhi_epi32'.
-// Requires KNCNI.
-func M512MaskLoadunpackhiEpi32(src x86.M512i, k x86.Mmask16, mt uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoadunpackhiEpi32([64]byte(src), uint16(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackhiEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
-
-
-// M512LoadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt-64 and expands them
-// into packed 64-bit integers in 'dst'. The initial values of 'dst' are copied
-// from 'src'. Only those converted quadwords that occur at or after the first
-// 64-byte-aligned address following (mt-64) are loaded. Elements in the
-// resulting vector that do not map to those quadwords are taken from 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*8) == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*64
-//				tmp := MEM[addr + loadOffset*8]
-//				dst[i+63:i] := tmp[i+63:i]
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_loadunpackhi_epi64'.
-// Requires KNCNI.
-func M512LoadunpackhiEpi64(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(m512LoadunpackhiEpi64([64]byte(src), uintptr(mt)))
-}
-
-func m512LoadunpackhiEpi64(src [64]byte, mt uintptr) [64]byte
-
-
-// M512MaskLoadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt-64 and expands them
-// into packed 64-bit integers in 'dst'. The initial values of 'dst' are copied
-// from 'src'. Only those converted quadwords that occur at or after the first
-// 64-byte-aligned address following (mt-64) are loaded. Elements in the
-// resulting vector that do not map to those quadwords are taken from 'src'.
-// Elements are loaded from memory according to element selector 'k' (elements
-// are skipped when the corresponding mask bit is not set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*8) == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*64
-//					tmp := MEM[addr + loadOffset*8]
-//					dst[i+63:i] := tmp[i+63:i]
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_mask_loadunpackhi_epi64'.
-// Requires KNCNI.
-func M512MaskLoadunpackhiEpi64(src x86.M512i, k x86.Mmask8, mt uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoadunpackhiEpi64([64]byte(src), uint8(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackhiEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
-
-
-// M512LoadunpackhiPd: Loads the high-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt-64 and expands them into
-// packed double-precision (64-bit) floating-point values in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted quadwords that
-// occur at or after the first 64-byte-aligned address following (mt-64) are
-// loaded. Elements in the resulting vector that do not map to those quadwords
-// are taken from 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*8) % 64 == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*64
-//				tmp := MEM[addr + loadOffset*8]
-//				dst[i+63:i] := tmp[i+63:i]
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_loadunpackhi_pd'.
-// Requires KNCNI.
-func M512LoadunpackhiPd(src x86.M512d, mt uintptr) x86.M512d {
-	return x86.M512d(m512LoadunpackhiPd([8]float64(src), uintptr(mt)))
-}
-
-func m512LoadunpackhiPd(src [8]float64, mt uintptr) [8]float64
-
-
-// M512MaskLoadunpackhiPd: Loads the high-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt-64 and expands them
-// into packed double-precision (64-bit) floating-point values in 'dst'. The
-// initial values of 'dst' are copied from 'src'. Only those converted
-// quadwords that occur at or after the first 64-byte-aligned address following
-// (mt-64) are loaded. Elements in the resulting vector that do not map to
-// those quadwords are taken from 'src'. Elements are loaded from memory
-// according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*8) % 64 == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*64
-//					tmp := MEM[addr + loadOffset*8]
-//					dst[i+63:i] := tmp[i+63:i]
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_mask_loadunpackhi_pd'.
-// Requires KNCNI.
-func M512MaskLoadunpackhiPd(src x86.M512d, k x86.Mmask8, mt uintptr) x86.M512d {
-	return x86.M512d(m512MaskLoadunpackhiPd([8]float64(src), uint8(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackhiPd(src [8]float64, k uint8, mt uintptr) [8]float64
-
-
-// M512LoadunpackhiPs: Loads the high-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt-64 and
-// expands them into packed single-precision (32-bit) floating-point elements
-// in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
-// converted quadwords that occur at or after the first 64-byte-aligned address
-// following (mt-64) are loaded. Elements in the resulting vector that do not
-// map to those quadwords are taken from 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF (addr + (loadOffset + 1)*4 % 64) == 0
-//					foundNext64BytesBoundary := true
-//				FI
-//			ELSE
-//				i := j*32
-//				tmp := MEM[addr + loadOffset*4]
-//				dst[i+31:i] := tmp[i+31:i]
-//			FI
-//			loadOffset := loadOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_loadunpackhi_ps'.
-// Requires KNCNI.
-func M512LoadunpackhiPs(src x86.M512, mt uintptr) x86.M512 {
-	return x86.M512(m512LoadunpackhiPs([16]float32(src), uintptr(mt)))
-}
-
-func m512LoadunpackhiPs(src [16]float32, mt uintptr) [16]float32
-
-
-// M512MaskLoadunpackhiPs: Loads the high-64-byte-aligned portion of the
-// doubleword stream starting at element-aligned address mt-64 and expands them
-// into packed single-precision (32-bit) floating-point elements in 'dst'. The
-// initial values of 'dst' are copied from 'src'. Only those converted
-// quadwords that occur at or after the first 64-byte-aligned address following
-// (mt-64) are loaded. Elements in the resulting vector that do not map to
-// those quadwords are taken from 'src'. Elements are loaded from memory
-// according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF (addr + (loadOffset + 1)*4 % 64) == 0
-//						foundNext64BytesBoundary := true
-//					FI
-//				ELSE
-//					i := j*32
-//					tmp := MEM[addr + loadOffset*4]
-//					dst[i+31:i] := tmp[i+31:i]
-//				FI
-//				loadOffset := loadOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_mask_loadunpackhi_ps'.
-// Requires KNCNI.
-func M512MaskLoadunpackhiPs(src x86.M512, k x86.Mmask16, mt uintptr) x86.M512 {
-	return x86.M512(m512MaskLoadunpackhiPs([16]float32(src), uint16(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackhiPs(src [16]float32, k uint16, mt uintptr) [16]float32
-
-
-// M512LoadunpackloEpi32: Loads the low-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt and
-// expanded into packed 32-bit integers in 'dst'. The initial values of 'dst'
-// are copied from 'src'. Only those converted doublewords that occur before
-// first 64-byte-aligned address following 'mt' are loaded. Elements in the
-// resulting vector that do not map to those doublewords are taken from 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			tmp := MEM[addr + loadOffset*4]
-//			dst[i+31:i] := tmp[i+31:i]
-//			loadOffset := loadOffset + 1
-//			IF (mt + loadOffset * 4) % 64 == 0
-//				break
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_loadunpacklo_epi32'.
-// Requires KNCNI.
-func M512LoadunpackloEpi32(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(m512LoadunpackloEpi32([64]byte(src), uintptr(mt)))
-}
-
-func m512LoadunpackloEpi32(src [64]byte, mt uintptr) [64]byte
-
-
-// M512MaskLoadunpackloEpi32: Loads the low-64-byte-aligned portion of the
-// byte/word/doubleword stream starting at element-aligned address mt and
-// expands them into packed 32-bit integers in 'dst'. The initial values of
-// 'dst' are copied from 'src'. Only those converted doublewords that occur
-// before first 64-byte-aligned address following 'mt' are loaded. Elements in
-// the resulting vector that do not map to those doublewords are taken from
-// 'src'. Elements are loaded from memory according to element selector 'k'
-// (elements are skipped when the corresponding mask bit is not set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				tmp := MEM[addr + loadOffset*4]
-//				dst[i+31:i] := tmp[i+31:i]
-//				loadOffset := loadOffset + 1
-//				IF (mt + loadOffset * 4) % 64 == 0
-//					break
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_mask_loadunpacklo_epi32'.
-// Requires KNCNI.
-func M512MaskLoadunpackloEpi32(src x86.M512i, k x86.Mmask16, mt uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoadunpackloEpi32([64]byte(src), uint16(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackloEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
-
-
-// M512LoadunpackloEpi64: Loads the low-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt and expands them into packed
-// 64-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
-// Only those converted quad that occur before first 64-byte-aligned address
-// following 'mt' are loaded. Elements in the resulting vector that do not map
-// to those quadwords are taken from 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			tmp := MEM[addr + loadOffset*8]
-//			dst[i+63:i] := tmp[i+63:i]
-//			loadOffset := loadOffset + 1
-//			IF (addr + loadOffset*8 % 64) == 0
-//				break
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_loadunpacklo_epi64'.
-// Requires KNCNI.
-func M512LoadunpackloEpi64(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(m512LoadunpackloEpi64([64]byte(src), uintptr(mt)))
-}
-
-func m512LoadunpackloEpi64(src [64]byte, mt uintptr) [64]byte
-
-
-// M512MaskLoadunpackloEpi64: Loads the low-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt and expands them into
-// packed 64-bit integers in 'dst'. The initial values of 'dst' are copied from
-// 'src'. Only those converted quad that occur before first 64-byte-aligned
-// address following 'mt' are loaded. Elements in the resulting vector that do
-// not map to those quadwords are taken from 'src'. Elements are loaded from
-// memory according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				tmp := MEM[addr + loadOffset*8]
-//				dst[i+63:i] := tmp[i+63:i]
-//				loadOffset := loadOffset + 1
-//				IF (addr + loadOffset*8 % 64) == 0
-//					break
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_mask_loadunpacklo_epi64'.
-// Requires KNCNI.
-func M512MaskLoadunpackloEpi64(src x86.M512i, k x86.Mmask8, mt uintptr) x86.M512i {
-	return x86.M512i(m512MaskLoadunpackloEpi64([64]byte(src), uint8(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackloEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
-
-
-// M512LoadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt and expands them into packed
-// double-precision (64-bit) floating-point elements in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted quad that occur
-// before first 64-byte-aligned address following 'mt' are loaded. Elements in
-// the resulting vector that do not map to those quadwords are taken from
-// 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			tmp := MEM[addr + loadOffset*8]
-//			dst[i+63:i] := tmp[i+63:i]
-//			loadOffset := loadOffset + 1
-//			IF ((addr + 8*loadOffset) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_loadunpacklo_pd'.
-// Requires KNCNI.
-func M512LoadunpackloPd(src x86.M512d, mt uintptr) x86.M512d {
-	return x86.M512d(m512LoadunpackloPd([8]float64(src), uintptr(mt)))
-}
-
-func m512LoadunpackloPd(src [8]float64, mt uintptr) [8]float64
-
-
-// M512MaskLoadunpackloPd: Loads the low-64-byte-aligned portion of the
-// quadword stream starting at element-aligned address mt and expands them into
-// packed double-precision (64-bit) floating-point values in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted quad that occur
-// before first 64-byte-aligned address following 'mt' are loaded. Elements in
-// the resulting vector that do not map to those quadwords are taken from
-// 'src'. Elements are loaded from memory according to element selector 'k'
-// (elements are skipped when the corresponding mask bit is not set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				tmp := MEM[addr + loadOffset*8]
-//				dst[i+63:i] := tmp[i+63:i]
-//				loadOffset := loadOffset + 1
-//				IF ((addr + 8*loadOffset) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_mask_loadunpacklo_pd'.
-// Requires KNCNI.
-func M512MaskLoadunpackloPd(src x86.M512d, k x86.Mmask8, mt uintptr) x86.M512d {
-	return x86.M512d(m512MaskLoadunpackloPd([8]float64(src), uint8(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackloPd(src [8]float64, k uint8, mt uintptr) [8]float64
-
-
-// M512LoadunpackloPs: Loads the low-64-byte-aligned portion of the doubleword
-// stream starting at element-aligned address mt and expanded into packed
-// single-precision (32-bit) floating-point elements in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted doublewords that
-// occur before first 64-byte-aligned address following 'mt' are loaded.
-// Elements in the resulting vector that do not map to those doublewords are
-// taken from 'src'. 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			tmp := MEM[addr + loadOffset*4]
-//			dst[i+31:i] := tmp[i+31:i]
-//			loadOffset := loadOffset + 1
-//			IF (mt + loadOffset * 4) % 64 == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_loadunpacklo_ps'.
-// Requires KNCNI.
-func M512LoadunpackloPs(src x86.M512, mt uintptr) x86.M512 {
-	return x86.M512(m512LoadunpackloPs([16]float32(src), uintptr(mt)))
-}
-
-func m512LoadunpackloPs(src [16]float32, mt uintptr) [16]float32
-
-
-// M512MaskLoadunpackloPs: Loads the low-64-byte-aligned portion of the
-// doubleword stream starting at element-aligned address mt and expanded into
-// packed single-precision (32-bit) floating-point elements in 'dst'. The
-// initial values of 'dst' are copied from 'src'. Only those converted
-// doublewords that occur before first 64-byte-aligned address following 'mt'
-// are loaded. Elements in the resulting vector that do not map to those
-// doublewords are taken from 'src'. Elements are loaded from memory according
-// to element selector 'k' (elements are skipped when the corresponding mask
-// bit is not set). 
-//
-//		dst[511:0] := src[511:0]
-//		loadOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				tmp := MEM[addr + loadOffset*4]
-//				dst[i+31:i] := tmp[i+31:i]
-//				loadOffset := loadOffset + 1
-//				IF (mt + loadOffset * 4) % 64 == 0
-//					break
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_mask_loadunpacklo_ps'.
-// Requires KNCNI.
-func M512MaskLoadunpackloPs(src x86.M512, k x86.Mmask16, mt uintptr) x86.M512 {
-	return x86.M512(m512MaskLoadunpackloPs([16]float32(src), uint16(k), uintptr(mt)))
-}
-
-func m512MaskLoadunpackloPs(src [16]float32, k uint16, mt uintptr) [16]float32
+// Skipped: _mm512_load_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_load_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_load_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_load_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_load_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_load_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_load_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_load_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_load_si512. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpackhi_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpackhi_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpackhi_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpackhi_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpackhi_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpackhi_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpackhi_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpackhi_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpacklo_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpacklo_epi32. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpacklo_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpacklo_epi64. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpacklo_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpacklo_pd. Contains pointer parameter.
+
+
+// Skipped: _mm512_loadunpacklo_ps. Contains pointer parameter.
+
+
+// Skipped: _mm512_mask_loadunpacklo_ps. Contains pointer parameter.
 
 
 // M512Log2Ps: Compute the base-2 logarithm of packed single-precision (32-bit)
@@ -11801,492 +7385,52 @@ func M512OrSi512(a x86.M512i, b x86.M512i) x86.M512i {
 func m512OrSi512(a [64]byte, b [64]byte) [64]byte
 
 
-// M512MaskPackstorehiEpi32: Stores packed 32-bit integer elements of 'v1' into
-// a doubleword stream at a logically mapped starting address (mt-64), storing
-// the high-64-byte elements of that stream (those elements of the stream that
-// map at or after the first 64-byte-aligned address following (m5-64)).
-// Elements are loaded from memory according to element selector 'k' (elements
-// are skipped when the corresponding mask bit is not set). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*4) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*32
-//					MEM[addr + storeOffset*4] := v1[i+31:i]
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_mask_packstorehi_epi32'.
-// Requires KNCNI.
-func M512MaskPackstorehiEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i)  {
-	m512MaskPackstorehiEpi32(uintptr(mt), uint16(k), [64]byte(v1))
-}
-
-func m512MaskPackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte) 
+// Skipped: _mm512_mask_packstorehi_epi32. Contains pointer parameter.
 
 
-// M512PackstorehiEpi32: Stores packed 32-bit integer elements of 'v1' into a
-// doubleword stream at a logically mapped starting address (mt-64), storing
-// the high-64-byte elements of that stream (those elements of the stream that
-// map at or after the first 64-byte-aligned address following (m5-64)). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*4) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*32
-//				MEM[addr + storeOffset*4] := v1[i+31:i]
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_packstorehi_epi32'.
-// Requires KNCNI.
-func M512PackstorehiEpi32(mt uintptr, v1 x86.M512i)  {
-	m512PackstorehiEpi32(uintptr(mt), [64]byte(v1))
-}
-
-func m512PackstorehiEpi32(mt uintptr, v1 [64]byte) 
+// Skipped: _mm512_packstorehi_epi32. Contains pointer parameter.
 
 
-// M512MaskPackstorehiEpi64: Stores packed 64-bit integer elements of 'v1' into
-// a quadword stream at a logically mapped starting address (mt-64), storing
-// the high-64-byte elements of that stream (those elemetns of the stream that
-// map at or after the first 64-byte-aligned address following (m5-64)).
-// Elements are loaded from memory according to element selector 'k' (elements
-// are skipped when the corresponding mask bit is not set). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*8) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*64
-//					MEM[addr + storeOffset*8] := v1[i+63:i]
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_mask_packstorehi_epi64'.
-// Requires KNCNI.
-func M512MaskPackstorehiEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i)  {
-	m512MaskPackstorehiEpi64(uintptr(mt), uint8(k), [64]byte(v1))
-}
-
-func m512MaskPackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte) 
+// Skipped: _mm512_mask_packstorehi_epi64. Contains pointer parameter.
 
 
-// M512PackstorehiEpi64: Stores packed 64-bit integer elements of 'v1' into a
-// quadword stream at a logically mapped starting address (mt-64), storing the
-// high-64-byte elements of that stream (those elemetns of the stream that map
-// at or after the first 64-byte-aligned address following (m5-64)). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*8) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*64
-//				MEM[addr + storeOffset*8] := v1[i+63:i]
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_packstorehi_epi64'.
-// Requires KNCNI.
-func M512PackstorehiEpi64(mt uintptr, v1 x86.M512i)  {
-	m512PackstorehiEpi64(uintptr(mt), [64]byte(v1))
-}
-
-func m512PackstorehiEpi64(mt uintptr, v1 [64]byte) 
+// Skipped: _mm512_packstorehi_epi64. Contains pointer parameter.
 
 
-// M512MaskPackstorehiPd: Stores packed double-precision (64-bit)
-// floating-point elements of 'v1' into a quadword stream at a logically mapped
-// starting address (mt-64), storing the high-64-byte elements of that stream
-// (those elemetns of the stream that map at or after the first 64-byte-aligned
-// address following (m5-64)). Elements are loaded from memory according to
-// element selector 'k' (elements are skipped when the corresponding mask bit
-// is not set). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*8) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*64
-//					MEM[addr + storeOffset*4] := v1[i+63:i]
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_mask_packstorehi_pd'.
-// Requires KNCNI.
-func M512MaskPackstorehiPd(mt uintptr, k x86.Mmask8, v1 x86.M512d)  {
-	m512MaskPackstorehiPd(uintptr(mt), uint8(k), [8]float64(v1))
-}
-
-func m512MaskPackstorehiPd(mt uintptr, k uint8, v1 [8]float64) 
+// Skipped: _mm512_mask_packstorehi_pd. Contains pointer parameter.
 
 
-// M512PackstorehiPd: Stores packed double-precision (64-bit) floating-point
-// elements of 'v1' into a quadword stream at a logically mapped starting
-// address (mt-64), storing the high-64-byte elements of that stream (those
-// elemetns of the stream that map at or after the first 64-byte-aligned
-// address following (m5-64)). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 7
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*8) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*64
-//				MEM[addr + storeOffset*4] := v1[i+63:i]
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_packstorehi_pd'.
-// Requires KNCNI.
-func M512PackstorehiPd(mt uintptr, v1 x86.M512d)  {
-	m512PackstorehiPd(uintptr(mt), [8]float64(v1))
-}
-
-func m512PackstorehiPd(mt uintptr, v1 [8]float64) 
+// Skipped: _mm512_packstorehi_pd. Contains pointer parameter.
 
 
-// M512MaskPackstorehiPs: Stores packed single-precision (32-bit)
-// floating-point elements of 'v1' into a doubleword stream at a logically
-// mapped starting address (mt-64), storing the high-64-byte elements of that
-// stream (those elemetns of the stream that map at or after the first
-// 64-byte-aligned address following (m5-64)). Elements are loaded from memory
-// according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF k[j]
-//				IF foundNext64BytesBoundary == false
-//					IF ((addr + (storeOffset + 1)*4) % 64) == 0
-//						foundNext64BytesBoundary = true
-//					FI
-//				ELSE
-//					i := j*32
-//					MEM[addr + storeOffset*4] := v1[i+31:i]
-//				FI
-//				storeOffset := storeOffset + 1
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_mask_packstorehi_ps'.
-// Requires KNCNI.
-func M512MaskPackstorehiPs(mt uintptr, k x86.Mmask16, v1 x86.M512)  {
-	m512MaskPackstorehiPs(uintptr(mt), uint16(k), [16]float32(v1))
-}
-
-func m512MaskPackstorehiPs(mt uintptr, k uint16, v1 [16]float32) 
+// Skipped: _mm512_mask_packstorehi_ps. Contains pointer parameter.
 
 
-// M512PackstorehiPs: Stores packed single-precision (32-bit) floating-point
-// elements of 'v1' into a doubleword stream at a logically mapped starting
-// address (mt-64), storing the high-64-byte elements of that stream (those
-// elemetns of the stream that map at or after the first 64-byte-aligned
-// address following (m5-64)). 
-//
-//		storeOffset := 0
-//		foundNext64BytesBoundary := false
-//		addr = mt-64
-//		FOR j := 0 to 15
-//			IF foundNext64BytesBoundary == false
-//				IF ((addr + (storeOffset + 1)*4) % 64) == 0
-//					foundNext64BytesBoundary = true
-//				FI
-//			ELSE
-//				i := j*32
-//				MEM[addr + storeOffset*4] := v1[i+31:i]
-//			FI
-//			storeOffset := storeOffset + 1
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_packstorehi_ps'.
-// Requires KNCNI.
-func M512PackstorehiPs(mt uintptr, v1 x86.M512)  {
-	m512PackstorehiPs(uintptr(mt), [16]float32(v1))
-}
-
-func m512PackstorehiPs(mt uintptr, v1 [16]float32) 
+// Skipped: _mm512_packstorehi_ps. Contains pointer parameter.
 
 
-// M512MaskPackstoreloEpi32: Stores packed 32-bit integer elements of 'v1' into
-// a doubleword stream at a logically mapped starting address 'mt', storing the
-// low-64-byte elements of that stream (those elements of the stream that map
-// before the first 64-byte-aligned address follwing 'mt'). Elements are loaded
-// from memory according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			IF k[j]
-//				i := j*32
-//				MEM[addr + storeOffset*4] := v1[i+31:i]
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset*4) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_mask_packstorelo_epi32'.
-// Requires KNCNI.
-func M512MaskPackstoreloEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i)  {
-	m512MaskPackstoreloEpi32(uintptr(mt), uint16(k), [64]byte(v1))
-}
-
-func m512MaskPackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte) 
+// Skipped: _mm512_mask_packstorelo_epi32. Contains pointer parameter.
 
 
-// M512PackstoreloEpi32: Stores packed 32-bit integer elements of 'v1' into a
-// doubleword stream at a logically mapped starting address 'mt', storing the
-// low-64-byte elements of that stream (those elements of the stream that map
-// before the first 64-byte-aligned address follwing 'mt'). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			MEM[addr + storeOffset*4] := v1[i+31:i]
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset*4) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_packstorelo_epi32'.
-// Requires KNCNI.
-func M512PackstoreloEpi32(mt uintptr, v1 x86.M512i)  {
-	m512PackstoreloEpi32(uintptr(mt), [64]byte(v1))
-}
-
-func m512PackstoreloEpi32(mt uintptr, v1 [64]byte) 
+// Skipped: _mm512_packstorelo_epi32. Contains pointer parameter.
 
 
-// M512MaskPackstoreloEpi64: Stores packed 64-bit integer elements of 'v1' into
-// a quadword stream at a logically mapped starting address 'mt', storing the
-// low-64-byte elements of that stream (those elements of the stream that map
-// before the first 64-byte-aligned address follwing 'mt'). Elements are loaded
-// from memory according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			IF k[j]
-//				i := j*64
-//				MEM[addr + storeOffset*8] := v1[i+63:i]
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset*8) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_mask_packstorelo_epi64'.
-// Requires KNCNI.
-func M512MaskPackstoreloEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i)  {
-	m512MaskPackstoreloEpi64(uintptr(mt), uint8(k), [64]byte(v1))
-}
-
-func m512MaskPackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte) 
+// Skipped: _mm512_mask_packstorelo_epi64. Contains pointer parameter.
 
 
-// M512PackstoreloEpi64: Stores packed 64-bit integer elements of 'v1' into a
-// quadword stream at a logically mapped starting address 'mt', storing the
-// low-64-byte elements of that stream (those elements of the stream that map
-// before the first 64-byte-aligned address follwing 'mt'). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			MEM[addr + storeOffset*8] := v1[i+63:i]
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset*8) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_packstorelo_epi64'.
-// Requires KNCNI.
-func M512PackstoreloEpi64(mt uintptr, v1 x86.M512i)  {
-	m512PackstoreloEpi64(uintptr(mt), [64]byte(v1))
-}
-
-func m512PackstoreloEpi64(mt uintptr, v1 [64]byte) 
+// Skipped: _mm512_packstorelo_epi64. Contains pointer parameter.
 
 
-// M512MaskPackstoreloPd: Stores packed double-precision (64-bit)
-// floating-point elements of 'v1' into a quadword stream at a logically mapped
-// starting address 'mt', storing the low-64-byte elements of that stream
-// (those elements of the stream that map before the first 64-byte-aligned
-// address follwing 'mt'). Elements are loaded from memory according to element
-// selector 'k' (elements are skipped when the corresponding mask bit is not
-// set). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			IF k[j]
-//				i := j*64
-//				MEM[addr + storeOffset*8] := v1[i+63:i]
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset*8) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_mask_packstorelo_pd'.
-// Requires KNCNI.
-func M512MaskPackstoreloPd(mt uintptr, k x86.Mmask8, v1 x86.M512d)  {
-	m512MaskPackstoreloPd(uintptr(mt), uint8(k), [8]float64(v1))
-}
-
-func m512MaskPackstoreloPd(mt uintptr, k uint8, v1 [8]float64) 
+// Skipped: _mm512_mask_packstorelo_pd. Contains pointer parameter.
 
 
-// M512PackstoreloPd: Stores packed double-precision (64-bit) floating-point
-// elements of 'v1' into a quadword stream at a logically mapped starting
-// address 'mt', storing the low-64-byte elements of that stream (those
-// elements of the stream that map before the first 64-byte-aligned address
-// follwing 'mt'). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 7
-//			i := j*64
-//			MEM[addr + storeOffset*8] := v1[i+63:i]
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset*8) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_packstorelo_pd'.
-// Requires KNCNI.
-func M512PackstoreloPd(mt uintptr, v1 x86.M512d)  {
-	m512PackstoreloPd(uintptr(mt), [8]float64(v1))
-}
-
-func m512PackstoreloPd(mt uintptr, v1 [8]float64) 
+// Skipped: _mm512_packstorelo_pd. Contains pointer parameter.
 
 
-// M512MaskPackstoreloPs: Stores packed single-precision (32-bit)
-// floating-point elements of 'v1' into a doubleword stream at a logically
-// mapped starting address 'mt', storing the low-64-byte elements of that
-// stream (those elements of the stream that map before the first
-// 64-byte-aligned address follwing 'mt'). Elements are loaded from memory
-// according to element selector 'k' (elements are skipped when the
-// corresponding mask bit is not set). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			IF k[j]
-//				i := j*32
-//				MEM[addr + storeOffset*4] := v1[i+31:i]
-//				storeOffset := storeOffset + 1
-//				IF ((addr + storeOffset*4) % 64) == 0
-//					BREAK
-//				FI
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_mask_packstorelo_ps'.
-// Requires KNCNI.
-func M512MaskPackstoreloPs(mt uintptr, k x86.Mmask16, v1 x86.M512)  {
-	m512MaskPackstoreloPs(uintptr(mt), uint16(k), [16]float32(v1))
-}
-
-func m512MaskPackstoreloPs(mt uintptr, k uint16, v1 [16]float32) 
+// Skipped: _mm512_mask_packstorelo_ps. Contains pointer parameter.
 
 
-// M512PackstoreloPs: Stores packed single-precision (32-bit) floating-point
-// elements of 'v1' into a doubleword stream at a logically mapped starting
-// address 'mt', storing the low-64-byte elements of that stream (those
-// elements of the stream that map before the first 64-byte-aligned address
-// follwing 'mt'). 
-//
-//		storeOffset := 0
-//		addr = mt
-//		FOR j := 0 to 15
-//			i := j*32
-//			MEM[addr + storeOffset*4] := v1[i+31:i]
-//			storeOffset := storeOffset + 1
-//			IF ((addr + storeOffset*4) % 64) == 0
-//				BREAK
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_packstorelo_ps'.
-// Requires KNCNI.
-func M512PackstoreloPs(mt uintptr, v1 x86.M512)  {
-	m512PackstoreloPs(uintptr(mt), [16]float32(v1))
-}
-
-func m512PackstoreloPs(mt uintptr, v1 [16]float32) 
+// Skipped: _mm512_packstorelo_ps. Contains pointer parameter.
 
 
 // M512MaskPermute4f128Epi32: Permutes 128-bit blocks of the packed 32-bit
@@ -12484,235 +7628,34 @@ func m512PermutevarEpi32(idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPREFETCH0, VPREFETCH1, VPREFETCH2, VPREFETCHNTA, VPREFETCHE0, VPREFETCHE1, VPREFETCHE2, VPREFETCHENTA'. Intrinsic: '_mm_prefetch'.
 // Requires KNCNI.
-func Prefetch(p byte, i int)  {
-	prefetch(p, i)
+// FIXME: Will likely need to be reworked.
+func Prefetch(p *byte, i int)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
 
-func prefetch(p byte, i int) 
+// Skipped: _mm512_mask_prefetch_i32extgather_ps. Contains pointer parameter.
 
 
-// M512MaskPrefetchI32extgatherPs: Prefetches a set of 16 single-precision
-// (32-bit) memory locations pointed by base address 'mv' and 32-bit integer
-// index vector 'index' with scale 'scale' to L1 or L2 level of cache depending
-// on the value of 'hint'. Gathered elements are merged in cache using
-// writemask 'k' (elements are brought into cache only when their corresponding
-// mask bits are set). The 'hint' parameter may be 1 (_MM_HINT_T0) for
-// prefetching to L1 cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache.
-// The 'conv' parameter specifies the granularity used by compilers to better
-// encode the instruction. It should be the same as the 'conv' parameter
-// specified for the subsequent gather intrinsic. 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			IF k[j] THEN
-//				CASE hint OF
-//				_MM_HINT_T0: PrefetchL1WithT0Hint(addr[i+31:i])
-//				_MM_HINT_T1: PrefetchL2WithT1Hint(addr[i+31:i])
-//				ESAC
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32extgather_ps'.
-// Requires KNCNI.
-func M512MaskPrefetchI32extgatherPs(index x86.M512i, k x86.Mmask16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
-	m512MaskPrefetchI32extgatherPs([64]byte(index), uint16(k), uintptr(mv), conv, scale, hint)
-}
-
-func m512MaskPrefetchI32extgatherPs(index [64]byte, k uint16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
+// Skipped: _mm512_prefetch_i32extgather_ps. Contains pointer parameter.
 
 
-// M512PrefetchI32extgatherPs: Prefetches a set of 16 single-precision (32-bit)
-// memory locations pointed by base address 'mv' and 32-bit integer index
-// vector 'index' with scale 'scale' to L1 or L2 level of cache depending on
-// the value of 'hint'. The 'hint' parameter may be 1 (_MM_HINT_T0) for
-// prefetching to L1 cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache.
-// The 'conv' parameter specifies the granularity used by compilers to better
-// encode the instruction. It should be the same as the 'conv' parameter
-// specified for the subsequent gather intrinsic. 
-//
-//		FOR j := 0 to 15
-//			addr := MEM[mv + index[j] * scale]
-//			i := j*32
-//			CASE hint OF
-//			_MM_HINT_T0: PrefetchL1WithT0Hint(addr[i+31:i])
-//			_MM_HINT_T1: PrefetchL2WithT1Hint(addr[i+31:i])
-//			ESAC
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_prefetch_i32extgather_ps'.
-// Requires KNCNI.
-func M512PrefetchI32extgatherPs(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
-	m512PrefetchI32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint)
-}
-
-func m512PrefetchI32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
+// Skipped: _mm512_mask_prefetch_i32extscatter_ps. Contains pointer parameter.
 
 
-// M512MaskPrefetchI32extscatterPs: Prefetches a set of 16 single-precision
-// (32-bit) memory locations pointed by base address 'mv' and 32-bit integer
-// index vector 'index' with scale 'scale' to L1 or L2 level of cache depending
-// on the value of 'hint'. The 'hint' parameter may be 1 (_MM_HINT_T0) for
-// prefetching to L1 cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache.
-// The 'conv' parameter specifies the granularity used by compilers to better
-// encode the instruction. It should be the same as the 'conv' parameter
-// specified for the subsequent gather intrinsic. Only those elements whose
-// corresponding mask bit in 'k' is set are loaded into cache. 
-//
-//		cachev := 0
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				CASE hint OF
-//				_MM_HINT_T0: PrefetchL1WithT0Hint(addr[i+31:i])
-//				_MM_HINT_T1: PrefetchL2WithT1Hint(addr[i+31:i])
-//				ESAC
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32extscatter_ps'.
-// Requires KNCNI.
-func M512MaskPrefetchI32extscatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
-	m512MaskPrefetchI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), conv, scale, hint)
-}
-
-func m512MaskPrefetchI32extscatterPs(mv uintptr, k uint16, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
+// Skipped: _mm512_prefetch_i32extscatter_ps. Contains pointer parameter.
 
 
-// M512PrefetchI32extscatterPs: Prefetches a set of 16 single-precision
-// (32-bit) memory locations pointed by base address 'mv' and 32-bit integer
-// index vector 'index' with scale 'scale' to L1 or L2 level of cache depending
-// on the value of 'hint', with a request for exclusive ownership. The 'hint'
-// parameter may be one of the following: _MM_HINT_T0 = 1 for prefetching to L1
-// cache, _MM_HINT_T1 = 2 for prefetching to L2 cache, _MM_HINT_T2 = 3 for
-// prefetching to L2 cache non-temporal, _MM_HINT_NTA = 0 for prefetching to L1
-// cache non-temporal. The 'conv' parameter specifies the granularity used by
-// compilers to better encode the instruction. It should be the same as the
-// 'conv' parameter specified for the subsequent scatter intrinsic. 
-//
-//		cachev := 0
-//		FOR j := 0 to 15
-//			i := j*32
-//			addr := MEM[mv + index[j] * scale]
-//			CASE hint OF
-//			_MM_HINT_T0: PrefetchL1WithT0Hint(addr[i+31:i])
-//			_MM_HINT_T1: PrefetchL2WithT1Hint(addr[i+31:i])
-//			_MM_HINT_T2: PrefetchL2WithT1HintNonTemporal(addr[i+31:i])
-//			_MM_HINT_NTA: PrefetchL1WithT0HintNonTemporal(addr[i+31:i])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_prefetch_i32extscatter_ps'.
-// Requires KNCNI.
-func M512PrefetchI32extscatterPs(mv uintptr, index x86.M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
-	m512PrefetchI32extscatterPs(uintptr(mv), [64]byte(index), conv, scale, hint)
-}
-
-func m512PrefetchI32extscatterPs(mv uintptr, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
+// Skipped: _mm512_mask_prefetch_i32gather_ps. Contains pointer parameter.
 
 
-// M512MaskPrefetchI32gatherPs: Prefetch single-precision (32-bit)
-// floating-point elements from memory using 32-bit indices. 32-bit elements
-// are loaded from addresses starting at 'base_addr' and offset by each 32-bit
-// element in 'vindex' (each index is scaled by the factor in 'scale').
-// Gathered elements are merged in cache using writemask 'k' (elements are
-// brought into cache only when their corresponding mask bits are set). 'scale'
-// should be 1, 2, 4 or 8. The 'hint' parameter may be 1 (_MM_HINT_T0) for
-// prefetching to L1 cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache. 
-//
-//		FOR j := 0 to 15
-//			i := j*16;
-//			IF mask[j] THEN
-//				Prefetch([base_addr + SignExtend(vindex[i*31:i]) * scale], hint, RFO=0);
-//			FI
-//		ENDFOR;
-//
-// Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32gather_ps'.
-// Requires KNCNI.
-func M512MaskPrefetchI32gatherPs(vindex x86.M512i, mask x86.Mmask16, base_addr uintptr, scale int, hint int)  {
-	m512MaskPrefetchI32gatherPs([64]byte(vindex), uint16(mask), uintptr(base_addr), scale, hint)
-}
-
-func m512MaskPrefetchI32gatherPs(vindex [64]byte, mask uint16, base_addr uintptr, scale int, hint int) 
+// Skipped: _mm512_prefetch_i32gather_ps. Contains pointer parameter.
 
 
-// M512PrefetchI32gatherPs: Prefetches 16 single-precision (32-bit)
-// floating-point elements in memory starting at location 'mv' at packed 32-bit
-// integer indices stored in 'index' scaled by 'scale'. The 'hint' parameter
-// may be 1 (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
-// prefetching to L2 cache. 
-//
-//		cachev := 0
-//		FOR j := 0 to 15
-//			i := j*32
-//			addr := MEM[mv + index[j] * scale]
-//			cachev[i+31:i] := addr[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_prefetch_i32gather_ps'.
-// Requires KNCNI.
-func M512PrefetchI32gatherPs(index x86.M512i, mv uintptr, scale int, hint int)  {
-	m512PrefetchI32gatherPs([64]byte(index), uintptr(mv), scale, hint)
-}
-
-func m512PrefetchI32gatherPs(index [64]byte, mv uintptr, scale int, hint int) 
+// Skipped: _mm512_mask_prefetch_i32scatter_ps. Contains pointer parameter.
 
 
-// M512MaskPrefetchI32scatterPs: Prefetches 16 single-precision (32-bit)
-// floating-point elements in memory starting at location 'mv' at packed 32-bit
-// integer indices stored in 'index' scaled by 'scale'. The 'hint' parameter
-// may be 1 (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
-// prefetching to L2 cache. Only those elements whose corresponding mask bit in
-// 'k' is set are loaded into the desired cache. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				CASE hint OF
-//				_MM_HINT_T0: PrefetchL1WithT0Hint(addr[i+31:i])
-//				_MM_HINT_T1: PrefetchL2WithT1Hint(addr[i+31:i])
-//				_MM_HINT_T2: PrefetchL2WithT1HintNonTemporal(addr[i+31:i])
-//				_MM_HINT_NTA: PrefetchL1WithT0HintNonTemporal(addr[i+31:i])
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32scatter_ps'.
-// Requires KNCNI.
-func M512MaskPrefetchI32scatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, scale int, hint int)  {
-	m512MaskPrefetchI32scatterPs(uintptr(mv), uint16(k), [64]byte(index), scale, hint)
-}
-
-func m512MaskPrefetchI32scatterPs(mv uintptr, k uint16, index [64]byte, scale int, hint int) 
-
-
-// M512PrefetchI32scatterPs: Prefetches 16 single-precision (32-bit)
-// floating-point elements in memory starting at location 'mv' at packed 32-bit
-// integer indices stored in 'index' scaled by 'scale'. The 'hint' parameter
-// may be 1 (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
-// prefetching to L2 cache. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			addr := MEM[mv + index[j] * scale]
-//			CASE hint OF
-//			_MM_HINT_T0: PrefetchL1WithT0Hint(addr[i+31:i])
-//			_MM_HINT_T1: PrefetchL2WithT1Hint(addr[i+31:i])
-//			_MM_HINT_T2: PrefetchL2WithT1HintNonTemporal(addr[i+31:i])
-//			_MM_HINT_NTA: PrefetchL1WithT0HintNonTemporal(addr[i+31:i])
-//			ESAC
-//		ENDFOR
-//
-// Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_prefetch_i32scatter_ps'.
-// Requires KNCNI.
-func M512PrefetchI32scatterPs(mv uintptr, index x86.M512i, scale int, hint int)  {
-	m512PrefetchI32scatterPs(uintptr(mv), [64]byte(index), scale, hint)
-}
-
-func m512PrefetchI32scatterPs(mv uintptr, index [64]byte, scale int, hint int) 
+// Skipped: _mm512_prefetch_i32scatter_ps. Contains pointer parameter.
 
 
 // M512MaskRcp23Ps: Approximates the reciprocals of packed single-precision
@@ -14208,12 +9151,11 @@ func m512Rsqrt23Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_mask_sbb_epi32'.
 // Requires KNCNI.
-func M512MaskSbbEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512MaskSbbEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512MaskSbbEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512MaskSbbEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512SbbEpi32: Performs element-by-element three-input subtraction of packed
 // 32-bit integer elements of 'v3' as well as the corresponding bit from 'k'
@@ -14230,12 +9172,11 @@ func m512MaskSbbEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uin
 //
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_sbb_epi32'.
 // Requires KNCNI.
-func M512SbbEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512SbbEpi32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512SbbEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512SbbEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512MaskSbbrEpi32: Performs element-by-element three-input subtraction of
 // packed 32-bit integer elements of 'v2' as well as the corresponding bit from
@@ -14257,12 +9198,11 @@ func m512SbbEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
 //
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_mask_sbbr_epi32'.
 // Requires KNCNI.
-func M512MaskSbbrEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512MaskSbbrEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512MaskSbbrEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512MaskSbbrEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512SbbrEpi32: Performs element-by-element three-input subtraction of packed
 // 32-bit integer elements of 'v2' as well as the corresponding bit from 'k'
@@ -14279,12 +9219,11 @@ func m512MaskSbbrEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow ui
 //
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_sbbr_epi32'.
 // Requires KNCNI.
-func M512SbbrEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512SbbrEpi32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512SbbrEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512SbbrEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512MaskScalePs: Scales each single-precision (32-bit) floating-point
 // element in 'a' by multiplying it by 2**exponent, where the exponenet is the
@@ -14783,247 +9722,43 @@ func M512SrlvEpi32(a x86.M512i, count x86.M512i) x86.M512i {
 func m512SrlvEpi32(a [64]byte, count [64]byte) [64]byte
 
 
-// M512MaskStoreEpi32: Store packed 32-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_store_epi32'.
-// Requires KNCNI.
-func M512MaskStoreEpi32(mem_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	m512MaskStoreEpi32(uintptr(mem_addr), uint16(k), [64]byte(a))
-}
-
-func m512MaskStoreEpi32(mem_addr uintptr, k uint16, a [64]byte) 
+// Skipped: _mm512_mask_store_epi32. Contains pointer parameter.
 
 
-// M512StoreEpi32: Store 512-bits (composed of 16 packed 32-bit integers) from
-// 'a' into memory. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_store_epi32'.
-// Requires KNCNI.
-func M512StoreEpi32(mem_addr uintptr, a x86.M512i)  {
-	m512StoreEpi32(uintptr(mem_addr), [64]byte(a))
-}
-
-func m512StoreEpi32(mem_addr uintptr, a [64]byte) 
+// Skipped: _mm512_store_epi32. Contains pointer parameter.
 
 
-// M512MaskStoreEpi64: Store packed 64-bit integers from 'a' into memory using
-// writemask 'k'.
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_store_epi64'.
-// Requires KNCNI.
-func M512MaskStoreEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	m512MaskStoreEpi64(uintptr(mem_addr), uint8(k), [64]byte(a))
-}
-
-func m512MaskStoreEpi64(mem_addr uintptr, k uint8, a [64]byte) 
+// Skipped: _mm512_mask_store_epi64. Contains pointer parameter.
 
 
-// M512StoreEpi64: Store 512-bits (composed of 8 packed 64-bit integers) from
-// 'a' into memory. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_store_epi64'.
-// Requires KNCNI.
-func M512StoreEpi64(mem_addr uintptr, a x86.M512i)  {
-	m512StoreEpi64(uintptr(mem_addr), [64]byte(a))
-}
-
-func m512StoreEpi64(mem_addr uintptr, a [64]byte) 
+// Skipped: _mm512_store_epi64. Contains pointer parameter.
 
 
-// M512MaskStorePd: Store packed double-precision (64-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				MEM[mem_addr+i+63:mem_addr+i] := a[i+63:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm512_mask_store_pd'.
-// Requires KNCNI.
-func M512MaskStorePd(mem_addr uintptr, k x86.Mmask8, a x86.M512d)  {
-	m512MaskStorePd(uintptr(mem_addr), uint8(k), [8]float64(a))
-}
-
-func m512MaskStorePd(mem_addr uintptr, k uint8, a [8]float64) 
+// Skipped: _mm512_mask_store_pd. Contains pointer parameter.
 
 
-// M512StorePd: Store 512-bits (composed of 8 packed double-precision (64-bit)
-// floating-point elements) from 'a' into memory.
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm512_store_pd'.
-// Requires KNCNI.
-func M512StorePd(mem_addr uintptr, a x86.M512d)  {
-	m512StorePd(uintptr(mem_addr), [8]float64(a))
-}
-
-func m512StorePd(mem_addr uintptr, a [8]float64) 
+// Skipped: _mm512_store_pd. Contains pointer parameter.
 
 
-// M512MaskStorePs: Store packed single-precision (32-bit) floating-point
-// elements from 'a' into memory using writemask 'k'.
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		FOR j := 0 to 15
-//			i := j*32
-//			IF k[j]
-//				MEM[mem_addr+i+31:mem_addr+i] := a[i+31:i]
-//			FI
-//		ENDFOR
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm512_mask_store_ps'.
-// Requires KNCNI.
-func M512MaskStorePs(mem_addr uintptr, k x86.Mmask16, a x86.M512)  {
-	m512MaskStorePs(uintptr(mem_addr), uint16(k), [16]float32(a))
-}
-
-func m512MaskStorePs(mem_addr uintptr, k uint16, a [16]float32) 
+// Skipped: _mm512_mask_store_ps. Contains pointer parameter.
 
 
-// M512StorePs: Store 512-bits (composed of 16 packed single-precision (32-bit)
-// floating-point elements) from 'a' into memory. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm512_store_ps'.
-// Requires KNCNI.
-func M512StorePs(mem_addr uintptr, a x86.M512)  {
-	m512StorePs(uintptr(mem_addr), [16]float32(a))
-}
-
-func m512StorePs(mem_addr uintptr, a [16]float32) 
+// Skipped: _mm512_store_ps. Contains pointer parameter.
 
 
-// M512StoreSi512: Store 512-bits of integer data from 'a' into memory. 
-// 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		MEM[mem_addr+511:mem_addr] := a[511:0]
-//
-// Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_store_si512'.
-// Requires KNCNI.
-func M512StoreSi512(mem_addr uintptr, a x86.M512i)  {
-	m512StoreSi512(uintptr(mem_addr), [64]byte(a))
-}
-
-func m512StoreSi512(mem_addr uintptr, a [64]byte) 
+// Skipped: _mm512_store_si512. Contains pointer parameter.
 
 
-// M512StorenrPd: Stores packed double-precision (64-bit) floating-point
-// elements from 'v' to memory address 'mt' with a no-read hint to the
-// processor. 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			addr[i+63:i] := v[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VMOVNRAPD'. Intrinsic: '_mm512_storenr_pd'.
-// Requires KNCNI.
-func M512StorenrPd(mt uintptr, v x86.M512d)  {
-	m512StorenrPd(uintptr(mt), [8]float64(v))
-}
-
-func m512StorenrPd(mt uintptr, v [8]float64) 
+// Skipped: _mm512_storenr_pd. Contains pointer parameter.
 
 
-// M512StorenrPs: Stores packed single-precision (32-bit) floating-point
-// elements from 'v' to memory address 'mt' with a no-read hint to the
-// processor. 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			addr[i+31:i] := v[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VMOVNRAPS'. Intrinsic: '_mm512_storenr_ps'.
-// Requires KNCNI.
-func M512StorenrPs(mt uintptr, v x86.M512)  {
-	m512StorenrPs(uintptr(mt), [16]float32(v))
-}
-
-func m512StorenrPs(mt uintptr, v [16]float32) 
+// Skipped: _mm512_storenr_ps. Contains pointer parameter.
 
 
-// M512StorenrngoPd: Stores packed double-precision (64-bit) floating-point
-// elements from 'v' to memory address 'mt' with a no-read hint and using a
-// weakly-ordered memory consistency model (stores performed with this function
-// are not globally ordered, and subsequent stores from the same thread can be
-// observed before them). 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 7
-//			i := j*64
-//			addr[i+63:i] := v[i+63:i]
-//		ENDFOR
-//
-// Instruction: 'VMOVNRNGOAPD'. Intrinsic: '_mm512_storenrngo_pd'.
-// Requires KNCNI.
-func M512StorenrngoPd(mt uintptr, v x86.M512d)  {
-	m512StorenrngoPd(uintptr(mt), [8]float64(v))
-}
-
-func m512StorenrngoPd(mt uintptr, v [8]float64) 
+// Skipped: _mm512_storenrngo_pd. Contains pointer parameter.
 
 
-// M512StorenrngoPs: Stores packed single-precision (32-bit) floating-point
-// elements from 'v' to memory address 'mt' with a no-read hint and using a
-// weakly-ordered memory consistency model (stores performed with this function
-// are not globally ordered, and subsequent stores from the same thread can be
-// observed before them). 
-//
-//		addr := MEM[mt]
-//		FOR j := 0 to 15
-//			i := j*32
-//			addr[i+31:i] := v[i+31:i]
-//		ENDFOR
-//
-// Instruction: 'VMOVNRNGOAPS'. Intrinsic: '_mm512_storenrngo_ps'.
-// Requires KNCNI.
-func M512StorenrngoPs(mt uintptr, v x86.M512)  {
-	m512StorenrngoPs(uintptr(mt), [16]float32(v))
-}
-
-func m512StorenrngoPs(mt uintptr, v [16]float32) 
+// Skipped: _mm512_storenrngo_ps. Contains pointer parameter.
 
 
 // M512MaskSubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit
@@ -15531,12 +10266,11 @@ func m512SubrRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_mask_subrsetb_epi32'.
 // Requires KNCNI.
-func M512MaskSubrsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512MaskSubrsetbEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512MaskSubrsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512MaskSubrsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512SubrsetbEpi32: Performs element-by-element subtraction of packed 32-bit
 // integer elements in 'v2' from 'v3', storing the results in 'dst' and 'v2'.
@@ -15552,12 +10286,11 @@ func m512MaskSubrsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, bor
 //
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_subrsetb_epi32'.
 // Requires KNCNI.
-func M512SubrsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512SubrsetbEpi32([64]byte(v2), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512SubrsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512SubrsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512MaskSubsetbEpi32: Performs element-by-element subtraction of packed
 // 32-bit integer elements in 'v3' from 'v2', storing the results in 'dst' and
@@ -15579,12 +10312,11 @@ func m512SubrsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
 //
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_mask_subsetb_epi32'.
 // Requires KNCNI.
-func M512MaskSubsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512MaskSubsetbEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512MaskSubsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512MaskSubsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512SubsetbEpi32: Performs element-by-element subtraction of packed 32-bit
 // integer elements in 'v3' from 'v2', storing the results in 'dst' and the nth
@@ -15599,12 +10331,11 @@ func m512MaskSubsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borr
 //
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_subsetb_epi32'.
 // Requires KNCNI.
-func M512SubsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(m512SubsetbEpi32([64]byte(v2), [64]byte(v3), uint16(borrow)))
+// FIXME: Will likely need to be reworked.
+func M512SubsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M512i{}
 }
-
-func m512SubsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
-
 
 // M512MaskSwizzleEpi32: Performs a swizzle transformation of each of the four
 // groups of packed 4x32-bit integer elements in 'v' using swizzle parameter

@@ -2748,32 +2748,6 @@ TEXT ·m512MaskzCvtepi16Epi8(SB),7,$0
 	MOV Y1, ret+0(FP)
 	RET
 
-// func maskCvtepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
-TEXT ·maskCvtepi16StoreuEpi8(SB),7,$0
-	MOVQ base_addr+0(FP),R8
-	MOVB k+8(FP),R9
-	MOVOU a+12(FP),X2
-
-	// TODO: Code missing - uses instrunction: VPMOVWB
-
-	RET
-
-// func m256MaskCvtepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
-TEXT ·m256MaskCvtepi16StoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VPMOVWB
-
-	RET
-
-// func m512MaskCvtepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
-TEXT ·m512MaskCvtepi16StoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512i
-
-	// TODO: Code missing - uses instrunction: VPMOVWB
-
-	RET
-
 // func maskCvtepi8Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 TEXT ·maskCvtepi8Epi16(SB),7,$0
 	MOVOU src+0(FP),X0
@@ -3006,32 +2980,6 @@ TEXT ·m512MaskzCvtsepi16Epi8(SB),7,$0
 	MOV Y1, ret+0(FP)
 	RET
 
-// func maskCvtsepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
-TEXT ·maskCvtsepi16StoreuEpi8(SB),7,$0
-	MOVQ base_addr+0(FP),R8
-	MOVB k+8(FP),R9
-	MOVOU a+12(FP),X2
-
-	// TODO: Code missing - uses instrunction: VPMOVSWB
-
-	RET
-
-// func m256MaskCvtsepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
-TEXT ·m256MaskCvtsepi16StoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VPMOVSWB
-
-	RET
-
-// func m512MaskCvtsepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
-TEXT ·m512MaskCvtsepi16StoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512i
-
-	// TODO: Code missing - uses instrunction: VPMOVSWB
-
-	RET
-
 // func cvtusepi16Epi8(a [16]byte) [16]byte
 TEXT ·cvtusepi16Epi8(SB),7,$0
 	MOVOU a+0(FP),X0
@@ -3120,32 +3068,6 @@ TEXT ·m512MaskzCvtusepi16Epi8(SB),7,$0
 	// VPMOVUSWB R8, Z1
 
 	MOV Y1, ret+0(FP)
-	RET
-
-// func maskCvtusepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
-TEXT ·maskCvtusepi16StoreuEpi8(SB),7,$0
-	MOVQ base_addr+0(FP),R8
-	MOVB k+8(FP),R9
-	MOVOU a+12(FP),X2
-
-	// TODO: Code missing - uses instrunction: VPMOVUSWB
-
-	RET
-
-// func m256MaskCvtusepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
-TEXT ·m256MaskCvtusepi16StoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VPMOVUSWB
-
-	RET
-
-// func m512MaskCvtusepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
-TEXT ·m512MaskCvtusepi16StoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512i
-
-	// TODO: Code missing - uses instrunction: VPMOVUSWB
-
 	RET
 
 // func dbsadEpu8(a [16]byte, b [16]byte, imm8 int) [16]byte
@@ -3258,130 +3180,6 @@ TEXT ·m512Kunpackw(SB),7,$0
 	// KUNPCKWD R8, R9
 
 	MOVL $0, ret+8(FP)
-	RET
-
-// func maskLoaduEpi16(src [16]byte, k uint8, mem_addr uintptr) [16]byte
-TEXT ·maskLoaduEpi16(SB),7,$0
-	MOVOU src+0(FP),X0
-	MOVB k+16(FP),R9
-	MOVQ mem_addr+20(FP),R10
-
-	// TODO: Code missing - uses instrunction: VMOVDQU16
-
-	MOVOU X2, ret+28(FP)
-	RET
-
-// func maskzLoaduEpi16(k uint8, mem_addr uintptr) [16]byte
-TEXT ·maskzLoaduEpi16(SB),7,$0
-	MOVB k+0(FP),R8
-	MOVQ mem_addr+4(FP),R9
-
-	// TODO: Code missing - could be:
-	// VMOVDQU16 R8, R9
-
-	MOVOU X1, ret+12(FP)
-	RET
-
-// func m256MaskLoaduEpi16(src [32]byte, k uint16, mem_addr uintptr) [32]byte
-TEXT ·m256MaskLoaduEpi16(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU16
-
-	MOV Y2, ret+0(FP)
-	RET
-
-// func m256MaskzLoaduEpi16(k uint16, mem_addr uintptr) [32]byte
-TEXT ·m256MaskzLoaduEpi16(SB),7,$0
-	MOVW k+0(FP),R8
-	MOVQ mem_addr+4(FP),R9
-
-	// TODO: Code missing - could be:
-	// VMOVDQU16 R8, R9
-
-	MOV Y1, ret+12(FP)
-	RET
-
-// func m512MaskLoaduEpi16(src [64]byte, k uint32, mem_addr uintptr) [64]byte
-TEXT ·m512MaskLoaduEpi16(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU16
-
-	MOV Z2, ret+0(FP)
-	RET
-
-// func m512MaskzLoaduEpi16(k uint32, mem_addr uintptr) [64]byte
-TEXT ·m512MaskzLoaduEpi16(SB),7,$0
-	MOVL k+0(FP),R8
-	MOVQ mem_addr+4(FP),R9
-
-	// TODO: Code missing - could be:
-	// VMOVDQU16 R8, R9
-
-	MOV Z1, ret+12(FP)
-	RET
-
-// func maskLoaduEpi8(src [16]byte, k uint16, mem_addr uintptr) [16]byte
-TEXT ·maskLoaduEpi8(SB),7,$0
-	MOVOU src+0(FP),X0
-	MOVW k+16(FP),R9
-	MOVQ mem_addr+20(FP),R10
-
-	// TODO: Code missing - uses instrunction: VMOVDQU8
-
-	MOVOU X2, ret+28(FP)
-	RET
-
-// func maskzLoaduEpi8(k uint16, mem_addr uintptr) [16]byte
-TEXT ·maskzLoaduEpi8(SB),7,$0
-	MOVW k+0(FP),R8
-	MOVQ mem_addr+4(FP),R9
-
-	// TODO: Code missing - could be:
-	// VMOVDQU8 R8, R9
-
-	MOVOU X1, ret+12(FP)
-	RET
-
-// func m256MaskLoaduEpi8(src [32]byte, k uint32, mem_addr uintptr) [32]byte
-TEXT ·m256MaskLoaduEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU8
-
-	MOV Y2, ret+0(FP)
-	RET
-
-// func m256MaskzLoaduEpi8(k uint32, mem_addr uintptr) [32]byte
-TEXT ·m256MaskzLoaduEpi8(SB),7,$0
-	MOVL k+0(FP),R8
-	MOVQ mem_addr+4(FP),R9
-
-	// TODO: Code missing - could be:
-	// VMOVDQU8 R8, R9
-
-	MOV Y1, ret+12(FP)
-	RET
-
-// func m512MaskLoaduEpi8(src [64]byte, k uint64, mem_addr uintptr) [64]byte
-TEXT ·m512MaskLoaduEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU8
-
-	MOV Z2, ret+0(FP)
-	RET
-
-// func m512MaskzLoaduEpi8(k uint64, mem_addr uintptr) [64]byte
-TEXT ·m512MaskzLoaduEpi8(SB),7,$0
-	MOVQ k+0(FP),R8
-	MOVQ mem_addr+8(FP),R9
-
-	// TODO: Code missing - could be:
-	// VMOVDQU8 R8, R9
-
-	MOV Z1, ret+16(FP)
 	RET
 
 // func maskMaddEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
@@ -6088,58 +5886,6 @@ TEXT ·m512SrlvEpi16(SB),7,$0
 	// VPSRLVW Z0, Z1
 
 	MOV Z1, ret+0(FP)
-	RET
-
-// func maskStoreuEpi16(mem_addr uintptr, k uint8, a [16]byte) 
-TEXT ·maskStoreuEpi16(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-	MOVB k+8(FP),R9
-	MOVOU a+12(FP),X2
-
-	// TODO: Code missing - uses instrunction: VMOVDQU16
-
-	RET
-
-// func m256MaskStoreuEpi16(mem_addr uintptr, k uint16, a [32]byte) 
-TEXT ·m256MaskStoreuEpi16(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU16
-
-	RET
-
-// func m512MaskStoreuEpi16(mem_addr uintptr, k uint32, a [64]byte) 
-TEXT ·m512MaskStoreuEpi16(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU16
-
-	RET
-
-// func maskStoreuEpi8(mem_addr uintptr, k uint16, a [16]byte) 
-TEXT ·maskStoreuEpi8(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-	MOVW k+8(FP),R9
-	MOVOU a+12(FP),X2
-
-	// TODO: Code missing - uses instrunction: VMOVDQU8
-
-	RET
-
-// func m256MaskStoreuEpi8(mem_addr uintptr, k uint32, a [32]byte) 
-TEXT ·m256MaskStoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU8
-
-	RET
-
-// func m512MaskStoreuEpi8(mem_addr uintptr, k uint64, a [64]byte) 
-TEXT ·m512MaskStoreuEpi8(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512i
-
-	// TODO: Code missing - uses instrunction: VMOVDQU8
-
 	RET
 
 // func maskSubEpi16(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte

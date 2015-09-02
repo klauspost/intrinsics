@@ -2803,12 +2803,11 @@ func roundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'MOVNTDQA'. Intrinsic: '_mm_stream_load_si128'.
 // Requires SSE4.1.
-func StreamLoadSi128(mem_addr x86.M128i) x86.M128i {
-	return x86.M128i(streamLoadSi128([16]byte(mem_addr)))
+// FIXME: Will likely need to be reworked.
+func StreamLoadSi128(mem_addr *x86.M128i) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func streamLoadSi128(mem_addr [16]byte) [16]byte
-
 
 // TestAllOnes: Compute the complement of 'a' and 0xFFFFFFFF, and return 1 if
 // the result is zero, otherwise return 0. 

@@ -308,6 +308,10 @@ func getTextR(z *html.Tokenizer) string {
 }
 
 func fixType(s string) string {
+	pointer := false
+	if strings.Contains(s, "*") {
+		pointer = true
+	}
 	r := CamelCase(s)
 	if len(r) == 0 {
 		return ""
@@ -352,13 +356,21 @@ func fixType(s string) string {
 	case "short":
 		r = "int16"
 	case "floatConst":
-		r = "float32"
+		r = "uintptr"
 	case "doubleConst":
-		r = "float64"
+		r = "uintptr"
 	case "longLong":
 		r = "int64"
 	case "constMMCMPINTENUM":
 		r = "uint8"
+	}
+
+	if r == "uintptr" || r == "" {
+		return r
+	}
+
+	if pointer {
+		r = "*" + r
 	}
 	return r
 
@@ -422,13 +434,47 @@ func (in *Intrinsic) fixup() {
 
 }
 
+func (in Intrinsic) shouldSkip() bool {
+	if in.RetType == "uintptr" {
+		return true
+	}
+	if strings.HasPrefix(in.RetType, "*") {
+		return true
+	}
+	for _, param := range in.Params {
+		if param.Type == "uintptr" {
+			return true
+		}
+	}
+	return false
+}
+
+func (in Intrinsic) shouldRework() bool {
+	if strings.HasPrefix(in.RetType, "*") {
+		return true
+	}
+	for _, param := range in.Params {
+		if strings.HasPrefix(param.Type, "*") {
+			return true
+		}
+	}
+	return false
+}
+
 func (in Intrinsic) Finish() {
 	if in.Name == "" {
 		return
 	}
 
 	in.fixup()
+
 	out := in.getFiles().goFile
+
+	if in.shouldSkip() {
+		fmt.Fprintf(out, "\n// Skipped: %s. Contains pointer parameter.\n\n", in.OrgName)
+		return
+	}
+	rework := in.shouldRework()
 
 	//fmt.Println("Finished:", in)
 	desc := in.Name + ": " + in.Description
@@ -443,12 +489,27 @@ func (in Intrinsic) Finish() {
 	if len(in.CpuID) > 0 {
 		fmt.Fprintln(out, "// Requires", in.CpuID+".")
 	}
+	if rework {
+		fmt.Fprintln(out, "// FIXME: Will likely need to be reworked.")
+	}
 	fmt.Fprint(out, "func ", in.Name, "(")
 	params := []string{}
 	for _, param := range in.Params {
 		params = append(params, fmt.Sprint(param.Name, " ", param.Type))
 	}
 	fmt.Fprint(out, strings.Join(params, ", "), ") ", in.RetType, " {\n")
+
+	// We have a receiver pointer,
+	if rework {
+		fmt.Fprintln(out, "\t// FIXME: Rework to avoid possible return value as parameter.")
+		if strings.HasPrefix(in.RetType, "x86.") {
+			fmt.Fprint(out, "\treturn "+in.RetType+"{}")
+		} else if in.RetType != "" {
+			fmt.Fprint(out, "\treturn 0")
+		}
+		fmt.Fprint(out, "\n}\n")
+		return
+	}
 
 	if in.RetType != "" {
 		fmt.Fprint(out, "\treturn "+in.RetType+"("+in.AsmName+"(")

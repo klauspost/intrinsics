@@ -19,12 +19,11 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDSEED'. Intrinsic: '_rdseed16_step'.
 // Requires RDSEED.
-func Rdseed16Step(val uint16) int {
-	return int(rdseed16Step(val))
+// FIXME: Will likely need to be reworked.
+func Rdseed16Step(val *uint16) int {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func rdseed16Step(val uint16) int
-
 
 // Rdseed32Step: Read a 32-bit NIST SP800-90B and SP800-90C compliant random
 // value and store in 'val'. Return 1 if a random value was generated, and 0
@@ -40,12 +39,11 @@ func rdseed16Step(val uint16) int
 //
 // Instruction: 'RDSEED'. Intrinsic: '_rdseed32_step'.
 // Requires RDSEED.
-func Rdseed32Step(val uint32) int {
-	return int(rdseed32Step(val))
+// FIXME: Will likely need to be reworked.
+func Rdseed32Step(val *uint32) int {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func rdseed32Step(val uint32) int
-
 
 // Rdseed64Step: Read a 64-bit NIST SP800-90B and SP800-90C compliant random
 // value and store in 'val'. Return 1 if a random value was generated, and 0
@@ -61,9 +59,8 @@ func rdseed32Step(val uint32) int
 //
 // Instruction: 'RDSEED'. Intrinsic: '_rdseed64_step'.
 // Requires RDSEED.
-func Rdseed64Step(val uint64) int {
-	return int(rdseed64Step(val))
+// FIXME: Will likely need to be reworked.
+func Rdseed64Step(val *uint64) int {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func rdseed64Step(val uint64) int
-

@@ -524,12 +524,11 @@ func m256BlendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_pd'.
 // Requires AVX.
-func M256BroadcastPd(mem_addr x86.M128dConst) x86.M256d {
-	return x86.M256d(m256BroadcastPd(mem_addr))
+// FIXME: Will likely need to be reworked.
+func M256BroadcastPd(mem_addr *x86.M128dConst) x86.M256d {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256d{}
 }
-
-func m256BroadcastPd(mem_addr x86.M128dConst) [4]float64
-
 
 // M256BroadcastPs: Broadcast 128 bits from memory (composed of 4 packed
 // single-precision (32-bit) floating-point elements) to all elements of 'dst'. 
@@ -541,68 +540,19 @@ func m256BroadcastPd(mem_addr x86.M128dConst) [4]float64
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_ps'.
 // Requires AVX.
-func M256BroadcastPs(mem_addr x86.M128Const) x86.M256 {
-	return x86.M256(m256BroadcastPs(mem_addr))
+// FIXME: Will likely need to be reworked.
+func M256BroadcastPs(mem_addr *x86.M128Const) x86.M256 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256{}
 }
 
-func m256BroadcastPs(mem_addr x86.M128Const) [8]float32
+// Skipped: _mm256_broadcast_sd. Contains pointer parameter.
 
 
-// M256BroadcastSd: Broadcast a double-precision (64-bit) floating-point
-// element from memory to all elements of 'dst'. 
-//
-//		tmp[63:0] = MEM[mem_addr+63:mem_addr]
-//		FOR j := 0 to 3
-//			i := j*64
-//			dst[i+63:i] := tmp[63:0]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VBROADCASTSD'. Intrinsic: '_mm256_broadcast_sd'.
-// Requires AVX.
-func M256BroadcastSd(mem_addr float64) x86.M256d {
-	return x86.M256d(m256BroadcastSd(mem_addr))
-}
-
-func m256BroadcastSd(mem_addr float64) [4]float64
+// Skipped: _mm_broadcast_ss. Contains pointer parameter.
 
 
-// BroadcastSs: Broadcast a single-precision (32-bit) floating-point element
-// from memory to all elements of 'dst'. 
-//
-//		tmp[31:0] = MEM[mem_addr+31:mem_addr]
-//		FOR j := 0 to 3
-//			i := j*32
-//			dst[i+31:i] := tmp[31:0]
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VBROADCASTSS'. Intrinsic: '_mm_broadcast_ss'.
-// Requires AVX.
-func BroadcastSs(mem_addr float32) x86.M128 {
-	return x86.M128(broadcastSs(mem_addr))
-}
-
-func broadcastSs(mem_addr float32) [4]float32
-
-
-// M256BroadcastSs: Broadcast a single-precision (32-bit) floating-point
-// element from memory to all elements of 'dst'. 
-//
-//		tmp[31:0] = MEM[mem_addr+31:mem_addr]
-//		FOR j := 0 to 7
-//			i := j*32
-//			dst[i+31:i] := tmp[31:0]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VBROADCASTSS'. Intrinsic: '_mm256_broadcast_ss'.
-// Requires AVX.
-func M256BroadcastSs(mem_addr float32) x86.M256 {
-	return x86.M256(m256BroadcastSs(mem_addr))
-}
-
-func m256BroadcastSs(mem_addr float32) [8]float32
+// Skipped: _mm256_broadcast_ss. Contains pointer parameter.
 
 
 // M256CastpdPs: Cast vector of type __m256d to type __m256.
@@ -2403,12 +2353,11 @@ func m256IdivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_idivrem_epi32'.
 // Requires AVX.
-func M256IdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(m256IdivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
+// FIXME: Will likely need to be reworked.
+func M256IdivremEpi32(mem_addr *x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256IdivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
-
 
 // M256InsertEpi16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into
 // 'dst' at the location specified by 'index'. 
@@ -2632,45 +2581,16 @@ func m256IremEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VLDDQU'. Intrinsic: '_mm256_lddqu_si256'.
 // Requires AVX.
-func M256LddquSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(m256LddquSi256(mem_addr))
+// FIXME: Will likely need to be reworked.
+func M256LddquSi256(mem_addr *x86.M256iConst) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
 
-func m256LddquSi256(mem_addr x86.M256iConst) [32]byte
+// Skipped: _mm256_load_pd. Contains pointer parameter.
 
 
-// M256LoadPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
-// floating-point elements) from memory into 'dst'.
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[255:0] := MEM[mem_addr+255:mem_addr]
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVAPD'. Intrinsic: '_mm256_load_pd'.
-// Requires AVX.
-func M256LoadPd(mem_addr float64) x86.M256d {
-	return x86.M256d(m256LoadPd(mem_addr))
-}
-
-func m256LoadPd(mem_addr float64) [4]float64
-
-
-// M256LoadPs: Load 256-bits (composed of 8 packed single-precision (32-bit)
-// floating-point elements) from memory into 'dst'.
-// 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
-// exception may be generated. 
-//
-//		dst[255:0] := MEM[mem_addr+255:mem_addr]
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVAPS'. Intrinsic: '_mm256_load_ps'.
-// Requires AVX.
-func M256LoadPs(mem_addr float32) x86.M256 {
-	return x86.M256(m256LoadPs(mem_addr))
-}
-
-func m256LoadPs(mem_addr float32) [8]float32
+// Skipped: _mm256_load_ps. Contains pointer parameter.
 
 
 // M256LoadSi256: Load 256-bits of integer data from memory into 'dst'.
@@ -2682,43 +2602,16 @@ func m256LoadPs(mem_addr float32) [8]float32
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_load_si256'.
 // Requires AVX.
-func M256LoadSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(m256LoadSi256(mem_addr))
+// FIXME: Will likely need to be reworked.
+func M256LoadSi256(mem_addr *x86.M256iConst) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
 
-func m256LoadSi256(mem_addr x86.M256iConst) [32]byte
+// Skipped: _mm256_loadu_pd. Contains pointer parameter.
 
 
-// M256LoaduPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
-// floating-point elements) from memory into 'dst'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		dst[255:0] := MEM[mem_addr+255:mem_addr]
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVUPD'. Intrinsic: '_mm256_loadu_pd'.
-// Requires AVX.
-func M256LoaduPd(mem_addr float64) x86.M256d {
-	return x86.M256d(m256LoaduPd(mem_addr))
-}
-
-func m256LoaduPd(mem_addr float64) [4]float64
-
-
-// M256LoaduPs: Load 256-bits (composed of 8 packed single-precision (32-bit)
-// floating-point elements) from memory into 'dst'.
-// 	'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		dst[255:0] := MEM[mem_addr+255:mem_addr]
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMOVUPS'. Intrinsic: '_mm256_loadu_ps'.
-// Requires AVX.
-func M256LoaduPs(mem_addr float32) x86.M256 {
-	return x86.M256(m256LoaduPs(mem_addr))
-}
-
-func m256LoaduPs(mem_addr float32) [8]float32
+// Skipped: _mm256_loadu_ps. Contains pointer parameter.
 
 
 // M256LoaduSi256: Load 256-bits of integer data from memory into 'dst'.
@@ -2729,47 +2622,16 @@ func m256LoaduPs(mem_addr float32) [8]float32
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_loadu_si256'.
 // Requires AVX.
-func M256LoaduSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(m256LoaduSi256(mem_addr))
+// FIXME: Will likely need to be reworked.
+func M256LoaduSi256(mem_addr *x86.M256iConst) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
 
-func m256LoaduSi256(mem_addr x86.M256iConst) [32]byte
+// Skipped: _mm256_loadu2_m128. Contains pointer parameter.
 
 
-// M256Loadu2M128: Load two 128-bit values (composed of 4 packed
-// single-precision (32-bit) floating-point elements) from memory, and combine
-// them into a 256-bit value in 'dst'.
-// 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
-//
-//		dst[127:0] := MEM[loaddr+127:loaddr]
-//		dst[255:128] := MEM[hiaddr+127:hiaddr]
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm256_loadu2_m128'.
-// Requires AVX.
-func M256Loadu2M128(hiaddr float32, loaddr float32) x86.M256 {
-	return x86.M256(m256Loadu2M128(hiaddr, loaddr))
-}
-
-func m256Loadu2M128(hiaddr float32, loaddr float32) [8]float32
-
-
-// M256Loadu2M128d: Load two 128-bit values (composed of 2 packed
-// double-precision (64-bit) floating-point elements) from memory, and combine
-// them into a 256-bit value in 'dst'.
-// 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
-//
-//		dst[127:0] := MEM[loaddr+127:loaddr]
-//		dst[255:128] := MEM[hiaddr+127:hiaddr]
-//		dst[MAX:256] := 0
-//
-// Instruction: '...'. Intrinsic: '_mm256_loadu2_m128d'.
-// Requires AVX.
-func M256Loadu2M128d(hiaddr float64, loaddr float64) x86.M256d {
-	return x86.M256d(m256Loadu2M128d(hiaddr, loaddr))
-}
-
-func m256Loadu2M128d(hiaddr float64, loaddr float64) [4]float64
+// Skipped: _mm256_loadu2_m128d. Contains pointer parameter.
 
 
 // M256Loadu2M128i: Load two 128-bit values (composed of integer data) from
@@ -2782,12 +2644,11 @@ func m256Loadu2M128d(hiaddr float64, loaddr float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128i'.
 // Requires AVX.
-func M256Loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) x86.M256i {
-	return x86.M256i(m256Loadu2M128i(hiaddr, loaddr))
+// FIXME: Will likely need to be reworked.
+func M256Loadu2M128i(hiaddr *x86.M128iConst, loaddr *x86.M128iConst) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256Loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) [32]byte
-
 
 // M256LogPd: Compute the natural logarithm of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
@@ -2975,96 +2836,16 @@ func M256LogbPs(a x86.M256) x86.M256 {
 func m256LogbPs(a [8]float32) [8]float32
 
 
-// MaskloadPd: Load packed double-precision (64-bit) floating-point elements
-// from memory into 'dst' using 'mask' (elements are zeroed out when the high
-// bit of the corresponding element is not set). 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF mask[i+63]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMASKMOVPD'. Intrinsic: '_mm_maskload_pd'.
-// Requires AVX.
-func MaskloadPd(mem_addr float64, mask x86.M128i) x86.M128d {
-	return x86.M128d(maskloadPd(mem_addr, [16]byte(mask)))
-}
-
-func maskloadPd(mem_addr float64, mask [16]byte) [2]float64
+// Skipped: _mm_maskload_pd. Contains pointer parameter.
 
 
-// M256MaskloadPd: Load packed double-precision (64-bit) floating-point
-// elements from memory into 'dst' using 'mask' (elements are zeroed out when
-// the high bit of the corresponding element is not set). 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF mask[i+63]
-//				dst[i+63:i] := MEM[mem_addr+i+63:mem_addr+i]
-//			ELSE
-//				dst[i+63:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMASKMOVPD'. Intrinsic: '_mm256_maskload_pd'.
-// Requires AVX.
-func M256MaskloadPd(mem_addr float64, mask x86.M256i) x86.M256d {
-	return x86.M256d(m256MaskloadPd(mem_addr, [32]byte(mask)))
-}
-
-func m256MaskloadPd(mem_addr float64, mask [32]byte) [4]float64
+// Skipped: _mm256_maskload_pd. Contains pointer parameter.
 
 
-// MaskloadPs: Load packed single-precision (32-bit) floating-point elements
-// from memory into 'dst' using 'mask' (elements are zeroed out when the high
-// bit of the corresponding element is not set). 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF mask[i+31]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VMASKMOVPS'. Intrinsic: '_mm_maskload_ps'.
-// Requires AVX.
-func MaskloadPs(mem_addr float32, mask x86.M128i) x86.M128 {
-	return x86.M128(maskloadPs(mem_addr, [16]byte(mask)))
-}
-
-func maskloadPs(mem_addr float32, mask [16]byte) [4]float32
+// Skipped: _mm_maskload_ps. Contains pointer parameter.
 
 
-// M256MaskloadPs: Load packed single-precision (32-bit) floating-point
-// elements from memory into 'dst' using 'mask' (elements are zeroed out when
-// the high bit of the corresponding element is not set). 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF mask[i+31]
-//				dst[i+31:i] := MEM[mem_addr+i+31:mem_addr+i]
-//			ELSE
-//				dst[i+31:i] := 0
-//			FI
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VMASKMOVPS'. Intrinsic: '_mm256_maskload_ps'.
-// Requires AVX.
-func M256MaskloadPs(mem_addr float32, mask x86.M256i) x86.M256 {
-	return x86.M256(m256MaskloadPs(mem_addr, [32]byte(mask)))
-}
-
-func m256MaskloadPs(mem_addr float32, mask [32]byte) [8]float32
+// Skipped: _mm256_maskload_ps. Contains pointer parameter.
 
 
 // MaskstorePd: Store packed double-precision (64-bit) floating-point elements
@@ -3079,12 +2860,11 @@ func m256MaskloadPs(mem_addr float32, mask [32]byte) [8]float32
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm_maskstore_pd'.
 // Requires AVX.
-func MaskstorePd(mem_addr float64, mask x86.M128i, a x86.M128d)  {
-	maskstorePd(mem_addr, [16]byte(mask), [2]float64(a))
+// FIXME: Will likely need to be reworked.
+func MaskstorePd(mem_addr *float64, mask x86.M128i, a x86.M128d)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func maskstorePd(mem_addr float64, mask [16]byte, a [2]float64) 
-
 
 // M256MaskstorePd: Store packed double-precision (64-bit) floating-point
 // elements from 'a' into memory using 'mask'. 
@@ -3098,12 +2878,11 @@ func maskstorePd(mem_addr float64, mask [16]byte, a [2]float64)
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm256_maskstore_pd'.
 // Requires AVX.
-func M256MaskstorePd(mem_addr float64, mask x86.M256i, a x86.M256d)  {
-	m256MaskstorePd(mem_addr, [32]byte(mask), [4]float64(a))
+// FIXME: Will likely need to be reworked.
+func M256MaskstorePd(mem_addr *float64, mask x86.M256i, a x86.M256d)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256MaskstorePd(mem_addr float64, mask [32]byte, a [4]float64) 
-
 
 // MaskstorePs: Store packed single-precision (32-bit) floating-point elements
 // from 'a' into memory using 'mask'. 
@@ -3117,12 +2896,11 @@ func m256MaskstorePd(mem_addr float64, mask [32]byte, a [4]float64)
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm_maskstore_ps'.
 // Requires AVX.
-func MaskstorePs(mem_addr float32, mask x86.M128i, a x86.M128)  {
-	maskstorePs(mem_addr, [16]byte(mask), [4]float32(a))
+// FIXME: Will likely need to be reworked.
+func MaskstorePs(mem_addr *float32, mask x86.M128i, a x86.M128)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func maskstorePs(mem_addr float32, mask [16]byte, a [4]float32) 
-
 
 // M256MaskstorePs: Store packed single-precision (32-bit) floating-point
 // elements from 'a' into memory using 'mask'. 
@@ -3136,12 +2914,11 @@ func maskstorePs(mem_addr float32, mask [16]byte, a [4]float32)
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm256_maskstore_ps'.
 // Requires AVX.
-func M256MaskstorePs(mem_addr float32, mask x86.M256i, a x86.M256)  {
-	m256MaskstorePs(mem_addr, [32]byte(mask), [8]float32(a))
+// FIXME: Will likely need to be reworked.
+func M256MaskstorePs(mem_addr *float32, mask x86.M256i, a x86.M256)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256MaskstorePs(mem_addr float32, mask [32]byte, a [8]float32) 
-
 
 // M256MaxPd: Compare packed double-precision (64-bit) floating-point elements
 // in 'a' and 'b', and store packed maximum values in 'dst'. 
@@ -4615,12 +4392,11 @@ func m256SinPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_pd'.
 // Requires AVX.
-func M256SincosPd(mem_addr x86.M256d, a x86.M256d) x86.M256d {
-	return x86.M256d(m256SincosPd([4]float64(mem_addr), [4]float64(a)))
+// FIXME: Will likely need to be reworked.
+func M256SincosPd(mem_addr *x86.M256d, a x86.M256d) x86.M256d {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256d{}
 }
-
-func m256SincosPd(mem_addr [4]float64, a [4]float64) [4]float64
-
 
 // M256SincosPs: Compute the sine and cosine of packed single-precision
 // (32-bit) floating-point elements in 'a' expressed in radians, store the sine
@@ -4635,12 +4411,11 @@ func m256SincosPd(mem_addr [4]float64, a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_ps'.
 // Requires AVX.
-func M256SincosPs(mem_addr x86.M256, a x86.M256) x86.M256 {
-	return x86.M256(m256SincosPs([8]float32(mem_addr), [8]float32(a)))
+// FIXME: Will likely need to be reworked.
+func M256SincosPs(mem_addr *x86.M256, a x86.M256) x86.M256 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256{}
 }
-
-func m256SincosPs(mem_addr [8]float32, a [8]float32) [8]float32
-
 
 // M256SindPd: Compute the sine of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in degrees, and store the results
@@ -4763,12 +4538,11 @@ func m256SqrtPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_store_pd'.
 // Requires AVX.
-func M256StorePd(mem_addr float64, a x86.M256d)  {
-	m256StorePd(mem_addr, [4]float64(a))
+// FIXME: Will likely need to be reworked.
+func M256StorePd(mem_addr *float64, a x86.M256d)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StorePd(mem_addr float64, a [4]float64) 
-
 
 // M256StorePs: Store 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory.
@@ -4779,12 +4553,11 @@ func m256StorePd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_store_ps'.
 // Requires AVX.
-func M256StorePs(mem_addr float32, a x86.M256)  {
-	m256StorePs(mem_addr, [8]float32(a))
+// FIXME: Will likely need to be reworked.
+func M256StorePs(mem_addr *float32, a x86.M256)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StorePs(mem_addr float32, a [8]float32) 
-
 
 // M256StoreSi256: Store 256-bits of integer data from 'a' into memory.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
@@ -4794,12 +4567,11 @@ func m256StorePs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_store_si256'.
 // Requires AVX.
-func M256StoreSi256(mem_addr x86.M256i, a x86.M256i)  {
-	m256StoreSi256([32]byte(mem_addr), [32]byte(a))
+// FIXME: Will likely need to be reworked.
+func M256StoreSi256(mem_addr *x86.M256i, a x86.M256i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StoreSi256(mem_addr [32]byte, a [32]byte) 
-
 
 // M256StoreuPd: Store 256-bits (composed of 4 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory.
@@ -4809,12 +4581,11 @@ func m256StoreSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: 'VMOVUPD'. Intrinsic: '_mm256_storeu_pd'.
 // Requires AVX.
-func M256StoreuPd(mem_addr float64, a x86.M256d)  {
-	m256StoreuPd(mem_addr, [4]float64(a))
+// FIXME: Will likely need to be reworked.
+func M256StoreuPd(mem_addr *float64, a x86.M256d)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StoreuPd(mem_addr float64, a [4]float64) 
-
 
 // M256StoreuPs: Store 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory.
@@ -4824,12 +4595,11 @@ func m256StoreuPd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVUPS'. Intrinsic: '_mm256_storeu_ps'.
 // Requires AVX.
-func M256StoreuPs(mem_addr float32, a x86.M256)  {
-	m256StoreuPs(mem_addr, [8]float32(a))
+// FIXME: Will likely need to be reworked.
+func M256StoreuPs(mem_addr *float32, a x86.M256)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StoreuPs(mem_addr float32, a [8]float32) 
-
 
 // M256StoreuSi256: Store 256-bits of integer data from 'a' into memory.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -4838,12 +4608,11 @@ func m256StoreuPs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_storeu_si256'.
 // Requires AVX.
-func M256StoreuSi256(mem_addr x86.M256i, a x86.M256i)  {
-	m256StoreuSi256([32]byte(mem_addr), [32]byte(a))
+// FIXME: Will likely need to be reworked.
+func M256StoreuSi256(mem_addr *x86.M256i, a x86.M256i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StoreuSi256(mem_addr [32]byte, a [32]byte) 
-
 
 // M256Storeu2M128: Store the high and low 128-bit halves (each composed of 4
 // packed single-precision (32-bit) floating-point elements) from 'a' into
@@ -4855,12 +4624,11 @@ func m256StoreuSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128'.
 // Requires AVX.
-func M256Storeu2M128(hiaddr float32, loaddr float32, a x86.M256)  {
-	m256Storeu2M128(hiaddr, loaddr, [8]float32(a))
+// FIXME: Will likely need to be reworked.
+func M256Storeu2M128(hiaddr *float32, loaddr *float32, a x86.M256)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256Storeu2M128(hiaddr float32, loaddr float32, a [8]float32) 
-
 
 // M256Storeu2M128d: Store the high and low 128-bit halves (each composed of 2
 // packed double-precision (64-bit) floating-point elements) from 'a' into
@@ -4872,12 +4640,11 @@ func m256Storeu2M128(hiaddr float32, loaddr float32, a [8]float32)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128d'.
 // Requires AVX.
-func M256Storeu2M128d(hiaddr float64, loaddr float64, a x86.M256d)  {
-	m256Storeu2M128d(hiaddr, loaddr, [4]float64(a))
+// FIXME: Will likely need to be reworked.
+func M256Storeu2M128d(hiaddr *float64, loaddr *float64, a x86.M256d)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256Storeu2M128d(hiaddr float64, loaddr float64, a [4]float64) 
-
 
 // M256Storeu2M128i: Store the high and low 128-bit halves (each composed of
 // integer data) from 'a' into memory two different 128-bit locations.
@@ -4888,12 +4655,11 @@ func m256Storeu2M128d(hiaddr float64, loaddr float64, a [4]float64)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128i'.
 // Requires AVX.
-func M256Storeu2M128i(hiaddr x86.M128i, loaddr x86.M128i, a x86.M256i)  {
-	m256Storeu2M128i([16]byte(hiaddr), [16]byte(loaddr), [32]byte(a))
+// FIXME: Will likely need to be reworked.
+func M256Storeu2M128i(hiaddr *x86.M128i, loaddr *x86.M128i, a x86.M256i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256Storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte) 
-
 
 // M256StreamPd: Store 256-bits (composed of 4 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory using a non-temporal memory
@@ -4905,12 +4671,11 @@ func m256Storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte)
 //
 // Instruction: 'VMOVNTPD'. Intrinsic: '_mm256_stream_pd'.
 // Requires AVX.
-func M256StreamPd(mem_addr float64, a x86.M256d)  {
-	m256StreamPd(mem_addr, [4]float64(a))
+// FIXME: Will likely need to be reworked.
+func M256StreamPd(mem_addr *float64, a x86.M256d)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StreamPd(mem_addr float64, a [4]float64) 
-
 
 // M256StreamPs: Store 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory using a non-temporal memory
@@ -4922,12 +4687,11 @@ func m256StreamPd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVNTPS'. Intrinsic: '_mm256_stream_ps'.
 // Requires AVX.
-func M256StreamPs(mem_addr float32, a x86.M256)  {
-	m256StreamPs(mem_addr, [8]float32(a))
+// FIXME: Will likely need to be reworked.
+func M256StreamPs(mem_addr *float32, a x86.M256)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StreamPs(mem_addr float32, a [8]float32) 
-
 
 // M256StreamSi256: Store 256-bits of integer data from 'a' into memory using a
 // non-temporal memory hint.
@@ -4938,12 +4702,11 @@ func m256StreamPs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVNTDQ'. Intrinsic: '_mm256_stream_si256'.
 // Requires AVX.
-func M256StreamSi256(mem_addr x86.M256i, a x86.M256i)  {
-	m256StreamSi256([32]byte(mem_addr), [32]byte(a))
+// FIXME: Will likely need to be reworked.
+func M256StreamSi256(mem_addr *x86.M256i, a x86.M256i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256StreamSi256(mem_addr [32]byte, a [32]byte) 
-
 
 // M256SubPd: Subtract packed double-precision (64-bit) floating-point elements
 // in 'b' from packed double-precision (64-bit) floating-point elements in 'a',
@@ -5801,12 +5564,11 @@ func m256UdivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_udivrem_epi32'.
 // Requires AVX.
-func M256UdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(m256UdivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
+// FIXME: Will likely need to be reworked.
+func M256UdivremEpi32(mem_addr *x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256UdivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
-
 
 // UndefinedPd: Return vector of type __m128d with undefined elements. 
 //

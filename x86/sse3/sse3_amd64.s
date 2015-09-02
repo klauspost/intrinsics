@@ -64,25 +64,6 @@ TEXT ·hsubPs(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func lddquSi128(mem_addr x86.M128iConst) [16]byte
-TEXT ·lddquSi128(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M128iConst
-
-	// TODO: Code missing - uses instrunction: LDDQU
-
-	MOVOU X0, ret+0(FP)
-	RET
-
-// func loaddupPd(mem_addr float64) [2]float64
-TEXT ·loaddupPd(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// MOVDDUP R8
-
-	MOVOU X0, ret+8(FP)
-	RET
-
 // func movedupPd(a [2]float64) [2]float64
 TEXT ·movedupPd(SB),7,$0
 	MOVOU a+0(FP),X0

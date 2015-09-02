@@ -18,12 +18,11 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDRAND'. Intrinsic: '_rdrand16_step'.
 // Requires RDRAND.
-func Rdrand16Step(val uint16) int {
-	return int(rdrand16Step(val))
+// FIXME: Will likely need to be reworked.
+func Rdrand16Step(val *uint16) int {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func rdrand16Step(val uint16) int
-
 
 // Rdrand32Step: Read a hardware generated 32-bit random value and store the
 // result in 'val'. Return 1 if a random value was generated, and 0 otherwise. 
@@ -38,12 +37,11 @@ func rdrand16Step(val uint16) int
 //
 // Instruction: 'RDRAND'. Intrinsic: '_rdrand32_step'.
 // Requires RDRAND.
-func Rdrand32Step(val uint32) int {
-	return int(rdrand32Step(val))
+// FIXME: Will likely need to be reworked.
+func Rdrand32Step(val *uint32) int {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func rdrand32Step(val uint32) int
-
 
 // Rdrand64Step: Read a hardware generated 64-bit random value and store the
 // result in 'val'. Return 1 if a random value was generated, and 0 otherwise. 
@@ -58,9 +56,8 @@ func rdrand32Step(val uint32) int
 //
 // Instruction: 'RDRAND'. Intrinsic: '_rdrand64_step'.
 // Requires RDRAND.
-func Rdrand64Step(val uint64) int {
-	return int(rdrand64Step(val))
+// FIXME: Will likely need to be reworked.
+func Rdrand64Step(val *uint64) int {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func rdrand64Step(val uint64) int
-

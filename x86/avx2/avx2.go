@@ -1217,12 +1217,11 @@ func m256HsubsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm_i32gather_epi32'.
 // Requires AVX2.
-func I32gatherEpi32(base_addr int, vindex x86.M128i, scale int) x86.M128i {
-	return x86.M128i(i32gatherEpi32(base_addr, [16]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func I32gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func i32gatherEpi32(base_addr int, vindex [16]byte, scale int) [16]byte
-
 
 // MaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
 // 32-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1245,12 +1244,11 @@ func i32gatherEpi32(base_addr int, vindex [16]byte, scale int) [16]byte
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm_mask_i32gather_epi32'.
 // Requires AVX2.
-func MaskI32gatherEpi32(src x86.M128i, base_addr int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
-	return x86.M128i(maskI32gatherEpi32([16]byte(src), base_addr, [16]byte(vindex), [16]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func MaskI32gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func maskI32gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
-
 
 // M256I32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
 // 32-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1266,12 +1264,11 @@ func maskI32gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm256_i32gather_epi32'.
 // Requires AVX2.
-func M256I32gatherEpi32(base_addr int, vindex x86.M256i, scale int) x86.M256i {
-	return x86.M256i(m256I32gatherEpi32(base_addr, [32]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func M256I32gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256I32gatherEpi32(base_addr int, vindex [32]byte, scale int) [32]byte
-
 
 // M256MaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit
 // indices. 32-bit elements are loaded from addresses starting at 'base_addr'
@@ -1294,12 +1291,11 @@ func m256I32gatherEpi32(base_addr int, vindex [32]byte, scale int) [32]byte
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm256_mask_i32gather_epi32'.
 // Requires AVX2.
-func M256MaskI32gatherEpi32(src x86.M256i, base_addr int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
-	return x86.M256i(m256MaskI32gatherEpi32([32]byte(src), base_addr, [32]byte(vindex), [32]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func M256MaskI32gatherEpi32(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256MaskI32gatherEpi32(src [32]byte, base_addr int, vindex [32]byte, mask [32]byte, scale int) [32]byte
-
 
 // I32gatherEpi64: Gather 64-bit integers from memory using 32-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1316,12 +1312,11 @@ func m256MaskI32gatherEpi32(src [32]byte, base_addr int, vindex [32]byte, mask [
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm_i32gather_epi64'.
 // Requires AVX2.
-func I32gatherEpi64(base_addr int, vindex x86.M128i, scale int) x86.M128i {
-	return x86.M128i(i32gatherEpi64(base_addr, [16]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func i32gatherEpi64(base_addr int, vindex [16]byte, scale int) [16]byte
-
 
 // MaskI32gatherEpi64: Gather 64-bit integers from memory using 32-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1345,12 +1340,11 @@ func i32gatherEpi64(base_addr int, vindex [16]byte, scale int) [16]byte
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm_mask_i32gather_epi64'.
 // Requires AVX2.
-func MaskI32gatherEpi64(src x86.M128i, base_addr int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
-	return x86.M128i(maskI32gatherEpi64([16]byte(src), base_addr, [16]byte(vindex), [16]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func MaskI32gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func maskI32gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
-
 
 // M256I32gatherEpi64: Gather 64-bit integers from memory using 32-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1367,12 +1361,11 @@ func maskI32gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm256_i32gather_epi64'.
 // Requires AVX2.
-func M256I32gatherEpi64(base_addr int, vindex x86.M128i, scale int) x86.M256i {
-	return x86.M256i(m256I32gatherEpi64(base_addr, [16]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func M256I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256I32gatherEpi64(base_addr int, vindex [16]byte, scale int) [32]byte
-
 
 // M256MaskI32gatherEpi64: Gather 64-bit integers from memory using 32-bit
 // indices. 64-bit elements are loaded from addresses starting at 'base_addr'
@@ -1396,213 +1389,34 @@ func m256I32gatherEpi64(base_addr int, vindex [16]byte, scale int) [32]byte
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm256_mask_i32gather_epi64'.
 // Requires AVX2.
-func M256MaskI32gatherEpi64(src x86.M256i, base_addr int, vindex x86.M128i, mask x86.M256i, scale int) x86.M256i {
-	return x86.M256i(m256MaskI32gatherEpi64([32]byte(src), base_addr, [16]byte(vindex), [32]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func M256MaskI32gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M128i, mask x86.M256i, scale int) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
 
-func m256MaskI32gatherEpi64(src [32]byte, base_addr int, vindex [16]byte, mask [32]byte, scale int) [32]byte
+// Skipped: _mm_i32gather_pd. Contains pointer parameter.
 
 
-// I32gatherPd: Gather double-precision (64-bit) floating-point elements from
-// memory using 32-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			m := j*32
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm_i32gather_pd'.
-// Requires AVX2.
-func I32gatherPd(base_addr float64, vindex x86.M128i, scale int) x86.M128d {
-	return x86.M128d(i32gatherPd(base_addr, [16]byte(vindex), scale))
-}
-
-func i32gatherPd(base_addr float64, vindex [16]byte, scale int) [2]float64
+// Skipped: _mm_mask_i32gather_pd. Contains pointer parameter.
 
 
-// MaskI32gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 32-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			m := j*32
-//			IF mask[i+63]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				mask[i+63] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:128] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm_mask_i32gather_pd'.
-// Requires AVX2.
-func MaskI32gatherPd(src x86.M128d, base_addr float64, vindex x86.M128i, mask x86.M128d, scale int) x86.M128d {
-	return x86.M128d(maskI32gatherPd([2]float64(src), base_addr, [16]byte(vindex), [2]float64(mask), scale))
-}
-
-func maskI32gatherPd(src [2]float64, base_addr float64, vindex [16]byte, mask [2]float64, scale int) [2]float64
+// Skipped: _mm256_i32gather_pd. Contains pointer parameter.
 
 
-// M256I32gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 32-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			m := j*32
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm256_i32gather_pd'.
-// Requires AVX2.
-func M256I32gatherPd(base_addr float64, vindex x86.M128i, scale int) x86.M256d {
-	return x86.M256d(m256I32gatherPd(base_addr, [16]byte(vindex), scale))
-}
-
-func m256I32gatherPd(base_addr float64, vindex [16]byte, scale int) [4]float64
+// Skipped: _mm256_mask_i32gather_pd. Contains pointer parameter.
 
 
-// M256MaskI32gatherPd: Gather double-precision (64-bit) floating-point
-// elements from memory using 32-bit indices. 64-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
-// highest bit is not set in the corresponding element). 'scale' should be 1,
-// 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			m := j*32
-//			IF mask[i+63]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[m+31:m])*scale]
-//				mask[i+63] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:256] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm256_mask_i32gather_pd'.
-// Requires AVX2.
-func M256MaskI32gatherPd(src x86.M256d, base_addr float64, vindex x86.M128i, mask x86.M256d, scale int) x86.M256d {
-	return x86.M256d(m256MaskI32gatherPd([4]float64(src), base_addr, [16]byte(vindex), [4]float64(mask), scale))
-}
-
-func m256MaskI32gatherPd(src [4]float64, base_addr float64, vindex [16]byte, mask [4]float64, scale int) [4]float64
+// Skipped: _mm_i32gather_ps. Contains pointer parameter.
 
 
-// I32gatherPs: Gather single-precision (32-bit) floating-point elements from
-// memory using 32-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm_i32gather_ps'.
-// Requires AVX2.
-func I32gatherPs(base_addr float32, vindex x86.M128i, scale int) x86.M128 {
-	return x86.M128(i32gatherPs(base_addr, [16]byte(vindex), scale))
-}
-
-func i32gatherPs(base_addr float32, vindex [16]byte, scale int) [4]float32
+// Skipped: _mm_mask_i32gather_ps. Contains pointer parameter.
 
 
-// MaskI32gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 32-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			IF mask[i+31]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				mask[i+31] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:128] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm_mask_i32gather_ps'.
-// Requires AVX2.
-func MaskI32gatherPs(src x86.M128, base_addr float32, vindex x86.M128i, mask x86.M128, scale int) x86.M128 {
-	return x86.M128(maskI32gatherPs([4]float32(src), base_addr, [16]byte(vindex), [4]float32(mask), scale))
-}
-
-func maskI32gatherPs(src [4]float32, base_addr float32, vindex [16]byte, mask [4]float32, scale int) [4]float32
+// Skipped: _mm256_i32gather_ps. Contains pointer parameter.
 
 
-// M256I32gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 32-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm256_i32gather_ps'.
-// Requires AVX2.
-func M256I32gatherPs(base_addr float32, vindex x86.M256i, scale int) x86.M256 {
-	return x86.M256(m256I32gatherPs(base_addr, [32]byte(vindex), scale))
-}
-
-func m256I32gatherPs(base_addr float32, vindex [32]byte, scale int) [8]float32
-
-
-// M256MaskI32gatherPs: Gather single-precision (32-bit) floating-point
-// elements from memory using 32-bit indices. 32-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
-// highest bit is not set in the corresponding element). 'scale' should be 1,
-// 2, 4 or 8. 
-//
-//		FOR j := 0 to 7
-//			i := j*32
-//			IF mask[i+31]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+31:i])*scale]
-//				mask[i+31] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:256] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERDPS'. Intrinsic: '_mm256_mask_i32gather_ps'.
-// Requires AVX2.
-func M256MaskI32gatherPs(src x86.M256, base_addr float32, vindex x86.M256i, mask x86.M256, scale int) x86.M256 {
-	return x86.M256(m256MaskI32gatherPs([8]float32(src), base_addr, [32]byte(vindex), [8]float32(mask), scale))
-}
-
-func m256MaskI32gatherPs(src [8]float32, base_addr float32, vindex [32]byte, mask [8]float32, scale int) [8]float32
+// Skipped: _mm256_mask_i32gather_ps. Contains pointer parameter.
 
 
 // I64gatherEpi32: Gather 32-bit integers from memory using 64-bit indices.
@@ -1620,12 +1434,11 @@ func m256MaskI32gatherPs(src [8]float32, base_addr float32, vindex [32]byte, mas
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm_i64gather_epi32'.
 // Requires AVX2.
-func I64gatherEpi32(base_addr int, vindex x86.M128i, scale int) x86.M128i {
-	return x86.M128i(i64gatherEpi32(base_addr, [16]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func I64gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func i64gatherEpi32(base_addr int, vindex [16]byte, scale int) [16]byte
-
 
 // MaskI64gatherEpi32: Gather 32-bit integers from memory using 64-bit indices.
 // 32-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1649,12 +1462,11 @@ func i64gatherEpi32(base_addr int, vindex [16]byte, scale int) [16]byte
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm_mask_i64gather_epi32'.
 // Requires AVX2.
-func MaskI64gatherEpi32(src x86.M128i, base_addr int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
-	return x86.M128i(maskI64gatherEpi32([16]byte(src), base_addr, [16]byte(vindex), [16]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func maskI64gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
-
 
 // M256I64gatherEpi32: Gather 32-bit integers from memory using 64-bit indices.
 // 32-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1671,12 +1483,11 @@ func maskI64gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm256_i64gather_epi32'.
 // Requires AVX2.
-func M256I64gatherEpi32(base_addr int, vindex x86.M256i, scale int) x86.M128i {
-	return x86.M128i(m256I64gatherEpi32(base_addr, [32]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func M256I64gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func m256I64gatherEpi32(base_addr int, vindex [32]byte, scale int) [16]byte
-
 
 // M256MaskI64gatherEpi32: Gather 32-bit integers from memory using 64-bit
 // indices. 32-bit elements are loaded from addresses starting at 'base_addr'
@@ -1700,12 +1511,11 @@ func m256I64gatherEpi32(base_addr int, vindex [32]byte, scale int) [16]byte
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm256_mask_i64gather_epi32'.
 // Requires AVX2.
-func M256MaskI64gatherEpi32(src x86.M128i, base_addr int, vindex x86.M256i, mask x86.M128i, scale int) x86.M128i {
-	return x86.M128i(m256MaskI64gatherEpi32([16]byte(src), base_addr, [32]byte(vindex), [16]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func M256MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M256i, mask x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func m256MaskI64gatherEpi32(src [16]byte, base_addr int, vindex [32]byte, mask [16]byte, scale int) [16]byte
-
 
 // I64gatherEpi64: Gather 64-bit integers from memory using 64-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1721,12 +1531,11 @@ func m256MaskI64gatherEpi32(src [16]byte, base_addr int, vindex [32]byte, mask [
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm_i64gather_epi64'.
 // Requires AVX2.
-func I64gatherEpi64(base_addr int, vindex x86.M128i, scale int) x86.M128i {
-	return x86.M128i(i64gatherEpi64(base_addr, [16]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func I64gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func i64gatherEpi64(base_addr int, vindex [16]byte, scale int) [16]byte
-
 
 // MaskI64gatherEpi64: Gather 64-bit integers from memory using 64-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1749,12 +1558,11 @@ func i64gatherEpi64(base_addr int, vindex [16]byte, scale int) [16]byte
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm_mask_i64gather_epi64'.
 // Requires AVX2.
-func MaskI64gatherEpi64(src x86.M128i, base_addr int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
-	return x86.M128i(maskI64gatherEpi64([16]byte(src), base_addr, [16]byte(vindex), [16]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func MaskI64gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func maskI64gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
-
 
 // M256I64gatherEpi64: Gather 64-bit integers from memory using 64-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
@@ -1770,12 +1578,11 @@ func maskI64gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm256_i64gather_epi64'.
 // Requires AVX2.
-func M256I64gatherEpi64(base_addr int, vindex x86.M256i, scale int) x86.M256i {
-	return x86.M256i(m256I64gatherEpi64(base_addr, [32]byte(vindex), scale))
+// FIXME: Will likely need to be reworked.
+func M256I64gatherEpi64(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256I64gatherEpi64(base_addr int, vindex [32]byte, scale int) [32]byte
-
 
 // M256MaskI64gatherEpi64: Gather 64-bit integers from memory using 64-bit
 // indices. 64-bit elements are loaded from addresses starting at 'base_addr'
@@ -1798,213 +1605,34 @@ func m256I64gatherEpi64(base_addr int, vindex [32]byte, scale int) [32]byte
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm256_mask_i64gather_epi64'.
 // Requires AVX2.
-func M256MaskI64gatherEpi64(src x86.M256i, base_addr int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
-	return x86.M256i(m256MaskI64gatherEpi64([32]byte(src), base_addr, [32]byte(vindex), [32]byte(mask), scale))
+// FIXME: Will likely need to be reworked.
+func M256MaskI64gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
 
-func m256MaskI64gatherEpi64(src [32]byte, base_addr int, vindex [32]byte, mask [32]byte, scale int) [32]byte
+// Skipped: _mm_i64gather_pd. Contains pointer parameter.
 
 
-// I64gatherPd: Gather double-precision (64-bit) floating-point elements from
-// memory using 64-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm_i64gather_pd'.
-// Requires AVX2.
-func I64gatherPd(base_addr float64, vindex x86.M128i, scale int) x86.M128d {
-	return x86.M128d(i64gatherPd(base_addr, [16]byte(vindex), scale))
-}
-
-func i64gatherPd(base_addr float64, vindex [16]byte, scale int) [2]float64
+// Skipped: _mm_mask_i64gather_pd. Contains pointer parameter.
 
 
-// MaskI64gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 64-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*64
-//			IF mask[i+63]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				mask[i+63] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:128] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm_mask_i64gather_pd'.
-// Requires AVX2.
-func MaskI64gatherPd(src x86.M128d, base_addr float64, vindex x86.M128i, mask x86.M128d, scale int) x86.M128d {
-	return x86.M128d(maskI64gatherPd([2]float64(src), base_addr, [16]byte(vindex), [2]float64(mask), scale))
-}
-
-func maskI64gatherPd(src [2]float64, base_addr float64, vindex [16]byte, mask [2]float64, scale int) [2]float64
+// Skipped: _mm256_i64gather_pd. Contains pointer parameter.
 
 
-// M256I64gatherPd: Gather double-precision (64-bit) floating-point elements
-// from memory using 64-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm256_i64gather_pd'.
-// Requires AVX2.
-func M256I64gatherPd(base_addr float64, vindex x86.M256i, scale int) x86.M256d {
-	return x86.M256d(m256I64gatherPd(base_addr, [32]byte(vindex), scale))
-}
-
-func m256I64gatherPd(base_addr float64, vindex [32]byte, scale int) [4]float64
+// Skipped: _mm256_mask_i64gather_pd. Contains pointer parameter.
 
 
-// M256MaskI64gatherPd: Gather double-precision (64-bit) floating-point
-// elements from memory using 64-bit indices. 64-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
-// highest bit is not set in the corresponding element). 'scale' should be 1,
-// 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*64
-//			IF mask[i+63]
-//				dst[i+63:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				mask[i+63] := 0
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:256] := 0
-//		dst[MAX:256] := 0
-//
-// Instruction: 'VGATHERQPD'. Intrinsic: '_mm256_mask_i64gather_pd'.
-// Requires AVX2.
-func M256MaskI64gatherPd(src x86.M256d, base_addr float64, vindex x86.M256i, mask x86.M256d, scale int) x86.M256d {
-	return x86.M256d(m256MaskI64gatherPd([4]float64(src), base_addr, [32]byte(vindex), [4]float64(mask), scale))
-}
-
-func m256MaskI64gatherPd(src [4]float64, base_addr float64, vindex [32]byte, mask [4]float64, scale int) [4]float64
+// Skipped: _mm_i64gather_ps. Contains pointer parameter.
 
 
-// I64gatherPs: Gather single-precision (32-bit) floating-point elements from
-// memory using 64-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			m := j*64
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm_i64gather_ps'.
-// Requires AVX2.
-func I64gatherPs(base_addr float32, vindex x86.M128i, scale int) x86.M128 {
-	return x86.M128(i64gatherPs(base_addr, [16]byte(vindex), scale))
-}
-
-func i64gatherPs(base_addr float32, vindex [16]byte, scale int) [4]float32
+// Skipped: _mm_mask_i64gather_ps. Contains pointer parameter.
 
 
-// MaskI64gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 64-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 1
-//			i := j*32
-//			m := j*64
-//			IF mask[i+31]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				mask[i+31] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:64] := 0
-//		dst[MAX:64] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm_mask_i64gather_ps'.
-// Requires AVX2.
-func MaskI64gatherPs(src x86.M128, base_addr float32, vindex x86.M128i, mask x86.M128, scale int) x86.M128 {
-	return x86.M128(maskI64gatherPs([4]float32(src), base_addr, [16]byte(vindex), [4]float32(mask), scale))
-}
-
-func maskI64gatherPs(src [4]float32, base_addr float32, vindex [16]byte, mask [4]float32, scale int) [4]float32
+// Skipped: _mm256_i64gather_ps. Contains pointer parameter.
 
 
-// M256I64gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 64-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst'. 'scale' should be 1, 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			m := j*64
-//			dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//		ENDFOR
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm256_i64gather_ps'.
-// Requires AVX2.
-func M256I64gatherPs(base_addr float32, vindex x86.M256i, scale int) x86.M128 {
-	return x86.M128(m256I64gatherPs(base_addr, [32]byte(vindex), scale))
-}
-
-func m256I64gatherPs(base_addr float32, vindex [32]byte, scale int) [4]float32
-
-
-// M256MaskI64gatherPs: Gather single-precision (32-bit) floating-point
-// elements from memory using 64-bit indices. 32-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 64-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
-// highest bit is not set in the corresponding element). 'scale' should be 1,
-// 2, 4 or 8. 
-//
-//		FOR j := 0 to 3
-//			i := j*32
-//			m := j*64
-//			IF mask[i+31]
-//				dst[i+31:i] := MEM[base_addr + SignExtend(vindex[i+63:i])*scale]
-//				mask[i+31] := 0
-//			ELSE
-//				dst[i+31:i] := src[i+31:i]
-//			FI
-//		ENDFOR
-//		mask[MAX:128] := 0
-//		dst[MAX:128] := 0
-//
-// Instruction: 'VGATHERQPS'. Intrinsic: '_mm256_mask_i64gather_ps'.
-// Requires AVX2.
-func M256MaskI64gatherPs(src x86.M128, base_addr float32, vindex x86.M256i, mask x86.M128, scale int) x86.M128 {
-	return x86.M128(m256MaskI64gatherPs([4]float32(src), base_addr, [32]byte(vindex), [4]float32(mask), scale))
-}
-
-func m256MaskI64gatherPs(src [4]float32, base_addr float32, vindex [32]byte, mask [4]float32, scale int) [4]float32
+// Skipped: _mm256_mask_i64gather_ps. Contains pointer parameter.
 
 
 // M256Inserti128Si256: Copy 'a' to 'dst', then insert 128 bits (composed of
@@ -2081,12 +1709,11 @@ func m256MaddubsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm_maskload_epi32'.
 // Requires AVX2.
-func MaskloadEpi32(mem_addr int, mask x86.M128i) x86.M128i {
-	return x86.M128i(maskloadEpi32(mem_addr, [16]byte(mask)))
+// FIXME: Will likely need to be reworked.
+func MaskloadEpi32(mem_addr *int, mask x86.M128i) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func maskloadEpi32(mem_addr int, mask [16]byte) [16]byte
-
 
 // M256MaskloadEpi32: Load packed 32-bit integers from memory into 'dst' using
 // 'mask' (elements are zeroed out when the highest bit is not set in the
@@ -2104,12 +1731,11 @@ func maskloadEpi32(mem_addr int, mask [16]byte) [16]byte
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm256_maskload_epi32'.
 // Requires AVX2.
-func M256MaskloadEpi32(mem_addr int, mask x86.M256i) x86.M256i {
-	return x86.M256i(m256MaskloadEpi32(mem_addr, [32]byte(mask)))
+// FIXME: Will likely need to be reworked.
+func M256MaskloadEpi32(mem_addr *int, mask x86.M256i) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256MaskloadEpi32(mem_addr int, mask [32]byte) [32]byte
-
 
 // MaskloadEpi64: Load packed 64-bit integers from memory into 'dst' using
 // 'mask' (elements are zeroed out when the highest bit is not set in the
@@ -2127,12 +1753,11 @@ func m256MaskloadEpi32(mem_addr int, mask [32]byte) [32]byte
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm_maskload_epi64'.
 // Requires AVX2.
-func MaskloadEpi64(mem_addr int, mask x86.M128i) x86.M128i {
-	return x86.M128i(maskloadEpi64(mem_addr, [16]byte(mask)))
+// FIXME: Will likely need to be reworked.
+func MaskloadEpi64(mem_addr *int, mask x86.M128i) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
-
-func maskloadEpi64(mem_addr int, mask [16]byte) [16]byte
-
 
 // M256MaskloadEpi64: Load packed 64-bit integers from memory into 'dst' using
 // 'mask' (elements are zeroed out when the highest bit is not set in the
@@ -2150,12 +1775,11 @@ func maskloadEpi64(mem_addr int, mask [16]byte) [16]byte
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm256_maskload_epi64'.
 // Requires AVX2.
-func M256MaskloadEpi64(mem_addr int, mask x86.M256i) x86.M256i {
-	return x86.M256i(m256MaskloadEpi64(mem_addr, [32]byte(mask)))
+// FIXME: Will likely need to be reworked.
+func M256MaskloadEpi64(mem_addr *int, mask x86.M256i) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256MaskloadEpi64(mem_addr int, mask [32]byte) [32]byte
-
 
 // MaskstoreEpi32: Store packed 32-bit integers from 'a' into memory using
 // 'mask' (elements are not stored when the highest bit is not set in the
@@ -2170,12 +1794,11 @@ func m256MaskloadEpi64(mem_addr int, mask [32]byte) [32]byte
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm_maskstore_epi32'.
 // Requires AVX2.
-func MaskstoreEpi32(mem_addr int, mask x86.M128i, a x86.M128i)  {
-	maskstoreEpi32(mem_addr, [16]byte(mask), [16]byte(a))
+// FIXME: Will likely need to be reworked.
+func MaskstoreEpi32(mem_addr *int, mask x86.M128i, a x86.M128i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func maskstoreEpi32(mem_addr int, mask [16]byte, a [16]byte) 
-
 
 // M256MaskstoreEpi32: Store packed 32-bit integers from 'a' into memory using
 // 'mask' (elements are not stored when the highest bit is not set in the
@@ -2190,12 +1813,11 @@ func maskstoreEpi32(mem_addr int, mask [16]byte, a [16]byte)
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm256_maskstore_epi32'.
 // Requires AVX2.
-func M256MaskstoreEpi32(mem_addr int, mask x86.M256i, a x86.M256i)  {
-	m256MaskstoreEpi32(mem_addr, [32]byte(mask), [32]byte(a))
+// FIXME: Will likely need to be reworked.
+func M256MaskstoreEpi32(mem_addr *int, mask x86.M256i, a x86.M256i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256MaskstoreEpi32(mem_addr int, mask [32]byte, a [32]byte) 
-
 
 // MaskstoreEpi64: Store packed 64-bit integers from 'a' into memory using
 // 'mask' (elements are not stored when the highest bit is not set in the
@@ -2210,12 +1832,11 @@ func m256MaskstoreEpi32(mem_addr int, mask [32]byte, a [32]byte)
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm_maskstore_epi64'.
 // Requires AVX2.
-func MaskstoreEpi64(mem_addr int64, mask x86.M128i, a x86.M128i)  {
-	maskstoreEpi64(mem_addr, [16]byte(mask), [16]byte(a))
+// FIXME: Will likely need to be reworked.
+func MaskstoreEpi64(mem_addr *int64, mask x86.M128i, a x86.M128i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func maskstoreEpi64(mem_addr int64, mask [16]byte, a [16]byte) 
-
 
 // M256MaskstoreEpi64: Store packed 64-bit integers from 'a' into memory using
 // 'mask' (elements are not stored when the highest bit is not set in the
@@ -2230,12 +1851,11 @@ func maskstoreEpi64(mem_addr int64, mask [16]byte, a [16]byte)
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm256_maskstore_epi64'.
 // Requires AVX2.
-func M256MaskstoreEpi64(mem_addr int64, mask x86.M256i, a x86.M256i)  {
-	m256MaskstoreEpi64(mem_addr, [32]byte(mask), [32]byte(a))
+// FIXME: Will likely need to be reworked.
+func M256MaskstoreEpi64(mem_addr *int64, mask x86.M256i, a x86.M256i)  {
+	// FIXME: Rework to avoid possible return value as parameter.
+
 }
-
-func m256MaskstoreEpi64(mem_addr int64, mask [32]byte, a [32]byte) 
-
 
 // M256MaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst'. 
@@ -3790,12 +3410,11 @@ func m256SrlvEpi64(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VMOVNTDQA'. Intrinsic: '_mm256_stream_load_si256'.
 // Requires AVX2.
-func M256StreamLoadSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(m256StreamLoadSi256(mem_addr))
+// FIXME: Will likely need to be reworked.
+func M256StreamLoadSi256(mem_addr *x86.M256iConst) x86.M256i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M256i{}
 }
-
-func m256StreamLoadSi256(mem_addr x86.M256iConst) [32]byte
-
 
 // M256SubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a', and store the results in 'dst'. 

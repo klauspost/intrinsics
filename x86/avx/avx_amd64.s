@@ -240,54 +240,6 @@ TEXT ·m256BlendvPs(SB),7,$0
 	MOV Y2, ret+0(FP)
 	RET
 
-// func m256BroadcastPd(mem_addr x86.M128dConst) [4]float64
-TEXT ·m256BroadcastPd(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M128dConst
-
-	// TODO: Code missing - uses instrunction: VBROADCASTF128
-
-	MOV Y0, ret+0(FP)
-	RET
-
-// func m256BroadcastPs(mem_addr x86.M128Const) [8]float32
-TEXT ·m256BroadcastPs(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M128Const
-
-	// TODO: Code missing - uses instrunction: VBROADCASTF128
-
-	MOV Y0, ret+0(FP)
-	RET
-
-// func m256BroadcastSd(mem_addr float64) [4]float64
-TEXT ·m256BroadcastSd(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// VBROADCASTSD R8
-
-	MOV Y0, ret+8(FP)
-	RET
-
-// func broadcastSs(mem_addr float32) [4]float32
-TEXT ·broadcastSs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// VBROADCASTSS R8
-
-	MOVOU X0, ret+4(FP)
-	RET
-
-// func m256BroadcastSs(mem_addr float32) [8]float32
-TEXT ·m256BroadcastSs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// VBROADCASTSS R8
-
-	MOV Y0, ret+4(FP)
-	RET
-
 // func m256CastpdPs(a [4]float64) [8]float32
 TEXT ·m256CastpdPs(SB),7,$0
 	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
@@ -1091,15 +1043,6 @@ TEXT ·m256IdivEpi32(SB),7,$0
 	MOV Y1, ret+0(FP)
 	RET
 
-// func m256IdivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
-TEXT ·m256IdivremEpi32(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing
-
-	MOV Y2, ret+0(FP)
-	RET
-
 // func m256InsertEpi16(a [32]byte, i int16, index int) [32]byte
 TEXT ·m256InsertEpi16(SB),7,$0
 	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
@@ -1208,102 +1151,6 @@ TEXT ·m256IremEpi32(SB),7,$0
 	MOV Y1, ret+0(FP)
 	RET
 
-// func m256LddquSi256(mem_addr x86.M256iConst) [32]byte
-TEXT ·m256LddquSi256(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M256iConst
-
-	// TODO: Code missing - uses instrunction: VLDDQU
-
-	MOV Y0, ret+0(FP)
-	RET
-
-// func m256LoadPd(mem_addr float64) [4]float64
-TEXT ·m256LoadPd(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// VMOVAPD R8
-
-	MOV Y0, ret+8(FP)
-	RET
-
-// func m256LoadPs(mem_addr float32) [8]float32
-TEXT ·m256LoadPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// VMOVAPS R8
-
-	MOV Y0, ret+4(FP)
-	RET
-
-// func m256LoadSi256(mem_addr x86.M256iConst) [32]byte
-TEXT ·m256LoadSi256(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M256iConst
-
-	// TODO: Code missing - uses instrunction: VMOVDQA
-
-	MOV Y0, ret+0(FP)
-	RET
-
-// func m256LoaduPd(mem_addr float64) [4]float64
-TEXT ·m256LoaduPd(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// VMOVUPD R8
-
-	MOV Y0, ret+8(FP)
-	RET
-
-// func m256LoaduPs(mem_addr float32) [8]float32
-TEXT ·m256LoaduPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-
-	// TODO: Code missing - could be:
-	// VMOVUPS R8
-
-	MOV Y0, ret+4(FP)
-	RET
-
-// func m256LoaduSi256(mem_addr x86.M256iConst) [32]byte
-TEXT ·m256LoaduSi256(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M256iConst
-
-	// TODO: Code missing - uses instrunction: VMOVDQU
-
-	MOV Y0, ret+0(FP)
-	RET
-
-// func m256Loadu2M128(hiaddr float32, loaddr float32) [8]float32
-TEXT ·m256Loadu2M128(SB),7,$0
-	MOVL hiaddr+0(FP),R8
-	MOVL loaddr+4(FP),R9
-
-	// TODO: Code missing
-
-	MOV Y1, ret+8(FP)
-	RET
-
-// func m256Loadu2M128d(hiaddr float64, loaddr float64) [4]float64
-TEXT ·m256Loadu2M128d(SB),7,$0
-	MOVQ hiaddr+0(FP),R8
-	MOVQ loaddr+8(FP),R9
-
-	// TODO: Code missing
-
-	MOV Y1, ret+16(FP)
-	RET
-
-// func m256Loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) [32]byte
-TEXT ·m256Loadu2M128i(SB),7,$0
-	// FIXME: Unimplemented. Unknown size of type x86.M128iConst
-
-	// TODO: Code missing
-
-	MOV Y1, ret+0(FP)
-	RET
-
 // func m256LogPd(a [4]float64) [4]float64
 TEXT ·m256LogPd(SB),7,$0
 	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
@@ -1392,84 +1239,6 @@ TEXT ·m256LogbPs(SB),7,$0
 	// TODO: Code missing
 
 	MOV Y0, ret+0(FP)
-	RET
-
-// func maskloadPd(mem_addr float64, mask [16]byte) [2]float64
-TEXT ·maskloadPd(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-	MOVOU mask+8(FP),X1
-
-	// TODO: Code missing - could be:
-	// VMASKMOVPD R8, X1
-
-	MOVOU X1, ret+24(FP)
-	RET
-
-// func m256MaskloadPd(mem_addr float64, mask [32]byte) [4]float64
-TEXT ·m256MaskloadPd(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - could be:
-	// VMASKMOVPD R8, Y1
-
-	MOV Y1, ret+0(FP)
-	RET
-
-// func maskloadPs(mem_addr float32, mask [16]byte) [4]float32
-TEXT ·maskloadPs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU mask+4(FP),X1
-
-	// TODO: Code missing - could be:
-	// VMASKMOVPS R8, X1
-
-	MOVOU X1, ret+20(FP)
-	RET
-
-// func m256MaskloadPs(mem_addr float32, mask [32]byte) [8]float32
-TEXT ·m256MaskloadPs(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - could be:
-	// VMASKMOVPS R8, Y1
-
-	MOV Y1, ret+0(FP)
-	RET
-
-// func maskstorePd(mem_addr float64, mask [16]byte, a [2]float64) 
-TEXT ·maskstorePd(SB),7,$0
-	MOVQ mem_addr+0(FP),R8
-	MOVOU mask+8(FP),X1
-	MOVOU a+24(FP),X2
-
-	// TODO: Code missing - uses instrunction: VMASKMOVPD
-
-	RET
-
-// func m256MaskstorePd(mem_addr float64, mask [32]byte, a [4]float64) 
-TEXT ·m256MaskstorePd(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VMASKMOVPD
-
-	RET
-
-// func maskstorePs(mem_addr float32, mask [16]byte, a [4]float32) 
-TEXT ·maskstorePs(SB),7,$0
-	MOVL mem_addr+0(FP),R8
-	MOVOU mask+4(FP),X1
-	MOVOU a+20(FP),X2
-
-	// TODO: Code missing - uses instrunction: VMASKMOVPS
-
-	RET
-
-// func m256MaskstorePs(mem_addr float32, mask [32]byte, a [8]float32) 
-TEXT ·m256MaskstorePs(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - uses instrunction: VMASKMOVPS
-
 	RET
 
 // func m256MaxPd(a [4]float64, b [4]float64) [4]float64
@@ -2171,24 +1940,6 @@ TEXT ·m256SinPs(SB),7,$0
 	MOV Y0, ret+0(FP)
 	RET
 
-// func m256SincosPd(mem_addr [4]float64, a [4]float64) [4]float64
-TEXT ·m256SincosPd(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
-
-	// TODO: Code missing
-
-	MOV Y1, ret+0(FP)
-	RET
-
-// func m256SincosPs(mem_addr [8]float32, a [8]float32) [8]float32
-TEXT ·m256SincosPs(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256
-
-	// TODO: Code missing
-
-	MOV Y1, ret+0(FP)
-	RET
-
 // func m256SindPd(a [4]float64) [4]float64
 TEXT ·m256SindPd(SB),7,$0
 	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
@@ -2243,111 +1994,6 @@ TEXT ·m256SqrtPs(SB),7,$0
 	// VSQRTPS Y0
 
 	MOV Y0, ret+0(FP)
-	RET
-
-// func m256StorePd(mem_addr float64, a [4]float64) 
-TEXT ·m256StorePd(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
-
-	// TODO: Code missing - could be:
-	// VMOVAPD R8, Y1
-
-	RET
-
-// func m256StorePs(mem_addr float32, a [8]float32) 
-TEXT ·m256StorePs(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256
-
-	// TODO: Code missing - could be:
-	// VMOVAPS R8, Y1
-
-	RET
-
-// func m256StoreSi256(mem_addr [32]byte, a [32]byte) 
-TEXT ·m256StoreSi256(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - could be:
-	// VMOVDQA Y0, Y1
-
-	RET
-
-// func m256StoreuPd(mem_addr float64, a [4]float64) 
-TEXT ·m256StoreuPd(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
-
-	// TODO: Code missing - could be:
-	// VMOVUPD R8, Y1
-
-	RET
-
-// func m256StoreuPs(mem_addr float32, a [8]float32) 
-TEXT ·m256StoreuPs(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256
-
-	// TODO: Code missing - could be:
-	// VMOVUPS R8, Y1
-
-	RET
-
-// func m256StoreuSi256(mem_addr [32]byte, a [32]byte) 
-TEXT ·m256StoreuSi256(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - could be:
-	// VMOVDQU Y0, Y1
-
-	RET
-
-// func m256Storeu2M128(hiaddr float32, loaddr float32, a [8]float32) 
-TEXT ·m256Storeu2M128(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256
-
-	// TODO: Code missing
-
-	RET
-
-// func m256Storeu2M128d(hiaddr float64, loaddr float64, a [4]float64) 
-TEXT ·m256Storeu2M128d(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
-
-	// TODO: Code missing
-
-	RET
-
-// func m256Storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte) 
-TEXT ·m256Storeu2M128i(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing
-
-	RET
-
-// func m256StreamPd(mem_addr float64, a [4]float64) 
-TEXT ·m256StreamPd(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256d
-
-	// TODO: Code missing - could be:
-	// VMOVNTPD R8, Y1
-
-	RET
-
-// func m256StreamPs(mem_addr float32, a [8]float32) 
-TEXT ·m256StreamPs(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256
-
-	// TODO: Code missing - could be:
-	// VMOVNTPS R8, Y1
-
-	RET
-
-// func m256StreamSi256(mem_addr [32]byte, a [32]byte) 
-TEXT ·m256StreamSi256(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing - could be:
-	// VMOVNTDQ Y0, Y1
-
 	RET
 
 // func m256SubPd(a [4]float64, b [4]float64) [4]float64
@@ -2677,15 +2323,6 @@ TEXT ·m256UdivEpi32(SB),7,$0
 	// TODO: Code missing
 
 	MOV Y1, ret+0(FP)
-	RET
-
-// func m256UdivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
-TEXT ·m256UdivremEpi32(SB),7,$0
-	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256i
-
-	// TODO: Code missing
-
-	MOV Y2, ret+0(FP)
 	RET
 
 // func undefinedPd() [2]float64

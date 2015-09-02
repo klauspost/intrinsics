@@ -12,12 +12,11 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //		dst:out[31:0] := a[31:0] + b[31:0] + c_in;
 //
 // Instruction: 'ADC'. Intrinsic: '_addcarry_u32'.
-func AddcarryU32(c_in uint8, a uint32, b uint32, out uint32) uint8 {
-	return uint8(addcarryU32(c_in, a, b, out))
+// FIXME: Will likely need to be reworked.
+func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func addcarryU32(c_in uint8, a uint32, b uint32, out uint32) uint8
-
 
 // AddcarryU64: Add unsigned 64-bit integers 'a' and 'b' with unsigned 8-bit
 // carry-in 'c_in' (carry flag), and store the unsigned 64-bit result in 'out',
@@ -26,12 +25,11 @@ func addcarryU32(c_in uint8, a uint32, b uint32, out uint32) uint8
 //		dst:out[63:0] := a[63:0] + b[63:0] + c_in;
 //
 // Instruction: 'ADC'. Intrinsic: '_addcarry_u64'.
-func AddcarryU64(c_in uint8, a uint64, b uint64, out uint64) uint8 {
-	return uint8(addcarryU64(c_in, a, b, out))
+// FIXME: Will likely need to be reworked.
+func AddcarryU64(c_in uint8, a uint64, b uint64, out *uint64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func addcarryU64(c_in uint8, a uint64, b uint64, out uint64) uint8
-
 
 // AllowCpuFeatures: Treat the processor-specific feature(s) specified in 'a'
 // as available. Multiple features may be OR'd together. See the valid feature
@@ -137,12 +135,11 @@ func bitScanReverse(a int) int
 //		FI
 //
 // Instruction: 'BSF'. Intrinsic: '_BitScanForward'.
-func BitScanForward2(index uint32, mask uint32) uint8 {
-	return uint8(bitScanForward2(index, mask))
+// FIXME: Will likely need to be reworked.
+func BitScanForward2(index *uint32, mask uint32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bitScanForward2(index uint32, mask uint32) uint8
-
 
 // BitScanForward64: Set 'index' to the index of the lowest set bit in 64-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
@@ -160,12 +157,11 @@ func bitScanForward2(index uint32, mask uint32) uint8
 //		FI
 //
 // Instruction: 'BSF'. Intrinsic: '_BitScanForward64'.
-func BitScanForward64(index uint32, mask uint64) uint8 {
-	return uint8(bitScanForward64(index, mask))
+// FIXME: Will likely need to be reworked.
+func BitScanForward64(index *uint32, mask uint64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bitScanForward64(index uint32, mask uint64) uint8
-
 
 // BitScanReverse2: Set 'index' to the index of the highest set bit in 32-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
@@ -183,12 +179,11 @@ func bitScanForward64(index uint32, mask uint64) uint8
 //		FI
 //
 // Instruction: 'BSR'. Intrinsic: '_BitScanReverse'.
-func BitScanReverse2(index uint32, mask uint32) uint8 {
-	return uint8(bitScanReverse2(index, mask))
+// FIXME: Will likely need to be reworked.
+func BitScanReverse2(index *uint32, mask uint32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bitScanReverse2(index uint32, mask uint32) uint8
-
 
 // BitScanReverse64: Set 'index' to the index of the highest set bit in 64-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
@@ -206,36 +201,33 @@ func bitScanReverse2(index uint32, mask uint32) uint8
 //		FI
 //
 // Instruction: 'BSR'. Intrinsic: '_BitScanReverse64'.
-func BitScanReverse64(index uint32, mask uint64) uint8 {
-	return uint8(bitScanReverse64(index, mask))
+// FIXME: Will likely need to be reworked.
+func BitScanReverse64(index *uint32, mask uint64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bitScanReverse64(index uint32, mask uint64) uint8
-
 
 // Bittest: Return the bit at index 'b' of 32-bit integer 'a'. 
 //
 //		dst := a[b]
 //
 // Instruction: 'BT'. Intrinsic: '_bittest'.
-func Bittest(a int32, b int32) uint8 {
-	return uint8(bittest(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittest(a *int32, b int32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittest(a int32, b int32) uint8
-
 
 // Bittest64: Return the bit at index 'b' of 64-bit integer 'a'. 
 //
 //		dst := a[b]
 //
 // Instruction: 'BT'. Intrinsic: '_bittest64'.
-func Bittest64(a int64, b int64) uint8 {
-	return uint8(bittest64(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittest64(a *int64, b int64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittest64(a int64, b int64) uint8
-
 
 // Bittestandcomplement: Return the bit at index 'b' of 32-bit integer 'a', and
 // set that bit to its complement. 
@@ -244,12 +236,11 @@ func bittest64(a int64, b int64) uint8
 //		a[b] := ~a[b]
 //
 // Instruction: 'BTC'. Intrinsic: '_bittestandcomplement'.
-func Bittestandcomplement(a int32, b int32) uint8 {
-	return uint8(bittestandcomplement(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittestandcomplement(a *int32, b int32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittestandcomplement(a int32, b int32) uint8
-
 
 // Bittestandcomplement64: Return the bit at index 'b' of 64-bit integer 'a',
 // and set that bit to its complement. 
@@ -258,12 +249,11 @@ func bittestandcomplement(a int32, b int32) uint8
 //		a[b] := ~a[b]
 //
 // Instruction: 'BTC'. Intrinsic: '_bittestandcomplement64'.
-func Bittestandcomplement64(a int64, b int64) uint8 {
-	return uint8(bittestandcomplement64(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittestandcomplement64(a *int64, b int64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittestandcomplement64(a int64, b int64) uint8
-
 
 // Bittestandreset: Return the bit at index 'b' of 32-bit integer 'a', and set
 // that bit to zero. 
@@ -272,12 +262,11 @@ func bittestandcomplement64(a int64, b int64) uint8
 //		a[b] := 0
 //
 // Instruction: 'BTR'. Intrinsic: '_bittestandreset'.
-func Bittestandreset(a int32, b int32) uint8 {
-	return uint8(bittestandreset(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittestandreset(a *int32, b int32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittestandreset(a int32, b int32) uint8
-
 
 // Bittestandreset64: Return the bit at index 'b' of 64-bit integer 'a', and
 // set that bit to zero. 
@@ -286,12 +275,11 @@ func bittestandreset(a int32, b int32) uint8
 //		a[b] := 0
 //
 // Instruction: 'BTR'. Intrinsic: '_bittestandreset64'.
-func Bittestandreset64(a int64, b int64) uint8 {
-	return uint8(bittestandreset64(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittestandreset64(a *int64, b int64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittestandreset64(a int64, b int64) uint8
-
 
 // Bittestandset: Return the bit at index 'b' of 32-bit integer 'a', and set
 // that bit to one. 
@@ -300,12 +288,11 @@ func bittestandreset64(a int64, b int64) uint8
 //		a[b] := 1
 //
 // Instruction: 'BTS'. Intrinsic: '_bittestandset'.
-func Bittestandset(a int32, b int32) uint8 {
-	return uint8(bittestandset(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittestandset(a *int32, b int32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittestandset(a int32, b int32) uint8
-
 
 // Bittestandset64: Return the bit at index 'b' of 64-bit integer 'a', and set
 // that bit to one. 
@@ -314,12 +301,11 @@ func bittestandset(a int32, b int32) uint8
 //		a[b] := 1
 //
 // Instruction: 'BTS'. Intrinsic: '_bittestandset64'.
-func Bittestandset64(a int64, b int64) uint8 {
-	return uint8(bittestandset64(a, b))
+// FIXME: Will likely need to be reworked.
+func Bittestandset64(a *int64, b int64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func bittestandset64(a int64, b int64) uint8
-
 
 // Bswap: Reverse the byte order of 32-bit integer 'a', and store the result in
 // 'dst'. This intrinsic is provided for conversion between little and big
@@ -446,97 +432,22 @@ func CvtssSh(a float32, imm8 int) uint16 {
 func cvtssSh(a float32, imm8 int) uint16
 
 
-// LoadbeI16: Loads a big-endian word (16-bit) value from address 'ptr' and
-// stores the result in 'dst'. 
-//
-//		addr := MEM[ptr]
-//		FOR j := 0 to 1
-//			i := j*8
-//			dst[i+7:i] := addr[15-i:15-i-7]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_loadbe_i16'.
-func LoadbeI16(ptr uintptr) int16 {
-	return int16(loadbeI16(uintptr(ptr)))
-}
-
-func loadbeI16(ptr uintptr) int16
+// Skipped: _loadbe_i16. Contains pointer parameter.
 
 
-// LoadbeI32: Loads a big-endian double word (32-bit) value from address 'ptr'
-// and stores the result in 'dst'. 
-//
-//		addr := MEM[ptr]
-//		FOR j := 0 to 4
-//			i := j*8
-//			dst[i+7:i] := addr[31-i:31-i-7]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_loadbe_i32'.
-func LoadbeI32(ptr uintptr) int {
-	return int(loadbeI32(uintptr(ptr)))
-}
-
-func loadbeI32(ptr uintptr) int
+// Skipped: _loadbe_i32. Contains pointer parameter.
 
 
-// LoadbeI64: Loads a big-endian quad word (64-bit) value from address 'ptr'
-// and stores the result in 'dst'. 
-//
-//		addr := MEM[ptr]
-//		FOR j := 0 to 8
-//			i := j*8
-//			dst[i+7:i] := addr[63-i:63-i-7]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_loadbe_i64'.
-func LoadbeI64(ptr uintptr) int64 {
-	return int64(loadbeI64(uintptr(ptr)))
-}
-
-func loadbeI64(ptr uintptr) int64
+// Skipped: _loadbe_i64. Contains pointer parameter.
 
 
-// LoaduSi16: Load unaligned 16-bit integer from memory into the first element
-// of 'dst'. 
-//
-//		dst[15:0] := MEM[mem_addr+15:mem_addr]
-//		dst[MAX:16] := 0
-//
-// Instruction: 'MOVZWL+MOVD'. Intrinsic: '_mm_loadu_si16'.
-func LoaduSi16(mem_addr uintptr) x86.M128i {
-	return x86.M128i(loaduSi16(uintptr(mem_addr)))
-}
-
-func loaduSi16(mem_addr uintptr) [16]byte
+// Skipped: _mm_loadu_si16. Contains pointer parameter.
 
 
-// LoaduSi32: Load unaligned 32-bit integer from memory into the first element
-// of 'dst'. 
-//
-//		dst[31:0] := MEM[mem_addr+31:mem_addr]
-//		dst[MAX:32] := 0
-//
-// Instruction: 'MOVD'. Intrinsic: '_mm_loadu_si32'.
-func LoaduSi32(mem_addr uintptr) x86.M128i {
-	return x86.M128i(loaduSi32(uintptr(mem_addr)))
-}
-
-func loaduSi32(mem_addr uintptr) [16]byte
+// Skipped: _mm_loadu_si32. Contains pointer parameter.
 
 
-// LoaduSi64: Load unaligned 64-bit integer from memory into the first element
-// of 'dst'. 
-//
-//		dst[63:0] := MEM[mem_addr+63:mem_addr]
-//		dst[MAX:64] := 0
-//
-// Instruction: 'MOVQ'. Intrinsic: '_mm_loadu_si64'.
-func LoaduSi64(mem_addr uintptr) x86.M128i {
-	return x86.M128i(loaduSi64(uintptr(mem_addr)))
-}
-
-func loaduSi64(mem_addr uintptr) [16]byte
+// Skipped: _mm_loadu_si64. Contains pointer parameter.
 
 
 // Lrotl: Shift the bits of unsigned 64-bit integer 'a' left by the number of
@@ -721,94 +632,22 @@ func Rotwr(a uint16, shift int) uint16 {
 func rotwr(a uint16, shift int) uint16
 
 
-// StorebeI16: Stores word-sized (16-bit) 'data' to address 'ptr' in big-endian
-// format. 
-//
-//		addr := MEM[ptr]
-//		FOR j := 0 to 1
-//			i := j*8
-//			addr[i+7:i] := data[15-i:15-i-7]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_storebe_i16'.
-func StorebeI16(ptr uintptr, data int16)  {
-	storebeI16(uintptr(ptr), data)
-}
-
-func storebeI16(ptr uintptr, data int16) 
+// Skipped: _storebe_i16. Contains pointer parameter.
 
 
-// StorebeI32: Stores double word-sized (32-bit) 'data' to address 'ptr' in
-// big-endian format. 
-//
-//		addr := MEM[ptr]
-//		FOR j := 0 to 4
-//			i := j*8
-//			addr[i+7:i] := data[31-i:31-i-7]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_storebe_i32'.
-func StorebeI32(ptr uintptr, data int)  {
-	storebeI32(uintptr(ptr), data)
-}
-
-func storebeI32(ptr uintptr, data int) 
+// Skipped: _storebe_i32. Contains pointer parameter.
 
 
-// StorebeI64: Stores quad word-sized (64-bit) 'data' to address 'ptr' in
-// big-endian format. 
-//
-//		addr := MEM[ptr]
-//		FOR j := 0 to 7
-//			i := j*8
-//			addr[i+7:i] := data[63-i:63-i-7]
-//		ENDFOR
-//
-// Instruction: '...'. Intrinsic: '_storebe_i64'.
-func StorebeI64(ptr uintptr, data int64)  {
-	storebeI64(uintptr(ptr), data)
-}
-
-func storebeI64(ptr uintptr, data int64) 
+// Skipped: _storebe_i64. Contains pointer parameter.
 
 
-// StoreuSi16: Store 16-bit integer from the first element of 'a' into memory.
-// 'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+15:mem_addr] := a[15:0]
-//
-// Instruction: 'MOVD+MOVW'. Intrinsic: '_mm_storeu_si16'.
-func StoreuSi16(mem_addr uintptr, a x86.M128i)  {
-	storeuSi16(uintptr(mem_addr), [16]byte(a))
-}
-
-func storeuSi16(mem_addr uintptr, a [16]byte) 
+// Skipped: _mm_storeu_si16. Contains pointer parameter.
 
 
-// StoreuSi32: Store 32-bit integer from the first element of 'a' into memory.
-// 'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+31:mem_addr] := a[31:0]
-//
-// Instruction: 'MOVD'. Intrinsic: '_mm_storeu_si32'.
-func StoreuSi32(mem_addr uintptr, a x86.M128i)  {
-	storeuSi32(uintptr(mem_addr), [16]byte(a))
-}
-
-func storeuSi32(mem_addr uintptr, a [16]byte) 
+// Skipped: _mm_storeu_si32. Contains pointer parameter.
 
 
-// StoreuSi64: Store 64-bit integer from the first element of 'a' into memory.
-// 'mem_addr' does not need to be aligned on any particular boundary. 
-//
-//		MEM[mem_addr+63:mem_addr] := a[63:0]
-//
-// Instruction: 'MOVQ'. Intrinsic: '_mm_storeu_si64'.
-func StoreuSi64(mem_addr uintptr, a x86.M128i)  {
-	storeuSi64(uintptr(mem_addr), [16]byte(a))
-}
-
-func storeuSi64(mem_addr uintptr, a [16]byte) 
+// Skipped: _mm_storeu_si64. Contains pointer parameter.
 
 
 // SubborrowU32: Add unsigned 8-bit borrow 'b_in' (carry flag) to unsigned
@@ -819,12 +658,11 @@ func storeuSi64(mem_addr uintptr, a [16]byte)
 //		dst:out[31:0] := (b[31:0] - (a[31:0] + b_in));
 //
 // Instruction: 'SBB'. Intrinsic: '_subborrow_u32'.
-func SubborrowU32(b_in uint8, a uint32, b uint32, out uint32) uint8 {
-	return uint8(subborrowU32(b_in, a, b, out))
+// FIXME: Will likely need to be reworked.
+func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func subborrowU32(b_in uint8, a uint32, b uint32, out uint32) uint8
-
 
 // SubborrowU64: Add unsigned 8-bit borrow 'b_in' (carry flag) to unsigned
 // 64-bit integer 'a', and subtract the result from unsigned 64-bit integer
@@ -834,9 +672,8 @@ func subborrowU32(b_in uint8, a uint32, b uint32, out uint32) uint8
 //		dst:out[63:0] := (b[63:0] - (a[63:0] + b_in));
 //
 // Instruction: 'SBB'. Intrinsic: '_subborrow_u64'.
-func SubborrowU64(b_in uint8, a uint64, b uint64, out uint64) uint8 {
-	return uint8(subborrowU64(b_in, a, b, out))
+// FIXME: Will likely need to be reworked.
+func SubborrowU64(b_in uint8, a uint64, b uint64, out *uint64) uint8 {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return 0
 }
-
-func subborrowU64(b_in uint8, a uint64, b uint64, out uint64) uint8
-

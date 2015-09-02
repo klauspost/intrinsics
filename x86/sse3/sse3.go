@@ -121,26 +121,13 @@ func hsubPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'LDDQU'. Intrinsic: '_mm_lddqu_si128'.
 // Requires SSE3.
-func LddquSi128(mem_addr x86.M128iConst) x86.M128i {
-	return x86.M128i(lddquSi128(mem_addr))
+// FIXME: Will likely need to be reworked.
+func LddquSi128(mem_addr *x86.M128iConst) x86.M128i {
+	// FIXME: Rework to avoid possible return value as parameter.
+	return x86.M128i{}
 }
 
-func lddquSi128(mem_addr x86.M128iConst) [16]byte
-
-
-// LoaddupPd: Load a double-precision (64-bit) floating-point element from
-// memory into both elements of 'dst'. 
-//
-//		tmp[63:0] := MEM[mem_addr+63:mem_addr]
-//		tmp[127:64] := MEM[mem_addr+63:mem_addr]
-//
-// Instruction: 'MOVDDUP'. Intrinsic: '_mm_loaddup_pd'.
-// Requires SSE3.
-func LoaddupPd(mem_addr float64) x86.M128d {
-	return x86.M128d(loaddupPd(mem_addr))
-}
-
-func loaddupPd(mem_addr float64) [2]float64
+// Skipped: _mm_loaddup_pd. Contains pointer parameter.
 
 
 // MovedupPd: Duplicate the low double-precision (64-bit) floating-point
