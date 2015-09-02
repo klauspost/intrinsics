@@ -37,7 +37,7 @@ TEXT ·sha1rnds4Epu32(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ fnc+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: SHA1RNDS4
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -70,7 +70,7 @@ TEXT ·sha256rnds2Epu32(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVOU k+32(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: SHA256RNDS2
 
 	MOVOU X2, ret+48(FP)
 	RET

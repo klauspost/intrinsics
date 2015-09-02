@@ -66,9 +66,9 @@ TEXT ·hsubPs(SB),7,$0
 
 // func lddquSi128(mem_addr x86.M128iConst) [16]byte
 TEXT ·lddquSi128(SB),7,$0
-	// Unimplemented. Unknown size of type x86.M128iConst
-	// TODO: Code missing - could be:
-	// LDDQU 
+	// FIXME: Unimplemented. Unknown size of type x86.M128iConst
+
+	// TODO: Code missing - uses instrunction: LDDQU
 
 	MOVOU X0, ret+0(FP)
 	RET

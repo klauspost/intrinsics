@@ -4,7 +4,7 @@ TEXT ·bextrU32(SB),7,$0
 	MOVL start+4(FP),R9
 	MOVL len+8(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: BEXTR
 
 	MOVL $0, ret+12(FP)
 	RET
@@ -15,7 +15,7 @@ TEXT ·bextrU64(SB),7,$0
 	MOVL start+8(FP),R9
 	MOVL len+12(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: BEXTR
 
 	MOVQ $0, ret+16(FP)
 	RET

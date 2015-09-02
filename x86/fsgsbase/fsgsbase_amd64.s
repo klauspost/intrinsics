@@ -1,7 +1,7 @@
 // func readfsbaseU32() uint32
 TEXT ·readfsbaseU32(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: RDFSBASE
 
 	MOVL $0, ret+0(FP)
 	RET
@@ -9,7 +9,7 @@ TEXT ·readfsbaseU32(SB),7,$0
 // func readfsbaseU64() uint64
 TEXT ·readfsbaseU64(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: RDFSBASE
 
 	MOVQ $0, ret+0(FP)
 	RET
@@ -17,7 +17,7 @@ TEXT ·readfsbaseU64(SB),7,$0
 // func readgsbaseU32() uint32
 TEXT ·readgsbaseU32(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: RDGSBASE
 
 	MOVL $0, ret+0(FP)
 	RET
@@ -25,7 +25,7 @@ TEXT ·readgsbaseU32(SB),7,$0
 // func readgsbaseU64() uint64
 TEXT ·readgsbaseU64(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: RDGSBASE
 
 	MOVQ $0, ret+0(FP)
 	RET

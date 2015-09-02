@@ -1,6 +1,7 @@
 // func m512Exp2a23Pd(a [8]float64) [8]float64
 TEXT ·m512Exp2a23Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VEXP2PD Z0
 
@@ -9,15 +10,17 @@ TEXT ·m512Exp2a23Pd(SB),7,$0
 
 // func m512MaskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
 TEXT ·m512MaskExp2a23Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VEXP2PD
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512MaskzExp2a23Pd(k uint8, a [8]float64) [8]float64
 TEXT ·m512MaskzExp2a23Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VEXP2PD R8, Z1
 
@@ -26,7 +29,8 @@ TEXT ·m512MaskzExp2a23Pd(SB),7,$0
 
 // func m512Exp2a23Ps(a [16]float32) [16]float32
 TEXT ·m512Exp2a23Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VEXP2PS Z0
 
@@ -35,15 +39,17 @@ TEXT ·m512Exp2a23Ps(SB),7,$0
 
 // func m512MaskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 TEXT ·m512MaskExp2a23Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VEXP2PS
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512MaskzExp2a23Ps(k uint16, a [16]float32) [16]float32
 TEXT ·m512MaskzExp2a23Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VEXP2PS R8, Z1
 
@@ -52,7 +58,8 @@ TEXT ·m512MaskzExp2a23Ps(SB),7,$0
 
 // func m512Exp2a23RoundPd(a [8]float64, rounding int) [8]float64
 TEXT ·m512Exp2a23RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VEXP2PD Z0, R9
 
@@ -61,23 +68,26 @@ TEXT ·m512Exp2a23RoundPd(SB),7,$0
 
 // func m512MaskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]float64
 TEXT ·m512MaskExp2a23RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VEXP2PD
 
 	MOV Z3, ret+0(FP)
 	RET
 
 // func m512MaskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 TEXT ·m512MaskzExp2a23RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VEXP2PD
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512Exp2a23RoundPs(a [16]float32, rounding int) [16]float32
 TEXT ·m512Exp2a23RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VEXP2PS Z0, R9
 
@@ -86,31 +96,35 @@ TEXT ·m512Exp2a23RoundPs(SB),7,$0
 
 // func m512MaskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 TEXT ·m512MaskExp2a23RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VEXP2PS
 
 	MOV Z3, ret+0(FP)
 	RET
 
 // func m512MaskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 TEXT ·m512MaskzExp2a23RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VEXP2PS
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512MaskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 TEXT ·m512MaskRcp28Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VRCP28PD
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512MaskzRcp28Pd(k uint8, a [8]float64) [8]float64
 TEXT ·m512MaskzRcp28Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VRCP28PD R8, Z1
 
@@ -119,7 +133,8 @@ TEXT ·m512MaskzRcp28Pd(SB),7,$0
 
 // func m512Rcp28Pd(a [8]float64) [8]float64
 TEXT ·m512Rcp28Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VRCP28PD Z0
 
@@ -128,15 +143,17 @@ TEXT ·m512Rcp28Pd(SB),7,$0
 
 // func m512MaskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 TEXT ·m512MaskRcp28Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VRCP28PS
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512MaskzRcp28Ps(k uint16, a [16]float32) [16]float32
 TEXT ·m512MaskzRcp28Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VRCP28PS R8, Z1
 
@@ -145,7 +162,8 @@ TEXT ·m512MaskzRcp28Ps(SB),7,$0
 
 // func m512Rcp28Ps(a [16]float32) [16]float32
 TEXT ·m512Rcp28Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VRCP28PS Z0
 
@@ -154,23 +172,26 @@ TEXT ·m512Rcp28Ps(SB),7,$0
 
 // func m512MaskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
 TEXT ·m512MaskRcp28RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VRCP28PD
 
 	MOV Z3, ret+0(FP)
 	RET
 
 // func m512MaskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 TEXT ·m512MaskzRcp28RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VRCP28PD
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512Rcp28RoundPd(a [8]float64, rounding int) [8]float64
 TEXT ·m512Rcp28RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VRCP28PD Z0, R9
 
@@ -179,23 +200,26 @@ TEXT ·m512Rcp28RoundPd(SB),7,$0
 
 // func m512MaskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 TEXT ·m512MaskRcp28RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VRCP28PS
 
 	MOV Z3, ret+0(FP)
 	RET
 
 // func m512MaskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 TEXT ·m512MaskzRcp28RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VRCP28PS
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512Rcp28RoundPs(a [16]float32, rounding int) [16]float32
 TEXT ·m512Rcp28RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VRCP28PS Z0, R9
 
@@ -210,7 +234,7 @@ TEXT ·maskRcp28RoundSd(SB),7,$0
 	MOVOU b+36(FP),X3
 	MOVQ rounding+52(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SD
 
 	MOVOU X4, ret+60(FP)
 	RET
@@ -222,7 +246,7 @@ TEXT ·maskzRcp28RoundSd(SB),7,$0
 	MOVOU b+20(FP),X2
 	MOVQ rounding+36(FP),R11
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SD
 
 	MOVOU X3, ret+44(FP)
 	RET
@@ -233,7 +257,7 @@ TEXT ·rcp28RoundSd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SD
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -246,7 +270,7 @@ TEXT ·maskRcp28RoundSs(SB),7,$0
 	MOVOU b+36(FP),X3
 	MOVQ rounding+52(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SS
 
 	MOVOU X4, ret+60(FP)
 	RET
@@ -258,7 +282,7 @@ TEXT ·maskzRcp28RoundSs(SB),7,$0
 	MOVOU b+20(FP),X2
 	MOVQ rounding+36(FP),R11
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SS
 
 	MOVOU X3, ret+44(FP)
 	RET
@@ -269,7 +293,7 @@ TEXT ·rcp28RoundSs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SS
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -281,7 +305,7 @@ TEXT ·maskRcp28Sd(SB),7,$0
 	MOVOU a+20(FP),X2
 	MOVOU b+36(FP),X3
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SD
 
 	MOVOU X3, ret+52(FP)
 	RET
@@ -292,7 +316,7 @@ TEXT ·maskzRcp28Sd(SB),7,$0
 	MOVOU a+4(FP),X1
 	MOVOU b+20(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SD
 
 	MOVOU X2, ret+36(FP)
 	RET
@@ -315,7 +339,7 @@ TEXT ·maskRcp28Ss(SB),7,$0
 	MOVOU a+20(FP),X2
 	MOVOU b+36(FP),X3
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SS
 
 	MOVOU X3, ret+52(FP)
 	RET
@@ -326,7 +350,7 @@ TEXT ·maskzRcp28Ss(SB),7,$0
 	MOVOU a+4(FP),X1
 	MOVOU b+20(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRCP28SS
 
 	MOVOU X2, ret+36(FP)
 	RET
@@ -344,15 +368,17 @@ TEXT ·rcp28Ss(SB),7,$0
 
 // func m512MaskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 TEXT ·m512MaskRsqrt28Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VRSQRT28PD
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512MaskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
 TEXT ·m512MaskzRsqrt28Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VRSQRT28PD R8, Z1
 
@@ -361,7 +387,8 @@ TEXT ·m512MaskzRsqrt28Pd(SB),7,$0
 
 // func m512Rsqrt28Pd(a [8]float64) [8]float64
 TEXT ·m512Rsqrt28Pd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VRSQRT28PD Z0
 
@@ -370,15 +397,17 @@ TEXT ·m512Rsqrt28Pd(SB),7,$0
 
 // func m512MaskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 TEXT ·m512MaskRsqrt28Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VRSQRT28PS
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512MaskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
 TEXT ·m512MaskzRsqrt28Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VRSQRT28PS R8, Z1
 
@@ -387,7 +416,8 @@ TEXT ·m512MaskzRsqrt28Ps(SB),7,$0
 
 // func m512Rsqrt28Ps(a [16]float32) [16]float32
 TEXT ·m512Rsqrt28Ps(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VRSQRT28PS Z0
 
@@ -396,23 +426,26 @@ TEXT ·m512Rsqrt28Ps(SB),7,$0
 
 // func m512MaskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
 TEXT ·m512MaskRsqrt28RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VRSQRT28PD
 
 	MOV Z3, ret+0(FP)
 	RET
 
 // func m512MaskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 TEXT ·m512MaskzRsqrt28RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
+	// TODO: Code missing - uses instrunction: VRSQRT28PD
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512Rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
 TEXT ·m512Rsqrt28RoundPd(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512d
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512d
+
 	// TODO: Code missing - could be:
 	// VRSQRT28PD Z0, R9
 
@@ -421,23 +454,26 @@ TEXT ·m512Rsqrt28RoundPd(SB),7,$0
 
 // func m512MaskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 TEXT ·m512MaskRsqrt28RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VRSQRT28PS
 
 	MOV Z3, ret+0(FP)
 	RET
 
 // func m512MaskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 TEXT ·m512MaskzRsqrt28RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
+	// TODO: Code missing - uses instrunction: VRSQRT28PS
 
 	MOV Z2, ret+0(FP)
 	RET
 
 // func m512Rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
 TEXT ·m512Rsqrt28RoundPs(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M512
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M512
+
 	// TODO: Code missing - could be:
 	// VRSQRT28PS Z0, R9
 
@@ -452,7 +488,7 @@ TEXT ·maskRsqrt28RoundSd(SB),7,$0
 	MOVOU b+36(FP),X3
 	MOVQ rounding+52(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SD
 
 	MOVOU X4, ret+60(FP)
 	RET
@@ -464,7 +500,7 @@ TEXT ·maskzRsqrt28RoundSd(SB),7,$0
 	MOVOU b+20(FP),X2
 	MOVQ rounding+36(FP),R11
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SD
 
 	MOVOU X3, ret+44(FP)
 	RET
@@ -475,7 +511,7 @@ TEXT ·rsqrt28RoundSd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SD
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -488,7 +524,7 @@ TEXT ·maskRsqrt28RoundSs(SB),7,$0
 	MOVOU b+36(FP),X3
 	MOVQ rounding+52(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SS
 
 	MOVOU X4, ret+60(FP)
 	RET
@@ -500,7 +536,7 @@ TEXT ·maskzRsqrt28RoundSs(SB),7,$0
 	MOVOU b+20(FP),X2
 	MOVQ rounding+36(FP),R11
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SS
 
 	MOVOU X3, ret+44(FP)
 	RET
@@ -511,7 +547,7 @@ TEXT ·rsqrt28RoundSs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SS
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -523,7 +559,7 @@ TEXT ·maskRsqrt28Sd(SB),7,$0
 	MOVOU a+20(FP),X2
 	MOVOU b+36(FP),X3
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SD
 
 	MOVOU X3, ret+52(FP)
 	RET
@@ -534,7 +570,7 @@ TEXT ·maskzRsqrt28Sd(SB),7,$0
 	MOVOU a+4(FP),X1
 	MOVOU b+20(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SD
 
 	MOVOU X2, ret+36(FP)
 	RET
@@ -557,7 +593,7 @@ TEXT ·maskRsqrt28Ss(SB),7,$0
 	MOVOU a+20(FP),X2
 	MOVOU b+36(FP),X3
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SS
 
 	MOVOU X3, ret+52(FP)
 	RET
@@ -568,7 +604,7 @@ TEXT ·maskzRsqrt28Ss(SB),7,$0
 	MOVOU a+4(FP),X1
 	MOVOU b+20(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: VRSQRT28SS
 
 	MOVOU X2, ret+36(FP)
 	RET

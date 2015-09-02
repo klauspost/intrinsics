@@ -31,7 +31,8 @@ TEXT ·cvtpsPh(SB),7,$0
 
 // func m256CvtpsPh(a [8]float32, rounding int) [16]byte
 TEXT ·m256CvtpsPh(SB),7,$0
-	// Unimplemented. Unknown MOVE postfix for type x86.M256
+	// FIXME: Unimplemented. Unknown MOVE postfix for type x86.M256
+
 	// TODO: Code missing - could be:
 	// VCVTPS2PH Y0, R9
 

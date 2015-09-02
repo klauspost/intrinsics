@@ -64,7 +64,7 @@ TEXT ·alignrEpi8(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ count+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PALIGNR
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -75,7 +75,7 @@ TEXT ·alignrPi8(SB),7,$0
 	MOVQ b+8(FP),M1
 	MOVQ count+16(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PALIGNR
 
 	// Return size: 8
 	RET

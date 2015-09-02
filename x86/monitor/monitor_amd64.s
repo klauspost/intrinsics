@@ -4,7 +4,7 @@ TEXT ·monitor(SB),7,$0
 	MOVQ extensions+8(FP),R9
 	MOVQ hints+16(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: MONITOR
 
 	RET
 

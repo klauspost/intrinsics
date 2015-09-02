@@ -506,12 +506,15 @@ func (in Intrinsic) Finish() {
 				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
 			} else if retparam.getReg(0) == "M0" && in.Params[0].getReg(0) == "M0" {
 				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
-			} else {
+			} else if in.Params[0].getReg(0) != "" {
 				fmt.Fprintf(out, " - could be:\n\t// %s %s", in.Instruction, in.Params[0].getReg(0))
+			} else {
+				fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
 			}
-		}
-		if len(params) == 2 {
+		} else if len(params) == 2 {
 			fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[1].getReg(1))
+		} else {
+			fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
 		}
 	}
 	fmt.Fprintln(out, "\n")
@@ -653,15 +656,15 @@ func (p Params) getAsm() (string, int) {
 	for i, param := range p {
 		size := param.getSize()
 		if size == 0 {
-			return "\t// Unimplemented. Unknown size of type " + param.Type, 0
+			return "\t// FIXME: Unimplemented. Unknown size of type " + param.Type + "\n", 0
 		}
 		reg := param.getReg(i)
 		if reg == "" {
-			return "\t// Unimplemented. Unknown register for type " + param.Type, 0
+			return "\t// FIXME: Unimplemented. Unknown register for type " + param.Type + "\n", 0
 		}
 		postfix := param.getPostfix()
 		if postfix == "" {
-			return "\t// Unimplemented. Unknown MOVE postfix for type " + param.Type, 0
+			return "\t// FIXME: Unimplemented. Unknown MOVE postfix for type " + param.Type + "\n", 0
 		}
 
 		out += "\tMOV" + postfix + " " + param.Name + "+" + strconv.Itoa(atbytes) + "(FP)," + reg + "\n"

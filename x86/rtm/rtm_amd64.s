@@ -10,7 +10,7 @@ TEXT ·xabort(SB),7,$0
 // func xbegin() uint32
 TEXT ·xbegin(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: XBEGIN
 
 	MOVL $0, ret+0(FP)
 	RET
@@ -18,14 +18,14 @@ TEXT ·xbegin(SB),7,$0
 // func xend() 
 TEXT ·xend(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: XEND
 
 	RET
 
 // func xtest() uint8
 TEXT ·xtest(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: XTEST
 
 	MOVB $0, ret+0(FP)
 	RET

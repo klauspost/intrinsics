@@ -206,14 +206,14 @@ TEXT ·cvtsi64Si32(SB),7,$0
 // func empty() 
 TEXT ·empty(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: EMMS
 
 	RET
 
 // func empty2() 
 TEXT ·empty2(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: EMMS
 
 	RET
 
@@ -992,7 +992,7 @@ TEXT ·setrPi8(SB),7,$0
 // func setzeroSi64() x86.M64
 TEXT ·setzeroSi64(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PXOR
 
 	// Return size: 8
 	RET

@@ -5,7 +5,7 @@ TEXT ·addcarryxU32(SB),7,$0
 	MOVL b+8(FP),R10
 	MOVL out+12(FP),R11
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: ADCX, ADOX
 
 	MOVB $0, ret+16(FP)
 	RET
@@ -17,7 +17,7 @@ TEXT ·addcarryxU64(SB),7,$0
 	MOVQ b+12(FP),R10
 	MOVQ out+20(FP),R11
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: ADCX, ADOX
 
 	MOVB $0, ret+28(FP)
 	RET

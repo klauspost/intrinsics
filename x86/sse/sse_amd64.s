@@ -1186,7 +1186,7 @@ TEXT ·mMGETROUNDINGMODE(SB),7,$0
 // func getcsr() uint32
 TEXT ·getcsr(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: STMXCSR
 
 	MOVL $0, ret+0(FP)
 	RET
@@ -1238,7 +1238,7 @@ TEXT ·insertPi16(SB),7,$0
 	MOVQ i+8(FP),R9
 	MOVQ imm8+16(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PINSRW
 
 	// Return size: 8
 	RET
@@ -1329,7 +1329,8 @@ TEXT ·load1Ps(SB),7,$0
 
 // func loadhPi(a [4]float32, mem_addr x86.M64Const) [4]float32
 TEXT ·loadhPi(SB),7,$0
-	// Unimplemented. Unknown size of type x86.M64Const
+	// FIXME: Unimplemented. Unknown size of type x86.M64Const
+
 	// TODO: Code missing - could be:
 	// MOVHPS X0, 
 
@@ -1338,7 +1339,8 @@ TEXT ·loadhPi(SB),7,$0
 
 // func loadlPi(a [4]float32, mem_addr x86.M64Const) [4]float32
 TEXT ·loadlPi(SB),7,$0
-	// Unimplemented. Unknown size of type x86.M64Const
+	// FIXME: Unimplemented. Unknown size of type x86.M64Const
+
 	// TODO: Code missing - could be:
 	// MOVLPS X0, 
 
@@ -1498,7 +1500,7 @@ TEXT ·maskmoveSi64(SB),7,$0
 	MOVQ mask+8(FP),M1
 	MOVB mem_addr+16(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: MASKMOVQ
 
 	RET
 
@@ -1508,7 +1510,7 @@ TEXT ·maskmovq(SB),7,$0
 	MOVQ mask+8(FP),M1
 	MOVB mem_addr+16(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: MASKMOVQ
 
 	RET
 
@@ -1736,7 +1738,7 @@ TEXT ·pinsrw(SB),7,$0
 	MOVQ i+8(FP),R9
 	MOVQ imm8+16(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PINSRW
 
 	// Return size: 8
 	RET
@@ -2084,7 +2086,7 @@ TEXT ·setrPs(SB),7,$0
 // func setzeroPs() [4]float32
 TEXT ·setzeroPs(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: XORPS
 
 	MOVOU X-1, ret+0(FP)
 	RET
@@ -2092,7 +2094,7 @@ TEXT ·setzeroPs(SB),7,$0
 // func sfence() 
 TEXT ·sfence(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: SFENCE
 
 	RET
 
@@ -2113,7 +2115,7 @@ TEXT ·shufflePs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVL imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: SHUFPS
 
 	MOVOU X2, ret+36(FP)
 	RET

@@ -1033,7 +1033,7 @@ TEXT ·insertEpi16(SB),7,$0
 	MOVQ i+16(FP),R9
 	MOVQ imm8+24(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PINSRW
 
 	MOVOU X2, ret+32(FP)
 	RET
@@ -1041,7 +1041,7 @@ TEXT ·insertEpi16(SB),7,$0
 // func lfence() 
 TEXT ·lfence(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: LFENCE
 
 	RET
 
@@ -1076,9 +1076,9 @@ TEXT ·loadSd(SB),7,$0
 
 // func loadSi128(mem_addr x86.M128iConst) [16]byte
 TEXT ·loadSi128(SB),7,$0
-	// Unimplemented. Unknown size of type x86.M128iConst
-	// TODO: Code missing - could be:
-	// MOVDQA 
+	// FIXME: Unimplemented. Unknown size of type x86.M128iConst
+
+	// TODO: Code missing - uses instrunction: MOVDQA
 
 	MOVOU X0, ret+0(FP)
 	RET
@@ -1105,9 +1105,9 @@ TEXT ·loadhPd(SB),7,$0
 
 // func loadlEpi64(mem_addr x86.M128iConst) [16]byte
 TEXT ·loadlEpi64(SB),7,$0
-	// Unimplemented. Unknown size of type x86.M128iConst
-	// TODO: Code missing - could be:
-	// MOVQ 
+	// FIXME: Unimplemented. Unknown size of type x86.M128iConst
+
+	// TODO: Code missing - uses instrunction: MOVQ
 
 	MOVOU X0, ret+0(FP)
 	RET
@@ -1144,9 +1144,9 @@ TEXT ·loaduPd(SB),7,$0
 
 // func loaduSi128(mem_addr x86.M128iConst) [16]byte
 TEXT ·loaduSi128(SB),7,$0
-	// Unimplemented. Unknown size of type x86.M128iConst
-	// TODO: Code missing - could be:
-	// MOVDQU 
+	// FIXME: Unimplemented. Unknown size of type x86.M128iConst
+
+	// TODO: Code missing - uses instrunction: MOVDQU
 
 	MOVOU X0, ret+0(FP)
 	RET
@@ -1168,7 +1168,7 @@ TEXT ·maskmoveuSi128(SB),7,$0
 	MOVOU mask+16(FP),X1
 	MOVB mem_addr+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: MASKMOVDQU
 
 	RET
 
@@ -1219,7 +1219,7 @@ TEXT ·maxSd(SB),7,$0
 // func mfence() 
 TEXT ·mfence(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: MFENCE
 
 	RET
 
@@ -1463,7 +1463,7 @@ TEXT ·packusEpi16(SB),7,$0
 // func pause() 
 TEXT ·pause(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PAUSE
 
 	RET
 
@@ -1528,7 +1528,8 @@ TEXT ·setEpi64x(SB),7,$0
 
 // func setEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [16]byte
 TEXT ·setEpi8(SB),7,$0
-	// Unimplemented. Unknown register for type byte
+	// FIXME: Unimplemented. Unknown register for type byte
+
 	// TODO: Code missing
 
 	MOVOU , ret+0(FP)
@@ -1656,7 +1657,8 @@ TEXT ·setrEpi64(SB),7,$0
 
 // func setrEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [16]byte
 TEXT ·setrEpi8(SB),7,$0
-	// Unimplemented. Unknown register for type byte
+	// FIXME: Unimplemented. Unknown register for type byte
+
 	// TODO: Code missing
 
 	MOVOU , ret+0(FP)
@@ -1675,7 +1677,7 @@ TEXT ·setrPd(SB),7,$0
 // func setzeroPd() [2]float64
 TEXT ·setzeroPd(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: XORPD
 
 	MOVOU X-1, ret+0(FP)
 	RET
@@ -1683,7 +1685,7 @@ TEXT ·setzeroPd(SB),7,$0
 // func setzeroSi128() [16]byte
 TEXT ·setzeroSi128(SB),7,$0
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PXOR
 
 	MOVOU X-1, ret+0(FP)
 	RET
@@ -1705,7 +1707,7 @@ TEXT ·shufflePd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: SHUFPD
 
 	MOVOU X2, ret+40(FP)
 	RET

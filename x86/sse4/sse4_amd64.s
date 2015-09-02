@@ -4,7 +4,7 @@ TEXT ·blendEpi16(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PBLENDW
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -15,7 +15,7 @@ TEXT ·blendPd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: BLENDPD
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -26,7 +26,7 @@ TEXT ·blendPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: BLENDPS
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -37,7 +37,7 @@ TEXT ·blendvEpi8(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVOU mask+32(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PBLENDVB
 
 	MOVOU X2, ret+48(FP)
 	RET
@@ -48,7 +48,7 @@ TEXT ·blendvPd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVOU mask+32(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: BLENDVPD
 
 	MOVOU X2, ret+48(FP)
 	RET
@@ -59,7 +59,7 @@ TEXT ·blendvPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVOU mask+32(FP),X2
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: BLENDVPS
 
 	MOVOU X2, ret+48(FP)
 	RET
@@ -125,7 +125,7 @@ TEXT ·cmpestra(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPESTRI
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -138,7 +138,7 @@ TEXT ·cmpestrc(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPESTRI
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -151,7 +151,7 @@ TEXT ·cmpestri(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPESTRI
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -164,7 +164,7 @@ TEXT ·cmpestrm(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPESTRM
 
 	MOVOU X4, ret+56(FP)
 	RET
@@ -177,7 +177,7 @@ TEXT ·cmpestro(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPESTRI
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -190,7 +190,7 @@ TEXT ·cmpestrs(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPESTRI
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -203,7 +203,7 @@ TEXT ·cmpestrz(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPESTRI
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -225,7 +225,7 @@ TEXT ·cmpistra(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPISTRI
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -236,7 +236,7 @@ TEXT ·cmpistrc(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPISTRI
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -247,7 +247,7 @@ TEXT ·cmpistri(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPISTRI
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -258,7 +258,7 @@ TEXT ·cmpistrm(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPISTRM
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -269,7 +269,7 @@ TEXT ·cmpistro(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPISTRI
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -280,7 +280,7 @@ TEXT ·cmpistrs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPISTRI
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -291,7 +291,7 @@ TEXT ·cmpistrz(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PCMPISTRI
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -466,7 +466,7 @@ TEXT ·dpPd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: DPPD
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -477,7 +477,7 @@ TEXT ·dpPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: DPPS
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -574,7 +574,7 @@ TEXT ·insertEpi32(SB),7,$0
 	MOVQ i+16(FP),R9
 	MOVQ imm8+24(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PINSRD
 
 	MOVOU X2, ret+32(FP)
 	RET
@@ -585,7 +585,7 @@ TEXT ·insertEpi64(SB),7,$0
 	MOVQ i+16(FP),R9
 	MOVQ imm8+24(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PINSRQ
 
 	MOVOU X2, ret+32(FP)
 	RET
@@ -596,7 +596,7 @@ TEXT ·insertEpi8(SB),7,$0
 	MOVQ i+16(FP),R9
 	MOVQ imm8+24(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: PINSRB
 
 	MOVOU X2, ret+32(FP)
 	RET
@@ -607,7 +607,7 @@ TEXT ·insertPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: INSERTPS
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -716,7 +716,7 @@ TEXT ·mpsadbwEpu8(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: MPSADBW
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -782,7 +782,7 @@ TEXT ·roundSd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: ROUNDSD
 
 	MOVOU X2, ret+40(FP)
 	RET
@@ -793,7 +793,7 @@ TEXT ·roundSs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	// TODO: Code missing
+	// TODO: Code missing - uses instrunction: ROUNDSS
 
 	MOVOU X2, ret+40(FP)
 	RET
