@@ -397,6 +397,7 @@ func (in *Intrinsic) fixup() {
 		if !ok {
 			break
 		}
+		fmt.Println("Warning: Name conflict:", in.Package+"/"+name+"(...)")
 		name = fmt.Sprintf("%s%d", in.Name, next)
 		next++
 
