@@ -191,8 +191,8 @@ TEXT ·empty(SB),7,$0
 
 	RET
 
-// func empty1() 
-TEXT ·empty1(SB),7,$0
+// func empty2() 
+TEXT ·empty2(SB),7,$0
 
 	//TODO: Code missing
 

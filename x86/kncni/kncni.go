@@ -5,7 +5,7 @@ import "github.com/klauspost/intrinsics/x86"
 var _ = x86.M64{}  // Make sure we use x86 package
 
 
-// AbsPd: Finds the absolute value of each packed double-precision (64-bit)
+// M512AbsPd: Finds the absolute value of each packed double-precision (64-bit)
 // floating-point element in 'v2', storing the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -16,17 +16,17 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_abs_pd'.
 // Requires KNCNI.
-func AbsPd(v2 x86.M512d) x86.M512d {
-	return x86.M512d(absPd([8]float64(v2)))
+func M512AbsPd(v2 x86.M512d) x86.M512d {
+	return x86.M512d(m512AbsPd([8]float64(v2)))
 }
 
-func absPd(v2 [8]float64) [8]float64
+func m512AbsPd(v2 [8]float64) [8]float64
 
 
-// MaskAbsPd: Finds the absolute value of each packed double-precision (64-bit)
-// floating-point element in 'v2', storing the results in 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M512MaskAbsPd: Finds the absolute value of each packed double-precision
+// (64-bit) floating-point element in 'v2', storing the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -40,14 +40,14 @@ func absPd(v2 [8]float64) [8]float64
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_mask_abs_pd'.
 // Requires KNCNI.
-func MaskAbsPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d) x86.M512d {
-	return x86.M512d(maskAbsPd([8]float64(src), uint8(k), [8]float64(v2)))
+func M512MaskAbsPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskAbsPd([8]float64(src), uint8(k), [8]float64(v2)))
 }
 
-func maskAbsPd(src [8]float64, k uint8, v2 [8]float64) [8]float64
+func m512MaskAbsPd(src [8]float64, k uint8, v2 [8]float64) [8]float64
 
 
-// AbsPs: Finds the absolute value of each packed single-precision (32-bit)
+// M512AbsPs: Finds the absolute value of each packed single-precision (32-bit)
 // floating-point element in 'v2', storing the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -58,17 +58,17 @@ func maskAbsPd(src [8]float64, k uint8, v2 [8]float64) [8]float64
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_abs_ps'.
 // Requires KNCNI.
-func AbsPs(v2 x86.M512) x86.M512 {
-	return x86.M512(absPs([16]float32(v2)))
+func M512AbsPs(v2 x86.M512) x86.M512 {
+	return x86.M512(m512AbsPs([16]float32(v2)))
 }
 
-func absPs(v2 [16]float32) [16]float32
+func m512AbsPs(v2 [16]float32) [16]float32
 
 
-// MaskAbsPs: Finds the absolute value of each packed single-precision (32-bit)
-// floating-point element in 'v2', storing the results in 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M512MaskAbsPs: Finds the absolute value of each packed single-precision
+// (32-bit) floating-point element in 'v2', storing the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -82,16 +82,16 @@ func absPs(v2 [16]float32) [16]float32
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_mask_abs_ps'.
 // Requires KNCNI.
-func MaskAbsPs(src x86.M512, k x86.Mmask16, v2 x86.M512) x86.M512 {
-	return x86.M512(maskAbsPs([16]float32(src), uint16(k), [16]float32(v2)))
+func M512MaskAbsPs(src x86.M512, k x86.Mmask16, v2 x86.M512) x86.M512 {
+	return x86.M512(m512MaskAbsPs([16]float32(src), uint16(k), [16]float32(v2)))
 }
 
-func maskAbsPs(src [16]float32, k uint16, v2 [16]float32) [16]float32
+func m512MaskAbsPs(src [16]float32, k uint16, v2 [16]float32) [16]float32
 
 
-// AdcEpi32: Performs element-by-element addition of packed 32-bit integers in
-// 'v2' and 'v3' and the corresponding bit in 'k2', storing the result of the
-// addition in 'dst' and the result of the carry in 'k2_res'. 
+// M512AdcEpi32: Performs element-by-element addition of packed 32-bit integers
+// in 'v2' and 'v3' and the corresponding bit in 'k2', storing the result of
+// the addition in 'dst' and the result of the carry in 'k2_res'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -102,18 +102,18 @@ func maskAbsPs(src [16]float32, k uint16, v2 [16]float32) [16]float32
 //
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_adc_epi32'.
 // Requires KNCNI.
-func AdcEpi32(v2 x86.M512i, k2 x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(adcEpi32([64]byte(v2), uint16(k2), [64]byte(v3), uint16(k2_res)))
+func M512AdcEpi32(v2 x86.M512i, k2 x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
+	return x86.M512i(m512AdcEpi32([64]byte(v2), uint16(k2), [64]byte(v3), uint16(k2_res)))
 }
 
-func adcEpi32(v2 [64]byte, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
+func m512AdcEpi32(v2 [64]byte, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
 
 
-// MaskAdcEpi32: Performs element-by-element addition of packed 32-bit integers
-// in 'v2' and 'v3' and the corresponding bit in 'k2', storing the result of
-// the addition in 'dst' and the result of the carry in 'k2_res' using
-// writemask 'k1' (elements are copied from 'v2' when the corresponding mask
-// bit is not set). 
+// M512MaskAdcEpi32: Performs element-by-element addition of packed 32-bit
+// integers in 'v2' and 'v3' and the corresponding bit in 'k2', storing the
+// result of the addition in 'dst' and the result of the carry in 'k2_res'
+// using writemask 'k1' (elements are copied from 'v2' when the corresponding
+// mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -128,15 +128,15 @@ func adcEpi32(v2 [64]byte, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
 //
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_mask_adc_epi32'.
 // Requires KNCNI.
-func MaskAdcEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(maskAdcEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(k2_res)))
+func M512MaskAdcEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
+	return x86.M512i(m512MaskAdcEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(k2_res)))
 }
 
-func maskAdcEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
+func m512MaskAdcEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, k2_res uint16) [64]byte
 
 
-// AddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the results
-// in 'dst'. 
+// M512AddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -146,14 +146,14 @@ func maskAdcEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, k2_res uint16)
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm512_add_epi32'.
 // Requires KNCNI.
-func AddEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(addEpi32([64]byte(a), [64]byte(b)))
+func M512AddEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AddEpi32([64]byte(a), [64]byte(b)))
 }
 
-func addEpi32(a [64]byte, b [64]byte) [64]byte
+func m512AddEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the
+// M512MaskAddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -169,15 +169,15 @@ func addEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm512_mask_add_epi32'.
 // Requires KNCNI.
-func MaskAddEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAddEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskAddEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAddEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskAddEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// AddPd: Add packed double-precision (64-bit) floating-point elements in 'a'
-// and 'b', and store the results in 'dst'. 
+// M512AddPd: Add packed double-precision (64-bit) floating-point elements in
+// 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -187,15 +187,15 @@ func maskAddEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm512_add_pd'.
 // Requires KNCNI.
-func AddPd(a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(addPd([8]float64(a), [8]float64(b)))
+func M512AddPd(a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512AddPd([8]float64(a), [8]float64(b)))
 }
 
-func addPd(a [8]float64, b [8]float64) [8]float64
+func m512AddPd(a [8]float64, b [8]float64) [8]float64
 
 
-// MaskAddPd: Add packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
+// M512MaskAddPd: Add packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
@@ -210,15 +210,15 @@ func addPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm512_mask_add_pd'.
 // Requires KNCNI.
-func MaskAddPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(maskAddPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
+func M512MaskAddPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskAddPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
-func maskAddPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
+func m512MaskAddPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 
 
-// AddPs: Add packed single-precision (32-bit) floating-point elements in 'a'
-// and 'b', and store the results in 'dst'. 
+// M512AddPs: Add packed single-precision (32-bit) floating-point elements in
+// 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -228,15 +228,15 @@ func maskAddPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm512_add_ps'.
 // Requires KNCNI.
-func AddPs(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(addPs([16]float32(a), [16]float32(b)))
+func M512AddPs(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512AddPs([16]float32(a), [16]float32(b)))
 }
 
-func addPs(a [16]float32, b [16]float32) [16]float32
+func m512AddPs(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskAddPs: Add packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
+// M512MaskAddPs: Add packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -251,15 +251,15 @@ func addPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm512_mask_add_ps'.
 // Requires KNCNI.
-func MaskAddPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskAddPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskAddPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskAddPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskAddPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskAddPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// AddRoundPd: Add packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst'.
+// M512AddRoundPd: Add packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -276,16 +276,16 @@ func maskAddPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]floa
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm512_add_round_pd'.
 // Requires KNCNI.
-func AddRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(addRoundPd([8]float64(a), [8]float64(b), rounding))
+func M512AddRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512AddRoundPd([8]float64(a), [8]float64(b), rounding))
 }
 
-func addRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
+func m512AddRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 
 
-// MaskAddRoundPd: Add packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
-// are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskAddRoundPd: Add packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set).
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -306,15 +306,15 @@ func addRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm512_mask_add_round_pd'.
 // Requires KNCNI.
-func MaskAddRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskAddRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
+func M512MaskAddRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskAddRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
-func maskAddRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, rounding int) [8]float64
+func m512MaskAddRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, rounding int) [8]float64
 
 
-// AddRoundPs: Add packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst'.
+// M512AddRoundPs: Add packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -331,16 +331,16 @@ func maskAddRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, roundin
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm512_add_round_ps'.
 // Requires KNCNI.
-func AddRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(addRoundPs([16]float32(a), [16]float32(b), rounding))
+func M512AddRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512AddRoundPs([16]float32(a), [16]float32(b), rounding))
 }
 
-func addRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
+func m512AddRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// MaskAddRoundPs: Add packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
-// are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskAddRoundPs: Add packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set).
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -361,16 +361,16 @@ func addRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm512_mask_add_round_ps'.
 // Requires KNCNI.
-func MaskAddRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskAddRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
+func M512MaskAddRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskAddRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
-func maskAddRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
+func m512MaskAddRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// AddnPd: Performs element-by-element addition between packed double-precision
-// (64-bit) floating-point elements in 'v2' and 'v3' and negates their sum,
-// storing the results in 'dst'. 
+// M512AddnPd: Performs element-by-element addition between packed
+// double-precision (64-bit) floating-point elements in 'v2' and 'v3' and
+// negates their sum, storing the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -380,14 +380,14 @@ func maskAddRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rou
 //
 // Instruction: 'VADDNPD'. Intrinsic: '_mm512_addn_pd'.
 // Requires KNCNI.
-func AddnPd(v2 x86.M512d, v3 x86.M512d) x86.M512d {
-	return x86.M512d(addnPd([8]float64(v2), [8]float64(v3)))
+func M512AddnPd(v2 x86.M512d, v3 x86.M512d) x86.M512d {
+	return x86.M512d(m512AddnPd([8]float64(v2), [8]float64(v3)))
 }
 
-func addnPd(v2 [8]float64, v3 [8]float64) [8]float64
+func m512AddnPd(v2 [8]float64, v3 [8]float64) [8]float64
 
 
-// MaskAddnPd: Performs element-by-element addition between packed
+// M512MaskAddnPd: Performs element-by-element addition between packed
 // double-precision (64-bit) floating-point elements in 'v2' and 'v3' and
 // negates their sum, storing the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
@@ -404,16 +404,16 @@ func addnPd(v2 [8]float64, v3 [8]float64) [8]float64
 //
 // Instruction: 'VADDNPD'. Intrinsic: '_mm512_mask_addn_pd'.
 // Requires KNCNI.
-func MaskAddnPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d) x86.M512d {
-	return x86.M512d(maskAddnPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3)))
+func M512MaskAddnPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskAddnPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3)))
 }
 
-func maskAddnPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64) [8]float64
+func m512MaskAddnPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64) [8]float64
 
 
-// AddnPs: Performs element-by-element addition between packed single-precision
-// (32-bit) floating-point elements in 'v2' and 'v3' and negates their sum,
-// storing the results in 'dst'. 
+// M512AddnPs: Performs element-by-element addition between packed
+// single-precision (32-bit) floating-point elements in 'v2' and 'v3' and
+// negates their sum, storing the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -423,14 +423,14 @@ func maskAddnPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64) [8]float6
 //
 // Instruction: 'VADDNPS'. Intrinsic: '_mm512_addn_ps'.
 // Requires KNCNI.
-func AddnPs(v2 x86.M512, v3 x86.M512) x86.M512 {
-	return x86.M512(addnPs([16]float32(v2), [16]float32(v3)))
+func M512AddnPs(v2 x86.M512, v3 x86.M512) x86.M512 {
+	return x86.M512(m512AddnPs([16]float32(v2), [16]float32(v3)))
 }
 
-func addnPs(v2 [16]float32, v3 [16]float32) [16]float32
+func m512AddnPs(v2 [16]float32, v3 [16]float32) [16]float32
 
 
-// MaskAddnPs: Performs element-by-element addition between packed
+// M512MaskAddnPs: Performs element-by-element addition between packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3' and
 // negates their sum, storing the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
@@ -447,14 +447,14 @@ func addnPs(v2 [16]float32, v3 [16]float32) [16]float32
 //
 // Instruction: 'VADDNPS'. Intrinsic: '_mm512_mask_addn_ps'.
 // Requires KNCNI.
-func MaskAddnPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512) x86.M512 {
-	return x86.M512(maskAddnPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3)))
+func M512MaskAddnPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512) x86.M512 {
+	return x86.M512(m512MaskAddnPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3)))
 }
 
-func maskAddnPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32) [16]float32
+func m512MaskAddnPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32) [16]float32
 
 
-// AddnRoundPd: Performs element by element addition between packed
+// M512AddnRoundPd: Performs element by element addition between packed
 // double-precision (64-bit) floating-point elements in 'v2' and 'v3' and
 // negates the sum, storing the result in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -473,14 +473,14 @@ func maskAddnPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32) [16]f
 //
 // Instruction: 'VADDNPD'. Intrinsic: '_mm512_addn_round_pd'.
 // Requires KNCNI.
-func AddnRoundPd(v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(addnRoundPd([8]float64(v2), [8]float64(v3), rounding))
+func M512AddnRoundPd(v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512AddnRoundPd([8]float64(v2), [8]float64(v3), rounding))
 }
 
-func addnRoundPd(v2 [8]float64, v3 [8]float64, rounding int) [8]float64
+func m512AddnRoundPd(v2 [8]float64, v3 [8]float64, rounding int) [8]float64
 
 
-// MaskAddnRoundPd: Performs element by element addition between packed
+// M512MaskAddnRoundPd: Performs element by element addition between packed
 // double-precision (64-bit) floating-point elements in 'v2' and 'v3' and
 // negates the sum, storing the result in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set).
@@ -504,14 +504,14 @@ func addnRoundPd(v2 [8]float64, v3 [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VADDNPD'. Intrinsic: '_mm512_mask_addn_round_pd'.
 // Requires KNCNI.
-func MaskAddnRoundPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskAddnRoundPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3), rounding))
+func M512MaskAddnRoundPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskAddnRoundPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3), rounding))
 }
 
-func maskAddnRoundPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64, rounding int) [8]float64
+func m512MaskAddnRoundPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64, rounding int) [8]float64
 
 
-// AddnRoundPs: Performs element by element addition between packed
+// M512AddnRoundPs: Performs element by element addition between packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3' and
 // negates the sum, storing the result in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -530,14 +530,14 @@ func maskAddnRoundPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64, roun
 //
 // Instruction: 'VADDNPS'. Intrinsic: '_mm512_addn_round_ps'.
 // Requires KNCNI.
-func AddnRoundPs(v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
-	return x86.M512(addnRoundPs([16]float32(v2), [16]float32(v3), rounding))
+func M512AddnRoundPs(v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512AddnRoundPs([16]float32(v2), [16]float32(v3), rounding))
 }
 
-func addnRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
+func m512AddnRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 
 
-// MaskAddnRoundPs: Performs element by element addition between packed
+// M512MaskAddnRoundPs: Performs element by element addition between packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3' and
 // negates the sum, storing the result in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set).
@@ -561,16 +561,16 @@ func addnRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VADDNPS'. Intrinsic: '_mm512_mask_addn_round_ps'.
 // Requires KNCNI.
-func MaskAddnRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskAddnRoundPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), rounding))
+func M512MaskAddnRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskAddnRoundPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), rounding))
 }
 
-func maskAddnRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, rounding int) [16]float32
+func m512MaskAddnRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 
 
-// AddsetcEpi32: Performs element-by-element addition of packed 32-bit integer
-// elements in 'v2' and 'v3', storing the resultant carry in 'k2_res' (carry
-// flag) and the addition results in 'dst'. 
+// M512AddsetcEpi32: Performs element-by-element addition of packed 32-bit
+// integer elements in 'v2' and 'v3', storing the resultant carry in 'k2_res'
+// (carry flag) and the addition results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -581,14 +581,14 @@ func maskAddnRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, 
 //
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_addsetc_epi32'.
 // Requires KNCNI.
-func AddsetcEpi32(v2 x86.M512i, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(addsetcEpi32([64]byte(v2), [64]byte(v3), uint16(k2_res)))
+func M512AddsetcEpi32(v2 x86.M512i, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
+	return x86.M512i(m512AddsetcEpi32([64]byte(v2), [64]byte(v3), uint16(k2_res)))
 }
 
-func addsetcEpi32(v2 [64]byte, v3 [64]byte, k2_res uint16) [64]byte
+func m512AddsetcEpi32(v2 [64]byte, v3 [64]byte, k2_res uint16) [64]byte
 
 
-// MaskAddsetcEpi32: Performs element-by-element addition of packed 32-bit
+// M512MaskAddsetcEpi32: Performs element-by-element addition of packed 32-bit
 // integer elements in 'v2' and 'v3', storing the resultant carry in 'k2_res'
 // (carry flag) and the addition results in 'dst' using writemask 'k' (elements
 // are copied from 'v2' and 'k_old' when the corresponding mask bit is not
@@ -607,14 +607,14 @@ func addsetcEpi32(v2 [64]byte, v3 [64]byte, k2_res uint16) [64]byte
 //
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_mask_addsetc_epi32'.
 // Requires KNCNI.
-func MaskAddsetcEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
-	return x86.M512i(maskAddsetcEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(k2_res)))
+func M512MaskAddsetcEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, k2_res x86.Mmask16) x86.M512i {
+	return x86.M512i(m512MaskAddsetcEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(k2_res)))
 }
 
-func maskAddsetcEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, k2_res uint16) [64]byte
+func m512MaskAddsetcEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, k2_res uint16) [64]byte
 
 
-// AddsetsEpi32: Performs an element-by-element addition of packed 32-bit
+// M512AddsetsEpi32: Performs an element-by-element addition of packed 32-bit
 // integer elements in 'v2' and 'v3', storing the results in 'dst' and the sign
 // of the sum in 'sign' (sign flag). 
 //
@@ -627,17 +627,18 @@ func maskAddsetcEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, k2_res u
 //
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_addsets_epi32'.
 // Requires KNCNI.
-func AddsetsEpi32(v2 x86.M512i, v3 x86.M512i, sign x86.Mmask16) x86.M512i {
-	return x86.M512i(addsetsEpi32([64]byte(v2), [64]byte(v3), uint16(sign)))
+func M512AddsetsEpi32(v2 x86.M512i, v3 x86.M512i, sign x86.Mmask16) x86.M512i {
+	return x86.M512i(m512AddsetsEpi32([64]byte(v2), [64]byte(v3), uint16(sign)))
 }
 
-func addsetsEpi32(v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
+func m512AddsetsEpi32(v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
 
 
-// MaskAddsetsEpi32: Performs an element-by-element addition of packed 32-bit
-// integer elements in 'v2' and 'v3', storing the results in 'dst' and the sign
-// of the sum in 'sign' (sign flag). Results are stored using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskAddsetsEpi32: Performs an element-by-element addition of packed
+// 32-bit integer elements in 'v2' and 'v3', storing the results in 'dst' and
+// the sign of the sum in 'sign' (sign flag). Results are stored using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -652,14 +653,14 @@ func addsetsEpi32(v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
 //
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_mask_addsets_epi32'.
 // Requires KNCNI.
-func MaskAddsetsEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i, sign x86.Mmask16) x86.M512i {
-	return x86.M512i(maskAddsetsEpi32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3), uint16(sign)))
+func M512MaskAddsetsEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i, sign x86.Mmask16) x86.M512i {
+	return x86.M512i(m512MaskAddsetsEpi32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3), uint16(sign)))
 }
 
-func maskAddsetsEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
+func m512MaskAddsetsEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte, sign uint16) [64]byte
 
 
-// AddsetsPs: Performs an element-by-element addition of packed
+// M512AddsetsPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
 // the results in 'dst' and the sign of the sum in 'sign' (sign flag). 
 //
@@ -672,14 +673,14 @@ func maskAddsetsEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte, sign uin
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_addsets_ps'.
 // Requires KNCNI.
-func AddsetsPs(v2 x86.M512, v3 x86.M512, sign x86.Mmask16) x86.M512 {
-	return x86.M512(addsetsPs([16]float32(v2), [16]float32(v3), uint16(sign)))
+func M512AddsetsPs(v2 x86.M512, v3 x86.M512, sign x86.Mmask16) x86.M512 {
+	return x86.M512(m512AddsetsPs([16]float32(v2), [16]float32(v3), uint16(sign)))
 }
 
-func addsetsPs(v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
+func m512AddsetsPs(v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
 
 
-// MaskAddsetsPs: Performs an element-by-element addition of packed
+// M512MaskAddsetsPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
 // the results in 'dst' and the sign of the sum in 'sign' (sign flag). Results
 // are stored using writemask 'k' (elements are copied from 'src' when the
@@ -698,14 +699,14 @@ func addsetsPs(v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_mask_addsets_ps'.
 // Requires KNCNI.
-func MaskAddsetsPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign x86.Mmask16) x86.M512 {
-	return x86.M512(maskAddsetsPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), uint16(sign)))
+func M512MaskAddsetsPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign x86.Mmask16) x86.M512 {
+	return x86.M512(m512MaskAddsetsPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), uint16(sign)))
 }
 
-func maskAddsetsPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
+func m512MaskAddsetsPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, sign uint16) [16]float32
 
 
-// AddsetsRoundPs: Performs an element-by-element addition of packed
+// M512AddsetsRoundPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
 // the results in 'dst' and the sign of the sum in 'sign' (sign flag).
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -725,14 +726,14 @@ func maskAddsetsPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, si
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_addsets_round_ps'.
 // Requires KNCNI.
-func AddsetsRoundPs(v2 x86.M512, v3 x86.M512, sign x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(addsetsRoundPs([16]float32(v2), [16]float32(v3), uint16(sign), rounding))
+func M512AddsetsRoundPs(v2 x86.M512, v3 x86.M512, sign x86.Mmask16, rounding int) x86.M512 {
+	return x86.M512(m512AddsetsRoundPs([16]float32(v2), [16]float32(v3), uint16(sign), rounding))
 }
 
-func addsetsRoundPs(v2 [16]float32, v3 [16]float32, sign uint16, rounding int) [16]float32
+func m512AddsetsRoundPs(v2 [16]float32, v3 [16]float32, sign uint16, rounding int) [16]float32
 
 
-// MaskAddsetsRoundPs: Performs an element-by-element addition of packed
+// M512MaskAddsetsRoundPs: Performs an element-by-element addition of packed
 // single-precision (32-bit) floating-point elements in 'v2' and 'v3', storing
 // the results in 'dst' and the sign of the sum in 'sign' (sign flag). Results
 // are stored using writemask 'k' (elements are copied from 'src' when the
@@ -758,16 +759,16 @@ func addsetsRoundPs(v2 [16]float32, v3 [16]float32, sign uint16, rounding int) [
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_mask_addsets_round_ps'.
 // Requires KNCNI.
-func MaskAddsetsRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(maskAddsetsRoundPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), uint16(sign), rounding))
+func M512MaskAddsetsRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign x86.Mmask16, rounding int) x86.M512 {
+	return x86.M512(m512MaskAddsetsRoundPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), uint16(sign), rounding))
 }
 
-func maskAddsetsRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, sign uint16, rounding int) [16]float32
+func m512MaskAddsetsRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, sign uint16, rounding int) [16]float32
 
 
-// AlignrEpi32: Concatenate 'a' and 'b' into a 128-byte immediate result, shift
-// the result right by 'count' 32-bit elements, and store the low 64 bytes (16
-// elements) in 'dst'. 
+// M512AlignrEpi32: Concatenate 'a' and 'b' into a 128-byte immediate result,
+// shift the result right by 'count' 32-bit elements, and store the low 64
+// bytes (16 elements) in 'dst'. 
 //
 //		temp[1023:512] := a[511:0]
 //		temp[511:0] := b[511:0]
@@ -777,17 +778,17 @@ func maskAddsetsRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float3
 //
 // Instruction: 'VALIGND'. Intrinsic: '_mm512_alignr_epi32'.
 // Requires KNCNI.
-func AlignrEpi32(a x86.M512i, b x86.M512i, count int) x86.M512i {
-	return x86.M512i(alignrEpi32([64]byte(a), [64]byte(b), count))
+func M512AlignrEpi32(a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(m512AlignrEpi32([64]byte(a), [64]byte(b), count))
 }
 
-func alignrEpi32(a [64]byte, b [64]byte, count int) [64]byte
+func m512AlignrEpi32(a [64]byte, b [64]byte, count int) [64]byte
 
 
-// MaskAlignrEpi32: Concatenate 'a' and 'b' into a 128-byte immediate result,
-// shift the result right by 'count' 32-bit elements, and store the low 64
-// bytes (16 elements) in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskAlignrEpi32: Concatenate 'a' and 'b' into a 128-byte immediate
+// result, shift the result right by 'count' 32-bit elements, and store the low
+// 64 bytes (16 elements) in 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). 
 //
 //		temp[1023:512] := a[511:0]
 //		temp[511:0] := b[511:0]
@@ -804,15 +805,15 @@ func alignrEpi32(a [64]byte, b [64]byte, count int) [64]byte
 //
 // Instruction: 'VALIGND'. Intrinsic: '_mm512_mask_alignr_epi32'.
 // Requires KNCNI.
-func MaskAlignrEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, count int) x86.M512i {
-	return x86.M512i(maskAlignrEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), count))
+func M512MaskAlignrEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(m512MaskAlignrEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskAlignrEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte, count int) [64]byte
+func m512MaskAlignrEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte, count int) [64]byte
 
 
-// AndEpi32: Compute the bitwise AND of packed 32-bit integers in 'a' and 'b',
-// and store the results in 'dst'. 
+// M512AndEpi32: Compute the bitwise AND of packed 32-bit integers in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -822,15 +823,15 @@ func maskAlignrEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte, count int) 
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_and_epi32'.
 // Requires KNCNI.
-func AndEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(andEpi32([64]byte(a), [64]byte(b)))
+func M512AndEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AndEpi32([64]byte(a), [64]byte(b)))
 }
 
-func andEpi32(a [64]byte, b [64]byte) [64]byte
+func m512AndEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAndEpi32: Performs element-by-element bitwise AND between packed 32-bit
-// integer elements of 'v2' and 'v3', storing the results in 'dst' using
+// M512MaskAndEpi32: Performs element-by-element bitwise AND between packed
+// 32-bit integer elements of 'v2' and 'v3', storing the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -846,14 +847,14 @@ func andEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_mask_and_epi32'.
 // Requires KNCNI.
-func MaskAndEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i) x86.M512i {
-	return x86.M512i(maskAndEpi32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3)))
+func M512MaskAndEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAndEpi32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3)))
 }
 
-func maskAndEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
+func m512MaskAndEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
 
 
-// AndEpi64: Compute the bitwise AND of 512 bits (composed of packed 64-bit
+// M512AndEpi64: Compute the bitwise AND of 512 bits (composed of packed 64-bit
 // integers) in 'a' and 'b', and store the results in 'dst'. 
 //
 //		dst[511:0] := (a[511:0] AND b[511:0])
@@ -861,16 +862,16 @@ func maskAndEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_and_epi64'.
 // Requires KNCNI.
-func AndEpi64(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(andEpi64([64]byte(a), [64]byte(b)))
+func M512AndEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AndEpi64([64]byte(a), [64]byte(b)))
 }
 
-func andEpi64(a [64]byte, b [64]byte) [64]byte
+func m512AndEpi64(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAndEpi64: Compute the bitwise AND of packed 64-bit integers in 'a' and
-// 'b', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 
+// M512MaskAndEpi64: Compute the bitwise AND of packed 64-bit integers in 'a'
+// and 'b', and store the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -884,30 +885,30 @@ func andEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_mask_and_epi64'.
 // Requires KNCNI.
-func MaskAndEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAndEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
+func M512MaskAndEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAndEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAndEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
+func m512MaskAndEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
-// AndSi512: Compute the bitwise AND of 512 bits (representing integer data) in
-// 'a' and 'b', and store the result in 'dst'. 
+// M512AndSi512: Compute the bitwise AND of 512 bits (representing integer
+// data) in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[511:0] := (a[511:0] AND b[511:0])
 //		dst[MAX:512] := 0
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_and_si512'.
 // Requires KNCNI.
-func AndSi512(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(andSi512([64]byte(a), [64]byte(b)))
+func M512AndSi512(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AndSi512([64]byte(a), [64]byte(b)))
 }
 
-func andSi512(a [64]byte, b [64]byte) [64]byte
+func m512AndSi512(a [64]byte, b [64]byte) [64]byte
 
 
-// AndnotEpi32: Compute the bitwise AND NOT of packed 32-bit integers in 'a'
-// and 'b', and store the results in 'dst'. 
+// M512AndnotEpi32: Compute the bitwise AND NOT of packed 32-bit integers in
+// 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -917,15 +918,15 @@ func andSi512(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_andnot_epi32'.
 // Requires KNCNI.
-func AndnotEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(andnotEpi32([64]byte(a), [64]byte(b)))
+func M512AndnotEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AndnotEpi32([64]byte(a), [64]byte(b)))
 }
 
-func andnotEpi32(a [64]byte, b [64]byte) [64]byte
+func m512AndnotEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAndnotEpi32: Compute the bitwise AND NOT of packed 32-bit integers in
-// 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
+// M512MaskAndnotEpi32: Compute the bitwise AND NOT of packed 32-bit integers
+// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -940,14 +941,14 @@ func andnotEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_mask_andnot_epi32'.
 // Requires KNCNI.
-func MaskAndnotEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAndnotEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskAndnotEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAndnotEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAndnotEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskAndnotEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// AndnotEpi64: Compute the bitwise AND NOT of 512 bits (composed of packed
+// M512AndnotEpi64: Compute the bitwise AND NOT of 512 bits (composed of packed
 // 64-bit integers) in 'a' and 'b', and store the results in 'dst'. 
 //
 //		dst[511:0] := ((NOT a[511:0]) AND b[511:0])
@@ -955,15 +956,15 @@ func maskAndnotEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm512_andnot_epi64'.
 // Requires KNCNI.
-func AndnotEpi64(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(andnotEpi64([64]byte(a), [64]byte(b)))
+func M512AndnotEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AndnotEpi64([64]byte(a), [64]byte(b)))
 }
 
-func andnotEpi64(a [64]byte, b [64]byte) [64]byte
+func m512AndnotEpi64(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAndnotEpi64: Compute the bitwise AND NOT of packed 64-bit integers in
-// 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
+// M512MaskAndnotEpi64: Compute the bitwise AND NOT of packed 64-bit integers
+// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
@@ -978,30 +979,30 @@ func andnotEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm512_mask_andnot_epi64'.
 // Requires KNCNI.
-func MaskAndnotEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAndnotEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
+func M512MaskAndnotEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAndnotEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAndnotEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
+func m512MaskAndnotEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
-// AndnotSi512: Compute the bitwise AND NOT of 512 bits (representing integer
-// data) in 'a' and 'b', and store the result in 'dst'. 
+// M512AndnotSi512: Compute the bitwise AND NOT of 512 bits (representing
+// integer data) in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[511:0] := ((NOT a[511:0]) AND b[511:0])
 //		dst[MAX:512] := 0
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_andnot_si512'.
 // Requires KNCNI.
-func AndnotSi512(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(andnotSi512([64]byte(a), [64]byte(b)))
+func M512AndnotSi512(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AndnotSi512([64]byte(a), [64]byte(b)))
 }
 
-func andnotSi512(a [64]byte, b [64]byte) [64]byte
+func m512AndnotSi512(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskBlendEpi32: Blend packed 32-bit integers from 'a' and 'b' using control
-// mask 'k', and store the results in 'dst'. 
+// M512MaskBlendEpi32: Blend packed 32-bit integers from 'a' and 'b' using
+// control mask 'k', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -1015,15 +1016,15 @@ func andnotSi512(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPBLENDMD'. Intrinsic: '_mm512_mask_blend_epi32'.
 // Requires KNCNI.
-func MaskBlendEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskBlendEpi32(uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskBlendEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskBlendEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlendEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskBlendEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskBlendEpi64: Blend packed 64-bit integers from 'a' and 'b' using control
-// mask 'k', and store the results in 'dst'. 
+// M512MaskBlendEpi64: Blend packed 64-bit integers from 'a' and 'b' using
+// control mask 'k', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -1037,15 +1038,16 @@ func maskBlendEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPBLENDMQ'. Intrinsic: '_mm512_mask_blend_epi64'.
 // Requires KNCNI.
-func MaskBlendEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskBlendEpi64(uint8(k), [64]byte(a), [64]byte(b)))
+func M512MaskBlendEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskBlendEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlendEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
+func m512MaskBlendEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskBlendPd: Blend packed double-precision (64-bit) floating-point elements
-// from 'a' and 'b' using control mask 'k', and store the results in 'dst'. 
+// M512MaskBlendPd: Blend packed double-precision (64-bit) floating-point
+// elements from 'a' and 'b' using control mask 'k', and store the results in
+// 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -1059,15 +1061,16 @@ func maskBlendEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VBLENDMPD'. Intrinsic: '_mm512_mask_blend_pd'.
 // Requires KNCNI.
-func MaskBlendPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(maskBlendPd(uint8(k), [8]float64(a), [8]float64(b)))
+func M512MaskBlendPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskBlendPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
-func maskBlendPd(k uint8, a [8]float64, b [8]float64) [8]float64
+func m512MaskBlendPd(k uint8, a [8]float64, b [8]float64) [8]float64
 
 
-// MaskBlendPs: Blend packed single-precision (32-bit) floating-point elements
-// from 'a' and 'b' using control mask 'k', and store the results in 'dst'. 
+// M512MaskBlendPs: Blend packed single-precision (32-bit) floating-point
+// elements from 'a' and 'b' using control mask 'k', and store the results in
+// 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -1081,14 +1084,14 @@ func maskBlendPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VBLENDMPS'. Intrinsic: '_mm512_mask_blend_ps'.
 // Requires KNCNI.
-func MaskBlendPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskBlendPs(uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskBlendPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskBlendPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskBlendPs(k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskBlendPs(k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// CastpdPs: Cast vector of type __m512d to type __m512.
+// M512CastpdPs: Cast vector of type __m512d to type __m512.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -1096,14 +1099,14 @@ func maskBlendPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_castpd_ps'.
 // Requires KNCNI.
-func CastpdPs(a x86.M512d) x86.M512 {
-	return x86.M512(castpdPs([8]float64(a)))
+func M512CastpdPs(a x86.M512d) x86.M512 {
+	return x86.M512(m512CastpdPs([8]float64(a)))
 }
 
-func castpdPs(a [8]float64) [16]float32
+func m512CastpdPs(a [8]float64) [16]float32
 
 
-// CastpdSi512: Cast vector of type __m512d to type __m512i.
+// M512CastpdSi512: Cast vector of type __m512d to type __m512i.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -1111,14 +1114,14 @@ func castpdPs(a [8]float64) [16]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_castpd_si512'.
 // Requires KNCNI.
-func CastpdSi512(a x86.M512d) x86.M512i {
-	return x86.M512i(castpdSi512([8]float64(a)))
+func M512CastpdSi512(a x86.M512d) x86.M512i {
+	return x86.M512i(m512CastpdSi512([8]float64(a)))
 }
 
-func castpdSi512(a [8]float64) [64]byte
+func m512CastpdSi512(a [8]float64) [64]byte
 
 
-// CastpsPd: Cast vector of type __m512 to type __m512d.
+// M512CastpsPd: Cast vector of type __m512 to type __m512d.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -1126,14 +1129,14 @@ func castpdSi512(a [8]float64) [64]byte
 //
 // Instruction: ''. Intrinsic: '_mm512_castps_pd'.
 // Requires KNCNI.
-func CastpsPd(a x86.M512) x86.M512d {
-	return x86.M512d(castpsPd([16]float32(a)))
+func M512CastpsPd(a x86.M512) x86.M512d {
+	return x86.M512d(m512CastpsPd([16]float32(a)))
 }
 
-func castpsPd(a [16]float32) [8]float64
+func m512CastpsPd(a [16]float32) [8]float64
 
 
-// CastpsSi512: Cast vector of type __m512 to type __m512i.
+// M512CastpsSi512: Cast vector of type __m512 to type __m512i.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -1141,14 +1144,14 @@ func castpsPd(a [16]float32) [8]float64
 //
 // Instruction: ''. Intrinsic: '_mm512_castps_si512'.
 // Requires KNCNI.
-func CastpsSi512(a x86.M512) x86.M512i {
-	return x86.M512i(castpsSi512([16]float32(a)))
+func M512CastpsSi512(a x86.M512) x86.M512i {
+	return x86.M512i(m512CastpsSi512([16]float32(a)))
 }
 
-func castpsSi512(a [16]float32) [64]byte
+func m512CastpsSi512(a [16]float32) [64]byte
 
 
-// Castsi512Pd: Cast vector of type __m512i to type __m512d.
+// M512Castsi512Pd: Cast vector of type __m512i to type __m512d.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -1156,14 +1159,14 @@ func castpsSi512(a [16]float32) [64]byte
 //
 // Instruction: ''. Intrinsic: '_mm512_castsi512_pd'.
 // Requires KNCNI.
-func Castsi512Pd(a x86.M512i) x86.M512d {
-	return x86.M512d(castsi512Pd([64]byte(a)))
+func M512Castsi512Pd(a x86.M512i) x86.M512d {
+	return x86.M512d(m512Castsi512Pd([64]byte(a)))
 }
 
-func castsi512Pd(a [64]byte) [8]float64
+func m512Castsi512Pd(a [64]byte) [8]float64
 
 
-// Castsi512Ps: Cast vector of type __m512i to type __m512.
+// M512Castsi512Ps: Cast vector of type __m512i to type __m512.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -1171,11 +1174,11 @@ func castsi512Pd(a [64]byte) [8]float64
 //
 // Instruction: ''. Intrinsic: '_mm512_castsi512_ps'.
 // Requires KNCNI.
-func Castsi512Ps(a x86.M512i) x86.M512 {
-	return x86.M512(castsi512Ps([64]byte(a)))
+func M512Castsi512Ps(a x86.M512i) x86.M512 {
+	return x86.M512(m512Castsi512Ps([64]byte(a)))
 }
 
-func castsi512Ps(a [64]byte) [16]float32
+func m512Castsi512Ps(a [64]byte) [16]float32
 
 
 // Clevict: Evicts the cache line containing the address 'ptr' from cache level
@@ -1192,7 +1195,7 @@ func Clevict(ptr uintptr, level int)  {
 func clevict(ptr uintptr, level int) 
 
 
-// CmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
+// M512CmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
 // comparison operand specified by 'imm8', and store the results in mask vector
 // 'k'. 
 //
@@ -1214,17 +1217,17 @@ func clevict(ptr uintptr, level int)
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmp_epi32_mask'.
 // Requires KNCNI.
-func CmpEpi32Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
-	return x86.Mmask16(cmpEpi32Mask([64]byte(a), [64]byte(b), imm8))
+func M512CmpEpi32Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
+	return x86.Mmask16(m512CmpEpi32Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpi32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
+func m512CmpEpi32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
-// MaskCmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
-// comparison operand specified by 'imm8', and store the results in mask vector
-// 'k1' using zeromask 'k' (elements are zeroed out when the corresponding mask
-// bit is not set). 
+// M512MaskCmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on
+// the comparison operand specified by 'imm8', and store the results in mask
+// vector 'k1' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _MM_CMPINT_EQ
@@ -1248,16 +1251,16 @@ func cmpEpi32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmp_epi32_mask'.
 // Requires KNCNI.
-func MaskCmpEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
-	return x86.Mmask16(maskCmpEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
+func M512MaskCmpEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpi32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
+func m512MaskCmpEpi32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
-// CmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' based
-// on the comparison operand specified by 'imm8', and store the results in mask
-// vector 'k'. 
+// M512CmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// based on the comparison operand specified by 'imm8', and store the results
+// in mask vector 'k'. 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _MM_CMPINT_EQ
@@ -1277,14 +1280,14 @@ func maskCmpEpi32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmp_epu32_mask'.
 // Requires KNCNI.
-func CmpEpu32Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
-	return x86.Mmask16(cmpEpu32Mask([64]byte(a), [64]byte(b), imm8))
+func M512CmpEpu32Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
+	return x86.Mmask16(m512CmpEpu32Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpu32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
+func m512CmpEpu32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
-// MaskCmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// M512MaskCmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
 // based on the comparison operand specified by 'imm8', and store the results
 // in mask vector 'k1' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -1311,16 +1314,16 @@ func cmpEpu32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmp_epu32_mask'.
 // Requires KNCNI.
-func MaskCmpEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
-	return x86.Mmask16(maskCmpEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
+func M512MaskCmpEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpu32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
+func m512MaskCmpEpu32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 
 
-// CmpPdMask: Compare packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b' based on the comparison operand specified by 'imm8', and
-// store the results in mask vector 'k'. 
+// M512CmpPdMask: Compare packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
+// and store the results in mask vector 'k'. 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _CMP_EQ_OQ
@@ -1364,14 +1367,14 @@ func maskCmpEpu32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmp_pd_mask'.
 // Requires KNCNI.
-func CmpPdMask(a x86.M512d, b x86.M512d, imm8 int) x86.Mmask8 {
-	return x86.Mmask8(cmpPdMask([8]float64(a), [8]float64(b), imm8))
+func M512CmpPdMask(a x86.M512d, b x86.M512d, imm8 int) x86.Mmask8 {
+	return x86.Mmask8(m512CmpPdMask([8]float64(a), [8]float64(b), imm8))
 }
 
-func cmpPdMask(a [8]float64, b [8]float64, imm8 int) uint8
+func m512CmpPdMask(a [8]float64, b [8]float64, imm8 int) uint8
 
 
-// MaskCmpPdMask: Compare packed double-precision (64-bit) floating-point
+// M512MaskCmpPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
 // and store the results in mask vector 'k' using zeromask 'k1' (elements are
 // zeroed out when the corresponding mask bit is not set). 
@@ -1422,16 +1425,16 @@ func cmpPdMask(a [8]float64, b [8]float64, imm8 int) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmp_pd_mask'.
 // Requires KNCNI.
-func MaskCmpPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.Mmask8 {
-	return x86.Mmask8(maskCmpPdMask(uint8(k1), [8]float64(a), [8]float64(b), imm8))
+func M512MaskCmpPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpPdMask(uint8(k1), [8]float64(a), [8]float64(b), imm8))
 }
 
-func maskCmpPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int) uint8
+func m512MaskCmpPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int) uint8
 
 
-// CmpPsMask: Compare packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b' based on the comparison operand specified by 'imm8', and
-// store the results in mask vector 'k'. 
+// M512CmpPsMask: Compare packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
+// and store the results in mask vector 'k'. 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _CMP_EQ_OQ
@@ -1475,14 +1478,14 @@ func maskCmpPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmp_ps_mask'.
 // Requires KNCNI.
-func CmpPsMask(a x86.M512, b x86.M512, imm8 int) x86.Mmask16 {
-	return x86.Mmask16(cmpPsMask([16]float32(a), [16]float32(b), imm8))
+func M512CmpPsMask(a x86.M512, b x86.M512, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(m512CmpPsMask([16]float32(a), [16]float32(b), imm8))
 }
 
-func cmpPsMask(a [16]float32, b [16]float32, imm8 int) uint16
+func m512CmpPsMask(a [16]float32, b [16]float32, imm8 int) uint16
 
 
-// MaskCmpPsMask: Compare packed single-precision (32-bit) floating-point
+// M512MaskCmpPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
 // and store the results in mask vector 'k' using zeromask 'k1' (elements are
 // zeroed out when the corresponding mask bit is not set). 
@@ -1533,14 +1536,14 @@ func cmpPsMask(a [16]float32, b [16]float32, imm8 int) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmp_ps_mask'.
 // Requires KNCNI.
-func MaskCmpPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.Mmask16 {
-	return x86.Mmask16(maskCmpPsMask(uint16(k1), [16]float32(a), [16]float32(b), imm8))
+func M512MaskCmpPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpPsMask(uint16(k1), [16]float32(a), [16]float32(b), imm8))
 }
 
-func maskCmpPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int) uint16
+func m512MaskCmpPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int) uint16
 
 
-// CmpRoundPdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpRoundPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
 // and store the results in mask vector 'k'.
 // 	Pass __MM_FROUND_NO_EXC to 'sae' to suppress all exceptions. 
@@ -1587,17 +1590,17 @@ func maskCmpPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmp_round_pd_mask'.
 // Requires KNCNI.
-func CmpRoundPdMask(a x86.M512d, b x86.M512d, imm8 int, sae int) x86.Mmask8 {
-	return x86.Mmask8(cmpRoundPdMask([8]float64(a), [8]float64(b), imm8, sae))
+func M512CmpRoundPdMask(a x86.M512d, b x86.M512d, imm8 int, sae int) x86.Mmask8 {
+	return x86.Mmask8(m512CmpRoundPdMask([8]float64(a), [8]float64(b), imm8, sae))
 }
 
-func cmpRoundPdMask(a [8]float64, b [8]float64, imm8 int, sae int) uint8
+func m512CmpRoundPdMask(a [8]float64, b [8]float64, imm8 int, sae int) uint8
 
 
-// MaskCmpRoundPdMask: Compare packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
-// and store the results in mask vector 'k' using zeromask 'k1' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpRoundPdMask: Compare packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b' based on the comparison operand
+// specified by 'imm8', and store the results in mask vector 'k' using zeromask
+// 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 // 	Pass __MM_FROUND_NO_EXC to 'sae' to suppress all exceptions. 
 //
 //		CASE (imm8[7:0]) OF
@@ -1646,14 +1649,14 @@ func cmpRoundPdMask(a [8]float64, b [8]float64, imm8 int, sae int) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmp_round_pd_mask'.
 // Requires KNCNI.
-func MaskCmpRoundPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int, sae int) x86.Mmask8 {
-	return x86.Mmask8(maskCmpRoundPdMask(uint8(k1), [8]float64(a), [8]float64(b), imm8, sae))
+func M512MaskCmpRoundPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int, sae int) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpRoundPdMask(uint8(k1), [8]float64(a), [8]float64(b), imm8, sae))
 }
 
-func maskCmpRoundPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int, sae int) uint8
+func m512MaskCmpRoundPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int, sae int) uint8
 
 
-// CmpRoundPsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpRoundPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
 // and store the results in mask vector 'k'.
 // 	Pass __MM_FROUND_NO_EXC to 'sae' to suppress all exceptions. 
@@ -1700,17 +1703,17 @@ func maskCmpRoundPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int, sae int)
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmp_round_ps_mask'.
 // Requires KNCNI.
-func CmpRoundPsMask(a x86.M512, b x86.M512, imm8 int, sae int) x86.Mmask16 {
-	return x86.Mmask16(cmpRoundPsMask([16]float32(a), [16]float32(b), imm8, sae))
+func M512CmpRoundPsMask(a x86.M512, b x86.M512, imm8 int, sae int) x86.Mmask16 {
+	return x86.Mmask16(m512CmpRoundPsMask([16]float32(a), [16]float32(b), imm8, sae))
 }
 
-func cmpRoundPsMask(a [16]float32, b [16]float32, imm8 int, sae int) uint16
+func m512CmpRoundPsMask(a [16]float32, b [16]float32, imm8 int, sae int) uint16
 
 
-// MaskCmpRoundPsMask: Compare packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b' based on the comparison operand specified by 'imm8',
-// and store the results in mask vector 'k' using zeromask 'k1' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpRoundPsMask: Compare packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b' based on the comparison operand
+// specified by 'imm8', and store the results in mask vector 'k' using zeromask
+// 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 // 	Pass __MM_FROUND_NO_EXC to 'sae' to suppress all exceptions. 
 //
 //		CASE (imm8[7:0]) OF
@@ -1759,15 +1762,15 @@ func cmpRoundPsMask(a [16]float32, b [16]float32, imm8 int, sae int) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmp_round_ps_mask'.
 // Requires KNCNI.
-func MaskCmpRoundPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512, imm8 int, sae int) x86.Mmask16 {
-	return x86.Mmask16(maskCmpRoundPsMask(uint16(k1), [16]float32(a), [16]float32(b), imm8, sae))
+func M512MaskCmpRoundPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512, imm8 int, sae int) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpRoundPsMask(uint16(k1), [16]float32(a), [16]float32(b), imm8, sae))
 }
 
-func maskCmpRoundPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int, sae int) uint16
+func m512MaskCmpRoundPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int, sae int) uint16
 
 
-// CmpeqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for equality,
-// and store the results in mask vector 'k'. 
+// M512CmpeqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -1777,14 +1780,14 @@ func maskCmpRoundPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int, sae i
 //
 // Instruction: 'VPCMPEQD'. Intrinsic: '_mm512_cmpeq_epi32_mask'.
 // Requires KNCNI.
-func CmpeqEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpeqEpi32Mask([64]byte(a), [64]byte(b)))
+func M512CmpeqEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpeqEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpi32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpeqEpi32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpeqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512MaskCmpeqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // equality, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -1800,15 +1803,15 @@ func cmpeqEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPEQD'. Intrinsic: '_mm512_mask_cmpeq_epi32_mask'.
 // Requires KNCNI.
-func MaskCmpeqEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpeqEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpeqEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpeqEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpeqEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpeqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
-// equality, and store the results in mask vector 'k'. 
+// M512CmpeqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// for equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -1818,16 +1821,16 @@ func maskCmpeqEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpeq_epu32_mask'.
 // Requires KNCNI.
-func CmpeqEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpeqEpu32Mask([64]byte(a), [64]byte(b)))
+func M512CmpeqEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpeqEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpu32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpeqEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpeqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
-// for equality, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpeqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and
+// 'b' for equality, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -1841,14 +1844,14 @@ func cmpeqEpu32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpeq_epu32_mask'.
 // Requires KNCNI.
-func MaskCmpeqEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpeqEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpeqEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpeqEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpeqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpeqPdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpeqPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for equality, and store the results in mask vector
 // 'k'. 
 //
@@ -1860,14 +1863,14 @@ func maskCmpeqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmpeq_pd_mask'.
 // Requires KNCNI.
-func CmpeqPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmpeqPdMask([8]float64(a), [8]float64(b)))
+func M512CmpeqPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmpeqPdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmpeqPdMask(a [8]float64, b [8]float64) uint8
+func m512CmpeqPdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmpeqPdMask: Compare packed double-precision (64-bit) floating-point
+// M512MaskCmpeqPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for equality, and store the results in mask vector
 // 'k' using zeromask 'k1' (elements are zeroed out when the corresponding mask
 // bit is not set). 
@@ -1884,14 +1887,14 @@ func cmpeqPdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmpeq_pd_mask'.
 // Requires KNCNI.
-func MaskCmpeqPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmpeqPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmpeqPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpeqPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmpeqPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmpeqPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmpeqPsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpeqPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for equality, and store the results in mask vector
 // 'k'. 
 //
@@ -1903,14 +1906,14 @@ func maskCmpeqPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmpeq_ps_mask'.
 // Requires KNCNI.
-func CmpeqPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmpeqPsMask([16]float32(a), [16]float32(b)))
+func M512CmpeqPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmpeqPsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmpeqPsMask(a [16]float32, b [16]float32) uint16
+func m512CmpeqPsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmpeqPsMask: Compare packed single-precision (32-bit) floating-point
+// M512MaskCmpeqPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for equality, and store the results in mask vector
 // 'k' using zeromask 'k1' (elements are zeroed out when the corresponding mask
 // bit is not set). 
@@ -1928,14 +1931,14 @@ func cmpeqPsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmpeq_ps_mask'.
 // Requires KNCNI.
-func MaskCmpeqPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmpeqPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmpeqPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpeqPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmpeqPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmpeqPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
-// CmpgeEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512CmpgeEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -1946,14 +1949,14 @@ func maskCmpeqPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmpge_epi32_mask'.
 // Requires KNCNI.
-func CmpgeEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpgeEpi32Mask([64]byte(a), [64]byte(b)))
+func M512CmpgeEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpgeEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpi32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpgeEpi32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpgeEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512MaskCmpgeEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k1' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
@@ -1970,15 +1973,15 @@ func cmpgeEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmpge_epi32_mask'.
 // Requires KNCNI.
-func MaskCmpgeEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgeEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgeEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpgeEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpgeEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpgeEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
-// greater-than-or-equal, and store the results in mask vector 'k'. 
+// M512CmpgeEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// for greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -1988,17 +1991,17 @@ func maskCmpgeEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpge_epu32_mask'.
 // Requires KNCNI.
-func CmpgeEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpgeEpu32Mask([64]byte(a), [64]byte(b)))
+func M512CmpgeEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpgeEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpu32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpgeEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpgeEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
-// for greater-than-or-equal, and store the results in mask vector 'k1' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskCmpgeEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and
+// 'b' for greater-than-or-equal, and store the results in mask vector 'k1'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2012,14 +2015,14 @@ func cmpgeEpu32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpge_epu32_mask'.
 // Requires KNCNI.
-func MaskCmpgeEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgeEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgeEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpgeEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpgeEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpgtEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512CmpgtEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -2030,14 +2033,14 @@ func maskCmpgeEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPGTD'. Intrinsic: '_mm512_cmpgt_epi32_mask'.
 // Requires KNCNI.
-func CmpgtEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpgtEpi32Mask([64]byte(a), [64]byte(b)))
+func M512CmpgtEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpgtEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpi32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpgtEpi32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpgtEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512MaskCmpgtEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -2053,15 +2056,15 @@ func cmpgtEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPGTD'. Intrinsic: '_mm512_mask_cmpgt_epi32_mask'.
 // Requires KNCNI.
-func MaskCmpgtEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgtEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgtEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpgtEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpgtEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpgtEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
-// greater-than, and store the results in mask vector 'k'. 
+// M512CmpgtEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// for greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2071,16 +2074,17 @@ func maskCmpgtEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpgt_epu32_mask'.
 // Requires KNCNI.
-func CmpgtEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpgtEpu32Mask([64]byte(a), [64]byte(b)))
+func M512CmpgtEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpgtEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpu32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpgtEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpgtEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
-// for greater-than, and store the results in mask vector 'k1' using zeromask
-// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpgtEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and
+// 'b' for greater-than, and store the results in mask vector 'k1' using
+// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
+// set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2094,14 +2098,14 @@ func cmpgtEpu32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpgt_epu32_mask'.
 // Requires KNCNI.
-func MaskCmpgtEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgtEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgtEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpgtEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpgtEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpleEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512CmpleEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -2112,14 +2116,14 @@ func maskCmpgtEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmple_epi32_mask'.
 // Requires KNCNI.
-func CmpleEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpleEpi32Mask([64]byte(a), [64]byte(b)))
+func M512CmpleEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpleEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpi32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpleEpi32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpleEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512MaskCmpleEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -2135,15 +2139,15 @@ func cmpleEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmple_epi32_mask'.
 // Requires KNCNI.
-func MaskCmpleEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpleEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpleEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpleEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpleEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpleEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
-// less-than-or-equal, and store the results in mask vector 'k'. 
+// M512CmpleEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// for less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2153,16 +2157,16 @@ func maskCmpleEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmple_epu32_mask'.
 // Requires KNCNI.
-func CmpleEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpleEpu32Mask([64]byte(a), [64]byte(b)))
+func M512CmpleEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpleEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpu32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpleEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpleEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
-// for less-than, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpleEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and
+// 'b' for less-than, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2176,14 +2180,14 @@ func cmpleEpu32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmple_epu32_mask'.
 // Requires KNCNI.
-func MaskCmpleEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpleEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpleEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpleEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpleEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmplePdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmplePdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for less-than-or-equal, and store the results in
 // mask vector 'k'. 
 //
@@ -2195,14 +2199,14 @@ func maskCmpleEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmple_pd_mask'.
 // Requires KNCNI.
-func CmplePdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmplePdMask([8]float64(a), [8]float64(b)))
+func M512CmplePdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmplePdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmplePdMask(a [8]float64, b [8]float64) uint8
+func m512CmplePdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmplePdMask: Compare packed double-precision (64-bit) floating-point
+// M512MaskCmplePdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for less-than-or-equal, and store the results in
 // mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2219,14 +2223,14 @@ func cmplePdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmple_pd_mask'.
 // Requires KNCNI.
-func MaskCmplePdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmplePdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmplePdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmplePdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmplePdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmplePdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmplePsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmplePsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for less-than-or-equal, and store the results in
 // mask vector 'k'. 
 //
@@ -2238,14 +2242,14 @@ func maskCmplePdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmple_ps_mask'.
 // Requires KNCNI.
-func CmplePsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmplePsMask([16]float32(a), [16]float32(b)))
+func M512CmplePsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmplePsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmplePsMask(a [16]float32, b [16]float32) uint16
+func m512CmplePsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmplePsMask: Compare packed single-precision (32-bit) floating-point
+// M512MaskCmplePsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for less-than-or-equal, and store the results in
 // mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2262,15 +2266,15 @@ func cmplePsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmple_ps_mask'.
 // Requires KNCNI.
-func MaskCmplePsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmplePsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmplePsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmplePsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmplePsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmplePsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
-// CmpltEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for less-than,
-// and store the results in mask vector 'k'. 
+// M512CmpltEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2280,14 +2284,14 @@ func maskCmplePsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VPCMPLTD'. Intrinsic: '_mm512_cmplt_epi32_mask'.
 // Requires KNCNI.
-func CmpltEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpltEpi32Mask([64]byte(a), [64]byte(b)))
+func M512CmpltEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpltEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpi32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpltEpi32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpltEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512MaskCmpltEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k1' using zeromask
 // 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -2303,15 +2307,15 @@ func cmpltEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPLTD'. Intrinsic: '_mm512_mask_cmplt_epi32_mask'.
 // Requires KNCNI.
-func MaskCmpltEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpltEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpltEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpltEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpltEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpltEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
-// less-than, and store the results in mask vector 'k'. 
+// M512CmpltEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// for less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2321,15 +2325,15 @@ func maskCmpltEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmplt_epu32_mask'.
 // Requires KNCNI.
-func CmpltEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpltEpu32Mask([64]byte(a), [64]byte(b)))
+func M512CmpltEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpltEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpu32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpltEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpltEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
-// for less-than-or-equal, and store the results in mask vector 'k1' using
+// M512MaskCmpltEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and
+// 'b' for less-than-or-equal, and store the results in mask vector 'k1' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
 //
@@ -2345,14 +2349,14 @@ func cmpltEpu32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmplt_epu32_mask'.
 // Requires KNCNI.
-func MaskCmpltEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpltEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpltEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpltEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpltEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpltPdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpltPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for less-than, and store the results in mask vector
 // 'k'. 
 //
@@ -2364,14 +2368,14 @@ func maskCmpltEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmplt_pd_mask'.
 // Requires KNCNI.
-func CmpltPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmpltPdMask([8]float64(a), [8]float64(b)))
+func M512CmpltPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmpltPdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmpltPdMask(a [8]float64, b [8]float64) uint8
+func m512CmpltPdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmpltPdMask: Compare packed double-precision (64-bit) floating-point
+// M512MaskCmpltPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for less-than, and store the results in mask vector
 // 'k' using zeromask 'k1' (elements are zeroed out when the corresponding mask
 // bit is not set). 
@@ -2388,14 +2392,14 @@ func cmpltPdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmplt_pd_mask'.
 // Requires KNCNI.
-func MaskCmpltPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmpltPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmpltPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpltPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmpltPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmpltPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmpltPsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpltPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for less-than, and store the results in mask vector
 // 'k'. 
 //
@@ -2407,14 +2411,14 @@ func maskCmpltPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmplt_ps_mask'.
 // Requires KNCNI.
-func CmpltPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmpltPsMask([16]float32(a), [16]float32(b)))
+func M512CmpltPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmpltPsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmpltPsMask(a [16]float32, b [16]float32) uint16
+func m512CmpltPsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmpltPsMask: Compare packed single-precision (32-bit) floating-point
+// M512MaskCmpltPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for less-than, and store the results in mask vector
 // 'k' using zeromask 'k1' (elements are zeroed out when the corresponding mask
 // bit is not set). 
@@ -2431,14 +2435,14 @@ func cmpltPsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmplt_ps_mask'.
 // Requires KNCNI.
-func MaskCmpltPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmpltPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmpltPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpltPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmpltPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmpltPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
-// CmpneqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512CmpneqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -2449,14 +2453,14 @@ func maskCmpltPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmpneq_epi32_mask'.
 // Requires KNCNI.
-func CmpneqEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpneqEpi32Mask([64]byte(a), [64]byte(b)))
+func M512CmpneqEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpneqEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpi32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpneqEpi32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpneqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
+// M512MaskCmpneqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -2472,15 +2476,15 @@ func cmpneqEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmpneq_epi32_mask'.
 // Requires KNCNI.
-func MaskCmpneqEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpneqEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpneqEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpneqEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpneqEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpneqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' for
-// not-equal, and store the results in mask vector 'k'. 
+// M512CmpneqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
+// for not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2490,16 +2494,16 @@ func maskCmpneqEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmpneq_epu32_mask'.
 // Requires KNCNI.
-func CmpneqEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(cmpneqEpu32Mask([64]byte(a), [64]byte(b)))
+func M512CmpneqEpu32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512CmpneqEpu32Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpu32Mask(a [64]byte, b [64]byte) uint16
+func m512CmpneqEpu32Mask(a [64]byte, b [64]byte) uint16
 
 
-// MaskCmpneqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
-// for not-equal, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpneqEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and
+// 'b' for not-equal, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2513,14 +2517,14 @@ func cmpneqEpu32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmpneq_epu32_mask'.
 // Requires KNCNI.
-func MaskCmpneqEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpneqEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpneqEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpneqEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskCmpneqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// CmpneqPdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpneqPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for not-equal, and store the results in mask vector
 // 'k'. 
 //
@@ -2532,17 +2536,17 @@ func maskCmpneqEpu32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmpneq_pd_mask'.
 // Requires KNCNI.
-func CmpneqPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmpneqPdMask([8]float64(a), [8]float64(b)))
+func M512CmpneqPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmpneqPdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmpneqPdMask(a [8]float64, b [8]float64) uint8
+func m512CmpneqPdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmpneqPdMask: Compare packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b' for not-equal, and store the results in mask vector
-// 'k' using zeromask 'k1' (elements are zeroed out when the corresponding mask
-// bit is not set). 
+// M512MaskCmpneqPdMask: Compare packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b' for not-equal, and store the results
+// in mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -2556,14 +2560,14 @@ func cmpneqPdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmpneq_pd_mask'.
 // Requires KNCNI.
-func MaskCmpneqPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmpneqPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmpneqPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpneqPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmpneqPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmpneqPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmpneqPsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpneqPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for not-equal, and store the results in mask vector
 // 'k'. 
 //
@@ -2575,17 +2579,17 @@ func maskCmpneqPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmpneq_ps_mask'.
 // Requires KNCNI.
-func CmpneqPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmpneqPsMask([16]float32(a), [16]float32(b)))
+func M512CmpneqPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmpneqPsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmpneqPsMask(a [16]float32, b [16]float32) uint16
+func m512CmpneqPsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmpneqPsMask: Compare packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b' for not-equal, and store the results in mask vector
-// 'k' using zeromask 'k1' (elements are zeroed out when the corresponding mask
-// bit is not set). 
+// M512MaskCmpneqPsMask: Compare packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b' for not-equal, and store the results
+// in mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2599,14 +2603,14 @@ func cmpneqPsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmpneq_ps_mask'.
 // Requires KNCNI.
-func MaskCmpneqPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmpneqPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmpneqPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpneqPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmpneqPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmpneqPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
-// CmpnlePdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpnlePdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for not-less-than-or-equal, and store the results in
 // mask vector 'k'. 
 //
@@ -2618,17 +2622,17 @@ func maskCmpneqPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmpnle_pd_mask'.
 // Requires KNCNI.
-func CmpnlePdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmpnlePdMask([8]float64(a), [8]float64(b)))
+func M512CmpnlePdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmpnlePdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmpnlePdMask(a [8]float64, b [8]float64) uint8
+func m512CmpnlePdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmpnlePdMask: Compare packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b' for not-less-than-or-equal, and store the results in
-// mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpnlePdMask: Compare packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b' for not-less-than-or-equal, and store
+// the results in mask vector 'k' using zeromask 'k1' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -2642,14 +2646,14 @@ func cmpnlePdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmpnle_pd_mask'.
 // Requires KNCNI.
-func MaskCmpnlePdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmpnlePdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmpnlePdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpnlePdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmpnlePdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmpnlePdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmpnlePsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpnlePsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for not-less-than-or-equal, and store the results in
 // mask vector 'k'. 
 //
@@ -2661,17 +2665,17 @@ func maskCmpnlePdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmpnle_ps_mask'.
 // Requires KNCNI.
-func CmpnlePsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmpnlePsMask([16]float32(a), [16]float32(b)))
+func M512CmpnlePsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmpnlePsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmpnlePsMask(a [16]float32, b [16]float32) uint16
+func m512CmpnlePsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmpnlePsMask: Compare packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b' for not-less-than-or-equal, and store the results in
-// mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpnlePsMask: Compare packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b' for not-less-than-or-equal, and store
+// the results in mask vector 'k' using zeromask 'k1' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2685,14 +2689,14 @@ func cmpnlePsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmpnle_ps_mask'.
 // Requires KNCNI.
-func MaskCmpnlePsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmpnlePsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmpnlePsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpnlePsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmpnlePsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmpnlePsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
-// CmpnltPdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpnltPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' for not-less-than, and store the results in mask
 // vector 'k'. 
 //
@@ -2704,17 +2708,17 @@ func maskCmpnlePsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmpnlt_pd_mask'.
 // Requires KNCNI.
-func CmpnltPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmpnltPdMask([8]float64(a), [8]float64(b)))
+func M512CmpnltPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmpnltPdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmpnltPdMask(a [8]float64, b [8]float64) uint8
+func m512CmpnltPdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmpnltPdMask: Compare packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b' for not-less-than, and store the results in mask
-// vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpnltPdMask: Compare packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b' for not-less-than, and store the
+// results in mask vector 'k' using zeromask 'k1' (elements are zeroed out when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -2728,14 +2732,14 @@ func cmpnltPdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmpnlt_pd_mask'.
 // Requires KNCNI.
-func MaskCmpnltPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmpnltPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmpnltPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpnltPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmpnltPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmpnltPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmpnltPsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpnltPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' for not-less-than, and store the results in mask
 // vector 'k'. 
 //
@@ -2747,17 +2751,17 @@ func maskCmpnltPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmpnlt_ps_mask'.
 // Requires KNCNI.
-func CmpnltPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmpnltPsMask([16]float32(a), [16]float32(b)))
+func M512CmpnltPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmpnltPsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmpnltPsMask(a [16]float32, b [16]float32) uint16
+func m512CmpnltPsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmpnltPsMask: Compare packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b' for not-less-than, and store the results in mask
-// vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpnltPsMask: Compare packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b' for not-less-than, and store the
+// results in mask vector 'k' using zeromask 'k1' (elements are zeroed out when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2771,14 +2775,14 @@ func cmpnltPsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmpnlt_ps_mask'.
 // Requires KNCNI.
-func MaskCmpnltPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmpnltPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmpnltPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpnltPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmpnltPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmpnltPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
-// CmpordPdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpordPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' to see if neither is NaN, and store the results in
 // mask vector 'k'. 
 //
@@ -2790,17 +2794,17 @@ func maskCmpnltPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmpord_pd_mask'.
 // Requires KNCNI.
-func CmpordPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmpordPdMask([8]float64(a), [8]float64(b)))
+func M512CmpordPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmpordPdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmpordPdMask(a [8]float64, b [8]float64) uint8
+func m512CmpordPdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmpordPdMask: Compare packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b' to see if neither is NaN, and store the results in
-// mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpordPdMask: Compare packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b' to see if neither is NaN, and store
+// the results in mask vector 'k' using zeromask 'k1' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -2814,14 +2818,14 @@ func cmpordPdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmpord_pd_mask'.
 // Requires KNCNI.
-func MaskCmpordPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmpordPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmpordPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpordPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmpordPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmpordPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmpordPsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpordPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' to see if neither is NaN, and store the results in
 // mask vector 'k'. 
 //
@@ -2833,17 +2837,17 @@ func maskCmpordPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmpord_ps_mask'.
 // Requires KNCNI.
-func CmpordPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmpordPsMask([16]float32(a), [16]float32(b)))
+func M512CmpordPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmpordPsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmpordPsMask(a [16]float32, b [16]float32) uint16
+func m512CmpordPsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmpordPsMask: Compare packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b' to see if neither is NaN, and store the results in
-// mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpordPsMask: Compare packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b' to see if neither is NaN, and store
+// the results in mask vector 'k' using zeromask 'k1' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2857,14 +2861,14 @@ func cmpordPsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmpord_ps_mask'.
 // Requires KNCNI.
-func MaskCmpordPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmpordPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmpordPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpordPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmpordPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmpordPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
-// CmpunordPdMask: Compare packed double-precision (64-bit) floating-point
+// M512CmpunordPdMask: Compare packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b' to see if either is NaN, and store the results in
 // mask vector 'k'. 
 //
@@ -2876,17 +2880,17 @@ func maskCmpordPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmpunord_pd_mask'.
 // Requires KNCNI.
-func CmpunordPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(cmpunordPdMask([8]float64(a), [8]float64(b)))
+func M512CmpunordPdMask(a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512CmpunordPdMask([8]float64(a), [8]float64(b)))
 }
 
-func cmpunordPdMask(a [8]float64, b [8]float64) uint8
+func m512CmpunordPdMask(a [8]float64, b [8]float64) uint8
 
 
-// MaskCmpunordPdMask: Compare packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b' to see if either is NaN, and store the results in
-// mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpunordPdMask: Compare packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b' to see if either is NaN, and store
+// the results in mask vector 'k' using zeromask 'k1' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -2900,14 +2904,14 @@ func cmpunordPdMask(a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmpunord_pd_mask'.
 // Requires KNCNI.
-func MaskCmpunordPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
-	return x86.Mmask8(maskCmpunordPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
+func M512MaskCmpunordPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d) x86.Mmask8 {
+	return x86.Mmask8(m512MaskCmpunordPdMask(uint8(k1), [8]float64(a), [8]float64(b)))
 }
 
-func maskCmpunordPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
+func m512MaskCmpunordPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 
 
-// CmpunordPsMask: Compare packed single-precision (32-bit) floating-point
+// M512CmpunordPsMask: Compare packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b' to see if either is NaN, and store the results in
 // mask vector 'k'. 
 //
@@ -2919,17 +2923,17 @@ func maskCmpunordPdMask(k1 uint8, a [8]float64, b [8]float64) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmpunord_ps_mask'.
 // Requires KNCNI.
-func CmpunordPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(cmpunordPsMask([16]float32(a), [16]float32(b)))
+func M512CmpunordPsMask(a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512CmpunordPsMask([16]float32(a), [16]float32(b)))
 }
 
-func cmpunordPsMask(a [16]float32, b [16]float32) uint16
+func m512CmpunordPsMask(a [16]float32, b [16]float32) uint16
 
 
-// MaskCmpunordPsMask: Compare packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b' to see if either is NaN, and store the results in
-// mask vector 'k' using zeromask 'k1' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskCmpunordPsMask: Compare packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b' to see if either is NaN, and store
+// the results in mask vector 'k' using zeromask 'k1' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -2943,11 +2947,11 @@ func cmpunordPsMask(a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmpunord_ps_mask'.
 // Requires KNCNI.
-func MaskCmpunordPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
-	return x86.Mmask16(maskCmpunordPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
+func M512MaskCmpunordPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512) x86.Mmask16 {
+	return x86.Mmask16(m512MaskCmpunordPsMask(uint16(k1), [16]float32(a), [16]float32(b)))
 }
 
-func maskCmpunordPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
+func m512MaskCmpunordPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 
 
 // Countbits32: Counts the number of set bits in 32-bit unsigned integer 'r1',
@@ -2978,7 +2982,7 @@ func Countbits64(r1 uint64) uint64 {
 func countbits64(r1 uint64) uint64
 
 
-// CvtRoundpdPslo: Performs element-by-element conversion of packed
+// M512CvtRoundpdPslo: Performs element-by-element conversion of packed
 // double-precision (64-bit) floating-point elements in 'v2' to packed
 // single-precision (32-bit) floating-point elements, storing the results in
 // 'dst'. Results are written to the lower half of 'dst', and the upper half
@@ -3000,14 +3004,14 @@ func countbits64(r1 uint64) uint64
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_cvt_roundpd_pslo'.
 // Requires KNCNI.
-func CvtRoundpdPslo(v2 x86.M512d, rounding int) x86.M512 {
-	return x86.M512(cvtRoundpdPslo([8]float64(v2), rounding))
+func M512CvtRoundpdPslo(v2 x86.M512d, rounding int) x86.M512 {
+	return x86.M512(m512CvtRoundpdPslo([8]float64(v2), rounding))
 }
 
-func cvtRoundpdPslo(v2 [8]float64, rounding int) [16]float32
+func m512CvtRoundpdPslo(v2 [8]float64, rounding int) [16]float32
 
 
-// MaskCvtRoundpdPslo: Performs element-by-element conversion of packed
+// M512MaskCvtRoundpdPslo: Performs element-by-element conversion of packed
 // double-precision (64-bit) floating-point elements in 'v2' to packed
 // single-precision (32-bit) floating-point elements, storing the results in
 // 'dst' using writemask 'k' (elements are copied from 'src' when the
@@ -3034,16 +3038,16 @@ func cvtRoundpdPslo(v2 [8]float64, rounding int) [16]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_mask_cvt_roundpd_pslo'.
 // Requires KNCNI.
-func MaskCvtRoundpdPslo(src x86.M512, k x86.Mmask8, v2 x86.M512d, rounding int) x86.M512 {
-	return x86.M512(maskCvtRoundpdPslo([16]float32(src), uint8(k), [8]float64(v2), rounding))
+func M512MaskCvtRoundpdPslo(src x86.M512, k x86.Mmask8, v2 x86.M512d, rounding int) x86.M512 {
+	return x86.M512(m512MaskCvtRoundpdPslo([16]float32(src), uint8(k), [8]float64(v2), rounding))
 }
 
-func maskCvtRoundpdPslo(src [16]float32, k uint8, v2 [8]float64, rounding int) [16]float32
+func m512MaskCvtRoundpdPslo(src [16]float32, k uint8, v2 [8]float64, rounding int) [16]float32
 
 
-// Cvtepi32loPd: Performs element-by-element conversion of the lower half of
-// packed 32-bit integer elements in 'v2' to packed double-precision (64-bit)
-// floating-point elements, storing the results in 'dst'. 
+// M512Cvtepi32loPd: Performs element-by-element conversion of the lower half
+// of packed 32-bit integer elements in 'v2' to packed double-precision
+// (64-bit) floating-point elements, storing the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3054,15 +3058,15 @@ func maskCvtRoundpdPslo(src [16]float32, k uint8, v2 [8]float64, rounding int) [
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_cvtepi32lo_pd'.
 // Requires KNCNI.
-func Cvtepi32loPd(v2 x86.M512i) x86.M512d {
-	return x86.M512d(cvtepi32loPd([64]byte(v2)))
+func M512Cvtepi32loPd(v2 x86.M512i) x86.M512d {
+	return x86.M512d(m512Cvtepi32loPd([64]byte(v2)))
 }
 
-func cvtepi32loPd(v2 [64]byte) [8]float64
+func m512Cvtepi32loPd(v2 [64]byte) [8]float64
 
 
-// MaskCvtepi32loPd: Performs element-by-element conversion of the lower half
-// of packed 32-bit integer elements in 'v2' to packed double-precision
+// M512MaskCvtepi32loPd: Performs element-by-element conversion of the lower
+// half of packed 32-bit integer elements in 'v2' to packed double-precision
 // (64-bit) floating-point elements, storing the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -3080,16 +3084,17 @@ func cvtepi32loPd(v2 [64]byte) [8]float64
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_mask_cvtepi32lo_pd'.
 // Requires KNCNI.
-func MaskCvtepi32loPd(src x86.M512d, k x86.Mmask8, v2 x86.M512i) x86.M512d {
-	return x86.M512d(maskCvtepi32loPd([8]float64(src), uint8(k), [64]byte(v2)))
+func M512MaskCvtepi32loPd(src x86.M512d, k x86.Mmask8, v2 x86.M512i) x86.M512d {
+	return x86.M512d(m512MaskCvtepi32loPd([8]float64(src), uint8(k), [64]byte(v2)))
 }
 
-func maskCvtepi32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
+func m512MaskCvtepi32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
 
 
-// Cvtepu32loPd: Performs element-by-element conversion of the lower half of
-// packed 32-bit unsigned integer elements in 'v2' to packed double-precision
-// (64-bit) floating-point elements, storing the results in 'dst'. 
+// M512Cvtepu32loPd: Performs element-by-element conversion of the lower half
+// of packed 32-bit unsigned integer elements in 'v2' to packed
+// double-precision (64-bit) floating-point elements, storing the results in
+// 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3100,15 +3105,15 @@ func maskCvtepi32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_cvtepu32lo_pd'.
 // Requires KNCNI.
-func Cvtepu32loPd(v2 x86.M512i) x86.M512d {
-	return x86.M512d(cvtepu32loPd([64]byte(v2)))
+func M512Cvtepu32loPd(v2 x86.M512i) x86.M512d {
+	return x86.M512d(m512Cvtepu32loPd([64]byte(v2)))
 }
 
-func cvtepu32loPd(v2 [64]byte) [8]float64
+func m512Cvtepu32loPd(v2 [64]byte) [8]float64
 
 
-// MaskCvtepu32loPd: Performs element-by-element conversion of the lower half
-// of 32-bit unsigned integer elements in 'v2' to packed double-precision
+// M512MaskCvtepu32loPd: Performs element-by-element conversion of the lower
+// half of 32-bit unsigned integer elements in 'v2' to packed double-precision
 // (64-bit) floating-point elements, storing the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -3126,15 +3131,15 @@ func cvtepu32loPd(v2 [64]byte) [8]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_mask_cvtepu32lo_pd'.
 // Requires KNCNI.
-func MaskCvtepu32loPd(src x86.M512d, k x86.Mmask8, v2 x86.M512i) x86.M512d {
-	return x86.M512d(maskCvtepu32loPd([8]float64(src), uint8(k), [64]byte(v2)))
+func M512MaskCvtepu32loPd(src x86.M512d, k x86.Mmask8, v2 x86.M512i) x86.M512d {
+	return x86.M512d(m512MaskCvtepu32loPd([8]float64(src), uint8(k), [64]byte(v2)))
 }
 
-func maskCvtepu32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
+func m512MaskCvtepu32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
 
 
-// CvtfxpntRoundAdjustepi32Ps: Performs element-by-element conversion of packed
-// 32-bit integer elements in 'v2' to packed single-precision (32-bit)
+// M512CvtfxpntRoundAdjustepi32Ps: Performs element-by-element conversion of
+// packed 32-bit integer elements in 'v2' to packed single-precision (32-bit)
 // floating-point elements and performing an optional exponent adjust using
 // 'expadj', storing the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -3163,17 +3168,17 @@ func maskCvtepu32loPd(src [8]float64, k uint8, v2 [64]byte) [8]float64
 //
 // Instruction: 'VCVTFXPNTDQ2PS'. Intrinsic: '_mm512_cvtfxpnt_round_adjustepi32_ps'.
 // Requires KNCNI.
-func CvtfxpntRoundAdjustepi32Ps(v2 x86.M512i, rounding int, expadj MMEXPADJENUM) x86.M512 {
-	return x86.M512(cvtfxpntRoundAdjustepi32Ps([64]byte(v2), rounding, expadj))
+func M512CvtfxpntRoundAdjustepi32Ps(v2 x86.M512i, rounding int, expadj MMEXPADJENUM) x86.M512 {
+	return x86.M512(m512CvtfxpntRoundAdjustepi32Ps([64]byte(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustepi32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
+func m512CvtfxpntRoundAdjustepi32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
-// CvtfxpntRoundAdjustepu32Ps: Performs element-by-element conversion of packed
-// 32-bit unsigned integer elements in 'v2' to packed single-precision (32-bit)
-// floating-point elements and performing an optional exponent adjust using
-// 'expadj', storing the results in 'dst'.
+// M512CvtfxpntRoundAdjustepu32Ps: Performs element-by-element conversion of
+// packed 32-bit unsigned integer elements in 'v2' to packed single-precision
+// (32-bit) floating-point elements and performing an optional exponent adjust
+// using 'expadj', storing the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -3200,18 +3205,19 @@ func cvtfxpntRoundAdjustepi32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) 
 //
 // Instruction: 'VCVTFXPNTUDQ2PS'. Intrinsic: '_mm512_cvtfxpnt_round_adjustepu32_ps'.
 // Requires KNCNI.
-func CvtfxpntRoundAdjustepu32Ps(v2 x86.M512i, rounding int, expadj MMEXPADJENUM) x86.M512 {
-	return x86.M512(cvtfxpntRoundAdjustepu32Ps([64]byte(v2), rounding, expadj))
+func M512CvtfxpntRoundAdjustepu32Ps(v2 x86.M512i, rounding int, expadj MMEXPADJENUM) x86.M512 {
+	return x86.M512(m512CvtfxpntRoundAdjustepu32Ps([64]byte(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustepu32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
+func m512CvtfxpntRoundAdjustepu32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
-// MaskCvtfxpntRoundAdjustepu32Ps: Performs element-by-element conversion of
-// packed 32-bit unsigned integer elements in 'v2' to packed single-precision
-// (32-bit) floating-point elements and performing an optional exponent adjust
-// using 'expadj', storing the results in 'dst' using writemask 'k' (elements
-// are copied from 'src' when the corresponding mask bit is not set).
+// M512MaskCvtfxpntRoundAdjustepu32Ps: Performs element-by-element conversion
+// of packed 32-bit unsigned integer elements in 'v2' to packed
+// single-precision (32-bit) floating-point elements and performing an optional
+// exponent adjust using 'expadj', storing the results in 'dst' using writemask
+// 'k' (elements are copied from 'src' when the corresponding mask bit is not
+// set).
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -3242,17 +3248,17 @@ func cvtfxpntRoundAdjustepu32Ps(v2 [64]byte, rounding int, expadj MMEXPADJENUM) 
 //
 // Instruction: 'VCVTFXPNTUDQ2PS'. Intrinsic: '_mm512_mask_cvtfxpnt_round_adjustepu32_ps'.
 // Requires KNCNI.
-func MaskCvtfxpntRoundAdjustepu32Ps(src x86.M512, k x86.Mmask16, v2 x86.M512i, rounding int, expadj MMEXPADJENUM) x86.M512 {
-	return x86.M512(maskCvtfxpntRoundAdjustepu32Ps([16]float32(src), uint16(k), [64]byte(v2), rounding, expadj))
+func M512MaskCvtfxpntRoundAdjustepu32Ps(src x86.M512, k x86.Mmask16, v2 x86.M512i, rounding int, expadj MMEXPADJENUM) x86.M512 {
+	return x86.M512(m512MaskCvtfxpntRoundAdjustepu32Ps([16]float32(src), uint16(k), [64]byte(v2), rounding, expadj))
 }
 
-func maskCvtfxpntRoundAdjustepu32Ps(src [16]float32, k uint16, v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
+func m512MaskCvtfxpntRoundAdjustepu32Ps(src [16]float32, k uint16, v2 [64]byte, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
-// CvtfxpntRoundAdjustpsEpi32: Performs element-by-element conversion of packed
-// single-precision (32-bit) floating-point elements in 'v2' to packed 32-bit
-// integer elements and performs an optional exponent adjust using 'expadj',
-// storing the results in 'dst'.
+// M512CvtfxpntRoundAdjustpsEpi32: Performs element-by-element conversion of
+// packed single-precision (32-bit) floating-point elements in 'v2' to packed
+// 32-bit integer elements and performs an optional exponent adjust using
+// 'expadj', storing the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -3279,17 +3285,17 @@ func maskCvtfxpntRoundAdjustepu32Ps(src [16]float32, k uint16, v2 [64]byte, roun
 //
 // Instruction: 'VCVTFXPNTPS2DQ'. Intrinsic: '_mm512_cvtfxpnt_round_adjustps_epi32'.
 // Requires KNCNI.
-func CvtfxpntRoundAdjustpsEpi32(v2 x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512i {
-	return x86.M512i(cvtfxpntRoundAdjustpsEpi32([16]float32(v2), rounding, expadj))
+func M512CvtfxpntRoundAdjustpsEpi32(v2 x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512i {
+	return x86.M512i(m512CvtfxpntRoundAdjustpsEpi32([16]float32(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustpsEpi32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) [64]byte
+func m512CvtfxpntRoundAdjustpsEpi32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) [64]byte
 
 
-// CvtfxpntRoundAdjustpsEpu32: Performs element-by-element conversion of packed
-// single-precision (32-bit) floating-point elements in 'v2' to packed 32-bit
-// unsigned integer elements and performing an optional exponent adjust using
-// 'expadj', storing the results in 'dst'.
+// M512CvtfxpntRoundAdjustpsEpu32: Performs element-by-element conversion of
+// packed single-precision (32-bit) floating-point elements in 'v2' to packed
+// 32-bit unsigned integer elements and performing an optional exponent adjust
+// using 'expadj', storing the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -3316,14 +3322,14 @@ func cvtfxpntRoundAdjustpsEpi32(v2 [16]float32, rounding int, expadj MMEXPADJENU
 //
 // Instruction: 'VCVTFXPNTPS2UDQ'. Intrinsic: '_mm512_cvtfxpnt_round_adjustps_epu32'.
 // Requires KNCNI.
-func CvtfxpntRoundAdjustpsEpu32(v2 x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512i {
-	return x86.M512i(cvtfxpntRoundAdjustpsEpu32([16]float32(v2), rounding, expadj))
+func M512CvtfxpntRoundAdjustpsEpu32(v2 x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512i {
+	return x86.M512i(m512CvtfxpntRoundAdjustpsEpu32([16]float32(v2), rounding, expadj))
 }
 
-func cvtfxpntRoundAdjustpsEpu32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) [64]byte
+func m512CvtfxpntRoundAdjustpsEpu32(v2 [16]float32, rounding int, expadj MMEXPADJENUM) [64]byte
 
 
-// CvtfxpntRoundpdEpi32lo: Performs an element-by-element conversion of
+// M512CvtfxpntRoundpdEpi32lo: Performs an element-by-element conversion of
 // elements in packed double-precision (64-bit) floating-point vector 'v2' to
 // 32-bit integer elements, storing them in the lower half of 'dst'. The
 // elements in the upper half of 'dst' are set to 0.
@@ -3344,14 +3350,14 @@ func cvtfxpntRoundAdjustpsEpu32(v2 [16]float32, rounding int, expadj MMEXPADJENU
 //
 // Instruction: 'VCVTFXPNTPD2DQ'. Intrinsic: '_mm512_cvtfxpnt_roundpd_epi32lo'.
 // Requires KNCNI.
-func CvtfxpntRoundpdEpi32lo(v2 x86.M512d, rounding int) x86.M512i {
-	return x86.M512i(cvtfxpntRoundpdEpi32lo([8]float64(v2), rounding))
+func M512CvtfxpntRoundpdEpi32lo(v2 x86.M512d, rounding int) x86.M512i {
+	return x86.M512i(m512CvtfxpntRoundpdEpi32lo([8]float64(v2), rounding))
 }
 
-func cvtfxpntRoundpdEpi32lo(v2 [8]float64, rounding int) [64]byte
+func m512CvtfxpntRoundpdEpi32lo(v2 [8]float64, rounding int) [64]byte
 
 
-// MaskCvtfxpntRoundpdEpi32lo: Performs an element-by-element conversion of
+// M512MaskCvtfxpntRoundpdEpi32lo: Performs an element-by-element conversion of
 // elements in packed double-precision (64-bit) floating-point vector 'v2' to
 // 32-bit integer elements, storing them in the lower half of 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
@@ -3377,14 +3383,14 @@ func cvtfxpntRoundpdEpi32lo(v2 [8]float64, rounding int) [64]byte
 //
 // Instruction: 'VCVTFXPNTPD2DQ'. Intrinsic: '_mm512_mask_cvtfxpnt_roundpd_epi32lo'.
 // Requires KNCNI.
-func MaskCvtfxpntRoundpdEpi32lo(src x86.M512i, k x86.Mmask8, v2 x86.M512d, rounding int) x86.M512i {
-	return x86.M512i(maskCvtfxpntRoundpdEpi32lo([64]byte(src), uint8(k), [8]float64(v2), rounding))
+func M512MaskCvtfxpntRoundpdEpi32lo(src x86.M512i, k x86.Mmask8, v2 x86.M512d, rounding int) x86.M512i {
+	return x86.M512i(m512MaskCvtfxpntRoundpdEpi32lo([64]byte(src), uint8(k), [8]float64(v2), rounding))
 }
 
-func maskCvtfxpntRoundpdEpi32lo(src [64]byte, k uint8, v2 [8]float64, rounding int) [64]byte
+func m512MaskCvtfxpntRoundpdEpi32lo(src [64]byte, k uint8, v2 [8]float64, rounding int) [64]byte
 
 
-// CvtfxpntRoundpdEpu32lo: Performs element-by-element conversion of packed
+// M512CvtfxpntRoundpdEpu32lo: Performs element-by-element conversion of packed
 // double-precision (64-bit) floating-point elements in 'v2' to packed 32-bit
 // unsigned integer elements, storing the results in 'dst'. Results are written
 // to the lower half of 'dst', and the upper half locations are set to '0'.
@@ -3405,19 +3411,19 @@ func maskCvtfxpntRoundpdEpi32lo(src [64]byte, k uint8, v2 [8]float64, rounding i
 //
 // Instruction: 'VCVTFXPNTPD2UDQ'. Intrinsic: '_mm512_cvtfxpnt_roundpd_epu32lo'.
 // Requires KNCNI.
-func CvtfxpntRoundpdEpu32lo(v2 x86.M512d, rounding int) x86.M512i {
-	return x86.M512i(cvtfxpntRoundpdEpu32lo([8]float64(v2), rounding))
+func M512CvtfxpntRoundpdEpu32lo(v2 x86.M512d, rounding int) x86.M512i {
+	return x86.M512i(m512CvtfxpntRoundpdEpu32lo([8]float64(v2), rounding))
 }
 
-func cvtfxpntRoundpdEpu32lo(v2 [8]float64, rounding int) [64]byte
+func m512CvtfxpntRoundpdEpu32lo(v2 [8]float64, rounding int) [64]byte
 
 
-// MaskCvtfxpntRoundpdEpu32lo: Performs element-by-element conversion of packed
-// double-precision (64-bit) floating-point elements in 'v2' to packed 32-bit
-// unsigned integer elements, storing the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set).
-// Results are written to the lower half of 'dst', and the upper half locations
-// are set to '0'.
+// M512MaskCvtfxpntRoundpdEpu32lo: Performs element-by-element conversion of
+// packed double-precision (64-bit) floating-point elements in 'v2' to packed
+// 32-bit unsigned integer elements, storing the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). Results are written to the lower half of 'dst', and the
+// upper half locations are set to '0'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -3439,14 +3445,14 @@ func cvtfxpntRoundpdEpu32lo(v2 [8]float64, rounding int) [64]byte
 //
 // Instruction: 'VCVTFXPNTPD2UDQ'. Intrinsic: '_mm512_mask_cvtfxpnt_roundpd_epu32lo'.
 // Requires KNCNI.
-func MaskCvtfxpntRoundpdEpu32lo(src x86.M512i, k x86.Mmask8, v2 x86.M512d, rounding int) x86.M512i {
-	return x86.M512i(maskCvtfxpntRoundpdEpu32lo([64]byte(src), uint8(k), [8]float64(v2), rounding))
+func M512MaskCvtfxpntRoundpdEpu32lo(src x86.M512i, k x86.Mmask8, v2 x86.M512d, rounding int) x86.M512i {
+	return x86.M512i(m512MaskCvtfxpntRoundpdEpu32lo([64]byte(src), uint8(k), [8]float64(v2), rounding))
 }
 
-func maskCvtfxpntRoundpdEpu32lo(src [64]byte, k uint8, v2 [8]float64, rounding int) [64]byte
+func m512MaskCvtfxpntRoundpdEpu32lo(src [64]byte, k uint8, v2 [8]float64, rounding int) [64]byte
 
 
-// CvtpdPslo: Performs an element-by-element conversion of packed
+// M512CvtpdPslo: Performs an element-by-element conversion of packed
 // double-precision (64-bit) floating-point elements in 'v2' to
 // single-precision (32-bit) floating-point elements and stores them in 'dst'.
 // The elements are stored in the lower half of the results vector, while the
@@ -3461,14 +3467,14 @@ func maskCvtfxpntRoundpdEpu32lo(src [64]byte, k uint8, v2 [8]float64, rounding i
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_cvtpd_pslo'.
 // Requires KNCNI.
-func CvtpdPslo(v2 x86.M512d) x86.M512 {
-	return x86.M512(cvtpdPslo([8]float64(v2)))
+func M512CvtpdPslo(v2 x86.M512d) x86.M512 {
+	return x86.M512(m512CvtpdPslo([8]float64(v2)))
 }
 
-func cvtpdPslo(v2 [8]float64) [16]float32
+func m512CvtpdPslo(v2 [8]float64) [16]float32
 
 
-// MaskCvtpdPslo: Performs an element-by-element conversion of packed
+// M512MaskCvtpdPslo: Performs an element-by-element conversion of packed
 // double-precision (64-bit) floating-point elements in 'v2' to
 // single-precision (32-bit) floating-point elements and stores them in 'dst'
 // using writemask 'k' (elements are copied from 'src' when the corresponding
@@ -3488,14 +3494,14 @@ func cvtpdPslo(v2 [8]float64) [16]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_mask_cvtpd_pslo'.
 // Requires KNCNI.
-func MaskCvtpdPslo(src x86.M512, k x86.Mmask8, v2 x86.M512d) x86.M512 {
-	return x86.M512(maskCvtpdPslo([16]float32(src), uint8(k), [8]float64(v2)))
+func M512MaskCvtpdPslo(src x86.M512, k x86.Mmask8, v2 x86.M512d) x86.M512 {
+	return x86.M512(m512MaskCvtpdPslo([16]float32(src), uint8(k), [8]float64(v2)))
 }
 
-func maskCvtpdPslo(src [16]float32, k uint8, v2 [8]float64) [16]float32
+func m512MaskCvtpdPslo(src [16]float32, k uint8, v2 [8]float64) [16]float32
 
 
-// CvtpsloPd: Performs element-by-element conversion of the lower half of
+// M512CvtpsloPd: Performs element-by-element conversion of the lower half of
 // packed single-precision (32-bit) floating-point elements in 'v2' to packed
 // double-precision (64-bit) floating-point elements, storing the results in
 // 'dst'. 
@@ -3509,18 +3515,18 @@ func maskCvtpdPslo(src [16]float32, k uint8, v2 [8]float64) [16]float32
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_cvtpslo_pd'.
 // Requires KNCNI.
-func CvtpsloPd(v2 x86.M512) x86.M512d {
-	return x86.M512d(cvtpsloPd([16]float32(v2)))
+func M512CvtpsloPd(v2 x86.M512) x86.M512d {
+	return x86.M512d(m512CvtpsloPd([16]float32(v2)))
 }
 
-func cvtpsloPd(v2 [16]float32) [8]float64
+func m512CvtpsloPd(v2 [16]float32) [8]float64
 
 
-// MaskCvtpsloPd: Performs element-by-element conversion of the lower half of
-// packed single-precision (32-bit) floating-point elements in 'v2' to packed
-// double-precision (64-bit) floating-point elements, storing the results in
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 
+// M512MaskCvtpsloPd: Performs element-by-element conversion of the lower half
+// of packed single-precision (32-bit) floating-point elements in 'v2' to
+// packed double-precision (64-bit) floating-point elements, storing the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3535,11 +3541,11 @@ func cvtpsloPd(v2 [16]float32) [8]float64
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_mask_cvtpslo_pd'.
 // Requires KNCNI.
-func MaskCvtpsloPd(src x86.M512d, k x86.Mmask8, v2 x86.M512) x86.M512d {
-	return x86.M512d(maskCvtpsloPd([8]float64(src), uint8(k), [16]float32(v2)))
+func M512MaskCvtpsloPd(src x86.M512d, k x86.Mmask8, v2 x86.M512) x86.M512d {
+	return x86.M512d(m512MaskCvtpsloPd([8]float64(src), uint8(k), [16]float32(v2)))
 }
 
-func maskCvtpsloPd(src [8]float64, k uint8, v2 [16]float32) [8]float64
+func m512MaskCvtpsloPd(src [8]float64, k uint8, v2 [16]float32) [8]float64
 
 
 // Delay32: Stalls a thread without blocking other threads for 32-bit unsigned
@@ -3570,9 +3576,10 @@ func Delay64(r1 uint64)  {
 func delay64(r1 uint64) 
 
 
-// Exp223Ps: Approximates the base-2 exponent of the packed single-precision
-// (32-bit) floating-point elements in 'v2' with eight bits for sign and
-// magnitude and 24 bits for the fractional part. Results are stored in 'dst'. 
+// M512Exp223Ps: Approximates the base-2 exponent of the packed
+// single-precision (32-bit) floating-point elements in 'v2' with eight bits
+// for sign and magnitude and 24 bits for the fractional part. Results are
+// stored in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -3582,14 +3589,14 @@ func delay64(r1 uint64)
 //
 // Instruction: 'VEXP223PS'. Intrinsic: '_mm512_exp223_ps'.
 // Requires KNCNI.
-func Exp223Ps(v2 x86.M512i) x86.M512 {
-	return x86.M512(exp223Ps([64]byte(v2)))
+func M512Exp223Ps(v2 x86.M512i) x86.M512 {
+	return x86.M512(m512Exp223Ps([64]byte(v2)))
 }
 
-func exp223Ps(v2 [64]byte) [16]float32
+func m512Exp223Ps(v2 [64]byte) [16]float32
 
 
-// MaskExp223Ps: Approximates the base-2 exponent of the packed
+// M512MaskExp223Ps: Approximates the base-2 exponent of the packed
 // single-precision (32-bit) floating-point elements in 'v2' with eight bits
 // for sign and magnitude and 24 bits for the fractional part. Results are
 // stored in 'dst' using writemask 'k' (elements are copied from 'src' when the
@@ -3607,17 +3614,17 @@ func exp223Ps(v2 [64]byte) [16]float32
 //
 // Instruction: 'VEXP223PS'. Intrinsic: '_mm512_mask_exp223_ps'.
 // Requires KNCNI.
-func MaskExp223Ps(src x86.M512, k x86.Mmask16, v2 x86.M512i) x86.M512 {
-	return x86.M512(maskExp223Ps([16]float32(src), uint16(k), [64]byte(v2)))
+func M512MaskExp223Ps(src x86.M512, k x86.Mmask16, v2 x86.M512i) x86.M512 {
+	return x86.M512(m512MaskExp223Ps([16]float32(src), uint16(k), [64]byte(v2)))
 }
 
-func maskExp223Ps(src [16]float32, k uint16, v2 [64]byte) [16]float32
+func m512MaskExp223Ps(src [16]float32, k uint16, v2 [64]byte) [16]float32
 
 
-// ExtloadEpi32: Depending on 'bc', loads 1, 4, or 16 elements of type and size
-// determined by 'conv' from memory address 'mt' and converts all elements to
-// 32-bit integer elements, storing the results in 'dst'. 'hint' indicates to
-// the processor whether the data is non-temporal. 
+// M512ExtloadEpi32: Depending on 'bc', loads 1, 4, or 16 elements of type and
+// size determined by 'conv' from memory address 'mt' and converts all elements
+// to 32-bit integer elements, storing the results in 'dst'. 'hint' indicates
+// to the processor whether the data is non-temporal. 
 //
 //		addr = MEM[mt]
 //		FOR j := 0 to 15
@@ -3684,18 +3691,19 @@ func maskExp223Ps(src [16]float32, k uint16, v2 [64]byte) [16]float32
 //
 // Instruction: 'VMOVDQA32, VBROADCASTI32X4, VPBROADCASTD'. Intrinsic: '_mm512_extload_epi32'.
 // Requires KNCNI.
-func ExtloadEpi32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) x86.M512i {
-	return x86.M512i(extloadEpi32(uintptr(mt), conv, bc, hint))
+func M512ExtloadEpi32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) x86.M512i {
+	return x86.M512i(m512ExtloadEpi32(uintptr(mt), conv, bc, hint))
 }
 
-func extloadEpi32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
+func m512ExtloadEpi32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
 
 
-// MaskExtloadEpi32: Depending on 'bc', loads 1, 4, or 16 elements of type and
-// size determined by 'conv' from memory address 'mt' and converts all elements
-// to 32-bit integer elements, storing the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set).
-// 'hint' indicates to the processor whether the data is non-temporal. 
+// M512MaskExtloadEpi32: Depending on 'bc', loads 1, 4, or 16 elements of type
+// and size determined by 'conv' from memory address 'mt' and converts all
+// elements to 32-bit integer elements, storing the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 'hint' indicates to the processor whether the data is
+// non-temporal. 
 //
 //		addr = MEM[mt]
 //		FOR j := 0 to 15
@@ -3766,17 +3774,17 @@ func extloadEpi32(mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint
 //
 // Instruction: 'VMOVDQA32, VBROADCASTI32X4, VPBROADCASTD'. Intrinsic: '_mm512_mask_extload_epi32'.
 // Requires KNCNI.
-func MaskExtloadEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) x86.M512i {
-	return x86.M512i(maskExtloadEpi32([64]byte(src), uint16(k), uintptr(mt), conv, bc, hint))
+func M512MaskExtloadEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) x86.M512i {
+	return x86.M512i(m512MaskExtloadEpi32([64]byte(src), uint16(k), uintptr(mt), conv, bc, hint))
 }
 
-func maskExtloadEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
+func m512MaskExtloadEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, bc MMBROADCAST32ENUM, hint int) [64]byte
 
 
-// ExtloadEpi64: Depending on 'bc', loads 1, 4, or 8 elements of type and size
-// determined by 'conv' from memory address 'mt' and converts all elements to
-// 64-bit integer elements, storing the results in 'dst'. 'hint' indicates to
-// the processor whether the data is non-temporal. 
+// M512ExtloadEpi64: Depending on 'bc', loads 1, 4, or 8 elements of type and
+// size determined by 'conv' from memory address 'mt' and converts all elements
+// to 64-bit integer elements, storing the results in 'dst'. 'hint' indicates
+// to the processor whether the data is non-temporal. 
 //
 //		addr = MEM[mt]
 //		FOR j := 0 to 7
@@ -3807,18 +3815,19 @@ func maskExtloadEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM
 //
 // Instruction: 'VMOVDQA64, VBROADCASTI64X4, VPBROADCASTQ'. Intrinsic: '_mm512_extload_epi64'.
 // Requires KNCNI.
-func ExtloadEpi64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) x86.M512i {
-	return x86.M512i(extloadEpi64(uintptr(mt), conv, bc, hint))
+func M512ExtloadEpi64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) x86.M512i {
+	return x86.M512i(m512ExtloadEpi64(uintptr(mt), conv, bc, hint))
 }
 
-func extloadEpi64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
+func m512ExtloadEpi64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
 
 
-// MaskExtloadEpi64: Depending on 'bc', loads 1, 4, or 8 elements of type and
-// size determined by 'conv' from memory address 'mt' and converts all elements
-// to 64-bit integer elements, storing the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set).
-// 'hint' indicates to the processor whether the data is non-temporal. 
+// M512MaskExtloadEpi64: Depending on 'bc', loads 1, 4, or 8 elements of type
+// and size determined by 'conv' from memory address 'mt' and converts all
+// elements to 64-bit integer elements, storing the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 'hint' indicates to the processor whether the data is
+// non-temporal. 
 //
 //		addr = MEM[mt]
 //		FOR j := 0 to 7
@@ -3853,14 +3862,14 @@ func extloadEpi64(mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint
 //
 // Instruction: 'VMOVDQA64, VBROADCASTI64X4, VPBROADCASTQ'. Intrinsic: '_mm512_mask_extload_epi64'.
 // Requires KNCNI.
-func MaskExtloadEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) x86.M512i {
-	return x86.M512i(maskExtloadEpi64([64]byte(src), uint8(k), uintptr(mt), conv, bc, hint))
+func M512MaskExtloadEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) x86.M512i {
+	return x86.M512i(m512MaskExtloadEpi64([64]byte(src), uint8(k), uintptr(mt), conv, bc, hint))
 }
 
-func maskExtloadEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
+func m512MaskExtloadEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, bc MMBROADCAST64ENUM, hint int) [64]byte
 
 
-// ExtloadPd: Depending on 'bc', loads 1, 4, or 8 elements of type and size
+// M512ExtloadPd: Depending on 'bc', loads 1, 4, or 8 elements of type and size
 // determined by 'conv' from memory address 'mt' and converts all elements to
 // double-precision (64-bit) floating-point elements, storing the results in
 // 'dst'. 'hint' indicates to the processor whether the data is non-temporal. 
@@ -3894,16 +3903,16 @@ func maskExtloadEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM,
 //
 // Instruction: 'VMOVAPD, VBROADCASTF64X4, VBROADCASTSD'. Intrinsic: '_mm512_extload_pd'.
 // Requires KNCNI.
-func ExtloadPd(mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) x86.M512d {
-	return x86.M512d(extloadPd(uintptr(mt), conv, bc, hint))
+func M512ExtloadPd(mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) x86.M512d {
+	return x86.M512d(m512ExtloadPd(uintptr(mt), conv, bc, hint))
 }
 
-func extloadPd(mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) [8]float64
+func m512ExtloadPd(mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) [8]float64
 
 
-// MaskExtloadPd: Depending on 'bc', loads 1, 4, or 8 elements of type and size
-// determined by 'conv' from memory address 'mt' and converts all elements to
-// double-precision (64-bit) floating-point elements, storing the results in
+// M512MaskExtloadPd: Depending on 'bc', loads 1, 4, or 8 elements of type and
+// size determined by 'conv' from memory address 'mt' and converts all elements
+// to double-precision (64-bit) floating-point elements, storing the results in
 // 'dst' using writemask 'k' (elements are copied from 'src' when the
 // corresponding mask bit is not set). 'hint' indicates to the processor
 // whether the data is non-temporal. 
@@ -3941,16 +3950,16 @@ func extloadPd(mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) 
 //
 // Instruction: 'VMOVAPD, VBROADCASTF64X4, VBROADCASTSD'. Intrinsic: '_mm512_mask_extload_pd'.
 // Requires KNCNI.
-func MaskExtloadPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) x86.M512d {
-	return x86.M512d(maskExtloadPd([8]float64(src), uint8(k), uintptr(mt), conv, bc, hint))
+func M512MaskExtloadPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) x86.M512d {
+	return x86.M512d(m512MaskExtloadPd([8]float64(src), uint8(k), uintptr(mt), conv, bc, hint))
 }
 
-func maskExtloadPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) [8]float64
+func m512MaskExtloadPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, bc MMBROADCAST64ENUM, hint int) [8]float64
 
 
-// ExtloadPs: Depending on 'bc', loads 1, 4, or 16 elements of type and size
-// determined by 'conv' from memory address 'mt' and converts all elements to
-// single-precision (32-bit) floating-point elements, storing the results in
+// M512ExtloadPs: Depending on 'bc', loads 1, 4, or 16 elements of type and
+// size determined by 'conv' from memory address 'mt' and converts all elements
+// to single-precision (32-bit) floating-point elements, storing the results in
 // 'dst'. 'hint' indicates to the processor whether the data is non-temporal. 
 //
 //		addr = MEM[mt]
@@ -4027,14 +4036,14 @@ func maskExtloadPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, bc 
 //
 // Instruction: 'VMOVAPS, VBROADCASTF32X4, VBROADCASTSS'. Intrinsic: '_mm512_extload_ps'.
 // Requires KNCNI.
-func ExtloadPs(mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) x86.M512 {
-	return x86.M512(extloadPs(uintptr(mt), conv, bc, hint))
+func M512ExtloadPs(mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) x86.M512 {
+	return x86.M512(m512ExtloadPs(uintptr(mt), conv, bc, hint))
 }
 
-func extloadPs(mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) [16]float32
+func m512ExtloadPs(mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) [16]float32
 
 
-// MaskExtloadPs: Depending on 'bc', loads 1, 4, or 16 elements of type and
+// M512MaskExtloadPs: Depending on 'bc', loads 1, 4, or 16 elements of type and
 // size determined by 'conv' from memory address 'mt' and converts all elements
 // to single-precision (32-bit) floating-point elements, storing the results in
 // 'dst' using writemask 'k' (elements are copied from 'src' when the
@@ -4119,14 +4128,14 @@ func extloadPs(mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) 
 //
 // Instruction: 'VMOVAPS, VBROADCASTF32X4, VBROADCASTSS'. Intrinsic: '_mm512_mask_extload_ps'.
 // Requires KNCNI.
-func MaskExtloadPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) x86.M512 {
-	return x86.M512(maskExtloadPs([16]float32(src), uint16(k), uintptr(mt), conv, bc, hint))
+func M512MaskExtloadPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) x86.M512 {
+	return x86.M512(m512MaskExtloadPs([16]float32(src), uint16(k), uintptr(mt), conv, bc, hint))
 }
 
-func maskExtloadPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) [16]float32
+func m512MaskExtloadPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, bc MMBROADCAST32ENUM, hint int) [16]float32
 
 
-// ExtloadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
+// M512ExtloadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt-64,
 // up-converted depending on the value of 'conv', and expanded into packed
 // 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
@@ -4175,14 +4184,14 @@ func maskExtloadPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, b
 //
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_extloadunpackhi_epi32'.
 // Requires KNCNI.
-func ExtloadunpackhiEpi32(src x86.M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(extloadunpackhiEpi32([64]byte(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackhiEpi32(src x86.M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
+	return x86.M512i(m512ExtloadunpackhiEpi32([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackhiEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
+func m512ExtloadunpackhiEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
-// MaskExtloadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
+// M512MaskExtloadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt-64,
 // up-converted depending on the value of 'conv', and expanded into packed
 // 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
@@ -4235,21 +4244,21 @@ func extloadunpackhiEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint
 //
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_mask_extloadunpackhi_epi32'.
 // Requires KNCNI.
-func MaskExtloadunpackhiEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(maskExtloadunpackhiEpi32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackhiEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
+	return x86.M512i(m512MaskExtloadunpackhiEpi32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackhiEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
+func m512MaskExtloadunpackhiEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
-// ExtloadunpackhiEpi64: Loads the high-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt-64, up-converted depending on
-// the value of 'conv', and expanded into packed 64-bit integers in 'dst'. The
-// initial values of 'dst' are copied from 'src'. Only those converted
-// quadwords that occur at or after the first 64-byte-aligned address following
-// (mt-64) are loaded. Elements in the resulting vector that do not map to
-// those quadwords are taken from 'src'. 'hint' indicates to the processor
-// whether the loaded data is non-temporal. 
+// M512ExtloadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt-64, up-converted
+// depending on the value of 'conv', and expanded into packed 64-bit integers
+// in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
+// converted quadwords that occur at or after the first 64-byte-aligned address
+// following (mt-64) are loaded. Elements in the resulting vector that do not
+// map to those quadwords are taken from 'src'. 'hint' indicates to the
+// processor whether the loaded data is non-temporal. 
 //
 //		UPCONVERT(address, offset, convertTo) {
 //			CASE conv OF
@@ -4283,14 +4292,14 @@ func maskExtloadunpackhiEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVE
 //
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_extloadunpackhi_epi64'.
 // Requires KNCNI.
-func ExtloadunpackhiEpi64(src x86.M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(extloadunpackhiEpi64([64]byte(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackhiEpi64(src x86.M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
+	return x86.M512i(m512ExtloadunpackhiEpi64([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackhiEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
+func m512ExtloadunpackhiEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
-// MaskExtloadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
+// M512MaskExtloadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
 // quadword stream starting at element-aligned address mt-64, up-converted
 // depending on the value of 'conv', and expanded into packed 64-bit integers
 // in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
@@ -4335,19 +4344,19 @@ func extloadunpackhiEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint
 //
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_mask_extloadunpackhi_epi64'.
 // Requires KNCNI.
-func MaskExtloadunpackhiEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(maskExtloadunpackhiEpi64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackhiEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
+	return x86.M512i(m512MaskExtloadunpackhiEpi64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackhiEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
+func m512MaskExtloadunpackhiEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
-// ExtloadunpackhiPd: Loads the high-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt-64, up-converted depending on
-// the value of 'conv', and expanded into packed double-precision (64-bit)
-// floating-point values in 'dst'. The initial values of 'dst' are copied from
-// 'src'. Only those converted quadwords that occur at or after the first
-// 64-byte-aligned address following (mt-64) are loaded. Elements in the
+// M512ExtloadunpackhiPd: Loads the high-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt-64, up-converted
+// depending on the value of 'conv', and expanded into packed double-precision
+// (64-bit) floating-point values in 'dst'. The initial values of 'dst' are
+// copied from 'src'. Only those converted quadwords that occur at or after the
+// first 64-byte-aligned address following (mt-64) are loaded. Elements in the
 // resulting vector that do not map to those quadwords are taken from 'src'.
 // 'hint' indicates to the processor whether the loaded data is non-temporal. 
 //
@@ -4383,14 +4392,14 @@ func maskExtloadunpackhiEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEP
 //
 // Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_extloadunpackhi_pd'.
 // Requires KNCNI.
-func ExtloadunpackhiPd(src x86.M512d, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(extloadunpackhiPd([8]float64(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackhiPd(src x86.M512d, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
+	return x86.M512d(m512ExtloadunpackhiPd([8]float64(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackhiPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
+func m512ExtloadunpackhiPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
 
 
-// MaskExtloadunpackhiPd: Loads the high-64-byte-aligned portion of the
+// M512MaskExtloadunpackhiPd: Loads the high-64-byte-aligned portion of the
 // quadword stream starting at element-aligned address mt-64, up-converted
 // depending on the value of 'conv', and expanded into packed double-precision
 // (64-bit) floating-point values in 'dst'. The initial values of 'dst' are
@@ -4435,14 +4444,14 @@ func extloadunpackhiPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int
 //
 // Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_mask_extloadunpackhi_pd'.
 // Requires KNCNI.
-func MaskExtloadunpackhiPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(maskExtloadunpackhiPd([8]float64(src), uint8(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackhiPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
+	return x86.M512d(m512MaskExtloadunpackhiPd([8]float64(src), uint8(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackhiPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
+func m512MaskExtloadunpackhiPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
 
 
-// ExtloadunpackhiPs: Loads the high-64-byte-aligned portion of the
+// M512ExtloadunpackhiPs: Loads the high-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt-64,
 // up-converted depending on the value of 'conv', and expanded into packed
 // single-precision (32-bit) floating-point elements in 'dst'. The initial
@@ -4494,14 +4503,14 @@ func maskExtloadunpackhiPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDE
 //
 // Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_extloadunpackhi_ps'.
 // Requires KNCNI.
-func ExtloadunpackhiPs(src x86.M512, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(extloadunpackhiPs([16]float32(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackhiPs(src x86.M512, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
+	return x86.M512(m512ExtloadunpackhiPs([16]float32(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackhiPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
+func m512ExtloadunpackhiPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
 
 
-// MaskExtloadunpackhiPs: Loads the high-64-byte-aligned portion of the
+// M512MaskExtloadunpackhiPs: Loads the high-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt-64,
 // up-converted depending on the value of 'conv', and expanded into packed
 // single-precision (32-bit) floating-point elements in 'dst'. The initial
@@ -4557,14 +4566,14 @@ func extloadunpackhiPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint in
 //
 // Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_mask_extloadunpackhi_ps'.
 // Requires KNCNI.
-func MaskExtloadunpackhiPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(maskExtloadunpackhiPs([16]float32(src), uint16(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackhiPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
+	return x86.M512(m512MaskExtloadunpackhiPs([16]float32(src), uint16(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackhiPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
+func m512MaskExtloadunpackhiPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
 
 
-// ExtloadunpackloEpi32: Loads the low-64-byte-aligned portion of the
+// M512ExtloadunpackloEpi32: Loads the low-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt,
 // up-converted depending on the value of 'conv', and expanded into packed
 // 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
@@ -4609,14 +4618,14 @@ func maskExtloadunpackhiPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVP
 //
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_extloadunpacklo_epi32'.
 // Requires KNCNI.
-func ExtloadunpackloEpi32(src x86.M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(extloadunpackloEpi32([64]byte(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackloEpi32(src x86.M512i, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
+	return x86.M512i(m512ExtloadunpackloEpi32([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackloEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
+func m512ExtloadunpackloEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
-// MaskExtloadunpackloEpi32: Loads the low-64-byte-aligned portion of the
+// M512MaskExtloadunpackloEpi32: Loads the low-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt,
 // up-converted depending on the value of 'conv', and expanded into packed
 // 32-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
@@ -4665,21 +4674,21 @@ func extloadunpackloEpi32(src [64]byte, mt uintptr, conv MMUPCONVEPI32ENUM, hint
 //
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_mask_extloadunpacklo_epi32'.
 // Requires KNCNI.
-func MaskExtloadunpackloEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
-	return x86.M512i(maskExtloadunpackloEpi32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackloEpi32(src x86.M512i, k x86.Mmask16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) x86.M512i {
+	return x86.M512i(m512MaskExtloadunpackloEpi32([64]byte(src), uint16(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackloEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
+func m512MaskExtloadunpackloEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVEPI32ENUM, hint int) [64]byte
 
 
-// ExtloadunpackloEpi64: Loads the low-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt, up-converted depending on the
-// value of 'conv', and expanded into packed 64-bit integers in 'dst'. The
-// initial values of 'dst' are copied from 'src'. Only those converted quad
-// that occur before first 64-byte-aligned address following 'mt' are loaded.
-// Elements in the resulting vector that do not map to those quadwords are
-// taken from 'src'. 'hint' indicates to the processor whether the loaded data
-// is non-temporal. 
+// M512ExtloadunpackloEpi64: Loads the low-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt, up-converted
+// depending on the value of 'conv', and expanded into packed 64-bit integers
+// in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
+// converted quad that occur before first 64-byte-aligned address following
+// 'mt' are loaded. Elements in the resulting vector that do not map to those
+// quadwords are taken from 'src'. 'hint' indicates to the processor whether
+// the loaded data is non-temporal. 
 //
 //		UPCONVERT(address, offset, convertTo) {
 //			CASE conv OF
@@ -4709,14 +4718,14 @@ func maskExtloadunpackloEpi32(src [64]byte, k uint16, mt uintptr, conv MMUPCONVE
 //
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_extloadunpacklo_epi64'.
 // Requires KNCNI.
-func ExtloadunpackloEpi64(src x86.M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(extloadunpackloEpi64([64]byte(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackloEpi64(src x86.M512i, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
+	return x86.M512i(m512ExtloadunpackloEpi64([64]byte(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackloEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
+func m512ExtloadunpackloEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
-// MaskExtloadunpackloEpi64: Loads the low-64-byte-aligned portion of the
+// M512MaskExtloadunpackloEpi64: Loads the low-64-byte-aligned portion of the
 // quadword stream starting at element-aligned address mt, up-converted
 // depending on the value of 'conv', and expanded into packed 64-bit integers
 // in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
@@ -4757,14 +4766,14 @@ func extloadunpackloEpi64(src [64]byte, mt uintptr, conv MMUPCONVEPI64ENUM, hint
 //
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_mask_extloadunpacklo_epi64'.
 // Requires KNCNI.
-func MaskExtloadunpackloEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
-	return x86.M512i(maskExtloadunpackloEpi64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackloEpi64(src x86.M512i, k x86.Mmask8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) x86.M512i {
+	return x86.M512i(m512MaskExtloadunpackloEpi64([64]byte(src), uint8(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackloEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
+func m512MaskExtloadunpackloEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEPI64ENUM, hint int) [64]byte
 
 
-// ExtloadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
+// M512ExtloadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
 // stream starting at element-aligned address mt, up-converted depending on the
 // value of 'conv', and expanded into packed double-precision (64-bit)
 // floating-point elements in 'dst'. The initial values of 'dst' are copied
@@ -4801,18 +4810,18 @@ func maskExtloadunpackloEpi64(src [64]byte, k uint8, mt uintptr, conv MMUPCONVEP
 //
 // Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_extloadunpacklo_pd'.
 // Requires KNCNI.
-func ExtloadunpackloPd(src x86.M512d, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(extloadunpackloPd([8]float64(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackloPd(src x86.M512d, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
+	return x86.M512d(m512ExtloadunpackloPd([8]float64(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackloPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
+func m512ExtloadunpackloPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
 
 
-// MaskExtloadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt, up-converted depending on the
-// value of 'conv', and expanded into packed double-precision (64-bit)
-// floating-point elements in 'dst'. The initial values of 'dst' are copied
-// from 'src'. Only those converted quad that occur before first
+// M512MaskExtloadunpackloPd: Loads the low-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt, up-converted
+// depending on the value of 'conv', and expanded into packed double-precision
+// (64-bit) floating-point elements in 'dst'. The initial values of 'dst' are
+// copied from 'src'. Only those converted quad that occur before first
 // 64-byte-aligned address following 'mt' are loaded. Elements in the resulting
 // vector that do not map to those quadwords are taken from 'src'. 'hint'
 // indicates to the processor whether the loaded data is non-temporal. Elements
@@ -4849,14 +4858,14 @@ func extloadunpackloPd(src [8]float64, mt uintptr, conv MMUPCONVPDENUM, hint int
 //
 // Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_mask_extloadunpacklo_pd'.
 // Requires KNCNI.
-func MaskExtloadunpackloPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
-	return x86.M512d(maskExtloadunpackloPd([8]float64(src), uint8(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackloPd(src x86.M512d, k x86.Mmask8, mt uintptr, conv MMUPCONVPDENUM, hint int) x86.M512d {
+	return x86.M512d(m512MaskExtloadunpackloPd([8]float64(src), uint8(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackloPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
+func m512MaskExtloadunpackloPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDENUM, hint int) [8]float64
 
 
-// ExtloadunpackloPs: Loads the low-64-byte-aligned portion of the
+// M512ExtloadunpackloPs: Loads the low-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt,
 // up-converted depending on the value of 'conv', and expanded into packed
 // single-precision (32-bit) floating-point elements in 'dst'. The initial
@@ -4904,14 +4913,14 @@ func maskExtloadunpackloPd(src [8]float64, k uint8, mt uintptr, conv MMUPCONVPDE
 //
 // Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_extloadunpacklo_ps'.
 // Requires KNCNI.
-func ExtloadunpackloPs(src x86.M512, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(extloadunpackloPs([16]float32(src), uintptr(mt), conv, hint))
+func M512ExtloadunpackloPs(src x86.M512, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
+	return x86.M512(m512ExtloadunpackloPs([16]float32(src), uintptr(mt), conv, hint))
 }
 
-func extloadunpackloPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
+func m512ExtloadunpackloPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
 
 
-// MaskExtloadunpackloPs: Loads the low-64-byte-aligned portion of the
+// M512MaskExtloadunpackloPs: Loads the low-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt,
 // up-converted depending on the value of 'conv', and expanded into packed
 // single-precision (32-bit) floating-point elements in 'dst'. The initial
@@ -4962,15 +4971,15 @@ func extloadunpackloPs(src [16]float32, mt uintptr, conv MMUPCONVPSENUM, hint in
 //
 // Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_mask_extloadunpacklo_ps'.
 // Requires KNCNI.
-func MaskExtloadunpackloPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
-	return x86.M512(maskExtloadunpackloPs([16]float32(src), uint16(k), uintptr(mt), conv, hint))
+func M512MaskExtloadunpackloPs(src x86.M512, k x86.Mmask16, mt uintptr, conv MMUPCONVPSENUM, hint int) x86.M512 {
+	return x86.M512(m512MaskExtloadunpackloPs([16]float32(src), uint16(k), uintptr(mt), conv, hint))
 }
 
-func maskExtloadunpackloPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
+func m512MaskExtloadunpackloPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVPSENUM, hint int) [16]float32
 
 
-// ExtpackstorehiEpi32: Down-converts and stores packed 32-bit integer elements
-// of 'v1' into a byte/word/doubleword stream according to 'conv' at a
+// M512ExtpackstorehiEpi32: Down-converts and stores packed 32-bit integer
+// elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
 // logically mapped starting address (mt-64), storing the high-64-byte elements
 // of that stream (those elemetns of the stream that map at or after the first
 // 64-byte-aligned address following (m5-64)). 'hint' indicates to the
@@ -5021,14 +5030,14 @@ func maskExtloadunpackloPs(src [16]float32, k uint16, mt uintptr, conv MMUPCONVP
 //
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_extpackstorehi_epi32'.
 // Requires KNCNI.
-func ExtpackstorehiEpi32(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	extpackstorehiEpi32(uintptr(mt), [64]byte(v1), conv, hint)
+func M512ExtpackstorehiEpi32(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
+	m512ExtpackstorehiEpi32(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstorehiEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
+func m512ExtpackstorehiEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
-// MaskExtpackstorehiEpi32: Down-converts and stores packed 32-bit integer
+// M512MaskExtpackstorehiEpi32: Down-converts and stores packed 32-bit integer
 // elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
 // logically mapped starting address (mt-64), storing the high-64-byte elements
 // of that stream (those elemetns of the stream that map at or after the first
@@ -5084,19 +5093,19 @@ func extpackstorehiEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint
 //
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_mask_extpackstorehi_epi32'.
 // Requires KNCNI.
-func MaskExtpackstorehiEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	maskExtpackstorehiEpi32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
+func M512MaskExtpackstorehiEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
+	m512MaskExtpackstorehiEpi32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
+func m512MaskExtpackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
-// ExtpackstorehiEpi64: Down-converts and stores packed 64-bit integer elements
-// of 'v1' into a quadword stream according to 'conv' at a logically mapped
-// starting address (mt-64), storing the high-64-byte elements of that stream
-// (those elemetns of the stream that map at or after the first 64-byte-aligned
-// address following (m5-64)). 'hint' indicates to the processor whether the
-// data is non-temporal. 
+// M512ExtpackstorehiEpi64: Down-converts and stores packed 64-bit integer
+// elements of 'v1' into a quadword stream according to 'conv' at a logically
+// mapped starting address (mt-64), storing the high-64-byte elements of that
+// stream (those elemetns of the stream that map at or after the first
+// 64-byte-aligned address following (m5-64)). 'hint' indicates to the
+// processor whether the data is non-temporal. 
 //
 //		DOWNCONVERT(element, convertTo) {
 //			CASE converTo OF
@@ -5133,14 +5142,14 @@ func maskExtpackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVE
 //
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_extpackstorehi_epi64'.
 // Requires KNCNI.
-func ExtpackstorehiEpi64(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	extpackstorehiEpi64(uintptr(mt), [64]byte(v1), conv, hint)
+func M512ExtpackstorehiEpi64(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
+	m512ExtpackstorehiEpi64(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstorehiEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
+func m512ExtpackstorehiEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
-// MaskExtpackstorehiEpi64: Down-converts and stores packed 64-bit integer
+// M512MaskExtpackstorehiEpi64: Down-converts and stores packed 64-bit integer
 // elements of 'v1' into a quadword stream according to 'conv' at a logically
 // mapped starting address (mt-64), storing the high-64-byte elements of that
 // stream (those elemetns of the stream that map at or after the first
@@ -5186,19 +5195,19 @@ func extpackstorehiEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint
 //
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_mask_extpackstorehi_epi64'.
 // Requires KNCNI.
-func MaskExtpackstorehiEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	maskExtpackstorehiEpi64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
+func M512MaskExtpackstorehiEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
+	m512MaskExtpackstorehiEpi64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
+func m512MaskExtpackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
-// ExtpackstorehiPd: Down-converts and stores packed double-precision (64-bit)
-// floating-point elements of 'v1' into a quadword stream according to 'conv'
-// at a logically mapped starting address (mt-64), storing the high-64-byte
-// elements of that stream (those elemetns of the stream that map at or after
-// the first 64-byte-aligned address following (m5-64)). 'hint' indicates to
-// the processor whether the data is non-temporal. 
+// M512ExtpackstorehiPd: Down-converts and stores packed double-precision
+// (64-bit) floating-point elements of 'v1' into a quadword stream according to
+// 'conv' at a logically mapped starting address (mt-64), storing the
+// high-64-byte elements of that stream (those elemetns of the stream that map
+// at or after the first 64-byte-aligned address following (m5-64)). 'hint'
+// indicates to the processor whether the data is non-temporal. 
 //
 //		DOWNCONVERT(element, convertTo) {
 //			CASE converTo OF
@@ -5235,14 +5244,14 @@ func maskExtpackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEP
 //
 // Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_extpackstorehi_pd'.
 // Requires KNCNI.
-func ExtpackstorehiPd(mt uintptr, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	extpackstorehiPd(uintptr(mt), [8]float64(v1), conv, hint)
+func M512ExtpackstorehiPd(mt uintptr, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
+	m512ExtpackstorehiPd(uintptr(mt), [8]float64(v1), conv, hint)
 }
 
-func extpackstorehiPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
+func m512ExtpackstorehiPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
 
 
-// MaskExtpackstorehiPd: Down-converts and stores packed double-precision
+// M512MaskExtpackstorehiPd: Down-converts and stores packed double-precision
 // (64-bit) floating-point elements of 'v1' into a quadword stream according to
 // 'conv' at a logically mapped starting address (mt-64), storing the
 // high-64-byte elements of that stream (those elemetns of the stream that map
@@ -5288,18 +5297,18 @@ func extpackstorehiPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int
 //
 // Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_mask_extpackstorehi_pd'.
 // Requires KNCNI.
-func MaskExtpackstorehiPd(mt uintptr, k x86.Mmask8, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	maskExtpackstorehiPd(uintptr(mt), uint8(k), [8]float64(v1), conv, hint)
+func M512MaskExtpackstorehiPd(mt uintptr, k x86.Mmask8, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
+	m512MaskExtpackstorehiPd(uintptr(mt), uint8(k), [8]float64(v1), conv, hint)
 }
 
-func maskExtpackstorehiPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
+func m512MaskExtpackstorehiPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
 
 
-// ExtpackstorehiPs: Down-converts and stores packed single-precision (32-bit)
-// floating-point elements of 'v1' into a byte/word/doubleword stream according
-// to 'conv' at a logically mapped starting address (mt-64), storing the
-// high-64-byte elements of that stream (those elemetns of the stream that map
-// at or after the first 64-byte-aligned address following (m5-64)). 'hint'
+// M512ExtpackstorehiPs: Down-converts and stores packed single-precision
+// (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
+// according to 'conv' at a logically mapped starting address (mt-64), storing
+// the high-64-byte elements of that stream (those elemetns of the stream that
+// map at or after the first 64-byte-aligned address following (m5-64)). 'hint'
 // indicates to the processor whether the data is non-temporal. 
 //
 //		DOWNCONVERT(element, convertTo) {
@@ -5349,14 +5358,14 @@ func maskExtpackstorehiPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDE
 //
 // Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_extpackstorehi_ps'.
 // Requires KNCNI.
-func ExtpackstorehiPs(mt uintptr, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	extpackstorehiPs(uintptr(mt), [16]float32(v1), conv, hint)
+func M512ExtpackstorehiPs(mt uintptr, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
+	m512ExtpackstorehiPs(uintptr(mt), [16]float32(v1), conv, hint)
 }
 
-func extpackstorehiPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
+func m512ExtpackstorehiPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
 
 
-// MaskExtpackstorehiPs: Down-converts and stores packed single-precision
+// M512MaskExtpackstorehiPs: Down-converts and stores packed single-precision
 // (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
 // according to 'conv' at a logically mapped starting address (mt-64), storing
 // the high-64-byte elements of that stream (those elemetns of the stream that
@@ -5414,15 +5423,15 @@ func extpackstorehiPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint in
 //
 // Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_mask_extpackstorehi_ps'.
 // Requires KNCNI.
-func MaskExtpackstorehiPs(mt uintptr, k x86.Mmask16, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	maskExtpackstorehiPs(uintptr(mt), uint16(k), [16]float32(v1), conv, hint)
+func M512MaskExtpackstorehiPs(mt uintptr, k x86.Mmask16, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
+	m512MaskExtpackstorehiPs(uintptr(mt), uint16(k), [16]float32(v1), conv, hint)
 }
 
-func maskExtpackstorehiPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
+func m512MaskExtpackstorehiPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
 
 
-// ExtpackstoreloEpi32: Down-converts and stores packed 32-bit integer elements
-// of 'v1' into a byte/word/doubleword stream according to 'conv' at a
+// M512ExtpackstoreloEpi32: Down-converts and stores packed 32-bit integer
+// elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
 // logically mapped starting address 'mt', storing the low-64-byte elements of
 // that stream (those elements of the stream that map before the first
 // 64-byte-aligned address follwing 'mt'). 'hint' indicates to the processor
@@ -5469,14 +5478,14 @@ func maskExtpackstorehiPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVP
 //
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_extpackstorelo_epi32'.
 // Requires KNCNI.
-func ExtpackstoreloEpi32(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	extpackstoreloEpi32(uintptr(mt), [64]byte(v1), conv, hint)
+func M512ExtpackstoreloEpi32(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
+	m512ExtpackstoreloEpi32(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstoreloEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
+func m512ExtpackstoreloEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
-// MaskExtpackstoreloEpi32: Down-converts and stores packed 32-bit integer
+// M512MaskExtpackstoreloEpi32: Down-converts and stores packed 32-bit integer
 // elements of 'v1' into a byte/word/doubleword stream according to 'conv' at a
 // logically mapped starting address 'mt', storing the low-64-byte elements of
 // that stream (those elements of the stream that map before the first
@@ -5528,19 +5537,19 @@ func extpackstoreloEpi32(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint
 //
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_mask_extpackstorelo_epi32'.
 // Requires KNCNI.
-func MaskExtpackstoreloEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	maskExtpackstoreloEpi32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
+func M512MaskExtpackstoreloEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
+	m512MaskExtpackstoreloEpi32(uintptr(mt), uint16(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
+func m512MaskExtpackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
-// ExtpackstoreloEpi64: Down-converts and stores packed 64-bit integer elements
-// of 'v1' into a quadword stream according to 'conv' at a logically mapped
-// starting address 'mt', storing the low-64-byte elements of that stream
-// (those elements of the stream that map before the first 64-byte-aligned
-// address follwing 'mt'). 'hint' indicates to the processor whether the data
-// is non-temporal. 
+// M512ExtpackstoreloEpi64: Down-converts and stores packed 64-bit integer
+// elements of 'v1' into a quadword stream according to 'conv' at a logically
+// mapped starting address 'mt', storing the low-64-byte elements of that
+// stream (those elements of the stream that map before the first
+// 64-byte-aligned address follwing 'mt'). 'hint' indicates to the processor
+// whether the data is non-temporal. 
 //
 //		DOWNCONVERT(element, convertTo) {
 //			CASE converTo OF
@@ -5573,14 +5582,14 @@ func maskExtpackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte, conv MMDOWNCONVE
 //
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_extpackstorelo_epi64'.
 // Requires KNCNI.
-func ExtpackstoreloEpi64(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	extpackstoreloEpi64(uintptr(mt), [64]byte(v1), conv, hint)
+func M512ExtpackstoreloEpi64(mt uintptr, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
+	m512ExtpackstoreloEpi64(uintptr(mt), [64]byte(v1), conv, hint)
 }
 
-func extpackstoreloEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
+func m512ExtpackstoreloEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
-// MaskExtpackstoreloEpi64: Down-converts and stores packed 64-bit integer
+// M512MaskExtpackstoreloEpi64: Down-converts and stores packed 64-bit integer
 // elements of 'v1' into a quadword stream according to 'conv' at a logically
 // mapped starting address 'mt', storing the low-64-byte elements of that
 // stream (those elements of the stream that map before the first
@@ -5622,16 +5631,16 @@ func extpackstoreloEpi64(mt uintptr, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint
 //
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_mask_extpackstorelo_epi64'.
 // Requires KNCNI.
-func MaskExtpackstoreloEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	maskExtpackstoreloEpi64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
+func M512MaskExtpackstoreloEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
+	m512MaskExtpackstoreloEpi64(uintptr(mt), uint8(k), [64]byte(v1), conv, hint)
 }
 
-func maskExtpackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
+func m512MaskExtpackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
-// ExtpackstoreloPd: Down-converts and stores packed double-precision (64-bit)
-// floating-point elements of 'v1' into a quadword stream according to 'conv'
-// at a logically mapped starting address 'mt', storing the low-64-byte
+// M512ExtpackstoreloPd: Down-converts and stores packed double-precision
+// (64-bit) floating-point elements of 'v1' into a quadword stream according to
+// 'conv' at a logically mapped starting address 'mt', storing the low-64-byte
 // elements of that stream (those elements of the stream that map before the
 // first 64-byte-aligned address follwing 'mt'). 'hint' indicates to the
 // processor whether the data is non-temporal. 
@@ -5667,14 +5676,14 @@ func maskExtpackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte, conv MMDOWNCONVEP
 //
 // Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_extpackstorelo_pd'.
 // Requires KNCNI.
-func ExtpackstoreloPd(mt uintptr, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	extpackstoreloPd(uintptr(mt), [8]float64(v1), conv, hint)
+func M512ExtpackstoreloPd(mt uintptr, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
+	m512ExtpackstoreloPd(uintptr(mt), [8]float64(v1), conv, hint)
 }
 
-func extpackstoreloPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
+func m512ExtpackstoreloPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
 
 
-// MaskExtpackstoreloPd: Down-converts and stores packed double-precision
+// M512MaskExtpackstoreloPd: Down-converts and stores packed double-precision
 // (64-bit) floating-point elements of 'v1' into a quadword stream according to
 // 'conv' at a logically mapped starting address 'mt', storing the low-64-byte
 // elements of that stream (those elements of the stream that map before the
@@ -5716,16 +5725,16 @@ func extpackstoreloPd(mt uintptr, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int
 //
 // Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_mask_extpackstorelo_pd'.
 // Requires KNCNI.
-func MaskExtpackstoreloPd(mt uintptr, k x86.Mmask8, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	maskExtpackstoreloPd(uintptr(mt), uint8(k), [8]float64(v1), conv, hint)
+func M512MaskExtpackstoreloPd(mt uintptr, k x86.Mmask8, v1 x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
+	m512MaskExtpackstoreloPd(uintptr(mt), uint8(k), [8]float64(v1), conv, hint)
 }
 
-func maskExtpackstoreloPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
+func m512MaskExtpackstoreloPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDENUM, hint int) 
 
 
-// ExtpackstoreloPs: Down-converts and stores packed single-precision (32-bit)
-// floating-point elements of 'v1' into a byte/word/doubleword stream according
-// to 'conv' at a logically mapped starting address 'mt', storing the
+// M512ExtpackstoreloPs: Down-converts and stores packed single-precision
+// (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
+// according to 'conv' at a logically mapped starting address 'mt', storing the
 // low-64-byte elements of that stream (those elements of the stream that map
 // before the first 64-byte-aligned address follwing 'mt'). 'hint' indicates to
 // the processor whether the data is non-temporal. 
@@ -5773,14 +5782,14 @@ func maskExtpackstoreloPd(mt uintptr, k uint8, v1 [8]float64, conv MMDOWNCONVPDE
 //
 // Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_extpackstorelo_ps'.
 // Requires KNCNI.
-func ExtpackstoreloPs(mt uintptr, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	extpackstoreloPs(uintptr(mt), [16]float32(v1), conv, hint)
+func M512ExtpackstoreloPs(mt uintptr, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
+	m512ExtpackstoreloPs(uintptr(mt), [16]float32(v1), conv, hint)
 }
 
-func extpackstoreloPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
+func m512ExtpackstoreloPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
 
 
-// MaskExtpackstoreloPs: Down-converts and stores packed single-precision
+// M512MaskExtpackstoreloPs: Down-converts and stores packed single-precision
 // (32-bit) floating-point elements of 'v1' into a byte/word/doubleword stream
 // according to 'conv' at a logically mapped starting address 'mt', storing the
 // low-64-byte elements of that stream (those elements of the stream that map
@@ -5834,16 +5843,16 @@ func extpackstoreloPs(mt uintptr, v1 [16]float32, conv MMDOWNCONVPSENUM, hint in
 //
 // Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_mask_extpackstorelo_ps'.
 // Requires KNCNI.
-func MaskExtpackstoreloPs(mt uintptr, k x86.Mmask16, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	maskExtpackstoreloPs(uintptr(mt), uint16(k), [16]float32(v1), conv, hint)
+func M512MaskExtpackstoreloPs(mt uintptr, k x86.Mmask16, v1 x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
+	m512MaskExtpackstoreloPs(uintptr(mt), uint16(k), [16]float32(v1), conv, hint)
 }
 
-func maskExtpackstoreloPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
+func m512MaskExtpackstoreloPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVPSENUM, hint int) 
 
 
-// ExtstoreEpi32: Downconverts packed 32-bit integer elements stored in 'v' to
-// a smaller type depending on 'conv' and stores them in memory location 'mt'.
-// 'hint' indicates to the processor whether the data is non-temporal. 
+// M512ExtstoreEpi32: Downconverts packed 32-bit integer elements stored in 'v'
+// to a smaller type depending on 'conv' and stores them in memory location
+// 'mt'. 'hint' indicates to the processor whether the data is non-temporal. 
 //
 //		addr := MEM[mt]
 //		FOR j := 0 to 15
@@ -5868,15 +5877,15 @@ func maskExtpackstoreloPs(mt uintptr, k uint16, v1 [16]float32, conv MMDOWNCONVP
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_extstore_epi32'.
 // Requires KNCNI.
-func ExtstoreEpi32(mt uintptr, v x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	extstoreEpi32(uintptr(mt), [64]byte(v), conv, hint)
+func M512ExtstoreEpi32(mt uintptr, v x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
+	m512ExtstoreEpi32(uintptr(mt), [64]byte(v), conv, hint)
 }
 
-func extstoreEpi32(mt uintptr, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
+func m512ExtstoreEpi32(mt uintptr, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
-// MaskExtstoreEpi32: Downconverts packed 32-bit integer elements stored in 'v'
-// to a smaller type depending on 'conv' and stores them in memory location
+// M512MaskExtstoreEpi32: Downconverts packed 32-bit integer elements stored in
+// 'v' to a smaller type depending on 'conv' and stores them in memory location
 // 'mt' (elements in 'mt' are unaltered when the corresponding mask bit is not
 // set). 'hint' indicates to the processor whether the data is non-temporal. 
 //
@@ -5905,16 +5914,16 @@ func extstoreEpi32(mt uintptr, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int)
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_extstore_epi32'.
 // Requires KNCNI.
-func MaskExtstoreEpi32(mt uintptr, k x86.Mmask16, v x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
-	maskExtstoreEpi32(uintptr(mt), uint16(k), [64]byte(v), conv, hint)
+func M512MaskExtstoreEpi32(mt uintptr, k x86.Mmask16, v x86.M512i, conv MMDOWNCONVEPI32ENUM, hint int)  {
+	m512MaskExtstoreEpi32(uintptr(mt), uint16(k), [64]byte(v), conv, hint)
 }
 
-func maskExtstoreEpi32(mt uintptr, k uint16, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
+func m512MaskExtstoreEpi32(mt uintptr, k uint16, v [64]byte, conv MMDOWNCONVEPI32ENUM, hint int) 
 
 
-// ExtstoreEpi64: Downconverts packed 64-bit integer elements stored in 'v' to
-// a smaller type depending on 'conv' and stores them in memory location 'mt'.
-// 'hint' indicates to the processor whether the data is non-temporal. 
+// M512ExtstoreEpi64: Downconverts packed 64-bit integer elements stored in 'v'
+// to a smaller type depending on 'conv' and stores them in memory location
+// 'mt'. 'hint' indicates to the processor whether the data is non-temporal. 
 //
 //		addr := MEM[mt]
 //		FOR j := 0 to 7
@@ -5926,15 +5935,15 @@ func maskExtstoreEpi32(mt uintptr, k uint16, v [64]byte, conv MMDOWNCONVEPI32ENU
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_extstore_epi64'.
 // Requires KNCNI.
-func ExtstoreEpi64(mt uintptr, v x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	extstoreEpi64(uintptr(mt), [64]byte(v), conv, hint)
+func M512ExtstoreEpi64(mt uintptr, v x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
+	m512ExtstoreEpi64(uintptr(mt), [64]byte(v), conv, hint)
 }
 
-func extstoreEpi64(mt uintptr, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
+func m512ExtstoreEpi64(mt uintptr, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
-// MaskExtstoreEpi64: Downconverts packed 64-bit integer elements stored in 'v'
-// to a smaller type depending on 'conv' and stores them in memory location
+// M512MaskExtstoreEpi64: Downconverts packed 64-bit integer elements stored in
+// 'v' to a smaller type depending on 'conv' and stores them in memory location
 // 'mt' (elements in 'mt' are unaltered when the corresponding mask bit is not
 // set). 'hint' indicates to the processor whether the data is non-temporal. 
 //
@@ -5950,14 +5959,14 @@ func extstoreEpi64(mt uintptr, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int)
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_extstore_epi64'.
 // Requires KNCNI.
-func MaskExtstoreEpi64(mt uintptr, k x86.Mmask8, v x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
-	maskExtstoreEpi64(uintptr(mt), uint8(k), [64]byte(v), conv, hint)
+func M512MaskExtstoreEpi64(mt uintptr, k x86.Mmask8, v x86.M512i, conv MMDOWNCONVEPI64ENUM, hint int)  {
+	m512MaskExtstoreEpi64(uintptr(mt), uint8(k), [64]byte(v), conv, hint)
 }
 
-func maskExtstoreEpi64(mt uintptr, k uint8, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
+func m512MaskExtstoreEpi64(mt uintptr, k uint8, v [64]byte, conv MMDOWNCONVEPI64ENUM, hint int) 
 
 
-// ExtstorePd: Downconverts packed double-precision (64-bit) floating-point
+// M512ExtstorePd: Downconverts packed double-precision (64-bit) floating-point
 // elements stored in 'v' to a smaller type depending on 'conv' and stores them
 // in memory location 'mt'. 'hint' indicates to the processor whether the data
 // is non-temporal. 
@@ -5973,17 +5982,17 @@ func maskExtstoreEpi64(mt uintptr, k uint8, v [64]byte, conv MMDOWNCONVEPI64ENUM
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_extstore_pd'.
 // Requires KNCNI.
-func ExtstorePd(mt uintptr, v x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	extstorePd(uintptr(mt), [8]float64(v), conv, hint)
+func M512ExtstorePd(mt uintptr, v x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
+	m512ExtstorePd(uintptr(mt), [8]float64(v), conv, hint)
 }
 
-func extstorePd(mt uintptr, v [8]float64, conv MMDOWNCONVPDENUM, hint int) 
+func m512ExtstorePd(mt uintptr, v [8]float64, conv MMDOWNCONVPDENUM, hint int) 
 
 
-// MaskExtstorePd: Downconverts packed double-precision (64-bit) floating-point
-// elements stored in 'v' to a smaller type depending on 'conv' and stores them
-// in memory location 'mt' (elements in 'mt' are unaltered when the
-// corresponding mask bit is not set). 'hint' indicates to the processor
+// M512MaskExtstorePd: Downconverts packed double-precision (64-bit)
+// floating-point elements stored in 'v' to a smaller type depending on 'conv'
+// and stores them in memory location 'mt' (elements in 'mt' are unaltered when
+// the corresponding mask bit is not set). 'hint' indicates to the processor
 // whether the data is non-temporal. 
 //
 //		addr := MEM[mt]		
@@ -5999,14 +6008,14 @@ func extstorePd(mt uintptr, v [8]float64, conv MMDOWNCONVPDENUM, hint int)
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_mask_extstore_pd'.
 // Requires KNCNI.
-func MaskExtstorePd(mt uintptr, k x86.Mmask8, v x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
-	maskExtstorePd(uintptr(mt), uint8(k), [8]float64(v), conv, hint)
+func M512MaskExtstorePd(mt uintptr, k x86.Mmask8, v x86.M512d, conv MMDOWNCONVPDENUM, hint int)  {
+	m512MaskExtstorePd(uintptr(mt), uint8(k), [8]float64(v), conv, hint)
 }
 
-func maskExtstorePd(mt uintptr, k uint8, v [8]float64, conv MMDOWNCONVPDENUM, hint int) 
+func m512MaskExtstorePd(mt uintptr, k uint8, v [8]float64, conv MMDOWNCONVPDENUM, hint int) 
 
 
-// ExtstorePs: Downconverts packed single-precision (32-bit) floating-point
+// M512ExtstorePs: Downconverts packed single-precision (32-bit) floating-point
 // elements stored in 'v' to a smaller type depending on 'conv' and stores them
 // in memory location 'mt'. 'hint' indicates to the processor whether the data
 // is non-temporal. 
@@ -6037,18 +6046,18 @@ func maskExtstorePd(mt uintptr, k uint8, v [8]float64, conv MMDOWNCONVPDENUM, hi
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_extstore_ps'.
 // Requires KNCNI.
-func ExtstorePs(mt uintptr, v x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	extstorePs(uintptr(mt), [16]float32(v), conv, hint)
+func M512ExtstorePs(mt uintptr, v x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
+	m512ExtstorePs(uintptr(mt), [16]float32(v), conv, hint)
 }
 
-func extstorePs(mt uintptr, v [16]float32, conv MMDOWNCONVPSENUM, hint int) 
+func m512ExtstorePs(mt uintptr, v [16]float32, conv MMDOWNCONVPSENUM, hint int) 
 
 
-// MaskExtstorePs: Downconverts packed single-precision (32-bit) floating-point
-// elements stored in 'v' to a smaller type depending on 'conv' and stores them
-// in memory location 'mt' using writemask 'k' (elements are not written to
-// memory when the corresponding mask bit is not set). 'hint' indicates to the
-// processor whether the data is non-temporal. 
+// M512MaskExtstorePs: Downconverts packed single-precision (32-bit)
+// floating-point elements stored in 'v' to a smaller type depending on 'conv'
+// and stores them in memory location 'mt' using writemask 'k' (elements are
+// not written to memory when the corresponding mask bit is not set). 'hint'
+// indicates to the processor whether the data is non-temporal. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -6077,14 +6086,14 @@ func extstorePs(mt uintptr, v [16]float32, conv MMDOWNCONVPSENUM, hint int)
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_mask_extstore_ps'.
 // Requires KNCNI.
-func MaskExtstorePs(mt uintptr, k x86.Mmask16, v x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
-	maskExtstorePs(uintptr(mt), uint16(k), [16]float32(v), conv, hint)
+func M512MaskExtstorePs(mt uintptr, k x86.Mmask16, v x86.M512, conv MMDOWNCONVPSENUM, hint int)  {
+	m512MaskExtstorePs(uintptr(mt), uint16(k), [16]float32(v), conv, hint)
 }
 
-func maskExtstorePs(mt uintptr, k uint16, v [16]float32, conv MMDOWNCONVPSENUM, hint int) 
+func m512MaskExtstorePs(mt uintptr, k uint16, v [16]float32, conv MMDOWNCONVPSENUM, hint int) 
 
 
-// FixupnanPd: Fixes up NaN's from packed double-precision (64-bit)
+// M512FixupnanPd: Fixes up NaN's from packed double-precision (64-bit)
 // floating-point elements in 'v1' and 'v2', storing the results in 'dst' and
 // storing the quietized NaN's from 'v1' in 'v3'. 
 //
@@ -6097,14 +6106,14 @@ func maskExtstorePs(mt uintptr, k uint16, v [16]float32, conv MMDOWNCONVPSENUM, 
 //
 // Instruction: 'VFIXUPNANPD'. Intrinsic: '_mm512_fixupnan_pd'.
 // Requires KNCNI.
-func FixupnanPd(v1 x86.M512d, v2 x86.M512d, v3 x86.M512i) x86.M512d {
-	return x86.M512d(fixupnanPd([8]float64(v1), [8]float64(v2), [64]byte(v3)))
+func M512FixupnanPd(v1 x86.M512d, v2 x86.M512d, v3 x86.M512i) x86.M512d {
+	return x86.M512d(m512FixupnanPd([8]float64(v1), [8]float64(v2), [64]byte(v3)))
 }
 
-func fixupnanPd(v1 [8]float64, v2 [8]float64, v3 [64]byte) [8]float64
+func m512FixupnanPd(v1 [8]float64, v2 [8]float64, v3 [64]byte) [8]float64
 
 
-// MaskFixupnanPd: Fixes up NaN's from packed double-precision (64-bit)
+// M512MaskFixupnanPd: Fixes up NaN's from packed double-precision (64-bit)
 // floating-point elements in 'v1' and 'v2', storing the results in 'dst' using
 // writemask 'k' (only elements whose corresponding mask bit is set are used in
 // the computation). Quietized NaN's from 'v1' are stored in 'v3'. 
@@ -6120,14 +6129,14 @@ func fixupnanPd(v1 [8]float64, v2 [8]float64, v3 [64]byte) [8]float64
 //
 // Instruction: 'VFIXUPNANPD'. Intrinsic: '_mm512_mask_fixupnan_pd'.
 // Requires KNCNI.
-func MaskFixupnanPd(v1 x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512i) x86.M512d {
-	return x86.M512d(maskFixupnanPd([8]float64(v1), uint8(k), [8]float64(v2), [64]byte(v3)))
+func M512MaskFixupnanPd(v1 x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512i) x86.M512d {
+	return x86.M512d(m512MaskFixupnanPd([8]float64(v1), uint8(k), [8]float64(v2), [64]byte(v3)))
 }
 
-func maskFixupnanPd(v1 [8]float64, k uint8, v2 [8]float64, v3 [64]byte) [8]float64
+func m512MaskFixupnanPd(v1 [8]float64, k uint8, v2 [8]float64, v3 [64]byte) [8]float64
 
 
-// FixupnanPs: Fixes up NaN's from packed single-precision (32-bit)
+// M512FixupnanPs: Fixes up NaN's from packed single-precision (32-bit)
 // floating-point elements in 'v1' and 'v2', storing the results in 'dst' and
 // storing the quietized NaN's from 'v1' in 'v3'. 
 //
@@ -6140,14 +6149,14 @@ func maskFixupnanPd(v1 [8]float64, k uint8, v2 [8]float64, v3 [64]byte) [8]float
 //
 // Instruction: 'VFIXUPNANPS'. Intrinsic: '_mm512_fixupnan_ps'.
 // Requires KNCNI.
-func FixupnanPs(v1 x86.M512, v2 x86.M512, v3 x86.M512i) x86.M512 {
-	return x86.M512(fixupnanPs([16]float32(v1), [16]float32(v2), [64]byte(v3)))
+func M512FixupnanPs(v1 x86.M512, v2 x86.M512, v3 x86.M512i) x86.M512 {
+	return x86.M512(m512FixupnanPs([16]float32(v1), [16]float32(v2), [64]byte(v3)))
 }
 
-func fixupnanPs(v1 [16]float32, v2 [16]float32, v3 [64]byte) [16]float32
+func m512FixupnanPs(v1 [16]float32, v2 [16]float32, v3 [64]byte) [16]float32
 
 
-// MaskFixupnanPs: Fixes up NaN's from packed single-precision (32-bit)
+// M512MaskFixupnanPs: Fixes up NaN's from packed single-precision (32-bit)
 // floating-point elements in 'v1' and 'v2', storing the results in 'dst' using
 // writemask 'k' (only elements whose corresponding mask bit is set are used in
 // the computation). Quietized NaN's from 'v1' are stored in 'v3'. 
@@ -6163,15 +6172,15 @@ func fixupnanPs(v1 [16]float32, v2 [16]float32, v3 [64]byte) [16]float32
 //
 // Instruction: 'VFIXUPNANPS'. Intrinsic: '_mm512_mask_fixupnan_ps'.
 // Requires KNCNI.
-func MaskFixupnanPs(v1 x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512i) x86.M512 {
-	return x86.M512(maskFixupnanPs([16]float32(v1), uint16(k), [16]float32(v2), [64]byte(v3)))
+func M512MaskFixupnanPs(v1 x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512i) x86.M512 {
+	return x86.M512(m512MaskFixupnanPs([16]float32(v1), uint16(k), [16]float32(v2), [64]byte(v3)))
 }
 
-func maskFixupnanPs(v1 [16]float32, k uint16, v2 [16]float32, v3 [64]byte) [16]float32
+func m512MaskFixupnanPs(v1 [16]float32, k uint16, v2 [16]float32, v3 [64]byte) [16]float32
 
 
-// FmaddEpi32: Multiply packed 32-bit integer elements in 'a' and 'b', add the
-// intermediate result to packed elements in 'c' and store the results in
+// M512FmaddEpi32: Multiply packed 32-bit integer elements in 'a' and 'b', add
+// the intermediate result to packed elements in 'c' and store the results in
 // 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -6182,16 +6191,16 @@ func maskFixupnanPs(v1 [16]float32, k uint16, v2 [16]float32, v3 [64]byte) [16]f
 //
 // Instruction: 'VPMADD231D'. Intrinsic: '_mm512_fmadd_epi32'.
 // Requires KNCNI.
-func FmaddEpi32(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(fmaddEpi32([64]byte(a), [64]byte(b), [64]byte(c)))
+func M512FmaddEpi32(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512FmaddEpi32([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func fmaddEpi32(a [64]byte, b [64]byte, c [64]byte) [64]byte
+func m512FmaddEpi32(a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
-// MaskFmaddEpi32: Multiply packed 32-bit integer elements in 'a' and 'b', add
-// the intermediate result to packed elements in 'c' and store the results in
-// 'dst' using writemask 'k' (elements are copied from 'a' when the
+// M512MaskFmaddEpi32: Multiply packed 32-bit integer elements in 'a' and 'b',
+// add the intermediate result to packed elements in 'c' and store the results
+// in 'dst' using writemask 'k' (elements are copied from 'a' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -6206,16 +6215,16 @@ func fmaddEpi32(a [64]byte, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD231D'. Intrinsic: '_mm512_mask_fmadd_epi32'.
 // Requires KNCNI.
-func MaskFmaddEpi32(a x86.M512i, k x86.Mmask16, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(maskFmaddEpi32([64]byte(a), uint16(k), [64]byte(b), [64]byte(c)))
+func M512MaskFmaddEpi32(a x86.M512i, k x86.Mmask16, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskFmaddEpi32([64]byte(a), uint16(k), [64]byte(b), [64]byte(c)))
 }
 
-func maskFmaddEpi32(a [64]byte, k uint16, b [64]byte, c [64]byte) [64]byte
+func m512MaskFmaddEpi32(a [64]byte, k uint16, b [64]byte, c [64]byte) [64]byte
 
 
-// Mask3FmaddEpi32: Multiply packed 32-bit integer elements in 'a' and 'b', add
-// the intermediate result to packed elements in 'c' and store the results in
-// 'dst' using writemask 'k' (elements are copied from 'c' when the
+// M512Mask3FmaddEpi32: Multiply packed 32-bit integer elements in 'a' and 'b',
+// add the intermediate result to packed elements in 'c' and store the results
+// in 'dst' using writemask 'k' (elements are copied from 'c' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -6230,16 +6239,16 @@ func maskFmaddEpi32(a [64]byte, k uint16, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD231D'. Intrinsic: '_mm512_mask3_fmadd_epi32'.
 // Requires KNCNI.
-func Mask3FmaddEpi32(a x86.M512i, b x86.M512i, c x86.M512i, k x86.Mmask16) x86.M512i {
-	return x86.M512i(mask3FmaddEpi32([64]byte(a), [64]byte(b), [64]byte(c), uint16(k)))
+func M512Mask3FmaddEpi32(a x86.M512i, b x86.M512i, c x86.M512i, k x86.Mmask16) x86.M512i {
+	return x86.M512i(m512Mask3FmaddEpi32([64]byte(a), [64]byte(b), [64]byte(c), uint16(k)))
 }
 
-func mask3FmaddEpi32(a [64]byte, b [64]byte, c [64]byte, k uint16) [64]byte
+func m512Mask3FmaddEpi32(a [64]byte, b [64]byte, c [64]byte, k uint16) [64]byte
 
 
-// FmaddPd: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', add the intermediate result to packed elements in 'c', and
-// store the results in 'dst'. 
+// M512FmaddPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', add the intermediate result to packed elements in
+// 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -6249,14 +6258,14 @@ func mask3FmaddEpi32(a [64]byte, b [64]byte, c [64]byte, k uint16) [64]byte
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_fmadd_pd'.
 // Requires KNCNI.
-func FmaddPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(fmaddPd([8]float64(a), [8]float64(b), [8]float64(c)))
+func M512FmaddPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512FmaddPd([8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
-func fmaddPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
+func m512FmaddPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 
 
-// MaskFmaddPd: Multiply packed double-precision (64-bit) floating-point
+// M512MaskFmaddPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', add the intermediate result to packed elements in
 // 'c', and store the results in 'dst' using writemask 'k' (elements are copied
 // from 'a' when the corresponding mask bit is not set). 
@@ -6273,14 +6282,14 @@ func fmaddPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_mask_fmadd_pd'.
 // Requires KNCNI.
-func MaskFmaddPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(maskFmaddPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
+func M512MaskFmaddPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskFmaddPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
 }
 
-func maskFmaddPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
+func m512MaskFmaddPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 
 
-// Mask3FmaddPd: Multiply packed double-precision (64-bit) floating-point
+// M512Mask3FmaddPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', add the intermediate result to packed elements in
 // 'c', and store the results in 'dst' using writemask 'k' (elements are copied
 // from 'c' when the corresponding mask bit is not set). 
@@ -6297,16 +6306,16 @@ func maskFmaddPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_mask3_fmadd_pd'.
 // Requires KNCNI.
-func Mask3FmaddPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
-	return x86.M512d(mask3FmaddPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
+func M512Mask3FmaddPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
+	return x86.M512d(m512Mask3FmaddPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
 }
 
-func mask3FmaddPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
+func m512Mask3FmaddPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 
 
-// FmaddPs: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', add the intermediate result to packed elements in 'c', and
-// store the results in 'dst'. 
+// M512FmaddPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', add the intermediate result to packed elements in
+// 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -6316,14 +6325,14 @@ func mask3FmaddPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_fmadd_ps'.
 // Requires KNCNI.
-func FmaddPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(fmaddPs([16]float32(a), [16]float32(b), [16]float32(c)))
+func M512FmaddPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512FmaddPs([16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
-func fmaddPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
+func m512FmaddPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 
 
-// MaskFmaddPs: Multiply packed single-precision (32-bit) floating-point
+// M512MaskFmaddPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', add the intermediate result to packed elements in
 // 'c', and store the results in 'dst' using writemask 'k' (elements are copied
 // from 'a' when the corresponding mask bit is not set). 
@@ -6340,14 +6349,14 @@ func fmaddPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_mask_fmadd_ps'.
 // Requires KNCNI.
-func MaskFmaddPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(maskFmaddPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
+func M512MaskFmaddPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512MaskFmaddPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
 }
 
-func maskFmaddPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
+func m512MaskFmaddPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
 
 
-// Mask3FmaddPs: Multiply packed single-precision (32-bit) floating-point
+// M512Mask3FmaddPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', add the intermediate result to packed elements in
 // 'c', and store the results in 'dst' using writemask 'k' (elements are copied
 // from 'c' when the corresponding mask bit is not set). 
@@ -6364,14 +6373,14 @@ func maskFmaddPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]floa
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_mask3_fmadd_ps'.
 // Requires KNCNI.
-func Mask3FmaddPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
-	return x86.M512(mask3FmaddPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
+func M512Mask3FmaddPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
+	return x86.M512(m512Mask3FmaddPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
 }
 
-func mask3FmaddPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
+func m512Mask3FmaddPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
 
 
-// FmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
+// M512FmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', add the intermediate result to packed elements in
 // 'c', and store the results in 'dst'. 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -6390,17 +6399,17 @@ func mask3FmaddPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]flo
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_fmadd_round_pd'.
 // Requires KNCNI.
-func FmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(fmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
+func M512FmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512FmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
-func fmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512FmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// MaskFmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', add the intermediate result to packed elements in
-// 'c', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'a' when the corresponding mask bit is not set).
+// M512MaskFmaddRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', add the intermediate result to
+// packed elements in 'c', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'a' when the corresponding mask bit is not set).
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6421,17 +6430,17 @@ func fmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]flo
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_mask_fmadd_round_pd'.
 // Requires KNCNI.
-func MaskFmaddRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskFmaddRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
+func M512MaskFmaddRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskFmaddRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
 }
 
-func maskFmaddRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512MaskFmaddRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// Mask3FmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', add the intermediate result to packed elements in
-// 'c', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'c' when the corresponding mask bit is not set). 
+// M512Mask3FmaddRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', add the intermediate result to
+// packed elements in 'c', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'c' when the corresponding mask bit is not set). 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6452,14 +6461,14 @@ func maskFmaddRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, roundin
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_mask3_fmadd_round_pd'.
 // Requires KNCNI.
-func Mask3FmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
-	return x86.M512d(mask3FmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
+func M512Mask3FmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
+	return x86.M512d(m512Mask3FmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
 }
 
-func mask3FmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
+func m512Mask3FmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
 
 
-// FmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
+// M512FmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', add the intermediate result to packed elements in
 // 'c', and store the results in 'dst'. 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -6478,17 +6487,17 @@ func mask3FmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, roundi
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_fmadd_round_ps'.
 // Requires KNCNI.
-func FmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(fmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
+func M512FmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512FmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
-func fmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512FmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// MaskFmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', add the intermediate result to packed elements in
-// 'c', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'a' when the corresponding mask bit is not set). 
+// M512MaskFmaddRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', add the intermediate result to
+// packed elements in 'c', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'a' when the corresponding mask bit is not set). 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6509,17 +6518,17 @@ func fmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_mask_fmadd_round_ps'.
 // Requires KNCNI.
-func MaskFmaddRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskFmaddRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
+func M512MaskFmaddRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskFmaddRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
 }
 
-func maskFmaddRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512MaskFmaddRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// Mask3FmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', add the intermediate result to packed elements in
-// 'c', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'c' when the corresponding mask bit is not set). 
+// M512Mask3FmaddRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', add the intermediate result to
+// packed elements in 'c', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'c' when the corresponding mask bit is not set). 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6540,16 +6549,16 @@ func maskFmaddRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rou
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_mask3_fmadd_round_ps'.
 // Requires KNCNI.
-func Mask3FmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(mask3FmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
+func M512Mask3FmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
+	return x86.M512(m512Mask3FmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
 }
 
-func mask3FmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
+func m512Mask3FmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
 
 
-// Fmadd233Epi32: Multiply packed 32-bit integer elements in each 4-element set
-// of 'a' and by element 1 of the corresponding 4-element set from 'b', add the
-// intermediate result to element 0 of the corresponding 4-element set from
+// M512Fmadd233Epi32: Multiply packed 32-bit integer elements in each 4-element
+// set of 'a' and by element 1 of the corresponding 4-element set from 'b', add
+// the intermediate result to element 0 of the corresponding 4-element set from
 // 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -6563,18 +6572,18 @@ func mask3FmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, ro
 //
 // Instruction: 'VPMADD233D'. Intrinsic: '_mm512_fmadd233_epi32'.
 // Requires KNCNI.
-func Fmadd233Epi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(fmadd233Epi32([64]byte(a), [64]byte(b)))
+func M512Fmadd233Epi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512Fmadd233Epi32([64]byte(a), [64]byte(b)))
 }
 
-func fmadd233Epi32(a [64]byte, b [64]byte) [64]byte
+func m512Fmadd233Epi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskFmadd233Epi32: Multiply packed 32-bit integer elements in each 4-element
-// set of 'a' and by element 1 of the corresponding 4-element set from 'b', add
-// the intermediate result to element 0 of the corresponding 4-element set from
-// 'b', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 
+// M512MaskFmadd233Epi32: Multiply packed 32-bit integer elements in each
+// 4-element set of 'a' and by element 1 of the corresponding 4-element set
+// from 'b', add the intermediate result to element 0 of the corresponding
+// 4-element set from 'b', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -6591,14 +6600,14 @@ func fmadd233Epi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADD233D'. Intrinsic: '_mm512_mask_fmadd233_epi32'.
 // Requires KNCNI.
-func MaskFmadd233Epi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskFmadd233Epi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskFmadd233Epi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskFmadd233Epi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskFmadd233Epi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskFmadd233Epi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// Fmadd233Ps: Performs multiplication between single-precision (32-bit)
+// M512Fmadd233Ps: Performs multiplication between single-precision (32-bit)
 // floating-point elements in 'a' and 'b' and adds the result to the elements
 // in 'b', storing the results in 'dst'. 
 //
@@ -6610,17 +6619,17 @@ func maskFmadd233Epi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VFMADD233PS'. Intrinsic: '_mm512_fmadd233_ps'.
 // Requires KNCNI.
-func Fmadd233Ps(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(fmadd233Ps([16]float32(a), [16]float32(b)))
+func M512Fmadd233Ps(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512Fmadd233Ps([16]float32(a), [16]float32(b)))
 }
 
-func fmadd233Ps(a [16]float32, b [16]float32) [16]float32
+func m512Fmadd233Ps(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskFmadd233Ps: Performs multiplication between single-precision (32-bit)
-// floating-point elements in 'a' and 'b' and adds the result to the elements
-// in 'b', storing the results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskFmadd233Ps: Performs multiplication between single-precision
+// (32-bit) floating-point elements in 'a' and 'b' and adds the result to the
+// elements in 'b', storing the results in 'dst' using writemask 'k' (elements
+// are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -6634,17 +6643,18 @@ func fmadd233Ps(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VFMADD233PS'. Intrinsic: '_mm512_mask_fmadd233_ps'.
 // Requires KNCNI.
-func MaskFmadd233Ps(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskFmadd233Ps([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskFmadd233Ps(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskFmadd233Ps([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskFmadd233Ps(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskFmadd233Ps(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// Fmadd233RoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in each 4-element set of 'a' and by element 1 of the corresponding
-// 4-element set from 'b', add the intermediate result to element 0 of the
-// corresponding 4-element set from 'b', and store the results in 'dst'.
+// M512Fmadd233RoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in each 4-element set of 'a' and by element 1 of the
+// corresponding 4-element set from 'b', add the intermediate result to element
+// 0 of the corresponding 4-element set from 'b', and store the results in
+// 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6664,14 +6674,14 @@ func maskFmadd233Ps(src [16]float32, k uint16, a [16]float32, b [16]float32) [16
 //
 // Instruction: 'VFMADD233PS'. Intrinsic: '_mm512_fmadd233_round_ps'.
 // Requires KNCNI.
-func Fmadd233RoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(fmadd233RoundPs([16]float32(a), [16]float32(b), rounding))
+func M512Fmadd233RoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512Fmadd233RoundPs([16]float32(a), [16]float32(b), rounding))
 }
 
-func fmadd233RoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
+func m512Fmadd233RoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// MaskFmadd233RoundPs: Multiply packed single-precision (32-bit)
+// M512MaskFmadd233RoundPs: Multiply packed single-precision (32-bit)
 // floating-point elements in each 4-element set of 'a' and by element 1 of the
 // corresponding 4-element set from 'b', add the intermediate result to element
 // 0 of the corresponding 4-element set from 'b', and store the results in
@@ -6700,16 +6710,16 @@ func fmadd233RoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VFMADD233PS'. Intrinsic: '_mm512_mask_fmadd233_round_ps'.
 // Requires KNCNI.
-func MaskFmadd233RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskFmadd233RoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
+func M512MaskFmadd233RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskFmadd233RoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
-func maskFmadd233RoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
+func m512MaskFmadd233RoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// FmsubPd: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the intermediate
-// result, and store the results in 'dst'. 
+// M512FmsubPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the
+// intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -6719,14 +6729,14 @@ func maskFmadd233RoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_fmsub_pd'.
 // Requires KNCNI.
-func FmsubPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(fmsubPd([8]float64(a), [8]float64(b), [8]float64(c)))
+func M512FmsubPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512FmsubPd([8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
-func fmsubPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
+func m512FmsubPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 
 
-// MaskFmsubPd: Multiply packed double-precision (64-bit) floating-point
+// M512MaskFmsubPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set). 
@@ -6743,14 +6753,14 @@ func fmsubPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_mask_fmsub_pd'.
 // Requires KNCNI.
-func MaskFmsubPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(maskFmsubPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
+func M512MaskFmsubPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskFmsubPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
 }
 
-func maskFmsubPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
+func m512MaskFmsubPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 
 
-// Mask3FmsubPd: Multiply packed double-precision (64-bit) floating-point
+// M512Mask3FmsubPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set). 
@@ -6767,16 +6777,16 @@ func maskFmsubPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_mask3_fmsub_pd'.
 // Requires KNCNI.
-func Mask3FmsubPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
-	return x86.M512d(mask3FmsubPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
+func M512Mask3FmsubPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
+	return x86.M512d(m512Mask3FmsubPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
 }
 
-func mask3FmsubPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
+func m512Mask3FmsubPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 
 
-// FmsubPs: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the intermediate
-// result, and store the results in 'dst'. 
+// M512FmsubPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the
+// intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -6786,14 +6796,14 @@ func mask3FmsubPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_fmsub_ps'.
 // Requires KNCNI.
-func FmsubPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(fmsubPs([16]float32(a), [16]float32(b), [16]float32(c)))
+func M512FmsubPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512FmsubPs([16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
-func fmsubPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
+func m512FmsubPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 
 
-// MaskFmsubPs: Multiply packed single-precision (32-bit) floating-point
+// M512MaskFmsubPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set). 
@@ -6810,14 +6820,14 @@ func fmsubPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_mask_fmsub_ps'.
 // Requires KNCNI.
-func MaskFmsubPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(maskFmsubPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
+func M512MaskFmsubPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512MaskFmsubPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
 }
 
-func maskFmsubPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
+func m512MaskFmsubPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
 
 
-// Mask3FmsubPs: Multiply packed single-precision (32-bit) floating-point
+// M512Mask3FmsubPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set). 
@@ -6834,14 +6844,14 @@ func maskFmsubPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]floa
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_mask3_fmsub_ps'.
 // Requires KNCNI.
-func Mask3FmsubPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
-	return x86.M512(mask3FmsubPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
+func M512Mask3FmsubPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
+	return x86.M512(m512Mask3FmsubPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
 }
 
-func mask3FmsubPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
+func m512Mask3FmsubPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
 
 
-// FmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
+// M512FmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the
 // intermediate result, and store the results in 'dst'. 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -6860,16 +6870,16 @@ func mask3FmsubPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]flo
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_fmsub_round_pd'.
 // Requires KNCNI.
-func FmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(fmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
+func M512FmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512FmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
-func fmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512FmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// MaskFmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the
-// intermediate result, and store the results in 'dst' using writemask 'k'
+// M512MaskFmsubRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set).
 // Rounding is done according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6890,16 +6900,16 @@ func fmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]flo
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_mask_fmsub_round_pd'.
 // Requires KNCNI.
-func MaskFmsubRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskFmsubRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
+func M512MaskFmsubRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskFmsubRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
 }
 
-func maskFmsubRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512MaskFmsubRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// Mask3FmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the
-// intermediate result, and store the results in 'dst' using writemask 'k'
+// M512Mask3FmsubRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set).
 // Rounding is done according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6920,14 +6930,14 @@ func maskFmsubRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, roundin
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_mask3_fmsub_round_pd'.
 // Requires KNCNI.
-func Mask3FmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
-	return x86.M512d(mask3FmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
+func M512Mask3FmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
+	return x86.M512d(m512Mask3FmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
 }
 
-func mask3FmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
+func m512Mask3FmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
 
 
-// FmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
+// M512FmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the
 // intermediate result, and store the results in 'dst'. 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -6946,16 +6956,16 @@ func mask3FmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, roundi
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_fmsub_round_ps'.
 // Requires KNCNI.
-func FmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(fmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
+func M512FmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512FmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
-func fmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512FmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// MaskFmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the
-// intermediate result, and store the results in 'dst' using writemask 'k'
+// M512MaskFmsubRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set).
 // Rounding is done according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -6976,16 +6986,16 @@ func fmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_mask_fmsub_round_ps'.
 // Requires KNCNI.
-func MaskFmsubRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskFmsubRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
+func M512MaskFmsubRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskFmsubRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
 }
 
-func maskFmsubRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512MaskFmsubRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// Mask3FmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the
-// intermediate result, and store the results in 'dst' using writemask 'k'
+// M512Mask3FmsubRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set).
 // Rounding is done according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -7006,16 +7016,16 @@ func maskFmsubRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rou
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_mask3_fmsub_round_ps'.
 // Requires KNCNI.
-func Mask3FmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(mask3FmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
+func M512Mask3FmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
+	return x86.M512(m512Mask3FmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
 }
 
-func mask3FmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
+func m512Mask3FmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
 
 
-// FnmaddPd: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', add the negated intermediate result to packed elements in
-// 'c', and store the results in 'dst'. 
+// M512FnmaddPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', add the negated intermediate result to packed
+// elements in 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -7025,14 +7035,14 @@ func mask3FmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, ro
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_fnmadd_pd'.
 // Requires KNCNI.
-func FnmaddPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(fnmaddPd([8]float64(a), [8]float64(b), [8]float64(c)))
+func M512FnmaddPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512FnmaddPd([8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
-func fnmaddPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
+func m512FnmaddPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 
 
-// MaskFnmaddPd: Multiply packed double-precision (64-bit) floating-point
+// M512MaskFnmaddPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', add the negated intermediate result to packed
 // elements in 'c', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set). 
@@ -7049,14 +7059,14 @@ func fnmaddPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_mask_fnmadd_pd'.
 // Requires KNCNI.
-func MaskFnmaddPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(maskFnmaddPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
+func M512MaskFnmaddPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskFnmaddPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
 }
 
-func maskFnmaddPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
+func m512MaskFnmaddPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 
 
-// Mask3FnmaddPd: Multiply packed double-precision (64-bit) floating-point
+// M512Mask3FnmaddPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', add the negated intermediate result to packed
 // elements in 'c', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set). 
@@ -7073,16 +7083,16 @@ func maskFnmaddPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_mask3_fnmadd_pd'.
 // Requires KNCNI.
-func Mask3FnmaddPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
-	return x86.M512d(mask3FnmaddPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
+func M512Mask3FnmaddPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
+	return x86.M512d(m512Mask3FnmaddPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
 }
 
-func mask3FnmaddPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
+func m512Mask3FnmaddPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 
 
-// FnmaddPs: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', add the negated intermediate result to packed elements in
-// 'c', and store the results in 'dst'. 
+// M512FnmaddPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', add the negated intermediate result to packed
+// elements in 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -7092,14 +7102,14 @@ func mask3FnmaddPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_fnmadd_ps'.
 // Requires KNCNI.
-func FnmaddPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(fnmaddPs([16]float32(a), [16]float32(b), [16]float32(c)))
+func M512FnmaddPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512FnmaddPs([16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
-func fnmaddPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
+func m512FnmaddPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 
 
-// MaskFnmaddPs: Multiply packed single-precision (32-bit) floating-point
+// M512MaskFnmaddPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', add the negated intermediate result to packed
 // elements in 'c', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set). 
@@ -7116,14 +7126,14 @@ func fnmaddPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_mask_fnmadd_ps'.
 // Requires KNCNI.
-func MaskFnmaddPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(maskFnmaddPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
+func M512MaskFnmaddPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512MaskFnmaddPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
 }
 
-func maskFnmaddPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
+func m512MaskFnmaddPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
 
 
-// Mask3FnmaddPs: Multiply packed single-precision (32-bit) floating-point
+// M512Mask3FnmaddPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', add the negated intermediate result to packed
 // elements in 'c', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set). 
@@ -7140,14 +7150,14 @@ func maskFnmaddPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]flo
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_mask3_fnmadd_ps'.
 // Requires KNCNI.
-func Mask3FnmaddPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
-	return x86.M512(mask3FnmaddPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
+func M512Mask3FnmaddPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
+	return x86.M512(m512Mask3FnmaddPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
 }
 
-func mask3FnmaddPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
+func m512Mask3FnmaddPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
 
 
-// FnmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
+// M512FnmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', add the negated intermediate result to packed
 // elements in 'c', and store the results in 'dst'.
 // 	 Rounding is done according to the 'rounding' parameter, which can be one
@@ -7166,18 +7176,19 @@ func mask3FnmaddPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]fl
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_fnmadd_round_pd'.
 // Requires KNCNI.
-func FnmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(fnmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
+func M512FnmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512FnmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
-func fnmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512FnmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// MaskFnmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', add the negated intermediate result to packed
-// elements in 'c', and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'a' when the corresponding mask bit is not set).
-// Rounding is done according to the 'rounding' parameter, which can be one of:
+// M512MaskFnmaddRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', add the negated intermediate result
+// to packed elements in 'c', and store the results in 'dst' using writemask
+// 'k' (elements are copied from 'a' when the corresponding mask bit is not
+// set). Rounding is done according to the 'rounding' parameter, which can be
+// one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -7196,18 +7207,19 @@ func fnmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]fl
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_mask_fnmadd_round_pd'.
 // Requires KNCNI.
-func MaskFnmaddRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskFnmaddRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
+func M512MaskFnmaddRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskFnmaddRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
 }
 
-func maskFnmaddRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512MaskFnmaddRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// Mask3FnmaddRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', add the negated intermediate result to packed
-// elements in 'c', and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'c' when the corresponding mask bit is not set).
-// Rounding is done according to the 'rounding' parameter, which can be one of:
+// M512Mask3FnmaddRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', add the negated intermediate result
+// to packed elements in 'c', and store the results in 'dst' using writemask
+// 'k' (elements are copied from 'c' when the corresponding mask bit is not
+// set).  Rounding is done according to the 'rounding' parameter, which can be
+// one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -7226,14 +7238,14 @@ func maskFnmaddRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, roundi
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_mask3_fnmadd_round_pd'.
 // Requires KNCNI.
-func Mask3FnmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
-	return x86.M512d(mask3FnmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
+func M512Mask3FnmaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
+	return x86.M512d(m512Mask3FnmaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
 }
 
-func mask3FnmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
+func m512Mask3FnmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
 
 
-// FnmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
+// M512FnmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', add the negated intermediate result to packed
 // elements in 'c', and store the results in 'dst'.  
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -7252,18 +7264,19 @@ func mask3FnmaddRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, round
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_fnmadd_round_ps'.
 // Requires KNCNI.
-func FnmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(fnmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
+func M512FnmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512FnmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
-func fnmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512FnmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// MaskFnmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', add the negated intermediate result to packed
-// elements in 'c', and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'a' when the corresponding mask bit is not set).
-// Rounding is done according to the 'rounding' parameter, which can be one of:
+// M512MaskFnmaddRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', add the negated intermediate result
+// to packed elements in 'c', and store the results in 'dst' using writemask
+// 'k' (elements are copied from 'a' when the corresponding mask bit is not
+// set). Rounding is done according to the 'rounding' parameter, which can be
+// one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -7282,18 +7295,19 @@ func fnmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [1
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_mask_fnmadd_round_ps'.
 // Requires KNCNI.
-func MaskFnmaddRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskFnmaddRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
+func M512MaskFnmaddRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskFnmaddRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
 }
 
-func maskFnmaddRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512MaskFnmaddRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// Mask3FnmaddRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', add the negated intermediate result to packed
-// elements in 'c', and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'c' when the corresponding mask bit is not set).
-// Rounding is done according to the 'rounding' parameter, which can be one of:
+// M512Mask3FnmaddRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', add the negated intermediate result
+// to packed elements in 'c', and store the results in 'dst' using writemask
+// 'k' (elements are copied from 'c' when the corresponding mask bit is not
+// set).  Rounding is done according to the 'rounding' parameter, which can be
+// one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -7312,15 +7326,15 @@ func maskFnmaddRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, ro
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_mask3_fnmadd_round_ps'.
 // Requires KNCNI.
-func Mask3FnmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(mask3FnmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
+func M512Mask3FnmaddRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
+	return x86.M512(m512Mask3FnmaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
 }
 
-func mask3FnmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
+func m512Mask3FnmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
 
 
-// FnmsubPd: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the negated
+// M512FnmsubPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -7331,14 +7345,14 @@ func mask3FnmaddRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, r
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_fnmsub_pd'.
 // Requires KNCNI.
-func FnmsubPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(fnmsubPd([8]float64(a), [8]float64(b), [8]float64(c)))
+func M512FnmsubPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512FnmsubPd([8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
-func fnmsubPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
+func m512FnmsubPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 
 
-// MaskFnmsubPd: Multiply packed double-precision (64-bit) floating-point
+// M512MaskFnmsubPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set). 
@@ -7355,14 +7369,14 @@ func fnmsubPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_mask_fnmsub_pd'.
 // Requires KNCNI.
-func MaskFnmsubPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
-	return x86.M512d(maskFnmsubPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
+func M512MaskFnmsubPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskFnmsubPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
 }
 
-func maskFnmsubPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
+func m512MaskFnmsubPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 
 
-// Mask3FnmsubPd: Multiply packed double-precision (64-bit) floating-point
+// M512Mask3FnmsubPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set). 
@@ -7379,15 +7393,15 @@ func maskFnmsubPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_mask3_fnmsub_pd'.
 // Requires KNCNI.
-func Mask3FnmsubPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
-	return x86.M512d(mask3FnmsubPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
+func M512Mask3FnmsubPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
+	return x86.M512d(m512Mask3FnmsubPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
 }
 
-func mask3FnmsubPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
+func m512Mask3FnmsubPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 
 
-// FnmsubPs: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the negated
+// M512FnmsubPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -7398,14 +7412,14 @@ func mask3FnmsubPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]float64
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_fnmsub_ps'.
 // Requires KNCNI.
-func FnmsubPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(fnmsubPs([16]float32(a), [16]float32(b), [16]float32(c)))
+func M512FnmsubPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512FnmsubPs([16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
-func fnmsubPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
+func m512FnmsubPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 
 
-// MaskFnmsubPs: Multiply packed single-precision (32-bit) floating-point
+// M512MaskFnmsubPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'a' when the corresponding mask bit is not set). 
@@ -7422,14 +7436,14 @@ func fnmsubPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_mask_fnmsub_ps'.
 // Requires KNCNI.
-func MaskFnmsubPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
-	return x86.M512(maskFnmsubPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
+func M512MaskFnmsubPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
+	return x86.M512(m512MaskFnmsubPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
 }
 
-func maskFnmsubPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
+func m512MaskFnmsubPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]float32
 
 
-// Mask3FnmsubPs: Multiply packed single-precision (32-bit) floating-point
+// M512Mask3FnmsubPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'c' when the corresponding mask bit is not set). 
@@ -7446,14 +7460,14 @@ func maskFnmsubPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [16]flo
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_mask3_fnmsub_ps'.
 // Requires KNCNI.
-func Mask3FnmsubPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
-	return x86.M512(mask3FnmsubPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
+func M512Mask3FnmsubPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
+	return x86.M512(m512Mask3FnmsubPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
 }
 
-func mask3FnmsubPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
+func m512Mask3FnmsubPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]float32
 
 
-// FnmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
+// M512FnmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst'.  
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -7472,17 +7486,18 @@ func mask3FnmsubPs(a [16]float32, b [16]float32, c [16]float32, k uint16) [16]fl
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_fnmsub_round_pd'.
 // Requires KNCNI.
-func FnmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(fnmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
+func M512FnmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512FnmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
-func fnmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512FnmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// MaskFnmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
-// intermediate result, and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'a' when the corresponding mask bit is not set).
+// M512MaskFnmsubRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the negated intermediate result, and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'a' when the corresponding mask bit
+// is not set).
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -7503,18 +7518,19 @@ func fnmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int) [8]fl
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_mask_fnmsub_round_pd'.
 // Requires KNCNI.
-func MaskFnmsubRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskFnmsubRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
+func M512MaskFnmsubRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskFnmsubRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
 }
 
-func maskFnmsubRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
+func m512MaskFnmsubRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, rounding int) [8]float64
 
 
-// Mask3FnmsubRoundPd: Multiply packed double-precision (64-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
-// intermediate result, and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'c' when the corresponding mask bit is not set).
-// Rounding is done according to the 'rounding' parameter, which can be one of:
+// M512Mask3FnmsubRoundPd: Multiply packed double-precision (64-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the negated intermediate result, and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'c' when the corresponding mask bit
+// is not set). Rounding is done according to the 'rounding' parameter, which
+// can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -7533,14 +7549,14 @@ func maskFnmsubRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, roundi
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_mask3_fnmsub_round_pd'.
 // Requires KNCNI.
-func Mask3FnmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
-	return x86.M512d(mask3FnmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
+func M512Mask3FnmsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
+	return x86.M512d(m512Mask3FnmsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
 }
 
-func mask3FnmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
+func m512Mask3FnmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, rounding int) [8]float64
 
 
-// FnmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
+// M512FnmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst'. 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -7559,17 +7575,18 @@ func mask3FnmsubRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8, round
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_fnmsub_round_ps'.
 // Requires KNCNI.
-func FnmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(fnmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
+func M512FnmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512FnmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
-func fnmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512FnmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// MaskFnmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
-// intermediate result, and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'a' when the corresponding mask bit is not set). 
+// M512MaskFnmsubRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the negated intermediate result, and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'a' when the corresponding mask bit
+// is not set). 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -7590,18 +7607,19 @@ func fnmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding int) [1
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_mask_fnmsub_round_ps'.
 // Requires KNCNI.
-func MaskFnmsubRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskFnmsubRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
+func M512MaskFnmsubRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskFnmsubRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
 }
 
-func maskFnmsubRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
+func m512MaskFnmsubRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, rounding int) [16]float32
 
 
-// Mask3FnmsubRoundPs: Multiply packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
-// intermediate result, and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'c' when the corresponding mask bit is not set).
-// Rounding is done according to the 'rounding' parameter, which can be one of:
+// M512Mask3FnmsubRoundPs: Multiply packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', subtract packed elements in 'c' from
+// the negated intermediate result, and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'c' when the corresponding mask bit
+// is not set).  Rounding is done according to the 'rounding' parameter, which
+// can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -7620,14 +7638,14 @@ func maskFnmsubRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float32, ro
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_mask3_fnmsub_round_ps'.
 // Requires KNCNI.
-func Mask3FnmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
-	return x86.M512(mask3FnmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
+func M512Mask3FnmsubRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
+	return x86.M512(m512Mask3FnmsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
 }
 
-func mask3FnmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
+func m512Mask3FnmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, rounding int) [16]float32
 
 
-// GetexpPd: Convert the exponent of each packed double-precision (64-bit)
+// M512GetexpPd: Convert the exponent of each packed double-precision (64-bit)
 // floating-point element in 'a' to a double-precision (64-bit) floating-point
 // number representing the integer exponent, and store the results in 'dst'.
 // This intrinsic essentially calculates 'floor(log2(x))' for each element. 
@@ -7640,19 +7658,19 @@ func mask3FnmsubRoundPs(a [16]float32, b [16]float32, c [16]float32, k uint16, r
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm512_getexp_pd'.
 // Requires KNCNI.
-func GetexpPd(a x86.M512d) x86.M512d {
-	return x86.M512d(getexpPd([8]float64(a)))
+func M512GetexpPd(a x86.M512d) x86.M512d {
+	return x86.M512d(m512GetexpPd([8]float64(a)))
 }
 
-func getexpPd(a [8]float64) [8]float64
+func m512GetexpPd(a [8]float64) [8]float64
 
 
-// MaskGetexpPd: Convert the exponent of each packed double-precision (64-bit)
-// floating-point element in 'a' to a double-precision (64-bit) floating-point
-// number representing the integer exponent, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). This intrinsic essentially calculates 'floor(log2(x))'
-// for each element. 
+// M512MaskGetexpPd: Convert the exponent of each packed double-precision
+// (64-bit) floating-point element in 'a' to a double-precision (64-bit)
+// floating-point number representing the integer exponent, and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). This intrinsic essentially
+// calculates 'floor(log2(x))' for each element. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -7666,14 +7684,14 @@ func getexpPd(a [8]float64) [8]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm512_mask_getexp_pd'.
 // Requires KNCNI.
-func MaskGetexpPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(maskGetexpPd([8]float64(src), uint8(k), [8]float64(a)))
+func M512MaskGetexpPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskGetexpPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
-func maskGetexpPd(src [8]float64, k uint8, a [8]float64) [8]float64
+func m512MaskGetexpPd(src [8]float64, k uint8, a [8]float64) [8]float64
 
 
-// GetexpPs: Convert the exponent of each packed single-precision (32-bit)
+// M512GetexpPs: Convert the exponent of each packed single-precision (32-bit)
 // floating-point element in 'a' to a single-precision (32-bit) floating-point
 // number representing the integer exponent, and store the results in 'dst'.
 // This intrinsic essentially calculates 'floor(log2(x))' for each element. 
@@ -7686,19 +7704,19 @@ func maskGetexpPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm512_getexp_ps'.
 // Requires KNCNI.
-func GetexpPs(a x86.M512) x86.M512 {
-	return x86.M512(getexpPs([16]float32(a)))
+func M512GetexpPs(a x86.M512) x86.M512 {
+	return x86.M512(m512GetexpPs([16]float32(a)))
 }
 
-func getexpPs(a [16]float32) [16]float32
+func m512GetexpPs(a [16]float32) [16]float32
 
 
-// MaskGetexpPs: Convert the exponent of each packed single-precision (32-bit)
-// floating-point element in 'a' to a single-precision (32-bit) floating-point
-// number representing the integer exponent, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). This intrinsic essentially calculates 'floor(log2(x))'
-// for each element. 
+// M512MaskGetexpPs: Convert the exponent of each packed single-precision
+// (32-bit) floating-point element in 'a' to a single-precision (32-bit)
+// floating-point number representing the integer exponent, and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). This intrinsic essentially
+// calculates 'floor(log2(x))' for each element. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -7712,17 +7730,18 @@ func getexpPs(a [16]float32) [16]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm512_mask_getexp_ps'.
 // Requires KNCNI.
-func MaskGetexpPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskGetexpPs([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskGetexpPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskGetexpPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskGetexpPs(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskGetexpPs(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// GetexpRoundPd: Convert the exponent of each packed double-precision (64-bit)
-// floating-point element in 'a' to a double-precision (64-bit) floating-point
-// number representing the integer exponent, and store the results in 'dst'.
-// This intrinsic essentially calculates 'floor(log2(x))' for each element.
+// M512GetexpRoundPd: Convert the exponent of each packed double-precision
+// (64-bit) floating-point element in 'a' to a double-precision (64-bit)
+// floating-point number representing the integer exponent, and store the
+// results in 'dst'. This intrinsic essentially calculates 'floor(log2(x))' for
+// each element.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -7739,14 +7758,14 @@ func maskGetexpPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm512_getexp_round_pd'.
 // Requires KNCNI.
-func GetexpRoundPd(a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(getexpRoundPd([8]float64(a), rounding))
+func M512GetexpRoundPd(a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512GetexpRoundPd([8]float64(a), rounding))
 }
 
-func getexpRoundPd(a [8]float64, rounding int) [8]float64
+func m512GetexpRoundPd(a [8]float64, rounding int) [8]float64
 
 
-// MaskGetexpRoundPd: Convert the exponent of each packed double-precision
+// M512MaskGetexpRoundPd: Convert the exponent of each packed double-precision
 // (64-bit) floating-point element in 'a' to a double-precision (64-bit)
 // floating-point number representing the integer exponent, and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
@@ -7772,17 +7791,18 @@ func getexpRoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm512_mask_getexp_round_pd'.
 // Requires KNCNI.
-func MaskGetexpRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskGetexpRoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
+func M512MaskGetexpRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskGetexpRoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
 }
 
-func maskGetexpRoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
+func m512MaskGetexpRoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
 
 
-// GetexpRoundPs: Convert the exponent of each packed single-precision (32-bit)
-// floating-point element in 'a' to a single-precision (32-bit) floating-point
-// number representing the integer exponent, and store the results in 'dst'.
-// This intrinsic essentially calculates 'floor(log2(x))' for each element.
+// M512GetexpRoundPs: Convert the exponent of each packed single-precision
+// (32-bit) floating-point element in 'a' to a single-precision (32-bit)
+// floating-point number representing the integer exponent, and store the
+// results in 'dst'. This intrinsic essentially calculates 'floor(log2(x))' for
+// each element.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -7799,14 +7819,14 @@ func maskGetexpRoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]f
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm512_getexp_round_ps'.
 // Requires KNCNI.
-func GetexpRoundPs(a x86.M512, rounding int) x86.M512 {
-	return x86.M512(getexpRoundPs([16]float32(a), rounding))
+func M512GetexpRoundPs(a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512GetexpRoundPs([16]float32(a), rounding))
 }
 
-func getexpRoundPs(a [16]float32, rounding int) [16]float32
+func m512GetexpRoundPs(a [16]float32, rounding int) [16]float32
 
 
-// MaskGetexpRoundPs: Convert the exponent of each packed single-precision
+// M512MaskGetexpRoundPs: Convert the exponent of each packed single-precision
 // (32-bit) floating-point element in 'a' to a single-precision (32-bit)
 // floating-point number representing the integer exponent, and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
@@ -7832,14 +7852,14 @@ func getexpRoundPs(a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm512_mask_getexp_round_ps'.
 // Requires KNCNI.
-func MaskGetexpRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskGetexpRoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+func M512MaskGetexpRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskGetexpRoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskGetexpRoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
+func m512MaskGetexpRoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 
 
-// GetmantPd: Normalize the mantissas of packed double-precision (64-bit)
+// M512GetmantPd: Normalize the mantissas of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. This
 // intrinsic essentially calculates '±(2^k)*|x.significand|', where 'k'
 // depends on the interval range defined by 'interv' and the sign depends on
@@ -7862,17 +7882,17 @@ func maskGetexpRoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm512_getmant_pd'.
 // Requires KNCNI.
-func GetmantPd(a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512d {
-	return x86.M512d(getmantPd([8]float64(a), interv, sc))
+func M512GetmantPd(a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512d {
+	return x86.M512d(m512GetmantPd([8]float64(a), interv, sc))
 }
 
-func getmantPd(a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [8]float64
+func m512GetmantPd(a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [8]float64
 
 
-// MaskGetmantPd: Normalize the mantissas of packed double-precision (64-bit)
-// floating-point elements in 'a', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). This intrinsic essentially calculates
+// M512MaskGetmantPd: Normalize the mantissas of packed double-precision
+// (64-bit) floating-point elements in 'a', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). This intrinsic essentially calculates
 // '±(2^k)*|x.significand|', where 'k' depends on the interval range defined
 // by 'interv' and the sign depends on 'sc' and the source sign.
 // 	The mantissa is normalized to the interval specified by 'interv', which can
@@ -7897,14 +7917,14 @@ func getmantPd(a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm512_mask_getmant_pd'.
 // Requires KNCNI.
-func MaskGetmantPd(src x86.M512d, k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512d {
-	return x86.M512d(maskGetmantPd([8]float64(src), uint8(k), [8]float64(a), interv, sc))
+func M512MaskGetmantPd(src x86.M512d, k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512d {
+	return x86.M512d(m512MaskGetmantPd([8]float64(src), uint8(k), [8]float64(a), interv, sc))
 }
 
-func maskGetmantPd(src [8]float64, k uint8, a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [8]float64
+func m512MaskGetmantPd(src [8]float64, k uint8, a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [8]float64
 
 
-// GetmantPs: Normalize the mantissas of packed single-precision (32-bit)
+// M512GetmantPs: Normalize the mantissas of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. This
 // intrinsic essentially calculates '±(2^k)*|x.significand|', where 'k'
 // depends on the interval range defined by 'interv' and the sign depends on
@@ -7927,17 +7947,17 @@ func maskGetmantPd(src [8]float64, k uint8, a [8]float64, interv MMMANTISSANORME
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm512_getmant_ps'.
 // Requires KNCNI.
-func GetmantPs(a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512 {
-	return x86.M512(getmantPs([16]float32(a), interv, sc))
+func M512GetmantPs(a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512 {
+	return x86.M512(m512GetmantPs([16]float32(a), interv, sc))
 }
 
-func getmantPs(a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [16]float32
+func m512GetmantPs(a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [16]float32
 
 
-// MaskGetmantPs: Normalize the mantissas of packed single-precision (32-bit)
-// floating-point elements in 'a', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). This intrinsic essentially calculates
+// M512MaskGetmantPs: Normalize the mantissas of packed single-precision
+// (32-bit) floating-point elements in 'a', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). This intrinsic essentially calculates
 // '±(2^k)*|x.significand|', where 'k' depends on the interval range defined
 // by 'interv' and the sign depends on 'sc' and the source sign.
 // 	The mantissa is normalized to the interval specified by 'interv', which can
@@ -7962,16 +7982,16 @@ func getmantPs(a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) 
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm512_mask_getmant_ps'.
 // Requires KNCNI.
-func MaskGetmantPs(src x86.M512, k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512 {
-	return x86.M512(maskGetmantPs([16]float32(src), uint16(k), [16]float32(a), interv, sc))
+func M512MaskGetmantPs(src x86.M512, k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512 {
+	return x86.M512(m512MaskGetmantPs([16]float32(src), uint16(k), [16]float32(a), interv, sc))
 }
 
-func maskGetmantPs(src [16]float32, k uint16, a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [16]float32
+func m512MaskGetmantPs(src [16]float32, k uint16, a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [16]float32
 
 
-// GetmantRoundPd: Normalize the mantissas of packed double-precision (64-bit)
-// floating-point elements in 'a', and store the results in 'dst'. This
-// intrinsic essentially calculates '±(2^k)*|x.significand|', where 'k'
+// M512GetmantRoundPd: Normalize the mantissas of packed double-precision
+// (64-bit) floating-point elements in 'a', and store the results in 'dst'.
+// This intrinsic essentially calculates '±(2^k)*|x.significand|', where 'k'
 // depends on the interval range defined by 'interv' and the sign depends on
 // 'sc' and the source sign.
 // 	The mantissa is normalized to the interval specified by 'interv', which can
@@ -7997,14 +8017,14 @@ func maskGetmantPs(src [16]float32, k uint16, a [16]float32, interv MMMANTISSANO
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm512_getmant_round_pd'.
 // Requires KNCNI.
-func GetmantRoundPd(a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512d {
-	return x86.M512d(getmantRoundPd([8]float64(a), interv, sc, rounding))
+func M512GetmantRoundPd(a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512d {
+	return x86.M512d(m512GetmantRoundPd([8]float64(a), interv, sc, rounding))
 }
 
-func getmantRoundPd(a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [8]float64
+func m512GetmantRoundPd(a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [8]float64
 
 
-// MaskGetmantRoundPd: Normalize the mantissas of packed double-precision
+// M512MaskGetmantRoundPd: Normalize the mantissas of packed double-precision
 // (64-bit) floating-point elements in 'a', and store the results in 'dst'
 // using writemask 'k' (elements are copied from 'src' when the corresponding
 // mask bit is not set). This intrinsic essentially calculates
@@ -8037,16 +8057,16 @@ func getmantRoundPd(a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNEN
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm512_mask_getmant_round_pd'.
 // Requires KNCNI.
-func MaskGetmantRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512d {
-	return x86.M512d(maskGetmantRoundPd([8]float64(src), uint8(k), [8]float64(a), interv, sc, rounding))
+func M512MaskGetmantRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512d {
+	return x86.M512d(m512MaskGetmantRoundPd([8]float64(src), uint8(k), [8]float64(a), interv, sc, rounding))
 }
 
-func maskGetmantRoundPd(src [8]float64, k uint8, a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [8]float64
+func m512MaskGetmantRoundPd(src [8]float64, k uint8, a [8]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [8]float64
 
 
-// GetmantRoundPs: Normalize the mantissas of packed single-precision (32-bit)
-// floating-point elements in 'a', and store the results in 'dst'. This
-// intrinsic essentially calculates '±(2^k)*|x.significand|', where 'k'
+// M512GetmantRoundPs: Normalize the mantissas of packed single-precision
+// (32-bit) floating-point elements in 'a', and store the results in 'dst'.
+// This intrinsic essentially calculates '±(2^k)*|x.significand|', where 'k'
 // depends on the interval range defined by 'interv' and the sign depends on
 // 'sc' and the source sign.
 // 	The mantissa is normalized to the interval specified by 'interv', which can
@@ -8072,14 +8092,14 @@ func maskGetmantRoundPd(src [8]float64, k uint8, a [8]float64, interv MMMANTISSA
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm512_getmant_round_ps'.
 // Requires KNCNI.
-func GetmantRoundPs(a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512 {
-	return x86.M512(getmantRoundPs([16]float32(a), interv, sc, rounding))
+func M512GetmantRoundPs(a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512 {
+	return x86.M512(m512GetmantRoundPs([16]float32(a), interv, sc, rounding))
 }
 
-func getmantRoundPs(a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [16]float32
+func m512GetmantRoundPs(a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [16]float32
 
 
-// MaskGetmantRoundPs: Normalize the mantissas of packed single-precision
+// M512MaskGetmantRoundPs: Normalize the mantissas of packed single-precision
 // (32-bit) floating-point elements in 'a', and store the results in 'dst'
 // using writemask 'k' (elements are copied from 'src' when the corresponding
 // mask bit is not set). This intrinsic essentially calculates
@@ -8112,14 +8132,14 @@ func getmantRoundPs(a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNE
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm512_mask_getmant_round_ps'.
 // Requires KNCNI.
-func MaskGetmantRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512 {
-	return x86.M512(maskGetmantRoundPs([16]float32(src), uint16(k), [16]float32(a), interv, sc, rounding))
+func M512MaskGetmantRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512 {
+	return x86.M512(m512MaskGetmantRoundPs([16]float32(src), uint16(k), [16]float32(a), interv, sc, rounding))
 }
 
-func maskGetmantRoundPs(src [16]float32, k uint16, a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [16]float32
+func m512MaskGetmantRoundPs(src [16]float32, k uint16, a [16]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) [16]float32
 
 
-// GmaxPd: Determines the maximum of each pair of corresponding elements in
+// M512GmaxPd: Determines the maximum of each pair of corresponding elements in
 // packed double-precision (64-bit) floating-point elements in 'a' and 'b',
 // storing the results in 'dst'. 
 //
@@ -8131,17 +8151,17 @@ func maskGetmantRoundPs(src [16]float32, k uint16, a [16]float32, interv MMMANTI
 //
 // Instruction: 'VGMAXPD'. Intrinsic: '_mm512_gmax_pd'.
 // Requires KNCNI.
-func GmaxPd(a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(gmaxPd([8]float64(a), [8]float64(b)))
+func M512GmaxPd(a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512GmaxPd([8]float64(a), [8]float64(b)))
 }
 
-func gmaxPd(a [8]float64, b [8]float64) [8]float64
+func m512GmaxPd(a [8]float64, b [8]float64) [8]float64
 
 
-// MaskGmaxPd: Determines the maximum of each pair of corresponding elements of
-// packed double-precision (64-bit) floating-point elements in 'a' and 'b',
-// storing the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskGmaxPd: Determines the maximum of each pair of corresponding
+// elements of packed double-precision (64-bit) floating-point elements in 'a'
+// and 'b', storing the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -8155,14 +8175,14 @@ func gmaxPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VGMAXPD'. Intrinsic: '_mm512_mask_gmax_pd'.
 // Requires KNCNI.
-func MaskGmaxPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(maskGmaxPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
+func M512MaskGmaxPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskGmaxPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
-func maskGmaxPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
+func m512MaskGmaxPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 
 
-// GmaxPs: Determines the maximum of each pair of corresponding elements in
+// M512GmaxPs: Determines the maximum of each pair of corresponding elements in
 // packed single-precision (32-bit) floating-point elements in 'a' and 'b',
 // storing the results in 'dst'. 
 //
@@ -8174,17 +8194,17 @@ func maskGmaxPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VGMAXPS'. Intrinsic: '_mm512_gmax_ps'.
 // Requires KNCNI.
-func GmaxPs(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(gmaxPs([16]float32(a), [16]float32(b)))
+func M512GmaxPs(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512GmaxPs([16]float32(a), [16]float32(b)))
 }
 
-func gmaxPs(a [16]float32, b [16]float32) [16]float32
+func m512GmaxPs(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskGmaxPs: Determines the maximum of each pair of corresponding elements of
-// packed single-precision (32-bit) floating-point elements in 'a' and 'b',
-// storing the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskGmaxPs: Determines the maximum of each pair of corresponding
+// elements of packed single-precision (32-bit) floating-point elements in 'a'
+// and 'b', storing the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -8198,15 +8218,15 @@ func gmaxPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VGMAXPS'. Intrinsic: '_mm512_mask_gmax_ps'.
 // Requires KNCNI.
-func MaskGmaxPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskGmaxPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskGmaxPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskGmaxPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskGmaxPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskGmaxPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// GmaxabsPs: Determines the maximum of the absolute elements of each pair of
-// corresponding elements of packed single-precision (32-bit) floating-point
+// M512GmaxabsPs: Determines the maximum of the absolute elements of each pair
+// of corresponding elements of packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', storing the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -8217,17 +8237,18 @@ func maskGmaxPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]flo
 //
 // Instruction: 'VGMAXABSPS'. Intrinsic: '_mm512_gmaxabs_ps'.
 // Requires KNCNI.
-func GmaxabsPs(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(gmaxabsPs([16]float32(a), [16]float32(b)))
+func M512GmaxabsPs(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512GmaxabsPs([16]float32(a), [16]float32(b)))
 }
 
-func gmaxabsPs(a [16]float32, b [16]float32) [16]float32
+func m512GmaxabsPs(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskGmaxabsPs: Determines the maximum of the absolute elements of each pair
-// of corresponding elements of packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', storing the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskGmaxabsPs: Determines the maximum of the absolute elements of each
+// pair of corresponding elements of packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', storing the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -8241,14 +8262,14 @@ func gmaxabsPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VGMAXABSPS'. Intrinsic: '_mm512_mask_gmaxabs_ps'.
 // Requires KNCNI.
-func MaskGmaxabsPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskGmaxabsPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskGmaxabsPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskGmaxabsPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskGmaxabsPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskGmaxabsPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// GminPd: Determines the minimum of each pair of corresponding elements in
+// M512GminPd: Determines the minimum of each pair of corresponding elements in
 // packed double-precision (64-bit) floating-point elements in 'a' and 'b',
 // storing the results in 'dst'. 
 //
@@ -8260,17 +8281,17 @@ func maskGmaxabsPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]
 //
 // Instruction: 'VGMINPD'. Intrinsic: '_mm512_gmin_pd'.
 // Requires KNCNI.
-func GminPd(a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(gminPd([8]float64(a), [8]float64(b)))
+func M512GminPd(a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512GminPd([8]float64(a), [8]float64(b)))
 }
 
-func gminPd(a [8]float64, b [8]float64) [8]float64
+func m512GminPd(a [8]float64, b [8]float64) [8]float64
 
 
-// MaskGminPd: Determines the maximum of each pair of corresponding elements of
-// packed double-precision (64-bit) floating-point elements in 'a' and 'b',
-// storing the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskGminPd: Determines the maximum of each pair of corresponding
+// elements of packed double-precision (64-bit) floating-point elements in 'a'
+// and 'b', storing the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -8284,14 +8305,14 @@ func gminPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VGMINPD'. Intrinsic: '_mm512_mask_gmin_pd'.
 // Requires KNCNI.
-func MaskGminPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(maskGminPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
+func M512MaskGminPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskGminPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
-func maskGminPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
+func m512MaskGminPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 
 
-// GminPs: Determines the minimum of each pair of corresponding elements in
+// M512GminPs: Determines the minimum of each pair of corresponding elements in
 // packed single-precision (32-bit) floating-point elements in 'a' and 'b',
 // storing the results in 'dst'. 
 //
@@ -8303,17 +8324,17 @@ func maskGminPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VGMINPS'. Intrinsic: '_mm512_gmin_ps'.
 // Requires KNCNI.
-func GminPs(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(gminPs([16]float32(a), [16]float32(b)))
+func M512GminPs(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512GminPs([16]float32(a), [16]float32(b)))
 }
 
-func gminPs(a [16]float32, b [16]float32) [16]float32
+func m512GminPs(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskGminPs: Determines the maximum of each pair of corresponding elements of
-// packed single-precision (32-bit) floating-point elements in 'a' and 'b',
-// storing the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskGminPs: Determines the maximum of each pair of corresponding
+// elements of packed single-precision (32-bit) floating-point elements in 'a'
+// and 'b', storing the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -8327,16 +8348,16 @@ func gminPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VGMINPS'. Intrinsic: '_mm512_mask_gmin_ps'.
 // Requires KNCNI.
-func MaskGminPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskGminPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskGminPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskGminPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskGminPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskGminPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// I32extgatherEpi32: Up-converts 16 memory locations starting at location 'mv'
-// at packed 32-bit integer indices stored in 'index' scaled by 'scale' using
-// 'conv' to 32-bit integer elements and stores them in 'dst'. 
+// M512I32extgatherEpi32: Up-converts 16 memory locations starting at location
+// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'
+// using 'conv' to 32-bit integer elements and stores them in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			addr := MEM[mv + index[j] * scale]
@@ -8362,14 +8383,14 @@ func maskGminPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]flo
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_i32extgather_epi32'.
 // Requires KNCNI.
-func I32extgatherEpi32(index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(i32extgatherEpi32([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I32extgatherEpi32(index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512I32extgatherEpi32([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32extgatherEpi32(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
+func m512I32extgatherEpi32(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
-// MaskI32extgatherEpi32: Up-converts 16 single-precision (32-bit) memory
+// M512MaskI32extgatherEpi32: Up-converts 16 single-precision (32-bit) memory
 // locations starting at location 'mv' at packed 32-bit integer indices stored
 // in 'index' scaled by 'scale' using 'conv' to 32-bit integer elements and
 // stores them in 'dst' using writemask 'k' (elements are copied from 'src'
@@ -8403,17 +8424,17 @@ func i32extgatherEpi32(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_mask_i32extgather_epi32'.
 // Requires KNCNI.
-func MaskI32extgatherEpi32(src x86.M512i, k x86.Mmask16, index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(maskI32extgatherEpi32([64]byte(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI32extgatherEpi32(src x86.M512i, k x86.Mmask16, index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512MaskI32extgatherEpi32([64]byte(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32extgatherEpi32(src [64]byte, k uint16, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
+func m512MaskI32extgatherEpi32(src [64]byte, k uint16, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
-// I32extgatherPs: Up-converts 16 memory locations starting at location 'mv' at
-// packed 32-bit integer indices stored in 'index' scaled by 'scale' using
-// 'conv' to single-precision (32-bit) floating-point elements and stores them
-// in 'dst'. 
+// M512I32extgatherPs: Up-converts 16 memory locations starting at location
+// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'
+// using 'conv' to single-precision (32-bit) floating-point elements and stores
+// them in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			addr := MEM[mv + index[j] * scale]
@@ -8442,14 +8463,14 @@ func maskI32extgatherEpi32(src [64]byte, k uint16, index [64]byte, mv uintptr, c
 //
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_i32extgather_ps'.
 // Requires KNCNI.
-func I32extgatherPs(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(i32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I32extgatherPs(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
+	return x86.M512(m512I32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func m512I32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
-// MaskI32extgatherPs: Up-converts 16 single-precision (32-bit) memory
+// M512MaskI32extgatherPs: Up-converts 16 single-precision (32-bit) memory
 // locations starting at location 'mv' at packed 32-bit integer indices stored
 // in 'index' scaled by 'scale' using 'conv' to single-precision (32-bit)
 // floating-point elements and stores them in 'dst' using writemask 'k'
@@ -8486,17 +8507,17 @@ func i32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, 
 //
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_mask_i32extgather_ps'.
 // Requires KNCNI.
-func MaskI32extgatherPs(src x86.M512, k x86.Mmask16, index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(maskI32extgatherPs([16]float32(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI32extgatherPs(src x86.M512, k x86.Mmask16, index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
+	return x86.M512(m512MaskI32extgatherPs([16]float32(src), uint16(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32extgatherPs(src [16]float32, k uint16, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func m512MaskI32extgatherPs(src [16]float32, k uint16, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
-// I32extscatterEpi32: Down-converts 16 packed 32-bit integer elements in 'v1'
-// using 'conv' and stores them in memory locations starting at location 'mv'
-// at packed 32-bit integer indices stored in 'index' scaled by 'scale'. 'hint'
-// indicates to the processor whether the data is non-temporal. 
+// M512I32extscatterEpi32: Down-converts 16 packed 32-bit integer elements in
+// 'v1' using 'conv' and stores them in memory locations starting at location
+// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'.
+// 'hint' indicates to the processor whether the data is non-temporal. 
 //
 //		FOR j := 0 to 15
 //			addr := MEM[mv + index[j] * scale]
@@ -8521,19 +8542,20 @@ func maskI32extgatherPs(src [16]float32, k uint16, index [64]byte, mv uintptr, c
 //
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_i32extscatter_epi32'.
 // Requires KNCNI.
-func I32extscatterEpi32(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	i32extscatterEpi32(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512I32extscatterEpi32(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
+	m512I32extscatterEpi32(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i32extscatterEpi32(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func m512I32extscatterEpi32(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
-// MaskI32extscatterEpi32: Down-converts 16 packed 32-bit integer elements in
-// 'v1' using 'conv' and stores them in memory locations starting at location
-// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'.
-// Elements are written using writemask 'k' (elements are only written when the
-// corresponding mask bit is set; otherwise, elements are left unchanged in
-// memory). 'hint' indicates to the processor whether the data is non-temporal. 
+// M512MaskI32extscatterEpi32: Down-converts 16 packed 32-bit integer elements
+// in 'v1' using 'conv' and stores them in memory locations starting at
+// location 'mv' at packed 32-bit integer indices stored in 'index' scaled by
+// 'scale'. Elements are written using writemask 'k' (elements are only written
+// when the corresponding mask bit is set; otherwise, elements are left
+// unchanged in memory). 'hint' indicates to the processor whether the data is
+// non-temporal. 
 //
 //		FOR j := 0 to 15
 //			addr := MEM[mv + index[j] * scale]
@@ -8560,14 +8582,14 @@ func i32extscatterEpi32(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONV
 //
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_mask_i32extscatter_epi32'.
 // Requires KNCNI.
-func MaskI32extscatterEpi32(mv uintptr, k x86.Mmask16, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	maskI32extscatterEpi32(uintptr(mv), uint16(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512MaskI32extscatterEpi32(mv uintptr, k x86.Mmask16, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
+	m512MaskI32extscatterEpi32(uintptr(mv), uint16(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI32extscatterEpi32(mv uintptr, k uint16, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func m512MaskI32extscatterEpi32(mv uintptr, k uint16, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
-// I32extscatterPs: Down-converts 16 packed single-precision (32-bit)
+// M512I32extscatterPs: Down-converts 16 packed single-precision (32-bit)
 // floating-point elements in 'v1' and stores them in memory locations starting
 // at location 'mv' at packed 32-bit integer indices stored in 'index' scaled
 // by 'scale' using 'conv'. 
@@ -8599,14 +8621,14 @@ func maskI32extscatterEpi32(mv uintptr, k uint16, index [64]byte, v1 [64]byte, c
 //
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_i32extscatter_ps'.
 // Requires KNCNI.
-func I32extscatterPs(mv uintptr, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int)  {
-	i32extscatterPs(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale)
+func M512I32extscatterPs(mv uintptr, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int)  {
+	m512I32extscatterPs(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale)
 }
 
-func i32extscatterPs(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int) 
+func m512I32extscatterPs(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int) 
 
 
-// MaskI32extscatterPs: Down-converts 16 packed single-precision (32-bit)
+// M512MaskI32extscatterPs: Down-converts 16 packed single-precision (32-bit)
 // floating-point elements in 'v1' according to 'conv' and stores them in
 // memory locations starting at location 'mv' at packed 32-bit integer indices
 // stored in 'index' scaled by 'scale' using writemask 'k' (elements are
@@ -8641,14 +8663,14 @@ func i32extscatterPs(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONV
 //
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_mask_i32extscatter_ps'.
 // Requires KNCNI.
-func MaskI32extscatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	maskI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
+func M512MaskI32extscatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
+	m512MaskI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
 }
 
-func maskI32extscatterPs(mv uintptr, k uint16, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
+func m512MaskI32extscatterPs(mv uintptr, k uint16, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
 
 
-// I32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
+// M512I32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
 // 32-bit elements are loaded from addresses starting at 'base_addr' and offset
 // by each 32-bit element in 'vindex' (each index is scaled by the factor in
 // 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
@@ -8662,19 +8684,19 @@ func maskI32extscatterPs(mv uintptr, k uint16, index [64]byte, v1 [16]float32, c
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_i32gather_epi32'.
 // Requires KNCNI.
-func I32gatherEpi32(vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(i32gatherEpi32([64]byte(vindex), uintptr(base_addr), scale))
+func M512I32gatherEpi32(vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
+	return x86.M512i(m512I32gatherEpi32([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i32gatherEpi32(vindex [64]byte, base_addr uintptr, scale int) [64]byte
+func m512I32gatherEpi32(vindex [64]byte, base_addr uintptr, scale int) [64]byte
 
 
-// MaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
-// 32-bit elements are loaded from addresses starting at 'base_addr' and offset
-// by each 32-bit element in 'vindex' (each index is scaled by the factor in
-// 'scale'). Gathered elements are merged into 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
+// M512MaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit
+// indices. 32-bit elements are loaded from addresses starting at 'base_addr'
+// and offset by each 32-bit element in 'vindex' (each index is scaled by the
+// factor in 'scale'). Gathered elements are merged into 'dst' using writemask
+// 'k' (elements are copied from 'src' when the corresponding mask bit is not
+// set). 'scale' should be 1, 2, 4 or 8. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -8690,15 +8712,15 @@ func i32gatherEpi32(vindex [64]byte, base_addr uintptr, scale int) [64]byte
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm512_mask_i32gather_epi32'.
 // Requires KNCNI.
-func MaskI32gatherEpi32(src x86.M512i, k x86.Mmask16, vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
-	return x86.M512i(maskI32gatherEpi32([64]byte(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
+func M512MaskI32gatherEpi32(src x86.M512i, k x86.Mmask16, vindex x86.M512i, base_addr uintptr, scale int) x86.M512i {
+	return x86.M512i(m512MaskI32gatherEpi32([64]byte(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI32gatherEpi32(src [64]byte, k uint16, vindex [64]byte, base_addr uintptr, scale int) [64]byte
+func m512MaskI32gatherEpi32(src [64]byte, k uint16, vindex [64]byte, base_addr uintptr, scale int) [64]byte
 
 
-// I32gatherPs: Gather single-precision (32-bit) floating-point elements from
-// memory using 32-bit indices. 32-bit elements are loaded from addresses
+// M512I32gatherPs: Gather single-precision (32-bit) floating-point elements
+// from memory using 32-bit indices. 32-bit elements are loaded from addresses
 // starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
 // index is scaled by the factor in 'scale'). Gathered elements are merged into
 // 'dst'. 'scale' should be 1, 2, 4 or 8. 
@@ -8711,19 +8733,19 @@ func maskI32gatherEpi32(src [64]byte, k uint16, vindex [64]byte, base_addr uintp
 //
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_i32gather_ps'.
 // Requires KNCNI.
-func I32gatherPs(vindex x86.M512i, base_addr uintptr, scale int) x86.M512 {
-	return x86.M512(i32gatherPs([64]byte(vindex), uintptr(base_addr), scale))
+func M512I32gatherPs(vindex x86.M512i, base_addr uintptr, scale int) x86.M512 {
+	return x86.M512(m512I32gatherPs([64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func i32gatherPs(vindex [64]byte, base_addr uintptr, scale int) [16]float32
+func m512I32gatherPs(vindex [64]byte, base_addr uintptr, scale int) [16]float32
 
 
-// MaskI32gatherPs: Gather single-precision (32-bit) floating-point elements
-// from memory using 32-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
+// M512MaskI32gatherPs: Gather single-precision (32-bit) floating-point
+// elements from memory using 32-bit indices. 32-bit elements are loaded from
+// addresses starting at 'base_addr' and offset by each 32-bit element in
+// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
+// are merged into 'dst' using writemask 'k' (elements are copied from 'src'
+// when the corresponding mask bit is not set). 'scale' should be 1, 2, 4 or 8. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -8739,14 +8761,14 @@ func i32gatherPs(vindex [64]byte, base_addr uintptr, scale int) [16]float32
 //
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm512_mask_i32gather_ps'.
 // Requires KNCNI.
-func MaskI32gatherPs(src x86.M512, k x86.Mmask16, vindex x86.M512i, base_addr uintptr, scale int) x86.M512 {
-	return x86.M512(maskI32gatherPs([16]float32(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
+func M512MaskI32gatherPs(src x86.M512, k x86.Mmask16, vindex x86.M512i, base_addr uintptr, scale int) x86.M512 {
+	return x86.M512(m512MaskI32gatherPs([16]float32(src), uint16(k), [64]byte(vindex), uintptr(base_addr), scale))
 }
 
-func maskI32gatherPs(src [16]float32, k uint16, vindex [64]byte, base_addr uintptr, scale int) [16]float32
+func m512MaskI32gatherPs(src [16]float32, k uint16, vindex [64]byte, base_addr uintptr, scale int) [16]float32
 
 
-// I32loextgatherEpi64: Up-converts 8 double-precision (64-bit) memory
+// M512I32loextgatherEpi64: Up-converts 8 double-precision (64-bit) memory
 // locations starting at location 'mv' at packed 32-bit integer indices stored
 // in the lower half of 'index' scaled by 'scale' using 'conv' to 64-bit
 // integer elements and stores them in 'dst'. 
@@ -8762,14 +8784,14 @@ func maskI32gatherPs(src [16]float32, k uint16, vindex [64]byte, base_addr uintp
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32loextgather_epi64'.
 // Requires KNCNI.
-func I32loextgatherEpi64(index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(i32loextgatherEpi64([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I32loextgatherEpi64(index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512I32loextgatherEpi64([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32loextgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
+func m512I32loextgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
-// MaskI32loextgatherEpi64: Up-converts 8 double-precision (64-bit) memory
+// M512MaskI32loextgatherEpi64: Up-converts 8 double-precision (64-bit) memory
 // locations starting at location 'mv' at packed 32-bit integer indices stored
 // in the lower half of 'index' scaled by 'scale' using 'conv' to 64-bit
 // integer elements and stores them in 'dst' using writemask 'k' (elements are
@@ -8790,14 +8812,14 @@ func i32loextgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, sca
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32loextgather_epi64'.
 // Requires KNCNI.
-func MaskI32loextgatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(maskI32loextgatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI32loextgatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512MaskI32loextgatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32loextgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
+func m512MaskI32loextgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
-// I32loextgatherPd: Up-converts 8 double-precision (64-bit) floating-point
+// M512I32loextgatherPd: Up-converts 8 double-precision (64-bit) floating-point
 // elements in memory locations starting at location 'mv' at packed 32-bit
 // integer indices stored in the lower half of 'index' scaled by 'scale' using
 // 'conv' to 64-bit floating-point elements and stores them in 'dst'. 
@@ -8813,19 +8835,19 @@ func maskI32loextgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, 
 //
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32loextgather_pd'.
 // Requires KNCNI.
-func I32loextgatherPd(index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(i32loextgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I32loextgatherPd(index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
+	return x86.M512d(m512I32loextgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i32loextgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func m512I32loextgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
-// MaskI32loextgatherPd: Up-converts 8 double-precision (64-bit) floating-point
-// elements in memory locations starting at location 'mv' at packed 32-bit
-// integer indices stored in the lower half of 'index' scaled by 'scale' using
-// 'conv' to 64-bit floating-point elements and stores them in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskI32loextgatherPd: Up-converts 8 double-precision (64-bit)
+// floating-point elements in memory locations starting at location 'mv' at
+// packed 32-bit integer indices stored in the lower half of 'index' scaled by
+// 'scale' using 'conv' to 64-bit floating-point elements and stores them in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			addr := MEM[mv + index[j] * scale]
@@ -8842,15 +8864,15 @@ func i32loextgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int
 //
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32loextgather_pd'.
 // Requires KNCNI.
-func MaskI32loextgatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(maskI32loextgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI32loextgatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
+	return x86.M512d(m512MaskI32loextgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI32loextgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func m512MaskI32loextgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
-// I32loextscatterEpi64: Down-converts 8 packed 64-bit integer elements in 'v1'
-// and stores them in memory locations starting at location 'mv' at packed
+// M512I32loextscatterEpi64: Down-converts 8 packed 64-bit integer elements in
+// 'v1' and stores them in memory locations starting at location 'mv' at packed
 // 32-bit integer indices stored in 'index' scaled by 'scale' using 'conv'. 
 //
 //		FOR j := 0 to 7
@@ -8863,18 +8885,18 @@ func maskI32loextgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, c
 //
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32loextscatter_epi64'.
 // Requires KNCNI.
-func I32loextscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	i32loextscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512I32loextscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
+	m512I32loextscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i32loextscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func m512I32loextscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
-// MaskI32loextscatterEpi64: Down-converts 8 packed 64-bit integer elements in
-// 'v1' and stores them in memory locations starting at location 'mv' at packed
-// 32-bit integer indices stored in 'index' scaled by 'scale' using 'conv'.
-// Only those elements whose corresponding mask bit is set in writemask 'k' are
-// written to memory. 
+// M512MaskI32loextscatterEpi64: Down-converts 8 packed 64-bit integer elements
+// in 'v1' and stores them in memory locations starting at location 'mv' at
+// packed 32-bit integer indices stored in 'index' scaled by 'scale' using
+// 'conv'. Only those elements whose corresponding mask bit is set in writemask
+// 'k' are written to memory. 
 //
 //		FOR j := 0 to 7
 //			IF k[j]
@@ -8888,14 +8910,14 @@ func i32loextscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCO
 //
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32loextscatter_epi64'.
 // Requires KNCNI.
-func MaskI32loextscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	maskI32loextscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512MaskI32loextscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
+	m512MaskI32loextscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI32loextscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func m512MaskI32loextscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
-// I32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
+// M512I32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
 // floating-point elements in 'v1' and stores them in memory locations starting
 // at location 'mv' at packed 32-bit integer indices stored in 'index' scaled
 // by 'scale' using 'conv'. 
@@ -8910,14 +8932,14 @@ func maskI32loextscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, 
 //
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32loextscatter_pd'.
 // Requires KNCNI.
-func I32loextscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	i32loextscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
+func M512I32loextscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
+	m512I32loextscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func i32loextscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func m512I32loextscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
-// MaskI32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
+// M512MaskI32loextscatterPd: Down-converts 8 packed double-precision (64-bit)
 // floating-point elements in 'v1' and stores them in memory locations starting
 // at location 'mv' at packed 32-bit integer indices stored in 'index' scaled
 // by 'scale' using 'conv'. Only those elements whose corresponding mask bit is
@@ -8935,16 +8957,16 @@ func i32loextscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCON
 //
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32loextscatter_pd'.
 // Requires KNCNI.
-func MaskI32loextscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	maskI32loextscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
+func M512MaskI32loextscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
+	m512MaskI32loextscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func maskI32loextscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func m512MaskI32loextscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
-// I32logatherEpi64: Loads 8 64-bit integer elements from memory starting at
-// location 'mv' at packed 32-bit integer indices stored in the lower half of
-// 'index' scaled by 'scale' and stores them in 'dst'. 
+// M512I32logatherEpi64: Loads 8 64-bit integer elements from memory starting
+// at location 'mv' at packed 32-bit integer indices stored in the lower half
+// of 'index' scaled by 'scale' and stores them in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -8955,62 +8977,16 @@ func maskI32loextscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, c
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_i32logather_epi64'.
 // Requires KNCNI.
-func I32logatherEpi64(index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(i32logatherEpi64([64]byte(index), uintptr(mv), scale))
+func M512I32logatherEpi64(index x86.M512i, mv uintptr, scale int) x86.M512i {
+	return x86.M512i(m512I32logatherEpi64([64]byte(index), uintptr(mv), scale))
 }
 
-func i32logatherEpi64(index [64]byte, mv uintptr, scale int) [64]byte
+func m512I32logatherEpi64(index [64]byte, mv uintptr, scale int) [64]byte
 
 
-// MaskI32logatherEpi64: Loads 8 64-bit integer elements from memory starting
-// at location 'mv' at packed 32-bit integer indices stored in the lower half
-// of 'index' scaled by 'scale' and stores them in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			IF k[j]
-//				addr := MEM[mv + index[j] * scale]
-//				dst[i+63:i] := addr[i+63:i]
-//			ELSE
-//				dst[i+63:i] := src[i+63:i]
-//			FI
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32logather_epi64'.
-// Requires KNCNI.
-func MaskI32logatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(maskI32logatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
-}
-
-func maskI32logatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
-
-
-// I32logatherPd: Loads 8 double-precision (64-bit) floating-point elements
-// stored at memory locations starting at location 'mv' at packed 32-bit
-// integer indices stored in the lower half of 'index' scaled by 'scale' them
-// in 'dst'. 
-//
-//		FOR j := 0 to 7
-//			i := j*64
-//			addr := MEM[mv + index[j] * scale]
-//			dst[i+63:i] := addr[i+63:i]
-//		ENDFOR
-//		dst[MAX:512] := 0
-//
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32logather_pd'.
-// Requires KNCNI.
-func I32logatherPd(index x86.M512i, mv uintptr, scale int) x86.M512d {
-	return x86.M512d(i32logatherPd([64]byte(index), uintptr(mv), scale))
-}
-
-func i32logatherPd(index [64]byte, mv uintptr, scale int) [8]float64
-
-
-// MaskI32logatherPd: Loads 8 double-precision (64-bit) floating-point elements
-// from memory starting at location 'mv' at packed 32-bit integer indices
-// stored in the lower half of 'index' scaled by 'scale' into 'dst' using
+// M512MaskI32logatherEpi64: Loads 8 64-bit integer elements from memory
+// starting at location 'mv' at packed 32-bit integer indices stored in the
+// lower half of 'index' scaled by 'scale' and stores them in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -9025,17 +9001,64 @@ func i32logatherPd(index [64]byte, mv uintptr, scale int) [8]float64
 //		ENDFOR
 //		dst[MAX:512] := 0
 //
-// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32logather_pd'.
+// Instruction: 'VPGATHERDQ'. Intrinsic: '_mm512_mask_i32logather_epi64'.
 // Requires KNCNI.
-func MaskI32logatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512d {
-	return x86.M512d(maskI32logatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), scale))
+func M512MaskI32logatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512i {
+	return x86.M512i(m512MaskI32logatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
 }
 
-func maskI32logatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, scale int) [8]float64
+func m512MaskI32logatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
 
 
-// I32loscatterEpi64: Stores 8 packed 64-bit integer elements located in 'v1'
-// and stores them in memory locations starting at location 'mv' at packed
+// M512I32logatherPd: Loads 8 double-precision (64-bit) floating-point elements
+// stored at memory locations starting at location 'mv' at packed 32-bit
+// integer indices stored in the lower half of 'index' scaled by 'scale' them
+// in 'dst'. 
+//
+//		FOR j := 0 to 7
+//			i := j*64
+//			addr := MEM[mv + index[j] * scale]
+//			dst[i+63:i] := addr[i+63:i]
+//		ENDFOR
+//		dst[MAX:512] := 0
+//
+// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_i32logather_pd'.
+// Requires KNCNI.
+func M512I32logatherPd(index x86.M512i, mv uintptr, scale int) x86.M512d {
+	return x86.M512d(m512I32logatherPd([64]byte(index), uintptr(mv), scale))
+}
+
+func m512I32logatherPd(index [64]byte, mv uintptr, scale int) [8]float64
+
+
+// M512MaskI32logatherPd: Loads 8 double-precision (64-bit) floating-point
+// elements from memory starting at location 'mv' at packed 32-bit integer
+// indices stored in the lower half of 'index' scaled by 'scale' into 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
+//
+//		FOR j := 0 to 7
+//			i := j*64
+//			IF k[j]
+//				addr := MEM[mv + index[j] * scale]
+//				dst[i+63:i] := addr[i+63:i]
+//			ELSE
+//				dst[i+63:i] := src[i+63:i]
+//			FI
+//		ENDFOR
+//		dst[MAX:512] := 0
+//
+// Instruction: 'VGATHERDPD'. Intrinsic: '_mm512_mask_i32logather_pd'.
+// Requires KNCNI.
+func M512MaskI32logatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512d {
+	return x86.M512d(m512MaskI32logatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), scale))
+}
+
+func m512MaskI32logatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, scale int) [8]float64
+
+
+// M512I32loscatterEpi64: Stores 8 packed 64-bit integer elements located in
+// 'v1' and stores them in memory locations starting at location 'mv' at packed
 // 32-bit integer indices stored in 'index' scaled by 'scale'. 
 //
 //		FOR j := 0 to 7
@@ -9046,18 +9069,18 @@ func maskI32logatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, scal
 //
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_i32loscatter_epi64'.
 // Requires KNCNI.
-func I32loscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, scale int)  {
-	i32loscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
+func M512I32loscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, scale int)  {
+	m512I32loscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
 }
 
-func i32loscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
+func m512I32loscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
 
 
-// MaskI32loscatterEpi64: Stores 8 packed 64-bit integer elements located in
-// 'v1' and stores them in memory locations starting at location 'mv' at packed
-// 32-bit integer indices stored in 'index' scaled by 'scale' using writemask
-// 'k' (elements whose corresponding mask bit is not set are not written to
-// memory). 
+// M512MaskI32loscatterEpi64: Stores 8 packed 64-bit integer elements located
+// in 'v1' and stores them in memory locations starting at location 'mv' at
+// packed 32-bit integer indices stored in 'index' scaled by 'scale' using
+// writemask 'k' (elements whose corresponding mask bit is not set are not
+// written to memory). 
 //
 //		FOR j := 0 to 7
 //			IF k[j]
@@ -9068,14 +9091,14 @@ func i32loscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, scale int)
 //
 // Instruction: 'VPSCATTERDQ'. Intrinsic: '_mm512_mask_i32loscatter_epi64'.
 // Requires KNCNI.
-func MaskI32loscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, scale int)  {
-	maskI32loscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
+func M512MaskI32loscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, scale int)  {
+	m512MaskI32loscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
 }
 
-func maskI32loscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
+func m512MaskI32loscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
 
 
-// I32loscatterPd: Stores 8 packed double-precision (64-bit) floating-point
+// M512I32loscatterPd: Stores 8 packed double-precision (64-bit) floating-point
 // elements in 'v1' and to memory locations starting at location 'mv' at packed
 // 32-bit integer indices stored in 'index' scaled by 'scale'. 
 //
@@ -9087,18 +9110,18 @@ func maskI32loscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, sca
 //
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_i32loscatter_pd'.
 // Requires KNCNI.
-func I32loscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, scale int)  {
-	i32loscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), scale)
+func M512I32loscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, scale int)  {
+	m512I32loscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), scale)
 }
 
-func i32loscatterPd(mv uintptr, index [64]byte, v1 [8]float64, scale int) 
+func m512I32loscatterPd(mv uintptr, index [64]byte, v1 [8]float64, scale int) 
 
 
-// MaskI32loscatterPd: Stores 8 packed double-precision (64-bit) floating-point
-// elements in 'v1' to memory locations starting at location 'mv' at packed
-// 32-bit integer indices stored in 'index' scaled by 'scale'. Only those
-// elements whose corresponding mask bit is set in writemask 'k' are written to
-// memory. 
+// M512MaskI32loscatterPd: Stores 8 packed double-precision (64-bit)
+// floating-point elements in 'v1' to memory locations starting at location
+// 'mv' at packed 32-bit integer indices stored in 'index' scaled by 'scale'.
+// Only those elements whose corresponding mask bit is set in writemask 'k' are
+// written to memory. 
 //
 //		FOR j := 0 to 7
 //			IF k[j]
@@ -9110,17 +9133,17 @@ func i32loscatterPd(mv uintptr, index [64]byte, v1 [8]float64, scale int)
 //
 // Instruction: 'VSCATTERDPD'. Intrinsic: '_mm512_mask_i32loscatter_pd'.
 // Requires KNCNI.
-func MaskI32loscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, scale int)  {
-	maskI32loscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), scale)
+func M512MaskI32loscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, scale int)  {
+	m512MaskI32loscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), scale)
 }
 
-func maskI32loscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, scale int) 
+func m512MaskI32loscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, scale int) 
 
 
-// I32scatterEpi32: Scatter 32-bit integers from 'a' into memory using 32-bit
-// indices. 32-bit elements are stored at addresses starting at 'base_addr' and
-// offset by each 32-bit element in 'vindex' (each index is scaled by the
-// factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
+// M512I32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
+// 32-bit indices. 32-bit elements are stored at addresses starting at
+// 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
+// scaled by the factor in 'scale'). 'scale' should be 1, 2, 4 or 8. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -9129,14 +9152,14 @@ func maskI32loscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, scal
 //
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_i32scatter_epi32'.
 // Requires KNCNI.
-func I32scatterEpi32(base_addr uintptr, vindex x86.M512i, a x86.M512i, scale int)  {
-	i32scatterEpi32(uintptr(base_addr), [64]byte(vindex), [64]byte(a), scale)
+func M512I32scatterEpi32(base_addr uintptr, vindex x86.M512i, a x86.M512i, scale int)  {
+	m512I32scatterEpi32(uintptr(base_addr), [64]byte(vindex), [64]byte(a), scale)
 }
 
-func i32scatterEpi32(base_addr uintptr, vindex [64]byte, a [64]byte, scale int) 
+func m512I32scatterEpi32(base_addr uintptr, vindex [64]byte, a [64]byte, scale int) 
 
 
-// MaskI32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
+// M512MaskI32scatterEpi32: Scatter 32-bit integers from 'a' into memory using
 // 32-bit indices. 32-bit elements are stored at addresses starting at
 // 'base_addr' and offset by each 32-bit element in 'vindex' (each index is
 // scaled by the factor in 'scale') subject to mask 'k' (elements are not
@@ -9154,15 +9177,15 @@ func i32scatterEpi32(base_addr uintptr, vindex [64]byte, a [64]byte, scale int)
 //
 // Instruction: 'VPSCATTERDD'. Intrinsic: '_mm512_mask_i32scatter_epi32'.
 // Requires KNCNI.
-func MaskI32scatterEpi32(base_addr uintptr, k x86.Mmask16, vindex x86.M512i, a x86.M512i, scale int)  {
-	maskI32scatterEpi32(uintptr(base_addr), uint16(k), [64]byte(vindex), [64]byte(a), scale)
+func M512MaskI32scatterEpi32(base_addr uintptr, k x86.Mmask16, vindex x86.M512i, a x86.M512i, scale int)  {
+	m512MaskI32scatterEpi32(uintptr(base_addr), uint16(k), [64]byte(vindex), [64]byte(a), scale)
 }
 
-func maskI32scatterEpi32(base_addr uintptr, k uint16, vindex [64]byte, a [64]byte, scale int) 
+func m512MaskI32scatterEpi32(base_addr uintptr, k uint16, vindex [64]byte, a [64]byte, scale int) 
 
 
-// I32scatterPs: Scatter single-precision (32-bit) floating-point elements from
-// 'a' into memory using 32-bit indices. 32-bit elements are stored at
+// M512I32scatterPs: Scatter single-precision (32-bit) floating-point elements
+// from 'a' into memory using 32-bit indices. 32-bit elements are stored at
 // addresses starting at 'base_addr' and offset by each 32-bit element in
 // 'vindex' (each index is scaled by the factor in 'scale'). 'scale' should be
 // 1, 2, 4 or 8. 
@@ -9174,19 +9197,19 @@ func maskI32scatterEpi32(base_addr uintptr, k uint16, vindex [64]byte, a [64]byt
 //
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_i32scatter_ps'.
 // Requires KNCNI.
-func I32scatterPs(base_addr uintptr, vindex x86.M512i, a x86.M512, scale int)  {
-	i32scatterPs(uintptr(base_addr), [64]byte(vindex), [16]float32(a), scale)
+func M512I32scatterPs(base_addr uintptr, vindex x86.M512i, a x86.M512, scale int)  {
+	m512I32scatterPs(uintptr(base_addr), [64]byte(vindex), [16]float32(a), scale)
 }
 
-func i32scatterPs(base_addr uintptr, vindex [64]byte, a [16]float32, scale int) 
+func m512I32scatterPs(base_addr uintptr, vindex [64]byte, a [16]float32, scale int) 
 
 
-// MaskI32scatterPs: Scatter single-precision (32-bit) floating-point elements
-// from 'a' into memory using 32-bit indices. 32-bit elements are stored at
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale') subject to mask 'k'
-// (elements are not stored when the corresponding mask bit is not set).
-// 'scale' should be 1, 2, 4 or 8. 
+// M512MaskI32scatterPs: Scatter single-precision (32-bit) floating-point
+// elements from 'a' into memory using 32-bit indices. 32-bit elements are
+// stored at addresses starting at 'base_addr' and offset by each 32-bit
+// element in 'vindex' (each index is scaled by the factor in 'scale') subject
+// to mask 'k' (elements are not stored when the corresponding mask bit is not
+// set). 'scale' should be 1, 2, 4 or 8. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -9199,14 +9222,14 @@ func i32scatterPs(base_addr uintptr, vindex [64]byte, a [16]float32, scale int)
 //
 // Instruction: 'VSCATTERDPS'. Intrinsic: '_mm512_mask_i32scatter_ps'.
 // Requires KNCNI.
-func MaskI32scatterPs(base_addr uintptr, k x86.Mmask16, vindex x86.M512i, a x86.M512, scale int)  {
-	maskI32scatterPs(uintptr(base_addr), uint16(k), [64]byte(vindex), [16]float32(a), scale)
+func M512MaskI32scatterPs(base_addr uintptr, k x86.Mmask16, vindex x86.M512i, a x86.M512, scale int)  {
+	m512MaskI32scatterPs(uintptr(base_addr), uint16(k), [64]byte(vindex), [16]float32(a), scale)
 }
 
-func maskI32scatterPs(base_addr uintptr, k uint16, vindex [64]byte, a [16]float32, scale int) 
+func m512MaskI32scatterPs(base_addr uintptr, k uint16, vindex [64]byte, a [16]float32, scale int) 
 
 
-// I64extgatherEpi32lo: Up-converts 8 single-precision (32-bit) memory
+// M512I64extgatherEpi32lo: Up-converts 8 single-precision (32-bit) memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale' using 'conv' to 32-bit integer elements and
 // stores them in 'dst'. 'hint' indicates to the processor whether the data is
@@ -9236,14 +9259,14 @@ func maskI32scatterPs(base_addr uintptr, k uint16, vindex [64]byte, a [16]float3
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_epi32lo'.
 // Requires KNCNI.
-func I64extgatherEpi32lo(index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(i64extgatherEpi32lo([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I64extgatherEpi32lo(index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512I64extgatherEpi32lo([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgatherEpi32lo(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
+func m512I64extgatherEpi32lo(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
-// MaskI64extgatherEpi32lo: Up-converts 8 single-precision (32-bit) memory
+// M512MaskI64extgatherEpi32lo: Up-converts 8 single-precision (32-bit) memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale' using 'conv' to 32-bit integer elements and
 // stores them in 'dst' using writemask 'k' (elements are copied from 'src'
@@ -9278,17 +9301,18 @@ func i64extgatherEpi32lo(index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, sca
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_epi32lo'.
 // Requires KNCNI.
-func MaskI64extgatherEpi32lo(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(maskI64extgatherEpi32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI64extgatherEpi32lo(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512MaskI64extgatherEpi32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
+func m512MaskI64extgatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI32ENUM, scale int, hint int) [64]byte
 
 
-// I64extgatherEpi64: Up-converts 8 double-precision (64-bit) memory locations
-// starting at location 'mv' at packed 64-bit integer indices stored in 'index'
-// scaled by 'scale' using 'conv' to 64-bit integer elements and stores them in
-// 'dst'. 'hint' indicates to the processor whether the load is non-temporal. 
+// M512I64extgatherEpi64: Up-converts 8 double-precision (64-bit) memory
+// locations starting at location 'mv' at packed 64-bit integer indices stored
+// in 'index' scaled by 'scale' using 'conv' to 64-bit integer elements and
+// stores them in 'dst'. 'hint' indicates to the processor whether the load is
+// non-temporal. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -9301,14 +9325,14 @@ func maskI64extgatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, 
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_epi64'.
 // Requires KNCNI.
-func I64extgatherEpi64(index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(i64extgatherEpi64([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I64extgatherEpi64(index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512I64extgatherEpi64([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
+func m512I64extgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
-// MaskI64extgatherEpi64: Up-converts 8 double-precision (64-bit) memory
+// M512MaskI64extgatherEpi64: Up-converts 8 double-precision (64-bit) memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale' using 'conv' to 64-bit integer elements and
 // stores them in 'dst' using writemask 'k' (elements are copied from 'src'
@@ -9330,14 +9354,14 @@ func i64extgatherEpi64(index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_epi64'.
 // Requires KNCNI.
-func MaskI64extgatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
-	return x86.M512i(maskI64extgatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI64extgatherEpi64(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) x86.M512i {
+	return x86.M512i(m512MaskI64extgatherEpi64([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
+func m512MaskI64extgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, conv MMUPCONVEPI64ENUM, scale int, hint int) [64]byte
 
 
-// I64extgatherPd: Up-converts 8 double-precision (64-bit) floating-point
+// M512I64extgatherPd: Up-converts 8 double-precision (64-bit) floating-point
 // elements stored in memory starting at location 'mv' at packed 64-bit integer
 // indices stored in 'index' scaled by 'scale' using 'conv' to 64-bit
 // floating-point elements and stores them in 'dst'. 'hint' indicates to the
@@ -9354,17 +9378,17 @@ func maskI64extgatherEpi64(src [64]byte, k uint8, index [64]byte, mv uintptr, co
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_pd'.
 // Requires KNCNI.
-func I64extgatherPd(index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(i64extgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I64extgatherPd(index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
+	return x86.M512d(m512I64extgatherPd([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func m512I64extgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
-// MaskI64extgatherPd: Up-converts 8 double-precision (64-bit) floating-point
-// elements stored in memory starting at location 'mv' at packed 64-bit integer
-// indices stored in 'index' scaled by 'scale' using 'conv' to 64-bit
-// floating-point elements and stores them in 'dst' using writemask 'k'
+// M512MaskI64extgatherPd: Up-converts 8 double-precision (64-bit)
+// floating-point elements stored in memory starting at location 'mv' at packed
+// 64-bit integer indices stored in 'index' scaled by 'scale' using 'conv' to
+// 64-bit floating-point elements and stores them in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set).
 // 'hint' indicates to the processor whether the data is non-temporal. 
 //
@@ -9383,18 +9407,18 @@ func i64extgatherPd(index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, 
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_pd'.
 // Requires KNCNI.
-func MaskI64extgatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
-	return x86.M512d(maskI64extgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI64extgatherPd(src x86.M512d, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) x86.M512d {
+	return x86.M512d(m512MaskI64extgatherPd([8]float64(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
+func m512MaskI64extgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPDENUM, scale int, hint int) [8]float64
 
 
-// I64extgatherPslo: Up-converts 8 memory locations starting at location 'mv'
-// at packed 64-bit integer indices stored in 'index' scaled by 'scale' using
-// 'conv' to single-precision (32-bit) floating-point elements and stores them
-// in the lower half of 'dst'. 'hint' indicates to the processor whether the
-// load is non-temporal. 
+// M512I64extgatherPslo: Up-converts 8 memory locations starting at location
+// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'
+// using 'conv' to single-precision (32-bit) floating-point elements and stores
+// them in the lower half of 'dst'. 'hint' indicates to the processor whether
+// the load is non-temporal. 
 //
 //		FOR j := 0 to 7
 //			addr := MEM[mv + index[j] * scale]
@@ -9423,19 +9447,19 @@ func maskI64extgatherPd(src [8]float64, k uint8, index [64]byte, mv uintptr, con
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extgather_pslo'.
 // Requires KNCNI.
-func I64extgatherPslo(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(i64extgatherPslo([64]byte(index), uintptr(mv), conv, scale, hint))
+func M512I64extgatherPslo(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
+	return x86.M512(m512I64extgatherPslo([64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func i64extgatherPslo(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func m512I64extgatherPslo(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
-// MaskI64extgatherPslo: Up-converts 8 memory locations starting at location
-// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'
-// using 'conv' to single-precision (32-bit) floating-point elements and stores
-// them in the lower half of 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 'hint' indicates to
-// the processor whether the load is non-temporal. 
+// M512MaskI64extgatherPslo: Up-converts 8 memory locations starting at
+// location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
+// 'scale' using 'conv' to single-precision (32-bit) floating-point elements
+// and stores them in the lower half of 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 'hint'
+// indicates to the processor whether the load is non-temporal. 
 //
 //		FOR j := 0 to 7
 //			addr := MEM[mv + index[j] * scale]
@@ -9468,17 +9492,18 @@ func i64extgatherPslo(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extgather_pslo'.
 // Requires KNCNI.
-func MaskI64extgatherPslo(src x86.M512, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
-	return x86.M512(maskI64extgatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
+func M512MaskI64extgatherPslo(src x86.M512, k x86.Mmask8, index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) x86.M512 {
+	return x86.M512(m512MaskI64extgatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), conv, scale, hint))
 }
 
-func maskI64extgatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
+func m512MaskI64extgatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) [16]float32
 
 
-// I64extscatterEpi32lo: Down-converts the low 8 packed 32-bit integer elements
-// in 'v1' using 'conv' and stores them in memory locations starting at
-// location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
-// 'scale'. 'hint' indicates to the processor whether the data is non-temporal. 
+// M512I64extscatterEpi32lo: Down-converts the low 8 packed 32-bit integer
+// elements in 'v1' using 'conv' and stores them in memory locations starting
+// at location 'mv' at packed 64-bit integer indices stored in 'index' scaled
+// by 'scale'. 'hint' indicates to the processor whether the data is
+// non-temporal. 
 //
 //		FOR j := 0 to 7
 //			addr := MEM[mv + index[j] * scale]
@@ -9503,14 +9528,14 @@ func maskI64extgatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, 
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_epi32lo'.
 // Requires KNCNI.
-func I64extscatterEpi32lo(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	i64extscatterEpi32lo(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512I64extscatterEpi32lo(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
+	m512I64extscatterEpi32lo(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i64extscatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func m512I64extscatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
-// MaskI64extscatterEpi32lo: Down-converts the low 8 packed 32-bit integer
+// M512MaskI64extscatterEpi32lo: Down-converts the low 8 packed 32-bit integer
 // elements in 'v1' using 'conv' and stores them in memory locations starting
 // at location 'mv' at packed 64-bit integer indices stored in 'index' scaled
 // by 'scale'. Elements are written to memory using writemask 'k' (elements are
@@ -9543,17 +9568,17 @@ func i64extscatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCO
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_epi32lo'.
 // Requires KNCNI.
-func MaskI64extscatterEpi32lo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
-	maskI64extscatterEpi32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512MaskI64extscatterEpi32lo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI32ENUM, scale int, hint int)  {
+	m512MaskI64extscatterEpi32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI64extscatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
+func m512MaskI64extscatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI32ENUM, scale int, hint int) 
 
 
-// I64extscatterEpi64: Down-converts 8 packed 64-bit integer elements in 'v1'
-// using 'conv' and stores them in memory locations starting at location 'mv'
-// at packed 64-bit integer indices stored in 'index' scaled by 'scale'. 'hint'
-// indicates to the processor whether the load is non-temporal. 
+// M512I64extscatterEpi64: Down-converts 8 packed 64-bit integer elements in
+// 'v1' using 'conv' and stores them in memory locations starting at location
+// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'.
+// 'hint' indicates to the processor whether the load is non-temporal. 
 //
 //		FOR j := 0 to 7
 //			addr := MEM[mv + index[j] * scale]
@@ -9565,18 +9590,18 @@ func maskI64extscatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, 
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_epi64'.
 // Requires KNCNI.
-func I64extscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	i64extscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512I64extscatterEpi64(mv uintptr, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
+	m512I64extscatterEpi64(uintptr(mv), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func i64extscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func m512I64extscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
-// MaskI64extscatterEpi64: Down-converts 8 packed 64-bit integer elements in
-// 'v1' using 'conv' and stores them in memory locations starting at location
-// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'.
-// Only those elements whose corresponding mask bit is set in writemask 'k' are
-// written to memory. 
+// M512MaskI64extscatterEpi64: Down-converts 8 packed 64-bit integer elements
+// in 'v1' using 'conv' and stores them in memory locations starting at
+// location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
+// 'scale'. Only those elements whose corresponding mask bit is set in
+// writemask 'k' are written to memory. 
 //
 //		FOR j := 0 to 7
 //			IF k[j]
@@ -9590,14 +9615,14 @@ func i64extscatterEpi64(mv uintptr, index [64]byte, v1 [64]byte, conv MMDOWNCONV
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_epi64'.
 // Requires KNCNI.
-func MaskI64extscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
-	maskI64extscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
+func M512MaskI64extscatterEpi64(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, conv MMDOWNCONVEPI64ENUM, scale int, hint int)  {
+	m512MaskI64extscatterEpi64(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), conv, scale, hint)
 }
 
-func maskI64extscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
+func m512MaskI64extscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, conv MMDOWNCONVEPI64ENUM, scale int, hint int) 
 
 
-// I64extscatterPd: Down-converts 8 packed double-precision (64-bit)
+// M512I64extscatterPd: Down-converts 8 packed double-precision (64-bit)
 // floating-point elements in 'v1' using 'conv' and stores them in memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale'. 'hint' indicates to the processor whether the
@@ -9614,14 +9639,14 @@ func maskI64extscatterEpi64(mv uintptr, k uint8, index [64]byte, v1 [64]byte, co
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_pd'.
 // Requires KNCNI.
-func I64extscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	i64extscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
+func M512I64extscatterPd(mv uintptr, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
+	m512I64extscatterPd(uintptr(mv), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func i64extscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func m512I64extscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
-// MaskI64extscatterPd: Down-converts 8 packed double-precision (64-bit)
+// M512MaskI64extscatterPd: Down-converts 8 packed double-precision (64-bit)
 // floating-point elements in 'v1' using 'conv' and stores them in memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale'. Elements are written to memory using writemask
@@ -9642,14 +9667,14 @@ func i64extscatterPd(mv uintptr, index [64]byte, v1 [8]float64, conv MMDOWNCONVP
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_pd'.
 // Requires KNCNI.
-func MaskI64extscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
-	maskI64extscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
+func M512MaskI64extscatterPd(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512d, conv MMDOWNCONVPDENUM, scale int, hint int)  {
+	m512MaskI64extscatterPd(uintptr(mv), uint8(k), [64]byte(index), [8]float64(v1), conv, scale, hint)
 }
 
-func maskI64extscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
+func m512MaskI64extscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, conv MMDOWNCONVPDENUM, scale int, hint int) 
 
 
-// I64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
+// M512I64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
 // floating-point elements in 'v1' using 'conv' and stores them in memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale'. 'hint' indicates to the processor whether the
@@ -9681,14 +9706,14 @@ func maskI64extscatterPd(mv uintptr, k uint8, index [64]byte, v1 [8]float64, con
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64extscatter_pslo'.
 // Requires KNCNI.
-func I64extscatterPslo(mv uintptr, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	i64extscatterPslo(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale, hint)
+func M512I64extscatterPslo(mv uintptr, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
+	m512I64extscatterPslo(uintptr(mv), [64]byte(index), [16]float32(v1), conv, scale, hint)
 }
 
-func i64extscatterPslo(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
+func m512I64extscatterPslo(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
 
 
-// MaskI64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
+// M512MaskI64extscatterPslo: Down-converts 8 packed single-precision (32-bit)
 // floating-point elements in 'v1' using 'conv' and stores them in memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale'. Elements are only written when the
@@ -9723,14 +9748,14 @@ func i64extscatterPslo(mv uintptr, index [64]byte, v1 [16]float32, conv MMDOWNCO
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64extscatter_pslo'.
 // Requires KNCNI.
-func MaskI64extscatterPslo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
-	maskI64extscatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
+func M512MaskI64extscatterPslo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512, conv MMDOWNCONVPSENUM, scale int, hint int)  {
+	m512MaskI64extscatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), conv, scale, hint)
 }
 
-func maskI64extscatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
+func m512MaskI64extscatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, conv MMDOWNCONVPSENUM, scale int, hint int) 
 
 
-// I64gatherEpi32lo: Loads 8 32-bit integer memory locations starting at
+// M512I64gatherEpi32lo: Loads 8 32-bit integer memory locations starting at
 // location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
 // 'scale' to 'dst'. 
 //
@@ -9743,16 +9768,16 @@ func maskI64extscatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, 
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64gather_epi32lo'.
 // Requires KNCNI.
-func I64gatherEpi32lo(index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(i64gatherEpi32lo([64]byte(index), uintptr(mv), scale))
+func M512I64gatherEpi32lo(index x86.M512i, mv uintptr, scale int) x86.M512i {
+	return x86.M512i(m512I64gatherEpi32lo([64]byte(index), uintptr(mv), scale))
 }
 
-func i64gatherEpi32lo(index [64]byte, mv uintptr, scale int) [64]byte
+func m512I64gatherEpi32lo(index [64]byte, mv uintptr, scale int) [64]byte
 
 
-// MaskI64gatherEpi32lo: Loads 8 32-bit integer memory locations starting at
-// location 'mv' at packed 64-bit integer indices stored in 'index' scaled by
-// 'scale' to 'dst' using writemask 'k' (elements are copied from 'src' when
+// M512MaskI64gatherEpi32lo: Loads 8 32-bit integer memory locations starting
+// at location 'mv' at packed 64-bit integer indices stored in 'index' scaled
+// by 'scale' to 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
@@ -9768,14 +9793,14 @@ func i64gatherEpi32lo(index [64]byte, mv uintptr, scale int) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64gather_epi32lo'.
 // Requires KNCNI.
-func MaskI64gatherEpi32lo(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512i {
-	return x86.M512i(maskI64gatherEpi32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
+func M512MaskI64gatherEpi32lo(src x86.M512i, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512i {
+	return x86.M512i(m512MaskI64gatherEpi32lo([64]byte(src), uint8(k), [64]byte(index), uintptr(mv), scale))
 }
 
-func maskI64gatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
+func m512MaskI64gatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, scale int) [64]byte
 
 
-// I64gatherPslo: Loads 8 single-precision (32-bit) floating-point memory
+// M512I64gatherPslo: Loads 8 single-precision (32-bit) floating-point memory
 // locations starting at location 'mv' at packed 64-bit integer indices stored
 // in 'index' scaled by 'scale' to 'dst'. 
 //
@@ -9788,17 +9813,17 @@ func maskI64gatherEpi32lo(src [64]byte, k uint8, index [64]byte, mv uintptr, sca
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64gather_pslo'.
 // Requires KNCNI.
-func I64gatherPslo(index x86.M512i, mv uintptr, scale int) x86.M512 {
-	return x86.M512(i64gatherPslo([64]byte(index), uintptr(mv), scale))
+func M512I64gatherPslo(index x86.M512i, mv uintptr, scale int) x86.M512 {
+	return x86.M512(m512I64gatherPslo([64]byte(index), uintptr(mv), scale))
 }
 
-func i64gatherPslo(index [64]byte, mv uintptr, scale int) [16]float32
+func m512I64gatherPslo(index [64]byte, mv uintptr, scale int) [16]float32
 
 
-// MaskI64gatherPslo: Loads 8 single-precision (32-bit) floating-point memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale' to 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskI64gatherPslo: Loads 8 single-precision (32-bit) floating-point
+// memory locations starting at location 'mv' at packed 64-bit integer indices
+// stored in 'index' scaled by 'scale' to 'dst' using writemask 'k' (elements
+// are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -9813,16 +9838,16 @@ func i64gatherPslo(index [64]byte, mv uintptr, scale int) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64gather_pslo'.
 // Requires KNCNI.
-func MaskI64gatherPslo(src x86.M512, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512 {
-	return x86.M512(maskI64gatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), scale))
+func M512MaskI64gatherPslo(src x86.M512, k x86.Mmask8, index x86.M512i, mv uintptr, scale int) x86.M512 {
+	return x86.M512(m512MaskI64gatherPslo([16]float32(src), uint8(k), [64]byte(index), uintptr(mv), scale))
 }
 
-func maskI64gatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, scale int) [16]float32
+func m512MaskI64gatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, scale int) [16]float32
 
 
-// I64scatterEpi32lo: Stores 8 packed 32-bit integer elements in 'v1' in memory
-// locations starting at location 'mv' at packed 64-bit integer indices stored
-// in 'index' scaled by 'scale'. 
+// M512I64scatterEpi32lo: Stores 8 packed 32-bit integer elements in 'v1' in
+// memory locations starting at location 'mv' at packed 64-bit integer indices
+// stored in 'index' scaled by 'scale'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -9832,17 +9857,17 @@ func maskI64gatherPslo(src [16]float32, k uint8, index [64]byte, mv uintptr, sca
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64scatter_epi32lo'.
 // Requires KNCNI.
-func I64scatterEpi32lo(mv uintptr, index x86.M512i, v1 x86.M512i, scale int)  {
-	i64scatterEpi32lo(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
+func M512I64scatterEpi32lo(mv uintptr, index x86.M512i, v1 x86.M512i, scale int)  {
+	m512I64scatterEpi32lo(uintptr(mv), [64]byte(index), [64]byte(v1), scale)
 }
 
-func i64scatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
+func m512I64scatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, scale int) 
 
 
-// MaskI64scatterEpi32lo: Stores 8 packed 32-bit integer elements in 'v1' in
-// memory locations starting at location 'mv' at packed 64-bit integer indices
-// stored in 'index' scaled by 'scale' using writemask 'k' (elements are only
-// written to memory when the corresponding mask bit is set). 
+// M512MaskI64scatterEpi32lo: Stores 8 packed 32-bit integer elements in 'v1'
+// in memory locations starting at location 'mv' at packed 64-bit integer
+// indices stored in 'index' scaled by 'scale' using writemask 'k' (elements
+// are only written to memory when the corresponding mask bit is set). 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -9854,14 +9879,14 @@ func i64scatterEpi32lo(mv uintptr, index [64]byte, v1 [64]byte, scale int)
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64scatter_epi32lo'.
 // Requires KNCNI.
-func MaskI64scatterEpi32lo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, scale int)  {
-	maskI64scatterEpi32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
+func M512MaskI64scatterEpi32lo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512i, scale int)  {
+	m512MaskI64scatterEpi32lo(uintptr(mv), uint8(k), [64]byte(index), [64]byte(v1), scale)
 }
 
-func maskI64scatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
+func m512MaskI64scatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, scale int) 
 
 
-// I64scatterPslo: Stores 8 packed single-precision (32-bit) floating-point
+// M512I64scatterPslo: Stores 8 packed single-precision (32-bit) floating-point
 // elements in 'v' in memory locations starting at location 'mv' at packed
 // 64-bit integer indices stored in 'index' scaled by 'scale'. 
 //
@@ -9873,18 +9898,18 @@ func maskI64scatterEpi32lo(mv uintptr, k uint8, index [64]byte, v1 [64]byte, sca
 //
 // Instruction: '...'. Intrinsic: '_mm512_i64scatter_pslo'.
 // Requires KNCNI.
-func I64scatterPslo(mv uintptr, index x86.M512i, v x86.M512, scale int)  {
-	i64scatterPslo(uintptr(mv), [64]byte(index), [16]float32(v), scale)
+func M512I64scatterPslo(mv uintptr, index x86.M512i, v x86.M512, scale int)  {
+	m512I64scatterPslo(uintptr(mv), [64]byte(index), [16]float32(v), scale)
 }
 
-func i64scatterPslo(mv uintptr, index [64]byte, v [16]float32, scale int) 
+func m512I64scatterPslo(mv uintptr, index [64]byte, v [16]float32, scale int) 
 
 
-// MaskI64scatterPslo: Stores 8 packed single-precision (32-bit) floating-point
-// elements in 'v1' in memory locations starting at location 'mv' at packed
-// 64-bit integer indices stored in 'index' scaled by 'scale' using writemask
-// 'k' (elements are only written to memory when the corresponding mask bit is
-// set). 
+// M512MaskI64scatterPslo: Stores 8 packed single-precision (32-bit)
+// floating-point elements in 'v1' in memory locations starting at location
+// 'mv' at packed 64-bit integer indices stored in 'index' scaled by 'scale'
+// using writemask 'k' (elements are only written to memory when the
+// corresponding mask bit is set). 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -9896,27 +9921,28 @@ func i64scatterPslo(mv uintptr, index [64]byte, v [16]float32, scale int)
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_i64scatter_pslo'.
 // Requires KNCNI.
-func MaskI64scatterPslo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512, scale int)  {
-	maskI64scatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), scale)
+func M512MaskI64scatterPslo(mv uintptr, k x86.Mmask8, index x86.M512i, v1 x86.M512, scale int)  {
+	m512MaskI64scatterPslo(uintptr(mv), uint8(k), [64]byte(index), [16]float32(v1), scale)
 }
 
-func maskI64scatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, scale int) 
+func m512MaskI64scatterPslo(mv uintptr, k uint8, index [64]byte, v1 [16]float32, scale int) 
 
 
-// Int2mask: Converts integer 'mask' into bitmask, storing the result in 'dst'. 
+// M512Int2mask: Converts integer 'mask' into bitmask, storing the result in
+// 'dst'. 
 //
 //		dst := mask[15:0]
 //
 // Instruction: 'KMOV'. Intrinsic: '_mm512_int2mask'.
 // Requires KNCNI.
-func Int2mask(mask int) x86.Mmask16 {
-	return x86.Mmask16(int2mask(mask))
+func M512Int2mask(mask int) x86.Mmask16 {
+	return x86.Mmask16(m512Int2mask(mask))
 }
 
-func int2mask(mask int) uint16
+func m512Int2mask(mask int) uint16
 
 
-// Kand: Compute the bitwise AND of 16-bit masks 'a' and 'b', and store the
+// M512Kand: Compute the bitwise AND of 16-bit masks 'a' and 'b', and store the
 // result in 'k'. 
 //
 //		k[15:0] := a[15:0] AND b[15:0]
@@ -9924,44 +9950,44 @@ func int2mask(mask int) uint16
 //
 // Instruction: 'KAND'. Intrinsic: '_mm512_kand'.
 // Requires KNCNI.
-func Kand(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kand(uint16(a), uint16(b)))
+func M512Kand(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kand(uint16(a), uint16(b)))
 }
 
-func kand(a uint16, b uint16) uint16
+func m512Kand(a uint16, b uint16) uint16
 
 
-// Kandn: Compute the bitwise AND NOT of 16-bit masks 'a' and 'b', and store
-// the result in 'k'. 
+// M512Kandn: Compute the bitwise AND NOT of 16-bit masks 'a' and 'b', and
+// store the result in 'k'. 
 //
 //		k[15:0] := (NOT a[15:0]) AND b[15:0]
 //		k[MAX:16] := 0
 //
 // Instruction: 'KANDN'. Intrinsic: '_mm512_kandn'.
 // Requires KNCNI.
-func Kandn(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kandn(uint16(a), uint16(b)))
+func M512Kandn(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kandn(uint16(a), uint16(b)))
 }
 
-func kandn(a uint16, b uint16) uint16
+func m512Kandn(a uint16, b uint16) uint16
 
 
-// Kandnr: Performs a bitwise AND operation between NOT of 'k2' and 'k1',
+// M512Kandnr: Performs a bitwise AND operation between NOT of 'k2' and 'k1',
 // storing the result in 'dst'. 
 //
 //		dst[15:0] := NOT(k2[15:0]) & k1[15:0]
 //
 // Instruction: 'KANDNR'. Intrinsic: '_mm512_kandnr'.
 // Requires KNCNI.
-func Kandnr(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kandnr(uint16(k1), uint16(k2)))
+func M512Kandnr(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kandnr(uint16(k1), uint16(k2)))
 }
 
-func kandnr(k1 uint16, k2 uint16) uint16
+func m512Kandnr(k1 uint16, k2 uint16) uint16
 
 
-// Kconcathi64: Packs masks 'k1' and 'k2' into the high 32 bits of 'dst'. The
-// rest of 'dst' is set to 0. 
+// M512Kconcathi64: Packs masks 'k1' and 'k2' into the high 32 bits of 'dst'.
+// The rest of 'dst' is set to 0. 
 //
 //		dst[63:48] := k1[15:0]
 //		dst[47:32] := k2[15:0]
@@ -9969,15 +9995,15 @@ func kandnr(k1 uint16, k2 uint16) uint16
 //
 // Instruction: 'KCONCATH'. Intrinsic: '_mm512_kconcathi_64'.
 // Requires KNCNI.
-func Kconcathi64(k1 x86.Mmask16, k2 x86.Mmask16) int64 {
-	return int64(kconcathi64(uint16(k1), uint16(k2)))
+func M512Kconcathi64(k1 x86.Mmask16, k2 x86.Mmask16) int64 {
+	return int64(m512Kconcathi64(uint16(k1), uint16(k2)))
 }
 
-func kconcathi64(k1 uint16, k2 uint16) int64
+func m512Kconcathi64(k1 uint16, k2 uint16) int64
 
 
-// Kconcatlo64: Packs masks 'k1' and 'k2' into the low 32 bits of 'dst'. The
-// rest of 'dst' is set to 0. 
+// M512Kconcatlo64: Packs masks 'k1' and 'k2' into the low 32 bits of 'dst'.
+// The rest of 'dst' is set to 0. 
 //
 //		dst[31:16] := k1[15:0]
 //		dst[15:0]  := k2[15:0]
@@ -9985,15 +10011,15 @@ func kconcathi64(k1 uint16, k2 uint16) int64
 //
 // Instruction: 'KCONCATL'. Intrinsic: '_mm512_kconcatlo_64'.
 // Requires KNCNI.
-func Kconcatlo64(k1 x86.Mmask16, k2 x86.Mmask16) int64 {
-	return int64(kconcatlo64(uint16(k1), uint16(k2)))
+func M512Kconcatlo64(k1 x86.Mmask16, k2 x86.Mmask16) int64 {
+	return int64(m512Kconcatlo64(uint16(k1), uint16(k2)))
 }
 
-func kconcatlo64(k1 uint16, k2 uint16) int64
+func m512Kconcatlo64(k1 uint16, k2 uint16) int64
 
 
-// Kextract64: Extracts 16-bit value 'b' from 64-bit integer 'a', storing the
-// result in 'dst'. 
+// M512Kextract64: Extracts 16-bit value 'b' from 64-bit integer 'a', storing
+// the result in 'dst'. 
 //
 //		CASE b of
 //		0: dst[15:0] := a[63:48]
@@ -10005,15 +10031,15 @@ func kconcatlo64(k1 uint16, k2 uint16) int64
 //
 // Instruction: 'KEXTRACT'. Intrinsic: '_mm512_kextract_64'.
 // Requires KNCNI.
-func Kextract64(a int64, b int) x86.Mmask16 {
-	return x86.Mmask16(kextract64(a, b))
+func M512Kextract64(a int64, b int) x86.Mmask16 {
+	return x86.Mmask16(m512Kextract64(a, b))
 }
 
-func kextract64(a int64, b int) uint16
+func m512Kextract64(a int64, b int) uint16
 
 
-// Kmerge2l1h: Move the high element from 'k1' to the low element of 'k1', and
-// insert the low element of 'k2' into the high element of 'k1'. 
+// M512Kmerge2l1h: Move the high element from 'k1' to the low element of 'k1',
+// and insert the low element of 'k2' into the high element of 'k1'. 
 //
 //		tmp[7:0] := k1[15:8]
 //		k1[15:8] := k2[7:0]
@@ -10021,71 +10047,72 @@ func kextract64(a int64, b int) uint16
 //
 // Instruction: 'KMERGE2L1H'. Intrinsic: '_mm512_kmerge2l1h'.
 // Requires KNCNI.
-func Kmerge2l1h(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kmerge2l1h(uint16(k1), uint16(k2)))
+func M512Kmerge2l1h(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kmerge2l1h(uint16(k1), uint16(k2)))
 }
 
-func kmerge2l1h(k1 uint16, k2 uint16) uint16
+func m512Kmerge2l1h(k1 uint16, k2 uint16) uint16
 
 
-// Kmerge2l1l: Insert the low element of 'k2' into the high element of 'k1'. 
+// M512Kmerge2l1l: Insert the low element of 'k2' into the high element of
+// 'k1'. 
 //
 //		k1[15:8] := k2[7:0]
 //
 // Instruction: 'KMERGE2L1L'. Intrinsic: '_mm512_kmerge2l1l'.
 // Requires KNCNI.
-func Kmerge2l1l(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kmerge2l1l(uint16(k1), uint16(k2)))
+func M512Kmerge2l1l(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kmerge2l1l(uint16(k1), uint16(k2)))
 }
 
-func kmerge2l1l(k1 uint16, k2 uint16) uint16
+func m512Kmerge2l1l(k1 uint16, k2 uint16) uint16
 
 
-// Kmov: Copy 16-bit mask 'a' to 'k'. 
+// M512Kmov: Copy 16-bit mask 'a' to 'k'. 
 //
 //		k[15:0] := a[15:0]
 //		k[MAX:16] := 0
 //
 // Instruction: 'KMOV'. Intrinsic: '_mm512_kmov'.
 // Requires KNCNI.
-func Kmov(a x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kmov(uint16(a)))
+func M512Kmov(a x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kmov(uint16(a)))
 }
 
-func kmov(a uint16) uint16
+func m512Kmov(a uint16) uint16
 
 
-// Kmovlhb: Inserts the low byte of mask 'k2' into the high byte of 'dst', and
-// copies the low byte of 'k1' to the low byte of 'dst'. 
+// M512Kmovlhb: Inserts the low byte of mask 'k2' into the high byte of 'dst',
+// and copies the low byte of 'k1' to the low byte of 'dst'. 
 //
 //		dst[7:0] := k1[7:0]
 //		dst[15:8] := k2[7:0]
 //
 // Instruction: 'KMERGE2L1L'. Intrinsic: '_mm512_kmovlhb'.
 // Requires KNCNI.
-func Kmovlhb(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kmovlhb(uint16(k1), uint16(k2)))
+func M512Kmovlhb(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kmovlhb(uint16(k1), uint16(k2)))
 }
 
-func kmovlhb(k1 uint16, k2 uint16) uint16
+func m512Kmovlhb(k1 uint16, k2 uint16) uint16
 
 
-// Knot: Compute the bitwise NOT of 16-bit mask 'a', and store the result in
-// 'k'. 
+// M512Knot: Compute the bitwise NOT of 16-bit mask 'a', and store the result
+// in 'k'. 
 //
 //		k[15:0] := NOT a[15:0]
 //		k[MAX:16] := 0
 //
 // Instruction: 'KNOT'. Intrinsic: '_mm512_knot'.
 // Requires KNCNI.
-func Knot(a x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(knot(uint16(a)))
+func M512Knot(a x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Knot(uint16(a)))
 }
 
-func knot(a uint16) uint16
+func m512Knot(a uint16) uint16
 
 
-// Kor: Compute the bitwise OR of 16-bit masks 'a' and 'b', and store the
+// M512Kor: Compute the bitwise OR of 16-bit masks 'a' and 'b', and store the
 // result in 'k'. 
 //
 //		k[15:0] := a[15:0] OR b[15:0]
@@ -10093,15 +10120,15 @@ func knot(a uint16) uint16
 //
 // Instruction: 'KOR'. Intrinsic: '_mm512_kor'.
 // Requires KNCNI.
-func Kor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kor(uint16(a), uint16(b)))
+func M512Kor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kor(uint16(a), uint16(b)))
 }
 
-func kor(a uint16, b uint16) uint16
+func m512Kor(a uint16, b uint16) uint16
 
 
-// Kortestc: Performs bitwise OR between 'k1' and 'k2', storing the result in
-// 'dst'. CF flag is set if 'dst' consists of all 1's. 
+// M512Kortestc: Performs bitwise OR between 'k1' and 'k2', storing the result
+// in 'dst'. CF flag is set if 'dst' consists of all 1's. 
 //
 //		dst[15:0] := k1[15:0] | k2[15:0]
 //		IF PopCount(dst[15:0]) = 16
@@ -10110,15 +10137,15 @@ func kor(a uint16, b uint16) uint16
 //
 // Instruction: 'KORTEST'. Intrinsic: '_mm512_kortestc'.
 // Requires KNCNI.
-func Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) int {
-	return int(kortestc(uint16(k1), uint16(k2)))
+func M512Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) int {
+	return int(m512Kortestc(uint16(k1), uint16(k2)))
 }
 
-func kortestc(k1 uint16, k2 uint16) int
+func m512Kortestc(k1 uint16, k2 uint16) int
 
 
-// Kortestz: Performs bitwise OR between 'k1' and 'k2', storing the result in
-// 'dst'. ZF flag is set if 'dst' is 0. 
+// M512Kortestz: Performs bitwise OR between 'k1' and 'k2', storing the result
+// in 'dst'. ZF flag is set if 'dst' is 0. 
 //
 //		dst[15:0] := k1[15:0] | k2[15:0]
 //		IF dst = 0
@@ -10127,15 +10154,15 @@ func kortestc(k1 uint16, k2 uint16) int
 //
 // Instruction: 'KORTEST'. Intrinsic: '_mm512_kortestz'.
 // Requires KNCNI.
-func Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) int {
-	return int(kortestz(uint16(k1), uint16(k2)))
+func M512Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) int {
+	return int(m512Kortestz(uint16(k1), uint16(k2)))
 }
 
-func kortestz(k1 uint16, k2 uint16) int
+func m512Kortestz(k1 uint16, k2 uint16) int
 
 
-// Kswapb: Moves high byte from 'k2' to low byte of 'k1', and moves low byte of
-// 'k2' to high byte of 'k1'. 
+// M512Kswapb: Moves high byte from 'k2' to low byte of 'k1', and moves low
+// byte of 'k2' to high byte of 'k1'. 
 //
 //		tmp[7:0] := k2[15:8]
 //		k2[15:8] := k1[7:0]
@@ -10147,29 +10174,29 @@ func kortestz(k1 uint16, k2 uint16) int
 //
 // Instruction: 'KMERGE2L1H'. Intrinsic: '_mm512_kswapb'.
 // Requires KNCNI.
-func Kswapb(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kswapb(uint16(k1), uint16(k2)))
+func M512Kswapb(k1 x86.Mmask16, k2 x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kswapb(uint16(k1), uint16(k2)))
 }
 
-func kswapb(k1 uint16, k2 uint16) uint16
+func m512Kswapb(k1 uint16, k2 uint16) uint16
 
 
-// Kxnor: Compute the bitwise XNOR of 16-bit masks 'a' and 'b', and store the
-// result in 'k'. 
+// M512Kxnor: Compute the bitwise XNOR of 16-bit masks 'a' and 'b', and store
+// the result in 'k'. 
 //
 //		k[15:0] := NOT (a[15:0] XOR b[15:0])
 //		k[MAX:16] := 0
 //
 // Instruction: 'KXNOR'. Intrinsic: '_mm512_kxnor'.
 // Requires KNCNI.
-func Kxnor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kxnor(uint16(a), uint16(b)))
+func M512Kxnor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kxnor(uint16(a), uint16(b)))
 }
 
-func kxnor(a uint16, b uint16) uint16
+func m512Kxnor(a uint16, b uint16) uint16
 
 
-// Kxor: Compute the bitwise XOR of 16-bit masks 'a' and 'b', and store the
+// M512Kxor: Compute the bitwise XOR of 16-bit masks 'a' and 'b', and store the
 // result in 'k'. 
 //
 //		k[15:0] := a[15:0] XOR b[15:0]
@@ -10177,15 +10204,15 @@ func kxnor(a uint16, b uint16) uint16
 //
 // Instruction: 'KXOR'. Intrinsic: '_mm512_kxor'.
 // Requires KNCNI.
-func Kxor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
-	return x86.Mmask16(kxor(uint16(a), uint16(b)))
+func M512Kxor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+	return x86.Mmask16(m512Kxor(uint16(a), uint16(b)))
 }
 
-func kxor(a uint16, b uint16) uint16
+func m512Kxor(a uint16, b uint16) uint16
 
 
-// LoadEpi32: Load 512-bits (composed of 16 packed 32-bit integers) from memory
-// into 'dst'. 
+// M512LoadEpi32: Load 512-bits (composed of 16 packed 32-bit integers) from
+// memory into 'dst'. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -10194,14 +10221,14 @@ func kxor(a uint16, b uint16) uint16
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_load_epi32'.
 // Requires KNCNI.
-func LoadEpi32(mem_addr uintptr) x86.M512i {
-	return x86.M512i(loadEpi32(uintptr(mem_addr)))
+func M512LoadEpi32(mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512LoadEpi32(uintptr(mem_addr)))
 }
 
-func loadEpi32(mem_addr uintptr) [64]byte
+func m512LoadEpi32(mem_addr uintptr) [64]byte
 
 
-// MaskLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
+// M512MaskLoadEpi32: Load packed 32-bit integers from memory into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set).
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
@@ -10219,15 +10246,15 @@ func loadEpi32(mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_load_epi32'.
 // Requires KNCNI.
-func MaskLoadEpi32(src x86.M512i, k x86.Mmask16, mem_addr uintptr) x86.M512i {
-	return x86.M512i(maskLoadEpi32([64]byte(src), uint16(k), uintptr(mem_addr)))
+func M512MaskLoadEpi32(src x86.M512i, k x86.Mmask16, mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoadEpi32([64]byte(src), uint16(k), uintptr(mem_addr)))
 }
 
-func maskLoadEpi32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
+func m512MaskLoadEpi32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
 
 
-// LoadEpi64: Load 512-bits (composed of 8 packed 64-bit integers) from memory
-// into 'dst'. 
+// M512LoadEpi64: Load 512-bits (composed of 8 packed 64-bit integers) from
+// memory into 'dst'. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -10236,14 +10263,14 @@ func maskLoadEpi32(src [64]byte, k uint16, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_load_epi64'.
 // Requires KNCNI.
-func LoadEpi64(mem_addr uintptr) x86.M512i {
-	return x86.M512i(loadEpi64(uintptr(mem_addr)))
+func M512LoadEpi64(mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512LoadEpi64(uintptr(mem_addr)))
 }
 
-func loadEpi64(mem_addr uintptr) [64]byte
+func m512LoadEpi64(mem_addr uintptr) [64]byte
 
 
-// MaskLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
+// M512MaskLoadEpi64: Load packed 64-bit integers from memory into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
@@ -10261,14 +10288,14 @@ func loadEpi64(mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_load_epi64'.
 // Requires KNCNI.
-func MaskLoadEpi64(src x86.M512i, k x86.Mmask8, mem_addr uintptr) x86.M512i {
-	return x86.M512i(maskLoadEpi64([64]byte(src), uint8(k), uintptr(mem_addr)))
+func M512MaskLoadEpi64(src x86.M512i, k x86.Mmask8, mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoadEpi64([64]byte(src), uint8(k), uintptr(mem_addr)))
 }
 
-func maskLoadEpi64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
+func m512MaskLoadEpi64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
 
 
-// LoadPd: Load 512-bits (composed of 8 packed double-precision (64-bit)
+// M512LoadPd: Load 512-bits (composed of 8 packed double-precision (64-bit)
 // floating-point elements) from memory into 'dst'. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
@@ -10278,17 +10305,18 @@ func maskLoadEpi64(src [64]byte, k uint8, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_load_pd'.
 // Requires KNCNI.
-func LoadPd(mem_addr uintptr) x86.M512d {
-	return x86.M512d(loadPd(uintptr(mem_addr)))
+func M512LoadPd(mem_addr uintptr) x86.M512d {
+	return x86.M512d(m512LoadPd(uintptr(mem_addr)))
 }
 
-func loadPd(mem_addr uintptr) [8]float64
+func m512LoadPd(mem_addr uintptr) [8]float64
 
 
-// MaskLoadPd: Load packed double-precision (64-bit) floating-point elements
-// from memory into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 64-byte boundary or a general-protection exception may be generated. 
+// M512MaskLoadPd: Load packed double-precision (64-bit) floating-point
+// elements from memory into 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). 'mem_addr' must be
+// aligned on a 64-byte boundary or a general-protection exception may be
+// generated. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -10302,14 +10330,14 @@ func loadPd(mem_addr uintptr) [8]float64
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_mask_load_pd'.
 // Requires KNCNI.
-func MaskLoadPd(src x86.M512d, k x86.Mmask8, mem_addr uintptr) x86.M512d {
-	return x86.M512d(maskLoadPd([8]float64(src), uint8(k), uintptr(mem_addr)))
+func M512MaskLoadPd(src x86.M512d, k x86.Mmask8, mem_addr uintptr) x86.M512d {
+	return x86.M512d(m512MaskLoadPd([8]float64(src), uint8(k), uintptr(mem_addr)))
 }
 
-func maskLoadPd(src [8]float64, k uint8, mem_addr uintptr) [8]float64
+func m512MaskLoadPd(src [8]float64, k uint8, mem_addr uintptr) [8]float64
 
 
-// LoadPs: Load 512-bits (composed of 16 packed single-precision (32-bit)
+// M512LoadPs: Load 512-bits (composed of 16 packed single-precision (32-bit)
 // floating-point elements) from memory into 'dst'. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
@@ -10319,17 +10347,18 @@ func maskLoadPd(src [8]float64, k uint8, mem_addr uintptr) [8]float64
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_load_ps'.
 // Requires KNCNI.
-func LoadPs(mem_addr uintptr) x86.M512 {
-	return x86.M512(loadPs(uintptr(mem_addr)))
+func M512LoadPs(mem_addr uintptr) x86.M512 {
+	return x86.M512(m512LoadPs(uintptr(mem_addr)))
 }
 
-func loadPs(mem_addr uintptr) [16]float32
+func m512LoadPs(mem_addr uintptr) [16]float32
 
 
-// MaskLoadPs: Load packed single-precision (32-bit) floating-point elements
-// from memory into 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 'mem_addr' must be aligned on a
-// 64-byte boundary or a general-protection exception may be generated. 
+// M512MaskLoadPs: Load packed single-precision (32-bit) floating-point
+// elements from memory into 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). 'mem_addr' must be
+// aligned on a 64-byte boundary or a general-protection exception may be
+// generated. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -10343,14 +10372,14 @@ func loadPs(mem_addr uintptr) [16]float32
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_mask_load_ps'.
 // Requires KNCNI.
-func MaskLoadPs(src x86.M512, k x86.Mmask16, mem_addr uintptr) x86.M512 {
-	return x86.M512(maskLoadPs([16]float32(src), uint16(k), uintptr(mem_addr)))
+func M512MaskLoadPs(src x86.M512, k x86.Mmask16, mem_addr uintptr) x86.M512 {
+	return x86.M512(m512MaskLoadPs([16]float32(src), uint16(k), uintptr(mem_addr)))
 }
 
-func maskLoadPs(src [16]float32, k uint16, mem_addr uintptr) [16]float32
+func m512MaskLoadPs(src [16]float32, k uint16, mem_addr uintptr) [16]float32
 
 
-// LoadSi512: Load 512-bits of integer data from memory into 'dst'. 
+// M512LoadSi512: Load 512-bits of integer data from memory into 'dst'. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -10359,14 +10388,14 @@ func maskLoadPs(src [16]float32, k uint16, mem_addr uintptr) [16]float32
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_load_si512'.
 // Requires KNCNI.
-func LoadSi512(mem_addr uintptr) x86.M512i {
-	return x86.M512i(loadSi512(uintptr(mem_addr)))
+func M512LoadSi512(mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512LoadSi512(uintptr(mem_addr)))
 }
 
-func loadSi512(mem_addr uintptr) [64]byte
+func m512LoadSi512(mem_addr uintptr) [64]byte
 
 
-// LoadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
+// M512LoadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt-64 and
 // expands them into packed 32-bit integers in 'dst'. The initial values of
 // 'dst' are copied from 'src'. Only those converted doublewords that occur at
@@ -10394,14 +10423,14 @@ func loadSi512(mem_addr uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_loadunpackhi_epi32'.
 // Requires KNCNI.
-func LoadunpackhiEpi32(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(loadunpackhiEpi32([64]byte(src), uintptr(mt)))
+func M512LoadunpackhiEpi32(src x86.M512i, mt uintptr) x86.M512i {
+	return x86.M512i(m512LoadunpackhiEpi32([64]byte(src), uintptr(mt)))
 }
 
-func loadunpackhiEpi32(src [64]byte, mt uintptr) [64]byte
+func m512LoadunpackhiEpi32(src [64]byte, mt uintptr) [64]byte
 
 
-// MaskLoadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
+// M512MaskLoadunpackhiEpi32: Loads the high-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt-64 and
 // expands them into packed 32-bit integers in 'dst'. The initial values of
 // 'dst' are copied from 'src'. Only those converted doublewords that occur at
@@ -10433,17 +10462,17 @@ func loadunpackhiEpi32(src [64]byte, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKHD'. Intrinsic: '_mm512_mask_loadunpackhi_epi32'.
 // Requires KNCNI.
-func MaskLoadunpackhiEpi32(src x86.M512i, k x86.Mmask16, mt uintptr) x86.M512i {
-	return x86.M512i(maskLoadunpackhiEpi32([64]byte(src), uint16(k), uintptr(mt)))
+func M512MaskLoadunpackhiEpi32(src x86.M512i, k x86.Mmask16, mt uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoadunpackhiEpi32([64]byte(src), uint16(k), uintptr(mt)))
 }
 
-func maskLoadunpackhiEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
+func m512MaskLoadunpackhiEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
 
 
-// LoadunpackhiEpi64: Loads the high-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt-64 and expands them into
-// packed 64-bit integers in 'dst'. The initial values of 'dst' are copied from
-// 'src'. Only those converted quadwords that occur at or after the first
+// M512LoadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt-64 and expands them
+// into packed 64-bit integers in 'dst'. The initial values of 'dst' are copied
+// from 'src'. Only those converted quadwords that occur at or after the first
 // 64-byte-aligned address following (mt-64) are loaded. Elements in the
 // resulting vector that do not map to those quadwords are taken from 'src'. 
 //
@@ -10467,14 +10496,14 @@ func maskLoadunpackhiEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_loadunpackhi_epi64'.
 // Requires KNCNI.
-func LoadunpackhiEpi64(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(loadunpackhiEpi64([64]byte(src), uintptr(mt)))
+func M512LoadunpackhiEpi64(src x86.M512i, mt uintptr) x86.M512i {
+	return x86.M512i(m512LoadunpackhiEpi64([64]byte(src), uintptr(mt)))
 }
 
-func loadunpackhiEpi64(src [64]byte, mt uintptr) [64]byte
+func m512LoadunpackhiEpi64(src [64]byte, mt uintptr) [64]byte
 
 
-// MaskLoadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
+// M512MaskLoadunpackhiEpi64: Loads the high-64-byte-aligned portion of the
 // quadword stream starting at element-aligned address mt-64 and expands them
 // into packed 64-bit integers in 'dst'. The initial values of 'dst' are copied
 // from 'src'. Only those converted quadwords that occur at or after the first
@@ -10505,14 +10534,14 @@ func loadunpackhiEpi64(src [64]byte, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKHQ'. Intrinsic: '_mm512_mask_loadunpackhi_epi64'.
 // Requires KNCNI.
-func MaskLoadunpackhiEpi64(src x86.M512i, k x86.Mmask8, mt uintptr) x86.M512i {
-	return x86.M512i(maskLoadunpackhiEpi64([64]byte(src), uint8(k), uintptr(mt)))
+func M512MaskLoadunpackhiEpi64(src x86.M512i, k x86.Mmask8, mt uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoadunpackhiEpi64([64]byte(src), uint8(k), uintptr(mt)))
 }
 
-func maskLoadunpackhiEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
+func m512MaskLoadunpackhiEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
 
 
-// LoadunpackhiPd: Loads the high-64-byte-aligned portion of the quadword
+// M512LoadunpackhiPd: Loads the high-64-byte-aligned portion of the quadword
 // stream starting at element-aligned address mt-64 and expands them into
 // packed double-precision (64-bit) floating-point values in 'dst'. The initial
 // values of 'dst' are copied from 'src'. Only those converted quadwords that
@@ -10540,22 +10569,22 @@ func maskLoadunpackhiEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_loadunpackhi_pd'.
 // Requires KNCNI.
-func LoadunpackhiPd(src x86.M512d, mt uintptr) x86.M512d {
-	return x86.M512d(loadunpackhiPd([8]float64(src), uintptr(mt)))
+func M512LoadunpackhiPd(src x86.M512d, mt uintptr) x86.M512d {
+	return x86.M512d(m512LoadunpackhiPd([8]float64(src), uintptr(mt)))
 }
 
-func loadunpackhiPd(src [8]float64, mt uintptr) [8]float64
+func m512LoadunpackhiPd(src [8]float64, mt uintptr) [8]float64
 
 
-// MaskLoadunpackhiPd: Loads the high-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt-64 and expands them into
-// packed double-precision (64-bit) floating-point values in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted quadwords that
-// occur at or after the first 64-byte-aligned address following (mt-64) are
-// loaded. Elements in the resulting vector that do not map to those quadwords
-// are taken from 'src'. Elements are loaded from memory according to element
-// selector 'k' (elements are skipped when the corresponding mask bit is not
-// set). 
+// M512MaskLoadunpackhiPd: Loads the high-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt-64 and expands them
+// into packed double-precision (64-bit) floating-point values in 'dst'. The
+// initial values of 'dst' are copied from 'src'. Only those converted
+// quadwords that occur at or after the first 64-byte-aligned address following
+// (mt-64) are loaded. Elements in the resulting vector that do not map to
+// those quadwords are taken from 'src'. Elements are loaded from memory
+// according to element selector 'k' (elements are skipped when the
+// corresponding mask bit is not set). 
 //
 //		dst[511:0] := src[511:0]
 //		loadOffset := 0
@@ -10579,14 +10608,14 @@ func loadunpackhiPd(src [8]float64, mt uintptr) [8]float64
 //
 // Instruction: 'VLOADUNPACKHPD'. Intrinsic: '_mm512_mask_loadunpackhi_pd'.
 // Requires KNCNI.
-func MaskLoadunpackhiPd(src x86.M512d, k x86.Mmask8, mt uintptr) x86.M512d {
-	return x86.M512d(maskLoadunpackhiPd([8]float64(src), uint8(k), uintptr(mt)))
+func M512MaskLoadunpackhiPd(src x86.M512d, k x86.Mmask8, mt uintptr) x86.M512d {
+	return x86.M512d(m512MaskLoadunpackhiPd([8]float64(src), uint8(k), uintptr(mt)))
 }
 
-func maskLoadunpackhiPd(src [8]float64, k uint8, mt uintptr) [8]float64
+func m512MaskLoadunpackhiPd(src [8]float64, k uint8, mt uintptr) [8]float64
 
 
-// LoadunpackhiPs: Loads the high-64-byte-aligned portion of the
+// M512LoadunpackhiPs: Loads the high-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt-64 and
 // expands them into packed single-precision (32-bit) floating-point elements
 // in 'dst'. The initial values of 'dst' are copied from 'src'. Only those
@@ -10614,16 +10643,16 @@ func maskLoadunpackhiPd(src [8]float64, k uint8, mt uintptr) [8]float64
 //
 // Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_loadunpackhi_ps'.
 // Requires KNCNI.
-func LoadunpackhiPs(src x86.M512, mt uintptr) x86.M512 {
-	return x86.M512(loadunpackhiPs([16]float32(src), uintptr(mt)))
+func M512LoadunpackhiPs(src x86.M512, mt uintptr) x86.M512 {
+	return x86.M512(m512LoadunpackhiPs([16]float32(src), uintptr(mt)))
 }
 
-func loadunpackhiPs(src [16]float32, mt uintptr) [16]float32
+func m512LoadunpackhiPs(src [16]float32, mt uintptr) [16]float32
 
 
-// MaskLoadunpackhiPs: Loads the high-64-byte-aligned portion of the doubleword
-// stream starting at element-aligned address mt-64 and expands them into
-// packed single-precision (32-bit) floating-point elements in 'dst'. The
+// M512MaskLoadunpackhiPs: Loads the high-64-byte-aligned portion of the
+// doubleword stream starting at element-aligned address mt-64 and expands them
+// into packed single-precision (32-bit) floating-point elements in 'dst'. The
 // initial values of 'dst' are copied from 'src'. Only those converted
 // quadwords that occur at or after the first 64-byte-aligned address following
 // (mt-64) are loaded. Elements in the resulting vector that do not map to
@@ -10653,14 +10682,14 @@ func loadunpackhiPs(src [16]float32, mt uintptr) [16]float32
 //
 // Instruction: 'VLOADUNPACKHPS'. Intrinsic: '_mm512_mask_loadunpackhi_ps'.
 // Requires KNCNI.
-func MaskLoadunpackhiPs(src x86.M512, k x86.Mmask16, mt uintptr) x86.M512 {
-	return x86.M512(maskLoadunpackhiPs([16]float32(src), uint16(k), uintptr(mt)))
+func M512MaskLoadunpackhiPs(src x86.M512, k x86.Mmask16, mt uintptr) x86.M512 {
+	return x86.M512(m512MaskLoadunpackhiPs([16]float32(src), uint16(k), uintptr(mt)))
 }
 
-func maskLoadunpackhiPs(src [16]float32, k uint16, mt uintptr) [16]float32
+func m512MaskLoadunpackhiPs(src [16]float32, k uint16, mt uintptr) [16]float32
 
 
-// LoadunpackloEpi32: Loads the low-64-byte-aligned portion of the
+// M512LoadunpackloEpi32: Loads the low-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt and
 // expanded into packed 32-bit integers in 'dst'. The initial values of 'dst'
 // are copied from 'src'. Only those converted doublewords that occur before
@@ -10683,14 +10712,14 @@ func maskLoadunpackhiPs(src [16]float32, k uint16, mt uintptr) [16]float32
 //
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_loadunpacklo_epi32'.
 // Requires KNCNI.
-func LoadunpackloEpi32(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(loadunpackloEpi32([64]byte(src), uintptr(mt)))
+func M512LoadunpackloEpi32(src x86.M512i, mt uintptr) x86.M512i {
+	return x86.M512i(m512LoadunpackloEpi32([64]byte(src), uintptr(mt)))
 }
 
-func loadunpackloEpi32(src [64]byte, mt uintptr) [64]byte
+func m512LoadunpackloEpi32(src [64]byte, mt uintptr) [64]byte
 
 
-// MaskLoadunpackloEpi32: Loads the low-64-byte-aligned portion of the
+// M512MaskLoadunpackloEpi32: Loads the low-64-byte-aligned portion of the
 // byte/word/doubleword stream starting at element-aligned address mt and
 // expands them into packed 32-bit integers in 'dst'. The initial values of
 // 'dst' are copied from 'src'. Only those converted doublewords that occur
@@ -10717,14 +10746,14 @@ func loadunpackloEpi32(src [64]byte, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKLD'. Intrinsic: '_mm512_mask_loadunpacklo_epi32'.
 // Requires KNCNI.
-func MaskLoadunpackloEpi32(src x86.M512i, k x86.Mmask16, mt uintptr) x86.M512i {
-	return x86.M512i(maskLoadunpackloEpi32([64]byte(src), uint16(k), uintptr(mt)))
+func M512MaskLoadunpackloEpi32(src x86.M512i, k x86.Mmask16, mt uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoadunpackloEpi32([64]byte(src), uint16(k), uintptr(mt)))
 }
 
-func maskLoadunpackloEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
+func m512MaskLoadunpackloEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
 
 
-// LoadunpackloEpi64: Loads the low-64-byte-aligned portion of the quadword
+// M512LoadunpackloEpi64: Loads the low-64-byte-aligned portion of the quadword
 // stream starting at element-aligned address mt and expands them into packed
 // 64-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
 // Only those converted quad that occur before first 64-byte-aligned address
@@ -10747,20 +10776,20 @@ func maskLoadunpackloEpi32(src [64]byte, k uint16, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_loadunpacklo_epi64'.
 // Requires KNCNI.
-func LoadunpackloEpi64(src x86.M512i, mt uintptr) x86.M512i {
-	return x86.M512i(loadunpackloEpi64([64]byte(src), uintptr(mt)))
+func M512LoadunpackloEpi64(src x86.M512i, mt uintptr) x86.M512i {
+	return x86.M512i(m512LoadunpackloEpi64([64]byte(src), uintptr(mt)))
 }
 
-func loadunpackloEpi64(src [64]byte, mt uintptr) [64]byte
+func m512LoadunpackloEpi64(src [64]byte, mt uintptr) [64]byte
 
 
-// MaskLoadunpackloEpi64: Loads the low-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt and expands them into packed
-// 64-bit integers in 'dst'. The initial values of 'dst' are copied from 'src'.
-// Only those converted quad that occur before first 64-byte-aligned address
-// following 'mt' are loaded. Elements in the resulting vector that do not map
-// to those quadwords are taken from 'src'. Elements are loaded from memory
-// according to element selector 'k' (elements are skipped when the
+// M512MaskLoadunpackloEpi64: Loads the low-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt and expands them into
+// packed 64-bit integers in 'dst'. The initial values of 'dst' are copied from
+// 'src'. Only those converted quad that occur before first 64-byte-aligned
+// address following 'mt' are loaded. Elements in the resulting vector that do
+// not map to those quadwords are taken from 'src'. Elements are loaded from
+// memory according to element selector 'k' (elements are skipped when the
 // corresponding mask bit is not set). 
 //
 //		dst[511:0] := src[511:0]
@@ -10781,15 +10810,15 @@ func loadunpackloEpi64(src [64]byte, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKLQ'. Intrinsic: '_mm512_mask_loadunpacklo_epi64'.
 // Requires KNCNI.
-func MaskLoadunpackloEpi64(src x86.M512i, k x86.Mmask8, mt uintptr) x86.M512i {
-	return x86.M512i(maskLoadunpackloEpi64([64]byte(src), uint8(k), uintptr(mt)))
+func M512MaskLoadunpackloEpi64(src x86.M512i, k x86.Mmask8, mt uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoadunpackloEpi64([64]byte(src), uint8(k), uintptr(mt)))
 }
 
-func maskLoadunpackloEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
+func m512MaskLoadunpackloEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
 
 
-// LoadunpackloPd: Loads the low-64-byte-aligned portion of the quadword stream
-// starting at element-aligned address mt and expands them into packed
+// M512LoadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
+// stream starting at element-aligned address mt and expands them into packed
 // double-precision (64-bit) floating-point elements in 'dst'. The initial
 // values of 'dst' are copied from 'src'. Only those converted quad that occur
 // before first 64-byte-aligned address following 'mt' are loaded. Elements in
@@ -10812,21 +10841,21 @@ func maskLoadunpackloEpi64(src [64]byte, k uint8, mt uintptr) [64]byte
 //
 // Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_loadunpacklo_pd'.
 // Requires KNCNI.
-func LoadunpackloPd(src x86.M512d, mt uintptr) x86.M512d {
-	return x86.M512d(loadunpackloPd([8]float64(src), uintptr(mt)))
+func M512LoadunpackloPd(src x86.M512d, mt uintptr) x86.M512d {
+	return x86.M512d(m512LoadunpackloPd([8]float64(src), uintptr(mt)))
 }
 
-func loadunpackloPd(src [8]float64, mt uintptr) [8]float64
+func m512LoadunpackloPd(src [8]float64, mt uintptr) [8]float64
 
 
-// MaskLoadunpackloPd: Loads the low-64-byte-aligned portion of the quadword
-// stream starting at element-aligned address mt and expands them into packed
-// double-precision (64-bit) floating-point values in 'dst'. The initial values
-// of 'dst' are copied from 'src'. Only those converted quad that occur before
-// first 64-byte-aligned address following 'mt' are loaded. Elements in the
-// resulting vector that do not map to those quadwords are taken from 'src'.
-// Elements are loaded from memory according to element selector 'k' (elements
-// are skipped when the corresponding mask bit is not set). 
+// M512MaskLoadunpackloPd: Loads the low-64-byte-aligned portion of the
+// quadword stream starting at element-aligned address mt and expands them into
+// packed double-precision (64-bit) floating-point values in 'dst'. The initial
+// values of 'dst' are copied from 'src'. Only those converted quad that occur
+// before first 64-byte-aligned address following 'mt' are loaded. Elements in
+// the resulting vector that do not map to those quadwords are taken from
+// 'src'. Elements are loaded from memory according to element selector 'k'
+// (elements are skipped when the corresponding mask bit is not set). 
 //
 //		dst[511:0] := src[511:0]
 //		loadOffset := 0
@@ -10846,14 +10875,14 @@ func loadunpackloPd(src [8]float64, mt uintptr) [8]float64
 //
 // Instruction: 'VLOADUNPACKLPD'. Intrinsic: '_mm512_mask_loadunpacklo_pd'.
 // Requires KNCNI.
-func MaskLoadunpackloPd(src x86.M512d, k x86.Mmask8, mt uintptr) x86.M512d {
-	return x86.M512d(maskLoadunpackloPd([8]float64(src), uint8(k), uintptr(mt)))
+func M512MaskLoadunpackloPd(src x86.M512d, k x86.Mmask8, mt uintptr) x86.M512d {
+	return x86.M512d(m512MaskLoadunpackloPd([8]float64(src), uint8(k), uintptr(mt)))
 }
 
-func maskLoadunpackloPd(src [8]float64, k uint8, mt uintptr) [8]float64
+func m512MaskLoadunpackloPd(src [8]float64, k uint8, mt uintptr) [8]float64
 
 
-// LoadunpackloPs: Loads the low-64-byte-aligned portion of the doubleword
+// M512LoadunpackloPs: Loads the low-64-byte-aligned portion of the doubleword
 // stream starting at element-aligned address mt and expanded into packed
 // single-precision (32-bit) floating-point elements in 'dst'. The initial
 // values of 'dst' are copied from 'src'. Only those converted doublewords that
@@ -10877,22 +10906,22 @@ func maskLoadunpackloPd(src [8]float64, k uint8, mt uintptr) [8]float64
 //
 // Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_loadunpacklo_ps'.
 // Requires KNCNI.
-func LoadunpackloPs(src x86.M512, mt uintptr) x86.M512 {
-	return x86.M512(loadunpackloPs([16]float32(src), uintptr(mt)))
+func M512LoadunpackloPs(src x86.M512, mt uintptr) x86.M512 {
+	return x86.M512(m512LoadunpackloPs([16]float32(src), uintptr(mt)))
 }
 
-func loadunpackloPs(src [16]float32, mt uintptr) [16]float32
+func m512LoadunpackloPs(src [16]float32, mt uintptr) [16]float32
 
 
-// MaskLoadunpackloPs: Loads the low-64-byte-aligned portion of the doubleword
-// stream starting at element-aligned address mt and expanded into packed
-// single-precision (32-bit) floating-point elements in 'dst'. The initial
-// values of 'dst' are copied from 'src'. Only those converted doublewords that
-// occur before first 64-byte-aligned address following 'mt' are loaded.
-// Elements in the resulting vector that do not map to those doublewords are
-// taken from 'src'. Elements are loaded from memory according to element
-// selector 'k' (elements are skipped when the corresponding mask bit is not
-// set). 
+// M512MaskLoadunpackloPs: Loads the low-64-byte-aligned portion of the
+// doubleword stream starting at element-aligned address mt and expanded into
+// packed single-precision (32-bit) floating-point elements in 'dst'. The
+// initial values of 'dst' are copied from 'src'. Only those converted
+// doublewords that occur before first 64-byte-aligned address following 'mt'
+// are loaded. Elements in the resulting vector that do not map to those
+// doublewords are taken from 'src'. Elements are loaded from memory according
+// to element selector 'k' (elements are skipped when the corresponding mask
+// bit is not set). 
 //
 //		dst[511:0] := src[511:0]
 //		loadOffset := 0
@@ -10912,14 +10941,14 @@ func loadunpackloPs(src [16]float32, mt uintptr) [16]float32
 //
 // Instruction: 'VLOADUNPACKLPS'. Intrinsic: '_mm512_mask_loadunpacklo_ps'.
 // Requires KNCNI.
-func MaskLoadunpackloPs(src x86.M512, k x86.Mmask16, mt uintptr) x86.M512 {
-	return x86.M512(maskLoadunpackloPs([16]float32(src), uint16(k), uintptr(mt)))
+func M512MaskLoadunpackloPs(src x86.M512, k x86.Mmask16, mt uintptr) x86.M512 {
+	return x86.M512(m512MaskLoadunpackloPs([16]float32(src), uint16(k), uintptr(mt)))
 }
 
-func maskLoadunpackloPs(src [16]float32, k uint16, mt uintptr) [16]float32
+func m512MaskLoadunpackloPs(src [16]float32, k uint16, mt uintptr) [16]float32
 
 
-// Log2Ps: Compute the base-2 logarithm of packed single-precision (32-bit)
+// M512Log2Ps: Compute the base-2 logarithm of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -10930,17 +10959,17 @@ func maskLoadunpackloPs(src [16]float32, k uint16, mt uintptr) [16]float32
 //
 // Instruction: 'VLOG2PS'. Intrinsic: '_mm512_log2_ps'.
 // Requires KNCNI.
-func Log2Ps(a x86.M512) x86.M512 {
-	return x86.M512(log2Ps([16]float32(a)))
+func M512Log2Ps(a x86.M512) x86.M512 {
+	return x86.M512(m512Log2Ps([16]float32(a)))
 }
 
-func log2Ps(a [16]float32) [16]float32
+func m512Log2Ps(a [16]float32) [16]float32
 
 
-// MaskLog2Ps: Compute the base-2 logarithm of packed single-precision (32-bit)
-// floating-point elements in 'a', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskLog2Ps: Compute the base-2 logarithm of packed single-precision
+// (32-bit) floating-point elements in 'a', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -10954,16 +10983,16 @@ func log2Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VLOG2PS'. Intrinsic: '_mm512_mask_log2_ps'.
 // Requires KNCNI.
-func MaskLog2Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskLog2Ps([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskLog2Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskLog2Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskLog2Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskLog2Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// Log2ae23Ps: Compute the base-2 logarithm of packed single-precision (32-bit)
-// floating-point elements in 'a' with absolute error of 2^(-23) and store the
-// results in 'dst'. 
+// M512Log2ae23Ps: Compute the base-2 logarithm of packed single-precision
+// (32-bit) floating-point elements in 'a' with absolute error of 2^(-23) and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -10973,14 +11002,14 @@ func maskLog2Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VLOG2PS'. Intrinsic: '_mm512_log2ae23_ps'.
 // Requires KNCNI.
-func Log2ae23Ps(a x86.M512) x86.M512 {
-	return x86.M512(log2ae23Ps([16]float32(a)))
+func M512Log2ae23Ps(a x86.M512) x86.M512 {
+	return x86.M512(m512Log2ae23Ps([16]float32(a)))
 }
 
-func log2ae23Ps(a [16]float32) [16]float32
+func m512Log2ae23Ps(a [16]float32) [16]float32
 
 
-// MaskLog2ae23Ps: Compute the base-2 logarithm of packed single-precision
+// M512MaskLog2ae23Ps: Compute the base-2 logarithm of packed single-precision
 // (32-bit) floating-point elements in 'a' with absolute error of 2^(-23) and
 // store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -10997,28 +11026,28 @@ func log2ae23Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VLOG2PS'. Intrinsic: '_mm512_mask_log2ae23_ps'.
 // Requires KNCNI.
-func MaskLog2ae23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskLog2ae23Ps([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskLog2ae23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskLog2ae23Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskLog2ae23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskLog2ae23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// Mask2int: Converts bit mask 'k1' into an integer value, storing the results
-// in 'dst'. 
+// M512Mask2int: Converts bit mask 'k1' into an integer value, storing the
+// results in 'dst'. 
 //
 //		dst := SignExtend(k1)
 //
 // Instruction: 'KMOV'. Intrinsic: '_mm512_mask2int'.
 // Requires KNCNI.
-func Mask2int(k1 x86.Mmask16) int {
-	return int(mask2int(uint16(k1)))
+func M512Mask2int(k1 x86.Mmask16) int {
+	return int(m512Mask2int(uint16(k1)))
 }
 
-func mask2int(k1 uint16) int
+func m512Mask2int(k1 uint16) int
 
 
-// MaskMaxEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
+// M512MaskMaxEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -11038,15 +11067,15 @@ func mask2int(k1 uint16) int
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm512_mask_max_epi32'.
 // Requires KNCNI.
-func MaskMaxEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaxEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaxEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaxEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaxEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MaxEpi32: Compare packed 32-bit integers in 'a' and 'b', and store packed
-// maximum values in 'dst'. 
+// M512MaxEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
+// packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11060,15 +11089,15 @@ func maskMaxEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm512_max_epi32'.
 // Requires KNCNI.
-func MaxEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maxEpi32([64]byte(a), [64]byte(b)))
+func M512MaxEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaxEpi32([64]byte(a), [64]byte(b)))
 }
 
-func maxEpi32(a [64]byte, b [64]byte) [64]byte
+func m512MaxEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
-// store packed maximum values in 'dst' using writemask 'k' (elements are
+// M512MaskMaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b',
+// and store packed maximum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -11087,15 +11116,15 @@ func maxEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm512_mask_max_epu32'.
 // Requires KNCNI.
-func MaskMaxEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaxEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaxEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaxEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaxEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and store
-// packed maximum values in 'dst'. 
+// M512MaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
+// store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11109,17 +11138,18 @@ func maskMaxEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm512_max_epu32'.
 // Requires KNCNI.
-func MaxEpu32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maxEpu32([64]byte(a), [64]byte(b)))
+func M512MaxEpu32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaxEpu32([64]byte(a), [64]byte(b)))
 }
 
-func maxEpu32(a [64]byte, b [64]byte) [64]byte
+func m512MaxEpu32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMaxabsPs: Determines the maximum of the absolute elements of each pair
-// of corresponding elements of packed single-precision (32-bit) floating-point
-// elements in 'a' and 'b', storing the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskMaxabsPs: Determines the maximum of the absolute elements of each
+// pair of corresponding elements of packed single-precision (32-bit)
+// floating-point elements in 'a' and 'b', storing the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11133,15 +11163,15 @@ func maxEpu32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VGMAXABSPS'. Intrinsic: '_mm512_mask_maxabs_ps'.
 // Requires KNCNI.
-func MaskMaxabsPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskMaxabsPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskMaxabsPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskMaxabsPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskMaxabsPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskMaxabsPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// MaxabsPs: Determines the maximum of the absolute elements of each pair of
-// corresponding elements of packed single-precision (32-bit) floating-point
+// M512MaxabsPs: Determines the maximum of the absolute elements of each pair
+// of corresponding elements of packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', storing the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -11152,14 +11182,14 @@ func maskMaxabsPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]f
 //
 // Instruction: 'VGMAXABSPS'. Intrinsic: '_mm512_maxabs_ps'.
 // Requires KNCNI.
-func MaxabsPs(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maxabsPs([16]float32(a), [16]float32(b)))
+func M512MaxabsPs(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaxabsPs([16]float32(a), [16]float32(b)))
 }
 
-func maxabsPs(a [16]float32, b [16]float32) [16]float32
+func m512MaxabsPs(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskMinEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
+// M512MaskMinEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -11179,15 +11209,15 @@ func maxabsPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm512_mask_min_epi32'.
 // Requires KNCNI.
-func MaskMinEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMinEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMinEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMinEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMinEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MinEpi32: Compare packed 32-bit integers in 'a' and 'b', and store packed
-// minimum values in 'dst'. 
+// M512MinEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
+// packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11201,15 +11231,15 @@ func maskMinEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm512_min_epi32'.
 // Requires KNCNI.
-func MinEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(minEpi32([64]byte(a), [64]byte(b)))
+func M512MinEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MinEpi32([64]byte(a), [64]byte(b)))
 }
 
-func minEpi32(a [64]byte, b [64]byte) [64]byte
+func m512MinEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
-// store packed minimum values in 'dst' using writemask 'k' (elements are
+// M512MaskMinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b',
+// and store packed minimum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -11228,15 +11258,15 @@ func minEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm512_mask_min_epu32'.
 // Requires KNCNI.
-func MaskMinEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMinEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMinEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMinEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMinEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and store
-// packed minimum values in 'dst'. 
+// M512MinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
+// store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11250,16 +11280,16 @@ func maskMinEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm512_min_epu32'.
 // Requires KNCNI.
-func MinEpu32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(minEpu32([64]byte(a), [64]byte(b)))
+func M512MinEpu32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MinEpu32([64]byte(a), [64]byte(b)))
 }
 
-func minEpu32(a [64]byte, b [64]byte) [64]byte
+func m512MinEpu32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMovEpi32: Move packed 32-bit integers from 'a' to 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M512MaskMovEpi32: Move packed 32-bit integers from 'a' to 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11273,16 +11303,16 @@ func minEpu32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_mov_epi32'.
 // Requires KNCNI.
-func MaskMovEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
-	return x86.M512i(maskMovEpi32([64]byte(src), uint16(k), [64]byte(a)))
+func M512MaskMovEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMovEpi32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskMovEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
+func m512MaskMovEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
-// MaskMovEpi64: Move packed 64-bit integers from 'a' to 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M512MaskMovEpi64: Move packed 64-bit integers from 'a' to 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -11296,14 +11326,14 @@ func maskMovEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_mov_epi64'.
 // Requires KNCNI.
-func MaskMovEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
-	return x86.M512i(maskMovEpi64([64]byte(src), uint8(k), [64]byte(a)))
+func M512MaskMovEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMovEpi64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskMovEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
+func m512MaskMovEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
-// MaskMovPd: Move packed double-precision (64-bit) floating-point elements
+// M512MaskMovPd: Move packed double-precision (64-bit) floating-point elements
 // from 'a' to 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -11319,14 +11349,14 @@ func maskMovEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_mask_mov_pd'.
 // Requires KNCNI.
-func MaskMovPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(maskMovPd([8]float64(src), uint8(k), [8]float64(a)))
+func M512MaskMovPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskMovPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
-func maskMovPd(src [8]float64, k uint8, a [8]float64) [8]float64
+func m512MaskMovPd(src [8]float64, k uint8, a [8]float64) [8]float64
 
 
-// MaskMovPs: Move packed single-precision (32-bit) floating-point elements
+// M512MaskMovPs: Move packed single-precision (32-bit) floating-point elements
 // from 'a' to 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -11342,16 +11372,17 @@ func maskMovPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_mask_mov_ps'.
 // Requires KNCNI.
-func MaskMovPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskMovPs([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskMovPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskMovPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskMovPs(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskMovPs(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// MaskMulPd: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
-// are copied from 'src' when the corresponding mask bit is not set).  RM. 
+// M512MaskMulPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set).
+// RM. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -11365,15 +11396,15 @@ func maskMovPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm512_mask_mul_pd'.
 // Requires KNCNI.
-func MaskMulPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(maskMulPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
+func M512MaskMulPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskMulPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
-func maskMulPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
+func m512MaskMulPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 
 
-// MulPd: Multiply packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst'. 
+// M512MulPd: Multiply packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -11383,16 +11414,17 @@ func maskMulPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm512_mul_pd'.
 // Requires KNCNI.
-func MulPd(a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(mulPd([8]float64(a), [8]float64(b)))
+func M512MulPd(a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512MulPd([8]float64(a), [8]float64(b)))
 }
 
-func mulPd(a [8]float64, b [8]float64) [8]float64
+func m512MulPd(a [8]float64, b [8]float64) [8]float64
 
 
-// MaskMulPs: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
-// are copied from 'src' when the corresponding mask bit is not set).  RM. 
+// M512MaskMulPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set).
+// RM. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11406,15 +11438,15 @@ func mulPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm512_mask_mul_ps'.
 // Requires KNCNI.
-func MaskMulPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskMulPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskMulPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskMulPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskMulPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskMulPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// MulPs: Multiply packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst'. 
+// M512MulPs: Multiply packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11424,14 +11456,14 @@ func maskMulPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]floa
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm512_mul_ps'.
 // Requires KNCNI.
-func MulPs(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(mulPs([16]float32(a), [16]float32(b)))
+func M512MulPs(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MulPs([16]float32(a), [16]float32(b)))
 }
 
-func mulPs(a [16]float32, b [16]float32) [16]float32
+func m512MulPs(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskMulRoundPd: Multiply packed double-precision (64-bit) floating-point
+// M512MaskMulRoundPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set).
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -11454,14 +11486,14 @@ func mulPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm512_mask_mul_round_pd'.
 // Requires KNCNI.
-func MaskMulRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskMulRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
+func M512MaskMulRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskMulRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
-func maskMulRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, rounding int) [8]float64
+func m512MaskMulRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, rounding int) [8]float64
 
 
-// MulRoundPd: Multiply packed double-precision (64-bit) floating-point
+// M512MulRoundPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', and store the results in 'dst'. 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
@@ -11479,14 +11511,14 @@ func maskMulRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, roundin
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm512_mul_round_pd'.
 // Requires KNCNI.
-func MulRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(mulRoundPd([8]float64(a), [8]float64(b), rounding))
+func M512MulRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MulRoundPd([8]float64(a), [8]float64(b), rounding))
 }
 
-func mulRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
+func m512MulRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 
 
-// MaskMulRoundPs: Multiply packed single-precision (32-bit) floating-point
+// M512MaskMulRoundPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set).
 // 	 Rounding is done according to the 'rounding' parameter, which can be one
@@ -11509,14 +11541,14 @@ func mulRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm512_mask_mul_round_ps'.
 // Requires KNCNI.
-func MaskMulRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskMulRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
+func M512MaskMulRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskMulRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
-func maskMulRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
+func m512MaskMulRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// MulRoundPs: Multiply packed single-precision (32-bit) floating-point
+// M512MulRoundPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', and store the results in 'dst'. 
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
@@ -11534,17 +11566,17 @@ func maskMulRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rou
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm512_mul_round_ps'.
 // Requires KNCNI.
-func MulRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(mulRoundPs([16]float32(a), [16]float32(b), rounding))
+func M512MulRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MulRoundPs([16]float32(a), [16]float32(b), rounding))
 }
 
-func mulRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
+func m512MulRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// MaskMulhiEpi32: Performs element-by-element multiplication between packed
-// 32-bit integer elements in 'a' and 'b' and stores the high 32 bits of each
-// result into 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
+// M512MaskMulhiEpi32: Performs element-by-element multiplication between
+// packed 32-bit integer elements in 'a' and 'b' and stores the high 32 bits of
+// each result into 'dst' using writemask 'k' (elements are copied from 'src'
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11558,16 +11590,16 @@ func mulRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VPMULHD'. Intrinsic: '_mm512_mask_mulhi_epi32'.
 // Requires KNCNI.
-func MaskMulhiEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMulhiEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMulhiEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMulhiEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhiEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMulhiEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MulhiEpi32: Performs element-by-element multiplication between packed 32-bit
-// integer elements in 'a' and 'b' and stores the high 32 bits of each result
-// into 'dst'. 
+// M512MulhiEpi32: Performs element-by-element multiplication between packed
+// 32-bit integer elements in 'a' and 'b' and stores the high 32 bits of each
+// result into 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11577,17 +11609,17 @@ func maskMulhiEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHD'. Intrinsic: '_mm512_mulhi_epi32'.
 // Requires KNCNI.
-func MulhiEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(mulhiEpi32([64]byte(a), [64]byte(b)))
+func M512MulhiEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MulhiEpi32([64]byte(a), [64]byte(b)))
 }
 
-func mulhiEpi32(a [64]byte, b [64]byte) [64]byte
+func m512MulhiEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMulhiEpu32: Performs element-by-element multiplication between packed
-// unsigned 32-bit integer elements in 'a' and 'b' and stores the high 32 bits
-// of each result into 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskMulhiEpu32: Performs element-by-element multiplication between
+// packed unsigned 32-bit integer elements in 'a' and 'b' and stores the high
+// 32 bits of each result into 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11601,14 +11633,14 @@ func mulhiEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHUD'. Intrinsic: '_mm512_mask_mulhi_epu32'.
 // Requires KNCNI.
-func MaskMulhiEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMulhiEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMulhiEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMulhiEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhiEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMulhiEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MulhiEpu32: Performs element-by-element multiplication between packed
+// M512MulhiEpu32: Performs element-by-element multiplication between packed
 // unsigned 32-bit integer elements in 'a' and 'b' and stores the high 32 bits
 // of each result into 'dst'. 
 //
@@ -11620,14 +11652,14 @@ func maskMulhiEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHUD'. Intrinsic: '_mm512_mulhi_epu32'.
 // Requires KNCNI.
-func MulhiEpu32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(mulhiEpu32([64]byte(a), [64]byte(b)))
+func M512MulhiEpu32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MulhiEpu32([64]byte(a), [64]byte(b)))
 }
 
-func mulhiEpu32(a [64]byte, b [64]byte) [64]byte
+func m512MulhiEpu32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMulloEpi32: Multiply the packed 32-bit integers in 'a' and 'b',
+// M512MaskMulloEpi32: Multiply the packed 32-bit integers in 'a' and 'b',
 // producing intermediate 64-bit integers, and store the low 32 bits of the
 // intermediate integers in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -11645,16 +11677,16 @@ func mulhiEpu32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm512_mask_mullo_epi32'.
 // Requires KNCNI.
-func MaskMulloEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMulloEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMulloEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMulloEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulloEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMulloEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MulloEpi32: Multiply the packed 32-bit integers in 'a' and 'b', producing
-// intermediate 64-bit integers, and store the low 32 bits of the intermediate
-// integers in 'dst'. 
+// M512MulloEpi32: Multiply the packed 32-bit integers in 'a' and 'b',
+// producing intermediate 64-bit integers, and store the low 32 bits of the
+// intermediate integers in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11665,14 +11697,14 @@ func maskMulloEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm512_mullo_epi32'.
 // Requires KNCNI.
-func MulloEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(mulloEpi32([64]byte(a), [64]byte(b)))
+func M512MulloEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MulloEpi32([64]byte(a), [64]byte(b)))
 }
 
-func mulloEpi32(a [64]byte, b [64]byte) [64]byte
+func m512MulloEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskOrEpi32: Compute the bitwise OR of packed 32-bit integers in 'a' and
+// M512MaskOrEpi32: Compute the bitwise OR of packed 32-bit integers in 'a' and
 // 'b', and store the results in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set). 
 //
@@ -11688,15 +11720,15 @@ func mulloEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm512_mask_or_epi32'.
 // Requires KNCNI.
-func MaskOrEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskOrEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskOrEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskOrEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskOrEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskOrEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// OrEpi32: Compute the bitwise OR of packed 32-bit integers in 'a' and 'b',
-// and store the results in 'dst'. 
+// M512OrEpi32: Compute the bitwise OR of packed 32-bit integers in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -11706,14 +11738,14 @@ func maskOrEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm512_or_epi32'.
 // Requires KNCNI.
-func OrEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(orEpi32([64]byte(a), [64]byte(b)))
+func M512OrEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512OrEpi32([64]byte(a), [64]byte(b)))
 }
 
-func orEpi32(a [64]byte, b [64]byte) [64]byte
+func m512OrEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskOrEpi64: Compute the bitwise OR of packed 64-bit integers in 'a' and
+// M512MaskOrEpi64: Compute the bitwise OR of packed 64-bit integers in 'a' and
 // 'b', and store the results in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set). 
 //
@@ -11729,15 +11761,15 @@ func orEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPORQ'. Intrinsic: '_mm512_mask_or_epi64'.
 // Requires KNCNI.
-func MaskOrEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskOrEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
+func M512MaskOrEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskOrEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskOrEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
+func m512MaskOrEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
-// OrEpi64: Compute the bitwise OR of packed 64-bit integers in 'a' and 'b',
-// and store the resut in 'dst'. 
+// M512OrEpi64: Compute the bitwise OR of packed 64-bit integers in 'a' and
+// 'b', and store the resut in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -11747,30 +11779,30 @@ func maskOrEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPORQ'. Intrinsic: '_mm512_or_epi64'.
 // Requires KNCNI.
-func OrEpi64(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(orEpi64([64]byte(a), [64]byte(b)))
+func M512OrEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512OrEpi64([64]byte(a), [64]byte(b)))
 }
 
-func orEpi64(a [64]byte, b [64]byte) [64]byte
+func m512OrEpi64(a [64]byte, b [64]byte) [64]byte
 
 
-// OrSi512: Compute the bitwise OR of 512 bits (representing integer data) in
-// 'a' and 'b', and store the result in 'dst'. 
+// M512OrSi512: Compute the bitwise OR of 512 bits (representing integer data)
+// in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[511:0] := (a[511:0] OR b[511:0])
 //		dst[MAX:512] := 0
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm512_or_si512'.
 // Requires KNCNI.
-func OrSi512(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(orSi512([64]byte(a), [64]byte(b)))
+func M512OrSi512(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512OrSi512([64]byte(a), [64]byte(b)))
 }
 
-func orSi512(a [64]byte, b [64]byte) [64]byte
+func m512OrSi512(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskPackstorehiEpi32: Stores packed 32-bit integer elements of 'v1' into a
-// doubleword stream at a logically mapped starting address (mt-64), storing
+// M512MaskPackstorehiEpi32: Stores packed 32-bit integer elements of 'v1' into
+// a doubleword stream at a logically mapped starting address (mt-64), storing
 // the high-64-byte elements of that stream (those elements of the stream that
 // map at or after the first 64-byte-aligned address following (m5-64)).
 // Elements are loaded from memory according to element selector 'k' (elements
@@ -11796,14 +11828,14 @@ func orSi512(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_mask_packstorehi_epi32'.
 // Requires KNCNI.
-func MaskPackstorehiEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i)  {
-	maskPackstorehiEpi32(uintptr(mt), uint16(k), [64]byte(v1))
+func M512MaskPackstorehiEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i)  {
+	m512MaskPackstorehiEpi32(uintptr(mt), uint16(k), [64]byte(v1))
 }
 
-func maskPackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte) 
+func m512MaskPackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte) 
 
 
-// PackstorehiEpi32: Stores packed 32-bit integer elements of 'v1' into a
+// M512PackstorehiEpi32: Stores packed 32-bit integer elements of 'v1' into a
 // doubleword stream at a logically mapped starting address (mt-64), storing
 // the high-64-byte elements of that stream (those elements of the stream that
 // map at or after the first 64-byte-aligned address following (m5-64)). 
@@ -11826,19 +11858,19 @@ func maskPackstorehiEpi32(mt uintptr, k uint16, v1 [64]byte)
 //
 // Instruction: 'VPACKSTOREHD'. Intrinsic: '_mm512_packstorehi_epi32'.
 // Requires KNCNI.
-func PackstorehiEpi32(mt uintptr, v1 x86.M512i)  {
-	packstorehiEpi32(uintptr(mt), [64]byte(v1))
+func M512PackstorehiEpi32(mt uintptr, v1 x86.M512i)  {
+	m512PackstorehiEpi32(uintptr(mt), [64]byte(v1))
 }
 
-func packstorehiEpi32(mt uintptr, v1 [64]byte) 
+func m512PackstorehiEpi32(mt uintptr, v1 [64]byte) 
 
 
-// MaskPackstorehiEpi64: Stores packed 64-bit integer elements of 'v1' into a
-// quadword stream at a logically mapped starting address (mt-64), storing the
-// high-64-byte elements of that stream (those elemetns of the stream that map
-// at or after the first 64-byte-aligned address following (m5-64)). Elements
-// are loaded from memory according to element selector 'k' (elements are
-// skipped when the corresponding mask bit is not set). 
+// M512MaskPackstorehiEpi64: Stores packed 64-bit integer elements of 'v1' into
+// a quadword stream at a logically mapped starting address (mt-64), storing
+// the high-64-byte elements of that stream (those elemetns of the stream that
+// map at or after the first 64-byte-aligned address following (m5-64)).
+// Elements are loaded from memory according to element selector 'k' (elements
+// are skipped when the corresponding mask bit is not set). 
 //
 //		storeOffset := 0
 //		foundNext64BytesBoundary := false
@@ -11860,14 +11892,14 @@ func packstorehiEpi32(mt uintptr, v1 [64]byte)
 //
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_mask_packstorehi_epi64'.
 // Requires KNCNI.
-func MaskPackstorehiEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i)  {
-	maskPackstorehiEpi64(uintptr(mt), uint8(k), [64]byte(v1))
+func M512MaskPackstorehiEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i)  {
+	m512MaskPackstorehiEpi64(uintptr(mt), uint8(k), [64]byte(v1))
 }
 
-func maskPackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte) 
+func m512MaskPackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte) 
 
 
-// PackstorehiEpi64: Stores packed 64-bit integer elements of 'v1' into a
+// M512PackstorehiEpi64: Stores packed 64-bit integer elements of 'v1' into a
 // quadword stream at a logically mapped starting address (mt-64), storing the
 // high-64-byte elements of that stream (those elemetns of the stream that map
 // at or after the first 64-byte-aligned address following (m5-64)). 
@@ -11890,17 +11922,17 @@ func maskPackstorehiEpi64(mt uintptr, k uint8, v1 [64]byte)
 //
 // Instruction: 'VPACKSTOREHQ'. Intrinsic: '_mm512_packstorehi_epi64'.
 // Requires KNCNI.
-func PackstorehiEpi64(mt uintptr, v1 x86.M512i)  {
-	packstorehiEpi64(uintptr(mt), [64]byte(v1))
+func M512PackstorehiEpi64(mt uintptr, v1 x86.M512i)  {
+	m512PackstorehiEpi64(uintptr(mt), [64]byte(v1))
 }
 
-func packstorehiEpi64(mt uintptr, v1 [64]byte) 
+func m512PackstorehiEpi64(mt uintptr, v1 [64]byte) 
 
 
-// MaskPackstorehiPd: Stores packed double-precision (64-bit) floating-point
-// elements of 'v1' into a quadword stream at a logically mapped starting
-// address (mt-64), storing the high-64-byte elements of that stream (those
-// elemetns of the stream that map at or after the first 64-byte-aligned
+// M512MaskPackstorehiPd: Stores packed double-precision (64-bit)
+// floating-point elements of 'v1' into a quadword stream at a logically mapped
+// starting address (mt-64), storing the high-64-byte elements of that stream
+// (those elemetns of the stream that map at or after the first 64-byte-aligned
 // address following (m5-64)). Elements are loaded from memory according to
 // element selector 'k' (elements are skipped when the corresponding mask bit
 // is not set). 
@@ -11925,14 +11957,14 @@ func packstorehiEpi64(mt uintptr, v1 [64]byte)
 //
 // Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_mask_packstorehi_pd'.
 // Requires KNCNI.
-func MaskPackstorehiPd(mt uintptr, k x86.Mmask8, v1 x86.M512d)  {
-	maskPackstorehiPd(uintptr(mt), uint8(k), [8]float64(v1))
+func M512MaskPackstorehiPd(mt uintptr, k x86.Mmask8, v1 x86.M512d)  {
+	m512MaskPackstorehiPd(uintptr(mt), uint8(k), [8]float64(v1))
 }
 
-func maskPackstorehiPd(mt uintptr, k uint8, v1 [8]float64) 
+func m512MaskPackstorehiPd(mt uintptr, k uint8, v1 [8]float64) 
 
 
-// PackstorehiPd: Stores packed double-precision (64-bit) floating-point
+// M512PackstorehiPd: Stores packed double-precision (64-bit) floating-point
 // elements of 'v1' into a quadword stream at a logically mapped starting
 // address (mt-64), storing the high-64-byte elements of that stream (those
 // elemetns of the stream that map at or after the first 64-byte-aligned
@@ -11956,20 +11988,20 @@ func maskPackstorehiPd(mt uintptr, k uint8, v1 [8]float64)
 //
 // Instruction: 'VPACKSTOREHPD'. Intrinsic: '_mm512_packstorehi_pd'.
 // Requires KNCNI.
-func PackstorehiPd(mt uintptr, v1 x86.M512d)  {
-	packstorehiPd(uintptr(mt), [8]float64(v1))
+func M512PackstorehiPd(mt uintptr, v1 x86.M512d)  {
+	m512PackstorehiPd(uintptr(mt), [8]float64(v1))
 }
 
-func packstorehiPd(mt uintptr, v1 [8]float64) 
+func m512PackstorehiPd(mt uintptr, v1 [8]float64) 
 
 
-// MaskPackstorehiPs: Stores packed single-precision (32-bit) floating-point
-// elements of 'v1' into a doubleword stream at a logically mapped starting
-// address (mt-64), storing the high-64-byte elements of that stream (those
-// elemetns of the stream that map at or after the first 64-byte-aligned
-// address following (m5-64)). Elements are loaded from memory according to
-// element selector 'k' (elements are skipped when the corresponding mask bit
-// is not set). 
+// M512MaskPackstorehiPs: Stores packed single-precision (32-bit)
+// floating-point elements of 'v1' into a doubleword stream at a logically
+// mapped starting address (mt-64), storing the high-64-byte elements of that
+// stream (those elemetns of the stream that map at or after the first
+// 64-byte-aligned address following (m5-64)). Elements are loaded from memory
+// according to element selector 'k' (elements are skipped when the
+// corresponding mask bit is not set). 
 //
 //		storeOffset := 0
 //		foundNext64BytesBoundary := false
@@ -11991,14 +12023,14 @@ func packstorehiPd(mt uintptr, v1 [8]float64)
 //
 // Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_mask_packstorehi_ps'.
 // Requires KNCNI.
-func MaskPackstorehiPs(mt uintptr, k x86.Mmask16, v1 x86.M512)  {
-	maskPackstorehiPs(uintptr(mt), uint16(k), [16]float32(v1))
+func M512MaskPackstorehiPs(mt uintptr, k x86.Mmask16, v1 x86.M512)  {
+	m512MaskPackstorehiPs(uintptr(mt), uint16(k), [16]float32(v1))
 }
 
-func maskPackstorehiPs(mt uintptr, k uint16, v1 [16]float32) 
+func m512MaskPackstorehiPs(mt uintptr, k uint16, v1 [16]float32) 
 
 
-// PackstorehiPs: Stores packed single-precision (32-bit) floating-point
+// M512PackstorehiPs: Stores packed single-precision (32-bit) floating-point
 // elements of 'v1' into a doubleword stream at a logically mapped starting
 // address (mt-64), storing the high-64-byte elements of that stream (those
 // elemetns of the stream that map at or after the first 64-byte-aligned
@@ -12022,15 +12054,15 @@ func maskPackstorehiPs(mt uintptr, k uint16, v1 [16]float32)
 //
 // Instruction: 'VPACKSTOREHPS'. Intrinsic: '_mm512_packstorehi_ps'.
 // Requires KNCNI.
-func PackstorehiPs(mt uintptr, v1 x86.M512)  {
-	packstorehiPs(uintptr(mt), [16]float32(v1))
+func M512PackstorehiPs(mt uintptr, v1 x86.M512)  {
+	m512PackstorehiPs(uintptr(mt), [16]float32(v1))
 }
 
-func packstorehiPs(mt uintptr, v1 [16]float32) 
+func m512PackstorehiPs(mt uintptr, v1 [16]float32) 
 
 
-// MaskPackstoreloEpi32: Stores packed 32-bit integer elements of 'v1' into a
-// doubleword stream at a logically mapped starting address 'mt', storing the
+// M512MaskPackstoreloEpi32: Stores packed 32-bit integer elements of 'v1' into
+// a doubleword stream at a logically mapped starting address 'mt', storing the
 // low-64-byte elements of that stream (those elements of the stream that map
 // before the first 64-byte-aligned address follwing 'mt'). Elements are loaded
 // from memory according to element selector 'k' (elements are skipped when the
@@ -12052,14 +12084,14 @@ func packstorehiPs(mt uintptr, v1 [16]float32)
 //
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_mask_packstorelo_epi32'.
 // Requires KNCNI.
-func MaskPackstoreloEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i)  {
-	maskPackstoreloEpi32(uintptr(mt), uint16(k), [64]byte(v1))
+func M512MaskPackstoreloEpi32(mt uintptr, k x86.Mmask16, v1 x86.M512i)  {
+	m512MaskPackstoreloEpi32(uintptr(mt), uint16(k), [64]byte(v1))
 }
 
-func maskPackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte) 
+func m512MaskPackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte) 
 
 
-// PackstoreloEpi32: Stores packed 32-bit integer elements of 'v1' into a
+// M512PackstoreloEpi32: Stores packed 32-bit integer elements of 'v1' into a
 // doubleword stream at a logically mapped starting address 'mt', storing the
 // low-64-byte elements of that stream (those elements of the stream that map
 // before the first 64-byte-aligned address follwing 'mt'). 
@@ -12078,15 +12110,15 @@ func maskPackstoreloEpi32(mt uintptr, k uint16, v1 [64]byte)
 //
 // Instruction: 'VPACKSTORELD'. Intrinsic: '_mm512_packstorelo_epi32'.
 // Requires KNCNI.
-func PackstoreloEpi32(mt uintptr, v1 x86.M512i)  {
-	packstoreloEpi32(uintptr(mt), [64]byte(v1))
+func M512PackstoreloEpi32(mt uintptr, v1 x86.M512i)  {
+	m512PackstoreloEpi32(uintptr(mt), [64]byte(v1))
 }
 
-func packstoreloEpi32(mt uintptr, v1 [64]byte) 
+func m512PackstoreloEpi32(mt uintptr, v1 [64]byte) 
 
 
-// MaskPackstoreloEpi64: Stores packed 64-bit integer elements of 'v1' into a
-// quadword stream at a logically mapped starting address 'mt', storing the
+// M512MaskPackstoreloEpi64: Stores packed 64-bit integer elements of 'v1' into
+// a quadword stream at a logically mapped starting address 'mt', storing the
 // low-64-byte elements of that stream (those elements of the stream that map
 // before the first 64-byte-aligned address follwing 'mt'). Elements are loaded
 // from memory according to element selector 'k' (elements are skipped when the
@@ -12108,14 +12140,14 @@ func packstoreloEpi32(mt uintptr, v1 [64]byte)
 //
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_mask_packstorelo_epi64'.
 // Requires KNCNI.
-func MaskPackstoreloEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i)  {
-	maskPackstoreloEpi64(uintptr(mt), uint8(k), [64]byte(v1))
+func M512MaskPackstoreloEpi64(mt uintptr, k x86.Mmask8, v1 x86.M512i)  {
+	m512MaskPackstoreloEpi64(uintptr(mt), uint8(k), [64]byte(v1))
 }
 
-func maskPackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte) 
+func m512MaskPackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte) 
 
 
-// PackstoreloEpi64: Stores packed 64-bit integer elements of 'v1' into a
+// M512PackstoreloEpi64: Stores packed 64-bit integer elements of 'v1' into a
 // quadword stream at a logically mapped starting address 'mt', storing the
 // low-64-byte elements of that stream (those elements of the stream that map
 // before the first 64-byte-aligned address follwing 'mt'). 
@@ -12134,18 +12166,18 @@ func maskPackstoreloEpi64(mt uintptr, k uint8, v1 [64]byte)
 //
 // Instruction: 'VPACKSTORELQ'. Intrinsic: '_mm512_packstorelo_epi64'.
 // Requires KNCNI.
-func PackstoreloEpi64(mt uintptr, v1 x86.M512i)  {
-	packstoreloEpi64(uintptr(mt), [64]byte(v1))
+func M512PackstoreloEpi64(mt uintptr, v1 x86.M512i)  {
+	m512PackstoreloEpi64(uintptr(mt), [64]byte(v1))
 }
 
-func packstoreloEpi64(mt uintptr, v1 [64]byte) 
+func m512PackstoreloEpi64(mt uintptr, v1 [64]byte) 
 
 
-// MaskPackstoreloPd: Stores packed double-precision (64-bit) floating-point
-// elements of 'v1' into a quadword stream at a logically mapped starting
-// address 'mt', storing the low-64-byte elements of that stream (those
-// elements of the stream that map before the first 64-byte-aligned address
-// follwing 'mt'). Elements are loaded from memory according to element
+// M512MaskPackstoreloPd: Stores packed double-precision (64-bit)
+// floating-point elements of 'v1' into a quadword stream at a logically mapped
+// starting address 'mt', storing the low-64-byte elements of that stream
+// (those elements of the stream that map before the first 64-byte-aligned
+// address follwing 'mt'). Elements are loaded from memory according to element
 // selector 'k' (elements are skipped when the corresponding mask bit is not
 // set). 
 //
@@ -12165,14 +12197,14 @@ func packstoreloEpi64(mt uintptr, v1 [64]byte)
 //
 // Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_mask_packstorelo_pd'.
 // Requires KNCNI.
-func MaskPackstoreloPd(mt uintptr, k x86.Mmask8, v1 x86.M512d)  {
-	maskPackstoreloPd(uintptr(mt), uint8(k), [8]float64(v1))
+func M512MaskPackstoreloPd(mt uintptr, k x86.Mmask8, v1 x86.M512d)  {
+	m512MaskPackstoreloPd(uintptr(mt), uint8(k), [8]float64(v1))
 }
 
-func maskPackstoreloPd(mt uintptr, k uint8, v1 [8]float64) 
+func m512MaskPackstoreloPd(mt uintptr, k uint8, v1 [8]float64) 
 
 
-// PackstoreloPd: Stores packed double-precision (64-bit) floating-point
+// M512PackstoreloPd: Stores packed double-precision (64-bit) floating-point
 // elements of 'v1' into a quadword stream at a logically mapped starting
 // address 'mt', storing the low-64-byte elements of that stream (those
 // elements of the stream that map before the first 64-byte-aligned address
@@ -12192,20 +12224,20 @@ func maskPackstoreloPd(mt uintptr, k uint8, v1 [8]float64)
 //
 // Instruction: 'VPACKSTORELPD'. Intrinsic: '_mm512_packstorelo_pd'.
 // Requires KNCNI.
-func PackstoreloPd(mt uintptr, v1 x86.M512d)  {
-	packstoreloPd(uintptr(mt), [8]float64(v1))
+func M512PackstoreloPd(mt uintptr, v1 x86.M512d)  {
+	m512PackstoreloPd(uintptr(mt), [8]float64(v1))
 }
 
-func packstoreloPd(mt uintptr, v1 [8]float64) 
+func m512PackstoreloPd(mt uintptr, v1 [8]float64) 
 
 
-// MaskPackstoreloPs: Stores packed single-precision (32-bit) floating-point
-// elements of 'v1' into a doubleword stream at a logically mapped starting
-// address 'mt', storing the low-64-byte elements of that stream (those
-// elements of the stream that map before the first 64-byte-aligned address
-// follwing 'mt'). Elements are loaded from memory according to element
-// selector 'k' (elements are skipped when the corresponding mask bit is not
-// set). 
+// M512MaskPackstoreloPs: Stores packed single-precision (32-bit)
+// floating-point elements of 'v1' into a doubleword stream at a logically
+// mapped starting address 'mt', storing the low-64-byte elements of that
+// stream (those elements of the stream that map before the first
+// 64-byte-aligned address follwing 'mt'). Elements are loaded from memory
+// according to element selector 'k' (elements are skipped when the
+// corresponding mask bit is not set). 
 //
 //		storeOffset := 0
 //		addr = mt
@@ -12223,14 +12255,14 @@ func packstoreloPd(mt uintptr, v1 [8]float64)
 //
 // Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_mask_packstorelo_ps'.
 // Requires KNCNI.
-func MaskPackstoreloPs(mt uintptr, k x86.Mmask16, v1 x86.M512)  {
-	maskPackstoreloPs(uintptr(mt), uint16(k), [16]float32(v1))
+func M512MaskPackstoreloPs(mt uintptr, k x86.Mmask16, v1 x86.M512)  {
+	m512MaskPackstoreloPs(uintptr(mt), uint16(k), [16]float32(v1))
 }
 
-func maskPackstoreloPs(mt uintptr, k uint16, v1 [16]float32) 
+func m512MaskPackstoreloPs(mt uintptr, k uint16, v1 [16]float32) 
 
 
-// PackstoreloPs: Stores packed single-precision (32-bit) floating-point
+// M512PackstoreloPs: Stores packed single-precision (32-bit) floating-point
 // elements of 'v1' into a doubleword stream at a logically mapped starting
 // address 'mt', storing the low-64-byte elements of that stream (those
 // elements of the stream that map before the first 64-byte-aligned address
@@ -12250,17 +12282,17 @@ func maskPackstoreloPs(mt uintptr, k uint16, v1 [16]float32)
 //
 // Instruction: 'VPACKSTORELPS'. Intrinsic: '_mm512_packstorelo_ps'.
 // Requires KNCNI.
-func PackstoreloPs(mt uintptr, v1 x86.M512)  {
-	packstoreloPs(uintptr(mt), [16]float32(v1))
+func M512PackstoreloPs(mt uintptr, v1 x86.M512)  {
+	m512PackstoreloPs(uintptr(mt), [16]float32(v1))
 }
 
-func packstoreloPs(mt uintptr, v1 [16]float32) 
+func m512PackstoreloPs(mt uintptr, v1 [16]float32) 
 
 
-// MaskPermute4f128Epi32: Permutes 128-bit blocks of the packed 32-bit integer
-// vector 'a' using constant 'imm8'. The results are stored in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskPermute4f128Epi32: Permutes 128-bit blocks of the packed 32-bit
+// integer vector 'a' using constant 'imm8'. The results are stored in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		SELECT4(src, control) {
 //			CASE control[1:0] OF
@@ -12289,14 +12321,14 @@ func packstoreloPs(mt uintptr, v1 [16]float32)
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_mask_permute4f128_epi32'.
 // Requires KNCNI.
-func MaskPermute4f128Epi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 MMPERMENUM) x86.M512i {
-	return x86.M512i(maskPermute4f128Epi32([64]byte(src), uint16(k), [64]byte(a), imm8))
+func M512MaskPermute4f128Epi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 MMPERMENUM) x86.M512i {
+	return x86.M512i(m512MaskPermute4f128Epi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskPermute4f128Epi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
+func m512MaskPermute4f128Epi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
-// Permute4f128Epi32: Permutes 128-bit blocks of the packed 32-bit integer
+// M512Permute4f128Epi32: Permutes 128-bit blocks of the packed 32-bit integer
 // vector 'a' using constant 'imm8'. The results are stored in 'dst'. 
 //
 //		SELECT4(src, control) {
@@ -12318,17 +12350,17 @@ func maskPermute4f128Epi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) 
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_permute4f128_epi32'.
 // Requires KNCNI.
-func Permute4f128Epi32(a x86.M512i, imm8 MMPERMENUM) x86.M512i {
-	return x86.M512i(permute4f128Epi32([64]byte(a), imm8))
+func M512Permute4f128Epi32(a x86.M512i, imm8 MMPERMENUM) x86.M512i {
+	return x86.M512i(m512Permute4f128Epi32([64]byte(a), imm8))
 }
 
-func permute4f128Epi32(a [64]byte, imm8 MMPERMENUM) [64]byte
+func m512Permute4f128Epi32(a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
-// MaskPermute4f128Ps: Permutes 128-bit blocks of the packed single-precision
-// (32-bit) floating-point elements in 'a' using constant 'imm8'. The results
-// are stored in 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
+// M512MaskPermute4f128Ps: Permutes 128-bit blocks of the packed
+// single-precision (32-bit) floating-point elements in 'a' using constant
+// 'imm8'. The results are stored in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		SELECT4(src, control) {
 //			CASE control[1:0] OF
@@ -12357,14 +12389,14 @@ func permute4f128Epi32(a [64]byte, imm8 MMPERMENUM) [64]byte
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_mask_permute4f128_ps'.
 // Requires KNCNI.
-func MaskPermute4f128Ps(src x86.M512, k x86.Mmask16, a x86.M512, imm8 MMPERMENUM) x86.M512 {
-	return x86.M512(maskPermute4f128Ps([16]float32(src), uint16(k), [16]float32(a), imm8))
+func M512MaskPermute4f128Ps(src x86.M512, k x86.Mmask16, a x86.M512, imm8 MMPERMENUM) x86.M512 {
+	return x86.M512(m512MaskPermute4f128Ps([16]float32(src), uint16(k), [16]float32(a), imm8))
 }
 
-func maskPermute4f128Ps(src [16]float32, k uint16, a [16]float32, imm8 MMPERMENUM) [16]float32
+func m512MaskPermute4f128Ps(src [16]float32, k uint16, a [16]float32, imm8 MMPERMENUM) [16]float32
 
 
-// Permute4f128Ps: Permutes 128-bit blocks of the packed single-precision
+// M512Permute4f128Ps: Permutes 128-bit blocks of the packed single-precision
 // (32-bit) floating-point elements in 'a' using constant 'imm8'. The results
 // are stored in 'dst'. 
 //
@@ -12387,20 +12419,20 @@ func maskPermute4f128Ps(src [16]float32, k uint16, a [16]float32, imm8 MMPERMENU
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_permute4f128_ps'.
 // Requires KNCNI.
-func Permute4f128Ps(a x86.M512, imm8 MMPERMENUM) x86.M512 {
-	return x86.M512(permute4f128Ps([16]float32(a), imm8))
+func M512Permute4f128Ps(a x86.M512, imm8 MMPERMENUM) x86.M512 {
+	return x86.M512(m512Permute4f128Ps([16]float32(a), imm8))
 }
 
-func permute4f128Ps(a [16]float32, imm8 MMPERMENUM) [16]float32
+func m512Permute4f128Ps(a [16]float32, imm8 MMPERMENUM) [16]float32
 
 
-// MaskPermutevarEpi32: Shuffle 32-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). Note that this intrinsic shuffles across 128-bit lanes, unlike past
-// intrinsics that use the 'permutevar' name. This intrinsic is identical to
-// '_mm512_mask_permutexvar_epi32', and it is recommended that you use that
-// intrinsic name. 
+// M512MaskPermutevarEpi32: Shuffle 32-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). Note that this intrinsic shuffles across 128-bit lanes,
+// unlike past intrinsics that use the 'permutevar' name. This intrinsic is
+// identical to '_mm512_mask_permutexvar_epi32', and it is recommended that you
+// use that intrinsic name. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -12415,14 +12447,14 @@ func permute4f128Ps(a [16]float32, imm8 MMPERMENUM) [16]float32
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_mask_permutevar_epi32'.
 // Requires KNCNI.
-func MaskPermutevarEpi32(src x86.M512i, k x86.Mmask16, idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(maskPermutevarEpi32([64]byte(src), uint16(k), [64]byte(idx), [64]byte(a)))
+func M512MaskPermutevarEpi32(src x86.M512i, k x86.Mmask16, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPermutevarEpi32([64]byte(src), uint16(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutevarEpi32(src [64]byte, k uint16, idx [64]byte, a [64]byte) [64]byte
+func m512MaskPermutevarEpi32(src [64]byte, k uint16, idx [64]byte, a [64]byte) [64]byte
 
 
-// PermutevarEpi32: Shuffle 32-bit integers in 'a' across lanes using the
+// M512PermutevarEpi32: Shuffle 32-bit integers in 'a' across lanes using the
 // corresponding index in 'idx', and store the results in 'dst'. Note that this
 // intrinsic shuffles across 128-bit lanes, unlike past intrinsics that use the
 // 'permutevar' name. This intrinsic is identical to
@@ -12438,11 +12470,11 @@ func maskPermutevarEpi32(src [64]byte, k uint16, idx [64]byte, a [64]byte) [64]b
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_permutevar_epi32'.
 // Requires KNCNI.
-func PermutevarEpi32(idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(permutevarEpi32([64]byte(idx), [64]byte(a)))
+func M512PermutevarEpi32(idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512PermutevarEpi32([64]byte(idx), [64]byte(a)))
 }
 
-func permutevarEpi32(idx [64]byte, a [64]byte) [64]byte
+func m512PermutevarEpi32(idx [64]byte, a [64]byte) [64]byte
 
 
 // Prefetch: Fetch the line of data from memory that contains address 'p' to a
@@ -12459,13 +12491,13 @@ func Prefetch(p byte, i int)  {
 func prefetch(p byte, i int) 
 
 
-// MaskPrefetchI32extgatherPs: Prefetches a set of 16 single-precision (32-bit)
-// memory locations pointed by base address 'mv' and 32-bit integer index
-// vector 'index' with scale 'scale' to L1 or L2 level of cache depending on
-// the value of 'hint'. Gathered elements are merged in cache using writemask
-// 'k' (elements are brought into cache only when their corresponding mask bits
-// are set). The 'hint' parameter may be 1 (_MM_HINT_T0) for prefetching to L1
-// cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache.
+// M512MaskPrefetchI32extgatherPs: Prefetches a set of 16 single-precision
+// (32-bit) memory locations pointed by base address 'mv' and 32-bit integer
+// index vector 'index' with scale 'scale' to L1 or L2 level of cache depending
+// on the value of 'hint'. Gathered elements are merged in cache using
+// writemask 'k' (elements are brought into cache only when their corresponding
+// mask bits are set). The 'hint' parameter may be 1 (_MM_HINT_T0) for
+// prefetching to L1 cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache.
 // The 'conv' parameter specifies the granularity used by compilers to better
 // encode the instruction. It should be the same as the 'conv' parameter
 // specified for the subsequent gather intrinsic. 
@@ -12484,14 +12516,14 @@ func prefetch(p byte, i int)
 //
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32extgather_ps'.
 // Requires KNCNI.
-func MaskPrefetchI32extgatherPs(index x86.M512i, k x86.Mmask16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
-	maskPrefetchI32extgatherPs([64]byte(index), uint16(k), uintptr(mv), conv, scale, hint)
+func M512MaskPrefetchI32extgatherPs(index x86.M512i, k x86.Mmask16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
+	m512MaskPrefetchI32extgatherPs([64]byte(index), uint16(k), uintptr(mv), conv, scale, hint)
 }
 
-func maskPrefetchI32extgatherPs(index [64]byte, k uint16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
+func m512MaskPrefetchI32extgatherPs(index [64]byte, k uint16, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
-// PrefetchI32extgatherPs: Prefetches a set of 16 single-precision (32-bit)
+// M512PrefetchI32extgatherPs: Prefetches a set of 16 single-precision (32-bit)
 // memory locations pointed by base address 'mv' and 32-bit integer index
 // vector 'index' with scale 'scale' to L1 or L2 level of cache depending on
 // the value of 'hint'. The 'hint' parameter may be 1 (_MM_HINT_T0) for
@@ -12512,14 +12544,14 @@ func maskPrefetchI32extgatherPs(index [64]byte, k uint16, mv uintptr, conv MMUPC
 //
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_prefetch_i32extgather_ps'.
 // Requires KNCNI.
-func PrefetchI32extgatherPs(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
-	prefetchI32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint)
+func M512PrefetchI32extgatherPs(index x86.M512i, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int)  {
+	m512PrefetchI32extgatherPs([64]byte(index), uintptr(mv), conv, scale, hint)
 }
 
-func prefetchI32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
+func m512PrefetchI32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
-// MaskPrefetchI32extscatterPs: Prefetches a set of 16 single-precision
+// M512MaskPrefetchI32extscatterPs: Prefetches a set of 16 single-precision
 // (32-bit) memory locations pointed by base address 'mv' and 32-bit integer
 // index vector 'index' with scale 'scale' to L1 or L2 level of cache depending
 // on the value of 'hint'. The 'hint' parameter may be 1 (_MM_HINT_T0) for
@@ -12543,17 +12575,17 @@ func prefetchI32extgatherPs(index [64]byte, mv uintptr, conv MMUPCONVPSENUM, sca
 //
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32extscatter_ps'.
 // Requires KNCNI.
-func MaskPrefetchI32extscatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
-	maskPrefetchI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), conv, scale, hint)
+func M512MaskPrefetchI32extscatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
+	m512MaskPrefetchI32extscatterPs(uintptr(mv), uint16(k), [64]byte(index), conv, scale, hint)
 }
 
-func maskPrefetchI32extscatterPs(mv uintptr, k uint16, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
+func m512MaskPrefetchI32extscatterPs(mv uintptr, k uint16, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
-// PrefetchI32extscatterPs: Prefetches a set of 16 single-precision (32-bit)
-// memory locations pointed by base address 'mv' and 32-bit integer index
-// vector 'index' with scale 'scale' to L1 or L2 level of cache depending on
-// the value of 'hint', with a request for exclusive ownership. The 'hint'
+// M512PrefetchI32extscatterPs: Prefetches a set of 16 single-precision
+// (32-bit) memory locations pointed by base address 'mv' and 32-bit integer
+// index vector 'index' with scale 'scale' to L1 or L2 level of cache depending
+// on the value of 'hint', with a request for exclusive ownership. The 'hint'
 // parameter may be one of the following: _MM_HINT_T0 = 1 for prefetching to L1
 // cache, _MM_HINT_T1 = 2 for prefetching to L2 cache, _MM_HINT_T2 = 3 for
 // prefetching to L2 cache non-temporal, _MM_HINT_NTA = 0 for prefetching to L1
@@ -12575,21 +12607,21 @@ func maskPrefetchI32extscatterPs(mv uintptr, k uint16, index [64]byte, conv MMUP
 //
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_prefetch_i32extscatter_ps'.
 // Requires KNCNI.
-func PrefetchI32extscatterPs(mv uintptr, index x86.M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
-	prefetchI32extscatterPs(uintptr(mv), [64]byte(index), conv, scale, hint)
+func M512PrefetchI32extscatterPs(mv uintptr, index x86.M512i, conv MMUPCONVPSENUM, scale int, hint int)  {
+	m512PrefetchI32extscatterPs(uintptr(mv), [64]byte(index), conv, scale, hint)
 }
 
-func prefetchI32extscatterPs(mv uintptr, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
+func m512PrefetchI32extscatterPs(mv uintptr, index [64]byte, conv MMUPCONVPSENUM, scale int, hint int) 
 
 
-// MaskPrefetchI32gatherPs: Prefetch single-precision (32-bit) floating-point
-// elements from memory using 32-bit indices. 32-bit elements are loaded from
-// addresses starting at 'base_addr' and offset by each 32-bit element in
-// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
-// are merged in cache using writemask 'k' (elements are brought into cache
-// only when their corresponding mask bits are set). 'scale' should be 1, 2, 4
-// or 8. The 'hint' parameter may be 1 (_MM_HINT_T0) for prefetching to L1
-// cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache. 
+// M512MaskPrefetchI32gatherPs: Prefetch single-precision (32-bit)
+// floating-point elements from memory using 32-bit indices. 32-bit elements
+// are loaded from addresses starting at 'base_addr' and offset by each 32-bit
+// element in 'vindex' (each index is scaled by the factor in 'scale').
+// Gathered elements are merged in cache using writemask 'k' (elements are
+// brought into cache only when their corresponding mask bits are set). 'scale'
+// should be 1, 2, 4 or 8. The 'hint' parameter may be 1 (_MM_HINT_T0) for
+// prefetching to L1 cache, or 2 (_MM_HINT_T1) for prefetching to L2 cache. 
 //
 //		FOR j := 0 to 15
 //			i := j*16;
@@ -12600,17 +12632,17 @@ func prefetchI32extscatterPs(mv uintptr, index [64]byte, conv MMUPCONVPSENUM, sc
 //
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32gather_ps'.
 // Requires KNCNI.
-func MaskPrefetchI32gatherPs(vindex x86.M512i, mask x86.Mmask16, base_addr uintptr, scale int, hint int)  {
-	maskPrefetchI32gatherPs([64]byte(vindex), uint16(mask), uintptr(base_addr), scale, hint)
+func M512MaskPrefetchI32gatherPs(vindex x86.M512i, mask x86.Mmask16, base_addr uintptr, scale int, hint int)  {
+	m512MaskPrefetchI32gatherPs([64]byte(vindex), uint16(mask), uintptr(base_addr), scale, hint)
 }
 
-func maskPrefetchI32gatherPs(vindex [64]byte, mask uint16, base_addr uintptr, scale int, hint int) 
+func m512MaskPrefetchI32gatherPs(vindex [64]byte, mask uint16, base_addr uintptr, scale int, hint int) 
 
 
-// PrefetchI32gatherPs: Prefetches 16 single-precision (32-bit) floating-point
-// elements in memory starting at location 'mv' at packed 32-bit integer
-// indices stored in 'index' scaled by 'scale'. The 'hint' parameter may be 1
-// (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
+// M512PrefetchI32gatherPs: Prefetches 16 single-precision (32-bit)
+// floating-point elements in memory starting at location 'mv' at packed 32-bit
+// integer indices stored in 'index' scaled by 'scale'. The 'hint' parameter
+// may be 1 (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
 // prefetching to L2 cache. 
 //
 //		cachev := 0
@@ -12622,14 +12654,14 @@ func maskPrefetchI32gatherPs(vindex [64]byte, mask uint16, base_addr uintptr, sc
 //
 // Instruction: 'VGATHERPF0DPS, VGATHERPF1DPS'. Intrinsic: '_mm512_prefetch_i32gather_ps'.
 // Requires KNCNI.
-func PrefetchI32gatherPs(index x86.M512i, mv uintptr, scale int, hint int)  {
-	prefetchI32gatherPs([64]byte(index), uintptr(mv), scale, hint)
+func M512PrefetchI32gatherPs(index x86.M512i, mv uintptr, scale int, hint int)  {
+	m512PrefetchI32gatherPs([64]byte(index), uintptr(mv), scale, hint)
 }
 
-func prefetchI32gatherPs(index [64]byte, mv uintptr, scale int, hint int) 
+func m512PrefetchI32gatherPs(index [64]byte, mv uintptr, scale int, hint int) 
 
 
-// MaskPrefetchI32scatterPs: Prefetches 16 single-precision (32-bit)
+// M512MaskPrefetchI32scatterPs: Prefetches 16 single-precision (32-bit)
 // floating-point elements in memory starting at location 'mv' at packed 32-bit
 // integer indices stored in 'index' scaled by 'scale'. The 'hint' parameter
 // may be 1 (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
@@ -12650,17 +12682,17 @@ func prefetchI32gatherPs(index [64]byte, mv uintptr, scale int, hint int)
 //
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_mask_prefetch_i32scatter_ps'.
 // Requires KNCNI.
-func MaskPrefetchI32scatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, scale int, hint int)  {
-	maskPrefetchI32scatterPs(uintptr(mv), uint16(k), [64]byte(index), scale, hint)
+func M512MaskPrefetchI32scatterPs(mv uintptr, k x86.Mmask16, index x86.M512i, scale int, hint int)  {
+	m512MaskPrefetchI32scatterPs(uintptr(mv), uint16(k), [64]byte(index), scale, hint)
 }
 
-func maskPrefetchI32scatterPs(mv uintptr, k uint16, index [64]byte, scale int, hint int) 
+func m512MaskPrefetchI32scatterPs(mv uintptr, k uint16, index [64]byte, scale int, hint int) 
 
 
-// PrefetchI32scatterPs: Prefetches 16 single-precision (32-bit) floating-point
-// elements in memory starting at location 'mv' at packed 32-bit integer
-// indices stored in 'index' scaled by 'scale'. The 'hint' parameter may be 1
-// (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
+// M512PrefetchI32scatterPs: Prefetches 16 single-precision (32-bit)
+// floating-point elements in memory starting at location 'mv' at packed 32-bit
+// integer indices stored in 'index' scaled by 'scale'. The 'hint' parameter
+// may be 1 (_MM_HINT_T0) for prefetching to L1 cache, or 2 (_MM_HINT_T1) for
 // prefetching to L2 cache. 
 //
 //		FOR j := 0 to 15
@@ -12676,14 +12708,14 @@ func maskPrefetchI32scatterPs(mv uintptr, k uint16, index [64]byte, scale int, h
 //
 // Instruction: 'VSCATTERPF0DPS, VSCATTERPF1DPS'. Intrinsic: '_mm512_prefetch_i32scatter_ps'.
 // Requires KNCNI.
-func PrefetchI32scatterPs(mv uintptr, index x86.M512i, scale int, hint int)  {
-	prefetchI32scatterPs(uintptr(mv), [64]byte(index), scale, hint)
+func M512PrefetchI32scatterPs(mv uintptr, index x86.M512i, scale int, hint int)  {
+	m512PrefetchI32scatterPs(uintptr(mv), [64]byte(index), scale, hint)
 }
 
-func prefetchI32scatterPs(mv uintptr, index [64]byte, scale int, hint int) 
+func m512PrefetchI32scatterPs(mv uintptr, index [64]byte, scale int, hint int) 
 
 
-// MaskRcp23Ps: Approximates the reciprocals of packed single-precision
+// M512MaskRcp23Ps: Approximates the reciprocals of packed single-precision
 // (32-bit) floating-point elements in 'a' to 23 bits of precision, storing the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
@@ -12700,16 +12732,16 @@ func prefetchI32scatterPs(mv uintptr, index [64]byte, scale int, hint int)
 //
 // Instruction: 'VRCP23PS'. Intrinsic: '_mm512_mask_rcp23_ps'.
 // Requires KNCNI.
-func MaskRcp23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskRcp23Ps([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskRcp23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskRcp23Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskRcp23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskRcp23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// Rcp23Ps: Approximates the reciprocals of packed single-precision (32-bit)
-// floating-point elements in 'a' to 23 bits of precision, storing the results
-// in 'dst'. 
+// M512Rcp23Ps: Approximates the reciprocals of packed single-precision
+// (32-bit) floating-point elements in 'a' to 23 bits of precision, storing the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -12719,14 +12751,14 @@ func maskRcp23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRCP23PS'. Intrinsic: '_mm512_rcp23_ps'.
 // Requires KNCNI.
-func Rcp23Ps(a x86.M512) x86.M512 {
-	return x86.M512(rcp23Ps([16]float32(a)))
+func M512Rcp23Ps(a x86.M512) x86.M512 {
+	return x86.M512(m512Rcp23Ps([16]float32(a)))
 }
 
-func rcp23Ps(a [16]float32) [16]float32
+func m512Rcp23Ps(a [16]float32) [16]float32
 
 
-// MaskReduceAddEpi32: Reduce the packed 32-bit integers in 'a' by addition
+// M512MaskReduceAddEpi32: Reduce the packed 32-bit integers in 'a' by addition
 // using mask 'k'. Returns the sum of all active elements in 'a'. 
 //
 //		sum[31:0] := 0
@@ -12740,14 +12772,14 @@ func rcp23Ps(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_epi32'.
 // Requires KNCNI.
-func MaskReduceAddEpi32(k x86.Mmask16, a x86.M512i) int {
-	return int(maskReduceAddEpi32(uint16(k), [64]byte(a)))
+func M512MaskReduceAddEpi32(k x86.Mmask16, a x86.M512i) int {
+	return int(m512MaskReduceAddEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceAddEpi32(k uint16, a [64]byte) int
+func m512MaskReduceAddEpi32(k uint16, a [64]byte) int
 
 
-// ReduceAddEpi32: Reduce the packed 32-bit integers in 'a' by addition.
+// M512ReduceAddEpi32: Reduce the packed 32-bit integers in 'a' by addition.
 // Returns the sum of all elements in 'a'. 
 //
 //		sum[31:0] := 0
@@ -12759,14 +12791,14 @@ func maskReduceAddEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_epi32'.
 // Requires KNCNI.
-func ReduceAddEpi32(a x86.M512i) int {
-	return int(reduceAddEpi32([64]byte(a)))
+func M512ReduceAddEpi32(a x86.M512i) int {
+	return int(m512ReduceAddEpi32([64]byte(a)))
 }
 
-func reduceAddEpi32(a [64]byte) int
+func m512ReduceAddEpi32(a [64]byte) int
 
 
-// MaskReduceAddEpi64: Reduce the packed 64-bit integers in 'a' by addition
+// M512MaskReduceAddEpi64: Reduce the packed 64-bit integers in 'a' by addition
 // using mask 'k'. Returns the sum of all active elements in 'a'. 
 //
 //		sum[63:0] := 0
@@ -12780,14 +12812,14 @@ func reduceAddEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_epi64'.
 // Requires KNCNI.
-func MaskReduceAddEpi64(k x86.Mmask8, a x86.M512i) int64 {
-	return int64(maskReduceAddEpi64(uint8(k), [64]byte(a)))
+func M512MaskReduceAddEpi64(k x86.Mmask8, a x86.M512i) int64 {
+	return int64(m512MaskReduceAddEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceAddEpi64(k uint8, a [64]byte) int64
+func m512MaskReduceAddEpi64(k uint8, a [64]byte) int64
 
 
-// ReduceAddEpi64: Reduce the packed 64-bit integers in 'a' by addition.
+// M512ReduceAddEpi64: Reduce the packed 64-bit integers in 'a' by addition.
 // Returns the sum of all elements in 'a'. 
 //
 //		sum[63:0] := 0
@@ -12799,16 +12831,16 @@ func maskReduceAddEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_epi64'.
 // Requires KNCNI.
-func ReduceAddEpi64(a x86.M512i) int64 {
-	return int64(reduceAddEpi64([64]byte(a)))
+func M512ReduceAddEpi64(a x86.M512i) int64 {
+	return int64(m512ReduceAddEpi64([64]byte(a)))
 }
 
-func reduceAddEpi64(a [64]byte) int64
+func m512ReduceAddEpi64(a [64]byte) int64
 
 
-// MaskReduceAddPd: Reduce the packed double-precision (64-bit) floating-point
-// elements in 'a' by addition using mask 'k'. Returns the sum of all active
-// elements in 'a'. 
+// M512MaskReduceAddPd: Reduce the packed double-precision (64-bit)
+// floating-point elements in 'a' by addition using mask 'k'. Returns the sum
+// of all active elements in 'a'. 
 //
 //		sum[63:0] := 0
 //		FOR j := 0 to 7
@@ -12821,14 +12853,14 @@ func reduceAddEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_pd'.
 // Requires KNCNI.
-func MaskReduceAddPd(k x86.Mmask8, a x86.M512d) float64 {
-	return float64(maskReduceAddPd(uint8(k), [8]float64(a)))
+func M512MaskReduceAddPd(k x86.Mmask8, a x86.M512d) float64 {
+	return float64(m512MaskReduceAddPd(uint8(k), [8]float64(a)))
 }
 
-func maskReduceAddPd(k uint8, a [8]float64) float64
+func m512MaskReduceAddPd(k uint8, a [8]float64) float64
 
 
-// ReduceAddPd: Reduce the packed double-precision (64-bit) floating-point
+// M512ReduceAddPd: Reduce the packed double-precision (64-bit) floating-point
 // elements in 'a' by addition. Returns the sum of all elements in 'a'. 
 //
 //		sum[63:0] := 0
@@ -12840,16 +12872,16 @@ func maskReduceAddPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_pd'.
 // Requires KNCNI.
-func ReduceAddPd(a x86.M512d) float64 {
-	return float64(reduceAddPd([8]float64(a)))
+func M512ReduceAddPd(a x86.M512d) float64 {
+	return float64(m512ReduceAddPd([8]float64(a)))
 }
 
-func reduceAddPd(a [8]float64) float64
+func m512ReduceAddPd(a [8]float64) float64
 
 
-// MaskReduceAddPs: Reduce the packed single-precision (32-bit) floating-point
-// elements in 'a' by addition using mask 'k'. Returns the sum of all active
-// elements in 'a'. 
+// M512MaskReduceAddPs: Reduce the packed single-precision (32-bit)
+// floating-point elements in 'a' by addition using mask 'k'. Returns the sum
+// of all active elements in 'a'. 
 //
 //		sum[31:0] := 0
 //		FOR j := 0 to 15
@@ -12862,14 +12894,14 @@ func reduceAddPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_ps'.
 // Requires KNCNI.
-func MaskReduceAddPs(k x86.Mmask16, a x86.M512) float32 {
-	return float32(maskReduceAddPs(uint16(k), [16]float32(a)))
+func M512MaskReduceAddPs(k x86.Mmask16, a x86.M512) float32 {
+	return float32(m512MaskReduceAddPs(uint16(k), [16]float32(a)))
 }
 
-func maskReduceAddPs(k uint16, a [16]float32) float32
+func m512MaskReduceAddPs(k uint16, a [16]float32) float32
 
 
-// ReduceAddPs: Reduce the packed single-precision (32-bit) floating-point
+// M512ReduceAddPs: Reduce the packed single-precision (32-bit) floating-point
 // elements in 'a' by addition. Returns the sum of all elements in 'a'. 
 //
 //		sum[31:0] := 0
@@ -12881,15 +12913,15 @@ func maskReduceAddPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_ps'.
 // Requires KNCNI.
-func ReduceAddPs(a x86.M512) float32 {
-	return float32(reduceAddPs([16]float32(a)))
+func M512ReduceAddPs(a x86.M512) float32 {
+	return float32(m512ReduceAddPs([16]float32(a)))
 }
 
-func reduceAddPs(a [16]float32) float32
+func m512ReduceAddPs(a [16]float32) float32
 
 
-// MaskReduceAndEpi32: Reduce the packed 32-bit integers in 'a' by bitwise AND
-// using mask 'k'. Returns the bitwise AND of all active elements in 'a'. 
+// M512MaskReduceAndEpi32: Reduce the packed 32-bit integers in 'a' by bitwise
+// AND using mask 'k'. Returns the bitwise AND of all active elements in 'a'. 
 //
 //		reduced[31:0] := 0xFFFFFFFF
 //		FOR j := 0 to 15
@@ -12902,14 +12934,14 @@ func reduceAddPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_and_epi32'.
 // Requires KNCNI.
-func MaskReduceAndEpi32(k x86.Mmask16, a x86.M512i) int {
-	return int(maskReduceAndEpi32(uint16(k), [64]byte(a)))
+func M512MaskReduceAndEpi32(k x86.Mmask16, a x86.M512i) int {
+	return int(m512MaskReduceAndEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceAndEpi32(k uint16, a [64]byte) int
+func m512MaskReduceAndEpi32(k uint16, a [64]byte) int
 
 
-// ReduceAndEpi32: Reduce the packed 32-bit integers in 'a' by bitwise AND.
+// M512ReduceAndEpi32: Reduce the packed 32-bit integers in 'a' by bitwise AND.
 // Returns the bitwise AND of all elements in 'a'. 
 //
 //		reduced[31:0] := 0xFFFFFFFF
@@ -12921,15 +12953,15 @@ func maskReduceAndEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_and_epi32'.
 // Requires KNCNI.
-func ReduceAndEpi32(a x86.M512i) int {
-	return int(reduceAndEpi32([64]byte(a)))
+func M512ReduceAndEpi32(a x86.M512i) int {
+	return int(m512ReduceAndEpi32([64]byte(a)))
 }
 
-func reduceAndEpi32(a [64]byte) int
+func m512ReduceAndEpi32(a [64]byte) int
 
 
-// MaskReduceAndEpi64: Reduce the packed 64-bit integers in 'a' by bitwise AND
-// using mask 'k'. Returns the bitwise AND of all active elements in 'a'. 
+// M512MaskReduceAndEpi64: Reduce the packed 64-bit integers in 'a' by bitwise
+// AND using mask 'k'. Returns the bitwise AND of all active elements in 'a'. 
 //
 //		reduced[63:0] := 0xFFFFFFFFFFFFFFFF
 //		FOR j := 0 to 7
@@ -12942,14 +12974,14 @@ func reduceAndEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_and_epi64'.
 // Requires KNCNI.
-func MaskReduceAndEpi64(k x86.Mmask8, a x86.M512i) int64 {
-	return int64(maskReduceAndEpi64(uint8(k), [64]byte(a)))
+func M512MaskReduceAndEpi64(k x86.Mmask8, a x86.M512i) int64 {
+	return int64(m512MaskReduceAndEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceAndEpi64(k uint8, a [64]byte) int64
+func m512MaskReduceAndEpi64(k uint8, a [64]byte) int64
 
 
-// ReduceAndEpi64: Reduce the packed 64-bit integers in 'a' by bitwise AND.
+// M512ReduceAndEpi64: Reduce the packed 64-bit integers in 'a' by bitwise AND.
 // Returns the bitwise AND of all elements in 'a'. 
 //
 //		reduced[63:0] := 0xFFFFFFFFFFFFFFFF
@@ -12961,14 +12993,14 @@ func maskReduceAndEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_and_epi64'.
 // Requires KNCNI.
-func ReduceAndEpi64(a x86.M512i) int64 {
-	return int64(reduceAndEpi64([64]byte(a)))
+func M512ReduceAndEpi64(a x86.M512i) int64 {
+	return int64(m512ReduceAndEpi64([64]byte(a)))
 }
 
-func reduceAndEpi64(a [64]byte) int64
+func m512ReduceAndEpi64(a [64]byte) int64
 
 
-// MaskReduceGmaxPd: Determines the maximum element of the packed
+// M512MaskReduceGmaxPd: Determines the maximum element of the packed
 // double-precision (64-bit) floating-point elements stored in 'a' and stores
 // the result in 'dst'. Bitmask 'k' is used to exclude certain elements
 // (elements are ignored when the corresponding mask bit is not set). 
@@ -12986,16 +13018,16 @@ func reduceAndEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmax_pd'.
 // Requires KNCNI.
-func MaskReduceGmaxPd(k x86.Mmask8, a x86.M512d) float64 {
-	return float64(maskReduceGmaxPd(uint8(k), [8]float64(a)))
+func M512MaskReduceGmaxPd(k x86.Mmask8, a x86.M512d) float64 {
+	return float64(m512MaskReduceGmaxPd(uint8(k), [8]float64(a)))
 }
 
-func maskReduceGmaxPd(k uint8, a [8]float64) float64
+func m512MaskReduceGmaxPd(k uint8, a [8]float64) float64
 
 
-// ReduceGmaxPd: Determines the maximum element of the packed double-precision
-// (64-bit) floating-point elements stored in 'a' and stores the result in
-// 'dst'. 
+// M512ReduceGmaxPd: Determines the maximum element of the packed
+// double-precision (64-bit) floating-point elements stored in 'a' and stores
+// the result in 'dst'. 
 //
 //		max = a[63:0]
 //		FOR j := 1 to 7
@@ -13006,14 +13038,14 @@ func maskReduceGmaxPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmax_pd'.
 // Requires KNCNI.
-func ReduceGmaxPd(a x86.M512d) float64 {
-	return float64(reduceGmaxPd([8]float64(a)))
+func M512ReduceGmaxPd(a x86.M512d) float64 {
+	return float64(m512ReduceGmaxPd([8]float64(a)))
 }
 
-func reduceGmaxPd(a [8]float64) float64
+func m512ReduceGmaxPd(a [8]float64) float64
 
 
-// MaskReduceGmaxPs: Determines the maximum element of the packed
+// M512MaskReduceGmaxPs: Determines the maximum element of the packed
 // single-precision (32-bit) floating-point elements stored in 'a' and stores
 // the result in 'dst'. Bitmask 'k' is used to exclude certain elements
 // (elements are ignored when the corresponding mask bit is not set). 
@@ -13031,16 +13063,16 @@ func reduceGmaxPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmax_ps'.
 // Requires KNCNI.
-func MaskReduceGmaxPs(k x86.Mmask16, a x86.M512) float32 {
-	return float32(maskReduceGmaxPs(uint16(k), [16]float32(a)))
+func M512MaskReduceGmaxPs(k x86.Mmask16, a x86.M512) float32 {
+	return float32(m512MaskReduceGmaxPs(uint16(k), [16]float32(a)))
 }
 
-func maskReduceGmaxPs(k uint16, a [16]float32) float32
+func m512MaskReduceGmaxPs(k uint16, a [16]float32) float32
 
 
-// ReduceGmaxPs: Determines the maximum element of the packed single-precision
-// (32-bit) floating-point elements stored in 'a' and stores the result in
-// 'dst'. 
+// M512ReduceGmaxPs: Determines the maximum element of the packed
+// single-precision (32-bit) floating-point elements stored in 'a' and stores
+// the result in 'dst'. 
 //
 //		max = a[31:0]
 //		FOR j := 1 to 15
@@ -13051,14 +13083,14 @@ func maskReduceGmaxPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmax_ps'.
 // Requires KNCNI.
-func ReduceGmaxPs(a x86.M512) float32 {
-	return float32(reduceGmaxPs([16]float32(a)))
+func M512ReduceGmaxPs(a x86.M512) float32 {
+	return float32(m512ReduceGmaxPs([16]float32(a)))
 }
 
-func reduceGmaxPs(a [16]float32) float32
+func m512ReduceGmaxPs(a [16]float32) float32
 
 
-// MaskReduceGminPd: Determines the minimum element of the packed
+// M512MaskReduceGminPd: Determines the minimum element of the packed
 // double-precision (64-bit) floating-point elements stored in 'a' and stores
 // the result in 'dst'. Bitmask 'k' is used to exclude certain elements
 // (elements are ignored when the corresponding mask bit is not set). 
@@ -13076,16 +13108,16 @@ func reduceGmaxPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmin_pd'.
 // Requires KNCNI.
-func MaskReduceGminPd(k x86.Mmask8, a x86.M512d) float64 {
-	return float64(maskReduceGminPd(uint8(k), [8]float64(a)))
+func M512MaskReduceGminPd(k x86.Mmask8, a x86.M512d) float64 {
+	return float64(m512MaskReduceGminPd(uint8(k), [8]float64(a)))
 }
 
-func maskReduceGminPd(k uint8, a [8]float64) float64
+func m512MaskReduceGminPd(k uint8, a [8]float64) float64
 
 
-// ReduceGminPd: Determines the minimum element of the packed double-precision
-// (64-bit) floating-point elements stored in 'a' and stores the result in
-// 'dst'. 
+// M512ReduceGminPd: Determines the minimum element of the packed
+// double-precision (64-bit) floating-point elements stored in 'a' and stores
+// the result in 'dst'. 
 //
 //		min = a[63:0]
 //		FOR j := 1 to 7
@@ -13096,14 +13128,14 @@ func maskReduceGminPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmin_pd'.
 // Requires KNCNI.
-func ReduceGminPd(a x86.M512d) float64 {
-	return float64(reduceGminPd([8]float64(a)))
+func M512ReduceGminPd(a x86.M512d) float64 {
+	return float64(m512ReduceGminPd([8]float64(a)))
 }
 
-func reduceGminPd(a [8]float64) float64
+func m512ReduceGminPd(a [8]float64) float64
 
 
-// MaskReduceGminPs: Determines the minimum element of the packed
+// M512MaskReduceGminPs: Determines the minimum element of the packed
 // single-precision (32-bit) floating-point elements stored in 'a' and stores
 // the result in 'dst' using writemask 'k' (elements are ignored when the
 // corresponding mask bit is not set). 
@@ -13121,16 +13153,16 @@ func reduceGminPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmin_ps'.
 // Requires KNCNI.
-func MaskReduceGminPs(k x86.Mmask16, a x86.M512) float32 {
-	return float32(maskReduceGminPs(uint16(k), [16]float32(a)))
+func M512MaskReduceGminPs(k x86.Mmask16, a x86.M512) float32 {
+	return float32(m512MaskReduceGminPs(uint16(k), [16]float32(a)))
 }
 
-func maskReduceGminPs(k uint16, a [16]float32) float32
+func m512MaskReduceGminPs(k uint16, a [16]float32) float32
 
 
-// ReduceGminPs: Determines the minimum element of the packed single-precision
-// (32-bit) floating-point elements stored in 'a' and stores the result in
-// 'dst'. 
+// M512ReduceGminPs: Determines the minimum element of the packed
+// single-precision (32-bit) floating-point elements stored in 'a' and stores
+// the result in 'dst'. 
 //
 //		min = a[31:0]
 //		FOR j := 1 to 15
@@ -13141,14 +13173,14 @@ func maskReduceGminPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmin_ps'.
 // Requires KNCNI.
-func ReduceGminPs(a x86.M512) float32 {
-	return float32(reduceGminPs([16]float32(a)))
+func M512ReduceGminPs(a x86.M512) float32 {
+	return float32(m512ReduceGminPs([16]float32(a)))
 }
 
-func reduceGminPs(a [16]float32) float32
+func m512ReduceGminPs(a [16]float32) float32
 
 
-// MaskReduceMaxEpi32: Reduce the packed 32-bit integers in 'a' by maximum
+// M512MaskReduceMaxEpi32: Reduce the packed 32-bit integers in 'a' by maximum
 // using mask 'k'. Returns the maximum of all active elements in 'a'. 
 //
 //		max[31:0] := MIN_INT
@@ -13162,15 +13194,15 @@ func reduceGminPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epi32'.
 // Requires KNCNI.
-func MaskReduceMaxEpi32(k x86.Mmask16, a x86.M512i) int {
-	return int(maskReduceMaxEpi32(uint16(k), [64]byte(a)))
+func M512MaskReduceMaxEpi32(k x86.Mmask16, a x86.M512i) int {
+	return int(m512MaskReduceMaxEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMaxEpi32(k uint16, a [64]byte) int
+func m512MaskReduceMaxEpi32(k uint16, a [64]byte) int
 
 
-// ReduceMaxEpi32: Reduce the packed 32-bit integers in 'a' by maximum. Returns
-// the maximum of all elements in 'a'. 
+// M512ReduceMaxEpi32: Reduce the packed 32-bit integers in 'a' by maximum.
+// Returns the maximum of all elements in 'a'. 
 //
 //		max[31:0] := MIN_INT
 //		FOR j := 0 to 15
@@ -13181,14 +13213,14 @@ func maskReduceMaxEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epi32'.
 // Requires KNCNI.
-func ReduceMaxEpi32(a x86.M512i) int {
-	return int(reduceMaxEpi32([64]byte(a)))
+func M512ReduceMaxEpi32(a x86.M512i) int {
+	return int(m512ReduceMaxEpi32([64]byte(a)))
 }
 
-func reduceMaxEpi32(a [64]byte) int
+func m512ReduceMaxEpi32(a [64]byte) int
 
 
-// MaskReduceMaxEpi64: Reduce the packed 64-bit integers in 'a' by maximum
+// M512MaskReduceMaxEpi64: Reduce the packed 64-bit integers in 'a' by maximum
 // using mask 'k'. Returns the maximum of all active elements in 'a'. 
 //
 //		max[63:0] := MIN_INT
@@ -13202,15 +13234,15 @@ func reduceMaxEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epi64'.
 // Requires KNCNI.
-func MaskReduceMaxEpi64(k x86.Mmask8, a x86.M512i) int64 {
-	return int64(maskReduceMaxEpi64(uint8(k), [64]byte(a)))
+func M512MaskReduceMaxEpi64(k x86.Mmask8, a x86.M512i) int64 {
+	return int64(m512MaskReduceMaxEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMaxEpi64(k uint8, a [64]byte) int64
+func m512MaskReduceMaxEpi64(k uint8, a [64]byte) int64
 
 
-// ReduceMaxEpi64: Reduce the packed 64-bit integers in 'a' by maximum. Returns
-// the maximum of all elements in 'a'. 
+// M512ReduceMaxEpi64: Reduce the packed 64-bit integers in 'a' by maximum.
+// Returns the maximum of all elements in 'a'. 
 //
 //		max[63:0] := MIN_INT
 //		FOR j := 0 to 7
@@ -13221,14 +13253,14 @@ func maskReduceMaxEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epi64'.
 // Requires KNCNI.
-func ReduceMaxEpi64(a x86.M512i) int64 {
-	return int64(reduceMaxEpi64([64]byte(a)))
+func M512ReduceMaxEpi64(a x86.M512i) int64 {
+	return int64(m512ReduceMaxEpi64([64]byte(a)))
 }
 
-func reduceMaxEpi64(a [64]byte) int64
+func m512ReduceMaxEpi64(a [64]byte) int64
 
 
-// MaskReduceMaxEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
+// M512MaskReduceMaxEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
 // maximum using mask 'k'. Returns the maximum of all active elements in 'a'. 
 //
 //		max[31:0] := 0
@@ -13242,14 +13274,14 @@ func reduceMaxEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epu32'.
 // Requires KNCNI.
-func MaskReduceMaxEpu32(k x86.Mmask16, a x86.M512i) uint32 {
-	return uint32(maskReduceMaxEpu32(uint16(k), [64]byte(a)))
+func M512MaskReduceMaxEpu32(k x86.Mmask16, a x86.M512i) uint32 {
+	return uint32(m512MaskReduceMaxEpu32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMaxEpu32(k uint16, a [64]byte) uint32
+func m512MaskReduceMaxEpu32(k uint16, a [64]byte) uint32
 
 
-// ReduceMaxEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
+// M512ReduceMaxEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
 // maximum. Returns the maximum of all elements in 'a'. 
 //
 //		max[31:0] := 0
@@ -13261,14 +13293,14 @@ func maskReduceMaxEpu32(k uint16, a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epu32'.
 // Requires KNCNI.
-func ReduceMaxEpu32(a x86.M512i) uint32 {
-	return uint32(reduceMaxEpu32([64]byte(a)))
+func M512ReduceMaxEpu32(a x86.M512i) uint32 {
+	return uint32(m512ReduceMaxEpu32([64]byte(a)))
 }
 
-func reduceMaxEpu32(a [64]byte) uint32
+func m512ReduceMaxEpu32(a [64]byte) uint32
 
 
-// MaskReduceMaxEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
+// M512MaskReduceMaxEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
 // maximum using mask 'k'. Returns the maximum of all active elements in 'a'. 
 //
 //		max[63:0] := 0
@@ -13282,14 +13314,14 @@ func reduceMaxEpu32(a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epu64'.
 // Requires KNCNI.
-func MaskReduceMaxEpu64(k x86.Mmask8, a x86.M512i) uint64 {
-	return uint64(maskReduceMaxEpu64(uint8(k), [64]byte(a)))
+func M512MaskReduceMaxEpu64(k x86.Mmask8, a x86.M512i) uint64 {
+	return uint64(m512MaskReduceMaxEpu64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMaxEpu64(k uint8, a [64]byte) uint64
+func m512MaskReduceMaxEpu64(k uint8, a [64]byte) uint64
 
 
-// ReduceMaxEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
+// M512ReduceMaxEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
 // maximum. Returns the maximum of all elements in 'a'. 
 //
 //		max[63:0] := 0
@@ -13301,16 +13333,16 @@ func maskReduceMaxEpu64(k uint8, a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epu64'.
 // Requires KNCNI.
-func ReduceMaxEpu64(a x86.M512i) uint64 {
-	return uint64(reduceMaxEpu64([64]byte(a)))
+func M512ReduceMaxEpu64(a x86.M512i) uint64 {
+	return uint64(m512ReduceMaxEpu64([64]byte(a)))
 }
 
-func reduceMaxEpu64(a [64]byte) uint64
+func m512ReduceMaxEpu64(a [64]byte) uint64
 
 
-// MaskReduceMaxPd: Reduce the packed double-precision (64-bit) floating-point
-// elements in 'a' by maximum using mask 'k'. Returns the maximum of all active
-// elements in 'a'. 
+// M512MaskReduceMaxPd: Reduce the packed double-precision (64-bit)
+// floating-point elements in 'a' by maximum using mask 'k'. Returns the
+// maximum of all active elements in 'a'. 
 //
 //		max[63:0] := MIN_DOUBLE
 //		FOR j := 0 to 7
@@ -13323,14 +13355,14 @@ func reduceMaxEpu64(a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_pd'.
 // Requires KNCNI.
-func MaskReduceMaxPd(k x86.Mmask8, a x86.M512d) float64 {
-	return float64(maskReduceMaxPd(uint8(k), [8]float64(a)))
+func M512MaskReduceMaxPd(k x86.Mmask8, a x86.M512d) float64 {
+	return float64(m512MaskReduceMaxPd(uint8(k), [8]float64(a)))
 }
 
-func maskReduceMaxPd(k uint8, a [8]float64) float64
+func m512MaskReduceMaxPd(k uint8, a [8]float64) float64
 
 
-// ReduceMaxPd: Reduce the packed double-precision (64-bit) floating-point
+// M512ReduceMaxPd: Reduce the packed double-precision (64-bit) floating-point
 // elements in 'a' by maximum. Returns the maximum of all elements in 'a'. 
 //
 //		max[63:0] := MIN_DOUBLE
@@ -13342,16 +13374,16 @@ func maskReduceMaxPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_pd'.
 // Requires KNCNI.
-func ReduceMaxPd(a x86.M512d) float64 {
-	return float64(reduceMaxPd([8]float64(a)))
+func M512ReduceMaxPd(a x86.M512d) float64 {
+	return float64(m512ReduceMaxPd([8]float64(a)))
 }
 
-func reduceMaxPd(a [8]float64) float64
+func m512ReduceMaxPd(a [8]float64) float64
 
 
-// MaskReduceMaxPs: Reduce the packed single-precision (32-bit) floating-point
-// elements in 'a' by maximum using mask 'k'. Returns the maximum of all active
-// elements in 'a'. 
+// M512MaskReduceMaxPs: Reduce the packed single-precision (32-bit)
+// floating-point elements in 'a' by maximum using mask 'k'. Returns the
+// maximum of all active elements in 'a'. 
 //
 //		max[31:0] := MIN_FLOAT
 //		FOR j := 0 to 15
@@ -13364,14 +13396,14 @@ func reduceMaxPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_ps'.
 // Requires KNCNI.
-func MaskReduceMaxPs(k x86.Mmask16, a x86.M512) float32 {
-	return float32(maskReduceMaxPs(uint16(k), [16]float32(a)))
+func M512MaskReduceMaxPs(k x86.Mmask16, a x86.M512) float32 {
+	return float32(m512MaskReduceMaxPs(uint16(k), [16]float32(a)))
 }
 
-func maskReduceMaxPs(k uint16, a [16]float32) float32
+func m512MaskReduceMaxPs(k uint16, a [16]float32) float32
 
 
-// ReduceMaxPs: Reduce the packed single-precision (32-bit) floating-point
+// M512ReduceMaxPs: Reduce the packed single-precision (32-bit) floating-point
 // elements in 'a' by maximum. Returns the maximum of all elements in 'a'. 
 //
 //		max[31:0] := MIN_FLOAT
@@ -13383,14 +13415,14 @@ func maskReduceMaxPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_ps'.
 // Requires KNCNI.
-func ReduceMaxPs(a x86.M512) float32 {
-	return float32(reduceMaxPs([16]float32(a)))
+func M512ReduceMaxPs(a x86.M512) float32 {
+	return float32(m512ReduceMaxPs([16]float32(a)))
 }
 
-func reduceMaxPs(a [16]float32) float32
+func m512ReduceMaxPs(a [16]float32) float32
 
 
-// MaskReduceMinEpi32: Reduce the packed 32-bit integers in 'a' by maximum
+// M512MaskReduceMinEpi32: Reduce the packed 32-bit integers in 'a' by maximum
 // using mask 'k'. Returns the minimum of all active elements in 'a'. 
 //
 //		min[31:0] := MAX_INT
@@ -13404,15 +13436,15 @@ func reduceMaxPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epi32'.
 // Requires KNCNI.
-func MaskReduceMinEpi32(k x86.Mmask16, a x86.M512i) int {
-	return int(maskReduceMinEpi32(uint16(k), [64]byte(a)))
+func M512MaskReduceMinEpi32(k x86.Mmask16, a x86.M512i) int {
+	return int(m512MaskReduceMinEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMinEpi32(k uint16, a [64]byte) int
+func m512MaskReduceMinEpi32(k uint16, a [64]byte) int
 
 
-// ReduceMinEpi32: Reduce the packed 32-bit integers in 'a' by minimum. Returns
-// the minimum of all elements in 'a'. 
+// M512ReduceMinEpi32: Reduce the packed 32-bit integers in 'a' by minimum.
+// Returns the minimum of all elements in 'a'. 
 //
 //		min[31:0] := MAX_INT
 //		FOR j := 0 to 15
@@ -13423,14 +13455,14 @@ func maskReduceMinEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epi32'.
 // Requires KNCNI.
-func ReduceMinEpi32(a x86.M512i) int {
-	return int(reduceMinEpi32([64]byte(a)))
+func M512ReduceMinEpi32(a x86.M512i) int {
+	return int(m512ReduceMinEpi32([64]byte(a)))
 }
 
-func reduceMinEpi32(a [64]byte) int
+func m512ReduceMinEpi32(a [64]byte) int
 
 
-// MaskReduceMinEpi64: Reduce the packed 64-bit integers in 'a' by maximum
+// M512MaskReduceMinEpi64: Reduce the packed 64-bit integers in 'a' by maximum
 // using mask 'k'. Returns the minimum of all active elements in 'a'. 
 //
 //		min[63:0] := MAX_INT
@@ -13444,15 +13476,15 @@ func reduceMinEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epi64'.
 // Requires KNCNI.
-func MaskReduceMinEpi64(k x86.Mmask8, a x86.M512i) int64 {
-	return int64(maskReduceMinEpi64(uint8(k), [64]byte(a)))
+func M512MaskReduceMinEpi64(k x86.Mmask8, a x86.M512i) int64 {
+	return int64(m512MaskReduceMinEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMinEpi64(k uint8, a [64]byte) int64
+func m512MaskReduceMinEpi64(k uint8, a [64]byte) int64
 
 
-// ReduceMinEpi64: Reduce the packed 64-bit integers in 'a' by minimum. Returns
-// the minimum of all elements in 'a'. 
+// M512ReduceMinEpi64: Reduce the packed 64-bit integers in 'a' by minimum.
+// Returns the minimum of all elements in 'a'. 
 //
 //		min[63:0] := MAX_INT
 //		FOR j := 0 to 7
@@ -13463,14 +13495,14 @@ func maskReduceMinEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epi64'.
 // Requires KNCNI.
-func ReduceMinEpi64(a x86.M512i) int64 {
-	return int64(reduceMinEpi64([64]byte(a)))
+func M512ReduceMinEpi64(a x86.M512i) int64 {
+	return int64(m512ReduceMinEpi64([64]byte(a)))
 }
 
-func reduceMinEpi64(a [64]byte) int64
+func m512ReduceMinEpi64(a [64]byte) int64
 
 
-// MaskReduceMinEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
+// M512MaskReduceMinEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
 // maximum using mask 'k'. Returns the minimum of all active elements in 'a'. 
 //
 //		min[31:0] := MAX_UINT
@@ -13484,14 +13516,14 @@ func reduceMinEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epu32'.
 // Requires KNCNI.
-func MaskReduceMinEpu32(k x86.Mmask16, a x86.M512i) uint32 {
-	return uint32(maskReduceMinEpu32(uint16(k), [64]byte(a)))
+func M512MaskReduceMinEpu32(k x86.Mmask16, a x86.M512i) uint32 {
+	return uint32(m512MaskReduceMinEpu32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMinEpu32(k uint16, a [64]byte) uint32
+func m512MaskReduceMinEpu32(k uint16, a [64]byte) uint32
 
 
-// ReduceMinEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
+// M512ReduceMinEpu32: Reduce the packed unsigned 32-bit integers in 'a' by
 // minimum. Returns the minimum of all elements in 'a'. 
 //
 //		min[31:0] := MAX_UINT
@@ -13503,14 +13535,14 @@ func maskReduceMinEpu32(k uint16, a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epu32'.
 // Requires KNCNI.
-func ReduceMinEpu32(a x86.M512i) uint32 {
-	return uint32(reduceMinEpu32([64]byte(a)))
+func M512ReduceMinEpu32(a x86.M512i) uint32 {
+	return uint32(m512ReduceMinEpu32([64]byte(a)))
 }
 
-func reduceMinEpu32(a [64]byte) uint32
+func m512ReduceMinEpu32(a [64]byte) uint32
 
 
-// MaskReduceMinEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
+// M512MaskReduceMinEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
 // minimum using mask 'k'. Returns the minimum of all active elements in 'a'. 
 //
 //		min[63:0] := MAX_UINT
@@ -13524,14 +13556,14 @@ func reduceMinEpu32(a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epu64'.
 // Requires KNCNI.
-func MaskReduceMinEpu64(k x86.Mmask8, a x86.M512i) uint64 {
-	return uint64(maskReduceMinEpu64(uint8(k), [64]byte(a)))
+func M512MaskReduceMinEpu64(k x86.Mmask8, a x86.M512i) uint64 {
+	return uint64(m512MaskReduceMinEpu64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMinEpu64(k uint8, a [64]byte) uint64
+func m512MaskReduceMinEpu64(k uint8, a [64]byte) uint64
 
 
-// ReduceMinEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
+// M512ReduceMinEpu64: Reduce the packed unsigned 64-bit integers in 'a' by
 // minimum. Returns the minimum of all elements in 'a'. 
 //
 //		min[63:0] := MAX_UINT
@@ -13543,16 +13575,16 @@ func maskReduceMinEpu64(k uint8, a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epu64'.
 // Requires KNCNI.
-func ReduceMinEpu64(a x86.M512i) uint64 {
-	return uint64(reduceMinEpu64([64]byte(a)))
+func M512ReduceMinEpu64(a x86.M512i) uint64 {
+	return uint64(m512ReduceMinEpu64([64]byte(a)))
 }
 
-func reduceMinEpu64(a [64]byte) uint64
+func m512ReduceMinEpu64(a [64]byte) uint64
 
 
-// MaskReduceMinPd: Reduce the packed double-precision (64-bit) floating-point
-// elements in 'a' by maximum using mask 'k'. Returns the minimum of all active
-// elements in 'a'. 
+// M512MaskReduceMinPd: Reduce the packed double-precision (64-bit)
+// floating-point elements in 'a' by maximum using mask 'k'. Returns the
+// minimum of all active elements in 'a'. 
 //
 //		min[63:0] := MAX_DOUBLE
 //		FOR j := 0 to 7
@@ -13565,14 +13597,14 @@ func reduceMinEpu64(a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_pd'.
 // Requires KNCNI.
-func MaskReduceMinPd(k x86.Mmask8, a x86.M512d) float64 {
-	return float64(maskReduceMinPd(uint8(k), [8]float64(a)))
+func M512MaskReduceMinPd(k x86.Mmask8, a x86.M512d) float64 {
+	return float64(m512MaskReduceMinPd(uint8(k), [8]float64(a)))
 }
 
-func maskReduceMinPd(k uint8, a [8]float64) float64
+func m512MaskReduceMinPd(k uint8, a [8]float64) float64
 
 
-// ReduceMinPd: Reduce the packed double-precision (64-bit) floating-point
+// M512ReduceMinPd: Reduce the packed double-precision (64-bit) floating-point
 // elements in 'a' by minimum. Returns the minimum of all elements in 'a'. 
 //
 //		min[63:0] := MAX_DOUBLE
@@ -13584,16 +13616,16 @@ func maskReduceMinPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_pd'.
 // Requires KNCNI.
-func ReduceMinPd(a x86.M512d) float64 {
-	return float64(reduceMinPd([8]float64(a)))
+func M512ReduceMinPd(a x86.M512d) float64 {
+	return float64(m512ReduceMinPd([8]float64(a)))
 }
 
-func reduceMinPd(a [8]float64) float64
+func m512ReduceMinPd(a [8]float64) float64
 
 
-// MaskReduceMinPs: Reduce the packed single-precision (32-bit) floating-point
-// elements in 'a' by maximum using mask 'k'. Returns the minimum of all active
-// elements in 'a'. 
+// M512MaskReduceMinPs: Reduce the packed single-precision (32-bit)
+// floating-point elements in 'a' by maximum using mask 'k'. Returns the
+// minimum of all active elements in 'a'. 
 //
 //		min[31:0] := MAX_FLOAT
 //		FOR j := 0 to 15
@@ -13606,14 +13638,14 @@ func reduceMinPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_ps'.
 // Requires KNCNI.
-func MaskReduceMinPs(k x86.Mmask16, a x86.M512) float32 {
-	return float32(maskReduceMinPs(uint16(k), [16]float32(a)))
+func M512MaskReduceMinPs(k x86.Mmask16, a x86.M512) float32 {
+	return float32(m512MaskReduceMinPs(uint16(k), [16]float32(a)))
 }
 
-func maskReduceMinPs(k uint16, a [16]float32) float32
+func m512MaskReduceMinPs(k uint16, a [16]float32) float32
 
 
-// ReduceMinPs: Reduce the packed single-precision (32-bit) floating-point
+// M512ReduceMinPs: Reduce the packed single-precision (32-bit) floating-point
 // elements in 'a' by minimum. Returns the minimum of all elements in 'a'. 
 //
 //		min[31:0] := MAX_INT
@@ -13625,14 +13657,14 @@ func maskReduceMinPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_ps'.
 // Requires KNCNI.
-func ReduceMinPs(a x86.M512) float32 {
-	return float32(reduceMinPs([16]float32(a)))
+func M512ReduceMinPs(a x86.M512) float32 {
+	return float32(m512ReduceMinPs([16]float32(a)))
 }
 
-func reduceMinPs(a [16]float32) float32
+func m512ReduceMinPs(a [16]float32) float32
 
 
-// MaskReduceMulEpi32: Reduce the packed 32-bit integers in 'a' by
+// M512MaskReduceMulEpi32: Reduce the packed 32-bit integers in 'a' by
 // multiplication using mask 'k'. Returns the product of all active elements in
 // 'a'. 
 //
@@ -13647,15 +13679,15 @@ func reduceMinPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_epi32'.
 // Requires KNCNI.
-func MaskReduceMulEpi32(k x86.Mmask16, a x86.M512i) int {
-	return int(maskReduceMulEpi32(uint16(k), [64]byte(a)))
+func M512MaskReduceMulEpi32(k x86.Mmask16, a x86.M512i) int {
+	return int(m512MaskReduceMulEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceMulEpi32(k uint16, a [64]byte) int
+func m512MaskReduceMulEpi32(k uint16, a [64]byte) int
 
 
-// ReduceMulEpi32: Reduce the packed 32-bit integers in 'a' by multiplication.
-// Returns the product of all elements in 'a'. 
+// M512ReduceMulEpi32: Reduce the packed 32-bit integers in 'a' by
+// multiplication. Returns the product of all elements in 'a'. 
 //
 //		prod[31:0] := 1
 //		FOR j := 0 to 15
@@ -13666,14 +13698,14 @@ func maskReduceMulEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_epi32'.
 // Requires KNCNI.
-func ReduceMulEpi32(a x86.M512i) int {
-	return int(reduceMulEpi32([64]byte(a)))
+func M512ReduceMulEpi32(a x86.M512i) int {
+	return int(m512ReduceMulEpi32([64]byte(a)))
 }
 
-func reduceMulEpi32(a [64]byte) int
+func m512ReduceMulEpi32(a [64]byte) int
 
 
-// MaskReduceMulEpi64: Reduce the packed 64-bit integers in 'a' by
+// M512MaskReduceMulEpi64: Reduce the packed 64-bit integers in 'a' by
 // multiplication using mask 'k'. Returns the product of all active elements in
 // 'a'. 
 //
@@ -13688,15 +13720,15 @@ func reduceMulEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_epi64'.
 // Requires KNCNI.
-func MaskReduceMulEpi64(k x86.Mmask8, a x86.M512i) int64 {
-	return int64(maskReduceMulEpi64(uint8(k), [64]byte(a)))
+func M512MaskReduceMulEpi64(k x86.Mmask8, a x86.M512i) int64 {
+	return int64(m512MaskReduceMulEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceMulEpi64(k uint8, a [64]byte) int64
+func m512MaskReduceMulEpi64(k uint8, a [64]byte) int64
 
 
-// ReduceMulEpi64: Reduce the packed 64-bit integers in 'a' by multiplication.
-// Returns the product of all elements in 'a'. 
+// M512ReduceMulEpi64: Reduce the packed 64-bit integers in 'a' by
+// multiplication. Returns the product of all elements in 'a'. 
 //
 //		prod[63:0] := 1
 //		FOR j := 0 to 7
@@ -13707,16 +13739,16 @@ func maskReduceMulEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_epi64'.
 // Requires KNCNI.
-func ReduceMulEpi64(a x86.M512i) int64 {
-	return int64(reduceMulEpi64([64]byte(a)))
+func M512ReduceMulEpi64(a x86.M512i) int64 {
+	return int64(m512ReduceMulEpi64([64]byte(a)))
 }
 
-func reduceMulEpi64(a [64]byte) int64
+func m512ReduceMulEpi64(a [64]byte) int64
 
 
-// MaskReduceMulPd: Reduce the packed double-precision (64-bit) floating-point
-// elements in 'a' by multiplication using mask 'k'. Returns the product of all
-// active elements in 'a'. 
+// M512MaskReduceMulPd: Reduce the packed double-precision (64-bit)
+// floating-point elements in 'a' by multiplication using mask 'k'. Returns the
+// product of all active elements in 'a'. 
 //
 //		prod[63:0] := 1
 //		FOR j := 0 to 7
@@ -13729,14 +13761,14 @@ func reduceMulEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_pd'.
 // Requires KNCNI.
-func MaskReduceMulPd(k x86.Mmask8, a x86.M512d) float64 {
-	return float64(maskReduceMulPd(uint8(k), [8]float64(a)))
+func M512MaskReduceMulPd(k x86.Mmask8, a x86.M512d) float64 {
+	return float64(m512MaskReduceMulPd(uint8(k), [8]float64(a)))
 }
 
-func maskReduceMulPd(k uint8, a [8]float64) float64
+func m512MaskReduceMulPd(k uint8, a [8]float64) float64
 
 
-// ReduceMulPd: Reduce the packed double-precision (64-bit) floating-point
+// M512ReduceMulPd: Reduce the packed double-precision (64-bit) floating-point
 // elements in 'a' by multiplication. Returns the product of all elements in
 // 'a'. 
 //
@@ -13749,16 +13781,16 @@ func maskReduceMulPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_pd'.
 // Requires KNCNI.
-func ReduceMulPd(a x86.M512d) float64 {
-	return float64(reduceMulPd([8]float64(a)))
+func M512ReduceMulPd(a x86.M512d) float64 {
+	return float64(m512ReduceMulPd([8]float64(a)))
 }
 
-func reduceMulPd(a [8]float64) float64
+func m512ReduceMulPd(a [8]float64) float64
 
 
-// MaskReduceMulPs: Reduce the packed single-precision (32-bit) floating-point
-// elements in 'a' by multiplication using mask 'k'. Returns the product of all
-// active elements in 'a'. 
+// M512MaskReduceMulPs: Reduce the packed single-precision (32-bit)
+// floating-point elements in 'a' by multiplication using mask 'k'. Returns the
+// product of all active elements in 'a'. 
 //
 //		prod[31:0] := 1
 //		FOR j := 0 to 15
@@ -13771,14 +13803,14 @@ func reduceMulPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_ps'.
 // Requires KNCNI.
-func MaskReduceMulPs(k x86.Mmask16, a x86.M512) float32 {
-	return float32(maskReduceMulPs(uint16(k), [16]float32(a)))
+func M512MaskReduceMulPs(k x86.Mmask16, a x86.M512) float32 {
+	return float32(m512MaskReduceMulPs(uint16(k), [16]float32(a)))
 }
 
-func maskReduceMulPs(k uint16, a [16]float32) float32
+func m512MaskReduceMulPs(k uint16, a [16]float32) float32
 
 
-// ReduceMulPs: Reduce the packed single-precision (32-bit) floating-point
+// M512ReduceMulPs: Reduce the packed single-precision (32-bit) floating-point
 // elements in 'a' by multiplication. Returns the product of all elements in
 // 'a'. 
 //
@@ -13791,15 +13823,15 @@ func maskReduceMulPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_ps'.
 // Requires KNCNI.
-func ReduceMulPs(a x86.M512) float32 {
-	return float32(reduceMulPs([16]float32(a)))
+func M512ReduceMulPs(a x86.M512) float32 {
+	return float32(m512ReduceMulPs([16]float32(a)))
 }
 
-func reduceMulPs(a [16]float32) float32
+func m512ReduceMulPs(a [16]float32) float32
 
 
-// MaskReduceOrEpi32: Reduce the packed 32-bit integers in 'a' by bitwise OR
-// using mask 'k'. Returns the bitwise OR of all active elements in 'a'. 
+// M512MaskReduceOrEpi32: Reduce the packed 32-bit integers in 'a' by bitwise
+// OR using mask 'k'. Returns the bitwise OR of all active elements in 'a'. 
 //
 //		reduced[31:0] := 0
 //		FOR j := 0 to 15
@@ -13812,14 +13844,14 @@ func reduceMulPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_or_epi32'.
 // Requires KNCNI.
-func MaskReduceOrEpi32(k x86.Mmask16, a x86.M512i) int {
-	return int(maskReduceOrEpi32(uint16(k), [64]byte(a)))
+func M512MaskReduceOrEpi32(k x86.Mmask16, a x86.M512i) int {
+	return int(m512MaskReduceOrEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskReduceOrEpi32(k uint16, a [64]byte) int
+func m512MaskReduceOrEpi32(k uint16, a [64]byte) int
 
 
-// ReduceOrEpi32: Reduce the packed 32-bit integers in 'a' by bitwise OR.
+// M512ReduceOrEpi32: Reduce the packed 32-bit integers in 'a' by bitwise OR.
 // Returns the bitwise OR of all elements in 'a'. 
 //
 //		reduced[31:0] := 0
@@ -13831,15 +13863,15 @@ func maskReduceOrEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_or_epi32'.
 // Requires KNCNI.
-func ReduceOrEpi32(a x86.M512i) int {
-	return int(reduceOrEpi32([64]byte(a)))
+func M512ReduceOrEpi32(a x86.M512i) int {
+	return int(m512ReduceOrEpi32([64]byte(a)))
 }
 
-func reduceOrEpi32(a [64]byte) int
+func m512ReduceOrEpi32(a [64]byte) int
 
 
-// MaskReduceOrEpi64: Reduce the packed 64-bit integers in 'a' by bitwise OR
-// using mask 'k'. Returns the bitwise OR of all active elements in 'a'. 
+// M512MaskReduceOrEpi64: Reduce the packed 64-bit integers in 'a' by bitwise
+// OR using mask 'k'. Returns the bitwise OR of all active elements in 'a'. 
 //
 //		reduced[63:0] := 0
 //		FOR j := 0 to 7
@@ -13852,14 +13884,14 @@ func reduceOrEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_or_epi64'.
 // Requires KNCNI.
-func MaskReduceOrEpi64(k x86.Mmask8, a x86.M512i) int64 {
-	return int64(maskReduceOrEpi64(uint8(k), [64]byte(a)))
+func M512MaskReduceOrEpi64(k x86.Mmask8, a x86.M512i) int64 {
+	return int64(m512MaskReduceOrEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskReduceOrEpi64(k uint8, a [64]byte) int64
+func m512MaskReduceOrEpi64(k uint8, a [64]byte) int64
 
 
-// ReduceOrEpi64: Reduce the packed 64-bit integers in 'a' by bitwise OR.
+// M512ReduceOrEpi64: Reduce the packed 64-bit integers in 'a' by bitwise OR.
 // Returns the bitwise OR of all elements in 'a'. 
 //
 //		reduced[63:0] := 0
@@ -13871,14 +13903,14 @@ func maskReduceOrEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_or_epi64'.
 // Requires KNCNI.
-func ReduceOrEpi64(a x86.M512i) int64 {
-	return int64(reduceOrEpi64([64]byte(a)))
+func M512ReduceOrEpi64(a x86.M512i) int64 {
+	return int64(m512ReduceOrEpi64([64]byte(a)))
 }
 
-func reduceOrEpi64(a [64]byte) int64
+func m512ReduceOrEpi64(a [64]byte) int64
 
 
-// MaskRoundPs: Round the packed single-precision (32-bit) floating-point
+// M512MaskRoundPs: Round the packed single-precision (32-bit) floating-point
 // elements in 'a' to the nearest integer value using 'expadj' and in the
 // direction of 'rounding', and store the results as packed single-precision
 // floating-point elements in 'dst' using writemask 'k' (elements are copied
@@ -13913,17 +13945,17 @@ func reduceOrEpi64(a [64]byte) int64
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm512_mask_round_ps'.
 // Requires KNCNI.
-func MaskRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
-	return x86.M512(maskRoundPs([16]float32(src), uint16(k), [16]float32(a), rounding, expadj))
+func M512MaskRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
+	return x86.M512(m512MaskRoundPs([16]float32(src), uint16(k), [16]float32(a), rounding, expadj))
 }
 
-func maskRoundPs(src [16]float32, k uint16, a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
+func m512MaskRoundPs(src [16]float32, k uint16, a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
-// RoundPs: Round the packed single-precision (32-bit) floating-point elements
-// in 'a' to the nearest integer value using 'expadj' and in the direction of
-// 'rounding', and store the results as packed single-precision floating-point
-// elements in 'dst'.
+// M512RoundPs: Round the packed single-precision (32-bit) floating-point
+// elements in 'a' to the nearest integer value using 'expadj' and in the
+// direction of 'rounding', and store the results as packed single-precision
+// floating-point elements in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -13950,14 +13982,14 @@ func maskRoundPs(src [16]float32, k uint16, a [16]float32, rounding int, expadj 
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm512_round_ps'.
 // Requires KNCNI.
-func RoundPs(a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
-	return x86.M512(roundPs([16]float32(a), rounding, expadj))
+func M512RoundPs(a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
+	return x86.M512(m512RoundPs([16]float32(a), rounding, expadj))
 }
 
-func roundPs(a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
+func m512RoundPs(a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
-// MaskRoundfxpntAdjustPd: Performs element-by-element rounding of packed
+// M512MaskRoundfxpntAdjustPd: Performs element-by-element rounding of packed
 // double-precision (64-bit) floating-point elements in 'a' using 'expadj' and
 // in the direction of 'rounding' and stores results in 'dst' using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
@@ -13992,14 +14024,14 @@ func roundPs(a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
 //
 // Instruction: 'VRNDFXPNTPD'. Intrinsic: '_mm512_mask_roundfxpnt_adjust_pd'.
 // Requires KNCNI.
-func MaskRoundfxpntAdjustPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int, expadj MMEXPADJENUM) x86.M512d {
-	return x86.M512d(maskRoundfxpntAdjustPd([8]float64(src), uint8(k), [8]float64(a), rounding, expadj))
+func M512MaskRoundfxpntAdjustPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int, expadj MMEXPADJENUM) x86.M512d {
+	return x86.M512d(m512MaskRoundfxpntAdjustPd([8]float64(src), uint8(k), [8]float64(a), rounding, expadj))
 }
 
-func maskRoundfxpntAdjustPd(src [8]float64, k uint8, a [8]float64, rounding int, expadj MMEXPADJENUM) [8]float64
+func m512MaskRoundfxpntAdjustPd(src [8]float64, k uint8, a [8]float64, rounding int, expadj MMEXPADJENUM) [8]float64
 
 
-// RoundfxpntAdjustPd: Performs element-by-element rounding of packed
+// M512RoundfxpntAdjustPd: Performs element-by-element rounding of packed
 // double-precision (64-bit) floating-point elements in 'a' using 'expadj' and
 // in the direction of 'rounding' and stores results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -14028,14 +14060,14 @@ func maskRoundfxpntAdjustPd(src [8]float64, k uint8, a [8]float64, rounding int,
 //
 // Instruction: 'VRNDFXPNTPD'. Intrinsic: '_mm512_roundfxpnt_adjust_pd'.
 // Requires KNCNI.
-func RoundfxpntAdjustPd(a x86.M512d, rounding int, expadj MMEXPADJENUM) x86.M512d {
-	return x86.M512d(roundfxpntAdjustPd([8]float64(a), rounding, expadj))
+func M512RoundfxpntAdjustPd(a x86.M512d, rounding int, expadj MMEXPADJENUM) x86.M512d {
+	return x86.M512d(m512RoundfxpntAdjustPd([8]float64(a), rounding, expadj))
 }
 
-func roundfxpntAdjustPd(a [8]float64, rounding int, expadj MMEXPADJENUM) [8]float64
+func m512RoundfxpntAdjustPd(a [8]float64, rounding int, expadj MMEXPADJENUM) [8]float64
 
 
-// MaskRoundfxpntAdjustPs: Performs element-by-element rounding of packed
+// M512MaskRoundfxpntAdjustPs: Performs element-by-element rounding of packed
 // single-precision (32-bit) floating-point elements in 'a' using 'expadj' and
 // in the direction of 'rounding' and stores results in 'dst' using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
@@ -14070,14 +14102,14 @@ func roundfxpntAdjustPd(a [8]float64, rounding int, expadj MMEXPADJENUM) [8]floa
 //
 // Instruction: 'VRNDFXPNTPS'. Intrinsic: '_mm512_mask_roundfxpnt_adjust_ps'.
 // Requires KNCNI.
-func MaskRoundfxpntAdjustPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
-	return x86.M512(maskRoundfxpntAdjustPs([16]float32(src), uint16(k), [16]float32(a), rounding, expadj))
+func M512MaskRoundfxpntAdjustPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
+	return x86.M512(m512MaskRoundfxpntAdjustPs([16]float32(src), uint16(k), [16]float32(a), rounding, expadj))
 }
 
-func maskRoundfxpntAdjustPs(src [16]float32, k uint16, a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
+func m512MaskRoundfxpntAdjustPs(src [16]float32, k uint16, a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
-// RoundfxpntAdjustPs: Performs element-by-element rounding of packed
+// M512RoundfxpntAdjustPs: Performs element-by-element rounding of packed
 // single-precision (32-bit) floating-point elements in 'a' using 'expadj' and
 // in the direction of 'rounding' and stores results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -14106,14 +14138,14 @@ func maskRoundfxpntAdjustPs(src [16]float32, k uint16, a [16]float32, rounding i
 //
 // Instruction: 'VRNDFXPNTPS'. Intrinsic: '_mm512_roundfxpnt_adjust_ps'.
 // Requires KNCNI.
-func RoundfxpntAdjustPs(a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
-	return x86.M512(roundfxpntAdjustPs([16]float32(a), rounding, expadj))
+func M512RoundfxpntAdjustPs(a x86.M512, rounding int, expadj MMEXPADJENUM) x86.M512 {
+	return x86.M512(m512RoundfxpntAdjustPs([16]float32(a), rounding, expadj))
 }
 
-func roundfxpntAdjustPs(a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
+func m512RoundfxpntAdjustPs(a [16]float32, rounding int, expadj MMEXPADJENUM) [16]float32
 
 
-// MaskRsqrt23Ps: Calculates the reciprocal square root of packed
+// M512MaskRsqrt23Ps: Calculates the reciprocal square root of packed
 // single-precision (32-bit) floating-point elements in 'a' to 23 bits of
 // accuracy and stores the result in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
@@ -14130,16 +14162,16 @@ func roundfxpntAdjustPs(a [16]float32, rounding int, expadj MMEXPADJENUM) [16]fl
 //
 // Instruction: 'VRSQRT23PS'. Intrinsic: '_mm512_mask_rsqrt23_ps'.
 // Requires KNCNI.
-func MaskRsqrt23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskRsqrt23Ps([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskRsqrt23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskRsqrt23Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskRsqrt23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskRsqrt23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// Rsqrt23Ps: Calculates the reciprocal square root of packed single-precision
-// (32-bit) floating-point elements in 'a' to 23 bits of accuracy and stores
-// the result in 'dst'. 
+// M512Rsqrt23Ps: Calculates the reciprocal square root of packed
+// single-precision (32-bit) floating-point elements in 'a' to 23 bits of
+// accuracy and stores the result in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -14149,17 +14181,17 @@ func maskRsqrt23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT23PS'. Intrinsic: '_mm512_rsqrt23_ps'.
 // Requires KNCNI.
-func Rsqrt23Ps(a x86.M512) x86.M512 {
-	return x86.M512(rsqrt23Ps([16]float32(a)))
+func M512Rsqrt23Ps(a x86.M512) x86.M512 {
+	return x86.M512(m512Rsqrt23Ps([16]float32(a)))
 }
 
-func rsqrt23Ps(a [16]float32) [16]float32
+func m512Rsqrt23Ps(a [16]float32) [16]float32
 
 
-// MaskSbbEpi32: Performs element-by-element three-input subtraction of packed
-// 32-bit integer elements of 'v3' as well as the corresponding bit from 'k2'
-// from 'v2'. The borrowed value from the subtraction difference for the nth
-// element is written to the nth bit of 'borrow' (borrow flag). Results are
+// M512MaskSbbEpi32: Performs element-by-element three-input subtraction of
+// packed 32-bit integer elements of 'v3' as well as the corresponding bit from
+// 'k2' from 'v2'. The borrowed value from the subtraction difference for the
+// nth element is written to the nth bit of 'borrow' (borrow flag). Results are
 // stored in 'dst' using writemask 'k1' (elements are copied from 'v2' when the
 // corresponding mask bit is not set). 
 //
@@ -14176,14 +14208,14 @@ func rsqrt23Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_mask_sbb_epi32'.
 // Requires KNCNI.
-func MaskSbbEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(maskSbbEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
+func M512MaskSbbEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512MaskSbbEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSbbEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
+func m512MaskSbbEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
-// SbbEpi32: Performs element-by-element three-input subtraction of packed
+// M512SbbEpi32: Performs element-by-element three-input subtraction of packed
 // 32-bit integer elements of 'v3' as well as the corresponding bit from 'k'
 // from 'v2'. The borrowed value from the subtraction difference for the nth
 // element is written to the nth bit of 'borrow' (borrow flag). Results are
@@ -14198,17 +14230,17 @@ func maskSbbEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16)
 //
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_sbb_epi32'.
 // Requires KNCNI.
-func SbbEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(sbbEpi32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
+func M512SbbEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512SbbEpi32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
 }
 
-func sbbEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
+func m512SbbEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
-// MaskSbbrEpi32: Performs element-by-element three-input subtraction of packed
-// 32-bit integer elements of 'v2' as well as the corresponding bit from 'k2'
-// from 'v3'. The borrowed value from the subtraction difference for the nth
-// element is written to the nth bit of 'borrow' (borrow flag). Results are
+// M512MaskSbbrEpi32: Performs element-by-element three-input subtraction of
+// packed 32-bit integer elements of 'v2' as well as the corresponding bit from
+// 'k2' from 'v3'. The borrowed value from the subtraction difference for the
+// nth element is written to the nth bit of 'borrow' (borrow flag). Results are
 // stored in 'dst' using writemask 'k1' (elements are copied from 'v2' when the
 // corresponding mask bit is not set). 
 //
@@ -14225,14 +14257,14 @@ func sbbEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
 //
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_mask_sbbr_epi32'.
 // Requires KNCNI.
-func MaskSbbrEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(maskSbbrEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
+func M512MaskSbbrEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512MaskSbbrEpi32([64]byte(v2), uint16(k1), uint16(k2), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSbbrEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
+func m512MaskSbbrEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
-// SbbrEpi32: Performs element-by-element three-input subtraction of packed
+// M512SbbrEpi32: Performs element-by-element three-input subtraction of packed
 // 32-bit integer elements of 'v2' as well as the corresponding bit from 'k'
 // from 'v3'. The borrowed value from the subtraction difference for the nth
 // element is written to the nth bit of 'borrow' (borrow flag). Results are
@@ -14247,15 +14279,15 @@ func maskSbbrEpi32(v2 [64]byte, k1 uint16, k2 uint16, v3 [64]byte, borrow uint16
 //
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_sbbr_epi32'.
 // Requires KNCNI.
-func SbbrEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(sbbrEpi32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
+func M512SbbrEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512SbbrEpi32([64]byte(v2), uint16(k), [64]byte(v3), uint16(borrow)))
 }
 
-func sbbrEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
+func m512SbbrEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
-// MaskScalePs: Scales each single-precision (32-bit) floating-point element in
-// 'a' by multiplying it by 2**exponent, where the exponenet is the
+// M512MaskScalePs: Scales each single-precision (32-bit) floating-point
+// element in 'a' by multiplying it by 2**exponent, where the exponenet is the
 // corresponding 32-bit integer element in 'b', storing results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -14272,16 +14304,16 @@ func sbbrEpi32(v2 [64]byte, k uint16, v3 [64]byte, borrow uint16) [64]byte
 //
 // Instruction: 'VSCALEPS'. Intrinsic: '_mm512_mask_scale_ps'.
 // Requires KNCNI.
-func MaskScalePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512i) x86.M512 {
-	return x86.M512(maskScalePs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b)))
+func M512MaskScalePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512i) x86.M512 {
+	return x86.M512(m512MaskScalePs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b)))
 }
 
-func maskScalePs(src [16]float32, k uint16, a [16]float32, b [64]byte) [16]float32
+func m512MaskScalePs(src [16]float32, k uint16, a [16]float32, b [64]byte) [16]float32
 
 
-// ScalePs: Scales each single-precision (32-bit) floating-point element in 'a'
-// by multiplying it by 2**exponent, where the exponent is the corresponding
-// 32-bit integer element in 'b', storing results in 'dst'. 
+// M512ScalePs: Scales each single-precision (32-bit) floating-point element in
+// 'a' by multiplying it by 2**exponent, where the exponent is the
+// corresponding 32-bit integer element in 'b', storing results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -14291,14 +14323,14 @@ func maskScalePs(src [16]float32, k uint16, a [16]float32, b [64]byte) [16]float
 //
 // Instruction: 'VSCALEPS'. Intrinsic: '_mm512_scale_ps'.
 // Requires KNCNI.
-func ScalePs(a x86.M512, b x86.M512i) x86.M512 {
-	return x86.M512(scalePs([16]float32(a), [64]byte(b)))
+func M512ScalePs(a x86.M512, b x86.M512i) x86.M512 {
+	return x86.M512(m512ScalePs([16]float32(a), [64]byte(b)))
 }
 
-func scalePs(a [16]float32, b [64]byte) [16]float32
+func m512ScalePs(a [16]float32, b [64]byte) [16]float32
 
 
-// MaskScaleRoundPs: Scales each single-precision (32-bit) floating-point
+// M512MaskScaleRoundPs: Scales each single-precision (32-bit) floating-point
 // element in 'a' by multiplying it by 2**exp, where the exp is the
 // corresponding 32-bit integer element in 'b', storing results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
@@ -14323,15 +14355,15 @@ func scalePs(a [16]float32, b [64]byte) [16]float32
 //
 // Instruction: 'VSCALEPS'. Intrinsic: '_mm512_mask_scale_round_ps'.
 // Requires KNCNI.
-func MaskScaleRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512i, rounding int) x86.M512 {
-	return x86.M512(maskScaleRoundPs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b), rounding))
+func M512MaskScaleRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512i, rounding int) x86.M512 {
+	return x86.M512(m512MaskScaleRoundPs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b), rounding))
 }
 
-func maskScaleRoundPs(src [16]float32, k uint16, a [16]float32, b [64]byte, rounding int) [16]float32
+func m512MaskScaleRoundPs(src [16]float32, k uint16, a [16]float32, b [64]byte, rounding int) [16]float32
 
 
-// ScaleRoundPs: Scales each single-precision (32-bit) floating-point element
-// in 'a' by multiplying it by 2**exponent, where the exponenet is the
+// M512ScaleRoundPs: Scales each single-precision (32-bit) floating-point
+// element in 'a' by multiplying it by 2**exponent, where the exponenet is the
 // corresponding 32-bit integer element in 'b', storing results in 'dst'.
 // Intermediate elements are rounded using 'rounding'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -14350,16 +14382,17 @@ func maskScaleRoundPs(src [16]float32, k uint16, a [16]float32, b [64]byte, roun
 //
 // Instruction: '...'. Intrinsic: '_mm512_scale_round_ps'.
 // Requires KNCNI.
-func ScaleRoundPs(a x86.M512, b x86.M512i, rounding int) x86.M512 {
-	return x86.M512(scaleRoundPs([16]float32(a), [64]byte(b), rounding))
+func M512ScaleRoundPs(a x86.M512, b x86.M512i, rounding int) x86.M512 {
+	return x86.M512(m512ScaleRoundPs([16]float32(a), [64]byte(b), rounding))
 }
 
-func scaleRoundPs(a [16]float32, b [64]byte, rounding int) [16]float32
+func m512ScaleRoundPs(a [16]float32, b [64]byte, rounding int) [16]float32
 
 
-// MaskShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes using
-// the control in 'imm8', and store the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes
+// using the control in 'imm8', and store the results in 'dst' using writemask
+// 'k' (elements are copied from 'src' when the corresponding mask bit is not
+// set). 
 //
 //		SELECT4(src, control){
 //			CASE(control[1:0])
@@ -14399,15 +14432,15 @@ func scaleRoundPs(a [16]float32, b [64]byte, rounding int) [16]float32
 //
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm512_mask_shuffle_epi32'.
 // Requires KNCNI.
-func MaskShuffleEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 MMPERMENUM) x86.M512i {
-	return x86.M512i(maskShuffleEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
+func M512MaskShuffleEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 MMPERMENUM) x86.M512i {
+	return x86.M512i(m512MaskShuffleEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskShuffleEpi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
+func m512MaskShuffleEpi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
-// ShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes using the
-// control in 'imm8', and store the results in 'dst'. 
+// M512ShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes using
+// the control in 'imm8', and store the results in 'dst'. 
 //
 //		SELECT4(src, control){
 //			CASE(control[1:0])
@@ -14439,14 +14472,14 @@ func maskShuffleEpi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [64]b
 //
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm512_shuffle_epi32'.
 // Requires KNCNI.
-func ShuffleEpi32(a x86.M512i, imm8 MMPERMENUM) x86.M512i {
-	return x86.M512i(shuffleEpi32([64]byte(a), imm8))
+func M512ShuffleEpi32(a x86.M512i, imm8 MMPERMENUM) x86.M512i {
+	return x86.M512i(m512ShuffleEpi32([64]byte(a), imm8))
 }
 
-func shuffleEpi32(a [64]byte, imm8 MMPERMENUM) [64]byte
+func m512ShuffleEpi32(a [64]byte, imm8 MMPERMENUM) [64]byte
 
 
-// MaskSlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
+// M512MaskSlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14466,15 +14499,15 @@ func shuffleEpi32(a [64]byte, imm8 MMPERMENUM) [64]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_mask_slli_epi32'.
 // Requires KNCNI.
-func MaskSlliEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskSlliEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
+func M512MaskSlliEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskSlliEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskSlliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSlliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
-// SlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting
-// in zeros, and store the results in 'dst'. 
+// M512SlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -14488,14 +14521,14 @@ func maskSlliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_slli_epi32'.
 // Requires KNCNI.
-func SlliEpi32(a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(slliEpi32([64]byte(a), imm8))
+func M512SlliEpi32(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512SlliEpi32([64]byte(a), imm8))
 }
 
-func slliEpi32(a [64]byte, imm8 uint32) [64]byte
+func m512SlliEpi32(a [64]byte, imm8 uint32) [64]byte
 
 
-// MaskSllvEpi32: Shift packed 32-bit integers in 'a' left by the amount
+// M512MaskSllvEpi32: Shift packed 32-bit integers in 'a' left by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -14512,16 +14545,16 @@ func slliEpi32(a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm512_mask_sllv_epi32'.
 // Requires KNCNI.
-func MaskSllvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskSllvEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
+func M512MaskSllvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSllvEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSllvEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
+func m512MaskSllvEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 
 
-// SllvEpi32: Shift packed 32-bit integers in 'a' left by the amount specified
-// by the corresponding element in 'count' while shifting in zeros, and store
-// the results in 'dst'. 
+// M512SllvEpi32: Shift packed 32-bit integers in 'a' left by the amount
+// specified by the corresponding element in 'count' while shifting in zeros,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -14531,11 +14564,11 @@ func maskSllvEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm512_sllv_epi32'.
 // Requires KNCNI.
-func SllvEpi32(a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(sllvEpi32([64]byte(a), [64]byte(count)))
+func M512SllvEpi32(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512SllvEpi32([64]byte(a), [64]byte(count)))
 }
 
-func sllvEpi32(a [64]byte, count [64]byte) [64]byte
+func m512SllvEpi32(a [64]byte, count [64]byte) [64]byte
 
 
 // Spflt32: Set performance monitoring filtering mask to 32-bit unsigned
@@ -14566,7 +14599,7 @@ func Spflt64(r1 uint64)  {
 func spflt64(r1 uint64) 
 
 
-// MaskSraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
+// M512MaskSraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
 // shifting in sign bits, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14586,14 +14619,14 @@ func spflt64(r1 uint64)
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_mask_srai_epi32'.
 // Requires KNCNI.
-func MaskSraiEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskSraiEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
+func M512MaskSraiEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskSraiEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskSraiEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSraiEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
-// SraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
+// M512SraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
 // shifting in sign bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -14608,14 +14641,14 @@ func maskSraiEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_srai_epi32'.
 // Requires KNCNI.
-func SraiEpi32(a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(sraiEpi32([64]byte(a), imm8))
+func M512SraiEpi32(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512SraiEpi32([64]byte(a), imm8))
 }
 
-func sraiEpi32(a [64]byte, imm8 uint32) [64]byte
+func m512SraiEpi32(a [64]byte, imm8 uint32) [64]byte
 
 
-// MaskSravEpi32: Shift packed 32-bit integers in 'a' right by the amount
+// M512MaskSravEpi32: Shift packed 32-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
@@ -14632,16 +14665,16 @@ func sraiEpi32(a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm512_mask_srav_epi32'.
 // Requires KNCNI.
-func MaskSravEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskSravEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
+func M512MaskSravEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSravEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSravEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
+func m512MaskSravEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 
 
-// SravEpi32: Shift packed 32-bit integers in 'a' right by the amount specified
-// by the corresponding element in 'count' while shifting in sign bits, and
-// store the results in 'dst'. 
+// M512SravEpi32: Shift packed 32-bit integers in 'a' right by the amount
+// specified by the corresponding element in 'count' while shifting in sign
+// bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -14651,14 +14684,14 @@ func maskSravEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm512_srav_epi32'.
 // Requires KNCNI.
-func SravEpi32(a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(sravEpi32([64]byte(a), [64]byte(count)))
+func M512SravEpi32(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512SravEpi32([64]byte(a), [64]byte(count)))
 }
 
-func sravEpi32(a [64]byte, count [64]byte) [64]byte
+func m512SravEpi32(a [64]byte, count [64]byte) [64]byte
 
 
-// MaskSrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
+// M512MaskSrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14678,14 +14711,14 @@ func sravEpi32(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_mask_srli_epi32'.
 // Requires KNCNI.
-func MaskSrliEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskSrliEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
+func M512MaskSrliEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskSrliEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func maskSrliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSrliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 
 
-// SrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
+// M512SrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -14700,14 +14733,14 @@ func maskSrliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_srli_epi32'.
 // Requires KNCNI.
-func SrliEpi32(a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(srliEpi32([64]byte(a), imm8))
+func M512SrliEpi32(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512SrliEpi32([64]byte(a), imm8))
 }
 
-func srliEpi32(a [64]byte, imm8 uint32) [64]byte
+func m512SrliEpi32(a [64]byte, imm8 uint32) [64]byte
 
 
-// MaskSrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount
+// M512MaskSrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -14724,16 +14757,16 @@ func srliEpi32(a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm512_mask_srlv_epi32'.
 // Requires KNCNI.
-func MaskSrlvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskSrlvEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
+func M512MaskSrlvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSrlvEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrlvEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
+func m512MaskSrlvEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 
 
-// SrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount specified
-// by the corresponding element in 'count' while shifting in zeros, and store
-// the results in 'dst'. 
+// M512SrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount
+// specified by the corresponding element in 'count' while shifting in zeros,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -14743,14 +14776,14 @@ func maskSrlvEpi32(src [64]byte, k uint16, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm512_srlv_epi32'.
 // Requires KNCNI.
-func SrlvEpi32(a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(srlvEpi32([64]byte(a), [64]byte(count)))
+func M512SrlvEpi32(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512SrlvEpi32([64]byte(a), [64]byte(count)))
 }
 
-func srlvEpi32(a [64]byte, count [64]byte) [64]byte
+func m512SrlvEpi32(a [64]byte, count [64]byte) [64]byte
 
 
-// MaskStoreEpi32: Store packed 32-bit integers from 'a' into memory using
+// M512MaskStoreEpi32: Store packed 32-bit integers from 'a' into memory using
 // writemask 'k'.
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
@@ -14764,15 +14797,15 @@ func srlvEpi32(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_mask_store_epi32'.
 // Requires KNCNI.
-func MaskStoreEpi32(mem_addr uintptr, k x86.Mmask16, a x86.M512i)  {
-	maskStoreEpi32(uintptr(mem_addr), uint16(k), [64]byte(a))
+func M512MaskStoreEpi32(mem_addr uintptr, k x86.Mmask16, a x86.M512i)  {
+	m512MaskStoreEpi32(uintptr(mem_addr), uint16(k), [64]byte(a))
 }
 
-func maskStoreEpi32(mem_addr uintptr, k uint16, a [64]byte) 
+func m512MaskStoreEpi32(mem_addr uintptr, k uint16, a [64]byte) 
 
 
-// StoreEpi32: Store 512-bits (composed of 16 packed 32-bit integers) from 'a'
-// into memory. 
+// M512StoreEpi32: Store 512-bits (composed of 16 packed 32-bit integers) from
+// 'a' into memory. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -14780,14 +14813,14 @@ func maskStoreEpi32(mem_addr uintptr, k uint16, a [64]byte)
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_store_epi32'.
 // Requires KNCNI.
-func StoreEpi32(mem_addr uintptr, a x86.M512i)  {
-	storeEpi32(uintptr(mem_addr), [64]byte(a))
+func M512StoreEpi32(mem_addr uintptr, a x86.M512i)  {
+	m512StoreEpi32(uintptr(mem_addr), [64]byte(a))
 }
 
-func storeEpi32(mem_addr uintptr, a [64]byte) 
+func m512StoreEpi32(mem_addr uintptr, a [64]byte) 
 
 
-// MaskStoreEpi64: Store packed 64-bit integers from 'a' into memory using
+// M512MaskStoreEpi64: Store packed 64-bit integers from 'a' into memory using
 // writemask 'k'.
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
@@ -14801,15 +14834,15 @@ func storeEpi32(mem_addr uintptr, a [64]byte)
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_mask_store_epi64'.
 // Requires KNCNI.
-func MaskStoreEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M512i)  {
-	maskStoreEpi64(uintptr(mem_addr), uint8(k), [64]byte(a))
+func M512MaskStoreEpi64(mem_addr uintptr, k x86.Mmask8, a x86.M512i)  {
+	m512MaskStoreEpi64(uintptr(mem_addr), uint8(k), [64]byte(a))
 }
 
-func maskStoreEpi64(mem_addr uintptr, k uint8, a [64]byte) 
+func m512MaskStoreEpi64(mem_addr uintptr, k uint8, a [64]byte) 
 
 
-// StoreEpi64: Store 512-bits (composed of 8 packed 64-bit integers) from 'a'
-// into memory. 
+// M512StoreEpi64: Store 512-bits (composed of 8 packed 64-bit integers) from
+// 'a' into memory. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -14817,15 +14850,15 @@ func maskStoreEpi64(mem_addr uintptr, k uint8, a [64]byte)
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_store_epi64'.
 // Requires KNCNI.
-func StoreEpi64(mem_addr uintptr, a x86.M512i)  {
-	storeEpi64(uintptr(mem_addr), [64]byte(a))
+func M512StoreEpi64(mem_addr uintptr, a x86.M512i)  {
+	m512StoreEpi64(uintptr(mem_addr), [64]byte(a))
 }
 
-func storeEpi64(mem_addr uintptr, a [64]byte) 
+func m512StoreEpi64(mem_addr uintptr, a [64]byte) 
 
 
-// MaskStorePd: Store packed double-precision (64-bit) floating-point elements
-// from 'a' into memory using writemask 'k'.
+// M512MaskStorePd: Store packed double-precision (64-bit) floating-point
+// elements from 'a' into memory using writemask 'k'.
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -14838,14 +14871,14 @@ func storeEpi64(mem_addr uintptr, a [64]byte)
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_mask_store_pd'.
 // Requires KNCNI.
-func MaskStorePd(mem_addr uintptr, k x86.Mmask8, a x86.M512d)  {
-	maskStorePd(uintptr(mem_addr), uint8(k), [8]float64(a))
+func M512MaskStorePd(mem_addr uintptr, k x86.Mmask8, a x86.M512d)  {
+	m512MaskStorePd(uintptr(mem_addr), uint8(k), [8]float64(a))
 }
 
-func maskStorePd(mem_addr uintptr, k uint8, a [8]float64) 
+func m512MaskStorePd(mem_addr uintptr, k uint8, a [8]float64) 
 
 
-// StorePd: Store 512-bits (composed of 8 packed double-precision (64-bit)
+// M512StorePd: Store 512-bits (composed of 8 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory.
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
@@ -14854,15 +14887,15 @@ func maskStorePd(mem_addr uintptr, k uint8, a [8]float64)
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_store_pd'.
 // Requires KNCNI.
-func StorePd(mem_addr uintptr, a x86.M512d)  {
-	storePd(uintptr(mem_addr), [8]float64(a))
+func M512StorePd(mem_addr uintptr, a x86.M512d)  {
+	m512StorePd(uintptr(mem_addr), [8]float64(a))
 }
 
-func storePd(mem_addr uintptr, a [8]float64) 
+func m512StorePd(mem_addr uintptr, a [8]float64) 
 
 
-// MaskStorePs: Store packed single-precision (32-bit) floating-point elements
-// from 'a' into memory using writemask 'k'.
+// M512MaskStorePs: Store packed single-precision (32-bit) floating-point
+// elements from 'a' into memory using writemask 'k'.
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -14875,14 +14908,14 @@ func storePd(mem_addr uintptr, a [8]float64)
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_mask_store_ps'.
 // Requires KNCNI.
-func MaskStorePs(mem_addr uintptr, k x86.Mmask16, a x86.M512)  {
-	maskStorePs(uintptr(mem_addr), uint16(k), [16]float32(a))
+func M512MaskStorePs(mem_addr uintptr, k x86.Mmask16, a x86.M512)  {
+	m512MaskStorePs(uintptr(mem_addr), uint16(k), [16]float32(a))
 }
 
-func maskStorePs(mem_addr uintptr, k uint16, a [16]float32) 
+func m512MaskStorePs(mem_addr uintptr, k uint16, a [16]float32) 
 
 
-// StorePs: Store 512-bits (composed of 16 packed single-precision (32-bit)
+// M512StorePs: Store 512-bits (composed of 16 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
@@ -14891,14 +14924,14 @@ func maskStorePs(mem_addr uintptr, k uint16, a [16]float32)
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_store_ps'.
 // Requires KNCNI.
-func StorePs(mem_addr uintptr, a x86.M512)  {
-	storePs(uintptr(mem_addr), [16]float32(a))
+func M512StorePs(mem_addr uintptr, a x86.M512)  {
+	m512StorePs(uintptr(mem_addr), [16]float32(a))
 }
 
-func storePs(mem_addr uintptr, a [16]float32) 
+func m512StorePs(mem_addr uintptr, a [16]float32) 
 
 
-// StoreSi512: Store 512-bits of integer data from 'a' into memory. 
+// M512StoreSi512: Store 512-bits of integer data from 'a' into memory. 
 // 	'mem_addr' must be aligned on a 64-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -14906,15 +14939,16 @@ func storePs(mem_addr uintptr, a [16]float32)
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_store_si512'.
 // Requires KNCNI.
-func StoreSi512(mem_addr uintptr, a x86.M512i)  {
-	storeSi512(uintptr(mem_addr), [64]byte(a))
+func M512StoreSi512(mem_addr uintptr, a x86.M512i)  {
+	m512StoreSi512(uintptr(mem_addr), [64]byte(a))
 }
 
-func storeSi512(mem_addr uintptr, a [64]byte) 
+func m512StoreSi512(mem_addr uintptr, a [64]byte) 
 
 
-// StorenrPd: Stores packed double-precision (64-bit) floating-point elements
-// from 'v' to memory address 'mt' with a no-read hint to the processor. 
+// M512StorenrPd: Stores packed double-precision (64-bit) floating-point
+// elements from 'v' to memory address 'mt' with a no-read hint to the
+// processor. 
 //
 //		addr := MEM[mt]
 //		FOR j := 0 to 7
@@ -14924,15 +14958,16 @@ func storeSi512(mem_addr uintptr, a [64]byte)
 //
 // Instruction: 'VMOVNRAPD'. Intrinsic: '_mm512_storenr_pd'.
 // Requires KNCNI.
-func StorenrPd(mt uintptr, v x86.M512d)  {
-	storenrPd(uintptr(mt), [8]float64(v))
+func M512StorenrPd(mt uintptr, v x86.M512d)  {
+	m512StorenrPd(uintptr(mt), [8]float64(v))
 }
 
-func storenrPd(mt uintptr, v [8]float64) 
+func m512StorenrPd(mt uintptr, v [8]float64) 
 
 
-// StorenrPs: Stores packed single-precision (32-bit) floating-point elements
-// from 'v' to memory address 'mt' with a no-read hint to the processor. 
+// M512StorenrPs: Stores packed single-precision (32-bit) floating-point
+// elements from 'v' to memory address 'mt' with a no-read hint to the
+// processor. 
 //
 //		addr := MEM[mt]
 //		FOR j := 0 to 15
@@ -14942,14 +14977,14 @@ func storenrPd(mt uintptr, v [8]float64)
 //
 // Instruction: 'VMOVNRAPS'. Intrinsic: '_mm512_storenr_ps'.
 // Requires KNCNI.
-func StorenrPs(mt uintptr, v x86.M512)  {
-	storenrPs(uintptr(mt), [16]float32(v))
+func M512StorenrPs(mt uintptr, v x86.M512)  {
+	m512StorenrPs(uintptr(mt), [16]float32(v))
 }
 
-func storenrPs(mt uintptr, v [16]float32) 
+func m512StorenrPs(mt uintptr, v [16]float32) 
 
 
-// StorenrngoPd: Stores packed double-precision (64-bit) floating-point
+// M512StorenrngoPd: Stores packed double-precision (64-bit) floating-point
 // elements from 'v' to memory address 'mt' with a no-read hint and using a
 // weakly-ordered memory consistency model (stores performed with this function
 // are not globally ordered, and subsequent stores from the same thread can be
@@ -14963,14 +14998,14 @@ func storenrPs(mt uintptr, v [16]float32)
 //
 // Instruction: 'VMOVNRNGOAPD'. Intrinsic: '_mm512_storenrngo_pd'.
 // Requires KNCNI.
-func StorenrngoPd(mt uintptr, v x86.M512d)  {
-	storenrngoPd(uintptr(mt), [8]float64(v))
+func M512StorenrngoPd(mt uintptr, v x86.M512d)  {
+	m512StorenrngoPd(uintptr(mt), [8]float64(v))
 }
 
-func storenrngoPd(mt uintptr, v [8]float64) 
+func m512StorenrngoPd(mt uintptr, v [8]float64) 
 
 
-// StorenrngoPs: Stores packed single-precision (32-bit) floating-point
+// M512StorenrngoPs: Stores packed single-precision (32-bit) floating-point
 // elements from 'v' to memory address 'mt' with a no-read hint and using a
 // weakly-ordered memory consistency model (stores performed with this function
 // are not globally ordered, and subsequent stores from the same thread can be
@@ -14984,14 +15019,14 @@ func storenrngoPd(mt uintptr, v [8]float64)
 //
 // Instruction: 'VMOVNRNGOAPS'. Intrinsic: '_mm512_storenrngo_ps'.
 // Requires KNCNI.
-func StorenrngoPs(mt uintptr, v x86.M512)  {
-	storenrngoPs(uintptr(mt), [16]float32(v))
+func M512StorenrngoPs(mt uintptr, v x86.M512)  {
+	m512StorenrngoPs(uintptr(mt), [16]float32(v))
 }
 
-func storenrngoPs(mt uintptr, v [16]float32) 
+func m512StorenrngoPs(mt uintptr, v [16]float32) 
 
 
-// MaskSubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit
+// M512MaskSubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit
 // integers in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15007,15 +15042,15 @@ func storenrngoPs(mt uintptr, v [16]float32)
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm512_mask_sub_epi32'.
 // Requires KNCNI.
-func MaskSubEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskSubEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskSubEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskSubEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// SubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit integers
-// in 'a', and store the results in 'dst'. 
+// M512SubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit
+// integers in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -15025,17 +15060,17 @@ func maskSubEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm512_sub_epi32'.
 // Requires KNCNI.
-func SubEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(subEpi32([64]byte(a), [64]byte(b)))
+func M512SubEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SubEpi32([64]byte(a), [64]byte(b)))
 }
 
-func subEpi32(a [64]byte, b [64]byte) [64]byte
+func m512SubEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskSubPd: Subtract packed double-precision (64-bit) floating-point elements
-// in 'b' from packed double-precision (64-bit) floating-point elements in 'a',
-// and store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskSubPd: Subtract packed double-precision (64-bit) floating-point
+// elements in 'b' from packed double-precision (64-bit) floating-point
+// elements in 'a', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -15049,15 +15084,15 @@ func subEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm512_mask_sub_pd'.
 // Requires KNCNI.
-func MaskSubPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(maskSubPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
+func M512MaskSubPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskSubPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
-func maskSubPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
+func m512MaskSubPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 
 
-// SubPd: Subtract packed double-precision (64-bit) floating-point elements in
-// 'b' from packed double-precision (64-bit) floating-point elements in 'a',
+// M512SubPd: Subtract packed double-precision (64-bit) floating-point elements
+// in 'b' from packed double-precision (64-bit) floating-point elements in 'a',
 // and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -15068,17 +15103,17 @@ func maskSubPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm512_sub_pd'.
 // Requires KNCNI.
-func SubPd(a x86.M512d, b x86.M512d) x86.M512d {
-	return x86.M512d(subPd([8]float64(a), [8]float64(b)))
+func M512SubPd(a x86.M512d, b x86.M512d) x86.M512d {
+	return x86.M512d(m512SubPd([8]float64(a), [8]float64(b)))
 }
 
-func subPd(a [8]float64, b [8]float64) [8]float64
+func m512SubPd(a [8]float64, b [8]float64) [8]float64
 
 
-// MaskSubPs: Subtract packed single-precision (32-bit) floating-point elements
-// in 'b' from packed single-precision (32-bit) floating-point elements in 'a',
-// and store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskSubPs: Subtract packed single-precision (32-bit) floating-point
+// elements in 'b' from packed single-precision (32-bit) floating-point
+// elements in 'a', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -15092,15 +15127,15 @@ func subPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm512_mask_sub_ps'.
 // Requires KNCNI.
-func MaskSubPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(maskSubPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
+func M512MaskSubPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512MaskSubPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
-func maskSubPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
+func m512MaskSubPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]float32
 
 
-// SubPs: Subtract packed single-precision (32-bit) floating-point elements in
-// 'b' from packed single-precision (32-bit) floating-point elements in 'a',
+// M512SubPs: Subtract packed single-precision (32-bit) floating-point elements
+// in 'b' from packed single-precision (32-bit) floating-point elements in 'a',
 // and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -15111,14 +15146,14 @@ func maskSubPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]floa
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm512_sub_ps'.
 // Requires KNCNI.
-func SubPs(a x86.M512, b x86.M512) x86.M512 {
-	return x86.M512(subPs([16]float32(a), [16]float32(b)))
+func M512SubPs(a x86.M512, b x86.M512) x86.M512 {
+	return x86.M512(m512SubPs([16]float32(a), [16]float32(b)))
 }
 
-func subPs(a [16]float32, b [16]float32) [16]float32
+func m512SubPs(a [16]float32, b [16]float32) [16]float32
 
 
-// MaskSubRoundPd: Subtract packed double-precision (64-bit) floating-point
+// M512MaskSubRoundPd: Subtract packed double-precision (64-bit) floating-point
 // elements in 'b' from packed double-precision (64-bit) floating-point
 // elements in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set).
@@ -15142,14 +15177,14 @@ func subPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm512_mask_sub_round_pd'.
 // Requires KNCNI.
-func MaskSubRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskSubRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
+func M512MaskSubRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskSubRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
-func maskSubRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, rounding int) [8]float64
+func m512MaskSubRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, rounding int) [8]float64
 
 
-// SubRoundPd: Subtract packed double-precision (64-bit) floating-point
+// M512SubRoundPd: Subtract packed double-precision (64-bit) floating-point
 // elements in 'b' from packed double-precision (64-bit) floating-point
 // elements in 'a', and store the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -15168,14 +15203,14 @@ func maskSubRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, roundin
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm512_sub_round_pd'.
 // Requires KNCNI.
-func SubRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(subRoundPd([8]float64(a), [8]float64(b), rounding))
+func M512SubRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512SubRoundPd([8]float64(a), [8]float64(b), rounding))
 }
 
-func subRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
+func m512SubRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 
 
-// MaskSubRoundPs: Subtract packed single-precision (32-bit) floating-point
+// M512MaskSubRoundPs: Subtract packed single-precision (32-bit) floating-point
 // elements in 'b' from packed single-precision (32-bit) floating-point
 // elements in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set).
@@ -15199,14 +15234,14 @@ func subRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm512_mask_sub_round_ps'.
 // Requires KNCNI.
-func MaskSubRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskSubRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
+func M512MaskSubRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskSubRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
-func maskSubRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
+func m512MaskSubRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// SubRoundPs: Subtract packed single-precision (32-bit) floating-point
+// M512SubRoundPs: Subtract packed single-precision (32-bit) floating-point
 // elements in 'b' from packed single-precision (32-bit) floating-point
 // elements in 'a', and store the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -15225,14 +15260,14 @@ func maskSubRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, rou
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm512_sub_round_ps'.
 // Requires KNCNI.
-func SubRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
-	return x86.M512(subRoundPs([16]float32(a), [16]float32(b), rounding))
+func M512SubRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512SubRoundPs([16]float32(a), [16]float32(b), rounding))
 }
 
-func subRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
+func m512SubRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 
 
-// MaskSubrEpi32: Performs element-by-element subtraction of packed 32-bit
+// M512MaskSubrEpi32: Performs element-by-element subtraction of packed 32-bit
 // integer elements in 'v2' from 'v3' storing the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set) 
@@ -15249,15 +15284,15 @@ func subRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VPSUBRD'. Intrinsic: '_mm512_mask_subr_epi32'.
 // Requires KNCNI.
-func MaskSubrEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i) x86.M512i {
-	return x86.M512i(maskSubrEpi32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3)))
+func M512MaskSubrEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubrEpi32([64]byte(src), uint16(k), [64]byte(v2), [64]byte(v3)))
 }
 
-func maskSubrEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
+func m512MaskSubrEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
 
 
-// SubrEpi32: Performs element-by-element subtraction of packed 32-bit integer
-// elements in 'v2' from 'v3' storing the results in 'dst'. 
+// M512SubrEpi32: Performs element-by-element subtraction of packed 32-bit
+// integer elements in 'v2' from 'v3' storing the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -15267,14 +15302,14 @@ func maskSubrEpi32(src [64]byte, k uint16, v2 [64]byte, v3 [64]byte) [64]byte
 //
 // Instruction: 'VPSUBRD'. Intrinsic: '_mm512_subr_epi32'.
 // Requires KNCNI.
-func SubrEpi32(v2 x86.M512i, v3 x86.M512i) x86.M512i {
-	return x86.M512i(subrEpi32([64]byte(v2), [64]byte(v3)))
+func M512SubrEpi32(v2 x86.M512i, v3 x86.M512i) x86.M512i {
+	return x86.M512i(m512SubrEpi32([64]byte(v2), [64]byte(v3)))
 }
 
-func subrEpi32(v2 [64]byte, v3 [64]byte) [64]byte
+func m512SubrEpi32(v2 [64]byte, v3 [64]byte) [64]byte
 
 
-// MaskSubrPd: Performs element-by-element subtraction of packed
+// M512MaskSubrPd: Performs element-by-element subtraction of packed
 // double-precision (64-bit) floating-point elements in 'v2' from 'v3' storing
 // the results in 'dst' using writemask 'k' (elements are copied from 'src'
 // when the corresponding mask bit is not set). 
@@ -15291,16 +15326,16 @@ func subrEpi32(v2 [64]byte, v3 [64]byte) [64]byte
 //
 // Instruction: 'VSUBRPD'. Intrinsic: '_mm512_mask_subr_pd'.
 // Requires KNCNI.
-func MaskSubrPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d) x86.M512d {
-	return x86.M512d(maskSubrPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3)))
+func M512MaskSubrPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskSubrPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3)))
 }
 
-func maskSubrPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64) [8]float64
+func m512MaskSubrPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64) [8]float64
 
 
-// SubrPd: Performs element-by-element subtraction of packed double-precision
-// (64-bit) floating-point elements in 'v2' from 'v3' storing the results in
-// 'dst'. 
+// M512SubrPd: Performs element-by-element subtraction of packed
+// double-precision (64-bit) floating-point elements in 'v2' from 'v3' storing
+// the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -15310,14 +15345,14 @@ func maskSubrPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64) [8]float6
 //
 // Instruction: 'VSUBRPD'. Intrinsic: '_mm512_subr_pd'.
 // Requires KNCNI.
-func SubrPd(v2 x86.M512d, v3 x86.M512d) x86.M512d {
-	return x86.M512d(subrPd([8]float64(v2), [8]float64(v3)))
+func M512SubrPd(v2 x86.M512d, v3 x86.M512d) x86.M512d {
+	return x86.M512d(m512SubrPd([8]float64(v2), [8]float64(v3)))
 }
 
-func subrPd(v2 [8]float64, v3 [8]float64) [8]float64
+func m512SubrPd(v2 [8]float64, v3 [8]float64) [8]float64
 
 
-// MaskSubrPs: Performs element-by-element subtraction of packed
+// M512MaskSubrPs: Performs element-by-element subtraction of packed
 // single-precision (32-bit) floating-point elements in 'v2' from 'v3' storing
 // the results in 'dst' using writemask 'k' (elements are copied from 'src'
 // when the corresponding mask bit is not set). 
@@ -15334,16 +15369,16 @@ func subrPd(v2 [8]float64, v3 [8]float64) [8]float64
 //
 // Instruction: 'VSUBRPS'. Intrinsic: '_mm512_mask_subr_ps'.
 // Requires KNCNI.
-func MaskSubrPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512) x86.M512 {
-	return x86.M512(maskSubrPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3)))
+func M512MaskSubrPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512) x86.M512 {
+	return x86.M512(m512MaskSubrPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3)))
 }
 
-func maskSubrPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32) [16]float32
+func m512MaskSubrPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32) [16]float32
 
 
-// SubrPs: Performs element-by-element subtraction of packed single-precision
-// (32-bit) floating-point elements in 'v2' from 'v3' storing the results in
-// 'dst'. 
+// M512SubrPs: Performs element-by-element subtraction of packed
+// single-precision (32-bit) floating-point elements in 'v2' from 'v3' storing
+// the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -15353,14 +15388,14 @@ func maskSubrPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32) [16]f
 //
 // Instruction: 'VSUBRPS'. Intrinsic: '_mm512_subr_ps'.
 // Requires KNCNI.
-func SubrPs(v2 x86.M512, v3 x86.M512) x86.M512 {
-	return x86.M512(subrPs([16]float32(v2), [16]float32(v3)))
+func M512SubrPs(v2 x86.M512, v3 x86.M512) x86.M512 {
+	return x86.M512(m512SubrPs([16]float32(v2), [16]float32(v3)))
 }
 
-func subrPs(v2 [16]float32, v3 [16]float32) [16]float32
+func m512SubrPs(v2 [16]float32, v3 [16]float32) [16]float32
 
 
-// MaskSubrRoundPd: Performs element-by-element subtraction of packed
+// M512MaskSubrRoundPd: Performs element-by-element subtraction of packed
 // double-precision (64-bit) floating-point elements in 'v2' from 'v3' storing
 // the results in 'dst' using writemask 'k' (elements are copied from 'src'
 // when the corresponding mask bit is not set).
@@ -15384,14 +15419,14 @@ func subrPs(v2 [16]float32, v3 [16]float32) [16]float32
 //
 // Instruction: 'VSUBRPD'. Intrinsic: '_mm512_mask_subr_round_pd'.
 // Requires KNCNI.
-func MaskSubrRoundPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskSubrRoundPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3), rounding))
+func M512MaskSubrRoundPd(src x86.M512d, k x86.Mmask8, v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskSubrRoundPd([8]float64(src), uint8(k), [8]float64(v2), [8]float64(v3), rounding))
 }
 
-func maskSubrRoundPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64, rounding int) [8]float64
+func m512MaskSubrRoundPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64, rounding int) [8]float64
 
 
-// SubrRoundPd: Performs element-by-element subtraction of packed
+// M512SubrRoundPd: Performs element-by-element subtraction of packed
 // double-precision (64-bit) floating-point elements in 'v2' from 'v3' storing
 // the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -15410,14 +15445,14 @@ func maskSubrRoundPd(src [8]float64, k uint8, v2 [8]float64, v3 [8]float64, roun
 //
 // Instruction: 'VSUBRPD'. Intrinsic: '_mm512_subr_round_pd'.
 // Requires KNCNI.
-func SubrRoundPd(v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(subrRoundPd([8]float64(v2), [8]float64(v3), rounding))
+func M512SubrRoundPd(v2 x86.M512d, v3 x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512SubrRoundPd([8]float64(v2), [8]float64(v3), rounding))
 }
 
-func subrRoundPd(v2 [8]float64, v3 [8]float64, rounding int) [8]float64
+func m512SubrRoundPd(v2 [8]float64, v3 [8]float64, rounding int) [8]float64
 
 
-// MaskSubrRoundPs: Performs element-by-element subtraction of packed
+// M512MaskSubrRoundPs: Performs element-by-element subtraction of packed
 // single-precision (32-bit) floating-point elements in 'v2' from 'v3' storing
 // the results in 'dst' using writemask 'k' (elements are copied from 'src'
 // when the corresponding mask bit is not set).
@@ -15441,14 +15476,14 @@ func subrRoundPd(v2 [8]float64, v3 [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VSUBRPS'. Intrinsic: '_mm512_mask_subr_round_ps'.
 // Requires KNCNI.
-func MaskSubrRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskSubrRoundPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), rounding))
+func M512MaskSubrRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskSubrRoundPs([16]float32(src), uint16(k), [16]float32(v2), [16]float32(v3), rounding))
 }
 
-func maskSubrRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, rounding int) [16]float32
+func m512MaskSubrRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 
 
-// SubrRoundPs: Performs element-by-element subtraction of packed
+// M512SubrRoundPs: Performs element-by-element subtraction of packed
 // single-precision (32-bit) floating-point elements in 'v2' from 'v3' storing
 // the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
@@ -15467,18 +15502,18 @@ func maskSubrRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float32, 
 //
 // Instruction: 'VSUBRPS'. Intrinsic: '_mm512_subr_round_ps'.
 // Requires KNCNI.
-func SubrRoundPs(v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
-	return x86.M512(subrRoundPs([16]float32(v2), [16]float32(v3), rounding))
+func M512SubrRoundPs(v2 x86.M512, v3 x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512SubrRoundPs([16]float32(v2), [16]float32(v3), rounding))
 }
 
-func subrRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
+func m512SubrRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 
 
-// MaskSubrsetbEpi32: Performs element-by-element subtraction of packed 32-bit
-// integer elements in 'v2' from 'v3', storing the results in 'dst' and 'v2'.
-// The borrowed value from the subtraction difference for the nth element is
-// written to the nth bit of 'borrow' (borrow flag). Results are written using
-// writemask 'k' (elements are copied from 'k' to 'k_old' when the
+// M512MaskSubrsetbEpi32: Performs element-by-element subtraction of packed
+// 32-bit integer elements in 'v2' from 'v3', storing the results in 'dst' and
+// 'v2'. The borrowed value from the subtraction difference for the nth element
+// is written to the nth bit of 'borrow' (borrow flag). Results are written
+// using writemask 'k' (elements are copied from 'k' to 'k_old' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -15496,14 +15531,14 @@ func subrRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_mask_subrsetb_epi32'.
 // Requires KNCNI.
-func MaskSubrsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(maskSubrsetbEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
+func M512MaskSubrsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512MaskSubrsetbEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSubrsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
+func m512MaskSubrsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
-// SubrsetbEpi32: Performs element-by-element subtraction of packed 32-bit
+// M512SubrsetbEpi32: Performs element-by-element subtraction of packed 32-bit
 // integer elements in 'v2' from 'v3', storing the results in 'dst' and 'v2'.
 // The borrowed value from the subtraction difference for the nth element is
 // written to the nth bit of 'borrow' (borrow flag). 
@@ -15517,18 +15552,18 @@ func maskSubrsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow 
 //
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_subrsetb_epi32'.
 // Requires KNCNI.
-func SubrsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(subrsetbEpi32([64]byte(v2), [64]byte(v3), uint16(borrow)))
+func M512SubrsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512SubrsetbEpi32([64]byte(v2), [64]byte(v3), uint16(borrow)))
 }
 
-func subrsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
+func m512SubrsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
 
 
-// MaskSubsetbEpi32: Performs element-by-element subtraction of packed 32-bit
-// integer elements in 'v3' from 'v2', storing the results in 'dst' and the nth
-// borrow bit in the nth position of 'borrow' (borrow flag). Results are stored
-// using writemask 'k' (elements are copied from 'v2' and 'k_old' when the
-// corresponding mask bit is not set). 
+// M512MaskSubsetbEpi32: Performs element-by-element subtraction of packed
+// 32-bit integer elements in 'v3' from 'v2', storing the results in 'dst' and
+// the nth borrow bit in the nth position of 'borrow' (borrow flag). Results
+// are stored using writemask 'k' (elements are copied from 'v2' and 'k_old'
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -15544,14 +15579,14 @@ func subrsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
 //
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_mask_subsetb_epi32'.
 // Requires KNCNI.
-func MaskSubsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(maskSubsetbEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
+func M512MaskSubsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512MaskSubsetbEpi32([64]byte(v2), uint16(k), uint16(k_old), [64]byte(v3), uint16(borrow)))
 }
 
-func maskSubsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
+func m512MaskSubsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow uint16) [64]byte
 
 
-// SubsetbEpi32: Performs element-by-element subtraction of packed 32-bit
+// M512SubsetbEpi32: Performs element-by-element subtraction of packed 32-bit
 // integer elements in 'v3' from 'v2', storing the results in 'dst' and the nth
 // borrow bit in the nth position of 'borrow' (borrow flag). 
 //
@@ -15564,14 +15599,14 @@ func maskSubsetbEpi32(v2 [64]byte, k uint16, k_old uint16, v3 [64]byte, borrow u
 //
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_subsetb_epi32'.
 // Requires KNCNI.
-func SubsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
-	return x86.M512i(subsetbEpi32([64]byte(v2), [64]byte(v3), uint16(borrow)))
+func M512SubsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow x86.Mmask16) x86.M512i {
+	return x86.M512i(m512SubsetbEpi32([64]byte(v2), [64]byte(v3), uint16(borrow)))
 }
 
-func subsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
+func m512SubsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
 
 
-// MaskSwizzleEpi32: Performs a swizzle transformation of each of the four
+// M512MaskSwizzleEpi32: Performs a swizzle transformation of each of the four
 // groups of packed 4x32-bit integer elements in 'v' using swizzle parameter
 // 's', storing the results in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set). 
@@ -15744,16 +15779,16 @@ func subsetbEpi32(v2 [64]byte, v3 [64]byte, borrow uint16) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_swizzle_epi32'.
 // Requires KNCNI.
-func MaskSwizzleEpi32(src x86.M512i, k x86.Mmask16, v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
-	return x86.M512i(maskSwizzleEpi32([64]byte(src), uint16(k), [64]byte(v), s))
+func M512MaskSwizzleEpi32(src x86.M512i, k x86.Mmask16, v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
+	return x86.M512i(m512MaskSwizzleEpi32([64]byte(src), uint16(k), [64]byte(v), s))
 }
 
-func maskSwizzleEpi32(src [64]byte, k uint16, v [64]byte, s MMSWIZZLEENUM) [64]byte
+func m512MaskSwizzleEpi32(src [64]byte, k uint16, v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
-// SwizzleEpi32: Performs a swizzle transformation of each of the four groups
-// of packed 4x 32-bit integer elements in 'v' using swizzle parameter 's',
-// storing the results in 'dst'. 
+// M512SwizzleEpi32: Performs a swizzle transformation of each of the four
+// groups of packed 4x 32-bit integer elements in 'v' using swizzle parameter
+// 's', storing the results in 'dst'. 
 //
 //		CASE s OF
 //		_MM_SWIZ_REG_NONE:
@@ -15819,14 +15854,14 @@ func maskSwizzleEpi32(src [64]byte, k uint16, v [64]byte, s MMSWIZZLEENUM) [64]b
 //
 // Instruction: '...'. Intrinsic: '_mm512_swizzle_epi32'.
 // Requires KNCNI.
-func SwizzleEpi32(v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
-	return x86.M512i(swizzleEpi32([64]byte(v), s))
+func M512SwizzleEpi32(v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
+	return x86.M512i(m512SwizzleEpi32([64]byte(v), s))
 }
 
-func swizzleEpi32(v [64]byte, s MMSWIZZLEENUM) [64]byte
+func m512SwizzleEpi32(v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
-// MaskSwizzleEpi64: Performs a swizzle transformation of each of the four
+// M512MaskSwizzleEpi64: Performs a swizzle transformation of each of the four
 // groups of packed 4x64-bit integer elements in 'v' using swizzle parameter
 // 's', storing the results in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set). 
@@ -15999,16 +16034,16 @@ func swizzleEpi32(v [64]byte, s MMSWIZZLEENUM) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_swizzle_epi64'.
 // Requires KNCNI.
-func MaskSwizzleEpi64(src x86.M512i, k x86.Mmask8, v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
-	return x86.M512i(maskSwizzleEpi64([64]byte(src), uint8(k), [64]byte(v), s))
+func M512MaskSwizzleEpi64(src x86.M512i, k x86.Mmask8, v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
+	return x86.M512i(m512MaskSwizzleEpi64([64]byte(src), uint8(k), [64]byte(v), s))
 }
 
-func maskSwizzleEpi64(src [64]byte, k uint8, v [64]byte, s MMSWIZZLEENUM) [64]byte
+func m512MaskSwizzleEpi64(src [64]byte, k uint8, v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
-// SwizzleEpi64: Performs a swizzle transformation of each of the two groups of
-// packed 4x64-bit integer elements in 'v' using swizzle parameter 's', storing
-// the results in 'dst'. 
+// M512SwizzleEpi64: Performs a swizzle transformation of each of the two
+// groups of packed 4x64-bit integer elements in 'v' using swizzle parameter
+// 's', storing the results in 'dst'. 
 //
 //		CASE s OF
 //		_MM_SWIZ_REG_NONE:
@@ -16074,17 +16109,18 @@ func maskSwizzleEpi64(src [64]byte, k uint8, v [64]byte, s MMSWIZZLEENUM) [64]by
 //
 // Instruction: '...'. Intrinsic: '_mm512_swizzle_epi64'.
 // Requires KNCNI.
-func SwizzleEpi64(v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
-	return x86.M512i(swizzleEpi64([64]byte(v), s))
+func M512SwizzleEpi64(v x86.M512i, s MMSWIZZLEENUM) x86.M512i {
+	return x86.M512i(m512SwizzleEpi64([64]byte(v), s))
 }
 
-func swizzleEpi64(v [64]byte, s MMSWIZZLEENUM) [64]byte
+func m512SwizzleEpi64(v [64]byte, s MMSWIZZLEENUM) [64]byte
 
 
-// MaskSwizzlePd: Performs a swizzle transformation of each of the two groups
-// of packed 4x double-precision (64-bit) floating-point elements in 'v' using
-// swizzle parameter 's', storing the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskSwizzlePd: Performs a swizzle transformation of each of the two
+// groups of packed 4x double-precision (64-bit) floating-point elements in 'v'
+// using swizzle parameter 's', storing the results in 'dst' using writemask
+// 'k' (elements are copied from 'src' when the corresponding mask bit is not
+// set). 
 //
 //		CASE s OF
 //		_MM_SWIZ_REG_NONE:
@@ -16254,15 +16290,15 @@ func swizzleEpi64(v [64]byte, s MMSWIZZLEENUM) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_swizzle_pd'.
 // Requires KNCNI.
-func MaskSwizzlePd(src x86.M512d, k x86.Mmask8, v x86.M512d, s MMSWIZZLEENUM) x86.M512d {
-	return x86.M512d(maskSwizzlePd([8]float64(src), uint8(k), [8]float64(v), s))
+func M512MaskSwizzlePd(src x86.M512d, k x86.Mmask8, v x86.M512d, s MMSWIZZLEENUM) x86.M512d {
+	return x86.M512d(m512MaskSwizzlePd([8]float64(src), uint8(k), [8]float64(v), s))
 }
 
-func maskSwizzlePd(src [8]float64, k uint8, v [8]float64, s MMSWIZZLEENUM) [8]float64
+func m512MaskSwizzlePd(src [8]float64, k uint8, v [8]float64, s MMSWIZZLEENUM) [8]float64
 
 
-// SwizzlePd: Performs a swizzle transformation of each of the two groups of
-// packed 4x double-precision (64-bit) floating-point elements in 'v' using
+// M512SwizzlePd: Performs a swizzle transformation of each of the two groups
+// of packed 4x double-precision (64-bit) floating-point elements in 'v' using
 // swizzle parameter 's', storing the results in 'dst'. 
 //
 //		CASE s OF
@@ -16329,17 +16365,18 @@ func maskSwizzlePd(src [8]float64, k uint8, v [8]float64, s MMSWIZZLEENUM) [8]fl
 //
 // Instruction: '...'. Intrinsic: '_mm512_swizzle_pd'.
 // Requires KNCNI.
-func SwizzlePd(v x86.M512d, s MMSWIZZLEENUM) x86.M512d {
-	return x86.M512d(swizzlePd([8]float64(v), s))
+func M512SwizzlePd(v x86.M512d, s MMSWIZZLEENUM) x86.M512d {
+	return x86.M512d(m512SwizzlePd([8]float64(v), s))
 }
 
-func swizzlePd(v [8]float64, s MMSWIZZLEENUM) [8]float64
+func m512SwizzlePd(v [8]float64, s MMSWIZZLEENUM) [8]float64
 
 
-// MaskSwizzlePs: Performs a swizzle transformation of each of the four groups
-// of packed 4x single-precision (32-bit) floating-point elements in 'v' using
-// swizzle parameter 's', storing the results in 'dst' using writemask 'k'
-// (elements are copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskSwizzlePs: Performs a swizzle transformation of each of the four
+// groups of packed 4x single-precision (32-bit) floating-point elements in 'v'
+// using swizzle parameter 's', storing the results in 'dst' using writemask
+// 'k' (elements are copied from 'src' when the corresponding mask bit is not
+// set). 
 //
 //		CASE s OF
 //		_MM_SWIZ_REG_NONE:
@@ -16509,15 +16546,15 @@ func swizzlePd(v [8]float64, s MMSWIZZLEENUM) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_swizzle_ps'.
 // Requires KNCNI.
-func MaskSwizzlePs(src x86.M512, k x86.Mmask16, v x86.M512, s MMSWIZZLEENUM) x86.M512 {
-	return x86.M512(maskSwizzlePs([16]float32(src), uint16(k), [16]float32(v), s))
+func M512MaskSwizzlePs(src x86.M512, k x86.Mmask16, v x86.M512, s MMSWIZZLEENUM) x86.M512 {
+	return x86.M512(m512MaskSwizzlePs([16]float32(src), uint16(k), [16]float32(v), s))
 }
 
-func maskSwizzlePs(src [16]float32, k uint16, v [16]float32, s MMSWIZZLEENUM) [16]float32
+func m512MaskSwizzlePs(src [16]float32, k uint16, v [16]float32, s MMSWIZZLEENUM) [16]float32
 
 
-// SwizzlePs: Performs a swizzle transformation of each of the four groups of
-// packed 4xsingle-precision (32-bit) floating-point elements in 'v' using
+// M512SwizzlePs: Performs a swizzle transformation of each of the four groups
+// of packed 4xsingle-precision (32-bit) floating-point elements in 'v' using
 // swizzle parameter 's', storing the results in 'dst'. 
 //
 //		CASE s OF
@@ -16584,17 +16621,17 @@ func maskSwizzlePs(src [16]float32, k uint16, v [16]float32, s MMSWIZZLEENUM) [1
 //
 // Instruction: '...'. Intrinsic: '_mm512_swizzle_ps'.
 // Requires KNCNI.
-func SwizzlePs(v x86.M512, s MMSWIZZLEENUM) x86.M512 {
-	return x86.M512(swizzlePs([16]float32(v), s))
+func M512SwizzlePs(v x86.M512, s MMSWIZZLEENUM) x86.M512 {
+	return x86.M512(m512SwizzlePs([16]float32(v), s))
 }
 
-func swizzlePs(v [16]float32, s MMSWIZZLEENUM) [16]float32
+func m512SwizzlePs(v [16]float32, s MMSWIZZLEENUM) [16]float32
 
 
-// MaskTestEpi32Mask: Compute the bitwise AND of packed 32-bit integers in 'a'
-// and 'b', producing intermediate 32-bit values, and set the corresponding bit
-// in result mask 'k' (subject to writemask 'k') if the intermediate value is
-// non-zero. 
+// M512MaskTestEpi32Mask: Compute the bitwise AND of packed 32-bit integers in
+// 'a' and 'b', producing intermediate 32-bit values, and set the corresponding
+// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
+// is non-zero. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -16608,16 +16645,16 @@ func swizzlePs(v [16]float32, s MMSWIZZLEENUM) [16]float32
 //
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm512_mask_test_epi32_mask'.
 // Requires KNCNI.
-func MaskTestEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(maskTestEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
+func M512MaskTestEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512MaskTestEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
+func m512MaskTestEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 
 
-// TestEpi32Mask: Compute the bitwise AND of packed 32-bit integers in 'a' and
-// 'b', producing intermediate 32-bit values, and set the corresponding bit in
-// result mask 'k' if the intermediate value is non-zero. 
+// M512TestEpi32Mask: Compute the bitwise AND of packed 32-bit integers in 'a'
+// and 'b', producing intermediate 32-bit values, and set the corresponding bit
+// in result mask 'k' if the intermediate value is non-zero. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -16627,11 +16664,11 @@ func maskTestEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm512_test_epi32_mask'.
 // Requires KNCNI.
-func TestEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
-	return x86.Mmask16(testEpi32Mask([64]byte(a), [64]byte(b)))
+func M512TestEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+	return x86.Mmask16(m512TestEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
-func testEpi32Mask(a [64]byte, b [64]byte) uint16
+func m512TestEpi32Mask(a [64]byte, b [64]byte) uint16
 
 
 // Tzcnti32: Counts the number of trailing bits in unsigned 32-bit integer 'x'
@@ -16674,9 +16711,9 @@ func Tzcnti64(a int64, x uint64) int64 {
 func tzcnti64(a int64, x uint64) int64
 
 
-// MaskXorEpi32: Compute the bitwise XOR of packed 32-bit integers in 'a' and
-// 'b', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 
+// M512MaskXorEpi32: Compute the bitwise XOR of packed 32-bit integers in 'a'
+// and 'b', and store the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -16690,15 +16727,15 @@ func tzcnti64(a int64, x uint64) int64
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_mask_xor_epi32'.
 // Requires KNCNI.
-func MaskXorEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskXorEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskXorEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskXorEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskXorEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskXorEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// XorEpi32: Compute the bitwise XOR of packed 32-bit integers in 'a' and 'b',
-// and store the results in 'dst'. 
+// M512XorEpi32: Compute the bitwise XOR of packed 32-bit integers in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -16708,16 +16745,16 @@ func maskXorEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_xor_epi32'.
 // Requires KNCNI.
-func XorEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(xorEpi32([64]byte(a), [64]byte(b)))
+func M512XorEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512XorEpi32([64]byte(a), [64]byte(b)))
 }
 
-func xorEpi32(a [64]byte, b [64]byte) [64]byte
+func m512XorEpi32(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskXorEpi64: Compute the bitwise XOR of packed 64-bit integers in 'a' and
-// 'b', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 
+// M512MaskXorEpi64: Compute the bitwise XOR of packed 64-bit integers in 'a'
+// and 'b', and store the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -16731,15 +16768,15 @@ func xorEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_mask_xor_epi64'.
 // Requires KNCNI.
-func MaskXorEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskXorEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
+func M512MaskXorEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskXorEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskXorEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
+func m512MaskXorEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 
 
-// XorEpi64: Compute the bitwise XOR of packed 64-bit integers in 'a' and 'b',
-// and store the results in 'dst'. 
+// M512XorEpi64: Compute the bitwise XOR of packed 64-bit integers in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -16749,24 +16786,24 @@ func maskXorEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_xor_epi64'.
 // Requires KNCNI.
-func XorEpi64(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(xorEpi64([64]byte(a), [64]byte(b)))
+func M512XorEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512XorEpi64([64]byte(a), [64]byte(b)))
 }
 
-func xorEpi64(a [64]byte, b [64]byte) [64]byte
+func m512XorEpi64(a [64]byte, b [64]byte) [64]byte
 
 
-// XorSi512: Compute the bitwise XOR of 512 bits (representing integer data) in
-// 'a' and 'b', and store the result in 'dst'. 
+// M512XorSi512: Compute the bitwise XOR of 512 bits (representing integer
+// data) in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[511:0] := (a[511:0] XOR b[511:0])
 //		dst[MAX:512] := 0
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_xor_si512'.
 // Requires KNCNI.
-func XorSi512(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(xorSi512([64]byte(a), [64]byte(b)))
+func M512XorSi512(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512XorSi512([64]byte(a), [64]byte(b)))
 }
 
-func xorSi512(a [64]byte, b [64]byte) [64]byte
+func m512XorSi512(a [64]byte, b [64]byte) [64]byte
 

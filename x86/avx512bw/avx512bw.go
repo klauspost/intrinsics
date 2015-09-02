@@ -51,9 +51,9 @@ func MaskzAbsEpi16(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzAbsEpi16(k uint8, a [16]byte) [16]byte
 
 
-// MaskAbsEpi161: Compute the absolute value of packed 16-bit integers in 'a',
-// and store the unsigned results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
+// M256MaskAbsEpi16: Compute the absolute value of packed 16-bit integers in
+// 'a', and store the unsigned results in 'dst' using writemask 'k' (elements
+// are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -67,16 +67,16 @@ func maskzAbsEpi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm256_mask_abs_epi16'.
 // Requires AVX512BW.
-func MaskAbsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i) x86.M256i {
-	return x86.M256i(maskAbsEpi161([32]byte(src), uint16(k), [32]byte(a)))
+func M256MaskAbsEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAbsEpi16([32]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskAbsEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
+func m256MaskAbsEpi16(src [32]byte, k uint16, a [32]byte) [32]byte
 
 
-// MaskzAbsEpi161: Compute the absolute value of packed 16-bit integers in 'a',
-// and store the unsigned results in 'dst' using zeromask 'k' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M256MaskzAbsEpi16: Compute the absolute value of packed 16-bit integers in
+// 'a', and store the unsigned results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -90,15 +90,15 @@ func maskAbsEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm256_maskz_abs_epi16'.
 // Requires AVX512BW.
-func MaskzAbsEpi161(k x86.Mmask16, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzAbsEpi161(uint16(k), [32]byte(a)))
+func M256MaskzAbsEpi16(k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAbsEpi16(uint16(k), [32]byte(a)))
 }
 
-func maskzAbsEpi161(k uint16, a [32]byte) [32]byte
+func m256MaskzAbsEpi16(k uint16, a [32]byte) [32]byte
 
 
-// AbsEpi16: Compute the absolute value of packed 16-bit integers in 'a', and
-// store the unsigned results in 'dst'. 
+// M512AbsEpi16: Compute the absolute value of packed 16-bit integers in 'a',
+// and store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -108,16 +108,16 @@ func maskzAbsEpi161(k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_abs_epi16'.
 // Requires AVX512BW.
-func AbsEpi16(a x86.M512i) x86.M512i {
-	return x86.M512i(absEpi16([64]byte(a)))
+func M512AbsEpi16(a x86.M512i) x86.M512i {
+	return x86.M512i(m512AbsEpi16([64]byte(a)))
 }
 
-func absEpi16(a [64]byte) [64]byte
+func m512AbsEpi16(a [64]byte) [64]byte
 
 
-// MaskAbsEpi162: Compute the absolute value of packed 16-bit integers in 'a',
-// and store the unsigned results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskAbsEpi16: Compute the absolute value of packed 16-bit integers in
+// 'a', and store the unsigned results in 'dst' using writemask 'k' (elements
+// are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -131,16 +131,16 @@ func absEpi16(a [64]byte) [64]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_mask_abs_epi16'.
 // Requires AVX512BW.
-func MaskAbsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i) x86.M512i {
-	return x86.M512i(maskAbsEpi162([64]byte(src), uint32(k), [64]byte(a)))
+func M512MaskAbsEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAbsEpi16([64]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskAbsEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
+func m512MaskAbsEpi16(src [64]byte, k uint32, a [64]byte) [64]byte
 
 
-// MaskzAbsEpi162: Compute the absolute value of packed 16-bit integers in 'a',
-// and store the unsigned results in 'dst' using zeromask 'k' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M512MaskzAbsEpi16: Compute the absolute value of packed 16-bit integers in
+// 'a', and store the unsigned results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -154,11 +154,11 @@ func maskAbsEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm512_maskz_abs_epi16'.
 // Requires AVX512BW.
-func MaskzAbsEpi162(k x86.Mmask32, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzAbsEpi162(uint32(k), [64]byte(a)))
+func M512MaskzAbsEpi16(k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAbsEpi16(uint32(k), [64]byte(a)))
 }
 
-func maskzAbsEpi162(k uint32, a [64]byte) [64]byte
+func m512MaskzAbsEpi16(k uint32, a [64]byte) [64]byte
 
 
 // MaskAbsEpi8: Compute the absolute value of packed 8-bit integers in 'a', and
@@ -207,7 +207,7 @@ func MaskzAbsEpi8(k x86.Mmask16, a x86.M128i) x86.M128i {
 func maskzAbsEpi8(k uint16, a [16]byte) [16]byte
 
 
-// MaskAbsEpi81: Compute the absolute value of packed 8-bit integers in 'a',
+// M256MaskAbsEpi8: Compute the absolute value of packed 8-bit integers in 'a',
 // and store the unsigned results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -223,16 +223,16 @@ func maskzAbsEpi8(k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm256_mask_abs_epi8'.
 // Requires AVX512BW.
-func MaskAbsEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i) x86.M256i {
-	return x86.M256i(maskAbsEpi81([32]byte(src), uint32(k), [32]byte(a)))
+func M256MaskAbsEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAbsEpi8([32]byte(src), uint32(k), [32]byte(a)))
 }
 
-func maskAbsEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
+func m256MaskAbsEpi8(src [32]byte, k uint32, a [32]byte) [32]byte
 
 
-// MaskzAbsEpi81: Compute the absolute value of packed 8-bit integers in 'a',
-// and store the unsigned results in 'dst' using zeromask 'k' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M256MaskzAbsEpi8: Compute the absolute value of packed 8-bit integers in
+// 'a', and store the unsigned results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -246,14 +246,14 @@ func maskAbsEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm256_maskz_abs_epi8'.
 // Requires AVX512BW.
-func MaskzAbsEpi81(k x86.Mmask32, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzAbsEpi81(uint32(k), [32]byte(a)))
+func M256MaskzAbsEpi8(k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAbsEpi8(uint32(k), [32]byte(a)))
 }
 
-func maskzAbsEpi81(k uint32, a [32]byte) [32]byte
+func m256MaskzAbsEpi8(k uint32, a [32]byte) [32]byte
 
 
-// AbsEpi8: Compute the absolute value of packed 8-bit integers in 'a', and
+// M512AbsEpi8: Compute the absolute value of packed 8-bit integers in 'a', and
 // store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 63
@@ -264,14 +264,14 @@ func maskzAbsEpi81(k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_abs_epi8'.
 // Requires AVX512BW.
-func AbsEpi8(a x86.M512i) x86.M512i {
-	return x86.M512i(absEpi8([64]byte(a)))
+func M512AbsEpi8(a x86.M512i) x86.M512i {
+	return x86.M512i(m512AbsEpi8([64]byte(a)))
 }
 
-func absEpi8(a [64]byte) [64]byte
+func m512AbsEpi8(a [64]byte) [64]byte
 
 
-// MaskAbsEpi82: Compute the absolute value of packed 8-bit integers in 'a',
+// M512MaskAbsEpi8: Compute the absolute value of packed 8-bit integers in 'a',
 // and store the unsigned results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -287,16 +287,16 @@ func absEpi8(a [64]byte) [64]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_mask_abs_epi8'.
 // Requires AVX512BW.
-func MaskAbsEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i) x86.M512i {
-	return x86.M512i(maskAbsEpi82([64]byte(src), uint64(k), [64]byte(a)))
+func M512MaskAbsEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAbsEpi8([64]byte(src), uint64(k), [64]byte(a)))
 }
 
-func maskAbsEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
+func m512MaskAbsEpi8(src [64]byte, k uint64, a [64]byte) [64]byte
 
 
-// MaskzAbsEpi82: Compute the absolute value of packed 8-bit integers in 'a',
-// and store the unsigned results in 'dst' using zeromask 'k' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M512MaskzAbsEpi8: Compute the absolute value of packed 8-bit integers in
+// 'a', and store the unsigned results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -310,11 +310,11 @@ func maskAbsEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm512_maskz_abs_epi8'.
 // Requires AVX512BW.
-func MaskzAbsEpi82(k x86.Mmask64, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzAbsEpi82(uint64(k), [64]byte(a)))
+func M512MaskzAbsEpi8(k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAbsEpi8(uint64(k), [64]byte(a)))
 }
 
-func maskzAbsEpi82(k uint64, a [64]byte) [64]byte
+func m512MaskzAbsEpi8(k uint64, a [64]byte) [64]byte
 
 
 // MaskAddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the
@@ -363,7 +363,7 @@ func MaskzAddEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAddEpi161: Add packed 16-bit integers in 'a' and 'b', and store the
+// M256MaskAddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -379,14 +379,14 @@ func maskzAddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm256_mask_add_epi16'.
 // Requires AVX512BW.
-func MaskAddEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAddEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskAddEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAddEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAddEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskAddEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAddEpi161: Add packed 16-bit integers in 'a' and 'b', and store the
+// M256MaskzAddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
@@ -402,15 +402,15 @@ func maskAddEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm256_maskz_add_epi16'.
 // Requires AVX512BW.
-func MaskzAddEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAddEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAddEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAddEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAddEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAddEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// AddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the results
-// in 'dst'. 
+// M512AddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -420,14 +420,14 @@ func maskzAddEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_add_epi16'.
 // Requires AVX512BW.
-func AddEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(addEpi16([64]byte(a), [64]byte(b)))
+func M512AddEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AddEpi16([64]byte(a), [64]byte(b)))
 }
 
-func addEpi16(a [64]byte, b [64]byte) [64]byte
+func m512AddEpi16(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAddEpi162: Add packed 16-bit integers in 'a' and 'b', and store the
+// M512MaskAddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -443,14 +443,14 @@ func addEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_mask_add_epi16'.
 // Requires AVX512BW.
-func MaskAddEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAddEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskAddEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAddEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskAddEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAddEpi162: Add packed 16-bit integers in 'a' and 'b', and store the
+// M512MaskzAddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
@@ -466,11 +466,11 @@ func maskAddEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm512_maskz_add_epi16'.
 // Requires AVX512BW.
-func MaskzAddEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAddEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAddEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAddEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAddEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the results
@@ -519,7 +519,7 @@ func MaskzAddEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAddEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAddEpi81: Add packed 8-bit integers in 'a' and 'b', and store the
+// M256MaskAddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -535,14 +535,14 @@ func maskzAddEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm256_mask_add_epi8'.
 // Requires AVX512BW.
-func MaskAddEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAddEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskAddEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAddEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAddEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskAddEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAddEpi81: Add packed 8-bit integers in 'a' and 'b', and store the
+// M256MaskzAddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
@@ -558,15 +558,15 @@ func maskAddEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm256_maskz_add_epi8'.
 // Requires AVX512BW.
-func MaskzAddEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAddEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAddEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAddEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAddEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAddEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// AddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the results in
-// 'dst'. 
+// M512AddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -576,14 +576,14 @@ func maskzAddEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_add_epi8'.
 // Requires AVX512BW.
-func AddEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(addEpi8([64]byte(a), [64]byte(b)))
+func M512AddEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AddEpi8([64]byte(a), [64]byte(b)))
 }
 
-func addEpi8(a [64]byte, b [64]byte) [64]byte
+func m512AddEpi8(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAddEpi82: Add packed 8-bit integers in 'a' and 'b', and store the
+// M512MaskAddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -599,14 +599,14 @@ func addEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_mask_add_epi8'.
 // Requires AVX512BW.
-func MaskAddEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAddEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskAddEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAddEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskAddEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAddEpi82: Add packed 8-bit integers in 'a' and 'b', and store the
+// M512MaskzAddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
@@ -622,11 +622,11 @@ func maskAddEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm512_maskz_add_epi8'.
 // Requires AVX512BW.
-func MaskzAddEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAddEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAddEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAddEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAddEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAddsEpi16: Add packed 16-bit integers in 'a' and 'b' using saturation,
@@ -675,9 +675,9 @@ func MaskzAddsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAddsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAddsEpi161: Add packed 16-bit integers in 'a' and 'b' using saturation,
-// and store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M256MaskAddsEpi16: Add packed 16-bit integers in 'a' and 'b' using
+// saturation, and store the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -691,16 +691,16 @@ func maskzAddsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm256_mask_adds_epi16'.
 // Requires AVX512BW.
-func MaskAddsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAddsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskAddsEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAddsEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAddsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskAddsEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAddsEpi161: Add packed 16-bit integers in 'a' and 'b' using saturation,
-// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M256MaskzAddsEpi16: Add packed 16-bit integers in 'a' and 'b' using
+// saturation, and store the results in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -714,15 +714,15 @@ func maskAddsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm256_maskz_adds_epi16'.
 // Requires AVX512BW.
-func MaskzAddsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAddsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAddsEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAddsEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAddsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAddsEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpi16: Add packed 16-bit integers in 'a' and 'b' using saturation, and
-// store the results in 'dst'. 
+// M512AddsEpi16: Add packed 16-bit integers in 'a' and 'b' using saturation,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -732,16 +732,16 @@ func maskzAddsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_adds_epi16'.
 // Requires AVX512BW.
-func AddsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(addsEpi16([64]byte(a), [64]byte(b)))
+func M512AddsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AddsEpi16([64]byte(a), [64]byte(b)))
 }
 
-func addsEpi16(a [64]byte, b [64]byte) [64]byte
+func m512AddsEpi16(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAddsEpi162: Add packed 16-bit integers in 'a' and 'b' using saturation,
-// and store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskAddsEpi16: Add packed 16-bit integers in 'a' and 'b' using
+// saturation, and store the results in 'dst' using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -755,16 +755,16 @@ func addsEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_mask_adds_epi16'.
 // Requires AVX512BW.
-func MaskAddsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAddsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskAddsEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAddsEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskAddsEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAddsEpi162: Add packed 16-bit integers in 'a' and 'b' using saturation,
-// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M512MaskzAddsEpi16: Add packed 16-bit integers in 'a' and 'b' using
+// saturation, and store the results in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -778,11 +778,11 @@ func maskAddsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm512_maskz_adds_epi16'.
 // Requires AVX512BW.
-func MaskzAddsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAddsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAddsEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAddsEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAddsEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
@@ -831,7 +831,7 @@ func MaskzAddsEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAddsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAddsEpi81: Add packed 8-bit integers in 'a' and 'b' using saturation,
+// M256MaskAddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -847,16 +847,16 @@ func maskzAddsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm256_mask_adds_epi8'.
 // Requires AVX512BW.
-func MaskAddsEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAddsEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskAddsEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAddsEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAddsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskAddsEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAddsEpi81: Add packed 8-bit integers in 'a' and 'b' using saturation,
-// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M256MaskzAddsEpi8: Add packed 8-bit integers in 'a' and 'b' using
+// saturation, and store the results in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -870,14 +870,14 @@ func maskAddsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm256_maskz_adds_epi8'.
 // Requires AVX512BW.
-func MaskzAddsEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAddsEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAddsEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAddsEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAddsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAddsEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
+// M512AddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
 // store the results in 'dst'. 
 //
 //		FOR j := 0 to 63
@@ -888,14 +888,14 @@ func maskzAddsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_adds_epi8'.
 // Requires AVX512BW.
-func AddsEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(addsEpi8([64]byte(a), [64]byte(b)))
+func M512AddsEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AddsEpi8([64]byte(a), [64]byte(b)))
 }
 
-func addsEpi8(a [64]byte, b [64]byte) [64]byte
+func m512AddsEpi8(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAddsEpi82: Add packed 8-bit integers in 'a' and 'b' using saturation,
+// M512MaskAddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -911,16 +911,16 @@ func addsEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_mask_adds_epi8'.
 // Requires AVX512BW.
-func MaskAddsEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAddsEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskAddsEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAddsEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskAddsEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAddsEpi82: Add packed 8-bit integers in 'a' and 'b' using saturation,
-// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M512MaskzAddsEpi8: Add packed 8-bit integers in 'a' and 'b' using
+// saturation, and store the results in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -934,11 +934,11 @@ func maskAddsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm512_maskz_adds_epi8'.
 // Requires AVX512BW.
-func MaskzAddsEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAddsEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAddsEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAddsEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddsEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAddsEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
@@ -987,7 +987,7 @@ func MaskzAddsEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAddsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAddsEpu161: Add packed unsigned 16-bit integers in 'a' and 'b' using
+// M256MaskAddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -1003,14 +1003,14 @@ func maskzAddsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm256_mask_adds_epu16'.
 // Requires AVX512BW.
-func MaskAddsEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAddsEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskAddsEpu16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAddsEpu16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAddsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskAddsEpu16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAddsEpu161: Add packed unsigned 16-bit integers in 'a' and 'b' using
+// M256MaskzAddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using zeromask 'k' (elements are
 // zeroed out when the corresponding mask bit is not set). 
 //
@@ -1026,14 +1026,14 @@ func maskAddsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm256_maskz_adds_epu16'.
 // Requires AVX512BW.
-func MaskzAddsEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAddsEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAddsEpu16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAddsEpu16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAddsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAddsEpu16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
+// M512AddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -1044,14 +1044,14 @@ func maskzAddsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_adds_epu16'.
 // Requires AVX512BW.
-func AddsEpu16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(addsEpu16([64]byte(a), [64]byte(b)))
+func M512AddsEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AddsEpu16([64]byte(a), [64]byte(b)))
 }
 
-func addsEpu16(a [64]byte, b [64]byte) [64]byte
+func m512AddsEpu16(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAddsEpu162: Add packed unsigned 16-bit integers in 'a' and 'b' using
+// M512MaskAddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -1067,14 +1067,14 @@ func addsEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_mask_adds_epu16'.
 // Requires AVX512BW.
-func MaskAddsEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAddsEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskAddsEpu16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAddsEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskAddsEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAddsEpu162: Add packed unsigned 16-bit integers in 'a' and 'b' using
+// M512MaskzAddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using zeromask 'k' (elements are
 // zeroed out when the corresponding mask bit is not set). 
 //
@@ -1090,11 +1090,11 @@ func maskAddsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm512_maskz_adds_epu16'.
 // Requires AVX512BW.
-func MaskzAddsEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAddsEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAddsEpu16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAddsEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddsEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAddsEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
@@ -1143,7 +1143,7 @@ func MaskzAddsEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAddsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAddsEpu81: Add packed unsigned 8-bit integers in 'a' and 'b' using
+// M256MaskAddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -1159,14 +1159,14 @@ func maskzAddsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm256_mask_adds_epu8'.
 // Requires AVX512BW.
-func MaskAddsEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAddsEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskAddsEpu8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAddsEpu8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAddsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskAddsEpu8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAddsEpu81: Add packed unsigned 8-bit integers in 'a' and 'b' using
+// M256MaskzAddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using zeromask 'k' (elements are
 // zeroed out when the corresponding mask bit is not set). 
 //
@@ -1182,14 +1182,14 @@ func maskAddsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm256_maskz_adds_epu8'.
 // Requires AVX512BW.
-func MaskzAddsEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAddsEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAddsEpu8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAddsEpu8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAddsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAddsEpu8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
+// M512AddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 63
@@ -1200,14 +1200,14 @@ func maskzAddsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_adds_epu8'.
 // Requires AVX512BW.
-func AddsEpu8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(addsEpu8([64]byte(a), [64]byte(b)))
+func M512AddsEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AddsEpu8([64]byte(a), [64]byte(b)))
 }
 
-func addsEpu8(a [64]byte, b [64]byte) [64]byte
+func m512AddsEpu8(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAddsEpu82: Add packed unsigned 8-bit integers in 'a' and 'b' using
+// M512MaskAddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -1223,14 +1223,14 @@ func addsEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_mask_adds_epu8'.
 // Requires AVX512BW.
-func MaskAddsEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAddsEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskAddsEpu8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAddsEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAddsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskAddsEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAddsEpu82: Add packed unsigned 8-bit integers in 'a' and 'b' using
+// M512MaskzAddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst' using zeromask 'k' (elements are
 // zeroed out when the corresponding mask bit is not set). 
 //
@@ -1246,11 +1246,11 @@ func maskAddsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm512_maskz_adds_epu8'.
 // Requires AVX512BW.
-func MaskzAddsEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAddsEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAddsEpu8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAddsEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAddsEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAddsEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
@@ -1305,10 +1305,10 @@ func MaskzAlignrEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i, count int) x86.M12
 func maskzAlignrEpi8(k uint16, a [16]byte, b [16]byte, count int) [16]byte
 
 
-// MaskAlignrEpi81: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
-// 32-byte temporary result, shift the result right by 'count' bytes, and store
-// the low 16 bytes in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M256MaskAlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into
+// a 32-byte temporary result, shift the result right by 'count' bytes, and
+// store the low 16 bytes in 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 1
 //			i := j*128
@@ -1328,17 +1328,17 @@ func maskzAlignrEpi8(k uint16, a [16]byte, b [16]byte, count int) [16]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm256_mask_alignr_epi8'.
 // Requires AVX512BW.
-func MaskAlignrEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(maskAlignrEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b), count))
+func M256MaskAlignrEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256MaskAlignrEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b), count))
 }
 
-func maskAlignrEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte, count int) [32]byte
+func m256MaskAlignrEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte, count int) [32]byte
 
 
-// MaskzAlignrEpi81: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
-// 32-byte temporary result, shift the result right by 'count' bytes, and store
-// the low 16 bytes in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
+// M256MaskzAlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into
+// a 32-byte temporary result, shift the result right by 'count' bytes, and
+// store the low 16 bytes in 'dst' using zeromask 'k' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 1
 //			i := j*128
@@ -1358,14 +1358,14 @@ func maskAlignrEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte, count int) 
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm256_maskz_alignr_epi8'.
 // Requires AVX512BW.
-func MaskzAlignrEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(maskzAlignrEpi81(uint32(k), [32]byte(a), [32]byte(b), count))
+func M256MaskzAlignrEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256MaskzAlignrEpi8(uint32(k), [32]byte(a), [32]byte(b), count))
 }
 
-func maskzAlignrEpi81(k uint32, a [32]byte, b [32]byte, count int) [32]byte
+func m256MaskzAlignrEpi8(k uint32, a [32]byte, b [32]byte, count int) [32]byte
 
 
-// AlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
+// M512AlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
 // 32-byte temporary result, shift the result right by 'count' bytes, and store
 // the low 16 bytes in 'dst'. 
 //
@@ -1378,17 +1378,17 @@ func maskzAlignrEpi81(k uint32, a [32]byte, b [32]byte, count int) [32]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_alignr_epi8'.
 // Requires AVX512BW.
-func AlignrEpi8(a x86.M512i, b x86.M512i, count int) x86.M512i {
-	return x86.M512i(alignrEpi8([64]byte(a), [64]byte(b), count))
+func M512AlignrEpi8(a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(m512AlignrEpi8([64]byte(a), [64]byte(b), count))
 }
 
-func alignrEpi8(a [64]byte, b [64]byte, count int) [64]byte
+func m512AlignrEpi8(a [64]byte, b [64]byte, count int) [64]byte
 
 
-// MaskAlignrEpi82: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
-// 32-byte temporary result, shift the result right by 'count' bytes, and store
-// the low 16 bytes in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskAlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into
+// a 32-byte temporary result, shift the result right by 'count' bytes, and
+// store the low 16 bytes in 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*128
@@ -1408,17 +1408,17 @@ func alignrEpi8(a [64]byte, b [64]byte, count int) [64]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_mask_alignr_epi8'.
 // Requires AVX512BW.
-func MaskAlignrEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i, count int) x86.M512i {
-	return x86.M512i(maskAlignrEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b), count))
+func M512MaskAlignrEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(m512MaskAlignrEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskAlignrEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte, count int) [64]byte
+func m512MaskAlignrEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte, count int) [64]byte
 
 
-// MaskzAlignrEpi82: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
-// 32-byte temporary result, shift the result right by 'count' bytes, and store
-// the low 16 bytes in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
+// M512MaskzAlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into
+// a 32-byte temporary result, shift the result right by 'count' bytes, and
+// store the low 16 bytes in 'dst' using zeromask 'k' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*128
@@ -1438,11 +1438,11 @@ func maskAlignrEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte, count int) 
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm512_maskz_alignr_epi8'.
 // Requires AVX512BW.
-func MaskzAlignrEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i, count int) x86.M512i {
-	return x86.M512i(maskzAlignrEpi82(uint64(k), [64]byte(a), [64]byte(b), count))
+func M512MaskzAlignrEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i, count int) x86.M512i {
+	return x86.M512i(m512MaskzAlignrEpi8(uint64(k), [64]byte(a), [64]byte(b), count))
 }
 
-func maskzAlignrEpi82(k uint64, a [64]byte, b [64]byte, count int) [64]byte
+func m512MaskzAlignrEpi8(k uint64, a [64]byte, b [64]byte, count int) [64]byte
 
 
 // MaskAvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and
@@ -1491,8 +1491,8 @@ func MaskzAvgEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAvgEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAvgEpu161: Average packed unsigned 16-bit integers in 'a' and 'b', and
-// store the results in 'dst' using writemask 'k' (elements are copied from
+// M256MaskAvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b',
+// and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -1507,16 +1507,16 @@ func maskzAvgEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm256_mask_avg_epu16'.
 // Requires AVX512BW.
-func MaskAvgEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAvgEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskAvgEpu16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAvgEpu16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAvgEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskAvgEpu16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAvgEpu161: Average packed unsigned 16-bit integers in 'a' and 'b', and
-// store the results in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
+// M256MaskzAvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b',
+// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -1530,15 +1530,15 @@ func maskAvgEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm256_maskz_avg_epu16'.
 // Requires AVX512BW.
-func MaskzAvgEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAvgEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAvgEpu16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAvgEpu16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAvgEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAvgEpu16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// AvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and store
-// the results in 'dst'. 
+// M512AvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -1548,15 +1548,15 @@ func maskzAvgEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_avg_epu16'.
 // Requires AVX512BW.
-func AvgEpu16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(avgEpu16([64]byte(a), [64]byte(b)))
+func M512AvgEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AvgEpu16([64]byte(a), [64]byte(b)))
 }
 
-func avgEpu16(a [64]byte, b [64]byte) [64]byte
+func m512AvgEpu16(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAvgEpu162: Average packed unsigned 16-bit integers in 'a' and 'b', and
-// store the results in 'dst' using writemask 'k' (elements are copied from
+// M512MaskAvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b',
+// and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -1571,16 +1571,16 @@ func avgEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_mask_avg_epu16'.
 // Requires AVX512BW.
-func MaskAvgEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAvgEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskAvgEpu16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAvgEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAvgEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskAvgEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAvgEpu162: Average packed unsigned 16-bit integers in 'a' and 'b', and
-// store the results in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
+// M512MaskzAvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b',
+// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -1594,11 +1594,11 @@ func maskAvgEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm512_maskz_avg_epu16'.
 // Requires AVX512BW.
-func MaskzAvgEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAvgEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAvgEpu16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAvgEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAvgEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAvgEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskAvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
@@ -1647,7 +1647,7 @@ func MaskzAvgEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzAvgEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskAvgEpu81: Average packed unsigned 8-bit integers in 'a' and 'b', and
+// M256MaskAvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
 // store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -1663,14 +1663,14 @@ func maskzAvgEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm256_mask_avg_epu8'.
 // Requires AVX512BW.
-func MaskAvgEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskAvgEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskAvgEpu8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskAvgEpu8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskAvgEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskAvgEpu8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzAvgEpu81: Average packed unsigned 8-bit integers in 'a' and 'b', and
+// M256MaskzAvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
 // store the results in 'dst' using zeromask 'k' (elements are zeroed out when
 // the corresponding mask bit is not set). 
 //
@@ -1686,15 +1686,15 @@ func maskAvgEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm256_maskz_avg_epu8'.
 // Requires AVX512BW.
-func MaskzAvgEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzAvgEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzAvgEpu8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzAvgEpu8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzAvgEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzAvgEpu8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// AvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and store
-// the results in 'dst'. 
+// M512AvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -1704,14 +1704,14 @@ func maskzAvgEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_avg_epu8'.
 // Requires AVX512BW.
-func AvgEpu8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(avgEpu8([64]byte(a), [64]byte(b)))
+func M512AvgEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512AvgEpu8([64]byte(a), [64]byte(b)))
 }
 
-func avgEpu8(a [64]byte, b [64]byte) [64]byte
+func m512AvgEpu8(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskAvgEpu82: Average packed unsigned 8-bit integers in 'a' and 'b', and
+// M512MaskAvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
 // store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -1727,14 +1727,14 @@ func avgEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_mask_avg_epu8'.
 // Requires AVX512BW.
-func MaskAvgEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskAvgEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskAvgEpu8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskAvgEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskAvgEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskAvgEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzAvgEpu82: Average packed unsigned 8-bit integers in 'a' and 'b', and
+// M512MaskzAvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
 // store the results in 'dst' using zeromask 'k' (elements are zeroed out when
 // the corresponding mask bit is not set). 
 //
@@ -1750,11 +1750,11 @@ func maskAvgEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm512_maskz_avg_epu8'.
 // Requires AVX512BW.
-func MaskzAvgEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzAvgEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzAvgEpu8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzAvgEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzAvgEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzAvgEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBlendEpi16: Blend packed 16-bit integers from 'a' and 'b' using control
@@ -1779,8 +1779,8 @@ func MaskBlendEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskBlendEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskBlendEpi161: Blend packed 16-bit integers from 'a' and 'b' using control
-// mask 'k', and store the results in 'dst'. 
+// M256MaskBlendEpi16: Blend packed 16-bit integers from 'a' and 'b' using
+// control mask 'k', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -1794,15 +1794,15 @@ func maskBlendEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPBLENDMW'. Intrinsic: '_mm256_mask_blend_epi16'.
 // Requires AVX512BW.
-func MaskBlendEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskBlendEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskBlendEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskBlendEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskBlendEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskBlendEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskBlendEpi162: Blend packed 16-bit integers from 'a' and 'b' using control
-// mask 'k', and store the results in 'dst'. 
+// M512MaskBlendEpi16: Blend packed 16-bit integers from 'a' and 'b' using
+// control mask 'k', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -1816,11 +1816,11 @@ func maskBlendEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPBLENDMW'. Intrinsic: '_mm512_mask_blend_epi16'.
 // Requires AVX512BW.
-func MaskBlendEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskBlendEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskBlendEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskBlendEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlendEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskBlendEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBlendEpi8: Blend packed 8-bit integers from 'a' and 'b' using control
@@ -1845,8 +1845,8 @@ func MaskBlendEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskBlendEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskBlendEpi81: Blend packed 8-bit integers from 'a' and 'b' using control
-// mask 'k', and store the results in 'dst'. 
+// M256MaskBlendEpi8: Blend packed 8-bit integers from 'a' and 'b' using
+// control mask 'k', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -1860,15 +1860,15 @@ func maskBlendEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPBLENDMB'. Intrinsic: '_mm256_mask_blend_epi8'.
 // Requires AVX512BW.
-func MaskBlendEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskBlendEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskBlendEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskBlendEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskBlendEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskBlendEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskBlendEpi82: Blend packed 8-bit integers from 'a' and 'b' using control
-// mask 'k', and store the results in 'dst'. 
+// M512MaskBlendEpi8: Blend packed 8-bit integers from 'a' and 'b' using
+// control mask 'k', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -1882,11 +1882,11 @@ func maskBlendEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPBLENDMB'. Intrinsic: '_mm512_mask_blend_epi8'.
 // Requires AVX512BW.
-func MaskBlendEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskBlendEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskBlendEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskBlendEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskBlendEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskBlendEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskBroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to all
@@ -1935,9 +1935,9 @@ func MaskzBroadcastbEpi8(k x86.Mmask16, a x86.M128i) x86.M128i {
 func maskzBroadcastbEpi8(k uint16, a [16]byte) [16]byte
 
 
-// MaskBroadcastbEpi81: Broadcast the low packed 8-bit integer from 'a' to all
-// elements of 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
+// M256MaskBroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to
+// all elements of 'dst' using writemask 'k' (elements are copied from 'src'
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -1951,15 +1951,15 @@ func maskzBroadcastbEpi8(k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_mask_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskBroadcastbEpi81(src x86.M256i, k x86.Mmask32, a x86.M128i) x86.M256i {
-	return x86.M256i(maskBroadcastbEpi81([32]byte(src), uint32(k), [16]byte(a)))
+func M256MaskBroadcastbEpi8(src x86.M256i, k x86.Mmask32, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskBroadcastbEpi8([32]byte(src), uint32(k), [16]byte(a)))
 }
 
-func maskBroadcastbEpi81(src [32]byte, k uint32, a [16]byte) [32]byte
+func m256MaskBroadcastbEpi8(src [32]byte, k uint32, a [16]byte) [32]byte
 
 
-// MaskzBroadcastbEpi81: Broadcast the low packed 8-bit integer from 'a' to all
-// elements of 'dst' using zeromask 'k' (elements are zeroed out when the
+// M256MaskzBroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to
+// all elements of 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -1974,14 +1974,14 @@ func maskBroadcastbEpi81(src [32]byte, k uint32, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_maskz_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskzBroadcastbEpi81(k x86.Mmask32, a x86.M128i) x86.M256i {
-	return x86.M256i(maskzBroadcastbEpi81(uint32(k), [16]byte(a)))
+func M256MaskzBroadcastbEpi8(k x86.Mmask32, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskzBroadcastbEpi8(uint32(k), [16]byte(a)))
 }
 
-func maskzBroadcastbEpi81(k uint32, a [16]byte) [32]byte
+func m256MaskzBroadcastbEpi8(k uint32, a [16]byte) [32]byte
 
 
-// BroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to all
+// M512BroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to all
 // elements of 'dst'. 
 //
 //		FOR j := 0 to 63
@@ -1992,16 +1992,16 @@ func maskzBroadcastbEpi81(k uint32, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_broadcastb_epi8'.
 // Requires AVX512BW.
-func BroadcastbEpi8(a x86.M128i) x86.M512i {
-	return x86.M512i(broadcastbEpi8([16]byte(a)))
+func M512BroadcastbEpi8(a x86.M128i) x86.M512i {
+	return x86.M512i(m512BroadcastbEpi8([16]byte(a)))
 }
 
-func broadcastbEpi8(a [16]byte) [64]byte
+func m512BroadcastbEpi8(a [16]byte) [64]byte
 
 
-// MaskBroadcastbEpi82: Broadcast the low packed 8-bit integer from 'a' to all
-// elements of 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
+// M512MaskBroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to
+// all elements of 'dst' using writemask 'k' (elements are copied from 'src'
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -2015,15 +2015,15 @@ func broadcastbEpi8(a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_mask_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskBroadcastbEpi82(src x86.M512i, k x86.Mmask64, a x86.M128i) x86.M512i {
-	return x86.M512i(maskBroadcastbEpi82([64]byte(src), uint64(k), [16]byte(a)))
+func M512MaskBroadcastbEpi8(src x86.M512i, k x86.Mmask64, a x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskBroadcastbEpi8([64]byte(src), uint64(k), [16]byte(a)))
 }
 
-func maskBroadcastbEpi82(src [64]byte, k uint64, a [16]byte) [64]byte
+func m512MaskBroadcastbEpi8(src [64]byte, k uint64, a [16]byte) [64]byte
 
 
-// MaskzBroadcastbEpi82: Broadcast the low packed 8-bit integer from 'a' to all
-// elements of 'dst' using zeromask 'k' (elements are zeroed out when the
+// M512MaskzBroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to
+// all elements of 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
@@ -2038,11 +2038,11 @@ func maskBroadcastbEpi82(src [64]byte, k uint64, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_maskz_broadcastb_epi8'.
 // Requires AVX512BW.
-func MaskzBroadcastbEpi82(k x86.Mmask64, a x86.M128i) x86.M512i {
-	return x86.M512i(maskzBroadcastbEpi82(uint64(k), [16]byte(a)))
+func M512MaskzBroadcastbEpi8(k x86.Mmask64, a x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskzBroadcastbEpi8(uint64(k), [16]byte(a)))
 }
 
-func maskzBroadcastbEpi82(k uint64, a [16]byte) [64]byte
+func m512MaskzBroadcastbEpi8(k uint64, a [16]byte) [64]byte
 
 
 // MaskBroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a' to all
@@ -2091,7 +2091,7 @@ func MaskzBroadcastwEpi16(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzBroadcastwEpi16(k uint8, a [16]byte) [16]byte
 
 
-// MaskBroadcastwEpi161: Broadcast the low packed 16-bit integer from 'a' to
+// M256MaskBroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a' to
 // all elements of 'dst' using writemask 'k' (elements are copied from 'src'
 // when the corresponding mask bit is not set). 
 //
@@ -2107,16 +2107,16 @@ func maskzBroadcastwEpi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_mask_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskBroadcastwEpi161(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
-	return x86.M256i(maskBroadcastwEpi161([32]byte(src), uint16(k), [16]byte(a)))
+func M256MaskBroadcastwEpi16(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskBroadcastwEpi16([32]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskBroadcastwEpi161(src [32]byte, k uint16, a [16]byte) [32]byte
+func m256MaskBroadcastwEpi16(src [32]byte, k uint16, a [16]byte) [32]byte
 
 
-// MaskzBroadcastwEpi161: Broadcast the low packed 16-bit integer from 'a' to
-// all elements of 'dst' using zeromask 'k' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M256MaskzBroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a'
+// to all elements of 'dst' using zeromask 'k' (elements are zeroed out when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -2130,14 +2130,14 @@ func maskBroadcastwEpi161(src [32]byte, k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_maskz_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskzBroadcastwEpi161(k x86.Mmask16, a x86.M128i) x86.M256i {
-	return x86.M256i(maskzBroadcastwEpi161(uint16(k), [16]byte(a)))
+func M256MaskzBroadcastwEpi16(k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskzBroadcastwEpi16(uint16(k), [16]byte(a)))
 }
 
-func maskzBroadcastwEpi161(k uint16, a [16]byte) [32]byte
+func m256MaskzBroadcastwEpi16(k uint16, a [16]byte) [32]byte
 
 
-// BroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a' to all
+// M512BroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a' to all
 // elements of 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -2148,14 +2148,14 @@ func maskzBroadcastwEpi161(k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_broadcastw_epi16'.
 // Requires AVX512BW.
-func BroadcastwEpi16(a x86.M128i) x86.M512i {
-	return x86.M512i(broadcastwEpi16([16]byte(a)))
+func M512BroadcastwEpi16(a x86.M128i) x86.M512i {
+	return x86.M512i(m512BroadcastwEpi16([16]byte(a)))
 }
 
-func broadcastwEpi16(a [16]byte) [64]byte
+func m512BroadcastwEpi16(a [16]byte) [64]byte
 
 
-// MaskBroadcastwEpi162: Broadcast the low packed 16-bit integer from 'a' to
+// M512MaskBroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a' to
 // all elements of 'dst' using writemask 'k' (elements are copied from 'src'
 // when the corresponding mask bit is not set). 
 //
@@ -2171,16 +2171,16 @@ func broadcastwEpi16(a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_mask_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskBroadcastwEpi162(src x86.M512i, k x86.Mmask32, a x86.M128i) x86.M512i {
-	return x86.M512i(maskBroadcastwEpi162([64]byte(src), uint32(k), [16]byte(a)))
+func M512MaskBroadcastwEpi16(src x86.M512i, k x86.Mmask32, a x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskBroadcastwEpi16([64]byte(src), uint32(k), [16]byte(a)))
 }
 
-func maskBroadcastwEpi162(src [64]byte, k uint32, a [16]byte) [64]byte
+func m512MaskBroadcastwEpi16(src [64]byte, k uint32, a [16]byte) [64]byte
 
 
-// MaskzBroadcastwEpi162: Broadcast the low packed 16-bit integer from 'a' to
-// all elements of 'dst' using zeromask 'k' (elements are zeroed out when the
-// corresponding mask bit is not set). 
+// M512MaskzBroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a'
+// to all elements of 'dst' using zeromask 'k' (elements are zeroed out when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -2194,15 +2194,15 @@ func maskBroadcastwEpi162(src [64]byte, k uint32, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_maskz_broadcastw_epi16'.
 // Requires AVX512BW.
-func MaskzBroadcastwEpi162(k x86.Mmask32, a x86.M128i) x86.M512i {
-	return x86.M512i(maskzBroadcastwEpi162(uint32(k), [16]byte(a)))
+func M512MaskzBroadcastwEpi16(k x86.Mmask32, a x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskzBroadcastwEpi16(uint32(k), [16]byte(a)))
 }
 
-func maskzBroadcastwEpi162(k uint32, a [16]byte) [64]byte
+func m512MaskzBroadcastwEpi16(k uint32, a [16]byte) [64]byte
 
 
-// BslliEpi128: Shift 128-bit lanes in 'a' left by 'imm8' bytes while shifting
-// in zeros, and store the results in 'dst'. 
+// M512BslliEpi128: Shift 128-bit lanes in 'a' left by 'imm8' bytes while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		tmp := imm8[7:0]
 //		IF tmp > 15
@@ -2216,15 +2216,15 @@ func maskzBroadcastwEpi162(k uint32, a [16]byte) [64]byte
 //
 // Instruction: 'VPSLLDQ'. Intrinsic: '_mm512_bslli_epi128'.
 // Requires AVX512BW.
-func BslliEpi128(a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(bslliEpi128([64]byte(a), imm8))
+func M512BslliEpi128(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512BslliEpi128([64]byte(a), imm8))
 }
 
-func bslliEpi128(a [64]byte, imm8 int) [64]byte
+func m512BslliEpi128(a [64]byte, imm8 int) [64]byte
 
 
-// BsrliEpi128: Shift 128-bit lanes in 'a' right by 'imm8' bytes while shifting
-// in zeros, and store the results in 'dst'. 
+// M512BsrliEpi128: Shift 128-bit lanes in 'a' right by 'imm8' bytes while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		tmp := imm8[7:0]
 //		IF tmp > 15
@@ -2238,11 +2238,11 @@ func bslliEpi128(a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSRLDQ'. Intrinsic: '_mm512_bsrli_epi128'.
 // Requires AVX512BW.
-func BsrliEpi128(a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(bsrliEpi128([64]byte(a), imm8))
+func M512BsrliEpi128(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512BsrliEpi128([64]byte(a), imm8))
 }
 
-func bsrliEpi128(a [64]byte, imm8 int) [64]byte
+func m512BsrliEpi128(a [64]byte, imm8 int) [64]byte
 
 
 // CmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
@@ -2308,7 +2308,7 @@ func MaskCmpEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.Mma
 func maskCmpEpi16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 
 
-// CmpEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' based on the
+// M256CmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
 // comparison operand specified by 'imm8', and store the results in mask vector
 // 'k'. 
 //
@@ -2330,14 +2330,14 @@ func maskCmpEpi16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmp_epi16_mask'.
 // Requires AVX512BW.
-func CmpEpi16Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
-	return x86.Mmask16(cmpEpi16Mask1([32]byte(a), [32]byte(b), imm8))
+func M256CmpEpi16Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(m256CmpEpi16Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func cmpEpi16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
+func m256CmpEpi16Mask(a [32]byte, b [32]byte, imm8 int) uint16
 
 
-// MaskCmpEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' based on
+// M256MaskCmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on
 // the comparison operand specified by 'imm8', and store the results in mask
 // vector 'k1' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2364,14 +2364,14 @@ func cmpEpi16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmp_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
-	return x86.Mmask16(maskCmpEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b), imm8))
+func M256MaskCmpEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func maskCmpEpi16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
+func m256MaskCmpEpi16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 
 
-// CmpEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' based on the
+// M512CmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
 // comparison operand specified by 'imm8', and store the results in mask vector
 // 'k'. 
 //
@@ -2393,14 +2393,14 @@ func maskCmpEpi16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmp_epi16_mask'.
 // Requires AVX512BW.
-func CmpEpi16Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(cmpEpi16Mask2([64]byte(a), [64]byte(b), imm8))
+func M512CmpEpi16Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m512CmpEpi16Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpi16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
+func m512CmpEpi16Mask(a [64]byte, b [64]byte, imm8 int) uint32
 
 
-// MaskCmpEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' based on
+// M512MaskCmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on
 // the comparison operand specified by 'imm8', and store the results in mask
 // vector 'k1' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2427,11 +2427,11 @@ func cmpEpi16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmp_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(maskCmpEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b), imm8))
+func M512MaskCmpEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpi16Mask2(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
+func m512MaskCmpEpi16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 
 
 // CmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
@@ -2497,7 +2497,7 @@ func MaskCmpEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 int) x86.Mma
 func maskCmpEpi8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 
 
-// CmpEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' based on the
+// M256CmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
 // comparison operand specified by 'imm8', and store the results in mask vector
 // 'k'. 
 //
@@ -2519,17 +2519,17 @@ func maskCmpEpi8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmp_epi8_mask'.
 // Requires AVX512BW.
-func CmpEpi8Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(cmpEpi8Mask1([32]byte(a), [32]byte(b), imm8))
+func M256CmpEpi8Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m256CmpEpi8Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func cmpEpi8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
+func m256CmpEpi8Mask(a [32]byte, b [32]byte, imm8 int) uint32
 
 
-// MaskCmpEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' based on the
-// comparison operand specified by 'imm8', and store the results in mask vector
-// 'k1' using zeromask 'k' (elements are zeroed out when the corresponding mask
-// bit is not set). 
+// M256MaskCmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on
+// the comparison operand specified by 'imm8', and store the results in mask
+// vector 'k1' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _MM_CMPINT_EQ
@@ -2553,14 +2553,14 @@ func cmpEpi8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmp_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(maskCmpEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b), imm8))
+func M256MaskCmpEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func maskCmpEpi8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
+func m256MaskCmpEpi8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 
 
-// CmpEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' based on the
+// M512CmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
 // comparison operand specified by 'imm8', and store the results in mask vector
 // 'k'. 
 //
@@ -2582,17 +2582,17 @@ func maskCmpEpi8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmp_epi8_mask'.
 // Requires AVX512BW.
-func CmpEpi8Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
-	return x86.Mmask64(cmpEpi8Mask2([64]byte(a), [64]byte(b), imm8))
+func M512CmpEpi8Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(m512CmpEpi8Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpi8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
+func m512CmpEpi8Mask(a [64]byte, b [64]byte, imm8 int) uint64
 
 
-// MaskCmpEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' based on the
-// comparison operand specified by 'imm8', and store the results in mask vector
-// 'k1' using zeromask 'k' (elements are zeroed out when the corresponding mask
-// bit is not set). 
+// M512MaskCmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on
+// the comparison operand specified by 'imm8', and store the results in mask
+// vector 'k1' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _MM_CMPINT_EQ
@@ -2616,11 +2616,11 @@ func cmpEpi8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmp_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
-	return x86.Mmask64(maskCmpEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b), imm8))
+func M512MaskCmpEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpi8Mask2(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
+func m512MaskCmpEpi8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
 
 
 // CmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' based
@@ -2686,9 +2686,9 @@ func MaskCmpEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.Mma
 func maskCmpEpu16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 
 
-// CmpEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b' based
-// on the comparison operand specified by 'imm8', and store the results in mask
-// vector 'k'. 
+// M256CmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// based on the comparison operand specified by 'imm8', and store the results
+// in mask vector 'k'. 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _MM_CMPINT_EQ
@@ -2708,14 +2708,14 @@ func maskCmpEpu16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmp_epu16_mask'.
 // Requires AVX512BW.
-func CmpEpu16Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
-	return x86.Mmask16(cmpEpu16Mask1([32]byte(a), [32]byte(b), imm8))
+func M256CmpEpu16Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(m256CmpEpu16Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func cmpEpu16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
+func m256CmpEpu16Mask(a [32]byte, b [32]byte, imm8 int) uint16
 
 
-// MaskCmpEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// M256MaskCmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
 // based on the comparison operand specified by 'imm8', and store the results
 // in mask vector 'k1' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2742,16 +2742,16 @@ func cmpEpu16Mask1(a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmp_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
-	return x86.Mmask16(maskCmpEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b), imm8))
+func M256MaskCmpEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func maskCmpEpu16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
+func m256MaskCmpEpu16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 
 
-// CmpEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b' based
-// on the comparison operand specified by 'imm8', and store the results in mask
-// vector 'k'. 
+// M512CmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// based on the comparison operand specified by 'imm8', and store the results
+// in mask vector 'k'. 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _MM_CMPINT_EQ
@@ -2771,14 +2771,14 @@ func maskCmpEpu16Mask1(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmp_epu16_mask'.
 // Requires AVX512BW.
-func CmpEpu16Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(cmpEpu16Mask2([64]byte(a), [64]byte(b), imm8))
+func M512CmpEpu16Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m512CmpEpu16Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpu16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
+func m512CmpEpu16Mask(a [64]byte, b [64]byte, imm8 int) uint32
 
 
-// MaskCmpEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// M512MaskCmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
 // based on the comparison operand specified by 'imm8', and store the results
 // in mask vector 'k1' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2805,11 +2805,11 @@ func cmpEpu16Mask2(a [64]byte, b [64]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmp_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(maskCmpEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b), imm8))
+func M512MaskCmpEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpu16Mask2(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
+func m512MaskCmpEpu16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 
 
 // CmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based on
@@ -2875,8 +2875,8 @@ func MaskCmpEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 int) x86.Mma
 func maskCmpEpu8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 
 
-// CmpEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b' based on
-// the comparison operand specified by 'imm8', and store the results in mask
+// M256CmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based
+// on the comparison operand specified by 'imm8', and store the results in mask
 // vector 'k'. 
 //
 //		CASE (imm8[7:0]) OF
@@ -2897,14 +2897,14 @@ func maskCmpEpu8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmp_epu8_mask'.
 // Requires AVX512BW.
-func CmpEpu8Mask1(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(cmpEpu8Mask1([32]byte(a), [32]byte(b), imm8))
+func M256CmpEpu8Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m256CmpEpu8Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func cmpEpu8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
+func m256CmpEpu8Mask(a [32]byte, b [32]byte, imm8 int) uint32
 
 
-// MaskCmpEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M256MaskCmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // based on the comparison operand specified by 'imm8', and store the results
 // in mask vector 'k1' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2931,15 +2931,15 @@ func cmpEpu8Mask1(a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmp_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
-	return x86.Mmask32(maskCmpEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b), imm8))
+func M256MaskCmpEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func maskCmpEpu8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
+func m256MaskCmpEpu8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 
 
-// CmpEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b' based on
-// the comparison operand specified by 'imm8', and store the results in mask
+// M512CmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based
+// on the comparison operand specified by 'imm8', and store the results in mask
 // vector 'k'. 
 //
 //		CASE (imm8[7:0]) OF
@@ -2960,14 +2960,14 @@ func maskCmpEpu8Mask1(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmp_epu8_mask'.
 // Requires AVX512BW.
-func CmpEpu8Mask2(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
-	return x86.Mmask64(cmpEpu8Mask2([64]byte(a), [64]byte(b), imm8))
+func M512CmpEpu8Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(m512CmpEpu8Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func cmpEpu8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
+func m512CmpEpu8Mask(a [64]byte, b [64]byte, imm8 int) uint64
 
 
-// MaskCmpEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M512MaskCmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // based on the comparison operand specified by 'imm8', and store the results
 // in mask vector 'k1' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -2994,11 +2994,11 @@ func cmpEpu8Mask2(a [64]byte, b [64]byte, imm8 int) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmp_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
-	return x86.Mmask64(maskCmpEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b), imm8))
+func M512MaskCmpEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskCmpEpu8Mask2(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
+func m512MaskCmpEpu8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
 
 
 // CmpeqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for equality,
@@ -3042,8 +3042,8 @@ func MaskCmpeqEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpeqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpeqEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for equality,
-// and store the results in mask vector 'k'. 
+// M256CmpeqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
+// equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3053,14 +3053,14 @@ func maskCmpeqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func CmpeqEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpeqEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpeqEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpeqEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpeqEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpeqEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256MaskCmpeqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // equality, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -3076,15 +3076,15 @@ func cmpeqEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpeqEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpeqEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpeqEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpeqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpeqEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpeqEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for equality,
-// and store the results in mask vector 'k'. 
+// M512CmpeqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
+// equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -3094,14 +3094,14 @@ func maskCmpeqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func CmpeqEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpeqEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpeqEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpeqEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpeqEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpeqEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512MaskCmpeqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // equality, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -3117,11 +3117,11 @@ func cmpeqEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpeq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpeqEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpeqEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpeqEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpeqEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpeqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for equality,
@@ -3165,8 +3165,8 @@ func MaskCmpeqEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpeqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpeqEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for equality,
-// and store the results in mask vector 'k'. 
+// M256CmpeqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
+// equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -3176,14 +3176,14 @@ func maskCmpeqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func CmpeqEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpeqEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpeqEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpeqEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpeqEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpeqEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256MaskCmpeqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // equality, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -3199,15 +3199,15 @@ func cmpeqEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpeqEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpeqEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpeqEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpeqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpeqEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpeqEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for equality,
-// and store the results in mask vector 'k'. 
+// M512CmpeqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
+// equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -3217,14 +3217,14 @@ func maskCmpeqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func CmpeqEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpeqEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpeqEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpeqEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpeqEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpeqEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512MaskCmpeqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // equality, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -3240,11 +3240,11 @@ func cmpeqEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpeq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpeqEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpeqEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpeqEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpeqEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpeqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -3288,8 +3288,8 @@ func MaskCmpeqEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpeqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpeqEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// equality, and store the results in mask vector 'k'. 
+// M256CmpeqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3299,16 +3299,16 @@ func maskCmpeqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func CmpeqEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpeqEpu16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpeqEpu16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpeqEpu16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpu16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpeqEpu16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpeqEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for equality, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskCmpeqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for equality, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3322,15 +3322,15 @@ func cmpeqEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpeqEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpeqEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpeqEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpeqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpeqEpu16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpeqEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// equality, and store the results in mask vector 'k'. 
+// M512CmpeqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -3340,16 +3340,16 @@ func maskCmpeqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func CmpeqEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpeqEpu16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpeqEpu16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpeqEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpu16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpeqEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpeqEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for equality, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpeqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for equality, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -3363,11 +3363,11 @@ func cmpeqEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpeq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpeqEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpeqEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpeqEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpeqEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpeqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -3411,7 +3411,7 @@ func MaskCmpeqEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpeqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpeqEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M256CmpeqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -3422,14 +3422,14 @@ func maskCmpeqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func CmpeqEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpeqEpu8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpeqEpu8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpeqEpu8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpu8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpeqEpu8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpeqEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M256MaskCmpeqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for equality, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -3445,14 +3445,14 @@ func cmpeqEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpeqEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpeqEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpeqEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpeqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpeqEpu8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpeqEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M512CmpeqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // equality, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -3463,14 +3463,14 @@ func maskCmpeqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func CmpeqEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpeqEpu8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpeqEpu8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpeqEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpeqEpu8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpeqEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpeqEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M512MaskCmpeqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for equality, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -3486,11 +3486,11 @@ func cmpeqEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpeq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpeqEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpeqEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpeqEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpeqEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpeqEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpeqEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpgeEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -3535,7 +3535,7 @@ func MaskCmpgeEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpgeEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpgeEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256CmpgeEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -3546,14 +3546,14 @@ func maskCmpgeEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func CmpgeEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpgeEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgeEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpgeEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgeEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpgeEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpgeEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256MaskCmpgeEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k1' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
@@ -3570,14 +3570,14 @@ func cmpgeEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgeEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgeEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpgeEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgeEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpgeEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpgeEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512CmpgeEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -3588,14 +3588,14 @@ func maskCmpgeEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func CmpgeEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpgeEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgeEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpgeEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpgeEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpgeEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512MaskCmpgeEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k1' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
@@ -3612,11 +3612,11 @@ func cmpgeEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpge_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgeEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgeEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpgeEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpgeEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpgeEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -3661,7 +3661,7 @@ func MaskCmpgeEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpgeEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpgeEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256CmpgeEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -3672,14 +3672,14 @@ func maskCmpgeEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func CmpgeEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpgeEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgeEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpgeEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgeEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpgeEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpgeEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256MaskCmpgeEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k' using
 // zeromask 'k1' (elements are zeroed out when the corresponding mask bit is
 // not set). 
@@ -3696,14 +3696,14 @@ func cmpgeEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgeEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgeEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpgeEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgeEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpgeEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpgeEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512CmpgeEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -3714,14 +3714,14 @@ func maskCmpgeEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func CmpgeEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpgeEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgeEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpgeEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpgeEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpgeEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512MaskCmpgeEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k' using
 // zeromask 'k1' (elements are zeroed out when the corresponding mask bit is
 // not set). 
@@ -3738,11 +3738,11 @@ func cmpgeEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpge_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpgeEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgeEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpgeEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpgeEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpgeEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -3787,8 +3787,8 @@ func MaskCmpgeEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpgeEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpgeEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// greater-than-or-equal, and store the results in mask vector 'k'. 
+// M256CmpgeEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3798,17 +3798,17 @@ func maskCmpgeEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func CmpgeEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpgeEpu16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgeEpu16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpgeEpu16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgeEpu16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpgeEpu16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpgeEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for greater-than-or-equal, and store the results in mask vector 'k1' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskCmpgeEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for greater-than-or-equal, and store the results in mask vector 'k1'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3822,15 +3822,15 @@ func cmpgeEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgeEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgeEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpgeEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgeEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpgeEpu16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpgeEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// greater-than-or-equal, and store the results in mask vector 'k'. 
+// M512CmpgeEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -3840,17 +3840,17 @@ func maskCmpgeEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func CmpgeEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpgeEpu16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgeEpu16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpgeEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpu16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpgeEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpgeEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for greater-than-or-equal, and store the results in mask vector 'k1' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskCmpgeEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for greater-than-or-equal, and store the results in mask vector 'k1'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -3864,11 +3864,11 @@ func cmpgeEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpge_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgeEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgeEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpgeEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpgeEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpgeEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -3913,7 +3913,7 @@ func MaskCmpgeEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpgeEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpgeEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M256CmpgeEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -3924,14 +3924,14 @@ func maskCmpgeEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func CmpgeEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpgeEpu8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgeEpu8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpgeEpu8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgeEpu8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpgeEpu8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpgeEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M256MaskCmpgeEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for greater-than-or-equal, and store the results in mask vector 'k' using
 // zeromask 'k1' (elements are zeroed out when the corresponding mask bit is
 // not set). 
@@ -3948,14 +3948,14 @@ func cmpgeEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgeEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgeEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpgeEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgeEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpgeEpu8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpgeEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M512CmpgeEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // greater-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -3966,14 +3966,14 @@ func maskCmpgeEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func CmpgeEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpgeEpu8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgeEpu8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpgeEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgeEpu8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpgeEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpgeEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M512MaskCmpgeEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for greater-than-or-equal, and store the results in mask vector 'k' using
 // zeromask 'k1' (elements are zeroed out when the corresponding mask bit is
 // not set). 
@@ -3990,11 +3990,11 @@ func cmpgeEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpge_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgeEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpgeEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgeEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpgeEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgeEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpgeEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpgtEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -4038,7 +4038,7 @@ func MaskCmpgtEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpgtEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpgtEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256CmpgtEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -4049,14 +4049,14 @@ func maskCmpgtEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func CmpgtEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpgtEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgtEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpgtEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpgtEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpgtEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256MaskCmpgtEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4072,14 +4072,14 @@ func cmpgtEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgtEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgtEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpgtEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgtEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpgtEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpgtEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512CmpgtEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -4090,14 +4090,14 @@ func maskCmpgtEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func CmpgtEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpgtEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgtEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpgtEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpgtEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpgtEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512MaskCmpgtEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4113,11 +4113,11 @@ func cmpgtEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpgt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgtEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgtEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpgtEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpgtEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpgtEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -4161,7 +4161,7 @@ func MaskCmpgtEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpgtEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpgtEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256CmpgtEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -4172,14 +4172,14 @@ func maskCmpgtEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func CmpgtEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpgtEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgtEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpgtEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpgtEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpgtEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256MaskCmpgtEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4195,14 +4195,14 @@ func cmpgtEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgtEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgtEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpgtEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgtEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpgtEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpgtEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512CmpgtEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -4213,14 +4213,14 @@ func maskCmpgtEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func CmpgtEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpgtEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgtEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpgtEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpgtEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpgtEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512MaskCmpgtEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4236,11 +4236,11 @@ func cmpgtEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpgt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpgtEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgtEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpgtEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpgtEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpgtEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -4284,8 +4284,8 @@ func MaskCmpgtEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpgtEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpgtEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// greater-than, and store the results in mask vector 'k'. 
+// M256CmpgtEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -4295,16 +4295,17 @@ func maskCmpgtEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func CmpgtEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpgtEpu16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgtEpu16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpgtEpu16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpu16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpgtEpu16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpgtEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for greater-than, and store the results in mask vector 'k1' using zeromask
-// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskCmpgtEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for greater-than, and store the results in mask vector 'k1' using
+// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
+// set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -4318,15 +4319,15 @@ func cmpgtEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpgtEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgtEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpgtEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgtEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpgtEpu16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpgtEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// greater-than, and store the results in mask vector 'k'. 
+// M512CmpgtEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -4336,16 +4337,17 @@ func maskCmpgtEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func CmpgtEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpgtEpu16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgtEpu16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpgtEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpu16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpgtEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpgtEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for greater-than, and store the results in mask vector 'k1' using zeromask
-// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpgtEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for greater-than, and store the results in mask vector 'k1' using
+// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
+// set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -4359,11 +4361,11 @@ func cmpgtEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpgt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgtEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgtEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpgtEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpgtEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpgtEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -4407,7 +4409,7 @@ func MaskCmpgtEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpgtEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpgtEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M256CmpgtEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -4418,14 +4420,14 @@ func maskCmpgtEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func CmpgtEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpgtEpu8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpgtEpu8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpgtEpu8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpu8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpgtEpu8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpgtEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M256MaskCmpgtEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for greater-than, and store the results in mask vector 'k' using zeromask
 // 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4441,14 +4443,14 @@ func cmpgtEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpgtEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpgtEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpgtEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpgtEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpgtEpu8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpgtEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M512CmpgtEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // greater-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -4459,14 +4461,14 @@ func maskCmpgtEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func CmpgtEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpgtEpu8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpgtEpu8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpgtEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpgtEpu8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpgtEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpgtEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M512MaskCmpgtEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for greater-than, and store the results in mask vector 'k' using zeromask
 // 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4482,11 +4484,11 @@ func cmpgtEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpgt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpgtEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpgtEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpgtEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpgtEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpgtEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpgtEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpleEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -4530,7 +4532,7 @@ func MaskCmpleEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpleEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpleEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256CmpleEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -4541,14 +4543,14 @@ func maskCmpleEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmple_epi16_mask'.
 // Requires AVX512BW.
-func CmpleEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpleEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpleEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpleEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpleEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpleEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpleEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256MaskCmpleEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k1' using zeromask
 // 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4564,14 +4566,14 @@ func cmpleEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmple_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpleEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpleEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpleEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpleEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpleEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpleEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512CmpleEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -4582,14 +4584,14 @@ func maskCmpleEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmple_epi16_mask'.
 // Requires AVX512BW.
-func CmpleEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpleEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpleEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpleEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpleEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpleEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512MaskCmpleEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k1' using zeromask
 // 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4605,11 +4607,11 @@ func cmpleEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmple_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpleEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpleEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpleEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpleEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpleEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
@@ -4653,7 +4655,7 @@ func MaskCmpleEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpleEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpleEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256CmpleEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -4664,14 +4666,14 @@ func maskCmpleEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmple_epi8_mask'.
 // Requires AVX512BW.
-func CmpleEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpleEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpleEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpleEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpleEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpleEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpleEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256MaskCmpleEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k' using zeromask
 // 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4687,14 +4689,14 @@ func cmpleEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmple_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpleEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpleEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpleEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpleEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpleEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpleEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512CmpleEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -4705,14 +4707,14 @@ func maskCmpleEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmple_epi8_mask'.
 // Requires AVX512BW.
-func CmpleEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpleEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpleEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpleEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpleEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpleEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512MaskCmpleEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k' using zeromask
 // 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -4728,11 +4730,11 @@ func cmpleEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmple_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpleEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpleEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpleEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpleEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpleEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -4777,8 +4779,8 @@ func MaskCmpleEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpleEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpleEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// less-than-or-equal, and store the results in mask vector 'k'. 
+// M256CmpleEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -4788,15 +4790,15 @@ func maskCmpleEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmple_epu16_mask'.
 // Requires AVX512BW.
-func CmpleEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpleEpu16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpleEpu16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpleEpu16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpleEpu16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpleEpu16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpleEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for less-than-or-equal, and store the results in mask vector 'k1' using
+// M256MaskCmpleEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for less-than-or-equal, and store the results in mask vector 'k1' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
 //
@@ -4812,15 +4814,15 @@ func cmpleEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmple_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpleEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpleEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpleEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpleEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpleEpu16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpleEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// less-than-or-equal, and store the results in mask vector 'k'. 
+// M512CmpleEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -4830,15 +4832,15 @@ func maskCmpleEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmple_epu16_mask'.
 // Requires AVX512BW.
-func CmpleEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpleEpu16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpleEpu16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpleEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpu16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpleEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpleEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for less-than-or-equal, and store the results in mask vector 'k1' using
+// M512MaskCmpleEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for less-than-or-equal, and store the results in mask vector 'k1' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
 //
@@ -4854,11 +4856,11 @@ func cmpleEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmple_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpleEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpleEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpleEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpleEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpleEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -4902,7 +4904,7 @@ func MaskCmpleEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpleEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpleEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M256CmpleEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -4913,14 +4915,14 @@ func maskCmpleEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmple_epu8_mask'.
 // Requires AVX512BW.
-func CmpleEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpleEpu8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpleEpu8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpleEpu8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpleEpu8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpleEpu8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpleEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M256MaskCmpleEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for less-than-or-equal, and store the results in mask vector 'k' using
 // zeromask 'k1' (elements are zeroed out when the corresponding mask bit is
 // not set). 
@@ -4937,14 +4939,14 @@ func cmpleEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmple_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpleEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpleEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpleEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpleEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpleEpu8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpleEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M512CmpleEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // less-than-or-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -4955,14 +4957,14 @@ func maskCmpleEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmple_epu8_mask'.
 // Requires AVX512BW.
-func CmpleEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpleEpu8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpleEpu8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpleEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpleEpu8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpleEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpleEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M512MaskCmpleEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for less-than-or-equal, and store the results in mask vector 'k' using
 // zeromask 'k1' (elements are zeroed out when the corresponding mask bit is
 // not set). 
@@ -4979,11 +4981,11 @@ func cmpleEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmple_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpleEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpleEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpleEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpleEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpleEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpleEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpltEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for less-than,
@@ -5027,7 +5029,7 @@ func MaskCmpltEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpltEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpltEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256CmpltEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -5038,14 +5040,14 @@ func maskCmpltEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func CmpltEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpltEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpltEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpltEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpltEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpltEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpltEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256MaskCmpltEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5061,14 +5063,14 @@ func cmpltEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpltEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpltEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpltEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpltEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpltEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpltEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512CmpltEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -5079,14 +5081,14 @@ func maskCmpltEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func CmpltEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpltEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpltEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpltEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpltEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpltEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512MaskCmpltEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5102,11 +5104,11 @@ func cmpltEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmplt_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpltEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpltEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpltEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpltEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpltEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for less-than,
@@ -5150,8 +5152,8 @@ func MaskCmpltEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpltEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpltEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for less-than,
-// and store the results in mask vector 'k'. 
+// M256CmpltEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
+// less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -5161,14 +5163,14 @@ func maskCmpltEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func CmpltEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpltEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpltEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpltEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpltEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpltEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpltEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256MaskCmpltEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5184,15 +5186,15 @@ func cmpltEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpltEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpltEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpltEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpltEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpltEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpltEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for less-than,
-// and store the results in mask vector 'k'. 
+// M512CmpltEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
+// less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -5202,14 +5204,14 @@ func maskCmpltEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func CmpltEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpltEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpltEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpltEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpltEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpltEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512MaskCmpltEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5225,11 +5227,11 @@ func cmpltEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmplt_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpltEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpltEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpltEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpltEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpltEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -5273,8 +5275,8 @@ func MaskCmpltEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpltEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpltEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// less-than, and store the results in mask vector 'k'. 
+// M256CmpltEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -5284,16 +5286,16 @@ func maskCmpltEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func CmpltEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpltEpu16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpltEpu16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpltEpu16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpltEpu16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpltEpu16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpltEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for less-than, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskCmpltEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for less-than, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -5307,15 +5309,15 @@ func cmpltEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpltEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpltEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpltEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpltEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpltEpu16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpltEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// less-than, and store the results in mask vector 'k'. 
+// M512CmpltEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -5325,16 +5327,16 @@ func maskCmpltEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func CmpltEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpltEpu16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpltEpu16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpltEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpu16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpltEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpltEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for less-than, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpltEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for less-than, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -5348,11 +5350,11 @@ func cmpltEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmplt_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpltEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpltEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpltEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpltEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpltEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -5396,7 +5398,7 @@ func MaskCmpltEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpltEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpltEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M256CmpltEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -5407,14 +5409,14 @@ func maskCmpltEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func CmpltEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpltEpu8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpltEpu8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpltEpu8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpltEpu8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpltEpu8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpltEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M256MaskCmpltEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for less-than, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5430,14 +5432,14 @@ func cmpltEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpltEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpltEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpltEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpltEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpltEpu8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpltEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b' for
+// M512CmpltEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
 // less-than, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
@@ -5448,14 +5450,14 @@ func maskCmpltEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func CmpltEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpltEpu8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpltEpu8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpltEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpltEpu8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpltEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpltEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// M512MaskCmpltEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
 // for less-than, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5471,11 +5473,11 @@ func cmpltEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmplt_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpltEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpltEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpltEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpltEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpltEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpltEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpneqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
@@ -5519,7 +5521,7 @@ func MaskCmpneqEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpneqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpneqEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256CmpneqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
@@ -5530,14 +5532,14 @@ func maskCmpneqEpi16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func CmpneqEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpneqEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpneqEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpneqEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpneqEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpneqEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpneqEpi16Mask1: Compare packed 16-bit integers in 'a' and 'b' for
+// M256MaskCmpneqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5553,14 +5555,14 @@ func cmpneqEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm256_mask_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpneqEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpneqEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpneqEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpneqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpneqEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpneqEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512CmpneqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
@@ -5571,14 +5573,14 @@ func maskCmpneqEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func CmpneqEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpneqEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpneqEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpneqEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpneqEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpneqEpi16Mask2: Compare packed 16-bit integers in 'a' and 'b' for
+// M512MaskCmpneqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k1' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5594,11 +5596,11 @@ func cmpneqEpi16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPW'. Intrinsic: '_mm512_mask_cmpneq_epi16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpneqEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpneqEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpneqEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpneqEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpneqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for not-equal,
@@ -5642,8 +5644,8 @@ func MaskCmpneqEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpneqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpneqEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for not-equal,
-// and store the results in mask vector 'k'. 
+// M256CmpneqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
+// not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -5653,14 +5655,14 @@ func maskCmpneqEpi8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func CmpneqEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpneqEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpneqEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpneqEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpneqEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpneqEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpneqEpi8Mask1: Compare packed 8-bit integers in 'a' and 'b' for
+// M256MaskCmpneqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5676,15 +5678,15 @@ func cmpneqEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm256_mask_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpneqEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpneqEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpneqEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpneqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpneqEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpneqEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for not-equal,
-// and store the results in mask vector 'k'. 
+// M512CmpneqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
+// not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -5694,14 +5696,14 @@ func maskCmpneqEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func CmpneqEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpneqEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpneqEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpneqEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpneqEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpneqEpi8Mask2: Compare packed 8-bit integers in 'a' and 'b' for
+// M512MaskCmpneqEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' for
 // not-equal, and store the results in mask vector 'k' using zeromask 'k1'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -5717,11 +5719,11 @@ func cmpneqEpi8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPB'. Intrinsic: '_mm512_mask_cmpneq_epi8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpneqEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpneqEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpneqEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpneqEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // CmpneqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' for
@@ -5765,8 +5767,8 @@ func MaskCmpneqEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
 func maskCmpneqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 
 
-// CmpneqEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// not-equal, and store the results in mask vector 'k'. 
+// M256CmpneqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -5776,16 +5778,16 @@ func maskCmpneqEpu16Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func CmpneqEpu16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(cmpneqEpu16Mask1([32]byte(a), [32]byte(b)))
+func M256CmpneqEpu16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256CmpneqEpu16Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpneqEpu16Mask1(a [32]byte, b [32]byte) uint16
+func m256CmpneqEpu16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskCmpneqEpu16Mask1: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for not-equal, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskCmpneqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for not-equal, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -5799,15 +5801,15 @@ func cmpneqEpu16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm256_mask_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskCmpneqEpu16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpneqEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskCmpneqEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpneqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskCmpneqEpu16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// CmpneqEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b' for
-// not-equal, and store the results in mask vector 'k'. 
+// M512CmpneqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
+// for not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -5817,16 +5819,16 @@ func maskCmpneqEpu16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func CmpneqEpu16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(cmpneqEpu16Mask2([64]byte(a), [64]byte(b)))
+func M512CmpneqEpu16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512CmpneqEpu16Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpu16Mask2(a [64]byte, b [64]byte) uint32
+func m512CmpneqEpu16Mask(a [64]byte, b [64]byte) uint32
 
 
-// MaskCmpneqEpu16Mask2: Compare packed unsigned 16-bit integers in 'a' and 'b'
-// for not-equal, and store the results in mask vector 'k1' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpneqEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and
+// 'b' for not-equal, and store the results in mask vector 'k1' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -5840,11 +5842,11 @@ func cmpneqEpu16Mask2(a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPCMPUW'. Intrinsic: '_mm512_mask_cmpneq_epu16_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpneqEpu16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpneqEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskCmpneqEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpu16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskCmpneqEpu16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
 // CmpneqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' for
@@ -5888,8 +5890,8 @@ func MaskCmpneqEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i) x86.Mmask16 {
 func maskCmpneqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 
 
-// CmpneqEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b' for
-// not-equal, and store the results in mask vector 'k'. 
+// M256CmpneqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// for not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -5899,16 +5901,16 @@ func maskCmpneqEpu8Mask(k1 uint16, a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func CmpneqEpu8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(cmpneqEpu8Mask1([32]byte(a), [32]byte(b)))
+func M256CmpneqEpu8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256CmpneqEpu8Mask([32]byte(a), [32]byte(b)))
 }
 
-func cmpneqEpu8Mask1(a [32]byte, b [32]byte) uint32
+func m256CmpneqEpu8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskCmpneqEpu8Mask1: Compare packed unsigned 8-bit integers in 'a' and 'b'
-// for not-equal, and store the results in mask vector 'k' using zeromask 'k1'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskCmpneqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and
+// 'b' for not-equal, and store the results in mask vector 'k' using zeromask
+// 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -5922,15 +5924,15 @@ func cmpneqEpu8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm256_mask_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskCmpneqEpu8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskCmpneqEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskCmpneqEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskCmpneqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskCmpneqEpu8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// CmpneqEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b' for
-// not-equal, and store the results in mask vector 'k'. 
+// M512CmpneqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
+// for not-equal, and store the results in mask vector 'k'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -5940,16 +5942,16 @@ func maskCmpneqEpu8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func CmpneqEpu8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(cmpneqEpu8Mask2([64]byte(a), [64]byte(b)))
+func M512CmpneqEpu8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512CmpneqEpu8Mask([64]byte(a), [64]byte(b)))
 }
 
-func cmpneqEpu8Mask2(a [64]byte, b [64]byte) uint64
+func m512CmpneqEpu8Mask(a [64]byte, b [64]byte) uint64
 
 
-// MaskCmpneqEpu8Mask2: Compare packed unsigned 8-bit integers in 'a' and 'b'
-// for not-equal, and store the results in mask vector 'k' using zeromask 'k1'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskCmpneqEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and
+// 'b' for not-equal, and store the results in mask vector 'k' using zeromask
+// 'k1' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -5963,11 +5965,11 @@ func cmpneqEpu8Mask2(a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPCMPUB'. Intrinsic: '_mm512_mask_cmpneq_epu8_mask'.
 // Requires AVX512BW.
-func MaskCmpneqEpu8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskCmpneqEpu8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskCmpneqEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskCmpneqEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskCmpneqEpu8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskCmpneqEpu8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
 // Cvtepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit integers
@@ -6037,7 +6039,7 @@ func MaskzCvtepi16Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzCvtepi16Epi8(k uint8, a [16]byte) [16]byte
 
 
-// Cvtepi16Epi81: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M256Cvtepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with truncation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -6049,14 +6051,14 @@ func maskzCvtepi16Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_cvtepi16_epi8'.
 // Requires AVX512BW.
-func Cvtepi16Epi81(a x86.M256i) x86.M128i {
-	return x86.M128i(cvtepi16Epi81([32]byte(a)))
+func M256Cvtepi16Epi8(a x86.M256i) x86.M128i {
+	return x86.M128i(m256Cvtepi16Epi8([32]byte(a)))
 }
 
-func cvtepi16Epi81(a [32]byte) [16]byte
+func m256Cvtepi16Epi8(a [32]byte) [16]byte
 
 
-// MaskCvtepi16Epi81: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M256MaskCvtepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with truncation, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -6073,14 +6075,14 @@ func cvtepi16Epi81(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_mask_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16Epi81(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
-	return x86.M128i(maskCvtepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
+func M256MaskCvtepi16Epi8(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(m256MaskCvtepi16Epi8([16]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskCvtepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
+func m256MaskCvtepi16Epi8(src [16]byte, k uint16, a [32]byte) [16]byte
 
 
-// MaskzCvtepi16Epi81: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M256MaskzCvtepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with truncation, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -6097,14 +6099,14 @@ func maskCvtepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_maskz_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtepi16Epi81(k x86.Mmask16, a x86.M256i) x86.M128i {
-	return x86.M128i(maskzCvtepi16Epi81(uint16(k), [32]byte(a)))
+func M256MaskzCvtepi16Epi8(k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(m256MaskzCvtepi16Epi8(uint16(k), [32]byte(a)))
 }
 
-func maskzCvtepi16Epi81(k uint16, a [32]byte) [16]byte
+func m256MaskzCvtepi16Epi8(k uint16, a [32]byte) [16]byte
 
 
-// Cvtepi16Epi82: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M512Cvtepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with truncation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -6116,14 +6118,14 @@ func maskzCvtepi16Epi81(k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_cvtepi16_epi8'.
 // Requires AVX512BW.
-func Cvtepi16Epi82(a x86.M512i) x86.M256i {
-	return x86.M256i(cvtepi16Epi82([64]byte(a)))
+func M512Cvtepi16Epi8(a x86.M512i) x86.M256i {
+	return x86.M256i(m512Cvtepi16Epi8([64]byte(a)))
 }
 
-func cvtepi16Epi82(a [64]byte) [32]byte
+func m512Cvtepi16Epi8(a [64]byte) [32]byte
 
 
-// MaskCvtepi16Epi82: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M512MaskCvtepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with truncation, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -6140,14 +6142,14 @@ func cvtepi16Epi82(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_mask_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16Epi82(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
-	return x86.M256i(maskCvtepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
+func M512MaskCvtepi16Epi8(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(m512MaskCvtepi16Epi8([32]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskCvtepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
+func m512MaskCvtepi16Epi8(src [32]byte, k uint32, a [64]byte) [32]byte
 
 
-// MaskzCvtepi16Epi82: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M512MaskzCvtepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with truncation, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -6164,11 +6166,11 @@ func maskCvtepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_maskz_cvtepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtepi16Epi82(k x86.Mmask32, a x86.M512i) x86.M256i {
-	return x86.M256i(maskzCvtepi16Epi82(uint32(k), [64]byte(a)))
+func M512MaskzCvtepi16Epi8(k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(m512MaskzCvtepi16Epi8(uint32(k), [64]byte(a)))
 }
 
-func maskzCvtepi16Epi82(k uint32, a [64]byte) [32]byte
+func m512MaskzCvtepi16Epi8(k uint32, a [64]byte) [32]byte
 
 
 // MaskCvtepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
@@ -6194,7 +6196,7 @@ func MaskCvtepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 func maskCvtepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
 
 
-// MaskCvtepi16StoreuEpi81: Convert packed 16-bit integers in 'a' to packed
+// M256MaskCvtepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
 // 8-bit integers with truncation, and store the active results (those with
 // their respective bit set in writemask 'k') to unaligned memory at
 // 'base_addr'. 
@@ -6210,14 +6212,14 @@ func maskCvtepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm256_mask_cvtepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16StoreuEpi81(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	maskCvtepi16StoreuEpi81(uintptr(base_addr), uint16(k), [32]byte(a))
+func M256MaskCvtepi16StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
+	m256MaskCvtepi16StoreuEpi8(uintptr(base_addr), uint16(k), [32]byte(a))
 }
 
-func maskCvtepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte) 
+func m256MaskCvtepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
 
 
-// MaskCvtepi16StoreuEpi82: Convert packed 16-bit integers in 'a' to packed
+// M512MaskCvtepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
 // 8-bit integers with truncation, and store the active results (those with
 // their respective bit set in writemask 'k') to unaligned memory at
 // 'base_addr'. 
@@ -6233,11 +6235,11 @@ func maskCvtepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VPMOVWB'. Intrinsic: '_mm512_mask_cvtepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtepi16StoreuEpi82(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	maskCvtepi16StoreuEpi82(uintptr(base_addr), uint32(k), [64]byte(a))
+func M512MaskCvtepi16StoreuEpi8(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
+	m512MaskCvtepi16StoreuEpi8(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
-func maskCvtepi16StoreuEpi82(base_addr uintptr, k uint32, a [64]byte) 
+func m512MaskCvtepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
 
 
 // MaskCvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed 16-bit
@@ -6288,9 +6290,9 @@ func MaskzCvtepi8Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzCvtepi8Epi16(k uint8, a [16]byte) [16]byte
 
 
-// MaskCvtepi8Epi161: Sign extend packed 8-bit integers in 'a' to packed 16-bit
-// integers, and store the results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
+// M256MaskCvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed
+// 16-bit integers, and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*8
@@ -6305,14 +6307,14 @@ func maskzCvtepi8Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm256_mask_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepi8Epi161(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
-	return x86.M256i(maskCvtepi8Epi161([32]byte(src), uint16(k), [16]byte(a)))
+func M256MaskCvtepi8Epi16(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskCvtepi8Epi16([32]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskCvtepi8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
+func m256MaskCvtepi8Epi16(src [32]byte, k uint16, a [16]byte) [32]byte
 
 
-// MaskzCvtepi8Epi161: Sign extend packed 8-bit integers in 'a' to packed
+// M256MaskzCvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed
 // 16-bit integers, and store the results in 'dst' using zeromask 'k' (elements
 // are zeroed out when the corresponding mask bit is not set). 
 //
@@ -6329,14 +6331,14 @@ func maskCvtepi8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm256_maskz_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepi8Epi161(k x86.Mmask16, a x86.M128i) x86.M256i {
-	return x86.M256i(maskzCvtepi8Epi161(uint16(k), [16]byte(a)))
+func M256MaskzCvtepi8Epi16(k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskzCvtepi8Epi16(uint16(k), [16]byte(a)))
 }
 
-func maskzCvtepi8Epi161(k uint16, a [16]byte) [32]byte
+func m256MaskzCvtepi8Epi16(k uint16, a [16]byte) [32]byte
 
 
-// Cvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed 16-bit
+// M512Cvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed 16-bit
 // integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -6348,16 +6350,16 @@ func maskzCvtepi8Epi161(k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_cvtepi8_epi16'.
 // Requires AVX512BW.
-func Cvtepi8Epi16(a x86.M256i) x86.M512i {
-	return x86.M512i(cvtepi8Epi16([32]byte(a)))
+func M512Cvtepi8Epi16(a x86.M256i) x86.M512i {
+	return x86.M512i(m512Cvtepi8Epi16([32]byte(a)))
 }
 
-func cvtepi8Epi16(a [32]byte) [64]byte
+func m512Cvtepi8Epi16(a [32]byte) [64]byte
 
 
-// MaskCvtepi8Epi162: Sign extend packed 8-bit integers in 'a' to packed 16-bit
-// integers, and store the results in 'dst' using writemask 'k' (elements are
-// copied from 'src' when the corresponding mask bit is not set). 
+// M512MaskCvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed
+// 16-bit integers, and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -6372,14 +6374,14 @@ func cvtepi8Epi16(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_mask_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepi8Epi162(src x86.M512i, k x86.Mmask32, a x86.M256i) x86.M512i {
-	return x86.M512i(maskCvtepi8Epi162([64]byte(src), uint32(k), [32]byte(a)))
+func M512MaskCvtepi8Epi16(src x86.M512i, k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(m512MaskCvtepi8Epi16([64]byte(src), uint32(k), [32]byte(a)))
 }
 
-func maskCvtepi8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
+func m512MaskCvtepi8Epi16(src [64]byte, k uint32, a [32]byte) [64]byte
 
 
-// MaskzCvtepi8Epi162: Sign extend packed 8-bit integers in 'a' to packed
+// M512MaskzCvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed
 // 16-bit integers, and store the results in 'dst' using zeromask 'k' (elements
 // are zeroed out when the corresponding mask bit is not set). 
 //
@@ -6396,11 +6398,11 @@ func maskCvtepi8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm512_maskz_cvtepi8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepi8Epi162(k x86.Mmask32, a x86.M256i) x86.M512i {
-	return x86.M512i(maskzCvtepi8Epi162(uint32(k), [32]byte(a)))
+func M512MaskzCvtepi8Epi16(k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(m512MaskzCvtepi8Epi16(uint32(k), [32]byte(a)))
 }
 
-func maskzCvtepi8Epi162(k uint32, a [32]byte) [64]byte
+func m512MaskzCvtepi8Epi16(k uint32, a [32]byte) [64]byte
 
 
 // MaskCvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to
@@ -6451,7 +6453,7 @@ func MaskzCvtepu8Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzCvtepu8Epi16(k uint8, a [16]byte) [16]byte
 
 
-// MaskCvtepu8Epi161: Zero extend packed unsigned 8-bit integers in 'a' to
+// M256MaskCvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to
 // packed 16-bit integers, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -6468,14 +6470,14 @@ func maskzCvtepu8Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm256_mask_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepu8Epi161(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
-	return x86.M256i(maskCvtepu8Epi161([32]byte(src), uint16(k), [16]byte(a)))
+func M256MaskCvtepu8Epi16(src x86.M256i, k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskCvtepu8Epi16([32]byte(src), uint16(k), [16]byte(a)))
 }
 
-func maskCvtepu8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
+func m256MaskCvtepu8Epi16(src [32]byte, k uint16, a [16]byte) [32]byte
 
 
-// MaskzCvtepu8Epi161: Zero extend packed unsigned 8-bit integers in 'a' to
+// M256MaskzCvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to
 // packed 16-bit integers, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -6492,15 +6494,15 @@ func maskCvtepu8Epi161(src [32]byte, k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm256_maskz_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepu8Epi161(k x86.Mmask16, a x86.M128i) x86.M256i {
-	return x86.M256i(maskzCvtepu8Epi161(uint16(k), [16]byte(a)))
+func M256MaskzCvtepu8Epi16(k x86.Mmask16, a x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskzCvtepu8Epi16(uint16(k), [16]byte(a)))
 }
 
-func maskzCvtepu8Epi161(k uint16, a [16]byte) [32]byte
+func m256MaskzCvtepu8Epi16(k uint16, a [16]byte) [32]byte
 
 
-// Cvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to packed
-// 16-bit integers, and store the results in 'dst'. 
+// M512Cvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to
+// packed 16-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -6511,14 +6513,14 @@ func maskzCvtepu8Epi161(k uint16, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_cvtepu8_epi16'.
 // Requires AVX512BW.
-func Cvtepu8Epi16(a x86.M256i) x86.M512i {
-	return x86.M512i(cvtepu8Epi16([32]byte(a)))
+func M512Cvtepu8Epi16(a x86.M256i) x86.M512i {
+	return x86.M512i(m512Cvtepu8Epi16([32]byte(a)))
 }
 
-func cvtepu8Epi16(a [32]byte) [64]byte
+func m512Cvtepu8Epi16(a [32]byte) [64]byte
 
 
-// MaskCvtepu8Epi162: Zero extend packed unsigned 8-bit integers in 'a' to
+// M512MaskCvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to
 // packed 16-bit integers, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -6535,14 +6537,14 @@ func cvtepu8Epi16(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_mask_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskCvtepu8Epi162(src x86.M512i, k x86.Mmask32, a x86.M256i) x86.M512i {
-	return x86.M512i(maskCvtepu8Epi162([64]byte(src), uint32(k), [32]byte(a)))
+func M512MaskCvtepu8Epi16(src x86.M512i, k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(m512MaskCvtepu8Epi16([64]byte(src), uint32(k), [32]byte(a)))
 }
 
-func maskCvtepu8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
+func m512MaskCvtepu8Epi16(src [64]byte, k uint32, a [32]byte) [64]byte
 
 
-// MaskzCvtepu8Epi162: Zero extend packed unsigned 8-bit integers in 'a' to
+// M512MaskzCvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to
 // packed 16-bit integers, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -6559,11 +6561,11 @@ func maskCvtepu8Epi162(src [64]byte, k uint32, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm512_maskz_cvtepu8_epi16'.
 // Requires AVX512BW.
-func MaskzCvtepu8Epi162(k x86.Mmask32, a x86.M256i) x86.M512i {
-	return x86.M512i(maskzCvtepu8Epi162(uint32(k), [32]byte(a)))
+func M512MaskzCvtepu8Epi16(k x86.Mmask32, a x86.M256i) x86.M512i {
+	return x86.M512i(m512MaskzCvtepu8Epi16(uint32(k), [32]byte(a)))
 }
 
-func maskzCvtepu8Epi162(k uint32, a [32]byte) [64]byte
+func m512MaskzCvtepu8Epi16(k uint32, a [32]byte) [64]byte
 
 
 // Cvtsepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
@@ -6635,7 +6637,7 @@ func MaskzCvtsepi16Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzCvtsepi16Epi8(k uint8, a [16]byte) [16]byte
 
 
-// Cvtsepi16Epi81: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M256Cvtsepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with signed saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -6647,14 +6649,14 @@ func maskzCvtsepi16Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func Cvtsepi16Epi81(a x86.M256i) x86.M128i {
-	return x86.M128i(cvtsepi16Epi81([32]byte(a)))
+func M256Cvtsepi16Epi8(a x86.M256i) x86.M128i {
+	return x86.M128i(m256Cvtsepi16Epi8([32]byte(a)))
 }
 
-func cvtsepi16Epi81(a [32]byte) [16]byte
+func m256Cvtsepi16Epi8(a [32]byte) [16]byte
 
 
-// MaskCvtsepi16Epi81: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M256MaskCvtsepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with signed saturation, and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -6672,15 +6674,15 @@ func cvtsepi16Epi81(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_mask_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16Epi81(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
-	return x86.M128i(maskCvtsepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
+func M256MaskCvtsepi16Epi8(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(m256MaskCvtsepi16Epi8([16]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskCvtsepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
+func m256MaskCvtsepi16Epi8(src [16]byte, k uint16, a [32]byte) [16]byte
 
 
-// MaskzCvtsepi16Epi81: Convert packed 16-bit integers in 'a' to packed 8-bit
-// integers with signed saturation, and store the results in 'dst' using
+// M256MaskzCvtsepi16Epi8: Convert packed 16-bit integers in 'a' to packed
+// 8-bit integers with signed saturation, and store the results in 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
 //
@@ -6697,14 +6699,14 @@ func maskCvtsepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_maskz_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtsepi16Epi81(k x86.Mmask16, a x86.M256i) x86.M128i {
-	return x86.M128i(maskzCvtsepi16Epi81(uint16(k), [32]byte(a)))
+func M256MaskzCvtsepi16Epi8(k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(m256MaskzCvtsepi16Epi8(uint16(k), [32]byte(a)))
 }
 
-func maskzCvtsepi16Epi81(k uint16, a [32]byte) [16]byte
+func m256MaskzCvtsepi16Epi8(k uint16, a [32]byte) [16]byte
 
 
-// Cvtsepi16Epi82: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M512Cvtsepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with signed saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -6716,14 +6718,14 @@ func maskzCvtsepi16Epi81(k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func Cvtsepi16Epi82(a x86.M512i) x86.M256i {
-	return x86.M256i(cvtsepi16Epi82([64]byte(a)))
+func M512Cvtsepi16Epi8(a x86.M512i) x86.M256i {
+	return x86.M256i(m512Cvtsepi16Epi8([64]byte(a)))
 }
 
-func cvtsepi16Epi82(a [64]byte) [32]byte
+func m512Cvtsepi16Epi8(a [64]byte) [32]byte
 
 
-// MaskCvtsepi16Epi82: Convert packed 16-bit integers in 'a' to packed 8-bit
+// M512MaskCvtsepi16Epi8: Convert packed 16-bit integers in 'a' to packed 8-bit
 // integers with signed saturation, and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -6741,15 +6743,15 @@ func cvtsepi16Epi82(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_mask_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16Epi82(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
-	return x86.M256i(maskCvtsepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
+func M512MaskCvtsepi16Epi8(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(m512MaskCvtsepi16Epi8([32]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskCvtsepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
+func m512MaskCvtsepi16Epi8(src [32]byte, k uint32, a [64]byte) [32]byte
 
 
-// MaskzCvtsepi16Epi82: Convert packed 16-bit integers in 'a' to packed 8-bit
-// integers with signed saturation, and store the results in 'dst' using
+// M512MaskzCvtsepi16Epi8: Convert packed 16-bit integers in 'a' to packed
+// 8-bit integers with signed saturation, and store the results in 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
 //
@@ -6766,11 +6768,11 @@ func maskCvtsepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_maskz_cvtsepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtsepi16Epi82(k x86.Mmask32, a x86.M512i) x86.M256i {
-	return x86.M256i(maskzCvtsepi16Epi82(uint32(k), [64]byte(a)))
+func M512MaskzCvtsepi16Epi8(k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(m512MaskzCvtsepi16Epi8(uint32(k), [64]byte(a)))
 }
 
-func maskzCvtsepi16Epi82(k uint32, a [64]byte) [32]byte
+func m512MaskzCvtsepi16Epi8(k uint32, a [64]byte) [32]byte
 
 
 // MaskCvtsepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
@@ -6796,7 +6798,7 @@ func MaskCvtsepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 func maskCvtsepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
 
 
-// MaskCvtsepi16StoreuEpi81: Convert packed 16-bit integers in 'a' to packed
+// M256MaskCvtsepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
 // 8-bit integers with signed saturation, and store the active results (those
 // with their respective bit set in writemask 'k') to unaligned memory at
 // 'base_addr'. 
@@ -6812,14 +6814,14 @@ func maskCvtsepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm256_mask_cvtsepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16StoreuEpi81(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	maskCvtsepi16StoreuEpi81(uintptr(base_addr), uint16(k), [32]byte(a))
+func M256MaskCvtsepi16StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
+	m256MaskCvtsepi16StoreuEpi8(uintptr(base_addr), uint16(k), [32]byte(a))
 }
 
-func maskCvtsepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte) 
+func m256MaskCvtsepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
 
 
-// MaskCvtsepi16StoreuEpi82: Convert packed 16-bit integers in 'a' to packed
+// M512MaskCvtsepi16StoreuEpi8: Convert packed 16-bit integers in 'a' to packed
 // 8-bit integers with signed saturation, and store the active results (those
 // with their respective bit set in writemask 'k') to unaligned memory at
 // 'base_addr'. 
@@ -6835,11 +6837,11 @@ func maskCvtsepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VPMOVSWB'. Intrinsic: '_mm512_mask_cvtsepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtsepi16StoreuEpi82(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	maskCvtsepi16StoreuEpi82(uintptr(base_addr), uint32(k), [64]byte(a))
+func M512MaskCvtsepi16StoreuEpi8(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
+	m512MaskCvtsepi16StoreuEpi8(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
-func maskCvtsepi16StoreuEpi82(base_addr uintptr, k uint32, a [64]byte) 
+func m512MaskCvtsepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
 
 
 // Cvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to packed
@@ -6912,7 +6914,7 @@ func MaskzCvtusepi16Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzCvtusepi16Epi8(k uint8, a [16]byte) [16]byte
 
 
-// Cvtusepi16Epi81: Convert packed unsigned 16-bit integers in 'a' to packed
+// M256Cvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to packed
 // unsigned 8-bit integers with unsigned saturation, and store the results in
 // 'dst'. 
 //
@@ -6925,14 +6927,14 @@ func maskzCvtusepi16Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func Cvtusepi16Epi81(a x86.M256i) x86.M128i {
-	return x86.M128i(cvtusepi16Epi81([32]byte(a)))
+func M256Cvtusepi16Epi8(a x86.M256i) x86.M128i {
+	return x86.M128i(m256Cvtusepi16Epi8([32]byte(a)))
 }
 
-func cvtusepi16Epi81(a [32]byte) [16]byte
+func m256Cvtusepi16Epi8(a [32]byte) [16]byte
 
 
-// MaskCvtusepi16Epi81: Convert packed unsigned 16-bit integers in 'a' to
+// M256MaskCvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to
 // packed unsigned 8-bit integers with unsigned saturation, and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
@@ -6950,14 +6952,14 @@ func cvtusepi16Epi81(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_mask_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16Epi81(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
-	return x86.M128i(maskCvtusepi16Epi81([16]byte(src), uint16(k), [32]byte(a)))
+func M256MaskCvtusepi16Epi8(src x86.M128i, k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(m256MaskCvtusepi16Epi8([16]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskCvtusepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
+func m256MaskCvtusepi16Epi8(src [16]byte, k uint16, a [32]byte) [16]byte
 
 
-// MaskzCvtusepi16Epi81: Convert packed unsigned 16-bit integers in 'a' to
+// M256MaskzCvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to
 // packed unsigned 8-bit integers with unsigned saturation, and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -6975,14 +6977,14 @@ func maskCvtusepi16Epi81(src [16]byte, k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_maskz_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtusepi16Epi81(k x86.Mmask16, a x86.M256i) x86.M128i {
-	return x86.M128i(maskzCvtusepi16Epi81(uint16(k), [32]byte(a)))
+func M256MaskzCvtusepi16Epi8(k x86.Mmask16, a x86.M256i) x86.M128i {
+	return x86.M128i(m256MaskzCvtusepi16Epi8(uint16(k), [32]byte(a)))
 }
 
-func maskzCvtusepi16Epi81(k uint16, a [32]byte) [16]byte
+func m256MaskzCvtusepi16Epi8(k uint16, a [32]byte) [16]byte
 
 
-// Cvtusepi16Epi82: Convert packed unsigned 16-bit integers in 'a' to packed
+// M512Cvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to packed
 // unsigned 8-bit integers with unsigned saturation, and store the results in
 // 'dst'. 
 //
@@ -6995,14 +6997,14 @@ func maskzCvtusepi16Epi81(k uint16, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func Cvtusepi16Epi82(a x86.M512i) x86.M256i {
-	return x86.M256i(cvtusepi16Epi82([64]byte(a)))
+func M512Cvtusepi16Epi8(a x86.M512i) x86.M256i {
+	return x86.M256i(m512Cvtusepi16Epi8([64]byte(a)))
 }
 
-func cvtusepi16Epi82(a [64]byte) [32]byte
+func m512Cvtusepi16Epi8(a [64]byte) [32]byte
 
 
-// MaskCvtusepi16Epi82: Convert packed unsigned 16-bit integers in 'a' to
+// M512MaskCvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to
 // packed unsigned 8-bit integers with unsigned saturation, and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
@@ -7020,14 +7022,14 @@ func cvtusepi16Epi82(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_mask_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16Epi82(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
-	return x86.M256i(maskCvtusepi16Epi82([32]byte(src), uint32(k), [64]byte(a)))
+func M512MaskCvtusepi16Epi8(src x86.M256i, k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(m512MaskCvtusepi16Epi8([32]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskCvtusepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
+func m512MaskCvtusepi16Epi8(src [32]byte, k uint32, a [64]byte) [32]byte
 
 
-// MaskzCvtusepi16Epi82: Convert packed unsigned 16-bit integers in 'a' to
+// M512MaskzCvtusepi16Epi8: Convert packed unsigned 16-bit integers in 'a' to
 // packed unsigned 8-bit integers with unsigned saturation, and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
@@ -7045,11 +7047,11 @@ func maskCvtusepi16Epi82(src [32]byte, k uint32, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_maskz_cvtusepi16_epi8'.
 // Requires AVX512BW.
-func MaskzCvtusepi16Epi82(k x86.Mmask32, a x86.M512i) x86.M256i {
-	return x86.M256i(maskzCvtusepi16Epi82(uint32(k), [64]byte(a)))
+func M512MaskzCvtusepi16Epi8(k x86.Mmask32, a x86.M512i) x86.M256i {
+	return x86.M256i(m512MaskzCvtusepi16Epi8(uint32(k), [64]byte(a)))
 }
 
-func maskzCvtusepi16Epi82(k uint32, a [64]byte) [32]byte
+func m512MaskzCvtusepi16Epi8(k uint32, a [64]byte) [32]byte
 
 
 // MaskCvtusepi16StoreuEpi8: Convert packed unsigned 16-bit integers in 'a' to
@@ -7075,8 +7077,8 @@ func MaskCvtusepi16StoreuEpi8(base_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 func maskCvtusepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte) 
 
 
-// MaskCvtusepi16StoreuEpi81: Convert packed unsigned 16-bit integers in 'a' to
-// packed unsigned 8-bit integers with unsigned saturation, and store the
+// M256MaskCvtusepi16StoreuEpi8: Convert packed unsigned 16-bit integers in 'a'
+// to packed unsigned 8-bit integers with unsigned saturation, and store the
 // active results (those with their respective bit set in writemask 'k') to
 // unaligned memory at 'base_addr'. 
 //
@@ -7091,15 +7093,15 @@ func maskCvtusepi16StoreuEpi8(base_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm256_mask_cvtusepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16StoreuEpi81(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	maskCvtusepi16StoreuEpi81(uintptr(base_addr), uint16(k), [32]byte(a))
+func M256MaskCvtusepi16StoreuEpi8(base_addr uintptr, k x86.Mmask16, a x86.M256i)  {
+	m256MaskCvtusepi16StoreuEpi8(uintptr(base_addr), uint16(k), [32]byte(a))
 }
 
-func maskCvtusepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte) 
+func m256MaskCvtusepi16StoreuEpi8(base_addr uintptr, k uint16, a [32]byte) 
 
 
-// MaskCvtusepi16StoreuEpi82: Convert packed unsigned 16-bit integers in 'a' to
-// packed unsigned 8-bit integers with unsigned saturation, and store the
+// M512MaskCvtusepi16StoreuEpi8: Convert packed unsigned 16-bit integers in 'a'
+// to packed unsigned 8-bit integers with unsigned saturation, and store the
 // active results (those with their respective bit set in writemask 'k') to
 // unaligned memory at 'base_addr'. 
 //
@@ -7114,11 +7116,11 @@ func maskCvtusepi16StoreuEpi81(base_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VPMOVUSWB'. Intrinsic: '_mm512_mask_cvtusepi16_storeu_epi8'.
 // Requires AVX512BW.
-func MaskCvtusepi16StoreuEpi82(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	maskCvtusepi16StoreuEpi82(uintptr(base_addr), uint32(k), [64]byte(a))
+func M512MaskCvtusepi16StoreuEpi8(base_addr uintptr, k x86.Mmask32, a x86.M512i)  {
+	m512MaskCvtusepi16StoreuEpi8(uintptr(base_addr), uint32(k), [64]byte(a))
 }
 
-func maskCvtusepi16StoreuEpi82(base_addr uintptr, k uint32, a [64]byte) 
+func m512MaskCvtusepi16StoreuEpi8(base_addr uintptr, k uint32, a [64]byte) 
 
 
 // DbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets of
@@ -7259,8 +7261,8 @@ func MaskzDbsadEpu8(k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.M128i 
 func maskzDbsadEpu8(k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
 
 
-// DbsadEpu81: Compute the sum of absolute differences (SADs) of quadruplets of
-// unsigned 8-bit integers in 'a' compared to those in 'b', and store the
+// M256DbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets
+// of unsigned 8-bit integers in 'a' compared to those in 'b', and store the
 // 16-bit results in 'dst'.
 // 	Four SADs are performed on four 8-bit quadruplets for each 64-bit lane. The
 // first two SADs use the lower 8-bit quadruplet of the lane from 'a', and the
@@ -7295,14 +7297,14 @@ func maskzDbsadEpu8(k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm256_dbsad_epu8'.
 // Requires AVX512BW.
-func DbsadEpu81(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(dbsadEpu81([32]byte(a), [32]byte(b), imm8))
+func M256DbsadEpu8(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256DbsadEpu8([32]byte(a), [32]byte(b), imm8))
 }
 
-func dbsadEpu81(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256DbsadEpu8(a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
-// MaskDbsadEpu81: Compute the sum of absolute differences (SADs) of
+// M256MaskDbsadEpu8: Compute the sum of absolute differences (SADs) of
 // quadruplets of unsigned 8-bit integers in 'a' compared to those in 'b', and
 // store the 16-bit results in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set).
@@ -7348,14 +7350,14 @@ func dbsadEpu81(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm256_mask_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskDbsadEpu81(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskDbsadEpu81([32]byte(src), uint16(k), [32]byte(a), [32]byte(b), imm8))
+func M256MaskDbsadEpu8(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskDbsadEpu8([32]byte(src), uint16(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func maskDbsadEpu81(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskDbsadEpu8(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
-// MaskzDbsadEpu81: Compute the sum of absolute differences (SADs) of
+// M256MaskzDbsadEpu8: Compute the sum of absolute differences (SADs) of
 // quadruplets of unsigned 8-bit integers in 'a' compared to those in 'b', and
 // store the 16-bit results in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set).
@@ -7401,15 +7403,15 @@ func maskDbsadEpu81(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 int) [3
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm256_maskz_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskzDbsadEpu81(k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskzDbsadEpu81(uint16(k), [32]byte(a), [32]byte(b), imm8))
+func M256MaskzDbsadEpu8(k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskzDbsadEpu8(uint16(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func maskzDbsadEpu81(k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskzDbsadEpu8(k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
-// DbsadEpu82: Compute the sum of absolute differences (SADs) of quadruplets of
-// unsigned 8-bit integers in 'a' compared to those in 'b', and store the
+// M512DbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets
+// of unsigned 8-bit integers in 'a' compared to those in 'b', and store the
 // 16-bit results in 'dst'.
 // 	Four SADs are performed on four 8-bit quadruplets for each 64-bit lane. The
 // first two SADs use the lower 8-bit quadruplet of the lane from 'a', and the
@@ -7444,14 +7446,14 @@ func maskzDbsadEpu81(k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_dbsad_epu8'.
 // Requires AVX512BW.
-func DbsadEpu82(a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(dbsadEpu82([64]byte(a), [64]byte(b), imm8))
+func M512DbsadEpu8(a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512DbsadEpu8([64]byte(a), [64]byte(b), imm8))
 }
 
-func dbsadEpu82(a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512DbsadEpu8(a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
-// MaskDbsadEpu82: Compute the sum of absolute differences (SADs) of
+// M512MaskDbsadEpu8: Compute the sum of absolute differences (SADs) of
 // quadruplets of unsigned 8-bit integers in 'a' compared to those in 'b', and
 // store the 16-bit results in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set).
@@ -7497,14 +7499,14 @@ func dbsadEpu82(a [64]byte, b [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_mask_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskDbsadEpu82(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(maskDbsadEpu82([64]byte(src), uint32(k), [64]byte(a), [64]byte(b), imm8))
+func M512MaskDbsadEpu8(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512MaskDbsadEpu8([64]byte(src), uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskDbsadEpu82(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskDbsadEpu8(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
-// MaskzDbsadEpu82: Compute the sum of absolute differences (SADs) of
+// M512MaskzDbsadEpu8: Compute the sum of absolute differences (SADs) of
 // quadruplets of unsigned 8-bit integers in 'a' compared to those in 'b', and
 // store the 16-bit results in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set).
@@ -7550,15 +7552,15 @@ func maskDbsadEpu82(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int) [6
 //
 // Instruction: 'VDBPSADBW'. Intrinsic: '_mm512_maskz_dbsad_epu8'.
 // Requires AVX512BW.
-func MaskzDbsadEpu82(k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(maskzDbsadEpu82(uint32(k), [64]byte(a), [64]byte(b), imm8))
+func M512MaskzDbsadEpu8(k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512MaskzDbsadEpu8(uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func maskzDbsadEpu82(k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskzDbsadEpu8(k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
 
 
-// Kunpackd: Unpack and interleave 32 bits from masks 'a' and 'b', and store
-// the 64-bit result in 'k'. 
+// M512Kunpackd: Unpack and interleave 32 bits from masks 'a' and 'b', and
+// store the 64-bit result in 'k'. 
 //
 //		k[31:0] := a[31:0]
 //		k[63:32] := b[31:0]
@@ -7566,15 +7568,15 @@ func maskzDbsadEpu82(k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'KUNPCKDQ'. Intrinsic: '_mm512_kunpackd'.
 // Requires AVX512BW.
-func Kunpackd(a x86.Mmask64, b x86.Mmask64) x86.Mmask64 {
-	return x86.Mmask64(kunpackd(uint64(a), uint64(b)))
+func M512Kunpackd(a x86.Mmask64, b x86.Mmask64) x86.Mmask64 {
+	return x86.Mmask64(m512Kunpackd(uint64(a), uint64(b)))
 }
 
-func kunpackd(a uint64, b uint64) uint64
+func m512Kunpackd(a uint64, b uint64) uint64
 
 
-// Kunpackw: Unpack and interleave 16 bits from masks 'a' and 'b', and store
-// the 32-bit result in 'k'. 
+// M512Kunpackw: Unpack and interleave 16 bits from masks 'a' and 'b', and
+// store the 32-bit result in 'k'. 
 //
 //		k[15:0] := a[15:0]
 //		k[31:16] := b[15:0]
@@ -7582,11 +7584,11 @@ func kunpackd(a uint64, b uint64) uint64
 //
 // Instruction: 'KUNPCKWD'. Intrinsic: '_mm512_kunpackw'.
 // Requires AVX512BW.
-func Kunpackw(a x86.Mmask32, b x86.Mmask32) x86.Mmask32 {
-	return x86.Mmask32(kunpackw(uint32(a), uint32(b)))
+func M512Kunpackw(a x86.Mmask32, b x86.Mmask32) x86.Mmask32 {
+	return x86.Mmask32(m512Kunpackw(uint32(a), uint32(b)))
 }
 
-func kunpackw(a uint32, b uint32) uint32
+func m512Kunpackw(a uint32, b uint32) uint32
 
 
 // MaskLoaduEpi16: Load packed 16-bit integers from memory into 'dst' using
@@ -7637,7 +7639,7 @@ func MaskzLoaduEpi16(k x86.Mmask8, mem_addr uintptr) x86.M128i {
 func maskzLoaduEpi16(k uint8, mem_addr uintptr) [16]byte
 
 
-// MaskLoaduEpi161: Load packed 16-bit integers from memory into 'dst' using
+// M256MaskLoaduEpi16: Load packed 16-bit integers from memory into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -7654,16 +7656,16 @@ func maskzLoaduEpi16(k uint8, mem_addr uintptr) [16]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_loadu_epi16'.
 // Requires AVX512BW.
-func MaskLoaduEpi161(src x86.M256i, k x86.Mmask16, mem_addr uintptr) x86.M256i {
-	return x86.M256i(maskLoaduEpi161([32]byte(src), uint16(k), uintptr(mem_addr)))
+func M256MaskLoaduEpi16(src x86.M256i, k x86.Mmask16, mem_addr uintptr) x86.M256i {
+	return x86.M256i(m256MaskLoaduEpi16([32]byte(src), uint16(k), uintptr(mem_addr)))
 }
 
-func maskLoaduEpi161(src [32]byte, k uint16, mem_addr uintptr) [32]byte
+func m256MaskLoaduEpi16(src [32]byte, k uint16, mem_addr uintptr) [32]byte
 
 
-// MaskzLoaduEpi161: Load packed 16-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
+// M256MaskzLoaduEpi16: Load packed 16-bit integers from memory into 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set).
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
 //		FOR j := 0 to 15
@@ -7678,14 +7680,14 @@ func maskLoaduEpi161(src [32]byte, k uint16, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_maskz_loadu_epi16'.
 // Requires AVX512BW.
-func MaskzLoaduEpi161(k x86.Mmask16, mem_addr uintptr) x86.M256i {
-	return x86.M256i(maskzLoaduEpi161(uint16(k), uintptr(mem_addr)))
+func M256MaskzLoaduEpi16(k x86.Mmask16, mem_addr uintptr) x86.M256i {
+	return x86.M256i(m256MaskzLoaduEpi16(uint16(k), uintptr(mem_addr)))
 }
 
-func maskzLoaduEpi161(k uint16, mem_addr uintptr) [32]byte
+func m256MaskzLoaduEpi16(k uint16, mem_addr uintptr) [32]byte
 
 
-// MaskLoaduEpi162: Load packed 16-bit integers from memory into 'dst' using
+// M512MaskLoaduEpi16: Load packed 16-bit integers from memory into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -7702,16 +7704,16 @@ func maskzLoaduEpi161(k uint16, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_loadu_epi16'.
 // Requires AVX512BW.
-func MaskLoaduEpi162(src x86.M512i, k x86.Mmask32, mem_addr uintptr) x86.M512i {
-	return x86.M512i(maskLoaduEpi162([64]byte(src), uint32(k), uintptr(mem_addr)))
+func M512MaskLoaduEpi16(src x86.M512i, k x86.Mmask32, mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoaduEpi16([64]byte(src), uint32(k), uintptr(mem_addr)))
 }
 
-func maskLoaduEpi162(src [64]byte, k uint32, mem_addr uintptr) [64]byte
+func m512MaskLoaduEpi16(src [64]byte, k uint32, mem_addr uintptr) [64]byte
 
 
-// MaskzLoaduEpi162: Load packed 16-bit integers from memory into 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set).
+// M512MaskzLoaduEpi16: Load packed 16-bit integers from memory into 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set).
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
 //		FOR j := 0 to 31
@@ -7726,11 +7728,11 @@ func maskLoaduEpi162(src [64]byte, k uint32, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_maskz_loadu_epi16'.
 // Requires AVX512BW.
-func MaskzLoaduEpi162(k x86.Mmask32, mem_addr uintptr) x86.M512i {
-	return x86.M512i(maskzLoaduEpi162(uint32(k), uintptr(mem_addr)))
+func M512MaskzLoaduEpi16(k x86.Mmask32, mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512MaskzLoaduEpi16(uint32(k), uintptr(mem_addr)))
 }
 
-func maskzLoaduEpi162(k uint32, mem_addr uintptr) [64]byte
+func m512MaskzLoaduEpi16(k uint32, mem_addr uintptr) [64]byte
 
 
 // MaskLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
@@ -7781,7 +7783,7 @@ func MaskzLoaduEpi8(k x86.Mmask16, mem_addr uintptr) x86.M128i {
 func maskzLoaduEpi8(k uint16, mem_addr uintptr) [16]byte
 
 
-// MaskLoaduEpi81: Load packed 8-bit integers from memory into 'dst' using
+// M256MaskLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -7798,14 +7800,14 @@ func maskzLoaduEpi8(k uint16, mem_addr uintptr) [16]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_loadu_epi8'.
 // Requires AVX512BW.
-func MaskLoaduEpi81(src x86.M256i, k x86.Mmask32, mem_addr uintptr) x86.M256i {
-	return x86.M256i(maskLoaduEpi81([32]byte(src), uint32(k), uintptr(mem_addr)))
+func M256MaskLoaduEpi8(src x86.M256i, k x86.Mmask32, mem_addr uintptr) x86.M256i {
+	return x86.M256i(m256MaskLoaduEpi8([32]byte(src), uint32(k), uintptr(mem_addr)))
 }
 
-func maskLoaduEpi81(src [32]byte, k uint32, mem_addr uintptr) [32]byte
+func m256MaskLoaduEpi8(src [32]byte, k uint32, mem_addr uintptr) [32]byte
 
 
-// MaskzLoaduEpi81: Load packed 8-bit integers from memory into 'dst' using
+// M256MaskzLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set).
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -7822,14 +7824,14 @@ func maskLoaduEpi81(src [32]byte, k uint32, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_maskz_loadu_epi8'.
 // Requires AVX512BW.
-func MaskzLoaduEpi81(k x86.Mmask32, mem_addr uintptr) x86.M256i {
-	return x86.M256i(maskzLoaduEpi81(uint32(k), uintptr(mem_addr)))
+func M256MaskzLoaduEpi8(k x86.Mmask32, mem_addr uintptr) x86.M256i {
+	return x86.M256i(m256MaskzLoaduEpi8(uint32(k), uintptr(mem_addr)))
 }
 
-func maskzLoaduEpi81(k uint32, mem_addr uintptr) [32]byte
+func m256MaskzLoaduEpi8(k uint32, mem_addr uintptr) [32]byte
 
 
-// MaskLoaduEpi82: Load packed 8-bit integers from memory into 'dst' using
+// M512MaskLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -7846,14 +7848,14 @@ func maskzLoaduEpi81(k uint32, mem_addr uintptr) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_loadu_epi8'.
 // Requires AVX512BW.
-func MaskLoaduEpi82(src x86.M512i, k x86.Mmask64, mem_addr uintptr) x86.M512i {
-	return x86.M512i(maskLoaduEpi82([64]byte(src), uint64(k), uintptr(mem_addr)))
+func M512MaskLoaduEpi8(src x86.M512i, k x86.Mmask64, mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512MaskLoaduEpi8([64]byte(src), uint64(k), uintptr(mem_addr)))
 }
 
-func maskLoaduEpi82(src [64]byte, k uint64, mem_addr uintptr) [64]byte
+func m512MaskLoaduEpi8(src [64]byte, k uint64, mem_addr uintptr) [64]byte
 
 
-// MaskzLoaduEpi82: Load packed 8-bit integers from memory into 'dst' using
+// M512MaskzLoaduEpi8: Load packed 8-bit integers from memory into 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set).
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -7870,11 +7872,11 @@ func maskLoaduEpi82(src [64]byte, k uint64, mem_addr uintptr) [64]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_maskz_loadu_epi8'.
 // Requires AVX512BW.
-func MaskzLoaduEpi82(k x86.Mmask64, mem_addr uintptr) x86.M512i {
-	return x86.M512i(maskzLoaduEpi82(uint64(k), uintptr(mem_addr)))
+func M512MaskzLoaduEpi8(k x86.Mmask64, mem_addr uintptr) x86.M512i {
+	return x86.M512i(m512MaskzLoaduEpi8(uint64(k), uintptr(mem_addr)))
 }
 
-func maskzLoaduEpi82(k uint64, mem_addr uintptr) [64]byte
+func m512MaskzLoaduEpi8(k uint64, mem_addr uintptr) [64]byte
 
 
 // MaskMaddEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -7926,7 +7928,7 @@ func MaskzMaddEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMaddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMaddEpi161: Multiply packed 16-bit integers in 'a' and 'b', producing
+// M256MaskMaddEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
 // intermediate 32-bit integers. Horizontally add adjacent pairs of
 // intermediate 32-bit integers, and pack the results in 'dst' using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
@@ -7944,15 +7946,15 @@ func maskzMaddEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm256_mask_madd_epi16'.
 // Requires AVX512BW.
-func MaskMaddEpi161(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMaddEpi161([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
+func M256MaskMaddEpi16(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMaddEpi16([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMaddEpi161(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
+func m256MaskMaddEpi16(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMaddEpi161: Multiply packed 16-bit integers in 'a' and 'b', producing
-// intermediate 32-bit integers. Horizontally add adjacent pairs of
+// M256MaskzMaddEpi16: Multiply packed 16-bit integers in 'a' and 'b',
+// producing intermediate 32-bit integers. Horizontally add adjacent pairs of
 // intermediate 32-bit integers, and pack the results in 'dst' using zeromask
 // 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -7968,14 +7970,14 @@ func maskMaddEpi161(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm256_maskz_madd_epi16'.
 // Requires AVX512BW.
-func MaskzMaddEpi161(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMaddEpi161(uint8(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMaddEpi16(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMaddEpi16(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMaddEpi161(k uint8, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMaddEpi16(k uint8, a [32]byte, b [32]byte) [32]byte
 
 
-// MaddEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
+// M512MaddEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
 // intermediate 32-bit integers. Horizontally add adjacent pairs of
 // intermediate 32-bit integers, and pack the results in 'dst'. 
 //
@@ -7987,14 +7989,14 @@ func maskzMaddEpi161(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_madd_epi16'.
 // Requires AVX512BW.
-func MaddEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maddEpi16([64]byte(a), [64]byte(b)))
+func M512MaddEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaddEpi16([64]byte(a), [64]byte(b)))
 }
 
-func maddEpi16(a [64]byte, b [64]byte) [64]byte
+func m512MaddEpi16(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMaddEpi162: Multiply packed 16-bit integers in 'a' and 'b', producing
+// M512MaskMaddEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
 // intermediate 32-bit integers. Horizontally add adjacent pairs of
 // intermediate 32-bit integers, and pack the results in 'dst' using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
@@ -8012,15 +8014,15 @@ func maddEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_mask_madd_epi16'.
 // Requires AVX512BW.
-func MaskMaddEpi162(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaddEpi162([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaddEpi16(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaddEpi16([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaddEpi162(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaddEpi16(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMaddEpi162: Multiply packed 16-bit integers in 'a' and 'b', producing
-// intermediate 32-bit integers. Horizontally add adjacent pairs of
+// M512MaskzMaddEpi16: Multiply packed 16-bit integers in 'a' and 'b',
+// producing intermediate 32-bit integers. Horizontally add adjacent pairs of
 // intermediate 32-bit integers, and pack the results in 'dst' using zeromask
 // 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -8036,11 +8038,11 @@ func maskMaddEpi162(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm512_maskz_madd_epi16'.
 // Requires AVX512BW.
-func MaskzMaddEpi162(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMaddEpi162(uint16(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMaddEpi16(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMaddEpi16(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaddEpi162(k uint16, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMaddEpi16(k uint16, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaddubsEpi16: Multiply packed unsigned 8-bit integers in 'a' by packed
@@ -8093,11 +8095,11 @@ func MaskzMaddubsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMaddubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMaddubsEpi161: Multiply packed unsigned 8-bit integers in 'a' by packed
-// signed 8-bit integers in 'b', producing intermediate signed 16-bit integers.
-// Horizontally add adjacent pairs of intermediate signed 16-bit integers, and
-// pack the saturated results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 
+// M256MaskMaddubsEpi16: Multiply packed unsigned 8-bit integers in 'a' by
+// packed signed 8-bit integers in 'b', producing intermediate signed 16-bit
+// integers. Horizontally add adjacent pairs of intermediate signed 16-bit
+// integers, and pack the saturated results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -8111,18 +8113,18 @@ func maskzMaddubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm256_mask_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskMaddubsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMaddubsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMaddubsEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMaddubsEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMaddubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMaddubsEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMaddubsEpi161: Multiply packed unsigned 8-bit integers in 'a' by packed
-// signed 8-bit integers in 'b', producing intermediate signed 16-bit integers.
-// Horizontally add adjacent pairs of intermediate signed 16-bit integers, and
-// pack the saturated results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
+// M256MaskzMaddubsEpi16: Multiply packed unsigned 8-bit integers in 'a' by
+// packed signed 8-bit integers in 'b', producing intermediate signed 16-bit
+// integers. Horizontally add adjacent pairs of intermediate signed 16-bit
+// integers, and pack the saturated results in 'dst' using zeromask 'k'
+// (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -8136,15 +8138,15 @@ func maskMaddubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm256_maskz_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskzMaddubsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMaddubsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMaddubsEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMaddubsEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMaddubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMaddubsEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaddubsEpi16: Vertically multiply each unsigned 8-bit integer from 'a' with
-// the corresponding signed 8-bit integer from 'b', producing intermediate
+// M512MaddubsEpi16: Vertically multiply each unsigned 8-bit integer from 'a'
+// with the corresponding signed 8-bit integer from 'b', producing intermediate
 // signed 16-bit integers. Horizontally add adjacent pairs of intermediate
 // signed 16-bit integers, and pack the saturated results in 'dst'. 
 //
@@ -8156,18 +8158,18 @@ func maskzMaddubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_maddubs_epi16'.
 // Requires AVX512BW.
-func MaddubsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maddubsEpi16([64]byte(a), [64]byte(b)))
+func M512MaddubsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaddubsEpi16([64]byte(a), [64]byte(b)))
 }
 
-func maddubsEpi16(a [64]byte, b [64]byte) [64]byte
+func m512MaddubsEpi16(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskMaddubsEpi162: Multiply packed unsigned 8-bit integers in 'a' by packed
-// signed 8-bit integers in 'b', producing intermediate signed 16-bit integers.
-// Horizontally add adjacent pairs of intermediate signed 16-bit integers, and
-// pack the saturated results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). 
+// M512MaskMaddubsEpi16: Multiply packed unsigned 8-bit integers in 'a' by
+// packed signed 8-bit integers in 'b', producing intermediate signed 16-bit
+// integers. Horizontally add adjacent pairs of intermediate signed 16-bit
+// integers, and pack the saturated results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -8181,18 +8183,18 @@ func maddubsEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_mask_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskMaddubsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaddubsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaddubsEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaddubsEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaddubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaddubsEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMaddubsEpi162: Multiply packed unsigned 8-bit integers in 'a' by packed
-// signed 8-bit integers in 'b', producing intermediate signed 16-bit integers.
-// Horizontally add adjacent pairs of intermediate signed 16-bit integers, and
-// pack the saturated results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
+// M512MaskzMaddubsEpi16: Multiply packed unsigned 8-bit integers in 'a' by
+// packed signed 8-bit integers in 'b', producing intermediate signed 16-bit
+// integers. Horizontally add adjacent pairs of intermediate signed 16-bit
+// integers, and pack the saturated results in 'dst' using zeromask 'k'
+// (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -8206,11 +8208,11 @@ func maskMaddubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm512_maskz_maddubs_epi16'.
 // Requires AVX512BW.
-func MaskzMaddubsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMaddubsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMaddubsEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMaddubsEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaddubsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMaddubsEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
@@ -8267,7 +8269,7 @@ func MaskzMaxEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMaxEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMaxEpi161: Compare packed 16-bit integers in 'a' and 'b', and store
+// M256MaskMaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -8287,14 +8289,14 @@ func maskzMaxEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm256_mask_max_epi16'.
 // Requires AVX512BW.
-func MaskMaxEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMaxEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMaxEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMaxEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMaxEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMaxEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMaxEpi161: Compare packed 16-bit integers in 'a' and 'b', and store
+// M256MaskzMaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -8314,14 +8316,14 @@ func maskMaxEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm256_maskz_max_epi16'.
 // Requires AVX512BW.
-func MaskzMaxEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMaxEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMaxEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMaxEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMaxEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMaxEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMaxEpi162: Compare packed 16-bit integers in 'a' and 'b', and store
+// M512MaskMaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -8341,14 +8343,14 @@ func maskzMaxEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_mask_max_epi16'.
 // Requires AVX512BW.
-func MaskMaxEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaxEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaxEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaxEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaxEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMaxEpi162: Compare packed 16-bit integers in 'a' and 'b', and store
+// M512MaskzMaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -8368,15 +8370,15 @@ func maskMaxEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_maskz_max_epi16'.
 // Requires AVX512BW.
-func MaskzMaxEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMaxEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMaxEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMaxEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMaxEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
-// maximum values in 'dst'. 
+// M512MaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
+// packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -8390,11 +8392,11 @@ func maskzMaxEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm512_max_epi16'.
 // Requires AVX512BW.
-func MaxEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maxEpi16([64]byte(a), [64]byte(b)))
+func M512MaxEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaxEpi16([64]byte(a), [64]byte(b)))
 }
 
-func maxEpi16(a [64]byte, b [64]byte) [64]byte
+func m512MaxEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
@@ -8451,9 +8453,9 @@ func MaskzMaxEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMaxEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMaxEpi81: Compare packed 8-bit integers in 'a' and 'b', and store packed
-// maximum values in 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 
+// M256MaskMaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
+// packed maximum values in 'dst' using writemask 'k' (elements are copied from
+// 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -8471,14 +8473,14 @@ func maskzMaxEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm256_mask_max_epi8'.
 // Requires AVX512BW.
-func MaskMaxEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMaxEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskMaxEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMaxEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMaxEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskMaxEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMaxEpi81: Compare packed 8-bit integers in 'a' and 'b', and store
+// M256MaskzMaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -8498,16 +8500,16 @@ func maskMaxEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm256_maskz_max_epi8'.
 // Requires AVX512BW.
-func MaskzMaxEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMaxEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMaxEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMaxEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMaxEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMaxEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMaxEpi82: Compare packed 8-bit integers in 'a' and 'b', and store packed
-// maximum values in 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 
+// M512MaskMaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
+// packed maximum values in 'dst' using writemask 'k' (elements are copied from
+// 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -8525,14 +8527,14 @@ func maskzMaxEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_mask_max_epi8'.
 // Requires AVX512BW.
-func MaskMaxEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaxEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaxEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaxEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaxEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMaxEpi82: Compare packed 8-bit integers in 'a' and 'b', and store
+// M512MaskzMaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
 // packed maximum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -8552,14 +8554,14 @@ func maskMaxEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_maskz_max_epi8'.
 // Requires AVX512BW.
-func MaskzMaxEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMaxEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMaxEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMaxEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMaxEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
+// M512MaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
 // maximum values in 'dst'. 
 //
 //		FOR j := 0 to 63
@@ -8574,11 +8576,11 @@ func maskzMaxEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm512_max_epi8'.
 // Requires AVX512BW.
-func MaxEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maxEpi8([64]byte(a), [64]byte(b)))
+func M512MaxEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaxEpi8([64]byte(a), [64]byte(b)))
 }
 
-func maxEpi8(a [64]byte, b [64]byte) [64]byte
+func m512MaxEpi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
@@ -8635,8 +8637,8 @@ func MaskzMaxEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMaxEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMaxEpu161: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed maximum values in 'dst' using writemask 'k' (elements are
+// M256MaskMaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed maximum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -8655,16 +8657,16 @@ func maskzMaxEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm256_mask_max_epu16'.
 // Requires AVX512BW.
-func MaskMaxEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMaxEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMaxEpu16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMaxEpu16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMaxEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMaxEpu16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMaxEpu161: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed maximum values in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
+// M256MaskzMaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed maximum values in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -8682,15 +8684,15 @@ func maskMaxEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm256_maskz_max_epu16'.
 // Requires AVX512BW.
-func MaskzMaxEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMaxEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMaxEpu16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMaxEpu16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMaxEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMaxEpu16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMaxEpu162: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed maximum values in 'dst' using writemask 'k' (elements are
+// M512MaskMaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed maximum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -8709,16 +8711,16 @@ func maskzMaxEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_mask_max_epu16'.
 // Requires AVX512BW.
-func MaskMaxEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaxEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaxEpu16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaxEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaxEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMaxEpu162: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed maximum values in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
+// M512MaskzMaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed maximum values in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -8736,15 +8738,15 @@ func maskMaxEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_maskz_max_epu16'.
 // Requires AVX512BW.
-func MaskzMaxEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMaxEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMaxEpu16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMaxEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMaxEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and store
-// packed maximum values in 'dst'. 
+// M512MaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
+// store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -8758,11 +8760,11 @@ func maskzMaxEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm512_max_epu16'.
 // Requires AVX512BW.
-func MaxEpu16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maxEpu16([64]byte(a), [64]byte(b)))
+func M512MaxEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaxEpu16([64]byte(a), [64]byte(b)))
 }
 
-func maxEpu16(a [64]byte, b [64]byte) [64]byte
+func m512MaxEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
@@ -8819,7 +8821,7 @@ func MaskzMaxEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMaxEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMaxEpu81: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M256MaskMaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed maximum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -8839,14 +8841,14 @@ func maskzMaxEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm256_mask_max_epu8'.
 // Requires AVX512BW.
-func MaskMaxEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMaxEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskMaxEpu8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMaxEpu8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMaxEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskMaxEpu8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMaxEpu81: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M256MaskzMaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed maximum values in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
 //
@@ -8866,14 +8868,14 @@ func maskMaxEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm256_maskz_max_epu8'.
 // Requires AVX512BW.
-func MaskzMaxEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMaxEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMaxEpu8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMaxEpu8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMaxEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMaxEpu8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMaxEpu82: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M512MaskMaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed maximum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -8893,14 +8895,14 @@ func maskzMaxEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_mask_max_epu8'.
 // Requires AVX512BW.
-func MaskMaxEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMaxEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskMaxEpu8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMaxEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMaxEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskMaxEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMaxEpu82: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M512MaskzMaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed maximum values in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
 //
@@ -8920,15 +8922,15 @@ func maskMaxEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_maskz_max_epu8'.
 // Requires AVX512BW.
-func MaskzMaxEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMaxEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMaxEpu8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMaxEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMaxEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMaxEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
-// packed maximum values in 'dst'. 
+// M512MaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -8942,11 +8944,11 @@ func maskzMaxEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm512_max_epu8'.
 // Requires AVX512BW.
-func MaxEpu8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maxEpu8([64]byte(a), [64]byte(b)))
+func M512MaxEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaxEpu8([64]byte(a), [64]byte(b)))
 }
 
-func maxEpu8(a [64]byte, b [64]byte) [64]byte
+func m512MaxEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
@@ -9003,7 +9005,7 @@ func MaskzMinEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMinEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMinEpi161: Compare packed 16-bit integers in 'a' and 'b', and store
+// M256MaskMinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -9023,14 +9025,14 @@ func maskzMinEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm256_mask_min_epi16'.
 // Requires AVX512BW.
-func MaskMinEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMinEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMinEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMinEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMinEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMinEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMinEpi161: Compare packed 16-bit integers in 'a' and 'b', and store
+// M256MaskzMinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -9050,14 +9052,14 @@ func maskMinEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm256_maskz_min_epi16'.
 // Requires AVX512BW.
-func MaskzMinEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMinEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMinEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMinEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMinEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMinEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMinEpi162: Compare packed 16-bit integers in 'a' and 'b', and store
+// M512MaskMinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
@@ -9077,14 +9079,14 @@ func maskzMinEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_mask_min_epi16'.
 // Requires AVX512BW.
-func MaskMinEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMinEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMinEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMinEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMinEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMinEpi162: Compare packed 16-bit integers in 'a' and 'b', and store
+// M512MaskzMinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -9104,15 +9106,15 @@ func maskMinEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_maskz_min_epi16'.
 // Requires AVX512BW.
-func MaskzMinEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMinEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMinEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMinEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMinEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
-// minimum values in 'dst'. 
+// M512MinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
+// packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -9126,11 +9128,11 @@ func maskzMinEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm512_min_epi16'.
 // Requires AVX512BW.
-func MinEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(minEpi16([64]byte(a), [64]byte(b)))
+func M512MinEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MinEpi16([64]byte(a), [64]byte(b)))
 }
 
-func minEpi16(a [64]byte, b [64]byte) [64]byte
+func m512MinEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
@@ -9187,9 +9189,9 @@ func MaskzMinEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMinEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMinEpi81: Compare packed 8-bit integers in 'a' and 'b', and store packed
-// minimum values in 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 
+// M256MaskMinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
+// packed minimum values in 'dst' using writemask 'k' (elements are copied from
+// 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -9207,14 +9209,14 @@ func maskzMinEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm256_mask_min_epi8'.
 // Requires AVX512BW.
-func MaskMinEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMinEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskMinEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMinEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMinEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskMinEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMinEpi81: Compare packed 8-bit integers in 'a' and 'b', and store
+// M256MaskzMinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -9234,16 +9236,16 @@ func maskMinEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm256_maskz_min_epi8'.
 // Requires AVX512BW.
-func MaskzMinEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMinEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMinEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMinEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMinEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMinEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMinEpi82: Compare packed 8-bit integers in 'a' and 'b', and store packed
-// minimum values in 'dst' using writemask 'k' (elements are copied from 'src'
-// when the corresponding mask bit is not set). 
+// M512MaskMinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
+// packed minimum values in 'dst' using writemask 'k' (elements are copied from
+// 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -9261,14 +9263,14 @@ func maskzMinEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_mask_min_epi8'.
 // Requires AVX512BW.
-func MaskMinEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMinEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskMinEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMinEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskMinEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMinEpi82: Compare packed 8-bit integers in 'a' and 'b', and store
+// M512MaskzMinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store
 // packed minimum values in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
 //
@@ -9288,14 +9290,14 @@ func maskMinEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_maskz_min_epi8'.
 // Requires AVX512BW.
-func MaskzMinEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMinEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMinEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMinEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMinEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
+// M512MinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
 // minimum values in 'dst'. 
 //
 //		FOR j := 0 to 63
@@ -9310,11 +9312,11 @@ func maskzMinEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm512_min_epi8'.
 // Requires AVX512BW.
-func MinEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(minEpi8([64]byte(a), [64]byte(b)))
+func M512MinEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MinEpi8([64]byte(a), [64]byte(b)))
 }
 
-func minEpi8(a [64]byte, b [64]byte) [64]byte
+func m512MinEpi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
@@ -9371,8 +9373,8 @@ func MaskzMinEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMinEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMinEpu161: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed minimum values in 'dst' using writemask 'k' (elements are
+// M256MaskMinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed minimum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -9391,16 +9393,16 @@ func maskzMinEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm256_mask_min_epu16'.
 // Requires AVX512BW.
-func MaskMinEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMinEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMinEpu16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMinEpu16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMinEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMinEpu16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMinEpu161: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed minimum values in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
+// M256MaskzMinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed minimum values in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -9418,15 +9420,15 @@ func maskMinEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm256_maskz_min_epu16'.
 // Requires AVX512BW.
-func MaskzMinEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMinEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMinEpu16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMinEpu16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMinEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMinEpu16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMinEpu162: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed minimum values in 'dst' using writemask 'k' (elements are
+// M512MaskMinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed minimum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -9445,16 +9447,16 @@ func maskzMinEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_mask_min_epu16'.
 // Requires AVX512BW.
-func MaskMinEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMinEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMinEpu16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMinEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMinEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMinEpu162: Compare packed unsigned 16-bit integers in 'a' and 'b', and
-// store packed minimum values in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). 
+// M512MaskzMinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b',
+// and store packed minimum values in 'dst' using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -9472,15 +9474,15 @@ func maskMinEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_maskz_min_epu16'.
 // Requires AVX512BW.
-func MaskzMinEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMinEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMinEpu16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMinEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMinEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and store
-// packed minimum values in 'dst'. 
+// M512MinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
+// store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -9494,11 +9496,11 @@ func maskzMinEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm512_min_epu16'.
 // Requires AVX512BW.
-func MinEpu16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(minEpu16([64]byte(a), [64]byte(b)))
+func M512MinEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MinEpu16([64]byte(a), [64]byte(b)))
 }
 
-func minEpu16(a [64]byte, b [64]byte) [64]byte
+func m512MinEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
@@ -9555,7 +9557,7 @@ func MaskzMinEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMinEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMinEpu81: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M256MaskMinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed minimum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -9575,14 +9577,14 @@ func maskzMinEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm256_mask_min_epu8'.
 // Requires AVX512BW.
-func MaskMinEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMinEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskMinEpu8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMinEpu8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMinEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskMinEpu8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMinEpu81: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M256MaskzMinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed minimum values in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
 //
@@ -9602,14 +9604,14 @@ func maskMinEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm256_maskz_min_epu8'.
 // Requires AVX512BW.
-func MaskzMinEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMinEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMinEpu8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMinEpu8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMinEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMinEpu8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMinEpu82: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M512MaskMinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed minimum values in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -9629,14 +9631,14 @@ func maskzMinEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_mask_min_epu8'.
 // Requires AVX512BW.
-func MaskMinEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMinEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskMinEpu8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMinEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMinEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskMinEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMinEpu82: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// M512MaskzMinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
 // store packed minimum values in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
 //
@@ -9656,15 +9658,15 @@ func maskMinEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_maskz_min_epu8'.
 // Requires AVX512BW.
-func MaskzMinEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMinEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMinEpu8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMinEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMinEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMinEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
-// packed minimum values in 'dst'. 
+// M512MinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -9678,11 +9680,11 @@ func maskzMinEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm512_min_epu8'.
 // Requires AVX512BW.
-func MinEpu8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(minEpu8([64]byte(a), [64]byte(b)))
+func M512MinEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MinEpu8([64]byte(a), [64]byte(b)))
 }
 
-func minEpu8(a [64]byte, b [64]byte) [64]byte
+func m512MinEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMovEpi16: Move packed 16-bit integers from 'a' into 'dst' using
@@ -9731,7 +9733,7 @@ func MaskzMovEpi16(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzMovEpi16(k uint8, a [16]byte) [16]byte
 
 
-// MaskMovEpi161: Move packed 16-bit integers from 'a' into 'dst' using
+// M256MaskMovEpi16: Move packed 16-bit integers from 'a' into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -9747,14 +9749,14 @@ func maskzMovEpi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_mov_epi16'.
 // Requires AVX512BW.
-func MaskMovEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i) x86.M256i {
-	return x86.M256i(maskMovEpi161([32]byte(src), uint16(k), [32]byte(a)))
+func M256MaskMovEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMovEpi16([32]byte(src), uint16(k), [32]byte(a)))
 }
 
-func maskMovEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
+func m256MaskMovEpi16(src [32]byte, k uint16, a [32]byte) [32]byte
 
 
-// MaskzMovEpi161: Move packed 16-bit integers from 'a' into 'dst' using
+// M256MaskzMovEpi16: Move packed 16-bit integers from 'a' into 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
 //
@@ -9770,14 +9772,14 @@ func maskMovEpi161(src [32]byte, k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_maskz_mov_epi16'.
 // Requires AVX512BW.
-func MaskzMovEpi161(k x86.Mmask16, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzMovEpi161(uint16(k), [32]byte(a)))
+func M256MaskzMovEpi16(k x86.Mmask16, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMovEpi16(uint16(k), [32]byte(a)))
 }
 
-func maskzMovEpi161(k uint16, a [32]byte) [32]byte
+func m256MaskzMovEpi16(k uint16, a [32]byte) [32]byte
 
 
-// MaskMovEpi162: Move packed 16-bit integers from 'a' into 'dst' using
+// M512MaskMovEpi16: Move packed 16-bit integers from 'a' into 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -9793,14 +9795,14 @@ func maskzMovEpi161(k uint16, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_mov_epi16'.
 // Requires AVX512BW.
-func MaskMovEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i) x86.M512i {
-	return x86.M512i(maskMovEpi162([64]byte(src), uint32(k), [64]byte(a)))
+func M512MaskMovEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMovEpi16([64]byte(src), uint32(k), [64]byte(a)))
 }
 
-func maskMovEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
+func m512MaskMovEpi16(src [64]byte, k uint32, a [64]byte) [64]byte
 
 
-// MaskzMovEpi162: Move packed 16-bit integers from 'a' into 'dst' using
+// M512MaskzMovEpi16: Move packed 16-bit integers from 'a' into 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
 //
@@ -9816,11 +9818,11 @@ func maskMovEpi162(src [64]byte, k uint32, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_maskz_mov_epi16'.
 // Requires AVX512BW.
-func MaskzMovEpi162(k x86.Mmask32, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzMovEpi162(uint32(k), [64]byte(a)))
+func M512MaskzMovEpi16(k x86.Mmask32, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMovEpi16(uint32(k), [64]byte(a)))
 }
 
-func maskzMovEpi162(k uint32, a [64]byte) [64]byte
+func m512MaskzMovEpi16(k uint32, a [64]byte) [64]byte
 
 
 // MaskMovEpi8: Move packed 8-bit integers from 'a' into 'dst' using writemask
@@ -9868,9 +9870,9 @@ func MaskzMovEpi8(k x86.Mmask16, a x86.M128i) x86.M128i {
 func maskzMovEpi8(k uint16, a [16]byte) [16]byte
 
 
-// MaskMovEpi81: Move packed 8-bit integers from 'a' into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M256MaskMovEpi8: Move packed 8-bit integers from 'a' into 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -9884,15 +9886,16 @@ func maskzMovEpi8(k uint16, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_mov_epi8'.
 // Requires AVX512BW.
-func MaskMovEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i) x86.M256i {
-	return x86.M256i(maskMovEpi81([32]byte(src), uint32(k), [32]byte(a)))
+func M256MaskMovEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMovEpi8([32]byte(src), uint32(k), [32]byte(a)))
 }
 
-func maskMovEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
+func m256MaskMovEpi8(src [32]byte, k uint32, a [32]byte) [32]byte
 
 
-// MaskzMovEpi81: Move packed 8-bit integers from 'a' into 'dst' using zeromask
-// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskzMovEpi8: Move packed 8-bit integers from 'a' into 'dst' using
+// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
+// set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -9906,16 +9909,16 @@ func maskMovEpi81(src [32]byte, k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_maskz_mov_epi8'.
 // Requires AVX512BW.
-func MaskzMovEpi81(k x86.Mmask32, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzMovEpi81(uint32(k), [32]byte(a)))
+func M256MaskzMovEpi8(k x86.Mmask32, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMovEpi8(uint32(k), [32]byte(a)))
 }
 
-func maskzMovEpi81(k uint32, a [32]byte) [32]byte
+func m256MaskzMovEpi8(k uint32, a [32]byte) [32]byte
 
 
-// MaskMovEpi82: Move packed 8-bit integers from 'a' into 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M512MaskMovEpi8: Move packed 8-bit integers from 'a' into 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -9929,15 +9932,16 @@ func maskzMovEpi81(k uint32, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_mov_epi8'.
 // Requires AVX512BW.
-func MaskMovEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i) x86.M512i {
-	return x86.M512i(maskMovEpi82([64]byte(src), uint64(k), [64]byte(a)))
+func M512MaskMovEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMovEpi8([64]byte(src), uint64(k), [64]byte(a)))
 }
 
-func maskMovEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
+func m512MaskMovEpi8(src [64]byte, k uint64, a [64]byte) [64]byte
 
 
-// MaskzMovEpi82: Move packed 8-bit integers from 'a' into 'dst' using zeromask
-// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskzMovEpi8: Move packed 8-bit integers from 'a' into 'dst' using
+// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
+// set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -9951,11 +9955,11 @@ func maskMovEpi82(src [64]byte, k uint64, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_maskz_mov_epi8'.
 // Requires AVX512BW.
-func MaskzMovEpi82(k x86.Mmask64, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzMovEpi82(uint64(k), [64]byte(a)))
+func M512MaskzMovEpi8(k x86.Mmask64, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMovEpi8(uint64(k), [64]byte(a)))
 }
 
-func maskzMovEpi82(k uint64, a [64]byte) [64]byte
+func m512MaskzMovEpi8(k uint64, a [64]byte) [64]byte
 
 
 // Movepi16Mask: Set each bit of mask register 'k' based on the most
@@ -9980,7 +9984,7 @@ func Movepi16Mask(a x86.M128i) x86.Mmask8 {
 func movepi16Mask(a [16]byte) uint8
 
 
-// Movepi16Mask1: Set each bit of mask register 'k' based on the most
+// M256Movepi16Mask: Set each bit of mask register 'k' based on the most
 // significant bit of the corresponding packed 16-bit integer in 'a'. 
 //
 //		FOR j := 0 to 15
@@ -9995,14 +9999,14 @@ func movepi16Mask(a [16]byte) uint8
 //
 // Instruction: 'VPMOVW2M'. Intrinsic: '_mm256_movepi16_mask'.
 // Requires AVX512BW.
-func Movepi16Mask1(a x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(movepi16Mask1([32]byte(a)))
+func M256Movepi16Mask(a x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256Movepi16Mask([32]byte(a)))
 }
 
-func movepi16Mask1(a [32]byte) uint16
+func m256Movepi16Mask(a [32]byte) uint16
 
 
-// Movepi16Mask2: Set each bit of mask register 'k' based on the most
+// M512Movepi16Mask: Set each bit of mask register 'k' based on the most
 // significant bit of the corresponding packed 16-bit integer in 'a'. 
 //
 //		FOR j := 0 to 31
@@ -10017,11 +10021,11 @@ func movepi16Mask1(a [32]byte) uint16
 //
 // Instruction: 'VPMOVW2M'. Intrinsic: '_mm512_movepi16_mask'.
 // Requires AVX512BW.
-func Movepi16Mask2(a x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(movepi16Mask2([64]byte(a)))
+func M512Movepi16Mask(a x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512Movepi16Mask([64]byte(a)))
 }
 
-func movepi16Mask2(a [64]byte) uint32
+func m512Movepi16Mask(a [64]byte) uint32
 
 
 // Movepi8Mask: Set each bit of mask register 'k' based on the most significant
@@ -10046,7 +10050,7 @@ func Movepi8Mask(a x86.M128i) x86.Mmask16 {
 func movepi8Mask(a [16]byte) uint16
 
 
-// Movepi8Mask1: Set each bit of mask register 'k' based on the most
+// M256Movepi8Mask: Set each bit of mask register 'k' based on the most
 // significant bit of the corresponding packed 8-bit integer in 'a'. 
 //
 //		FOR j := 0 to 31
@@ -10061,14 +10065,14 @@ func movepi8Mask(a [16]byte) uint16
 //
 // Instruction: 'VPMOVB2M'. Intrinsic: '_mm256_movepi8_mask'.
 // Requires AVX512BW.
-func Movepi8Mask1(a x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(movepi8Mask1([32]byte(a)))
+func M256Movepi8Mask(a x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256Movepi8Mask([32]byte(a)))
 }
 
-func movepi8Mask1(a [32]byte) uint32
+func m256Movepi8Mask(a [32]byte) uint32
 
 
-// Movepi8Mask2: Set each bit of mask register 'k' based on the most
+// M512Movepi8Mask: Set each bit of mask register 'k' based on the most
 // significant bit of the corresponding packed 8-bit integer in 'a'. 
 //
 //		FOR j := 0 to 63
@@ -10083,11 +10087,11 @@ func movepi8Mask1(a [32]byte) uint32
 //
 // Instruction: 'VPMOVB2M'. Intrinsic: '_mm512_movepi8_mask'.
 // Requires AVX512BW.
-func Movepi8Mask2(a x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(movepi8Mask2([64]byte(a)))
+func M512Movepi8Mask(a x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512Movepi8Mask([64]byte(a)))
 }
 
-func movepi8Mask2(a [64]byte) uint64
+func m512Movepi8Mask(a [64]byte) uint64
 
 
 // MovmEpi16: Set each packed 16-bit integer in 'dst' to all ones or all zeros
@@ -10112,8 +10116,8 @@ func MovmEpi16(k x86.Mmask8) x86.M128i {
 func movmEpi16(k uint8) [16]byte
 
 
-// MovmEpi161: Set each packed 16-bit integer in 'dst' to all ones or all zeros
-// based on the value of the corresponding bit in 'k'. 
+// M256MovmEpi16: Set each packed 16-bit integer in 'dst' to all ones or all
+// zeros based on the value of the corresponding bit in 'k'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -10127,15 +10131,15 @@ func movmEpi16(k uint8) [16]byte
 //
 // Instruction: 'VPMOVM2W'. Intrinsic: '_mm256_movm_epi16'.
 // Requires AVX512BW.
-func MovmEpi161(k x86.Mmask16) x86.M256i {
-	return x86.M256i(movmEpi161(uint16(k)))
+func M256MovmEpi16(k x86.Mmask16) x86.M256i {
+	return x86.M256i(m256MovmEpi16(uint16(k)))
 }
 
-func movmEpi161(k uint16) [32]byte
+func m256MovmEpi16(k uint16) [32]byte
 
 
-// MovmEpi162: Set each packed 16-bit integer in 'dst' to all ones or all zeros
-// based on the value of the corresponding bit in 'k'. 
+// M512MovmEpi16: Set each packed 16-bit integer in 'dst' to all ones or all
+// zeros based on the value of the corresponding bit in 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -10149,15 +10153,15 @@ func movmEpi161(k uint16) [32]byte
 //
 // Instruction: 'VPMOVM2W'. Intrinsic: '_mm512_movm_epi16'.
 // Requires AVX512BW.
-func MovmEpi162(k x86.Mmask32) x86.M512i {
-	return x86.M512i(movmEpi162(uint32(k)))
+func M512MovmEpi16(k x86.Mmask32) x86.M512i {
+	return x86.M512i(m512MovmEpi16(uint32(k)))
 }
 
-func movmEpi162(k uint32) [64]byte
+func m512MovmEpi16(k uint32) [64]byte
 
 
-// MovmEpi8: Set each packed 8-bit integer in 'dst' to all ones or all zeros
-// based on the value of the corresponding bit in 'k'. 
+// M256MovmEpi8: Set each packed 8-bit integer in 'dst' to all ones or all
+// zeros based on the value of the corresponding bit in 'k'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -10171,15 +10175,15 @@ func movmEpi162(k uint32) [64]byte
 //
 // Instruction: 'VPMOVM2B'. Intrinsic: '_mm256_movm_epi8'.
 // Requires AVX512BW.
-func MovmEpi8(k x86.Mmask32) x86.M256i {
-	return x86.M256i(movmEpi8(uint32(k)))
+func M256MovmEpi8(k x86.Mmask32) x86.M256i {
+	return x86.M256i(m256MovmEpi8(uint32(k)))
 }
 
-func movmEpi8(k uint32) [32]byte
+func m256MovmEpi8(k uint32) [32]byte
 
 
-// MovmEpi81: Set each packed 8-bit integer in 'dst' to all ones or all zeros
-// based on the value of the corresponding bit in 'k'. 
+// M512MovmEpi8: Set each packed 8-bit integer in 'dst' to all ones or all
+// zeros based on the value of the corresponding bit in 'k'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -10193,11 +10197,11 @@ func movmEpi8(k uint32) [32]byte
 //
 // Instruction: 'VPMOVM2B'. Intrinsic: '_mm512_movm_epi8'.
 // Requires AVX512BW.
-func MovmEpi81(k x86.Mmask64) x86.M512i {
-	return x86.M512i(movmEpi81(uint64(k)))
+func M512MovmEpi8(k x86.Mmask64) x86.M512i {
+	return x86.M512i(m512MovmEpi8(uint64(k)))
 }
 
-func movmEpi81(k uint64) [64]byte
+func m512MovmEpi8(k uint64) [64]byte
 
 
 // MaskMulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
@@ -10250,7 +10254,7 @@ func MaskzMulhiEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMulhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMulhiEpi161: Multiply the packed 16-bit integers in 'a' and 'b',
+// M256MaskMulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the high 16 bits of the
 // intermediate integers in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -10268,14 +10272,14 @@ func maskzMulhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm256_mask_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskMulhiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMulhiEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMulhiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMulhiEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMulhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMulhiEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMulhiEpi161: Multiply the packed 16-bit integers in 'a' and 'b',
+// M256MaskzMulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the high 16 bits of the
 // intermediate integers in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -10293,14 +10297,14 @@ func maskMulhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm256_maskz_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskzMulhiEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMulhiEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMulhiEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMulhiEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMulhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMulhiEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMulhiEpi162: Multiply the packed 16-bit integers in 'a' and 'b',
+// M512MaskMulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the high 16 bits of the
 // intermediate integers in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -10318,14 +10322,14 @@ func maskzMulhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_mask_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskMulhiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMulhiEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMulhiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMulhiEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMulhiEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMulhiEpi162: Multiply the packed 16-bit integers in 'a' and 'b',
+// M512MaskzMulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the high 16 bits of the
 // intermediate integers in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -10343,16 +10347,16 @@ func maskMulhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_maskz_mulhi_epi16'.
 // Requires AVX512BW.
-func MaskzMulhiEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMulhiEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMulhiEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMulhiEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMulhiEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
-// intermediate 32-bit integers, and store the high 16 bits of the intermediate
-// integers in 'dst'. 
+// M512MulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
+// producing intermediate 32-bit integers, and store the high 16 bits of the
+// intermediate integers in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -10363,11 +10367,11 @@ func maskzMulhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm512_mulhi_epi16'.
 // Requires AVX512BW.
-func MulhiEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(mulhiEpi16([64]byte(a), [64]byte(b)))
+func M512MulhiEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MulhiEpi16([64]byte(a), [64]byte(b)))
 }
 
-func mulhiEpi16(a [64]byte, b [64]byte) [64]byte
+func m512MulhiEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
@@ -10420,7 +10424,7 @@ func MaskzMulhiEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMulhiEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMulhiEpu161: Multiply the packed unsigned 16-bit integers in 'a' and
+// M256MaskMulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and
 // 'b', producing intermediate 32-bit integers, and store the high 16 bits of
 // the intermediate integers in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set). 
@@ -10438,14 +10442,14 @@ func maskzMulhiEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm256_mask_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskMulhiEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMulhiEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMulhiEpu16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMulhiEpu16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMulhiEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMulhiEpu16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMulhiEpu161: Multiply the packed unsigned 16-bit integers in 'a' and
+// M256MaskzMulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and
 // 'b', producing intermediate 32-bit integers, and store the high 16 bits of
 // the intermediate integers in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
@@ -10463,14 +10467,14 @@ func maskMulhiEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm256_maskz_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskzMulhiEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMulhiEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMulhiEpu16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMulhiEpu16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMulhiEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMulhiEpu16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMulhiEpu162: Multiply the packed unsigned 16-bit integers in 'a' and
+// M512MaskMulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and
 // 'b', producing intermediate 32-bit integers, and store the high 16 bits of
 // the intermediate integers in 'dst' using writemask 'k' (elements are copied
 // from 'src' when the corresponding mask bit is not set). 
@@ -10488,14 +10492,14 @@ func maskzMulhiEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_mask_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskMulhiEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMulhiEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMulhiEpu16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMulhiEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhiEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMulhiEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMulhiEpu162: Multiply the packed unsigned 16-bit integers in 'a' and
+// M512MaskzMulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and
 // 'b', producing intermediate 32-bit integers, and store the high 16 bits of
 // the intermediate integers in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
@@ -10513,14 +10517,14 @@ func maskMulhiEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_maskz_mulhi_epu16'.
 // Requires AVX512BW.
-func MaskzMulhiEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMulhiEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMulhiEpu16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMulhiEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulhiEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMulhiEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
+// M512MulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the high 16 bits of the
 // intermediate integers in 'dst'. 
 //
@@ -10533,11 +10537,11 @@ func maskzMulhiEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm512_mulhi_epu16'.
 // Requires AVX512BW.
-func MulhiEpu16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(mulhiEpu16([64]byte(a), [64]byte(b)))
+func M512MulhiEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MulhiEpu16([64]byte(a), [64]byte(b)))
 }
 
-func mulhiEpu16(a [64]byte, b [64]byte) [64]byte
+func m512MulhiEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -10592,10 +10596,10 @@ func MaskzMulhrsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMulhrsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMulhrsEpi161: Multiply packed 16-bit integers in 'a' and 'b', producing
-// intermediate signed 32-bit integers. Truncate each intermediate integer to
-// the 18 most significant bits, round by adding 1, and store bits [16:1] to
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// M256MaskMulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b',
+// producing intermediate signed 32-bit integers. Truncate each intermediate
+// integer to the 18 most significant bits, round by adding 1, and store bits
+// [16:1] to 'dst' using writemask 'k' (elements are copied from 'src' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -10611,18 +10615,18 @@ func maskzMulhrsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm256_mask_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskMulhrsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMulhrsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMulhrsEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMulhrsEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMulhrsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMulhrsEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMulhrsEpi161: Multiply packed 16-bit integers in 'a' and 'b', producing
-// intermediate signed 32-bit integers. Truncate each intermediate integer to
-// the 18 most significant bits, round by adding 1, and store bits [16:1] to
-// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M256MaskzMulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b',
+// producing intermediate signed 32-bit integers. Truncate each intermediate
+// integer to the 18 most significant bits, round by adding 1, and store bits
+// [16:1] to 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -10637,17 +10641,17 @@ func maskMulhrsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm256_maskz_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskzMulhrsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMulhrsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMulhrsEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMulhrsEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMulhrsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMulhrsEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMulhrsEpi162: Multiply packed 16-bit integers in 'a' and 'b', producing
-// intermediate signed 32-bit integers. Truncate each intermediate integer to
-// the 18 most significant bits, round by adding 1, and store bits [16:1] to
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// M512MaskMulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b',
+// producing intermediate signed 32-bit integers. Truncate each intermediate
+// integer to the 18 most significant bits, round by adding 1, and store bits
+// [16:1] to 'dst' using writemask 'k' (elements are copied from 'src' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -10663,18 +10667,18 @@ func maskzMulhrsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_mask_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskMulhrsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMulhrsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMulhrsEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMulhrsEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulhrsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMulhrsEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMulhrsEpi162: Multiply packed 16-bit integers in 'a' and 'b', producing
-// intermediate signed 32-bit integers. Truncate each intermediate integer to
-// the 18 most significant bits, round by adding 1, and store bits [16:1] to
-// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M512MaskzMulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b',
+// producing intermediate signed 32-bit integers. Truncate each intermediate
+// integer to the 18 most significant bits, round by adding 1, and store bits
+// [16:1] to 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -10689,14 +10693,14 @@ func maskMulhrsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_maskz_mulhrs_epi16'.
 // Requires AVX512BW.
-func MaskzMulhrsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMulhrsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMulhrsEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMulhrsEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulhrsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMulhrsEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
+// M512MulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
 // intermediate signed 32-bit integers. Truncate each intermediate integer to
 // the 18 most significant bits, round by adding 1, and store bits [16:1] to
 // 'dst'. 
@@ -10710,11 +10714,11 @@ func maskzMulhrsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm512_mulhrs_epi16'.
 // Requires AVX512BW.
-func MulhrsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(mulhrsEpi16([64]byte(a), [64]byte(b)))
+func M512MulhrsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MulhrsEpi16([64]byte(a), [64]byte(b)))
 }
 
-func mulhrsEpi16(a [64]byte, b [64]byte) [64]byte
+func m512MulhrsEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskMulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
@@ -10767,7 +10771,7 @@ func MaskzMulloEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzMulloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMulloEpi161: Multiply the packed 16-bit integers in 'a' and 'b',
+// M256MaskMulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the low 16 bits of the
 // intermediate integers in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -10785,14 +10789,14 @@ func maskzMulloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm256_mask_mullo_epi16'.
 // Requires AVX512BW.
-func MaskMulloEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMulloEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskMulloEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMulloEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMulloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskMulloEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMulloEpi161: Multiply the packed 16-bit integers in 'a' and 'b',
+// M256MaskzMulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the low 16 bits of the
 // intermediate integers in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -10810,14 +10814,14 @@ func maskMulloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm256_maskz_mullo_epi16'.
 // Requires AVX512BW.
-func MaskzMulloEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMulloEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMulloEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMulloEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMulloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMulloEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskMulloEpi162: Multiply the packed 16-bit integers in 'a' and 'b',
+// M512MaskMulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the low 16 bits of the
 // intermediate integers in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -10835,14 +10839,14 @@ func maskzMulloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_mask_mullo_epi16'.
 // Requires AVX512BW.
-func MaskMulloEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMulloEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskMulloEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMulloEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMulloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskMulloEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMulloEpi162: Multiply the packed 16-bit integers in 'a' and 'b',
+// M512MaskzMulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the low 16 bits of the
 // intermediate integers in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -10860,16 +10864,16 @@ func maskMulloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_maskz_mullo_epi16'.
 // Requires AVX512BW.
-func MaskzMulloEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMulloEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMulloEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMulloEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMulloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMulloEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
-// intermediate 32-bit integers, and store the low 16 bits of the intermediate
-// integers in 'dst'. 
+// M512MulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
+// producing intermediate 32-bit integers, and store the low 16 bits of the
+// intermediate integers in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -10880,11 +10884,11 @@ func maskzMulloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm512_mullo_epi16'.
 // Requires AVX512BW.
-func MulloEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(mulloEpi16([64]byte(a), [64]byte(b)))
+func M512MulloEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MulloEpi16([64]byte(a), [64]byte(b)))
 }
 
-func mulloEpi16(a [64]byte, b [64]byte) [64]byte
+func m512MulloEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed
@@ -10969,10 +10973,10 @@ func MaskzPacksEpi16(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzPacksEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskPacksEpi161: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using signed saturation, and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M256MaskPacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using signed saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_Int8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_Int8 (a[31:16])
@@ -11019,17 +11023,17 @@ func maskzPacksEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm256_mask_packs_epi16'.
 // Requires AVX512BW.
-func MaskPacksEpi161(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskPacksEpi161([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskPacksEpi16(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPacksEpi16([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskPacksEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskPacksEpi16(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzPacksEpi161: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using signed saturation, and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzPacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using signed saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_Int8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_Int8 (a[31:16])
@@ -11076,17 +11080,17 @@ func maskPacksEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm256_maskz_packs_epi16'.
 // Requires AVX512BW.
-func MaskzPacksEpi161(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzPacksEpi161(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzPacksEpi16(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPacksEpi16(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzPacksEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzPacksEpi16(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskPacksEpi162: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using signed saturation, and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskPacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using signed saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_Int8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_Int8 (a[31:16])
@@ -11165,17 +11169,17 @@ func maskzPacksEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_mask_packs_epi16'.
 // Requires AVX512BW.
-func MaskPacksEpi162(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskPacksEpi162([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskPacksEpi16(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPacksEpi16([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPacksEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskPacksEpi16(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzPacksEpi162: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using signed saturation, and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzPacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using signed saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_Int8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_Int8 (a[31:16])
@@ -11254,15 +11258,15 @@ func maskPacksEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_maskz_packs_epi16'.
 // Requires AVX512BW.
-func MaskzPacksEpi162(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzPacksEpi162(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzPacksEpi16(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPacksEpi16(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPacksEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzPacksEpi16(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// PacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
-// integers using signed saturation, and store the results in 'dst'. 
+// M512PacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed
+// 8-bit integers using signed saturation, and store the results in 'dst'. 
 //
 //		dst[7:0] := Saturate_Int16_To_Int8 (a[15:0])
 //		dst[15:8] := Saturate_Int16_To_Int8 (a[31:16])
@@ -11332,11 +11336,11 @@ func maskzPacksEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm512_packs_epi16'.
 // Requires AVX512BW.
-func PacksEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(packsEpi16([64]byte(a), [64]byte(b)))
+func M512PacksEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512PacksEpi16([64]byte(a), [64]byte(b)))
 }
 
-func packsEpi16(a [64]byte, b [64]byte) [64]byte
+func m512PacksEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
@@ -11405,10 +11409,10 @@ func MaskzPacksEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzPacksEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskPacksEpi321: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using signed saturation, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). 
+// M256MaskPacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using signed saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_Int16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_Int16 (a[63:32])
@@ -11439,17 +11443,17 @@ func maskzPacksEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm256_mask_packs_epi32'.
 // Requires AVX512BW.
-func MaskPacksEpi321(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskPacksEpi321([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskPacksEpi32(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPacksEpi32([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskPacksEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskPacksEpi32(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzPacksEpi321: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using signed saturation, and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). 
+// M256MaskzPacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using signed saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_Int16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_Int16 (a[63:32])
@@ -11480,17 +11484,17 @@ func maskPacksEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm256_maskz_packs_epi32'.
 // Requires AVX512BW.
-func MaskzPacksEpi321(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzPacksEpi321(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzPacksEpi32(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPacksEpi32(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzPacksEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzPacksEpi32(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskPacksEpi322: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using signed saturation, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). 
+// M512MaskPacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using signed saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_Int16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_Int16 (a[63:32])
@@ -11537,17 +11541,17 @@ func maskzPacksEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_mask_packs_epi32'.
 // Requires AVX512BW.
-func MaskPacksEpi322(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskPacksEpi322([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskPacksEpi32(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPacksEpi32([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPacksEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskPacksEpi32(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzPacksEpi322: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using signed saturation, and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). 
+// M512MaskzPacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using signed saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_Int16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_Int16 (a[63:32])
@@ -11594,15 +11598,15 @@ func maskPacksEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_maskz_packs_epi32'.
 // Requires AVX512BW.
-func MaskzPacksEpi322(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzPacksEpi322(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzPacksEpi32(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPacksEpi32(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPacksEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzPacksEpi32(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// PacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed 16-bit
-// integers using signed saturation, and store the results in 'dst'. 
+// M512PacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
+// 16-bit integers using signed saturation, and store the results in 'dst'. 
 //
 //		dst[15:0] := Saturate_Int32_To_Int16 (a[31:0])
 //		dst[31:16] := Saturate_Int32_To_Int16 (a[63:32])
@@ -11640,11 +11644,11 @@ func maskzPacksEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm512_packs_epi32'.
 // Requires AVX512BW.
-func PacksEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(packsEpi32([64]byte(a), [64]byte(b)))
+func M512PacksEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512PacksEpi32([64]byte(a), [64]byte(b)))
 }
 
-func packsEpi32(a [64]byte, b [64]byte) [64]byte
+func m512PacksEpi32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed
@@ -11729,10 +11733,10 @@ func MaskzPackusEpi16(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzPackusEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskPackusEpi161: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using unsigned saturation, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). 
+// M256MaskPackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using unsigned saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_UnsignedInt8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_UnsignedInt8 (a[31:16])
@@ -11779,17 +11783,17 @@ func maskzPackusEpi16(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm256_mask_packus_epi16'.
 // Requires AVX512BW.
-func MaskPackusEpi161(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskPackusEpi161([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskPackusEpi16(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPackusEpi16([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskPackusEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskPackusEpi16(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzPackusEpi161: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using unsigned saturation, and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). 
+// M256MaskzPackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using unsigned saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_UnsignedInt8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_UnsignedInt8 (a[31:16])
@@ -11836,17 +11840,17 @@ func maskPackusEpi161(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm256_maskz_packus_epi16'.
 // Requires AVX512BW.
-func MaskzPackusEpi161(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzPackusEpi161(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzPackusEpi16(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPackusEpi16(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzPackusEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzPackusEpi16(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskPackusEpi162: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using unsigned saturation, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). 
+// M512MaskPackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using unsigned saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_UnsignedInt8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_UnsignedInt8 (a[31:16])
@@ -11925,17 +11929,17 @@ func maskzPackusEpi161(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_mask_packus_epi16'.
 // Requires AVX512BW.
-func MaskPackusEpi162(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskPackusEpi162([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskPackusEpi16(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPackusEpi16([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPackusEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskPackusEpi16(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzPackusEpi162: Convert packed 16-bit integers from 'a' and 'b' to packed
-// 8-bit integers using unsigned saturation, and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). 
+// M512MaskzPackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to
+// packed 8-bit integers using unsigned saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[7:0] := Saturate_Int16_To_UnsignedInt8 (a[15:0])
 //		tmp_dst[15:8] := Saturate_Int16_To_UnsignedInt8 (a[31:16])
@@ -12014,15 +12018,15 @@ func maskPackusEpi162(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_maskz_packus_epi16'.
 // Requires AVX512BW.
-func MaskzPackusEpi162(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzPackusEpi162(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzPackusEpi16(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPackusEpi16(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPackusEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzPackusEpi16(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// PackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
-// integers using unsigned saturation, and store the results in 'dst'. 
+// M512PackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed
+// 8-bit integers using unsigned saturation, and store the results in 'dst'. 
 //
 //		dst[7:0] := Saturate_Int16_To_UnsignedInt8 (a[15:0])
 //		dst[15:8] := Saturate_Int16_To_UnsignedInt8 (a[31:16])
@@ -12092,11 +12096,11 @@ func maskzPackusEpi162(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm512_packus_epi16'.
 // Requires AVX512BW.
-func PackusEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(packusEpi16([64]byte(a), [64]byte(b)))
+func M512PackusEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512PackusEpi16([64]byte(a), [64]byte(b)))
 }
 
-func packusEpi16(a [64]byte, b [64]byte) [64]byte
+func m512PackusEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
@@ -12165,10 +12169,10 @@ func MaskzPackusEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzPackusEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskPackusEpi321: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using unsigned saturation, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). 
+// M256MaskPackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using unsigned saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_UnsignedInt16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_UnsignedInt16 (a[63:32])
@@ -12199,17 +12203,17 @@ func maskzPackusEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm256_mask_packus_epi32'.
 // Requires AVX512BW.
-func MaskPackusEpi321(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskPackusEpi321([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskPackusEpi32(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPackusEpi32([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskPackusEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskPackusEpi32(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzPackusEpi321: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using unsigned saturation, and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). 
+// M256MaskzPackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using unsigned saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_UnsignedInt16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_UnsignedInt16 (a[63:32])
@@ -12240,17 +12244,17 @@ func maskPackusEpi321(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm256_maskz_packus_epi32'.
 // Requires AVX512BW.
-func MaskzPackusEpi321(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzPackusEpi321(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzPackusEpi32(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPackusEpi32(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzPackusEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzPackusEpi32(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskPackusEpi322: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using unsigned saturation, and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). 
+// M512MaskPackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using unsigned saturation, and store the results in
+// 'dst' using writemask 'k' (elements are copied from 'src' when the
+// corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_UnsignedInt16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_UnsignedInt16 (a[63:32])
@@ -12297,17 +12301,17 @@ func maskzPackusEpi321(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_mask_packus_epi32'.
 // Requires AVX512BW.
-func MaskPackusEpi322(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskPackusEpi322([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskPackusEpi32(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPackusEpi32([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskPackusEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskPackusEpi32(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzPackusEpi322: Convert packed 32-bit integers from 'a' and 'b' to packed
-// 16-bit integers using unsigned saturation, and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). 
+// M512MaskzPackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to
+// packed 16-bit integers using unsigned saturation, and store the results in
+// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
+// mask bit is not set). 
 //
 //		tmp_dst[15:0] := Saturate_Int32_To_UnsignedInt16 (a[31:0])
 //		tmp_dst[31:16] := Saturate_Int32_To_UnsignedInt16 (a[63:32])
@@ -12354,14 +12358,14 @@ func maskPackusEpi322(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_maskz_packus_epi32'.
 // Requires AVX512BW.
-func MaskzPackusEpi322(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzPackusEpi322(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzPackusEpi32(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPackusEpi32(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzPackusEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzPackusEpi32(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// PackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
+// M512PackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
 // 16-bit integers using unsigned saturation, and store the results in 'dst'. 
 //
 //		dst[15:0] := Saturate_Int32_To_UnsignedInt16 (a[31:0])
@@ -12400,11 +12404,11 @@ func maskzPackusEpi322(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm512_packus_epi32'.
 // Requires AVX512BW.
-func PackusEpi32(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(packusEpi32([64]byte(a), [64]byte(b)))
+func M512PackusEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512PackusEpi32([64]byte(a), [64]byte(b)))
 }
 
-func packusEpi32(a [64]byte, b [64]byte) [64]byte
+func m512PackusEpi32(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskPermutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' using the
@@ -12501,9 +12505,9 @@ func Permutex2varEpi16(a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
 func permutex2varEpi16(a [16]byte, idx [16]byte, b [16]byte) [16]byte
 
 
-// MaskPermutex2varEpi161: Shuffle 16-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using writemask 'k' (elements are copied from 'a' when the
+// M256MaskPermutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'a' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -12519,17 +12523,17 @@ func permutex2varEpi16(a [16]byte, idx [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPERMT2W'. Intrinsic: '_mm256_mask_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskPermutex2varEpi161(a x86.M256i, k x86.Mmask16, idx x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskPermutex2varEpi161([32]byte(a), uint16(k), [32]byte(idx), [32]byte(b)))
+func M256MaskPermutex2varEpi16(a x86.M256i, k x86.Mmask16, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPermutex2varEpi16([32]byte(a), uint16(k), [32]byte(idx), [32]byte(b)))
 }
 
-func maskPermutex2varEpi161(a [32]byte, k uint16, idx [32]byte, b [32]byte) [32]byte
+func m256MaskPermutex2varEpi16(a [32]byte, k uint16, idx [32]byte, b [32]byte) [32]byte
 
 
-// Mask2Permutex2varEpi161: Shuffle 16-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using writemask 'k' (elements are copied from 'idx' when the
-// corresponding mask bit is not set). 
+// M256Mask2Permutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'idx' when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -12544,17 +12548,17 @@ func maskPermutex2varEpi161(a [32]byte, k uint16, idx [32]byte, b [32]byte) [32]
 //
 // Instruction: 'VPERMI2W'. Intrinsic: '_mm256_mask2_permutex2var_epi16'.
 // Requires AVX512BW.
-func Mask2Permutex2varEpi161(a x86.M256i, idx x86.M256i, k x86.Mmask16, b x86.M256i) x86.M256i {
-	return x86.M256i(mask2Permutex2varEpi161([32]byte(a), [32]byte(idx), uint16(k), [32]byte(b)))
+func M256Mask2Permutex2varEpi16(a x86.M256i, idx x86.M256i, k x86.Mmask16, b x86.M256i) x86.M256i {
+	return x86.M256i(m256Mask2Permutex2varEpi16([32]byte(a), [32]byte(idx), uint16(k), [32]byte(b)))
 }
 
-func mask2Permutex2varEpi161(a [32]byte, idx [32]byte, k uint16, b [32]byte) [32]byte
+func m256Mask2Permutex2varEpi16(a [32]byte, idx [32]byte, k uint16, b [32]byte) [32]byte
 
 
-// MaskzPermutex2varEpi161: Shuffle 16-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M256MaskzPermutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -12569,14 +12573,14 @@ func mask2Permutex2varEpi161(a [32]byte, idx [32]byte, k uint16, b [32]byte) [32
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm256_maskz_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskzPermutex2varEpi161(k x86.Mmask16, a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzPermutex2varEpi161(uint16(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
+func M256MaskzPermutex2varEpi16(k x86.Mmask16, a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPermutex2varEpi16(uint16(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
-func maskzPermutex2varEpi161(k uint16, a [32]byte, idx [32]byte, b [32]byte) [32]byte
+func m256MaskzPermutex2varEpi16(k uint16, a [32]byte, idx [32]byte, b [32]byte) [32]byte
 
 
-// Permutex2varEpi161: Shuffle 16-bit integers in 'a' and 'b' across lanes
+// M256Permutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across lanes
 // using the corresponding selector and index in 'idx', and store the results
 // in 'dst'. 
 //
@@ -12589,16 +12593,16 @@ func maskzPermutex2varEpi161(k uint16, a [32]byte, idx [32]byte, b [32]byte) [32
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm256_permutex2var_epi16'.
 // Requires AVX512BW.
-func Permutex2varEpi161(a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(permutex2varEpi161([32]byte(a), [32]byte(idx), [32]byte(b)))
+func M256Permutex2varEpi16(a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256Permutex2varEpi16([32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
-func permutex2varEpi161(a [32]byte, idx [32]byte, b [32]byte) [32]byte
+func m256Permutex2varEpi16(a [32]byte, idx [32]byte, b [32]byte) [32]byte
 
 
-// MaskPermutex2varEpi162: Shuffle 16-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using writemask 'k' (elements are copied from 'a' when the
+// M512MaskPermutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'a' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -12614,17 +12618,17 @@ func permutex2varEpi161(a [32]byte, idx [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPERMT2W'. Intrinsic: '_mm512_mask_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskPermutex2varEpi162(a x86.M512i, k x86.Mmask32, idx x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskPermutex2varEpi162([64]byte(a), uint32(k), [64]byte(idx), [64]byte(b)))
+func M512MaskPermutex2varEpi16(a x86.M512i, k x86.Mmask32, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPermutex2varEpi16([64]byte(a), uint32(k), [64]byte(idx), [64]byte(b)))
 }
 
-func maskPermutex2varEpi162(a [64]byte, k uint32, idx [64]byte, b [64]byte) [64]byte
+func m512MaskPermutex2varEpi16(a [64]byte, k uint32, idx [64]byte, b [64]byte) [64]byte
 
 
-// Mask2Permutex2varEpi162: Shuffle 16-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using writemask 'k' (elements are copied from 'idx' when the
-// corresponding mask bit is not set). 
+// M512Mask2Permutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'idx' when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -12639,17 +12643,17 @@ func maskPermutex2varEpi162(a [64]byte, k uint32, idx [64]byte, b [64]byte) [64]
 //
 // Instruction: 'VPERMI2W'. Intrinsic: '_mm512_mask2_permutex2var_epi16'.
 // Requires AVX512BW.
-func Mask2Permutex2varEpi162(a x86.M512i, idx x86.M512i, k x86.Mmask32, b x86.M512i) x86.M512i {
-	return x86.M512i(mask2Permutex2varEpi162([64]byte(a), [64]byte(idx), uint32(k), [64]byte(b)))
+func M512Mask2Permutex2varEpi16(a x86.M512i, idx x86.M512i, k x86.Mmask32, b x86.M512i) x86.M512i {
+	return x86.M512i(m512Mask2Permutex2varEpi16([64]byte(a), [64]byte(idx), uint32(k), [64]byte(b)))
 }
 
-func mask2Permutex2varEpi162(a [64]byte, idx [64]byte, k uint32, b [64]byte) [64]byte
+func m512Mask2Permutex2varEpi16(a [64]byte, idx [64]byte, k uint32, b [64]byte) [64]byte
 
 
-// MaskzPermutex2varEpi162: Shuffle 16-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M512MaskzPermutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -12664,14 +12668,14 @@ func mask2Permutex2varEpi162(a [64]byte, idx [64]byte, k uint32, b [64]byte) [64
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm512_maskz_permutex2var_epi16'.
 // Requires AVX512BW.
-func MaskzPermutex2varEpi162(k x86.Mmask32, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzPermutex2varEpi162(uint32(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
+func M512MaskzPermutex2varEpi16(k x86.Mmask32, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPermutex2varEpi16(uint32(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func maskzPermutex2varEpi162(k uint32, a [64]byte, idx [64]byte, b [64]byte) [64]byte
+func m512MaskzPermutex2varEpi16(k uint32, a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
-// Permutex2varEpi162: Shuffle 16-bit integers in 'a' and 'b' across lanes
+// M512Permutex2varEpi16: Shuffle 16-bit integers in 'a' and 'b' across lanes
 // using the corresponding selector and index in 'idx', and store the results
 // in 'dst'. 
 //
@@ -12684,11 +12688,11 @@ func maskzPermutex2varEpi162(k uint32, a [64]byte, idx [64]byte, b [64]byte) [64
 //
 // Instruction: 'VPERMI2W, VPERMT2W'. Intrinsic: '_mm512_permutex2var_epi16'.
 // Requires AVX512BW.
-func Permutex2varEpi162(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(permutex2varEpi162([64]byte(a), [64]byte(idx), [64]byte(b)))
+func M512Permutex2varEpi16(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512Permutex2varEpi16([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func permutex2varEpi162(a [64]byte, idx [64]byte, b [64]byte) [64]byte
+func m512Permutex2varEpi16(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
 // MaskPermutexvarEpi16: Shuffle 16-bit integers in 'a' using the corresponding
@@ -12758,10 +12762,10 @@ func PermutexvarEpi16(idx x86.M128i, a x86.M128i) x86.M128i {
 func permutexvarEpi16(idx [16]byte, a [16]byte) [16]byte
 
 
-// MaskPermutexvarEpi161: Shuffle 16-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M256MaskPermutexvarEpi16: Shuffle 16-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -12776,14 +12780,14 @@ func permutexvarEpi16(idx [16]byte, a [16]byte) [16]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm256_mask_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskPermutexvarEpi161(src x86.M256i, k x86.Mmask16, idx x86.M256i, a x86.M256i) x86.M256i {
-	return x86.M256i(maskPermutexvarEpi161([32]byte(src), uint16(k), [32]byte(idx), [32]byte(a)))
+func M256MaskPermutexvarEpi16(src x86.M256i, k x86.Mmask16, idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPermutexvarEpi16([32]byte(src), uint16(k), [32]byte(idx), [32]byte(a)))
 }
 
-func maskPermutexvarEpi161(src [32]byte, k uint16, idx [32]byte, a [32]byte) [32]byte
+func m256MaskPermutexvarEpi16(src [32]byte, k uint16, idx [32]byte, a [32]byte) [32]byte
 
 
-// MaskzPermutexvarEpi161: Shuffle 16-bit integers in 'a' across lanes using
+// M256MaskzPermutexvarEpi16: Shuffle 16-bit integers in 'a' across lanes using
 // the corresponding index in 'idx', and store the results in 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
@@ -12801,14 +12805,14 @@ func maskPermutexvarEpi161(src [32]byte, k uint16, idx [32]byte, a [32]byte) [32
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm256_maskz_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskzPermutexvarEpi161(k x86.Mmask16, idx x86.M256i, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzPermutexvarEpi161(uint16(k), [32]byte(idx), [32]byte(a)))
+func M256MaskzPermutexvarEpi16(k x86.Mmask16, idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPermutexvarEpi16(uint16(k), [32]byte(idx), [32]byte(a)))
 }
 
-func maskzPermutexvarEpi161(k uint16, idx [32]byte, a [32]byte) [32]byte
+func m256MaskzPermutexvarEpi16(k uint16, idx [32]byte, a [32]byte) [32]byte
 
 
-// PermutexvarEpi161: Shuffle 16-bit integers in 'a' across lanes using the
+// M256PermutexvarEpi16: Shuffle 16-bit integers in 'a' across lanes using the
 // corresponding index in 'idx', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -12820,17 +12824,17 @@ func maskzPermutexvarEpi161(k uint16, idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm256_permutexvar_epi16'.
 // Requires AVX512BW.
-func PermutexvarEpi161(idx x86.M256i, a x86.M256i) x86.M256i {
-	return x86.M256i(permutexvarEpi161([32]byte(idx), [32]byte(a)))
+func M256PermutexvarEpi16(idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(m256PermutexvarEpi16([32]byte(idx), [32]byte(a)))
 }
 
-func permutexvarEpi161(idx [32]byte, a [32]byte) [32]byte
+func m256PermutexvarEpi16(idx [32]byte, a [32]byte) [32]byte
 
 
-// MaskPermutexvarEpi162: Shuffle 16-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M512MaskPermutexvarEpi16: Shuffle 16-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -12845,14 +12849,14 @@ func permutexvarEpi161(idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_mask_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskPermutexvarEpi162(src x86.M512i, k x86.Mmask32, idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(maskPermutexvarEpi162([64]byte(src), uint32(k), [64]byte(idx), [64]byte(a)))
+func M512MaskPermutexvarEpi16(src x86.M512i, k x86.Mmask32, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPermutexvarEpi16([64]byte(src), uint32(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutexvarEpi162(src [64]byte, k uint32, idx [64]byte, a [64]byte) [64]byte
+func m512MaskPermutexvarEpi16(src [64]byte, k uint32, idx [64]byte, a [64]byte) [64]byte
 
 
-// MaskzPermutexvarEpi162: Shuffle 16-bit integers in 'a' across lanes using
+// M512MaskzPermutexvarEpi16: Shuffle 16-bit integers in 'a' across lanes using
 // the corresponding index in 'idx', and store the results in 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
@@ -12870,14 +12874,14 @@ func maskPermutexvarEpi162(src [64]byte, k uint32, idx [64]byte, a [64]byte) [64
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_maskz_permutexvar_epi16'.
 // Requires AVX512BW.
-func MaskzPermutexvarEpi162(k x86.Mmask32, idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzPermutexvarEpi162(uint32(k), [64]byte(idx), [64]byte(a)))
+func M512MaskzPermutexvarEpi16(k x86.Mmask32, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPermutexvarEpi16(uint32(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskzPermutexvarEpi162(k uint32, idx [64]byte, a [64]byte) [64]byte
+func m512MaskzPermutexvarEpi16(k uint32, idx [64]byte, a [64]byte) [64]byte
 
 
-// PermutexvarEpi162: Shuffle 16-bit integers in 'a' across lanes using the
+// M512PermutexvarEpi16: Shuffle 16-bit integers in 'a' across lanes using the
 // corresponding index in 'idx', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -12889,17 +12893,17 @@ func maskzPermutexvarEpi162(k uint32, idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMW'. Intrinsic: '_mm512_permutexvar_epi16'.
 // Requires AVX512BW.
-func PermutexvarEpi162(idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(permutexvarEpi162([64]byte(idx), [64]byte(a)))
+func M512PermutexvarEpi16(idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512PermutexvarEpi16([64]byte(idx), [64]byte(a)))
 }
 
-func permutexvarEpi162(idx [64]byte, a [64]byte) [64]byte
+func m512PermutexvarEpi16(idx [64]byte, a [64]byte) [64]byte
 
 
-// SadEpu8: Compute the absolute differences of packed unsigned 8-bit integers
-// in 'a' and 'b', then horizontally sum each consecutive 8 differences to
-// produce four unsigned 16-bit integers, and pack these unsigned 16-bit
-// integers in the low 16 bits of 64-bit elements in 'dst'. 
+// M512SadEpu8: Compute the absolute differences of packed unsigned 8-bit
+// integers in 'a' and 'b', then horizontally sum each consecutive 8
+// differences to produce four unsigned 16-bit integers, and pack these
+// unsigned 16-bit integers in the low 16 bits of 64-bit elements in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -12914,11 +12918,11 @@ func permutexvarEpi162(idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPSADBW'. Intrinsic: '_mm512_sad_epu8'.
 // Requires AVX512BW.
-func SadEpu8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(sadEpu8([64]byte(a), [64]byte(b)))
+func M512SadEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SadEpu8([64]byte(a), [64]byte(b)))
 }
 
-func sadEpu8(a [64]byte, b [64]byte) [64]byte
+func m512SadEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSet1Epi16: Broadcast the low packed 16-bit integer from 'a' to all
@@ -12967,7 +12971,7 @@ func MaskzSet1Epi16(k x86.Mmask8, a int16) x86.M128i {
 func maskzSet1Epi16(k uint8, a int16) [16]byte
 
 
-// MaskSet1Epi161: Broadcast the low packed 16-bit integer from 'a' to all
+// M256MaskSet1Epi16: Broadcast the low packed 16-bit integer from 'a' to all
 // elements of 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). 
 //
@@ -12983,16 +12987,16 @@ func maskzSet1Epi16(k uint8, a int16) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_mask_set1_epi16'.
 // Requires AVX512BW.
-func MaskSet1Epi161(src x86.M256i, k x86.Mmask16, a int16) x86.M256i {
-	return x86.M256i(maskSet1Epi161([32]byte(src), uint16(k), a))
+func M256MaskSet1Epi16(src x86.M256i, k x86.Mmask16, a int16) x86.M256i {
+	return x86.M256i(m256MaskSet1Epi16([32]byte(src), uint16(k), a))
 }
 
-func maskSet1Epi161(src [32]byte, k uint16, a int16) [32]byte
+func m256MaskSet1Epi16(src [32]byte, k uint16, a int16) [32]byte
 
 
-// MaskzSet1Epi161: Broadcast 16-bit integer 'a' to all elements of 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzSet1Epi16: Broadcast 16-bit integer 'a' to all elements of 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -13006,16 +13010,16 @@ func maskSet1Epi161(src [32]byte, k uint16, a int16) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_maskz_set1_epi16'.
 // Requires AVX512BW.
-func MaskzSet1Epi161(k x86.Mmask16, a int16) x86.M256i {
-	return x86.M256i(maskzSet1Epi161(uint16(k), a))
+func M256MaskzSet1Epi16(k x86.Mmask16, a int16) x86.M256i {
+	return x86.M256i(m256MaskzSet1Epi16(uint16(k), a))
 }
 
-func maskzSet1Epi161(k uint16, a int16) [32]byte
+func m256MaskzSet1Epi16(k uint16, a int16) [32]byte
 
 
-// MaskSet1Epi162: Broadcast 16-bit integer 'a' to all elements of 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskSet1Epi16: Broadcast 16-bit integer 'a' to all elements of 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -13029,14 +13033,14 @@ func maskzSet1Epi161(k uint16, a int16) [32]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_mask_set1_epi16'.
 // Requires AVX512BW.
-func MaskSet1Epi162(src x86.M512i, k x86.Mmask32, a int16) x86.M512i {
-	return x86.M512i(maskSet1Epi162([64]byte(src), uint32(k), a))
+func M512MaskSet1Epi16(src x86.M512i, k x86.Mmask32, a int16) x86.M512i {
+	return x86.M512i(m512MaskSet1Epi16([64]byte(src), uint32(k), a))
 }
 
-func maskSet1Epi162(src [64]byte, k uint32, a int16) [64]byte
+func m512MaskSet1Epi16(src [64]byte, k uint32, a int16) [64]byte
 
 
-// MaskzSet1Epi162: Broadcast the low packed 16-bit integer from 'a' to all
+// M512MaskzSet1Epi16: Broadcast the low packed 16-bit integer from 'a' to all
 // elements of 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
@@ -13052,11 +13056,11 @@ func maskSet1Epi162(src [64]byte, k uint32, a int16) [64]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm512_maskz_set1_epi16'.
 // Requires AVX512BW.
-func MaskzSet1Epi162(k x86.Mmask32, a int16) x86.M512i {
-	return x86.M512i(maskzSet1Epi162(uint32(k), a))
+func M512MaskzSet1Epi16(k x86.Mmask32, a int16) x86.M512i {
+	return x86.M512i(m512MaskzSet1Epi16(uint32(k), a))
 }
 
-func maskzSet1Epi162(k uint32, a int16) [64]byte
+func m512MaskzSet1Epi16(k uint32, a int16) [64]byte
 
 
 // MaskSet1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst' using
@@ -13105,7 +13109,7 @@ func MaskzSet1Epi8(k x86.Mmask16, a byte) x86.M128i {
 func maskzSet1Epi8(k uint16, a byte) [16]byte
 
 
-// MaskSet1Epi81: Broadcast 8-bit integer 'a' to all elements of 'dst' using
+// M256MaskSet1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -13121,16 +13125,16 @@ func maskzSet1Epi8(k uint16, a byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_mask_set1_epi8'.
 // Requires AVX512BW.
-func MaskSet1Epi81(src x86.M256i, k x86.Mmask32, a byte) x86.M256i {
-	return x86.M256i(maskSet1Epi81([32]byte(src), uint32(k), a))
+func M256MaskSet1Epi8(src x86.M256i, k x86.Mmask32, a byte) x86.M256i {
+	return x86.M256i(m256MaskSet1Epi8([32]byte(src), uint32(k), a))
 }
 
-func maskSet1Epi81(src [32]byte, k uint32, a byte) [32]byte
+func m256MaskSet1Epi8(src [32]byte, k uint32, a byte) [32]byte
 
 
-// MaskzSet1Epi81: Broadcast 8-bit integer 'a' to all elements of 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzSet1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -13144,14 +13148,14 @@ func maskSet1Epi81(src [32]byte, k uint32, a byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_maskz_set1_epi8'.
 // Requires AVX512BW.
-func MaskzSet1Epi81(k x86.Mmask32, a byte) x86.M256i {
-	return x86.M256i(maskzSet1Epi81(uint32(k), a))
+func M256MaskzSet1Epi8(k x86.Mmask32, a byte) x86.M256i {
+	return x86.M256i(m256MaskzSet1Epi8(uint32(k), a))
 }
 
-func maskzSet1Epi81(k uint32, a byte) [32]byte
+func m256MaskzSet1Epi8(k uint32, a byte) [32]byte
 
 
-// MaskSet1Epi82: Broadcast 8-bit integer 'a' to all elements of 'dst' using
+// M512MaskSet1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -13167,16 +13171,16 @@ func maskzSet1Epi81(k uint32, a byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_mask_set1_epi8'.
 // Requires AVX512BW.
-func MaskSet1Epi82(src x86.M512i, k x86.Mmask64, a byte) x86.M512i {
-	return x86.M512i(maskSet1Epi82([64]byte(src), uint64(k), a))
+func M512MaskSet1Epi8(src x86.M512i, k x86.Mmask64, a byte) x86.M512i {
+	return x86.M512i(m512MaskSet1Epi8([64]byte(src), uint64(k), a))
 }
 
-func maskSet1Epi82(src [64]byte, k uint64, a byte) [64]byte
+func m512MaskSet1Epi8(src [64]byte, k uint64, a byte) [64]byte
 
 
-// MaskzSet1Epi82: Broadcast 8-bit integer 'a' to all elements of 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzSet1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -13190,11 +13194,11 @@ func maskSet1Epi82(src [64]byte, k uint64, a byte) [64]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm512_maskz_set1_epi8'.
 // Requires AVX512BW.
-func MaskzSet1Epi82(k x86.Mmask64, a byte) x86.M512i {
-	return x86.M512i(maskzSet1Epi82(uint64(k), a))
+func M512MaskzSet1Epi8(k x86.Mmask64, a byte) x86.M512i {
+	return x86.M512i(m512MaskzSet1Epi8(uint64(k), a))
 }
 
-func maskzSet1Epi82(k uint64, a byte) [64]byte
+func m512MaskzSet1Epi8(k uint64, a byte) [64]byte
 
 
 // MaskShuffleEpi8: Shuffle packed 8-bit integers in 'a' according to shuffle
@@ -13255,10 +13259,10 @@ func MaskzShuffleEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzShuffleEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskShuffleEpi81: Shuffle packed 8-bit integers in 'a' according to shuffle
-// control mask in the corresponding 8-bit element of 'b', and store the
-// results in 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
+// M256MaskShuffleEpi8: Shuffle packed 8-bit integers in 'a' according to
+// shuffle control mask in the corresponding 8-bit element of 'b', and store
+// the results in 'dst' using writemask 'k' (elements are copied from 'src'
+// when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -13277,16 +13281,16 @@ func maskzShuffleEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm256_mask_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskShuffleEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskShuffleEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskShuffleEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskShuffleEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskShuffleEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskShuffleEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzShuffleEpi81: Shuffle packed 8-bit integers in 'a' according to shuffle
-// control mask in the corresponding 8-bit element of 'b', and store the
-// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// M256MaskzShuffleEpi8: Shuffle packed 8-bit integers in 'a' according to
+// shuffle control mask in the corresponding 8-bit element of 'b', and store
+// the results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -13306,17 +13310,17 @@ func maskShuffleEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm256_maskz_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskzShuffleEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzShuffleEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzShuffleEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzShuffleEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzShuffleEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzShuffleEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskShuffleEpi82: Shuffle 8-bit integers in 'a' within 128-bit lanes using
-// the control in the corresponding 8-bit element of 'b', and store the results
-// in 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 
+// M512MaskShuffleEpi8: Shuffle 8-bit integers in 'a' within 128-bit lanes
+// using the control in the corresponding 8-bit element of 'b', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -13335,16 +13339,16 @@ func maskzShuffleEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_mask_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskShuffleEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskShuffleEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskShuffleEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskShuffleEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskShuffleEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskShuffleEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzShuffleEpi82: Shuffle packed 8-bit integers in 'a' according to shuffle
-// control mask in the corresponding 8-bit element of 'b', and store the
-// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// M512MaskzShuffleEpi8: Shuffle packed 8-bit integers in 'a' according to
+// shuffle control mask in the corresponding 8-bit element of 'b', and store
+// the results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
@@ -13364,14 +13368,14 @@ func maskShuffleEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_maskz_shuffle_epi8'.
 // Requires AVX512BW.
-func MaskzShuffleEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzShuffleEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzShuffleEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzShuffleEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzShuffleEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzShuffleEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// ShuffleEpi8: Shuffle packed 8-bit integers in 'a' according to shuffle
+// M512ShuffleEpi8: Shuffle packed 8-bit integers in 'a' according to shuffle
 // control mask in the corresponding 8-bit element of 'b', and store the
 // results in 'dst'. 
 //
@@ -13388,11 +13392,11 @@ func maskzShuffleEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm512_shuffle_epi8'.
 // Requires AVX512BW.
-func ShuffleEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(shuffleEpi8([64]byte(a), [64]byte(b)))
+func M512ShuffleEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512ShuffleEpi8([64]byte(a), [64]byte(b)))
 }
 
-func shuffleEpi8(a [64]byte, b [64]byte) [64]byte
+func m512ShuffleEpi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 'a' using
@@ -13455,11 +13459,11 @@ func MaskzShufflehiEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
 func maskzShufflehiEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 
 
-// MaskShufflehiEpi161: Shuffle 16-bit integers in the high 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the high 64
-// bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M256MaskShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// high 64 bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		tmp_dst[63:0] := a[63:0]
 //		tmp_dst[79:64] := (a >> (imm8[1:0] * 16))[79:64]
@@ -13484,18 +13488,18 @@ func maskzShufflehiEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm256_mask_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskShufflehiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskShufflehiEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func M256MaskShufflehiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskShufflehiEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func maskShufflehiEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskShufflehiEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 
 
-// MaskzShufflehiEpi161: Shuffle 16-bit integers in the high 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the high 64
-// bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M256MaskzShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// high 64 bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		tmp_dst[63:0] := a[63:0]
 //		tmp_dst[79:64] := (a >> (imm8[1:0] * 16))[79:64]
@@ -13520,18 +13524,18 @@ func maskShufflehiEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm256_maskz_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskzShufflehiEpi161(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskzShufflehiEpi161(uint16(k), [32]byte(a), imm8))
+func M256MaskzShufflehiEpi16(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskzShufflehiEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func maskzShufflehiEpi161(k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskzShufflehiEpi16(k uint16, a [32]byte, imm8 int) [32]byte
 
 
-// MaskShufflehiEpi162: Shuffle 16-bit integers in the high 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the high 64
-// bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// high 64 bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		tmp_dst[63:0] := a[63:0]
 //		tmp_dst[79:64] := (a >> (imm8[1:0] * 16))[79:64]
@@ -13566,18 +13570,18 @@ func maskzShufflehiEpi161(k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_mask_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskShufflehiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(maskShufflehiEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func M512MaskShufflehiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512MaskShufflehiEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskShufflehiEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskShufflehiEpi16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 
 
-// MaskzShufflehiEpi162: Shuffle 16-bit integers in the high 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the high 64
-// bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M512MaskzShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// high 64 bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		tmp_dst[63:0] := a[63:0]
 //		tmp_dst[79:64] := (a >> (imm8[1:0] * 16))[79:64]
@@ -13612,17 +13616,17 @@ func maskShufflehiEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_maskz_shufflehi_epi16'.
 // Requires AVX512BW.
-func MaskzShufflehiEpi162(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(maskzShufflehiEpi162(uint32(k), [64]byte(a), imm8))
+func M512MaskzShufflehiEpi16(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512MaskzShufflehiEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzShufflehiEpi162(k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskzShufflehiEpi16(k uint32, a [64]byte, imm8 int) [64]byte
 
 
-// ShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 128-bit lanes
-// of 'a' using the control in 'imm8'. Store the results in the high 64 bits of
-// 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being copied
-// from from 'a' to 'dst'. 
+// M512ShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 128-bit
+// lanes of 'a' using the control in 'imm8'. Store the results in the high 64
+// bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being
+// copied from from 'a' to 'dst'. 
 //
 //		dst[63:0] := a[63:0]
 //		dst[79:64] := (a >> (imm8[1:0] * 16))[79:64]
@@ -13648,11 +13652,11 @@ func maskzShufflehiEpi162(k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm512_shufflehi_epi16'.
 // Requires AVX512BW.
-func ShufflehiEpi16(a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(shufflehiEpi16([64]byte(a), imm8))
+func M512ShufflehiEpi16(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512ShufflehiEpi16([64]byte(a), imm8))
 }
 
-func shufflehiEpi16(a [64]byte, imm8 int) [64]byte
+func m512ShufflehiEpi16(a [64]byte, imm8 int) [64]byte
 
 
 // MaskShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 'a' using
@@ -13715,11 +13719,11 @@ func MaskzShuffleloEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
 func maskzShuffleloEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 
 
-// MaskShuffleloEpi161: Shuffle 16-bit integers in the low 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the low 64
-// bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M256MaskShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// low 64 bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := (a >> (imm8[1:0] * 16))[15:0]
 //		tmp_dst[31:16] := (a >> (imm8[3:2] * 16))[15:0]
@@ -13744,18 +13748,18 @@ func maskzShuffleloEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm256_mask_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskShuffleloEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskShuffleloEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func M256MaskShuffleloEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskShuffleloEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func maskShuffleloEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskShuffleloEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 
 
-// MaskzShuffleloEpi161: Shuffle 16-bit integers in the low 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the low 64
-// bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M256MaskzShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// low 64 bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := (a >> (imm8[1:0] * 16))[15:0]
 //		tmp_dst[31:16] := (a >> (imm8[3:2] * 16))[15:0]
@@ -13780,18 +13784,18 @@ func maskShuffleloEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm256_maskz_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskzShuffleloEpi161(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskzShuffleloEpi161(uint16(k), [32]byte(a), imm8))
+func M256MaskzShuffleloEpi16(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskzShuffleloEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func maskzShuffleloEpi161(k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskzShuffleloEpi16(k uint16, a [32]byte, imm8 int) [32]byte
 
 
-// MaskShuffleloEpi162: Shuffle 16-bit integers in the low 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the low 64
-// bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). 
+// M512MaskShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// low 64 bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using writemask 'k' (elements are
+// copied from 'src' when the corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := (a >> (imm8[1:0] * 16))[15:0]
 //		tmp_dst[31:16] := (a >> (imm8[3:2] * 16))[15:0]
@@ -13826,18 +13830,18 @@ func maskzShuffleloEpi161(k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_mask_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskShuffleloEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(maskShuffleloEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func M512MaskShuffleloEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512MaskShuffleloEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskShuffleloEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskShuffleloEpi16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 
 
-// MaskzShuffleloEpi162: Shuffle 16-bit integers in the low 64 bits of 128-bit
-// lanes of 'a' using the control in 'imm8'. Store the results in the low 64
-// bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being
-// copied from from 'a' to 'dst', using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). 
+// M512MaskzShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
+// 128-bit lanes of 'a' using the control in 'imm8'. Store the results in the
+// low 64 bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit
+// lanes being copied from from 'a' to 'dst', using zeromask 'k' (elements are
+// zeroed out when the corresponding mask bit is not set). 
 //
 //		tmp_dst[15:0] := (a >> (imm8[1:0] * 16))[15:0]
 //		tmp_dst[31:16] := (a >> (imm8[3:2] * 16))[15:0]
@@ -13872,17 +13876,17 @@ func maskShuffleloEpi162(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_maskz_shufflelo_epi16'.
 // Requires AVX512BW.
-func MaskzShuffleloEpi162(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(maskzShuffleloEpi162(uint32(k), [64]byte(a), imm8))
+func M512MaskzShuffleloEpi16(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512MaskzShuffleloEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzShuffleloEpi162(k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskzShuffleloEpi16(k uint32, a [64]byte, imm8 int) [64]byte
 
 
-// ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 128-bit lanes
-// of 'a' using the control in 'imm8'. Store the results in the low 64 bits of
-// 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being copied
-// from from 'a' to 'dst'. 
+// M512ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 128-bit
+// lanes of 'a' using the control in 'imm8'. Store the results in the low 64
+// bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being
+// copied from from 'a' to 'dst'. 
 //
 //		dst[15:0] := (a >> (imm8[1:0] * 16))[15:0]
 //		dst[31:16] := (a >> (imm8[3:2] * 16))[15:0]
@@ -13908,11 +13912,11 @@ func maskzShuffleloEpi162(k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm512_shufflelo_epi16'.
 // Requires AVX512BW.
-func ShuffleloEpi16(a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(shuffleloEpi16([64]byte(a), imm8))
+func M512ShuffleloEpi16(a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512ShuffleloEpi16([64]byte(a), imm8))
 }
 
-func shuffleloEpi16(a [64]byte, imm8 int) [64]byte
+func m512ShuffleloEpi16(a [64]byte, imm8 int) [64]byte
 
 
 // MaskSllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
@@ -13969,7 +13973,7 @@ func MaskzSllEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
 func maskzSllEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 
 
-// MaskSllEpi161: Shift packed 16-bit integers in 'a' left by 'count' while
+// M256MaskSllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -13989,14 +13993,14 @@ func maskzSllEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_mask_sll_epi16'.
 // Requires AVX512BW.
-func MaskSllEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(maskSllEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
+func M256MaskSllEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskSllEpi16([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
 }
 
-func maskSllEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
+func m256MaskSllEpi16(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 
 
-// MaskzSllEpi161: Shift packed 16-bit integers in 'a' left by 'count' while
+// M256MaskzSllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
 // shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -14016,14 +14020,14 @@ func maskSllEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_maskz_sll_epi16'.
 // Requires AVX512BW.
-func MaskzSllEpi161(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(maskzSllEpi161(uint16(k), [32]byte(a), [16]byte(count)))
+func M256MaskzSllEpi16(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskzSllEpi16(uint16(k), [32]byte(a), [16]byte(count)))
 }
 
-func maskzSllEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
+func m256MaskzSllEpi16(k uint16, a [32]byte, count [16]byte) [32]byte
 
 
-// MaskSllEpi162: Shift packed 16-bit integers in 'a' left by 'count' while
+// M512MaskSllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14043,14 +14047,14 @@ func maskzSllEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_mask_sll_epi16'.
 // Requires AVX512BW.
-func MaskSllEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(maskSllEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
+func M512MaskSllEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskSllEpi16([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSllEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
+func m512MaskSllEpi16(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 
 
-// MaskzSllEpi162: Shift packed 16-bit integers in 'a' left by 'count' while
+// M512MaskzSllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
 // shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -14070,15 +14074,15 @@ func maskSllEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_maskz_sll_epi16'.
 // Requires AVX512BW.
-func MaskzSllEpi162(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(maskzSllEpi162(uint32(k), [64]byte(a), [16]byte(count)))
+func M512MaskzSllEpi16(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskzSllEpi16(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSllEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
+func m512MaskzSllEpi16(k uint32, a [64]byte, count [16]byte) [64]byte
 
 
-// SllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while shifting
-// in zeros, and store the results in 'dst'. 
+// M512SllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -14092,11 +14096,11 @@ func maskzSllEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_sll_epi16'.
 // Requires AVX512BW.
-func SllEpi16(a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(sllEpi16([64]byte(a), [16]byte(count)))
+func M512SllEpi16(a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512SllEpi16([64]byte(a), [16]byte(count)))
 }
 
-func sllEpi16(a [64]byte, count [16]byte) [64]byte
+func m512SllEpi16(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -14153,7 +14157,7 @@ func MaskzSlliEpi16(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
 func maskzSlliEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 
 
-// MaskSlliEpi161: Shift packed 16-bit integers in 'a' left by 'imm8' while
+// M256MaskSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14173,14 +14177,14 @@ func maskzSlliEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_mask_slli_epi16'.
 // Requires AVX512BW.
-func MaskSlliEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
-	return x86.M256i(maskSlliEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func M256MaskSlliEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(m256MaskSlliEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func maskSlliEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSlliEpi16(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 
 
-// MaskzSlliEpi161: Shift packed 16-bit integers in 'a' left by 'imm8' while
+// M256MaskzSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -14200,14 +14204,14 @@ func maskSlliEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_maskz_slli_epi16'.
 // Requires AVX512BW.
-func MaskzSlliEpi161(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
-	return x86.M256i(maskzSlliEpi161(uint16(k), [32]byte(a), imm8))
+func M256MaskzSlliEpi16(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(m256MaskzSlliEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func maskzSlliEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSlliEpi16(k uint16, a [32]byte, imm8 uint32) [32]byte
 
 
-// MaskSlliEpi162: Shift packed 16-bit integers in 'a' left by 'imm8' while
+// M512MaskSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14227,14 +14231,14 @@ func maskzSlliEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_mask_slli_epi16'.
 // Requires AVX512BW.
-func MaskSlliEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskSlliEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func M512MaskSlliEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskSlliEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskSlliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSlliEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
-// MaskzSlliEpi162: Shift packed 16-bit integers in 'a' left by 'imm8' while
+// M512MaskzSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -14254,15 +14258,15 @@ func maskSlliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_maskz_slli_epi16'.
 // Requires AVX512BW.
-func MaskzSlliEpi162(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskzSlliEpi162(uint32(k), [64]byte(a), imm8))
+func M512MaskzSlliEpi16(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskzSlliEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzSlliEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSlliEpi16(k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
-// SlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while shifting
-// in zeros, and store the results in 'dst'. 
+// M512SlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -14276,11 +14280,11 @@ func maskzSlliEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm512_slli_epi16'.
 // Requires AVX512BW.
-func SlliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(slliEpi16([64]byte(a), imm8))
+func M512SlliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512SlliEpi16([64]byte(a), imm8))
 }
 
-func slliEpi16(a [64]byte, imm8 uint32) [64]byte
+func m512SlliEpi16(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
@@ -14354,7 +14358,7 @@ func SllvEpi16(a x86.M128i, count x86.M128i) x86.M128i {
 func sllvEpi16(a [16]byte, count [16]byte) [16]byte
 
 
-// MaskSllvEpi161: Shift packed 16-bit integers in 'a' left by the amount
+// M256MaskSllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -14371,14 +14375,14 @@ func sllvEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm256_mask_sllv_epi16'.
 // Requires AVX512BW.
-func MaskSllvEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(maskSllvEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
+func M256MaskSllvEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSllvEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
 }
 
-func maskSllvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
+func m256MaskSllvEpi16(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 
 
-// MaskzSllvEpi161: Shift packed 16-bit integers in 'a' left by the amount
+// M256MaskzSllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -14395,16 +14399,16 @@ func maskSllvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm256_maskz_sllv_epi16'.
 // Requires AVX512BW.
-func MaskzSllvEpi161(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(maskzSllvEpi161(uint16(k), [32]byte(a), [32]byte(count)))
+func M256MaskzSllvEpi16(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSllvEpi16(uint16(k), [32]byte(a), [32]byte(count)))
 }
 
-func maskzSllvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
+func m256MaskzSllvEpi16(k uint16, a [32]byte, count [32]byte) [32]byte
 
 
-// SllvEpi161: Shift packed 16-bit integers in 'a' left by the amount specified
-// by the corresponding element in 'count' while shifting in zeros, and store
-// the results in 'dst'. 
+// M256SllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
+// specified by the corresponding element in 'count' while shifting in zeros,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -14418,14 +14422,14 @@ func maskzSllvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm256_sllv_epi16'.
 // Requires AVX512BW.
-func SllvEpi161(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(sllvEpi161([32]byte(a), [32]byte(count)))
+func M256SllvEpi16(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SllvEpi16([32]byte(a), [32]byte(count)))
 }
 
-func sllvEpi161(a [32]byte, count [32]byte) [32]byte
+func m256SllvEpi16(a [32]byte, count [32]byte) [32]byte
 
 
-// MaskSllvEpi162: Shift packed 16-bit integers in 'a' left by the amount
+// M512MaskSllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -14442,14 +14446,14 @@ func sllvEpi161(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_mask_sllv_epi16'.
 // Requires AVX512BW.
-func MaskSllvEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskSllvEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
+func M512MaskSllvEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSllvEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSllvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
+func m512MaskSllvEpi16(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 
 
-// MaskzSllvEpi162: Shift packed 16-bit integers in 'a' left by the amount
+// M512MaskzSllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -14466,16 +14470,16 @@ func maskSllvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_maskz_sllv_epi16'.
 // Requires AVX512BW.
-func MaskzSllvEpi162(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskzSllvEpi162(uint32(k), [64]byte(a), [64]byte(count)))
+func M512MaskzSllvEpi16(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSllvEpi16(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSllvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
+func m512MaskzSllvEpi16(k uint32, a [64]byte, count [64]byte) [64]byte
 
 
-// SllvEpi162: Shift packed 16-bit integers in 'a' left by the amount specified
-// by the corresponding element in 'count' while shifting in zeros, and store
-// the results in 'dst'. 
+// M512SllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
+// specified by the corresponding element in 'count' while shifting in zeros,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -14489,11 +14493,11 @@ func maskzSllvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSLLVW'. Intrinsic: '_mm512_sllv_epi16'.
 // Requires AVX512BW.
-func SllvEpi162(a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(sllvEpi162([64]byte(a), [64]byte(count)))
+func M512SllvEpi16(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512SllvEpi16([64]byte(a), [64]byte(count)))
 }
 
-func sllvEpi162(a [64]byte, count [64]byte) [64]byte
+func m512SllvEpi16(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -14550,7 +14554,7 @@ func MaskzSraEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
 func maskzSraEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 
 
-// MaskSraEpi161: Shift packed 16-bit integers in 'a' right by 'count' while
+// M256MaskSraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in sign bits, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14570,16 +14574,16 @@ func maskzSraEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_mask_sra_epi16'.
 // Requires AVX512BW.
-func MaskSraEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(maskSraEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
+func M256MaskSraEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskSraEpi16([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
 }
 
-func maskSraEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
+func m256MaskSraEpi16(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 
 
-// MaskzSraEpi161: Shift packed 16-bit integers in 'a' right by 'count' while
-// shifting in sign bits, and store the results in 'dst' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskzSraEpi16: Shift packed 16-bit integers in 'a' right by 'count'
+// while shifting in sign bits, and store the results in 'dst' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -14597,14 +14601,14 @@ func maskSraEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_maskz_sra_epi16'.
 // Requires AVX512BW.
-func MaskzSraEpi161(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(maskzSraEpi161(uint16(k), [32]byte(a), [16]byte(count)))
+func M256MaskzSraEpi16(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskzSraEpi16(uint16(k), [32]byte(a), [16]byte(count)))
 }
 
-func maskzSraEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
+func m256MaskzSraEpi16(k uint16, a [32]byte, count [16]byte) [32]byte
 
 
-// MaskSraEpi162: Shift packed 16-bit integers in 'a' right by 'count' while
+// M512MaskSraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in sign bits, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14624,16 +14628,16 @@ func maskzSraEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_mask_sra_epi16'.
 // Requires AVX512BW.
-func MaskSraEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(maskSraEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
+func M512MaskSraEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskSraEpi16([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSraEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
+func m512MaskSraEpi16(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 
 
-// MaskzSraEpi162: Shift packed 16-bit integers in 'a' right by 'count' while
-// shifting in sign bits, and store the results in 'dst' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskzSraEpi16: Shift packed 16-bit integers in 'a' right by 'count'
+// while shifting in sign bits, and store the results in 'dst' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -14651,14 +14655,14 @@ func maskSraEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_maskz_sra_epi16'.
 // Requires AVX512BW.
-func MaskzSraEpi162(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(maskzSraEpi162(uint32(k), [64]byte(a), [16]byte(count)))
+func M512MaskzSraEpi16(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskzSraEpi16(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSraEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
+func m512MaskzSraEpi16(k uint32, a [64]byte, count [16]byte) [64]byte
 
 
-// SraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
+// M512SraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in sign bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -14673,11 +14677,11 @@ func maskzSraEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_sra_epi16'.
 // Requires AVX512BW.
-func SraEpi16(a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(sraEpi16([64]byte(a), [16]byte(count)))
+func M512SraEpi16(a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512SraEpi16([64]byte(a), [16]byte(count)))
 }
 
-func sraEpi16(a [64]byte, count [16]byte) [64]byte
+func m512SraEpi16(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -14734,7 +14738,7 @@ func MaskzSraiEpi16(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
 func maskzSraiEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 
 
-// MaskSraiEpi161: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M256MaskSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in sign bits, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14754,16 +14758,16 @@ func maskzSraiEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_mask_srai_epi16'.
 // Requires AVX512BW.
-func MaskSraiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
-	return x86.M256i(maskSraiEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func M256MaskSraiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(m256MaskSraiEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func maskSraiEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSraiEpi16(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 
 
-// MaskzSraiEpi161: Shift packed 16-bit integers in 'a' right by 'imm8' while
-// shifting in sign bits, and store the results in 'dst' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskzSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
+// while shifting in sign bits, and store the results in 'dst' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -14781,14 +14785,14 @@ func maskSraiEpi161(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_maskz_srai_epi16'.
 // Requires AVX512BW.
-func MaskzSraiEpi161(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
-	return x86.M256i(maskzSraiEpi161(uint16(k), [32]byte(a), imm8))
+func M256MaskzSraiEpi16(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+	return x86.M256i(m256MaskzSraiEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func maskzSraiEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSraiEpi16(k uint16, a [32]byte, imm8 uint32) [32]byte
 
 
-// MaskSraiEpi162: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M512MaskSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in sign bits, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -14808,16 +14812,16 @@ func maskzSraiEpi161(k uint16, a [32]byte, imm8 uint32) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_mask_srai_epi16'.
 // Requires AVX512BW.
-func MaskSraiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskSraiEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func M512MaskSraiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskSraiEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskSraiEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSraiEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
-// MaskzSraiEpi162: Shift packed 16-bit integers in 'a' right by 'imm8' while
-// shifting in sign bits, and store the results in 'dst' using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskzSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
+// while shifting in sign bits, and store the results in 'dst' using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -14835,14 +14839,14 @@ func maskSraiEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_maskz_srai_epi16'.
 // Requires AVX512BW.
-func MaskzSraiEpi162(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskzSraiEpi162(uint32(k), [64]byte(a), imm8))
+func M512MaskzSraiEpi16(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskzSraiEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzSraiEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSraiEpi16(k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
-// SraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M512SraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in sign bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -14857,11 +14861,11 @@ func maskzSraiEpi162(k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm512_srai_epi16'.
 // Requires AVX512BW.
-func SraiEpi16(a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(sraiEpi16([64]byte(a), imm8))
+func M512SraiEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512SraiEpi16([64]byte(a), imm8))
 }
 
-func sraiEpi16(a [64]byte, imm8 uint32) [64]byte
+func m512SraiEpi16(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSravEpi16: Shift packed 16-bit integers in 'a' right by the amount
@@ -14931,7 +14935,7 @@ func SravEpi16(a x86.M128i, count x86.M128i) x86.M128i {
 func sravEpi16(a [16]byte, count [16]byte) [16]byte
 
 
-// MaskSravEpi161: Shift packed 16-bit integers in 'a' right by the amount
+// M256MaskSravEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
@@ -14948,14 +14952,14 @@ func sravEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm256_mask_srav_epi16'.
 // Requires AVX512BW.
-func MaskSravEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(maskSravEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
+func M256MaskSravEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSravEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
 }
 
-func maskSravEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
+func m256MaskSravEpi16(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 
 
-// MaskzSravEpi161: Shift packed 16-bit integers in 'a' right by the amount
+// M256MaskzSravEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
@@ -14972,14 +14976,14 @@ func maskSravEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm256_maskz_srav_epi16'.
 // Requires AVX512BW.
-func MaskzSravEpi161(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(maskzSravEpi161(uint16(k), [32]byte(a), [32]byte(count)))
+func M256MaskzSravEpi16(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSravEpi16(uint16(k), [32]byte(a), [32]byte(count)))
 }
 
-func maskzSravEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
+func m256MaskzSravEpi16(k uint16, a [32]byte, count [32]byte) [32]byte
 
 
-// SravEpi161: Shift packed 16-bit integers in 'a' right by the amount
+// M256SravEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst'. 
 //
@@ -14991,14 +14995,14 @@ func maskzSravEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm256_srav_epi16'.
 // Requires AVX512BW.
-func SravEpi161(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(sravEpi161([32]byte(a), [32]byte(count)))
+func M256SravEpi16(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SravEpi16([32]byte(a), [32]byte(count)))
 }
 
-func sravEpi161(a [32]byte, count [32]byte) [32]byte
+func m256SravEpi16(a [32]byte, count [32]byte) [32]byte
 
 
-// MaskSravEpi162: Shift packed 16-bit integers in 'a' right by the amount
+// M512MaskSravEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst' using writemask 'k' (elements are
 // copied from 'src' when the corresponding mask bit is not set). 
@@ -15015,14 +15019,14 @@ func sravEpi161(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_mask_srav_epi16'.
 // Requires AVX512BW.
-func MaskSravEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskSravEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
+func M512MaskSravEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSravEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSravEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
+func m512MaskSravEpi16(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 
 
-// MaskzSravEpi162: Shift packed 16-bit integers in 'a' right by the amount
+// M512MaskzSravEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst' using zeromask 'k' (elements are zeroed
 // out when the corresponding mask bit is not set). 
@@ -15039,14 +15043,14 @@ func maskSravEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_maskz_srav_epi16'.
 // Requires AVX512BW.
-func MaskzSravEpi162(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskzSravEpi162(uint32(k), [64]byte(a), [64]byte(count)))
+func M512MaskzSravEpi16(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSravEpi16(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSravEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
+func m512MaskzSravEpi16(k uint32, a [64]byte, count [64]byte) [64]byte
 
 
-// SravEpi162: Shift packed 16-bit integers in 'a' right by the amount
+// M512SravEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst'. 
 //
@@ -15058,11 +15062,11 @@ func maskzSravEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAVW'. Intrinsic: '_mm512_srav_epi16'.
 // Requires AVX512BW.
-func SravEpi162(a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(sravEpi162([64]byte(a), [64]byte(count)))
+func M512SravEpi16(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512SravEpi16([64]byte(a), [64]byte(count)))
 }
 
-func sravEpi162(a [64]byte, count [64]byte) [64]byte
+func m512SravEpi16(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskSrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -15119,7 +15123,7 @@ func MaskzSrlEpi16(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
 func maskzSrlEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 
 
-// MaskSrlEpi161: Shift packed 16-bit integers in 'a' right by 'count' while
+// M256MaskSrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15139,15 +15143,15 @@ func maskzSrlEpi16(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_mask_srl_epi16'.
 // Requires AVX512BW.
-func MaskSrlEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(maskSrlEpi161([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
+func M256MaskSrlEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskSrlEpi16([32]byte(src), uint16(k), [32]byte(a), [16]byte(count)))
 }
 
-func maskSrlEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
+func m256MaskSrlEpi16(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 
 
-// MaskzSrlEpi161: Shift packed 16-bit integers in 'a' right by 'count' while
-// shifting in zeros, and store the results in 'dst' using zeromask 'k'
+// M256MaskzSrlEpi16: Shift packed 16-bit integers in 'a' right by 'count'
+// while shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -15166,14 +15170,14 @@ func maskSrlEpi161(src [32]byte, k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_maskz_srl_epi16'.
 // Requires AVX512BW.
-func MaskzSrlEpi161(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(maskzSrlEpi161(uint16(k), [32]byte(a), [16]byte(count)))
+func M256MaskzSrlEpi16(k x86.Mmask16, a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256MaskzSrlEpi16(uint16(k), [32]byte(a), [16]byte(count)))
 }
 
-func maskzSrlEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
+func m256MaskzSrlEpi16(k uint16, a [32]byte, count [16]byte) [32]byte
 
 
-// MaskSrlEpi162: Shift packed 16-bit integers in 'a' right by 'count' while
+// M512MaskSrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15193,15 +15197,15 @@ func maskzSrlEpi161(k uint16, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_mask_srl_epi16'.
 // Requires AVX512BW.
-func MaskSrlEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(maskSrlEpi162([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
+func M512MaskSrlEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskSrlEpi16([64]byte(src), uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskSrlEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
+func m512MaskSrlEpi16(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 
 
-// MaskzSrlEpi162: Shift packed 16-bit integers in 'a' right by 'count' while
-// shifting in zeros, and store the results in 'dst' using zeromask 'k'
+// M512MaskzSrlEpi16: Shift packed 16-bit integers in 'a' right by 'count'
+// while shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -15220,14 +15224,14 @@ func maskSrlEpi162(src [64]byte, k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_maskz_srl_epi16'.
 // Requires AVX512BW.
-func MaskzSrlEpi162(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(maskzSrlEpi162(uint32(k), [64]byte(a), [16]byte(count)))
+func M512MaskzSrlEpi16(k x86.Mmask32, a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512MaskzSrlEpi16(uint32(k), [64]byte(a), [16]byte(count)))
 }
 
-func maskzSrlEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
+func m512MaskzSrlEpi16(k uint32, a [64]byte, count [16]byte) [64]byte
 
 
-// SrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
+// M512SrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -15242,11 +15246,11 @@ func maskzSrlEpi162(k uint32, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_srl_epi16'.
 // Requires AVX512BW.
-func SrlEpi16(a x86.M512i, count x86.M128i) x86.M512i {
-	return x86.M512i(srlEpi16([64]byte(a), [16]byte(count)))
+func M512SrlEpi16(a x86.M512i, count x86.M128i) x86.M512i {
+	return x86.M512i(m512SrlEpi16([64]byte(a), [16]byte(count)))
 }
 
-func srlEpi16(a [64]byte, count [16]byte) [64]byte
+func m512SrlEpi16(a [64]byte, count [16]byte) [64]byte
 
 
 // MaskSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -15303,7 +15307,7 @@ func MaskzSrliEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
 func maskzSrliEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 
 
-// MaskSrliEpi161: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M256MaskSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15323,15 +15327,15 @@ func maskzSrliEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_mask_srli_epi16'.
 // Requires AVX512BW.
-func MaskSrliEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskSrliEpi161([32]byte(src), uint16(k), [32]byte(a), imm8))
+func M256MaskSrliEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskSrliEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func maskSrliEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskSrliEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 
 
-// MaskzSrliEpi161: Shift packed 16-bit integers in 'a' right by 'imm8' while
-// shifting in zeros, and store the results in 'dst' using zeromask 'k'
+// M256MaskzSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
+// while shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
@@ -15350,14 +15354,14 @@ func maskSrliEpi161(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_maskz_srli_epi16'.
 // Requires AVX512BW.
-func MaskzSrliEpi161(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(maskzSrliEpi161(uint16(k), [32]byte(a), imm8))
+func M256MaskzSrliEpi16(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MaskzSrliEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func maskzSrliEpi161(k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskzSrliEpi16(k uint16, a [32]byte, imm8 int) [32]byte
 
 
-// MaskSrliEpi162: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M512MaskSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15377,15 +15381,15 @@ func maskzSrliEpi161(k uint16, a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_mask_srli_epi16'.
 // Requires AVX512BW.
-func MaskSrliEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(maskSrliEpi162([64]byte(src), uint32(k), [64]byte(a), imm8))
+func M512MaskSrliEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512MaskSrliEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func maskSrliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSrliEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 
 
-// MaskzSrliEpi162: Shift packed 16-bit integers in 'a' right by 'imm8' while
-// shifting in zeros, and store the results in 'dst' using zeromask 'k'
+// M512MaskzSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
+// while shifting in zeros, and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -15404,14 +15408,14 @@ func maskSrliEpi162(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_maskz_srli_epi16'.
 // Requires AVX512BW.
-func MaskzSrliEpi162(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
-	return x86.M512i(maskzSrliEpi162(uint32(k), [64]byte(a), imm8))
+func M512MaskzSrliEpi16(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+	return x86.M512i(m512MaskzSrliEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func maskzSrliEpi162(k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskzSrliEpi16(k uint32, a [64]byte, imm8 int) [64]byte
 
 
-// SrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M512SrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -15426,11 +15430,11 @@ func maskzSrliEpi162(k uint32, a [64]byte, imm8 int) [64]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm512_srli_epi16'.
 // Requires AVX512BW.
-func SrliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
-	return x86.M512i(srliEpi16([64]byte(a), imm8))
+func M512SrliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+	return x86.M512i(m512SrliEpi16([64]byte(a), imm8))
 }
 
-func srliEpi16(a [64]byte, imm8 uint32) [64]byte
+func m512SrliEpi16(a [64]byte, imm8 uint32) [64]byte
 
 
 // MaskSrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount
@@ -15504,7 +15508,7 @@ func SrlvEpi16(a x86.M128i, count x86.M128i) x86.M128i {
 func srlvEpi16(a [16]byte, count [16]byte) [16]byte
 
 
-// MaskSrlvEpi161: Shift packed 16-bit integers in 'a' right by the amount
+// M256MaskSrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -15521,14 +15525,14 @@ func srlvEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm256_mask_srlv_epi16'.
 // Requires AVX512BW.
-func MaskSrlvEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(maskSrlvEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
+func M256MaskSrlvEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSrlvEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(count)))
 }
 
-func maskSrlvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
+func m256MaskSrlvEpi16(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 
 
-// MaskzSrlvEpi161: Shift packed 16-bit integers in 'a' right by the amount
+// M256MaskzSrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -15545,14 +15549,14 @@ func maskSrlvEpi161(src [32]byte, k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm256_maskz_srlv_epi16'.
 // Requires AVX512BW.
-func MaskzSrlvEpi161(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(maskzSrlvEpi161(uint16(k), [32]byte(a), [32]byte(count)))
+func M256MaskzSrlvEpi16(k x86.Mmask16, a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSrlvEpi16(uint16(k), [32]byte(a), [32]byte(count)))
 }
 
-func maskzSrlvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
+func m256MaskzSrlvEpi16(k uint16, a [32]byte, count [32]byte) [32]byte
 
 
-// SrlvEpi161: Shift packed 16-bit integers in 'a' right by the amount
+// M256SrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst'. 
 //
@@ -15568,14 +15572,14 @@ func maskzSrlvEpi161(k uint16, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm256_srlv_epi16'.
 // Requires AVX512BW.
-func SrlvEpi161(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(srlvEpi161([32]byte(a), [32]byte(count)))
+func M256SrlvEpi16(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SrlvEpi16([32]byte(a), [32]byte(count)))
 }
 
-func srlvEpi161(a [32]byte, count [32]byte) [32]byte
+func m256SrlvEpi16(a [32]byte, count [32]byte) [32]byte
 
 
-// MaskSrlvEpi162: Shift packed 16-bit integers in 'a' right by the amount
+// M512MaskSrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
@@ -15592,14 +15596,14 @@ func srlvEpi161(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_mask_srlv_epi16'.
 // Requires AVX512BW.
-func MaskSrlvEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskSrlvEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
+func M512MaskSrlvEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSrlvEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskSrlvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
+func m512MaskSrlvEpi16(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 
 
-// MaskzSrlvEpi162: Shift packed 16-bit integers in 'a' right by the amount
+// M512MaskzSrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst' using zeromask 'k' (elements are zeroed out
 // when the corresponding mask bit is not set). 
@@ -15616,14 +15620,14 @@ func maskSrlvEpi162(src [64]byte, k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_maskz_srlv_epi16'.
 // Requires AVX512BW.
-func MaskzSrlvEpi162(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(maskzSrlvEpi162(uint32(k), [64]byte(a), [64]byte(count)))
+func M512MaskzSrlvEpi16(k x86.Mmask32, a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSrlvEpi16(uint32(k), [64]byte(a), [64]byte(count)))
 }
 
-func maskzSrlvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
+func m512MaskzSrlvEpi16(k uint32, a [64]byte, count [64]byte) [64]byte
 
 
-// SrlvEpi162: Shift packed 16-bit integers in 'a' right by the amount
+// M512SrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst'. 
 //
@@ -15639,11 +15643,11 @@ func maskzSrlvEpi162(k uint32, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLVW'. Intrinsic: '_mm512_srlv_epi16'.
 // Requires AVX512BW.
-func SrlvEpi162(a x86.M512i, count x86.M512i) x86.M512i {
-	return x86.M512i(srlvEpi162([64]byte(a), [64]byte(count)))
+func M512SrlvEpi16(a x86.M512i, count x86.M512i) x86.M512i {
+	return x86.M512i(m512SrlvEpi16([64]byte(a), [64]byte(count)))
 }
 
-func srlvEpi162(a [64]byte, count [64]byte) [64]byte
+func m512SrlvEpi16(a [64]byte, count [64]byte) [64]byte
 
 
 // MaskStoreuEpi16: Store packed 16-bit integers from 'a' into memory using
@@ -15667,7 +15671,7 @@ func MaskStoreuEpi16(mem_addr uintptr, k x86.Mmask8, a x86.M128i)  {
 func maskStoreuEpi16(mem_addr uintptr, k uint8, a [16]byte) 
 
 
-// MaskStoreuEpi161: Store packed 16-bit integers from 'a' into memory using
+// M256MaskStoreuEpi16: Store packed 16-bit integers from 'a' into memory using
 // writemask 'k'.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -15681,14 +15685,14 @@ func maskStoreuEpi16(mem_addr uintptr, k uint8, a [16]byte)
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm256_mask_storeu_epi16'.
 // Requires AVX512BW.
-func MaskStoreuEpi161(mem_addr uintptr, k x86.Mmask16, a x86.M256i)  {
-	maskStoreuEpi161(uintptr(mem_addr), uint16(k), [32]byte(a))
+func M256MaskStoreuEpi16(mem_addr uintptr, k x86.Mmask16, a x86.M256i)  {
+	m256MaskStoreuEpi16(uintptr(mem_addr), uint16(k), [32]byte(a))
 }
 
-func maskStoreuEpi161(mem_addr uintptr, k uint16, a [32]byte) 
+func m256MaskStoreuEpi16(mem_addr uintptr, k uint16, a [32]byte) 
 
 
-// MaskStoreuEpi162: Store packed 16-bit integers from 'a' into memory using
+// M512MaskStoreuEpi16: Store packed 16-bit integers from 'a' into memory using
 // writemask 'k'.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -15702,11 +15706,11 @@ func maskStoreuEpi161(mem_addr uintptr, k uint16, a [32]byte)
 //
 // Instruction: 'VMOVDQU16'. Intrinsic: '_mm512_mask_storeu_epi16'.
 // Requires AVX512BW.
-func MaskStoreuEpi162(mem_addr uintptr, k x86.Mmask32, a x86.M512i)  {
-	maskStoreuEpi162(uintptr(mem_addr), uint32(k), [64]byte(a))
+func M512MaskStoreuEpi16(mem_addr uintptr, k x86.Mmask32, a x86.M512i)  {
+	m512MaskStoreuEpi16(uintptr(mem_addr), uint32(k), [64]byte(a))
 }
 
-func maskStoreuEpi162(mem_addr uintptr, k uint32, a [64]byte) 
+func m512MaskStoreuEpi16(mem_addr uintptr, k uint32, a [64]byte) 
 
 
 // MaskStoreuEpi8: Store packed 8-bit integers from 'a' into memory using
@@ -15729,7 +15733,7 @@ func MaskStoreuEpi8(mem_addr uintptr, k x86.Mmask16, a x86.M128i)  {
 func maskStoreuEpi8(mem_addr uintptr, k uint16, a [16]byte) 
 
 
-// MaskStoreuEpi81: Store packed 8-bit integers from 'a' into memory using
+// M256MaskStoreuEpi8: Store packed 8-bit integers from 'a' into memory using
 // writemask 'k'.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -15742,14 +15746,14 @@ func maskStoreuEpi8(mem_addr uintptr, k uint16, a [16]byte)
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm256_mask_storeu_epi8'.
 // Requires AVX512BW.
-func MaskStoreuEpi81(mem_addr uintptr, k x86.Mmask32, a x86.M256i)  {
-	maskStoreuEpi81(uintptr(mem_addr), uint32(k), [32]byte(a))
+func M256MaskStoreuEpi8(mem_addr uintptr, k x86.Mmask32, a x86.M256i)  {
+	m256MaskStoreuEpi8(uintptr(mem_addr), uint32(k), [32]byte(a))
 }
 
-func maskStoreuEpi81(mem_addr uintptr, k uint32, a [32]byte) 
+func m256MaskStoreuEpi8(mem_addr uintptr, k uint32, a [32]byte) 
 
 
-// MaskStoreuEpi82: Store packed 8-bit integers from 'a' into memory using
+// M512MaskStoreuEpi8: Store packed 8-bit integers from 'a' into memory using
 // writemask 'k'.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -15762,11 +15766,11 @@ func maskStoreuEpi81(mem_addr uintptr, k uint32, a [32]byte)
 //
 // Instruction: 'VMOVDQU8'. Intrinsic: '_mm512_mask_storeu_epi8'.
 // Requires AVX512BW.
-func MaskStoreuEpi82(mem_addr uintptr, k x86.Mmask64, a x86.M512i)  {
-	maskStoreuEpi82(uintptr(mem_addr), uint64(k), [64]byte(a))
+func M512MaskStoreuEpi8(mem_addr uintptr, k x86.Mmask64, a x86.M512i)  {
+	m512MaskStoreuEpi8(uintptr(mem_addr), uint64(k), [64]byte(a))
 }
 
-func maskStoreuEpi82(mem_addr uintptr, k uint64, a [64]byte) 
+func m512MaskStoreuEpi8(mem_addr uintptr, k uint64, a [64]byte) 
 
 
 // MaskSubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
@@ -15815,7 +15819,7 @@ func MaskzSubEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzSubEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskSubEpi161: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M256MaskSubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15831,14 +15835,14 @@ func maskzSubEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm256_mask_sub_epi16'.
 // Requires AVX512BW.
-func MaskSubEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskSubEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskSubEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSubEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskSubEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskSubEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzSubEpi161: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M256MaskzSubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a', and store the results in 'dst' using zeromask 'k' (elements
 // are zeroed out when the corresponding mask bit is not set). 
 //
@@ -15854,14 +15858,14 @@ func maskSubEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm256_maskz_sub_epi16'.
 // Requires AVX512BW.
-func MaskzSubEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzSubEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzSubEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSubEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzSubEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzSubEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskSubEpi162: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M512MaskSubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15877,14 +15881,14 @@ func maskzSubEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_mask_sub_epi16'.
 // Requires AVX512BW.
-func MaskSubEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskSubEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskSubEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskSubEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzSubEpi162: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M512MaskzSubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a', and store the results in 'dst' using zeromask 'k' (elements
 // are zeroed out when the corresponding mask bit is not set). 
 //
@@ -15900,15 +15904,15 @@ func maskSubEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_maskz_sub_epi16'.
 // Requires AVX512BW.
-func MaskzSubEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzSubEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzSubEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSubEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzSubEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// SubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers
-// in 'a', and store the results in 'dst'. 
+// M512SubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// integers in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -15918,11 +15922,11 @@ func maskzSubEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm512_sub_epi16'.
 // Requires AVX512BW.
-func SubEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(subEpi16([64]byte(a), [64]byte(b)))
+func M512SubEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SubEpi16([64]byte(a), [64]byte(b)))
 }
 
-func subEpi16(a [64]byte, b [64]byte) [64]byte
+func m512SubEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
@@ -15971,7 +15975,7 @@ func MaskzSubEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzSubEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskSubEpi81: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M256MaskSubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -15987,14 +15991,14 @@ func maskzSubEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm256_mask_sub_epi8'.
 // Requires AVX512BW.
-func MaskSubEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskSubEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskSubEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSubEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskSubEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskSubEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzSubEpi81: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M256MaskzSubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a', and store the results in 'dst' using zeromask 'k' (elements
 // are zeroed out when the corresponding mask bit is not set). 
 //
@@ -16010,14 +16014,14 @@ func maskSubEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm256_maskz_sub_epi8'.
 // Requires AVX512BW.
-func MaskzSubEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzSubEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzSubEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSubEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzSubEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzSubEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskSubEpi82: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M512MaskSubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -16033,14 +16037,14 @@ func maskzSubEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_mask_sub_epi8'.
 // Requires AVX512BW.
-func MaskSubEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskSubEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskSubEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskSubEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzSubEpi82: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M512MaskzSubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a', and store the results in 'dst' using zeromask 'k' (elements
 // are zeroed out when the corresponding mask bit is not set). 
 //
@@ -16056,15 +16060,15 @@ func maskSubEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_maskz_sub_epi8'.
 // Requires AVX512BW.
-func MaskzSubEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzSubEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzSubEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSubEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzSubEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// SubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
-// 'a', and store the results in 'dst'. 
+// M512SubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// integers in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -16074,11 +16078,11 @@ func maskzSubEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm512_sub_epi8'.
 // Requires AVX512BW.
-func SubEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(subEpi8([64]byte(a), [64]byte(b)))
+func M512SubEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SubEpi8([64]byte(a), [64]byte(b)))
 }
 
-func subEpi8(a [64]byte, b [64]byte) [64]byte
+func m512SubEpi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
@@ -16129,7 +16133,7 @@ func MaskzSubsEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzSubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskSubsEpi161: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M256MaskSubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a' using saturation, and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -16146,17 +16150,17 @@ func maskzSubsEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm256_mask_subs_epi16'.
 // Requires AVX512BW.
-func MaskSubsEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskSubsEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskSubsEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSubsEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskSubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskSubsEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzSubsEpi161: Subtract packed 16-bit integers in 'b' from packed 16-bit
-// integers in 'a' using saturation, and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzSubsEpi16: Subtract packed 16-bit integers in 'b' from packed
+// 16-bit integers in 'a' using saturation, and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -16170,14 +16174,14 @@ func maskSubsEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm256_maskz_subs_epi16'.
 // Requires AVX512BW.
-func MaskzSubsEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzSubsEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzSubsEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSubsEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzSubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzSubsEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskSubsEpi162: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M512MaskSubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a' using saturation, and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -16194,17 +16198,17 @@ func maskzSubsEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_mask_subs_epi16'.
 // Requires AVX512BW.
-func MaskSubsEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskSubsEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskSubsEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubsEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskSubsEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzSubsEpi162: Subtract packed 16-bit integers in 'b' from packed 16-bit
-// integers in 'a' using saturation, and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzSubsEpi16: Subtract packed 16-bit integers in 'b' from packed
+// 16-bit integers in 'a' using saturation, and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -16218,14 +16222,14 @@ func maskSubsEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_maskz_subs_epi16'.
 // Requires AVX512BW.
-func MaskzSubsEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzSubsEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzSubsEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSubsEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzSubsEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// SubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M512SubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a' using saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -16236,11 +16240,11 @@ func maskzSubsEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm512_subs_epi16'.
 // Requires AVX512BW.
-func SubsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(subsEpi16([64]byte(a), [64]byte(b)))
+func M512SubsEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SubsEpi16([64]byte(a), [64]byte(b)))
 }
 
-func subsEpi16(a [64]byte, b [64]byte) [64]byte
+func m512SubsEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
@@ -16291,7 +16295,7 @@ func MaskzSubsEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzSubsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskSubsEpi81: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M256MaskSubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a' using saturation, and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -16308,14 +16312,14 @@ func maskzSubsEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm256_mask_subs_epi8'.
 // Requires AVX512BW.
-func MaskSubsEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskSubsEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskSubsEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSubsEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskSubsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskSubsEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzSubsEpi81: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M256MaskzSubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a' using saturation, and store the results in 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
@@ -16332,14 +16336,14 @@ func maskSubsEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm256_maskz_subs_epi8'.
 // Requires AVX512BW.
-func MaskzSubsEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzSubsEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzSubsEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSubsEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzSubsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzSubsEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskSubsEpi82: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M512MaskSubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a' using saturation, and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
@@ -16356,14 +16360,14 @@ func maskzSubsEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_mask_subs_epi8'.
 // Requires AVX512BW.
-func MaskSubsEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskSubsEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskSubsEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubsEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskSubsEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzSubsEpi82: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// M512MaskzSubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
 // integers in 'a' using saturation, and store the results in 'dst' using
 // zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
 // set). 
@@ -16380,15 +16384,15 @@ func maskSubsEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_maskz_subs_epi8'.
 // Requires AVX512BW.
-func MaskzSubsEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzSubsEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzSubsEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSubsEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubsEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzSubsEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// SubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers
-// in 'a' using saturation, and store the results in 'dst'. 
+// M512SubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// integers in 'a' using saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -16398,11 +16402,11 @@ func maskzSubsEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm512_subs_epi8'.
 // Requires AVX512BW.
-func SubsEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(subsEpi8([64]byte(a), [64]byte(b)))
+func M512SubsEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SubsEpi8([64]byte(a), [64]byte(b)))
 }
 
-func subsEpi8(a [64]byte, b [64]byte) [64]byte
+func m512SubsEpi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
@@ -16453,10 +16457,10 @@ func MaskzSubsEpu16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzSubsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskSubsEpu161: Subtract packed unsigned 16-bit integers in 'b' from packed
-// unsigned 16-bit integers in 'a' using saturation, and store the results in
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 
+// M256MaskSubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from
+// packed unsigned 16-bit integers in 'a' using saturation, and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -16470,17 +16474,17 @@ func maskzSubsEpu16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm256_mask_subs_epu16'.
 // Requires AVX512BW.
-func MaskSubsEpu161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskSubsEpu161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskSubsEpu16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSubsEpu16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskSubsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskSubsEpu16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzSubsEpu161: Subtract packed unsigned 16-bit integers in 'b' from packed
-// unsigned 16-bit integers in 'a' using saturation, and store the results in
-// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M256MaskzSubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from
+// packed unsigned 16-bit integers in 'a' using saturation, and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -16494,17 +16498,17 @@ func maskSubsEpu161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm256_maskz_subs_epu16'.
 // Requires AVX512BW.
-func MaskzSubsEpu161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzSubsEpu161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzSubsEpu16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSubsEpu16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzSubsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzSubsEpu16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskSubsEpu162: Subtract packed unsigned 16-bit integers in 'b' from packed
-// unsigned 16-bit integers in 'a' using saturation, and store the results in
-// 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). 
+// M512MaskSubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from
+// packed unsigned 16-bit integers in 'a' using saturation, and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -16518,17 +16522,17 @@ func maskzSubsEpu161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_mask_subs_epu16'.
 // Requires AVX512BW.
-func MaskSubsEpu162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskSubsEpu162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskSubsEpu16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubsEpu16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskSubsEpu16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzSubsEpu162: Subtract packed unsigned 16-bit integers in 'b' from packed
-// unsigned 16-bit integers in 'a' using saturation, and store the results in
-// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M512MaskzSubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from
+// packed unsigned 16-bit integers in 'a' using saturation, and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -16542,14 +16546,14 @@ func maskSubsEpu162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_maskz_subs_epu16'.
 // Requires AVX512BW.
-func MaskzSubsEpu162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzSubsEpu162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzSubsEpu16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSubsEpu16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubsEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzSubsEpu16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// SubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
+// M512SubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
 // unsigned 16-bit integers in 'a' using saturation, and store the results in
 // 'dst'. 
 //
@@ -16561,11 +16565,11 @@ func maskzSubsEpu162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm512_subs_epu16'.
 // Requires AVX512BW.
-func SubsEpu16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(subsEpu16([64]byte(a), [64]byte(b)))
+func M512SubsEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SubsEpu16([64]byte(a), [64]byte(b)))
 }
 
-func subsEpu16(a [64]byte, b [64]byte) [64]byte
+func m512SubsEpu16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskSubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
@@ -16616,7 +16620,7 @@ func MaskzSubsEpu8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzSubsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskSubsEpu81: Subtract packed unsigned 8-bit integers in 'b' from packed
+// M256MaskSubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
 // unsigned 8-bit integers in 'a' using saturation, and store the results in
 // 'dst' using writemask 'k' (elements are copied from 'src' when the
 // corresponding mask bit is not set). 
@@ -16633,17 +16637,17 @@ func maskzSubsEpu8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm256_mask_subs_epu8'.
 // Requires AVX512BW.
-func MaskSubsEpu81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskSubsEpu81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskSubsEpu8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskSubsEpu8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskSubsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskSubsEpu8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzSubsEpu81: Subtract packed unsigned 8-bit integers in 'b' from packed
-// unsigned 8-bit integers in 'a' using saturation, and store the results in
-// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M256MaskzSubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from
+// packed unsigned 8-bit integers in 'a' using saturation, and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -16657,14 +16661,14 @@ func maskSubsEpu81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm256_maskz_subs_epu8'.
 // Requires AVX512BW.
-func MaskzSubsEpu81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzSubsEpu81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzSubsEpu8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzSubsEpu8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzSubsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzSubsEpu8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskSubsEpu82: Subtract packed unsigned 8-bit integers in 'b' from packed
+// M512MaskSubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
 // unsigned 8-bit integers in 'a' using saturation, and store the results in
 // 'dst' using writemask 'k' (elements are copied from 'src' when the
 // corresponding mask bit is not set). 
@@ -16681,17 +16685,17 @@ func maskzSubsEpu81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_mask_subs_epu8'.
 // Requires AVX512BW.
-func MaskSubsEpu82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskSubsEpu82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskSubsEpu8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskSubsEpu8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskSubsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskSubsEpu8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzSubsEpu82: Subtract packed unsigned 8-bit integers in 'b' from packed
-// unsigned 8-bit integers in 'a' using saturation, and store the results in
-// 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M512MaskzSubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from
+// packed unsigned 8-bit integers in 'a' using saturation, and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -16705,14 +16709,14 @@ func maskSubsEpu82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_maskz_subs_epu8'.
 // Requires AVX512BW.
-func MaskzSubsEpu82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzSubsEpu82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzSubsEpu8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzSubsEpu8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzSubsEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzSubsEpu8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// SubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
+// M512SubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
 // unsigned 8-bit integers in 'a' using saturation, and store the results in
 // 'dst'. 
 //
@@ -16724,11 +16728,11 @@ func maskzSubsEpu82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm512_subs_epu8'.
 // Requires AVX512BW.
-func SubsEpu8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(subsEpu8([64]byte(a), [64]byte(b)))
+func M512SubsEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512SubsEpu8([64]byte(a), [64]byte(b)))
 }
 
-func subsEpu8(a [64]byte, b [64]byte) [64]byte
+func m512SubsEpu8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskTestEpi16Mask: Compute the bitwise AND of packed 16-bit integers in 'a'
@@ -16774,10 +16778,10 @@ func TestEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
 func testEpi16Mask(a [16]byte, b [16]byte) uint8
 
 
-// MaskTestEpi16Mask1: Compute the bitwise AND of packed 16-bit integers in 'a'
-// and 'b', producing intermediate 16-bit values, and set the corresponding bit
-// in result mask 'k' (subject to writemask 'k') if the intermediate value is
-// non-zero. 
+// M256MaskTestEpi16Mask: Compute the bitwise AND of packed 16-bit integers in
+// 'a' and 'b', producing intermediate 16-bit values, and set the corresponding
+// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
+// is non-zero. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -16791,16 +16795,16 @@ func testEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm256_mask_test_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskTestEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskTestEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskTestEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskTestEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskTestEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// TestEpi16Mask1: Compute the bitwise AND of packed 16-bit integers in 'a' and
-// 'b', producing intermediate 16-bit values, and set the corresponding bit in
-// result mask 'k' if the intermediate value is non-zero. 
+// M256TestEpi16Mask: Compute the bitwise AND of packed 16-bit integers in 'a'
+// and 'b', producing intermediate 16-bit values, and set the corresponding bit
+// in result mask 'k' if the intermediate value is non-zero. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -16810,17 +16814,17 @@ func maskTestEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm256_test_epi16_mask'.
 // Requires AVX512BW.
-func TestEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(testEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256TestEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256TestEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func testEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256TestEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskTestEpi16Mask2: Compute the bitwise AND of packed 16-bit integers in 'a'
-// and 'b', producing intermediate 16-bit values, and set the corresponding bit
-// in result mask 'k' (subject to writemask 'k') if the intermediate value is
-// non-zero. 
+// M512MaskTestEpi16Mask: Compute the bitwise AND of packed 16-bit integers in
+// 'a' and 'b', producing intermediate 16-bit values, and set the corresponding
+// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
+// is non-zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -16834,16 +16838,16 @@ func testEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm512_mask_test_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskTestEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskTestEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskTestEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskTestEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
-// TestEpi16Mask2: Compute the bitwise AND of packed 16-bit integers in 'a' and
-// 'b', producing intermediate 16-bit values, and set the corresponding bit in
-// result mask 'k' if the intermediate value is non-zero. 
+// M512TestEpi16Mask: Compute the bitwise AND of packed 16-bit integers in 'a'
+// and 'b', producing intermediate 16-bit values, and set the corresponding bit
+// in result mask 'k' if the intermediate value is non-zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -16853,11 +16857,11 @@ func maskTestEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPTESTMW'. Intrinsic: '_mm512_test_epi16_mask'.
 // Requires AVX512BW.
-func TestEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(testEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512TestEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512TestEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func testEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512TestEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskTestEpi8Mask: Compute the bitwise AND of packed 8-bit integers in 'a'
@@ -16903,10 +16907,10 @@ func TestEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
 func testEpi8Mask(a [16]byte, b [16]byte) uint16
 
 
-// MaskTestEpi8Mask1: Compute the bitwise AND of packed 8-bit integers in 'a'
-// and 'b', producing intermediate 8-bit values, and set the corresponding bit
-// in result mask 'k' (subject to writemask 'k') if the intermediate value is
-// non-zero. 
+// M256MaskTestEpi8Mask: Compute the bitwise AND of packed 8-bit integers in
+// 'a' and 'b', producing intermediate 8-bit values, and set the corresponding
+// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
+// is non-zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -16920,16 +16924,16 @@ func testEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm256_mask_test_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskTestEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskTestEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskTestEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskTestEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskTestEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// TestEpi8Mask1: Compute the bitwise AND of packed 8-bit integers in 'a' and
-// 'b', producing intermediate 8-bit values, and set the corresponding bit in
-// result mask 'k' if the intermediate value is non-zero. 
+// M256TestEpi8Mask: Compute the bitwise AND of packed 8-bit integers in 'a'
+// and 'b', producing intermediate 8-bit values, and set the corresponding bit
+// in result mask 'k' if the intermediate value is non-zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -16939,17 +16943,17 @@ func maskTestEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm256_test_epi8_mask'.
 // Requires AVX512BW.
-func TestEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(testEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256TestEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256TestEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func testEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256TestEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskTestEpi8Mask2: Compute the bitwise AND of packed 8-bit integers in 'a'
-// and 'b', producing intermediate 8-bit values, and set the corresponding bit
-// in result mask 'k' (subject to writemask 'k') if the intermediate value is
-// non-zero. 
+// M512MaskTestEpi8Mask: Compute the bitwise AND of packed 8-bit integers in
+// 'a' and 'b', producing intermediate 8-bit values, and set the corresponding
+// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
+// is non-zero. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -16963,16 +16967,16 @@ func testEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm512_mask_test_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskTestEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskTestEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskTestEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskTestEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
-// TestEpi8Mask2: Compute the bitwise AND of packed 8-bit integers in 'a' and
-// 'b', producing intermediate 8-bit values, and set the corresponding bit in
-// result mask 'k' if the intermediate value is non-zero. 
+// M512TestEpi8Mask: Compute the bitwise AND of packed 8-bit integers in 'a'
+// and 'b', producing intermediate 8-bit values, and set the corresponding bit
+// in result mask 'k' if the intermediate value is non-zero. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -16982,11 +16986,11 @@ func maskTestEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPTESTMB'. Intrinsic: '_mm512_test_epi8_mask'.
 // Requires AVX512BW.
-func TestEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(testEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512TestEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512TestEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func testEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512TestEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskTestnEpi16Mask: Compute the bitwise NAND of packed 16-bit integers in
@@ -17032,10 +17036,10 @@ func TestnEpi16Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
 func testnEpi16Mask(a [16]byte, b [16]byte) uint8
 
 
-// MaskTestnEpi16Mask1: Compute the bitwise NAND of packed 16-bit integers in
-// 'a' and 'b', producing intermediate 16-bit values, and set the corresponding
-// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
-// is zero. 
+// M256MaskTestnEpi16Mask: Compute the bitwise NAND of packed 16-bit integers
+// in 'a' and 'b', producing intermediate 16-bit values, and set the
+// corresponding bit in result mask 'k' (subject to writemask 'k') if the
+// intermediate value is zero. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -17049,16 +17053,16 @@ func testnEpi16Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm256_mask_testn_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi16Mask1(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(maskTestnEpi16Mask1(uint16(k1), [32]byte(a), [32]byte(b)))
+func M256MaskTestnEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256MaskTestnEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskTestnEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
+func m256MaskTestnEpi16Mask(k1 uint16, a [32]byte, b [32]byte) uint16
 
 
-// TestnEpi16Mask1: Compute the bitwise NAND of packed 16-bit integers in 'a'
-// and 'b', producing intermediate 16-bit values, and set the corresponding bit
-// in result mask 'k' if the intermediate value is zero. 
+// M256TestnEpi16Mask: Compute the bitwise NAND of packed 16-bit integers in
+// 'a' and 'b', producing intermediate 16-bit values, and set the corresponding
+// bit in result mask 'k' if the intermediate value is zero. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -17068,17 +17072,17 @@ func maskTestnEpi16Mask1(k1 uint16, a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm256_testn_epi16_mask'.
 // Requires AVX512BW.
-func TestnEpi16Mask1(a x86.M256i, b x86.M256i) x86.Mmask16 {
-	return x86.Mmask16(testnEpi16Mask1([32]byte(a), [32]byte(b)))
+func M256TestnEpi16Mask(a x86.M256i, b x86.M256i) x86.Mmask16 {
+	return x86.Mmask16(m256TestnEpi16Mask([32]byte(a), [32]byte(b)))
 }
 
-func testnEpi16Mask1(a [32]byte, b [32]byte) uint16
+func m256TestnEpi16Mask(a [32]byte, b [32]byte) uint16
 
 
-// MaskTestnEpi16Mask2: Compute the bitwise NAND of packed 16-bit integers in
-// 'a' and 'b', producing intermediate 16-bit values, and set the corresponding
-// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
-// is zero. 
+// M512MaskTestnEpi16Mask: Compute the bitwise NAND of packed 16-bit integers
+// in 'a' and 'b', producing intermediate 16-bit values, and set the
+// corresponding bit in result mask 'k' (subject to writemask 'k') if the
+// intermediate value is zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -17092,16 +17096,16 @@ func testnEpi16Mask1(a [32]byte, b [32]byte) uint16
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm512_mask_testn_epi16_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi16Mask2(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(maskTestnEpi16Mask2(uint32(k1), [64]byte(a), [64]byte(b)))
+func M512MaskTestnEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512MaskTestnEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestnEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
+func m512MaskTestnEpi16Mask(k1 uint32, a [64]byte, b [64]byte) uint32
 
 
-// TestnEpi16Mask2: Compute the bitwise NAND of packed 16-bit integers in 'a'
-// and 'b', producing intermediate 16-bit values, and set the corresponding bit
-// in result mask 'k' if the intermediate value is zero. 
+// M512TestnEpi16Mask: Compute the bitwise NAND of packed 16-bit integers in
+// 'a' and 'b', producing intermediate 16-bit values, and set the corresponding
+// bit in result mask 'k' if the intermediate value is zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*16
@@ -17111,11 +17115,11 @@ func maskTestnEpi16Mask2(k1 uint32, a [64]byte, b [64]byte) uint32
 //
 // Instruction: 'VPTESTNMW'. Intrinsic: '_mm512_testn_epi16_mask'.
 // Requires AVX512BW.
-func TestnEpi16Mask2(a x86.M512i, b x86.M512i) x86.Mmask32 {
-	return x86.Mmask32(testnEpi16Mask2([64]byte(a), [64]byte(b)))
+func M512TestnEpi16Mask(a x86.M512i, b x86.M512i) x86.Mmask32 {
+	return x86.Mmask32(m512TestnEpi16Mask([64]byte(a), [64]byte(b)))
 }
 
-func testnEpi16Mask2(a [64]byte, b [64]byte) uint32
+func m512TestnEpi16Mask(a [64]byte, b [64]byte) uint32
 
 
 // MaskTestnEpi8Mask: Compute the bitwise NAND of packed 8-bit integers in 'a'
@@ -17161,10 +17165,10 @@ func TestnEpi8Mask(a x86.M128i, b x86.M128i) x86.Mmask16 {
 func testnEpi8Mask(a [16]byte, b [16]byte) uint16
 
 
-// MaskTestnEpi8Mask1: Compute the bitwise NAND of packed 8-bit integers in 'a'
-// and 'b', producing intermediate 8-bit values, and set the corresponding bit
-// in result mask 'k' (subject to writemask 'k') if the intermediate value is
-// zero. 
+// M256MaskTestnEpi8Mask: Compute the bitwise NAND of packed 8-bit integers in
+// 'a' and 'b', producing intermediate 8-bit values, and set the corresponding
+// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
+// is zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -17178,16 +17182,16 @@ func testnEpi8Mask(a [16]byte, b [16]byte) uint16
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm256_mask_testn_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi8Mask1(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(maskTestnEpi8Mask1(uint32(k1), [32]byte(a), [32]byte(b)))
+func M256MaskTestnEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256MaskTestnEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b)))
 }
 
-func maskTestnEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
+func m256MaskTestnEpi8Mask(k1 uint32, a [32]byte, b [32]byte) uint32
 
 
-// TestnEpi8Mask1: Compute the bitwise NAND of packed 8-bit integers in 'a' and
-// 'b', producing intermediate 8-bit values, and set the corresponding bit in
-// result mask 'k' if the intermediate value is zero. 
+// M256TestnEpi8Mask: Compute the bitwise NAND of packed 8-bit integers in 'a'
+// and 'b', producing intermediate 8-bit values, and set the corresponding bit
+// in result mask 'k' if the intermediate value is zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -17197,17 +17201,17 @@ func maskTestnEpi8Mask1(k1 uint32, a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm256_testn_epi8_mask'.
 // Requires AVX512BW.
-func TestnEpi8Mask1(a x86.M256i, b x86.M256i) x86.Mmask32 {
-	return x86.Mmask32(testnEpi8Mask1([32]byte(a), [32]byte(b)))
+func M256TestnEpi8Mask(a x86.M256i, b x86.M256i) x86.Mmask32 {
+	return x86.Mmask32(m256TestnEpi8Mask([32]byte(a), [32]byte(b)))
 }
 
-func testnEpi8Mask1(a [32]byte, b [32]byte) uint32
+func m256TestnEpi8Mask(a [32]byte, b [32]byte) uint32
 
 
-// MaskTestnEpi8Mask2: Compute the bitwise NAND of packed 8-bit integers in 'a'
-// and 'b', producing intermediate 8-bit values, and set the corresponding bit
-// in result mask 'k' (subject to writemask 'k') if the intermediate value is
-// zero. 
+// M512MaskTestnEpi8Mask: Compute the bitwise NAND of packed 8-bit integers in
+// 'a' and 'b', producing intermediate 8-bit values, and set the corresponding
+// bit in result mask 'k' (subject to writemask 'k') if the intermediate value
+// is zero. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -17221,16 +17225,16 @@ func testnEpi8Mask1(a [32]byte, b [32]byte) uint32
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm512_mask_testn_epi8_mask'.
 // Requires AVX512BW.
-func MaskTestnEpi8Mask2(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(maskTestnEpi8Mask2(uint64(k1), [64]byte(a), [64]byte(b)))
+func M512MaskTestnEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512MaskTestnEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b)))
 }
 
-func maskTestnEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
+func m512MaskTestnEpi8Mask(k1 uint64, a [64]byte, b [64]byte) uint64
 
 
-// TestnEpi8Mask2: Compute the bitwise NAND of packed 8-bit integers in 'a' and
-// 'b', producing intermediate 8-bit values, and set the corresponding bit in
-// result mask 'k' if the intermediate value is zero. 
+// M512TestnEpi8Mask: Compute the bitwise NAND of packed 8-bit integers in 'a'
+// and 'b', producing intermediate 8-bit values, and set the corresponding bit
+// in result mask 'k' if the intermediate value is zero. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -17240,11 +17244,11 @@ func maskTestnEpi8Mask2(k1 uint64, a [64]byte, b [64]byte) uint64
 //
 // Instruction: 'VPTESTNMB'. Intrinsic: '_mm512_testn_epi8_mask'.
 // Requires AVX512BW.
-func TestnEpi8Mask2(a x86.M512i, b x86.M512i) x86.Mmask64 {
-	return x86.Mmask64(testnEpi8Mask2([64]byte(a), [64]byte(b)))
+func M512TestnEpi8Mask(a x86.M512i, b x86.M512i) x86.Mmask64 {
+	return x86.Mmask64(m512TestnEpi8Mask([64]byte(a), [64]byte(b)))
 }
 
-func testnEpi8Mask2(a [64]byte, b [64]byte) uint64
+func m512TestnEpi8Mask(a [64]byte, b [64]byte) uint64
 
 
 // MaskUnpackhiEpi16: Unpack and interleave 16-bit integers from the high half
@@ -17321,10 +17325,10 @@ func MaskzUnpackhiEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzUnpackhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskUnpackhiEpi161: Unpack and interleave 16-bit integers from the high half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M256MaskUnpackhiEpi16: Unpack and interleave 16-bit integers from the high
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		INTERLEAVE_HIGH_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[79:64]
@@ -17353,14 +17357,14 @@ func maskzUnpackhiEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm256_mask_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskUnpackhiEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskUnpackhiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskUnpackhiEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskUnpackhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskUnpackhiEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzUnpackhiEpi161: Unpack and interleave 16-bit integers from the high
+// M256MaskzUnpackhiEpi16: Unpack and interleave 16-bit integers from the high
 // half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
 // using zeromask 'k' (elements are zeroed out when the corresponding mask bit
 // is not set). 
@@ -17392,17 +17396,17 @@ func maskUnpackhiEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm256_maskz_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzUnpackhiEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzUnpackhiEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzUnpackhiEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzUnpackhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzUnpackhiEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskUnpackhiEpi162: Unpack and interleave 16-bit integers from the high half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskUnpackhiEpi16: Unpack and interleave 16-bit integers from the high
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		INTERLEAVE_HIGH_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[79:64]
@@ -17433,14 +17437,14 @@ func maskzUnpackhiEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_mask_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskUnpackhiEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskUnpackhiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskUnpackhiEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskUnpackhiEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzUnpackhiEpi162: Unpack and interleave 16-bit integers from the high
+// M512MaskzUnpackhiEpi16: Unpack and interleave 16-bit integers from the high
 // half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
 // using zeromask 'k' (elements are zeroed out when the corresponding mask bit
 // is not set). 
@@ -17474,15 +17478,15 @@ func maskUnpackhiEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_maskz_unpackhi_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzUnpackhiEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzUnpackhiEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzUnpackhiEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzUnpackhiEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// UnpackhiEpi16: Unpack and interleave 16-bit integers from the high half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M512UnpackhiEpi16: Unpack and interleave 16-bit integers from the high half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[79:64]
@@ -17504,11 +17508,11 @@ func maskzUnpackhiEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm512_unpackhi_epi16'.
 // Requires AVX512BW.
-func UnpackhiEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(unpackhiEpi16([64]byte(a), [64]byte(b)))
+func M512UnpackhiEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512UnpackhiEpi16([64]byte(a), [64]byte(b)))
 }
 
-func unpackhiEpi16(a [64]byte, b [64]byte) [64]byte
+func m512UnpackhiEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackhiEpi8: Unpack and interleave 8-bit integers from the high half of
@@ -17601,10 +17605,10 @@ func MaskzUnpackhiEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzUnpackhiEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskUnpackhiEpi81: Unpack and interleave 8-bit integers from the high half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M256MaskUnpackhiEpi8: Unpack and interleave 8-bit integers from the high
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		INTERLEAVE_HIGH_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[71:64] 
@@ -17641,17 +17645,17 @@ func maskzUnpackhiEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm256_mask_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskUnpackhiEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskUnpackhiEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskUnpackhiEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskUnpackhiEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskUnpackhiEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzUnpackhiEpi81: Unpack and interleave 8-bit integers from the high half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzUnpackhiEpi8: Unpack and interleave 8-bit integers from the high
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		INTERLEAVE_HIGH_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[71:64] 
@@ -17688,17 +17692,17 @@ func maskUnpackhiEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm256_maskz_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzUnpackhiEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzUnpackhiEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzUnpackhiEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzUnpackhiEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzUnpackhiEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskUnpackhiEpi82: Unpack and interleave 8-bit integers from the high half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskUnpackhiEpi8: Unpack and interleave 8-bit integers from the high
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		INTERLEAVE_HIGH_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[71:64] 
@@ -17737,17 +17741,17 @@ func maskzUnpackhiEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_mask_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskUnpackhiEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskUnpackhiEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskUnpackhiEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskUnpackhiEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackhiEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskUnpackhiEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzUnpackhiEpi82: Unpack and interleave 8-bit integers from the high half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzUnpackhiEpi8: Unpack and interleave 8-bit integers from the high
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		INTERLEAVE_HIGH_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[71:64] 
@@ -17786,14 +17790,14 @@ func maskUnpackhiEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_maskz_unpackhi_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackhiEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzUnpackhiEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzUnpackhiEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzUnpackhiEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackhiEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzUnpackhiEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// UnpackhiEpi8: Unpack and interleave 8-bit integers from the high half of
+// M512UnpackhiEpi8: Unpack and interleave 8-bit integers from the high half of
 // each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_BYTES(src1[127:0], src2[127:0]){
@@ -17824,11 +17828,11 @@ func maskzUnpackhiEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm512_unpackhi_epi8'.
 // Requires AVX512BW.
-func UnpackhiEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(unpackhiEpi8([64]byte(a), [64]byte(b)))
+func M512UnpackhiEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512UnpackhiEpi8([64]byte(a), [64]byte(b)))
 }
 
-func unpackhiEpi8(a [64]byte, b [64]byte) [64]byte
+func m512UnpackhiEpi8(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackloEpi16: Unpack and interleave 16-bit integers from the low half
@@ -17905,10 +17909,10 @@ func MaskzUnpackloEpi16(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzUnpackloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskUnpackloEpi161: Unpack and interleave 16-bit integers from the low half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M256MaskUnpackloEpi16: Unpack and interleave 16-bit integers from the low
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		INTERLEAVE_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[15:0] 
@@ -17937,17 +17941,17 @@ func maskzUnpackloEpi16(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm256_mask_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskUnpackloEpi161(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskUnpackloEpi161([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskUnpackloEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskUnpackloEpi16([32]byte(src), uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskUnpackloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskUnpackloEpi16(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzUnpackloEpi161: Unpack and interleave 16-bit integers from the low half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzUnpackloEpi16: Unpack and interleave 16-bit integers from the low
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		INTERLEAVE_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[15:0] 
@@ -17976,17 +17980,17 @@ func maskUnpackloEpi161(src [32]byte, k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm256_maskz_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi161(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzUnpackloEpi161(uint16(k), [32]byte(a), [32]byte(b)))
+func M256MaskzUnpackloEpi16(k x86.Mmask16, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzUnpackloEpi16(uint16(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzUnpackloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
+func m256MaskzUnpackloEpi16(k uint16, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskUnpackloEpi162: Unpack and interleave 16-bit integers from the low half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'src' when the corresponding mask
-// bit is not set). 
+// M512MaskUnpackloEpi16: Unpack and interleave 16-bit integers from the low
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'src' when the corresponding
+// mask bit is not set). 
 //
 //		INTERLEAVE_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[15:0] 
@@ -18017,17 +18021,17 @@ func maskzUnpackloEpi161(k uint16, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_mask_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskUnpackloEpi162(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskUnpackloEpi162([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskUnpackloEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskUnpackloEpi16([64]byte(src), uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskUnpackloEpi16(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzUnpackloEpi162: Unpack and interleave 16-bit integers from the low half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzUnpackloEpi16: Unpack and interleave 16-bit integers from the low
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		INTERLEAVE_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[15:0] 
@@ -18058,15 +18062,15 @@ func maskUnpackloEpi162(src [64]byte, k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_maskz_unpacklo_epi16'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi162(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzUnpackloEpi162(uint32(k), [64]byte(a), [64]byte(b)))
+func M512MaskzUnpackloEpi16(k x86.Mmask32, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzUnpackloEpi16(uint32(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
+func m512MaskzUnpackloEpi16(k uint32, a [64]byte, b [64]byte) [64]byte
 
 
-// UnpackloEpi16: Unpack and interleave 16-bit integers from the low half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M512UnpackloEpi16: Unpack and interleave 16-bit integers from the low half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[15:0] 
@@ -18088,11 +18092,11 @@ func maskzUnpackloEpi162(k uint32, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm512_unpacklo_epi16'.
 // Requires AVX512BW.
-func UnpackloEpi16(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(unpackloEpi16([64]byte(a), [64]byte(b)))
+func M512UnpackloEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512UnpackloEpi16([64]byte(a), [64]byte(b)))
 }
 
-func unpackloEpi16(a [64]byte, b [64]byte) [64]byte
+func m512UnpackloEpi16(a [64]byte, b [64]byte) [64]byte
 
 
 // MaskUnpackloEpi8: Unpack and interleave 8-bit integers from the low half of
@@ -18185,8 +18189,8 @@ func MaskzUnpackloEpi8(k x86.Mmask16, a x86.M128i, b x86.M128i) x86.M128i {
 func maskzUnpackloEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 
 
-// MaskUnpackloEpi81: Unpack and interleave 8-bit integers from the low half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
+// M256MaskUnpackloEpi8: Unpack and interleave 8-bit integers from the low half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -18225,17 +18229,17 @@ func maskzUnpackloEpi8(k uint16, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm256_mask_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskUnpackloEpi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskUnpackloEpi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskUnpackloEpi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskUnpackloEpi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskUnpackloEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskUnpackloEpi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzUnpackloEpi81: Unpack and interleave 8-bit integers from the low half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzUnpackloEpi8: Unpack and interleave 8-bit integers from the low
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		INTERLEAVE_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[7:0] 
@@ -18272,15 +18276,15 @@ func maskUnpackloEpi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm256_maskz_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzUnpackloEpi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzUnpackloEpi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzUnpackloEpi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzUnpackloEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzUnpackloEpi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskUnpackloEpi82: Unpack and interleave 8-bit integers from the low half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
+// M512MaskUnpackloEpi8: Unpack and interleave 8-bit integers from the low half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
 // writemask 'k' (elements are copied from 'src' when the corresponding mask
 // bit is not set). 
 //
@@ -18321,17 +18325,17 @@ func maskzUnpackloEpi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_mask_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskUnpackloEpi82(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskUnpackloEpi82([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskUnpackloEpi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskUnpackloEpi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskUnpackloEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskUnpackloEpi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzUnpackloEpi82: Unpack and interleave 8-bit integers from the low half
-// of each 128-bit lane in 'a' and 'b', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzUnpackloEpi8: Unpack and interleave 8-bit integers from the low
+// half of each 128-bit lane in 'a' and 'b', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		INTERLEAVE_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[7:0] 
@@ -18370,15 +18374,15 @@ func maskUnpackloEpi82(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_maskz_unpacklo_epi8'.
 // Requires AVX512BW.
-func MaskzUnpackloEpi82(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzUnpackloEpi82(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzUnpackloEpi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzUnpackloEpi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzUnpackloEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzUnpackloEpi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// UnpackloEpi8: Unpack and interleave 8-bit integers from the low half of each
-// 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M512UnpackloEpi8: Unpack and interleave 8-bit integers from the low half of
+// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[7:0] 
@@ -18408,9 +18412,9 @@ func maskzUnpackloEpi82(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm512_unpacklo_epi8'.
 // Requires AVX512BW.
-func UnpackloEpi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(unpackloEpi8([64]byte(a), [64]byte(b)))
+func M512UnpackloEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512UnpackloEpi8([64]byte(a), [64]byte(b)))
 }
 
-func unpackloEpi8(a [64]byte, b [64]byte) [64]byte
+func m512UnpackloEpi8(a [64]byte, b [64]byte) [64]byte
 

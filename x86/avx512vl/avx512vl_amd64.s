@@ -21,16 +21,16 @@ TEXT ·maskzAddPd(SB),7,$0
 	MOVOU X0, ret+36(FP)
 	RET
 
-// func maskAddPd1(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
-TEXT ·maskAddPd1(SB),7,$0
+// func m256MaskAddPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
+TEXT ·m256MaskAddPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzAddPd1(k uint8, a [4]float64, b [4]float64) [4]float64
-TEXT ·maskzAddPd1(SB),7,$0
+// func m256MaskzAddPd(k uint8, a [4]float64, b [4]float64) [4]float64
+TEXT ·m256MaskzAddPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
 	//TODO: Code missing
 
@@ -60,16 +60,16 @@ TEXT ·maskzAddPs(SB),7,$0
 	MOVOU X0, ret+36(FP)
 	RET
 
-// func maskAddPs1(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
-TEXT ·maskAddPs1(SB),7,$0
+// func m256MaskAddPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
+TEXT ·m256MaskAddPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzAddPs1(k uint8, a [8]float32, b [8]float32) [8]float32
-TEXT ·maskzAddPs1(SB),7,$0
+// func m256MaskzAddPs(k uint8, a [8]float32, b [8]float32) [8]float32
+TEXT ·m256MaskzAddPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
 	//TODO: Code missing
 
@@ -112,24 +112,24 @@ TEXT ·maskzAlignrEpi32(SB),7,$0
 	MOVOU X0, ret+44(FP)
 	RET
 
-// func alignrEpi321(a [32]byte, b [32]byte, count int) [32]byte
-TEXT ·alignrEpi321(SB),7,$0
+// func m256AlignrEpi32(a [32]byte, b [32]byte, count int) [32]byte
+TEXT ·m256AlignrEpi32(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskAlignrEpi321(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
-TEXT ·maskAlignrEpi321(SB),7,$0
+// func m256MaskAlignrEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
+TEXT ·m256MaskAlignrEpi32(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzAlignrEpi321(k uint8, a [32]byte, b [32]byte, count int) [32]byte
-TEXT ·maskzAlignrEpi321(SB),7,$0
+// func m256MaskzAlignrEpi32(k uint8, a [32]byte, b [32]byte, count int) [32]byte
+TEXT ·m256MaskzAlignrEpi32(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
@@ -172,24 +172,24 @@ TEXT ·maskzAlignrEpi64(SB),7,$0
 	MOVOU X0, ret+44(FP)
 	RET
 
-// func alignrEpi641(a [32]byte, b [32]byte, count int) [32]byte
-TEXT ·alignrEpi641(SB),7,$0
+// func m256AlignrEpi64(a [32]byte, b [32]byte, count int) [32]byte
+TEXT ·m256AlignrEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskAlignrEpi641(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
-TEXT ·maskAlignrEpi641(SB),7,$0
+// func m256MaskAlignrEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
+TEXT ·m256MaskAlignrEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzAlignrEpi641(k uint8, a [32]byte, b [32]byte, count int) [32]byte
-TEXT ·maskzAlignrEpi641(SB),7,$0
+// func m256MaskzAlignrEpi64(k uint8, a [32]byte, b [32]byte, count int) [32]byte
+TEXT ·m256MaskzAlignrEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
@@ -231,24 +231,24 @@ TEXT ·maskzMadd52hiEpu64(SB),7,$0
 	MOVOU X0, ret+52(FP)
 	RET
 
-// func madd52hiEpu641(a [32]byte, b [32]byte, c [32]byte) [32]byte
-TEXT ·madd52hiEpu641(SB),7,$0
+// func m256Madd52hiEpu64(a [32]byte, b [32]byte, c [32]byte) [32]byte
+TEXT ·m256Madd52hiEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskMadd52hiEpu641(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
-TEXT ·maskMadd52hiEpu641(SB),7,$0
+// func m256MaskMadd52hiEpu64(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
+TEXT ·m256MaskMadd52hiEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzMadd52hiEpu641(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
-TEXT ·maskzMadd52hiEpu641(SB),7,$0
+// func m256MaskzMadd52hiEpu64(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
+TEXT ·m256MaskzMadd52hiEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
@@ -290,24 +290,24 @@ TEXT ·maskzMadd52loEpu64(SB),7,$0
 	MOVOU X0, ret+52(FP)
 	RET
 
-// func madd52loEpu641(a [32]byte, b [32]byte, c [32]byte) [32]byte
-TEXT ·madd52loEpu641(SB),7,$0
+// func m256Madd52loEpu64(a [32]byte, b [32]byte, c [32]byte) [32]byte
+TEXT ·m256Madd52loEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskMadd52loEpu641(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
-TEXT ·maskMadd52loEpu641(SB),7,$0
+// func m256MaskMadd52loEpu64(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
+TEXT ·m256MaskMadd52loEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzMadd52loEpu641(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
-TEXT ·maskzMadd52loEpu641(SB),7,$0
+// func m256MaskzMadd52loEpu64(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
+TEXT ·m256MaskzMadd52loEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
@@ -356,24 +356,24 @@ TEXT ·multishiftEpi64Epi8(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func maskMultishiftEpi64Epi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
-TEXT ·maskMultishiftEpi64Epi81(SB),7,$0
+// func m256MaskMultishiftEpi64Epi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+TEXT ·m256MaskMultishiftEpi64Epi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzMultishiftEpi64Epi81(k uint32, a [32]byte, b [32]byte) [32]byte
-TEXT ·maskzMultishiftEpi64Epi81(SB),7,$0
+// func m256MaskzMultishiftEpi64Epi8(k uint32, a [32]byte, b [32]byte) [32]byte
+TEXT ·m256MaskzMultishiftEpi64Epi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func multishiftEpi64Epi81(a [32]byte, b [32]byte) [32]byte
-TEXT ·multishiftEpi64Epi81(SB),7,$0
+// func m256MultishiftEpi64Epi8(a [32]byte, b [32]byte) [32]byte
+TEXT ·m256MultishiftEpi64Epi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
@@ -427,32 +427,32 @@ TEXT ·permutex2varEpi8(SB),7,$0
 	MOVOU X0, ret+48(FP)
 	RET
 
-// func maskPermutex2varEpi81(a [32]byte, k uint32, idx [32]byte, b [32]byte) [32]byte
-TEXT ·maskPermutex2varEpi81(SB),7,$0
+// func m256MaskPermutex2varEpi8(a [32]byte, k uint32, idx [32]byte, b [32]byte) [32]byte
+TEXT ·m256MaskPermutex2varEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func mask2Permutex2varEpi81(a [32]byte, idx [32]byte, k uint32, b [32]byte) [32]byte
-TEXT ·mask2Permutex2varEpi81(SB),7,$0
+// func m256Mask2Permutex2varEpi8(a [32]byte, idx [32]byte, k uint32, b [32]byte) [32]byte
+TEXT ·m256Mask2Permutex2varEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzPermutex2varEpi81(k uint32, a [32]byte, idx [32]byte, b [32]byte) [32]byte
-TEXT ·maskzPermutex2varEpi81(SB),7,$0
+// func m256MaskzPermutex2varEpi8(k uint32, a [32]byte, idx [32]byte, b [32]byte) [32]byte
+TEXT ·m256MaskzPermutex2varEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func permutex2varEpi81(a [32]byte, idx [32]byte, b [32]byte) [32]byte
-TEXT ·permutex2varEpi81(SB),7,$0
+// func m256Permutex2varEpi8(a [32]byte, idx [32]byte, b [32]byte) [32]byte
+TEXT ·m256Permutex2varEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
@@ -492,24 +492,24 @@ TEXT ·permutexvarEpi8(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func maskPermutexvarEpi81(src [32]byte, k uint32, idx [32]byte, a [32]byte) [32]byte
-TEXT ·maskPermutexvarEpi81(SB),7,$0
+// func m256MaskPermutexvarEpi8(src [32]byte, k uint32, idx [32]byte, a [32]byte) [32]byte
+TEXT ·m256MaskPermutexvarEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func maskzPermutexvarEpi81(k uint32, idx [32]byte, a [32]byte) [32]byte
-TEXT ·maskzPermutexvarEpi81(SB),7,$0
+// func m256MaskzPermutexvarEpi8(k uint32, idx [32]byte, a [32]byte) [32]byte
+TEXT ·m256MaskzPermutexvarEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 
 	MOV Y0, ret+0(FP)
 	RET
 
-// func permutexvarEpi81(idx [32]byte, a [32]byte) [32]byte
-TEXT ·permutexvarEpi81(SB),7,$0
+// func m256PermutexvarEpi8(idx [32]byte, a [32]byte) [32]byte
+TEXT ·m256PermutexvarEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
 	//TODO: Code missing
 

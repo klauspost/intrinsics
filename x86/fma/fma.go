@@ -24,9 +24,9 @@ func FmaddPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
 func fmaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 
 
-// FmaddPd1: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', add the intermediate result to packed elements in 'c', and
-// store the results in 'dst'. 
+// M256FmaddPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', add the intermediate result to packed elements in
+// 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -36,11 +36,11 @@ func fmaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm256_fmadd_pd'.
 // Requires FMA.
-func FmaddPd1(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
-	return x86.M256d(fmaddPd1([4]float64(a), [4]float64(b), [4]float64(c)))
+func M256FmaddPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+	return x86.M256d(m256FmaddPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
-func fmaddPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
+func m256FmaddPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 
 
 // FmaddPs: Multiply packed single-precision (32-bit) floating-point elements
@@ -62,9 +62,9 @@ func FmaddPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
 func fmaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 
 
-// FmaddPs1: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', add the intermediate result to packed elements in 'c', and
-// store the results in 'dst'. 
+// M256FmaddPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', add the intermediate result to packed elements in
+// 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -74,11 +74,11 @@ func fmaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm256_fmadd_ps'.
 // Requires FMA.
-func FmaddPs1(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
-	return x86.M256(fmaddPs1([8]float32(a), [8]float32(b), [8]float32(c)))
+func M256FmaddPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+	return x86.M256(m256FmaddPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
-func fmaddPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
+func m256FmaddPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 
 
 // FmaddSd: Multiply the lower double-precision (64-bit) floating-point
@@ -140,7 +140,7 @@ func FmaddsubPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
 func fmaddsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 
 
-// FmaddsubPd1: Multiply packed double-precision (64-bit) floating-point
+// M256FmaddsubPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', alternatively add and subtract packed elements in
 // 'c' to/from the intermediate result, and store the results in 'dst'. 
 //
@@ -156,11 +156,11 @@ func fmaddsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm256_fmaddsub_pd'.
 // Requires FMA.
-func FmaddsubPd1(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
-	return x86.M256d(fmaddsubPd1([4]float64(a), [4]float64(b), [4]float64(c)))
+func M256FmaddsubPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+	return x86.M256d(m256FmaddsubPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
-func fmaddsubPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
+func m256FmaddsubPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 
 
 // FmaddsubPs: Multiply packed single-precision (32-bit) floating-point
@@ -186,7 +186,7 @@ func FmaddsubPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
 func fmaddsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 
 
-// FmaddsubPs1: Multiply packed single-precision (32-bit) floating-point
+// M256FmaddsubPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', alternatively add and subtract packed elements in
 // 'c' to/from the intermediate result, and store the results in 'dst'. 
 //
@@ -202,11 +202,11 @@ func fmaddsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm256_fmaddsub_ps'.
 // Requires FMA.
-func FmaddsubPs1(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
-	return x86.M256(fmaddsubPs1([8]float32(a), [8]float32(b), [8]float32(c)))
+func M256FmaddsubPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+	return x86.M256(m256FmaddsubPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
-func fmaddsubPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
+func m256FmaddsubPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 
 
 // FmsubPd: Multiply packed double-precision (64-bit) floating-point elements
@@ -228,9 +228,9 @@ func FmsubPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
 func fmsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 
 
-// FmsubPd1: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the intermediate
-// result, and store the results in 'dst'. 
+// M256FmsubPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the
+// intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -240,11 +240,11 @@ func fmsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm256_fmsub_pd'.
 // Requires FMA.
-func FmsubPd1(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
-	return x86.M256d(fmsubPd1([4]float64(a), [4]float64(b), [4]float64(c)))
+func M256FmsubPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+	return x86.M256d(m256FmsubPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
-func fmsubPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
+func m256FmsubPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 
 
 // FmsubPs: Multiply packed single-precision (32-bit) floating-point elements
@@ -266,9 +266,9 @@ func FmsubPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
 func fmsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 
 
-// FmsubPs1: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the intermediate
-// result, and store the results in 'dst'. 
+// M256FmsubPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the
+// intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -278,11 +278,11 @@ func fmsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm256_fmsub_ps'.
 // Requires FMA.
-func FmsubPs1(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
-	return x86.M256(fmsubPs1([8]float32(a), [8]float32(b), [8]float32(c)))
+func M256FmsubPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+	return x86.M256(m256FmsubPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
-func fmsubPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
+func m256FmsubPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 
 
 // FmsubSd: Multiply the lower double-precision (64-bit) floating-point
@@ -344,7 +344,7 @@ func FmsubaddPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
 func fmsubaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 
 
-// FmsubaddPd1: Multiply packed double-precision (64-bit) floating-point
+// M256FmsubaddPd: Multiply packed double-precision (64-bit) floating-point
 // elements in 'a' and 'b', alternatively subtract and add packed elements in
 // 'c' from/to the intermediate result, and store the results in 'dst'. 
 //
@@ -360,11 +360,11 @@ func fmsubaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm256_fmsubadd_pd'.
 // Requires FMA.
-func FmsubaddPd1(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
-	return x86.M256d(fmsubaddPd1([4]float64(a), [4]float64(b), [4]float64(c)))
+func M256FmsubaddPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+	return x86.M256d(m256FmsubaddPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
-func fmsubaddPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
+func m256FmsubaddPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 
 
 // FmsubaddPs: Multiply packed single-precision (32-bit) floating-point
@@ -390,7 +390,7 @@ func FmsubaddPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
 func fmsubaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 
 
-// FmsubaddPs1: Multiply packed single-precision (32-bit) floating-point
+// M256FmsubaddPs: Multiply packed single-precision (32-bit) floating-point
 // elements in 'a' and 'b', alternatively subtract and add packed elements in
 // 'c' from/to the intermediate result, and store the results in 'dst'. 
 //
@@ -406,11 +406,11 @@ func fmsubaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm256_fmsubadd_ps'.
 // Requires FMA.
-func FmsubaddPs1(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
-	return x86.M256(fmsubaddPs1([8]float32(a), [8]float32(b), [8]float32(c)))
+func M256FmsubaddPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+	return x86.M256(m256FmsubaddPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
-func fmsubaddPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
+func m256FmsubaddPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 
 
 // FnmaddPd: Multiply packed double-precision (64-bit) floating-point elements
@@ -432,9 +432,9 @@ func FnmaddPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
 func fnmaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 
 
-// FnmaddPd1: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', add the negated intermediate result to packed elements in
-// 'c', and store the results in 'dst'. 
+// M256FnmaddPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', add the negated intermediate result to packed
+// elements in 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -444,11 +444,11 @@ func fnmaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm256_fnmadd_pd'.
 // Requires FMA.
-func FnmaddPd1(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
-	return x86.M256d(fnmaddPd1([4]float64(a), [4]float64(b), [4]float64(c)))
+func M256FnmaddPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+	return x86.M256d(m256FnmaddPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
-func fnmaddPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
+func m256FnmaddPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 
 
 // FnmaddPs: Multiply packed single-precision (32-bit) floating-point elements
@@ -470,9 +470,9 @@ func FnmaddPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
 func fnmaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 
 
-// FnmaddPs1: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', add the negated intermediate result to packed elements in
-// 'c', and store the results in 'dst'. 
+// M256FnmaddPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', add the negated intermediate result to packed
+// elements in 'c', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -482,11 +482,11 @@ func fnmaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm256_fnmadd_ps'.
 // Requires FMA.
-func FnmaddPs1(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
-	return x86.M256(fnmaddPs1([8]float32(a), [8]float32(b), [8]float32(c)))
+func M256FnmaddPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+	return x86.M256(m256FnmaddPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
-func fnmaddPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
+func m256FnmaddPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 
 
 // FnmaddSd: Multiply the lower double-precision (64-bit) floating-point
@@ -544,8 +544,8 @@ func FnmsubPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
 func fnmsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 
 
-// FnmsubPd1: Multiply packed double-precision (64-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the negated
+// M256FnmsubPd: Multiply packed double-precision (64-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -556,11 +556,11 @@ func fnmsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm256_fnmsub_pd'.
 // Requires FMA.
-func FnmsubPd1(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
-	return x86.M256d(fnmsubPd1([4]float64(a), [4]float64(b), [4]float64(c)))
+func M256FnmsubPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+	return x86.M256d(m256FnmsubPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
-func fnmsubPd1(a [4]float64, b [4]float64, c [4]float64) [4]float64
+func m256FnmsubPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 
 
 // FnmsubPs: Multiply packed single-precision (32-bit) floating-point elements
@@ -582,8 +582,8 @@ func FnmsubPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
 func fnmsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 
 
-// FnmsubPs1: Multiply packed single-precision (32-bit) floating-point elements
-// in 'a' and 'b', subtract packed elements in 'c' from the negated
+// M256FnmsubPs: Multiply packed single-precision (32-bit) floating-point
+// elements in 'a' and 'b', subtract packed elements in 'c' from the negated
 // intermediate result, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -594,11 +594,11 @@ func fnmsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm256_fnmsub_ps'.
 // Requires FMA.
-func FnmsubPs1(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
-	return x86.M256(fnmsubPs1([8]float32(a), [8]float32(b), [8]float32(c)))
+func M256FnmsubPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+	return x86.M256(m256FnmsubPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
-func fnmsubPs1(a [8]float32, b [8]float32, c [8]float32) [8]float32
+func m256FnmsubPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 
 
 // FnmsubSd: Multiply the lower double-precision (64-bit) floating-point

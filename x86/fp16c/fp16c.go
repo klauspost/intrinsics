@@ -25,9 +25,9 @@ func CvtphPs(a x86.M128i) x86.M128 {
 func cvtphPs(a [16]byte) [4]float32
 
 
-// CvtphPs1: Convert packed half-precision (16-bit) floating-point elements in
-// 'a' to packed single-precision (32-bit) floating-point elements, and store
-// the results in 'dst'. 
+// M256CvtphPs: Convert packed half-precision (16-bit) floating-point elements
+// in 'a' to packed single-precision (32-bit) floating-point elements, and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -38,11 +38,11 @@ func cvtphPs(a [16]byte) [4]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm256_cvtph_ps'.
 // Requires FP16C.
-func CvtphPs1(a x86.M128i) x86.M256 {
-	return x86.M256(cvtphPs1([16]byte(a)))
+func M256CvtphPs(a x86.M128i) x86.M256 {
+	return x86.M256(m256CvtphPs([16]byte(a)))
 }
 
-func cvtphPs1(a [16]byte) [8]float32
+func m256CvtphPs(a [16]byte) [8]float32
 
 
 // CvtpsPh: Convert packed single-precision (32-bit) floating-point elements in
@@ -72,9 +72,9 @@ func CvtpsPh(a x86.M128, rounding int) x86.M128i {
 func cvtpsPh(a [4]float32, rounding int) [16]byte
 
 
-// CvtpsPh1: Convert packed single-precision (32-bit) floating-point elements
-// in 'a' to packed half-precision (16-bit) floating-point elements, and store
-// the results in 'dst'.
+// M256CvtpsPh: Convert packed single-precision (32-bit) floating-point
+// elements in 'a' to packed half-precision (16-bit) floating-point elements,
+// and store the results in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -92,9 +92,9 @@ func cvtpsPh(a [4]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm256_cvtps_ph'.
 // Requires FP16C.
-func CvtpsPh1(a x86.M256, rounding int) x86.M128i {
-	return x86.M128i(cvtpsPh1([8]float32(a), rounding))
+func M256CvtpsPh(a x86.M256, rounding int) x86.M128i {
+	return x86.M128i(m256CvtpsPh([8]float32(a), rounding))
 }
 
-func cvtpsPh1(a [8]float32, rounding int) [16]byte
+func m256CvtpsPh(a [8]float32, rounding int) [16]byte
 

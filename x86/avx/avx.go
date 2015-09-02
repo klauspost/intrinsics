@@ -5,7 +5,7 @@ import "github.com/klauspost/intrinsics/x86"
 var _ = x86.M64{}  // Make sure we use x86 package
 
 
-// AcosPd: Compute the inverse cosine of packed double-precision (64-bit)
+// M256AcosPd: Compute the inverse cosine of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -16,14 +16,14 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: '...'. Intrinsic: '_mm256_acos_pd'.
 // Requires AVX.
-func AcosPd(a x86.M256d) x86.M256d {
-	return x86.M256d(acosPd([4]float64(a)))
+func M256AcosPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256AcosPd([4]float64(a)))
 }
 
-func acosPd(a [4]float64) [4]float64
+func m256AcosPd(a [4]float64) [4]float64
 
 
-// AcosPs: Compute the inverse cosine of packed single-precision (32-bit)
+// M256AcosPs: Compute the inverse cosine of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -35,16 +35,16 @@ func acosPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_acos_ps'.
 // Requires AVX.
-func AcosPs(a x86.M256) x86.M256 {
-	return x86.M256(acosPs([8]float32(a)))
+func M256AcosPs(a x86.M256) x86.M256 {
+	return x86.M256(m256AcosPs([8]float32(a)))
 }
 
-func acosPs(a [8]float32) [8]float32
+func m256AcosPs(a [8]float32) [8]float32
 
 
-// AcoshPd: Compute the inverse hyperbolic cosine of packed double-precision
-// (64-bit) floating-point elements in 'a' expressed in radians, and store the
-// results in 'dst'. 
+// M256AcoshPd: Compute the inverse hyperbolic cosine of packed
+// double-precision (64-bit) floating-point elements in 'a' expressed in
+// radians, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -54,16 +54,16 @@ func acosPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_acosh_pd'.
 // Requires AVX.
-func AcoshPd(a x86.M256d) x86.M256d {
-	return x86.M256d(acoshPd([4]float64(a)))
+func M256AcoshPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256AcoshPd([4]float64(a)))
 }
 
-func acoshPd(a [4]float64) [4]float64
+func m256AcoshPd(a [4]float64) [4]float64
 
 
-// AcoshPs: Compute the inverse hyperbolic cosine of packed single-precision
-// (32-bit) floating-point elements in 'a' expressed in radians, and store the
-// results in 'dst'. 
+// M256AcoshPs: Compute the inverse hyperbolic cosine of packed
+// single-precision (32-bit) floating-point elements in 'a' expressed in
+// radians, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -73,15 +73,15 @@ func acoshPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_acosh_ps'.
 // Requires AVX.
-func AcoshPs(a x86.M256) x86.M256 {
-	return x86.M256(acoshPs([8]float32(a)))
+func M256AcoshPs(a x86.M256) x86.M256 {
+	return x86.M256(m256AcoshPs([8]float32(a)))
 }
 
-func acoshPs(a [8]float32) [8]float32
+func m256AcoshPs(a [8]float32) [8]float32
 
 
-// AddPd: Add packed double-precision (64-bit) floating-point elements in 'a'
-// and 'b', and store the results in 'dst'. 
+// M256AddPd: Add packed double-precision (64-bit) floating-point elements in
+// 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -91,15 +91,15 @@ func acoshPs(a [8]float32) [8]float32
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm256_add_pd'.
 // Requires AVX.
-func AddPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(addPd([4]float64(a), [4]float64(b)))
+func M256AddPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256AddPd([4]float64(a), [4]float64(b)))
 }
 
-func addPd(a [4]float64, b [4]float64) [4]float64
+func m256AddPd(a [4]float64, b [4]float64) [4]float64
 
 
-// AddPs: Add packed single-precision (32-bit) floating-point elements in 'a'
-// and 'b', and store the results in 'dst'. 
+// M256AddPs: Add packed single-precision (32-bit) floating-point elements in
+// 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -109,16 +109,16 @@ func addPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm256_add_ps'.
 // Requires AVX.
-func AddPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(addPs([8]float32(a), [8]float32(b)))
+func M256AddPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256AddPs([8]float32(a), [8]float32(b)))
 }
 
-func addPs(a [8]float32, b [8]float32) [8]float32
+func m256AddPs(a [8]float32, b [8]float32) [8]float32
 
 
-// AddsubPd: Alternatively add and subtract packed double-precision (64-bit)
-// floating-point elements in 'a' to/from packed elements in 'b', and store the
-// results in 'dst'. 
+// M256AddsubPd: Alternatively add and subtract packed double-precision
+// (64-bit) floating-point elements in 'a' to/from packed elements in 'b', and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -132,16 +132,16 @@ func addPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VADDSUBPD'. Intrinsic: '_mm256_addsub_pd'.
 // Requires AVX.
-func AddsubPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(addsubPd([4]float64(a), [4]float64(b)))
+func M256AddsubPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256AddsubPd([4]float64(a), [4]float64(b)))
 }
 
-func addsubPd(a [4]float64, b [4]float64) [4]float64
+func m256AddsubPd(a [4]float64, b [4]float64) [4]float64
 
 
-// AddsubPs: Alternatively add and subtract packed single-precision (32-bit)
-// floating-point elements in 'a' to/from packed elements in 'b', and store the
-// results in 'dst'. 
+// M256AddsubPs: Alternatively add and subtract packed single-precision
+// (32-bit) floating-point elements in 'a' to/from packed elements in 'b', and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -155,14 +155,14 @@ func addsubPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VADDSUBPS'. Intrinsic: '_mm256_addsub_ps'.
 // Requires AVX.
-func AddsubPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(addsubPs([8]float32(a), [8]float32(b)))
+func M256AddsubPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256AddsubPs([8]float32(a), [8]float32(b)))
 }
 
-func addsubPs(a [8]float32, b [8]float32) [8]float32
+func m256AddsubPs(a [8]float32, b [8]float32) [8]float32
 
 
-// AndPd: Compute the bitwise AND of packed double-precision (64-bit)
+// M256AndPd: Compute the bitwise AND of packed double-precision (64-bit)
 // floating-point elements in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -173,14 +173,14 @@ func addsubPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VANDPD'. Intrinsic: '_mm256_and_pd'.
 // Requires AVX.
-func AndPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(andPd([4]float64(a), [4]float64(b)))
+func M256AndPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256AndPd([4]float64(a), [4]float64(b)))
 }
 
-func andPd(a [4]float64, b [4]float64) [4]float64
+func m256AndPd(a [4]float64, b [4]float64) [4]float64
 
 
-// AndPs: Compute the bitwise AND of packed single-precision (32-bit)
+// M256AndPs: Compute the bitwise AND of packed single-precision (32-bit)
 // floating-point elements in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -191,15 +191,16 @@ func andPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VANDPS'. Intrinsic: '_mm256_and_ps'.
 // Requires AVX.
-func AndPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(andPs([8]float32(a), [8]float32(b)))
+func M256AndPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256AndPs([8]float32(a), [8]float32(b)))
 }
 
-func andPs(a [8]float32, b [8]float32) [8]float32
+func m256AndPs(a [8]float32, b [8]float32) [8]float32
 
 
-// AndnotPd: Compute the bitwise AND NOT of packed double-precision (64-bit)
-// floating-point elements in 'a' and 'b', and store the results in 'dst'. 
+// M256AndnotPd: Compute the bitwise AND NOT of packed double-precision
+// (64-bit) floating-point elements in 'a' and 'b', and store the results in
+// 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -209,15 +210,16 @@ func andPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VANDNPD'. Intrinsic: '_mm256_andnot_pd'.
 // Requires AVX.
-func AndnotPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(andnotPd([4]float64(a), [4]float64(b)))
+func M256AndnotPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256AndnotPd([4]float64(a), [4]float64(b)))
 }
 
-func andnotPd(a [4]float64, b [4]float64) [4]float64
+func m256AndnotPd(a [4]float64, b [4]float64) [4]float64
 
 
-// AndnotPs: Compute the bitwise AND NOT of packed single-precision (32-bit)
-// floating-point elements in 'a' and 'b', and store the results in 'dst'. 
+// M256AndnotPs: Compute the bitwise AND NOT of packed single-precision
+// (32-bit) floating-point elements in 'a' and 'b', and store the results in
+// 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -227,14 +229,14 @@ func andnotPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VANDNPS'. Intrinsic: '_mm256_andnot_ps'.
 // Requires AVX.
-func AndnotPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(andnotPs([8]float32(a), [8]float32(b)))
+func M256AndnotPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256AndnotPs([8]float32(a), [8]float32(b)))
 }
 
-func andnotPs(a [8]float32, b [8]float32) [8]float32
+func m256AndnotPs(a [8]float32, b [8]float32) [8]float32
 
 
-// AsinPd: Compute the inverse sine of packed double-precision (64-bit)
+// M256AsinPd: Compute the inverse sine of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -246,14 +248,14 @@ func andnotPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_asin_pd'.
 // Requires AVX.
-func AsinPd(a x86.M256d) x86.M256d {
-	return x86.M256d(asinPd([4]float64(a)))
+func M256AsinPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256AsinPd([4]float64(a)))
 }
 
-func asinPd(a [4]float64) [4]float64
+func m256AsinPd(a [4]float64) [4]float64
 
 
-// AsinPs: Compute the inverse sine of packed single-precision (32-bit)
+// M256AsinPs: Compute the inverse sine of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -265,14 +267,14 @@ func asinPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_asin_ps'.
 // Requires AVX.
-func AsinPs(a x86.M256) x86.M256 {
-	return x86.M256(asinPs([8]float32(a)))
+func M256AsinPs(a x86.M256) x86.M256 {
+	return x86.M256(m256AsinPs([8]float32(a)))
 }
 
-func asinPs(a [8]float32) [8]float32
+func m256AsinPs(a [8]float32) [8]float32
 
 
-// AsinhPd: Compute the inverse hyperbolic sine of packed double-precision
+// M256AsinhPd: Compute the inverse hyperbolic sine of packed double-precision
 // (64-bit) floating-point elements in 'a' expressed in radians, and store the
 // results in 'dst'. 
 //
@@ -284,14 +286,14 @@ func asinPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_asinh_pd'.
 // Requires AVX.
-func AsinhPd(a x86.M256d) x86.M256d {
-	return x86.M256d(asinhPd([4]float64(a)))
+func M256AsinhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256AsinhPd([4]float64(a)))
 }
 
-func asinhPd(a [4]float64) [4]float64
+func m256AsinhPd(a [4]float64) [4]float64
 
 
-// AsinhPs: Compute the inverse hyperbolic sine of packed single-precision
+// M256AsinhPs: Compute the inverse hyperbolic sine of packed single-precision
 // (32-bit) floating-point elements in 'a' expressed in radians, and store the
 // results in 'dst'. 
 //
@@ -303,14 +305,14 @@ func asinhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_asinh_ps'.
 // Requires AVX.
-func AsinhPs(a x86.M256) x86.M256 {
-	return x86.M256(asinhPs([8]float32(a)))
+func M256AsinhPs(a x86.M256) x86.M256 {
+	return x86.M256(m256AsinhPs([8]float32(a)))
 }
 
-func asinhPs(a [8]float32) [8]float32
+func m256AsinhPs(a [8]float32) [8]float32
 
 
-// AtanPd: Compute the inverse tangent of packed double-precision (64-bit)
+// M256AtanPd: Compute the inverse tangent of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -322,14 +324,14 @@ func asinhPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan_pd'.
 // Requires AVX.
-func AtanPd(a x86.M256d) x86.M256d {
-	return x86.M256d(atanPd([4]float64(a)))
+func M256AtanPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256AtanPd([4]float64(a)))
 }
 
-func atanPd(a [4]float64) [4]float64
+func m256AtanPd(a [4]float64) [4]float64
 
 
-// AtanPs: Compute the inverse tangent of packed single-precision (32-bit)
+// M256AtanPs: Compute the inverse tangent of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -341,14 +343,14 @@ func atanPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan_ps'.
 // Requires AVX.
-func AtanPs(a x86.M256) x86.M256 {
-	return x86.M256(atanPs([8]float32(a)))
+func M256AtanPs(a x86.M256) x86.M256 {
+	return x86.M256(m256AtanPs([8]float32(a)))
 }
 
-func atanPs(a [8]float32) [8]float32
+func m256AtanPs(a [8]float32) [8]float32
 
 
-// Atan2Pd: Compute the inverse tangent of packed double-precision (64-bit)
+// M256Atan2Pd: Compute the inverse tangent of packed double-precision (64-bit)
 // floating-point elements in 'a' divided by packed elements in 'b', and store
 // the results in 'dst' expressed in radians. 
 //
@@ -360,14 +362,14 @@ func atanPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan2_pd'.
 // Requires AVX.
-func Atan2Pd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(atan2Pd([4]float64(a), [4]float64(b)))
+func M256Atan2Pd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256Atan2Pd([4]float64(a), [4]float64(b)))
 }
 
-func atan2Pd(a [4]float64, b [4]float64) [4]float64
+func m256Atan2Pd(a [4]float64, b [4]float64) [4]float64
 
 
-// Atan2Ps: Compute the inverse tangent of packed single-precision (32-bit)
+// M256Atan2Ps: Compute the inverse tangent of packed single-precision (32-bit)
 // floating-point elements in 'a' divided by packed elements in 'b', and store
 // the results in 'dst' expressed in radians. 
 //
@@ -379,16 +381,16 @@ func atan2Pd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_atan2_ps'.
 // Requires AVX.
-func Atan2Ps(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(atan2Ps([8]float32(a), [8]float32(b)))
+func M256Atan2Ps(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256Atan2Ps([8]float32(a), [8]float32(b)))
 }
 
-func atan2Ps(a [8]float32, b [8]float32) [8]float32
+func m256Atan2Ps(a [8]float32, b [8]float32) [8]float32
 
 
-// AtanhPd: Compute the inverse hyperbolic tangent of packed double-precision
-// (64-bit) floating-point elements in 'a' expressed in radians, and store the
-// results in 'dst'. 
+// M256AtanhPd: Compute the inverse hyperbolic tangent of packed
+// double-precision (64-bit) floating-point elements in 'a' expressed in
+// radians, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -398,16 +400,16 @@ func atan2Ps(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_atanh_pd'.
 // Requires AVX.
-func AtanhPd(a x86.M256d) x86.M256d {
-	return x86.M256d(atanhPd([4]float64(a)))
+func M256AtanhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256AtanhPd([4]float64(a)))
 }
 
-func atanhPd(a [4]float64) [4]float64
+func m256AtanhPd(a [4]float64) [4]float64
 
 
-// AtanhPs: Compute the inverse hyperbolic tangent of packed single-precision
-// (32-bit) floating-point elements in 'a' expressed in radians, and store the
-// results in 'dst'. 
+// M256AtanhPs: Compute the inverse hyperbolic tangent of packed
+// single-precision (32-bit) floating-point elements in 'a' expressed in
+// radians, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -417,15 +419,15 @@ func atanhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_atanh_ps'.
 // Requires AVX.
-func AtanhPs(a x86.M256) x86.M256 {
-	return x86.M256(atanhPs([8]float32(a)))
+func M256AtanhPs(a x86.M256) x86.M256 {
+	return x86.M256(m256AtanhPs([8]float32(a)))
 }
 
-func atanhPs(a [8]float32) [8]float32
+func m256AtanhPs(a [8]float32) [8]float32
 
 
-// BlendPd: Blend packed double-precision (64-bit) floating-point elements from
-// 'a' and 'b' using control mask 'imm8', and store the results in 'dst'. 
+// M256BlendPd: Blend packed double-precision (64-bit) floating-point elements
+// from 'a' and 'b' using control mask 'imm8', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -439,15 +441,15 @@ func atanhPs(a [8]float32) [8]float32
 //
 // Instruction: 'VBLENDPD'. Intrinsic: '_mm256_blend_pd'.
 // Requires AVX.
-func BlendPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
-	return x86.M256d(blendPd([4]float64(a), [4]float64(b), imm8))
+func M256BlendPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(m256BlendPd([4]float64(a), [4]float64(b), imm8))
 }
 
-func blendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256BlendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 
 
-// BlendPs: Blend packed single-precision (32-bit) floating-point elements from
-// 'a' and 'b' using control mask 'imm8', and store the results in 'dst'. 
+// M256BlendPs: Blend packed single-precision (32-bit) floating-point elements
+// from 'a' and 'b' using control mask 'imm8', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -461,14 +463,14 @@ func blendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VBLENDPS'. Intrinsic: '_mm256_blend_ps'.
 // Requires AVX.
-func BlendPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
-	return x86.M256(blendPs([8]float32(a), [8]float32(b), imm8))
+func M256BlendPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(m256BlendPs([8]float32(a), [8]float32(b), imm8))
 }
 
-func blendPs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256BlendPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 
 
-// BlendvPd: Blend packed double-precision (64-bit) floating-point elements
+// M256BlendvPd: Blend packed double-precision (64-bit) floating-point elements
 // from 'a' and 'b' using 'mask', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -483,14 +485,14 @@ func blendPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VBLENDVPD'. Intrinsic: '_mm256_blendv_pd'.
 // Requires AVX.
-func BlendvPd(a x86.M256d, b x86.M256d, mask x86.M256d) x86.M256d {
-	return x86.M256d(blendvPd([4]float64(a), [4]float64(b), [4]float64(mask)))
+func M256BlendvPd(a x86.M256d, b x86.M256d, mask x86.M256d) x86.M256d {
+	return x86.M256d(m256BlendvPd([4]float64(a), [4]float64(b), [4]float64(mask)))
 }
 
-func blendvPd(a [4]float64, b [4]float64, mask [4]float64) [4]float64
+func m256BlendvPd(a [4]float64, b [4]float64, mask [4]float64) [4]float64
 
 
-// BlendvPs: Blend packed single-precision (32-bit) floating-point elements
+// M256BlendvPs: Blend packed single-precision (32-bit) floating-point elements
 // from 'a' and 'b' using 'mask', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -505,14 +507,14 @@ func blendvPd(a [4]float64, b [4]float64, mask [4]float64) [4]float64
 //
 // Instruction: 'VBLENDVPS'. Intrinsic: '_mm256_blendv_ps'.
 // Requires AVX.
-func BlendvPs(a x86.M256, b x86.M256, mask x86.M256) x86.M256 {
-	return x86.M256(blendvPs([8]float32(a), [8]float32(b), [8]float32(mask)))
+func M256BlendvPs(a x86.M256, b x86.M256, mask x86.M256) x86.M256 {
+	return x86.M256(m256BlendvPs([8]float32(a), [8]float32(b), [8]float32(mask)))
 }
 
-func blendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
+func m256BlendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
 
 
-// BroadcastPd: Broadcast 128 bits from memory (composed of 2 packed
+// M256BroadcastPd: Broadcast 128 bits from memory (composed of 2 packed
 // double-precision (64-bit) floating-point elements) to all elements of 'dst'. 
 //
 //		tmp[127:0] = MEM[mem_addr+127:mem_addr]
@@ -522,14 +524,14 @@ func blendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_pd'.
 // Requires AVX.
-func BroadcastPd(mem_addr x86.M128dConst) x86.M256d {
-	return x86.M256d(broadcastPd(mem_addr))
+func M256BroadcastPd(mem_addr x86.M128dConst) x86.M256d {
+	return x86.M256d(m256BroadcastPd(mem_addr))
 }
 
-func broadcastPd(mem_addr x86.M128dConst) [4]float64
+func m256BroadcastPd(mem_addr x86.M128dConst) [4]float64
 
 
-// BroadcastPs: Broadcast 128 bits from memory (composed of 4 packed
+// M256BroadcastPs: Broadcast 128 bits from memory (composed of 4 packed
 // single-precision (32-bit) floating-point elements) to all elements of 'dst'. 
 //
 //		tmp[127:0] = MEM[mem_addr+127:mem_addr]
@@ -539,15 +541,15 @@ func broadcastPd(mem_addr x86.M128dConst) [4]float64
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_ps'.
 // Requires AVX.
-func BroadcastPs(mem_addr x86.M128Const) x86.M256 {
-	return x86.M256(broadcastPs(mem_addr))
+func M256BroadcastPs(mem_addr x86.M128Const) x86.M256 {
+	return x86.M256(m256BroadcastPs(mem_addr))
 }
 
-func broadcastPs(mem_addr x86.M128Const) [8]float32
+func m256BroadcastPs(mem_addr x86.M128Const) [8]float32
 
 
-// BroadcastSd: Broadcast a double-precision (64-bit) floating-point element
-// from memory to all elements of 'dst'. 
+// M256BroadcastSd: Broadcast a double-precision (64-bit) floating-point
+// element from memory to all elements of 'dst'. 
 //
 //		tmp[63:0] = MEM[mem_addr+63:mem_addr]
 //		FOR j := 0 to 3
@@ -558,11 +560,11 @@ func broadcastPs(mem_addr x86.M128Const) [8]float32
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm256_broadcast_sd'.
 // Requires AVX.
-func BroadcastSd(mem_addr float64) x86.M256d {
-	return x86.M256d(broadcastSd(mem_addr))
+func M256BroadcastSd(mem_addr float64) x86.M256d {
+	return x86.M256d(m256BroadcastSd(mem_addr))
 }
 
-func broadcastSd(mem_addr float64) [4]float64
+func m256BroadcastSd(mem_addr float64) [4]float64
 
 
 // BroadcastSs: Broadcast a single-precision (32-bit) floating-point element
@@ -584,8 +586,8 @@ func BroadcastSs(mem_addr float32) x86.M128 {
 func broadcastSs(mem_addr float32) [4]float32
 
 
-// BroadcastSs1: Broadcast a single-precision (32-bit) floating-point element
-// from memory to all elements of 'dst'. 
+// M256BroadcastSs: Broadcast a single-precision (32-bit) floating-point
+// element from memory to all elements of 'dst'. 
 //
 //		tmp[31:0] = MEM[mem_addr+31:mem_addr]
 //		FOR j := 0 to 7
@@ -596,14 +598,14 @@ func broadcastSs(mem_addr float32) [4]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm256_broadcast_ss'.
 // Requires AVX.
-func BroadcastSs1(mem_addr float32) x86.M256 {
-	return x86.M256(broadcastSs1(mem_addr))
+func M256BroadcastSs(mem_addr float32) x86.M256 {
+	return x86.M256(m256BroadcastSs(mem_addr))
 }
 
-func broadcastSs1(mem_addr float32) [8]float32
+func m256BroadcastSs(mem_addr float32) [8]float32
 
 
-// CastpdPs: Cast vector of type __m256d to type __m256.
+// M256CastpdPs: Cast vector of type __m256d to type __m256.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -611,30 +613,30 @@ func broadcastSs1(mem_addr float32) [8]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd_ps'.
 // Requires AVX.
-func CastpdPs(a x86.M256d) x86.M256 {
-	return x86.M256(castpdPs([4]float64(a)))
+func M256CastpdPs(a x86.M256d) x86.M256 {
+	return x86.M256(m256CastpdPs([4]float64(a)))
 }
 
-func castpdPs(a [4]float64) [8]float32
+func m256CastpdPs(a [4]float64) [8]float32
 
 
-// CastpdSi256: Casts vector of type __m256d to type __m256i. This intrinsic is
-// only used for compilation and does not generate any instructions, thus it
-// has zero latency. 
+// M256CastpdSi256: Casts vector of type __m256d to type __m256i. This
+// intrinsic is only used for compilation and does not generate any
+// instructions, thus it has zero latency. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd_si256'.
 // Requires AVX.
-func CastpdSi256(a x86.M256d) x86.M256i {
-	return x86.M256i(castpdSi256([4]float64(a)))
+func M256CastpdSi256(a x86.M256d) x86.M256i {
+	return x86.M256i(m256CastpdSi256([4]float64(a)))
 }
 
-func castpdSi256(a [4]float64) [32]byte
+func m256CastpdSi256(a [4]float64) [32]byte
 
 
-// Castpd128Pd256: Casts vector of type __m128d to type __m256d; the upper 128
-// bits of the result are undefined. This intrinsic is only used for
+// M256Castpd128Pd256: Casts vector of type __m128d to type __m256d; the upper
+// 128 bits of the result are undefined. This intrinsic is only used for
 // compilation and does not generate any instructions, thus it has zero
 // latency. 
 //
@@ -642,29 +644,29 @@ func castpdSi256(a [4]float64) [32]byte
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd128_pd256'.
 // Requires AVX.
-func Castpd128Pd256(a x86.M128d) x86.M256d {
-	return x86.M256d(castpd128Pd256([2]float64(a)))
+func M256Castpd128Pd256(a x86.M128d) x86.M256d {
+	return x86.M256d(m256Castpd128Pd256([2]float64(a)))
 }
 
-func castpd128Pd256(a [2]float64) [4]float64
+func m256Castpd128Pd256(a [2]float64) [4]float64
 
 
-// Castpd256Pd128: Casts vector of type __m256d to type __m128d. This intrinsic
-// is only used for compilation and does not generate any instructions, thus it
-// has zero latency. 
+// M256Castpd256Pd128: Casts vector of type __m256d to type __m128d. This
+// intrinsic is only used for compilation and does not generate any
+// instructions, thus it has zero latency. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_castpd256_pd128'.
 // Requires AVX.
-func Castpd256Pd128(a x86.M256d) x86.M128d {
-	return x86.M128d(castpd256Pd128([4]float64(a)))
+func M256Castpd256Pd128(a x86.M256d) x86.M128d {
+	return x86.M128d(m256Castpd256Pd128([4]float64(a)))
 }
 
-func castpd256Pd128(a [4]float64) [2]float64
+func m256Castpd256Pd128(a [4]float64) [2]float64
 
 
-// CastpsPd: Cast vector of type __m256 to type __m256d.
+// M256CastpsPd: Cast vector of type __m256 to type __m256d.
 // 	This intrinsic is only used for compilation and does not generate any
 // instructions, thus it has zero latency. 
 //
@@ -672,30 +674,30 @@ func castpd256Pd128(a [4]float64) [2]float64
 //
 // Instruction: ''. Intrinsic: '_mm256_castps_pd'.
 // Requires AVX.
-func CastpsPd(a x86.M256) x86.M256d {
-	return x86.M256d(castpsPd([8]float32(a)))
+func M256CastpsPd(a x86.M256) x86.M256d {
+	return x86.M256d(m256CastpsPd([8]float32(a)))
 }
 
-func castpsPd(a [8]float32) [4]float64
+func m256CastpsPd(a [8]float32) [4]float64
 
 
-// CastpsSi256: Casts vector of type __m256 to type __m256i. This intrinsic is
-// only used for compilation and does not generate any instructions, thus it
+// M256CastpsSi256: Casts vector of type __m256 to type __m256i. This intrinsic
+// is only used for compilation and does not generate any instructions, thus it
 // has zero latency. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_castps_si256'.
 // Requires AVX.
-func CastpsSi256(a x86.M256) x86.M256i {
-	return x86.M256i(castpsSi256([8]float32(a)))
+func M256CastpsSi256(a x86.M256) x86.M256i {
+	return x86.M256i(m256CastpsSi256([8]float32(a)))
 }
 
-func castpsSi256(a [8]float32) [32]byte
+func m256CastpsSi256(a [8]float32) [32]byte
 
 
-// Castps128Ps256: Casts vector of type __m128 to type __m256; the upper 128
-// bits of the result are undefined. This intrinsic is only used for
+// M256Castps128Ps256: Casts vector of type __m128 to type __m256; the upper
+// 128 bits of the result are undefined. This intrinsic is only used for
 // compilation and does not generate any instructions, thus it has zero
 // latency. 
 //
@@ -703,30 +705,30 @@ func castpsSi256(a [8]float32) [32]byte
 //
 // Instruction: ''. Intrinsic: '_mm256_castps128_ps256'.
 // Requires AVX.
-func Castps128Ps256(a x86.M128) x86.M256 {
-	return x86.M256(castps128Ps256([4]float32(a)))
+func M256Castps128Ps256(a x86.M128) x86.M256 {
+	return x86.M256(m256Castps128Ps256([4]float32(a)))
 }
 
-func castps128Ps256(a [4]float32) [8]float32
+func m256Castps128Ps256(a [4]float32) [8]float32
 
 
-// Castps256Ps128: Casts vector of type __m256 to type __m128. This intrinsic
-// is only used for compilation and does not generate any instructions, thus it
-// has zero latency. 
+// M256Castps256Ps128: Casts vector of type __m256 to type __m128. This
+// intrinsic is only used for compilation and does not generate any
+// instructions, thus it has zero latency. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_castps256_ps128'.
 // Requires AVX.
-func Castps256Ps128(a x86.M256) x86.M128 {
-	return x86.M128(castps256Ps128([8]float32(a)))
+func M256Castps256Ps128(a x86.M256) x86.M128 {
+	return x86.M128(m256Castps256Ps128([8]float32(a)))
 }
 
-func castps256Ps128(a [8]float32) [4]float32
+func m256Castps256Ps128(a [8]float32) [4]float32
 
 
-// Castsi128Si256: Casts vector of type __m128i to type __m256i; the upper 128
-// bits of the result are undefined. This intrinsic is only used for
+// M256Castsi128Si256: Casts vector of type __m128i to type __m256i; the upper
+// 128 bits of the result are undefined. This intrinsic is only used for
 // compilation and does not generate any instructions, thus it has zero
 // latency. 
 //
@@ -734,59 +736,59 @@ func castps256Ps128(a [8]float32) [4]float32
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi128_si256'.
 // Requires AVX.
-func Castsi128Si256(a x86.M128i) x86.M256i {
-	return x86.M256i(castsi128Si256([16]byte(a)))
+func M256Castsi128Si256(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Castsi128Si256([16]byte(a)))
 }
 
-func castsi128Si256(a [16]byte) [32]byte
+func m256Castsi128Si256(a [16]byte) [32]byte
 
 
-// Castsi256Pd: Casts vector of type __m256i to type __m256d. This intrinsic is
-// only used for compilation and does not generate any instructions, thus it
-// has zero latency. 
+// M256Castsi256Pd: Casts vector of type __m256i to type __m256d. This
+// intrinsic is only used for compilation and does not generate any
+// instructions, thus it has zero latency. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi256_pd'.
 // Requires AVX.
-func Castsi256Pd(a x86.M256i) x86.M256d {
-	return x86.M256d(castsi256Pd([32]byte(a)))
+func M256Castsi256Pd(a x86.M256i) x86.M256d {
+	return x86.M256d(m256Castsi256Pd([32]byte(a)))
 }
 
-func castsi256Pd(a [32]byte) [4]float64
+func m256Castsi256Pd(a [32]byte) [4]float64
 
 
-// Castsi256Ps: Casts vector of type __m256i to type __m256. This intrinsic is
-// only used for compilation and does not generate any instructions, thus it
+// M256Castsi256Ps: Casts vector of type __m256i to type __m256. This intrinsic
+// is only used for compilation and does not generate any instructions, thus it
 // has zero latency. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi256_ps'.
 // Requires AVX.
-func Castsi256Ps(a x86.M256i) x86.M256 {
-	return x86.M256(castsi256Ps([32]byte(a)))
+func M256Castsi256Ps(a x86.M256i) x86.M256 {
+	return x86.M256(m256Castsi256Ps([32]byte(a)))
 }
 
-func castsi256Ps(a [32]byte) [8]float32
+func m256Castsi256Ps(a [32]byte) [8]float32
 
 
-// Castsi256Si128: Casts vector of type __m256i to type __m128i. This intrinsic
-// is only used for compilation and does not generate any instructions, thus it
-// has zero latency. 
+// M256Castsi256Si128: Casts vector of type __m256i to type __m128i. This
+// intrinsic is only used for compilation and does not generate any
+// instructions, thus it has zero latency. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_castsi256_si128'.
 // Requires AVX.
-func Castsi256Si128(a x86.M256i) x86.M128i {
-	return x86.M128i(castsi256Si128([32]byte(a)))
+func M256Castsi256Si128(a x86.M256i) x86.M128i {
+	return x86.M128i(m256Castsi256Si128([32]byte(a)))
 }
 
-func castsi256Si128(a [32]byte) [16]byte
+func m256Castsi256Si128(a [32]byte) [16]byte
 
 
-// CbrtPd: Compute the cube root of packed double-precision (64-bit)
+// M256CbrtPd: Compute the cube root of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -797,14 +799,14 @@ func castsi256Si128(a [32]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_cbrt_pd'.
 // Requires AVX.
-func CbrtPd(a x86.M256d) x86.M256d {
-	return x86.M256d(cbrtPd([4]float64(a)))
+func M256CbrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256CbrtPd([4]float64(a)))
 }
 
-func cbrtPd(a [4]float64) [4]float64
+func m256CbrtPd(a [4]float64) [4]float64
 
 
-// CbrtPs: Compute the cube root of packed single-precision (32-bit)
+// M256CbrtPs: Compute the cube root of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -815,14 +817,14 @@ func cbrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cbrt_ps'.
 // Requires AVX.
-func CbrtPs(a x86.M256) x86.M256 {
-	return x86.M256(cbrtPs([8]float32(a)))
+func M256CbrtPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CbrtPs([8]float32(a)))
 }
 
-func cbrtPs(a [8]float32) [8]float32
+func m256CbrtPs(a [8]float32) [8]float32
 
 
-// CdfnormPd: Compute the cumulative distribution function of packed
+// M256CdfnormPd: Compute the cumulative distribution function of packed
 // double-precision (64-bit) floating-point elements in 'a' using the normal
 // distribution, and store the results in 'dst'. 
 //
@@ -834,14 +836,14 @@ func cbrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorm_pd'.
 // Requires AVX.
-func CdfnormPd(a x86.M256d) x86.M256d {
-	return x86.M256d(cdfnormPd([4]float64(a)))
+func M256CdfnormPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256CdfnormPd([4]float64(a)))
 }
 
-func cdfnormPd(a [4]float64) [4]float64
+func m256CdfnormPd(a [4]float64) [4]float64
 
 
-// CdfnormPs: Compute the cumulative distribution function of packed
+// M256CdfnormPs: Compute the cumulative distribution function of packed
 // single-precision (32-bit) floating-point elements in 'a' using the normal
 // distribution, and store the results in 'dst'. 
 //
@@ -853,16 +855,16 @@ func cdfnormPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorm_ps'.
 // Requires AVX.
-func CdfnormPs(a x86.M256) x86.M256 {
-	return x86.M256(cdfnormPs([8]float32(a)))
+func M256CdfnormPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CdfnormPs([8]float32(a)))
 }
 
-func cdfnormPs(a [8]float32) [8]float32
+func m256CdfnormPs(a [8]float32) [8]float32
 
 
-// CdfnorminvPd: Compute the inverse cumulative distribution function of packed
-// double-precision (64-bit) floating-point elements in 'a' using the normal
-// distribution, and store the results in 'dst'. 
+// M256CdfnorminvPd: Compute the inverse cumulative distribution function of
+// packed double-precision (64-bit) floating-point elements in 'a' using the
+// normal distribution, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -872,16 +874,16 @@ func cdfnormPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorminv_pd'.
 // Requires AVX.
-func CdfnorminvPd(a x86.M256d) x86.M256d {
-	return x86.M256d(cdfnorminvPd([4]float64(a)))
+func M256CdfnorminvPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256CdfnorminvPd([4]float64(a)))
 }
 
-func cdfnorminvPd(a [4]float64) [4]float64
+func m256CdfnorminvPd(a [4]float64) [4]float64
 
 
-// CdfnorminvPs: Compute the inverse cumulative distribution function of packed
-// single-precision (32-bit) floating-point elements in 'a' using the normal
-// distribution, and store the results in 'dst'. 
+// M256CdfnorminvPs: Compute the inverse cumulative distribution function of
+// packed single-precision (32-bit) floating-point elements in 'a' using the
+// normal distribution, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -891,15 +893,15 @@ func cdfnorminvPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cdfnorminv_ps'.
 // Requires AVX.
-func CdfnorminvPs(a x86.M256) x86.M256 {
-	return x86.M256(cdfnorminvPs([8]float32(a)))
+func M256CdfnorminvPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CdfnorminvPs([8]float32(a)))
 }
 
-func cdfnorminvPs(a [8]float32) [8]float32
+func m256CdfnorminvPs(a [8]float32) [8]float32
 
 
-// CeilPd: Round the packed double-precision (64-bit) floating-point elements
-// in 'a' up to an integer value, and store the results as packed
+// M256CeilPd: Round the packed double-precision (64-bit) floating-point
+// elements in 'a' up to an integer value, and store the results as packed
 // double-precision floating-point elements in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -910,15 +912,15 @@ func cdfnorminvPs(a [8]float32) [8]float32
 //
 // Instruction: 'VROUNDPD'. Intrinsic: '_mm256_ceil_pd'.
 // Requires AVX.
-func CeilPd(a x86.M256d) x86.M256d {
-	return x86.M256d(ceilPd([4]float64(a)))
+func M256CeilPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256CeilPd([4]float64(a)))
 }
 
-func ceilPd(a [4]float64) [4]float64
+func m256CeilPd(a [4]float64) [4]float64
 
 
-// CeilPs: Round the packed single-precision (32-bit) floating-point elements
-// in 'a' up to an integer value, and store the results as packed
+// M256CeilPs: Round the packed single-precision (32-bit) floating-point
+// elements in 'a' up to an integer value, and store the results as packed
 // single-precision floating-point elements in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -929,16 +931,16 @@ func ceilPd(a [4]float64) [4]float64
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm256_ceil_ps'.
 // Requires AVX.
-func CeilPs(a x86.M256) x86.M256 {
-	return x86.M256(ceilPs([8]float32(a)))
+func M256CeilPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CeilPs([8]float32(a)))
 }
 
-func ceilPs(a [8]float32) [8]float32
+func m256CeilPs(a [8]float32) [8]float32
 
 
-// CexpPs: Compute the exponential value of 'e' raised to the power of packed
-// complex single-precision (32-bit) floating-point elements in 'a', and store
-// the results in 'dst'. 
+// M256CexpPs: Compute the exponential value of 'e' raised to the power of
+// packed complex single-precision (32-bit) floating-point elements in 'a', and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -948,14 +950,14 @@ func ceilPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cexp_ps'.
 // Requires AVX.
-func CexpPs(a x86.M256) x86.M256 {
-	return x86.M256(cexpPs([8]float32(a)))
+func M256CexpPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CexpPs([8]float32(a)))
 }
 
-func cexpPs(a [8]float32) [8]float32
+func m256CexpPs(a [8]float32) [8]float32
 
 
-// ClogPs: Compute the natural logarithm of packed complex single-precision
+// M256ClogPs: Compute the natural logarithm of packed complex single-precision
 // (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -966,11 +968,11 @@ func cexpPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_clog_ps'.
 // Requires AVX.
-func ClogPs(a x86.M256) x86.M256 {
-	return x86.M256(clogPs([8]float32(a)))
+func M256ClogPs(a x86.M256) x86.M256 {
+	return x86.M256(m256ClogPs([8]float32(a)))
 }
 
-func clogPs(a [8]float32) [8]float32
+func m256ClogPs(a [8]float32) [8]float32
 
 
 // CmpPd: Compare packed double-precision (64-bit) floating-point elements in
@@ -1026,9 +1028,9 @@ func CmpPd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
 func cmpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
 
 
-// CmpPd1: Compare packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b' based on the comparison operand specified by 'imm8', and store
-// the results in 'dst'. 
+// M256CmpPd: Compare packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b' based on the comparison operand specified by 'imm8', and
+// store the results in 'dst'. 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _CMP_EQ_OQ
@@ -1072,11 +1074,11 @@ func cmpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm256_cmp_pd'.
 // Requires AVX.
-func CmpPd1(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
-	return x86.M256d(cmpPd1([4]float64(a), [4]float64(b), imm8))
+func M256CmpPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(m256CmpPd([4]float64(a), [4]float64(b), imm8))
 }
 
-func cmpPd1(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256CmpPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 
 
 // CmpPs: Compare packed single-precision (32-bit) floating-point elements in
@@ -1132,9 +1134,9 @@ func CmpPs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
 func cmpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
 
 
-// CmpPs1: Compare packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b' based on the comparison operand specified by 'imm8', and store
-// the results in 'dst'. 
+// M256CmpPs: Compare packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b' based on the comparison operand specified by 'imm8', and
+// store the results in 'dst'. 
 //
 //		CASE (imm8[7:0]) OF
 //		0: OP := _CMP_EQ_OQ
@@ -1178,11 +1180,11 @@ func cmpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm256_cmp_ps'.
 // Requires AVX.
-func CmpPs1(a x86.M256, b x86.M256, imm8 int) x86.M256 {
-	return x86.M256(cmpPs1([8]float32(a), [8]float32(b), imm8))
+func M256CmpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(m256CmpPs([8]float32(a), [8]float32(b), imm8))
 }
 
-func cmpPs1(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256CmpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 
 
 // CmpSd: Compare the lower double-precision (64-bit) floating-point element in
@@ -1291,8 +1293,9 @@ func CmpSs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
 func cmpSs(a [4]float32, b [4]float32, imm8 int) [4]float32
 
 
-// CosPd: Compute the cosine of packed double-precision (64-bit) floating-point
-// elements in 'a' expressed in radians, and store the results in 'dst'. 
+// M256CosPd: Compute the cosine of packed double-precision (64-bit)
+// floating-point elements in 'a' expressed in radians, and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -1302,15 +1305,16 @@ func cmpSs(a [4]float32, b [4]float32, imm8 int) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cos_pd'.
 // Requires AVX.
-func CosPd(a x86.M256d) x86.M256d {
-	return x86.M256d(cosPd([4]float64(a)))
+func M256CosPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256CosPd([4]float64(a)))
 }
 
-func cosPd(a [4]float64) [4]float64
+func m256CosPd(a [4]float64) [4]float64
 
 
-// CosPs: Compute the cosine of packed single-precision (32-bit) floating-point
-// elements in 'a' expressed in radians, and store the results in 'dst'. 
+// M256CosPs: Compute the cosine of packed single-precision (32-bit)
+// floating-point elements in 'a' expressed in radians, and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -1320,14 +1324,14 @@ func cosPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cos_ps'.
 // Requires AVX.
-func CosPs(a x86.M256) x86.M256 {
-	return x86.M256(cosPs([8]float32(a)))
+func M256CosPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CosPs([8]float32(a)))
 }
 
-func cosPs(a [8]float32) [8]float32
+func m256CosPs(a [8]float32) [8]float32
 
 
-// CosdPd: Compute the cosine of packed double-precision (64-bit)
+// M256CosdPd: Compute the cosine of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in degrees, and store the results
 // in 'dst'. 
 //
@@ -1339,14 +1343,14 @@ func cosPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosd_pd'.
 // Requires AVX.
-func CosdPd(a x86.M256d) x86.M256d {
-	return x86.M256d(cosdPd([4]float64(a)))
+func M256CosdPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256CosdPd([4]float64(a)))
 }
 
-func cosdPd(a [4]float64) [4]float64
+func m256CosdPd(a [4]float64) [4]float64
 
 
-// CosdPs: Compute the cosine of packed single-precision (32-bit)
+// M256CosdPs: Compute the cosine of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in degrees, and store the results
 // in 'dst'. 
 //
@@ -1358,16 +1362,16 @@ func cosdPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosd_ps'.
 // Requires AVX.
-func CosdPs(a x86.M256) x86.M256 {
-	return x86.M256(cosdPs([8]float32(a)))
+func M256CosdPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CosdPs([8]float32(a)))
 }
 
-func cosdPs(a [8]float32) [8]float32
+func m256CosdPs(a [8]float32) [8]float32
 
 
-// CoshPd: Compute the hyperbolic cosine of packed double-precision (64-bit)
-// floating-point elements in 'a' expressed in radians, and store the results
-// in 'dst'. 
+// M256CoshPd: Compute the hyperbolic cosine of packed double-precision
+// (64-bit) floating-point elements in 'a' expressed in radians, and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -1377,16 +1381,16 @@ func cosdPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosh_pd'.
 // Requires AVX.
-func CoshPd(a x86.M256d) x86.M256d {
-	return x86.M256d(coshPd([4]float64(a)))
+func M256CoshPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256CoshPd([4]float64(a)))
 }
 
-func coshPd(a [4]float64) [4]float64
+func m256CoshPd(a [4]float64) [4]float64
 
 
-// CoshPs: Compute the hyperbolic cosine of packed single-precision (32-bit)
-// floating-point elements in 'a' expressed in radians, and store the results
-// in 'dst'. 
+// M256CoshPs: Compute the hyperbolic cosine of packed single-precision
+// (32-bit) floating-point elements in 'a' expressed in radians, and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -1396,15 +1400,15 @@ func coshPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_cosh_ps'.
 // Requires AVX.
-func CoshPs(a x86.M256) x86.M256 {
-	return x86.M256(coshPs([8]float32(a)))
+func M256CoshPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CoshPs([8]float32(a)))
 }
 
-func coshPs(a [8]float32) [8]float32
+func m256CoshPs(a [8]float32) [8]float32
 
 
-// CsqrtPs: Compute the square root of packed complex single-precision (32-bit)
-// floating-point elements in 'a', and store the results in 'dst'. 
+// M256CsqrtPs: Compute the square root of packed complex single-precision
+// (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -1414,15 +1418,16 @@ func coshPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_csqrt_ps'.
 // Requires AVX.
-func CsqrtPs(a x86.M256) x86.M256 {
-	return x86.M256(csqrtPs([8]float32(a)))
+func M256CsqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(m256CsqrtPs([8]float32(a)))
 }
 
-func csqrtPs(a [8]float32) [8]float32
+func m256CsqrtPs(a [8]float32) [8]float32
 
 
-// Cvtepi32Pd: Convert packed 32-bit integers in 'a' to packed double-precision
-// (64-bit) floating-point elements, and store the results in 'dst'. 
+// M256Cvtepi32Pd: Convert packed 32-bit integers in 'a' to packed
+// double-precision (64-bit) floating-point elements, and store the results in
+// 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*32
@@ -1433,15 +1438,16 @@ func csqrtPs(a [8]float32) [8]float32
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm256_cvtepi32_pd'.
 // Requires AVX.
-func Cvtepi32Pd(a x86.M128i) x86.M256d {
-	return x86.M256d(cvtepi32Pd([16]byte(a)))
+func M256Cvtepi32Pd(a x86.M128i) x86.M256d {
+	return x86.M256d(m256Cvtepi32Pd([16]byte(a)))
 }
 
-func cvtepi32Pd(a [16]byte) [4]float64
+func m256Cvtepi32Pd(a [16]byte) [4]float64
 
 
-// Cvtepi32Ps: Convert packed 32-bit integers in 'a' to packed single-precision
-// (32-bit) floating-point elements, and store the results in 'dst'. 
+// M256Cvtepi32Ps: Convert packed 32-bit integers in 'a' to packed
+// single-precision (32-bit) floating-point elements, and store the results in
+// 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -1451,15 +1457,15 @@ func cvtepi32Pd(a [16]byte) [4]float64
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm256_cvtepi32_ps'.
 // Requires AVX.
-func Cvtepi32Ps(a x86.M256i) x86.M256 {
-	return x86.M256(cvtepi32Ps([32]byte(a)))
+func M256Cvtepi32Ps(a x86.M256i) x86.M256 {
+	return x86.M256(m256Cvtepi32Ps([32]byte(a)))
 }
 
-func cvtepi32Ps(a [32]byte) [8]float32
+func m256Cvtepi32Ps(a [32]byte) [8]float32
 
 
-// CvtpdEpi32: Convert packed double-precision (64-bit) floating-point elements
-// in 'a' to packed 32-bit integers, and store the results in 'dst'. 
+// M256CvtpdEpi32: Convert packed double-precision (64-bit) floating-point
+// elements in 'a' to packed 32-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 32*j
@@ -1470,16 +1476,16 @@ func cvtepi32Ps(a [32]byte) [8]float32
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm256_cvtpd_epi32'.
 // Requires AVX.
-func CvtpdEpi32(a x86.M256d) x86.M128i {
-	return x86.M128i(cvtpdEpi32([4]float64(a)))
+func M256CvtpdEpi32(a x86.M256d) x86.M128i {
+	return x86.M128i(m256CvtpdEpi32([4]float64(a)))
 }
 
-func cvtpdEpi32(a [4]float64) [16]byte
+func m256CvtpdEpi32(a [4]float64) [16]byte
 
 
-// CvtpdPs: Convert packed double-precision (64-bit) floating-point elements in
-// 'a' to packed single-precision (32-bit) floating-point elements, and store
-// the results in 'dst'. 
+// M256CvtpdPs: Convert packed double-precision (64-bit) floating-point
+// elements in 'a' to packed single-precision (32-bit) floating-point elements,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 32*j
@@ -1490,15 +1496,15 @@ func cvtpdEpi32(a [4]float64) [16]byte
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm256_cvtpd_ps'.
 // Requires AVX.
-func CvtpdPs(a x86.M256d) x86.M128 {
-	return x86.M128(cvtpdPs([4]float64(a)))
+func M256CvtpdPs(a x86.M256d) x86.M128 {
+	return x86.M128(m256CvtpdPs([4]float64(a)))
 }
 
-func cvtpdPs(a [4]float64) [4]float32
+func m256CvtpdPs(a [4]float64) [4]float32
 
 
-// CvtpsEpi32: Convert packed single-precision (32-bit) floating-point elements
-// in 'a' to packed 32-bit integers, and store the results in 'dst'. 
+// M256CvtpsEpi32: Convert packed single-precision (32-bit) floating-point
+// elements in 'a' to packed 32-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -1508,16 +1514,16 @@ func cvtpdPs(a [4]float64) [4]float32
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm256_cvtps_epi32'.
 // Requires AVX.
-func CvtpsEpi32(a x86.M256) x86.M256i {
-	return x86.M256i(cvtpsEpi32([8]float32(a)))
+func M256CvtpsEpi32(a x86.M256) x86.M256i {
+	return x86.M256i(m256CvtpsEpi32([8]float32(a)))
 }
 
-func cvtpsEpi32(a [8]float32) [32]byte
+func m256CvtpsEpi32(a [8]float32) [32]byte
 
 
-// CvtpsPd: Convert packed single-precision (32-bit) floating-point elements in
-// 'a' to packed double-precision (64-bit) floating-point elements, and store
-// the results in 'dst'. 
+// M256CvtpsPd: Convert packed single-precision (32-bit) floating-point
+// elements in 'a' to packed double-precision (64-bit) floating-point elements,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -1528,14 +1534,14 @@ func cvtpsEpi32(a [8]float32) [32]byte
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm256_cvtps_pd'.
 // Requires AVX.
-func CvtpsPd(a x86.M128) x86.M256d {
-	return x86.M256d(cvtpsPd([4]float32(a)))
+func M256CvtpsPd(a x86.M128) x86.M256d {
+	return x86.M256d(m256CvtpsPd([4]float32(a)))
 }
 
-func cvtpsPd(a [4]float32) [4]float64
+func m256CvtpsPd(a [4]float32) [4]float64
 
 
-// CvttpdEpi32: Convert packed double-precision (64-bit) floating-point
+// M256CvttpdEpi32: Convert packed double-precision (64-bit) floating-point
 // elements in 'a' to packed 32-bit integers with truncation, and store the
 // results in 'dst'. 
 //
@@ -1548,14 +1554,14 @@ func cvtpsPd(a [4]float32) [4]float64
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm256_cvttpd_epi32'.
 // Requires AVX.
-func CvttpdEpi32(a x86.M256d) x86.M128i {
-	return x86.M128i(cvttpdEpi32([4]float64(a)))
+func M256CvttpdEpi32(a x86.M256d) x86.M128i {
+	return x86.M128i(m256CvttpdEpi32([4]float64(a)))
 }
 
-func cvttpdEpi32(a [4]float64) [16]byte
+func m256CvttpdEpi32(a [4]float64) [16]byte
 
 
-// CvttpsEpi32: Convert packed single-precision (32-bit) floating-point
+// M256CvttpsEpi32: Convert packed single-precision (32-bit) floating-point
 // elements in 'a' to packed 32-bit integers with truncation, and store the
 // results in 'dst'. 
 //
@@ -1567,15 +1573,15 @@ func cvttpdEpi32(a [4]float64) [16]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm256_cvttps_epi32'.
 // Requires AVX.
-func CvttpsEpi32(a x86.M256) x86.M256i {
-	return x86.M256i(cvttpsEpi32([8]float32(a)))
+func M256CvttpsEpi32(a x86.M256) x86.M256i {
+	return x86.M256i(m256CvttpsEpi32([8]float32(a)))
 }
 
-func cvttpsEpi32(a [8]float32) [32]byte
+func m256CvttpsEpi32(a [8]float32) [32]byte
 
 
-// DivEpi16: Divide packed 16-bit integers in 'a' by packed elements in 'b',
-// and store the truncated results in 'dst'. 
+// M256DivEpi16: Divide packed 16-bit integers in 'a' by packed elements in
+// 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := 16*j
@@ -1585,15 +1591,15 @@ func cvttpsEpi32(a [8]float32) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi16'.
 // Requires AVX.
-func DivEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpi16([32]byte(a), [32]byte(b)))
+func M256DivEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpi16([32]byte(a), [32]byte(b)))
 }
 
-func divEpi16(a [32]byte, b [32]byte) [32]byte
+func m256DivEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// DivEpi32: Divide packed 32-bit integers in 'a' by packed elements in 'b',
-// and store the truncated results in 'dst'. 
+// M256DivEpi32: Divide packed 32-bit integers in 'a' by packed elements in
+// 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -1603,15 +1609,15 @@ func divEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi32'.
 // Requires AVX.
-func DivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpi32([32]byte(a), [32]byte(b)))
+func M256DivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpi32([32]byte(a), [32]byte(b)))
 }
 
-func divEpi32(a [32]byte, b [32]byte) [32]byte
+func m256DivEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// DivEpi64: Divide packed 64-bit integers in 'a' by packed elements in 'b',
-// and store the truncated results in 'dst'. 
+// M256DivEpi64: Divide packed 64-bit integers in 'a' by packed elements in
+// 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -1621,15 +1627,15 @@ func divEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi64'.
 // Requires AVX.
-func DivEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpi64([32]byte(a), [32]byte(b)))
+func M256DivEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpi64([32]byte(a), [32]byte(b)))
 }
 
-func divEpi64(a [32]byte, b [32]byte) [32]byte
+func m256DivEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// DivEpi8: Divide packed 8-bit integers in 'a' by packed elements in 'b', and
-// store the truncated results in 'dst'. 
+// M256DivEpi8: Divide packed 8-bit integers in 'a' by packed elements in 'b',
+// and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := 8*j
@@ -1639,15 +1645,15 @@ func divEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epi8'.
 // Requires AVX.
-func DivEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpi8([32]byte(a), [32]byte(b)))
+func M256DivEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpi8([32]byte(a), [32]byte(b)))
 }
 
-func divEpi8(a [32]byte, b [32]byte) [32]byte
+func m256DivEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// DivEpu16: Divide packed unsigned 16-bit integers in 'a' by packed elements
-// in 'b', and store the truncated results in 'dst'. 
+// M256DivEpu16: Divide packed unsigned 16-bit integers in 'a' by packed
+// elements in 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := 16*j
@@ -1657,15 +1663,15 @@ func divEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu16'.
 // Requires AVX.
-func DivEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpu16([32]byte(a), [32]byte(b)))
+func M256DivEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpu16([32]byte(a), [32]byte(b)))
 }
 
-func divEpu16(a [32]byte, b [32]byte) [32]byte
+func m256DivEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// DivEpu32: Divide packed unsigned 32-bit integers in 'a' by packed elements
-// in 'b', and store the truncated results in 'dst'. 
+// M256DivEpu32: Divide packed unsigned 32-bit integers in 'a' by packed
+// elements in 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -1675,15 +1681,15 @@ func divEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu32'.
 // Requires AVX.
-func DivEpu32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpu32([32]byte(a), [32]byte(b)))
+func M256DivEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpu32([32]byte(a), [32]byte(b)))
 }
 
-func divEpu32(a [32]byte, b [32]byte) [32]byte
+func m256DivEpu32(a [32]byte, b [32]byte) [32]byte
 
 
-// DivEpu64: Divide packed unsigned 64-bit integers in 'a' by packed elements
-// in 'b', and store the truncated results in 'dst'. 
+// M256DivEpu64: Divide packed unsigned 64-bit integers in 'a' by packed
+// elements in 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -1693,15 +1699,15 @@ func divEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu64'.
 // Requires AVX.
-func DivEpu64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpu64([32]byte(a), [32]byte(b)))
+func M256DivEpu64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpu64([32]byte(a), [32]byte(b)))
 }
 
-func divEpu64(a [32]byte, b [32]byte) [32]byte
+func m256DivEpu64(a [32]byte, b [32]byte) [32]byte
 
 
-// DivEpu8: Divide packed unsigned 8-bit integers in 'a' by packed elements in
-// 'b', and store the truncated results in 'dst'. 
+// M256DivEpu8: Divide packed unsigned 8-bit integers in 'a' by packed elements
+// in 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := 8*j
@@ -1711,15 +1717,15 @@ func divEpu64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_div_epu8'.
 // Requires AVX.
-func DivEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(divEpu8([32]byte(a), [32]byte(b)))
+func M256DivEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256DivEpu8([32]byte(a), [32]byte(b)))
 }
 
-func divEpu8(a [32]byte, b [32]byte) [32]byte
+func m256DivEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// DivPd: Divide packed double-precision (64-bit) floating-point elements in
-// 'a' by packed elements in 'b', and store the results in 'dst'. 
+// M256DivPd: Divide packed double-precision (64-bit) floating-point elements
+// in 'a' by packed elements in 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -1729,15 +1735,15 @@ func divEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm256_div_pd'.
 // Requires AVX.
-func DivPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(divPd([4]float64(a), [4]float64(b)))
+func M256DivPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256DivPd([4]float64(a), [4]float64(b)))
 }
 
-func divPd(a [4]float64, b [4]float64) [4]float64
+func m256DivPd(a [4]float64, b [4]float64) [4]float64
 
 
-// DivPs: Divide packed single-precision (32-bit) floating-point elements in
-// 'a' by packed elements in 'b', and store the results in 'dst'. 
+// M256DivPs: Divide packed single-precision (32-bit) floating-point elements
+// in 'a' by packed elements in 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -1747,14 +1753,14 @@ func divPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm256_div_ps'.
 // Requires AVX.
-func DivPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(divPs([8]float32(a), [8]float32(b)))
+func M256DivPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256DivPs([8]float32(a), [8]float32(b)))
 }
 
-func divPs(a [8]float32, b [8]float32) [8]float32
+func m256DivPs(a [8]float32, b [8]float32) [8]float32
 
 
-// DpPs: Conditionally multiply the packed single-precision (32-bit)
+// M256DpPs: Conditionally multiply the packed single-precision (32-bit)
 // floating-point elements in 'a' and 'b' using the high 4 bits in 'imm8', sum
 // the four products, and conditionally store the sum in 'dst' using the low 4
 // bits of 'imm8'. 
@@ -1788,14 +1794,14 @@ func divPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VDPPS'. Intrinsic: '_mm256_dp_ps'.
 // Requires AVX.
-func DpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
-	return x86.M256(dpPs([8]float32(a), [8]float32(b), imm8))
+func M256DpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(m256DpPs([8]float32(a), [8]float32(b), imm8))
 }
 
-func dpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256DpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 
 
-// ErfPd: Compute the error function of packed double-precision (64-bit)
+// M256ErfPd: Compute the error function of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -1806,14 +1812,14 @@ func dpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erf_pd'.
 // Requires AVX.
-func ErfPd(a x86.M256d) x86.M256d {
-	return x86.M256d(erfPd([4]float64(a)))
+func M256ErfPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256ErfPd([4]float64(a)))
 }
 
-func erfPd(a [4]float64) [4]float64
+func m256ErfPd(a [4]float64) [4]float64
 
 
-// ErfPs: Compute the error function of packed single-precision (32-bit)
+// M256ErfPs: Compute the error function of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -1824,15 +1830,16 @@ func erfPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erf_ps'.
 // Requires AVX.
-func ErfPs(a x86.M256) x86.M256 {
-	return x86.M256(erfPs([8]float32(a)))
+func M256ErfPs(a x86.M256) x86.M256 {
+	return x86.M256(m256ErfPs([8]float32(a)))
 }
 
-func erfPs(a [8]float32) [8]float32
+func m256ErfPs(a [8]float32) [8]float32
 
 
-// ErfcPd: Compute the complementary error function of packed double-precision
-// (64-bit) floating-point elements in 'a', and store the results in 'dst'. 
+// M256ErfcPd: Compute the complementary error function of packed
+// double-precision (64-bit) floating-point elements in 'a', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -1842,15 +1849,16 @@ func erfPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfc_pd'.
 // Requires AVX.
-func ErfcPd(a x86.M256d) x86.M256d {
-	return x86.M256d(erfcPd([4]float64(a)))
+func M256ErfcPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256ErfcPd([4]float64(a)))
 }
 
-func erfcPd(a [4]float64) [4]float64
+func m256ErfcPd(a [4]float64) [4]float64
 
 
-// ErfcPs: Compute the complementary error function of packed single-precision
-// (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
+// M256ErfcPs: Compute the complementary error function of packed
+// single-precision (32-bit) floating-point elements in 'a', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -1860,14 +1868,14 @@ func erfcPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfc_ps'.
 // Requires AVX.
-func ErfcPs(a x86.M256) x86.M256 {
-	return x86.M256(erfcPs([8]float32(a)))
+func M256ErfcPs(a x86.M256) x86.M256 {
+	return x86.M256(m256ErfcPs([8]float32(a)))
 }
 
-func erfcPs(a [8]float32) [8]float32
+func m256ErfcPs(a [8]float32) [8]float32
 
 
-// ErfcinvPd: Compute the inverse complementary error function of packed
+// M256ErfcinvPd: Compute the inverse complementary error function of packed
 // double-precision (64-bit) floating-point elements in 'a', and store the
 // results in 'dst'. 
 //
@@ -1879,14 +1887,14 @@ func erfcPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfcinv_pd'.
 // Requires AVX.
-func ErfcinvPd(a x86.M256d) x86.M256d {
-	return x86.M256d(erfcinvPd([4]float64(a)))
+func M256ErfcinvPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256ErfcinvPd([4]float64(a)))
 }
 
-func erfcinvPd(a [4]float64) [4]float64
+func m256ErfcinvPd(a [4]float64) [4]float64
 
 
-// ErfcinvPs: Compute the inverse complementary error function of packed
+// M256ErfcinvPs: Compute the inverse complementary error function of packed
 // single-precision (32-bit) floating-point elements in 'a', and store the
 // results in 'dst'. 
 //
@@ -1898,14 +1906,14 @@ func erfcinvPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfcinv_ps'.
 // Requires AVX.
-func ErfcinvPs(a x86.M256) x86.M256 {
-	return x86.M256(erfcinvPs([8]float32(a)))
+func M256ErfcinvPs(a x86.M256) x86.M256 {
+	return x86.M256(m256ErfcinvPs([8]float32(a)))
 }
 
-func erfcinvPs(a [8]float32) [8]float32
+func m256ErfcinvPs(a [8]float32) [8]float32
 
 
-// ErfinvPd: Compute the inverse error function of packed double-precision
+// M256ErfinvPd: Compute the inverse error function of packed double-precision
 // (64-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -1916,14 +1924,14 @@ func erfcinvPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfinv_pd'.
 // Requires AVX.
-func ErfinvPd(a x86.M256d) x86.M256d {
-	return x86.M256d(erfinvPd([4]float64(a)))
+func M256ErfinvPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256ErfinvPd([4]float64(a)))
 }
 
-func erfinvPd(a [4]float64) [4]float64
+func m256ErfinvPd(a [4]float64) [4]float64
 
 
-// ErfinvPs: Compute the inverse error function of packed single-precision
+// M256ErfinvPs: Compute the inverse error function of packed single-precision
 // (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -1934,16 +1942,16 @@ func erfinvPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_erfinv_ps'.
 // Requires AVX.
-func ErfinvPs(a x86.M256) x86.M256 {
-	return x86.M256(erfinvPs([8]float32(a)))
+func M256ErfinvPs(a x86.M256) x86.M256 {
+	return x86.M256(m256ErfinvPs([8]float32(a)))
 }
 
-func erfinvPs(a [8]float32) [8]float32
+func m256ErfinvPs(a [8]float32) [8]float32
 
 
-// ExpPd: Compute the exponential value of 'e' raised to the power of packed
-// double-precision (64-bit) floating-point elements in 'a', and store the
-// results in 'dst'. 
+// M256ExpPd: Compute the exponential value of 'e' raised to the power of
+// packed double-precision (64-bit) floating-point elements in 'a', and store
+// the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -1953,16 +1961,16 @@ func erfinvPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp_pd'.
 // Requires AVX.
-func ExpPd(a x86.M256d) x86.M256d {
-	return x86.M256d(expPd([4]float64(a)))
+func M256ExpPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256ExpPd([4]float64(a)))
 }
 
-func expPd(a [4]float64) [4]float64
+func m256ExpPd(a [4]float64) [4]float64
 
 
-// ExpPs: Compute the exponential value of 'e' raised to the power of packed
-// single-precision (32-bit) floating-point elements in 'a', and store the
-// results in 'dst'. 
+// M256ExpPs: Compute the exponential value of 'e' raised to the power of
+// packed single-precision (32-bit) floating-point elements in 'a', and store
+// the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -1972,16 +1980,16 @@ func expPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp_ps'.
 // Requires AVX.
-func ExpPs(a x86.M256) x86.M256 {
-	return x86.M256(expPs([8]float32(a)))
+func M256ExpPs(a x86.M256) x86.M256 {
+	return x86.M256(m256ExpPs([8]float32(a)))
 }
 
-func expPs(a [8]float32) [8]float32
+func m256ExpPs(a [8]float32) [8]float32
 
 
-// Exp10Pd: Compute the exponential value of 10 raised to the power of packed
-// double-precision (64-bit) floating-point elements in 'a', and store the
-// results in 'dst'. 
+// M256Exp10Pd: Compute the exponential value of 10 raised to the power of
+// packed double-precision (64-bit) floating-point elements in 'a', and store
+// the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -1991,16 +1999,16 @@ func expPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp10_pd'.
 // Requires AVX.
-func Exp10Pd(a x86.M256d) x86.M256d {
-	return x86.M256d(exp10Pd([4]float64(a)))
+func M256Exp10Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256Exp10Pd([4]float64(a)))
 }
 
-func exp10Pd(a [4]float64) [4]float64
+func m256Exp10Pd(a [4]float64) [4]float64
 
 
-// Exp10Ps: Compute the exponential value of 10 raised to the power of packed
-// single-precision (32-bit) floating-point elements in 'a', and store the
-// results in 'dst'. 
+// M256Exp10Ps: Compute the exponential value of 10 raised to the power of
+// packed single-precision (32-bit) floating-point elements in 'a', and store
+// the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2010,14 +2018,14 @@ func exp10Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp10_ps'.
 // Requires AVX.
-func Exp10Ps(a x86.M256) x86.M256 {
-	return x86.M256(exp10Ps([8]float32(a)))
+func M256Exp10Ps(a x86.M256) x86.M256 {
+	return x86.M256(m256Exp10Ps([8]float32(a)))
 }
 
-func exp10Ps(a [8]float32) [8]float32
+func m256Exp10Ps(a [8]float32) [8]float32
 
 
-// Exp2Pd: Compute the exponential value of 2 raised to the power of packed
+// M256Exp2Pd: Compute the exponential value of 2 raised to the power of packed
 // double-precision (64-bit) floating-point elements in 'a', and store the
 // results in 'dst'. 
 //
@@ -2029,14 +2037,14 @@ func exp10Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp2_pd'.
 // Requires AVX.
-func Exp2Pd(a x86.M256d) x86.M256d {
-	return x86.M256d(exp2Pd([4]float64(a)))
+func M256Exp2Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256Exp2Pd([4]float64(a)))
 }
 
-func exp2Pd(a [4]float64) [4]float64
+func m256Exp2Pd(a [4]float64) [4]float64
 
 
-// Exp2Ps: Compute the exponential value of 2 raised to the power of packed
+// M256Exp2Ps: Compute the exponential value of 2 raised to the power of packed
 // single-precision (32-bit) floating-point elements in 'a', and store the
 // results in 'dst'. 
 //
@@ -2048,16 +2056,16 @@ func exp2Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_exp2_ps'.
 // Requires AVX.
-func Exp2Ps(a x86.M256) x86.M256 {
-	return x86.M256(exp2Ps([8]float32(a)))
+func M256Exp2Ps(a x86.M256) x86.M256 {
+	return x86.M256(m256Exp2Ps([8]float32(a)))
 }
 
-func exp2Ps(a [8]float32) [8]float32
+func m256Exp2Ps(a [8]float32) [8]float32
 
 
-// Expm1Pd: Compute the exponential value of 'e' raised to the power of packed
-// double-precision (64-bit) floating-point elements in 'a', subtract one from
-// each element, and store the results in 'dst'. 
+// M256Expm1Pd: Compute the exponential value of 'e' raised to the power of
+// packed double-precision (64-bit) floating-point elements in 'a', subtract
+// one from each element, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -2067,16 +2075,16 @@ func exp2Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_expm1_pd'.
 // Requires AVX.
-func Expm1Pd(a x86.M256d) x86.M256d {
-	return x86.M256d(expm1Pd([4]float64(a)))
+func M256Expm1Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256Expm1Pd([4]float64(a)))
 }
 
-func expm1Pd(a [4]float64) [4]float64
+func m256Expm1Pd(a [4]float64) [4]float64
 
 
-// Expm1Ps: Compute the exponential value of 'e' raised to the power of packed
-// single-precision (32-bit) floating-point elements in 'a', subtract one from
-// each element, and store the results in 'dst'. 
+// M256Expm1Ps: Compute the exponential value of 'e' raised to the power of
+// packed single-precision (32-bit) floating-point elements in 'a', subtract
+// one from each element, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2086,70 +2094,70 @@ func expm1Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_expm1_ps'.
 // Requires AVX.
-func Expm1Ps(a x86.M256) x86.M256 {
-	return x86.M256(expm1Ps([8]float32(a)))
+func M256Expm1Ps(a x86.M256) x86.M256 {
+	return x86.M256(m256Expm1Ps([8]float32(a)))
 }
 
-func expm1Ps(a [8]float32) [8]float32
+func m256Expm1Ps(a [8]float32) [8]float32
 
 
-// ExtractEpi16: Extract a 16-bit integer from 'a', selected with 'index', and
-// store the result in 'dst'. 
+// M256ExtractEpi16: Extract a 16-bit integer from 'a', selected with 'index',
+// and store the result in 'dst'. 
 //
 //		dst[15:0] := (a[255:0] >> (index * 16))[15:0]
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi16'.
 // Requires AVX.
-func ExtractEpi16(a x86.M256i, index int) int16 {
-	return int16(extractEpi16([32]byte(a), index))
+func M256ExtractEpi16(a x86.M256i, index int) int16 {
+	return int16(m256ExtractEpi16([32]byte(a), index))
 }
 
-func extractEpi16(a [32]byte, index int) int16
+func m256ExtractEpi16(a [32]byte, index int) int16
 
 
-// ExtractEpi32: Extract a 32-bit integer from 'a', selected with 'index', and
-// store the result in 'dst'. 
+// M256ExtractEpi32: Extract a 32-bit integer from 'a', selected with 'index',
+// and store the result in 'dst'. 
 //
 //		dst[31:0] := (a[255:0] >> (index * 32))[31:0]
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi32'.
 // Requires AVX.
-func ExtractEpi32(a x86.M256i, index int) int32 {
-	return int32(extractEpi32([32]byte(a), index))
+func M256ExtractEpi32(a x86.M256i, index int) int32 {
+	return int32(m256ExtractEpi32([32]byte(a), index))
 }
 
-func extractEpi32(a [32]byte, index int) int32
+func m256ExtractEpi32(a [32]byte, index int) int32
 
 
-// ExtractEpi64: Extract a 64-bit integer from 'a', selected with 'index', and
-// store the result in 'dst'. 
+// M256ExtractEpi64: Extract a 64-bit integer from 'a', selected with 'index',
+// and store the result in 'dst'. 
 //
 //		dst[63:0] := (a[255:0] >> (index * 64))[63:0]
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi64'.
 // Requires AVX.
-func ExtractEpi64(a x86.M256i, index int) int64 {
-	return int64(extractEpi64([32]byte(a), index))
+func M256ExtractEpi64(a x86.M256i, index int) int64 {
+	return int64(m256ExtractEpi64([32]byte(a), index))
 }
 
-func extractEpi64(a [32]byte, index int) int64
+func m256ExtractEpi64(a [32]byte, index int) int64
 
 
-// ExtractEpi8: Extract an 8-bit integer from 'a', selected with 'index', and
-// store the result in 'dst'. 
+// M256ExtractEpi8: Extract an 8-bit integer from 'a', selected with 'index',
+// and store the result in 'dst'. 
 //
 //		dst[7:0] := (a[255:0] >> (index * 8))[7:0]
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi8'.
 // Requires AVX.
-func ExtractEpi8(a x86.M256i, index int) int8 {
-	return int8(extractEpi8([32]byte(a), index))
+func M256ExtractEpi8(a x86.M256i, index int) int8 {
+	return int8(m256ExtractEpi8([32]byte(a), index))
 }
 
-func extractEpi8(a [32]byte, index int) int8
+func m256ExtractEpi8(a [32]byte, index int) int8
 
 
-// Extractf128Pd: Extract 128 bits (composed of 2 packed double-precision
+// M256Extractf128Pd: Extract 128 bits (composed of 2 packed double-precision
 // (64-bit) floating-point elements) from 'a', selected with 'imm8', and store
 // the result in 'dst'. 
 //
@@ -2161,14 +2169,14 @@ func extractEpi8(a [32]byte, index int) int8
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_pd'.
 // Requires AVX.
-func Extractf128Pd(a x86.M256d, imm8 int) x86.M128d {
-	return x86.M128d(extractf128Pd([4]float64(a), imm8))
+func M256Extractf128Pd(a x86.M256d, imm8 int) x86.M128d {
+	return x86.M128d(m256Extractf128Pd([4]float64(a), imm8))
 }
 
-func extractf128Pd(a [4]float64, imm8 int) [2]float64
+func m256Extractf128Pd(a [4]float64, imm8 int) [2]float64
 
 
-// Extractf128Ps: Extract 128 bits (composed of 4 packed single-precision
+// M256Extractf128Ps: Extract 128 bits (composed of 4 packed single-precision
 // (32-bit) floating-point elements) from 'a', selected with 'imm8', and store
 // the result in 'dst'. 
 //
@@ -2180,14 +2188,14 @@ func extractf128Pd(a [4]float64, imm8 int) [2]float64
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_ps'.
 // Requires AVX.
-func Extractf128Ps(a x86.M256, imm8 int) x86.M128 {
-	return x86.M128(extractf128Ps([8]float32(a), imm8))
+func M256Extractf128Ps(a x86.M256, imm8 int) x86.M128 {
+	return x86.M128(m256Extractf128Ps([8]float32(a), imm8))
 }
 
-func extractf128Ps(a [8]float32, imm8 int) [4]float32
+func m256Extractf128Ps(a [8]float32, imm8 int) [4]float32
 
 
-// Extractf128Si256: Extract 128 bits (composed of integer data) from 'a',
+// M256Extractf128Si256: Extract 128 bits (composed of integer data) from 'a',
 // selected with 'imm8', and store the result in 'dst'. 
 //
 //		CASE imm8[7:0] of
@@ -2198,15 +2206,15 @@ func extractf128Ps(a [8]float32, imm8 int) [4]float32
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_si256'.
 // Requires AVX.
-func Extractf128Si256(a x86.M256i, imm8 int) x86.M128i {
-	return x86.M128i(extractf128Si256([32]byte(a), imm8))
+func M256Extractf128Si256(a x86.M256i, imm8 int) x86.M128i {
+	return x86.M128i(m256Extractf128Si256([32]byte(a), imm8))
 }
 
-func extractf128Si256(a [32]byte, imm8 int) [16]byte
+func m256Extractf128Si256(a [32]byte, imm8 int) [16]byte
 
 
-// FloorPd: Round the packed double-precision (64-bit) floating-point elements
-// in 'a' down to an integer value, and store the results as packed
+// M256FloorPd: Round the packed double-precision (64-bit) floating-point
+// elements in 'a' down to an integer value, and store the results as packed
 // double-precision floating-point elements in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -2217,15 +2225,15 @@ func extractf128Si256(a [32]byte, imm8 int) [16]byte
 //
 // Instruction: 'VROUNDPD'. Intrinsic: '_mm256_floor_pd'.
 // Requires AVX.
-func FloorPd(a x86.M256d) x86.M256d {
-	return x86.M256d(floorPd([4]float64(a)))
+func M256FloorPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256FloorPd([4]float64(a)))
 }
 
-func floorPd(a [4]float64) [4]float64
+func m256FloorPd(a [4]float64) [4]float64
 
 
-// FloorPs: Round the packed single-precision (32-bit) floating-point elements
-// in 'a' down to an integer value, and store the results as packed
+// M256FloorPs: Round the packed single-precision (32-bit) floating-point
+// elements in 'a' down to an integer value, and store the results as packed
 // single-precision floating-point elements in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -2236,14 +2244,14 @@ func floorPd(a [4]float64) [4]float64
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm256_floor_ps'.
 // Requires AVX.
-func FloorPs(a x86.M256) x86.M256 {
-	return x86.M256(floorPs([8]float32(a)))
+func M256FloorPs(a x86.M256) x86.M256 {
+	return x86.M256(m256FloorPs([8]float32(a)))
 }
 
-func floorPs(a [8]float32) [8]float32
+func m256FloorPs(a [8]float32) [8]float32
 
 
-// HaddPd: Horizontally add adjacent pairs of double-precision (64-bit)
+// M256HaddPd: Horizontally add adjacent pairs of double-precision (64-bit)
 // floating-point elements in 'a' and 'b', and pack the results in 'dst'. 
 //
 //		dst[63:0] := a[127:64] + a[63:0]
@@ -2254,14 +2262,14 @@ func floorPs(a [8]float32) [8]float32
 //
 // Instruction: 'VHADDPD'. Intrinsic: '_mm256_hadd_pd'.
 // Requires AVX.
-func HaddPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(haddPd([4]float64(a), [4]float64(b)))
+func M256HaddPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256HaddPd([4]float64(a), [4]float64(b)))
 }
 
-func haddPd(a [4]float64, b [4]float64) [4]float64
+func m256HaddPd(a [4]float64, b [4]float64) [4]float64
 
 
-// HaddPs: Horizontally add adjacent pairs of single-precision (32-bit)
+// M256HaddPs: Horizontally add adjacent pairs of single-precision (32-bit)
 // floating-point elements in 'a' and 'b', and pack the results in 'dst'. 
 //
 //		dst[31:0] := a[63:32] + a[31:0]
@@ -2276,15 +2284,16 @@ func haddPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VHADDPS'. Intrinsic: '_mm256_hadd_ps'.
 // Requires AVX.
-func HaddPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(haddPs([8]float32(a), [8]float32(b)))
+func M256HaddPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256HaddPs([8]float32(a), [8]float32(b)))
 }
 
-func haddPs(a [8]float32, b [8]float32) [8]float32
+func m256HaddPs(a [8]float32, b [8]float32) [8]float32
 
 
-// HsubPd: Horizontally subtract adjacent pairs of double-precision (64-bit)
-// floating-point elements in 'a' and 'b', and pack the results in 'dst'. 
+// M256HsubPd: Horizontally subtract adjacent pairs of double-precision
+// (64-bit) floating-point elements in 'a' and 'b', and pack the results in
+// 'dst'. 
 //
 //		dst[63:0] := a[63:0] - a[127:64]
 //		dst[127:64] := b[63:0] - b[127:64]
@@ -2294,14 +2303,14 @@ func haddPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VHSUBPD'. Intrinsic: '_mm256_hsub_pd'.
 // Requires AVX.
-func HsubPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(hsubPd([4]float64(a), [4]float64(b)))
+func M256HsubPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256HsubPd([4]float64(a), [4]float64(b)))
 }
 
-func hsubPd(a [4]float64, b [4]float64) [4]float64
+func m256HsubPd(a [4]float64, b [4]float64) [4]float64
 
 
-// HsubPs: Horizontally add adjacent pairs of single-precision (32-bit)
+// M256HsubPs: Horizontally add adjacent pairs of single-precision (32-bit)
 // floating-point elements in 'a' and 'b', and pack the results in 'dst'. 
 //
 //		dst[31:0] := a[31:0] - a[63:32]
@@ -2316,15 +2325,15 @@ func hsubPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VHSUBPS'. Intrinsic: '_mm256_hsub_ps'.
 // Requires AVX.
-func HsubPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(hsubPs([8]float32(a), [8]float32(b)))
+func M256HsubPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256HsubPs([8]float32(a), [8]float32(b)))
 }
 
-func hsubPs(a [8]float32, b [8]float32) [8]float32
+func m256HsubPs(a [8]float32, b [8]float32) [8]float32
 
 
-// HypotPd: Compute the length of the hypotenous of a right triangle, with the
-// lengths of the other two sides of the triangle stored as packed
+// M256HypotPd: Compute the length of the hypotenous of a right triangle, with
+// the lengths of the other two sides of the triangle stored as packed
 // double-precision (64-bit) floating-point elements in 'a' and 'b', and store
 // the results in 'dst'. 
 //
@@ -2336,15 +2345,15 @@ func hsubPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_hypot_pd'.
 // Requires AVX.
-func HypotPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(hypotPd([4]float64(a), [4]float64(b)))
+func M256HypotPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256HypotPd([4]float64(a), [4]float64(b)))
 }
 
-func hypotPd(a [4]float64, b [4]float64) [4]float64
+func m256HypotPd(a [4]float64, b [4]float64) [4]float64
 
 
-// HypotPs: Compute the length of the hypotenous of a right triangle, with the
-// lengths of the other two sides of the triangle stored as packed
+// M256HypotPs: Compute the length of the hypotenous of a right triangle, with
+// the lengths of the other two sides of the triangle stored as packed
 // single-precision (32-bit) floating-point elements in 'a' and 'b', and store
 // the results in 'dst'. 
 //
@@ -2356,15 +2365,15 @@ func hypotPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_hypot_ps'.
 // Requires AVX.
-func HypotPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(hypotPs([8]float32(a), [8]float32(b)))
+func M256HypotPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256HypotPs([8]float32(a), [8]float32(b)))
 }
 
-func hypotPs(a [8]float32, b [8]float32) [8]float32
+func m256HypotPs(a [8]float32, b [8]float32) [8]float32
 
 
-// IdivEpi32: Divide packed 32-bit integers in 'a' by packed elements in 'b',
-// and store the truncated results in 'dst'. 
+// M256IdivEpi32: Divide packed 32-bit integers in 'a' by packed elements in
+// 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -2374,14 +2383,14 @@ func hypotPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_idiv_epi32'.
 // Requires AVX.
-func IdivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(idivEpi32([32]byte(a), [32]byte(b)))
+func M256IdivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256IdivEpi32([32]byte(a), [32]byte(b)))
 }
 
-func idivEpi32(a [32]byte, b [32]byte) [32]byte
+func m256IdivEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// IdivremEpi32: Divide packed 32-bit integers in 'a' by packed elements in
+// M256IdivremEpi32: Divide packed 32-bit integers in 'a' by packed elements in
 // 'b', store the truncated results in 'dst', and store the remainders as
 // packed 32-bit integers into memory at 'mem_addr'. 
 //
@@ -2394,15 +2403,15 @@ func idivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_idivrem_epi32'.
 // Requires AVX.
-func IdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(idivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
+func M256IdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256IdivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
 }
 
-func idivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
+func m256IdivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
 
 
-// InsertEpi16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst'
-// at the location specified by 'index'. 
+// M256InsertEpi16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into
+// 'dst' at the location specified by 'index'. 
 //
 //		dst[255:0] := a[255:0]
 //		sel := index*16
@@ -2410,15 +2419,15 @@ func idivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi16'.
 // Requires AVX.
-func InsertEpi16(a x86.M256i, i int16, index int) x86.M256i {
-	return x86.M256i(insertEpi16([32]byte(a), i, index))
+func M256InsertEpi16(a x86.M256i, i int16, index int) x86.M256i {
+	return x86.M256i(m256InsertEpi16([32]byte(a), i, index))
 }
 
-func insertEpi16(a [32]byte, i int16, index int) [32]byte
+func m256InsertEpi16(a [32]byte, i int16, index int) [32]byte
 
 
-// InsertEpi32: Copy 'a' to 'dst', and insert the 32-bit integer 'i' into 'dst'
-// at the location specified by 'index'. 
+// M256InsertEpi32: Copy 'a' to 'dst', and insert the 32-bit integer 'i' into
+// 'dst' at the location specified by 'index'. 
 //
 //		dst[255:0] := a[255:0]
 //		sel := index*32
@@ -2426,15 +2435,15 @@ func insertEpi16(a [32]byte, i int16, index int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi32'.
 // Requires AVX.
-func InsertEpi32(a x86.M256i, i int32, index int) x86.M256i {
-	return x86.M256i(insertEpi32([32]byte(a), i, index))
+func M256InsertEpi32(a x86.M256i, i int32, index int) x86.M256i {
+	return x86.M256i(m256InsertEpi32([32]byte(a), i, index))
 }
 
-func insertEpi32(a [32]byte, i int32, index int) [32]byte
+func m256InsertEpi32(a [32]byte, i int32, index int) [32]byte
 
 
-// InsertEpi64: Copy 'a' to 'dst', and insert the 64-bit integer 'i' into 'dst'
-// at the location specified by 'index'. 
+// M256InsertEpi64: Copy 'a' to 'dst', and insert the 64-bit integer 'i' into
+// 'dst' at the location specified by 'index'. 
 //
 //		dst[255:0] := a[255:0]
 //		sel := index*64
@@ -2442,15 +2451,15 @@ func insertEpi32(a [32]byte, i int32, index int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi64'.
 // Requires AVX.
-func InsertEpi64(a x86.M256i, i int64, index int) x86.M256i {
-	return x86.M256i(insertEpi64([32]byte(a), i, index))
+func M256InsertEpi64(a x86.M256i, i int64, index int) x86.M256i {
+	return x86.M256i(m256InsertEpi64([32]byte(a), i, index))
 }
 
-func insertEpi64(a [32]byte, i int64, index int) [32]byte
+func m256InsertEpi64(a [32]byte, i int64, index int) [32]byte
 
 
-// InsertEpi8: Copy 'a' to 'dst', and insert the 8-bit integer 'i' into 'dst'
-// at the location specified by 'index'. 
+// M256InsertEpi8: Copy 'a' to 'dst', and insert the 8-bit integer 'i' into
+// 'dst' at the location specified by 'index'. 
 //
 //		dst[255:0] := a[255:0]
 //		sel := index*8
@@ -2458,16 +2467,16 @@ func insertEpi64(a [32]byte, i int64, index int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_insert_epi8'.
 // Requires AVX.
-func InsertEpi8(a x86.M256i, i int8, index int) x86.M256i {
-	return x86.M256i(insertEpi8([32]byte(a), i, index))
+func M256InsertEpi8(a x86.M256i, i int8, index int) x86.M256i {
+	return x86.M256i(m256InsertEpi8([32]byte(a), i, index))
 }
 
-func insertEpi8(a [32]byte, i int8, index int) [32]byte
+func m256InsertEpi8(a [32]byte, i int8, index int) [32]byte
 
 
-// Insertf128Pd: Copy 'a' to 'dst', then insert 128 bits (composed of 2 packed
-// double-precision (64-bit) floating-point elements) from 'b' into 'dst' at
-// the location specified by 'imm8'. 
+// M256Insertf128Pd: Copy 'a' to 'dst', then insert 128 bits (composed of 2
+// packed double-precision (64-bit) floating-point elements) from 'b' into
+// 'dst' at the location specified by 'imm8'. 
 //
 //		dst[255:0] := a[255:0]
 //		CASE imm8[7:0] of
@@ -2478,16 +2487,16 @@ func insertEpi8(a [32]byte, i int8, index int) [32]byte
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_pd'.
 // Requires AVX.
-func Insertf128Pd(a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
-	return x86.M256d(insertf128Pd([4]float64(a), [2]float64(b), imm8))
+func M256Insertf128Pd(a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
+	return x86.M256d(m256Insertf128Pd([4]float64(a), [2]float64(b), imm8))
 }
 
-func insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
+func m256Insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
 
 
-// Insertf128Ps: Copy 'a' to 'dst', then insert 128 bits (composed of 4 packed
-// single-precision (32-bit) floating-point elements) from 'b' into 'dst' at
-// the location specified by 'imm8'. 
+// M256Insertf128Ps: Copy 'a' to 'dst', then insert 128 bits (composed of 4
+// packed single-precision (32-bit) floating-point elements) from 'b' into
+// 'dst' at the location specified by 'imm8'. 
 //
 //		dst[255:0] := a[255:0]
 //		CASE (imm8[1:0]) of
@@ -2498,15 +2507,15 @@ func insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_ps'.
 // Requires AVX.
-func Insertf128Ps(a x86.M256, b x86.M128, imm8 int) x86.M256 {
-	return x86.M256(insertf128Ps([8]float32(a), [4]float32(b), imm8))
+func M256Insertf128Ps(a x86.M256, b x86.M128, imm8 int) x86.M256 {
+	return x86.M256(m256Insertf128Ps([8]float32(a), [4]float32(b), imm8))
 }
 
-func insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
+func m256Insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
 
 
-// Insertf128Si256: Copy 'a' to 'dst', then insert 128 bits from 'b' into 'dst'
-// at the location specified by 'imm8'. 
+// M256Insertf128Si256: Copy 'a' to 'dst', then insert 128 bits from 'b' into
+// 'dst' at the location specified by 'imm8'. 
 //
 //		dst[255:0] := a[255:0]
 //		CASE (imm8[1:0]) of
@@ -2517,15 +2526,15 @@ func insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_si256'.
 // Requires AVX.
-func Insertf128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
-	return x86.M256i(insertf128Si256([32]byte(a), [16]byte(b), imm8))
+func M256Insertf128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+	return x86.M256i(m256Insertf128Si256([32]byte(a), [16]byte(b), imm8))
 }
 
-func insertf128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256Insertf128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
 
 
-// InvcbrtPd: Compute the inverse cube root of packed double-precision (64-bit)
-// floating-point elements in 'a', and store the results in 'dst'. 
+// M256InvcbrtPd: Compute the inverse cube root of packed double-precision
+// (64-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -2535,15 +2544,15 @@ func insertf128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_invcbrt_pd'.
 // Requires AVX.
-func InvcbrtPd(a x86.M256d) x86.M256d {
-	return x86.M256d(invcbrtPd([4]float64(a)))
+func M256InvcbrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256InvcbrtPd([4]float64(a)))
 }
 
-func invcbrtPd(a [4]float64) [4]float64
+func m256InvcbrtPd(a [4]float64) [4]float64
 
 
-// InvcbrtPs: Compute the inverse cube root of packed single-precision (32-bit)
-// floating-point elements in 'a', and store the results in 'dst'. 
+// M256InvcbrtPs: Compute the inverse cube root of packed single-precision
+// (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2553,14 +2562,14 @@ func invcbrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_invcbrt_ps'.
 // Requires AVX.
-func InvcbrtPs(a x86.M256) x86.M256 {
-	return x86.M256(invcbrtPs([8]float32(a)))
+func M256InvcbrtPs(a x86.M256) x86.M256 {
+	return x86.M256(m256InvcbrtPs([8]float32(a)))
 }
 
-func invcbrtPs(a [8]float32) [8]float32
+func m256InvcbrtPs(a [8]float32) [8]float32
 
 
-// InvsqrtPd: Compute the inverse square root of packed double-precision
+// M256InvsqrtPd: Compute the inverse square root of packed double-precision
 // (64-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -2571,14 +2580,14 @@ func invcbrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_invsqrt_pd'.
 // Requires AVX.
-func InvsqrtPd(a x86.M256d) x86.M256d {
-	return x86.M256d(invsqrtPd([4]float64(a)))
+func M256InvsqrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256InvsqrtPd([4]float64(a)))
 }
 
-func invsqrtPd(a [4]float64) [4]float64
+func m256InvsqrtPd(a [4]float64) [4]float64
 
 
-// InvsqrtPs: Compute the inverse square root of packed single-precision
+// M256InvsqrtPs: Compute the inverse square root of packed single-precision
 // (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -2589,15 +2598,15 @@ func invsqrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_invsqrt_ps'.
 // Requires AVX.
-func InvsqrtPs(a x86.M256) x86.M256 {
-	return x86.M256(invsqrtPs([8]float32(a)))
+func M256InvsqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(m256InvsqrtPs([8]float32(a)))
 }
 
-func invsqrtPs(a [8]float32) [8]float32
+func m256InvsqrtPs(a [8]float32) [8]float32
 
 
-// IremEpi32: Divide packed 32-bit integers in 'a' by packed elements in 'b',
-// and store the remainders as packed 32-bit integers in 'dst'. 
+// M256IremEpi32: Divide packed 32-bit integers in 'a' by packed elements in
+// 'b', and store the remainders as packed 32-bit integers in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -2607,30 +2616,30 @@ func invsqrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_irem_epi32'.
 // Requires AVX.
-func IremEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(iremEpi32([32]byte(a), [32]byte(b)))
+func M256IremEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256IremEpi32([32]byte(a), [32]byte(b)))
 }
 
-func iremEpi32(a [32]byte, b [32]byte) [32]byte
+func m256IremEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// LddquSi256: Load 256-bits of integer data from unaligned memory into 'dst'.
-// This intrinsic may perform better than '_mm256_loadu_si256' when the data
-// crosses a cache line boundary. 
+// M256LddquSi256: Load 256-bits of integer data from unaligned memory into
+// 'dst'. This intrinsic may perform better than '_mm256_loadu_si256' when the
+// data crosses a cache line boundary. 
 //
 //		dst[255:0] := MEM[mem_addr+255:mem_addr]
 //		dst[MAX:256] := 0
 //
 // Instruction: 'VLDDQU'. Intrinsic: '_mm256_lddqu_si256'.
 // Requires AVX.
-func LddquSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(lddquSi256(mem_addr))
+func M256LddquSi256(mem_addr x86.M256iConst) x86.M256i {
+	return x86.M256i(m256LddquSi256(mem_addr))
 }
 
-func lddquSi256(mem_addr x86.M256iConst) [32]byte
+func m256LddquSi256(mem_addr x86.M256iConst) [32]byte
 
 
-// LoadPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
+// M256LoadPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
 // floating-point elements) from memory into 'dst'.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
@@ -2640,14 +2649,14 @@ func lddquSi256(mem_addr x86.M256iConst) [32]byte
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_load_pd'.
 // Requires AVX.
-func LoadPd(mem_addr float64) x86.M256d {
-	return x86.M256d(loadPd(mem_addr))
+func M256LoadPd(mem_addr float64) x86.M256d {
+	return x86.M256d(m256LoadPd(mem_addr))
 }
 
-func loadPd(mem_addr float64) [4]float64
+func m256LoadPd(mem_addr float64) [4]float64
 
 
-// LoadPs: Load 256-bits (composed of 8 packed single-precision (32-bit)
+// M256LoadPs: Load 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from memory into 'dst'.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
@@ -2657,14 +2666,14 @@ func loadPd(mem_addr float64) [4]float64
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_load_ps'.
 // Requires AVX.
-func LoadPs(mem_addr float32) x86.M256 {
-	return x86.M256(loadPs(mem_addr))
+func M256LoadPs(mem_addr float32) x86.M256 {
+	return x86.M256(m256LoadPs(mem_addr))
 }
 
-func loadPs(mem_addr float32) [8]float32
+func m256LoadPs(mem_addr float32) [8]float32
 
 
-// LoadSi256: Load 256-bits of integer data from memory into 'dst'.
+// M256LoadSi256: Load 256-bits of integer data from memory into 'dst'.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -2673,14 +2682,14 @@ func loadPs(mem_addr float32) [8]float32
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_load_si256'.
 // Requires AVX.
-func LoadSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(loadSi256(mem_addr))
+func M256LoadSi256(mem_addr x86.M256iConst) x86.M256i {
+	return x86.M256i(m256LoadSi256(mem_addr))
 }
 
-func loadSi256(mem_addr x86.M256iConst) [32]byte
+func m256LoadSi256(mem_addr x86.M256iConst) [32]byte
 
 
-// LoaduPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
+// M256LoaduPd: Load 256-bits (composed of 4 packed double-precision (64-bit)
 // floating-point elements) from memory into 'dst'.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -2689,14 +2698,14 @@ func loadSi256(mem_addr x86.M256iConst) [32]byte
 //
 // Instruction: 'VMOVUPD'. Intrinsic: '_mm256_loadu_pd'.
 // Requires AVX.
-func LoaduPd(mem_addr float64) x86.M256d {
-	return x86.M256d(loaduPd(mem_addr))
+func M256LoaduPd(mem_addr float64) x86.M256d {
+	return x86.M256d(m256LoaduPd(mem_addr))
 }
 
-func loaduPd(mem_addr float64) [4]float64
+func m256LoaduPd(mem_addr float64) [4]float64
 
 
-// LoaduPs: Load 256-bits (composed of 8 packed single-precision (32-bit)
+// M256LoaduPs: Load 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from memory into 'dst'.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -2705,14 +2714,14 @@ func loaduPd(mem_addr float64) [4]float64
 //
 // Instruction: 'VMOVUPS'. Intrinsic: '_mm256_loadu_ps'.
 // Requires AVX.
-func LoaduPs(mem_addr float32) x86.M256 {
-	return x86.M256(loaduPs(mem_addr))
+func M256LoaduPs(mem_addr float32) x86.M256 {
+	return x86.M256(m256LoaduPs(mem_addr))
 }
 
-func loaduPs(mem_addr float32) [8]float32
+func m256LoaduPs(mem_addr float32) [8]float32
 
 
-// LoaduSi256: Load 256-bits of integer data from memory into 'dst'.
+// M256LoaduSi256: Load 256-bits of integer data from memory into 'dst'.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
 //		dst[255:0] := MEM[mem_addr+255:mem_addr]
@@ -2720,16 +2729,16 @@ func loaduPs(mem_addr float32) [8]float32
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_loadu_si256'.
 // Requires AVX.
-func LoaduSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(loaduSi256(mem_addr))
+func M256LoaduSi256(mem_addr x86.M256iConst) x86.M256i {
+	return x86.M256i(m256LoaduSi256(mem_addr))
 }
 
-func loaduSi256(mem_addr x86.M256iConst) [32]byte
+func m256LoaduSi256(mem_addr x86.M256iConst) [32]byte
 
 
-// Loadu2M128: Load two 128-bit values (composed of 4 packed single-precision
-// (32-bit) floating-point elements) from memory, and combine them into a
-// 256-bit value in 'dst'.
+// M256Loadu2M128: Load two 128-bit values (composed of 4 packed
+// single-precision (32-bit) floating-point elements) from memory, and combine
+// them into a 256-bit value in 'dst'.
 // 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
 //
 //		dst[127:0] := MEM[loaddr+127:loaddr]
@@ -2738,16 +2747,16 @@ func loaduSi256(mem_addr x86.M256iConst) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128'.
 // Requires AVX.
-func Loadu2M128(hiaddr float32, loaddr float32) x86.M256 {
-	return x86.M256(loadu2M128(hiaddr, loaddr))
+func M256Loadu2M128(hiaddr float32, loaddr float32) x86.M256 {
+	return x86.M256(m256Loadu2M128(hiaddr, loaddr))
 }
 
-func loadu2M128(hiaddr float32, loaddr float32) [8]float32
+func m256Loadu2M128(hiaddr float32, loaddr float32) [8]float32
 
 
-// Loadu2M128d: Load two 128-bit values (composed of 2 packed double-precision
-// (64-bit) floating-point elements) from memory, and combine them into a
-// 256-bit value in 'dst'.
+// M256Loadu2M128d: Load two 128-bit values (composed of 2 packed
+// double-precision (64-bit) floating-point elements) from memory, and combine
+// them into a 256-bit value in 'dst'.
 // 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
 //
 //		dst[127:0] := MEM[loaddr+127:loaddr]
@@ -2756,15 +2765,15 @@ func loadu2M128(hiaddr float32, loaddr float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128d'.
 // Requires AVX.
-func Loadu2M128d(hiaddr float64, loaddr float64) x86.M256d {
-	return x86.M256d(loadu2M128d(hiaddr, loaddr))
+func M256Loadu2M128d(hiaddr float64, loaddr float64) x86.M256d {
+	return x86.M256d(m256Loadu2M128d(hiaddr, loaddr))
 }
 
-func loadu2M128d(hiaddr float64, loaddr float64) [4]float64
+func m256Loadu2M128d(hiaddr float64, loaddr float64) [4]float64
 
 
-// Loadu2M128i: Load two 128-bit values (composed of integer data) from memory,
-// and combine them into a 256-bit value in 'dst'.
+// M256Loadu2M128i: Load two 128-bit values (composed of integer data) from
+// memory, and combine them into a 256-bit value in 'dst'.
 // 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
 //
 //		dst[127:0] := MEM[loaddr+127:loaddr]
@@ -2773,14 +2782,14 @@ func loadu2M128d(hiaddr float64, loaddr float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128i'.
 // Requires AVX.
-func Loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) x86.M256i {
-	return x86.M256i(loadu2M128i(hiaddr, loaddr))
+func M256Loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) x86.M256i {
+	return x86.M256i(m256Loadu2M128i(hiaddr, loaddr))
 }
 
-func loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) [32]byte
+func m256Loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) [32]byte
 
 
-// LogPd: Compute the natural logarithm of packed double-precision (64-bit)
+// M256LogPd: Compute the natural logarithm of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -2791,14 +2800,14 @@ func loadu2M128i(hiaddr x86.M128iConst, loaddr x86.M128iConst) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_log_pd'.
 // Requires AVX.
-func LogPd(a x86.M256d) x86.M256d {
-	return x86.M256d(logPd([4]float64(a)))
+func M256LogPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256LogPd([4]float64(a)))
 }
 
-func logPd(a [4]float64) [4]float64
+func m256LogPd(a [4]float64) [4]float64
 
 
-// LogPs: Compute the natural logarithm of packed single-precision (32-bit)
+// M256LogPs: Compute the natural logarithm of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -2809,15 +2818,15 @@ func logPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log_ps'.
 // Requires AVX.
-func LogPs(a x86.M256) x86.M256 {
-	return x86.M256(logPs([8]float32(a)))
+func M256LogPs(a x86.M256) x86.M256 {
+	return x86.M256(m256LogPs([8]float32(a)))
 }
 
-func logPs(a [8]float32) [8]float32
+func m256LogPs(a [8]float32) [8]float32
 
 
-// Log10Pd: Compute the base-10 logarithm of packed double-precision (64-bit)
-// floating-point elements in 'a', and store the results in 'dst'. 
+// M256Log10Pd: Compute the base-10 logarithm of packed double-precision
+// (64-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -2827,15 +2836,15 @@ func logPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_log10_pd'.
 // Requires AVX.
-func Log10Pd(a x86.M256d) x86.M256d {
-	return x86.M256d(log10Pd([4]float64(a)))
+func M256Log10Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256Log10Pd([4]float64(a)))
 }
 
-func log10Pd(a [4]float64) [4]float64
+func m256Log10Pd(a [4]float64) [4]float64
 
 
-// Log10Ps: Compute the base-10 logarithm of packed single-precision (32-bit)
-// floating-point elements in 'a', and store the results in 'dst'. 
+// M256Log10Ps: Compute the base-10 logarithm of packed single-precision
+// (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2845,15 +2854,16 @@ func log10Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log10_ps'.
 // Requires AVX.
-func Log10Ps(a x86.M256) x86.M256 {
-	return x86.M256(log10Ps([8]float32(a)))
+func M256Log10Ps(a x86.M256) x86.M256 {
+	return x86.M256(m256Log10Ps([8]float32(a)))
 }
 
-func log10Ps(a [8]float32) [8]float32
+func m256Log10Ps(a [8]float32) [8]float32
 
 
-// Log1pPd: Compute the natural logarithm of one plus packed double-precision
-// (64-bit) floating-point elements in 'a', and store the results in 'dst'. 
+// M256Log1pPd: Compute the natural logarithm of one plus packed
+// double-precision (64-bit) floating-point elements in 'a', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -2863,15 +2873,16 @@ func log10Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_log1p_pd'.
 // Requires AVX.
-func Log1pPd(a x86.M256d) x86.M256d {
-	return x86.M256d(log1pPd([4]float64(a)))
+func M256Log1pPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256Log1pPd([4]float64(a)))
 }
 
-func log1pPd(a [4]float64) [4]float64
+func m256Log1pPd(a [4]float64) [4]float64
 
 
-// Log1pPs: Compute the natural logarithm of one plus packed single-precision
-// (32-bit) floating-point elements in 'a', and store the results in 'dst'. 
+// M256Log1pPs: Compute the natural logarithm of one plus packed
+// single-precision (32-bit) floating-point elements in 'a', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2881,14 +2892,14 @@ func log1pPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log1p_ps'.
 // Requires AVX.
-func Log1pPs(a x86.M256) x86.M256 {
-	return x86.M256(log1pPs([8]float32(a)))
+func M256Log1pPs(a x86.M256) x86.M256 {
+	return x86.M256(m256Log1pPs([8]float32(a)))
 }
 
-func log1pPs(a [8]float32) [8]float32
+func m256Log1pPs(a [8]float32) [8]float32
 
 
-// Log2Pd: Compute the base-2 logarithm of packed double-precision (64-bit)
+// M256Log2Pd: Compute the base-2 logarithm of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -2899,14 +2910,14 @@ func log1pPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_log2_pd'.
 // Requires AVX.
-func Log2Pd(a x86.M256d) x86.M256d {
-	return x86.M256d(log2Pd([4]float64(a)))
+func M256Log2Pd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256Log2Pd([4]float64(a)))
 }
 
-func log2Pd(a [4]float64) [4]float64
+func m256Log2Pd(a [4]float64) [4]float64
 
 
-// Log2Ps: Compute the base-2 logarithm of packed single-precision (32-bit)
+// M256Log2Ps: Compute the base-2 logarithm of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -2917,14 +2928,14 @@ func log2Pd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_log2_ps'.
 // Requires AVX.
-func Log2Ps(a x86.M256) x86.M256 {
-	return x86.M256(log2Ps([8]float32(a)))
+func M256Log2Ps(a x86.M256) x86.M256 {
+	return x86.M256(m256Log2Ps([8]float32(a)))
 }
 
-func log2Ps(a [8]float32) [8]float32
+func m256Log2Ps(a [8]float32) [8]float32
 
 
-// LogbPd: Convert the exponent of each packed double-precision (64-bit)
+// M256LogbPd: Convert the exponent of each packed double-precision (64-bit)
 // floating-point element in 'a' to a double-precision floating-point number
 // representing the integer exponent, and store the results in 'dst'. This
 // intrinsic essentially calculates 'floor(log2(x))' for each element. 
@@ -2937,14 +2948,14 @@ func log2Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_logb_pd'.
 // Requires AVX.
-func LogbPd(a x86.M256d) x86.M256d {
-	return x86.M256d(logbPd([4]float64(a)))
+func M256LogbPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256LogbPd([4]float64(a)))
 }
 
-func logbPd(a [4]float64) [4]float64
+func m256LogbPd(a [4]float64) [4]float64
 
 
-// LogbPs: Convert the exponent of each packed single-precision (32-bit)
+// M256LogbPs: Convert the exponent of each packed single-precision (32-bit)
 // floating-point element in 'a' to a single-precision floating-point number
 // representing the integer exponent, and store the results in 'dst'. This
 // intrinsic essentially calculates 'floor(log2(x))' for each element. 
@@ -2957,11 +2968,11 @@ func logbPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_logb_ps'.
 // Requires AVX.
-func LogbPs(a x86.M256) x86.M256 {
-	return x86.M256(logbPs([8]float32(a)))
+func M256LogbPs(a x86.M256) x86.M256 {
+	return x86.M256(m256LogbPs([8]float32(a)))
 }
 
-func logbPs(a [8]float32) [8]float32
+func m256LogbPs(a [8]float32) [8]float32
 
 
 // MaskloadPd: Load packed double-precision (64-bit) floating-point elements
@@ -2987,9 +2998,9 @@ func MaskloadPd(mem_addr float64, mask x86.M128i) x86.M128d {
 func maskloadPd(mem_addr float64, mask [16]byte) [2]float64
 
 
-// MaskloadPd1: Load packed double-precision (64-bit) floating-point elements
-// from memory into 'dst' using 'mask' (elements are zeroed out when the high
-// bit of the corresponding element is not set). 
+// M256MaskloadPd: Load packed double-precision (64-bit) floating-point
+// elements from memory into 'dst' using 'mask' (elements are zeroed out when
+// the high bit of the corresponding element is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3003,11 +3014,11 @@ func maskloadPd(mem_addr float64, mask [16]byte) [2]float64
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm256_maskload_pd'.
 // Requires AVX.
-func MaskloadPd1(mem_addr float64, mask x86.M256i) x86.M256d {
-	return x86.M256d(maskloadPd1(mem_addr, [32]byte(mask)))
+func M256MaskloadPd(mem_addr float64, mask x86.M256i) x86.M256d {
+	return x86.M256d(m256MaskloadPd(mem_addr, [32]byte(mask)))
 }
 
-func maskloadPd1(mem_addr float64, mask [32]byte) [4]float64
+func m256MaskloadPd(mem_addr float64, mask [32]byte) [4]float64
 
 
 // MaskloadPs: Load packed single-precision (32-bit) floating-point elements
@@ -3033,9 +3044,9 @@ func MaskloadPs(mem_addr float32, mask x86.M128i) x86.M128 {
 func maskloadPs(mem_addr float32, mask [16]byte) [4]float32
 
 
-// MaskloadPs1: Load packed single-precision (32-bit) floating-point elements
-// from memory into 'dst' using 'mask' (elements are zeroed out when the high
-// bit of the corresponding element is not set). 
+// M256MaskloadPs: Load packed single-precision (32-bit) floating-point
+// elements from memory into 'dst' using 'mask' (elements are zeroed out when
+// the high bit of the corresponding element is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3049,11 +3060,11 @@ func maskloadPs(mem_addr float32, mask [16]byte) [4]float32
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm256_maskload_ps'.
 // Requires AVX.
-func MaskloadPs1(mem_addr float32, mask x86.M256i) x86.M256 {
-	return x86.M256(maskloadPs1(mem_addr, [32]byte(mask)))
+func M256MaskloadPs(mem_addr float32, mask x86.M256i) x86.M256 {
+	return x86.M256(m256MaskloadPs(mem_addr, [32]byte(mask)))
 }
 
-func maskloadPs1(mem_addr float32, mask [32]byte) [8]float32
+func m256MaskloadPs(mem_addr float32, mask [32]byte) [8]float32
 
 
 // MaskstorePd: Store packed double-precision (64-bit) floating-point elements
@@ -3075,8 +3086,8 @@ func MaskstorePd(mem_addr float64, mask x86.M128i, a x86.M128d)  {
 func maskstorePd(mem_addr float64, mask [16]byte, a [2]float64) 
 
 
-// MaskstorePd1: Store packed double-precision (64-bit) floating-point elements
-// from 'a' into memory using 'mask'. 
+// M256MaskstorePd: Store packed double-precision (64-bit) floating-point
+// elements from 'a' into memory using 'mask'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3087,11 +3098,11 @@ func maskstorePd(mem_addr float64, mask [16]byte, a [2]float64)
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm256_maskstore_pd'.
 // Requires AVX.
-func MaskstorePd1(mem_addr float64, mask x86.M256i, a x86.M256d)  {
-	maskstorePd1(mem_addr, [32]byte(mask), [4]float64(a))
+func M256MaskstorePd(mem_addr float64, mask x86.M256i, a x86.M256d)  {
+	m256MaskstorePd(mem_addr, [32]byte(mask), [4]float64(a))
 }
 
-func maskstorePd1(mem_addr float64, mask [32]byte, a [4]float64) 
+func m256MaskstorePd(mem_addr float64, mask [32]byte, a [4]float64) 
 
 
 // MaskstorePs: Store packed single-precision (32-bit) floating-point elements
@@ -3113,8 +3124,8 @@ func MaskstorePs(mem_addr float32, mask x86.M128i, a x86.M128)  {
 func maskstorePs(mem_addr float32, mask [16]byte, a [4]float32) 
 
 
-// MaskstorePs1: Store packed single-precision (32-bit) floating-point elements
-// from 'a' into memory using 'mask'. 
+// M256MaskstorePs: Store packed single-precision (32-bit) floating-point
+// elements from 'a' into memory using 'mask'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3125,15 +3136,15 @@ func maskstorePs(mem_addr float32, mask [16]byte, a [4]float32)
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm256_maskstore_ps'.
 // Requires AVX.
-func MaskstorePs1(mem_addr float32, mask x86.M256i, a x86.M256)  {
-	maskstorePs1(mem_addr, [32]byte(mask), [8]float32(a))
+func M256MaskstorePs(mem_addr float32, mask x86.M256i, a x86.M256)  {
+	m256MaskstorePs(mem_addr, [32]byte(mask), [8]float32(a))
 }
 
-func maskstorePs1(mem_addr float32, mask [32]byte, a [8]float32) 
+func m256MaskstorePs(mem_addr float32, mask [32]byte, a [8]float32) 
 
 
-// MaxPd: Compare packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store packed maximum values in 'dst'. 
+// M256MaxPd: Compare packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3143,15 +3154,15 @@ func maskstorePs1(mem_addr float32, mask [32]byte, a [8]float32)
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm256_max_pd'.
 // Requires AVX.
-func MaxPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(maxPd([4]float64(a), [4]float64(b)))
+func M256MaxPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256MaxPd([4]float64(a), [4]float64(b)))
 }
 
-func maxPd(a [4]float64, b [4]float64) [4]float64
+func m256MaxPd(a [4]float64, b [4]float64) [4]float64
 
 
-// MaxPs: Compare packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store packed maximum values in 'dst'. 
+// M256MaxPs: Compare packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3161,15 +3172,15 @@ func maxPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm256_max_ps'.
 // Requires AVX.
-func MaxPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(maxPs([8]float32(a), [8]float32(b)))
+func M256MaxPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256MaxPs([8]float32(a), [8]float32(b)))
 }
 
-func maxPs(a [8]float32, b [8]float32) [8]float32
+func m256MaxPs(a [8]float32, b [8]float32) [8]float32
 
 
-// MinPd: Compare packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store packed minimum values in 'dst'. 
+// M256MinPd: Compare packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3179,15 +3190,15 @@ func maxPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm256_min_pd'.
 // Requires AVX.
-func MinPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(minPd([4]float64(a), [4]float64(b)))
+func M256MinPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256MinPd([4]float64(a), [4]float64(b)))
 }
 
-func minPd(a [4]float64, b [4]float64) [4]float64
+func m256MinPd(a [4]float64, b [4]float64) [4]float64
 
 
-// MinPs: Compare packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store packed minimum values in 'dst'. 
+// M256MinPs: Compare packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3197,15 +3208,15 @@ func minPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm256_min_ps'.
 // Requires AVX.
-func MinPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(minPs([8]float32(a), [8]float32(b)))
+func M256MinPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256MinPs([8]float32(a), [8]float32(b)))
 }
 
-func minPs(a [8]float32, b [8]float32) [8]float32
+func m256MinPs(a [8]float32, b [8]float32) [8]float32
 
 
-// MovedupPd: Duplicate even-indexed double-precision (64-bit) floating-point
-// elements from 'a', and store the results in 'dst'. 
+// M256MovedupPd: Duplicate even-indexed double-precision (64-bit)
+// floating-point elements from 'a', and store the results in 'dst'. 
 //
 //		dst[63:0] := a[63:0]
 //		dst[127:64] := a[63:0]
@@ -3215,15 +3226,15 @@ func minPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm256_movedup_pd'.
 // Requires AVX.
-func MovedupPd(a x86.M256d) x86.M256d {
-	return x86.M256d(movedupPd([4]float64(a)))
+func M256MovedupPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256MovedupPd([4]float64(a)))
 }
 
-func movedupPd(a [4]float64) [4]float64
+func m256MovedupPd(a [4]float64) [4]float64
 
 
-// MovehdupPs: Duplicate odd-indexed single-precision (32-bit) floating-point
-// elements from 'a', and store the results in 'dst'. 
+// M256MovehdupPs: Duplicate odd-indexed single-precision (32-bit)
+// floating-point elements from 'a', and store the results in 'dst'. 
 //
 //		dst[31:0] := a[63:32] 
 //		dst[63:32] := a[63:32] 
@@ -3237,15 +3248,15 @@ func movedupPd(a [4]float64) [4]float64
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm256_movehdup_ps'.
 // Requires AVX.
-func MovehdupPs(a x86.M256) x86.M256 {
-	return x86.M256(movehdupPs([8]float32(a)))
+func M256MovehdupPs(a x86.M256) x86.M256 {
+	return x86.M256(m256MovehdupPs([8]float32(a)))
 }
 
-func movehdupPs(a [8]float32) [8]float32
+func m256MovehdupPs(a [8]float32) [8]float32
 
 
-// MoveldupPs: Duplicate even-indexed single-precision (32-bit) floating-point
-// elements from 'a', and store the results in 'dst'. 
+// M256MoveldupPs: Duplicate even-indexed single-precision (32-bit)
+// floating-point elements from 'a', and store the results in 'dst'. 
 //
 //		dst[31:0] := a[31:0] 
 //		dst[63:32] := a[31:0] 
@@ -3259,16 +3270,16 @@ func movehdupPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm256_moveldup_ps'.
 // Requires AVX.
-func MoveldupPs(a x86.M256) x86.M256 {
-	return x86.M256(moveldupPs([8]float32(a)))
+func M256MoveldupPs(a x86.M256) x86.M256 {
+	return x86.M256(m256MoveldupPs([8]float32(a)))
 }
 
-func moveldupPs(a [8]float32) [8]float32
+func m256MoveldupPs(a [8]float32) [8]float32
 
 
-// MovemaskPd: Set each bit of mask 'dst' based on the most significant bit of
-// the corresponding packed double-precision (64-bit) floating-point element in
-// 'a'. 
+// M256MovemaskPd: Set each bit of mask 'dst' based on the most significant bit
+// of the corresponding packed double-precision (64-bit) floating-point element
+// in 'a'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3282,16 +3293,16 @@ func moveldupPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVMSKPD'. Intrinsic: '_mm256_movemask_pd'.
 // Requires AVX.
-func MovemaskPd(a x86.M256d) int {
-	return int(movemaskPd([4]float64(a)))
+func M256MovemaskPd(a x86.M256d) int {
+	return int(m256MovemaskPd([4]float64(a)))
 }
 
-func movemaskPd(a [4]float64) int
+func m256MovemaskPd(a [4]float64) int
 
 
-// MovemaskPs: Set each bit of mask 'dst' based on the most significant bit of
-// the corresponding packed single-precision (32-bit) floating-point element in
-// 'a'. 
+// M256MovemaskPs: Set each bit of mask 'dst' based on the most significant bit
+// of the corresponding packed single-precision (32-bit) floating-point element
+// in 'a'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3305,15 +3316,15 @@ func movemaskPd(a [4]float64) int
 //
 // Instruction: 'VMOVMSKPS'. Intrinsic: '_mm256_movemask_ps'.
 // Requires AVX.
-func MovemaskPs(a x86.M256) int {
-	return int(movemaskPs([8]float32(a)))
+func M256MovemaskPs(a x86.M256) int {
+	return int(m256MovemaskPs([8]float32(a)))
 }
 
-func movemaskPs(a [8]float32) int
+func m256MovemaskPs(a [8]float32) int
 
 
-// MulPd: Multiply packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst'. 
+// M256MulPd: Multiply packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3323,15 +3334,15 @@ func movemaskPs(a [8]float32) int
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm256_mul_pd'.
 // Requires AVX.
-func MulPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(mulPd([4]float64(a), [4]float64(b)))
+func M256MulPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256MulPd([4]float64(a), [4]float64(b)))
 }
 
-func mulPd(a [4]float64, b [4]float64) [4]float64
+func m256MulPd(a [4]float64, b [4]float64) [4]float64
 
 
-// MulPs: Multiply packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst'. 
+// M256MulPs: Multiply packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3341,14 +3352,14 @@ func mulPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm256_mul_ps'.
 // Requires AVX.
-func MulPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(mulPs([8]float32(a), [8]float32(b)))
+func M256MulPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256MulPs([8]float32(a), [8]float32(b)))
 }
 
-func mulPs(a [8]float32, b [8]float32) [8]float32
+func m256MulPs(a [8]float32, b [8]float32) [8]float32
 
 
-// OrPd: Compute the bitwise OR of packed double-precision (64-bit)
+// M256OrPd: Compute the bitwise OR of packed double-precision (64-bit)
 // floating-point elements in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -3359,14 +3370,14 @@ func mulPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VORPD'. Intrinsic: '_mm256_or_pd'.
 // Requires AVX.
-func OrPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(orPd([4]float64(a), [4]float64(b)))
+func M256OrPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256OrPd([4]float64(a), [4]float64(b)))
 }
 
-func orPd(a [4]float64, b [4]float64) [4]float64
+func m256OrPd(a [4]float64, b [4]float64) [4]float64
 
 
-// OrPs: Compute the bitwise OR of packed single-precision (32-bit)
+// M256OrPs: Compute the bitwise OR of packed single-precision (32-bit)
 // floating-point elements in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -3377,11 +3388,11 @@ func orPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VORPS'. Intrinsic: '_mm256_or_ps'.
 // Requires AVX.
-func OrPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(orPs([8]float32(a), [8]float32(b)))
+func M256OrPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256OrPs([8]float32(a), [8]float32(b)))
 }
 
-func orPs(a [8]float32, b [8]float32) [8]float32
+func m256OrPs(a [8]float32, b [8]float32) [8]float32
 
 
 // PermutePd: Shuffle double-precision (64-bit) floating-point elements in 'a'
@@ -3402,9 +3413,9 @@ func PermutePd(a x86.M128d, imm8 int) x86.M128d {
 func permutePd(a [2]float64, imm8 int) [2]float64
 
 
-// PermutePd1: Shuffle double-precision (64-bit) floating-point elements in 'a'
-// within 128-bit lanes using the control in 'imm8', and store the results in
-// 'dst'. 
+// M256PermutePd: Shuffle double-precision (64-bit) floating-point elements in
+// 'a' within 128-bit lanes using the control in 'imm8', and store the results
+// in 'dst'. 
 //
 //		IF (imm8[0] == 0) dst[63:0] := a[63:0]
 //		IF (imm8[0] == 1) dst[63:0] := a[127:64]
@@ -3418,11 +3429,11 @@ func permutePd(a [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm256_permute_pd'.
 // Requires AVX.
-func PermutePd1(a x86.M256d, imm8 int) x86.M256d {
-	return x86.M256d(permutePd1([4]float64(a), imm8))
+func M256PermutePd(a x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(m256PermutePd([4]float64(a), imm8))
 }
 
-func permutePd1(a [4]float64, imm8 int) [4]float64
+func m256PermutePd(a [4]float64, imm8 int) [4]float64
 
 
 // PermutePs: Shuffle single-precision (32-bit) floating-point elements in 'a'
@@ -3453,9 +3464,9 @@ func PermutePs(a x86.M128, imm8 int) x86.M128 {
 func permutePs(a [4]float32, imm8 int) [4]float32
 
 
-// PermutePs1: Shuffle single-precision (32-bit) floating-point elements in 'a'
-// within 128-bit lanes using the control in 'imm8', and store the results in
-// 'dst'. 
+// M256PermutePs: Shuffle single-precision (32-bit) floating-point elements in
+// 'a' within 128-bit lanes using the control in 'imm8', and store the results
+// in 'dst'. 
 //
 //		SELECT4(src, control){
 //			CASE(control[1:0])
@@ -3479,14 +3490,14 @@ func permutePs(a [4]float32, imm8 int) [4]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm256_permute_ps'.
 // Requires AVX.
-func PermutePs1(a x86.M256, imm8 int) x86.M256 {
-	return x86.M256(permutePs1([8]float32(a), imm8))
+func M256PermutePs(a x86.M256, imm8 int) x86.M256 {
+	return x86.M256(m256PermutePs([8]float32(a), imm8))
 }
 
-func permutePs1(a [8]float32, imm8 int) [8]float32
+func m256PermutePs(a [8]float32, imm8 int) [8]float32
 
 
-// Permute2f128Pd: Shuffle 128-bits (composed of 2 packed double-precision
+// M256Permute2f128Pd: Shuffle 128-bits (composed of 2 packed double-precision
 // (64-bit) floating-point elements) selected by 'imm8' from 'a' and 'b', and
 // store the results in 'dst'. 
 //
@@ -3509,14 +3520,14 @@ func permutePs1(a [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_pd'.
 // Requires AVX.
-func Permute2f128Pd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
-	return x86.M256d(permute2f128Pd([4]float64(a), [4]float64(b), imm8))
+func M256Permute2f128Pd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(m256Permute2f128Pd([4]float64(a), [4]float64(b), imm8))
 }
 
-func permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256Permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
 
 
-// Permute2f128Ps: Shuffle 128-bits (composed of 4 packed single-precision
+// M256Permute2f128Ps: Shuffle 128-bits (composed of 4 packed single-precision
 // (32-bit) floating-point elements) selected by 'imm8' from 'a' and 'b', and
 // store the results in 'dst'. 
 //
@@ -3539,15 +3550,15 @@ func permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_ps'.
 // Requires AVX.
-func Permute2f128Ps(a x86.M256, b x86.M256, imm8 int) x86.M256 {
-	return x86.M256(permute2f128Ps([8]float32(a), [8]float32(b), imm8))
+func M256Permute2f128Ps(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(m256Permute2f128Ps([8]float32(a), [8]float32(b), imm8))
 }
 
-func permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256Permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
 
 
-// Permute2f128Si256: Shuffle 128-bits (composed of integer data) selected by
-// 'imm8' from 'a' and 'b', and store the results in 'dst'. 
+// M256Permute2f128Si256: Shuffle 128-bits (composed of integer data) selected
+// by 'imm8' from 'a' and 'b', and store the results in 'dst'. 
 //
 //		SELECT4(src1, src2, control){
 //			CASE(control[1:0])
@@ -3568,11 +3579,11 @@ func permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_si256'.
 // Requires AVX.
-func Permute2f128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(permute2f128Si256([32]byte(a), [32]byte(b), imm8))
+func M256Permute2f128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256Permute2f128Si256([32]byte(a), [32]byte(b), imm8))
 }
 
-func permute2f128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256Permute2f128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
 // PermutevarPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -3593,9 +3604,9 @@ func PermutevarPd(a x86.M128d, b x86.M128i) x86.M128d {
 func permutevarPd(a [2]float64, b [16]byte) [2]float64
 
 
-// PermutevarPd1: Shuffle double-precision (64-bit) floating-point elements in
-// 'a' within 128-bit lanes using the control in 'b', and store the results in
-// 'dst'. 
+// M256PermutevarPd: Shuffle double-precision (64-bit) floating-point elements
+// in 'a' within 128-bit lanes using the control in 'b', and store the results
+// in 'dst'. 
 //
 //		IF (b[1] == 0) dst[63:0] := a[63:0]
 //		IF (b[1] == 1) dst[63:0] := a[127:64]
@@ -3609,11 +3620,11 @@ func permutevarPd(a [2]float64, b [16]byte) [2]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm256_permutevar_pd'.
 // Requires AVX.
-func PermutevarPd1(a x86.M256d, b x86.M256i) x86.M256d {
-	return x86.M256d(permutevarPd1([4]float64(a), [32]byte(b)))
+func M256PermutevarPd(a x86.M256d, b x86.M256i) x86.M256d {
+	return x86.M256d(m256PermutevarPd([4]float64(a), [32]byte(b)))
 }
 
-func permutevarPd1(a [4]float64, b [32]byte) [4]float64
+func m256PermutevarPd(a [4]float64, b [32]byte) [4]float64
 
 
 // PermutevarPs: Shuffle single-precision (32-bit) floating-point elements in
@@ -3644,9 +3655,9 @@ func PermutevarPs(a x86.M128, b x86.M128i) x86.M128 {
 func permutevarPs(a [4]float32, b [16]byte) [4]float32
 
 
-// PermutevarPs1: Shuffle single-precision (32-bit) floating-point elements in
-// 'a' within 128-bit lanes using the control in 'b', and store the results in
-// 'dst'. 
+// M256PermutevarPs: Shuffle single-precision (32-bit) floating-point elements
+// in 'a' within 128-bit lanes using the control in 'b', and store the results
+// in 'dst'. 
 //
 //		SELECT4(src, control){
 //			CASE(control[1:0])
@@ -3670,14 +3681,14 @@ func permutevarPs(a [4]float32, b [16]byte) [4]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm256_permutevar_ps'.
 // Requires AVX.
-func PermutevarPs1(a x86.M256, b x86.M256i) x86.M256 {
-	return x86.M256(permutevarPs1([8]float32(a), [32]byte(b)))
+func M256PermutevarPs(a x86.M256, b x86.M256i) x86.M256 {
+	return x86.M256(m256PermutevarPs([8]float32(a), [32]byte(b)))
 }
 
-func permutevarPs1(a [8]float32, b [32]byte) [8]float32
+func m256PermutevarPs(a [8]float32, b [32]byte) [8]float32
 
 
-// PowPd: Compute the exponential value of packed double-precision (64-bit)
+// M256PowPd: Compute the exponential value of packed double-precision (64-bit)
 // floating-point elements in 'a' raised by packed elements in 'b', and store
 // the results in 'dst'. 
 //
@@ -3689,14 +3700,14 @@ func permutevarPs1(a [8]float32, b [32]byte) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_pow_pd'.
 // Requires AVX.
-func PowPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(powPd([4]float64(a), [4]float64(b)))
+func M256PowPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256PowPd([4]float64(a), [4]float64(b)))
 }
 
-func powPd(a [4]float64, b [4]float64) [4]float64
+func m256PowPd(a [4]float64, b [4]float64) [4]float64
 
 
-// PowPs: Compute the exponential value of packed single-precision (32-bit)
+// M256PowPs: Compute the exponential value of packed single-precision (32-bit)
 // floating-point elements in 'a' raised by packed elements in 'b', and store
 // the results in 'dst'. 
 //
@@ -3708,14 +3719,14 @@ func powPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_pow_ps'.
 // Requires AVX.
-func PowPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(powPs([8]float32(a), [8]float32(b)))
+func M256PowPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256PowPs([8]float32(a), [8]float32(b)))
 }
 
-func powPs(a [8]float32, b [8]float32) [8]float32
+func m256PowPs(a [8]float32, b [8]float32) [8]float32
 
 
-// RcpPs: Compute the approximate reciprocal of packed single-precision
+// M256RcpPs: Compute the approximate reciprocal of packed single-precision
 // (32-bit) floating-point elements in 'a', and store the results in 'dst'. The
 // maximum relative error for this approximation is less than 1.5*2^-12. 
 //
@@ -3727,15 +3738,15 @@ func powPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VRCPPS'. Intrinsic: '_mm256_rcp_ps'.
 // Requires AVX.
-func RcpPs(a x86.M256) x86.M256 {
-	return x86.M256(rcpPs([8]float32(a)))
+func M256RcpPs(a x86.M256) x86.M256 {
+	return x86.M256(m256RcpPs([8]float32(a)))
 }
 
-func rcpPs(a [8]float32) [8]float32
+func m256RcpPs(a [8]float32) [8]float32
 
 
-// RemEpi16: Divide packed 16-bit integers in 'a' by packed elements in 'b',
-// and store the remainders as packed 32-bit integers in 'dst'. 
+// M256RemEpi16: Divide packed 16-bit integers in 'a' by packed elements in
+// 'b', and store the remainders as packed 32-bit integers in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := 16*j
@@ -3745,15 +3756,15 @@ func rcpPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi16'.
 // Requires AVX.
-func RemEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpi16([32]byte(a), [32]byte(b)))
+func M256RemEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpi16([32]byte(a), [32]byte(b)))
 }
 
-func remEpi16(a [32]byte, b [32]byte) [32]byte
+func m256RemEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// RemEpi32: Divide packed 32-bit integers in 'a' by packed elements in 'b',
-// and store the remainders as packed 32-bit integers in 'dst'. 
+// M256RemEpi32: Divide packed 32-bit integers in 'a' by packed elements in
+// 'b', and store the remainders as packed 32-bit integers in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -3763,15 +3774,15 @@ func remEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi32'.
 // Requires AVX.
-func RemEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpi32([32]byte(a), [32]byte(b)))
+func M256RemEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpi32([32]byte(a), [32]byte(b)))
 }
 
-func remEpi32(a [32]byte, b [32]byte) [32]byte
+func m256RemEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// RemEpi64: Divide packed 64-bit integers in 'a' by packed elements in 'b',
-// and store the remainders as packed 32-bit integers in 'dst'. 
+// M256RemEpi64: Divide packed 64-bit integers in 'a' by packed elements in
+// 'b', and store the remainders as packed 32-bit integers in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -3781,15 +3792,15 @@ func remEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi64'.
 // Requires AVX.
-func RemEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpi64([32]byte(a), [32]byte(b)))
+func M256RemEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpi64([32]byte(a), [32]byte(b)))
 }
 
-func remEpi64(a [32]byte, b [32]byte) [32]byte
+func m256RemEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// RemEpi8: Divide packed 8-bit integers in 'a' by packed elements in 'b', and
-// store the remainders as packed 32-bit integers in 'dst'. 
+// M256RemEpi8: Divide packed 8-bit integers in 'a' by packed elements in 'b',
+// and store the remainders as packed 32-bit integers in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := 8*j
@@ -3799,16 +3810,16 @@ func remEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epi8'.
 // Requires AVX.
-func RemEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpi8([32]byte(a), [32]byte(b)))
+func M256RemEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpi8([32]byte(a), [32]byte(b)))
 }
 
-func remEpi8(a [32]byte, b [32]byte) [32]byte
+func m256RemEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// RemEpu16: Divide packed unsigned 16-bit integers in 'a' by packed elements
-// in 'b', and store the remainders as packed unsigned 32-bit integers in
-// 'dst'. 
+// M256RemEpu16: Divide packed unsigned 16-bit integers in 'a' by packed
+// elements in 'b', and store the remainders as packed unsigned 32-bit integers
+// in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := 16*j
@@ -3818,16 +3829,16 @@ func remEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu16'.
 // Requires AVX.
-func RemEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpu16([32]byte(a), [32]byte(b)))
+func M256RemEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpu16([32]byte(a), [32]byte(b)))
 }
 
-func remEpu16(a [32]byte, b [32]byte) [32]byte
+func m256RemEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// RemEpu32: Divide packed unsigned 32-bit integers in 'a' by packed elements
-// in 'b', and store the remainders as packed unsigned 32-bit integers in
-// 'dst'. 
+// M256RemEpu32: Divide packed unsigned 32-bit integers in 'a' by packed
+// elements in 'b', and store the remainders as packed unsigned 32-bit integers
+// in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -3837,16 +3848,16 @@ func remEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu32'.
 // Requires AVX.
-func RemEpu32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpu32([32]byte(a), [32]byte(b)))
+func M256RemEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpu32([32]byte(a), [32]byte(b)))
 }
 
-func remEpu32(a [32]byte, b [32]byte) [32]byte
+func m256RemEpu32(a [32]byte, b [32]byte) [32]byte
 
 
-// RemEpu64: Divide packed unsigned 64-bit integers in 'a' by packed elements
-// in 'b', and store the remainders as packed unsigned 32-bit integers in
-// 'dst'. 
+// M256RemEpu64: Divide packed unsigned 64-bit integers in 'a' by packed
+// elements in 'b', and store the remainders as packed unsigned 32-bit integers
+// in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -3856,15 +3867,16 @@ func remEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu64'.
 // Requires AVX.
-func RemEpu64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpu64([32]byte(a), [32]byte(b)))
+func M256RemEpu64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpu64([32]byte(a), [32]byte(b)))
 }
 
-func remEpu64(a [32]byte, b [32]byte) [32]byte
+func m256RemEpu64(a [32]byte, b [32]byte) [32]byte
 
 
-// RemEpu8: Divide packed unsigned 8-bit integers in 'a' by packed elements in
-// 'b', and store the remainders as packed unsigned 32-bit integers in 'dst'. 
+// M256RemEpu8: Divide packed unsigned 8-bit integers in 'a' by packed elements
+// in 'b', and store the remainders as packed unsigned 32-bit integers in
+// 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := 8*j
@@ -3874,16 +3886,16 @@ func remEpu64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_rem_epu8'.
 // Requires AVX.
-func RemEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(remEpu8([32]byte(a), [32]byte(b)))
+func M256RemEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256RemEpu8([32]byte(a), [32]byte(b)))
 }
 
-func remEpu8(a [32]byte, b [32]byte) [32]byte
+func m256RemEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// RoundPd: Round the packed double-precision (64-bit) floating-point elements
-// in 'a' using the 'rounding' parameter, and store the results as packed
-// double-precision floating-point elements in 'dst'.
+// M256RoundPd: Round the packed double-precision (64-bit) floating-point
+// elements in 'a' using the 'rounding' parameter, and store the results as
+// packed double-precision floating-point elements in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -3900,16 +3912,16 @@ func remEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VROUNDPD'. Intrinsic: '_mm256_round_pd'.
 // Requires AVX.
-func RoundPd(a x86.M256d, rounding int) x86.M256d {
-	return x86.M256d(roundPd([4]float64(a), rounding))
+func M256RoundPd(a x86.M256d, rounding int) x86.M256d {
+	return x86.M256d(m256RoundPd([4]float64(a), rounding))
 }
 
-func roundPd(a [4]float64, rounding int) [4]float64
+func m256RoundPd(a [4]float64, rounding int) [4]float64
 
 
-// RoundPs: Round the packed single-precision (32-bit) floating-point elements
-// in 'a' using the 'rounding' parameter, and store the results as packed
-// single-precision floating-point elements in 'dst'.
+// M256RoundPs: Round the packed single-precision (32-bit) floating-point
+// elements in 'a' using the 'rounding' parameter, and store the results as
+// packed single-precision floating-point elements in 'dst'.
 // 	Rounding is done according to the 'rounding' parameter, which can be one
 // of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -3926,14 +3938,14 @@ func roundPd(a [4]float64, rounding int) [4]float64
 //
 // Instruction: 'VROUNDPS'. Intrinsic: '_mm256_round_ps'.
 // Requires AVX.
-func RoundPs(a x86.M256, rounding int) x86.M256 {
-	return x86.M256(roundPs([8]float32(a), rounding))
+func M256RoundPs(a x86.M256, rounding int) x86.M256 {
+	return x86.M256(m256RoundPs([8]float32(a), rounding))
 }
 
-func roundPs(a [8]float32, rounding int) [8]float32
+func m256RoundPs(a [8]float32, rounding int) [8]float32
 
 
-// RsqrtPs: Compute the approximate reciprocal square root of packed
+// M256RsqrtPs: Compute the approximate reciprocal square root of packed
 // single-precision (32-bit) floating-point elements in 'a', and store the
 // results in 'dst'. The maximum relative error for this approximation is less
 // than 1.5*2^-12. 
@@ -3946,14 +3958,14 @@ func roundPs(a [8]float32, rounding int) [8]float32
 //
 // Instruction: 'VRSQRTPS'. Intrinsic: '_mm256_rsqrt_ps'.
 // Requires AVX.
-func RsqrtPs(a x86.M256) x86.M256 {
-	return x86.M256(rsqrtPs([8]float32(a)))
+func M256RsqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(m256RsqrtPs([8]float32(a)))
 }
 
-func rsqrtPs(a [8]float32) [8]float32
+func m256RsqrtPs(a [8]float32) [8]float32
 
 
-// SetEpi16: Set packed 16-bit integers in 'dst' with the supplied values. 
+// M256SetEpi16: Set packed 16-bit integers in 'dst' with the supplied values. 
 //
 //		dst[15:0] := e0
 //		dst[31:16] := e1
@@ -3975,14 +3987,14 @@ func rsqrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi16'.
 // Requires AVX.
-func SetEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M256i {
-	return x86.M256i(setEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M256i {
+	return x86.M256i(m256SetEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [32]byte
+func m256SetEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [32]byte
 
 
-// SetEpi32: Set packed 32-bit integers in 'dst' with the supplied values. 
+// M256SetEpi32: Set packed 32-bit integers in 'dst' with the supplied values. 
 //
 //		dst[31:0] := e0
 //		dst[63:32] := e1
@@ -3996,14 +4008,14 @@ func setEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, 
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi32'.
 // Requires AVX.
-func SetEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M256i {
-	return x86.M256i(setEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M256i {
+	return x86.M256i(m256SetEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
+func m256SetEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
 
 
-// SetEpi64x: Set packed 64-bit integers in 'dst' with the supplied values. 
+// M256SetEpi64x: Set packed 64-bit integers in 'dst' with the supplied values. 
 //
 //		dst[63:0] := e0
 //		dst[127:64] := e1
@@ -4013,14 +4025,14 @@ func setEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [3
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi64x'.
 // Requires AVX.
-func SetEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) x86.M256i {
-	return x86.M256i(setEpi64x(e3, e2, e1, e0))
+func M256SetEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) x86.M256i {
+	return x86.M256i(m256SetEpi64x(e3, e2, e1, e0))
 }
 
-func setEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
+func m256SetEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
 
 
-// SetEpi8: Set packed 8-bit integers in 'dst' with the supplied values in
+// M256SetEpi8: Set packed 8-bit integers in 'dst' with the supplied values in
 // reverse order. 
 //
 //		dst[7:0] := e0
@@ -4059,14 +4071,14 @@ func setEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_epi8'.
 // Requires AVX.
-func SetEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M256i {
-	return x86.M256i(setEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M256i {
+	return x86.M256i(m256SetEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [32]byte
+func m256SetEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [32]byte
 
 
-// SetM128: Set packed __m256 vector 'dst' with the supplied values. 
+// M256SetM128: Set packed __m256 vector 'dst' with the supplied values. 
 //
 //		dst[127:0] := lo[127:0]
 //		dst[255:128] := hi[127:0]
@@ -4074,14 +4086,14 @@ func setEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byt
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_set_m128'.
 // Requires AVX.
-func SetM128(hi x86.M128, lo x86.M128) x86.M256 {
-	return x86.M256(setM128([4]float32(hi), [4]float32(lo)))
+func M256SetM128(hi x86.M128, lo x86.M128) x86.M256 {
+	return x86.M256(m256SetM128([4]float32(hi), [4]float32(lo)))
 }
 
-func setM128(hi [4]float32, lo [4]float32) [8]float32
+func m256SetM128(hi [4]float32, lo [4]float32) [8]float32
 
 
-// SetM128d: Set packed __m256d vector 'dst' with the supplied values. 
+// M256SetM128d: Set packed __m256d vector 'dst' with the supplied values. 
 //
 //		dst[127:0] := lo[127:0]
 //		dst[255:128] := hi[127:0]
@@ -4089,14 +4101,14 @@ func setM128(hi [4]float32, lo [4]float32) [8]float32
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_set_m128d'.
 // Requires AVX.
-func SetM128d(hi x86.M128d, lo x86.M128d) x86.M256d {
-	return x86.M256d(setM128d([2]float64(hi), [2]float64(lo)))
+func M256SetM128d(hi x86.M128d, lo x86.M128d) x86.M256d {
+	return x86.M256d(m256SetM128d([2]float64(hi), [2]float64(lo)))
 }
 
-func setM128d(hi [2]float64, lo [2]float64) [4]float64
+func m256SetM128d(hi [2]float64, lo [2]float64) [4]float64
 
 
-// SetM128i: Set packed __m256i vector 'dst' with the supplied values. 
+// M256SetM128i: Set packed __m256i vector 'dst' with the supplied values. 
 //
 //		dst[127:0] := lo[127:0]
 //		dst[255:128] := hi[127:0]
@@ -4104,15 +4116,15 @@ func setM128d(hi [2]float64, lo [2]float64) [4]float64
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_set_m128i'.
 // Requires AVX.
-func SetM128i(hi x86.M128i, lo x86.M128i) x86.M256i {
-	return x86.M256i(setM128i([16]byte(hi), [16]byte(lo)))
+func M256SetM128i(hi x86.M128i, lo x86.M128i) x86.M256i {
+	return x86.M256i(m256SetM128i([16]byte(hi), [16]byte(lo)))
 }
 
-func setM128i(hi [16]byte, lo [16]byte) [32]byte
+func m256SetM128i(hi [16]byte, lo [16]byte) [32]byte
 
 
-// SetPd: Set packed double-precision (64-bit) floating-point elements in 'dst'
-// with the supplied values. 
+// M256SetPd: Set packed double-precision (64-bit) floating-point elements in
+// 'dst' with the supplied values. 
 //
 //		dst[63:0] := e0
 //		dst[127:64] := e1
@@ -4122,15 +4134,15 @@ func setM128i(hi [16]byte, lo [16]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_pd'.
 // Requires AVX.
-func SetPd(e3 float64, e2 float64, e1 float64, e0 float64) x86.M256d {
-	return x86.M256d(setPd(e3, e2, e1, e0))
+func M256SetPd(e3 float64, e2 float64, e1 float64, e0 float64) x86.M256d {
+	return x86.M256d(m256SetPd(e3, e2, e1, e0))
 }
 
-func setPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
+func m256SetPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
 
 
-// SetPs: Set packed single-precision (32-bit) floating-point elements in 'dst'
-// with the supplied values. 
+// M256SetPs: Set packed single-precision (32-bit) floating-point elements in
+// 'dst' with the supplied values. 
 //
 //		dst[31:0] := e0
 //		dst[63:32] := e1
@@ -4144,15 +4156,15 @@ func setPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_set_ps'.
 // Requires AVX.
-func SetPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M256 {
-	return x86.M256(setPs(e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M256 {
+	return x86.M256(m256SetPs(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) [8]float32
+func m256SetPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) [8]float32
 
 
-// Set1Epi16: Broadcast 16-bit integer 'a' to all all elements of 'dst'. This
-// intrinsic may generate the 'vpbroadcastw'. 
+// M256Set1Epi16: Broadcast 16-bit integer 'a' to all all elements of 'dst'.
+// This intrinsic may generate the 'vpbroadcastw'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -4162,14 +4174,14 @@ func setPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float3
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi16'.
 // Requires AVX.
-func Set1Epi16(a int16) x86.M256i {
-	return x86.M256i(set1Epi16(a))
+func M256Set1Epi16(a int16) x86.M256i {
+	return x86.M256i(m256Set1Epi16(a))
 }
 
-func set1Epi16(a int16) [32]byte
+func m256Set1Epi16(a int16) [32]byte
 
 
-// Set1Epi32: Broadcast 32-bit integer 'a' to all elements of 'dst'. This
+// M256Set1Epi32: Broadcast 32-bit integer 'a' to all elements of 'dst'. This
 // intrinsic may generate the 'vpbroadcastd'. 
 //
 //		FOR j := 0 to 7
@@ -4180,14 +4192,14 @@ func set1Epi16(a int16) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi32'.
 // Requires AVX.
-func Set1Epi32(a int) x86.M256i {
-	return x86.M256i(set1Epi32(a))
+func M256Set1Epi32(a int) x86.M256i {
+	return x86.M256i(m256Set1Epi32(a))
 }
 
-func set1Epi32(a int) [32]byte
+func m256Set1Epi32(a int) [32]byte
 
 
-// Set1Epi64x: Broadcast 64-bit integer 'a' to all elements of 'dst'. This
+// M256Set1Epi64x: Broadcast 64-bit integer 'a' to all elements of 'dst'. This
 // intrinsic may generate the 'vpbroadcastq'. 
 //
 //		FOR j := 0 to 3
@@ -4198,14 +4210,14 @@ func set1Epi32(a int) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi64x'.
 // Requires AVX.
-func Set1Epi64x(a int64) x86.M256i {
-	return x86.M256i(set1Epi64x(a))
+func M256Set1Epi64x(a int64) x86.M256i {
+	return x86.M256i(m256Set1Epi64x(a))
 }
 
-func set1Epi64x(a int64) [32]byte
+func m256Set1Epi64x(a int64) [32]byte
 
 
-// Set1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst'. This
+// M256Set1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst'. This
 // intrinsic may generate the 'vpbroadcastb'. 
 //
 //		FOR j := 0 to 31
@@ -4216,15 +4228,15 @@ func set1Epi64x(a int64) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_epi8'.
 // Requires AVX.
-func Set1Epi8(a byte) x86.M256i {
-	return x86.M256i(set1Epi8(a))
+func M256Set1Epi8(a byte) x86.M256i {
+	return x86.M256i(m256Set1Epi8(a))
 }
 
-func set1Epi8(a byte) [32]byte
+func m256Set1Epi8(a byte) [32]byte
 
 
-// Set1Pd: Broadcast double-precision (64-bit) floating-point value 'a' to all
-// elements of 'dst'. 
+// M256Set1Pd: Broadcast double-precision (64-bit) floating-point value 'a' to
+// all elements of 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -4234,15 +4246,15 @@ func set1Epi8(a byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_pd'.
 // Requires AVX.
-func Set1Pd(a float64) x86.M256d {
-	return x86.M256d(set1Pd(a))
+func M256Set1Pd(a float64) x86.M256d {
+	return x86.M256d(m256Set1Pd(a))
 }
 
-func set1Pd(a float64) [4]float64
+func m256Set1Pd(a float64) [4]float64
 
 
-// Set1Ps: Broadcast single-precision (32-bit) floating-point value 'a' to all
-// elements of 'dst'. 
+// M256Set1Ps: Broadcast single-precision (32-bit) floating-point value 'a' to
+// all elements of 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -4252,15 +4264,15 @@ func set1Pd(a float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_set1_ps'.
 // Requires AVX.
-func Set1Ps(a float32) x86.M256 {
-	return x86.M256(set1Ps(a))
+func M256Set1Ps(a float32) x86.M256 {
+	return x86.M256(m256Set1Ps(a))
 }
 
-func set1Ps(a float32) [8]float32
+func m256Set1Ps(a float32) [8]float32
 
 
-// SetrEpi16: Set packed 16-bit integers in 'dst' with the supplied values in
-// reverse order. 
+// M256SetrEpi16: Set packed 16-bit integers in 'dst' with the supplied values
+// in reverse order. 
 //
 //		dst[15:0] := e15
 //		dst[31:16] := e14
@@ -4282,15 +4294,15 @@ func set1Ps(a float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi16'.
 // Requires AVX.
-func SetrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M256i {
-	return x86.M256i(setrEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M256i {
+	return x86.M256i(m256SetrEpi16(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [32]byte
+func m256SetrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16, e9 int16, e8 int16, e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [32]byte
 
 
-// SetrEpi32: Set packed 32-bit integers in 'dst' with the supplied values in
-// reverse order. 
+// M256SetrEpi32: Set packed 32-bit integers in 'dst' with the supplied values
+// in reverse order. 
 //
 //		dst[31:0] := e7
 //		dst[63:32] := e6
@@ -4304,15 +4316,15 @@ func setrEpi16(e15 int16, e14 int16, e13 int16, e12 int16, e11 int16, e10 int16,
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi32'.
 // Requires AVX.
-func SetrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M256i {
-	return x86.M256i(setrEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M256i {
+	return x86.M256i(m256SetrEpi32(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
+func m256SetrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
 
 
-// SetrEpi64x: Set packed 64-bit integers in 'dst' with the supplied values in
-// reverse order. 
+// M256SetrEpi64x: Set packed 64-bit integers in 'dst' with the supplied values
+// in reverse order. 
 //
 //		dst[63:0] := e3
 //		dst[127:64] := e2
@@ -4322,14 +4334,14 @@ func setrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi64x'.
 // Requires AVX.
-func SetrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) x86.M256i {
-	return x86.M256i(setrEpi64x(e3, e2, e1, e0))
+func M256SetrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) x86.M256i {
+	return x86.M256i(m256SetrEpi64x(e3, e2, e1, e0))
 }
 
-func setrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
+func m256SetrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
 
 
-// SetrEpi8: Set packed 8-bit integers in 'dst' with the supplied values in
+// M256SetrEpi8: Set packed 8-bit integers in 'dst' with the supplied values in
 // reverse order. 
 //
 //		dst[7:0] := e31
@@ -4368,14 +4380,14 @@ func setrEpi64x(e3 int64, e2 int64, e1 int64, e0 int64) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_epi8'.
 // Requires AVX.
-func SetrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M256i {
-	return x86.M256i(setrEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M256i {
+	return x86.M256i(m256SetrEpi8(e31, e30, e29, e28, e27, e26, e25, e24, e23, e22, e21, e20, e19, e18, e17, e16, e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [32]byte
+func m256SetrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 byte, e24 byte, e23 byte, e22 byte, e21 byte, e20 byte, e19 byte, e18 byte, e17 byte, e16 byte, e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [32]byte
 
 
-// SetrM128: Set packed __m256 vector 'dst' with the supplied values. 
+// M256SetrM128: Set packed __m256 vector 'dst' with the supplied values. 
 //
 //		dst[127:0] := lo[127:0]
 //		dst[255:128] := hi[127:0]
@@ -4383,14 +4395,14 @@ func setrEpi8(e31 byte, e30 byte, e29 byte, e28 byte, e27 byte, e26 byte, e25 by
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_setr_m128'.
 // Requires AVX.
-func SetrM128(lo x86.M128, hi x86.M128) x86.M256 {
-	return x86.M256(setrM128([4]float32(lo), [4]float32(hi)))
+func M256SetrM128(lo x86.M128, hi x86.M128) x86.M256 {
+	return x86.M256(m256SetrM128([4]float32(lo), [4]float32(hi)))
 }
 
-func setrM128(lo [4]float32, hi [4]float32) [8]float32
+func m256SetrM128(lo [4]float32, hi [4]float32) [8]float32
 
 
-// SetrM128d: Set packed __m256d vector 'dst' with the supplied values. 
+// M256SetrM128d: Set packed __m256d vector 'dst' with the supplied values. 
 //
 //		dst[127:0] := lo[127:0]
 //		dst[255:128] := hi[127:0]
@@ -4398,14 +4410,14 @@ func setrM128(lo [4]float32, hi [4]float32) [8]float32
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_setr_m128d'.
 // Requires AVX.
-func SetrM128d(lo x86.M128d, hi x86.M128d) x86.M256d {
-	return x86.M256d(setrM128d([2]float64(lo), [2]float64(hi)))
+func M256SetrM128d(lo x86.M128d, hi x86.M128d) x86.M256d {
+	return x86.M256d(m256SetrM128d([2]float64(lo), [2]float64(hi)))
 }
 
-func setrM128d(lo [2]float64, hi [2]float64) [4]float64
+func m256SetrM128d(lo [2]float64, hi [2]float64) [4]float64
 
 
-// SetrM128i: Set packed __m256i vector 'dst' with the supplied values. 
+// M256SetrM128i: Set packed __m256i vector 'dst' with the supplied values. 
 //
 //		dst[127:0] := lo[127:0]
 //		dst[255:128] := hi[127:0]
@@ -4413,14 +4425,14 @@ func setrM128d(lo [2]float64, hi [2]float64) [4]float64
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_setr_m128i'.
 // Requires AVX.
-func SetrM128i(lo x86.M128i, hi x86.M128i) x86.M256i {
-	return x86.M256i(setrM128i([16]byte(lo), [16]byte(hi)))
+func M256SetrM128i(lo x86.M128i, hi x86.M128i) x86.M256i {
+	return x86.M256i(m256SetrM128i([16]byte(lo), [16]byte(hi)))
 }
 
-func setrM128i(lo [16]byte, hi [16]byte) [32]byte
+func m256SetrM128i(lo [16]byte, hi [16]byte) [32]byte
 
 
-// SetrPd: Set packed double-precision (64-bit) floating-point elements in
+// M256SetrPd: Set packed double-precision (64-bit) floating-point elements in
 // 'dst' with the supplied values in reverse order. 
 //
 //		dst[63:0] := e3
@@ -4431,14 +4443,14 @@ func setrM128i(lo [16]byte, hi [16]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_pd'.
 // Requires AVX.
-func SetrPd(e3 float64, e2 float64, e1 float64, e0 float64) x86.M256d {
-	return x86.M256d(setrPd(e3, e2, e1, e0))
+func M256SetrPd(e3 float64, e2 float64, e1 float64, e0 float64) x86.M256d {
+	return x86.M256d(m256SetrPd(e3, e2, e1, e0))
 }
 
-func setrPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
+func m256SetrPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
 
 
-// SetrPs: Set packed single-precision (32-bit) floating-point elements in
+// M256SetrPs: Set packed single-precision (32-bit) floating-point elements in
 // 'dst' with the supplied values in reverse order. 
 //
 //		dst[31:0] := e7
@@ -4453,54 +4465,56 @@ func setrPd(e3 float64, e2 float64, e1 float64, e0 float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_setr_ps'.
 // Requires AVX.
-func SetrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M256 {
-	return x86.M256(setrPs(e7, e6, e5, e4, e3, e2, e1, e0))
+func M256SetrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M256 {
+	return x86.M256(m256SetrPs(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
-func setrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) [8]float32
+func m256SetrPs(e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) [8]float32
 
 
-// SetzeroPd: Return vector of type __m256d with all elements set to zero. 
+// M256SetzeroPd: Return vector of type __m256d with all elements set to zero. 
 //
 //		dst[MAX:0] := 0
 //
 // Instruction: 'VXORPD'. Intrinsic: '_mm256_setzero_pd'.
 // Requires AVX.
-func SetzeroPd() x86.M256d {
-	return x86.M256d(setzeroPd())
+func M256SetzeroPd() x86.M256d {
+	return x86.M256d(m256SetzeroPd())
 }
 
-func setzeroPd() [4]float64
+func m256SetzeroPd() [4]float64
 
 
-// SetzeroPs: Return vector of type __m256 with all elements set to zero. 
+// M256SetzeroPs: Return vector of type __m256 with all elements set to zero. 
 //
 //		dst[MAX:0] := 0
 //
 // Instruction: 'VXORPS'. Intrinsic: '_mm256_setzero_ps'.
 // Requires AVX.
-func SetzeroPs() x86.M256 {
-	return x86.M256(setzeroPs())
+func M256SetzeroPs() x86.M256 {
+	return x86.M256(m256SetzeroPs())
 }
 
-func setzeroPs() [8]float32
+func m256SetzeroPs() [8]float32
 
 
-// SetzeroSi256: Return vector of type __m256i with all elements set to zero. 
+// M256SetzeroSi256: Return vector of type __m256i with all elements set to
+// zero. 
 //
 //		dst[MAX:0] := 0
 //
 // Instruction: 'VPXOR'. Intrinsic: '_mm256_setzero_si256'.
 // Requires AVX.
-func SetzeroSi256() x86.M256i {
-	return x86.M256i(setzeroSi256())
+func M256SetzeroSi256() x86.M256i {
+	return x86.M256i(m256SetzeroSi256())
 }
 
-func setzeroSi256() [32]byte
+func m256SetzeroSi256() [32]byte
 
 
-// ShufflePd: Shuffle double-precision (64-bit) floating-point elements within
-// 128-bit lanes using the control in 'imm8', and store the results in 'dst'. 
+// M256ShufflePd: Shuffle double-precision (64-bit) floating-point elements
+// within 128-bit lanes using the control in 'imm8', and store the results in
+// 'dst'. 
 //
 //		dst[63:0] := (imm8[0] == 0) ? a[63:0] : a[127:64]
 //		dst[127:64] := (imm8[1] == 0) ? b[63:0] : b[127:64]
@@ -4510,16 +4524,16 @@ func setzeroSi256() [32]byte
 //
 // Instruction: 'VSHUFPD'. Intrinsic: '_mm256_shuffle_pd'.
 // Requires AVX.
-func ShufflePd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
-	return x86.M256d(shufflePd([4]float64(a), [4]float64(b), imm8))
+func M256ShufflePd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(m256ShufflePd([4]float64(a), [4]float64(b), imm8))
 }
 
-func shufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256ShufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
 
 
-// ShufflePs: Shuffle single-precision (32-bit) floating-point elements in 'a'
-// within 128-bit lanes using the control in 'imm8', and store the results in
-// 'dst'. 
+// M256ShufflePs: Shuffle single-precision (32-bit) floating-point elements in
+// 'a' within 128-bit lanes using the control in 'imm8', and store the results
+// in 'dst'. 
 //
 //		SELECT4(src, control){
 //			CASE(control[1:0])
@@ -4543,15 +4557,16 @@ func shufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VSHUFPS'. Intrinsic: '_mm256_shuffle_ps'.
 // Requires AVX.
-func ShufflePs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
-	return x86.M256(shufflePs([8]float32(a), [8]float32(b), imm8))
+func M256ShufflePs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+	return x86.M256(m256ShufflePs([8]float32(a), [8]float32(b), imm8))
 }
 
-func shufflePs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256ShufflePs(a [8]float32, b [8]float32, imm8 int) [8]float32
 
 
-// SinPd: Compute the sine of packed double-precision (64-bit) floating-point
-// elements in 'a' expressed in radians, and store the results in 'dst'. 
+// M256SinPd: Compute the sine of packed double-precision (64-bit)
+// floating-point elements in 'a' expressed in radians, and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -4561,15 +4576,16 @@ func shufflePs(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sin_pd'.
 // Requires AVX.
-func SinPd(a x86.M256d) x86.M256d {
-	return x86.M256d(sinPd([4]float64(a)))
+func M256SinPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SinPd([4]float64(a)))
 }
 
-func sinPd(a [4]float64) [4]float64
+func m256SinPd(a [4]float64) [4]float64
 
 
-// SinPs: Compute the sine of packed single-precision (32-bit) floating-point
-// elements in 'a' expressed in radians, and store the results in 'dst'. 
+// M256SinPs: Compute the sine of packed single-precision (32-bit)
+// floating-point elements in 'a' expressed in radians, and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -4579,16 +4595,16 @@ func sinPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sin_ps'.
 // Requires AVX.
-func SinPs(a x86.M256) x86.M256 {
-	return x86.M256(sinPs([8]float32(a)))
+func M256SinPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SinPs([8]float32(a)))
 }
 
-func sinPs(a [8]float32) [8]float32
+func m256SinPs(a [8]float32) [8]float32
 
 
-// SincosPd: Compute the sine and cosine of packed double-precision (64-bit)
-// floating-point elements in 'a' expressed in radians, store the sine in
-// 'dst', and store the cosine into memory at 'mem_addr'. 
+// M256SincosPd: Compute the sine and cosine of packed double-precision
+// (64-bit) floating-point elements in 'a' expressed in radians, store the sine
+// in 'dst', and store the cosine into memory at 'mem_addr'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -4599,16 +4615,16 @@ func sinPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_pd'.
 // Requires AVX.
-func SincosPd(mem_addr x86.M256d, a x86.M256d) x86.M256d {
-	return x86.M256d(sincosPd([4]float64(mem_addr), [4]float64(a)))
+func M256SincosPd(mem_addr x86.M256d, a x86.M256d) x86.M256d {
+	return x86.M256d(m256SincosPd([4]float64(mem_addr), [4]float64(a)))
 }
 
-func sincosPd(mem_addr [4]float64, a [4]float64) [4]float64
+func m256SincosPd(mem_addr [4]float64, a [4]float64) [4]float64
 
 
-// SincosPs: Compute the sine and cosine of packed single-precision (32-bit)
-// floating-point elements in 'a' expressed in radians, store the sine in
-// 'dst', and store the cosine into memory at 'mem_addr'. 
+// M256SincosPs: Compute the sine and cosine of packed single-precision
+// (32-bit) floating-point elements in 'a' expressed in radians, store the sine
+// in 'dst', and store the cosine into memory at 'mem_addr'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -4619,15 +4635,16 @@ func sincosPd(mem_addr [4]float64, a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_ps'.
 // Requires AVX.
-func SincosPs(mem_addr x86.M256, a x86.M256) x86.M256 {
-	return x86.M256(sincosPs([8]float32(mem_addr), [8]float32(a)))
+func M256SincosPs(mem_addr x86.M256, a x86.M256) x86.M256 {
+	return x86.M256(m256SincosPs([8]float32(mem_addr), [8]float32(a)))
 }
 
-func sincosPs(mem_addr [8]float32, a [8]float32) [8]float32
+func m256SincosPs(mem_addr [8]float32, a [8]float32) [8]float32
 
 
-// SindPd: Compute the sine of packed double-precision (64-bit) floating-point
-// elements in 'a' expressed in degrees, and store the results in 'dst'. 
+// M256SindPd: Compute the sine of packed double-precision (64-bit)
+// floating-point elements in 'a' expressed in degrees, and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -4637,15 +4654,16 @@ func sincosPs(mem_addr [8]float32, a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sind_pd'.
 // Requires AVX.
-func SindPd(a x86.M256d) x86.M256d {
-	return x86.M256d(sindPd([4]float64(a)))
+func M256SindPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SindPd([4]float64(a)))
 }
 
-func sindPd(a [4]float64) [4]float64
+func m256SindPd(a [4]float64) [4]float64
 
 
-// SindPs: Compute the sine of packed single-precision (32-bit) floating-point
-// elements in 'a' expressed in degrees, and store the results in 'dst'. 
+// M256SindPs: Compute the sine of packed single-precision (32-bit)
+// floating-point elements in 'a' expressed in degrees, and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -4655,14 +4673,14 @@ func sindPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sind_ps'.
 // Requires AVX.
-func SindPs(a x86.M256) x86.M256 {
-	return x86.M256(sindPs([8]float32(a)))
+func M256SindPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SindPs([8]float32(a)))
 }
 
-func sindPs(a [8]float32) [8]float32
+func m256SindPs(a [8]float32) [8]float32
 
 
-// SinhPd: Compute the hyperbolic sine of packed double-precision (64-bit)
+// M256SinhPd: Compute the hyperbolic sine of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -4674,14 +4692,14 @@ func sindPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sinh_pd'.
 // Requires AVX.
-func SinhPd(a x86.M256d) x86.M256d {
-	return x86.M256d(sinhPd([4]float64(a)))
+func M256SinhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SinhPd([4]float64(a)))
 }
 
-func sinhPd(a [4]float64) [4]float64
+func m256SinhPd(a [4]float64) [4]float64
 
 
-// SinhPs: Compute the hyperbolic sine of packed single-precision (32-bit)
+// M256SinhPs: Compute the hyperbolic sine of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -4693,14 +4711,14 @@ func sinhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_sinh_ps'.
 // Requires AVX.
-func SinhPs(a x86.M256) x86.M256 {
-	return x86.M256(sinhPs([8]float32(a)))
+func M256SinhPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SinhPs([8]float32(a)))
 }
 
-func sinhPs(a [8]float32) [8]float32
+func m256SinhPs(a [8]float32) [8]float32
 
 
-// SqrtPd: Compute the square root of packed double-precision (64-bit)
+// M256SqrtPd: Compute the square root of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -4711,14 +4729,14 @@ func sinhPs(a [8]float32) [8]float32
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm256_sqrt_pd'.
 // Requires AVX.
-func SqrtPd(a x86.M256d) x86.M256d {
-	return x86.M256d(sqrtPd([4]float64(a)))
+func M256SqrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SqrtPd([4]float64(a)))
 }
 
-func sqrtPd(a [4]float64) [4]float64
+func m256SqrtPd(a [4]float64) [4]float64
 
 
-// SqrtPs: Compute the square root of packed single-precision (32-bit)
+// M256SqrtPs: Compute the square root of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -4729,14 +4747,14 @@ func sqrtPd(a [4]float64) [4]float64
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm256_sqrt_ps'.
 // Requires AVX.
-func SqrtPs(a x86.M256) x86.M256 {
-	return x86.M256(sqrtPs([8]float32(a)))
+func M256SqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SqrtPs([8]float32(a)))
 }
 
-func sqrtPs(a [8]float32) [8]float32
+func m256SqrtPs(a [8]float32) [8]float32
 
 
-// StorePd: Store 256-bits (composed of 4 packed double-precision (64-bit)
+// M256StorePd: Store 256-bits (composed of 4 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
@@ -4745,14 +4763,14 @@ func sqrtPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_store_pd'.
 // Requires AVX.
-func StorePd(mem_addr float64, a x86.M256d)  {
-	storePd(mem_addr, [4]float64(a))
+func M256StorePd(mem_addr float64, a x86.M256d)  {
+	m256StorePd(mem_addr, [4]float64(a))
 }
 
-func storePd(mem_addr float64, a [4]float64) 
+func m256StorePd(mem_addr float64, a [4]float64) 
 
 
-// StorePs: Store 256-bits (composed of 8 packed single-precision (32-bit)
+// M256StorePs: Store 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
@@ -4761,14 +4779,14 @@ func storePd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_store_ps'.
 // Requires AVX.
-func StorePs(mem_addr float32, a x86.M256)  {
-	storePs(mem_addr, [8]float32(a))
+func M256StorePs(mem_addr float32, a x86.M256)  {
+	m256StorePs(mem_addr, [8]float32(a))
 }
 
-func storePs(mem_addr float32, a [8]float32) 
+func m256StorePs(mem_addr float32, a [8]float32) 
 
 
-// StoreSi256: Store 256-bits of integer data from 'a' into memory.
+// M256StoreSi256: Store 256-bits of integer data from 'a' into memory.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -4776,14 +4794,14 @@ func storePs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_store_si256'.
 // Requires AVX.
-func StoreSi256(mem_addr x86.M256i, a x86.M256i)  {
-	storeSi256([32]byte(mem_addr), [32]byte(a))
+func M256StoreSi256(mem_addr x86.M256i, a x86.M256i)  {
+	m256StoreSi256([32]byte(mem_addr), [32]byte(a))
 }
 
-func storeSi256(mem_addr [32]byte, a [32]byte) 
+func m256StoreSi256(mem_addr [32]byte, a [32]byte) 
 
 
-// StoreuPd: Store 256-bits (composed of 4 packed double-precision (64-bit)
+// M256StoreuPd: Store 256-bits (composed of 4 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -4791,14 +4809,14 @@ func storeSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: 'VMOVUPD'. Intrinsic: '_mm256_storeu_pd'.
 // Requires AVX.
-func StoreuPd(mem_addr float64, a x86.M256d)  {
-	storeuPd(mem_addr, [4]float64(a))
+func M256StoreuPd(mem_addr float64, a x86.M256d)  {
+	m256StoreuPd(mem_addr, [4]float64(a))
 }
 
-func storeuPd(mem_addr float64, a [4]float64) 
+func m256StoreuPd(mem_addr float64, a [4]float64) 
 
 
-// StoreuPs: Store 256-bits (composed of 8 packed single-precision (32-bit)
+// M256StoreuPs: Store 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
@@ -4806,28 +4824,28 @@ func storeuPd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVUPS'. Intrinsic: '_mm256_storeu_ps'.
 // Requires AVX.
-func StoreuPs(mem_addr float32, a x86.M256)  {
-	storeuPs(mem_addr, [8]float32(a))
+func M256StoreuPs(mem_addr float32, a x86.M256)  {
+	m256StoreuPs(mem_addr, [8]float32(a))
 }
 
-func storeuPs(mem_addr float32, a [8]float32) 
+func m256StoreuPs(mem_addr float32, a [8]float32) 
 
 
-// StoreuSi256: Store 256-bits of integer data from 'a' into memory.
+// M256StoreuSi256: Store 256-bits of integer data from 'a' into memory.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
 //
 //		MEM[mem_addr+255:mem_addr] := a[255:0]
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_storeu_si256'.
 // Requires AVX.
-func StoreuSi256(mem_addr x86.M256i, a x86.M256i)  {
-	storeuSi256([32]byte(mem_addr), [32]byte(a))
+func M256StoreuSi256(mem_addr x86.M256i, a x86.M256i)  {
+	m256StoreuSi256([32]byte(mem_addr), [32]byte(a))
 }
 
-func storeuSi256(mem_addr [32]byte, a [32]byte) 
+func m256StoreuSi256(mem_addr [32]byte, a [32]byte) 
 
 
-// Storeu2M128: Store the high and low 128-bit halves (each composed of 4
+// M256Storeu2M128: Store the high and low 128-bit halves (each composed of 4
 // packed single-precision (32-bit) floating-point elements) from 'a' into
 // memory two different 128-bit locations.
 // 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
@@ -4837,14 +4855,14 @@ func storeuSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128'.
 // Requires AVX.
-func Storeu2M128(hiaddr float32, loaddr float32, a x86.M256)  {
-	storeu2M128(hiaddr, loaddr, [8]float32(a))
+func M256Storeu2M128(hiaddr float32, loaddr float32, a x86.M256)  {
+	m256Storeu2M128(hiaddr, loaddr, [8]float32(a))
 }
 
-func storeu2M128(hiaddr float32, loaddr float32, a [8]float32) 
+func m256Storeu2M128(hiaddr float32, loaddr float32, a [8]float32) 
 
 
-// Storeu2M128d: Store the high and low 128-bit halves (each composed of 2
+// M256Storeu2M128d: Store the high and low 128-bit halves (each composed of 2
 // packed double-precision (64-bit) floating-point elements) from 'a' into
 // memory two different 128-bit locations.
 // 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
@@ -4854,14 +4872,14 @@ func storeu2M128(hiaddr float32, loaddr float32, a [8]float32)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128d'.
 // Requires AVX.
-func Storeu2M128d(hiaddr float64, loaddr float64, a x86.M256d)  {
-	storeu2M128d(hiaddr, loaddr, [4]float64(a))
+func M256Storeu2M128d(hiaddr float64, loaddr float64, a x86.M256d)  {
+	m256Storeu2M128d(hiaddr, loaddr, [4]float64(a))
 }
 
-func storeu2M128d(hiaddr float64, loaddr float64, a [4]float64) 
+func m256Storeu2M128d(hiaddr float64, loaddr float64, a [4]float64) 
 
 
-// Storeu2M128i: Store the high and low 128-bit halves (each composed of
+// M256Storeu2M128i: Store the high and low 128-bit halves (each composed of
 // integer data) from 'a' into memory two different 128-bit locations.
 // 	'hiaddr' and 'loaddr' do not need to be aligned on any particular boundary. 
 //
@@ -4870,14 +4888,14 @@ func storeu2M128d(hiaddr float64, loaddr float64, a [4]float64)
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128i'.
 // Requires AVX.
-func Storeu2M128i(hiaddr x86.M128i, loaddr x86.M128i, a x86.M256i)  {
-	storeu2M128i([16]byte(hiaddr), [16]byte(loaddr), [32]byte(a))
+func M256Storeu2M128i(hiaddr x86.M128i, loaddr x86.M128i, a x86.M256i)  {
+	m256Storeu2M128i([16]byte(hiaddr), [16]byte(loaddr), [32]byte(a))
 }
 
-func storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte) 
+func m256Storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte) 
 
 
-// StreamPd: Store 256-bits (composed of 4 packed double-precision (64-bit)
+// M256StreamPd: Store 256-bits (composed of 4 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory using a non-temporal memory
 // hint.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
@@ -4887,14 +4905,14 @@ func storeu2M128i(hiaddr [16]byte, loaddr [16]byte, a [32]byte)
 //
 // Instruction: 'VMOVNTPD'. Intrinsic: '_mm256_stream_pd'.
 // Requires AVX.
-func StreamPd(mem_addr float64, a x86.M256d)  {
-	streamPd(mem_addr, [4]float64(a))
+func M256StreamPd(mem_addr float64, a x86.M256d)  {
+	m256StreamPd(mem_addr, [4]float64(a))
 }
 
-func streamPd(mem_addr float64, a [4]float64) 
+func m256StreamPd(mem_addr float64, a [4]float64) 
 
 
-// StreamPs: Store 256-bits (composed of 8 packed single-precision (32-bit)
+// M256StreamPs: Store 256-bits (composed of 8 packed single-precision (32-bit)
 // floating-point elements) from 'a' into memory using a non-temporal memory
 // hint.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
@@ -4904,14 +4922,14 @@ func streamPd(mem_addr float64, a [4]float64)
 //
 // Instruction: 'VMOVNTPS'. Intrinsic: '_mm256_stream_ps'.
 // Requires AVX.
-func StreamPs(mem_addr float32, a x86.M256)  {
-	streamPs(mem_addr, [8]float32(a))
+func M256StreamPs(mem_addr float32, a x86.M256)  {
+	m256StreamPs(mem_addr, [8]float32(a))
 }
 
-func streamPs(mem_addr float32, a [8]float32) 
+func m256StreamPs(mem_addr float32, a [8]float32) 
 
 
-// StreamSi256: Store 256-bits of integer data from 'a' into memory using a
+// M256StreamSi256: Store 256-bits of integer data from 'a' into memory using a
 // non-temporal memory hint.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
@@ -4920,15 +4938,15 @@ func streamPs(mem_addr float32, a [8]float32)
 //
 // Instruction: 'VMOVNTDQ'. Intrinsic: '_mm256_stream_si256'.
 // Requires AVX.
-func StreamSi256(mem_addr x86.M256i, a x86.M256i)  {
-	streamSi256([32]byte(mem_addr), [32]byte(a))
+func M256StreamSi256(mem_addr x86.M256i, a x86.M256i)  {
+	m256StreamSi256([32]byte(mem_addr), [32]byte(a))
 }
 
-func streamSi256(mem_addr [32]byte, a [32]byte) 
+func m256StreamSi256(mem_addr [32]byte, a [32]byte) 
 
 
-// SubPd: Subtract packed double-precision (64-bit) floating-point elements in
-// 'b' from packed double-precision (64-bit) floating-point elements in 'a',
+// M256SubPd: Subtract packed double-precision (64-bit) floating-point elements
+// in 'b' from packed double-precision (64-bit) floating-point elements in 'a',
 // and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -4939,15 +4957,15 @@ func streamSi256(mem_addr [32]byte, a [32]byte)
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm256_sub_pd'.
 // Requires AVX.
-func SubPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(subPd([4]float64(a), [4]float64(b)))
+func M256SubPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256SubPd([4]float64(a), [4]float64(b)))
 }
 
-func subPd(a [4]float64, b [4]float64) [4]float64
+func m256SubPd(a [4]float64, b [4]float64) [4]float64
 
 
-// SubPs: Subtract packed single-precision (32-bit) floating-point elements in
-// 'b' from packed single-precision (32-bit) floating-point elements in 'a',
+// M256SubPs: Subtract packed single-precision (32-bit) floating-point elements
+// in 'b' from packed single-precision (32-bit) floating-point elements in 'a',
 // and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -4958,14 +4976,14 @@ func subPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm256_sub_ps'.
 // Requires AVX.
-func SubPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(subPs([8]float32(a), [8]float32(b)))
+func M256SubPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256SubPs([8]float32(a), [8]float32(b)))
 }
 
-func subPs(a [8]float32, b [8]float32) [8]float32
+func m256SubPs(a [8]float32, b [8]float32) [8]float32
 
 
-// SvmlCeilPd: Round the packed double-precision (64-bit) floating-point
+// M256SvmlCeilPd: Round the packed double-precision (64-bit) floating-point
 // elements in 'a' up to an integer value, and store the results as packed
 // double-precision floating-point elements in 'dst'. This intrinsic may
 // generate the 'roundpd'/'vroundpd' instruction. 
@@ -4978,14 +4996,14 @@ func subPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_ceil_pd'.
 // Requires AVX.
-func SvmlCeilPd(a x86.M256d) x86.M256d {
-	return x86.M256d(svmlCeilPd([4]float64(a)))
+func M256SvmlCeilPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SvmlCeilPd([4]float64(a)))
 }
 
-func svmlCeilPd(a [4]float64) [4]float64
+func m256SvmlCeilPd(a [4]float64) [4]float64
 
 
-// SvmlCeilPs: Round the packed single-precision (32-bit) floating-point
+// M256SvmlCeilPs: Round the packed single-precision (32-bit) floating-point
 // elements in 'a' up to an integer value, and store the results as packed
 // single-precision floating-point elements in 'dst'. This intrinsic may
 // generate the 'roundps'/'vroundps' instruction. 
@@ -4998,14 +5016,14 @@ func svmlCeilPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_ceil_ps'.
 // Requires AVX.
-func SvmlCeilPs(a x86.M256) x86.M256 {
-	return x86.M256(svmlCeilPs([8]float32(a)))
+func M256SvmlCeilPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SvmlCeilPs([8]float32(a)))
 }
 
-func svmlCeilPs(a [8]float32) [8]float32
+func m256SvmlCeilPs(a [8]float32) [8]float32
 
 
-// SvmlFloorPd: Round the packed double-precision (64-bit) floating-point
+// M256SvmlFloorPd: Round the packed double-precision (64-bit) floating-point
 // elements in 'a' down to an integer value, and store the results as packed
 // double-precision floating-point elements in 'dst'. This intrinsic may
 // generate the 'roundpd'/'vroundpd' instruction. 
@@ -5018,14 +5036,14 @@ func svmlCeilPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_floor_pd'.
 // Requires AVX.
-func SvmlFloorPd(a x86.M256d) x86.M256d {
-	return x86.M256d(svmlFloorPd([4]float64(a)))
+func M256SvmlFloorPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SvmlFloorPd([4]float64(a)))
 }
 
-func svmlFloorPd(a [4]float64) [4]float64
+func m256SvmlFloorPd(a [4]float64) [4]float64
 
 
-// SvmlFloorPs: Round the packed single-precision (32-bit) floating-point
+// M256SvmlFloorPs: Round the packed single-precision (32-bit) floating-point
 // elements in 'a' down to an integer value, and store the results as packed
 // single-precision floating-point elements in 'dst'. This intrinsic may
 // generate the 'roundps'/'vroundps' instruction. 
@@ -5038,14 +5056,14 @@ func svmlFloorPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_floor_ps'.
 // Requires AVX.
-func SvmlFloorPs(a x86.M256) x86.M256 {
-	return x86.M256(svmlFloorPs([8]float32(a)))
+func M256SvmlFloorPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SvmlFloorPs([8]float32(a)))
 }
 
-func svmlFloorPs(a [8]float32) [8]float32
+func m256SvmlFloorPs(a [8]float32) [8]float32
 
 
-// SvmlRoundPd: Round the packed double-precision (64-bit) floating-point
+// M256SvmlRoundPd: Round the packed double-precision (64-bit) floating-point
 // elements in 'a' to the nearest integer value, and store the results as
 // packed double-precision floating-point elements in 'dst'. This intrinsic may
 // generate the 'roundpd'/'vroundpd' instruction. 
@@ -5058,14 +5076,14 @@ func svmlFloorPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_round_pd'.
 // Requires AVX.
-func SvmlRoundPd(a x86.M256d) x86.M256d {
-	return x86.M256d(svmlRoundPd([4]float64(a)))
+func M256SvmlRoundPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SvmlRoundPd([4]float64(a)))
 }
 
-func svmlRoundPd(a [4]float64) [4]float64
+func m256SvmlRoundPd(a [4]float64) [4]float64
 
 
-// SvmlRoundPs: Round the packed single-precision (32-bit) floating-point
+// M256SvmlRoundPs: Round the packed single-precision (32-bit) floating-point
 // elements in 'a' to the nearest integer value, and store the results as
 // packed single-precision floating-point elements in 'dst'. This intrinsic may
 // generate the 'roundps'/'vroundps' instruction. 
@@ -5078,14 +5096,14 @@ func svmlRoundPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_round_ps'.
 // Requires AVX.
-func SvmlRoundPs(a x86.M256) x86.M256 {
-	return x86.M256(svmlRoundPs([8]float32(a)))
+func M256SvmlRoundPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SvmlRoundPs([8]float32(a)))
 }
 
-func svmlRoundPs(a [8]float32) [8]float32
+func m256SvmlRoundPs(a [8]float32) [8]float32
 
 
-// SvmlSqrtPd: Compute the square root of packed double-precision (64-bit)
+// M256SvmlSqrtPd: Compute the square root of packed double-precision (64-bit)
 // floating-point elements in 'a', and store the results in 'dst'. Note that
 // this intrinsic is less efficient than '_mm_sqrt_pd'. 
 //
@@ -5097,14 +5115,14 @@ func svmlRoundPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_sqrt_pd'.
 // Requires AVX.
-func SvmlSqrtPd(a x86.M256d) x86.M256d {
-	return x86.M256d(svmlSqrtPd([4]float64(a)))
+func M256SvmlSqrtPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256SvmlSqrtPd([4]float64(a)))
 }
 
-func svmlSqrtPd(a [4]float64) [4]float64
+func m256SvmlSqrtPd(a [4]float64) [4]float64
 
 
-// SvmlSqrtPs: Compute the square root of packed single-precision (32-bit)
+// M256SvmlSqrtPs: Compute the square root of packed single-precision (32-bit)
 // floating-point elements in 'a', and store the results in 'dst'. Note that
 // this intrinsic is less efficient than '_mm_sqrt_ps'. 
 //
@@ -5116,14 +5134,14 @@ func svmlSqrtPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_svml_sqrt_ps'.
 // Requires AVX.
-func SvmlSqrtPs(a x86.M256) x86.M256 {
-	return x86.M256(svmlSqrtPs([8]float32(a)))
+func M256SvmlSqrtPs(a x86.M256) x86.M256 {
+	return x86.M256(m256SvmlSqrtPs([8]float32(a)))
 }
 
-func svmlSqrtPs(a [8]float32) [8]float32
+func m256SvmlSqrtPs(a [8]float32) [8]float32
 
 
-// TanPd: Compute the tangent of packed double-precision (64-bit)
+// M256TanPd: Compute the tangent of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -5135,14 +5153,14 @@ func svmlSqrtPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_tan_pd'.
 // Requires AVX.
-func TanPd(a x86.M256d) x86.M256d {
-	return x86.M256d(tanPd([4]float64(a)))
+func M256TanPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256TanPd([4]float64(a)))
 }
 
-func tanPd(a [4]float64) [4]float64
+func m256TanPd(a [4]float64) [4]float64
 
 
-// TanPs: Compute the tangent of packed single-precision (32-bit)
+// M256TanPs: Compute the tangent of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in radians, and store the results
 // in 'dst'. 
 //
@@ -5154,14 +5172,14 @@ func tanPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_tan_ps'.
 // Requires AVX.
-func TanPs(a x86.M256) x86.M256 {
-	return x86.M256(tanPs([8]float32(a)))
+func M256TanPs(a x86.M256) x86.M256 {
+	return x86.M256(m256TanPs([8]float32(a)))
 }
 
-func tanPs(a [8]float32) [8]float32
+func m256TanPs(a [8]float32) [8]float32
 
 
-// TandPd: Compute the tangent of packed double-precision (64-bit)
+// M256TandPd: Compute the tangent of packed double-precision (64-bit)
 // floating-point elements in 'a' expressed in degrees, and store the results
 // in 'dst'. 
 //
@@ -5173,14 +5191,14 @@ func tanPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_tand_pd'.
 // Requires AVX.
-func TandPd(a x86.M256d) x86.M256d {
-	return x86.M256d(tandPd([4]float64(a)))
+func M256TandPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256TandPd([4]float64(a)))
 }
 
-func tandPd(a [4]float64) [4]float64
+func m256TandPd(a [4]float64) [4]float64
 
 
-// TandPs: Compute the tangent of packed single-precision (32-bit)
+// M256TandPs: Compute the tangent of packed single-precision (32-bit)
 // floating-point elements in 'a' expressed in degrees, and store the results
 // in 'dst'. 
 //
@@ -5192,16 +5210,16 @@ func tandPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_tand_ps'.
 // Requires AVX.
-func TandPs(a x86.M256) x86.M256 {
-	return x86.M256(tandPs([8]float32(a)))
+func M256TandPs(a x86.M256) x86.M256 {
+	return x86.M256(m256TandPs([8]float32(a)))
 }
 
-func tandPs(a [8]float32) [8]float32
+func m256TandPs(a [8]float32) [8]float32
 
 
-// TanhPd: Compute the hyperbolic tangent of packed double-precision (64-bit)
-// floating-point elements in 'a' expressed in radians, and store the results
-// in 'dst'. 
+// M256TanhPd: Compute the hyperbolic tangent of packed double-precision
+// (64-bit) floating-point elements in 'a' expressed in radians, and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -5211,16 +5229,16 @@ func tandPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_tanh_pd'.
 // Requires AVX.
-func TanhPd(a x86.M256d) x86.M256d {
-	return x86.M256d(tanhPd([4]float64(a)))
+func M256TanhPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256TanhPd([4]float64(a)))
 }
 
-func tanhPd(a [4]float64) [4]float64
+func m256TanhPd(a [4]float64) [4]float64
 
 
-// TanhPs: Compute the hyperbolic tangent of packed single-precision (32-bit)
-// floating-point elements in 'a' expressed in radians, and store the results
-// in 'dst'. 
+// M256TanhPs: Compute the hyperbolic tangent of packed single-precision
+// (32-bit) floating-point elements in 'a' expressed in radians, and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -5230,11 +5248,11 @@ func tanhPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_tanh_ps'.
 // Requires AVX.
-func TanhPs(a x86.M256) x86.M256 {
-	return x86.M256(tanhPs([8]float32(a)))
+func M256TanhPs(a x86.M256) x86.M256 {
+	return x86.M256(m256TanhPs([8]float32(a)))
 }
 
-func tanhPs(a [8]float32) [8]float32
+func m256TanhPs(a [8]float32) [8]float32
 
 
 // TestcPd: Compute the bitwise AND of 128 bits (representing double-precision
@@ -5268,13 +5286,13 @@ func TestcPd(a x86.M128d, b x86.M128d) int {
 func testcPd(a [2]float64, b [2]float64) int
 
 
-// TestcPd1: Compute the bitwise AND of 256 bits (representing double-precision
-// (64-bit) floating-point elements) in 'a' and 'b', producing an intermediate
-// 256-bit value, and set 'ZF' to 1 if the sign bit of each 64-bit element in
-// the intermediate value is zero, otherwise set 'ZF' to 0. Compute the bitwise
-// AND NOT of 'a' and 'b', producing an intermediate value, and set 'CF' to 1
-// if the sign bit of each 64-bit element in the intermediate value is zero,
-// otherwise set 'CF' to 0. Return the 'CF' value. 
+// M256TestcPd: Compute the bitwise AND of 256 bits (representing
+// double-precision (64-bit) floating-point elements) in 'a' and 'b', producing
+// an intermediate 256-bit value, and set 'ZF' to 1 if the sign bit of each
+// 64-bit element in the intermediate value is zero, otherwise set 'ZF' to 0.
+// Compute the bitwise AND NOT of 'a' and 'b', producing an intermediate value,
+// and set 'CF' to 1 if the sign bit of each 64-bit element in the intermediate
+// value is zero, otherwise set 'CF' to 0. Return the 'CF' value. 
 //
 //		tmp[255:0] := a[255:0] AND b[255:0]
 //		IF (tmp[63] == tmp[127] == tmp[191] == tmp[255] == 0)
@@ -5292,11 +5310,11 @@ func testcPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testc_pd'.
 // Requires AVX.
-func TestcPd1(a x86.M256d, b x86.M256d) int {
-	return int(testcPd1([4]float64(a), [4]float64(b)))
+func M256TestcPd(a x86.M256d, b x86.M256d) int {
+	return int(m256TestcPd([4]float64(a), [4]float64(b)))
 }
 
-func testcPd1(a [4]float64, b [4]float64) int
+func m256TestcPd(a [4]float64, b [4]float64) int
 
 
 // TestcPs: Compute the bitwise AND of 128 bits (representing single-precision
@@ -5330,13 +5348,13 @@ func TestcPs(a x86.M128, b x86.M128) int {
 func testcPs(a [4]float32, b [4]float32) int
 
 
-// TestcPs1: Compute the bitwise AND of 256 bits (representing single-precision
-// (32-bit) floating-point elements) in 'a' and 'b', producing an intermediate
-// 256-bit value, and set 'ZF' to 1 if the sign bit of each 32-bit element in
-// the intermediate value is zero, otherwise set 'ZF' to 0. Compute the bitwise
-// AND NOT of 'a' and 'b', producing an intermediate value, and set 'CF' to 1
-// if the sign bit of each 32-bit element in the intermediate value is zero,
-// otherwise set 'CF' to 0. Return the 'CF' value. 
+// M256TestcPs: Compute the bitwise AND of 256 bits (representing
+// single-precision (32-bit) floating-point elements) in 'a' and 'b', producing
+// an intermediate 256-bit value, and set 'ZF' to 1 if the sign bit of each
+// 32-bit element in the intermediate value is zero, otherwise set 'ZF' to 0.
+// Compute the bitwise AND NOT of 'a' and 'b', producing an intermediate value,
+// and set 'CF' to 1 if the sign bit of each 32-bit element in the intermediate
+// value is zero, otherwise set 'CF' to 0. Return the 'CF' value. 
 //
 //		tmp[255:0] := a[255:0] AND b[255:0]
 //		IF (tmp[31] == tmp[63] == tmp[95] == tmp[127] == tmp[159] == tmp[191] == tmp[223] == tmp[255] == 0)
@@ -5354,17 +5372,17 @@ func testcPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testc_ps'.
 // Requires AVX.
-func TestcPs1(a x86.M256, b x86.M256) int {
-	return int(testcPs1([8]float32(a), [8]float32(b)))
+func M256TestcPs(a x86.M256, b x86.M256) int {
+	return int(m256TestcPs([8]float32(a), [8]float32(b)))
 }
 
-func testcPs1(a [8]float32, b [8]float32) int
+func m256TestcPs(a [8]float32, b [8]float32) int
 
 
-// TestcSi256: Compute the bitwise AND of 256 bits (representing integer data)
-// in 'a' and 'b', and set 'ZF' to 1 if the result is zero, otherwise set 'ZF'
-// to 0. Compute the bitwise AND NOT of 'a' and 'b', and set 'CF' to 1 if the
-// result is zero, otherwise set 'CF' to 0. Return the 'CF' value. 
+// M256TestcSi256: Compute the bitwise AND of 256 bits (representing integer
+// data) in 'a' and 'b', and set 'ZF' to 1 if the result is zero, otherwise set
+// 'ZF' to 0. Compute the bitwise AND NOT of 'a' and 'b', and set 'CF' to 1 if
+// the result is zero, otherwise set 'CF' to 0. Return the 'CF' value. 
 //
 //		IF (a[255:0] AND b[255:0] == 0)
 //			ZF := 1
@@ -5380,11 +5398,11 @@ func testcPs1(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testc_si256'.
 // Requires AVX.
-func TestcSi256(a x86.M256i, b x86.M256i) int {
-	return int(testcSi256([32]byte(a), [32]byte(b)))
+func M256TestcSi256(a x86.M256i, b x86.M256i) int {
+	return int(m256TestcSi256([32]byte(a), [32]byte(b)))
 }
 
-func testcSi256(a [32]byte, b [32]byte) int
+func m256TestcSi256(a [32]byte, b [32]byte) int
 
 
 // TestnzcPd: Compute the bitwise AND of 128 bits (representing
@@ -5423,7 +5441,7 @@ func TestnzcPd(a x86.M128d, b x86.M128d) int {
 func testnzcPd(a [2]float64, b [2]float64) int
 
 
-// TestnzcPd1: Compute the bitwise AND of 256 bits (representing
+// M256TestnzcPd: Compute the bitwise AND of 256 bits (representing
 // double-precision (64-bit) floating-point elements) in 'a' and 'b', producing
 // an intermediate 256-bit value, and set 'ZF' to 1 if the sign bit of each
 // 64-bit element in the intermediate value is zero, otherwise set 'ZF' to 0.
@@ -5452,11 +5470,11 @@ func testnzcPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testnzc_pd'.
 // Requires AVX.
-func TestnzcPd1(a x86.M256d, b x86.M256d) int {
-	return int(testnzcPd1([4]float64(a), [4]float64(b)))
+func M256TestnzcPd(a x86.M256d, b x86.M256d) int {
+	return int(m256TestnzcPd([4]float64(a), [4]float64(b)))
 }
 
-func testnzcPd1(a [4]float64, b [4]float64) int
+func m256TestnzcPd(a [4]float64, b [4]float64) int
 
 
 // TestnzcPs: Compute the bitwise AND of 128 bits (representing
@@ -5495,7 +5513,7 @@ func TestnzcPs(a x86.M128, b x86.M128) int {
 func testnzcPs(a [4]float32, b [4]float32) int
 
 
-// TestnzcPs1: Compute the bitwise AND of 256 bits (representing
+// M256TestnzcPs: Compute the bitwise AND of 256 bits (representing
 // single-precision (32-bit) floating-point elements) in 'a' and 'b', producing
 // an intermediate 256-bit value, and set 'ZF' to 1 if the sign bit of each
 // 32-bit element in the intermediate value is zero, otherwise set 'ZF' to 0.
@@ -5524,14 +5542,14 @@ func testnzcPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testnzc_ps'.
 // Requires AVX.
-func TestnzcPs1(a x86.M256, b x86.M256) int {
-	return int(testnzcPs1([8]float32(a), [8]float32(b)))
+func M256TestnzcPs(a x86.M256, b x86.M256) int {
+	return int(m256TestnzcPs([8]float32(a), [8]float32(b)))
 }
 
-func testnzcPs1(a [8]float32, b [8]float32) int
+func m256TestnzcPs(a [8]float32, b [8]float32) int
 
 
-// TestnzcSi256: Compute the bitwise AND of 256 bits (representing integer
+// M256TestnzcSi256: Compute the bitwise AND of 256 bits (representing integer
 // data) in 'a' and 'b', and set 'ZF' to 1 if the result is zero, otherwise set
 // 'ZF' to 0. Compute the bitwise AND NOT of 'a' and 'b', and set 'CF' to 1 if
 // the result is zero, otherwise set 'CF' to 0. Return 1 if both the 'ZF' and
@@ -5555,11 +5573,11 @@ func testnzcPs1(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testnzc_si256'.
 // Requires AVX.
-func TestnzcSi256(a x86.M256i, b x86.M256i) int {
-	return int(testnzcSi256([32]byte(a), [32]byte(b)))
+func M256TestnzcSi256(a x86.M256i, b x86.M256i) int {
+	return int(m256TestnzcSi256([32]byte(a), [32]byte(b)))
 }
 
-func testnzcSi256(a [32]byte, b [32]byte) int
+func m256TestnzcSi256(a [32]byte, b [32]byte) int
 
 
 // TestzPd: Compute the bitwise AND of 128 bits (representing double-precision
@@ -5593,13 +5611,13 @@ func TestzPd(a x86.M128d, b x86.M128d) int {
 func testzPd(a [2]float64, b [2]float64) int
 
 
-// TestzPd1: Compute the bitwise AND of 256 bits (representing double-precision
-// (64-bit) floating-point elements) in 'a' and 'b', producing an intermediate
-// 256-bit value, and set 'ZF' to 1 if the sign bit of each 64-bit element in
-// the intermediate value is zero, otherwise set 'ZF' to 0. Compute the bitwise
-// AND NOT of 'a' and 'b', producing an intermediate value, and set 'CF' to 1
-// if the sign bit of each 64-bit element in the intermediate value is zero,
-// otherwise set 'CF' to 0. Return the 'ZF' value. 
+// M256TestzPd: Compute the bitwise AND of 256 bits (representing
+// double-precision (64-bit) floating-point elements) in 'a' and 'b', producing
+// an intermediate 256-bit value, and set 'ZF' to 1 if the sign bit of each
+// 64-bit element in the intermediate value is zero, otherwise set 'ZF' to 0.
+// Compute the bitwise AND NOT of 'a' and 'b', producing an intermediate value,
+// and set 'CF' to 1 if the sign bit of each 64-bit element in the intermediate
+// value is zero, otherwise set 'CF' to 0. Return the 'ZF' value. 
 //
 //		tmp[255:0] := a[255:0] AND b[255:0]
 //		IF (tmp[63] == tmp[127] == tmp[191] == tmp[255] == 0)
@@ -5617,11 +5635,11 @@ func testzPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testz_pd'.
 // Requires AVX.
-func TestzPd1(a x86.M256d, b x86.M256d) int {
-	return int(testzPd1([4]float64(a), [4]float64(b)))
+func M256TestzPd(a x86.M256d, b x86.M256d) int {
+	return int(m256TestzPd([4]float64(a), [4]float64(b)))
 }
 
-func testzPd1(a [4]float64, b [4]float64) int
+func m256TestzPd(a [4]float64, b [4]float64) int
 
 
 // TestzPs: Compute the bitwise AND of 128 bits (representing single-precision
@@ -5655,13 +5673,13 @@ func TestzPs(a x86.M128, b x86.M128) int {
 func testzPs(a [4]float32, b [4]float32) int
 
 
-// TestzPs1: Compute the bitwise AND of 256 bits (representing single-precision
-// (32-bit) floating-point elements) in 'a' and 'b', producing an intermediate
-// 256-bit value, and set 'ZF' to 1 if the sign bit of each 32-bit element in
-// the intermediate value is zero, otherwise set 'ZF' to 0. Compute the bitwise
-// AND NOT of 'a' and 'b', producing an intermediate value, and set 'CF' to 1
-// if the sign bit of each 32-bit element in the intermediate value is zero,
-// otherwise set 'CF' to 0. Return the 'ZF' value. 
+// M256TestzPs: Compute the bitwise AND of 256 bits (representing
+// single-precision (32-bit) floating-point elements) in 'a' and 'b', producing
+// an intermediate 256-bit value, and set 'ZF' to 1 if the sign bit of each
+// 32-bit element in the intermediate value is zero, otherwise set 'ZF' to 0.
+// Compute the bitwise AND NOT of 'a' and 'b', producing an intermediate value,
+// and set 'CF' to 1 if the sign bit of each 32-bit element in the intermediate
+// value is zero, otherwise set 'CF' to 0. Return the 'ZF' value. 
 //
 //		tmp[255:0] := a[255:0] AND b[255:0]
 //		IF (tmp[31] == tmp[63] == tmp[95] == tmp[127] == tmp[159] == tmp[191] == tmp[223] == tmp[255] == 0)
@@ -5679,17 +5697,17 @@ func testzPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testz_ps'.
 // Requires AVX.
-func TestzPs1(a x86.M256, b x86.M256) int {
-	return int(testzPs1([8]float32(a), [8]float32(b)))
+func M256TestzPs(a x86.M256, b x86.M256) int {
+	return int(m256TestzPs([8]float32(a), [8]float32(b)))
 }
 
-func testzPs1(a [8]float32, b [8]float32) int
+func m256TestzPs(a [8]float32, b [8]float32) int
 
 
-// TestzSi256: Compute the bitwise AND of 256 bits (representing integer data)
-// in 'a' and 'b', and set 'ZF' to 1 if the result is zero, otherwise set 'ZF'
-// to 0. Compute the bitwise AND NOT of 'a' and 'b', and set 'CF' to 1 if the
-// result is zero, otherwise set 'CF' to 0. Return the 'ZF' value. 
+// M256TestzSi256: Compute the bitwise AND of 256 bits (representing integer
+// data) in 'a' and 'b', and set 'ZF' to 1 if the result is zero, otherwise set
+// 'ZF' to 0. Compute the bitwise AND NOT of 'a' and 'b', and set 'CF' to 1 if
+// the result is zero, otherwise set 'CF' to 0. Return the 'ZF' value. 
 //
 //		IF (a[255:0] AND b[255:0] == 0)
 //			ZF := 1
@@ -5705,14 +5723,14 @@ func testzPs1(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testz_si256'.
 // Requires AVX.
-func TestzSi256(a x86.M256i, b x86.M256i) int {
-	return int(testzSi256([32]byte(a), [32]byte(b)))
+func M256TestzSi256(a x86.M256i, b x86.M256i) int {
+	return int(m256TestzSi256([32]byte(a), [32]byte(b)))
 }
 
-func testzSi256(a [32]byte, b [32]byte) int
+func m256TestzSi256(a [32]byte, b [32]byte) int
 
 
-// TruncPd: Truncate the packed double-precision (64-bit) floating-point
+// M256TruncPd: Truncate the packed double-precision (64-bit) floating-point
 // elements in 'a', and store the results as packed double-precision
 // floating-point elements in 'dst'. This intrinsic may generate the
 // 'roundpd'/'vroundpd' instruction. 
@@ -5725,14 +5743,14 @@ func testzSi256(a [32]byte, b [32]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm256_trunc_pd'.
 // Requires AVX.
-func TruncPd(a x86.M256d) x86.M256d {
-	return x86.M256d(truncPd([4]float64(a)))
+func M256TruncPd(a x86.M256d) x86.M256d {
+	return x86.M256d(m256TruncPd([4]float64(a)))
 }
 
-func truncPd(a [4]float64) [4]float64
+func m256TruncPd(a [4]float64) [4]float64
 
 
-// TruncPs: Truncate the packed single-precision (32-bit) floating-point
+// M256TruncPs: Truncate the packed single-precision (32-bit) floating-point
 // elements in 'a', and store the results as packed single-precision
 // floating-point elements in 'dst'. This intrinsic may generate the
 // 'roundps'/'vroundps' instruction. 
@@ -5745,15 +5763,15 @@ func truncPd(a [4]float64) [4]float64
 //
 // Instruction: '...'. Intrinsic: '_mm256_trunc_ps'.
 // Requires AVX.
-func TruncPs(a x86.M256) x86.M256 {
-	return x86.M256(truncPs([8]float32(a)))
+func M256TruncPs(a x86.M256) x86.M256 {
+	return x86.M256(m256TruncPs([8]float32(a)))
 }
 
-func truncPs(a [8]float32) [8]float32
+func m256TruncPs(a [8]float32) [8]float32
 
 
-// UdivEpi32: Divide packed unsigned 32-bit integers in 'a' by packed elements
-// in 'b', and store the truncated results in 'dst'. 
+// M256UdivEpi32: Divide packed unsigned 32-bit integers in 'a' by packed
+// elements in 'b', and store the truncated results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -5763,14 +5781,14 @@ func truncPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_udiv_epi32'.
 // Requires AVX.
-func UdivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(udivEpi32([32]byte(a), [32]byte(b)))
+func M256UdivEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UdivEpi32([32]byte(a), [32]byte(b)))
 }
 
-func udivEpi32(a [32]byte, b [32]byte) [32]byte
+func m256UdivEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// UdivremEpi32: Divide packed unsigned 32-bit integers in 'a' by packed
+// M256UdivremEpi32: Divide packed unsigned 32-bit integers in 'a' by packed
 // elements in 'b', store the truncated results in 'dst', and store the
 // remainders as packed unsigned 32-bit integers into memory at 'mem_addr'. 
 //
@@ -5783,11 +5801,11 @@ func udivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_udivrem_epi32'.
 // Requires AVX.
-func UdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(udivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
+func M256UdivremEpi32(mem_addr x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UdivremEpi32([32]byte(mem_addr), [32]byte(a), [32]byte(b)))
 }
 
-func udivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
+func m256UdivremEpi32(mem_addr [32]byte, a [32]byte, b [32]byte) [32]byte
 
 
 // UndefinedPd: Return vector of type __m128d with undefined elements. 
@@ -5803,17 +5821,17 @@ func UndefinedPd() x86.M128d {
 func undefinedPd() [2]float64
 
 
-// UndefinedPd1: Return vector of type __m256d with undefined elements. 
+// M256UndefinedPd: Return vector of type __m256d with undefined elements. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_undefined_pd'.
 // Requires AVX.
-func UndefinedPd1() x86.M256d {
-	return x86.M256d(undefinedPd1())
+func M256UndefinedPd() x86.M256d {
+	return x86.M256d(m256UndefinedPd())
 }
 
-func undefinedPd1() [4]float64
+func m256UndefinedPd() [4]float64
 
 
 // UndefinedPs: Return vector of type __m128 with undefined elements. 
@@ -5829,17 +5847,17 @@ func UndefinedPs() x86.M128 {
 func undefinedPs() [4]float32
 
 
-// UndefinedPs1: Return vector of type __m256 with undefined elements. 
+// M256UndefinedPs: Return vector of type __m256 with undefined elements. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_undefined_ps'.
 // Requires AVX.
-func UndefinedPs1() x86.M256 {
-	return x86.M256(undefinedPs1())
+func M256UndefinedPs() x86.M256 {
+	return x86.M256(m256UndefinedPs())
 }
 
-func undefinedPs1() [8]float32
+func m256UndefinedPs() [8]float32
 
 
 // UndefinedSi128: Return vector of type __m128i with undefined elements. 
@@ -5855,22 +5873,22 @@ func UndefinedSi128() x86.M128i {
 func undefinedSi128() [16]byte
 
 
-// UndefinedSi256: Return vector of type __m256i with undefined elements. 
+// M256UndefinedSi256: Return vector of type __m256i with undefined elements. 
 //
 //		
 //
 // Instruction: ''. Intrinsic: '_mm256_undefined_si256'.
 // Requires AVX.
-func UndefinedSi256() x86.M256i {
-	return x86.M256i(undefinedSi256())
+func M256UndefinedSi256() x86.M256i {
+	return x86.M256i(m256UndefinedSi256())
 }
 
-func undefinedSi256() [32]byte
+func m256UndefinedSi256() [32]byte
 
 
-// UnpackhiPd: Unpack and interleave double-precision (64-bit) floating-point
-// elements from the high half of each 128-bit lane in 'a' and 'b', and store
-// the results in 'dst'. 
+// M256UnpackhiPd: Unpack and interleave double-precision (64-bit)
+// floating-point elements from the high half of each 128-bit lane in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_QWORDS(src1[127:0], src2[127:0]){
 //			dst[63:0] := src1[127:64] 
@@ -5884,16 +5902,16 @@ func undefinedSi256() [32]byte
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm256_unpackhi_pd'.
 // Requires AVX.
-func UnpackhiPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(unpackhiPd([4]float64(a), [4]float64(b)))
+func M256UnpackhiPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256UnpackhiPd([4]float64(a), [4]float64(b)))
 }
 
-func unpackhiPd(a [4]float64, b [4]float64) [4]float64
+func m256UnpackhiPd(a [4]float64, b [4]float64) [4]float64
 
 
-// UnpackhiPs: Unpack and interleave single-precision (32-bit) floating-point
-// elements from the high half of each 128-bit lane in 'a' and 'b', and store
-// the results in 'dst'. 
+// M256UnpackhiPs: Unpack and interleave single-precision (32-bit)
+// floating-point elements from the high half of each 128-bit lane in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_DWORDS(src1[127:0], src2[127:0]){
 //			dst[31:0] := src1[95:64] 
@@ -5909,16 +5927,16 @@ func unpackhiPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm256_unpackhi_ps'.
 // Requires AVX.
-func UnpackhiPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(unpackhiPs([8]float32(a), [8]float32(b)))
+func M256UnpackhiPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256UnpackhiPs([8]float32(a), [8]float32(b)))
 }
 
-func unpackhiPs(a [8]float32, b [8]float32) [8]float32
+func m256UnpackhiPs(a [8]float32, b [8]float32) [8]float32
 
 
-// UnpackloPd: Unpack and interleave double-precision (64-bit) floating-point
-// elements from the low half of each 128-bit lane in 'a' and 'b', and store
-// the results in 'dst'. 
+// M256UnpackloPd: Unpack and interleave double-precision (64-bit)
+// floating-point elements from the low half of each 128-bit lane in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_QWORDS(src1[127:0], src2[127:0]){
 //			dst[63:0] := src1[63:0] 
@@ -5932,16 +5950,16 @@ func unpackhiPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm256_unpacklo_pd'.
 // Requires AVX.
-func UnpackloPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(unpackloPd([4]float64(a), [4]float64(b)))
+func M256UnpackloPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256UnpackloPd([4]float64(a), [4]float64(b)))
 }
 
-func unpackloPd(a [4]float64, b [4]float64) [4]float64
+func m256UnpackloPd(a [4]float64, b [4]float64) [4]float64
 
 
-// UnpackloPs: Unpack and interleave single-precision (32-bit) floating-point
-// elements from the low half of each 128-bit lane in 'a' and 'b', and store
-// the results in 'dst'. 
+// M256UnpackloPs: Unpack and interleave single-precision (32-bit)
+// floating-point elements from the low half of each 128-bit lane in 'a' and
+// 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_DWORDS(src1[127:0], src2[127:0]){
 //			dst[31:0] := src1[31:0] 
@@ -5957,16 +5975,16 @@ func unpackloPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm256_unpacklo_ps'.
 // Requires AVX.
-func UnpackloPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(unpackloPs([8]float32(a), [8]float32(b)))
+func M256UnpackloPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256UnpackloPs([8]float32(a), [8]float32(b)))
 }
 
-func unpackloPs(a [8]float32, b [8]float32) [8]float32
+func m256UnpackloPs(a [8]float32, b [8]float32) [8]float32
 
 
-// UremEpi32: Divide packed unsigned 32-bit integers in 'a' by packed elements
-// in 'b', and store the remainders as packed unsigned 32-bit integers in
-// 'dst'. 
+// M256UremEpi32: Divide packed unsigned 32-bit integers in 'a' by packed
+// elements in 'b', and store the remainders as packed unsigned 32-bit integers
+// in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -5976,14 +5994,14 @@ func unpackloPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_urem_epi32'.
 // Requires AVX.
-func UremEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(uremEpi32([32]byte(a), [32]byte(b)))
+func M256UremEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UremEpi32([32]byte(a), [32]byte(b)))
 }
 
-func uremEpi32(a [32]byte, b [32]byte) [32]byte
+func m256UremEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// XorPd: Compute the bitwise XOR of packed double-precision (64-bit)
+// M256XorPd: Compute the bitwise XOR of packed double-precision (64-bit)
 // floating-point elements in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -5994,14 +6012,14 @@ func uremEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VXORPD'. Intrinsic: '_mm256_xor_pd'.
 // Requires AVX.
-func XorPd(a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(xorPd([4]float64(a), [4]float64(b)))
+func M256XorPd(a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256XorPd([4]float64(a), [4]float64(b)))
 }
 
-func xorPd(a [4]float64, b [4]float64) [4]float64
+func m256XorPd(a [4]float64, b [4]float64) [4]float64
 
 
-// XorPs: Compute the bitwise XOR of packed single-precision (32-bit)
+// M256XorPs: Compute the bitwise XOR of packed single-precision (32-bit)
 // floating-point elements in 'a' and 'b', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -6012,14 +6030,14 @@ func xorPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VXORPS'. Intrinsic: '_mm256_xor_ps'.
 // Requires AVX.
-func XorPs(a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(xorPs([8]float32(a), [8]float32(b)))
+func M256XorPs(a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256XorPs([8]float32(a), [8]float32(b)))
 }
 
-func xorPs(a [8]float32, b [8]float32) [8]float32
+func m256XorPs(a [8]float32, b [8]float32) [8]float32
 
 
-// Zeroall: Zero the contents of all XMM or YMM registers. 
+// M256Zeroall: Zero the contents of all XMM or YMM registers. 
 //
 //		YMM0[MAX:0] := 0
 //		YMM1[MAX:0] := 0
@@ -6042,15 +6060,15 @@ func xorPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VZEROALL'. Intrinsic: '_mm256_zeroall'.
 // Requires AVX.
-func Zeroall()  {
-	zeroall()
+func M256Zeroall()  {
+	m256Zeroall()
 }
 
-func zeroall() 
+func m256Zeroall() 
 
 
-// Zeroupper: Zero the upper 128 bits of all YMM registers; the lower 128-bits
-// of the registers are unmodified. 
+// M256Zeroupper: Zero the upper 128 bits of all YMM registers; the lower
+// 128-bits of the registers are unmodified. 
 //
 //		YMM0[MAX:128] := 0
 //		YMM1[MAX:128] := 0
@@ -6073,9 +6091,9 @@ func zeroall()
 //
 // Instruction: 'VZEROUPPER'. Intrinsic: '_mm256_zeroupper'.
 // Requires AVX.
-func Zeroupper()  {
-	zeroupper()
+func M256Zeroupper()  {
+	m256Zeroupper()
 }
 
-func zeroupper() 
+func m256Zeroupper() 
 

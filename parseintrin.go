@@ -192,13 +192,13 @@ func fixFuncName(in string) string {
 	}
 	out := CamelCase(in)
 	if strings.HasPrefix(out, "mm512") {
-		out = strings.TrimPrefix(out, "mm512")
+		out = strings.TrimPrefix(out, "m")
 	}
 	if strings.HasPrefix(out, "mm256") {
-		out = strings.TrimPrefix(out, "mm256")
+		out = strings.TrimPrefix(out, "m")
 	}
 	if strings.HasPrefix(out, "mm512") {
-		out = strings.TrimPrefix(out, "m256")
+		out = strings.TrimPrefix(out, "m")
 	}
 	out = strings.TrimPrefix(out, "mm")
 	out = strings.Title(out)
@@ -391,7 +391,7 @@ var usedNames = make(map[string]struct{})
 func (in *Intrinsic) fixup() {
 	in.Package = in.getPackage()
 	name := in.Name
-	next := 1
+	next := 2
 	for {
 		_, ok := usedNames[in.Package+name]
 		if !ok {

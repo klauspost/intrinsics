@@ -5,7 +5,7 @@ import "github.com/klauspost/intrinsics/x86"
 var _ = x86.M64{}  // Make sure we use x86 package
 
 
-// Madd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
+// M512Madd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
 // element of 'b' and 'c' to form a 104-bit intermediate result. Add the high
 // 52-bit unsigned integer from the intermediate result with the corresponding
 // unsigned 64-bit integer in 'a', and store the results in 'dst'. 
@@ -19,19 +19,19 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_madd52hi_epu64'.
 // Requires AVX512IFMA52.
-func Madd52hiEpu64(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(madd52hiEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
+func M512Madd52hiEpu64(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512Madd52hiEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func madd52hiEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
+func m512Madd52hiEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
-// MaskMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the high
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'a' when the corresponding mask bit
-// is not set). 
+// M512MaskMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// high 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'a' when the corresponding
+// mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -46,19 +46,19 @@ func madd52hiEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_mask_madd52hi_epu64'.
 // Requires AVX512IFMA52.
-func MaskMadd52hiEpu64(a x86.M512i, k x86.Mmask8, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(maskMadd52hiEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
+func M512MaskMadd52hiEpu64(a x86.M512i, k x86.Mmask8, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMadd52hiEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
 }
 
-func maskMadd52hiEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
+func m512MaskMadd52hiEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 
 
-// MaskzMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the high
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// high 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -73,14 +73,14 @@ func maskMadd52hiEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm512_maskz_madd52hi_epu64'.
 // Requires AVX512IFMA52.
-func MaskzMadd52hiEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(maskzMadd52hiEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
+func M512MaskzMadd52hiEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMadd52hiEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func maskzMadd52hiEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
+func m512MaskzMadd52hiEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
-// Madd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
+// M512Madd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
 // element of 'b' and 'c' to form a 104-bit intermediate result. Add the low
 // 52-bit unsigned integer from the intermediate result with the corresponding
 // unsigned 64-bit integer in 'a', and store the results in 'dst'. 
@@ -94,19 +94,19 @@ func maskzMadd52hiEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_madd52lo_epu64'.
 // Requires AVX512IFMA52.
-func Madd52loEpu64(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(madd52loEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
+func M512Madd52loEpu64(a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512Madd52loEpu64([64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func madd52loEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
+func m512Madd52loEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 
 
-// MaskMadd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the low
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'a' when the corresponding mask bit
-// is not set). 
+// M512MaskMadd52loEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// low 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'a' when the corresponding
+// mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -121,19 +121,19 @@ func madd52loEpu64(a [64]byte, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_mask_madd52lo_epu64'.
 // Requires AVX512IFMA52.
-func MaskMadd52loEpu64(a x86.M512i, k x86.Mmask8, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(maskMadd52loEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
+func M512MaskMadd52loEpu64(a x86.M512i, k x86.Mmask8, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMadd52loEpu64([64]byte(a), uint8(k), [64]byte(b), [64]byte(c)))
 }
 
-func maskMadd52loEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
+func m512MaskMadd52loEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 
 
-// MaskzMadd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the low
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M512MaskzMadd52loEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// low 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -148,9 +148,9 @@ func maskMadd52loEpu64(a [64]byte, k uint8, b [64]byte, c [64]byte) [64]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm512_maskz_madd52lo_epu64'.
 // Requires AVX512IFMA52.
-func MaskzMadd52loEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
-	return x86.M512i(maskzMadd52loEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
+func M512MaskzMadd52loEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMadd52loEpu64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c)))
 }
 
-func maskzMadd52loEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
+func m512MaskzMadd52loEpu64(k uint8, a [64]byte, b [64]byte, c [64]byte) [64]byte
 

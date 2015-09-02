@@ -5,11 +5,11 @@ import "github.com/klauspost/intrinsics/x86"
 var _ = x86.M64{}  // Make sure we use x86 package
 
 
-// MaskMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8 unaligned
-// bytes using a byte-granular shift control within the corresponding 64-bit
-// element of 'a', and store the 8 assembled bytes to the corresponding 64-bit
-// element of 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
+// M512MaskMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8
+// unaligned bytes using a byte-granular shift control within the corresponding
+// 64-bit element of 'a', and store the 8 assembled bytes to the corresponding
+// 64-bit element of 'dst' using writemask 'k' (elements are copied from 'src'
+// when the corresponding mask bit is not set). 
 //
 //		FOR i := 0 to 7
 //			q := i * 64
@@ -30,17 +30,17 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_mask_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func MaskMultishiftEpi64Epi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskMultishiftEpi64Epi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskMultishiftEpi64Epi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskMultishiftEpi64Epi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskMultishiftEpi64Epi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskMultishiftEpi64Epi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MaskzMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8 unaligned
-// bytes using a byte-granular shift control within the corresponding 64-bit
-// element of 'a', and store the 8 assembled bytes to the corresponding 64-bit
-// element of 'dst' using zeromask 'k' (elements are zeroed out when the
+// M512MaskzMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8
+// unaligned bytes using a byte-granular shift control within the corresponding
+// 64-bit element of 'a', and store the 8 assembled bytes to the corresponding
+// 64-bit element of 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). 
 //
 //		FOR i := 0 to 7
@@ -62,14 +62,14 @@ func maskMultishiftEpi64Epi8(src [64]byte, k uint64, a [64]byte, b [64]byte) [64
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_maskz_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func MaskzMultishiftEpi64Epi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzMultishiftEpi64Epi8(uint64(k), [64]byte(a), [64]byte(b)))
+func M512MaskzMultishiftEpi64Epi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzMultishiftEpi64Epi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
-func maskzMultishiftEpi64Epi8(k uint64, a [64]byte, b [64]byte) [64]byte
+func m512MaskzMultishiftEpi64Epi8(k uint64, a [64]byte, b [64]byte) [64]byte
 
 
-// MultishiftEpi64Epi8: For each 64-bit element in 'b', select 8 unaligned
+// M512MultishiftEpi64Epi8: For each 64-bit element in 'b', select 8 unaligned
 // bytes using a byte-granular shift control within the corresponding 64-bit
 // element of 'a', and store the 8 assembled bytes to the corresponding 64-bit
 // element of 'dst'. 
@@ -89,14 +89,14 @@ func maskzMultishiftEpi64Epi8(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func MultishiftEpi64Epi8(a x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(multishiftEpi64Epi8([64]byte(a), [64]byte(b)))
+func M512MultishiftEpi64Epi8(a x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MultishiftEpi64Epi8([64]byte(a), [64]byte(b)))
 }
 
-func multishiftEpi64Epi8(a [64]byte, b [64]byte) [64]byte
+func m512MultishiftEpi64Epi8(a [64]byte, b [64]byte) [64]byte
 
 
-// MaskPermutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes
+// M512MaskPermutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes
 // using the corresponding selector and index in 'idx', and store the results
 // in 'dst' using writemask 'k' (elements are copied from 'a' when the
 // corresponding mask bit is not set). 
@@ -114,16 +114,16 @@ func multishiftEpi64Epi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMT2B'. Intrinsic: '_mm512_mask_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func MaskPermutex2varEpi8(a x86.M512i, k x86.Mmask64, idx x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskPermutex2varEpi8([64]byte(a), uint64(k), [64]byte(idx), [64]byte(b)))
+func M512MaskPermutex2varEpi8(a x86.M512i, k x86.Mmask64, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPermutex2varEpi8([64]byte(a), uint64(k), [64]byte(idx), [64]byte(b)))
 }
 
-func maskPermutex2varEpi8(a [64]byte, k uint64, idx [64]byte, b [64]byte) [64]byte
+func m512MaskPermutex2varEpi8(a [64]byte, k uint64, idx [64]byte, b [64]byte) [64]byte
 
 
-// Mask2Permutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using writemask 'k' (elements are copied from 'a' when the
+// M512Mask2Permutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'a' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
@@ -139,17 +139,17 @@ func maskPermutex2varEpi8(a [64]byte, k uint64, idx [64]byte, b [64]byte) [64]by
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_mask2_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func Mask2Permutex2varEpi8(a x86.M512i, idx x86.M512i, k x86.Mmask64, b x86.M512i) x86.M512i {
-	return x86.M512i(mask2Permutex2varEpi8([64]byte(a), [64]byte(idx), uint64(k), [64]byte(b)))
+func M512Mask2Permutex2varEpi8(a x86.M512i, idx x86.M512i, k x86.Mmask64, b x86.M512i) x86.M512i {
+	return x86.M512i(m512Mask2Permutex2varEpi8([64]byte(a), [64]byte(idx), uint64(k), [64]byte(b)))
 }
 
-func mask2Permutex2varEpi8(a [64]byte, idx [64]byte, k uint64, b [64]byte) [64]byte
+func m512Mask2Permutex2varEpi8(a [64]byte, idx [64]byte, k uint64, b [64]byte) [64]byte
 
 
-// MaskzPermutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M512MaskzPermutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -164,16 +164,16 @@ func mask2Permutex2varEpi8(a [64]byte, idx [64]byte, k uint64, b [64]byte) [64]b
 //
 // Instruction: 'VPERMI2B, VPERMT2B'. Intrinsic: '_mm512_maskz_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func MaskzPermutex2varEpi8(k x86.Mmask64, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(maskzPermutex2varEpi8(uint64(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
+func M512MaskzPermutex2varEpi8(k x86.Mmask64, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPermutex2varEpi8(uint64(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func maskzPermutex2varEpi8(k uint64, a [64]byte, idx [64]byte, b [64]byte) [64]byte
+func m512MaskzPermutex2varEpi8(k uint64, a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
-// Permutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes using
-// the corresponding selector and index in 'idx', and store the results in
-// 'dst'. 
+// M512Permutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes
+// using the corresponding selector and index in 'idx', and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -184,17 +184,17 @@ func maskzPermutex2varEpi8(k uint64, a [64]byte, idx [64]byte, b [64]byte) [64]b
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func Permutex2varEpi8(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
-	return x86.M512i(permutex2varEpi8([64]byte(a), [64]byte(idx), [64]byte(b)))
+func M512Permutex2varEpi8(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+	return x86.M512i(m512Permutex2varEpi8([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
-func permutex2varEpi8(a [64]byte, idx [64]byte, b [64]byte) [64]byte
+func m512Permutex2varEpi8(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 
 
-// MaskPermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M512MaskPermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -209,16 +209,17 @@ func permutex2varEpi8(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_mask_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func MaskPermutexvarEpi8(src x86.M512i, k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(maskPermutexvarEpi8([64]byte(src), uint64(k), [64]byte(idx), [64]byte(a)))
+func M512MaskPermutexvarEpi8(src x86.M512i, k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskPermutexvarEpi8([64]byte(src), uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskPermutexvarEpi8(src [64]byte, k uint64, idx [64]byte, a [64]byte) [64]byte
+func m512MaskPermutexvarEpi8(src [64]byte, k uint64, idx [64]byte, a [64]byte) [64]byte
 
 
-// MaskzPermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst' using zeromask
-// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
+// M512MaskzPermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst' using
+// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
+// set). 
 //
 //		FOR j := 0 to 63
 //			i := j*8
@@ -233,14 +234,14 @@ func maskPermutexvarEpi8(src [64]byte, k uint64, idx [64]byte, a [64]byte) [64]b
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_maskz_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func MaskzPermutexvarEpi8(k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzPermutexvarEpi8(uint64(k), [64]byte(idx), [64]byte(a)))
+func M512MaskzPermutexvarEpi8(k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzPermutexvarEpi8(uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
-func maskzPermutexvarEpi8(k uint64, idx [64]byte, a [64]byte) [64]byte
+func m512MaskzPermutexvarEpi8(k uint64, idx [64]byte, a [64]byte) [64]byte
 
 
-// PermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using the
+// M512PermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using the
 // corresponding index in 'idx', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 63
@@ -252,9 +253,9 @@ func maskzPermutexvarEpi8(k uint64, idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func PermutexvarEpi8(idx x86.M512i, a x86.M512i) x86.M512i {
-	return x86.M512i(permutexvarEpi8([64]byte(idx), [64]byte(a)))
+func M512PermutexvarEpi8(idx x86.M512i, a x86.M512i) x86.M512i {
+	return x86.M512i(m512PermutexvarEpi8([64]byte(idx), [64]byte(a)))
 }
 
-func permutexvarEpi8(idx [64]byte, a [64]byte) [64]byte
+func m512PermutexvarEpi8(idx [64]byte, a [64]byte) [64]byte
 

@@ -5,8 +5,8 @@ import "github.com/klauspost/intrinsics/x86"
 var _ = x86.M64{}  // Make sure we use x86 package
 
 
-// AbsEpi16: Compute the absolute value of packed 16-bit integers in 'a', and
-// store the unsigned results in 'dst'. 
+// M256AbsEpi16: Compute the absolute value of packed 16-bit integers in 'a',
+// and store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -16,15 +16,15 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm256_abs_epi16'.
 // Requires AVX2.
-func AbsEpi16(a x86.M256i) x86.M256i {
-	return x86.M256i(absEpi16([32]byte(a)))
+func M256AbsEpi16(a x86.M256i) x86.M256i {
+	return x86.M256i(m256AbsEpi16([32]byte(a)))
 }
 
-func absEpi16(a [32]byte) [32]byte
+func m256AbsEpi16(a [32]byte) [32]byte
 
 
-// AbsEpi32: Compute the absolute value of packed 32-bit integers in 'a', and
-// store the unsigned results in 'dst'. 
+// M256AbsEpi32: Compute the absolute value of packed 32-bit integers in 'a',
+// and store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -34,14 +34,14 @@ func absEpi16(a [32]byte) [32]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm256_abs_epi32'.
 // Requires AVX2.
-func AbsEpi32(a x86.M256i) x86.M256i {
-	return x86.M256i(absEpi32([32]byte(a)))
+func M256AbsEpi32(a x86.M256i) x86.M256i {
+	return x86.M256i(m256AbsEpi32([32]byte(a)))
 }
 
-func absEpi32(a [32]byte) [32]byte
+func m256AbsEpi32(a [32]byte) [32]byte
 
 
-// AbsEpi8: Compute the absolute value of packed 8-bit integers in 'a', and
+// M256AbsEpi8: Compute the absolute value of packed 8-bit integers in 'a', and
 // store the unsigned results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -52,15 +52,15 @@ func absEpi32(a [32]byte) [32]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm256_abs_epi8'.
 // Requires AVX2.
-func AbsEpi8(a x86.M256i) x86.M256i {
-	return x86.M256i(absEpi8([32]byte(a)))
+func M256AbsEpi8(a x86.M256i) x86.M256i {
+	return x86.M256i(m256AbsEpi8([32]byte(a)))
 }
 
-func absEpi8(a [32]byte) [32]byte
+func m256AbsEpi8(a [32]byte) [32]byte
 
 
-// AddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the results
-// in 'dst'. 
+// M256AddEpi16: Add packed 16-bit integers in 'a' and 'b', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -70,15 +70,15 @@ func absEpi8(a [32]byte) [32]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm256_add_epi16'.
 // Requires AVX2.
-func AddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addEpi16([32]byte(a), [32]byte(b)))
+func M256AddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddEpi16([32]byte(a), [32]byte(b)))
 }
 
-func addEpi16(a [32]byte, b [32]byte) [32]byte
+func m256AddEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// AddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the results
-// in 'dst'. 
+// M256AddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -88,15 +88,15 @@ func addEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm256_add_epi32'.
 // Requires AVX2.
-func AddEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addEpi32([32]byte(a), [32]byte(b)))
+func M256AddEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddEpi32([32]byte(a), [32]byte(b)))
 }
 
-func addEpi32(a [32]byte, b [32]byte) [32]byte
+func m256AddEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// AddEpi64: Add packed 64-bit integers in 'a' and 'b', and store the results
-// in 'dst'. 
+// M256AddEpi64: Add packed 64-bit integers in 'a' and 'b', and store the
+// results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -106,15 +106,15 @@ func addEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm256_add_epi64'.
 // Requires AVX2.
-func AddEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addEpi64([32]byte(a), [32]byte(b)))
+func M256AddEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddEpi64([32]byte(a), [32]byte(b)))
 }
 
-func addEpi64(a [32]byte, b [32]byte) [32]byte
+func m256AddEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// AddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the results in
-// 'dst'. 
+// M256AddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -124,15 +124,15 @@ func addEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm256_add_epi8'.
 // Requires AVX2.
-func AddEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addEpi8([32]byte(a), [32]byte(b)))
+func M256AddEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddEpi8([32]byte(a), [32]byte(b)))
 }
 
-func addEpi8(a [32]byte, b [32]byte) [32]byte
+func m256AddEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpi16: Add packed 16-bit integers in 'a' and 'b' using saturation, and
-// store the results in 'dst'. 
+// M256AddsEpi16: Add packed 16-bit integers in 'a' and 'b' using saturation,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -142,14 +142,14 @@ func addEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm256_adds_epi16'.
 // Requires AVX2.
-func AddsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addsEpi16([32]byte(a), [32]byte(b)))
+func M256AddsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddsEpi16([32]byte(a), [32]byte(b)))
 }
 
-func addsEpi16(a [32]byte, b [32]byte) [32]byte
+func m256AddsEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
+// M256AddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
 // store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -160,14 +160,14 @@ func addsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm256_adds_epi8'.
 // Requires AVX2.
-func AddsEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addsEpi8([32]byte(a), [32]byte(b)))
+func M256AddsEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddsEpi8([32]byte(a), [32]byte(b)))
 }
 
-func addsEpi8(a [32]byte, b [32]byte) [32]byte
+func m256AddsEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
+// M256AddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -178,14 +178,14 @@ func addsEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm256_adds_epu16'.
 // Requires AVX2.
-func AddsEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addsEpu16([32]byte(a), [32]byte(b)))
+func M256AddsEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddsEpu16([32]byte(a), [32]byte(b)))
 }
 
-func addsEpu16(a [32]byte, b [32]byte) [32]byte
+func m256AddsEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// AddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
+// M256AddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
 // saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -196,14 +196,14 @@ func addsEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm256_adds_epu8'.
 // Requires AVX2.
-func AddsEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(addsEpu8([32]byte(a), [32]byte(b)))
+func M256AddsEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AddsEpu8([32]byte(a), [32]byte(b)))
 }
 
-func addsEpu8(a [32]byte, b [32]byte) [32]byte
+func m256AddsEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// AlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
+// M256AlignrEpi8: Concatenate pairs of 16-byte blocks in 'a' and 'b' into a
 // 32-byte temporary result, shift the result right by 'count' bytes, and store
 // the low 16 bytes in 'dst'. 
 //
@@ -216,45 +216,45 @@ func addsEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm256_alignr_epi8'.
 // Requires AVX2.
-func AlignrEpi8(a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(alignrEpi8([32]byte(a), [32]byte(b), count))
+func M256AlignrEpi8(a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256AlignrEpi8([32]byte(a), [32]byte(b), count))
 }
 
-func alignrEpi8(a [32]byte, b [32]byte, count int) [32]byte
+func m256AlignrEpi8(a [32]byte, b [32]byte, count int) [32]byte
 
 
-// AndSi256: Compute the bitwise AND of 256 bits (representing integer data) in
-// 'a' and 'b', and store the result in 'dst'. 
+// M256AndSi256: Compute the bitwise AND of 256 bits (representing integer
+// data) in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[255:0] := (a[255:0] AND b[255:0])
 //		dst[MAX:256] := 0
 //
 // Instruction: 'VPAND'. Intrinsic: '_mm256_and_si256'.
 // Requires AVX2.
-func AndSi256(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(andSi256([32]byte(a), [32]byte(b)))
+func M256AndSi256(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AndSi256([32]byte(a), [32]byte(b)))
 }
 
-func andSi256(a [32]byte, b [32]byte) [32]byte
+func m256AndSi256(a [32]byte, b [32]byte) [32]byte
 
 
-// AndnotSi256: Compute the bitwise AND NOT of 256 bits (representing integer
-// data) in 'a' and 'b', and store the result in 'dst'. 
+// M256AndnotSi256: Compute the bitwise AND NOT of 256 bits (representing
+// integer data) in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[255:0] := ((NOT a[255:0]) AND b[255:0])
 //		dst[MAX:256] := 0
 //
 // Instruction: 'VPANDN'. Intrinsic: '_mm256_andnot_si256'.
 // Requires AVX2.
-func AndnotSi256(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(andnotSi256([32]byte(a), [32]byte(b)))
+func M256AndnotSi256(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AndnotSi256([32]byte(a), [32]byte(b)))
 }
 
-func andnotSi256(a [32]byte, b [32]byte) [32]byte
+func m256AndnotSi256(a [32]byte, b [32]byte) [32]byte
 
 
-// AvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and store
-// the results in 'dst'. 
+// M256AvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -264,15 +264,15 @@ func andnotSi256(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm256_avg_epu16'.
 // Requires AVX2.
-func AvgEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(avgEpu16([32]byte(a), [32]byte(b)))
+func M256AvgEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AvgEpu16([32]byte(a), [32]byte(b)))
 }
 
-func avgEpu16(a [32]byte, b [32]byte) [32]byte
+func m256AvgEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// AvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and store
-// the results in 'dst'. 
+// M256AvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and
+// store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -282,15 +282,15 @@ func avgEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm256_avg_epu8'.
 // Requires AVX2.
-func AvgEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(avgEpu8([32]byte(a), [32]byte(b)))
+func M256AvgEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256AvgEpu8([32]byte(a), [32]byte(b)))
 }
 
-func avgEpu8(a [32]byte, b [32]byte) [32]byte
+func m256AvgEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// BlendEpi16: Blend packed 16-bit integers from 'a' and 'b' using control mask
-// 'imm8', and store the results in 'dst'. 
+// M256BlendEpi16: Blend packed 16-bit integers from 'a' and 'b' using control
+// mask 'imm8', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -304,11 +304,11 @@ func avgEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPBLENDW'. Intrinsic: '_mm256_blend_epi16'.
 // Requires AVX2.
-func BlendEpi16(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(blendEpi16([32]byte(a), [32]byte(b), imm8))
+func M256BlendEpi16(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256BlendEpi16([32]byte(a), [32]byte(b), imm8))
 }
 
-func blendEpi16(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256BlendEpi16(a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
 // BlendEpi32: Blend packed 32-bit integers from 'a' and 'b' using control mask
@@ -333,7 +333,7 @@ func BlendEpi32(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
 func blendEpi32(a [16]byte, b [16]byte, imm8 int) [16]byte
 
 
-// BlendEpi321: Blend packed 32-bit integers from 'a' and 'b' using control
+// M256BlendEpi32: Blend packed 32-bit integers from 'a' and 'b' using control
 // mask 'imm8', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -348,15 +348,15 @@ func blendEpi32(a [16]byte, b [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPBLENDD'. Intrinsic: '_mm256_blend_epi32'.
 // Requires AVX2.
-func BlendEpi321(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(blendEpi321([32]byte(a), [32]byte(b), imm8))
+func M256BlendEpi32(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256BlendEpi32([32]byte(a), [32]byte(b), imm8))
 }
 
-func blendEpi321(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256BlendEpi32(a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
-// BlendvEpi8: Blend packed 8-bit integers from 'a' and 'b' using 'mask', and
-// store the results in 'dst'. 
+// M256BlendvEpi8: Blend packed 8-bit integers from 'a' and 'b' using 'mask',
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -370,11 +370,11 @@ func blendEpi321(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPBLENDVB'. Intrinsic: '_mm256_blendv_epi8'.
 // Requires AVX2.
-func BlendvEpi8(a x86.M256i, b x86.M256i, mask x86.M256i) x86.M256i {
-	return x86.M256i(blendvEpi8([32]byte(a), [32]byte(b), [32]byte(mask)))
+func M256BlendvEpi8(a x86.M256i, b x86.M256i, mask x86.M256i) x86.M256i {
+	return x86.M256i(m256BlendvEpi8([32]byte(a), [32]byte(b), [32]byte(mask)))
 }
 
-func blendvEpi8(a [32]byte, b [32]byte, mask [32]byte) [32]byte
+func m256BlendvEpi8(a [32]byte, b [32]byte, mask [32]byte) [32]byte
 
 
 // BroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to all
@@ -395,7 +395,7 @@ func BroadcastbEpi8(a x86.M128i) x86.M128i {
 func broadcastbEpi8(a [16]byte) [16]byte
 
 
-// BroadcastbEpi81: Broadcast the low packed 8-bit integer from 'a' to all
+// M256BroadcastbEpi8: Broadcast the low packed 8-bit integer from 'a' to all
 // elements of 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -406,11 +406,11 @@ func broadcastbEpi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_broadcastb_epi8'.
 // Requires AVX2.
-func BroadcastbEpi81(a x86.M128i) x86.M256i {
-	return x86.M256i(broadcastbEpi81([16]byte(a)))
+func M256BroadcastbEpi8(a x86.M128i) x86.M256i {
+	return x86.M256i(m256BroadcastbEpi8([16]byte(a)))
 }
 
-func broadcastbEpi81(a [16]byte) [32]byte
+func m256BroadcastbEpi8(a [16]byte) [32]byte
 
 
 // BroadcastdEpi32: Broadcast the low packed 32-bit integer from 'a' to all
@@ -431,7 +431,7 @@ func BroadcastdEpi32(a x86.M128i) x86.M128i {
 func broadcastdEpi32(a [16]byte) [16]byte
 
 
-// BroadcastdEpi321: Broadcast the low packed 32-bit integer from 'a' to all
+// M256BroadcastdEpi32: Broadcast the low packed 32-bit integer from 'a' to all
 // elements of 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -442,11 +442,11 @@ func broadcastdEpi32(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm256_broadcastd_epi32'.
 // Requires AVX2.
-func BroadcastdEpi321(a x86.M128i) x86.M256i {
-	return x86.M256i(broadcastdEpi321([16]byte(a)))
+func M256BroadcastdEpi32(a x86.M128i) x86.M256i {
+	return x86.M256i(m256BroadcastdEpi32([16]byte(a)))
 }
 
-func broadcastdEpi321(a [16]byte) [32]byte
+func m256BroadcastdEpi32(a [16]byte) [32]byte
 
 
 // BroadcastqEpi64: Broadcast the low packed 64-bit integer from 'a' to all
@@ -467,7 +467,7 @@ func BroadcastqEpi64(a x86.M128i) x86.M128i {
 func broadcastqEpi64(a [16]byte) [16]byte
 
 
-// BroadcastqEpi641: Broadcast the low packed 64-bit integer from 'a' to all
+// M256BroadcastqEpi64: Broadcast the low packed 64-bit integer from 'a' to all
 // elements of 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -478,11 +478,11 @@ func broadcastqEpi64(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm256_broadcastq_epi64'.
 // Requires AVX2.
-func BroadcastqEpi641(a x86.M128i) x86.M256i {
-	return x86.M256i(broadcastqEpi641([16]byte(a)))
+func M256BroadcastqEpi64(a x86.M128i) x86.M256i {
+	return x86.M256i(m256BroadcastqEpi64([16]byte(a)))
 }
 
-func broadcastqEpi641(a [16]byte) [32]byte
+func m256BroadcastqEpi64(a [16]byte) [32]byte
 
 
 // BroadcastsdPd: Broadcast the low double-precision (64-bit) floating-point
@@ -503,8 +503,8 @@ func BroadcastsdPd(a x86.M128d) x86.M128d {
 func broadcastsdPd(a [2]float64) [2]float64
 
 
-// BroadcastsdPd1: Broadcast the low double-precision (64-bit) floating-point
-// element from 'a' to all elements of 'dst'. 
+// M256BroadcastsdPd: Broadcast the low double-precision (64-bit)
+// floating-point element from 'a' to all elements of 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -514,14 +514,14 @@ func broadcastsdPd(a [2]float64) [2]float64
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm256_broadcastsd_pd'.
 // Requires AVX2.
-func BroadcastsdPd1(a x86.M128d) x86.M256d {
-	return x86.M256d(broadcastsdPd1([2]float64(a)))
+func M256BroadcastsdPd(a x86.M128d) x86.M256d {
+	return x86.M256d(m256BroadcastsdPd([2]float64(a)))
 }
 
-func broadcastsdPd1(a [2]float64) [4]float64
+func m256BroadcastsdPd(a [2]float64) [4]float64
 
 
-// Broadcastsi128Si256: Broadcast 128 bits of integer data from 'a' to all
+// M256Broadcastsi128Si256: Broadcast 128 bits of integer data from 'a' to all
 // 128-bit lanes in 'dst'. 
 //
 //		dst[127:0] := a[127:0]
@@ -530,11 +530,11 @@ func broadcastsdPd1(a [2]float64) [4]float64
 //
 // Instruction: 'VBROADCASTI128'. Intrinsic: '_mm256_broadcastsi128_si256'.
 // Requires AVX2.
-func Broadcastsi128Si256(a x86.M128i) x86.M256i {
-	return x86.M256i(broadcastsi128Si256([16]byte(a)))
+func M256Broadcastsi128Si256(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Broadcastsi128Si256([16]byte(a)))
 }
 
-func broadcastsi128Si256(a [16]byte) [32]byte
+func m256Broadcastsi128Si256(a [16]byte) [32]byte
 
 
 // BroadcastssPs: Broadcast the low single-precision (32-bit) floating-point
@@ -555,8 +555,8 @@ func BroadcastssPs(a x86.M128) x86.M128 {
 func broadcastssPs(a [4]float32) [4]float32
 
 
-// BroadcastssPs1: Broadcast the low single-precision (32-bit) floating-point
-// element from 'a' to all elements of 'dst'. 
+// M256BroadcastssPs: Broadcast the low single-precision (32-bit)
+// floating-point element from 'a' to all elements of 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -566,11 +566,11 @@ func broadcastssPs(a [4]float32) [4]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm256_broadcastss_ps'.
 // Requires AVX2.
-func BroadcastssPs1(a x86.M128) x86.M256 {
-	return x86.M256(broadcastssPs1([4]float32(a)))
+func M256BroadcastssPs(a x86.M128) x86.M256 {
+	return x86.M256(m256BroadcastssPs([4]float32(a)))
 }
 
-func broadcastssPs1(a [4]float32) [8]float32
+func m256BroadcastssPs(a [4]float32) [8]float32
 
 
 // BroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a' to all
@@ -591,7 +591,7 @@ func BroadcastwEpi16(a x86.M128i) x86.M128i {
 func broadcastwEpi16(a [16]byte) [16]byte
 
 
-// BroadcastwEpi161: Broadcast the low packed 16-bit integer from 'a' to all
+// M256BroadcastwEpi16: Broadcast the low packed 16-bit integer from 'a' to all
 // elements of 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -602,15 +602,15 @@ func broadcastwEpi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_broadcastw_epi16'.
 // Requires AVX2.
-func BroadcastwEpi161(a x86.M128i) x86.M256i {
-	return x86.M256i(broadcastwEpi161([16]byte(a)))
+func M256BroadcastwEpi16(a x86.M128i) x86.M256i {
+	return x86.M256i(m256BroadcastwEpi16([16]byte(a)))
 }
 
-func broadcastwEpi161(a [16]byte) [32]byte
+func m256BroadcastwEpi16(a [16]byte) [32]byte
 
 
-// BslliEpi128: Shift 128-bit lanes in 'a' left by 'imm8' bytes while shifting
-// in zeros, and store the results in 'dst'. 
+// M256BslliEpi128: Shift 128-bit lanes in 'a' left by 'imm8' bytes while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		tmp := imm8[7:0]
 //		IF tmp > 15
@@ -622,15 +622,15 @@ func broadcastwEpi161(a [16]byte) [32]byte
 //
 // Instruction: 'VPSLLDQ'. Intrinsic: '_mm256_bslli_epi128'.
 // Requires AVX2.
-func BslliEpi128(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(bslliEpi128([32]byte(a), imm8))
+func M256BslliEpi128(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256BslliEpi128([32]byte(a), imm8))
 }
 
-func bslliEpi128(a [32]byte, imm8 int) [32]byte
+func m256BslliEpi128(a [32]byte, imm8 int) [32]byte
 
 
-// BsrliEpi128: Shift 128-bit lanes in 'a' right by 'imm8' bytes while shifting
-// in zeros, and store the results in 'dst'. 
+// M256BsrliEpi128: Shift 128-bit lanes in 'a' right by 'imm8' bytes while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		tmp := imm8[7:0]
 //		IF tmp > 15
@@ -642,15 +642,15 @@ func bslliEpi128(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLDQ'. Intrinsic: '_mm256_bsrli_epi128'.
 // Requires AVX2.
-func BsrliEpi128(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(bsrliEpi128([32]byte(a), imm8))
+func M256BsrliEpi128(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256BsrliEpi128([32]byte(a), imm8))
 }
 
-func bsrliEpi128(a [32]byte, imm8 int) [32]byte
+func m256BsrliEpi128(a [32]byte, imm8 int) [32]byte
 
 
-// CmpeqEpi16: Compare packed 16-bit integers in 'a' and 'b' for equality, and
-// store the results in 'dst'. 
+// M256CmpeqEpi16: Compare packed 16-bit integers in 'a' and 'b' for equality,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -660,15 +660,15 @@ func bsrliEpi128(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPCMPEQW'. Intrinsic: '_mm256_cmpeq_epi16'.
 // Requires AVX2.
-func CmpeqEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpeqEpi16([32]byte(a), [32]byte(b)))
+func M256CmpeqEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpeqEpi16([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpi16(a [32]byte, b [32]byte) [32]byte
+func m256CmpeqEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// CmpeqEpi32: Compare packed 32-bit integers in 'a' and 'b' for equality, and
-// store the results in 'dst'. 
+// M256CmpeqEpi32: Compare packed 32-bit integers in 'a' and 'b' for equality,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -678,15 +678,15 @@ func cmpeqEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPEQD'. Intrinsic: '_mm256_cmpeq_epi32'.
 // Requires AVX2.
-func CmpeqEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpeqEpi32([32]byte(a), [32]byte(b)))
+func M256CmpeqEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpeqEpi32([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpi32(a [32]byte, b [32]byte) [32]byte
+func m256CmpeqEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// CmpeqEpi64: Compare packed 64-bit integers in 'a' and 'b' for equality, and
-// store the results in 'dst'. 
+// M256CmpeqEpi64: Compare packed 64-bit integers in 'a' and 'b' for equality,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -696,15 +696,15 @@ func cmpeqEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPEQQ'. Intrinsic: '_mm256_cmpeq_epi64'.
 // Requires AVX2.
-func CmpeqEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpeqEpi64([32]byte(a), [32]byte(b)))
+func M256CmpeqEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpeqEpi64([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpi64(a [32]byte, b [32]byte) [32]byte
+func m256CmpeqEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// CmpeqEpi8: Compare packed 8-bit integers in 'a' and 'b' for equality, and
-// store the results in 'dst'. 
+// M256CmpeqEpi8: Compare packed 8-bit integers in 'a' and 'b' for equality,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -714,15 +714,15 @@ func cmpeqEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPEQB'. Intrinsic: '_mm256_cmpeq_epi8'.
 // Requires AVX2.
-func CmpeqEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpeqEpi8([32]byte(a), [32]byte(b)))
+func M256CmpeqEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpeqEpi8([32]byte(a), [32]byte(b)))
 }
 
-func cmpeqEpi8(a [32]byte, b [32]byte) [32]byte
+func m256CmpeqEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// CmpgtEpi16: Compare packed 16-bit integers in 'a' and 'b' for greater-than,
-// and store the results in 'dst'. 
+// M256CmpgtEpi16: Compare packed 16-bit integers in 'a' and 'b' for
+// greater-than, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -732,15 +732,15 @@ func cmpeqEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTW'. Intrinsic: '_mm256_cmpgt_epi16'.
 // Requires AVX2.
-func CmpgtEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpgtEpi16([32]byte(a), [32]byte(b)))
+func M256CmpgtEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpgtEpi16([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpi16(a [32]byte, b [32]byte) [32]byte
+func m256CmpgtEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// CmpgtEpi32: Compare packed 32-bit integers in 'a' and 'b' for greater-than,
-// and store the results in 'dst'. 
+// M256CmpgtEpi32: Compare packed 32-bit integers in 'a' and 'b' for
+// greater-than, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -750,15 +750,15 @@ func cmpgtEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTD'. Intrinsic: '_mm256_cmpgt_epi32'.
 // Requires AVX2.
-func CmpgtEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpgtEpi32([32]byte(a), [32]byte(b)))
+func M256CmpgtEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpgtEpi32([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpi32(a [32]byte, b [32]byte) [32]byte
+func m256CmpgtEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// CmpgtEpi64: Compare packed 64-bit integers in 'a' and 'b' for greater-than,
-// and store the results in 'dst'. 
+// M256CmpgtEpi64: Compare packed 64-bit integers in 'a' and 'b' for
+// greater-than, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -768,15 +768,15 @@ func cmpgtEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTQ'. Intrinsic: '_mm256_cmpgt_epi64'.
 // Requires AVX2.
-func CmpgtEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpgtEpi64([32]byte(a), [32]byte(b)))
+func M256CmpgtEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpgtEpi64([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpi64(a [32]byte, b [32]byte) [32]byte
+func m256CmpgtEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// CmpgtEpi8: Compare packed 8-bit integers in 'a' and 'b' for greater-than,
-// and store the results in 'dst'. 
+// M256CmpgtEpi8: Compare packed 8-bit integers in 'a' and 'b' for
+// greater-than, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -786,15 +786,15 @@ func cmpgtEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTB'. Intrinsic: '_mm256_cmpgt_epi8'.
 // Requires AVX2.
-func CmpgtEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(cmpgtEpi8([32]byte(a), [32]byte(b)))
+func M256CmpgtEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256CmpgtEpi8([32]byte(a), [32]byte(b)))
 }
 
-func cmpgtEpi8(a [32]byte, b [32]byte) [32]byte
+func m256CmpgtEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// Cvtepi16Epi32: Sign extend packed 16-bit integers in 'a' to packed 32-bit
-// integers, and store the results in 'dst'. 
+// M256Cvtepi16Epi32: Sign extend packed 16-bit integers in 'a' to packed
+// 32-bit integers, and store the results in 'dst'. 
 //
 //		FOR j:= 0 to 7
 //			i := 32*j
@@ -805,15 +805,15 @@ func cmpgtEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm256_cvtepi16_epi32'.
 // Requires AVX2.
-func Cvtepi16Epi32(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepi16Epi32([16]byte(a)))
+func M256Cvtepi16Epi32(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepi16Epi32([16]byte(a)))
 }
 
-func cvtepi16Epi32(a [16]byte) [32]byte
+func m256Cvtepi16Epi32(a [16]byte) [32]byte
 
 
-// Cvtepi16Epi64: Sign extend packed 16-bit integers in 'a' to packed 64-bit
-// integers, and store the results in 'dst'. 
+// M256Cvtepi16Epi64: Sign extend packed 16-bit integers in 'a' to packed
+// 64-bit integers, and store the results in 'dst'. 
 //
 //		FOR j:= 0 to 3
 //			i := 64*j
@@ -824,15 +824,15 @@ func cvtepi16Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm256_cvtepi16_epi64'.
 // Requires AVX2.
-func Cvtepi16Epi64(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepi16Epi64([16]byte(a)))
+func M256Cvtepi16Epi64(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepi16Epi64([16]byte(a)))
 }
 
-func cvtepi16Epi64(a [16]byte) [32]byte
+func m256Cvtepi16Epi64(a [16]byte) [32]byte
 
 
-// Cvtepi32Epi64: Sign extend packed 32-bit integers in 'a' to packed 64-bit
-// integers, and store the results in 'dst'. 
+// M256Cvtepi32Epi64: Sign extend packed 32-bit integers in 'a' to packed
+// 64-bit integers, and store the results in 'dst'. 
 //
 //		FOR j:= 0 to 3
 //			i := 64*j
@@ -843,14 +843,14 @@ func cvtepi16Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm256_cvtepi32_epi64'.
 // Requires AVX2.
-func Cvtepi32Epi64(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepi32Epi64([16]byte(a)))
+func M256Cvtepi32Epi64(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepi32Epi64([16]byte(a)))
 }
 
-func cvtepi32Epi64(a [16]byte) [32]byte
+func m256Cvtepi32Epi64(a [16]byte) [32]byte
 
 
-// Cvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed 16-bit
+// M256Cvtepi8Epi16: Sign extend packed 8-bit integers in 'a' to packed 16-bit
 // integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -862,14 +862,14 @@ func cvtepi32Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm256_cvtepi8_epi16'.
 // Requires AVX2.
-func Cvtepi8Epi16(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepi8Epi16([16]byte(a)))
+func M256Cvtepi8Epi16(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepi8Epi16([16]byte(a)))
 }
 
-func cvtepi8Epi16(a [16]byte) [32]byte
+func m256Cvtepi8Epi16(a [16]byte) [32]byte
 
 
-// Cvtepi8Epi32: Sign extend packed 8-bit integers in 'a' to packed 32-bit
+// M256Cvtepi8Epi32: Sign extend packed 8-bit integers in 'a' to packed 32-bit
 // integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -881,15 +881,15 @@ func cvtepi8Epi16(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm256_cvtepi8_epi32'.
 // Requires AVX2.
-func Cvtepi8Epi32(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepi8Epi32([16]byte(a)))
+func M256Cvtepi8Epi32(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepi8Epi32([16]byte(a)))
 }
 
-func cvtepi8Epi32(a [16]byte) [32]byte
+func m256Cvtepi8Epi32(a [16]byte) [32]byte
 
 
-// Cvtepi8Epi64: Sign extend packed 8-bit integers in the low 8 bytes of 'a' to
-// packed 64-bit integers, and store the results in 'dst'. 
+// M256Cvtepi8Epi64: Sign extend packed 8-bit integers in the low 8 bytes of
+// 'a' to packed 64-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -900,15 +900,15 @@ func cvtepi8Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm256_cvtepi8_epi64'.
 // Requires AVX2.
-func Cvtepi8Epi64(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepi8Epi64([16]byte(a)))
+func M256Cvtepi8Epi64(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepi8Epi64([16]byte(a)))
 }
 
-func cvtepi8Epi64(a [16]byte) [32]byte
+func m256Cvtepi8Epi64(a [16]byte) [32]byte
 
 
-// Cvtepu16Epi32: Zero extend packed unsigned 16-bit integers in 'a' to packed
-// 32-bit integers, and store the results in 'dst'. 
+// M256Cvtepu16Epi32: Zero extend packed unsigned 16-bit integers in 'a' to
+// packed 32-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -919,15 +919,15 @@ func cvtepi8Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm256_cvtepu16_epi32'.
 // Requires AVX2.
-func Cvtepu16Epi32(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepu16Epi32([16]byte(a)))
+func M256Cvtepu16Epi32(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepu16Epi32([16]byte(a)))
 }
 
-func cvtepu16Epi32(a [16]byte) [32]byte
+func m256Cvtepu16Epi32(a [16]byte) [32]byte
 
 
-// Cvtepu16Epi64: Zero extend packed unsigned 16-bit integers in 'a' to packed
-// 64-bit integers, and store the results in 'dst'. 
+// M256Cvtepu16Epi64: Zero extend packed unsigned 16-bit integers in 'a' to
+// packed 64-bit integers, and store the results in 'dst'. 
 //
 //		FOR j:= 0 to 3
 //			i := 64*j
@@ -938,15 +938,15 @@ func cvtepu16Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm256_cvtepu16_epi64'.
 // Requires AVX2.
-func Cvtepu16Epi64(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepu16Epi64([16]byte(a)))
+func M256Cvtepu16Epi64(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepu16Epi64([16]byte(a)))
 }
 
-func cvtepu16Epi64(a [16]byte) [32]byte
+func m256Cvtepu16Epi64(a [16]byte) [32]byte
 
 
-// Cvtepu32Epi64: Zero extend packed unsigned 32-bit integers in 'a' to packed
-// 64-bit integers, and store the results in 'dst'. 
+// M256Cvtepu32Epi64: Zero extend packed unsigned 32-bit integers in 'a' to
+// packed 64-bit integers, and store the results in 'dst'. 
 //
 //		FOR j:= 0 to 3
 //			i := 64*j
@@ -957,15 +957,15 @@ func cvtepu16Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm256_cvtepu32_epi64'.
 // Requires AVX2.
-func Cvtepu32Epi64(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepu32Epi64([16]byte(a)))
+func M256Cvtepu32Epi64(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepu32Epi64([16]byte(a)))
 }
 
-func cvtepu32Epi64(a [16]byte) [32]byte
+func m256Cvtepu32Epi64(a [16]byte) [32]byte
 
 
-// Cvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to packed
-// 16-bit integers, and store the results in 'dst'. 
+// M256Cvtepu8Epi16: Zero extend packed unsigned 8-bit integers in 'a' to
+// packed 16-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*8
@@ -976,15 +976,15 @@ func cvtepu32Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm256_cvtepu8_epi16'.
 // Requires AVX2.
-func Cvtepu8Epi16(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepu8Epi16([16]byte(a)))
+func M256Cvtepu8Epi16(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepu8Epi16([16]byte(a)))
 }
 
-func cvtepu8Epi16(a [16]byte) [32]byte
+func m256Cvtepu8Epi16(a [16]byte) [32]byte
 
 
-// Cvtepu8Epi32: Zero extend packed unsigned 8-bit integers in 'a' to packed
-// 32-bit integers, and store the results in 'dst'. 
+// M256Cvtepu8Epi32: Zero extend packed unsigned 8-bit integers in 'a' to
+// packed 32-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := 32*j
@@ -995,15 +995,15 @@ func cvtepu8Epi16(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm256_cvtepu8_epi32'.
 // Requires AVX2.
-func Cvtepu8Epi32(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepu8Epi32([16]byte(a)))
+func M256Cvtepu8Epi32(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepu8Epi32([16]byte(a)))
 }
 
-func cvtepu8Epi32(a [16]byte) [32]byte
+func m256Cvtepu8Epi32(a [16]byte) [32]byte
 
 
-// Cvtepu8Epi64: Zero extend packed unsigned 8-bit integers in the low 8 byte
-// sof 'a' to packed 64-bit integers, and store the results in 'dst'. 
+// M256Cvtepu8Epi64: Zero extend packed unsigned 8-bit integers in the low 8
+// byte sof 'a' to packed 64-bit integers, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := 64*j
@@ -1014,14 +1014,14 @@ func cvtepu8Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm256_cvtepu8_epi64'.
 // Requires AVX2.
-func Cvtepu8Epi64(a x86.M128i) x86.M256i {
-	return x86.M256i(cvtepu8Epi64([16]byte(a)))
+func M256Cvtepu8Epi64(a x86.M128i) x86.M256i {
+	return x86.M256i(m256Cvtepu8Epi64([16]byte(a)))
 }
 
-func cvtepu8Epi64(a [16]byte) [32]byte
+func m256Cvtepu8Epi64(a [16]byte) [32]byte
 
 
-// Extracti128Si256: Extract 128 bits (composed of integer data) from 'a',
+// M256Extracti128Si256: Extract 128 bits (composed of integer data) from 'a',
 // selected with 'imm8', and store the result in 'dst'. 
 //
 //		CASE imm8[7:0] of
@@ -1032,14 +1032,14 @@ func cvtepu8Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VEXTRACTI128'. Intrinsic: '_mm256_extracti128_si256'.
 // Requires AVX2.
-func Extracti128Si256(a x86.M256i, imm8 int) x86.M128i {
-	return x86.M128i(extracti128Si256([32]byte(a), imm8))
+func M256Extracti128Si256(a x86.M256i, imm8 int) x86.M128i {
+	return x86.M128i(m256Extracti128Si256([32]byte(a), imm8))
 }
 
-func extracti128Si256(a [32]byte, imm8 int) [16]byte
+func m256Extracti128Si256(a [32]byte, imm8 int) [16]byte
 
 
-// HaddEpi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and
+// M256HaddEpi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and
 // 'b', and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0] := a[31:16] + a[15:0]
@@ -1062,14 +1062,14 @@ func extracti128Si256(a [32]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPHADDW'. Intrinsic: '_mm256_hadd_epi16'.
 // Requires AVX2.
-func HaddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(haddEpi16([32]byte(a), [32]byte(b)))
+func M256HaddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256HaddEpi16([32]byte(a), [32]byte(b)))
 }
 
-func haddEpi16(a [32]byte, b [32]byte) [32]byte
+func m256HaddEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// HaddEpi32: Horizontally add adjacent pairs of 32-bit integers in 'a' and
+// M256HaddEpi32: Horizontally add adjacent pairs of 32-bit integers in 'a' and
 // 'b', and pack the signed 32-bit results in 'dst'. 
 //
 //		dst[31:0] := a[63:32] + a[31:0]
@@ -1084,15 +1084,15 @@ func haddEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHADDD'. Intrinsic: '_mm256_hadd_epi32'.
 // Requires AVX2.
-func HaddEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(haddEpi32([32]byte(a), [32]byte(b)))
+func M256HaddEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256HaddEpi32([32]byte(a), [32]byte(b)))
 }
 
-func haddEpi32(a [32]byte, b [32]byte) [32]byte
+func m256HaddEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// HaddsEpi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and
-// 'b' using saturation, and pack the signed 16-bit results in 'dst'. 
+// M256HaddsEpi16: Horizontally add adjacent pairs of 16-bit integers in 'a'
+// and 'b' using saturation, and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0]= Saturate_To_Int16(a[31:16] + a[15:0])
 //		dst[31:16] = Saturate_To_Int16(a[63:48] + a[47:32])
@@ -1114,15 +1114,15 @@ func haddEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHADDSW'. Intrinsic: '_mm256_hadds_epi16'.
 // Requires AVX2.
-func HaddsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(haddsEpi16([32]byte(a), [32]byte(b)))
+func M256HaddsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256HaddsEpi16([32]byte(a), [32]byte(b)))
 }
 
-func haddsEpi16(a [32]byte, b [32]byte) [32]byte
+func m256HaddsEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// HsubEpi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a'
-// and 'b', and pack the signed 16-bit results in 'dst'. 
+// M256HsubEpi16: Horizontally subtract adjacent pairs of 16-bit integers in
+// 'a' and 'b', and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0] := a[15:0] - a[31:16]
 //		dst[31:16] := a[47:32] - a[63:48]
@@ -1144,15 +1144,15 @@ func haddsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHSUBW'. Intrinsic: '_mm256_hsub_epi16'.
 // Requires AVX2.
-func HsubEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(hsubEpi16([32]byte(a), [32]byte(b)))
+func M256HsubEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256HsubEpi16([32]byte(a), [32]byte(b)))
 }
 
-func hsubEpi16(a [32]byte, b [32]byte) [32]byte
+func m256HsubEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// HsubEpi32: Horizontally subtract adjacent pairs of 32-bit integers in 'a'
-// and 'b', and pack the signed 32-bit results in 'dst'. 
+// M256HsubEpi32: Horizontally subtract adjacent pairs of 32-bit integers in
+// 'a' and 'b', and pack the signed 32-bit results in 'dst'. 
 //
 //		dst[31:0] := a[31:0] - a[63:32]
 //		dst[63:32] := a[95:64] - a[127:96]
@@ -1166,15 +1166,15 @@ func hsubEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHSUBD'. Intrinsic: '_mm256_hsub_epi32'.
 // Requires AVX2.
-func HsubEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(hsubEpi32([32]byte(a), [32]byte(b)))
+func M256HsubEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256HsubEpi32([32]byte(a), [32]byte(b)))
 }
 
-func hsubEpi32(a [32]byte, b [32]byte) [32]byte
+func m256HsubEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// HsubsEpi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a'
-// and 'b' using saturation, and pack the signed 16-bit results in 'dst'. 
+// M256HsubsEpi16: Horizontally subtract adjacent pairs of 16-bit integers in
+// 'a' and 'b' using saturation, and pack the signed 16-bit results in 'dst'. 
 //
 //		dst[15:0]= Saturate_To_Int16(a[15:0] - a[31:16])
 //		dst[31:16] = Saturate_To_Int16(a[47:32] - a[63:48])
@@ -1196,11 +1196,11 @@ func hsubEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHSUBSW'. Intrinsic: '_mm256_hsubs_epi16'.
 // Requires AVX2.
-func HsubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(hsubsEpi16([32]byte(a), [32]byte(b)))
+func M256HsubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256HsubsEpi16([32]byte(a), [32]byte(b)))
 }
 
-func hsubsEpi16(a [32]byte, b [32]byte) [32]byte
+func m256HsubsEpi16(a [32]byte, b [32]byte) [32]byte
 
 
 // I32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
@@ -1252,7 +1252,7 @@ func MaskI32gatherEpi32(src x86.M128i, base_addr int, vindex x86.M128i, mask x86
 func maskI32gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
 
 
-// I32gatherEpi321: Gather 32-bit integers from memory using 32-bit indices.
+// M256I32gatherEpi32: Gather 32-bit integers from memory using 32-bit indices.
 // 32-bit elements are loaded from addresses starting at 'base_addr' and offset
 // by each 32-bit element in 'vindex' (each index is scaled by the factor in
 // 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
@@ -1266,14 +1266,14 @@ func maskI32gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm256_i32gather_epi32'.
 // Requires AVX2.
-func I32gatherEpi321(base_addr int, vindex x86.M256i, scale int) x86.M256i {
-	return x86.M256i(i32gatherEpi321(base_addr, [32]byte(vindex), scale))
+func M256I32gatherEpi32(base_addr int, vindex x86.M256i, scale int) x86.M256i {
+	return x86.M256i(m256I32gatherEpi32(base_addr, [32]byte(vindex), scale))
 }
 
-func i32gatherEpi321(base_addr int, vindex [32]byte, scale int) [32]byte
+func m256I32gatherEpi32(base_addr int, vindex [32]byte, scale int) [32]byte
 
 
-// MaskI32gatherEpi321: Gather 32-bit integers from memory using 32-bit
+// M256MaskI32gatherEpi32: Gather 32-bit integers from memory using 32-bit
 // indices. 32-bit elements are loaded from addresses starting at 'base_addr'
 // and offset by each 32-bit element in 'vindex' (each index is scaled by the
 // factor in 'scale'). Gathered elements are merged into 'dst' using 'mask'
@@ -1294,11 +1294,11 @@ func i32gatherEpi321(base_addr int, vindex [32]byte, scale int) [32]byte
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm256_mask_i32gather_epi32'.
 // Requires AVX2.
-func MaskI32gatherEpi321(src x86.M256i, base_addr int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
-	return x86.M256i(maskI32gatherEpi321([32]byte(src), base_addr, [32]byte(vindex), [32]byte(mask), scale))
+func M256MaskI32gatherEpi32(src x86.M256i, base_addr int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
+	return x86.M256i(m256MaskI32gatherEpi32([32]byte(src), base_addr, [32]byte(vindex), [32]byte(mask), scale))
 }
 
-func maskI32gatherEpi321(src [32]byte, base_addr int, vindex [32]byte, mask [32]byte, scale int) [32]byte
+func m256MaskI32gatherEpi32(src [32]byte, base_addr int, vindex [32]byte, mask [32]byte, scale int) [32]byte
 
 
 // I32gatherEpi64: Gather 64-bit integers from memory using 32-bit indices.
@@ -1352,7 +1352,7 @@ func MaskI32gatherEpi64(src x86.M128i, base_addr int, vindex x86.M128i, mask x86
 func maskI32gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
 
 
-// I32gatherEpi641: Gather 64-bit integers from memory using 32-bit indices.
+// M256I32gatherEpi64: Gather 64-bit integers from memory using 32-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
 // by each 32-bit element in 'vindex' (each index is scaled by the factor in
 // 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
@@ -1367,14 +1367,14 @@ func maskI32gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm256_i32gather_epi64'.
 // Requires AVX2.
-func I32gatherEpi641(base_addr int, vindex x86.M128i, scale int) x86.M256i {
-	return x86.M256i(i32gatherEpi641(base_addr, [16]byte(vindex), scale))
+func M256I32gatherEpi64(base_addr int, vindex x86.M128i, scale int) x86.M256i {
+	return x86.M256i(m256I32gatherEpi64(base_addr, [16]byte(vindex), scale))
 }
 
-func i32gatherEpi641(base_addr int, vindex [16]byte, scale int) [32]byte
+func m256I32gatherEpi64(base_addr int, vindex [16]byte, scale int) [32]byte
 
 
-// MaskI32gatherEpi641: Gather 64-bit integers from memory using 32-bit
+// M256MaskI32gatherEpi64: Gather 64-bit integers from memory using 32-bit
 // indices. 64-bit elements are loaded from addresses starting at 'base_addr'
 // and offset by each 32-bit element in 'vindex' (each index is scaled by the
 // factor in 'scale'). Gathered elements are merged into 'dst' using 'mask'
@@ -1396,11 +1396,11 @@ func i32gatherEpi641(base_addr int, vindex [16]byte, scale int) [32]byte
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm256_mask_i32gather_epi64'.
 // Requires AVX2.
-func MaskI32gatherEpi641(src x86.M256i, base_addr int, vindex x86.M128i, mask x86.M256i, scale int) x86.M256i {
-	return x86.M256i(maskI32gatherEpi641([32]byte(src), base_addr, [16]byte(vindex), [32]byte(mask), scale))
+func M256MaskI32gatherEpi64(src x86.M256i, base_addr int, vindex x86.M128i, mask x86.M256i, scale int) x86.M256i {
+	return x86.M256i(m256MaskI32gatherEpi64([32]byte(src), base_addr, [16]byte(vindex), [32]byte(mask), scale))
 }
 
-func maskI32gatherEpi641(src [32]byte, base_addr int, vindex [16]byte, mask [32]byte, scale int) [32]byte
+func m256MaskI32gatherEpi64(src [32]byte, base_addr int, vindex [16]byte, mask [32]byte, scale int) [32]byte
 
 
 // I32gatherPd: Gather double-precision (64-bit) floating-point elements from
@@ -1454,8 +1454,8 @@ func MaskI32gatherPd(src x86.M128d, base_addr float64, vindex x86.M128i, mask x8
 func maskI32gatherPd(src [2]float64, base_addr float64, vindex [16]byte, mask [2]float64, scale int) [2]float64
 
 
-// I32gatherPd1: Gather double-precision (64-bit) floating-point elements from
-// memory using 32-bit indices. 64-bit elements are loaded from addresses
+// M256I32gatherPd: Gather double-precision (64-bit) floating-point elements
+// from memory using 32-bit indices. 64-bit elements are loaded from addresses
 // starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
 // index is scaled by the factor in 'scale'). Gathered elements are merged into
 // 'dst'. 'scale' should be 1, 2, 4 or 8. 
@@ -1469,19 +1469,20 @@ func maskI32gatherPd(src [2]float64, base_addr float64, vindex [16]byte, mask [2
 //
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm256_i32gather_pd'.
 // Requires AVX2.
-func I32gatherPd1(base_addr float64, vindex x86.M128i, scale int) x86.M256d {
-	return x86.M256d(i32gatherPd1(base_addr, [16]byte(vindex), scale))
+func M256I32gatherPd(base_addr float64, vindex x86.M128i, scale int) x86.M256d {
+	return x86.M256d(m256I32gatherPd(base_addr, [16]byte(vindex), scale))
 }
 
-func i32gatherPd1(base_addr float64, vindex [16]byte, scale int) [4]float64
+func m256I32gatherPd(base_addr float64, vindex [16]byte, scale int) [4]float64
 
 
-// MaskI32gatherPd1: Gather double-precision (64-bit) floating-point elements
-// from memory using 32-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
+// M256MaskI32gatherPd: Gather double-precision (64-bit) floating-point
+// elements from memory using 32-bit indices. 64-bit elements are loaded from
+// addresses starting at 'base_addr' and offset by each 32-bit element in
+// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
+// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
+// highest bit is not set in the corresponding element). 'scale' should be 1,
+// 2, 4 or 8. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -1498,11 +1499,11 @@ func i32gatherPd1(base_addr float64, vindex [16]byte, scale int) [4]float64
 //
 // Instruction: 'VGATHERDPD'. Intrinsic: '_mm256_mask_i32gather_pd'.
 // Requires AVX2.
-func MaskI32gatherPd1(src x86.M256d, base_addr float64, vindex x86.M128i, mask x86.M256d, scale int) x86.M256d {
-	return x86.M256d(maskI32gatherPd1([4]float64(src), base_addr, [16]byte(vindex), [4]float64(mask), scale))
+func M256MaskI32gatherPd(src x86.M256d, base_addr float64, vindex x86.M128i, mask x86.M256d, scale int) x86.M256d {
+	return x86.M256d(m256MaskI32gatherPd([4]float64(src), base_addr, [16]byte(vindex), [4]float64(mask), scale))
 }
 
-func maskI32gatherPd1(src [4]float64, base_addr float64, vindex [16]byte, mask [4]float64, scale int) [4]float64
+func m256MaskI32gatherPd(src [4]float64, base_addr float64, vindex [16]byte, mask [4]float64, scale int) [4]float64
 
 
 // I32gatherPs: Gather single-precision (32-bit) floating-point elements from
@@ -1554,8 +1555,8 @@ func MaskI32gatherPs(src x86.M128, base_addr float32, vindex x86.M128i, mask x86
 func maskI32gatherPs(src [4]float32, base_addr float32, vindex [16]byte, mask [4]float32, scale int) [4]float32
 
 
-// I32gatherPs1: Gather single-precision (32-bit) floating-point elements from
-// memory using 32-bit indices. 32-bit elements are loaded from addresses
+// M256I32gatherPs: Gather single-precision (32-bit) floating-point elements
+// from memory using 32-bit indices. 32-bit elements are loaded from addresses
 // starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
 // index is scaled by the factor in 'scale'). Gathered elements are merged into
 // 'dst'. 'scale' should be 1, 2, 4 or 8. 
@@ -1568,19 +1569,20 @@ func maskI32gatherPs(src [4]float32, base_addr float32, vindex [16]byte, mask [4
 //
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm256_i32gather_ps'.
 // Requires AVX2.
-func I32gatherPs1(base_addr float32, vindex x86.M256i, scale int) x86.M256 {
-	return x86.M256(i32gatherPs1(base_addr, [32]byte(vindex), scale))
+func M256I32gatherPs(base_addr float32, vindex x86.M256i, scale int) x86.M256 {
+	return x86.M256(m256I32gatherPs(base_addr, [32]byte(vindex), scale))
 }
 
-func i32gatherPs1(base_addr float32, vindex [32]byte, scale int) [8]float32
+func m256I32gatherPs(base_addr float32, vindex [32]byte, scale int) [8]float32
 
 
-// MaskI32gatherPs1: Gather single-precision (32-bit) floating-point elements
-// from memory using 32-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 32-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
+// M256MaskI32gatherPs: Gather single-precision (32-bit) floating-point
+// elements from memory using 32-bit indices. 32-bit elements are loaded from
+// addresses starting at 'base_addr' and offset by each 32-bit element in
+// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
+// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
+// highest bit is not set in the corresponding element). 'scale' should be 1,
+// 2, 4 or 8. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -1596,11 +1598,11 @@ func i32gatherPs1(base_addr float32, vindex [32]byte, scale int) [8]float32
 //
 // Instruction: 'VGATHERDPS'. Intrinsic: '_mm256_mask_i32gather_ps'.
 // Requires AVX2.
-func MaskI32gatherPs1(src x86.M256, base_addr float32, vindex x86.M256i, mask x86.M256, scale int) x86.M256 {
-	return x86.M256(maskI32gatherPs1([8]float32(src), base_addr, [32]byte(vindex), [8]float32(mask), scale))
+func M256MaskI32gatherPs(src x86.M256, base_addr float32, vindex x86.M256i, mask x86.M256, scale int) x86.M256 {
+	return x86.M256(m256MaskI32gatherPs([8]float32(src), base_addr, [32]byte(vindex), [8]float32(mask), scale))
 }
 
-func maskI32gatherPs1(src [8]float32, base_addr float32, vindex [32]byte, mask [8]float32, scale int) [8]float32
+func m256MaskI32gatherPs(src [8]float32, base_addr float32, vindex [32]byte, mask [8]float32, scale int) [8]float32
 
 
 // I64gatherEpi32: Gather 32-bit integers from memory using 64-bit indices.
@@ -1654,7 +1656,7 @@ func MaskI64gatherEpi32(src x86.M128i, base_addr int, vindex x86.M128i, mask x86
 func maskI64gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
 
 
-// I64gatherEpi321: Gather 32-bit integers from memory using 64-bit indices.
+// M256I64gatherEpi32: Gather 32-bit integers from memory using 64-bit indices.
 // 32-bit elements are loaded from addresses starting at 'base_addr' and offset
 // by each 64-bit element in 'vindex' (each index is scaled by the factor in
 // 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
@@ -1669,14 +1671,14 @@ func maskI64gatherEpi32(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm256_i64gather_epi32'.
 // Requires AVX2.
-func I64gatherEpi321(base_addr int, vindex x86.M256i, scale int) x86.M128i {
-	return x86.M128i(i64gatherEpi321(base_addr, [32]byte(vindex), scale))
+func M256I64gatherEpi32(base_addr int, vindex x86.M256i, scale int) x86.M128i {
+	return x86.M128i(m256I64gatherEpi32(base_addr, [32]byte(vindex), scale))
 }
 
-func i64gatherEpi321(base_addr int, vindex [32]byte, scale int) [16]byte
+func m256I64gatherEpi32(base_addr int, vindex [32]byte, scale int) [16]byte
 
 
-// MaskI64gatherEpi321: Gather 32-bit integers from memory using 64-bit
+// M256MaskI64gatherEpi32: Gather 32-bit integers from memory using 64-bit
 // indices. 32-bit elements are loaded from addresses starting at 'base_addr'
 // and offset by each 64-bit element in 'vindex' (each index is scaled by the
 // factor in 'scale'). Gathered elements are merged into 'dst' using 'mask'
@@ -1698,11 +1700,11 @@ func i64gatherEpi321(base_addr int, vindex [32]byte, scale int) [16]byte
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm256_mask_i64gather_epi32'.
 // Requires AVX2.
-func MaskI64gatherEpi321(src x86.M128i, base_addr int, vindex x86.M256i, mask x86.M128i, scale int) x86.M128i {
-	return x86.M128i(maskI64gatherEpi321([16]byte(src), base_addr, [32]byte(vindex), [16]byte(mask), scale))
+func M256MaskI64gatherEpi32(src x86.M128i, base_addr int, vindex x86.M256i, mask x86.M128i, scale int) x86.M128i {
+	return x86.M128i(m256MaskI64gatherEpi32([16]byte(src), base_addr, [32]byte(vindex), [16]byte(mask), scale))
 }
 
-func maskI64gatherEpi321(src [16]byte, base_addr int, vindex [32]byte, mask [16]byte, scale int) [16]byte
+func m256MaskI64gatherEpi32(src [16]byte, base_addr int, vindex [32]byte, mask [16]byte, scale int) [16]byte
 
 
 // I64gatherEpi64: Gather 64-bit integers from memory using 64-bit indices.
@@ -1754,7 +1756,7 @@ func MaskI64gatherEpi64(src x86.M128i, base_addr int, vindex x86.M128i, mask x86
 func maskI64gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]byte, scale int) [16]byte
 
 
-// I64gatherEpi641: Gather 64-bit integers from memory using 64-bit indices.
+// M256I64gatherEpi64: Gather 64-bit integers from memory using 64-bit indices.
 // 64-bit elements are loaded from addresses starting at 'base_addr' and offset
 // by each 64-bit element in 'vindex' (each index is scaled by the factor in
 // 'scale'). Gathered elements are merged into 'dst'. 'scale' should be 1, 2, 4
@@ -1768,14 +1770,14 @@ func maskI64gatherEpi64(src [16]byte, base_addr int, vindex [16]byte, mask [16]b
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm256_i64gather_epi64'.
 // Requires AVX2.
-func I64gatherEpi641(base_addr int, vindex x86.M256i, scale int) x86.M256i {
-	return x86.M256i(i64gatherEpi641(base_addr, [32]byte(vindex), scale))
+func M256I64gatherEpi64(base_addr int, vindex x86.M256i, scale int) x86.M256i {
+	return x86.M256i(m256I64gatherEpi64(base_addr, [32]byte(vindex), scale))
 }
 
-func i64gatherEpi641(base_addr int, vindex [32]byte, scale int) [32]byte
+func m256I64gatherEpi64(base_addr int, vindex [32]byte, scale int) [32]byte
 
 
-// MaskI64gatherEpi641: Gather 64-bit integers from memory using 64-bit
+// M256MaskI64gatherEpi64: Gather 64-bit integers from memory using 64-bit
 // indices. 64-bit elements are loaded from addresses starting at 'base_addr'
 // and offset by each 64-bit element in 'vindex' (each index is scaled by the
 // factor in 'scale'). Gathered elements are merged into 'dst' using 'mask'
@@ -1796,11 +1798,11 @@ func i64gatherEpi641(base_addr int, vindex [32]byte, scale int) [32]byte
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm256_mask_i64gather_epi64'.
 // Requires AVX2.
-func MaskI64gatherEpi641(src x86.M256i, base_addr int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
-	return x86.M256i(maskI64gatherEpi641([32]byte(src), base_addr, [32]byte(vindex), [32]byte(mask), scale))
+func M256MaskI64gatherEpi64(src x86.M256i, base_addr int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
+	return x86.M256i(m256MaskI64gatherEpi64([32]byte(src), base_addr, [32]byte(vindex), [32]byte(mask), scale))
 }
 
-func maskI64gatherEpi641(src [32]byte, base_addr int, vindex [32]byte, mask [32]byte, scale int) [32]byte
+func m256MaskI64gatherEpi64(src [32]byte, base_addr int, vindex [32]byte, mask [32]byte, scale int) [32]byte
 
 
 // I64gatherPd: Gather double-precision (64-bit) floating-point elements from
@@ -1852,8 +1854,8 @@ func MaskI64gatherPd(src x86.M128d, base_addr float64, vindex x86.M128i, mask x8
 func maskI64gatherPd(src [2]float64, base_addr float64, vindex [16]byte, mask [2]float64, scale int) [2]float64
 
 
-// I64gatherPd1: Gather double-precision (64-bit) floating-point elements from
-// memory using 64-bit indices. 64-bit elements are loaded from addresses
+// M256I64gatherPd: Gather double-precision (64-bit) floating-point elements
+// from memory using 64-bit indices. 64-bit elements are loaded from addresses
 // starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
 // index is scaled by the factor in 'scale'). Gathered elements are merged into
 // 'dst'. 'scale' should be 1, 2, 4 or 8. 
@@ -1866,19 +1868,20 @@ func maskI64gatherPd(src [2]float64, base_addr float64, vindex [16]byte, mask [2
 //
 // Instruction: 'VGATHERQPD'. Intrinsic: '_mm256_i64gather_pd'.
 // Requires AVX2.
-func I64gatherPd1(base_addr float64, vindex x86.M256i, scale int) x86.M256d {
-	return x86.M256d(i64gatherPd1(base_addr, [32]byte(vindex), scale))
+func M256I64gatherPd(base_addr float64, vindex x86.M256i, scale int) x86.M256d {
+	return x86.M256d(m256I64gatherPd(base_addr, [32]byte(vindex), scale))
 }
 
-func i64gatherPd1(base_addr float64, vindex [32]byte, scale int) [4]float64
+func m256I64gatherPd(base_addr float64, vindex [32]byte, scale int) [4]float64
 
 
-// MaskI64gatherPd1: Gather double-precision (64-bit) floating-point elements
-// from memory using 64-bit indices. 64-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
+// M256MaskI64gatherPd: Gather double-precision (64-bit) floating-point
+// elements from memory using 64-bit indices. 64-bit elements are loaded from
+// addresses starting at 'base_addr' and offset by each 64-bit element in
+// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
+// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
+// highest bit is not set in the corresponding element). 'scale' should be 1,
+// 2, 4 or 8. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -1894,11 +1897,11 @@ func i64gatherPd1(base_addr float64, vindex [32]byte, scale int) [4]float64
 //
 // Instruction: 'VGATHERQPD'. Intrinsic: '_mm256_mask_i64gather_pd'.
 // Requires AVX2.
-func MaskI64gatherPd1(src x86.M256d, base_addr float64, vindex x86.M256i, mask x86.M256d, scale int) x86.M256d {
-	return x86.M256d(maskI64gatherPd1([4]float64(src), base_addr, [32]byte(vindex), [4]float64(mask), scale))
+func M256MaskI64gatherPd(src x86.M256d, base_addr float64, vindex x86.M256i, mask x86.M256d, scale int) x86.M256d {
+	return x86.M256d(m256MaskI64gatherPd([4]float64(src), base_addr, [32]byte(vindex), [4]float64(mask), scale))
 }
 
-func maskI64gatherPd1(src [4]float64, base_addr float64, vindex [32]byte, mask [4]float64, scale int) [4]float64
+func m256MaskI64gatherPd(src [4]float64, base_addr float64, vindex [32]byte, mask [4]float64, scale int) [4]float64
 
 
 // I64gatherPs: Gather single-precision (32-bit) floating-point elements from
@@ -1952,8 +1955,8 @@ func MaskI64gatherPs(src x86.M128, base_addr float32, vindex x86.M128i, mask x86
 func maskI64gatherPs(src [4]float32, base_addr float32, vindex [16]byte, mask [4]float32, scale int) [4]float32
 
 
-// I64gatherPs1: Gather single-precision (32-bit) floating-point elements from
-// memory using 64-bit indices. 32-bit elements are loaded from addresses
+// M256I64gatherPs: Gather single-precision (32-bit) floating-point elements
+// from memory using 64-bit indices. 32-bit elements are loaded from addresses
 // starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
 // index is scaled by the factor in 'scale'). Gathered elements are merged into
 // 'dst'. 'scale' should be 1, 2, 4 or 8. 
@@ -1967,19 +1970,20 @@ func maskI64gatherPs(src [4]float32, base_addr float32, vindex [16]byte, mask [4
 //
 // Instruction: 'VGATHERQPS'. Intrinsic: '_mm256_i64gather_ps'.
 // Requires AVX2.
-func I64gatherPs1(base_addr float32, vindex x86.M256i, scale int) x86.M128 {
-	return x86.M128(i64gatherPs1(base_addr, [32]byte(vindex), scale))
+func M256I64gatherPs(base_addr float32, vindex x86.M256i, scale int) x86.M128 {
+	return x86.M128(m256I64gatherPs(base_addr, [32]byte(vindex), scale))
 }
 
-func i64gatherPs1(base_addr float32, vindex [32]byte, scale int) [4]float32
+func m256I64gatherPs(base_addr float32, vindex [32]byte, scale int) [4]float32
 
 
-// MaskI64gatherPs1: Gather single-precision (32-bit) floating-point elements
-// from memory using 64-bit indices. 32-bit elements are loaded from addresses
-// starting at 'base_addr' and offset by each 64-bit element in 'vindex' (each
-// index is scaled by the factor in 'scale'). Gathered elements are merged into
-// 'dst' using 'mask' (elements are copied from 'src' when the highest bit is
-// not set in the corresponding element). 'scale' should be 1, 2, 4 or 8. 
+// M256MaskI64gatherPs: Gather single-precision (32-bit) floating-point
+// elements from memory using 64-bit indices. 32-bit elements are loaded from
+// addresses starting at 'base_addr' and offset by each 64-bit element in
+// 'vindex' (each index is scaled by the factor in 'scale'). Gathered elements
+// are merged into 'dst' using 'mask' (elements are copied from 'src' when the
+// highest bit is not set in the corresponding element). 'scale' should be 1,
+// 2, 4 or 8. 
 //
 //		FOR j := 0 to 3
 //			i := j*32
@@ -1996,14 +2000,14 @@ func i64gatherPs1(base_addr float32, vindex [32]byte, scale int) [4]float32
 //
 // Instruction: 'VGATHERQPS'. Intrinsic: '_mm256_mask_i64gather_ps'.
 // Requires AVX2.
-func MaskI64gatherPs1(src x86.M128, base_addr float32, vindex x86.M256i, mask x86.M128, scale int) x86.M128 {
-	return x86.M128(maskI64gatherPs1([4]float32(src), base_addr, [32]byte(vindex), [4]float32(mask), scale))
+func M256MaskI64gatherPs(src x86.M128, base_addr float32, vindex x86.M256i, mask x86.M128, scale int) x86.M128 {
+	return x86.M128(m256MaskI64gatherPs([4]float32(src), base_addr, [32]byte(vindex), [4]float32(mask), scale))
 }
 
-func maskI64gatherPs1(src [4]float32, base_addr float32, vindex [32]byte, mask [4]float32, scale int) [4]float32
+func m256MaskI64gatherPs(src [4]float32, base_addr float32, vindex [32]byte, mask [4]float32, scale int) [4]float32
 
 
-// Inserti128Si256: Copy 'a' to 'dst', then insert 128 bits (composed of
+// M256Inserti128Si256: Copy 'a' to 'dst', then insert 128 bits (composed of
 // integer data) from 'b' into 'dst' at the location specified by 'imm8'. 
 //
 //		dst[255:0] := a[255:0]
@@ -2015,16 +2019,16 @@ func maskI64gatherPs1(src [4]float32, base_addr float32, vindex [32]byte, mask [
 //
 // Instruction: 'VINSERTI128'. Intrinsic: '_mm256_inserti128_si256'.
 // Requires AVX2.
-func Inserti128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
-	return x86.M256i(inserti128Si256([32]byte(a), [16]byte(b), imm8))
+func M256Inserti128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+	return x86.M256i(m256Inserti128Si256([32]byte(a), [16]byte(b), imm8))
 }
 
-func inserti128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256Inserti128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
 
 
-// MaddEpi16: Multiply packed signed 16-bit integers in 'a' and 'b', producing
-// intermediate signed 32-bit integers. Horizontally add adjacent pairs of
-// intermediate 32-bit integers, and pack the results in 'dst'. 
+// M256MaddEpi16: Multiply packed signed 16-bit integers in 'a' and 'b',
+// producing intermediate signed 32-bit integers. Horizontally add adjacent
+// pairs of intermediate 32-bit integers, and pack the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2034,15 +2038,15 @@ func inserti128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm256_madd_epi16'.
 // Requires AVX2.
-func MaddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maddEpi16([32]byte(a), [32]byte(b)))
+func M256MaddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaddEpi16([32]byte(a), [32]byte(b)))
 }
 
-func maddEpi16(a [32]byte, b [32]byte) [32]byte
+func m256MaddEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// MaddubsEpi16: Vertically multiply each unsigned 8-bit integer from 'a' with
-// the corresponding signed 8-bit integer from 'b', producing intermediate
+// M256MaddubsEpi16: Vertically multiply each unsigned 8-bit integer from 'a'
+// with the corresponding signed 8-bit integer from 'b', producing intermediate
 // signed 16-bit integers. Horizontally add adjacent pairs of intermediate
 // signed 16-bit integers, and pack the saturated results in 'dst'. 
 //
@@ -2054,11 +2058,11 @@ func maddEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm256_maddubs_epi16'.
 // Requires AVX2.
-func MaddubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maddubsEpi16([32]byte(a), [32]byte(b)))
+func M256MaddubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaddubsEpi16([32]byte(a), [32]byte(b)))
 }
 
-func maddubsEpi16(a [32]byte, b [32]byte) [32]byte
+func m256MaddubsEpi16(a [32]byte, b [32]byte) [32]byte
 
 
 // MaskloadEpi32: Load packed 32-bit integers from memory into 'dst' using
@@ -2084,7 +2088,7 @@ func MaskloadEpi32(mem_addr int, mask x86.M128i) x86.M128i {
 func maskloadEpi32(mem_addr int, mask [16]byte) [16]byte
 
 
-// MaskloadEpi321: Load packed 32-bit integers from memory into 'dst' using
+// M256MaskloadEpi32: Load packed 32-bit integers from memory into 'dst' using
 // 'mask' (elements are zeroed out when the highest bit is not set in the
 // corresponding element). 
 //
@@ -2100,11 +2104,11 @@ func maskloadEpi32(mem_addr int, mask [16]byte) [16]byte
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm256_maskload_epi32'.
 // Requires AVX2.
-func MaskloadEpi321(mem_addr int, mask x86.M256i) x86.M256i {
-	return x86.M256i(maskloadEpi321(mem_addr, [32]byte(mask)))
+func M256MaskloadEpi32(mem_addr int, mask x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskloadEpi32(mem_addr, [32]byte(mask)))
 }
 
-func maskloadEpi321(mem_addr int, mask [32]byte) [32]byte
+func m256MaskloadEpi32(mem_addr int, mask [32]byte) [32]byte
 
 
 // MaskloadEpi64: Load packed 64-bit integers from memory into 'dst' using
@@ -2130,7 +2134,7 @@ func MaskloadEpi64(mem_addr int, mask x86.M128i) x86.M128i {
 func maskloadEpi64(mem_addr int, mask [16]byte) [16]byte
 
 
-// MaskloadEpi641: Load packed 64-bit integers from memory into 'dst' using
+// M256MaskloadEpi64: Load packed 64-bit integers from memory into 'dst' using
 // 'mask' (elements are zeroed out when the highest bit is not set in the
 // corresponding element). 
 //
@@ -2146,11 +2150,11 @@ func maskloadEpi64(mem_addr int, mask [16]byte) [16]byte
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm256_maskload_epi64'.
 // Requires AVX2.
-func MaskloadEpi641(mem_addr int, mask x86.M256i) x86.M256i {
-	return x86.M256i(maskloadEpi641(mem_addr, [32]byte(mask)))
+func M256MaskloadEpi64(mem_addr int, mask x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskloadEpi64(mem_addr, [32]byte(mask)))
 }
 
-func maskloadEpi641(mem_addr int, mask [32]byte) [32]byte
+func m256MaskloadEpi64(mem_addr int, mask [32]byte) [32]byte
 
 
 // MaskstoreEpi32: Store packed 32-bit integers from 'a' into memory using
@@ -2173,7 +2177,7 @@ func MaskstoreEpi32(mem_addr int, mask x86.M128i, a x86.M128i)  {
 func maskstoreEpi32(mem_addr int, mask [16]byte, a [16]byte) 
 
 
-// MaskstoreEpi321: Store packed 32-bit integers from 'a' into memory using
+// M256MaskstoreEpi32: Store packed 32-bit integers from 'a' into memory using
 // 'mask' (elements are not stored when the highest bit is not set in the
 // corresponding element). 
 //
@@ -2186,11 +2190,11 @@ func maskstoreEpi32(mem_addr int, mask [16]byte, a [16]byte)
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm256_maskstore_epi32'.
 // Requires AVX2.
-func MaskstoreEpi321(mem_addr int, mask x86.M256i, a x86.M256i)  {
-	maskstoreEpi321(mem_addr, [32]byte(mask), [32]byte(a))
+func M256MaskstoreEpi32(mem_addr int, mask x86.M256i, a x86.M256i)  {
+	m256MaskstoreEpi32(mem_addr, [32]byte(mask), [32]byte(a))
 }
 
-func maskstoreEpi321(mem_addr int, mask [32]byte, a [32]byte) 
+func m256MaskstoreEpi32(mem_addr int, mask [32]byte, a [32]byte) 
 
 
 // MaskstoreEpi64: Store packed 64-bit integers from 'a' into memory using
@@ -2213,7 +2217,7 @@ func MaskstoreEpi64(mem_addr int64, mask x86.M128i, a x86.M128i)  {
 func maskstoreEpi64(mem_addr int64, mask [16]byte, a [16]byte) 
 
 
-// MaskstoreEpi641: Store packed 64-bit integers from 'a' into memory using
+// M256MaskstoreEpi64: Store packed 64-bit integers from 'a' into memory using
 // 'mask' (elements are not stored when the highest bit is not set in the
 // corresponding element). 
 //
@@ -2226,15 +2230,15 @@ func maskstoreEpi64(mem_addr int64, mask [16]byte, a [16]byte)
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm256_maskstore_epi64'.
 // Requires AVX2.
-func MaskstoreEpi641(mem_addr int64, mask x86.M256i, a x86.M256i)  {
-	maskstoreEpi641(mem_addr, [32]byte(mask), [32]byte(a))
+func M256MaskstoreEpi64(mem_addr int64, mask x86.M256i, a x86.M256i)  {
+	m256MaskstoreEpi64(mem_addr, [32]byte(mask), [32]byte(a))
 }
 
-func maskstoreEpi641(mem_addr int64, mask [32]byte, a [32]byte) 
+func m256MaskstoreEpi64(mem_addr int64, mask [32]byte, a [32]byte) 
 
 
-// MaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
-// maximum values in 'dst'. 
+// M256MaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
+// packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -2248,15 +2252,15 @@ func maskstoreEpi641(mem_addr int64, mask [32]byte, a [32]byte)
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm256_max_epi16'.
 // Requires AVX2.
-func MaxEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maxEpi16([32]byte(a), [32]byte(b)))
+func M256MaxEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaxEpi16([32]byte(a), [32]byte(b)))
 }
 
-func maxEpi16(a [32]byte, b [32]byte) [32]byte
+func m256MaxEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// MaxEpi32: Compare packed 32-bit integers in 'a' and 'b', and store packed
-// maximum values in 'dst'. 
+// M256MaxEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
+// packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2270,14 +2274,14 @@ func maxEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm256_max_epi32'.
 // Requires AVX2.
-func MaxEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maxEpi32([32]byte(a), [32]byte(b)))
+func M256MaxEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaxEpi32([32]byte(a), [32]byte(b)))
 }
 
-func maxEpi32(a [32]byte, b [32]byte) [32]byte
+func m256MaxEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// MaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
+// M256MaxEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
 // maximum values in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -2292,15 +2296,15 @@ func maxEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm256_max_epi8'.
 // Requires AVX2.
-func MaxEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maxEpi8([32]byte(a), [32]byte(b)))
+func M256MaxEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaxEpi8([32]byte(a), [32]byte(b)))
 }
 
-func maxEpi8(a [32]byte, b [32]byte) [32]byte
+func m256MaxEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// MaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and store
-// packed maximum values in 'dst'. 
+// M256MaxEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
+// store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -2314,15 +2318,15 @@ func maxEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm256_max_epu16'.
 // Requires AVX2.
-func MaxEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maxEpu16([32]byte(a), [32]byte(b)))
+func M256MaxEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaxEpu16([32]byte(a), [32]byte(b)))
 }
 
-func maxEpu16(a [32]byte, b [32]byte) [32]byte
+func m256MaxEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// MaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and store
-// packed maximum values in 'dst'. 
+// M256MaxEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
+// store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2336,15 +2340,15 @@ func maxEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm256_max_epu32'.
 // Requires AVX2.
-func MaxEpu32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maxEpu32([32]byte(a), [32]byte(b)))
+func M256MaxEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaxEpu32([32]byte(a), [32]byte(b)))
 }
 
-func maxEpu32(a [32]byte, b [32]byte) [32]byte
+func m256MaxEpu32(a [32]byte, b [32]byte) [32]byte
 
 
-// MaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
-// packed maximum values in 'dst'. 
+// M256MaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// store packed maximum values in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -2358,15 +2362,15 @@ func maxEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm256_max_epu8'.
 // Requires AVX2.
-func MaxEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maxEpu8([32]byte(a), [32]byte(b)))
+func M256MaxEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaxEpu8([32]byte(a), [32]byte(b)))
 }
 
-func maxEpu8(a [32]byte, b [32]byte) [32]byte
+func m256MaxEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// MinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
-// minimum values in 'dst'. 
+// M256MinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store
+// packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -2380,15 +2384,15 @@ func maxEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm256_min_epi16'.
 // Requires AVX2.
-func MinEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(minEpi16([32]byte(a), [32]byte(b)))
+func M256MinEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MinEpi16([32]byte(a), [32]byte(b)))
 }
 
-func minEpi16(a [32]byte, b [32]byte) [32]byte
+func m256MinEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// MinEpi32: Compare packed 32-bit integers in 'a' and 'b', and store packed
-// minimum values in 'dst'. 
+// M256MinEpi32: Compare packed 32-bit integers in 'a' and 'b', and store
+// packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2402,14 +2406,14 @@ func minEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm256_min_epi32'.
 // Requires AVX2.
-func MinEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(minEpi32([32]byte(a), [32]byte(b)))
+func M256MinEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MinEpi32([32]byte(a), [32]byte(b)))
 }
 
-func minEpi32(a [32]byte, b [32]byte) [32]byte
+func m256MinEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// MinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
+// M256MinEpi8: Compare packed 8-bit integers in 'a' and 'b', and store packed
 // minimum values in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -2424,15 +2428,15 @@ func minEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm256_min_epi8'.
 // Requires AVX2.
-func MinEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(minEpi8([32]byte(a), [32]byte(b)))
+func M256MinEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MinEpi8([32]byte(a), [32]byte(b)))
 }
 
-func minEpi8(a [32]byte, b [32]byte) [32]byte
+func m256MinEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// MinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and store
-// packed minimum values in 'dst'. 
+// M256MinEpu16: Compare packed unsigned 16-bit integers in 'a' and 'b', and
+// store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -2446,15 +2450,15 @@ func minEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm256_min_epu16'.
 // Requires AVX2.
-func MinEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(minEpu16([32]byte(a), [32]byte(b)))
+func M256MinEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MinEpu16([32]byte(a), [32]byte(b)))
 }
 
-func minEpu16(a [32]byte, b [32]byte) [32]byte
+func m256MinEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// MinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and store
-// packed minimum values in 'dst'. 
+// M256MinEpu32: Compare packed unsigned 32-bit integers in 'a' and 'b', and
+// store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2468,15 +2472,15 @@ func minEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm256_min_epu32'.
 // Requires AVX2.
-func MinEpu32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(minEpu32([32]byte(a), [32]byte(b)))
+func M256MinEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MinEpu32([32]byte(a), [32]byte(b)))
 }
 
-func minEpu32(a [32]byte, b [32]byte) [32]byte
+func m256MinEpu32(a [32]byte, b [32]byte) [32]byte
 
 
-// MinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
-// packed minimum values in 'dst'. 
+// M256MinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and
+// store packed minimum values in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -2490,14 +2494,14 @@ func minEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm256_min_epu8'.
 // Requires AVX2.
-func MinEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(minEpu8([32]byte(a), [32]byte(b)))
+func M256MinEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MinEpu8([32]byte(a), [32]byte(b)))
 }
 
-func minEpu8(a [32]byte, b [32]byte) [32]byte
+func m256MinEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// MovemaskEpi8: Create mask from the most significant bit of each 8-bit
+// M256MovemaskEpi8: Create mask from the most significant bit of each 8-bit
 // element in 'a', and store the result in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -2507,16 +2511,16 @@ func minEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMOVMSKB'. Intrinsic: '_mm256_movemask_epi8'.
 // Requires AVX2.
-func MovemaskEpi8(a x86.M256i) int {
-	return int(movemaskEpi8([32]byte(a)))
+func M256MovemaskEpi8(a x86.M256i) int {
+	return int(m256MovemaskEpi8([32]byte(a)))
 }
 
-func movemaskEpi8(a [32]byte) int
+func m256MovemaskEpi8(a [32]byte) int
 
 
-// MpsadbwEpu8: Compute the sum of absolute differences (SADs) of quadruplets
-// of unsigned 8-bit integers in 'a' compared to those in 'b', and store the
-// 16-bit results in 'dst'.
+// M256MpsadbwEpu8: Compute the sum of absolute differences (SADs) of
+// quadruplets of unsigned 8-bit integers in 'a' compared to those in 'b', and
+// store the 16-bit results in 'dst'.
 // 	Eight SADs are performed for each 128-bit lane using one quadruplet from
 // 'b' and eight quadruplets from 'a'. One quadruplet is selected from 'b'
 // starting at on the offset specified in 'imm8'. Eight quadruplets are formed
@@ -2541,15 +2545,15 @@ func movemaskEpi8(a [32]byte) int
 //
 // Instruction: 'VMPSADBW'. Intrinsic: '_mm256_mpsadbw_epu8'.
 // Requires AVX2.
-func MpsadbwEpu8(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(mpsadbwEpu8([32]byte(a), [32]byte(b), imm8))
+func M256MpsadbwEpu8(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256MpsadbwEpu8([32]byte(a), [32]byte(b), imm8))
 }
 
-func mpsadbwEpu8(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MpsadbwEpu8(a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
-// MulEpi32: Multiply the low 32-bit integers from each packed 64-bit element
-// in 'a' and 'b', and store the signed 64-bit results in 'dst'. 
+// M256MulEpi32: Multiply the low 32-bit integers from each packed 64-bit
+// element in 'a' and 'b', and store the signed 64-bit results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -2559,15 +2563,16 @@ func mpsadbwEpu8(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm256_mul_epi32'.
 // Requires AVX2.
-func MulEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(mulEpi32([32]byte(a), [32]byte(b)))
+func M256MulEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MulEpi32([32]byte(a), [32]byte(b)))
 }
 
-func mulEpi32(a [32]byte, b [32]byte) [32]byte
+func m256MulEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// MulEpu32: Multiply the low unsigned 32-bit integers from each packed 64-bit
-// element in 'a' and 'b', and store the unsigned 64-bit results in 'dst'. 
+// M256MulEpu32: Multiply the low unsigned 32-bit integers from each packed
+// 64-bit element in 'a' and 'b', and store the unsigned 64-bit results in
+// 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -2577,16 +2582,16 @@ func mulEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm256_mul_epu32'.
 // Requires AVX2.
-func MulEpu32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(mulEpu32([32]byte(a), [32]byte(b)))
+func M256MulEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MulEpu32([32]byte(a), [32]byte(b)))
 }
 
-func mulEpu32(a [32]byte, b [32]byte) [32]byte
+func m256MulEpu32(a [32]byte, b [32]byte) [32]byte
 
 
-// MulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
-// intermediate 32-bit integers, and store the high 16 bits of the intermediate
-// integers in 'dst'. 
+// M256MulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
+// producing intermediate 32-bit integers, and store the high 16 bits of the
+// intermediate integers in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -2597,14 +2602,14 @@ func mulEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm256_mulhi_epi16'.
 // Requires AVX2.
-func MulhiEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(mulhiEpi16([32]byte(a), [32]byte(b)))
+func M256MulhiEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MulhiEpi16([32]byte(a), [32]byte(b)))
 }
 
-func mulhiEpi16(a [32]byte, b [32]byte) [32]byte
+func m256MulhiEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// MulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
+// M256MulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
 // producing intermediate 32-bit integers, and store the high 16 bits of the
 // intermediate integers in 'dst'. 
 //
@@ -2617,14 +2622,14 @@ func mulhiEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm256_mulhi_epu16'.
 // Requires AVX2.
-func MulhiEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(mulhiEpu16([32]byte(a), [32]byte(b)))
+func M256MulhiEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MulhiEpu16([32]byte(a), [32]byte(b)))
 }
 
-func mulhiEpu16(a [32]byte, b [32]byte) [32]byte
+func m256MulhiEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// MulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
+// M256MulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
 // intermediate signed 32-bit integers. Truncate each intermediate integer to
 // the 18 most significant bits, round by adding 1, and store bits [16:1] to
 // 'dst'. 
@@ -2638,16 +2643,16 @@ func mulhiEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm256_mulhrs_epi16'.
 // Requires AVX2.
-func MulhrsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(mulhrsEpi16([32]byte(a), [32]byte(b)))
+func M256MulhrsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MulhrsEpi16([32]byte(a), [32]byte(b)))
 }
 
-func mulhrsEpi16(a [32]byte, b [32]byte) [32]byte
+func m256MulhrsEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// MulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
-// intermediate 32-bit integers, and store the low 16 bits of the intermediate
-// integers in 'dst'. 
+// M256MulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b',
+// producing intermediate 32-bit integers, and store the low 16 bits of the
+// intermediate integers in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -2658,16 +2663,16 @@ func mulhrsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm256_mullo_epi16'.
 // Requires AVX2.
-func MulloEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(mulloEpi16([32]byte(a), [32]byte(b)))
+func M256MulloEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MulloEpi16([32]byte(a), [32]byte(b)))
 }
 
-func mulloEpi16(a [32]byte, b [32]byte) [32]byte
+func m256MulloEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// MulloEpi32: Multiply the packed 32-bit integers in 'a' and 'b', producing
-// intermediate 64-bit integers, and store the low 32 bits of the intermediate
-// integers in 'dst'. 
+// M256MulloEpi32: Multiply the packed 32-bit integers in 'a' and 'b',
+// producing intermediate 64-bit integers, and store the low 32 bits of the
+// intermediate integers in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2678,30 +2683,30 @@ func mulloEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm256_mullo_epi32'.
 // Requires AVX2.
-func MulloEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(mulloEpi32([32]byte(a), [32]byte(b)))
+func M256MulloEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MulloEpi32([32]byte(a), [32]byte(b)))
 }
 
-func mulloEpi32(a [32]byte, b [32]byte) [32]byte
+func m256MulloEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// OrSi256: Compute the bitwise OR of 256 bits (representing integer data) in
-// 'a' and 'b', and store the result in 'dst'. 
+// M256OrSi256: Compute the bitwise OR of 256 bits (representing integer data)
+// in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[255:0] := (a[255:0] OR b[255:0])
 //		dst[MAX:256] := 0
 //
 // Instruction: 'VPOR'. Intrinsic: '_mm256_or_si256'.
 // Requires AVX2.
-func OrSi256(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(orSi256([32]byte(a), [32]byte(b)))
+func M256OrSi256(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256OrSi256([32]byte(a), [32]byte(b)))
 }
 
-func orSi256(a [32]byte, b [32]byte) [32]byte
+func m256OrSi256(a [32]byte, b [32]byte) [32]byte
 
 
-// PacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
-// integers using signed saturation, and store the results in 'dst'. 
+// M256PacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed
+// 8-bit integers using signed saturation, and store the results in 'dst'. 
 //
 //		dst[7:0] := Saturate_Int16_To_Int8 (a[15:0])
 //		dst[15:8] := Saturate_Int16_To_Int8 (a[31:16])
@@ -2739,15 +2744,15 @@ func orSi256(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm256_packs_epi16'.
 // Requires AVX2.
-func PacksEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(packsEpi16([32]byte(a), [32]byte(b)))
+func M256PacksEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256PacksEpi16([32]byte(a), [32]byte(b)))
 }
 
-func packsEpi16(a [32]byte, b [32]byte) [32]byte
+func m256PacksEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// PacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed 16-bit
-// integers using signed saturation, and store the results in 'dst'. 
+// M256PacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
+// 16-bit integers using signed saturation, and store the results in 'dst'. 
 //
 //		dst[15:0] := Saturate_Int32_To_Int16 (a[31:0])
 //		dst[31:16] := Saturate_Int32_To_Int16 (a[63:32])
@@ -2769,15 +2774,15 @@ func packsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm256_packs_epi32'.
 // Requires AVX2.
-func PacksEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(packsEpi32([32]byte(a), [32]byte(b)))
+func M256PacksEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256PacksEpi32([32]byte(a), [32]byte(b)))
 }
 
-func packsEpi32(a [32]byte, b [32]byte) [32]byte
+func m256PacksEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// PackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
-// integers using unsigned saturation, and store the results in 'dst'. 
+// M256PackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed
+// 8-bit integers using unsigned saturation, and store the results in 'dst'. 
 //
 //		dst[7:0] := Saturate_Int16_To_UnsignedInt8 (a[15:0])
 //		dst[15:8] := Saturate_Int16_To_UnsignedInt8 (a[31:16])
@@ -2815,14 +2820,14 @@ func packsEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm256_packus_epi16'.
 // Requires AVX2.
-func PackusEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(packusEpi16([32]byte(a), [32]byte(b)))
+func M256PackusEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256PackusEpi16([32]byte(a), [32]byte(b)))
 }
 
-func packusEpi16(a [32]byte, b [32]byte) [32]byte
+func m256PackusEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// PackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
+// M256PackusEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed
 // 16-bit integers using unsigned saturation, and store the results in 'dst'. 
 //
 //		dst[15:0] := Saturate_Int32_To_UnsignedInt16 (a[31:0])
@@ -2845,15 +2850,15 @@ func packusEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm256_packus_epi32'.
 // Requires AVX2.
-func PackusEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(packusEpi32([32]byte(a), [32]byte(b)))
+func M256PackusEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256PackusEpi32([32]byte(a), [32]byte(b)))
 }
 
-func packusEpi32(a [32]byte, b [32]byte) [32]byte
+func m256PackusEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// Permute2x128Si256: Shuffle 128-bits (composed of integer data) selected by
-// 'imm8' from 'a' and 'b', and store the results in 'dst'. 
+// M256Permute2x128Si256: Shuffle 128-bits (composed of integer data) selected
+// by 'imm8' from 'a' and 'b', and store the results in 'dst'. 
 //
 //		SELECT4(src1, src2, control){
 //			CASE(control[1:0])
@@ -2874,14 +2879,14 @@ func packusEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPERM2I128'. Intrinsic: '_mm256_permute2x128_si256'.
 // Requires AVX2.
-func Permute2x128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(permute2x128Si256([32]byte(a), [32]byte(b), imm8))
+func M256Permute2x128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256Permute2x128Si256([32]byte(a), [32]byte(b), imm8))
 }
 
-func permute2x128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256Permute2x128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
 
 
-// Permute4x64Epi64: Shuffle 64-bit integers in 'a' across lanes using the
+// M256Permute4x64Epi64: Shuffle 64-bit integers in 'a' across lanes using the
 // control in 'imm8', and store the results in 'dst'. 
 //
 //		SELECT4(src, control){
@@ -2902,15 +2907,15 @@ func permute2x128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm256_permute4x64_epi64'.
 // Requires AVX2.
-func Permute4x64Epi64(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(permute4x64Epi64([32]byte(a), imm8))
+func M256Permute4x64Epi64(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256Permute4x64Epi64([32]byte(a), imm8))
 }
 
-func permute4x64Epi64(a [32]byte, imm8 int) [32]byte
+func m256Permute4x64Epi64(a [32]byte, imm8 int) [32]byte
 
 
-// Permute4x64Pd: Shuffle double-precision (64-bit) floating-point elements in
-// 'a' across lanes using the control in 'imm8', and store the results in
+// M256Permute4x64Pd: Shuffle double-precision (64-bit) floating-point elements
+// in 'a' across lanes using the control in 'imm8', and store the results in
 // 'dst'. 
 //
 //		SELECT4(src, control){
@@ -2931,15 +2936,15 @@ func permute4x64Epi64(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm256_permute4x64_pd'.
 // Requires AVX2.
-func Permute4x64Pd(a x86.M256d, imm8 int) x86.M256d {
-	return x86.M256d(permute4x64Pd([4]float64(a), imm8))
+func M256Permute4x64Pd(a x86.M256d, imm8 int) x86.M256d {
+	return x86.M256d(m256Permute4x64Pd([4]float64(a), imm8))
 }
 
-func permute4x64Pd(a [4]float64, imm8 int) [4]float64
+func m256Permute4x64Pd(a [4]float64, imm8 int) [4]float64
 
 
-// Permutevar8x32Epi32: Shuffle 32-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst'. 
+// M256Permutevar8x32Epi32: Shuffle 32-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2950,15 +2955,15 @@ func permute4x64Pd(a [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm256_permutevar8x32_epi32'.
 // Requires AVX2.
-func Permutevar8x32Epi32(a x86.M256i, idx x86.M256i) x86.M256i {
-	return x86.M256i(permutevar8x32Epi32([32]byte(a), [32]byte(idx)))
+func M256Permutevar8x32Epi32(a x86.M256i, idx x86.M256i) x86.M256i {
+	return x86.M256i(m256Permutevar8x32Epi32([32]byte(a), [32]byte(idx)))
 }
 
-func permutevar8x32Epi32(a [32]byte, idx [32]byte) [32]byte
+func m256Permutevar8x32Epi32(a [32]byte, idx [32]byte) [32]byte
 
 
-// Permutevar8x32Ps: Shuffle single-precision (32-bit) floating-point elements
-// in 'a' across lanes using the corresponding index in 'idx'. 
+// M256Permutevar8x32Ps: Shuffle single-precision (32-bit) floating-point
+// elements in 'a' across lanes using the corresponding index in 'idx'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -2969,17 +2974,17 @@ func permutevar8x32Epi32(a [32]byte, idx [32]byte) [32]byte
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm256_permutevar8x32_ps'.
 // Requires AVX2.
-func Permutevar8x32Ps(a x86.M256, idx x86.M256i) x86.M256 {
-	return x86.M256(permutevar8x32Ps([8]float32(a), [32]byte(idx)))
+func M256Permutevar8x32Ps(a x86.M256, idx x86.M256i) x86.M256 {
+	return x86.M256(m256Permutevar8x32Ps([8]float32(a), [32]byte(idx)))
 }
 
-func permutevar8x32Ps(a [8]float32, idx [32]byte) [8]float32
+func m256Permutevar8x32Ps(a [8]float32, idx [32]byte) [8]float32
 
 
-// SadEpu8: Compute the absolute differences of packed unsigned 8-bit integers
-// in 'a' and 'b', then horizontally sum each consecutive 8 differences to
-// produce four unsigned 16-bit integers, and pack these unsigned 16-bit
-// integers in the low 16 bits of 64-bit elements in 'dst'. 
+// M256SadEpu8: Compute the absolute differences of packed unsigned 8-bit
+// integers in 'a' and 'b', then horizontally sum each consecutive 8
+// differences to produce four unsigned 16-bit integers, and pack these
+// unsigned 16-bit integers in the low 16 bits of 64-bit elements in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -2994,15 +2999,15 @@ func permutevar8x32Ps(a [8]float32, idx [32]byte) [8]float32
 //
 // Instruction: 'VPSADBW'. Intrinsic: '_mm256_sad_epu8'.
 // Requires AVX2.
-func SadEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(sadEpu8([32]byte(a), [32]byte(b)))
+func M256SadEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SadEpu8([32]byte(a), [32]byte(b)))
 }
 
-func sadEpu8(a [32]byte, b [32]byte) [32]byte
+func m256SadEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// ShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes using the
-// control in 'imm8', and store the results in 'dst'. 
+// M256ShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes using
+// the control in 'imm8', and store the results in 'dst'. 
 //
 //		SELECT4(src, control){
 //			CASE(control[1:0])
@@ -3026,16 +3031,16 @@ func sadEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm256_shuffle_epi32'.
 // Requires AVX2.
-func ShuffleEpi32(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(shuffleEpi32([32]byte(a), imm8))
+func M256ShuffleEpi32(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256ShuffleEpi32([32]byte(a), imm8))
 }
 
-func shuffleEpi32(a [32]byte, imm8 int) [32]byte
+func m256ShuffleEpi32(a [32]byte, imm8 int) [32]byte
 
 
-// ShuffleEpi8: Shuffle 8-bit integers in 'a' within 128-bit lanes according to
-// shuffle control mask in the corresponding 8-bit element of 'b', and store
-// the results in 'dst'. 
+// M256ShuffleEpi8: Shuffle 8-bit integers in 'a' within 128-bit lanes
+// according to shuffle control mask in the corresponding 8-bit element of 'b',
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*8
@@ -3056,17 +3061,17 @@ func shuffleEpi32(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm256_shuffle_epi8'.
 // Requires AVX2.
-func ShuffleEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(shuffleEpi8([32]byte(a), [32]byte(b)))
+func M256ShuffleEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256ShuffleEpi8([32]byte(a), [32]byte(b)))
 }
 
-func shuffleEpi8(a [32]byte, b [32]byte) [32]byte
+func m256ShuffleEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// ShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 128-bit lanes
-// of 'a' using the control in 'imm8'. Store the results in the high 64 bits of
-// 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being copied
-// from from 'a' to 'dst'. 
+// M256ShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 128-bit
+// lanes of 'a' using the control in 'imm8'. Store the results in the high 64
+// bits of 128-bit lanes of 'dst', with the low 64 bits of 128-bit lanes being
+// copied from from 'a' to 'dst'. 
 //
 //		dst[63:0] := a[63:0]
 //		dst[79:64] := (a >> (imm8[1:0] * 16))[79:64]
@@ -3082,17 +3087,17 @@ func shuffleEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm256_shufflehi_epi16'.
 // Requires AVX2.
-func ShufflehiEpi16(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(shufflehiEpi16([32]byte(a), imm8))
+func M256ShufflehiEpi16(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256ShufflehiEpi16([32]byte(a), imm8))
 }
 
-func shufflehiEpi16(a [32]byte, imm8 int) [32]byte
+func m256ShufflehiEpi16(a [32]byte, imm8 int) [32]byte
 
 
-// ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 128-bit lanes
-// of 'a' using the control in 'imm8'. Store the results in the low 64 bits of
-// 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being copied
-// from from 'a' to 'dst'. 
+// M256ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 128-bit
+// lanes of 'a' using the control in 'imm8'. Store the results in the low 64
+// bits of 128-bit lanes of 'dst', with the high 64 bits of 128-bit lanes being
+// copied from from 'a' to 'dst'. 
 //
 //		dst[15:0] := (a >> (imm8[1:0] * 16))[15:0]
 //		dst[31:16] := (a >> (imm8[3:2] * 16))[15:0]
@@ -3108,14 +3113,14 @@ func shufflehiEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm256_shufflelo_epi16'.
 // Requires AVX2.
-func ShuffleloEpi16(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(shuffleloEpi16([32]byte(a), imm8))
+func M256ShuffleloEpi16(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256ShuffleloEpi16([32]byte(a), imm8))
 }
 
-func shuffleloEpi16(a [32]byte, imm8 int) [32]byte
+func m256ShuffleloEpi16(a [32]byte, imm8 int) [32]byte
 
 
-// SignEpi16: Negate packed 16-bit integers in 'a' when the corresponding
+// M256SignEpi16: Negate packed 16-bit integers in 'a' when the corresponding
 // signed 16-bit integer in 'b' is negative, and store the results in 'dst'.
 // Element in 'dst' are zeroed out when the corresponding element in 'b' is
 // zero. 
@@ -3134,14 +3139,14 @@ func shuffleloEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSIGNW'. Intrinsic: '_mm256_sign_epi16'.
 // Requires AVX2.
-func SignEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(signEpi16([32]byte(a), [32]byte(b)))
+func M256SignEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SignEpi16([32]byte(a), [32]byte(b)))
 }
 
-func signEpi16(a [32]byte, b [32]byte) [32]byte
+func m256SignEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// SignEpi32: Negate packed 32-bit integers in 'a' when the corresponding
+// M256SignEpi32: Negate packed 32-bit integers in 'a' when the corresponding
 // signed 32-bit integer in 'b' is negative, and store the results in 'dst'.
 // Element in 'dst' are zeroed out when the corresponding element in 'b' is
 // zero. 
@@ -3160,16 +3165,17 @@ func signEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSIGND'. Intrinsic: '_mm256_sign_epi32'.
 // Requires AVX2.
-func SignEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(signEpi32([32]byte(a), [32]byte(b)))
+func M256SignEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SignEpi32([32]byte(a), [32]byte(b)))
 }
 
-func signEpi32(a [32]byte, b [32]byte) [32]byte
+func m256SignEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// SignEpi8: Negate packed 8-bit integers in 'a' when the corresponding signed
-// 8-bit integer in 'b' is negative, and store the results in 'dst'. Element in
-// 'dst' are zeroed out when the corresponding element in 'b' is zero. 
+// M256SignEpi8: Negate packed 8-bit integers in 'a' when the corresponding
+// signed 8-bit integer in 'b' is negative, and store the results in 'dst'.
+// Element in 'dst' are zeroed out when the corresponding element in 'b' is
+// zero. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -3185,15 +3191,15 @@ func signEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSIGNB'. Intrinsic: '_mm256_sign_epi8'.
 // Requires AVX2.
-func SignEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(signEpi8([32]byte(a), [32]byte(b)))
+func M256SignEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SignEpi8([32]byte(a), [32]byte(b)))
 }
 
-func signEpi8(a [32]byte, b [32]byte) [32]byte
+func m256SignEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// SllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while shifting
-// in zeros, and store the results in 'dst'. 
+// M256SllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3207,15 +3213,15 @@ func signEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_sll_epi16'.
 // Requires AVX2.
-func SllEpi16(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(sllEpi16([32]byte(a), [16]byte(count)))
+func M256SllEpi16(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SllEpi16([32]byte(a), [16]byte(count)))
 }
 
-func sllEpi16(a [32]byte, count [16]byte) [32]byte
+func m256SllEpi16(a [32]byte, count [16]byte) [32]byte
 
 
-// SllEpi32: Shift packed 32-bit integers in 'a' left by 'count' while shifting
-// in zeros, and store the results in 'dst'. 
+// M256SllEpi32: Shift packed 32-bit integers in 'a' left by 'count' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3229,15 +3235,15 @@ func sllEpi16(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm256_sll_epi32'.
 // Requires AVX2.
-func SllEpi32(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(sllEpi32([32]byte(a), [16]byte(count)))
+func M256SllEpi32(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SllEpi32([32]byte(a), [16]byte(count)))
 }
 
-func sllEpi32(a [32]byte, count [16]byte) [32]byte
+func m256SllEpi32(a [32]byte, count [16]byte) [32]byte
 
 
-// SllEpi64: Shift packed 64-bit integers in 'a' left by 'count' while shifting
-// in zeros, and store the results in 'dst'. 
+// M256SllEpi64: Shift packed 64-bit integers in 'a' left by 'count' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3251,15 +3257,15 @@ func sllEpi32(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm256_sll_epi64'.
 // Requires AVX2.
-func SllEpi64(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(sllEpi64([32]byte(a), [16]byte(count)))
+func M256SllEpi64(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SllEpi64([32]byte(a), [16]byte(count)))
 }
 
-func sllEpi64(a [32]byte, count [16]byte) [32]byte
+func m256SllEpi64(a [32]byte, count [16]byte) [32]byte
 
 
-// SlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while shifting
-// in zeros, and store the results in 'dst'. 
+// M256SlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3273,15 +3279,15 @@ func sllEpi64(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_slli_epi16'.
 // Requires AVX2.
-func SlliEpi16(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(slliEpi16([32]byte(a), imm8))
+func M256SlliEpi16(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SlliEpi16([32]byte(a), imm8))
 }
 
-func slliEpi16(a [32]byte, imm8 int) [32]byte
+func m256SlliEpi16(a [32]byte, imm8 int) [32]byte
 
 
-// SlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting
-// in zeros, and store the results in 'dst'. 
+// M256SlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3295,15 +3301,15 @@ func slliEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm256_slli_epi32'.
 // Requires AVX2.
-func SlliEpi32(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(slliEpi32([32]byte(a), imm8))
+func M256SlliEpi32(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SlliEpi32([32]byte(a), imm8))
 }
 
-func slliEpi32(a [32]byte, imm8 int) [32]byte
+func m256SlliEpi32(a [32]byte, imm8 int) [32]byte
 
 
-// SlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while shifting
-// in zeros, and store the results in 'dst'. 
+// M256SlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3317,15 +3323,15 @@ func slliEpi32(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm256_slli_epi64'.
 // Requires AVX2.
-func SlliEpi64(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(slliEpi64([32]byte(a), imm8))
+func M256SlliEpi64(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SlliEpi64([32]byte(a), imm8))
 }
 
-func slliEpi64(a [32]byte, imm8 int) [32]byte
+func m256SlliEpi64(a [32]byte, imm8 int) [32]byte
 
 
-// SlliSi256: Shift 128-bit lanes in 'a' left by 'imm8' bytes while shifting in
-// zeros, and store the results in 'dst'. 
+// M256SlliSi256: Shift 128-bit lanes in 'a' left by 'imm8' bytes while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		tmp := imm8[7:0]
 //		IF tmp > 15
@@ -3337,11 +3343,11 @@ func slliEpi64(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSLLDQ'. Intrinsic: '_mm256_slli_si256'.
 // Requires AVX2.
-func SlliSi256(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(slliSi256([32]byte(a), imm8))
+func M256SlliSi256(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SlliSi256([32]byte(a), imm8))
 }
 
-func slliSi256(a [32]byte, imm8 int) [32]byte
+func m256SlliSi256(a [32]byte, imm8 int) [32]byte
 
 
 // SllvEpi32: Shift packed 32-bit integers in 'a' left by the amount specified
@@ -3363,9 +3369,9 @@ func SllvEpi32(a x86.M128i, count x86.M128i) x86.M128i {
 func sllvEpi32(a [16]byte, count [16]byte) [16]byte
 
 
-// SllvEpi321: Shift packed 32-bit integers in 'a' left by the amount specified
-// by the corresponding element in 'count' while shifting in zeros, and store
-// the results in 'dst'. 
+// M256SllvEpi32: Shift packed 32-bit integers in 'a' left by the amount
+// specified by the corresponding element in 'count' while shifting in zeros,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3375,11 +3381,11 @@ func sllvEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm256_sllv_epi32'.
 // Requires AVX2.
-func SllvEpi321(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(sllvEpi321([32]byte(a), [32]byte(count)))
+func M256SllvEpi32(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SllvEpi32([32]byte(a), [32]byte(count)))
 }
 
-func sllvEpi321(a [32]byte, count [32]byte) [32]byte
+func m256SllvEpi32(a [32]byte, count [32]byte) [32]byte
 
 
 // SllvEpi64: Shift packed 64-bit integers in 'a' left by the amount specified
@@ -3401,9 +3407,9 @@ func SllvEpi64(a x86.M128i, count x86.M128i) x86.M128i {
 func sllvEpi64(a [16]byte, count [16]byte) [16]byte
 
 
-// SllvEpi641: Shift packed 64-bit integers in 'a' left by the amount specified
-// by the corresponding element in 'count' while shifting in zeros, and store
-// the results in 'dst'. 
+// M256SllvEpi64: Shift packed 64-bit integers in 'a' left by the amount
+// specified by the corresponding element in 'count' while shifting in zeros,
+// and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3413,14 +3419,14 @@ func sllvEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm256_sllv_epi64'.
 // Requires AVX2.
-func SllvEpi641(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(sllvEpi641([32]byte(a), [32]byte(count)))
+func M256SllvEpi64(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SllvEpi64([32]byte(a), [32]byte(count)))
 }
 
-func sllvEpi641(a [32]byte, count [32]byte) [32]byte
+func m256SllvEpi64(a [32]byte, count [32]byte) [32]byte
 
 
-// SraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
+// M256SraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in sign bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -3435,14 +3441,14 @@ func sllvEpi641(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_sra_epi16'.
 // Requires AVX2.
-func SraEpi16(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(sraEpi16([32]byte(a), [16]byte(count)))
+func M256SraEpi16(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SraEpi16([32]byte(a), [16]byte(count)))
 }
 
-func sraEpi16(a [32]byte, count [16]byte) [32]byte
+func m256SraEpi16(a [32]byte, count [16]byte) [32]byte
 
 
-// SraEpi32: Shift packed 32-bit integers in 'a' right by 'count' while
+// M256SraEpi32: Shift packed 32-bit integers in 'a' right by 'count' while
 // shifting in sign bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -3457,14 +3463,14 @@ func sraEpi16(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm256_sra_epi32'.
 // Requires AVX2.
-func SraEpi32(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(sraEpi32([32]byte(a), [16]byte(count)))
+func M256SraEpi32(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SraEpi32([32]byte(a), [16]byte(count)))
 }
 
-func sraEpi32(a [32]byte, count [16]byte) [32]byte
+func m256SraEpi32(a [32]byte, count [16]byte) [32]byte
 
 
-// SraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M256SraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in sign bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -3479,14 +3485,14 @@ func sraEpi32(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_srai_epi16'.
 // Requires AVX2.
-func SraiEpi16(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(sraiEpi16([32]byte(a), imm8))
+func M256SraiEpi16(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SraiEpi16([32]byte(a), imm8))
 }
 
-func sraiEpi16(a [32]byte, imm8 int) [32]byte
+func m256SraiEpi16(a [32]byte, imm8 int) [32]byte
 
 
-// SraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
+// M256SraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
 // shifting in sign bits, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -3501,11 +3507,11 @@ func sraiEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm256_srai_epi32'.
 // Requires AVX2.
-func SraiEpi32(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(sraiEpi32([32]byte(a), imm8))
+func M256SraiEpi32(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SraiEpi32([32]byte(a), imm8))
 }
 
-func sraiEpi32(a [32]byte, imm8 int) [32]byte
+func m256SraiEpi32(a [32]byte, imm8 int) [32]byte
 
 
 // SravEpi32: Shift packed 32-bit integers in 'a' right by the amount specified
@@ -3527,7 +3533,7 @@ func SravEpi32(a x86.M128i, count x86.M128i) x86.M128i {
 func sravEpi32(a [16]byte, count [16]byte) [16]byte
 
 
-// SravEpi321: Shift packed 32-bit integers in 'a' right by the amount
+// M256SravEpi32: Shift packed 32-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in sign
 // bits, and store the results in 'dst'. 
 //
@@ -3539,14 +3545,14 @@ func sravEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm256_srav_epi32'.
 // Requires AVX2.
-func SravEpi321(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(sravEpi321([32]byte(a), [32]byte(count)))
+func M256SravEpi32(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SravEpi32([32]byte(a), [32]byte(count)))
 }
 
-func sravEpi321(a [32]byte, count [32]byte) [32]byte
+func m256SravEpi32(a [32]byte, count [32]byte) [32]byte
 
 
-// SrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
+// M256SrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -3561,14 +3567,14 @@ func sravEpi321(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_srl_epi16'.
 // Requires AVX2.
-func SrlEpi16(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(srlEpi16([32]byte(a), [16]byte(count)))
+func M256SrlEpi16(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SrlEpi16([32]byte(a), [16]byte(count)))
 }
 
-func srlEpi16(a [32]byte, count [16]byte) [32]byte
+func m256SrlEpi16(a [32]byte, count [16]byte) [32]byte
 
 
-// SrlEpi32: Shift packed 32-bit integers in 'a' right by 'count' while
+// M256SrlEpi32: Shift packed 32-bit integers in 'a' right by 'count' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -3583,14 +3589,14 @@ func srlEpi16(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm256_srl_epi32'.
 // Requires AVX2.
-func SrlEpi32(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(srlEpi32([32]byte(a), [16]byte(count)))
+func M256SrlEpi32(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SrlEpi32([32]byte(a), [16]byte(count)))
 }
 
-func srlEpi32(a [32]byte, count [16]byte) [32]byte
+func m256SrlEpi32(a [32]byte, count [16]byte) [32]byte
 
 
-// SrlEpi64: Shift packed 64-bit integers in 'a' right by 'count' while
+// M256SrlEpi64: Shift packed 64-bit integers in 'a' right by 'count' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -3605,14 +3611,14 @@ func srlEpi32(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm256_srl_epi64'.
 // Requires AVX2.
-func SrlEpi64(a x86.M256i, count x86.M128i) x86.M256i {
-	return x86.M256i(srlEpi64([32]byte(a), [16]byte(count)))
+func M256SrlEpi64(a x86.M256i, count x86.M128i) x86.M256i {
+	return x86.M256i(m256SrlEpi64([32]byte(a), [16]byte(count)))
 }
 
-func srlEpi64(a [32]byte, count [16]byte) [32]byte
+func m256SrlEpi64(a [32]byte, count [16]byte) [32]byte
 
 
-// SrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
+// M256SrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -3627,14 +3633,14 @@ func srlEpi64(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_srli_epi16'.
 // Requires AVX2.
-func SrliEpi16(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(srliEpi16([32]byte(a), imm8))
+func M256SrliEpi16(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SrliEpi16([32]byte(a), imm8))
 }
 
-func srliEpi16(a [32]byte, imm8 int) [32]byte
+func m256SrliEpi16(a [32]byte, imm8 int) [32]byte
 
 
-// SrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
+// M256SrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -3649,14 +3655,14 @@ func srliEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm256_srli_epi32'.
 // Requires AVX2.
-func SrliEpi32(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(srliEpi32([32]byte(a), imm8))
+func M256SrliEpi32(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SrliEpi32([32]byte(a), imm8))
 }
 
-func srliEpi32(a [32]byte, imm8 int) [32]byte
+func m256SrliEpi32(a [32]byte, imm8 int) [32]byte
 
 
-// SrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
+// M256SrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
 // shifting in zeros, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -3671,15 +3677,15 @@ func srliEpi32(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm256_srli_epi64'.
 // Requires AVX2.
-func SrliEpi64(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(srliEpi64([32]byte(a), imm8))
+func M256SrliEpi64(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SrliEpi64([32]byte(a), imm8))
 }
 
-func srliEpi64(a [32]byte, imm8 int) [32]byte
+func m256SrliEpi64(a [32]byte, imm8 int) [32]byte
 
 
-// SrliSi256: Shift 128-bit lanes in 'a' right by 'imm8' bytes while shifting
-// in zeros, and store the results in 'dst'. 
+// M256SrliSi256: Shift 128-bit lanes in 'a' right by 'imm8' bytes while
+// shifting in zeros, and store the results in 'dst'. 
 //
 //		tmp := imm8[7:0]
 //		IF tmp > 15
@@ -3691,11 +3697,11 @@ func srliEpi64(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLDQ'. Intrinsic: '_mm256_srli_si256'.
 // Requires AVX2.
-func SrliSi256(a x86.M256i, imm8 int) x86.M256i {
-	return x86.M256i(srliSi256([32]byte(a), imm8))
+func M256SrliSi256(a x86.M256i, imm8 int) x86.M256i {
+	return x86.M256i(m256SrliSi256([32]byte(a), imm8))
 }
 
-func srliSi256(a [32]byte, imm8 int) [32]byte
+func m256SrliSi256(a [32]byte, imm8 int) [32]byte
 
 
 // SrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount specified
@@ -3717,7 +3723,7 @@ func SrlvEpi32(a x86.M128i, count x86.M128i) x86.M128i {
 func srlvEpi32(a [16]byte, count [16]byte) [16]byte
 
 
-// SrlvEpi321: Shift packed 32-bit integers in 'a' right by the amount
+// M256SrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst'. 
 //
@@ -3729,11 +3735,11 @@ func srlvEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm256_srlv_epi32'.
 // Requires AVX2.
-func SrlvEpi321(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(srlvEpi321([32]byte(a), [32]byte(count)))
+func M256SrlvEpi32(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SrlvEpi32([32]byte(a), [32]byte(count)))
 }
 
-func srlvEpi321(a [32]byte, count [32]byte) [32]byte
+func m256SrlvEpi32(a [32]byte, count [32]byte) [32]byte
 
 
 // SrlvEpi64: Shift packed 64-bit integers in 'a' right by the amount specified
@@ -3755,7 +3761,7 @@ func SrlvEpi64(a x86.M128i, count x86.M128i) x86.M128i {
 func srlvEpi64(a [16]byte, count [16]byte) [16]byte
 
 
-// SrlvEpi641: Shift packed 64-bit integers in 'a' right by the amount
+// M256SrlvEpi64: Shift packed 64-bit integers in 'a' right by the amount
 // specified by the corresponding element in 'count' while shifting in zeros,
 // and store the results in 'dst'. 
 //
@@ -3767,15 +3773,15 @@ func srlvEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm256_srlv_epi64'.
 // Requires AVX2.
-func SrlvEpi641(a x86.M256i, count x86.M256i) x86.M256i {
-	return x86.M256i(srlvEpi641([32]byte(a), [32]byte(count)))
+func M256SrlvEpi64(a x86.M256i, count x86.M256i) x86.M256i {
+	return x86.M256i(m256SrlvEpi64([32]byte(a), [32]byte(count)))
 }
 
-func srlvEpi641(a [32]byte, count [32]byte) [32]byte
+func m256SrlvEpi64(a [32]byte, count [32]byte) [32]byte
 
 
-// StreamLoadSi256: Load 256-bits of integer data from memory into 'dst' using
-// a non-temporal memory hint.
+// M256StreamLoadSi256: Load 256-bits of integer data from memory into 'dst'
+// using a non-temporal memory hint.
 // 	'mem_addr' must be aligned on a 32-byte boundary or a general-protection
 // exception may be generated. 
 //
@@ -3784,15 +3790,15 @@ func srlvEpi641(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VMOVNTDQA'. Intrinsic: '_mm256_stream_load_si256'.
 // Requires AVX2.
-func StreamLoadSi256(mem_addr x86.M256iConst) x86.M256i {
-	return x86.M256i(streamLoadSi256(mem_addr))
+func M256StreamLoadSi256(mem_addr x86.M256iConst) x86.M256i {
+	return x86.M256i(m256StreamLoadSi256(mem_addr))
 }
 
-func streamLoadSi256(mem_addr x86.M256iConst) [32]byte
+func m256StreamLoadSi256(mem_addr x86.M256iConst) [32]byte
 
 
-// SubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers
-// in 'a', and store the results in 'dst'. 
+// M256SubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// integers in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*16
@@ -3802,15 +3808,15 @@ func streamLoadSi256(mem_addr x86.M256iConst) [32]byte
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm256_sub_epi16'.
 // Requires AVX2.
-func SubEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subEpi16([32]byte(a), [32]byte(b)))
+func M256SubEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubEpi16([32]byte(a), [32]byte(b)))
 }
 
-func subEpi16(a [32]byte, b [32]byte) [32]byte
+func m256SubEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// SubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit integers
-// in 'a', and store the results in 'dst'. 
+// M256SubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit
+// integers in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -3820,15 +3826,15 @@ func subEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm256_sub_epi32'.
 // Requires AVX2.
-func SubEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subEpi32([32]byte(a), [32]byte(b)))
+func M256SubEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubEpi32([32]byte(a), [32]byte(b)))
 }
 
-func subEpi32(a [32]byte, b [32]byte) [32]byte
+func m256SubEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// SubEpi64: Subtract packed 64-bit integers in 'b' from packed 64-bit integers
-// in 'a', and store the results in 'dst'. 
+// M256SubEpi64: Subtract packed 64-bit integers in 'b' from packed 64-bit
+// integers in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -3838,15 +3844,15 @@ func subEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm256_sub_epi64'.
 // Requires AVX2.
-func SubEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subEpi64([32]byte(a), [32]byte(b)))
+func M256SubEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubEpi64([32]byte(a), [32]byte(b)))
 }
 
-func subEpi64(a [32]byte, b [32]byte) [32]byte
+func m256SubEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// SubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
-// 'a', and store the results in 'dst'. 
+// M256SubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// integers in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -3856,14 +3862,14 @@ func subEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm256_sub_epi8'.
 // Requires AVX2.
-func SubEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subEpi8([32]byte(a), [32]byte(b)))
+func M256SubEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubEpi8([32]byte(a), [32]byte(b)))
 }
 
-func subEpi8(a [32]byte, b [32]byte) [32]byte
+func m256SubEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// SubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
+// M256SubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
 // integers in 'a' using saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -3874,15 +3880,15 @@ func subEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm256_subs_epi16'.
 // Requires AVX2.
-func SubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subsEpi16([32]byte(a), [32]byte(b)))
+func M256SubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubsEpi16([32]byte(a), [32]byte(b)))
 }
 
-func subsEpi16(a [32]byte, b [32]byte) [32]byte
+func m256SubsEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// SubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers
-// in 'a' using saturation, and store the results in 'dst'. 
+// M256SubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit
+// integers in 'a' using saturation, and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -3892,14 +3898,14 @@ func subsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm256_subs_epi8'.
 // Requires AVX2.
-func SubsEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subsEpi8([32]byte(a), [32]byte(b)))
+func M256SubsEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubsEpi8([32]byte(a), [32]byte(b)))
 }
 
-func subsEpi8(a [32]byte, b [32]byte) [32]byte
+func m256SubsEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// SubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
+// M256SubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
 // unsigned 16-bit integers in 'a' using saturation, and store the results in
 // 'dst'. 
 //
@@ -3911,14 +3917,14 @@ func subsEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm256_subs_epu16'.
 // Requires AVX2.
-func SubsEpu16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subsEpu16([32]byte(a), [32]byte(b)))
+func M256SubsEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubsEpu16([32]byte(a), [32]byte(b)))
 }
 
-func subsEpu16(a [32]byte, b [32]byte) [32]byte
+func m256SubsEpu16(a [32]byte, b [32]byte) [32]byte
 
 
-// SubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
+// M256SubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
 // unsigned 8-bit integers in 'a' using saturation, and store the results in
 // 'dst'. 
 //
@@ -3930,15 +3936,15 @@ func subsEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm256_subs_epu8'.
 // Requires AVX2.
-func SubsEpu8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(subsEpu8([32]byte(a), [32]byte(b)))
+func M256SubsEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256SubsEpu8([32]byte(a), [32]byte(b)))
 }
 
-func subsEpu8(a [32]byte, b [32]byte) [32]byte
+func m256SubsEpu8(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackhiEpi16: Unpack and interleave 16-bit integers from the high half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M256UnpackhiEpi16: Unpack and interleave 16-bit integers from the high half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[79:64]
@@ -3958,15 +3964,15 @@ func subsEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm256_unpackhi_epi16'.
 // Requires AVX2.
-func UnpackhiEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackhiEpi16([32]byte(a), [32]byte(b)))
+func M256UnpackhiEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackhiEpi16([32]byte(a), [32]byte(b)))
 }
 
-func unpackhiEpi16(a [32]byte, b [32]byte) [32]byte
+func m256UnpackhiEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackhiEpi32: Unpack and interleave 32-bit integers from the high half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M256UnpackhiEpi32: Unpack and interleave 32-bit integers from the high half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_DWORDS(src1[127:0], src2[127:0]){
 //			dst[31:0] := src1[95:64] 
@@ -3982,15 +3988,15 @@ func unpackhiEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm256_unpackhi_epi32'.
 // Requires AVX2.
-func UnpackhiEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackhiEpi32([32]byte(a), [32]byte(b)))
+func M256UnpackhiEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackhiEpi32([32]byte(a), [32]byte(b)))
 }
 
-func unpackhiEpi32(a [32]byte, b [32]byte) [32]byte
+func m256UnpackhiEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackhiEpi64: Unpack and interleave 64-bit integers from the high half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M256UnpackhiEpi64: Unpack and interleave 64-bit integers from the high half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_QWORDS(src1[127:0], src2[127:0]){
 //			dst[63:0] := src1[127:64] 
@@ -4004,14 +4010,14 @@ func unpackhiEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm256_unpackhi_epi64'.
 // Requires AVX2.
-func UnpackhiEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackhiEpi64([32]byte(a), [32]byte(b)))
+func M256UnpackhiEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackhiEpi64([32]byte(a), [32]byte(b)))
 }
 
-func unpackhiEpi64(a [32]byte, b [32]byte) [32]byte
+func m256UnpackhiEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackhiEpi8: Unpack and interleave 8-bit integers from the high half of
+// M256UnpackhiEpi8: Unpack and interleave 8-bit integers from the high half of
 // each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_HIGH_BYTES(src1[127:0], src2[127:0]){
@@ -4040,15 +4046,15 @@ func unpackhiEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm256_unpackhi_epi8'.
 // Requires AVX2.
-func UnpackhiEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackhiEpi8([32]byte(a), [32]byte(b)))
+func M256UnpackhiEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackhiEpi8([32]byte(a), [32]byte(b)))
 }
 
-func unpackhiEpi8(a [32]byte, b [32]byte) [32]byte
+func m256UnpackhiEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackloEpi16: Unpack and interleave 16-bit integers from the low half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M256UnpackloEpi16: Unpack and interleave 16-bit integers from the low half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_WORDS(src1[127:0], src2[127:0]){
 //			dst[15:0] := src1[15:0] 
@@ -4068,15 +4074,15 @@ func unpackhiEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm256_unpacklo_epi16'.
 // Requires AVX2.
-func UnpackloEpi16(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackloEpi16([32]byte(a), [32]byte(b)))
+func M256UnpackloEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackloEpi16([32]byte(a), [32]byte(b)))
 }
 
-func unpackloEpi16(a [32]byte, b [32]byte) [32]byte
+func m256UnpackloEpi16(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackloEpi32: Unpack and interleave 32-bit integers from the low half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M256UnpackloEpi32: Unpack and interleave 32-bit integers from the low half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_DWORDS(src1[127:0], src2[127:0]){
 //			dst[31:0] := src1[31:0] 
@@ -4092,15 +4098,15 @@ func unpackloEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm256_unpacklo_epi32'.
 // Requires AVX2.
-func UnpackloEpi32(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackloEpi32([32]byte(a), [32]byte(b)))
+func M256UnpackloEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackloEpi32([32]byte(a), [32]byte(b)))
 }
 
-func unpackloEpi32(a [32]byte, b [32]byte) [32]byte
+func m256UnpackloEpi32(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackloEpi64: Unpack and interleave 64-bit integers from the low half of
-// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M256UnpackloEpi64: Unpack and interleave 64-bit integers from the low half
+// of each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_QWORDS(src1[127:0], src2[127:0]){
 //			dst[63:0] := src1[63:0] 
@@ -4114,15 +4120,15 @@ func unpackloEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm256_unpacklo_epi64'.
 // Requires AVX2.
-func UnpackloEpi64(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackloEpi64([32]byte(a), [32]byte(b)))
+func M256UnpackloEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackloEpi64([32]byte(a), [32]byte(b)))
 }
 
-func unpackloEpi64(a [32]byte, b [32]byte) [32]byte
+func m256UnpackloEpi64(a [32]byte, b [32]byte) [32]byte
 
 
-// UnpackloEpi8: Unpack and interleave 8-bit integers from the low half of each
-// 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
+// M256UnpackloEpi8: Unpack and interleave 8-bit integers from the low half of
+// each 128-bit lane in 'a' and 'b', and store the results in 'dst'. 
 //
 //		INTERLEAVE_BYTES(src1[127:0], src2[127:0]){
 //			dst[7:0] := src1[7:0] 
@@ -4150,24 +4156,24 @@ func unpackloEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm256_unpacklo_epi8'.
 // Requires AVX2.
-func UnpackloEpi8(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(unpackloEpi8([32]byte(a), [32]byte(b)))
+func M256UnpackloEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256UnpackloEpi8([32]byte(a), [32]byte(b)))
 }
 
-func unpackloEpi8(a [32]byte, b [32]byte) [32]byte
+func m256UnpackloEpi8(a [32]byte, b [32]byte) [32]byte
 
 
-// XorSi256: Compute the bitwise XOR of 256 bits (representing integer data) in
-// 'a' and 'b', and store the result in 'dst'. 
+// M256XorSi256: Compute the bitwise XOR of 256 bits (representing integer
+// data) in 'a' and 'b', and store the result in 'dst'. 
 //
 //		dst[255:0] := (a[255:0] XOR b[255:0])
 //		dst[MAX:256] := 0
 //
 // Instruction: 'VPXOR'. Intrinsic: '_mm256_xor_si256'.
 // Requires AVX2.
-func XorSi256(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(xorSi256([32]byte(a), [32]byte(b)))
+func M256XorSi256(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256XorSi256([32]byte(a), [32]byte(b)))
 }
 
-func xorSi256(a [32]byte, b [32]byte) [32]byte
+func m256XorSi256(a [32]byte, b [32]byte) [32]byte
 

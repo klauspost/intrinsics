@@ -48,8 +48,8 @@ TEXT ·bitScanReverse(SB),7,$0
 	MOVQ $0, ret+8(FP)
 	RET
 
-// func bitScanForward1(index uint32, mask uint32) uint8
-TEXT ·bitScanForward1(SB),7,$0
+// func bitScanForward2(index uint32, mask uint32) uint8
+TEXT ·bitScanForward2(SB),7,$0
 	MOVL index+0(FP),R8
 	MOVL mask+4(FP),R9
 
@@ -68,8 +68,8 @@ TEXT ·bitScanForward64(SB),7,$0
 	MOVB $0, ret+12(FP)
 	RET
 
-// func bitScanReverse1(index uint32, mask uint32) uint8
-TEXT ·bitScanReverse1(SB),7,$0
+// func bitScanReverse2(index uint32, mask uint32) uint8
+TEXT ·bitScanReverse2(SB),7,$0
 	MOVL index+0(FP),R8
 	MOVL mask+4(FP),R9
 

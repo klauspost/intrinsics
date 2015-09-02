@@ -1,189 +1,189 @@
-// func exp2a23Pd(a [8]float64) [8]float64
-TEXT ·exp2a23Pd(SB),7,$0
+// func m512Exp2a23Pd(a [8]float64) [8]float64
+TEXT ·m512Exp2a23Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
-TEXT ·maskExp2a23Pd(SB),7,$0
+// func m512MaskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
+TEXT ·m512MaskExp2a23Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzExp2a23Pd(k uint8, a [8]float64) [8]float64
-TEXT ·maskzExp2a23Pd(SB),7,$0
+// func m512MaskzExp2a23Pd(k uint8, a [8]float64) [8]float64
+TEXT ·m512MaskzExp2a23Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func exp2a23Ps(a [16]float32) [16]float32
-TEXT ·exp2a23Ps(SB),7,$0
+// func m512Exp2a23Ps(a [16]float32) [16]float32
+TEXT ·m512Exp2a23Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
-TEXT ·maskExp2a23Ps(SB),7,$0
+// func m512MaskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+TEXT ·m512MaskExp2a23Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzExp2a23Ps(k uint16, a [16]float32) [16]float32
-TEXT ·maskzExp2a23Ps(SB),7,$0
+// func m512MaskzExp2a23Ps(k uint16, a [16]float32) [16]float32
+TEXT ·m512MaskzExp2a23Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func exp2a23RoundPd(a [8]float64, rounding int) [8]float64
-TEXT ·exp2a23RoundPd(SB),7,$0
+// func m512Exp2a23RoundPd(a [8]float64, rounding int) [8]float64
+TEXT ·m512Exp2a23RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]float64
-TEXT ·maskExp2a23RoundPd(SB),7,$0
+// func m512MaskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]float64
+TEXT ·m512MaskExp2a23RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
-TEXT ·maskzExp2a23RoundPd(SB),7,$0
+// func m512MaskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
+TEXT ·m512MaskzExp2a23RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func exp2a23RoundPs(a [16]float32, rounding int) [16]float32
-TEXT ·exp2a23RoundPs(SB),7,$0
+// func m512Exp2a23RoundPs(a [16]float32, rounding int) [16]float32
+TEXT ·m512Exp2a23RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
-TEXT ·maskExp2a23RoundPs(SB),7,$0
+// func m512MaskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
+TEXT ·m512MaskExp2a23RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
-TEXT ·maskzExp2a23RoundPs(SB),7,$0
+// func m512MaskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
+TEXT ·m512MaskzExp2a23RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
-TEXT ·maskRcp28Pd(SB),7,$0
+// func m512MaskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
+TEXT ·m512MaskRcp28Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRcp28Pd(k uint8, a [8]float64) [8]float64
-TEXT ·maskzRcp28Pd(SB),7,$0
+// func m512MaskzRcp28Pd(k uint8, a [8]float64) [8]float64
+TEXT ·m512MaskzRcp28Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rcp28Pd(a [8]float64) [8]float64
-TEXT ·rcp28Pd(SB),7,$0
+// func m512Rcp28Pd(a [8]float64) [8]float64
+TEXT ·m512Rcp28Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
-TEXT ·maskRcp28Ps(SB),7,$0
+// func m512MaskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+TEXT ·m512MaskRcp28Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRcp28Ps(k uint16, a [16]float32) [16]float32
-TEXT ·maskzRcp28Ps(SB),7,$0
+// func m512MaskzRcp28Ps(k uint16, a [16]float32) [16]float32
+TEXT ·m512MaskzRcp28Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rcp28Ps(a [16]float32) [16]float32
-TEXT ·rcp28Ps(SB),7,$0
+// func m512Rcp28Ps(a [16]float32) [16]float32
+TEXT ·m512Rcp28Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
-TEXT ·maskRcp28RoundPd(SB),7,$0
+// func m512MaskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
+TEXT ·m512MaskRcp28RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
-TEXT ·maskzRcp28RoundPd(SB),7,$0
+// func m512MaskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
+TEXT ·m512MaskzRcp28RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rcp28RoundPd(a [8]float64, rounding int) [8]float64
-TEXT ·rcp28RoundPd(SB),7,$0
+// func m512Rcp28RoundPd(a [8]float64, rounding int) [8]float64
+TEXT ·m512Rcp28RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
-TEXT ·maskRcp28RoundPs(SB),7,$0
+// func m512MaskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
+TEXT ·m512MaskRcp28RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
-TEXT ·maskzRcp28RoundPs(SB),7,$0
+// func m512MaskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
+TEXT ·m512MaskzRcp28RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rcp28RoundPs(a [16]float32, rounding int) [16]float32
-TEXT ·rcp28RoundPs(SB),7,$0
+// func m512Rcp28RoundPs(a [16]float32, rounding int) [16]float32
+TEXT ·m512Rcp28RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
@@ -328,96 +328,96 @@ TEXT ·rcp28Ss(SB),7,$0
 	MOVOU X0, ret+32(FP)
 	RET
 
-// func maskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
-TEXT ·maskRsqrt28Pd(SB),7,$0
+// func m512MaskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
+TEXT ·m512MaskRsqrt28Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
-TEXT ·maskzRsqrt28Pd(SB),7,$0
+// func m512MaskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
+TEXT ·m512MaskzRsqrt28Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rsqrt28Pd(a [8]float64) [8]float64
-TEXT ·rsqrt28Pd(SB),7,$0
+// func m512Rsqrt28Pd(a [8]float64) [8]float64
+TEXT ·m512Rsqrt28Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
-TEXT ·maskRsqrt28Ps(SB),7,$0
+// func m512MaskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+TEXT ·m512MaskRsqrt28Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
-TEXT ·maskzRsqrt28Ps(SB),7,$0
+// func m512MaskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
+TEXT ·m512MaskzRsqrt28Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rsqrt28Ps(a [16]float32) [16]float32
-TEXT ·rsqrt28Ps(SB),7,$0
+// func m512Rsqrt28Ps(a [16]float32) [16]float32
+TEXT ·m512Rsqrt28Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
-TEXT ·maskRsqrt28RoundPd(SB),7,$0
+// func m512MaskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
+TEXT ·m512MaskRsqrt28RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
-TEXT ·maskzRsqrt28RoundPd(SB),7,$0
+// func m512MaskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
+TEXT ·m512MaskzRsqrt28RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
-TEXT ·rsqrt28RoundPd(SB),7,$0
+// func m512Rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
+TEXT ·m512Rsqrt28RoundPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
-TEXT ·maskRsqrt28RoundPs(SB),7,$0
+// func m512MaskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
+TEXT ·m512MaskRsqrt28RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func maskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
-TEXT ·maskzRsqrt28RoundPs(SB),7,$0
+// func m512MaskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
+TEXT ·m512MaskzRsqrt28RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 
 	MOV Z0, ret+0(FP)
 	RET
 
-// func rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
-TEXT ·rsqrt28RoundPs(SB),7,$0
+// func m512Rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
+TEXT ·m512Rsqrt28RoundPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
 	//TODO: Code missing
 

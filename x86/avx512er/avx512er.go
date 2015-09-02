@@ -5,7 +5,7 @@ import "github.com/klauspost/intrinsics/x86"
 var _ = x86.M64{}  // Make sure we use x86 package
 
 
-// Exp2a23Pd: Compute the approximate exponential value of 2 raised to the
+// M512Exp2a23Pd: Compute the approximate exponential value of 2 raised to the
 // power of packed double-precision (64-bit) floating-point elements in 'a',
 // and store the results in 'dst'. The maximum relative error for this
 // approximation is less than 2^-23. 
@@ -18,17 +18,17 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_exp2a23_pd'.
 // Requires AVX512ER.
-func Exp2a23Pd(a x86.M512d) x86.M512d {
-	return x86.M512d(exp2a23Pd([8]float64(a)))
+func M512Exp2a23Pd(a x86.M512d) x86.M512d {
+	return x86.M512d(m512Exp2a23Pd([8]float64(a)))
 }
 
-func exp2a23Pd(a [8]float64) [8]float64
+func m512Exp2a23Pd(a [8]float64) [8]float64
 
 
-// MaskExp2a23Pd: Compute the approximate exponential value of 2 raised to the
-// power of packed double-precision (64-bit) floating-point elements in 'a',
-// and store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). The maximum relative
+// M512MaskExp2a23Pd: Compute the approximate exponential value of 2 raised to
+// the power of packed double-precision (64-bit) floating-point elements in
+// 'a', and store the results in 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). The maximum relative
 // error for this approximation is less than 2^-23. 
 //
 //		FOR j := 0 to 7
@@ -43,18 +43,18 @@ func exp2a23Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_mask_exp2a23_pd'.
 // Requires AVX512ER.
-func MaskExp2a23Pd(a x86.M512d, k x86.Mmask8, src x86.M512d) x86.M512d {
-	return x86.M512d(maskExp2a23Pd([8]float64(a), uint8(k), [8]float64(src)))
+func M512MaskExp2a23Pd(a x86.M512d, k x86.Mmask8, src x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskExp2a23Pd([8]float64(a), uint8(k), [8]float64(src)))
 }
 
-func maskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
+func m512MaskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
 
 
-// MaskzExp2a23Pd: Compute the approximate exponential value of 2 raised to the
-// power of packed double-precision (64-bit) floating-point elements in 'a',
-// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). The maximum relative error for
-// this approximation is less than 2^-23. 
+// M512MaskzExp2a23Pd: Compute the approximate exponential value of 2 raised to
+// the power of packed double-precision (64-bit) floating-point elements in
+// 'a', and store the results in 'dst' using zeromask 'k' (elements are zeroed
+// out when the corresponding mask bit is not set). The maximum relative error
+// for this approximation is less than 2^-23. 
 //
 //		FOR j := 0 to 7
 //			i := j*64;
@@ -68,14 +68,14 @@ func maskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_maskz_exp2a23_pd'.
 // Requires AVX512ER.
-func MaskzExp2a23Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(maskzExp2a23Pd(uint8(k), [8]float64(a)))
+func M512MaskzExp2a23Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskzExp2a23Pd(uint8(k), [8]float64(a)))
 }
 
-func maskzExp2a23Pd(k uint8, a [8]float64) [8]float64
+func m512MaskzExp2a23Pd(k uint8, a [8]float64) [8]float64
 
 
-// Exp2a23Ps: Compute the approximate exponential value of 2 raised to the
+// M512Exp2a23Ps: Compute the approximate exponential value of 2 raised to the
 // power of packed single-precision (32-bit) floating-point elements in 'a',
 // and store the results in 'dst'. The maximum relative error for this
 // approximation is less than 2^-23. 
@@ -88,17 +88,17 @@ func maskzExp2a23Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_exp2a23_ps'.
 // Requires AVX512ER.
-func Exp2a23Ps(a x86.M512) x86.M512 {
-	return x86.M512(exp2a23Ps([16]float32(a)))
+func M512Exp2a23Ps(a x86.M512) x86.M512 {
+	return x86.M512(m512Exp2a23Ps([16]float32(a)))
 }
 
-func exp2a23Ps(a [16]float32) [16]float32
+func m512Exp2a23Ps(a [16]float32) [16]float32
 
 
-// MaskExp2a23Ps: Compute the approximate exponential value of 2 raised to the
-// power of packed single-precision (32-bit) floating-point elements in 'a',
-// and store the results in 'dst' using writemask 'k' (elements are copied from
-// 'src' when the corresponding mask bit is not set). The maximum relative
+// M512MaskExp2a23Ps: Compute the approximate exponential value of 2 raised to
+// the power of packed single-precision (32-bit) floating-point elements in
+// 'a', and store the results in 'dst' using writemask 'k' (elements are copied
+// from 'src' when the corresponding mask bit is not set). The maximum relative
 // error for this approximation is less than 2^-23. 
 //
 //		FOR j := 0 to 15
@@ -113,18 +113,18 @@ func exp2a23Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_mask_exp2a23_ps'.
 // Requires AVX512ER.
-func MaskExp2a23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskExp2a23Ps([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskExp2a23Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskExp2a23Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// MaskzExp2a23Ps: Compute the approximate exponential value of 2 raised to the
-// power of packed single-precision (32-bit) floating-point elements in 'a',
-// and store the results in 'dst' using zeromask 'k' (elements are zeroed out
-// when the corresponding mask bit is not set). The maximum relative error for
-// this approximation is less than 2^-23. 
+// M512MaskzExp2a23Ps: Compute the approximate exponential value of 2 raised to
+// the power of packed single-precision (32-bit) floating-point elements in
+// 'a', and store the results in 'dst' using zeromask 'k' (elements are zeroed
+// out when the corresponding mask bit is not set). The maximum relative error
+// for this approximation is less than 2^-23. 
 //
 //		FOR j := 0 to 15
 //			i := j*32;
@@ -138,16 +138,16 @@ func maskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_maskz_exp2a23_ps'.
 // Requires AVX512ER.
-func MaskzExp2a23Ps(k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskzExp2a23Ps(uint16(k), [16]float32(a)))
+func M512MaskzExp2a23Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskzExp2a23Ps(uint16(k), [16]float32(a)))
 }
 
-func maskzExp2a23Ps(k uint16, a [16]float32) [16]float32
+func m512MaskzExp2a23Ps(k uint16, a [16]float32) [16]float32
 
 
-// Exp2a23RoundPd: Compute the approximate exponential value of 2 raised to the
-// power of packed double-precision (64-bit) floating-point elements in 'a',
-// and store the results in 'dst'. The maximum relative error for this
+// M512Exp2a23RoundPd: Compute the approximate exponential value of 2 raised to
+// the power of packed double-precision (64-bit) floating-point elements in
+// 'a', and store the results in 'dst'. The maximum relative error for this
 // approximation is less than 2^-23. Rounding is done according to the
 // 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -164,19 +164,19 @@ func maskzExp2a23Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_exp2a23_round_pd'.
 // Requires AVX512ER.
-func Exp2a23RoundPd(a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(exp2a23RoundPd([8]float64(a), rounding))
+func M512Exp2a23RoundPd(a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512Exp2a23RoundPd([8]float64(a), rounding))
 }
 
-func exp2a23RoundPd(a [8]float64, rounding int) [8]float64
+func m512Exp2a23RoundPd(a [8]float64, rounding int) [8]float64
 
 
-// MaskExp2a23RoundPd: Compute the approximate exponential value of 2 raised to
-// the power of packed double-precision (64-bit) floating-point elements in
-// 'a', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). The maximum relative
-// error for this approximation is less than 2^-23. Rounding is done according
-// to the 'rounding' parameter, which can be one of:
+// M512MaskExp2a23RoundPd: Compute the approximate exponential value of 2
+// raised to the power of packed double-precision (64-bit) floating-point
+// elements in 'a', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set).
+// The maximum relative error for this approximation is less than 2^-23.
+// Rounding is done according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -195,19 +195,19 @@ func exp2a23RoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_mask_exp2a23_round_pd'.
 // Requires AVX512ER.
-func MaskExp2a23RoundPd(a x86.M512d, k x86.Mmask8, src x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskExp2a23RoundPd([8]float64(a), uint8(k), [8]float64(src), rounding))
+func M512MaskExp2a23RoundPd(a x86.M512d, k x86.Mmask8, src x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskExp2a23RoundPd([8]float64(a), uint8(k), [8]float64(src), rounding))
 }
 
-func maskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]float64
+func m512MaskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]float64
 
 
-// MaskzExp2a23RoundPd: Compute the approximate exponential value of 2 raised
-// to the power of packed double-precision (64-bit) floating-point elements in
-// 'a', and store the results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). The maximum relative error
-// for this approximation is less than 2^-23. Rounding is done according to the
-// 'rounding' parameter, which can be one of:
+// M512MaskzExp2a23RoundPd: Compute the approximate exponential value of 2
+// raised to the power of packed double-precision (64-bit) floating-point
+// elements in 'a', and store the results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). The maximum
+// relative error for this approximation is less than 2^-23. Rounding is done
+// according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -226,16 +226,16 @@ func maskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]
 //
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_maskz_exp2a23_round_pd'.
 // Requires AVX512ER.
-func MaskzExp2a23RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskzExp2a23RoundPd(uint8(k), [8]float64(a), rounding))
+func M512MaskzExp2a23RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskzExp2a23RoundPd(uint8(k), [8]float64(a), rounding))
 }
 
-func maskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
+func m512MaskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 
 
-// Exp2a23RoundPs: Compute the approximate exponential value of 2 raised to the
-// power of packed single-precision (32-bit) floating-point elements in 'a',
-// and store the results in 'dst'. The maximum relative error for this
+// M512Exp2a23RoundPs: Compute the approximate exponential value of 2 raised to
+// the power of packed single-precision (32-bit) floating-point elements in
+// 'a', and store the results in 'dst'. The maximum relative error for this
 // approximation is less than 2^-23. Rounding is done according to the
 // 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -252,19 +252,19 @@ func maskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_exp2a23_round_ps'.
 // Requires AVX512ER.
-func Exp2a23RoundPs(a x86.M512, rounding int) x86.M512 {
-	return x86.M512(exp2a23RoundPs([16]float32(a), rounding))
+func M512Exp2a23RoundPs(a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512Exp2a23RoundPs([16]float32(a), rounding))
 }
 
-func exp2a23RoundPs(a [16]float32, rounding int) [16]float32
+func m512Exp2a23RoundPs(a [16]float32, rounding int) [16]float32
 
 
-// MaskExp2a23RoundPs: Compute the approximate exponential value of 2 raised to
-// the power of packed single-precision (32-bit) floating-point elements in
-// 'a', and store the results in 'dst' using writemask 'k' (elements are copied
-// from 'src' when the corresponding mask bit is not set). The maximum relative
-// error for this approximation is less than 2^-23. Rounding is done according
-// to the 'rounding' parameter, which can be one of:
+// M512MaskExp2a23RoundPs: Compute the approximate exponential value of 2
+// raised to the power of packed single-precision (32-bit) floating-point
+// elements in 'a', and store the results in 'dst' using writemask 'k'
+// (elements are copied from 'src' when the corresponding mask bit is not set).
+// The maximum relative error for this approximation is less than 2^-23.
+// Rounding is done according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -283,19 +283,19 @@ func exp2a23RoundPs(a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_mask_exp2a23_round_ps'.
 // Requires AVX512ER.
-func MaskExp2a23RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskExp2a23RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+func M512MaskExp2a23RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskExp2a23RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
+func m512MaskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 
 
-// MaskzExp2a23RoundPs: Compute the approximate exponential value of 2 raised
-// to the power of packed single-precision (32-bit) floating-point elements in
-// 'a', and store the results in 'dst' using zeromask 'k' (elements are zeroed
-// out when the corresponding mask bit is not set). The maximum relative error
-// for this approximation is less than 2^-23. Rounding is done according to the
-// 'rounding' parameter, which can be one of:
+// M512MaskzExp2a23RoundPs: Compute the approximate exponential value of 2
+// raised to the power of packed single-precision (32-bit) floating-point
+// elements in 'a', and store the results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). The maximum
+// relative error for this approximation is less than 2^-23. Rounding is done
+// according to the 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -314,18 +314,18 @@ func maskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) 
 //
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_maskz_exp2a23_round_ps'.
 // Requires AVX512ER.
-func MaskzExp2a23RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskzExp2a23RoundPs(uint16(k), [16]float32(a), rounding))
+func M512MaskzExp2a23RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskzExp2a23RoundPs(uint16(k), [16]float32(a), rounding))
 }
 
-func maskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
+func m512MaskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 
 
-// MaskRcp28Pd: Compute the approximate reciprocal of packed double-precision
-// (64-bit) floating-point elements in 'a', and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). The maximum relative error for this approximation is
-// less than 2^-28. 
+// M512MaskRcp28Pd: Compute the approximate reciprocal of packed
+// double-precision (64-bit) floating-point elements in 'a', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). The maximum relative error for this
+// approximation is less than 2^-28. 
 //
 //		FOR j := 0 to 7
 //			i := j*64;
@@ -338,18 +338,18 @@ func maskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_mask_rcp28_pd'.
 // Requires AVX512ER.
-func MaskRcp28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(maskRcp28Pd([8]float64(src), uint8(k), [8]float64(a)))
+func M512MaskRcp28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskRcp28Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
-func maskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
+func m512MaskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 
 
-// MaskzRcp28Pd: Compute the approximate reciprocal of packed double-precision
-// (64-bit) floating-point elements in 'a', and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). The maximum relative error for this approximation is less than
-// 2^-28. 
+// M512MaskzRcp28Pd: Compute the approximate reciprocal of packed
+// double-precision (64-bit) floating-point elements in 'a', and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). The maximum relative error for this
+// approximation is less than 2^-28. 
 //
 //		FOR j := 0 to 7
 //			i := j*64;
@@ -362,14 +362,14 @@ func maskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_maskz_rcp28_pd'.
 // Requires AVX512ER.
-func MaskzRcp28Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(maskzRcp28Pd(uint8(k), [8]float64(a)))
+func M512MaskzRcp28Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskzRcp28Pd(uint8(k), [8]float64(a)))
 }
 
-func maskzRcp28Pd(k uint8, a [8]float64) [8]float64
+func m512MaskzRcp28Pd(k uint8, a [8]float64) [8]float64
 
 
-// Rcp28Pd: Compute the approximate reciprocal of packed double-precision
+// M512Rcp28Pd: Compute the approximate reciprocal of packed double-precision
 // (64-bit) floating-point elements in 'a', and store the results in 'dst'. The
 // maximum relative error for this approximation is less than 2^-28. 
 //
@@ -380,18 +380,18 @@ func maskzRcp28Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_rcp28_pd'.
 // Requires AVX512ER.
-func Rcp28Pd(a x86.M512d) x86.M512d {
-	return x86.M512d(rcp28Pd([8]float64(a)))
+func M512Rcp28Pd(a x86.M512d) x86.M512d {
+	return x86.M512d(m512Rcp28Pd([8]float64(a)))
 }
 
-func rcp28Pd(a [8]float64) [8]float64
+func m512Rcp28Pd(a [8]float64) [8]float64
 
 
-// MaskRcp28Ps: Compute the approximate reciprocal of packed single-precision
-// (32-bit) floating-point elements in 'a', and store the results in 'dst'
-// using writemask 'k' (elements are copied from 'src' when the corresponding
-// mask bit is not set). The maximum relative error for this approximation is
-// less than 2^-28. 
+// M512MaskRcp28Ps: Compute the approximate reciprocal of packed
+// single-precision (32-bit) floating-point elements in 'a', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). The maximum relative error for this
+// approximation is less than 2^-28. 
 //
 //		FOR j := 0 to 15
 //			i := j*32;
@@ -404,18 +404,18 @@ func rcp28Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_mask_rcp28_ps'.
 // Requires AVX512ER.
-func MaskRcp28Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskRcp28Ps([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskRcp28Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskRcp28Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// MaskzRcp28Ps: Compute the approximate reciprocal of packed single-precision
-// (32-bit) floating-point elements in 'a', and store the results in 'dst'
-// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
-// is not set). The maximum relative error for this approximation is less than
-// 2^-28. 
+// M512MaskzRcp28Ps: Compute the approximate reciprocal of packed
+// single-precision (32-bit) floating-point elements in 'a', and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). The maximum relative error for this
+// approximation is less than 2^-28. 
 //
 //		FOR j := 0 to 15
 //			i := j*32;
@@ -428,14 +428,14 @@ func maskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_maskz_rcp28_ps'.
 // Requires AVX512ER.
-func MaskzRcp28Ps(k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskzRcp28Ps(uint16(k), [16]float32(a)))
+func M512MaskzRcp28Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskzRcp28Ps(uint16(k), [16]float32(a)))
 }
 
-func maskzRcp28Ps(k uint16, a [16]float32) [16]float32
+func m512MaskzRcp28Ps(k uint16, a [16]float32) [16]float32
 
 
-// Rcp28Ps: Compute the approximate reciprocal of packed single-precision
+// M512Rcp28Ps: Compute the approximate reciprocal of packed single-precision
 // (32-bit) floating-point elements in 'a', and store the results in 'dst'. The
 // maximum relative error for this approximation is less than 2^-28. 
 //
@@ -446,14 +446,14 @@ func maskzRcp28Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_rcp28_ps'.
 // Requires AVX512ER.
-func Rcp28Ps(a x86.M512) x86.M512 {
-	return x86.M512(rcp28Ps([16]float32(a)))
+func M512Rcp28Ps(a x86.M512) x86.M512 {
+	return x86.M512(m512Rcp28Ps([16]float32(a)))
 }
 
-func rcp28Ps(a [16]float32) [16]float32
+func m512Rcp28Ps(a [16]float32) [16]float32
 
 
-// MaskRcp28RoundPd: Compute the approximate reciprocal of packed
+// M512MaskRcp28RoundPd: Compute the approximate reciprocal of packed
 // double-precision (64-bit) floating-point elements in 'a', and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). The maximum relative error for this
@@ -476,14 +476,14 @@ func rcp28Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_mask_rcp28_round_pd'.
 // Requires AVX512ER.
-func MaskRcp28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskRcp28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
+func M512MaskRcp28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskRcp28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
 }
 
-func maskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
+func m512MaskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
 
 
-// MaskzRcp28RoundPd: Compute the approximate reciprocal of packed
+// M512MaskzRcp28RoundPd: Compute the approximate reciprocal of packed
 // double-precision (64-bit) floating-point elements in 'a', and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). The maximum relative error for this
@@ -506,17 +506,18 @@ func maskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]fl
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_maskz_rcp28_round_pd'.
 // Requires AVX512ER.
-func MaskzRcp28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskzRcp28RoundPd(uint8(k), [8]float64(a), rounding))
+func M512MaskzRcp28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskzRcp28RoundPd(uint8(k), [8]float64(a), rounding))
 }
 
-func maskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
+func m512MaskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 
 
-// Rcp28RoundPd: Compute the approximate reciprocal of packed double-precision
-// (64-bit) floating-point elements in 'a', and store the results in 'dst'. The
-// maximum relative error for this approximation is less than 2^-28. Rounding
-// is done according to the 'rounding' parameter, which can be one of:
+// M512Rcp28RoundPd: Compute the approximate reciprocal of packed
+// double-precision (64-bit) floating-point elements in 'a', and store the
+// results in 'dst'. The maximum relative error for this approximation is less
+// than 2^-28. Rounding is done according to the 'rounding' parameter, which
+// can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -530,14 +531,14 @@ func maskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_rcp28_round_pd'.
 // Requires AVX512ER.
-func Rcp28RoundPd(a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(rcp28RoundPd([8]float64(a), rounding))
+func M512Rcp28RoundPd(a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512Rcp28RoundPd([8]float64(a), rounding))
 }
 
-func rcp28RoundPd(a [8]float64, rounding int) [8]float64
+func m512Rcp28RoundPd(a [8]float64, rounding int) [8]float64
 
 
-// MaskRcp28RoundPs: Compute the approximate reciprocal of packed
+// M512MaskRcp28RoundPs: Compute the approximate reciprocal of packed
 // single-precision (32-bit) floating-point elements in 'a', and store the
 // results in 'dst' using writemask 'k' (elements are copied from 'src' when
 // the corresponding mask bit is not set). The maximum relative error for this
@@ -560,14 +561,14 @@ func rcp28RoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_mask_rcp28_round_ps'.
 // Requires AVX512ER.
-func MaskRcp28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskRcp28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+func M512MaskRcp28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskRcp28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
+func m512MaskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 
 
-// MaskzRcp28RoundPs: Compute the approximate reciprocal of packed
+// M512MaskzRcp28RoundPs: Compute the approximate reciprocal of packed
 // single-precision (32-bit) floating-point elements in 'a', and store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). The maximum relative error for this
@@ -590,17 +591,18 @@ func maskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [1
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_maskz_rcp28_round_ps'.
 // Requires AVX512ER.
-func MaskzRcp28RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskzRcp28RoundPs(uint16(k), [16]float32(a), rounding))
+func M512MaskzRcp28RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskzRcp28RoundPs(uint16(k), [16]float32(a), rounding))
 }
 
-func maskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
+func m512MaskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 
 
-// Rcp28RoundPs: Compute the approximate reciprocal of packed single-precision
-// (32-bit) floating-point elements in 'a', and store the results in 'dst'. The
-// maximum relative error for this approximation is less than 2^-28. Rounding
-// is done according to the 'rounding' parameter, which can be one of:
+// M512Rcp28RoundPs: Compute the approximate reciprocal of packed
+// single-precision (32-bit) floating-point elements in 'a', and store the
+// results in 'dst'. The maximum relative error for this approximation is less
+// than 2^-28. Rounding is done according to the 'rounding' parameter, which
+// can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
 //     (_MM_FROUND_TO_NEG_INF |_MM_FROUND_NO_EXC)     // round down, and suppress exceptions
 //     (_MM_FROUND_TO_POS_INF |_MM_FROUND_NO_EXC)     // round up, and suppress exceptions
@@ -614,11 +616,11 @@ func maskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_rcp28_round_ps'.
 // Requires AVX512ER.
-func Rcp28RoundPs(a x86.M512, rounding int) x86.M512 {
-	return x86.M512(rcp28RoundPs([16]float32(a), rounding))
+func M512Rcp28RoundPs(a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512Rcp28RoundPs([16]float32(a), rounding))
 }
 
-func rcp28RoundPs(a [16]float32, rounding int) [16]float32
+func m512Rcp28RoundPs(a [16]float32, rounding int) [16]float32
 
 
 // MaskRcp28RoundSd: Compute the approximate reciprocal of the lower
@@ -925,7 +927,7 @@ func Rcp28Ss(a x86.M128, b x86.M128) x86.M128 {
 func rcp28Ss(a [4]float32, b [4]float32) [4]float32
 
 
-// MaskRsqrt28Pd: Compute the approximate reciprocal square root of packed
+// M512MaskRsqrt28Pd: Compute the approximate reciprocal square root of packed
 // double-precision (64-bit) floating-point elements in 'a', store the results
 // in 'dst' using writemask 'k' (elements are copied from 'src' when the
 // corresponding mask bit is not set). The maximum relative error for this
@@ -942,14 +944,14 @@ func rcp28Ss(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_mask_rsqrt28_pd'.
 // Requires AVX512ER.
-func MaskRsqrt28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(maskRsqrt28Pd([8]float64(src), uint8(k), [8]float64(a)))
+func M512MaskRsqrt28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskRsqrt28Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
-func maskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
+func m512MaskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 
 
-// MaskzRsqrt28Pd: Compute the approximate reciprocal square root of packed
+// M512MaskzRsqrt28Pd: Compute the approximate reciprocal square root of packed
 // double-precision (64-bit) floating-point elements in 'a', store the results
 // in 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
 // mask bit is not set). The maximum relative error for this approximation is
@@ -966,14 +968,14 @@ func maskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_maskz_rsqrt28_pd'.
 // Requires AVX512ER.
-func MaskzRsqrt28Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
-	return x86.M512d(maskzRsqrt28Pd(uint8(k), [8]float64(a)))
+func M512MaskzRsqrt28Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+	return x86.M512d(m512MaskzRsqrt28Pd(uint8(k), [8]float64(a)))
 }
 
-func maskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
+func m512MaskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
 
 
-// Rsqrt28Pd: Compute the approximate reciprocal square root of packed
+// M512Rsqrt28Pd: Compute the approximate reciprocal square root of packed
 // double-precision (64-bit) floating-point elements in 'a', store the results
 // in 'dst'. The maximum relative error for this approximation is less than
 // 2^-28. 
@@ -985,14 +987,14 @@ func maskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_rsqrt28_pd'.
 // Requires AVX512ER.
-func Rsqrt28Pd(a x86.M512d) x86.M512d {
-	return x86.M512d(rsqrt28Pd([8]float64(a)))
+func M512Rsqrt28Pd(a x86.M512d) x86.M512d {
+	return x86.M512d(m512Rsqrt28Pd([8]float64(a)))
 }
 
-func rsqrt28Pd(a [8]float64) [8]float64
+func m512Rsqrt28Pd(a [8]float64) [8]float64
 
 
-// MaskRsqrt28Ps: Compute the approximate reciprocal square root of packed
+// M512MaskRsqrt28Ps: Compute the approximate reciprocal square root of packed
 // single-precision (32-bit) floating-point elements in 'a', store the results
 // in 'dst' using writemask 'k' (elements are copied from 'src' when the
 // corresponding mask bit is not set). The maximum relative error for this
@@ -1009,14 +1011,14 @@ func rsqrt28Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_mask_rsqrt28_ps'.
 // Requires AVX512ER.
-func MaskRsqrt28Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskRsqrt28Ps([16]float32(src), uint16(k), [16]float32(a)))
+func M512MaskRsqrt28Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskRsqrt28Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
-func maskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
+func m512MaskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
-// MaskzRsqrt28Ps: Compute the approximate reciprocal square root of packed
+// M512MaskzRsqrt28Ps: Compute the approximate reciprocal square root of packed
 // single-precision (32-bit) floating-point elements in 'a', store the results
 // in 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
 // mask bit is not set). The maximum relative error for this approximation is
@@ -1033,14 +1035,14 @@ func maskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_maskz_rsqrt28_ps'.
 // Requires AVX512ER.
-func MaskzRsqrt28Ps(k x86.Mmask16, a x86.M512) x86.M512 {
-	return x86.M512(maskzRsqrt28Ps(uint16(k), [16]float32(a)))
+func M512MaskzRsqrt28Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+	return x86.M512(m512MaskzRsqrt28Ps(uint16(k), [16]float32(a)))
 }
 
-func maskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
+func m512MaskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
 
 
-// Rsqrt28Ps: Compute the approximate reciprocal square root of packed
+// M512Rsqrt28Ps: Compute the approximate reciprocal square root of packed
 // single-precision (32-bit) floating-point elements in 'a', store the results
 // in 'dst'. The maximum relative error for this approximation is less than
 // 2^-28. 
@@ -1052,17 +1054,17 @@ func maskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_rsqrt28_ps'.
 // Requires AVX512ER.
-func Rsqrt28Ps(a x86.M512) x86.M512 {
-	return x86.M512(rsqrt28Ps([16]float32(a)))
+func M512Rsqrt28Ps(a x86.M512) x86.M512 {
+	return x86.M512(m512Rsqrt28Ps([16]float32(a)))
 }
 
-func rsqrt28Ps(a [16]float32) [16]float32
+func m512Rsqrt28Ps(a [16]float32) [16]float32
 
 
-// MaskRsqrt28RoundPd: Compute the approximate reciprocal square root of packed
-// double-precision (64-bit) floating-point elements in 'a', store the results
-// in 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). The maximum relative error for this
+// M512MaskRsqrt28RoundPd: Compute the approximate reciprocal square root of
+// packed double-precision (64-bit) floating-point elements in 'a', store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). The maximum relative error for this
 // approximation is less than 2^-28. Rounding is done according to the
 // 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -1082,14 +1084,14 @@ func rsqrt28Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_mask_rsqrt28_round_pd'.
 // Requires AVX512ER.
-func MaskRsqrt28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskRsqrt28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
+func M512MaskRsqrt28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskRsqrt28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
 }
 
-func maskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
+func m512MaskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
 
 
-// MaskzRsqrt28RoundPd: Compute the approximate reciprocal square root of
+// M512MaskzRsqrt28RoundPd: Compute the approximate reciprocal square root of
 // packed double-precision (64-bit) floating-point elements in 'a', store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). The maximum relative error for this
@@ -1112,14 +1114,14 @@ func maskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_maskz_rsqrt28_round_pd'.
 // Requires AVX512ER.
-func MaskzRsqrt28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(maskzRsqrt28RoundPd(uint8(k), [8]float64(a), rounding))
+func M512MaskzRsqrt28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512MaskzRsqrt28RoundPd(uint8(k), [8]float64(a), rounding))
 }
 
-func maskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
+func m512MaskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 
 
-// Rsqrt28RoundPd: Compute the approximate reciprocal square root of packed
+// M512Rsqrt28RoundPd: Compute the approximate reciprocal square root of packed
 // double-precision (64-bit) floating-point elements in 'a', store the results
 // in 'dst'. The maximum relative error for this approximation is less than
 // 2^-28. Rounding is done according to the 'rounding' parameter, which can be
@@ -1137,17 +1139,17 @@ func maskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_rsqrt28_round_pd'.
 // Requires AVX512ER.
-func Rsqrt28RoundPd(a x86.M512d, rounding int) x86.M512d {
-	return x86.M512d(rsqrt28RoundPd([8]float64(a), rounding))
+func M512Rsqrt28RoundPd(a x86.M512d, rounding int) x86.M512d {
+	return x86.M512d(m512Rsqrt28RoundPd([8]float64(a), rounding))
 }
 
-func rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
+func m512Rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
 
 
-// MaskRsqrt28RoundPs: Compute the approximate reciprocal square root of packed
-// single-precision (32-bit) floating-point elements in 'a', store the results
-// in 'dst' using writemask 'k' (elements are copied from 'src' when the
-// corresponding mask bit is not set). The maximum relative error for this
+// M512MaskRsqrt28RoundPs: Compute the approximate reciprocal square root of
+// packed single-precision (32-bit) floating-point elements in 'a', store the
+// results in 'dst' using writemask 'k' (elements are copied from 'src' when
+// the corresponding mask bit is not set). The maximum relative error for this
 // approximation is less than 2^-28. Rounding is done according to the
 // 'rounding' parameter, which can be one of:
 //     (_MM_FROUND_TO_NEAREST_INT |_MM_FROUND_NO_EXC) // round to nearest, and suppress exceptions
@@ -1167,14 +1169,14 @@ func rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_mask_rsqrt28_round_ps'.
 // Requires AVX512ER.
-func MaskRsqrt28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskRsqrt28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+func M512MaskRsqrt28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskRsqrt28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
-func maskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
+func m512MaskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 
 
-// MaskzRsqrt28RoundPs: Compute the approximate reciprocal square root of
+// M512MaskzRsqrt28RoundPs: Compute the approximate reciprocal square root of
 // packed single-precision (32-bit) floating-point elements in 'a', store the
 // results in 'dst' using zeromask 'k' (elements are zeroed out when the
 // corresponding mask bit is not set). The maximum relative error for this
@@ -1197,14 +1199,14 @@ func maskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) 
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_maskz_rsqrt28_round_ps'.
 // Requires AVX512ER.
-func MaskzRsqrt28RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
-	return x86.M512(maskzRsqrt28RoundPs(uint16(k), [16]float32(a), rounding))
+func M512MaskzRsqrt28RoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512MaskzRsqrt28RoundPs(uint16(k), [16]float32(a), rounding))
 }
 
-func maskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
+func m512MaskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 
 
-// Rsqrt28RoundPs: Compute the approximate reciprocal square root of packed
+// M512Rsqrt28RoundPs: Compute the approximate reciprocal square root of packed
 // single-precision (32-bit) floating-point elements in 'a', store the results
 // in 'dst'. The maximum relative error for this approximation is less than
 // 2^-28. Rounding is done according to the 'rounding' parameter, which can be
@@ -1222,11 +1224,11 @@ func maskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_rsqrt28_round_ps'.
 // Requires AVX512ER.
-func Rsqrt28RoundPs(a x86.M512, rounding int) x86.M512 {
-	return x86.M512(rsqrt28RoundPs([16]float32(a), rounding))
+func M512Rsqrt28RoundPs(a x86.M512, rounding int) x86.M512 {
+	return x86.M512(m512Rsqrt28RoundPs([16]float32(a), rounding))
 }
 
-func rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
+func m512Rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
 
 
 // MaskRsqrt28RoundSd: Compute the approximate reciprocal square root of the

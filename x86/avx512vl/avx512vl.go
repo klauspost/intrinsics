@@ -51,8 +51,8 @@ func MaskzAddPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
 func maskzAddPd(k uint8, a [2]float64, b [2]float64) [2]float64
 
 
-// MaskAddPd1: Add packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
+// M256MaskAddPd: Add packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 3
@@ -67,16 +67,16 @@ func maskzAddPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm256_mask_add_pd'.
 // Requires AVX512VL.
-func MaskAddPd1(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(maskAddPd1([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
+func M256MaskAddPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256MaskAddPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
-func maskAddPd1(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
+func m256MaskAddPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
 
 
-// MaskzAddPd1: Add packed double-precision (64-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst' using zeromask 'k' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M256MaskzAddPd: Add packed double-precision (64-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -90,11 +90,11 @@ func maskAddPd1(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm256_maskz_add_pd'.
 // Requires AVX512VL.
-func MaskzAddPd1(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
-	return x86.M256d(maskzAddPd1(uint8(k), [4]float64(a), [4]float64(b)))
+func M256MaskzAddPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+	return x86.M256d(m256MaskzAddPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
-func maskzAddPd1(k uint8, a [4]float64, b [4]float64) [4]float64
+func m256MaskzAddPd(k uint8, a [4]float64, b [4]float64) [4]float64
 
 
 // MaskAddPs: Add packed single-precision (32-bit) floating-point elements in
@@ -143,8 +143,8 @@ func MaskzAddPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
 func maskzAddPs(k uint8, a [4]float32, b [4]float32) [4]float32
 
 
-// MaskAddPs1: Add packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
+// M256MaskAddPs: Add packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst' using writemask 'k' (elements
 // are copied from 'src' when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
@@ -159,16 +159,16 @@ func maskzAddPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm256_mask_add_ps'.
 // Requires AVX512VL.
-func MaskAddPs1(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(maskAddPs1([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
+func M256MaskAddPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256MaskAddPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
-func maskAddPs1(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
+func m256MaskAddPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
 
 
-// MaskzAddPs1: Add packed single-precision (32-bit) floating-point elements in
-// 'a' and 'b', and store the results in 'dst' using zeromask 'k' (elements are
-// zeroed out when the corresponding mask bit is not set). 
+// M256MaskzAddPs: Add packed single-precision (32-bit) floating-point elements
+// in 'a' and 'b', and store the results in 'dst' using zeromask 'k' (elements
+// are zeroed out when the corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -182,11 +182,11 @@ func maskAddPs1(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm256_maskz_add_ps'.
 // Requires AVX512VL.
-func MaskzAddPs1(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
-	return x86.M256(maskzAddPs1(uint8(k), [8]float32(a), [8]float32(b)))
+func M256MaskzAddPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+	return x86.M256(m256MaskzAddPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
-func maskzAddPs1(k uint8, a [8]float32, b [8]float32) [8]float32
+func m256MaskzAddPs(k uint8, a [8]float32, b [8]float32) [8]float32
 
 
 // AlignrEpi32: Concatenate 'a' and 'b' into a 32-byte immediate result, shift
@@ -262,9 +262,9 @@ func MaskzAlignrEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i, count int) x86.M12
 func maskzAlignrEpi32(k uint8, a [16]byte, b [16]byte, count int) [16]byte
 
 
-// AlignrEpi321: Concatenate 'a' and 'b' into a 64-byte immediate result, shift
-// the result right by 'count' 32-bit elements, and store the low 32 bytes (8
-// elements) in 'dst'. 
+// M256AlignrEpi32: Concatenate 'a' and 'b' into a 64-byte immediate result,
+// shift the result right by 'count' 32-bit elements, and store the low 32
+// bytes (8 elements) in 'dst'. 
 //
 //		temp[511:256] := a[255:0]
 //		temp[255:0] := b[255:0]
@@ -274,16 +274,16 @@ func maskzAlignrEpi32(k uint8, a [16]byte, b [16]byte, count int) [16]byte
 //
 // Instruction: 'VALIGND'. Intrinsic: '_mm256_alignr_epi32'.
 // Requires AVX512VL.
-func AlignrEpi321(a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(alignrEpi321([32]byte(a), [32]byte(b), count))
+func M256AlignrEpi32(a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256AlignrEpi32([32]byte(a), [32]byte(b), count))
 }
 
-func alignrEpi321(a [32]byte, b [32]byte, count int) [32]byte
+func m256AlignrEpi32(a [32]byte, b [32]byte, count int) [32]byte
 
 
-// MaskAlignrEpi321: Concatenate 'a' and 'b' into a 64-byte immediate result,
-// shift the result right by 'count' 32-bit elements, and store the low 32
-// bytes (8 elements) in 'dst' using writemask 'k' (elements are copied from
+// M256MaskAlignrEpi32: Concatenate 'a' and 'b' into a 64-byte immediate
+// result, shift the result right by 'count' 32-bit elements, and store the low
+// 32 bytes (8 elements) in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
 //		temp[511:256] := a[255:0]
@@ -301,17 +301,17 @@ func alignrEpi321(a [32]byte, b [32]byte, count int) [32]byte
 //
 // Instruction: 'VALIGND'. Intrinsic: '_mm256_mask_alignr_epi32'.
 // Requires AVX512VL.
-func MaskAlignrEpi321(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(maskAlignrEpi321([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), count))
+func M256MaskAlignrEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256MaskAlignrEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), count))
 }
 
-func maskAlignrEpi321(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
+func m256MaskAlignrEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
 
 
-// MaskzAlignrEpi321: Concatenate 'a' and 'b' into a 64-byte immediate result,
-// shift the result right by 'count' 32-bit elements, and store the low 32
-// bytes (8 elements) in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
+// M256MaskzAlignrEpi32: Concatenate 'a' and 'b' into a 64-byte immediate
+// result, shift the result right by 'count' 32-bit elements, and store the low
+// 32 bytes (8 elements) in 'dst' using zeromask 'k' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		temp[511:256] := a[255:0]
 //		temp[255:0] := b[255:0]
@@ -328,11 +328,11 @@ func maskAlignrEpi321(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) 
 //
 // Instruction: 'VALIGND'. Intrinsic: '_mm256_maskz_alignr_epi32'.
 // Requires AVX512VL.
-func MaskzAlignrEpi321(k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(maskzAlignrEpi321(uint8(k), [32]byte(a), [32]byte(b), count))
+func M256MaskzAlignrEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256MaskzAlignrEpi32(uint8(k), [32]byte(a), [32]byte(b), count))
 }
 
-func maskzAlignrEpi321(k uint8, a [32]byte, b [32]byte, count int) [32]byte
+func m256MaskzAlignrEpi32(k uint8, a [32]byte, b [32]byte, count int) [32]byte
 
 
 // AlignrEpi64: Concatenate 'a' and 'b' into a 32-byte immediate result, shift
@@ -408,9 +408,9 @@ func MaskzAlignrEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i, count int) x86.M12
 func maskzAlignrEpi64(k uint8, a [16]byte, b [16]byte, count int) [16]byte
 
 
-// AlignrEpi641: Concatenate 'a' and 'b' into a 64-byte immediate result, shift
-// the result right by 'count' 64-bit elements, and store the low 32 bytes (4
-// elements) in 'dst'. 
+// M256AlignrEpi64: Concatenate 'a' and 'b' into a 64-byte immediate result,
+// shift the result right by 'count' 64-bit elements, and store the low 32
+// bytes (4 elements) in 'dst'. 
 //
 //		temp[511:256] := a[255:0]
 //		temp[255:0] := b[255:0]
@@ -420,16 +420,16 @@ func maskzAlignrEpi64(k uint8, a [16]byte, b [16]byte, count int) [16]byte
 //
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm256_alignr_epi64'.
 // Requires AVX512VL.
-func AlignrEpi641(a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(alignrEpi641([32]byte(a), [32]byte(b), count))
+func M256AlignrEpi64(a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256AlignrEpi64([32]byte(a), [32]byte(b), count))
 }
 
-func alignrEpi641(a [32]byte, b [32]byte, count int) [32]byte
+func m256AlignrEpi64(a [32]byte, b [32]byte, count int) [32]byte
 
 
-// MaskAlignrEpi641: Concatenate 'a' and 'b' into a 64-byte immediate result,
-// shift the result right by 'count' 64-bit elements, and store the low 32
-// bytes (4 elements) in 'dst' using writemask 'k' (elements are copied from
+// M256MaskAlignrEpi64: Concatenate 'a' and 'b' into a 64-byte immediate
+// result, shift the result right by 'count' 64-bit elements, and store the low
+// 32 bytes (4 elements) in 'dst' using writemask 'k' (elements are copied from
 // 'src' when the corresponding mask bit is not set). 
 //
 //		temp[511:256] := a[255:0]
@@ -447,17 +447,17 @@ func alignrEpi641(a [32]byte, b [32]byte, count int) [32]byte
 //
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm256_mask_alignr_epi64'.
 // Requires AVX512VL.
-func MaskAlignrEpi641(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(maskAlignrEpi641([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), count))
+func M256MaskAlignrEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256MaskAlignrEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), count))
 }
 
-func maskAlignrEpi641(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
+func m256MaskAlignrEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) [32]byte
 
 
-// MaskzAlignrEpi641: Concatenate 'a' and 'b' into a 64-byte immediate result,
-// shift the result right by 'count' 64-bit elements, and store the low 32
-// bytes (4 elements) in 'dst' using zeromask 'k' (elements are zeroed out when
-// the corresponding mask bit is not set). 
+// M256MaskzAlignrEpi64: Concatenate 'a' and 'b' into a 64-byte immediate
+// result, shift the result right by 'count' 64-bit elements, and store the low
+// 32 bytes (4 elements) in 'dst' using zeromask 'k' (elements are zeroed out
+// when the corresponding mask bit is not set). 
 //
 //		temp[511:256] := a[255:0]
 //		temp[255:0] := b[255:0]
@@ -474,11 +474,11 @@ func maskAlignrEpi641(src [32]byte, k uint8, a [32]byte, b [32]byte, count int) 
 //
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm256_maskz_alignr_epi64'.
 // Requires AVX512VL.
-func MaskzAlignrEpi641(k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
-	return x86.M256i(maskzAlignrEpi641(uint8(k), [32]byte(a), [32]byte(b), count))
+func M256MaskzAlignrEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i, count int) x86.M256i {
+	return x86.M256i(m256MaskzAlignrEpi64(uint8(k), [32]byte(a), [32]byte(b), count))
 }
 
-func maskzAlignrEpi641(k uint8, a [32]byte, b [32]byte, count int) [32]byte
+func m256MaskzAlignrEpi64(k uint8, a [32]byte, b [32]byte, count int) [32]byte
 
 
 // Madd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -556,7 +556,7 @@ func MaskzMadd52hiEpu64(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i) x86
 func maskzMadd52hiEpu64(k uint8, a [16]byte, b [16]byte, c [16]byte) [16]byte
 
 
-// Madd52hiEpu641: Multiply packed unsigned 52-bit integers in each 64-bit
+// M256Madd52hiEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
 // element of 'b' and 'c' to form a 104-bit intermediate result. Add the high
 // 52-bit unsigned integer from the intermediate result with the corresponding
 // unsigned 64-bit integer in 'a', and store the results in 'dst'. 
@@ -570,19 +570,19 @@ func maskzMadd52hiEpu64(k uint8, a [16]byte, b [16]byte, c [16]byte) [16]byte
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm256_madd52hi_epu64'.
 // Requires AVX512VL.
-func Madd52hiEpu641(a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
-	return x86.M256i(madd52hiEpu641([32]byte(a), [32]byte(b), [32]byte(c)))
+func M256Madd52hiEpu64(a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
+	return x86.M256i(m256Madd52hiEpu64([32]byte(a), [32]byte(b), [32]byte(c)))
 }
 
-func madd52hiEpu641(a [32]byte, b [32]byte, c [32]byte) [32]byte
+func m256Madd52hiEpu64(a [32]byte, b [32]byte, c [32]byte) [32]byte
 
 
-// MaskMadd52hiEpu641: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the high
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'a' when the corresponding mask bit
-// is not set). 
+// M256MaskMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// high 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'a' when the corresponding
+// mask bit is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -597,19 +597,19 @@ func madd52hiEpu641(a [32]byte, b [32]byte, c [32]byte) [32]byte
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm256_mask_madd52hi_epu64'.
 // Requires AVX512VL.
-func MaskMadd52hiEpu641(a x86.M256i, k x86.Mmask8, b x86.M256i, c x86.M256i) x86.M256i {
-	return x86.M256i(maskMadd52hiEpu641([32]byte(a), uint8(k), [32]byte(b), [32]byte(c)))
+func M256MaskMadd52hiEpu64(a x86.M256i, k x86.Mmask8, b x86.M256i, c x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMadd52hiEpu64([32]byte(a), uint8(k), [32]byte(b), [32]byte(c)))
 }
 
-func maskMadd52hiEpu641(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
+func m256MaskMadd52hiEpu64(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
 
 
-// MaskzMadd52hiEpu641: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the high
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzMadd52hiEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// high 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -624,11 +624,11 @@ func maskMadd52hiEpu641(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
 //
 // Instruction: 'VPMADD52HUQ'. Intrinsic: '_mm256_maskz_madd52hi_epu64'.
 // Requires AVX512VL.
-func MaskzMadd52hiEpu641(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
-	return x86.M256i(maskzMadd52hiEpu641(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c)))
+func M256MaskzMadd52hiEpu64(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMadd52hiEpu64(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c)))
 }
 
-func maskzMadd52hiEpu641(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
+func m256MaskzMadd52hiEpu64(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
 
 
 // Madd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
@@ -706,7 +706,7 @@ func MaskzMadd52loEpu64(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i) x86
 func maskzMadd52loEpu64(k uint8, a [16]byte, b [16]byte, c [16]byte) [16]byte
 
 
-// Madd52loEpu641: Multiply packed unsigned 52-bit integers in each 64-bit
+// M256Madd52loEpu64: Multiply packed unsigned 52-bit integers in each 64-bit
 // element of 'b' and 'c' to form a 104-bit intermediate result. Add the low
 // 52-bit unsigned integer from the intermediate result with the corresponding
 // unsigned 64-bit integer in 'a', and store the results in 'dst'. 
@@ -720,19 +720,19 @@ func maskzMadd52loEpu64(k uint8, a [16]byte, b [16]byte, c [16]byte) [16]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm256_madd52lo_epu64'.
 // Requires AVX512VL.
-func Madd52loEpu641(a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
-	return x86.M256i(madd52loEpu641([32]byte(a), [32]byte(b), [32]byte(c)))
+func M256Madd52loEpu64(a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
+	return x86.M256i(m256Madd52loEpu64([32]byte(a), [32]byte(b), [32]byte(c)))
 }
 
-func madd52loEpu641(a [32]byte, b [32]byte, c [32]byte) [32]byte
+func m256Madd52loEpu64(a [32]byte, b [32]byte, c [32]byte) [32]byte
 
 
-// MaskMadd52loEpu641: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the low
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// writemask 'k' (elements are copied from 'a' when the corresponding mask bit
-// is not set). 
+// M256MaskMadd52loEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// low 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using writemask 'k' (elements are copied from 'a' when the corresponding
+// mask bit is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -747,19 +747,19 @@ func madd52loEpu641(a [32]byte, b [32]byte, c [32]byte) [32]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm256_mask_madd52lo_epu64'.
 // Requires AVX512VL.
-func MaskMadd52loEpu641(a x86.M256i, k x86.Mmask8, b x86.M256i, c x86.M256i) x86.M256i {
-	return x86.M256i(maskMadd52loEpu641([32]byte(a), uint8(k), [32]byte(b), [32]byte(c)))
+func M256MaskMadd52loEpu64(a x86.M256i, k x86.Mmask8, b x86.M256i, c x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMadd52loEpu64([32]byte(a), uint8(k), [32]byte(b), [32]byte(c)))
 }
 
-func maskMadd52loEpu641(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
+func m256MaskMadd52loEpu64(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
 
 
-// MaskzMadd52loEpu641: Multiply packed unsigned 52-bit integers in each 64-bit
-// element of 'b' and 'c' to form a 104-bit intermediate result. Add the low
-// 52-bit unsigned integer from the intermediate result with the corresponding
-// unsigned 64-bit integer in 'a', and store the results in 'dst' using
-// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
-// set). 
+// M256MaskzMadd52loEpu64: Multiply packed unsigned 52-bit integers in each
+// 64-bit element of 'b' and 'c' to form a 104-bit intermediate result. Add the
+// low 52-bit unsigned integer from the intermediate result with the
+// corresponding unsigned 64-bit integer in 'a', and store the results in 'dst'
+// using zeromask 'k' (elements are zeroed out when the corresponding mask bit
+// is not set). 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -774,11 +774,11 @@ func maskMadd52loEpu641(a [32]byte, k uint8, b [32]byte, c [32]byte) [32]byte
 //
 // Instruction: 'VPMADD52LUQ'. Intrinsic: '_mm256_maskz_madd52lo_epu64'.
 // Requires AVX512VL.
-func MaskzMadd52loEpu641(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
-	return x86.M256i(maskzMadd52loEpu641(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c)))
+func M256MaskzMadd52loEpu64(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMadd52loEpu64(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c)))
 }
 
-func maskzMadd52loEpu641(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
+func m256MaskzMadd52loEpu64(k uint8, a [32]byte, b [32]byte, c [32]byte) [32]byte
 
 
 // MovmEpi8: Set each packed 8-bit integer in 'dst' to all ones or all zeros
@@ -894,11 +894,11 @@ func MultishiftEpi64Epi8(a x86.M128i, b x86.M128i) x86.M128i {
 func multishiftEpi64Epi8(a [16]byte, b [16]byte) [16]byte
 
 
-// MaskMultishiftEpi64Epi81: For each 64-bit element in 'b', select 8 unaligned
-// bytes using a byte-granular shift control within the corresponding 64-bit
-// element of 'a', and store the 8 assembled bytes to the corresponding 64-bit
-// element of 'dst' using writemask 'k' (elements are copied from 'src' when
-// the corresponding mask bit is not set). 
+// M256MaskMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8
+// unaligned bytes using a byte-granular shift control within the corresponding
+// 64-bit element of 'a', and store the 8 assembled bytes to the corresponding
+// 64-bit element of 'dst' using writemask 'k' (elements are copied from 'src'
+// when the corresponding mask bit is not set). 
 //
 //		FOR i := 0 to 3
 //			q := i * 64
@@ -919,14 +919,14 @@ func multishiftEpi64Epi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm256_mask_multishift_epi64_epi8'.
 // Requires AVX512VL.
-func MaskMultishiftEpi64Epi81(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskMultishiftEpi64Epi81([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskMultishiftEpi64Epi8(src x86.M256i, k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskMultishiftEpi64Epi8([32]byte(src), uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskMultishiftEpi64Epi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskMultishiftEpi64Epi8(src [32]byte, k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MaskzMultishiftEpi64Epi81: For each 64-bit element in 'b', select 8
+// M256MaskzMultishiftEpi64Epi8: For each 64-bit element in 'b', select 8
 // unaligned bytes using a byte-granular shift control within the corresponding
 // 64-bit element of 'a', and store the 8 assembled bytes to the corresponding
 // 64-bit element of 'dst' using zeromask 'k' (elements are zeroed out when the
@@ -951,14 +951,14 @@ func maskMultishiftEpi64Epi81(src [32]byte, k uint32, a [32]byte, b [32]byte) [3
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm256_maskz_multishift_epi64_epi8'.
 // Requires AVX512VL.
-func MaskzMultishiftEpi64Epi81(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzMultishiftEpi64Epi81(uint32(k), [32]byte(a), [32]byte(b)))
+func M256MaskzMultishiftEpi64Epi8(k x86.Mmask32, a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzMultishiftEpi64Epi8(uint32(k), [32]byte(a), [32]byte(b)))
 }
 
-func maskzMultishiftEpi64Epi81(k uint32, a [32]byte, b [32]byte) [32]byte
+func m256MaskzMultishiftEpi64Epi8(k uint32, a [32]byte, b [32]byte) [32]byte
 
 
-// MultishiftEpi64Epi81: For each 64-bit element in 'b', select 8 unaligned
+// M256MultishiftEpi64Epi8: For each 64-bit element in 'b', select 8 unaligned
 // bytes using a byte-granular shift control within the corresponding 64-bit
 // element of 'a', and store the 8 assembled bytes to the corresponding 64-bit
 // element of 'dst'. 
@@ -978,11 +978,11 @@ func maskzMultishiftEpi64Epi81(k uint32, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm256_multishift_epi64_epi8'.
 // Requires AVX512VL.
-func MultishiftEpi64Epi81(a x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(multishiftEpi64Epi81([32]byte(a), [32]byte(b)))
+func M256MultishiftEpi64Epi8(a x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MultishiftEpi64Epi8([32]byte(a), [32]byte(b)))
 }
 
-func multishiftEpi64Epi81(a [32]byte, b [32]byte) [32]byte
+func m256MultishiftEpi64Epi8(a [32]byte, b [32]byte) [32]byte
 
 
 // MaskPermutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' using the
@@ -1079,7 +1079,7 @@ func Permutex2varEpi8(a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
 func permutex2varEpi8(a [16]byte, idx [16]byte, b [16]byte) [16]byte
 
 
-// MaskPermutex2varEpi81: Shuffle 8-bit integers in 'a' and 'b' across lanes
+// M256MaskPermutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes
 // using the corresponding selector and index in 'idx', and store the results
 // in 'dst' using writemask 'k' (elements are copied from 'a' when the
 // corresponding mask bit is not set). 
@@ -1097,16 +1097,16 @@ func permutex2varEpi8(a [16]byte, idx [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPERMT2B'. Intrinsic: '_mm256_mask_permutex2var_epi8'.
 // Requires AVX512VL.
-func MaskPermutex2varEpi81(a x86.M256i, k x86.Mmask32, idx x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskPermutex2varEpi81([32]byte(a), uint32(k), [32]byte(idx), [32]byte(b)))
+func M256MaskPermutex2varEpi8(a x86.M256i, k x86.Mmask32, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPermutex2varEpi8([32]byte(a), uint32(k), [32]byte(idx), [32]byte(b)))
 }
 
-func maskPermutex2varEpi81(a [32]byte, k uint32, idx [32]byte, b [32]byte) [32]byte
+func m256MaskPermutex2varEpi8(a [32]byte, k uint32, idx [32]byte, b [32]byte) [32]byte
 
 
-// Mask2Permutex2varEpi81: Shuffle 8-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using writemask 'k' (elements are copied from 'a' when the
+// M256Mask2Permutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using writemask 'k' (elements are copied from 'a' when the
 // corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
@@ -1122,17 +1122,17 @@ func maskPermutex2varEpi81(a [32]byte, k uint32, idx [32]byte, b [32]byte) [32]b
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm256_mask2_permutex2var_epi8'.
 // Requires AVX512VL.
-func Mask2Permutex2varEpi81(a x86.M256i, idx x86.M256i, k x86.Mmask32, b x86.M256i) x86.M256i {
-	return x86.M256i(mask2Permutex2varEpi81([32]byte(a), [32]byte(idx), uint32(k), [32]byte(b)))
+func M256Mask2Permutex2varEpi8(a x86.M256i, idx x86.M256i, k x86.Mmask32, b x86.M256i) x86.M256i {
+	return x86.M256i(m256Mask2Permutex2varEpi8([32]byte(a), [32]byte(idx), uint32(k), [32]byte(b)))
 }
 
-func mask2Permutex2varEpi81(a [32]byte, idx [32]byte, k uint32, b [32]byte) [32]byte
+func m256Mask2Permutex2varEpi8(a [32]byte, idx [32]byte, k uint32, b [32]byte) [32]byte
 
 
-// MaskzPermutex2varEpi81: Shuffle 8-bit integers in 'a' and 'b' across lanes
-// using the corresponding selector and index in 'idx', and store the results
-// in 'dst' using zeromask 'k' (elements are zeroed out when the corresponding
-// mask bit is not set). 
+// M256MaskzPermutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across
+// lanes using the corresponding selector and index in 'idx', and store the
+// results in 'dst' using zeromask 'k' (elements are zeroed out when the
+// corresponding mask bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -1147,16 +1147,16 @@ func mask2Permutex2varEpi81(a [32]byte, idx [32]byte, k uint32, b [32]byte) [32]
 //
 // Instruction: 'VPERMI2B, VPERMT2B'. Intrinsic: '_mm256_maskz_permutex2var_epi8'.
 // Requires AVX512VL.
-func MaskzPermutex2varEpi81(k x86.Mmask32, a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(maskzPermutex2varEpi81(uint32(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
+func M256MaskzPermutex2varEpi8(k x86.Mmask32, a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPermutex2varEpi8(uint32(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
-func maskzPermutex2varEpi81(k uint32, a [32]byte, idx [32]byte, b [32]byte) [32]byte
+func m256MaskzPermutex2varEpi8(k uint32, a [32]byte, idx [32]byte, b [32]byte) [32]byte
 
 
-// Permutex2varEpi81: Shuffle 8-bit integers in 'a' and 'b' across lanes using
-// the corresponding selector and index in 'idx', and store the results in
-// 'dst'. 
+// M256Permutex2varEpi8: Shuffle 8-bit integers in 'a' and 'b' across lanes
+// using the corresponding selector and index in 'idx', and store the results
+// in 'dst'. 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -1167,11 +1167,11 @@ func maskzPermutex2varEpi81(k uint32, a [32]byte, idx [32]byte, b [32]byte) [32]
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm256_permutex2var_epi8'.
 // Requires AVX512VL.
-func Permutex2varEpi81(a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
-	return x86.M256i(permutex2varEpi81([32]byte(a), [32]byte(idx), [32]byte(b)))
+func M256Permutex2varEpi8(a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+	return x86.M256i(m256Permutex2varEpi8([32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
-func permutex2varEpi81(a [32]byte, idx [32]byte, b [32]byte) [32]byte
+func m256Permutex2varEpi8(a [32]byte, idx [32]byte, b [32]byte) [32]byte
 
 
 // MaskPermutexvarEpi8: Shuffle 8-bit integers in 'a' using the corresponding
@@ -1241,10 +1241,10 @@ func PermutexvarEpi8(idx x86.M128i, a x86.M128i) x86.M128i {
 func permutexvarEpi8(idx [16]byte, a [16]byte) [16]byte
 
 
-// MaskPermutexvarEpi81: Shuffle 8-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst' using writemask
-// 'k' (elements are copied from 'src' when the corresponding mask bit is not
-// set). 
+// M256MaskPermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst' using
+// writemask 'k' (elements are copied from 'src' when the corresponding mask
+// bit is not set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -1259,16 +1259,17 @@ func permutexvarEpi8(idx [16]byte, a [16]byte) [16]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm256_mask_permutexvar_epi8'.
 // Requires AVX512VL.
-func MaskPermutexvarEpi81(src x86.M256i, k x86.Mmask32, idx x86.M256i, a x86.M256i) x86.M256i {
-	return x86.M256i(maskPermutexvarEpi81([32]byte(src), uint32(k), [32]byte(idx), [32]byte(a)))
+func M256MaskPermutexvarEpi8(src x86.M256i, k x86.Mmask32, idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskPermutexvarEpi8([32]byte(src), uint32(k), [32]byte(idx), [32]byte(a)))
 }
 
-func maskPermutexvarEpi81(src [32]byte, k uint32, idx [32]byte, a [32]byte) [32]byte
+func m256MaskPermutexvarEpi8(src [32]byte, k uint32, idx [32]byte, a [32]byte) [32]byte
 
 
-// MaskzPermutexvarEpi81: Shuffle 8-bit integers in 'a' across lanes using the
-// corresponding index in 'idx', and store the results in 'dst' using zeromask
-// 'k' (elements are zeroed out when the corresponding mask bit is not set). 
+// M256MaskzPermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using
+// the corresponding index in 'idx', and store the results in 'dst' using
+// zeromask 'k' (elements are zeroed out when the corresponding mask bit is not
+// set). 
 //
 //		FOR j := 0 to 31
 //			i := j*8
@@ -1283,14 +1284,14 @@ func maskPermutexvarEpi81(src [32]byte, k uint32, idx [32]byte, a [32]byte) [32]
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm256_maskz_permutexvar_epi8'.
 // Requires AVX512VL.
-func MaskzPermutexvarEpi81(k x86.Mmask32, idx x86.M256i, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzPermutexvarEpi81(uint32(k), [32]byte(idx), [32]byte(a)))
+func M256MaskzPermutexvarEpi8(k x86.Mmask32, idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzPermutexvarEpi8(uint32(k), [32]byte(idx), [32]byte(a)))
 }
 
-func maskzPermutexvarEpi81(k uint32, idx [32]byte, a [32]byte) [32]byte
+func m256MaskzPermutexvarEpi8(k uint32, idx [32]byte, a [32]byte) [32]byte
 
 
-// PermutexvarEpi81: Shuffle 8-bit integers in 'a' across lanes using the
+// M256PermutexvarEpi8: Shuffle 8-bit integers in 'a' across lanes using the
 // corresponding index in 'idx', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 31
@@ -1302,9 +1303,9 @@ func maskzPermutexvarEpi81(k uint32, idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm256_permutexvar_epi8'.
 // Requires AVX512VL.
-func PermutexvarEpi81(idx x86.M256i, a x86.M256i) x86.M256i {
-	return x86.M256i(permutexvarEpi81([32]byte(idx), [32]byte(a)))
+func M256PermutexvarEpi8(idx x86.M256i, a x86.M256i) x86.M256i {
+	return x86.M256i(m256PermutexvarEpi8([32]byte(idx), [32]byte(a)))
 }
 
-func permutexvarEpi81(idx [32]byte, a [32]byte) [32]byte
+func m256PermutexvarEpi8(idx [32]byte, a [32]byte) [32]byte
 

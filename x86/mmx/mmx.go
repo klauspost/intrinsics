@@ -323,7 +323,7 @@ func Empty()  {
 func empty() 
 
 
-// Empty1: Empty the MMX state, which marks the x87 FPU registers as available
+// Empty2: Empty the MMX state, which marks the x87 FPU registers as available
 // for use by x87 instructions. This instruction must be used at the end of all
 // MMX technology procedures. 
 //
@@ -331,11 +331,11 @@ func empty()
 //
 // Instruction: 'EMMS'. Intrinsic: '_mm_empty'.
 // Requires MMX.
-func Empty1()  {
-	empty1()
+func Empty2()  {
+	empty2()
 }
 
-func empty1() 
+func empty2() 
 
 
 // FromInt: Copy 32-bit integer 'a' to the lower elements of 'dst', and zero

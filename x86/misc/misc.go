@@ -121,7 +121,7 @@ func BitScanReverse(a int) int {
 func bitScanReverse(a int) int
 
 
-// BitScanForward1: Set 'index' to the index of the lowest set bit in 32-bit
+// BitScanForward2: Set 'index' to the index of the lowest set bit in 32-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
 // set 'dst' to 1. 
 //
@@ -137,11 +137,11 @@ func bitScanReverse(a int) int
 //		FI
 //
 // Instruction: 'BSF'. Intrinsic: '_BitScanForward'.
-func BitScanForward1(index uint32, mask uint32) uint8 {
-	return uint8(bitScanForward1(index, mask))
+func BitScanForward2(index uint32, mask uint32) uint8 {
+	return uint8(bitScanForward2(index, mask))
 }
 
-func bitScanForward1(index uint32, mask uint32) uint8
+func bitScanForward2(index uint32, mask uint32) uint8
 
 
 // BitScanForward64: Set 'index' to the index of the lowest set bit in 64-bit
@@ -167,7 +167,7 @@ func BitScanForward64(index uint32, mask uint64) uint8 {
 func bitScanForward64(index uint32, mask uint64) uint8
 
 
-// BitScanReverse1: Set 'index' to the index of the highest set bit in 32-bit
+// BitScanReverse2: Set 'index' to the index of the highest set bit in 32-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
 // set 'dst' to 1. 
 //
@@ -183,11 +183,11 @@ func bitScanForward64(index uint32, mask uint64) uint8
 //		FI
 //
 // Instruction: 'BSR'. Intrinsic: '_BitScanReverse'.
-func BitScanReverse1(index uint32, mask uint32) uint8 {
-	return uint8(bitScanReverse1(index, mask))
+func BitScanReverse2(index uint32, mask uint32) uint8 {
+	return uint8(bitScanReverse2(index, mask))
 }
 
-func bitScanReverse1(index uint32, mask uint32) uint8
+func bitScanReverse2(index uint32, mask uint32) uint8
 
 
 // BitScanReverse64: Set 'index' to the index of the highest set bit in 64-bit

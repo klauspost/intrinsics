@@ -23,7 +23,7 @@ func BroadcastmbEpi64(k x86.Mmask8) x86.M128i {
 func broadcastmbEpi64(k uint8) [16]byte
 
 
-// BroadcastmbEpi641: Broadcast the low 8-bits from input mask 'k' to all
+// M256BroadcastmbEpi64: Broadcast the low 8-bits from input mask 'k' to all
 // 64-bit elements of 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -34,14 +34,14 @@ func broadcastmbEpi64(k uint8) [16]byte
 //
 // Instruction: 'VPBROADCASTMB2Q'. Intrinsic: '_mm256_broadcastmb_epi64'.
 // Requires AVX512CD.
-func BroadcastmbEpi641(k x86.Mmask8) x86.M256i {
-	return x86.M256i(broadcastmbEpi641(uint8(k)))
+func M256BroadcastmbEpi64(k x86.Mmask8) x86.M256i {
+	return x86.M256i(m256BroadcastmbEpi64(uint8(k)))
 }
 
-func broadcastmbEpi641(k uint8) [32]byte
+func m256BroadcastmbEpi64(k uint8) [32]byte
 
 
-// BroadcastmbEpi642: Broadcast the low 8-bits from input mask 'k' to all
+// M512BroadcastmbEpi64: Broadcast the low 8-bits from input mask 'k' to all
 // 64-bit elements of 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -52,11 +52,11 @@ func broadcastmbEpi641(k uint8) [32]byte
 //
 // Instruction: 'VPBROADCASTMB2Q'. Intrinsic: '_mm512_broadcastmb_epi64'.
 // Requires AVX512CD.
-func BroadcastmbEpi642(k x86.Mmask8) x86.M512i {
-	return x86.M512i(broadcastmbEpi642(uint8(k)))
+func M512BroadcastmbEpi64(k x86.Mmask8) x86.M512i {
+	return x86.M512i(m512BroadcastmbEpi64(uint8(k)))
 }
 
-func broadcastmbEpi642(k uint8) [64]byte
+func m512BroadcastmbEpi64(k uint8) [64]byte
 
 
 // BroadcastmwEpi32: Broadcast the low 16-bits from input mask 'k' to all
@@ -77,7 +77,7 @@ func BroadcastmwEpi32(k x86.Mmask16) x86.M128i {
 func broadcastmwEpi32(k uint16) [16]byte
 
 
-// BroadcastmwEpi321: Broadcast the low 16-bits from input mask 'k' to all
+// M256BroadcastmwEpi32: Broadcast the low 16-bits from input mask 'k' to all
 // 32-bit elements of 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -88,14 +88,14 @@ func broadcastmwEpi32(k uint16) [16]byte
 //
 // Instruction: 'VPBROADCASTMW2D'. Intrinsic: '_mm256_broadcastmw_epi32'.
 // Requires AVX512CD.
-func BroadcastmwEpi321(k x86.Mmask16) x86.M256i {
-	return x86.M256i(broadcastmwEpi321(uint16(k)))
+func M256BroadcastmwEpi32(k x86.Mmask16) x86.M256i {
+	return x86.M256i(m256BroadcastmwEpi32(uint16(k)))
 }
 
-func broadcastmwEpi321(k uint16) [32]byte
+func m256BroadcastmwEpi32(k uint16) [32]byte
 
 
-// BroadcastmwEpi322: Broadcast the low 16-bits from input mask 'k' to all
+// M512BroadcastmwEpi32: Broadcast the low 16-bits from input mask 'k' to all
 // 32-bit elements of 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -106,11 +106,11 @@ func broadcastmwEpi321(k uint16) [32]byte
 //
 // Instruction: 'VPBROADCASTMW2D'. Intrinsic: '_mm512_broadcastmw_epi32'.
 // Requires AVX512CD.
-func BroadcastmwEpi322(k x86.Mmask16) x86.M512i {
-	return x86.M512i(broadcastmwEpi322(uint16(k)))
+func M512BroadcastmwEpi32(k x86.Mmask16) x86.M512i {
+	return x86.M512i(m512BroadcastmwEpi32(uint16(k)))
 }
 
-func broadcastmwEpi322(k uint16) [64]byte
+func m512BroadcastmwEpi32(k uint16) [64]byte
 
 
 // ConflictEpi32: Test each 32-bit element of 'a' for equality with all other
@@ -192,8 +192,8 @@ func MaskzConflictEpi32(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzConflictEpi32(k uint8, a [16]byte) [16]byte
 
 
-// ConflictEpi321: Test each 32-bit element of 'a' for equality with all other
-// elements in 'a' closer to the least significant bit. Each element's
+// M256ConflictEpi32: Test each 32-bit element of 'a' for equality with all
+// other elements in 'a' closer to the least significant bit. Each element's
 // comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -208,14 +208,14 @@ func maskzConflictEpi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm256_conflict_epi32'.
 // Requires AVX512CD.
-func ConflictEpi321(a x86.M256i) x86.M256i {
-	return x86.M256i(conflictEpi321([32]byte(a)))
+func M256ConflictEpi32(a x86.M256i) x86.M256i {
+	return x86.M256i(m256ConflictEpi32([32]byte(a)))
 }
 
-func conflictEpi321(a [32]byte) [32]byte
+func m256ConflictEpi32(a [32]byte) [32]byte
 
 
-// MaskConflictEpi321: Test each 32-bit element of 'a' for equality with all
+// M256MaskConflictEpi32: Test each 32-bit element of 'a' for equality with all
 // other elements in 'a' closer to the least significant bit using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
 // set). Each element's comparison forms a zero extended bit vector in 'dst'. 
@@ -236,17 +236,17 @@ func conflictEpi321(a [32]byte) [32]byte
 //
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm256_mask_conflict_epi32'.
 // Requires AVX512CD.
-func MaskConflictEpi321(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskConflictEpi321([32]byte(src), uint8(k), [32]byte(a)))
+func M256MaskConflictEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskConflictEpi32([32]byte(src), uint8(k), [32]byte(a)))
 }
 
-func maskConflictEpi321(src [32]byte, k uint8, a [32]byte) [32]byte
+func m256MaskConflictEpi32(src [32]byte, k uint8, a [32]byte) [32]byte
 
 
-// MaskzConflictEpi321: Test each 32-bit element of 'a' for equality with all
-// other elements in 'a' closer to the least significant bit using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). Each
-// element's comparison forms a zero extended bit vector in 'dst'. 
+// M256MaskzConflictEpi32: Test each 32-bit element of 'a' for equality with
+// all other elements in 'a' closer to the least significant bit using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set).
+// Each element's comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*32
@@ -264,15 +264,15 @@ func maskConflictEpi321(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm256_maskz_conflict_epi32'.
 // Requires AVX512CD.
-func MaskzConflictEpi321(k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzConflictEpi321(uint8(k), [32]byte(a)))
+func M256MaskzConflictEpi32(k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzConflictEpi32(uint8(k), [32]byte(a)))
 }
 
-func maskzConflictEpi321(k uint8, a [32]byte) [32]byte
+func m256MaskzConflictEpi32(k uint8, a [32]byte) [32]byte
 
 
-// ConflictEpi322: Test each 32-bit element of 'a' for equality with all other
-// elements in 'a' closer to the least significant bit. Each element's
+// M512ConflictEpi32: Test each 32-bit element of 'a' for equality with all
+// other elements in 'a' closer to the least significant bit. Each element's
 // comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -287,14 +287,14 @@ func maskzConflictEpi321(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm512_conflict_epi32'.
 // Requires AVX512CD.
-func ConflictEpi322(a x86.M512i) x86.M512i {
-	return x86.M512i(conflictEpi322([64]byte(a)))
+func M512ConflictEpi32(a x86.M512i) x86.M512i {
+	return x86.M512i(m512ConflictEpi32([64]byte(a)))
 }
 
-func conflictEpi322(a [64]byte) [64]byte
+func m512ConflictEpi32(a [64]byte) [64]byte
 
 
-// MaskConflictEpi322: Test each 32-bit element of 'a' for equality with all
+// M512MaskConflictEpi32: Test each 32-bit element of 'a' for equality with all
 // other elements in 'a' closer to the least significant bit using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
 // set). Each element's comparison forms a zero extended bit vector in 'dst'. 
@@ -315,17 +315,17 @@ func conflictEpi322(a [64]byte) [64]byte
 //
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm512_mask_conflict_epi32'.
 // Requires AVX512CD.
-func MaskConflictEpi322(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
-	return x86.M512i(maskConflictEpi322([64]byte(src), uint16(k), [64]byte(a)))
+func M512MaskConflictEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskConflictEpi32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskConflictEpi322(src [64]byte, k uint16, a [64]byte) [64]byte
+func m512MaskConflictEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
-// MaskzConflictEpi322: Test each 32-bit element of 'a' for equality with all
-// other elements in 'a' closer to the least significant bit using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). Each
-// element's comparison forms a zero extended bit vector in 'dst'. 
+// M512MaskzConflictEpi32: Test each 32-bit element of 'a' for equality with
+// all other elements in 'a' closer to the least significant bit using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set).
+// Each element's comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 15
 //			i := j*32
@@ -343,11 +343,11 @@ func maskConflictEpi322(src [64]byte, k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPCONFLICTD'. Intrinsic: '_mm512_maskz_conflict_epi32'.
 // Requires AVX512CD.
-func MaskzConflictEpi322(k x86.Mmask16, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzConflictEpi322(uint16(k), [64]byte(a)))
+func M512MaskzConflictEpi32(k x86.Mmask16, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzConflictEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskzConflictEpi322(k uint16, a [64]byte) [64]byte
+func m512MaskzConflictEpi32(k uint16, a [64]byte) [64]byte
 
 
 // ConflictEpi64: Test each 64-bit element of 'a' for equality with all other
@@ -429,8 +429,8 @@ func MaskzConflictEpi64(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzConflictEpi64(k uint8, a [16]byte) [16]byte
 
 
-// ConflictEpi641: Test each 64-bit element of 'a' for equality with all other
-// elements in 'a' closer to the least significant bit. Each element's
+// M256ConflictEpi64: Test each 64-bit element of 'a' for equality with all
+// other elements in 'a' closer to the least significant bit. Each element's
 // comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -445,14 +445,14 @@ func maskzConflictEpi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm256_conflict_epi64'.
 // Requires AVX512CD.
-func ConflictEpi641(a x86.M256i) x86.M256i {
-	return x86.M256i(conflictEpi641([32]byte(a)))
+func M256ConflictEpi64(a x86.M256i) x86.M256i {
+	return x86.M256i(m256ConflictEpi64([32]byte(a)))
 }
 
-func conflictEpi641(a [32]byte) [32]byte
+func m256ConflictEpi64(a [32]byte) [32]byte
 
 
-// MaskConflictEpi641: Test each 64-bit element of 'a' for equality with all
+// M256MaskConflictEpi64: Test each 64-bit element of 'a' for equality with all
 // other elements in 'a' closer to the least significant bit using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
 // set). Each element's comparison forms a zero extended bit vector in 'dst'. 
@@ -473,17 +473,17 @@ func conflictEpi641(a [32]byte) [32]byte
 //
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm256_mask_conflict_epi64'.
 // Requires AVX512CD.
-func MaskConflictEpi641(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskConflictEpi641([32]byte(src), uint8(k), [32]byte(a)))
+func M256MaskConflictEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskConflictEpi64([32]byte(src), uint8(k), [32]byte(a)))
 }
 
-func maskConflictEpi641(src [32]byte, k uint8, a [32]byte) [32]byte
+func m256MaskConflictEpi64(src [32]byte, k uint8, a [32]byte) [32]byte
 
 
-// MaskzConflictEpi641: Test each 64-bit element of 'a' for equality with all
-// other elements in 'a' closer to the least significant bit using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). Each
-// element's comparison forms a zero extended bit vector in 'dst'. 
+// M256MaskzConflictEpi64: Test each 64-bit element of 'a' for equality with
+// all other elements in 'a' closer to the least significant bit using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set).
+// Each element's comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 3
 //			i := j*64
@@ -501,15 +501,15 @@ func maskConflictEpi641(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm256_maskz_conflict_epi64'.
 // Requires AVX512CD.
-func MaskzConflictEpi641(k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzConflictEpi641(uint8(k), [32]byte(a)))
+func M256MaskzConflictEpi64(k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzConflictEpi64(uint8(k), [32]byte(a)))
 }
 
-func maskzConflictEpi641(k uint8, a [32]byte) [32]byte
+func m256MaskzConflictEpi64(k uint8, a [32]byte) [32]byte
 
 
-// ConflictEpi642: Test each 64-bit element of 'a' for equality with all other
-// elements in 'a' closer to the least significant bit. Each element's
+// M512ConflictEpi64: Test each 64-bit element of 'a' for equality with all
+// other elements in 'a' closer to the least significant bit. Each element's
 // comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -524,14 +524,14 @@ func maskzConflictEpi641(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm512_conflict_epi64'.
 // Requires AVX512CD.
-func ConflictEpi642(a x86.M512i) x86.M512i {
-	return x86.M512i(conflictEpi642([64]byte(a)))
+func M512ConflictEpi64(a x86.M512i) x86.M512i {
+	return x86.M512i(m512ConflictEpi64([64]byte(a)))
 }
 
-func conflictEpi642(a [64]byte) [64]byte
+func m512ConflictEpi64(a [64]byte) [64]byte
 
 
-// MaskConflictEpi642: Test each 64-bit element of 'a' for equality with all
+// M512MaskConflictEpi64: Test each 64-bit element of 'a' for equality with all
 // other elements in 'a' closer to the least significant bit using writemask
 // 'k' (elements are copied from 'src' when the corresponding mask bit is not
 // set). Each element's comparison forms a zero extended bit vector in 'dst'. 
@@ -552,17 +552,17 @@ func conflictEpi642(a [64]byte) [64]byte
 //
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm512_mask_conflict_epi64'.
 // Requires AVX512CD.
-func MaskConflictEpi642(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
-	return x86.M512i(maskConflictEpi642([64]byte(src), uint8(k), [64]byte(a)))
+func M512MaskConflictEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskConflictEpi64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskConflictEpi642(src [64]byte, k uint8, a [64]byte) [64]byte
+func m512MaskConflictEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
-// MaskzConflictEpi642: Test each 64-bit element of 'a' for equality with all
-// other elements in 'a' closer to the least significant bit using zeromask 'k'
-// (elements are zeroed out when the corresponding mask bit is not set). Each
-// element's comparison forms a zero extended bit vector in 'dst'. 
+// M512MaskzConflictEpi64: Test each 64-bit element of 'a' for equality with
+// all other elements in 'a' closer to the least significant bit using zeromask
+// 'k' (elements are zeroed out when the corresponding mask bit is not set).
+// Each element's comparison forms a zero extended bit vector in 'dst'. 
 //
 //		FOR j := 0 to 7
 //			i := j*64
@@ -580,11 +580,11 @@ func maskConflictEpi642(src [64]byte, k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VPCONFLICTQ'. Intrinsic: '_mm512_maskz_conflict_epi64'.
 // Requires AVX512CD.
-func MaskzConflictEpi642(k x86.Mmask8, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzConflictEpi642(uint8(k), [64]byte(a)))
+func M512MaskzConflictEpi64(k x86.Mmask8, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzConflictEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskzConflictEpi642(k uint8, a [64]byte) [64]byte
+func m512MaskzConflictEpi64(k uint8, a [64]byte) [64]byte
 
 
 // LzcntEpi32: Counts the number of leading zero bits in each packed 32-bit
@@ -666,7 +666,7 @@ func MaskzLzcntEpi32(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzLzcntEpi32(k uint8, a [16]byte) [16]byte
 
 
-// LzcntEpi321: Counts the number of leading zero bits in each packed 32-bit
+// M256LzcntEpi32: Counts the number of leading zero bits in each packed 32-bit
 // integer in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -682,14 +682,14 @@ func maskzLzcntEpi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm256_lzcnt_epi32'.
 // Requires AVX512CD.
-func LzcntEpi321(a x86.M256i) x86.M256i {
-	return x86.M256i(lzcntEpi321([32]byte(a)))
+func M256LzcntEpi32(a x86.M256i) x86.M256i {
+	return x86.M256i(m256LzcntEpi32([32]byte(a)))
 }
 
-func lzcntEpi321(a [32]byte) [32]byte
+func m256LzcntEpi32(a [32]byte) [32]byte
 
 
-// MaskLzcntEpi321: Counts the number of leading zero bits in each packed
+// M256MaskLzcntEpi32: Counts the number of leading zero bits in each packed
 // 32-bit integer in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -710,14 +710,14 @@ func lzcntEpi321(a [32]byte) [32]byte
 //
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm256_mask_lzcnt_epi32'.
 // Requires AVX512CD.
-func MaskLzcntEpi321(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskLzcntEpi321([32]byte(src), uint8(k), [32]byte(a)))
+func M256MaskLzcntEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskLzcntEpi32([32]byte(src), uint8(k), [32]byte(a)))
 }
 
-func maskLzcntEpi321(src [32]byte, k uint8, a [32]byte) [32]byte
+func m256MaskLzcntEpi32(src [32]byte, k uint8, a [32]byte) [32]byte
 
 
-// MaskzLzcntEpi321: Counts the number of leading zero bits in each packed
+// M256MaskzLzcntEpi32: Counts the number of leading zero bits in each packed
 // 32-bit integer in 'a', and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -738,14 +738,14 @@ func maskLzcntEpi321(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm256_maskz_lzcnt_epi32'.
 // Requires AVX512CD.
-func MaskzLzcntEpi321(k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzLzcntEpi321(uint8(k), [32]byte(a)))
+func M256MaskzLzcntEpi32(k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzLzcntEpi32(uint8(k), [32]byte(a)))
 }
 
-func maskzLzcntEpi321(k uint8, a [32]byte) [32]byte
+func m256MaskzLzcntEpi32(k uint8, a [32]byte) [32]byte
 
 
-// LzcntEpi322: Counts the number of leading zero bits in each packed 32-bit
+// M512LzcntEpi32: Counts the number of leading zero bits in each packed 32-bit
 // integer in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 15
@@ -761,14 +761,14 @@ func maskzLzcntEpi321(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm512_lzcnt_epi32'.
 // Requires AVX512CD.
-func LzcntEpi322(a x86.M512i) x86.M512i {
-	return x86.M512i(lzcntEpi322([64]byte(a)))
+func M512LzcntEpi32(a x86.M512i) x86.M512i {
+	return x86.M512i(m512LzcntEpi32([64]byte(a)))
 }
 
-func lzcntEpi322(a [64]byte) [64]byte
+func m512LzcntEpi32(a [64]byte) [64]byte
 
 
-// MaskLzcntEpi322: Counts the number of leading zero bits in each packed
+// M512MaskLzcntEpi32: Counts the number of leading zero bits in each packed
 // 32-bit integer in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -789,14 +789,14 @@ func lzcntEpi322(a [64]byte) [64]byte
 //
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm512_mask_lzcnt_epi32'.
 // Requires AVX512CD.
-func MaskLzcntEpi322(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
-	return x86.M512i(maskLzcntEpi322([64]byte(src), uint16(k), [64]byte(a)))
+func M512MaskLzcntEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskLzcntEpi32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
-func maskLzcntEpi322(src [64]byte, k uint16, a [64]byte) [64]byte
+func m512MaskLzcntEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
 
 
-// MaskzLzcntEpi322: Counts the number of leading zero bits in each packed
+// M512MaskzLzcntEpi32: Counts the number of leading zero bits in each packed
 // 32-bit integer in 'a', and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -817,11 +817,11 @@ func maskLzcntEpi322(src [64]byte, k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPLZCNTD'. Intrinsic: '_mm512_maskz_lzcnt_epi32'.
 // Requires AVX512CD.
-func MaskzLzcntEpi322(k x86.Mmask16, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzLzcntEpi322(uint16(k), [64]byte(a)))
+func M512MaskzLzcntEpi32(k x86.Mmask16, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzLzcntEpi32(uint16(k), [64]byte(a)))
 }
 
-func maskzLzcntEpi322(k uint16, a [64]byte) [64]byte
+func m512MaskzLzcntEpi32(k uint16, a [64]byte) [64]byte
 
 
 // LzcntEpi64: Counts the number of leading zero bits in each packed 64-bit
@@ -903,7 +903,7 @@ func MaskzLzcntEpi64(k x86.Mmask8, a x86.M128i) x86.M128i {
 func maskzLzcntEpi64(k uint8, a [16]byte) [16]byte
 
 
-// LzcntEpi641: Counts the number of leading zero bits in each packed 64-bit
+// M256LzcntEpi64: Counts the number of leading zero bits in each packed 64-bit
 // integer in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 3
@@ -919,14 +919,14 @@ func maskzLzcntEpi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm256_lzcnt_epi64'.
 // Requires AVX512CD.
-func LzcntEpi641(a x86.M256i) x86.M256i {
-	return x86.M256i(lzcntEpi641([32]byte(a)))
+func M256LzcntEpi64(a x86.M256i) x86.M256i {
+	return x86.M256i(m256LzcntEpi64([32]byte(a)))
 }
 
-func lzcntEpi641(a [32]byte) [32]byte
+func m256LzcntEpi64(a [32]byte) [32]byte
 
 
-// MaskLzcntEpi641: Counts the number of leading zero bits in each packed
+// M256MaskLzcntEpi64: Counts the number of leading zero bits in each packed
 // 64-bit integer in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -947,14 +947,14 @@ func lzcntEpi641(a [32]byte) [32]byte
 //
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm256_mask_lzcnt_epi64'.
 // Requires AVX512CD.
-func MaskLzcntEpi641(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskLzcntEpi641([32]byte(src), uint8(k), [32]byte(a)))
+func M256MaskLzcntEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskLzcntEpi64([32]byte(src), uint8(k), [32]byte(a)))
 }
 
-func maskLzcntEpi641(src [32]byte, k uint8, a [32]byte) [32]byte
+func m256MaskLzcntEpi64(src [32]byte, k uint8, a [32]byte) [32]byte
 
 
-// MaskzLzcntEpi641: Counts the number of leading zero bits in each packed
+// M256MaskzLzcntEpi64: Counts the number of leading zero bits in each packed
 // 64-bit integer in 'a', and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -975,14 +975,14 @@ func maskLzcntEpi641(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm256_maskz_lzcnt_epi64'.
 // Requires AVX512CD.
-func MaskzLzcntEpi641(k x86.Mmask8, a x86.M256i) x86.M256i {
-	return x86.M256i(maskzLzcntEpi641(uint8(k), [32]byte(a)))
+func M256MaskzLzcntEpi64(k x86.Mmask8, a x86.M256i) x86.M256i {
+	return x86.M256i(m256MaskzLzcntEpi64(uint8(k), [32]byte(a)))
 }
 
-func maskzLzcntEpi641(k uint8, a [32]byte) [32]byte
+func m256MaskzLzcntEpi64(k uint8, a [32]byte) [32]byte
 
 
-// LzcntEpi642: Counts the number of leading zero bits in each packed 64-bit
+// M512LzcntEpi64: Counts the number of leading zero bits in each packed 64-bit
 // integer in 'a', and store the results in 'dst'. 
 //
 //		FOR j := 0 to 7
@@ -998,14 +998,14 @@ func maskzLzcntEpi641(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm512_lzcnt_epi64'.
 // Requires AVX512CD.
-func LzcntEpi642(a x86.M512i) x86.M512i {
-	return x86.M512i(lzcntEpi642([64]byte(a)))
+func M512LzcntEpi64(a x86.M512i) x86.M512i {
+	return x86.M512i(m512LzcntEpi64([64]byte(a)))
 }
 
-func lzcntEpi642(a [64]byte) [64]byte
+func m512LzcntEpi64(a [64]byte) [64]byte
 
 
-// MaskLzcntEpi642: Counts the number of leading zero bits in each packed
+// M512MaskLzcntEpi64: Counts the number of leading zero bits in each packed
 // 64-bit integer in 'a', and store the results in 'dst' using writemask 'k'
 // (elements are copied from 'src' when the corresponding mask bit is not set). 
 //
@@ -1026,14 +1026,14 @@ func lzcntEpi642(a [64]byte) [64]byte
 //
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm512_mask_lzcnt_epi64'.
 // Requires AVX512CD.
-func MaskLzcntEpi642(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
-	return x86.M512i(maskLzcntEpi642([64]byte(src), uint8(k), [64]byte(a)))
+func M512MaskLzcntEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskLzcntEpi64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
-func maskLzcntEpi642(src [64]byte, k uint8, a [64]byte) [64]byte
+func m512MaskLzcntEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
 
 
-// MaskzLzcntEpi642: Counts the number of leading zero bits in each packed
+// M512MaskzLzcntEpi64: Counts the number of leading zero bits in each packed
 // 64-bit integer in 'a', and store the results in 'dst' using zeromask 'k'
 // (elements are zeroed out when the corresponding mask bit is not set). 
 //
@@ -1054,9 +1054,9 @@ func maskLzcntEpi642(src [64]byte, k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VPLZCNTQ'. Intrinsic: '_mm512_maskz_lzcnt_epi64'.
 // Requires AVX512CD.
-func MaskzLzcntEpi642(k x86.Mmask8, a x86.M512i) x86.M512i {
-	return x86.M512i(maskzLzcntEpi642(uint8(k), [64]byte(a)))
+func M512MaskzLzcntEpi64(k x86.Mmask8, a x86.M512i) x86.M512i {
+	return x86.M512i(m512MaskzLzcntEpi64(uint8(k), [64]byte(a)))
 }
 
-func maskzLzcntEpi642(k uint8, a [64]byte) [64]byte
+func m512MaskzLzcntEpi64(k uint8, a [64]byte) [64]byte
 
