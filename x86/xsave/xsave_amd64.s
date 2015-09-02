@@ -2,8 +2,7 @@
 TEXT ·xgetbv(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XGETBV R8
 
 	MOVQ $0, ret+4(FP)
@@ -14,8 +13,7 @@ TEXT ·xrstor(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVQ rs_mask+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XRSTOR R8, R9
 
 	RET
@@ -25,8 +23,7 @@ TEXT ·xrstor64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVQ rs_mask+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XRSTOR64 R8, R9
 
 	RET
@@ -36,8 +33,7 @@ TEXT ·xsave(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVQ save_mask+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XSAVE R8, R9
 
 	RET
@@ -47,8 +43,7 @@ TEXT ·xsave64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVQ save_mask+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XSAVE64 R8, R9
 
 	RET
@@ -58,8 +53,7 @@ TEXT ·xsetbv(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVQ val+4(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XSETBV R8, R9
 
 	RET

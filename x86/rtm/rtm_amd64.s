@@ -2,8 +2,7 @@
 TEXT ·xabort(SB),7,$0
 	MOVQ imm8+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XABORT R8
 
 	RET

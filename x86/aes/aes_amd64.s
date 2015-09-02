@@ -3,8 +3,7 @@ TEXT ·aesdecSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU RoundKey+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// AESDEC X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -15,8 +14,7 @@ TEXT ·aesdeclastSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU RoundKey+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// AESDECLAST X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -27,8 +25,7 @@ TEXT ·aesencSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU RoundKey+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// AESENC X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -39,8 +36,7 @@ TEXT ·aesenclastSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU RoundKey+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// AESENCLAST X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -50,8 +46,7 @@ TEXT ·aesenclastSi128(SB),7,$0
 TEXT ·aesimcSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// AESIMC X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -62,8 +57,7 @@ TEXT ·aeskeygenassistSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// AESKEYGENASSIST X0, R9
 
 	MOVOU X1, ret+24(FP)

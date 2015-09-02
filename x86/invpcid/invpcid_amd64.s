@@ -3,8 +3,7 @@ TEXT ·invpcid(SB),7,$0
 	MOVL typ+0(FP),R8
 	MOVQ descriptor+4(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// INVPCID R8, R9
 
 	RET

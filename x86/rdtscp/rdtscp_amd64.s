@@ -2,8 +2,7 @@
 TEXT ·rdtscp(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// RDTSCP R8
 
 	MOVQ $0, ret+4(FP)

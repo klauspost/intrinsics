@@ -40,8 +40,7 @@ TEXT ·m256MaskzAndPd(SB),7,$0
 // func m512AndPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·m512AndPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VANDPD Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -105,8 +104,7 @@ TEXT ·m256MaskzAndPs(SB),7,$0
 // func m512AndPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·m512AndPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VANDPS Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -170,8 +168,7 @@ TEXT ·m256MaskzAndnotPd(SB),7,$0
 // func m512AndnotPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·m512AndnotPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VANDNPD Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -235,8 +232,7 @@ TEXT ·m256MaskzAndnotPs(SB),7,$0
 // func m512AndnotPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·m512AndnotPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VANDNPS Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -262,8 +258,7 @@ TEXT ·m512MaskzAndnotPs(SB),7,$0
 TEXT ·m256BroadcastF32x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF32X2 X0
 
 	MOV Y0, ret+16(FP)
@@ -282,8 +277,7 @@ TEXT ·m256MaskzBroadcastF32x2(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF32X2 R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -293,8 +287,7 @@ TEXT ·m256MaskzBroadcastF32x2(SB),7,$0
 TEXT ·m512BroadcastF32x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF32X2 X0
 
 	MOV Z0, ret+16(FP)
@@ -313,8 +306,7 @@ TEXT ·m512MaskzBroadcastF32x2(SB),7,$0
 	MOVW k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF32X2 R8, X1
 
 	MOV Z1, ret+20(FP)
@@ -323,8 +315,7 @@ TEXT ·m512MaskzBroadcastF32x2(SB),7,$0
 // func m512BroadcastF32x8(a [8]float32) [16]float32
 TEXT ·m512BroadcastF32x8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF32X8 Y0
 
 	MOV Z0, ret+0(FP)
@@ -341,8 +332,7 @@ TEXT ·m512MaskBroadcastF32x8(SB),7,$0
 // func m512MaskzBroadcastF32x8(k uint16, a [8]float32) [16]float32
 TEXT ·m512MaskzBroadcastF32x8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF32X8 R8, Y1
 
 	MOV Z1, ret+0(FP)
@@ -352,8 +342,7 @@ TEXT ·m512MaskzBroadcastF32x8(SB),7,$0
 TEXT ·m256BroadcastF64x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF64X2 X0
 
 	MOV Y0, ret+16(FP)
@@ -372,8 +361,7 @@ TEXT ·m256MaskzBroadcastF64x2(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF64X2 R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -383,8 +371,7 @@ TEXT ·m256MaskzBroadcastF64x2(SB),7,$0
 TEXT ·m512BroadcastF64x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF64X2 X0
 
 	MOV Z0, ret+16(FP)
@@ -403,8 +390,7 @@ TEXT ·m512MaskzBroadcastF64x2(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTF64X2 R8, X1
 
 	MOV Z1, ret+20(FP)
@@ -414,8 +400,7 @@ TEXT ·m512MaskzBroadcastF64x2(SB),7,$0
 TEXT ·broadcastI32x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X2 X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -437,8 +422,7 @@ TEXT ·maskzBroadcastI32x2(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X2 R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -448,8 +432,7 @@ TEXT ·maskzBroadcastI32x2(SB),7,$0
 TEXT ·m256BroadcastI32x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X2 X0
 
 	MOV Y0, ret+16(FP)
@@ -468,8 +451,7 @@ TEXT ·m256MaskzBroadcastI32x2(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X2 R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -479,8 +461,7 @@ TEXT ·m256MaskzBroadcastI32x2(SB),7,$0
 TEXT ·m512BroadcastI32x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X2 X0
 
 	MOV Z0, ret+16(FP)
@@ -499,8 +480,7 @@ TEXT ·m512MaskzBroadcastI32x2(SB),7,$0
 	MOVW k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X2 R8, X1
 
 	MOV Z1, ret+20(FP)
@@ -509,8 +489,7 @@ TEXT ·m512MaskzBroadcastI32x2(SB),7,$0
 // func m512BroadcastI32x8(a [32]byte) [64]byte
 TEXT ·m512BroadcastI32x8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X8 Y0
 
 	MOV Z0, ret+0(FP)
@@ -527,8 +506,7 @@ TEXT ·m512MaskBroadcastI32x8(SB),7,$0
 // func m512MaskzBroadcastI32x8(k uint16, a [32]byte) [64]byte
 TEXT ·m512MaskzBroadcastI32x8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI32X8 R8, Y1
 
 	MOV Z1, ret+0(FP)
@@ -538,8 +516,7 @@ TEXT ·m512MaskzBroadcastI32x8(SB),7,$0
 TEXT ·m256BroadcastI64x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI64X2 X0
 
 	MOV Y0, ret+16(FP)
@@ -558,8 +535,7 @@ TEXT ·m256MaskzBroadcastI64x2(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI64X2 R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -569,8 +545,7 @@ TEXT ·m256MaskzBroadcastI64x2(SB),7,$0
 TEXT ·m512BroadcastI64x2(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI64X2 X0
 
 	MOV Z0, ret+16(FP)
@@ -589,8 +564,7 @@ TEXT ·m512MaskzBroadcastI64x2(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VBROADCASTI64X2 R8, X1
 
 	MOV Z1, ret+20(FP)
@@ -599,8 +573,7 @@ TEXT ·m512MaskzBroadcastI64x2(SB),7,$0
 // func m512CvtRoundepi64Pd(a [64]byte, rounding int) [8]float64
 TEXT ·m512CvtRoundepi64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PD Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -625,8 +598,7 @@ TEXT ·m512MaskzCvtRoundepi64Pd(SB),7,$0
 // func m512CvtRoundepi64Ps(a [64]byte, rounding int) [8]float32
 TEXT ·m512CvtRoundepi64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PS Z0, R9
 
 	MOV Y1, ret+0(FP)
@@ -651,8 +623,7 @@ TEXT ·m512MaskzCvtRoundepi64Ps(SB),7,$0
 // func m512CvtRoundepu64Pd(a [64]byte, rounding int) [8]float64
 TEXT ·m512CvtRoundepu64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PD Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -677,8 +648,7 @@ TEXT ·m512MaskzCvtRoundepu64Pd(SB),7,$0
 // func m512CvtRoundepu64Ps(a [64]byte, rounding int) [8]float32
 TEXT ·m512CvtRoundepu64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PS Z0, R9
 
 	MOV Y1, ret+0(FP)
@@ -703,8 +673,7 @@ TEXT ·m512MaskzCvtRoundepu64Ps(SB),7,$0
 // func m512CvtRoundpdEpi64(a [8]float64, rounding int) [64]byte
 TEXT ·m512CvtRoundpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2QQ Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -729,8 +698,7 @@ TEXT ·m512MaskzCvtRoundpdEpi64(SB),7,$0
 // func m512CvtRoundpdEpu64(a [8]float64, rounding int) [64]byte
 TEXT ·m512CvtRoundpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2UQQ Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -755,8 +723,7 @@ TEXT ·m512MaskzCvtRoundpdEpu64(SB),7,$0
 // func m512CvtRoundpsEpi64(a [8]float32, rounding int) [64]byte
 TEXT ·m512CvtRoundpsEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2QQ Y0, R9
 
 	MOV Z1, ret+0(FP)
@@ -781,8 +748,7 @@ TEXT ·m512MaskzCvtRoundpsEpi64(SB),7,$0
 // func m512CvtRoundpsEpu64(a [8]float32, rounding int) [64]byte
 TEXT ·m512CvtRoundpsEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2UQQ Y0, R9
 
 	MOV Z1, ret+0(FP)
@@ -808,8 +774,7 @@ TEXT ·m512MaskzCvtRoundpsEpu64(SB),7,$0
 TEXT ·cvtepi64Pd(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PD X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -831,8 +796,7 @@ TEXT ·maskzCvtepi64Pd(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PD R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -841,8 +805,7 @@ TEXT ·maskzCvtepi64Pd(SB),7,$0
 // func m256Cvtepi64Pd(a [32]byte) [4]float64
 TEXT ·m256Cvtepi64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PD Y0
 
 	MOV Y0, ret+0(FP)
@@ -859,8 +822,7 @@ TEXT ·m256MaskCvtepi64Pd(SB),7,$0
 // func m256MaskzCvtepi64Pd(k uint8, a [32]byte) [4]float64
 TEXT ·m256MaskzCvtepi64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PD R8, Y1
 
 	MOV Y1, ret+0(FP)
@@ -869,8 +831,7 @@ TEXT ·m256MaskzCvtepi64Pd(SB),7,$0
 // func m512Cvtepi64Pd(a [64]byte) [8]float64
 TEXT ·m512Cvtepi64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PD Z0
 
 	MOV Z0, ret+0(FP)
@@ -887,8 +848,7 @@ TEXT ·m512MaskCvtepi64Pd(SB),7,$0
 // func m512MaskzCvtepi64Pd(k uint8, a [64]byte) [8]float64
 TEXT ·m512MaskzCvtepi64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PD R8, Z1
 
 	MOV Z1, ret+0(FP)
@@ -898,8 +858,7 @@ TEXT ·m512MaskzCvtepi64Pd(SB),7,$0
 TEXT ·cvtepi64Ps(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -921,8 +880,7 @@ TEXT ·maskzCvtepi64Ps(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PS R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -931,8 +889,7 @@ TEXT ·maskzCvtepi64Ps(SB),7,$0
 // func m256Cvtepi64Ps(a [32]byte) [4]float32
 TEXT ·m256Cvtepi64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PS Y0
 
 	MOVOU X0, ret+0(FP)
@@ -949,8 +906,7 @@ TEXT ·m256MaskCvtepi64Ps(SB),7,$0
 // func m256MaskzCvtepi64Ps(k uint8, a [32]byte) [4]float32
 TEXT ·m256MaskzCvtepi64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PS R8, Y1
 
 	MOVOU X1, ret+0(FP)
@@ -959,8 +915,7 @@ TEXT ·m256MaskzCvtepi64Ps(SB),7,$0
 // func m512Cvtepi64Ps(a [64]byte) [8]float32
 TEXT ·m512Cvtepi64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PS Z0
 
 	MOV Y0, ret+0(FP)
@@ -977,8 +932,7 @@ TEXT ·m512MaskCvtepi64Ps(SB),7,$0
 // func m512MaskzCvtepi64Ps(k uint8, a [64]byte) [8]float32
 TEXT ·m512MaskzCvtepi64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTQQ2PS R8, Z1
 
 	MOV Y1, ret+0(FP)
@@ -988,8 +942,7 @@ TEXT ·m512MaskzCvtepi64Ps(SB),7,$0
 TEXT ·cvtepu64Pd(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PD X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1011,8 +964,7 @@ TEXT ·maskzCvtepu64Pd(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PD R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1021,8 +973,7 @@ TEXT ·maskzCvtepu64Pd(SB),7,$0
 // func m256Cvtepu64Pd(a [32]byte) [4]float64
 TEXT ·m256Cvtepu64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PD Y0
 
 	MOV Y0, ret+0(FP)
@@ -1039,8 +990,7 @@ TEXT ·m256MaskCvtepu64Pd(SB),7,$0
 // func m256MaskzCvtepu64Pd(k uint8, a [32]byte) [4]float64
 TEXT ·m256MaskzCvtepu64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PD R8, Y1
 
 	MOV Y1, ret+0(FP)
@@ -1049,8 +999,7 @@ TEXT ·m256MaskzCvtepu64Pd(SB),7,$0
 // func m512Cvtepu64Pd(a [64]byte) [8]float64
 TEXT ·m512Cvtepu64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PD Z0
 
 	MOV Z0, ret+0(FP)
@@ -1067,8 +1016,7 @@ TEXT ·m512MaskCvtepu64Pd(SB),7,$0
 // func m512MaskzCvtepu64Pd(k uint8, a [64]byte) [8]float64
 TEXT ·m512MaskzCvtepu64Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PD R8, Z1
 
 	MOV Z1, ret+0(FP)
@@ -1078,8 +1026,7 @@ TEXT ·m512MaskzCvtepu64Pd(SB),7,$0
 TEXT ·cvtepu64Ps(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1101,8 +1048,7 @@ TEXT ·maskzCvtepu64Ps(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PS R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1111,8 +1057,7 @@ TEXT ·maskzCvtepu64Ps(SB),7,$0
 // func m256Cvtepu64Ps(a [32]byte) [4]float32
 TEXT ·m256Cvtepu64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PS Y0
 
 	MOVOU X0, ret+0(FP)
@@ -1129,8 +1074,7 @@ TEXT ·m256MaskCvtepu64Ps(SB),7,$0
 // func m256MaskzCvtepu64Ps(k uint8, a [32]byte) [4]float32
 TEXT ·m256MaskzCvtepu64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PS R8, Y1
 
 	MOVOU X1, ret+0(FP)
@@ -1139,8 +1083,7 @@ TEXT ·m256MaskzCvtepu64Ps(SB),7,$0
 // func m512Cvtepu64Ps(a [64]byte) [8]float32
 TEXT ·m512Cvtepu64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PS Z0
 
 	MOV Y0, ret+0(FP)
@@ -1157,8 +1100,7 @@ TEXT ·m512MaskCvtepu64Ps(SB),7,$0
 // func m512MaskzCvtepu64Ps(k uint8, a [64]byte) [8]float32
 TEXT ·m512MaskzCvtepu64Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTUQQ2PS R8, Z1
 
 	MOV Y1, ret+0(FP)
@@ -1168,8 +1110,7 @@ TEXT ·m512MaskzCvtepu64Ps(SB),7,$0
 TEXT ·cvtpdEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2QQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1191,8 +1132,7 @@ TEXT ·maskzCvtpdEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2QQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1201,8 +1141,7 @@ TEXT ·maskzCvtpdEpi64(SB),7,$0
 // func m256CvtpdEpi64(a [4]float64) [32]byte
 TEXT ·m256CvtpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2QQ Y0
 
 	MOV Y0, ret+0(FP)
@@ -1219,8 +1158,7 @@ TEXT ·m256MaskCvtpdEpi64(SB),7,$0
 // func m256MaskzCvtpdEpi64(k uint8, a [4]float64) [32]byte
 TEXT ·m256MaskzCvtpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2QQ R8, Y1
 
 	MOV Y1, ret+0(FP)
@@ -1229,8 +1167,7 @@ TEXT ·m256MaskzCvtpdEpi64(SB),7,$0
 // func m512CvtpdEpi64(a [8]float64) [64]byte
 TEXT ·m512CvtpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2QQ Z0
 
 	MOV Z0, ret+0(FP)
@@ -1247,8 +1184,7 @@ TEXT ·m512MaskCvtpdEpi64(SB),7,$0
 // func m512MaskzCvtpdEpi64(k uint8, a [8]float64) [64]byte
 TEXT ·m512MaskzCvtpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2QQ R8, Z1
 
 	MOV Z1, ret+0(FP)
@@ -1258,8 +1194,7 @@ TEXT ·m512MaskzCvtpdEpi64(SB),7,$0
 TEXT ·cvtpdEpu64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2UQQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1281,8 +1216,7 @@ TEXT ·maskzCvtpdEpu64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2UQQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1291,8 +1225,7 @@ TEXT ·maskzCvtpdEpu64(SB),7,$0
 // func m256CvtpdEpu64(a [4]float64) [32]byte
 TEXT ·m256CvtpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2UQQ Y0
 
 	MOV Y0, ret+0(FP)
@@ -1309,8 +1242,7 @@ TEXT ·m256MaskCvtpdEpu64(SB),7,$0
 // func m256MaskzCvtpdEpu64(k uint8, a [4]float64) [32]byte
 TEXT ·m256MaskzCvtpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2UQQ R8, Y1
 
 	MOV Y1, ret+0(FP)
@@ -1319,8 +1251,7 @@ TEXT ·m256MaskzCvtpdEpu64(SB),7,$0
 // func m512CvtpdEpu64(a [8]float64) [64]byte
 TEXT ·m512CvtpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2UQQ Z0
 
 	MOV Z0, ret+0(FP)
@@ -1337,8 +1268,7 @@ TEXT ·m512MaskCvtpdEpu64(SB),7,$0
 // func m512MaskzCvtpdEpu64(k uint8, a [8]float64) [64]byte
 TEXT ·m512MaskzCvtpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPD2UQQ R8, Z1
 
 	MOV Z1, ret+0(FP)
@@ -1348,8 +1278,7 @@ TEXT ·m512MaskzCvtpdEpu64(SB),7,$0
 TEXT ·cvtpsEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2QQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1371,8 +1300,7 @@ TEXT ·maskzCvtpsEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2QQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1382,8 +1310,7 @@ TEXT ·maskzCvtpsEpi64(SB),7,$0
 TEXT ·m256CvtpsEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2QQ X0
 
 	MOV Y0, ret+16(FP)
@@ -1402,8 +1329,7 @@ TEXT ·m256MaskzCvtpsEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2QQ R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -1412,8 +1338,7 @@ TEXT ·m256MaskzCvtpsEpi64(SB),7,$0
 // func m512CvtpsEpi64(a [8]float32) [64]byte
 TEXT ·m512CvtpsEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2QQ Y0
 
 	MOV Z0, ret+0(FP)
@@ -1430,8 +1355,7 @@ TEXT ·m512MaskCvtpsEpi64(SB),7,$0
 // func m512MaskzCvtpsEpi64(k uint8, a [8]float32) [64]byte
 TEXT ·m512MaskzCvtpsEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2QQ R8, Y1
 
 	MOV Z1, ret+0(FP)
@@ -1441,8 +1365,7 @@ TEXT ·m512MaskzCvtpsEpi64(SB),7,$0
 TEXT ·cvtpsEpu64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2UQQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1464,8 +1387,7 @@ TEXT ·maskzCvtpsEpu64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2UQQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1475,8 +1397,7 @@ TEXT ·maskzCvtpsEpu64(SB),7,$0
 TEXT ·m256CvtpsEpu64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2UQQ X0
 
 	MOV Y0, ret+16(FP)
@@ -1495,8 +1416,7 @@ TEXT ·m256MaskzCvtpsEpu64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2UQQ R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -1505,8 +1425,7 @@ TEXT ·m256MaskzCvtpsEpu64(SB),7,$0
 // func m512CvtpsEpu64(a [8]float32) [64]byte
 TEXT ·m512CvtpsEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2UQQ Y0
 
 	MOV Z0, ret+0(FP)
@@ -1523,8 +1442,7 @@ TEXT ·m512MaskCvtpsEpu64(SB),7,$0
 // func m512MaskzCvtpsEpu64(k uint8, a [8]float32) [64]byte
 TEXT ·m512MaskzCvtpsEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTPS2UQQ R8, Y1
 
 	MOV Z1, ret+0(FP)
@@ -1533,8 +1451,7 @@ TEXT ·m512MaskzCvtpsEpu64(SB),7,$0
 // func m512CvttRoundpdEpi64(a [8]float64, sae int) [64]byte
 TEXT ·m512CvttRoundpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2QQ Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -1559,8 +1476,7 @@ TEXT ·m512MaskzCvttRoundpdEpi64(SB),7,$0
 // func m512CvttRoundpdEpu64(a [8]float64, sae int) [64]byte
 TEXT ·m512CvttRoundpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2UQQ Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -1585,8 +1501,7 @@ TEXT ·m512MaskzCvttRoundpdEpu64(SB),7,$0
 // func m512CvttRoundpsEpi64(a [8]float32, sae int) [64]byte
 TEXT ·m512CvttRoundpsEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2QQ Y0, R9
 
 	MOV Z1, ret+0(FP)
@@ -1611,8 +1526,7 @@ TEXT ·m512MaskzCvttRoundpsEpi64(SB),7,$0
 // func m512CvttRoundpsEpu64(a [8]float32, sae int) [64]byte
 TEXT ·m512CvttRoundpsEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2UQQ Y0, R9
 
 	MOV Z1, ret+0(FP)
@@ -1638,8 +1552,7 @@ TEXT ·m512MaskzCvttRoundpsEpu64(SB),7,$0
 TEXT ·cvttpdEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2QQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1661,8 +1574,7 @@ TEXT ·maskzCvttpdEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2QQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1671,8 +1583,7 @@ TEXT ·maskzCvttpdEpi64(SB),7,$0
 // func m256CvttpdEpi64(a [4]float64) [32]byte
 TEXT ·m256CvttpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2QQ Y0
 
 	MOV Y0, ret+0(FP)
@@ -1689,8 +1600,7 @@ TEXT ·m256MaskCvttpdEpi64(SB),7,$0
 // func m256MaskzCvttpdEpi64(k uint8, a [4]float64) [32]byte
 TEXT ·m256MaskzCvttpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2QQ R8, Y1
 
 	MOV Y1, ret+0(FP)
@@ -1699,8 +1609,7 @@ TEXT ·m256MaskzCvttpdEpi64(SB),7,$0
 // func m512CvttpdEpi64(a [8]float64) [64]byte
 TEXT ·m512CvttpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2QQ Z0
 
 	MOV Z0, ret+0(FP)
@@ -1717,8 +1626,7 @@ TEXT ·m512MaskCvttpdEpi64(SB),7,$0
 // func m512MaskzCvttpdEpi64(k uint8, a [8]float64) [64]byte
 TEXT ·m512MaskzCvttpdEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2QQ R8, Z1
 
 	MOV Z1, ret+0(FP)
@@ -1728,8 +1636,7 @@ TEXT ·m512MaskzCvttpdEpi64(SB),7,$0
 TEXT ·cvttpdEpu64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2UQQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1751,8 +1658,7 @@ TEXT ·maskzCvttpdEpu64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2UQQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1761,8 +1667,7 @@ TEXT ·maskzCvttpdEpu64(SB),7,$0
 // func m256CvttpdEpu64(a [4]float64) [32]byte
 TEXT ·m256CvttpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2UQQ Y0
 
 	MOV Y0, ret+0(FP)
@@ -1779,8 +1684,7 @@ TEXT ·m256MaskCvttpdEpu64(SB),7,$0
 // func m256MaskzCvttpdEpu64(k uint8, a [4]float64) [32]byte
 TEXT ·m256MaskzCvttpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2UQQ R8, Y1
 
 	MOV Y1, ret+0(FP)
@@ -1789,8 +1693,7 @@ TEXT ·m256MaskzCvttpdEpu64(SB),7,$0
 // func m512CvttpdEpu64(a [8]float64) [64]byte
 TEXT ·m512CvttpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2UQQ Z0
 
 	MOV Z0, ret+0(FP)
@@ -1807,8 +1710,7 @@ TEXT ·m512MaskCvttpdEpu64(SB),7,$0
 // func m512MaskzCvttpdEpu64(k uint8, a [8]float64) [64]byte
 TEXT ·m512MaskzCvttpdEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPD2UQQ R8, Z1
 
 	MOV Z1, ret+0(FP)
@@ -1818,8 +1720,7 @@ TEXT ·m512MaskzCvttpdEpu64(SB),7,$0
 TEXT ·cvttpsEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2QQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1841,8 +1742,7 @@ TEXT ·maskzCvttpsEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2QQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1852,8 +1752,7 @@ TEXT ·maskzCvttpsEpi64(SB),7,$0
 TEXT ·m256CvttpsEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2QQ X0
 
 	MOV Y0, ret+16(FP)
@@ -1872,8 +1771,7 @@ TEXT ·m256MaskzCvttpsEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2QQ R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -1882,8 +1780,7 @@ TEXT ·m256MaskzCvttpsEpi64(SB),7,$0
 // func m512CvttpsEpi64(a [8]float32) [64]byte
 TEXT ·m512CvttpsEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2QQ Y0
 
 	MOV Z0, ret+0(FP)
@@ -1900,8 +1797,7 @@ TEXT ·m512MaskCvttpsEpi64(SB),7,$0
 // func m512MaskzCvttpsEpi64(k uint8, a [8]float32) [64]byte
 TEXT ·m512MaskzCvttpsEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2QQ R8, Y1
 
 	MOV Z1, ret+0(FP)
@@ -1911,8 +1807,7 @@ TEXT ·m512MaskzCvttpsEpi64(SB),7,$0
 TEXT ·cvttpsEpu64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2UQQ X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1934,8 +1829,7 @@ TEXT ·maskzCvttpsEpu64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2UQQ R8, X1
 
 	MOVOU X1, ret+20(FP)
@@ -1945,8 +1839,7 @@ TEXT ·maskzCvttpsEpu64(SB),7,$0
 TEXT ·m256CvttpsEpu64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2UQQ X0
 
 	MOV Y0, ret+16(FP)
@@ -1965,8 +1858,7 @@ TEXT ·m256MaskzCvttpsEpu64(SB),7,$0
 	MOVB k+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2UQQ R8, X1
 
 	MOV Y1, ret+20(FP)
@@ -1975,8 +1867,7 @@ TEXT ·m256MaskzCvttpsEpu64(SB),7,$0
 // func m512CvttpsEpu64(a [8]float32) [64]byte
 TEXT ·m512CvttpsEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2UQQ Y0
 
 	MOV Z0, ret+0(FP)
@@ -1993,8 +1884,7 @@ TEXT ·m512MaskCvttpsEpu64(SB),7,$0
 // func m512MaskzCvttpsEpu64(k uint8, a [8]float32) [64]byte
 TEXT ·m512MaskzCvttpsEpu64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VCVTTPS2UQQ R8, Y1
 
 	MOV Z1, ret+0(FP)
@@ -2003,8 +1893,7 @@ TEXT ·m512MaskzCvttpsEpu64(SB),7,$0
 // func m512Extractf32x8Ps(a [16]float32, imm8 int) [8]float32
 TEXT ·m512Extractf32x8Ps(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VEXTRACTF32X8 Z0, R9
 
 	MOV Y1, ret+0(FP)
@@ -2029,8 +1918,7 @@ TEXT ·m512MaskzExtractf32x8Ps(SB),7,$0
 // func m256Extractf64x2Pd(a [4]float64, imm8 int) [2]float64
 TEXT ·m256Extractf64x2Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VEXTRACTF64X2 Y0, R9
 
 	MOVOU X1, ret+0(FP)
@@ -2055,8 +1943,7 @@ TEXT ·m256MaskzExtractf64x2Pd(SB),7,$0
 // func m512Extractf64x2Pd(a [8]float64, imm8 int) [2]float64
 TEXT ·m512Extractf64x2Pd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VEXTRACTF64X2 Z0, R9
 
 	MOVOU X1, ret+0(FP)
@@ -2081,8 +1968,7 @@ TEXT ·m512MaskzExtractf64x2Pd(SB),7,$0
 // func m512Extracti32x8Epi32(a [64]byte, imm8 int) [32]byte
 TEXT ·m512Extracti32x8Epi32(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VEXTRACTI32X8 Z0, R9
 
 	MOV Y1, ret+0(FP)
@@ -2107,8 +1993,7 @@ TEXT ·m512MaskzExtracti32x8Epi32(SB),7,$0
 // func m256Extracti64x2Epi64(a [32]byte, imm8 int) [16]byte
 TEXT ·m256Extracti64x2Epi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VEXTRACTI64X2 Y0, R9
 
 	MOVOU X1, ret+0(FP)
@@ -2133,8 +2018,7 @@ TEXT ·m256MaskzExtracti64x2Epi64(SB),7,$0
 // func m512Extracti64x2Epi64(a [64]byte, imm8 int) [16]byte
 TEXT ·m512Extracti64x2Epi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VEXTRACTI64X2 Z0, R9
 
 	MOVOU X1, ret+0(FP)
@@ -2161,8 +2045,7 @@ TEXT ·fpclassPdMask(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSPD X0, R9
 
 	MOVB $0, ret+24(FP)
@@ -2182,8 +2065,7 @@ TEXT ·maskFpclassPdMask(SB),7,$0
 // func m256FpclassPdMask(a [4]float64, imm8 int) uint8
 TEXT ·m256FpclassPdMask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSPD Y0, R9
 
 	MOVB $0, ret+0(FP)
@@ -2200,8 +2082,7 @@ TEXT ·m256MaskFpclassPdMask(SB),7,$0
 // func m512FpclassPdMask(a [8]float64, imm8 int) uint8
 TEXT ·m512FpclassPdMask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSPD Z0, R9
 
 	MOVB $0, ret+0(FP)
@@ -2220,8 +2101,7 @@ TEXT ·fpclassPsMask(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSPS X0, R9
 
 	MOVB $0, ret+24(FP)
@@ -2241,8 +2121,7 @@ TEXT ·maskFpclassPsMask(SB),7,$0
 // func m256FpclassPsMask(a [8]float32, imm8 int) uint8
 TEXT ·m256FpclassPsMask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSPS Y0, R9
 
 	MOVB $0, ret+0(FP)
@@ -2259,8 +2138,7 @@ TEXT ·m256MaskFpclassPsMask(SB),7,$0
 // func m512FpclassPsMask(a [16]float32, imm8 int) uint16
 TEXT ·m512FpclassPsMask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSPS Z0, R9
 
 	MOVW $0, ret+0(FP)
@@ -2279,8 +2157,7 @@ TEXT ·fpclassSdMask(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSSD X0, R9
 
 	MOVB $0, ret+24(FP)
@@ -2302,8 +2179,7 @@ TEXT ·fpclassSsMask(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VFPCLASSSS X0, R9
 
 	MOVB $0, ret+24(FP)
@@ -2468,8 +2344,7 @@ TEXT ·m512MaskzInserti64x2(SB),7,$0
 TEXT ·movepi32Mask(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVD2M X0
 
 	MOVB $0, ret+16(FP)
@@ -2478,8 +2353,7 @@ TEXT ·movepi32Mask(SB),7,$0
 // func m256Movepi32Mask(a [32]byte) uint8
 TEXT ·m256Movepi32Mask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVD2M Y0
 
 	MOVB $0, ret+0(FP)
@@ -2488,8 +2362,7 @@ TEXT ·m256Movepi32Mask(SB),7,$0
 // func m512Movepi32Mask(a [64]byte) uint16
 TEXT ·m512Movepi32Mask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVD2M Z0
 
 	MOVW $0, ret+0(FP)
@@ -2499,8 +2372,7 @@ TEXT ·m512Movepi32Mask(SB),7,$0
 TEXT ·movepi64Mask(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVQ2M X0
 
 	MOVB $0, ret+16(FP)
@@ -2509,8 +2381,7 @@ TEXT ·movepi64Mask(SB),7,$0
 // func m256Movepi64Mask(a [32]byte) uint8
 TEXT ·m256Movepi64Mask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVQ2M Y0
 
 	MOVB $0, ret+0(FP)
@@ -2519,8 +2390,7 @@ TEXT ·m256Movepi64Mask(SB),7,$0
 // func m512Movepi64Mask(a [64]byte) uint8
 TEXT ·m512Movepi64Mask(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVQ2M Z0
 
 	MOVB $0, ret+0(FP)
@@ -2530,8 +2400,7 @@ TEXT ·m512Movepi64Mask(SB),7,$0
 TEXT ·movmEpi32(SB),7,$0
 	MOVB k+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVM2D R8
 
 	MOVOU X0, ret+4(FP)
@@ -2541,8 +2410,7 @@ TEXT ·movmEpi32(SB),7,$0
 TEXT ·m256MovmEpi32(SB),7,$0
 	MOVB k+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVM2D R8
 
 	MOV Y0, ret+4(FP)
@@ -2552,8 +2420,7 @@ TEXT ·m256MovmEpi32(SB),7,$0
 TEXT ·m512MovmEpi32(SB),7,$0
 	MOVW k+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVM2D R8
 
 	MOV Z0, ret+4(FP)
@@ -2563,8 +2430,7 @@ TEXT ·m512MovmEpi32(SB),7,$0
 TEXT ·movmEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVM2Q R8
 
 	MOVOU X0, ret+4(FP)
@@ -2574,8 +2440,7 @@ TEXT ·movmEpi64(SB),7,$0
 TEXT ·m256MovmEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVM2Q R8
 
 	MOV Y0, ret+4(FP)
@@ -2585,8 +2450,7 @@ TEXT ·m256MovmEpi64(SB),7,$0
 TEXT ·m512MovmEpi64(SB),7,$0
 	MOVB k+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVM2Q R8
 
 	MOV Z0, ret+4(FP)
@@ -2620,8 +2484,7 @@ TEXT ·mulloEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMULLQ X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -2646,8 +2509,7 @@ TEXT ·m256MaskzMulloEpi64(SB),7,$0
 // func m256MulloEpi64(a [32]byte, b [32]byte) [32]byte
 TEXT ·m256MulloEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMULLQ Y0, Y1
 
 	MOV Y1, ret+0(FP)
@@ -2672,8 +2534,7 @@ TEXT ·m512MaskzMulloEpi64(SB),7,$0
 // func m512MulloEpi64(a [64]byte, b [64]byte) [64]byte
 TEXT ·m512MulloEpi64(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMULLQ Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -2737,8 +2598,7 @@ TEXT ·m512MaskzOrPd(SB),7,$0
 // func m512OrPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·m512OrPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VORPD Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -2802,8 +2662,7 @@ TEXT ·m512MaskzOrPs(SB),7,$0
 // func m512OrPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·m512OrPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VORPS Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -3181,8 +3040,7 @@ TEXT ·reducePd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VREDUCEPD X0, R9
 
 	MOVOU X1, ret+24(FP)
@@ -3207,8 +3065,7 @@ TEXT ·m256MaskzReducePd(SB),7,$0
 // func m256ReducePd(a [4]float64, imm8 int) [4]float64
 TEXT ·m256ReducePd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VREDUCEPD Y0, R9
 
 	MOV Y1, ret+0(FP)
@@ -3233,8 +3090,7 @@ TEXT ·m512MaskzReducePd(SB),7,$0
 // func m512ReducePd(a [8]float64, imm8 int) [8]float64
 TEXT ·m512ReducePd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VREDUCEPD Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -3268,8 +3124,7 @@ TEXT ·reducePs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VREDUCEPS X0, R9
 
 	MOVOU X1, ret+24(FP)
@@ -3294,8 +3149,7 @@ TEXT ·m256MaskzReducePs(SB),7,$0
 // func m256ReducePs(a [8]float32, imm8 int) [8]float32
 TEXT ·m256ReducePs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VREDUCEPS Y0, R9
 
 	MOV Y1, ret+0(FP)
@@ -3320,8 +3174,7 @@ TEXT ·m512MaskzReducePs(SB),7,$0
 // func m512ReducePs(a [16]float32, imm8 int) [16]float32
 TEXT ·m512ReducePs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VREDUCEPS Z0, R9
 
 	MOV Z1, ret+0(FP)
@@ -3583,8 +3436,7 @@ TEXT ·m512MaskzXorPd(SB),7,$0
 // func m512XorPd(a [8]float64, b [8]float64) [8]float64
 TEXT ·m512XorPd(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512d
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VXORPD Z0, Z1
 
 	MOV Z1, ret+0(FP)
@@ -3648,8 +3500,7 @@ TEXT ·m512MaskzXorPs(SB),7,$0
 // func m512XorPs(a [16]float32, b [16]float32) [16]float32
 TEXT ·m512XorPs(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M512
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VXORPS Z0, Z1
 
 	MOV Z1, ret+0(FP)

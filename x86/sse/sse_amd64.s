@@ -39,8 +39,7 @@ TEXT ·addPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// ADDPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -51,8 +50,7 @@ TEXT ·addSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// ADDSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -63,8 +61,7 @@ TEXT ·andPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// ANDPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -75,8 +72,7 @@ TEXT ·andnotPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// ANDNPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -179,8 +175,7 @@ TEXT ·avgPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PAVGW M0, M1
 
 	// Return size: 8
@@ -191,8 +186,7 @@ TEXT ·avgPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PAVGB M0, M1
 
 	// Return size: 8
@@ -275,8 +269,7 @@ TEXT ·cmpeqPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -287,8 +280,7 @@ TEXT ·cmpeqSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -299,8 +291,7 @@ TEXT ·cmpgePs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -311,8 +302,7 @@ TEXT ·cmpgeSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -323,8 +313,7 @@ TEXT ·cmpgtPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -335,8 +324,7 @@ TEXT ·cmpgtSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -347,8 +335,7 @@ TEXT ·cmplePs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -359,8 +346,7 @@ TEXT ·cmpleSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -371,8 +357,7 @@ TEXT ·cmpltPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -383,8 +368,7 @@ TEXT ·cmpltSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -395,8 +379,7 @@ TEXT ·cmpneqPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -407,8 +390,7 @@ TEXT ·cmpneqSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -419,8 +401,7 @@ TEXT ·cmpngePs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -431,8 +412,7 @@ TEXT ·cmpngeSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -443,8 +423,7 @@ TEXT ·cmpngtPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -455,8 +434,7 @@ TEXT ·cmpngtSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -467,8 +445,7 @@ TEXT ·cmpnlePs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -479,8 +456,7 @@ TEXT ·cmpnleSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -491,8 +467,7 @@ TEXT ·cmpnltPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -503,8 +478,7 @@ TEXT ·cmpnltSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -515,8 +489,7 @@ TEXT ·cmpordPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -527,8 +500,7 @@ TEXT ·cmpordSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -539,8 +511,7 @@ TEXT ·cmpunordPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -551,8 +522,7 @@ TEXT ·cmpunordSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CMPSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -563,8 +533,7 @@ TEXT ·comieqSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// COMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -575,8 +544,7 @@ TEXT ·comigeSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// COMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -587,8 +555,7 @@ TEXT ·comigtSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// COMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -599,8 +566,7 @@ TEXT ·comileSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// COMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -611,8 +577,7 @@ TEXT ·comiltSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// COMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -623,8 +588,7 @@ TEXT ·comineqSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// COMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -698,8 +662,7 @@ TEXT ·cvtPi2ps(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ b+16(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTPI2PS X0, M1
 
 	MOVOU X1, ret+24(FP)
@@ -709,8 +672,7 @@ TEXT ·cvtPi2ps(SB),7,$0
 TEXT ·cvtPs2pi(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTPS2PI X0
 
 	// Return size: 8
@@ -721,8 +683,7 @@ TEXT ·cvtSi2ss(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ b+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTSI2SS X0, R9
 
 	MOVOU X1, ret+24(FP)
@@ -732,8 +693,7 @@ TEXT ·cvtSi2ss(SB),7,$0
 TEXT ·cvtSs2si(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTSS2SI X0
 
 	MOVQ $0, ret+16(FP)
@@ -753,8 +713,7 @@ TEXT ·cvtpi32Ps(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ b+16(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTPI2PS X0, M1
 
 	MOVOU X1, ret+24(FP)
@@ -792,8 +751,7 @@ TEXT ·cvtpsPi16(SB),7,$0
 TEXT ·cvtpsPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTPS2PI X0
 
 	// Return size: 8
@@ -831,8 +789,7 @@ TEXT ·cvtsi32Ss(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ b+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTSI2SS X0, R9
 
 	MOVOU X1, ret+24(FP)
@@ -843,8 +800,7 @@ TEXT ·cvtsi64Ss(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ b+16(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTSI2SS X0, R9
 
 	MOVOU X1, ret+24(FP)
@@ -854,8 +810,7 @@ TEXT ·cvtsi64Ss(SB),7,$0
 TEXT ·cvtssF32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVSS X0
 
 	MOVL $0, ret+16(FP)
@@ -865,8 +820,7 @@ TEXT ·cvtssF32(SB),7,$0
 TEXT ·cvtssSi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTSS2SI X0
 
 	MOVQ $0, ret+16(FP)
@@ -876,8 +830,7 @@ TEXT ·cvtssSi32(SB),7,$0
 TEXT ·cvtssSi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTSS2SI X0
 
 	MOVQ $0, ret+16(FP)
@@ -887,8 +840,7 @@ TEXT ·cvtssSi64(SB),7,$0
 TEXT ·cvttPs2pi(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTTPS2PI X0
 
 	// Return size: 8
@@ -898,8 +850,7 @@ TEXT ·cvttPs2pi(SB),7,$0
 TEXT ·cvttSs2si(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTTSS2SI X0
 
 	MOVQ $0, ret+16(FP)
@@ -909,8 +860,7 @@ TEXT ·cvttSs2si(SB),7,$0
 TEXT ·cvttpsPi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTTPS2PI X0
 
 	// Return size: 8
@@ -920,8 +870,7 @@ TEXT ·cvttpsPi32(SB),7,$0
 TEXT ·cvttssSi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTTSS2SI X0
 
 	MOVQ $0, ret+16(FP)
@@ -931,8 +880,7 @@ TEXT ·cvttssSi32(SB),7,$0
 TEXT ·cvttssSi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// CVTTSS2SI X0
 
 	MOVQ $0, ret+16(FP)
@@ -1023,8 +971,7 @@ TEXT ·divPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// DIVPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1035,8 +982,7 @@ TEXT ·divSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// DIVSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1191,8 +1137,7 @@ TEXT ·extractPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PEXTRW M0, R9
 
 	MOVQ $0, ret+16(FP)
@@ -1348,8 +1293,7 @@ TEXT ·iremEpi32(SB),7,$0
 TEXT ·loadPs(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVAPS R8
 
 	MOVOU X0, ret+4(FP)
@@ -1368,8 +1312,7 @@ TEXT ·loadPs1(SB),7,$0
 TEXT ·loadSs(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVSS R8
 
 	MOVOU X0, ret+4(FP)
@@ -1387,8 +1330,7 @@ TEXT ·load1Ps(SB),7,$0
 // func loadhPi(a [4]float32, mem_addr x86.M64Const) [4]float32
 TEXT ·loadhPi(SB),7,$0
 	// Unimplemented. Unknown size of type x86.M64Const
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVHPS X0, 
 
 	MOVOU X1, ret+0(FP)
@@ -1397,8 +1339,7 @@ TEXT ·loadhPi(SB),7,$0
 // func loadlPi(a [4]float32, mem_addr x86.M64Const) [4]float32
 TEXT ·loadlPi(SB),7,$0
 	// Unimplemented. Unknown size of type x86.M64Const
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVLPS X0, 
 
 	MOVOU X1, ret+0(FP)
@@ -1417,8 +1358,7 @@ TEXT ·loadrPs(SB),7,$0
 TEXT ·loaduPs(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVUPS R8
 
 	MOVOU X0, ret+4(FP)
@@ -1437,8 +1377,7 @@ TEXT ·loaduSi16(SB),7,$0
 TEXT ·loaduSi32(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVD R8
 
 	MOVOU X0, ret+8(FP)
@@ -1448,8 +1387,7 @@ TEXT ·loaduSi32(SB),7,$0
 TEXT ·loaduSi64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVQ R8
 
 	MOVOU X0, ret+8(FP)
@@ -1579,8 +1517,7 @@ TEXT ·maxPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMAXSW M0, M1
 
 	// Return size: 8
@@ -1591,8 +1528,7 @@ TEXT ·maxPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MAXPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1603,8 +1539,7 @@ TEXT ·maxPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMAXUB M0, M1
 
 	// Return size: 8
@@ -1615,8 +1550,7 @@ TEXT ·maxSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MAXSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1627,8 +1561,7 @@ TEXT ·minPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMINSW M0, M1
 
 	// Return size: 8
@@ -1639,8 +1572,7 @@ TEXT ·minPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MINPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1651,8 +1583,7 @@ TEXT ·minPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMINUB M0, M1
 
 	// Return size: 8
@@ -1663,8 +1594,7 @@ TEXT ·minSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MINSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1675,8 +1605,7 @@ TEXT ·moveSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1687,8 +1616,7 @@ TEXT ·movehlPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVHLPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1699,8 +1627,7 @@ TEXT ·movelhPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVLHPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1710,8 +1637,7 @@ TEXT ·movelhPs(SB),7,$0
 TEXT ·movemaskPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMOVMSKB M0
 
 	MOVQ $0, ret+8(FP)
@@ -1721,8 +1647,7 @@ TEXT ·movemaskPi8(SB),7,$0
 TEXT ·movemaskPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVMSKPS X0
 
 	MOVQ $0, ret+16(FP)
@@ -1733,8 +1658,7 @@ TEXT ·mulPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MULPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1745,8 +1669,7 @@ TEXT ·mulSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MULSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1757,8 +1680,7 @@ TEXT ·mulhiPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMULHUW M0, M1
 
 	// Return size: 8
@@ -1769,8 +1691,7 @@ TEXT ·orPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// ORPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -1781,8 +1702,7 @@ TEXT ·pavgb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PAVGB M0, M1
 
 	// Return size: 8
@@ -1793,8 +1713,7 @@ TEXT ·pavgw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PAVGW M0, M1
 
 	// Return size: 8
@@ -1805,8 +1724,7 @@ TEXT ·pextrw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PEXTRW M0, R9
 
 	MOVQ $0, ret+16(FP)
@@ -1828,8 +1746,7 @@ TEXT ·pmaxsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMAXSW M0, M1
 
 	// Return size: 8
@@ -1840,8 +1757,7 @@ TEXT ·pmaxub(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMAXUB M0, M1
 
 	// Return size: 8
@@ -1852,8 +1768,7 @@ TEXT ·pminsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMINSW M0, M1
 
 	// Return size: 8
@@ -1864,8 +1779,7 @@ TEXT ·pminub(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMINUB M0, M1
 
 	// Return size: 8
@@ -1875,8 +1789,7 @@ TEXT ·pminub(SB),7,$0
 TEXT ·pmovmskb(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMOVMSKB M0
 
 	MOVQ $0, ret+8(FP)
@@ -1887,8 +1800,7 @@ TEXT ·pmulhuw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PMULHUW M0, M1
 
 	// Return size: 8
@@ -1919,8 +1831,7 @@ TEXT ·prefetch(SB),7,$0
 	MOVB p+0(FP),R8
 	MOVQ i+4(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PREFETCHNTA, PREFETCHT0, PREFETCHT1, PREFETCHT2 R8, R9
 
 	RET
@@ -1930,8 +1841,7 @@ TEXT ·psadbw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PSADBW M0, M1
 
 	// Return size: 8
@@ -1942,8 +1852,7 @@ TEXT ·pshufw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PSHUFW M0, R9
 
 	// Return size: 8
@@ -1953,8 +1862,7 @@ TEXT ·pshufw(SB),7,$0
 TEXT ·rcpPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// RCPPS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -1964,8 +1872,7 @@ TEXT ·rcpPs(SB),7,$0
 TEXT ·rcpSs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// RCPSS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -2055,8 +1962,7 @@ TEXT ·remEpu8(SB),7,$0
 TEXT ·rsqrtPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// RSQRTPS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -2066,8 +1972,7 @@ TEXT ·rsqrtPs(SB),7,$0
 TEXT ·rsqrtSs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// RSQRTSS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -2078,8 +1983,7 @@ TEXT ·sadPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PSADBW M0, M1
 
 	// Return size: 8
@@ -2160,8 +2064,7 @@ TEXT ·set1Ps(SB),7,$0
 TEXT ·setcsr(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// LDMXCSR R8
 
 	RET
@@ -2198,8 +2101,7 @@ TEXT ·shufflePi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// PSHUFW M0, R9
 
 	// Return size: 8
@@ -2294,8 +2196,7 @@ TEXT ·sinhPs(SB),7,$0
 TEXT ·sqrtPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SQRTPS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -2305,8 +2206,7 @@ TEXT ·sqrtPs(SB),7,$0
 TEXT ·sqrtSs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SQRTSS X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -2317,8 +2217,7 @@ TEXT ·storePs(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVAPS R8, X1
 
 	RET
@@ -2337,8 +2236,7 @@ TEXT ·storeSs(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVSS R8, X1
 
 	RET
@@ -2357,8 +2255,7 @@ TEXT ·storehPi(SB),7,$0
 	MOVQ mem_addr+0(FP),M0
 	MOVOU a+8(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVHPS M0, X1
 
 	RET
@@ -2368,8 +2265,7 @@ TEXT ·storelPi(SB),7,$0
 	MOVQ mem_addr+0(FP),M0
 	MOVOU a+8(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVLPS M0, X1
 
 	RET
@@ -2388,8 +2284,7 @@ TEXT ·storeuPs(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVUPS R8, X1
 
 	RET
@@ -2408,8 +2303,7 @@ TEXT ·storeuSi32(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVOU a+8(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVD R8, X1
 
 	RET
@@ -2419,8 +2313,7 @@ TEXT ·storeuSi64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVOU a+8(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVQ R8, X1
 
 	RET
@@ -2430,8 +2323,7 @@ TEXT ·streamPi(SB),7,$0
 	MOVQ mem_addr+0(FP),M0
 	MOVQ a+8(FP),M1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVNTQ M0, M1
 
 	RET
@@ -2441,8 +2333,7 @@ TEXT ·streamPs(SB),7,$0
 	MOVL mem_addr+0(FP),R8
 	MOVOU a+4(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVNTPS R8, X1
 
 	RET
@@ -2452,8 +2343,7 @@ TEXT ·subPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SUBPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -2464,8 +2354,7 @@ TEXT ·subSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SUBSS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -2631,8 +2520,7 @@ TEXT ·ucomieqSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UCOMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -2643,8 +2531,7 @@ TEXT ·ucomigeSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UCOMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -2655,8 +2542,7 @@ TEXT ·ucomigtSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UCOMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -2667,8 +2553,7 @@ TEXT ·ucomileSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UCOMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -2679,8 +2564,7 @@ TEXT ·ucomiltSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UCOMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -2691,8 +2575,7 @@ TEXT ·ucomineqSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UCOMISS X0, X1
 
 	MOVQ $0, ret+32(FP)
@@ -2724,8 +2607,7 @@ TEXT ·unpackhiPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UNPCKHPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -2736,8 +2618,7 @@ TEXT ·unpackloPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// UNPCKLPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -2758,8 +2639,7 @@ TEXT ·xorPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// XORPS X0, X1
 
 	MOVOU X1, ret+32(FP)

@@ -34,8 +34,7 @@ TEXT ·readgsbaseU64(SB),7,$0
 TEXT ·writefsbaseU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// WRFSBASE R8
 
 	RET
@@ -44,8 +43,7 @@ TEXT ·writefsbaseU32(SB),7,$0
 TEXT ·writefsbaseU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// WRFSBASE R8
 
 	RET
@@ -54,8 +52,7 @@ TEXT ·writefsbaseU64(SB),7,$0
 TEXT ·writegsbaseU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// WRGSBASE R8
 
 	RET
@@ -64,8 +61,7 @@ TEXT ·writegsbaseU32(SB),7,$0
 TEXT ·writegsbaseU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// WRGSBASE R8
 
 	RET

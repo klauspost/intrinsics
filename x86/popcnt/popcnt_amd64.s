@@ -2,8 +2,7 @@
 TEXT ·popcntU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// POPCNT R8
 
 	MOVQ $0, ret+4(FP)
@@ -13,8 +12,7 @@ TEXT ·popcntU32(SB),7,$0
 TEXT ·popcntU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// POPCNT R8
 
 	MOVQ $0, ret+8(FP)
@@ -24,8 +22,7 @@ TEXT ·popcntU64(SB),7,$0
 TEXT ·popcnt32(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// POPCNT R8
 
 	MOVQ $0, ret+8(FP)
@@ -35,8 +32,7 @@ TEXT ·popcnt32(SB),7,$0
 TEXT ·popcnt64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// POPCNT R8
 
 	MOVQ $0, ret+8(FP)

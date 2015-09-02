@@ -2,8 +2,7 @@
 TEXT ·lzcntU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// LZCNT R8
 
 	MOVL $0, ret+4(FP)
@@ -13,8 +12,7 @@ TEXT ·lzcntU32(SB),7,$0
 TEXT ·lzcntU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// LZCNT R8
 
 	MOVQ $0, ret+8(FP)

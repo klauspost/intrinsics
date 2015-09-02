@@ -499,22 +499,22 @@ func (in Intrinsic) Finish() {
 	fmt.Fprintln(out, load)
 	retparam = Param{Type: in.RetType}
 
-	fmt.Fprintln(out, "\t// TODO: Code missing")
+	fmt.Fprint(out, "\t// TODO: Code missing")
 	if in.Instruction != "..." && in.Instruction != "" {
 		if len(params) == 1 {
 			if retparam.getReg(0) == "X0" && in.Params[0].getReg(0) == "X0" {
-				fmt.Fprintf(out, "\t// Could be:\n\t// %s %s, %s\n", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
+				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
 			} else if retparam.getReg(0) == "M0" && in.Params[0].getReg(0) == "M0" {
-				fmt.Fprintf(out, "\t// Could be:\n\t// %s %s, %s\n", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
+				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
 			} else {
-				fmt.Fprintf(out, "\t// Could be:\n\t// %s %s\n", in.Instruction, in.Params[0].getReg(0))
+				fmt.Fprintf(out, " - could be:\n\t// %s %s", in.Instruction, in.Params[0].getReg(0))
 			}
 		}
 		if len(params) == 2 {
-			fmt.Fprintf(out, "\t// Could be:\n\t// %s %s, %s\n", in.Instruction, in.Params[0].getReg(0), in.Params[1].getReg(1))
+			fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[1].getReg(1))
 		}
 	}
-	fmt.Fprintln(out, "")
+	fmt.Fprintln(out, "\n")
 
 	// Attempts to write a return value
 	if in.RetType != "" {

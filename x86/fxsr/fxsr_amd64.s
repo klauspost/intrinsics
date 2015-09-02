@@ -2,8 +2,7 @@
 TEXT ·fxrstor(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// FXRSTOR R8
 
 	RET
@@ -12,8 +11,7 @@ TEXT ·fxrstor(SB),7,$0
 TEXT ·fxrstor64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// FXRSTOR64 R8
 
 	RET
@@ -22,8 +20,7 @@ TEXT ·fxrstor64(SB),7,$0
 TEXT ·fxsave(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// FXSAVE R8
 
 	RET
@@ -32,8 +29,7 @@ TEXT ·fxsave(SB),7,$0
 TEXT ·fxsave64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// FXSAVE64 R8
 
 	RET

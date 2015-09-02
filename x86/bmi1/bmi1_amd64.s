@@ -24,8 +24,7 @@ TEXT ·bextrU64(SB),7,$0
 TEXT ·blsiU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BLSI R8
 
 	MOVL $0, ret+4(FP)
@@ -35,8 +34,7 @@ TEXT ·blsiU32(SB),7,$0
 TEXT ·blsiU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BLSI R8
 
 	MOVQ $0, ret+8(FP)
@@ -46,8 +44,7 @@ TEXT ·blsiU64(SB),7,$0
 TEXT ·blsmskU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BLSMSK R8
 
 	MOVL $0, ret+4(FP)
@@ -57,8 +54,7 @@ TEXT ·blsmskU32(SB),7,$0
 TEXT ·blsmskU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BLSMSK R8
 
 	MOVQ $0, ret+8(FP)
@@ -68,8 +64,7 @@ TEXT ·blsmskU64(SB),7,$0
 TEXT ·blsrU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BLSR R8
 
 	MOVL $0, ret+4(FP)
@@ -79,8 +74,7 @@ TEXT ·blsrU32(SB),7,$0
 TEXT ·blsrU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BLSR R8
 
 	MOVQ $0, ret+8(FP)
@@ -90,8 +84,7 @@ TEXT ·blsrU64(SB),7,$0
 TEXT ·tzcnt32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// TZCNT R8
 
 	MOVQ $0, ret+4(FP)
@@ -101,8 +94,7 @@ TEXT ·tzcnt32(SB),7,$0
 TEXT ·tzcnt64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// TZCNT R8
 
 	MOVQ $0, ret+8(FP)
@@ -112,8 +104,7 @@ TEXT ·tzcnt64(SB),7,$0
 TEXT ·tzcntU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// TZCNT R8
 
 	MOVL $0, ret+4(FP)
@@ -123,8 +114,7 @@ TEXT ·tzcntU32(SB),7,$0
 TEXT ·tzcntU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// TZCNT R8
 
 	MOVQ $0, ret+8(FP)

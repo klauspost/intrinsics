@@ -3,8 +3,7 @@ TEXT ·sha1msg1Epu32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SHA1MSG1 X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -15,8 +14,7 @@ TEXT ·sha1msg2Epu32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SHA1MSG2 X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -27,8 +25,7 @@ TEXT ·sha1nexteEpu32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SHA1NEXTE X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -50,8 +47,7 @@ TEXT ·sha256msg1Epu32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SHA256MSG1 X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -62,8 +58,7 @@ TEXT ·sha256msg2Epu32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// SHA256MSG2 X0, X1
 
 	MOVOU X1, ret+32(FP)

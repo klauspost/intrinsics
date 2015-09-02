@@ -3,8 +3,7 @@ TEXT ·addsubPd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// ADDSUBPD X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -15,8 +14,7 @@ TEXT ·addsubPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// ADDSUBPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -27,8 +25,7 @@ TEXT ·haddPd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// HADDPD X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -39,8 +36,7 @@ TEXT ·haddPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// HADDPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -51,8 +47,7 @@ TEXT ·hsubPd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// HSUBPD X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -63,8 +58,7 @@ TEXT ·hsubPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// HSUBPS X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -73,8 +67,7 @@ TEXT ·hsubPs(SB),7,$0
 // func lddquSi128(mem_addr x86.M128iConst) [16]byte
 TEXT ·lddquSi128(SB),7,$0
 	// Unimplemented. Unknown size of type x86.M128iConst
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// LDDQU 
 
 	MOVOU X0, ret+0(FP)
@@ -84,8 +77,7 @@ TEXT ·lddquSi128(SB),7,$0
 TEXT ·loaddupPd(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVDDUP R8
 
 	MOVOU X0, ret+8(FP)
@@ -95,8 +87,7 @@ TEXT ·loaddupPd(SB),7,$0
 TEXT ·movedupPd(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVDDUP X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -106,8 +97,7 @@ TEXT ·movedupPd(SB),7,$0
 TEXT ·movehdupPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVSHDUP X0, X0
 
 	MOVOU X0, ret+16(FP)
@@ -117,8 +107,7 @@ TEXT ·movehdupPs(SB),7,$0
 TEXT ·moveldupPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// MOVSLDUP X0, X0
 
 	MOVOU X0, ret+16(FP)

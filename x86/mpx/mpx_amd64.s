@@ -3,8 +3,7 @@ TEXT ·bndChkPtrBounds(SB),7,$0
 	MOVQ q+0(FP),R8
 	MOVQ size+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BNDCU, BNDCN R8, R9
 
 	RET
@@ -13,8 +12,7 @@ TEXT ·bndChkPtrBounds(SB),7,$0
 TEXT ·bndChkPtrLbounds(SB),7,$0
 	MOVQ q+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BNDCL R8
 
 	RET
@@ -23,8 +21,7 @@ TEXT ·bndChkPtrLbounds(SB),7,$0
 TEXT ·bndChkPtrUbounds(SB),7,$0
 	MOVQ q+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BNDCU, BNDCN R8
 
 	RET
@@ -79,8 +76,7 @@ TEXT ·bndSetPtrBounds(SB),7,$0
 	MOVQ srcmem+0(FP),R8
 	MOVQ size+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BNDMK R8, R9
 
 	RET
@@ -90,8 +86,7 @@ TEXT ·bndStorePtrBounds(SB),7,$0
 	MOVQ ptr_addr+0(FP),R8
 	MOVQ ptr_val+8(FP),R9
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// BNDSTX R8, R9
 
 	RET

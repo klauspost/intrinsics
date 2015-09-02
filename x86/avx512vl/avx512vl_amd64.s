@@ -318,8 +318,7 @@ TEXT ·m256MaskzMadd52loEpu64(SB),7,$0
 TEXT ·movmEpi8(SB),7,$0
 	MOVW k+0(FP),R8
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMOVM2B R8
 
 	MOVOU X0, ret+4(FP)
@@ -353,8 +352,7 @@ TEXT ·multishiftEpi64Epi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMULTISHIFTQB X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -379,8 +377,7 @@ TEXT ·m256MaskzMultishiftEpi64Epi8(SB),7,$0
 // func m256MultishiftEpi64Epi8(a [32]byte, b [32]byte) [32]byte
 TEXT ·m256MultishiftEpi64Epi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPMULTISHIFTQB Y0, Y1
 
 	MOV Y1, ret+0(FP)
@@ -493,8 +490,7 @@ TEXT ·permutexvarEpi8(SB),7,$0
 	MOVOU idx+0(FP),X0
 	MOVOU a+16(FP),X1
 
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPERMB X0, X1
 
 	MOVOU X1, ret+32(FP)
@@ -519,8 +515,7 @@ TEXT ·m256MaskzPermutexvarEpi8(SB),7,$0
 // func m256PermutexvarEpi8(idx [32]byte, a [32]byte) [32]byte
 TEXT ·m256PermutexvarEpi8(SB),7,$0
 	// Unimplemented. Unknown MOVE postfix for type x86.M256i
-	// TODO: Code missing
-	// Could be:
+	// TODO: Code missing - could be:
 	// VPERMB Y0, Y1
 
 	MOV Y1, ret+0(FP)
