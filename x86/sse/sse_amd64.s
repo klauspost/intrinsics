@@ -39,7 +39,7 @@ TEXT ·addPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	ADDPS X1, X0
 
 	MOVOU X0, ret+32(FP)
 	RET
@@ -1579,7 +1579,7 @@ TEXT ·mulPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	MULPS X1, X0
 
 	MOVOU X0, ret+32(FP)
 	RET
