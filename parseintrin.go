@@ -43,8 +43,12 @@ type Timing struct {
 
 type Perf map[string]Timing
 
-var m64, m128, m256, m512, gen *os.File
-var m64a, m128a, m256a, m512a, gena *os.File
+//var m64, m128, m256, m512, gen *os.File
+//var m64a, m128a, m256a, m512a, gena *os.File
+type pack struct {
+	goFile  *os.File
+	asmFile *os.File
+}
 
 const genimport = `import . "github.com/klauspost/intrinsics/x86"`
 
@@ -57,81 +61,15 @@ func main() {
 		panic(err)
 	}
 	defer f.Close()
-	m64, err = os.Create("x86/m64/m64.go")
-	if err != nil {
-		panic(err)
-	}
-	defer m64.Close()
-	_, err = m64.WriteString("package m64\n\n" + genimport + "\n")
-	if err != nil {
-		panic(err)
-	}
-	m128, err = os.Create("x86/m128/m128.go")
-	if err != nil {
-		panic(err)
-	}
-	defer m128.Close()
-	_, err = m128.WriteString("package m128\n\n" + genimport + "\n")
-	if err != nil {
-		panic(err)
-	}
-	m256, err = os.Create("x86/m256/m256.go")
-	if err != nil {
-		panic(err)
-	}
-	defer m256.Close()
-	_, err = m256.WriteString("package m256\n\n" + genimport + "\n")
-	if err != nil {
-		panic(err)
-	}
-	m512, err = os.Create("x86/m512/m512.go")
-	if err != nil {
-		panic(err)
-	}
-	defer m512.Close()
-	_, err = m512.WriteString("package m512\n\n" + genimport + "\n")
-	if err != nil {
-		panic(err)
-	}
-	gen, err = os.Create("x86/intrin.go")
-	if err != nil {
-		panic(err)
-	}
-	defer gen.Close()
-	_, err = gen.WriteString("package x86\n\n")
-	if err != nil {
-		panic(err)
-	}
-
-	m64a, err = os.Create("x86/m64/m64_amd64.s")
-	if err != nil {
-		panic(err)
-	}
-	defer m64a.Close()
-	m128a, err = os.Create("x86/m128/m128_amd64.s")
-	if err != nil {
-		panic(err)
-	}
-	defer m128a.Close()
-	m256a, err = os.Create("x86/m256/m256_amd64.s")
-	if err != nil {
-		panic(err)
-	}
-	defer m256a.Close()
-	m512a, err = os.Create("x86/m512/m512_amd64.s")
-	if err != nil {
-		panic(err)
-	}
-	defer m512a.Close()
-	gena, err = os.Create("x86/intrin_amd64.s")
-	if err != nil {
-		panic(err)
-	}
 
 	/*	fmt.Println("package intrin")
 		fmt.Println("")
 		fmt.Println("import \"unsafe\"")*/
 	parseHTML(f)
+	for _, pk := range packages {
+		pk.goFile.Close()
+		pk.asmFile.Close()
+	}
 }
 
 func NewIntrinsic() *Intrinsic {
@@ -208,92 +146,41 @@ func parseDiv(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 	return in
 }
 
-func getFile(pack string) *os.File {
-	switch pack {
-	case "m64":
-		return m64
-	case "m128":
-		return m128
-	case "m256":
-		return m256
-	case "m512":
-		return m512
+func (i Intrinsic) getPackage() string {
+	pk := strings.ToLower(i.CpuID)
+	if pk == "" {
+		pk = "misc"
 	}
-	return gen
+	if pk == "sse4.1" || pk == "sse4.2" {
+		pk = "sse4"
+	}
+	return pk
 }
 
-func getAsmFile(pack string) *os.File {
-	switch pack {
-	case "m64":
-		return m64a
-	case "m128":
-		return m128a
-	case "m256":
-		return m256a
-	case "m512":
-		return m512a
-	}
-	return gena
-}
+var packages = make(map[string]pack)
 
-func getPackage(i Intrinsic) string {
-	if strings.Contains(i.CpuID, "MMX") {
-		return "m64"
+func (i Intrinsic) getFiles() pack {
+	pk := i.getPackage()
+	p, ok := packages[pk]
+	if !ok {
+		var err error
+		err = os.MkdirAll("x86/"+pk, 666)
+		if err != nil {
+			panic(err)
+		}
+		p.goFile, err = os.Create("x86/" + pk + "/" + pk + ".go")
+		if err != nil {
+			panic(err)
+		}
+		p.goFile.WriteString("package " + pk + "\n\n")
+		p.goFile.WriteString(`import . "github.com/klauspost/intrinsics/x86"` + "\n\n")
+		p.asmFile, err = os.Create("x86/" + pk + "/" + pk + "_amd64.s")
+		if err != nil {
+			panic(err)
+		}
+		packages[pk] = p
 	}
-	in := i.OrgName
-	if strings.HasPrefix(in, "_mm256") {
-		return "m256"
-	}
-	if strings.HasPrefix(in, "_mm512") {
-		return "m512"
-	}
-	if strings.HasPrefix(in, "_m_") {
-		return "m64"
-	}
-	in = strings.TrimPrefix(in, "_mm")
-	if strings.Contains(in, "_sd") {
-		return "m128"
-	}
-	if strings.Contains(in, "_si128") {
-		return "m128"
-	}
-	if strings.Contains(in, "_ss") {
-		return "m128"
-	}
-	if strings.Contains(in, "_ps") {
-		return "m128"
-	}
-	if strings.Contains(in, "_ph") {
-		return "m128"
-	}
-	if strings.Contains(in, "_pd") {
-		return "m128"
-	}
-	if strings.Contains(in, "_epi") {
-		return "m128"
-	}
-	if strings.Contains(in, "_pi") {
-		return "m64"
-	}
-	if strings.Contains(in, "_cvt") {
-		return "m128"
-	}
-	if strings.Contains(in, "_si") {
-		return "m64"
-	}
-	if strings.Contains(in, "_epu") {
-		return "m128"
-	}
-	if strings.Contains(in, "_pu") {
-		return "m64"
-	}
-	if strings.Contains(in, "_su") {
-		return "m64"
-	}
-	if strings.Contains(i.CpuID, "AVX512") {
-		return "m512"
-	}
-	return "intrin"
+	return p
 }
 
 func fixFuncName(in string) string {
@@ -499,7 +386,7 @@ func (p Params) HasParam(s string) bool {
 var usedNames = make(map[string]struct{})
 
 func (in *Intrinsic) fixup() {
-	in.Package = getPackage(*in)
+	in.Package = in.getPackage()
 	name := in.Name
 	next := 1
 	for {
@@ -537,7 +424,7 @@ func (in Intrinsic) Finish() {
 	}
 
 	in.fixup()
-	out := getFile(in.Package)
+	out := in.getFiles().goFile
 
 	//fmt.Println("Finished:", in)
 	desc := in.Name + ": " + in.Description
@@ -600,7 +487,7 @@ func (in Intrinsic) Finish() {
 
 	//emptyType(in.RetType)
 	// ASM
-	out = getAsmFile(in.Package)
+	out = in.getFiles().asmFile
 	fmt.Fprint(out, "// func ", in.AsmName, "(")
 	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n")
 	fmt.Fprint(out, "TEXT ·"+in.AsmName+"(SB),7,$0\n")
