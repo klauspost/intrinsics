@@ -2088,7 +2088,7 @@ TEXT ·setzeroPs(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: XORPS
 
-	MOVOU X-1, ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func sfence() 

@@ -521,10 +521,20 @@ func (in Intrinsic) Finish() {
 
 	// Attempts to write a return value
 	if in.RetType != "" {
+		// Guess a return reg
+		rreg := retparam.getReg(0)
+
+		if len(params) > 0 {
+			rtry := retparam.getReg(len(params) - 1)
+			if rtry != "" {
+				rreg = rtry
+			}
+		}
+
 		if retparam.getSize() > 0 && retparam.getReg(0) == "R8" {
 			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" $0, ret+"+strconv.Itoa(off)+"(FP)\n")
 		} else if retparam.getSize() > 8 {
-			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+retparam.getReg(len(params)-1)+", ret+"+strconv.Itoa(off)+"(FP)\n")
+			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+rreg+", ret+"+strconv.Itoa(off)+"(FP)\n")
 		} else {
 			fmt.Fprintf(out, "\t// Return size: %d\n", retparam.getSize())
 		}

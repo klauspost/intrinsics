@@ -1532,7 +1532,7 @@ TEXT ·setEpi8(SB),7,$0
 
 	// TODO: Code missing
 
-	MOVOU , ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func setPd(e1 float64, e0 float64) [2]float64
@@ -1661,7 +1661,7 @@ TEXT ·setrEpi8(SB),7,$0
 
 	// TODO: Code missing
 
-	MOVOU , ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func setrPd(e1 float64, e0 float64) [2]float64
@@ -1679,7 +1679,7 @@ TEXT ·setzeroPd(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: XORPD
 
-	MOVOU X-1, ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func setzeroSi128() [16]byte
@@ -1687,7 +1687,7 @@ TEXT ·setzeroSi128(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: PXOR
 
-	MOVOU X-1, ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func shuffleEpi32(a [16]byte, imm8 int) [16]byte

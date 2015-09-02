@@ -19828,7 +19828,7 @@ TEXT ·m512SetEpi32(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512SetEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) [64]byte
@@ -19869,7 +19869,7 @@ TEXT ·m512SetPs(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512Set1Epi16(a int16) [64]byte
@@ -20106,7 +20106,7 @@ TEXT ·m512SetrEpi32(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512SetrEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) [64]byte
@@ -20147,7 +20147,7 @@ TEXT ·m512SetrPs(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512Setr4Epi32(d int, c int, b int, a int) [64]byte
@@ -20203,7 +20203,7 @@ TEXT ·m512Setzero(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VPXORQ
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512SetzeroEpi32() [64]byte
@@ -20211,7 +20211,7 @@ TEXT ·m512SetzeroEpi32(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VPXORQ
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512SetzeroPd() [8]float64
@@ -20219,7 +20219,7 @@ TEXT ·m512SetzeroPd(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VPXORQ
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512SetzeroPs() [16]float32
@@ -20227,7 +20227,7 @@ TEXT ·m512SetzeroPs(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VPXORQ
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512SetzeroSi512() [64]byte
@@ -20235,7 +20235,7 @@ TEXT ·m512SetzeroSi512(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VPXORQ
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func maskShuffleEpi32(src [16]byte, k uint8, a [16]byte, imm8 MMPERMENUM) [16]byte
@@ -23475,7 +23475,7 @@ TEXT ·m512Undefined(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512UndefinedEpi32() [64]byte
@@ -23483,7 +23483,7 @@ TEXT ·m512UndefinedEpi32(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512UndefinedPd() [8]float64
@@ -23491,7 +23491,7 @@ TEXT ·m512UndefinedPd(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func m512UndefinedPs() [16]float32
@@ -23499,7 +23499,7 @@ TEXT ·m512UndefinedPs(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV Z-1, ret+0(FP)
+	MOV Z0, ret+0(FP)
 	RET
 
 // func maskUnpackhiEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte

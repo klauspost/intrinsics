@@ -1849,7 +1849,7 @@ TEXT ·m256SetEpi16(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256SetEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
@@ -1886,7 +1886,7 @@ TEXT ·m256SetEpi8(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256SetM128(hi [4]float32, lo [4]float32) [8]float32
@@ -2010,7 +2010,7 @@ TEXT ·m256SetrEpi16(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256SetrEpi32(e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) [32]byte
@@ -2047,7 +2047,7 @@ TEXT ·m256SetrEpi8(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV , ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256SetrM128(lo [4]float32, hi [4]float32) [8]float32
@@ -2116,7 +2116,7 @@ TEXT ·m256SetzeroPd(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VXORPD
 
-	MOV Y-1, ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256SetzeroPs() [8]float32
@@ -2124,7 +2124,7 @@ TEXT ·m256SetzeroPs(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VXORPS
 
-	MOV Y-1, ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256SetzeroSi256() [32]byte
@@ -2132,7 +2132,7 @@ TEXT ·m256SetzeroSi256(SB),7,$0
 
 	// TODO: Code missing - uses instrunction: VPXOR
 
-	MOV Y-1, ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256ShufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
@@ -2693,7 +2693,7 @@ TEXT ·undefinedPd(SB),7,$0
 
 	// TODO: Code missing
 
-	MOVOU X-1, ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func m256UndefinedPd() [4]float64
@@ -2701,7 +2701,7 @@ TEXT ·m256UndefinedPd(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV Y-1, ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func undefinedPs() [4]float32
@@ -2709,7 +2709,7 @@ TEXT ·undefinedPs(SB),7,$0
 
 	// TODO: Code missing
 
-	MOVOU X-1, ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func m256UndefinedPs() [8]float32
@@ -2717,7 +2717,7 @@ TEXT ·m256UndefinedPs(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV Y-1, ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func undefinedSi128() [16]byte
@@ -2725,7 +2725,7 @@ TEXT ·undefinedSi128(SB),7,$0
 
 	// TODO: Code missing
 
-	MOVOU X-1, ret+0(FP)
+	MOVOU X0, ret+0(FP)
 	RET
 
 // func m256UndefinedSi256() [32]byte
@@ -2733,7 +2733,7 @@ TEXT ·m256UndefinedSi256(SB),7,$0
 
 	// TODO: Code missing
 
-	MOV Y-1, ret+0(FP)
+	MOV Y0, ret+0(FP)
 	RET
 
 // func m256UnpackhiPd(a [4]float64, b [4]float64) [4]float64
