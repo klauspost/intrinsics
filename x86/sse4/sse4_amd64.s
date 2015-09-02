@@ -798,16 +798,6 @@ TEXT ·roundSs(SB),7,$0
 	MOVOU X2, ret+40(FP)
 	RET
 
-// func streamLoadSi128(mem_addr [16]byte) [16]byte
-TEXT ·streamLoadSi128(SB),7,$0
-	MOVOU mem_addr+0(FP),X0
-
-	// TODO: Code missing - could be:
-	// MOVNTDQA X0, X0
-
-	MOVOU X0, ret+16(FP)
-	RET
-
 // func testAllOnes(a [16]byte) int
 TEXT ·testAllOnes(SB),7,$0
 	MOVOU a+0(FP),X0
