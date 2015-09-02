@@ -3,7 +3,9 @@ TEXT ·bzhiU32(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVL index+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BZHI R8, R9
 
 	MOVL $0, ret+8(FP)
 	RET
@@ -13,7 +15,9 @@ TEXT ·bzhiU64(SB),7,$0
 	MOVQ a+0(FP),R8
 	MOVL index+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BZHI R8, R9
 
 	MOVQ $0, ret+12(FP)
 	RET
@@ -23,7 +27,9 @@ TEXT ·pdepU32(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVL mask+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PDEP R8, R9
 
 	MOVL $0, ret+8(FP)
 	RET
@@ -33,7 +39,9 @@ TEXT ·pdepU64(SB),7,$0
 	MOVQ a+0(FP),R8
 	MOVQ mask+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PDEP R8, R9
 
 	MOVQ $0, ret+16(FP)
 	RET
@@ -43,7 +51,9 @@ TEXT ·pextU32(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVL mask+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PEXT R8, R9
 
 	MOVL $0, ret+8(FP)
 	RET
@@ -53,7 +63,9 @@ TEXT ·pextU64(SB),7,$0
 	MOVQ a+0(FP),R8
 	MOVQ mask+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PEXT R8, R9
 
 	MOVQ $0, ret+16(FP)
 	RET

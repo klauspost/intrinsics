@@ -3,7 +3,9 @@ TEXT ·bndChkPtrBounds(SB),7,$0
 	MOVQ q+0(FP),R8
 	MOVQ size+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BNDCU, BNDCN R8, R9
 
 	RET
 
@@ -11,7 +13,9 @@ TEXT ·bndChkPtrBounds(SB),7,$0
 TEXT ·bndChkPtrLbounds(SB),7,$0
 	MOVQ q+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BNDCL R8
 
 	RET
 
@@ -19,7 +23,9 @@ TEXT ·bndChkPtrLbounds(SB),7,$0
 TEXT ·bndChkPtrUbounds(SB),7,$0
 	MOVQ q+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BNDCU, BNDCN R8
 
 	RET
 
@@ -28,7 +34,7 @@ TEXT ·bndCopyPtrBounds(SB),7,$0
 	MOVQ q+0(FP),R8
 	MOVQ r+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -36,7 +42,7 @@ TEXT ·bndCopyPtrBounds(SB),7,$0
 TEXT ·bndGetPtrLbound(SB),7,$0
 	MOVQ q+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -45,7 +51,7 @@ TEXT ·bndGetPtrLbound(SB),7,$0
 TEXT ·bndGetPtrUbound(SB),7,$0
 	MOVQ q+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -54,7 +60,7 @@ TEXT ·bndGetPtrUbound(SB),7,$0
 TEXT ·bndInitPtrBounds(SB),7,$0
 	MOVQ q+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -64,7 +70,7 @@ TEXT ·bndNarrowPtrBounds(SB),7,$0
 	MOVQ r+8(FP),R9
 	MOVQ size+16(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -73,7 +79,9 @@ TEXT ·bndSetPtrBounds(SB),7,$0
 	MOVQ srcmem+0(FP),R8
 	MOVQ size+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BNDMK R8, R9
 
 	RET
 
@@ -82,7 +90,9 @@ TEXT ·bndStorePtrBounds(SB),7,$0
 	MOVQ ptr_addr+0(FP),R8
 	MOVQ ptr_val+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BNDSTX R8, R9
 
 	RET
 

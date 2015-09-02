@@ -4,7 +4,7 @@ TEXT ·monitor(SB),7,$0
 	MOVQ extensions+8(FP),R9
 	MOVQ hints+16(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -13,7 +13,9 @@ TEXT ·mwait(SB),7,$0
 	MOVQ extensions+0(FP),R8
 	MOVQ hints+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MWAIT R8, R9
 
 	RET
 

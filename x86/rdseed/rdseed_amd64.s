@@ -2,7 +2,9 @@
 TEXT ·rdseed16Step(SB),7,$0
 	MOVW val+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// RDSEED R8
 
 	MOVQ $0, ret+4(FP)
 	RET
@@ -11,7 +13,9 @@ TEXT ·rdseed16Step(SB),7,$0
 TEXT ·rdseed32Step(SB),7,$0
 	MOVL val+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// RDSEED R8
 
 	MOVQ $0, ret+4(FP)
 	RET
@@ -20,7 +24,9 @@ TEXT ·rdseed32Step(SB),7,$0
 TEXT ·rdseed64Step(SB),7,$0
 	MOVQ val+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// RDSEED R8
 
 	MOVQ $0, ret+8(FP)
 	RET

@@ -5,7 +5,7 @@ TEXT ·addcarryU32(SB),7,$0
 	MOVL b+8(FP),R10
 	MOVL out+12(FP),R11
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVB $0, ret+16(FP)
 	RET
@@ -17,7 +17,7 @@ TEXT ·addcarryU64(SB),7,$0
 	MOVQ b+12(FP),R10
 	MOVQ out+20(FP),R11
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVB $0, ret+28(FP)
 	RET
@@ -26,7 +26,7 @@ TEXT ·addcarryU64(SB),7,$0
 TEXT ·allowCpuFeatures(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -34,7 +34,9 @@ TEXT ·allowCpuFeatures(SB),7,$0
 TEXT ·bitScanForward(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSF R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -43,7 +45,9 @@ TEXT ·bitScanForward(SB),7,$0
 TEXT ·bitScanReverse(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSR R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -53,7 +57,9 @@ TEXT ·bitScanForward2(SB),7,$0
 	MOVL index+0(FP),R8
 	MOVL mask+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSF R8, R9
 
 	MOVB $0, ret+8(FP)
 	RET
@@ -63,7 +69,9 @@ TEXT ·bitScanForward64(SB),7,$0
 	MOVL index+0(FP),R8
 	MOVQ mask+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSF R8, R9
 
 	MOVB $0, ret+12(FP)
 	RET
@@ -73,7 +81,9 @@ TEXT ·bitScanReverse2(SB),7,$0
 	MOVL index+0(FP),R8
 	MOVL mask+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSR R8, R9
 
 	MOVB $0, ret+8(FP)
 	RET
@@ -83,7 +93,9 @@ TEXT ·bitScanReverse64(SB),7,$0
 	MOVL index+0(FP),R8
 	MOVQ mask+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSR R8, R9
 
 	MOVB $0, ret+12(FP)
 	RET
@@ -93,7 +105,9 @@ TEXT ·bittest(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVL b+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BT R8, R9
 
 	MOVB $0, ret+8(FP)
 	RET
@@ -103,7 +117,9 @@ TEXT ·bittest64(SB),7,$0
 	MOVQ a+0(FP),R8
 	MOVQ b+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BT R8, R9
 
 	MOVB $0, ret+16(FP)
 	RET
@@ -113,7 +129,9 @@ TEXT ·bittestandcomplement(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVL b+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BTC R8, R9
 
 	MOVB $0, ret+8(FP)
 	RET
@@ -123,7 +141,9 @@ TEXT ·bittestandcomplement64(SB),7,$0
 	MOVQ a+0(FP),R8
 	MOVQ b+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BTC R8, R9
 
 	MOVB $0, ret+16(FP)
 	RET
@@ -133,7 +153,9 @@ TEXT ·bittestandreset(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVL b+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BTR R8, R9
 
 	MOVB $0, ret+8(FP)
 	RET
@@ -143,7 +165,9 @@ TEXT ·bittestandreset64(SB),7,$0
 	MOVQ a+0(FP),R8
 	MOVQ b+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BTR R8, R9
 
 	MOVB $0, ret+16(FP)
 	RET
@@ -153,7 +177,9 @@ TEXT ·bittestandset(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVL b+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BTS R8, R9
 
 	MOVB $0, ret+8(FP)
 	RET
@@ -163,7 +189,9 @@ TEXT ·bittestandset64(SB),7,$0
 	MOVQ a+0(FP),R8
 	MOVQ b+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BTS R8, R9
 
 	MOVB $0, ret+16(FP)
 	RET
@@ -172,7 +200,9 @@ TEXT ·bittestandset64(SB),7,$0
 TEXT ·bswap(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSWAP R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -181,7 +211,9 @@ TEXT ·bswap(SB),7,$0
 TEXT ·bswap64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BSWAP R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -190,7 +222,7 @@ TEXT ·bswap64(SB),7,$0
 TEXT ·castf32U32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVL $0, ret+4(FP)
 	RET
@@ -199,7 +231,7 @@ TEXT ·castf32U32(SB),7,$0
 TEXT ·castf64U64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -208,7 +240,7 @@ TEXT ·castf64U64(SB),7,$0
 TEXT ·castu32F32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVL $0, ret+4(FP)
 	RET
@@ -217,7 +249,7 @@ TEXT ·castu32F32(SB),7,$0
 TEXT ·castu64F64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -226,7 +258,7 @@ TEXT ·castu64F64(SB),7,$0
 TEXT ·cvtshSs(SB),7,$0
 	MOVW a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVL $0, ret+4(FP)
 	RET
@@ -236,7 +268,7 @@ TEXT ·cvtssSh(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVQ imm8+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVW $0, ret+12(FP)
 	RET
@@ -245,7 +277,7 @@ TEXT ·cvtssSh(SB),7,$0
 TEXT ·loadbeI16(SB),7,$0
 	MOVQ ptr+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVW $0, ret+8(FP)
 	RET
@@ -254,7 +286,7 @@ TEXT ·loadbeI16(SB),7,$0
 TEXT ·loadbeI32(SB),7,$0
 	MOVQ ptr+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -263,7 +295,7 @@ TEXT ·loadbeI32(SB),7,$0
 TEXT ·loadbeI64(SB),7,$0
 	MOVQ ptr+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -272,7 +304,9 @@ TEXT ·loadbeI64(SB),7,$0
 TEXT ·loaduSi16(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVZWL+MOVD R8
 
 	MOVOU X0, ret+8(FP)
 	RET
@@ -281,7 +315,9 @@ TEXT ·loaduSi16(SB),7,$0
 TEXT ·loaduSi32(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVD R8
 
 	MOVOU X0, ret+8(FP)
 	RET
@@ -290,7 +326,9 @@ TEXT ·loaduSi32(SB),7,$0
 TEXT ·loaduSi64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVQ R8
 
 	MOVOU X0, ret+8(FP)
 	RET
@@ -300,7 +338,9 @@ TEXT ·lrotl(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVQ shift+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROL R8, R9
 
 	MOVL $0, ret+12(FP)
 	RET
@@ -310,7 +350,9 @@ TEXT ·lrotr(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVQ shift+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROR R8, R9
 
 	MOVL $0, ret+12(FP)
 	RET
@@ -319,7 +361,7 @@ TEXT ·lrotr(SB),7,$0
 TEXT ·mayIUseCpuFeature(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -328,7 +370,9 @@ TEXT ·mayIUseCpuFeature(SB),7,$0
 TEXT ·rdpmc(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// RDPMC R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -338,7 +382,9 @@ TEXT ·rotl(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVQ shift+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROL R8, R9
 
 	MOVL $0, ret+12(FP)
 	RET
@@ -348,7 +394,9 @@ TEXT ·rotr(SB),7,$0
 	MOVL a+0(FP),R8
 	MOVQ shift+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROR R8, R9
 
 	MOVL $0, ret+12(FP)
 	RET
@@ -358,7 +406,9 @@ TEXT ·rotwl(SB),7,$0
 	MOVW a+0(FP),R8
 	MOVQ shift+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROL R8, R9
 
 	MOVW $0, ret+12(FP)
 	RET
@@ -368,7 +418,9 @@ TEXT ·rotwr(SB),7,$0
 	MOVW a+0(FP),R8
 	MOVQ shift+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROR R8, R9
 
 	MOVW $0, ret+12(FP)
 	RET
@@ -378,7 +430,7 @@ TEXT ·storebeI16(SB),7,$0
 	MOVQ ptr+0(FP),R8
 	MOVW data+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -387,7 +439,7 @@ TEXT ·storebeI32(SB),7,$0
 	MOVQ ptr+0(FP),R8
 	MOVQ data+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -396,7 +448,7 @@ TEXT ·storebeI64(SB),7,$0
 	MOVQ ptr+0(FP),R8
 	MOVQ data+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -405,7 +457,9 @@ TEXT ·storeuSi16(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVOU a+8(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVD+MOVW R8, X1
 
 	RET
 
@@ -414,7 +468,9 @@ TEXT ·storeuSi32(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVOU a+8(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVD R8, X1
 
 	RET
 
@@ -423,7 +479,9 @@ TEXT ·storeuSi64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVOU a+8(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVQ R8, X1
 
 	RET
 
@@ -434,7 +492,7 @@ TEXT ·subborrowU32(SB),7,$0
 	MOVL b+8(FP),R10
 	MOVL out+12(FP),R11
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVB $0, ret+16(FP)
 	RET
@@ -446,7 +504,7 @@ TEXT ·subborrowU64(SB),7,$0
 	MOVQ b+12(FP),R10
 	MOVQ out+20(FP),R11
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVB $0, ret+28(FP)
 	RET

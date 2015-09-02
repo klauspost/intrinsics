@@ -3,7 +3,9 @@ TEXT ·addPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDW M0, M1
 
 	// Return size: 8
 	RET
@@ -13,7 +15,9 @@ TEXT ·addPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDD M0, M1
 
 	// Return size: 8
 	RET
@@ -23,7 +27,9 @@ TEXT ·addPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDB M0, M1
 
 	// Return size: 8
 	RET
@@ -33,7 +39,9 @@ TEXT ·addsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDSW M0, M1
 
 	// Return size: 8
 	RET
@@ -43,7 +51,9 @@ TEXT ·addsPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDSB M0, M1
 
 	// Return size: 8
 	RET
@@ -53,7 +63,9 @@ TEXT ·addsPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDUSW M0, M1
 
 	// Return size: 8
 	RET
@@ -63,7 +75,9 @@ TEXT ·addsPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDUSB M0, M1
 
 	// Return size: 8
 	RET
@@ -73,7 +87,9 @@ TEXT ·andSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PAND M0, M1
 
 	// Return size: 8
 	RET
@@ -83,7 +99,9 @@ TEXT ·andnotSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PANDN M0, M1
 
 	// Return size: 8
 	RET
@@ -93,7 +111,9 @@ TEXT ·cmpeqPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPEQW M0, M1
 
 	// Return size: 8
 	RET
@@ -103,7 +123,9 @@ TEXT ·cmpeqPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPEQD M0, M1
 
 	// Return size: 8
 	RET
@@ -113,7 +135,9 @@ TEXT ·cmpeqPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPEQB M0, M1
 
 	// Return size: 8
 	RET
@@ -123,7 +147,9 @@ TEXT ·cmpgtPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPGTW M0, M1
 
 	// Return size: 8
 	RET
@@ -133,7 +159,9 @@ TEXT ·cmpgtPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPGTD M0, M1
 
 	// Return size: 8
 	RET
@@ -143,7 +171,9 @@ TEXT ·cmpgtPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPGTB M0, M1
 
 	// Return size: 8
 	RET
@@ -152,7 +182,9 @@ TEXT ·cmpgtPi8(SB),7,$0
 TEXT ·cvtm64Si64(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVQ M0
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -161,7 +193,9 @@ TEXT ·cvtm64Si64(SB),7,$0
 TEXT ·cvtsi32Si64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVD R8
 
 	// Return size: 8
 	RET
@@ -170,7 +204,9 @@ TEXT ·cvtsi32Si64(SB),7,$0
 TEXT ·cvtsi64M64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVQ R8
 
 	// Return size: 8
 	RET
@@ -179,7 +215,9 @@ TEXT ·cvtsi64M64(SB),7,$0
 TEXT ·cvtsi64Si32(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVD M0
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -187,14 +225,14 @@ TEXT ·cvtsi64Si32(SB),7,$0
 // func empty() 
 TEXT ·empty(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
 // func empty2() 
 TEXT ·empty2(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
@@ -202,7 +240,9 @@ TEXT ·empty2(SB),7,$0
 TEXT ·fromInt(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVD R8
 
 	// Return size: 8
 	RET
@@ -211,7 +251,9 @@ TEXT ·fromInt(SB),7,$0
 TEXT ·fromInt64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVQ R8
 
 	// Return size: 8
 	RET
@@ -221,7 +263,9 @@ TEXT ·maddPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMADDWD M0, M1
 
 	// Return size: 8
 	RET
@@ -231,7 +275,9 @@ TEXT ·mulhiPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULHW M0, M1
 
 	// Return size: 8
 	RET
@@ -241,7 +287,9 @@ TEXT ·mulloPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULLW M0, M1
 
 	// Return size: 8
 	RET
@@ -251,7 +299,9 @@ TEXT ·orSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// POR M0, M1
 
 	// Return size: 8
 	RET
@@ -261,7 +311,9 @@ TEXT ·packsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PACKSSWB M0, M1
 
 	// Return size: 8
 	RET
@@ -271,7 +323,9 @@ TEXT ·packsPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PACKSSDW M0, M1
 
 	// Return size: 8
 	RET
@@ -281,7 +335,9 @@ TEXT ·packsPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PACKUSWB M0, M1
 
 	// Return size: 8
 	RET
@@ -291,7 +347,9 @@ TEXT ·packssdw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PACKSSDW M0, M1
 
 	// Return size: 8
 	RET
@@ -301,7 +359,9 @@ TEXT ·packsswb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PACKSSWB M0, M1
 
 	// Return size: 8
 	RET
@@ -311,7 +371,9 @@ TEXT ·packuswb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PACKUSWB M0, M1
 
 	// Return size: 8
 	RET
@@ -321,7 +383,9 @@ TEXT ·paddb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDB M0, M1
 
 	// Return size: 8
 	RET
@@ -331,7 +395,9 @@ TEXT ·paddd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDD M0, M1
 
 	// Return size: 8
 	RET
@@ -341,7 +407,9 @@ TEXT ·paddsb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDSB M0, M1
 
 	// Return size: 8
 	RET
@@ -351,7 +419,9 @@ TEXT ·paddsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDSW M0, M1
 
 	// Return size: 8
 	RET
@@ -361,7 +431,9 @@ TEXT ·paddusb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDUSB M0, M1
 
 	// Return size: 8
 	RET
@@ -371,7 +443,9 @@ TEXT ·paddusw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDUSW M0, M1
 
 	// Return size: 8
 	RET
@@ -381,7 +455,9 @@ TEXT ·paddw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PADDW M0, M1
 
 	// Return size: 8
 	RET
@@ -391,7 +467,9 @@ TEXT ·pand(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PAND M0, M1
 
 	// Return size: 8
 	RET
@@ -401,7 +479,9 @@ TEXT ·pandn(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PANDN M0, M1
 
 	// Return size: 8
 	RET
@@ -411,7 +491,9 @@ TEXT ·pcmpeqb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPEQB M0, M1
 
 	// Return size: 8
 	RET
@@ -421,7 +503,9 @@ TEXT ·pcmpeqd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPEQD M0, M1
 
 	// Return size: 8
 	RET
@@ -431,7 +515,9 @@ TEXT ·pcmpeqw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPEQW M0, M1
 
 	// Return size: 8
 	RET
@@ -441,7 +527,9 @@ TEXT ·pcmpgtb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPGTB M0, M1
 
 	// Return size: 8
 	RET
@@ -451,7 +539,9 @@ TEXT ·pcmpgtd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPGTD M0, M1
 
 	// Return size: 8
 	RET
@@ -461,7 +551,9 @@ TEXT ·pcmpgtw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPGTW M0, M1
 
 	// Return size: 8
 	RET
@@ -471,7 +563,9 @@ TEXT ·pmaddwd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMADDWD M0, M1
 
 	// Return size: 8
 	RET
@@ -481,7 +575,9 @@ TEXT ·pmulhw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULHW M0, M1
 
 	// Return size: 8
 	RET
@@ -491,7 +587,9 @@ TEXT ·pmullw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULLW M0, M1
 
 	// Return size: 8
 	RET
@@ -501,7 +599,9 @@ TEXT ·por(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// POR M0, M1
 
 	// Return size: 8
 	RET
@@ -511,7 +611,9 @@ TEXT ·pslld(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLD M0, M1
 
 	// Return size: 8
 	RET
@@ -521,7 +623,9 @@ TEXT ·pslldi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLD M0, R9
 
 	// Return size: 8
 	RET
@@ -531,7 +635,9 @@ TEXT ·psllq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLQ M0, M1
 
 	// Return size: 8
 	RET
@@ -541,7 +647,9 @@ TEXT ·psllqi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLQ M0, R9
 
 	// Return size: 8
 	RET
@@ -551,7 +659,9 @@ TEXT ·psllw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLW M0, M1
 
 	// Return size: 8
 	RET
@@ -561,7 +671,9 @@ TEXT ·psllwi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLW M0, R9
 
 	// Return size: 8
 	RET
@@ -571,7 +683,9 @@ TEXT ·psrad(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAD M0, M1
 
 	// Return size: 8
 	RET
@@ -581,7 +695,9 @@ TEXT ·psradi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAD M0, R9
 
 	// Return size: 8
 	RET
@@ -591,7 +707,9 @@ TEXT ·psraw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAW M0, M1
 
 	// Return size: 8
 	RET
@@ -601,7 +719,9 @@ TEXT ·psrawi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAW M0, R9
 
 	// Return size: 8
 	RET
@@ -611,7 +731,9 @@ TEXT ·psrld(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLD M0, M1
 
 	// Return size: 8
 	RET
@@ -621,7 +743,9 @@ TEXT ·psrldi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLD M0, R9
 
 	// Return size: 8
 	RET
@@ -631,7 +755,9 @@ TEXT ·psrlq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLQ M0, M1
 
 	// Return size: 8
 	RET
@@ -641,7 +767,9 @@ TEXT ·psrlqi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLQ M0, R9
 
 	// Return size: 8
 	RET
@@ -651,7 +779,9 @@ TEXT ·psrlw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLW M0, M1
 
 	// Return size: 8
 	RET
@@ -661,7 +791,9 @@ TEXT ·psrlwi(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLW M0, R9
 
 	// Return size: 8
 	RET
@@ -671,7 +803,9 @@ TEXT ·psubb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBB M0, M1
 
 	// Return size: 8
 	RET
@@ -681,7 +815,9 @@ TEXT ·psubd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBD M0, M1
 
 	// Return size: 8
 	RET
@@ -691,7 +827,9 @@ TEXT ·psubsb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBSB M0, M1
 
 	// Return size: 8
 	RET
@@ -701,7 +839,9 @@ TEXT ·psubsw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBSW M0, M1
 
 	// Return size: 8
 	RET
@@ -711,7 +851,9 @@ TEXT ·psubusb(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBUSB M0, M1
 
 	// Return size: 8
 	RET
@@ -721,7 +863,9 @@ TEXT ·psubusw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBUSW M0, M1
 
 	// Return size: 8
 	RET
@@ -731,7 +875,9 @@ TEXT ·psubw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBW M0, M1
 
 	// Return size: 8
 	RET
@@ -741,7 +887,9 @@ TEXT ·punpckhbw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKHBW M0, M1
 
 	// Return size: 8
 	RET
@@ -751,7 +899,9 @@ TEXT ·punpckhdq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKHDQ M0, M1
 
 	// Return size: 8
 	RET
@@ -761,7 +911,9 @@ TEXT ·punpckhwd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLBW M0, M1
 
 	// Return size: 8
 	RET
@@ -771,7 +923,9 @@ TEXT ·punpcklbw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLBW M0, M1
 
 	// Return size: 8
 	RET
@@ -781,7 +935,9 @@ TEXT ·punpckldq(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLDQ M0, M1
 
 	// Return size: 8
 	RET
@@ -791,7 +947,9 @@ TEXT ·punpcklwd(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLWD M0, M1
 
 	// Return size: 8
 	RET
@@ -801,7 +959,9 @@ TEXT ·pxor(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PXOR M0, M1
 
 	// Return size: 8
 	RET
@@ -813,7 +973,7 @@ TEXT ·setPi16(SB),7,$0
 	MOVW e1+8(FP),R10
 	MOVW e0+12(FP),R11
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -823,7 +983,7 @@ TEXT ·setPi32(SB),7,$0
 	MOVQ e1+0(FP),R8
 	MOVQ e0+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -839,7 +999,7 @@ TEXT ·setPi8(SB),7,$0
 	MOVB e1+24(FP),R14
 	MOVB e0+28(FP),R15
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -848,7 +1008,7 @@ TEXT ·setPi8(SB),7,$0
 TEXT ·set1Pi16(SB),7,$0
 	MOVW a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -857,7 +1017,7 @@ TEXT ·set1Pi16(SB),7,$0
 TEXT ·set1Pi32(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -866,7 +1026,7 @@ TEXT ·set1Pi32(SB),7,$0
 TEXT ·set1Pi8(SB),7,$0
 	MOVB a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -878,7 +1038,7 @@ TEXT ·setrPi16(SB),7,$0
 	MOVW e1+8(FP),R10
 	MOVW e0+12(FP),R11
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -888,7 +1048,7 @@ TEXT ·setrPi32(SB),7,$0
 	MOVQ e1+0(FP),R8
 	MOVQ e0+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -904,7 +1064,7 @@ TEXT ·setrPi8(SB),7,$0
 	MOVB e1+24(FP),R14
 	MOVB e0+28(FP),R15
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -912,7 +1072,7 @@ TEXT ·setrPi8(SB),7,$0
 // func setzeroSi64() x86.M64
 TEXT ·setzeroSi64(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -922,7 +1082,9 @@ TEXT ·sllPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLW M0, M1
 
 	// Return size: 8
 	RET
@@ -932,7 +1094,9 @@ TEXT ·sllPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLD M0, M1
 
 	// Return size: 8
 	RET
@@ -942,7 +1106,9 @@ TEXT ·sllSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLQ M0, M1
 
 	// Return size: 8
 	RET
@@ -952,7 +1118,9 @@ TEXT ·slliPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLW M0, R9
 
 	// Return size: 8
 	RET
@@ -962,7 +1130,9 @@ TEXT ·slliPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLD M0, R9
 
 	// Return size: 8
 	RET
@@ -972,7 +1142,9 @@ TEXT ·slliSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSLLQ M0, R9
 
 	// Return size: 8
 	RET
@@ -982,7 +1154,9 @@ TEXT ·sraPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAW M0, M1
 
 	// Return size: 8
 	RET
@@ -992,7 +1166,9 @@ TEXT ·sraPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAD M0, M1
 
 	// Return size: 8
 	RET
@@ -1002,7 +1178,9 @@ TEXT ·sraiPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAW M0, R9
 
 	// Return size: 8
 	RET
@@ -1012,7 +1190,9 @@ TEXT ·sraiPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRAD M0, R9
 
 	// Return size: 8
 	RET
@@ -1022,7 +1202,9 @@ TEXT ·srlPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLW M0, M1
 
 	// Return size: 8
 	RET
@@ -1032,7 +1214,9 @@ TEXT ·srlPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLD M0, M1
 
 	// Return size: 8
 	RET
@@ -1042,7 +1226,9 @@ TEXT ·srlSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ count+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLQ M0, M1
 
 	// Return size: 8
 	RET
@@ -1052,7 +1238,9 @@ TEXT ·srliPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLW M0, R9
 
 	// Return size: 8
 	RET
@@ -1062,7 +1250,9 @@ TEXT ·srliPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLD M0, R9
 
 	// Return size: 8
 	RET
@@ -1072,7 +1262,9 @@ TEXT ·srliSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ imm8+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSRLQ M0, R9
 
 	// Return size: 8
 	RET
@@ -1082,7 +1274,9 @@ TEXT ·subPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBW M0, M1
 
 	// Return size: 8
 	RET
@@ -1092,7 +1286,9 @@ TEXT ·subPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBD M0, M1
 
 	// Return size: 8
 	RET
@@ -1102,7 +1298,9 @@ TEXT ·subPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBB M0, M1
 
 	// Return size: 8
 	RET
@@ -1112,7 +1310,9 @@ TEXT ·subsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBSW M0, M1
 
 	// Return size: 8
 	RET
@@ -1122,7 +1322,9 @@ TEXT ·subsPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBSB M0, M1
 
 	// Return size: 8
 	RET
@@ -1132,7 +1334,9 @@ TEXT ·subsPu16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBUSW M0, M1
 
 	// Return size: 8
 	RET
@@ -1142,7 +1346,9 @@ TEXT ·subsPu8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSUBUSB M0, M1
 
 	// Return size: 8
 	RET
@@ -1151,7 +1357,9 @@ TEXT ·subsPu8(SB),7,$0
 TEXT ·toInt(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVD M0
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -1160,7 +1368,9 @@ TEXT ·toInt(SB),7,$0
 TEXT ·toInt64(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVQ M0
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -1170,7 +1380,9 @@ TEXT ·unpackhiPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLBW M0, M1
 
 	// Return size: 8
 	RET
@@ -1180,7 +1392,9 @@ TEXT ·unpackhiPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKHDQ M0, M1
 
 	// Return size: 8
 	RET
@@ -1190,7 +1404,9 @@ TEXT ·unpackhiPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKHBW M0, M1
 
 	// Return size: 8
 	RET
@@ -1200,7 +1416,9 @@ TEXT ·unpackloPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLWD M0, M1
 
 	// Return size: 8
 	RET
@@ -1210,7 +1428,9 @@ TEXT ·unpackloPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLDQ M0, M1
 
 	// Return size: 8
 	RET
@@ -1220,7 +1440,9 @@ TEXT ·unpackloPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PUNPCKLBW M0, M1
 
 	// Return size: 8
 	RET
@@ -1230,7 +1452,9 @@ TEXT ·xorSi64(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PXOR M0, M1
 
 	// Return size: 8
 	RET

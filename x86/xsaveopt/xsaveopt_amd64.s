@@ -3,7 +3,9 @@ TEXT ·xsaveopt(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVQ save_mask+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// XSAVEOPT R8, R9
 
 	RET
 
@@ -12,7 +14,9 @@ TEXT ·xsaveopt64(SB),7,$0
 	MOVQ mem_addr+0(FP),R8
 	MOVQ save_mask+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// XSAVEOPT64 R8, R9
 
 	RET
 

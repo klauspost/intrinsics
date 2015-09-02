@@ -2,14 +2,16 @@
 TEXT ·xabort(SB),7,$0
 	MOVQ imm8+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// XABORT R8
 
 	RET
 
 // func xbegin() uint32
 TEXT ·xbegin(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVL $0, ret+0(FP)
 	RET
@@ -17,14 +19,14 @@ TEXT ·xbegin(SB),7,$0
 // func xend() 
 TEXT ·xend(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	RET
 
 // func xtest() uint8
 TEXT ·xtest(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVB $0, ret+0(FP)
 	RET

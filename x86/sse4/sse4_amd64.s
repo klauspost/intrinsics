@@ -4,9 +4,9 @@ TEXT ·blendEpi16(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func blendPd(a [2]float64, b [2]float64, imm8 int) [2]float64
@@ -15,9 +15,9 @@ TEXT ·blendPd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func blendPs(a [4]float32, b [4]float32, imm8 int) [4]float32
@@ -26,9 +26,9 @@ TEXT ·blendPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func blendvEpi8(a [16]byte, b [16]byte, mask [16]byte) [16]byte
@@ -37,9 +37,9 @@ TEXT ·blendvEpi8(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVOU mask+32(FP),X2
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+48(FP)
+	MOVOU X2, ret+48(FP)
 	RET
 
 // func blendvPd(a [2]float64, b [2]float64, mask [2]float64) [2]float64
@@ -48,9 +48,9 @@ TEXT ·blendvPd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVOU mask+32(FP),X2
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+48(FP)
+	MOVOU X2, ret+48(FP)
 	RET
 
 // func blendvPs(a [4]float32, b [4]float32, mask [4]float32) [4]float32
@@ -59,16 +59,18 @@ TEXT ·blendvPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVOU mask+32(FP),X2
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+48(FP)
+	MOVOU X2, ret+48(FP)
 	RET
 
 // func ceilPd(a [2]float64) [2]float64
 TEXT ·ceilPd(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDPD X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -77,7 +79,9 @@ TEXT ·ceilPd(SB),7,$0
 TEXT ·ceilPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDPS X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -87,9 +91,11 @@ TEXT ·ceilSd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDSD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func ceilSs(a [4]float32, b [4]float32) [4]float32
@@ -97,9 +103,11 @@ TEXT ·ceilSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDSS X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func cmpeqEpi64(a [16]byte, b [16]byte) [16]byte
@@ -107,9 +115,11 @@ TEXT ·cmpeqEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPEQQ X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
@@ -120,7 +130,7 @@ TEXT ·cmpestra(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -133,7 +143,7 @@ TEXT ·cmpestrc(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -146,7 +156,7 @@ TEXT ·cmpestri(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -159,9 +169,9 @@ TEXT ·cmpestrm(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+56(FP)
+	MOVOU X4, ret+56(FP)
 	RET
 
 // func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
@@ -172,7 +182,7 @@ TEXT ·cmpestro(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -185,7 +195,7 @@ TEXT ·cmpestrs(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -198,7 +208,7 @@ TEXT ·cmpestrz(SB),7,$0
 	MOVQ lb+40(FP),R11
 	MOVQ imm8+48(FP),R12
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+56(FP)
 	RET
@@ -208,9 +218,11 @@ TEXT ·cmpgtEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PCMPGTQ X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func cmpistra(a [16]byte, b [16]byte, imm8 int) int
@@ -219,7 +231,7 @@ TEXT ·cmpistra(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -230,7 +242,7 @@ TEXT ·cmpistrc(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -241,7 +253,7 @@ TEXT ·cmpistri(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -252,9 +264,9 @@ TEXT ·cmpistrm(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func cmpistro(a [16]byte, b [16]byte, imm8 int) int
@@ -263,7 +275,7 @@ TEXT ·cmpistro(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -274,7 +286,7 @@ TEXT ·cmpistrs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -285,7 +297,7 @@ TEXT ·cmpistrz(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+40(FP)
 	RET
@@ -295,7 +307,9 @@ TEXT ·crc32U16(SB),7,$0
 	MOVL crc+0(FP),R8
 	MOVW v+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// CRC32 R8, R9
 
 	MOVL $0, ret+8(FP)
 	RET
@@ -305,7 +319,9 @@ TEXT ·crc32U32(SB),7,$0
 	MOVL crc+0(FP),R8
 	MOVL v+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// CRC32 R8, R9
 
 	MOVL $0, ret+8(FP)
 	RET
@@ -315,7 +331,9 @@ TEXT ·crc32U64(SB),7,$0
 	MOVQ crc+0(FP),R8
 	MOVQ v+8(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// CRC32 R8, R9
 
 	MOVQ $0, ret+16(FP)
 	RET
@@ -325,7 +343,9 @@ TEXT ·crc32U8(SB),7,$0
 	MOVL crc+0(FP),R8
 	MOVB v+4(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// CRC32 R8, R9
 
 	MOVL $0, ret+8(FP)
 	RET
@@ -334,7 +354,9 @@ TEXT ·crc32U8(SB),7,$0
 TEXT ·cvtepi16Epi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVSXWD X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -343,7 +365,9 @@ TEXT ·cvtepi16Epi32(SB),7,$0
 TEXT ·cvtepi16Epi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVSXWQ X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -352,7 +376,9 @@ TEXT ·cvtepi16Epi64(SB),7,$0
 TEXT ·cvtepi32Epi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVSXDQ X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -361,7 +387,9 @@ TEXT ·cvtepi32Epi64(SB),7,$0
 TEXT ·cvtepi8Epi16(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVSXBW X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -370,7 +398,9 @@ TEXT ·cvtepi8Epi16(SB),7,$0
 TEXT ·cvtepi8Epi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVSXBD X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -379,7 +409,9 @@ TEXT ·cvtepi8Epi32(SB),7,$0
 TEXT ·cvtepi8Epi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVSXBQ X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -388,7 +420,9 @@ TEXT ·cvtepi8Epi64(SB),7,$0
 TEXT ·cvtepu16Epi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVZXWD X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -397,7 +431,9 @@ TEXT ·cvtepu16Epi32(SB),7,$0
 TEXT ·cvtepu16Epi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVZXWQ X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -406,7 +442,9 @@ TEXT ·cvtepu16Epi64(SB),7,$0
 TEXT ·cvtepu32Epi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVZXDQ X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -415,7 +453,9 @@ TEXT ·cvtepu32Epi64(SB),7,$0
 TEXT ·cvtepu8Epi16(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVZXBW X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -424,7 +464,9 @@ TEXT ·cvtepu8Epi16(SB),7,$0
 TEXT ·cvtepu8Epi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVZXBD X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -433,7 +475,9 @@ TEXT ·cvtepu8Epi32(SB),7,$0
 TEXT ·cvtepu8Epi64(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMOVZXBQ X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -444,9 +488,9 @@ TEXT ·dpPd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func dpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
@@ -455,9 +499,9 @@ TEXT ·dpPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func extractEpi32(a [16]byte, imm8 int) int
@@ -465,7 +509,9 @@ TEXT ·extractEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PEXTRD X0, R9
 
 	MOVQ $0, ret+24(FP)
 	RET
@@ -475,7 +521,9 @@ TEXT ·extractEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PEXTRQ X0, R9
 
 	MOVQ $0, ret+24(FP)
 	RET
@@ -485,7 +533,9 @@ TEXT ·extractEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PEXTRB X0, R9
 
 	MOVQ $0, ret+24(FP)
 	RET
@@ -495,7 +545,9 @@ TEXT ·extractPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ imm8+16(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// EXTRACTPS X0, R9
 
 	MOVQ $0, ret+24(FP)
 	RET
@@ -504,7 +556,9 @@ TEXT ·extractPs(SB),7,$0
 TEXT ·floorPd(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDPD X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -513,7 +567,9 @@ TEXT ·floorPd(SB),7,$0
 TEXT ·floorPs(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDPS X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -523,9 +579,11 @@ TEXT ·floorSd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDSD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func floorSs(a [4]float32, b [4]float32) [4]float32
@@ -533,9 +591,11 @@ TEXT ·floorSs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDSS X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func insertEpi32(a [16]byte, i int, imm8 int) [16]byte
@@ -544,9 +604,9 @@ TEXT ·insertEpi32(SB),7,$0
 	MOVQ i+16(FP),R9
 	MOVQ imm8+24(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X2, ret+32(FP)
 	RET
 
 // func insertEpi64(a [16]byte, i int64, imm8 int) [16]byte
@@ -555,9 +615,9 @@ TEXT ·insertEpi64(SB),7,$0
 	MOVQ i+16(FP),R9
 	MOVQ imm8+24(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X2, ret+32(FP)
 	RET
 
 // func insertEpi8(a [16]byte, i int, imm8 int) [16]byte
@@ -566,9 +626,9 @@ TEXT ·insertEpi8(SB),7,$0
 	MOVQ i+16(FP),R9
 	MOVQ imm8+24(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X2, ret+32(FP)
 	RET
 
 // func insertPs(a [4]float32, b [4]float32, imm8 int) [4]float32
@@ -577,9 +637,9 @@ TEXT ·insertPs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func maxEpi32(a [16]byte, b [16]byte) [16]byte
@@ -587,9 +647,11 @@ TEXT ·maxEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMAXSD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func maxEpi8(a [16]byte, b [16]byte) [16]byte
@@ -597,9 +659,11 @@ TEXT ·maxEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMAXSB X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func maxEpu16(a [16]byte, b [16]byte) [16]byte
@@ -607,9 +671,11 @@ TEXT ·maxEpu16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMAXUW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func maxEpu32(a [16]byte, b [16]byte) [16]byte
@@ -617,9 +683,11 @@ TEXT ·maxEpu32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMAXUD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func minEpi32(a [16]byte, b [16]byte) [16]byte
@@ -627,9 +695,11 @@ TEXT ·minEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMINSD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func minEpi8(a [16]byte, b [16]byte) [16]byte
@@ -637,9 +707,11 @@ TEXT ·minEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMINSB X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func minEpu16(a [16]byte, b [16]byte) [16]byte
@@ -647,9 +719,11 @@ TEXT ·minEpu16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMINUW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func minEpu32(a [16]byte, b [16]byte) [16]byte
@@ -657,16 +731,20 @@ TEXT ·minEpu32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMINUD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func minposEpu16(a [16]byte) [16]byte
 TEXT ·minposEpu16(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHMINPOSUW X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -677,9 +755,9 @@ TEXT ·mpsadbwEpu8(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func mulEpi32(a [16]byte, b [16]byte) [16]byte
@@ -687,9 +765,11 @@ TEXT ·mulEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULDQ X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func mulloEpi32(a [16]byte, b [16]byte) [16]byte
@@ -697,9 +777,11 @@ TEXT ·mulloEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULLD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func packusEpi32(a [16]byte, b [16]byte) [16]byte
@@ -707,9 +789,11 @@ TEXT ·packusEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PACKUSDW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func roundPd(a [2]float64, rounding int) [2]float64
@@ -717,9 +801,11 @@ TEXT ·roundPd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ rounding+16(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDPD X0, R9
 
-	MOVOU X0, ret+24(FP)
+	MOVOU X1, ret+24(FP)
 	RET
 
 // func roundPs(a [4]float32, rounding int) [4]float32
@@ -727,9 +813,11 @@ TEXT ·roundPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ rounding+16(FP),R9
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// ROUNDPS X0, R9
 
-	MOVOU X0, ret+24(FP)
+	MOVOU X1, ret+24(FP)
 	RET
 
 // func roundSd(a [2]float64, b [2]float64, rounding int) [2]float64
@@ -738,9 +826,9 @@ TEXT ·roundSd(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func roundSs(a [4]float32, b [4]float32, rounding int) [4]float32
@@ -749,16 +837,18 @@ TEXT ·roundSs(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ rounding+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func streamLoadSi128(mem_addr [16]byte) [16]byte
 TEXT ·streamLoadSi128(SB),7,$0
 	MOVOU mem_addr+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// MOVNTDQA X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -767,7 +857,7 @@ TEXT ·streamLoadSi128(SB),7,$0
 TEXT ·testAllOnes(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+16(FP)
 	RET
@@ -777,7 +867,9 @@ TEXT ·testAllZeros(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU mask+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PTEST X0, X1
 
 	MOVQ $0, ret+32(FP)
 	RET
@@ -787,7 +879,9 @@ TEXT ·testMixOnesZeros(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU mask+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PTEST X0, X1
 
 	MOVQ $0, ret+32(FP)
 	RET
@@ -797,7 +891,9 @@ TEXT ·testcSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PTEST X0, X1
 
 	MOVQ $0, ret+32(FP)
 	RET
@@ -807,7 +903,9 @@ TEXT ·testnzcSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PTEST X0, X1
 
 	MOVQ $0, ret+32(FP)
 	RET
@@ -817,7 +915,9 @@ TEXT ·testzSi128(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PTEST X0, X1
 
 	MOVQ $0, ret+32(FP)
 	RET

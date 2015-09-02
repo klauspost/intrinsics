@@ -4,8 +4,8 @@ TEXT ·clmulepi64Si128(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ imm8+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 

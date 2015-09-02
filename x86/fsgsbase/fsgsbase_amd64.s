@@ -1,7 +1,7 @@
 // func readfsbaseU32() uint32
 TEXT ·readfsbaseU32(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVL $0, ret+0(FP)
 	RET
@@ -9,7 +9,7 @@ TEXT ·readfsbaseU32(SB),7,$0
 // func readfsbaseU64() uint64
 TEXT ·readfsbaseU64(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
 	RET
@@ -17,7 +17,7 @@ TEXT ·readfsbaseU64(SB),7,$0
 // func readgsbaseU32() uint32
 TEXT ·readgsbaseU32(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVL $0, ret+0(FP)
 	RET
@@ -25,7 +25,7 @@ TEXT ·readgsbaseU32(SB),7,$0
 // func readgsbaseU64() uint64
 TEXT ·readgsbaseU64(SB),7,$0
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+0(FP)
 	RET
@@ -34,7 +34,9 @@ TEXT ·readgsbaseU64(SB),7,$0
 TEXT ·writefsbaseU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// WRFSBASE R8
 
 	RET
 
@@ -42,7 +44,9 @@ TEXT ·writefsbaseU32(SB),7,$0
 TEXT ·writefsbaseU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// WRFSBASE R8
 
 	RET
 
@@ -50,7 +54,9 @@ TEXT ·writefsbaseU64(SB),7,$0
 TEXT ·writegsbaseU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// WRGSBASE R8
 
 	RET
 
@@ -58,7 +64,9 @@ TEXT ·writegsbaseU32(SB),7,$0
 TEXT ·writegsbaseU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// WRGSBASE R8
 
 	RET
 

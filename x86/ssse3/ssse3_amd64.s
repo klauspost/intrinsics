@@ -2,7 +2,9 @@
 TEXT ·absEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PABSW X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -11,7 +13,9 @@ TEXT ·absEpi16(SB),7,$0
 TEXT ·absEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PABSD X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -20,7 +24,9 @@ TEXT ·absEpi32(SB),7,$0
 TEXT ·absEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PABSB X0, X0
 
 	MOVOU X0, ret+16(FP)
 	RET
@@ -29,7 +35,9 @@ TEXT ·absEpi8(SB),7,$0
 TEXT ·absPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PABSW M0, M0
 
 	// Return size: 8
 	RET
@@ -38,7 +46,9 @@ TEXT ·absPi16(SB),7,$0
 TEXT ·absPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PABSD M0, M0
 
 	// Return size: 8
 	RET
@@ -47,7 +57,9 @@ TEXT ·absPi32(SB),7,$0
 TEXT ·absPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PABSB M0, M0
 
 	// Return size: 8
 	RET
@@ -58,9 +70,9 @@ TEXT ·alignrEpi8(SB),7,$0
 	MOVOU b+16(FP),X1
 	MOVQ count+32(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
-	MOVOU X0, ret+40(FP)
+	MOVOU X2, ret+40(FP)
 	RET
 
 // func alignrPi8(a x86.M64, b x86.M64, count int) x86.M64
@@ -69,7 +81,7 @@ TEXT ·alignrPi8(SB),7,$0
 	MOVQ b+8(FP),M1
 	MOVQ count+16(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	// Return size: 8
 	RET
@@ -79,9 +91,11 @@ TEXT ·haddEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHADDW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func haddEpi32(a [16]byte, b [16]byte) [16]byte
@@ -89,9 +103,11 @@ TEXT ·haddEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHADDD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func haddPi16(a x86.M64, b x86.M64) x86.M64
@@ -99,7 +115,9 @@ TEXT ·haddPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHADDW M0, M1
 
 	// Return size: 8
 	RET
@@ -109,7 +127,9 @@ TEXT ·haddPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHADDW M0, M1
 
 	// Return size: 8
 	RET
@@ -119,9 +139,11 @@ TEXT ·haddsEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHADDSW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func haddsPi16(a x86.M64, b x86.M64) x86.M64
@@ -129,7 +151,9 @@ TEXT ·haddsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHADDSW M0, M1
 
 	// Return size: 8
 	RET
@@ -139,9 +163,11 @@ TEXT ·hsubEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHSUBW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func hsubEpi32(a [16]byte, b [16]byte) [16]byte
@@ -149,9 +175,11 @@ TEXT ·hsubEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHSUBD X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func hsubPi16(a x86.M64, b x86.M64) x86.M64
@@ -159,7 +187,9 @@ TEXT ·hsubPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHSUBW M0, M1
 
 	// Return size: 8
 	RET
@@ -169,7 +199,9 @@ TEXT ·hsubPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHSUBD M0, M1
 
 	// Return size: 8
 	RET
@@ -179,9 +211,11 @@ TEXT ·hsubsEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHSUBSW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func hsubsPi16(a x86.M64, b x86.M64) x86.M64
@@ -189,7 +223,9 @@ TEXT ·hsubsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PHSUBSW M0, M1
 
 	// Return size: 8
 	RET
@@ -199,9 +235,11 @@ TEXT ·maddubsEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMADDUBSW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func maddubsPi16(a x86.M64, b x86.M64) x86.M64
@@ -209,7 +247,9 @@ TEXT ·maddubsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMADDUBSW M0, M1
 
 	// Return size: 8
 	RET
@@ -219,9 +259,11 @@ TEXT ·mulhrsEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULHRSW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func mulhrsPi16(a x86.M64, b x86.M64) x86.M64
@@ -229,7 +271,9 @@ TEXT ·mulhrsPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PMULHRSW M0, M1
 
 	// Return size: 8
 	RET
@@ -239,9 +283,11 @@ TEXT ·shuffleEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSHUFB X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func shufflePi8(a x86.M64, b x86.M64) x86.M64
@@ -249,7 +295,9 @@ TEXT ·shufflePi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSHUFB M0, M1
 
 	// Return size: 8
 	RET
@@ -259,9 +307,11 @@ TEXT ·signEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSIGNW X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func signEpi32(a [16]byte, b [16]byte) [16]byte
@@ -269,9 +319,11 @@ TEXT ·signEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSIGND X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func signEpi8(a [16]byte, b [16]byte) [16]byte
@@ -279,9 +331,11 @@ TEXT ·signEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSIGNB X0, X1
 
-	MOVOU X0, ret+32(FP)
+	MOVOU X1, ret+32(FP)
 	RET
 
 // func signPi16(a x86.M64, b x86.M64) x86.M64
@@ -289,7 +343,9 @@ TEXT ·signPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSIGNW M0, M1
 
 	// Return size: 8
 	RET
@@ -299,7 +355,9 @@ TEXT ·signPi32(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSIGND M0, M1
 
 	// Return size: 8
 	RET
@@ -309,7 +367,9 @@ TEXT ·signPi8(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ b+8(FP),M1
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// PSIGNB M0, M1
 
 	// Return size: 8
 	RET

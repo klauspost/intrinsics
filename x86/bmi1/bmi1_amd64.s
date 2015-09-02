@@ -4,7 +4,7 @@ TEXT ·bextrU32(SB),7,$0
 	MOVL start+4(FP),R9
 	MOVL len+8(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVL $0, ret+12(FP)
 	RET
@@ -15,7 +15,7 @@ TEXT ·bextrU64(SB),7,$0
 	MOVL start+8(FP),R9
 	MOVL len+12(FP),R10
 
-	//TODO: Code missing
+	// TODO: Code missing
 
 	MOVQ $0, ret+16(FP)
 	RET
@@ -24,7 +24,9 @@ TEXT ·bextrU64(SB),7,$0
 TEXT ·blsiU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BLSI R8
 
 	MOVL $0, ret+4(FP)
 	RET
@@ -33,7 +35,9 @@ TEXT ·blsiU32(SB),7,$0
 TEXT ·blsiU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BLSI R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -42,7 +46,9 @@ TEXT ·blsiU64(SB),7,$0
 TEXT ·blsmskU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BLSMSK R8
 
 	MOVL $0, ret+4(FP)
 	RET
@@ -51,7 +57,9 @@ TEXT ·blsmskU32(SB),7,$0
 TEXT ·blsmskU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BLSMSK R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -60,7 +68,9 @@ TEXT ·blsmskU64(SB),7,$0
 TEXT ·blsrU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BLSR R8
 
 	MOVL $0, ret+4(FP)
 	RET
@@ -69,7 +79,9 @@ TEXT ·blsrU32(SB),7,$0
 TEXT ·blsrU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// BLSR R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -78,7 +90,9 @@ TEXT ·blsrU64(SB),7,$0
 TEXT ·tzcnt32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// TZCNT R8
 
 	MOVQ $0, ret+4(FP)
 	RET
@@ -87,7 +101,9 @@ TEXT ·tzcnt32(SB),7,$0
 TEXT ·tzcnt64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// TZCNT R8
 
 	MOVQ $0, ret+8(FP)
 	RET
@@ -96,7 +112,9 @@ TEXT ·tzcnt64(SB),7,$0
 TEXT ·tzcntU32(SB),7,$0
 	MOVL a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// TZCNT R8
 
 	MOVL $0, ret+4(FP)
 	RET
@@ -105,7 +123,9 @@ TEXT ·tzcntU32(SB),7,$0
 TEXT ·tzcntU64(SB),7,$0
 	MOVQ a+0(FP),R8
 
-	//TODO: Code missing
+	// TODO: Code missing
+	// Could be:
+	// TZCNT R8
 
 	MOVQ $0, ret+8(FP)
 	RET

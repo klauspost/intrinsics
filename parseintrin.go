@@ -497,16 +497,31 @@ func (in Intrinsic) Finish() {
 	fmt.Fprint(out, "TEXT ·"+in.AsmName+"(SB),7,$0\n")
 	load, off := in.Params.getAsm()
 	fmt.Fprintln(out, load)
+	retparam = Param{Type: in.RetType}
 
-	fmt.Fprintln(out, "\t//TODO: Code missing\n")
+	fmt.Fprintln(out, "\t// TODO: Code missing")
+	if in.Instruction != "..." && in.Instruction != "" {
+		if len(params) == 1 {
+			if retparam.getReg(0) == "X0" && in.Params[0].getReg(0) == "X0" {
+				fmt.Fprintf(out, "\t// Could be:\n\t// %s %s, %s\n", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
+			} else if retparam.getReg(0) == "M0" && in.Params[0].getReg(0) == "M0" {
+				fmt.Fprintf(out, "\t// Could be:\n\t// %s %s, %s\n", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
+			} else {
+				fmt.Fprintf(out, "\t// Could be:\n\t// %s %s\n", in.Instruction, in.Params[0].getReg(0))
+			}
+		}
+		if len(params) == 2 {
+			fmt.Fprintf(out, "\t// Could be:\n\t// %s %s, %s\n", in.Instruction, in.Params[0].getReg(0), in.Params[1].getReg(1))
+		}
+	}
+	fmt.Fprintln(out, "")
 
 	// Attempts to write a return value
 	if in.RetType != "" {
-		retparam = Param{Type: in.RetType}
 		if retparam.getSize() > 0 && retparam.getReg(0) == "R8" {
 			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" $0, ret+"+strconv.Itoa(off)+"(FP)\n")
 		} else if retparam.getSize() > 8 {
-			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+retparam.getReg(0)+", ret+"+strconv.Itoa(off)+"(FP)\n")
+			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+retparam.getReg(len(params)-1)+", ret+"+strconv.Itoa(off)+"(FP)\n")
 		} else {
 			fmt.Fprintf(out, "\t// Return size: %d\n", retparam.getSize())
 		}
