@@ -1,0 +1,31 @@
+package arm
+
+type Int8x8 [8]int8
+type Int16x4 [4]int16
+type Int32x2 [2]int32
+type Int64x1 [1]int64
+type Float32x2 [2]float32
+type Poly8x8 [8]byte
+type Poly16x4 [4]uint16
+type Uint8x8 [8]byte
+type Uint16x4 [4]uint16
+type Uint32x2 [2]uint32
+type Float64x1 [1]float64
+type Uint64x1 [1]uint64
+type Int8x16 [16]int8
+type Int16x8 [8]int16
+type Int32x4 [4]int32
+type Int64x2 [2]int64
+type Float32x4 [4]float32
+type Float64x2 [2]float64
+type Poly8x16 [16]uint8
+type Poly16x8 [8]uint16
+type Poly64x2 [2]uint64
+type Uint8x16 [16]uint8
+type Uint16x8 [8]uint16
+type Uint32x4 [4]uint32
+type Uint64x2 [2]uint64
+type Poly8 [1]uint8
+type Poly16 [1]uint16
+type Poly64 [1]uint64
+type Poly128 [2]uint64
