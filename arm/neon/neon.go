@@ -5,7975 +5,7975 @@ import "github.com/klauspost/intrinsics/arm"
 var _ = arm.Int8x8{}  // Make sure we use arm package
 
 
-// VaddS8: ARM NEON intrinsic 
+// AddS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_s8'.
 // Requires NEON.
-func VaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func AddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VaddS16: ARM NEON intrinsic 
+// AddS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_s16'.
 // Requires NEON.
-func VaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func AddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VaddS32: ARM NEON intrinsic 
+// AddS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_s32'.
 // Requires NEON.
-func VaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func AddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VaddF32: ARM NEON intrinsic 
+// AddF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_f32'.
 // Requires NEON.
-func VaddF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func AddF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VaddF64: ARM NEON intrinsic 
+// AddF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_f64'.
 // Requires NEON.
-func VaddF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
+func AddF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VaddU8: ARM NEON intrinsic 
+// AddU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_u8'.
 // Requires NEON.
-func VaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func AddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VaddU16: ARM NEON intrinsic 
+// AddU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_u16'.
 // Requires NEON.
-func VaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func AddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VaddU32: ARM NEON intrinsic 
+// AddU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_u32'.
 // Requires NEON.
-func VaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func AddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VaddS64: ARM NEON intrinsic 
+// AddS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_s64'.
 // Requires NEON.
-func VaddS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func AddS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VaddU64: ARM NEON intrinsic 
+// AddU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vadd_u64'.
 // Requires NEON.
-func VaddU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func AddU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VaddqS8: ARM NEON intrinsic 
+// AddqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_s8'.
 // Requires NEON.
-func VaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func AddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VaddqS16: ARM NEON intrinsic 
+// AddqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_s16'.
 // Requires NEON.
-func VaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func AddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VaddqS32: ARM NEON intrinsic 
+// AddqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_s32'.
 // Requires NEON.
-func VaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func AddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VaddqS64: ARM NEON intrinsic 
+// AddqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_s64'.
 // Requires NEON.
-func VaddqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func AddqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VaddqF32: ARM NEON intrinsic 
+// AddqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_f32'.
 // Requires NEON.
-func VaddqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func AddqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VaddqF64: ARM NEON intrinsic 
+// AddqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_f64'.
 // Requires NEON.
-func VaddqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func AddqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VaddqU8: ARM NEON intrinsic 
+// AddqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_u8'.
 // Requires NEON.
-func VaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func AddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VaddqU16: ARM NEON intrinsic 
+// AddqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_u16'.
 // Requires NEON.
-func VaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func AddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VaddqU32: ARM NEON intrinsic 
+// AddqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_u32'.
 // Requires NEON.
-func VaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func AddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VaddqU64: ARM NEON intrinsic 
+// AddqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddq_u64'.
 // Requires NEON.
-func VaddqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func AddqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VaddlS8: ARM NEON intrinsic 
+// AddlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_s8'.
 // Requires NEON.
-func VaddlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
+func AddlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VaddlS16: ARM NEON intrinsic 
+// AddlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_s16'.
 // Requires NEON.
-func VaddlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
+func AddlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VaddlS32: ARM NEON intrinsic 
+// AddlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_s32'.
 // Requires NEON.
-func VaddlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
+func AddlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VaddlU8: ARM NEON intrinsic 
+// AddlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_u8'.
 // Requires NEON.
-func VaddlU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
+func AddlU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VaddlU16: ARM NEON intrinsic 
+// AddlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_u16'.
 // Requires NEON.
-func VaddlU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
+func AddlU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VaddlU32: ARM NEON intrinsic 
+// AddlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_u32'.
 // Requires NEON.
-func VaddlU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
+func AddlU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VaddlHighS8: ARM NEON intrinsic 
+// AddlHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_high_s8'.
 // Requires NEON.
-func VaddlHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
+func AddlHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VaddlHighS16: ARM NEON intrinsic 
+// AddlHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_high_s16'.
 // Requires NEON.
-func VaddlHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
+func AddlHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VaddlHighS32: ARM NEON intrinsic 
+// AddlHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_high_s32'.
 // Requires NEON.
-func VaddlHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
+func AddlHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VaddlHighU8: ARM NEON intrinsic 
+// AddlHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_high_u8'.
 // Requires NEON.
-func VaddlHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
+func AddlHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VaddlHighU16: ARM NEON intrinsic 
+// AddlHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_high_u16'.
 // Requires NEON.
-func VaddlHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
+func AddlHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VaddlHighU32: ARM NEON intrinsic 
+// AddlHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddl_high_u32'.
 // Requires NEON.
-func VaddlHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
+func AddlHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VaddwS8: ARM NEON intrinsic 
+// AddwS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_s8'.
 // Requires NEON.
-func VaddwS8(a arm.Int16x8, b arm.Int8x8) (dst arm.Int16x8) {
+func AddwS8(a arm.Int16x8, b arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VaddwS16: ARM NEON intrinsic 
+// AddwS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_s16'.
 // Requires NEON.
-func VaddwS16(a arm.Int32x4, b arm.Int16x4) (dst arm.Int32x4) {
+func AddwS16(a arm.Int32x4, b arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VaddwS32: ARM NEON intrinsic 
+// AddwS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_s32'.
 // Requires NEON.
-func VaddwS32(a arm.Int64x2, b arm.Int32x2) (dst arm.Int64x2) {
+func AddwS32(a arm.Int64x2, b arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VaddwU8: ARM NEON intrinsic 
+// AddwU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_u8'.
 // Requires NEON.
-func VaddwU8(a arm.Uint16x8, b arm.Uint8x8) (dst arm.Uint16x8) {
+func AddwU8(a arm.Uint16x8, b arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VaddwU16: ARM NEON intrinsic 
+// AddwU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_u16'.
 // Requires NEON.
-func VaddwU16(a arm.Uint32x4, b arm.Uint16x4) (dst arm.Uint32x4) {
+func AddwU16(a arm.Uint32x4, b arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VaddwU32: ARM NEON intrinsic 
+// AddwU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_u32'.
 // Requires NEON.
-func VaddwU32(a arm.Uint64x2, b arm.Uint32x2) (dst arm.Uint64x2) {
+func AddwU32(a arm.Uint64x2, b arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VaddwHighS8: ARM NEON intrinsic 
+// AddwHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_high_s8'.
 // Requires NEON.
-func VaddwHighS8(a arm.Int16x8, b arm.Int8x16) (dst arm.Int16x8) {
+func AddwHighS8(a arm.Int16x8, b arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VaddwHighS16: ARM NEON intrinsic 
+// AddwHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_high_s16'.
 // Requires NEON.
-func VaddwHighS16(a arm.Int32x4, b arm.Int16x8) (dst arm.Int32x4) {
+func AddwHighS16(a arm.Int32x4, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VaddwHighS32: ARM NEON intrinsic 
+// AddwHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_high_s32'.
 // Requires NEON.
-func VaddwHighS32(a arm.Int64x2, b arm.Int32x4) (dst arm.Int64x2) {
+func AddwHighS32(a arm.Int64x2, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VaddwHighU8: ARM NEON intrinsic 
+// AddwHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_high_u8'.
 // Requires NEON.
-func VaddwHighU8(a arm.Uint16x8, b arm.Uint8x16) (dst arm.Uint16x8) {
+func AddwHighU8(a arm.Uint16x8, b arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VaddwHighU16: ARM NEON intrinsic 
+// AddwHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_high_u16'.
 // Requires NEON.
-func VaddwHighU16(a arm.Uint32x4, b arm.Uint16x8) (dst arm.Uint32x4) {
+func AddwHighU16(a arm.Uint32x4, b arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VaddwHighU32: ARM NEON intrinsic 
+// AddwHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddw_high_u32'.
 // Requires NEON.
-func VaddwHighU32(a arm.Uint64x2, b arm.Uint32x4) (dst arm.Uint64x2) {
+func AddwHighU32(a arm.Uint64x2, b arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VhaddS8: ARM NEON intrinsic 
+// HaddS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhadd_s8'.
 // Requires NEON.
-func VhaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func HaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VhaddS16: ARM NEON intrinsic 
+// HaddS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhadd_s16'.
 // Requires NEON.
-func VhaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func HaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VhaddS32: ARM NEON intrinsic 
+// HaddS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhadd_s32'.
 // Requires NEON.
-func VhaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func HaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VhaddU8: ARM NEON intrinsic 
+// HaddU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhadd_u8'.
 // Requires NEON.
-func VhaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func HaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VhaddU16: ARM NEON intrinsic 
+// HaddU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhadd_u16'.
 // Requires NEON.
-func VhaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func HaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VhaddU32: ARM NEON intrinsic 
+// HaddU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhadd_u32'.
 // Requires NEON.
-func VhaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func HaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VhaddqS8: ARM NEON intrinsic 
+// HaddqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhaddq_s8'.
 // Requires NEON.
-func VhaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func HaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VhaddqS16: ARM NEON intrinsic 
+// HaddqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhaddq_s16'.
 // Requires NEON.
-func VhaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func HaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VhaddqS32: ARM NEON intrinsic 
+// HaddqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhaddq_s32'.
 // Requires NEON.
-func VhaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func HaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VhaddqU8: ARM NEON intrinsic 
+// HaddqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhaddq_u8'.
 // Requires NEON.
-func VhaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func HaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VhaddqU16: ARM NEON intrinsic 
+// HaddqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhaddq_u16'.
 // Requires NEON.
-func VhaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func HaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VhaddqU32: ARM NEON intrinsic 
+// HaddqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhaddq_u32'.
 // Requires NEON.
-func VhaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func HaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VrhaddS8: ARM NEON intrinsic 
+// RhaddS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhadd_s8'.
 // Requires NEON.
-func VrhaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func RhaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VrhaddS16: ARM NEON intrinsic 
+// RhaddS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhadd_s16'.
 // Requires NEON.
-func VrhaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func RhaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VrhaddS32: ARM NEON intrinsic 
+// RhaddS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhadd_s32'.
 // Requires NEON.
-func VrhaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func RhaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VrhaddU8: ARM NEON intrinsic 
+// RhaddU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhadd_u8'.
 // Requires NEON.
-func VrhaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func RhaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VrhaddU16: ARM NEON intrinsic 
+// RhaddU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhadd_u16'.
 // Requires NEON.
-func VrhaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func RhaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VrhaddU32: ARM NEON intrinsic 
+// RhaddU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhadd_u32'.
 // Requires NEON.
-func VrhaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func RhaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrhaddqS8: ARM NEON intrinsic 
+// RhaddqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhaddq_s8'.
 // Requires NEON.
-func VrhaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func RhaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VrhaddqS16: ARM NEON intrinsic 
+// RhaddqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhaddq_s16'.
 // Requires NEON.
-func VrhaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func RhaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VrhaddqS32: ARM NEON intrinsic 
+// RhaddqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhaddq_s32'.
 // Requires NEON.
-func VrhaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func RhaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VrhaddqU8: ARM NEON intrinsic 
+// RhaddqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhaddq_u8'.
 // Requires NEON.
-func VrhaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func RhaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VrhaddqU16: ARM NEON intrinsic 
+// RhaddqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhaddq_u16'.
 // Requires NEON.
-func VrhaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func RhaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VrhaddqU32: ARM NEON intrinsic 
+// RhaddqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrhaddq_u32'.
 // Requires NEON.
-func VrhaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func RhaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VaddhnS16: ARM NEON intrinsic 
+// AddhnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_s16'.
 // Requires NEON.
-func VaddhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
+func AddhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VaddhnS32: ARM NEON intrinsic 
+// AddhnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_s32'.
 // Requires NEON.
-func VaddhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
+func AddhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VaddhnS64: ARM NEON intrinsic 
+// AddhnS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_s64'.
 // Requires NEON.
-func VaddhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
+func AddhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VaddhnU16: ARM NEON intrinsic 
+// AddhnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_u16'.
 // Requires NEON.
-func VaddhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
+func AddhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VaddhnU32: ARM NEON intrinsic 
+// AddhnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_u32'.
 // Requires NEON.
-func VaddhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
+func AddhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VaddhnU64: ARM NEON intrinsic 
+// AddhnU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_u64'.
 // Requires NEON.
-func VaddhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
+func AddhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VraddhnS16: ARM NEON intrinsic 
+// RaddhnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_s16'.
 // Requires NEON.
-func VraddhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
+func RaddhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VraddhnS32: ARM NEON intrinsic 
+// RaddhnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_s32'.
 // Requires NEON.
-func VraddhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
+func RaddhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VraddhnS64: ARM NEON intrinsic 
+// RaddhnS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_s64'.
 // Requires NEON.
-func VraddhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
+func RaddhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VraddhnU16: ARM NEON intrinsic 
+// RaddhnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_u16'.
 // Requires NEON.
-func VraddhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
+func RaddhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VraddhnU32: ARM NEON intrinsic 
+// RaddhnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_u32'.
 // Requires NEON.
-func VraddhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
+func RaddhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VraddhnU64: ARM NEON intrinsic 
+// RaddhnU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_u64'.
 // Requires NEON.
-func VraddhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
+func RaddhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VaddhnHighS16: ARM NEON intrinsic 
+// AddhnHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_high_s16'.
 // Requires NEON.
-func VaddhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
+func AddhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VaddhnHighS32: ARM NEON intrinsic 
+// AddhnHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_high_s32'.
 // Requires NEON.
-func VaddhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
+func AddhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VaddhnHighS64: ARM NEON intrinsic 
+// AddhnHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_high_s64'.
 // Requires NEON.
-func VaddhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
+func AddhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VaddhnHighU16: ARM NEON intrinsic 
+// AddhnHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_high_u16'.
 // Requires NEON.
-func VaddhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
+func AddhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VaddhnHighU32: ARM NEON intrinsic 
+// AddhnHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_high_u32'.
 // Requires NEON.
-func VaddhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
+func AddhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VaddhnHighU64: ARM NEON intrinsic 
+// AddhnHighU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddhn_high_u64'.
 // Requires NEON.
-func VaddhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
+func AddhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VraddhnHighS16: ARM NEON intrinsic 
+// RaddhnHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_high_s16'.
 // Requires NEON.
-func VraddhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
+func RaddhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VraddhnHighS32: ARM NEON intrinsic 
+// RaddhnHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_high_s32'.
 // Requires NEON.
-func VraddhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
+func RaddhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VraddhnHighS64: ARM NEON intrinsic 
+// RaddhnHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_high_s64'.
 // Requires NEON.
-func VraddhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
+func RaddhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VraddhnHighU16: ARM NEON intrinsic 
+// RaddhnHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_high_u16'.
 // Requires NEON.
-func VraddhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
+func RaddhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VraddhnHighU32: ARM NEON intrinsic 
+// RaddhnHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_high_u32'.
 // Requires NEON.
-func VraddhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
+func RaddhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VraddhnHighU64: ARM NEON intrinsic 
+// RaddhnHighU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vraddhn_high_u64'.
 // Requires NEON.
-func VraddhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
+func RaddhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VdivF32: ARM NEON intrinsic 
+// DivF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdiv_f32'.
 // Requires NEON.
-func VdivF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func DivF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VdivF64: ARM NEON intrinsic 
+// DivF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdiv_f64'.
 // Requires NEON.
-func VdivF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
+func DivF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VdivqF32: ARM NEON intrinsic 
+// DivqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdivq_f32'.
 // Requires NEON.
-func VdivqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func DivqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VdivqF64: ARM NEON intrinsic 
+// DivqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdivq_f64'.
 // Requires NEON.
-func VdivqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func DivqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmulS8: ARM NEON intrinsic 
+// MulS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_s8'.
 // Requires NEON.
-func VmulS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func MulS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VmulS16: ARM NEON intrinsic 
+// MulS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_s16'.
 // Requires NEON.
-func VmulS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func MulS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmulS32: ARM NEON intrinsic 
+// MulS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_s32'.
 // Requires NEON.
-func VmulS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func MulS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmulF32: ARM NEON intrinsic 
+// MulF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_f32'.
 // Requires NEON.
-func VmulF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func MulF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmulF64: ARM NEON intrinsic 
+// MulF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_f64'.
 // Requires NEON.
-func VmulF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
+func MulF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VmulU8: ARM NEON intrinsic 
+// MulU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_u8'.
 // Requires NEON.
-func VmulU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func MulU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VmulU16: ARM NEON intrinsic 
+// MulU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_u16'.
 // Requires NEON.
-func VmulU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func MulU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmulU32: ARM NEON intrinsic 
+// MulU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_u32'.
 // Requires NEON.
-func VmulU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func MulU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmulP8: ARM NEON intrinsic 
+// MulP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_p8'.
 // Requires NEON.
-func VmulP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
+func MulP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VmulqS8: ARM NEON intrinsic 
+// MulqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_s8'.
 // Requires NEON.
-func VmulqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func MulqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VmulqS16: ARM NEON intrinsic 
+// MulqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_s16'.
 // Requires NEON.
-func VmulqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func MulqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmulqS32: ARM NEON intrinsic 
+// MulqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_s32'.
 // Requires NEON.
-func VmulqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func MulqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmulqF32: ARM NEON intrinsic 
+// MulqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_f32'.
 // Requires NEON.
-func VmulqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func MulqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmulqF64: ARM NEON intrinsic 
+// MulqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_f64'.
 // Requires NEON.
-func VmulqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func MulqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmulqU8: ARM NEON intrinsic 
+// MulqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_u8'.
 // Requires NEON.
-func VmulqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func MulqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VmulqU16: ARM NEON intrinsic 
+// MulqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_u16'.
 // Requires NEON.
-func VmulqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func MulqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmulqU32: ARM NEON intrinsic 
+// MulqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_u32'.
 // Requires NEON.
-func VmulqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func MulqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmulqP8: ARM NEON intrinsic 
+// MulqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_p8'.
 // Requires NEON.
-func VmulqP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
+func MulqP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VandS8: ARM NEON intrinsic 
+// AndS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_s8'.
 // Requires NEON.
-func VandS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func AndS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VandS16: ARM NEON intrinsic 
+// AndS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_s16'.
 // Requires NEON.
-func VandS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func AndS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VandS32: ARM NEON intrinsic 
+// AndS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_s32'.
 // Requires NEON.
-func VandS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func AndS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VandU8: ARM NEON intrinsic 
+// AndU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_u8'.
 // Requires NEON.
-func VandU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func AndU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VandU16: ARM NEON intrinsic 
+// AndU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_u16'.
 // Requires NEON.
-func VandU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func AndU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VandU32: ARM NEON intrinsic 
+// AndU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_u32'.
 // Requires NEON.
-func VandU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func AndU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VandS64: ARM NEON intrinsic 
+// AndS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_s64'.
 // Requires NEON.
-func VandS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func AndS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VandU64: ARM NEON intrinsic 
+// AndU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vand_u64'.
 // Requires NEON.
-func VandU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func AndU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VandqS8: ARM NEON intrinsic 
+// AndqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_s8'.
 // Requires NEON.
-func VandqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func AndqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VandqS16: ARM NEON intrinsic 
+// AndqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_s16'.
 // Requires NEON.
-func VandqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func AndqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VandqS32: ARM NEON intrinsic 
+// AndqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_s32'.
 // Requires NEON.
-func VandqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func AndqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VandqS64: ARM NEON intrinsic 
+// AndqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_s64'.
 // Requires NEON.
-func VandqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func AndqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VandqU8: ARM NEON intrinsic 
+// AndqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_u8'.
 // Requires NEON.
-func VandqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func AndqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VandqU16: ARM NEON intrinsic 
+// AndqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_u16'.
 // Requires NEON.
-func VandqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func AndqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VandqU32: ARM NEON intrinsic 
+// AndqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_u32'.
 // Requires NEON.
-func VandqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func AndqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VandqU64: ARM NEON intrinsic 
+// AndqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vandq_u64'.
 // Requires NEON.
-func VandqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func AndqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VorrS8: ARM NEON intrinsic 
+// OrrS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_s8'.
 // Requires NEON.
-func VorrS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func OrrS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VorrS16: ARM NEON intrinsic 
+// OrrS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_s16'.
 // Requires NEON.
-func VorrS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func OrrS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VorrS32: ARM NEON intrinsic 
+// OrrS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_s32'.
 // Requires NEON.
-func VorrS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func OrrS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VorrU8: ARM NEON intrinsic 
+// OrrU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_u8'.
 // Requires NEON.
-func VorrU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func OrrU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VorrU16: ARM NEON intrinsic 
+// OrrU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_u16'.
 // Requires NEON.
-func VorrU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func OrrU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VorrU32: ARM NEON intrinsic 
+// OrrU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_u32'.
 // Requires NEON.
-func VorrU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func OrrU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VorrS64: ARM NEON intrinsic 
+// OrrS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_s64'.
 // Requires NEON.
-func VorrS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func OrrS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VorrU64: ARM NEON intrinsic 
+// OrrU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorr_u64'.
 // Requires NEON.
-func VorrU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func OrrU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VorrqS8: ARM NEON intrinsic 
+// OrrqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_s8'.
 // Requires NEON.
-func VorrqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func OrrqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VorrqS16: ARM NEON intrinsic 
+// OrrqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_s16'.
 // Requires NEON.
-func VorrqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func OrrqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VorrqS32: ARM NEON intrinsic 
+// OrrqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_s32'.
 // Requires NEON.
-func VorrqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func OrrqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VorrqS64: ARM NEON intrinsic 
+// OrrqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_s64'.
 // Requires NEON.
-func VorrqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func OrrqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VorrqU8: ARM NEON intrinsic 
+// OrrqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_u8'.
 // Requires NEON.
-func VorrqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func OrrqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VorrqU16: ARM NEON intrinsic 
+// OrrqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_u16'.
 // Requires NEON.
-func VorrqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func OrrqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VorrqU32: ARM NEON intrinsic 
+// OrrqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_u32'.
 // Requires NEON.
-func VorrqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func OrrqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VorrqU64: ARM NEON intrinsic 
+// OrrqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorrq_u64'.
 // Requires NEON.
-func VorrqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func OrrqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VeorS8: ARM NEON intrinsic 
+// EorS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_s8'.
 // Requires NEON.
-func VeorS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func EorS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VeorS16: ARM NEON intrinsic 
+// EorS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_s16'.
 // Requires NEON.
-func VeorS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func EorS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VeorS32: ARM NEON intrinsic 
+// EorS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_s32'.
 // Requires NEON.
-func VeorS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func EorS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VeorU8: ARM NEON intrinsic 
+// EorU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_u8'.
 // Requires NEON.
-func VeorU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func EorU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VeorU16: ARM NEON intrinsic 
+// EorU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_u16'.
 // Requires NEON.
-func VeorU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func EorU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VeorU32: ARM NEON intrinsic 
+// EorU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_u32'.
 // Requires NEON.
-func VeorU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func EorU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VeorS64: ARM NEON intrinsic 
+// EorS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_s64'.
 // Requires NEON.
-func VeorS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func EorS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VeorU64: ARM NEON intrinsic 
+// EorU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'veor_u64'.
 // Requires NEON.
-func VeorU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func EorU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VeorqS8: ARM NEON intrinsic 
+// EorqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_s8'.
 // Requires NEON.
-func VeorqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func EorqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VeorqS16: ARM NEON intrinsic 
+// EorqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_s16'.
 // Requires NEON.
-func VeorqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func EorqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VeorqS32: ARM NEON intrinsic 
+// EorqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_s32'.
 // Requires NEON.
-func VeorqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func EorqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VeorqS64: ARM NEON intrinsic 
+// EorqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_s64'.
 // Requires NEON.
-func VeorqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func EorqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VeorqU8: ARM NEON intrinsic 
+// EorqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_u8'.
 // Requires NEON.
-func VeorqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func EorqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VeorqU16: ARM NEON intrinsic 
+// EorqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_u16'.
 // Requires NEON.
-func VeorqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func EorqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VeorqU32: ARM NEON intrinsic 
+// EorqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_u32'.
 // Requires NEON.
-func VeorqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func EorqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VeorqU64: ARM NEON intrinsic 
+// EorqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'veorq_u64'.
 // Requires NEON.
-func VeorqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func EorqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VbicS8: ARM NEON intrinsic 
+// BicS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_s8'.
 // Requires NEON.
-func VbicS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func BicS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VbicS16: ARM NEON intrinsic 
+// BicS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_s16'.
 // Requires NEON.
-func VbicS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func BicS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VbicS32: ARM NEON intrinsic 
+// BicS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_s32'.
 // Requires NEON.
-func VbicS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func BicS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VbicU8: ARM NEON intrinsic 
+// BicU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_u8'.
 // Requires NEON.
-func VbicU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func BicU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VbicU16: ARM NEON intrinsic 
+// BicU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_u16'.
 // Requires NEON.
-func VbicU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func BicU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VbicU32: ARM NEON intrinsic 
+// BicU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_u32'.
 // Requires NEON.
-func VbicU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func BicU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VbicS64: ARM NEON intrinsic 
+// BicS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_s64'.
 // Requires NEON.
-func VbicS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func BicS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VbicU64: ARM NEON intrinsic 
+// BicU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbic_u64'.
 // Requires NEON.
-func VbicU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func BicU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VbicqS8: ARM NEON intrinsic 
+// BicqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_s8'.
 // Requires NEON.
-func VbicqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func BicqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VbicqS16: ARM NEON intrinsic 
+// BicqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_s16'.
 // Requires NEON.
-func VbicqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func BicqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VbicqS32: ARM NEON intrinsic 
+// BicqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_s32'.
 // Requires NEON.
-func VbicqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func BicqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VbicqS64: ARM NEON intrinsic 
+// BicqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_s64'.
 // Requires NEON.
-func VbicqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func BicqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VbicqU8: ARM NEON intrinsic 
+// BicqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_u8'.
 // Requires NEON.
-func VbicqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func BicqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VbicqU16: ARM NEON intrinsic 
+// BicqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_u16'.
 // Requires NEON.
-func VbicqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func BicqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VbicqU32: ARM NEON intrinsic 
+// BicqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_u32'.
 // Requires NEON.
-func VbicqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func BicqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VbicqU64: ARM NEON intrinsic 
+// BicqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbicq_u64'.
 // Requires NEON.
-func VbicqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func BicqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VornS8: ARM NEON intrinsic 
+// OrnS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_s8'.
 // Requires NEON.
-func VornS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func OrnS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VornS16: ARM NEON intrinsic 
+// OrnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_s16'.
 // Requires NEON.
-func VornS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func OrnS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VornS32: ARM NEON intrinsic 
+// OrnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_s32'.
 // Requires NEON.
-func VornS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func OrnS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VornU8: ARM NEON intrinsic 
+// OrnU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_u8'.
 // Requires NEON.
-func VornU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func OrnU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VornU16: ARM NEON intrinsic 
+// OrnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_u16'.
 // Requires NEON.
-func VornU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func OrnU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VornU32: ARM NEON intrinsic 
+// OrnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_u32'.
 // Requires NEON.
-func VornU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func OrnU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VornS64: ARM NEON intrinsic 
+// OrnS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_s64'.
 // Requires NEON.
-func VornS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func OrnS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VornU64: ARM NEON intrinsic 
+// OrnU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vorn_u64'.
 // Requires NEON.
-func VornU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func OrnU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VornqS8: ARM NEON intrinsic 
+// OrnqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_s8'.
 // Requires NEON.
-func VornqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func OrnqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VornqS16: ARM NEON intrinsic 
+// OrnqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_s16'.
 // Requires NEON.
-func VornqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func OrnqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VornqS32: ARM NEON intrinsic 
+// OrnqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_s32'.
 // Requires NEON.
-func VornqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func OrnqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VornqS64: ARM NEON intrinsic 
+// OrnqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_s64'.
 // Requires NEON.
-func VornqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func OrnqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VornqU8: ARM NEON intrinsic 
+// OrnqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_u8'.
 // Requires NEON.
-func VornqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func OrnqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VornqU16: ARM NEON intrinsic 
+// OrnqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_u16'.
 // Requires NEON.
-func VornqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func OrnqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VornqU32: ARM NEON intrinsic 
+// OrnqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_u32'.
 // Requires NEON.
-func VornqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func OrnqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VornqU64: ARM NEON intrinsic 
+// OrnqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vornq_u64'.
 // Requires NEON.
-func VornqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func OrnqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsubS8: ARM NEON intrinsic 
+// SubS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_s8'.
 // Requires NEON.
-func VsubS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func SubS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VsubS16: ARM NEON intrinsic 
+// SubS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_s16'.
 // Requires NEON.
-func VsubS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func SubS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VsubS32: ARM NEON intrinsic 
+// SubS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_s32'.
 // Requires NEON.
-func VsubS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func SubS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VsubF32: ARM NEON intrinsic 
+// SubF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_f32'.
 // Requires NEON.
-func VsubF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func SubF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VsubF64: ARM NEON intrinsic 
+// SubF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_f64'.
 // Requires NEON.
-func VsubF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
+func SubF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VsubU8: ARM NEON intrinsic 
+// SubU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_u8'.
 // Requires NEON.
-func VsubU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func SubU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VsubU16: ARM NEON intrinsic 
+// SubU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_u16'.
 // Requires NEON.
-func VsubU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func SubU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VsubU32: ARM NEON intrinsic 
+// SubU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_u32'.
 // Requires NEON.
-func VsubU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func SubU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VsubS64: ARM NEON intrinsic 
+// SubS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_s64'.
 // Requires NEON.
-func VsubS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func SubS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VsubU64: ARM NEON intrinsic 
+// SubU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsub_u64'.
 // Requires NEON.
-func VsubU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func SubU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VsubqS8: ARM NEON intrinsic 
+// SubqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_s8'.
 // Requires NEON.
-func VsubqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func SubqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VsubqS16: ARM NEON intrinsic 
+// SubqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_s16'.
 // Requires NEON.
-func VsubqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func SubqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsubqS32: ARM NEON intrinsic 
+// SubqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_s32'.
 // Requires NEON.
-func VsubqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func SubqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsubqS64: ARM NEON intrinsic 
+// SubqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_s64'.
 // Requires NEON.
-func VsubqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func SubqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsubqF32: ARM NEON intrinsic 
+// SubqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_f32'.
 // Requires NEON.
-func VsubqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func SubqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VsubqF64: ARM NEON intrinsic 
+// SubqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_f64'.
 // Requires NEON.
-func VsubqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func SubqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VsubqU8: ARM NEON intrinsic 
+// SubqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_u8'.
 // Requires NEON.
-func VsubqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func SubqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VsubqU16: ARM NEON intrinsic 
+// SubqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_u16'.
 // Requires NEON.
-func VsubqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func SubqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsubqU32: ARM NEON intrinsic 
+// SubqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_u32'.
 // Requires NEON.
-func VsubqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func SubqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsubqU64: ARM NEON intrinsic 
+// SubqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubq_u64'.
 // Requires NEON.
-func VsubqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func SubqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsublS8: ARM NEON intrinsic 
+// SublS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_s8'.
 // Requires NEON.
-func VsublS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
+func SublS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsublS16: ARM NEON intrinsic 
+// SublS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_s16'.
 // Requires NEON.
-func VsublS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
+func SublS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsublS32: ARM NEON intrinsic 
+// SublS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_s32'.
 // Requires NEON.
-func VsublS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
+func SublS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsublU8: ARM NEON intrinsic 
+// SublU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_u8'.
 // Requires NEON.
-func VsublU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
+func SublU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsublU16: ARM NEON intrinsic 
+// SublU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_u16'.
 // Requires NEON.
-func VsublU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
+func SublU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsublU32: ARM NEON intrinsic 
+// SublU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_u32'.
 // Requires NEON.
-func VsublU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
+func SublU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsublHighS8: ARM NEON intrinsic 
+// SublHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_high_s8'.
 // Requires NEON.
-func VsublHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
+func SublHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsublHighS16: ARM NEON intrinsic 
+// SublHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_high_s16'.
 // Requires NEON.
-func VsublHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
+func SublHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsublHighS32: ARM NEON intrinsic 
+// SublHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_high_s32'.
 // Requires NEON.
-func VsublHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
+func SublHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsublHighU8: ARM NEON intrinsic 
+// SublHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_high_u8'.
 // Requires NEON.
-func VsublHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
+func SublHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsublHighU16: ARM NEON intrinsic 
+// SublHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_high_u16'.
 // Requires NEON.
-func VsublHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
+func SublHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsublHighU32: ARM NEON intrinsic 
+// SublHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubl_high_u32'.
 // Requires NEON.
-func VsublHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
+func SublHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsubwS8: ARM NEON intrinsic 
+// SubwS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_s8'.
 // Requires NEON.
-func VsubwS8(a arm.Int16x8, b arm.Int8x8) (dst arm.Int16x8) {
+func SubwS8(a arm.Int16x8, b arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsubwS16: ARM NEON intrinsic 
+// SubwS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_s16'.
 // Requires NEON.
-func VsubwS16(a arm.Int32x4, b arm.Int16x4) (dst arm.Int32x4) {
+func SubwS16(a arm.Int32x4, b arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsubwS32: ARM NEON intrinsic 
+// SubwS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_s32'.
 // Requires NEON.
-func VsubwS32(a arm.Int64x2, b arm.Int32x2) (dst arm.Int64x2) {
+func SubwS32(a arm.Int64x2, b arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsubwU8: ARM NEON intrinsic 
+// SubwU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_u8'.
 // Requires NEON.
-func VsubwU8(a arm.Uint16x8, b arm.Uint8x8) (dst arm.Uint16x8) {
+func SubwU8(a arm.Uint16x8, b arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsubwU16: ARM NEON intrinsic 
+// SubwU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_u16'.
 // Requires NEON.
-func VsubwU16(a arm.Uint32x4, b arm.Uint16x4) (dst arm.Uint32x4) {
+func SubwU16(a arm.Uint32x4, b arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsubwU32: ARM NEON intrinsic 
+// SubwU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_u32'.
 // Requires NEON.
-func VsubwU32(a arm.Uint64x2, b arm.Uint32x2) (dst arm.Uint64x2) {
+func SubwU32(a arm.Uint64x2, b arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsubwHighS8: ARM NEON intrinsic 
+// SubwHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_high_s8'.
 // Requires NEON.
-func VsubwHighS8(a arm.Int16x8, b arm.Int8x16) (dst arm.Int16x8) {
+func SubwHighS8(a arm.Int16x8, b arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsubwHighS16: ARM NEON intrinsic 
+// SubwHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_high_s16'.
 // Requires NEON.
-func VsubwHighS16(a arm.Int32x4, b arm.Int16x8) (dst arm.Int32x4) {
+func SubwHighS16(a arm.Int32x4, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsubwHighS32: ARM NEON intrinsic 
+// SubwHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_high_s32'.
 // Requires NEON.
-func VsubwHighS32(a arm.Int64x2, b arm.Int32x4) (dst arm.Int64x2) {
+func SubwHighS32(a arm.Int64x2, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsubwHighU8: ARM NEON intrinsic 
+// SubwHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_high_u8'.
 // Requires NEON.
-func VsubwHighU8(a arm.Uint16x8, b arm.Uint8x16) (dst arm.Uint16x8) {
+func SubwHighU8(a arm.Uint16x8, b arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsubwHighU16: ARM NEON intrinsic 
+// SubwHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_high_u16'.
 // Requires NEON.
-func VsubwHighU16(a arm.Uint32x4, b arm.Uint16x8) (dst arm.Uint32x4) {
+func SubwHighU16(a arm.Uint32x4, b arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsubwHighU32: ARM NEON intrinsic 
+// SubwHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubw_high_u32'.
 // Requires NEON.
-func VsubwHighU32(a arm.Uint64x2, b arm.Uint32x4) (dst arm.Uint64x2) {
+func SubwHighU32(a arm.Uint64x2, b arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VqaddS8: ARM NEON intrinsic 
+// QaddS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_s8'.
 // Requires NEON.
-func VqaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func QaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqaddS16: ARM NEON intrinsic 
+// QaddS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_s16'.
 // Requires NEON.
-func VqaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func QaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqaddS32: ARM NEON intrinsic 
+// QaddS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_s32'.
 // Requires NEON.
-func VqaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func QaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqaddS64: ARM NEON intrinsic 
+// QaddS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_s64'.
 // Requires NEON.
-func VqaddS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func QaddS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VqaddU8: ARM NEON intrinsic 
+// QaddU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_u8'.
 // Requires NEON.
-func VqaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func QaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VhsubS8: ARM NEON intrinsic 
+// HsubS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsub_s8'.
 // Requires NEON.
-func VhsubS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func HsubS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VhsubS16: ARM NEON intrinsic 
+// HsubS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsub_s16'.
 // Requires NEON.
-func VhsubS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func HsubS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VhsubS32: ARM NEON intrinsic 
+// HsubS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsub_s32'.
 // Requires NEON.
-func VhsubS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func HsubS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VhsubU8: ARM NEON intrinsic 
+// HsubU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsub_u8'.
 // Requires NEON.
-func VhsubU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func HsubU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VhsubU16: ARM NEON intrinsic 
+// HsubU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsub_u16'.
 // Requires NEON.
-func VhsubU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func HsubU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VhsubU32: ARM NEON intrinsic 
+// HsubU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsub_u32'.
 // Requires NEON.
-func VhsubU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func HsubU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VhsubqS8: ARM NEON intrinsic 
+// HsubqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsubq_s8'.
 // Requires NEON.
-func VhsubqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func HsubqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VhsubqS16: ARM NEON intrinsic 
+// HsubqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsubq_s16'.
 // Requires NEON.
-func VhsubqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func HsubqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VhsubqS32: ARM NEON intrinsic 
+// HsubqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsubq_s32'.
 // Requires NEON.
-func VhsubqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func HsubqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VhsubqU8: ARM NEON intrinsic 
+// HsubqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsubq_u8'.
 // Requires NEON.
-func VhsubqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func HsubqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VhsubqU16: ARM NEON intrinsic 
+// HsubqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsubq_u16'.
 // Requires NEON.
-func VhsubqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func HsubqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VhsubqU32: ARM NEON intrinsic 
+// HsubqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vhsubq_u32'.
 // Requires NEON.
-func VhsubqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func HsubqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsubhnS16: ARM NEON intrinsic 
+// SubhnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_s16'.
 // Requires NEON.
-func VsubhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
+func SubhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VsubhnS32: ARM NEON intrinsic 
+// SubhnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_s32'.
 // Requires NEON.
-func VsubhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
+func SubhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VsubhnS64: ARM NEON intrinsic 
+// SubhnS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_s64'.
 // Requires NEON.
-func VsubhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
+func SubhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VsubhnU16: ARM NEON intrinsic 
+// SubhnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_u16'.
 // Requires NEON.
-func VsubhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
+func SubhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VsubhnU32: ARM NEON intrinsic 
+// SubhnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_u32'.
 // Requires NEON.
-func VsubhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
+func SubhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VsubhnU64: ARM NEON intrinsic 
+// SubhnU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_u64'.
 // Requires NEON.
-func VsubhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
+func SubhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrsubhnS16: ARM NEON intrinsic 
+// RsubhnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_s16'.
 // Requires NEON.
-func VrsubhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
+func RsubhnS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VrsubhnS32: ARM NEON intrinsic 
+// RsubhnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_s32'.
 // Requires NEON.
-func VrsubhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
+func RsubhnS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VrsubhnS64: ARM NEON intrinsic 
+// RsubhnS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_s64'.
 // Requires NEON.
-func VrsubhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
+func RsubhnS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VrsubhnU16: ARM NEON intrinsic 
+// RsubhnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_u16'.
 // Requires NEON.
-func VrsubhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
+func RsubhnU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VrsubhnU32: ARM NEON intrinsic 
+// RsubhnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_u32'.
 // Requires NEON.
-func VrsubhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
+func RsubhnU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VrsubhnU64: ARM NEON intrinsic 
+// RsubhnU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_u64'.
 // Requires NEON.
-func VrsubhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
+func RsubhnU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrsubhnHighS16: ARM NEON intrinsic 
+// RsubhnHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_high_s16'.
 // Requires NEON.
-func VrsubhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
+func RsubhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VrsubhnHighS32: ARM NEON intrinsic 
+// RsubhnHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_high_s32'.
 // Requires NEON.
-func VrsubhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
+func RsubhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VrsubhnHighS64: ARM NEON intrinsic 
+// RsubhnHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_high_s64'.
 // Requires NEON.
-func VrsubhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
+func RsubhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VrsubhnHighU16: ARM NEON intrinsic 
+// RsubhnHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_high_u16'.
 // Requires NEON.
-func VrsubhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
+func RsubhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VrsubhnHighU32: ARM NEON intrinsic 
+// RsubhnHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_high_u32'.
 // Requires NEON.
-func VrsubhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
+func RsubhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VrsubhnHighU64: ARM NEON intrinsic 
+// RsubhnHighU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsubhn_high_u64'.
 // Requires NEON.
-func VrsubhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
+func RsubhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsubhnHighS16: ARM NEON intrinsic 
+// SubhnHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_high_s16'.
 // Requires NEON.
-func VsubhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
+func SubhnHighS16(a arm.Int8x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VsubhnHighS32: ARM NEON intrinsic 
+// SubhnHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_high_s32'.
 // Requires NEON.
-func VsubhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
+func SubhnHighS32(a arm.Int16x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsubhnHighS64: ARM NEON intrinsic 
+// SubhnHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_high_s64'.
 // Requires NEON.
-func VsubhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
+func SubhnHighS64(a arm.Int32x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsubhnHighU16: ARM NEON intrinsic 
+// SubhnHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_high_u16'.
 // Requires NEON.
-func VsubhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
+func SubhnHighU16(a arm.Uint8x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VsubhnHighU32: ARM NEON intrinsic 
+// SubhnHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_high_u32'.
 // Requires NEON.
-func VsubhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
+func SubhnHighU32(a arm.Uint16x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsubhnHighU64: ARM NEON intrinsic 
+// SubhnHighU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubhn_high_u64'.
 // Requires NEON.
-func VsubhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
+func SubhnHighU64(a arm.Uint32x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqaddU16: ARM NEON intrinsic 
+// QaddU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_u16'.
 // Requires NEON.
-func VqaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func QaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqaddU32: ARM NEON intrinsic 
+// QaddU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_u32'.
 // Requires NEON.
-func VqaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func QaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqaddU64: ARM NEON intrinsic 
+// QaddU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadd_u64'.
 // Requires NEON.
-func VqaddU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func QaddU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VqaddqS8: ARM NEON intrinsic 
+// QaddqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_s8'.
 // Requires NEON.
-func VqaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func QaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqaddqS16: ARM NEON intrinsic 
+// QaddqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_s16'.
 // Requires NEON.
-func VqaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func QaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqaddqS32: ARM NEON intrinsic 
+// QaddqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_s32'.
 // Requires NEON.
-func VqaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func QaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqaddqS64: ARM NEON intrinsic 
+// QaddqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_s64'.
 // Requires NEON.
-func VqaddqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func QaddqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqaddqU8: ARM NEON intrinsic 
+// QaddqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_u8'.
 // Requires NEON.
-func VqaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func QaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqaddqU16: ARM NEON intrinsic 
+// QaddqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_u16'.
 // Requires NEON.
-func VqaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func QaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqaddqU32: ARM NEON intrinsic 
+// QaddqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_u32'.
 // Requires NEON.
-func VqaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func QaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqaddqU64: ARM NEON intrinsic 
+// QaddqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddq_u64'.
 // Requires NEON.
-func VqaddqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func QaddqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VqsubS8: ARM NEON intrinsic 
+// QsubS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_s8'.
 // Requires NEON.
-func VqsubS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func QsubS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqsubS16: ARM NEON intrinsic 
+// QsubS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_s16'.
 // Requires NEON.
-func VqsubS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func QsubS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqsubS32: ARM NEON intrinsic 
+// QsubS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_s32'.
 // Requires NEON.
-func VqsubS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func QsubS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqsubS64: ARM NEON intrinsic 
+// QsubS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_s64'.
 // Requires NEON.
-func VqsubS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func QsubS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VqsubU8: ARM NEON intrinsic 
+// QsubU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_u8'.
 // Requires NEON.
-func VqsubU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func QsubU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqsubU16: ARM NEON intrinsic 
+// QsubU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_u16'.
 // Requires NEON.
-func VqsubU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func QsubU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqsubU32: ARM NEON intrinsic 
+// QsubU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_u32'.
 // Requires NEON.
-func VqsubU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func QsubU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqsubU64: ARM NEON intrinsic 
+// QsubU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsub_u64'.
 // Requires NEON.
-func VqsubU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func QsubU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VqsubqS8: ARM NEON intrinsic 
+// QsubqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_s8'.
 // Requires NEON.
-func VqsubqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func QsubqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqsubqS16: ARM NEON intrinsic 
+// QsubqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_s16'.
 // Requires NEON.
-func VqsubqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func QsubqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqsubqS32: ARM NEON intrinsic 
+// QsubqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_s32'.
 // Requires NEON.
-func VqsubqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func QsubqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqsubqS64: ARM NEON intrinsic 
+// QsubqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_s64'.
 // Requires NEON.
-func VqsubqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func QsubqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqsubqU8: ARM NEON intrinsic 
+// QsubqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_u8'.
 // Requires NEON.
-func VqsubqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func QsubqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqsubqU16: ARM NEON intrinsic 
+// QsubqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_u16'.
 // Requires NEON.
-func VqsubqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func QsubqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqsubqU32: ARM NEON intrinsic 
+// QsubqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_u32'.
 // Requires NEON.
-func VqsubqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func QsubqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqsubqU64: ARM NEON intrinsic 
+// QsubqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubq_u64'.
 // Requires NEON.
-func VqsubqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func QsubqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VqnegS8: ARM NEON intrinsic 
+// QnegS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqneg_s8'.
 // Requires NEON.
-func VqnegS8(a arm.Int8x8) (dst arm.Int8x8) {
+func QnegS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqnegS16: ARM NEON intrinsic 
+// QnegS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqneg_s16'.
 // Requires NEON.
-func VqnegS16(a arm.Int16x4) (dst arm.Int16x4) {
+func QnegS16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqnegS32: ARM NEON intrinsic 
+// QnegS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqneg_s32'.
 // Requires NEON.
-func VqnegS32(a arm.Int32x2) (dst arm.Int32x2) {
+func QnegS32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqnegS64: ARM NEON intrinsic 
+// QnegS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqneg_s64'.
 // Requires NEON.
-func VqnegS64(a arm.Int64x1) (dst arm.Int64x1) {
+func QnegS64(a arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VqnegqS8: ARM NEON intrinsic 
+// QnegqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegq_s8'.
 // Requires NEON.
-func VqnegqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func QnegqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqnegqS16: ARM NEON intrinsic 
+// QnegqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegq_s16'.
 // Requires NEON.
-func VqnegqS16(a arm.Int16x8) (dst arm.Int16x8) {
+func QnegqS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqnegqS32: ARM NEON intrinsic 
+// QnegqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegq_s32'.
 // Requires NEON.
-func VqnegqS32(a arm.Int32x4) (dst arm.Int32x4) {
+func QnegqS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqabsS8: ARM NEON intrinsic 
+// QabsS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabs_s8'.
 // Requires NEON.
-func VqabsS8(a arm.Int8x8) (dst arm.Int8x8) {
+func QabsS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqabsS16: ARM NEON intrinsic 
+// QabsS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabs_s16'.
 // Requires NEON.
-func VqabsS16(a arm.Int16x4) (dst arm.Int16x4) {
+func QabsS16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqabsS32: ARM NEON intrinsic 
+// QabsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabs_s32'.
 // Requires NEON.
-func VqabsS32(a arm.Int32x2) (dst arm.Int32x2) {
+func QabsS32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqabsS64: ARM NEON intrinsic 
+// QabsS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabs_s64'.
 // Requires NEON.
-func VqabsS64(a arm.Int64x1) (dst arm.Int64x1) {
+func QabsS64(a arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VqabsqS8: ARM NEON intrinsic 
+// QabsqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabsq_s8'.
 // Requires NEON.
-func VqabsqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func QabsqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqabsqS16: ARM NEON intrinsic 
+// QabsqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabsq_s16'.
 // Requires NEON.
-func VqabsqS16(a arm.Int16x8) (dst arm.Int16x8) {
+func QabsqS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqabsqS32: ARM NEON intrinsic 
+// QabsqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabsq_s32'.
 // Requires NEON.
-func VqabsqS32(a arm.Int32x4) (dst arm.Int32x4) {
+func QabsqS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmulhS16: ARM NEON intrinsic 
+// QdmulhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_s16'.
 // Requires NEON.
-func VqdmulhS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func QdmulhS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqdmulhS32: ARM NEON intrinsic 
+// QdmulhS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_s32'.
 // Requires NEON.
-func VqdmulhS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func QdmulhS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqdmulhqS16: ARM NEON intrinsic 
+// QdmulhqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_s16'.
 // Requires NEON.
-func VqdmulhqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func QdmulhqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqdmulhqS32: ARM NEON intrinsic 
+// QdmulhqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_s32'.
 // Requires NEON.
-func VqdmulhqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func QdmulhqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqrdmulhS16: ARM NEON intrinsic 
+// QrdmulhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_s16'.
 // Requires NEON.
-func VqrdmulhS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func QrdmulhS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqrdmulhS32: ARM NEON intrinsic 
+// QrdmulhS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_s32'.
 // Requires NEON.
-func VqrdmulhS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func QrdmulhS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqrdmulhqS16: ARM NEON intrinsic 
+// QrdmulhqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_s16'.
 // Requires NEON.
-func VqrdmulhqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func QrdmulhqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqrdmulhqS32: ARM NEON intrinsic 
+// QrdmulhqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_s32'.
 // Requires NEON.
-func VqrdmulhqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func QrdmulhqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VcreateS8: ARM NEON intrinsic 
+// CreateS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_s8'.
 // Requires NEON.
-func VcreateS8(a uint64) (dst arm.Int8x8) {
+func CreateS8(a uint64) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VcreateS16: ARM NEON intrinsic 
+// CreateS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_s16'.
 // Requires NEON.
-func VcreateS16(a uint64) (dst arm.Int16x4) {
+func CreateS16(a uint64) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VcreateS32: ARM NEON intrinsic 
+// CreateS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_s32'.
 // Requires NEON.
-func VcreateS32(a uint64) (dst arm.Int32x2) {
+func CreateS32(a uint64) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VcreateS64: ARM NEON intrinsic 
+// CreateS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_s64'.
 // Requires NEON.
-func VcreateS64(a uint64) (dst arm.Int64x1) {
+func CreateS64(a uint64) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VcreateF32: ARM NEON intrinsic 
+// CreateF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_f32'.
 // Requires NEON.
-func VcreateF32(a uint64) (dst arm.Float32x2) {
+func CreateF32(a uint64) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VcreateU8: ARM NEON intrinsic 
+// CreateU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_u8'.
 // Requires NEON.
-func VcreateU8(a uint64) (dst arm.Uint8x8) {
+func CreateU8(a uint64) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcreateU16: ARM NEON intrinsic 
+// CreateU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_u16'.
 // Requires NEON.
-func VcreateU16(a uint64) (dst arm.Uint16x4) {
+func CreateU16(a uint64) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcreateU32: ARM NEON intrinsic 
+// CreateU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_u32'.
 // Requires NEON.
-func VcreateU32(a uint64) (dst arm.Uint32x2) {
+func CreateU32(a uint64) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcreateU64: ARM NEON intrinsic 
+// CreateU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_u64'.
 // Requires NEON.
-func VcreateU64(a uint64) (dst arm.Uint64x1) {
+func CreateU64(a uint64) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcreateF64: ARM NEON intrinsic 
+// CreateF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_f64'.
 // Requires NEON.
-func VcreateF64(a uint64) (dst arm.Float64x1) {
+func CreateF64(a uint64) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VcreateP8: ARM NEON intrinsic 
+// CreateP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_p8'.
 // Requires NEON.
-func VcreateP8(a uint64) (dst arm.Poly8x8) {
+func CreateP8(a uint64) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VcreateP16: ARM NEON intrinsic 
+// CreateP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcreate_p16'.
 // Requires NEON.
-func VcreateP16(a uint64) (dst arm.Poly16x4) {
+func CreateP16(a uint64) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VgetLaneF32: ARM NEON intrinsic 
+// GetLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneF32(a arm.Float32x2, b int) float32 {
+func GetLaneF32(a arm.Float32x2, b int) float32 {
 	return 0
 }
 
-// VgetLaneF64: ARM NEON intrinsic 
+// GetLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneF64(a arm.Float64x1, b int) float64 {
+func GetLaneF64(a arm.Float64x1, b int) float64 {
 	return 0
 }
 
-// VgetLaneP8: ARM NEON intrinsic 
+// GetLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8) {
+func GetLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8) {
 	return arm.Poly8{}
 }
 
-// VgetLaneP16: ARM NEON intrinsic 
+// GetLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16) {
+func GetLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16) {
 	return arm.Poly16{}
 }
 
-// VgetLaneS8: ARM NEON intrinsic 
+// GetLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneS8(a arm.Int8x8, b int) int8 {
+func GetLaneS8(a arm.Int8x8, b int) int8 {
 	return 0
 }
 
-// VgetLaneS16: ARM NEON intrinsic 
+// GetLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneS16(a arm.Int16x4, b int) int16 {
+func GetLaneS16(a arm.Int16x4, b int) int16 {
 	return 0
 }
 
-// VgetLaneS32: ARM NEON intrinsic 
+// GetLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneS32(a arm.Int32x2, b int) int32 {
+func GetLaneS32(a arm.Int32x2, b int) int32 {
 	return 0
 }
 
-// VgetLaneS64: ARM NEON intrinsic 
+// GetLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneS64(a arm.Int64x1, b int) int64 {
+func GetLaneS64(a arm.Int64x1, b int) int64 {
 	return 0
 }
 
-// VgetLaneU8: ARM NEON intrinsic 
+// GetLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneU8(a arm.Uint8x8, b int) uint8 {
+func GetLaneU8(a arm.Uint8x8, b int) uint8 {
 	return 0
 }
 
-// VgetLaneU16: ARM NEON intrinsic 
+// GetLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneU16(a arm.Uint16x4, b int) uint16 {
+func GetLaneU16(a arm.Uint16x4, b int) uint16 {
 	return 0
 }
 
-// VgetLaneU32: ARM NEON intrinsic 
+// GetLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneU32(a arm.Uint32x2, b int) uint32 {
+func GetLaneU32(a arm.Uint32x2, b int) uint32 {
 	return 0
 }
 
-// VgetLaneU64: ARM NEON intrinsic 
+// GetLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_lane_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetLaneU64(a arm.Uint64x1, b int) uint64 {
+func GetLaneU64(a arm.Uint64x1, b int) uint64 {
 	return 0
 }
 
-// VgetqLaneF32: ARM NEON intrinsic 
+// GetqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneF32(a arm.Float32x4, b int) float32 {
+func GetqLaneF32(a arm.Float32x4, b int) float32 {
 	return 0
 }
 
-// VgetqLaneF64: ARM NEON intrinsic 
+// GetqLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneF64(a arm.Float64x2, b int) float64 {
+func GetqLaneF64(a arm.Float64x2, b int) float64 {
 	return 0
 }
 
-// VgetqLaneP8: ARM NEON intrinsic 
+// GetqLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneP8(a arm.Poly8x16, b int) (dst arm.Poly8) {
+func GetqLaneP8(a arm.Poly8x16, b int) (dst arm.Poly8) {
 	return arm.Poly8{}
 }
 
-// VgetqLaneP16: ARM NEON intrinsic 
+// GetqLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneP16(a arm.Poly16x8, b int) (dst arm.Poly16) {
+func GetqLaneP16(a arm.Poly16x8, b int) (dst arm.Poly16) {
 	return arm.Poly16{}
 }
 
-// VgetqLaneS8: ARM NEON intrinsic 
+// GetqLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneS8(a arm.Int8x16, b int) int8 {
+func GetqLaneS8(a arm.Int8x16, b int) int8 {
 	return 0
 }
 
-// VgetqLaneS16: ARM NEON intrinsic 
+// GetqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneS16(a arm.Int16x8, b int) int16 {
+func GetqLaneS16(a arm.Int16x8, b int) int16 {
 	return 0
 }
 
-// VgetqLaneS32: ARM NEON intrinsic 
+// GetqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneS32(a arm.Int32x4, b int) int32 {
+func GetqLaneS32(a arm.Int32x4, b int) int32 {
 	return 0
 }
 
-// VgetqLaneS64: ARM NEON intrinsic 
+// GetqLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneS64(a arm.Int64x2, b int) int64 {
+func GetqLaneS64(a arm.Int64x2, b int) int64 {
 	return 0
 }
 
-// VgetqLaneU8: ARM NEON intrinsic 
+// GetqLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneU8(a arm.Uint8x16, b int) uint8 {
+func GetqLaneU8(a arm.Uint8x16, b int) uint8 {
 	return 0
 }
 
-// VgetqLaneU16: ARM NEON intrinsic 
+// GetqLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneU16(a arm.Uint16x8, b int) uint16 {
+func GetqLaneU16(a arm.Uint16x8, b int) uint16 {
 	return 0
 }
 
-// VgetqLaneU32: ARM NEON intrinsic 
+// GetqLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneU32(a arm.Uint32x4, b int) uint32 {
+func GetqLaneU32(a arm.Uint32x4, b int) uint32 {
 	return 0
 }
 
-// VgetqLaneU64: ARM NEON intrinsic 
+// GetqLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vgetq_lane_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VgetqLaneU64(a arm.Uint64x2, b int) uint64 {
+func GetqLaneU64(a arm.Uint64x2, b int) uint64 {
 	return 0
 }
 
-// VreinterpretP8F64: ARM NEON intrinsic 
+// ReinterpretP8F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_f64'.
 // Requires NEON.
-func VreinterpretP8F64(a arm.Float64x1) (dst arm.Poly8x8) {
+func ReinterpretP8F64(a arm.Float64x1) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8S8: ARM NEON intrinsic 
+// ReinterpretP8S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_s8'.
 // Requires NEON.
-func VreinterpretP8S8(a arm.Int8x8) (dst arm.Poly8x8) {
+func ReinterpretP8S8(a arm.Int8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8S16: ARM NEON intrinsic 
+// ReinterpretP8S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_s16'.
 // Requires NEON.
-func VreinterpretP8S16(a arm.Int16x4) (dst arm.Poly8x8) {
+func ReinterpretP8S16(a arm.Int16x4) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8S32: ARM NEON intrinsic 
+// ReinterpretP8S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_s32'.
 // Requires NEON.
-func VreinterpretP8S32(a arm.Int32x2) (dst arm.Poly8x8) {
+func ReinterpretP8S32(a arm.Int32x2) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8S64: ARM NEON intrinsic 
+// ReinterpretP8S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_s64'.
 // Requires NEON.
-func VreinterpretP8S64(a arm.Int64x1) (dst arm.Poly8x8) {
+func ReinterpretP8S64(a arm.Int64x1) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8F32: ARM NEON intrinsic 
+// ReinterpretP8F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_f32'.
 // Requires NEON.
-func VreinterpretP8F32(a arm.Float32x2) (dst arm.Poly8x8) {
+func ReinterpretP8F32(a arm.Float32x2) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8U8: ARM NEON intrinsic 
+// ReinterpretP8U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_u8'.
 // Requires NEON.
-func VreinterpretP8U8(a arm.Uint8x8) (dst arm.Poly8x8) {
+func ReinterpretP8U8(a arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8U16: ARM NEON intrinsic 
+// ReinterpretP8U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_u16'.
 // Requires NEON.
-func VreinterpretP8U16(a arm.Uint16x4) (dst arm.Poly8x8) {
+func ReinterpretP8U16(a arm.Uint16x4) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8U32: ARM NEON intrinsic 
+// ReinterpretP8U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_u32'.
 // Requires NEON.
-func VreinterpretP8U32(a arm.Uint32x2) (dst arm.Poly8x8) {
+func ReinterpretP8U32(a arm.Uint32x2) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8U64: ARM NEON intrinsic 
+// ReinterpretP8U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_u64'.
 // Requires NEON.
-func VreinterpretP8U64(a arm.Uint64x1) (dst arm.Poly8x8) {
+func ReinterpretP8U64(a arm.Uint64x1) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretP8P16: ARM NEON intrinsic 
+// ReinterpretP8P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p8_p16'.
 // Requires NEON.
-func VreinterpretP8P16(a arm.Poly16x4) (dst arm.Poly8x8) {
+func ReinterpretP8P16(a arm.Poly16x4) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VreinterpretqP8F64: ARM NEON intrinsic 
+// ReinterpretqP8F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_f64'.
 // Requires NEON.
-func VreinterpretqP8F64(a arm.Float64x2) (dst arm.Poly8x16) {
+func ReinterpretqP8F64(a arm.Float64x2) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8S8: ARM NEON intrinsic 
+// ReinterpretqP8S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_s8'.
 // Requires NEON.
-func VreinterpretqP8S8(a arm.Int8x16) (dst arm.Poly8x16) {
+func ReinterpretqP8S8(a arm.Int8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8S16: ARM NEON intrinsic 
+// ReinterpretqP8S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_s16'.
 // Requires NEON.
-func VreinterpretqP8S16(a arm.Int16x8) (dst arm.Poly8x16) {
+func ReinterpretqP8S16(a arm.Int16x8) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8S32: ARM NEON intrinsic 
+// ReinterpretqP8S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_s32'.
 // Requires NEON.
-func VreinterpretqP8S32(a arm.Int32x4) (dst arm.Poly8x16) {
+func ReinterpretqP8S32(a arm.Int32x4) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8S64: ARM NEON intrinsic 
+// ReinterpretqP8S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_s64'.
 // Requires NEON.
-func VreinterpretqP8S64(a arm.Int64x2) (dst arm.Poly8x16) {
+func ReinterpretqP8S64(a arm.Int64x2) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8F32: ARM NEON intrinsic 
+// ReinterpretqP8F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_f32'.
 // Requires NEON.
-func VreinterpretqP8F32(a arm.Float32x4) (dst arm.Poly8x16) {
+func ReinterpretqP8F32(a arm.Float32x4) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8U8: ARM NEON intrinsic 
+// ReinterpretqP8U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_u8'.
 // Requires NEON.
-func VreinterpretqP8U8(a arm.Uint8x16) (dst arm.Poly8x16) {
+func ReinterpretqP8U8(a arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8U16: ARM NEON intrinsic 
+// ReinterpretqP8U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_u16'.
 // Requires NEON.
-func VreinterpretqP8U16(a arm.Uint16x8) (dst arm.Poly8x16) {
+func ReinterpretqP8U16(a arm.Uint16x8) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8U32: ARM NEON intrinsic 
+// ReinterpretqP8U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_u32'.
 // Requires NEON.
-func VreinterpretqP8U32(a arm.Uint32x4) (dst arm.Poly8x16) {
+func ReinterpretqP8U32(a arm.Uint32x4) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8U64: ARM NEON intrinsic 
+// ReinterpretqP8U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_u64'.
 // Requires NEON.
-func VreinterpretqP8U64(a arm.Uint64x2) (dst arm.Poly8x16) {
+func ReinterpretqP8U64(a arm.Uint64x2) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretqP8P16: ARM NEON intrinsic 
+// ReinterpretqP8P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p8_p16'.
 // Requires NEON.
-func VreinterpretqP8P16(a arm.Poly16x8) (dst arm.Poly8x16) {
+func ReinterpretqP8P16(a arm.Poly16x8) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VreinterpretP16F64: ARM NEON intrinsic 
+// ReinterpretP16F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_f64'.
 // Requires NEON.
-func VreinterpretP16F64(a arm.Float64x1) (dst arm.Poly16x4) {
+func ReinterpretP16F64(a arm.Float64x1) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16S8: ARM NEON intrinsic 
+// ReinterpretP16S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_s8'.
 // Requires NEON.
-func VreinterpretP16S8(a arm.Int8x8) (dst arm.Poly16x4) {
+func ReinterpretP16S8(a arm.Int8x8) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16S16: ARM NEON intrinsic 
+// ReinterpretP16S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_s16'.
 // Requires NEON.
-func VreinterpretP16S16(a arm.Int16x4) (dst arm.Poly16x4) {
+func ReinterpretP16S16(a arm.Int16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16S32: ARM NEON intrinsic 
+// ReinterpretP16S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_s32'.
 // Requires NEON.
-func VreinterpretP16S32(a arm.Int32x2) (dst arm.Poly16x4) {
+func ReinterpretP16S32(a arm.Int32x2) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16S64: ARM NEON intrinsic 
+// ReinterpretP16S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_s64'.
 // Requires NEON.
-func VreinterpretP16S64(a arm.Int64x1) (dst arm.Poly16x4) {
+func ReinterpretP16S64(a arm.Int64x1) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16F32: ARM NEON intrinsic 
+// ReinterpretP16F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_f32'.
 // Requires NEON.
-func VreinterpretP16F32(a arm.Float32x2) (dst arm.Poly16x4) {
+func ReinterpretP16F32(a arm.Float32x2) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16U8: ARM NEON intrinsic 
+// ReinterpretP16U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_u8'.
 // Requires NEON.
-func VreinterpretP16U8(a arm.Uint8x8) (dst arm.Poly16x4) {
+func ReinterpretP16U8(a arm.Uint8x8) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16U16: ARM NEON intrinsic 
+// ReinterpretP16U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_u16'.
 // Requires NEON.
-func VreinterpretP16U16(a arm.Uint16x4) (dst arm.Poly16x4) {
+func ReinterpretP16U16(a arm.Uint16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16U32: ARM NEON intrinsic 
+// ReinterpretP16U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_u32'.
 // Requires NEON.
-func VreinterpretP16U32(a arm.Uint32x2) (dst arm.Poly16x4) {
+func ReinterpretP16U32(a arm.Uint32x2) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16U64: ARM NEON intrinsic 
+// ReinterpretP16U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_u64'.
 // Requires NEON.
-func VreinterpretP16U64(a arm.Uint64x1) (dst arm.Poly16x4) {
+func ReinterpretP16U64(a arm.Uint64x1) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretP16P8: ARM NEON intrinsic 
+// ReinterpretP16P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_p16_p8'.
 // Requires NEON.
-func VreinterpretP16P8(a arm.Poly8x8) (dst arm.Poly16x4) {
+func ReinterpretP16P8(a arm.Poly8x8) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VreinterpretqP16F64: ARM NEON intrinsic 
+// ReinterpretqP16F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_f64'.
 // Requires NEON.
-func VreinterpretqP16F64(a arm.Float64x2) (dst arm.Poly16x8) {
+func ReinterpretqP16F64(a arm.Float64x2) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16S8: ARM NEON intrinsic 
+// ReinterpretqP16S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_s8'.
 // Requires NEON.
-func VreinterpretqP16S8(a arm.Int8x16) (dst arm.Poly16x8) {
+func ReinterpretqP16S8(a arm.Int8x16) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16S16: ARM NEON intrinsic 
+// ReinterpretqP16S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_s16'.
 // Requires NEON.
-func VreinterpretqP16S16(a arm.Int16x8) (dst arm.Poly16x8) {
+func ReinterpretqP16S16(a arm.Int16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16S32: ARM NEON intrinsic 
+// ReinterpretqP16S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_s32'.
 // Requires NEON.
-func VreinterpretqP16S32(a arm.Int32x4) (dst arm.Poly16x8) {
+func ReinterpretqP16S32(a arm.Int32x4) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16S64: ARM NEON intrinsic 
+// ReinterpretqP16S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_s64'.
 // Requires NEON.
-func VreinterpretqP16S64(a arm.Int64x2) (dst arm.Poly16x8) {
+func ReinterpretqP16S64(a arm.Int64x2) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16F32: ARM NEON intrinsic 
+// ReinterpretqP16F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_f32'.
 // Requires NEON.
-func VreinterpretqP16F32(a arm.Float32x4) (dst arm.Poly16x8) {
+func ReinterpretqP16F32(a arm.Float32x4) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16U8: ARM NEON intrinsic 
+// ReinterpretqP16U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_u8'.
 // Requires NEON.
-func VreinterpretqP16U8(a arm.Uint8x16) (dst arm.Poly16x8) {
+func ReinterpretqP16U8(a arm.Uint8x16) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16U16: ARM NEON intrinsic 
+// ReinterpretqP16U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_u16'.
 // Requires NEON.
-func VreinterpretqP16U16(a arm.Uint16x8) (dst arm.Poly16x8) {
+func ReinterpretqP16U16(a arm.Uint16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16U32: ARM NEON intrinsic 
+// ReinterpretqP16U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_u32'.
 // Requires NEON.
-func VreinterpretqP16U32(a arm.Uint32x4) (dst arm.Poly16x8) {
+func ReinterpretqP16U32(a arm.Uint32x4) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16U64: ARM NEON intrinsic 
+// ReinterpretqP16U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_u64'.
 // Requires NEON.
-func VreinterpretqP16U64(a arm.Uint64x2) (dst arm.Poly16x8) {
+func ReinterpretqP16U64(a arm.Uint64x2) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretqP16P8: ARM NEON intrinsic 
+// ReinterpretqP16P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_p16_p8'.
 // Requires NEON.
-func VreinterpretqP16P8(a arm.Poly8x16) (dst arm.Poly16x8) {
+func ReinterpretqP16P8(a arm.Poly8x16) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VreinterpretF32F64: ARM NEON intrinsic 
+// ReinterpretF32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_f64'.
 // Requires NEON.
-func VreinterpretF32F64(a arm.Float64x1) (dst arm.Float32x2) {
+func ReinterpretF32F64(a arm.Float64x1) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32S8: ARM NEON intrinsic 
+// ReinterpretF32S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_s8'.
 // Requires NEON.
-func VreinterpretF32S8(a arm.Int8x8) (dst arm.Float32x2) {
+func ReinterpretF32S8(a arm.Int8x8) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32S16: ARM NEON intrinsic 
+// ReinterpretF32S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_s16'.
 // Requires NEON.
-func VreinterpretF32S16(a arm.Int16x4) (dst arm.Float32x2) {
+func ReinterpretF32S16(a arm.Int16x4) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32S32: ARM NEON intrinsic 
+// ReinterpretF32S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_s32'.
 // Requires NEON.
-func VreinterpretF32S32(a arm.Int32x2) (dst arm.Float32x2) {
+func ReinterpretF32S32(a arm.Int32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32S64: ARM NEON intrinsic 
+// ReinterpretF32S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_s64'.
 // Requires NEON.
-func VreinterpretF32S64(a arm.Int64x1) (dst arm.Float32x2) {
+func ReinterpretF32S64(a arm.Int64x1) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32U8: ARM NEON intrinsic 
+// ReinterpretF32U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_u8'.
 // Requires NEON.
-func VreinterpretF32U8(a arm.Uint8x8) (dst arm.Float32x2) {
+func ReinterpretF32U8(a arm.Uint8x8) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32U16: ARM NEON intrinsic 
+// ReinterpretF32U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_u16'.
 // Requires NEON.
-func VreinterpretF32U16(a arm.Uint16x4) (dst arm.Float32x2) {
+func ReinterpretF32U16(a arm.Uint16x4) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32U32: ARM NEON intrinsic 
+// ReinterpretF32U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_u32'.
 // Requires NEON.
-func VreinterpretF32U32(a arm.Uint32x2) (dst arm.Float32x2) {
+func ReinterpretF32U32(a arm.Uint32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32U64: ARM NEON intrinsic 
+// ReinterpretF32U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_u64'.
 // Requires NEON.
-func VreinterpretF32U64(a arm.Uint64x1) (dst arm.Float32x2) {
+func ReinterpretF32U64(a arm.Uint64x1) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32P8: ARM NEON intrinsic 
+// ReinterpretF32P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_p8'.
 // Requires NEON.
-func VreinterpretF32P8(a arm.Poly8x8) (dst arm.Float32x2) {
+func ReinterpretF32P8(a arm.Poly8x8) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretF32P16: ARM NEON intrinsic 
+// ReinterpretF32P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f32_p16'.
 // Requires NEON.
-func VreinterpretF32P16(a arm.Poly16x4) (dst arm.Float32x2) {
+func ReinterpretF32P16(a arm.Poly16x4) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VreinterpretqF32F64: ARM NEON intrinsic 
+// ReinterpretqF32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_f64'.
 // Requires NEON.
-func VreinterpretqF32F64(a arm.Float64x2) (dst arm.Float32x4) {
+func ReinterpretqF32F64(a arm.Float64x2) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32S8: ARM NEON intrinsic 
+// ReinterpretqF32S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_s8'.
 // Requires NEON.
-func VreinterpretqF32S8(a arm.Int8x16) (dst arm.Float32x4) {
+func ReinterpretqF32S8(a arm.Int8x16) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32S16: ARM NEON intrinsic 
+// ReinterpretqF32S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_s16'.
 // Requires NEON.
-func VreinterpretqF32S16(a arm.Int16x8) (dst arm.Float32x4) {
+func ReinterpretqF32S16(a arm.Int16x8) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32S32: ARM NEON intrinsic 
+// ReinterpretqF32S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_s32'.
 // Requires NEON.
-func VreinterpretqF32S32(a arm.Int32x4) (dst arm.Float32x4) {
+func ReinterpretqF32S32(a arm.Int32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32S64: ARM NEON intrinsic 
+// ReinterpretqF32S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_s64'.
 // Requires NEON.
-func VreinterpretqF32S64(a arm.Int64x2) (dst arm.Float32x4) {
+func ReinterpretqF32S64(a arm.Int64x2) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32U8: ARM NEON intrinsic 
+// ReinterpretqF32U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_u8'.
 // Requires NEON.
-func VreinterpretqF32U8(a arm.Uint8x16) (dst arm.Float32x4) {
+func ReinterpretqF32U8(a arm.Uint8x16) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32U16: ARM NEON intrinsic 
+// ReinterpretqF32U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_u16'.
 // Requires NEON.
-func VreinterpretqF32U16(a arm.Uint16x8) (dst arm.Float32x4) {
+func ReinterpretqF32U16(a arm.Uint16x8) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32U32: ARM NEON intrinsic 
+// ReinterpretqF32U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_u32'.
 // Requires NEON.
-func VreinterpretqF32U32(a arm.Uint32x4) (dst arm.Float32x4) {
+func ReinterpretqF32U32(a arm.Uint32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32U64: ARM NEON intrinsic 
+// ReinterpretqF32U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_u64'.
 // Requires NEON.
-func VreinterpretqF32U64(a arm.Uint64x2) (dst arm.Float32x4) {
+func ReinterpretqF32U64(a arm.Uint64x2) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32P8: ARM NEON intrinsic 
+// ReinterpretqF32P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_p8'.
 // Requires NEON.
-func VreinterpretqF32P8(a arm.Poly8x16) (dst arm.Float32x4) {
+func ReinterpretqF32P8(a arm.Poly8x16) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretqF32P16: ARM NEON intrinsic 
+// ReinterpretqF32P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f32_p16'.
 // Requires NEON.
-func VreinterpretqF32P16(a arm.Poly16x8) (dst arm.Float32x4) {
+func ReinterpretqF32P16(a arm.Poly16x8) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VreinterpretF64F32: ARM NEON intrinsic 
+// ReinterpretF64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_f32'.
 // Requires NEON.
-func VreinterpretF64F32(a arm.Float32x2) (dst arm.Float64x1) {
+func ReinterpretF64F32(a arm.Float32x2) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64P8: ARM NEON intrinsic 
+// ReinterpretF64P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_p8'.
 // Requires NEON.
-func VreinterpretF64P8(a arm.Poly8x8) (dst arm.Float64x1) {
+func ReinterpretF64P8(a arm.Poly8x8) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64P16: ARM NEON intrinsic 
+// ReinterpretF64P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_p16'.
 // Requires NEON.
-func VreinterpretF64P16(a arm.Poly16x4) (dst arm.Float64x1) {
+func ReinterpretF64P16(a arm.Poly16x4) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64S8: ARM NEON intrinsic 
+// ReinterpretF64S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_s8'.
 // Requires NEON.
-func VreinterpretF64S8(a arm.Int8x8) (dst arm.Float64x1) {
+func ReinterpretF64S8(a arm.Int8x8) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64S16: ARM NEON intrinsic 
+// ReinterpretF64S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_s16'.
 // Requires NEON.
-func VreinterpretF64S16(a arm.Int16x4) (dst arm.Float64x1) {
+func ReinterpretF64S16(a arm.Int16x4) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64S32: ARM NEON intrinsic 
+// ReinterpretF64S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_s32'.
 // Requires NEON.
-func VreinterpretF64S32(a arm.Int32x2) (dst arm.Float64x1) {
+func ReinterpretF64S32(a arm.Int32x2) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64S64: ARM NEON intrinsic 
+// ReinterpretF64S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_s64'.
 // Requires NEON.
-func VreinterpretF64S64(a arm.Int64x1) (dst arm.Float64x1) {
+func ReinterpretF64S64(a arm.Int64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64U8: ARM NEON intrinsic 
+// ReinterpretF64U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_u8'.
 // Requires NEON.
-func VreinterpretF64U8(a arm.Uint8x8) (dst arm.Float64x1) {
+func ReinterpretF64U8(a arm.Uint8x8) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64U16: ARM NEON intrinsic 
+// ReinterpretF64U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_u16'.
 // Requires NEON.
-func VreinterpretF64U16(a arm.Uint16x4) (dst arm.Float64x1) {
+func ReinterpretF64U16(a arm.Uint16x4) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64U32: ARM NEON intrinsic 
+// ReinterpretF64U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_u32'.
 // Requires NEON.
-func VreinterpretF64U32(a arm.Uint32x2) (dst arm.Float64x1) {
+func ReinterpretF64U32(a arm.Uint32x2) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretF64U64: ARM NEON intrinsic 
+// ReinterpretF64U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_f64_u64'.
 // Requires NEON.
-func VreinterpretF64U64(a arm.Uint64x1) (dst arm.Float64x1) {
+func ReinterpretF64U64(a arm.Uint64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VreinterpretqF64F32: ARM NEON intrinsic 
+// ReinterpretqF64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_f32'.
 // Requires NEON.
-func VreinterpretqF64F32(a arm.Float32x4) (dst arm.Float64x2) {
+func ReinterpretqF64F32(a arm.Float32x4) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64P8: ARM NEON intrinsic 
+// ReinterpretqF64P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_p8'.
 // Requires NEON.
-func VreinterpretqF64P8(a arm.Poly8x16) (dst arm.Float64x2) {
+func ReinterpretqF64P8(a arm.Poly8x16) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64P16: ARM NEON intrinsic 
+// ReinterpretqF64P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_p16'.
 // Requires NEON.
-func VreinterpretqF64P16(a arm.Poly16x8) (dst arm.Float64x2) {
+func ReinterpretqF64P16(a arm.Poly16x8) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64S8: ARM NEON intrinsic 
+// ReinterpretqF64S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_s8'.
 // Requires NEON.
-func VreinterpretqF64S8(a arm.Int8x16) (dst arm.Float64x2) {
+func ReinterpretqF64S8(a arm.Int8x16) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64S16: ARM NEON intrinsic 
+// ReinterpretqF64S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_s16'.
 // Requires NEON.
-func VreinterpretqF64S16(a arm.Int16x8) (dst arm.Float64x2) {
+func ReinterpretqF64S16(a arm.Int16x8) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64S32: ARM NEON intrinsic 
+// ReinterpretqF64S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_s32'.
 // Requires NEON.
-func VreinterpretqF64S32(a arm.Int32x4) (dst arm.Float64x2) {
+func ReinterpretqF64S32(a arm.Int32x4) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64S64: ARM NEON intrinsic 
+// ReinterpretqF64S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_s64'.
 // Requires NEON.
-func VreinterpretqF64S64(a arm.Int64x2) (dst arm.Float64x2) {
+func ReinterpretqF64S64(a arm.Int64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64U8: ARM NEON intrinsic 
+// ReinterpretqF64U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_u8'.
 // Requires NEON.
-func VreinterpretqF64U8(a arm.Uint8x16) (dst arm.Float64x2) {
+func ReinterpretqF64U8(a arm.Uint8x16) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64U16: ARM NEON intrinsic 
+// ReinterpretqF64U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_u16'.
 // Requires NEON.
-func VreinterpretqF64U16(a arm.Uint16x8) (dst arm.Float64x2) {
+func ReinterpretqF64U16(a arm.Uint16x8) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64U32: ARM NEON intrinsic 
+// ReinterpretqF64U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_u32'.
 // Requires NEON.
-func VreinterpretqF64U32(a arm.Uint32x4) (dst arm.Float64x2) {
+func ReinterpretqF64U32(a arm.Uint32x4) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretqF64U64: ARM NEON intrinsic 
+// ReinterpretqF64U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_f64_u64'.
 // Requires NEON.
-func VreinterpretqF64U64(a arm.Uint64x2) (dst arm.Float64x2) {
+func ReinterpretqF64U64(a arm.Uint64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VreinterpretS64F64: ARM NEON intrinsic 
+// ReinterpretS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_f64'.
 // Requires NEON.
-func VreinterpretS64F64(a arm.Float64x1) (dst arm.Int64x1) {
+func ReinterpretS64F64(a arm.Float64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64S8: ARM NEON intrinsic 
+// ReinterpretS64S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_s8'.
 // Requires NEON.
-func VreinterpretS64S8(a arm.Int8x8) (dst arm.Int64x1) {
+func ReinterpretS64S8(a arm.Int8x8) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64S16: ARM NEON intrinsic 
+// ReinterpretS64S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_s16'.
 // Requires NEON.
-func VreinterpretS64S16(a arm.Int16x4) (dst arm.Int64x1) {
+func ReinterpretS64S16(a arm.Int16x4) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64S32: ARM NEON intrinsic 
+// ReinterpretS64S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_s32'.
 // Requires NEON.
-func VreinterpretS64S32(a arm.Int32x2) (dst arm.Int64x1) {
+func ReinterpretS64S32(a arm.Int32x2) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64F32: ARM NEON intrinsic 
+// ReinterpretS64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_f32'.
 // Requires NEON.
-func VreinterpretS64F32(a arm.Float32x2) (dst arm.Int64x1) {
+func ReinterpretS64F32(a arm.Float32x2) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64U8: ARM NEON intrinsic 
+// ReinterpretS64U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_u8'.
 // Requires NEON.
-func VreinterpretS64U8(a arm.Uint8x8) (dst arm.Int64x1) {
+func ReinterpretS64U8(a arm.Uint8x8) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64U16: ARM NEON intrinsic 
+// ReinterpretS64U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_u16'.
 // Requires NEON.
-func VreinterpretS64U16(a arm.Uint16x4) (dst arm.Int64x1) {
+func ReinterpretS64U16(a arm.Uint16x4) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64U32: ARM NEON intrinsic 
+// ReinterpretS64U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_u32'.
 // Requires NEON.
-func VreinterpretS64U32(a arm.Uint32x2) (dst arm.Int64x1) {
+func ReinterpretS64U32(a arm.Uint32x2) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64U64: ARM NEON intrinsic 
+// ReinterpretS64U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_u64'.
 // Requires NEON.
-func VreinterpretS64U64(a arm.Uint64x1) (dst arm.Int64x1) {
+func ReinterpretS64U64(a arm.Uint64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64P8: ARM NEON intrinsic 
+// ReinterpretS64P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_p8'.
 // Requires NEON.
-func VreinterpretS64P8(a arm.Poly8x8) (dst arm.Int64x1) {
+func ReinterpretS64P8(a arm.Poly8x8) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretS64P16: ARM NEON intrinsic 
+// ReinterpretS64P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s64_p16'.
 // Requires NEON.
-func VreinterpretS64P16(a arm.Poly16x4) (dst arm.Int64x1) {
+func ReinterpretS64P16(a arm.Poly16x4) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VreinterpretqS64F64: ARM NEON intrinsic 
+// ReinterpretqS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_f64'.
 // Requires NEON.
-func VreinterpretqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
+func ReinterpretqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64S8: ARM NEON intrinsic 
+// ReinterpretqS64S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_s8'.
 // Requires NEON.
-func VreinterpretqS64S8(a arm.Int8x16) (dst arm.Int64x2) {
+func ReinterpretqS64S8(a arm.Int8x16) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64S16: ARM NEON intrinsic 
+// ReinterpretqS64S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_s16'.
 // Requires NEON.
-func VreinterpretqS64S16(a arm.Int16x8) (dst arm.Int64x2) {
+func ReinterpretqS64S16(a arm.Int16x8) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64S32: ARM NEON intrinsic 
+// ReinterpretqS64S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_s32'.
 // Requires NEON.
-func VreinterpretqS64S32(a arm.Int32x4) (dst arm.Int64x2) {
+func ReinterpretqS64S32(a arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64F32: ARM NEON intrinsic 
+// ReinterpretqS64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_f32'.
 // Requires NEON.
-func VreinterpretqS64F32(a arm.Float32x4) (dst arm.Int64x2) {
+func ReinterpretqS64F32(a arm.Float32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64U8: ARM NEON intrinsic 
+// ReinterpretqS64U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_u8'.
 // Requires NEON.
-func VreinterpretqS64U8(a arm.Uint8x16) (dst arm.Int64x2) {
+func ReinterpretqS64U8(a arm.Uint8x16) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64U16: ARM NEON intrinsic 
+// ReinterpretqS64U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_u16'.
 // Requires NEON.
-func VreinterpretqS64U16(a arm.Uint16x8) (dst arm.Int64x2) {
+func ReinterpretqS64U16(a arm.Uint16x8) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64U32: ARM NEON intrinsic 
+// ReinterpretqS64U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_u32'.
 // Requires NEON.
-func VreinterpretqS64U32(a arm.Uint32x4) (dst arm.Int64x2) {
+func ReinterpretqS64U32(a arm.Uint32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64U64: ARM NEON intrinsic 
+// ReinterpretqS64U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_u64'.
 // Requires NEON.
-func VreinterpretqS64U64(a arm.Uint64x2) (dst arm.Int64x2) {
+func ReinterpretqS64U64(a arm.Uint64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64P8: ARM NEON intrinsic 
+// ReinterpretqS64P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_p8'.
 // Requires NEON.
-func VreinterpretqS64P8(a arm.Poly8x16) (dst arm.Int64x2) {
+func ReinterpretqS64P8(a arm.Poly8x16) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretqS64P16: ARM NEON intrinsic 
+// ReinterpretqS64P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s64_p16'.
 // Requires NEON.
-func VreinterpretqS64P16(a arm.Poly16x8) (dst arm.Int64x2) {
+func ReinterpretqS64P16(a arm.Poly16x8) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VreinterpretU64F64: ARM NEON intrinsic 
+// ReinterpretU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_f64'.
 // Requires NEON.
-func VreinterpretU64F64(a arm.Float64x1) (dst arm.Uint64x1) {
+func ReinterpretU64F64(a arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64S8: ARM NEON intrinsic 
+// ReinterpretU64S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_s8'.
 // Requires NEON.
-func VreinterpretU64S8(a arm.Int8x8) (dst arm.Uint64x1) {
+func ReinterpretU64S8(a arm.Int8x8) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64S16: ARM NEON intrinsic 
+// ReinterpretU64S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_s16'.
 // Requires NEON.
-func VreinterpretU64S16(a arm.Int16x4) (dst arm.Uint64x1) {
+func ReinterpretU64S16(a arm.Int16x4) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64S32: ARM NEON intrinsic 
+// ReinterpretU64S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_s32'.
 // Requires NEON.
-func VreinterpretU64S32(a arm.Int32x2) (dst arm.Uint64x1) {
+func ReinterpretU64S32(a arm.Int32x2) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64S64: ARM NEON intrinsic 
+// ReinterpretU64S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_s64'.
 // Requires NEON.
-func VreinterpretU64S64(a arm.Int64x1) (dst arm.Uint64x1) {
+func ReinterpretU64S64(a arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64F32: ARM NEON intrinsic 
+// ReinterpretU64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_f32'.
 // Requires NEON.
-func VreinterpretU64F32(a arm.Float32x2) (dst arm.Uint64x1) {
+func ReinterpretU64F32(a arm.Float32x2) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64U8: ARM NEON intrinsic 
+// ReinterpretU64U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_u8'.
 // Requires NEON.
-func VreinterpretU64U8(a arm.Uint8x8) (dst arm.Uint64x1) {
+func ReinterpretU64U8(a arm.Uint8x8) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64U16: ARM NEON intrinsic 
+// ReinterpretU64U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_u16'.
 // Requires NEON.
-func VreinterpretU64U16(a arm.Uint16x4) (dst arm.Uint64x1) {
+func ReinterpretU64U16(a arm.Uint16x4) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64U32: ARM NEON intrinsic 
+// ReinterpretU64U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_u32'.
 // Requires NEON.
-func VreinterpretU64U32(a arm.Uint32x2) (dst arm.Uint64x1) {
+func ReinterpretU64U32(a arm.Uint32x2) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64P8: ARM NEON intrinsic 
+// ReinterpretU64P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_p8'.
 // Requires NEON.
-func VreinterpretU64P8(a arm.Poly8x8) (dst arm.Uint64x1) {
+func ReinterpretU64P8(a arm.Poly8x8) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretU64P16: ARM NEON intrinsic 
+// ReinterpretU64P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u64_p16'.
 // Requires NEON.
-func VreinterpretU64P16(a arm.Poly16x4) (dst arm.Uint64x1) {
+func ReinterpretU64P16(a arm.Poly16x4) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VreinterpretqU64F64: ARM NEON intrinsic 
+// ReinterpretqU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_f64'.
 // Requires NEON.
-func VreinterpretqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
+func ReinterpretqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64S8: ARM NEON intrinsic 
+// ReinterpretqU64S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_s8'.
 // Requires NEON.
-func VreinterpretqU64S8(a arm.Int8x16) (dst arm.Uint64x2) {
+func ReinterpretqU64S8(a arm.Int8x16) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64S16: ARM NEON intrinsic 
+// ReinterpretqU64S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_s16'.
 // Requires NEON.
-func VreinterpretqU64S16(a arm.Int16x8) (dst arm.Uint64x2) {
+func ReinterpretqU64S16(a arm.Int16x8) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64S32: ARM NEON intrinsic 
+// ReinterpretqU64S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_s32'.
 // Requires NEON.
-func VreinterpretqU64S32(a arm.Int32x4) (dst arm.Uint64x2) {
+func ReinterpretqU64S32(a arm.Int32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64S64: ARM NEON intrinsic 
+// ReinterpretqU64S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_s64'.
 // Requires NEON.
-func VreinterpretqU64S64(a arm.Int64x2) (dst arm.Uint64x2) {
+func ReinterpretqU64S64(a arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64F32: ARM NEON intrinsic 
+// ReinterpretqU64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_f32'.
 // Requires NEON.
-func VreinterpretqU64F32(a arm.Float32x4) (dst arm.Uint64x2) {
+func ReinterpretqU64F32(a arm.Float32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64U8: ARM NEON intrinsic 
+// ReinterpretqU64U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_u8'.
 // Requires NEON.
-func VreinterpretqU64U8(a arm.Uint8x16) (dst arm.Uint64x2) {
+func ReinterpretqU64U8(a arm.Uint8x16) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64U16: ARM NEON intrinsic 
+// ReinterpretqU64U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_u16'.
 // Requires NEON.
-func VreinterpretqU64U16(a arm.Uint16x8) (dst arm.Uint64x2) {
+func ReinterpretqU64U16(a arm.Uint16x8) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64U32: ARM NEON intrinsic 
+// ReinterpretqU64U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_u32'.
 // Requires NEON.
-func VreinterpretqU64U32(a arm.Uint32x4) (dst arm.Uint64x2) {
+func ReinterpretqU64U32(a arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64P8: ARM NEON intrinsic 
+// ReinterpretqU64P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_p8'.
 // Requires NEON.
-func VreinterpretqU64P8(a arm.Poly8x16) (dst arm.Uint64x2) {
+func ReinterpretqU64P8(a arm.Poly8x16) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretqU64P16: ARM NEON intrinsic 
+// ReinterpretqU64P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u64_p16'.
 // Requires NEON.
-func VreinterpretqU64P16(a arm.Poly16x8) (dst arm.Uint64x2) {
+func ReinterpretqU64P16(a arm.Poly16x8) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VreinterpretS8F64: ARM NEON intrinsic 
+// ReinterpretS8F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_f64'.
 // Requires NEON.
-func VreinterpretS8F64(a arm.Float64x1) (dst arm.Int8x8) {
+func ReinterpretS8F64(a arm.Float64x1) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8S16: ARM NEON intrinsic 
+// ReinterpretS8S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_s16'.
 // Requires NEON.
-func VreinterpretS8S16(a arm.Int16x4) (dst arm.Int8x8) {
+func ReinterpretS8S16(a arm.Int16x4) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8S32: ARM NEON intrinsic 
+// ReinterpretS8S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_s32'.
 // Requires NEON.
-func VreinterpretS8S32(a arm.Int32x2) (dst arm.Int8x8) {
+func ReinterpretS8S32(a arm.Int32x2) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8S64: ARM NEON intrinsic 
+// ReinterpretS8S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_s64'.
 // Requires NEON.
-func VreinterpretS8S64(a arm.Int64x1) (dst arm.Int8x8) {
+func ReinterpretS8S64(a arm.Int64x1) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8F32: ARM NEON intrinsic 
+// ReinterpretS8F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_f32'.
 // Requires NEON.
-func VreinterpretS8F32(a arm.Float32x2) (dst arm.Int8x8) {
+func ReinterpretS8F32(a arm.Float32x2) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8U8: ARM NEON intrinsic 
+// ReinterpretS8U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_u8'.
 // Requires NEON.
-func VreinterpretS8U8(a arm.Uint8x8) (dst arm.Int8x8) {
+func ReinterpretS8U8(a arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8U16: ARM NEON intrinsic 
+// ReinterpretS8U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_u16'.
 // Requires NEON.
-func VreinterpretS8U16(a arm.Uint16x4) (dst arm.Int8x8) {
+func ReinterpretS8U16(a arm.Uint16x4) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8U32: ARM NEON intrinsic 
+// ReinterpretS8U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_u32'.
 // Requires NEON.
-func VreinterpretS8U32(a arm.Uint32x2) (dst arm.Int8x8) {
+func ReinterpretS8U32(a arm.Uint32x2) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8U64: ARM NEON intrinsic 
+// ReinterpretS8U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_u64'.
 // Requires NEON.
-func VreinterpretS8U64(a arm.Uint64x1) (dst arm.Int8x8) {
+func ReinterpretS8U64(a arm.Uint64x1) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8P8: ARM NEON intrinsic 
+// ReinterpretS8P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_p8'.
 // Requires NEON.
-func VreinterpretS8P8(a arm.Poly8x8) (dst arm.Int8x8) {
+func ReinterpretS8P8(a arm.Poly8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretS8P16: ARM NEON intrinsic 
+// ReinterpretS8P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s8_p16'.
 // Requires NEON.
-func VreinterpretS8P16(a arm.Poly16x4) (dst arm.Int8x8) {
+func ReinterpretS8P16(a arm.Poly16x4) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VreinterpretqS8F64: ARM NEON intrinsic 
+// ReinterpretqS8F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_f64'.
 // Requires NEON.
-func VreinterpretqS8F64(a arm.Float64x2) (dst arm.Int8x16) {
+func ReinterpretqS8F64(a arm.Float64x2) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8S16: ARM NEON intrinsic 
+// ReinterpretqS8S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_s16'.
 // Requires NEON.
-func VreinterpretqS8S16(a arm.Int16x8) (dst arm.Int8x16) {
+func ReinterpretqS8S16(a arm.Int16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8S32: ARM NEON intrinsic 
+// ReinterpretqS8S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_s32'.
 // Requires NEON.
-func VreinterpretqS8S32(a arm.Int32x4) (dst arm.Int8x16) {
+func ReinterpretqS8S32(a arm.Int32x4) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8S64: ARM NEON intrinsic 
+// ReinterpretqS8S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_s64'.
 // Requires NEON.
-func VreinterpretqS8S64(a arm.Int64x2) (dst arm.Int8x16) {
+func ReinterpretqS8S64(a arm.Int64x2) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8F32: ARM NEON intrinsic 
+// ReinterpretqS8F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_f32'.
 // Requires NEON.
-func VreinterpretqS8F32(a arm.Float32x4) (dst arm.Int8x16) {
+func ReinterpretqS8F32(a arm.Float32x4) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8U8: ARM NEON intrinsic 
+// ReinterpretqS8U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_u8'.
 // Requires NEON.
-func VreinterpretqS8U8(a arm.Uint8x16) (dst arm.Int8x16) {
+func ReinterpretqS8U8(a arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8U16: ARM NEON intrinsic 
+// ReinterpretqS8U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_u16'.
 // Requires NEON.
-func VreinterpretqS8U16(a arm.Uint16x8) (dst arm.Int8x16) {
+func ReinterpretqS8U16(a arm.Uint16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8U32: ARM NEON intrinsic 
+// ReinterpretqS8U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_u32'.
 // Requires NEON.
-func VreinterpretqS8U32(a arm.Uint32x4) (dst arm.Int8x16) {
+func ReinterpretqS8U32(a arm.Uint32x4) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8U64: ARM NEON intrinsic 
+// ReinterpretqS8U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_u64'.
 // Requires NEON.
-func VreinterpretqS8U64(a arm.Uint64x2) (dst arm.Int8x16) {
+func ReinterpretqS8U64(a arm.Uint64x2) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8P8: ARM NEON intrinsic 
+// ReinterpretqS8P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_p8'.
 // Requires NEON.
-func VreinterpretqS8P8(a arm.Poly8x16) (dst arm.Int8x16) {
+func ReinterpretqS8P8(a arm.Poly8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretqS8P16: ARM NEON intrinsic 
+// ReinterpretqS8P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s8_p16'.
 // Requires NEON.
-func VreinterpretqS8P16(a arm.Poly16x8) (dst arm.Int8x16) {
+func ReinterpretqS8P16(a arm.Poly16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VreinterpretS16F64: ARM NEON intrinsic 
+// ReinterpretS16F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_f64'.
 // Requires NEON.
-func VreinterpretS16F64(a arm.Float64x1) (dst arm.Int16x4) {
+func ReinterpretS16F64(a arm.Float64x1) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16S8: ARM NEON intrinsic 
+// ReinterpretS16S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_s8'.
 // Requires NEON.
-func VreinterpretS16S8(a arm.Int8x8) (dst arm.Int16x4) {
+func ReinterpretS16S8(a arm.Int8x8) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16S32: ARM NEON intrinsic 
+// ReinterpretS16S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_s32'.
 // Requires NEON.
-func VreinterpretS16S32(a arm.Int32x2) (dst arm.Int16x4) {
+func ReinterpretS16S32(a arm.Int32x2) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16S64: ARM NEON intrinsic 
+// ReinterpretS16S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_s64'.
 // Requires NEON.
-func VreinterpretS16S64(a arm.Int64x1) (dst arm.Int16x4) {
+func ReinterpretS16S64(a arm.Int64x1) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16F32: ARM NEON intrinsic 
+// ReinterpretS16F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_f32'.
 // Requires NEON.
-func VreinterpretS16F32(a arm.Float32x2) (dst arm.Int16x4) {
+func ReinterpretS16F32(a arm.Float32x2) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16U8: ARM NEON intrinsic 
+// ReinterpretS16U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_u8'.
 // Requires NEON.
-func VreinterpretS16U8(a arm.Uint8x8) (dst arm.Int16x4) {
+func ReinterpretS16U8(a arm.Uint8x8) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16U16: ARM NEON intrinsic 
+// ReinterpretS16U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_u16'.
 // Requires NEON.
-func VreinterpretS16U16(a arm.Uint16x4) (dst arm.Int16x4) {
+func ReinterpretS16U16(a arm.Uint16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16U32: ARM NEON intrinsic 
+// ReinterpretS16U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_u32'.
 // Requires NEON.
-func VreinterpretS16U32(a arm.Uint32x2) (dst arm.Int16x4) {
+func ReinterpretS16U32(a arm.Uint32x2) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16U64: ARM NEON intrinsic 
+// ReinterpretS16U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_u64'.
 // Requires NEON.
-func VreinterpretS16U64(a arm.Uint64x1) (dst arm.Int16x4) {
+func ReinterpretS16U64(a arm.Uint64x1) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16P8: ARM NEON intrinsic 
+// ReinterpretS16P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_p8'.
 // Requires NEON.
-func VreinterpretS16P8(a arm.Poly8x8) (dst arm.Int16x4) {
+func ReinterpretS16P8(a arm.Poly8x8) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretS16P16: ARM NEON intrinsic 
+// ReinterpretS16P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s16_p16'.
 // Requires NEON.
-func VreinterpretS16P16(a arm.Poly16x4) (dst arm.Int16x4) {
+func ReinterpretS16P16(a arm.Poly16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VreinterpretqS16F64: ARM NEON intrinsic 
+// ReinterpretqS16F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_f64'.
 // Requires NEON.
-func VreinterpretqS16F64(a arm.Float64x2) (dst arm.Int16x8) {
+func ReinterpretqS16F64(a arm.Float64x2) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16S8: ARM NEON intrinsic 
+// ReinterpretqS16S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_s8'.
 // Requires NEON.
-func VreinterpretqS16S8(a arm.Int8x16) (dst arm.Int16x8) {
+func ReinterpretqS16S8(a arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16S32: ARM NEON intrinsic 
+// ReinterpretqS16S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_s32'.
 // Requires NEON.
-func VreinterpretqS16S32(a arm.Int32x4) (dst arm.Int16x8) {
+func ReinterpretqS16S32(a arm.Int32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16S64: ARM NEON intrinsic 
+// ReinterpretqS16S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_s64'.
 // Requires NEON.
-func VreinterpretqS16S64(a arm.Int64x2) (dst arm.Int16x8) {
+func ReinterpretqS16S64(a arm.Int64x2) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16F32: ARM NEON intrinsic 
+// ReinterpretqS16F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_f32'.
 // Requires NEON.
-func VreinterpretqS16F32(a arm.Float32x4) (dst arm.Int16x8) {
+func ReinterpretqS16F32(a arm.Float32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16U8: ARM NEON intrinsic 
+// ReinterpretqS16U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_u8'.
 // Requires NEON.
-func VreinterpretqS16U8(a arm.Uint8x16) (dst arm.Int16x8) {
+func ReinterpretqS16U8(a arm.Uint8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16U16: ARM NEON intrinsic 
+// ReinterpretqS16U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_u16'.
 // Requires NEON.
-func VreinterpretqS16U16(a arm.Uint16x8) (dst arm.Int16x8) {
+func ReinterpretqS16U16(a arm.Uint16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16U32: ARM NEON intrinsic 
+// ReinterpretqS16U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_u32'.
 // Requires NEON.
-func VreinterpretqS16U32(a arm.Uint32x4) (dst arm.Int16x8) {
+func ReinterpretqS16U32(a arm.Uint32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16U64: ARM NEON intrinsic 
+// ReinterpretqS16U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_u64'.
 // Requires NEON.
-func VreinterpretqS16U64(a arm.Uint64x2) (dst arm.Int16x8) {
+func ReinterpretqS16U64(a arm.Uint64x2) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16P8: ARM NEON intrinsic 
+// ReinterpretqS16P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_p8'.
 // Requires NEON.
-func VreinterpretqS16P8(a arm.Poly8x16) (dst arm.Int16x8) {
+func ReinterpretqS16P8(a arm.Poly8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretqS16P16: ARM NEON intrinsic 
+// ReinterpretqS16P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s16_p16'.
 // Requires NEON.
-func VreinterpretqS16P16(a arm.Poly16x8) (dst arm.Int16x8) {
+func ReinterpretqS16P16(a arm.Poly16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VreinterpretS32F64: ARM NEON intrinsic 
+// ReinterpretS32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_f64'.
 // Requires NEON.
-func VreinterpretS32F64(a arm.Float64x1) (dst arm.Int32x2) {
+func ReinterpretS32F64(a arm.Float64x1) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32S8: ARM NEON intrinsic 
+// ReinterpretS32S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_s8'.
 // Requires NEON.
-func VreinterpretS32S8(a arm.Int8x8) (dst arm.Int32x2) {
+func ReinterpretS32S8(a arm.Int8x8) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32S16: ARM NEON intrinsic 
+// ReinterpretS32S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_s16'.
 // Requires NEON.
-func VreinterpretS32S16(a arm.Int16x4) (dst arm.Int32x2) {
+func ReinterpretS32S16(a arm.Int16x4) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32S64: ARM NEON intrinsic 
+// ReinterpretS32S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_s64'.
 // Requires NEON.
-func VreinterpretS32S64(a arm.Int64x1) (dst arm.Int32x2) {
+func ReinterpretS32S64(a arm.Int64x1) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32F32: ARM NEON intrinsic 
+// ReinterpretS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_f32'.
 // Requires NEON.
-func VreinterpretS32F32(a arm.Float32x2) (dst arm.Int32x2) {
+func ReinterpretS32F32(a arm.Float32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32U8: ARM NEON intrinsic 
+// ReinterpretS32U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_u8'.
 // Requires NEON.
-func VreinterpretS32U8(a arm.Uint8x8) (dst arm.Int32x2) {
+func ReinterpretS32U8(a arm.Uint8x8) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32U16: ARM NEON intrinsic 
+// ReinterpretS32U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_u16'.
 // Requires NEON.
-func VreinterpretS32U16(a arm.Uint16x4) (dst arm.Int32x2) {
+func ReinterpretS32U16(a arm.Uint16x4) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32U32: ARM NEON intrinsic 
+// ReinterpretS32U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_u32'.
 // Requires NEON.
-func VreinterpretS32U32(a arm.Uint32x2) (dst arm.Int32x2) {
+func ReinterpretS32U32(a arm.Uint32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32U64: ARM NEON intrinsic 
+// ReinterpretS32U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_u64'.
 // Requires NEON.
-func VreinterpretS32U64(a arm.Uint64x1) (dst arm.Int32x2) {
+func ReinterpretS32U64(a arm.Uint64x1) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32P8: ARM NEON intrinsic 
+// ReinterpretS32P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_p8'.
 // Requires NEON.
-func VreinterpretS32P8(a arm.Poly8x8) (dst arm.Int32x2) {
+func ReinterpretS32P8(a arm.Poly8x8) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretS32P16: ARM NEON intrinsic 
+// ReinterpretS32P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_s32_p16'.
 // Requires NEON.
-func VreinterpretS32P16(a arm.Poly16x4) (dst arm.Int32x2) {
+func ReinterpretS32P16(a arm.Poly16x4) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VreinterpretqS32F64: ARM NEON intrinsic 
+// ReinterpretqS32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_f64'.
 // Requires NEON.
-func VreinterpretqS32F64(a arm.Float64x2) (dst arm.Int32x4) {
+func ReinterpretqS32F64(a arm.Float64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32S8: ARM NEON intrinsic 
+// ReinterpretqS32S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_s8'.
 // Requires NEON.
-func VreinterpretqS32S8(a arm.Int8x16) (dst arm.Int32x4) {
+func ReinterpretqS32S8(a arm.Int8x16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32S16: ARM NEON intrinsic 
+// ReinterpretqS32S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_s16'.
 // Requires NEON.
-func VreinterpretqS32S16(a arm.Int16x8) (dst arm.Int32x4) {
+func ReinterpretqS32S16(a arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32S64: ARM NEON intrinsic 
+// ReinterpretqS32S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_s64'.
 // Requires NEON.
-func VreinterpretqS32S64(a arm.Int64x2) (dst arm.Int32x4) {
+func ReinterpretqS32S64(a arm.Int64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32F32: ARM NEON intrinsic 
+// ReinterpretqS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_f32'.
 // Requires NEON.
-func VreinterpretqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
+func ReinterpretqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32U8: ARM NEON intrinsic 
+// ReinterpretqS32U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_u8'.
 // Requires NEON.
-func VreinterpretqS32U8(a arm.Uint8x16) (dst arm.Int32x4) {
+func ReinterpretqS32U8(a arm.Uint8x16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32U16: ARM NEON intrinsic 
+// ReinterpretqS32U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_u16'.
 // Requires NEON.
-func VreinterpretqS32U16(a arm.Uint16x8) (dst arm.Int32x4) {
+func ReinterpretqS32U16(a arm.Uint16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32U32: ARM NEON intrinsic 
+// ReinterpretqS32U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_u32'.
 // Requires NEON.
-func VreinterpretqS32U32(a arm.Uint32x4) (dst arm.Int32x4) {
+func ReinterpretqS32U32(a arm.Uint32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32U64: ARM NEON intrinsic 
+// ReinterpretqS32U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_u64'.
 // Requires NEON.
-func VreinterpretqS32U64(a arm.Uint64x2) (dst arm.Int32x4) {
+func ReinterpretqS32U64(a arm.Uint64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32P8: ARM NEON intrinsic 
+// ReinterpretqS32P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_p8'.
 // Requires NEON.
-func VreinterpretqS32P8(a arm.Poly8x16) (dst arm.Int32x4) {
+func ReinterpretqS32P8(a arm.Poly8x16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretqS32P16: ARM NEON intrinsic 
+// ReinterpretqS32P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_s32_p16'.
 // Requires NEON.
-func VreinterpretqS32P16(a arm.Poly16x8) (dst arm.Int32x4) {
+func ReinterpretqS32P16(a arm.Poly16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VreinterpretU8F64: ARM NEON intrinsic 
+// ReinterpretU8F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_f64'.
 // Requires NEON.
-func VreinterpretU8F64(a arm.Float64x1) (dst arm.Uint8x8) {
+func ReinterpretU8F64(a arm.Float64x1) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8S8: ARM NEON intrinsic 
+// ReinterpretU8S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_s8'.
 // Requires NEON.
-func VreinterpretU8S8(a arm.Int8x8) (dst arm.Uint8x8) {
+func ReinterpretU8S8(a arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8S16: ARM NEON intrinsic 
+// ReinterpretU8S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_s16'.
 // Requires NEON.
-func VreinterpretU8S16(a arm.Int16x4) (dst arm.Uint8x8) {
+func ReinterpretU8S16(a arm.Int16x4) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8S32: ARM NEON intrinsic 
+// ReinterpretU8S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_s32'.
 // Requires NEON.
-func VreinterpretU8S32(a arm.Int32x2) (dst arm.Uint8x8) {
+func ReinterpretU8S32(a arm.Int32x2) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8S64: ARM NEON intrinsic 
+// ReinterpretU8S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_s64'.
 // Requires NEON.
-func VreinterpretU8S64(a arm.Int64x1) (dst arm.Uint8x8) {
+func ReinterpretU8S64(a arm.Int64x1) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8F32: ARM NEON intrinsic 
+// ReinterpretU8F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_f32'.
 // Requires NEON.
-func VreinterpretU8F32(a arm.Float32x2) (dst arm.Uint8x8) {
+func ReinterpretU8F32(a arm.Float32x2) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8U16: ARM NEON intrinsic 
+// ReinterpretU8U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_u16'.
 // Requires NEON.
-func VreinterpretU8U16(a arm.Uint16x4) (dst arm.Uint8x8) {
+func ReinterpretU8U16(a arm.Uint16x4) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8U32: ARM NEON intrinsic 
+// ReinterpretU8U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_u32'.
 // Requires NEON.
-func VreinterpretU8U32(a arm.Uint32x2) (dst arm.Uint8x8) {
+func ReinterpretU8U32(a arm.Uint32x2) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8U64: ARM NEON intrinsic 
+// ReinterpretU8U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_u64'.
 // Requires NEON.
-func VreinterpretU8U64(a arm.Uint64x1) (dst arm.Uint8x8) {
+func ReinterpretU8U64(a arm.Uint64x1) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8P8: ARM NEON intrinsic 
+// ReinterpretU8P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_p8'.
 // Requires NEON.
-func VreinterpretU8P8(a arm.Poly8x8) (dst arm.Uint8x8) {
+func ReinterpretU8P8(a arm.Poly8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretU8P16: ARM NEON intrinsic 
+// ReinterpretU8P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u8_p16'.
 // Requires NEON.
-func VreinterpretU8P16(a arm.Poly16x4) (dst arm.Uint8x8) {
+func ReinterpretU8P16(a arm.Poly16x4) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VreinterpretqU8F64: ARM NEON intrinsic 
+// ReinterpretqU8F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_f64'.
 // Requires NEON.
-func VreinterpretqU8F64(a arm.Float64x2) (dst arm.Uint8x16) {
+func ReinterpretqU8F64(a arm.Float64x2) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8S8: ARM NEON intrinsic 
+// ReinterpretqU8S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_s8'.
 // Requires NEON.
-func VreinterpretqU8S8(a arm.Int8x16) (dst arm.Uint8x16) {
+func ReinterpretqU8S8(a arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8S16: ARM NEON intrinsic 
+// ReinterpretqU8S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_s16'.
 // Requires NEON.
-func VreinterpretqU8S16(a arm.Int16x8) (dst arm.Uint8x16) {
+func ReinterpretqU8S16(a arm.Int16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8S32: ARM NEON intrinsic 
+// ReinterpretqU8S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_s32'.
 // Requires NEON.
-func VreinterpretqU8S32(a arm.Int32x4) (dst arm.Uint8x16) {
+func ReinterpretqU8S32(a arm.Int32x4) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8S64: ARM NEON intrinsic 
+// ReinterpretqU8S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_s64'.
 // Requires NEON.
-func VreinterpretqU8S64(a arm.Int64x2) (dst arm.Uint8x16) {
+func ReinterpretqU8S64(a arm.Int64x2) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8F32: ARM NEON intrinsic 
+// ReinterpretqU8F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_f32'.
 // Requires NEON.
-func VreinterpretqU8F32(a arm.Float32x4) (dst arm.Uint8x16) {
+func ReinterpretqU8F32(a arm.Float32x4) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8U16: ARM NEON intrinsic 
+// ReinterpretqU8U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_u16'.
 // Requires NEON.
-func VreinterpretqU8U16(a arm.Uint16x8) (dst arm.Uint8x16) {
+func ReinterpretqU8U16(a arm.Uint16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8U32: ARM NEON intrinsic 
+// ReinterpretqU8U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_u32'.
 // Requires NEON.
-func VreinterpretqU8U32(a arm.Uint32x4) (dst arm.Uint8x16) {
+func ReinterpretqU8U32(a arm.Uint32x4) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8U64: ARM NEON intrinsic 
+// ReinterpretqU8U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_u64'.
 // Requires NEON.
-func VreinterpretqU8U64(a arm.Uint64x2) (dst arm.Uint8x16) {
+func ReinterpretqU8U64(a arm.Uint64x2) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8P8: ARM NEON intrinsic 
+// ReinterpretqU8P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_p8'.
 // Requires NEON.
-func VreinterpretqU8P8(a arm.Poly8x16) (dst arm.Uint8x16) {
+func ReinterpretqU8P8(a arm.Poly8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretqU8P16: ARM NEON intrinsic 
+// ReinterpretqU8P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u8_p16'.
 // Requires NEON.
-func VreinterpretqU8P16(a arm.Poly16x8) (dst arm.Uint8x16) {
+func ReinterpretqU8P16(a arm.Poly16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VreinterpretU16F64: ARM NEON intrinsic 
+// ReinterpretU16F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_f64'.
 // Requires NEON.
-func VreinterpretU16F64(a arm.Float64x1) (dst arm.Uint16x4) {
+func ReinterpretU16F64(a arm.Float64x1) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16S8: ARM NEON intrinsic 
+// ReinterpretU16S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_s8'.
 // Requires NEON.
-func VreinterpretU16S8(a arm.Int8x8) (dst arm.Uint16x4) {
+func ReinterpretU16S8(a arm.Int8x8) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16S16: ARM NEON intrinsic 
+// ReinterpretU16S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_s16'.
 // Requires NEON.
-func VreinterpretU16S16(a arm.Int16x4) (dst arm.Uint16x4) {
+func ReinterpretU16S16(a arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16S32: ARM NEON intrinsic 
+// ReinterpretU16S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_s32'.
 // Requires NEON.
-func VreinterpretU16S32(a arm.Int32x2) (dst arm.Uint16x4) {
+func ReinterpretU16S32(a arm.Int32x2) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16S64: ARM NEON intrinsic 
+// ReinterpretU16S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_s64'.
 // Requires NEON.
-func VreinterpretU16S64(a arm.Int64x1) (dst arm.Uint16x4) {
+func ReinterpretU16S64(a arm.Int64x1) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16F32: ARM NEON intrinsic 
+// ReinterpretU16F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_f32'.
 // Requires NEON.
-func VreinterpretU16F32(a arm.Float32x2) (dst arm.Uint16x4) {
+func ReinterpretU16F32(a arm.Float32x2) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16U8: ARM NEON intrinsic 
+// ReinterpretU16U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_u8'.
 // Requires NEON.
-func VreinterpretU16U8(a arm.Uint8x8) (dst arm.Uint16x4) {
+func ReinterpretU16U8(a arm.Uint8x8) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16U32: ARM NEON intrinsic 
+// ReinterpretU16U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_u32'.
 // Requires NEON.
-func VreinterpretU16U32(a arm.Uint32x2) (dst arm.Uint16x4) {
+func ReinterpretU16U32(a arm.Uint32x2) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16U64: ARM NEON intrinsic 
+// ReinterpretU16U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_u64'.
 // Requires NEON.
-func VreinterpretU16U64(a arm.Uint64x1) (dst arm.Uint16x4) {
+func ReinterpretU16U64(a arm.Uint64x1) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16P8: ARM NEON intrinsic 
+// ReinterpretU16P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_p8'.
 // Requires NEON.
-func VreinterpretU16P8(a arm.Poly8x8) (dst arm.Uint16x4) {
+func ReinterpretU16P8(a arm.Poly8x8) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretU16P16: ARM NEON intrinsic 
+// ReinterpretU16P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u16_p16'.
 // Requires NEON.
-func VreinterpretU16P16(a arm.Poly16x4) (dst arm.Uint16x4) {
+func ReinterpretU16P16(a arm.Poly16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VreinterpretqU16F64: ARM NEON intrinsic 
+// ReinterpretqU16F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_f64'.
 // Requires NEON.
-func VreinterpretqU16F64(a arm.Float64x2) (dst arm.Uint16x8) {
+func ReinterpretqU16F64(a arm.Float64x2) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16S8: ARM NEON intrinsic 
+// ReinterpretqU16S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_s8'.
 // Requires NEON.
-func VreinterpretqU16S8(a arm.Int8x16) (dst arm.Uint16x8) {
+func ReinterpretqU16S8(a arm.Int8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16S16: ARM NEON intrinsic 
+// ReinterpretqU16S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_s16'.
 // Requires NEON.
-func VreinterpretqU16S16(a arm.Int16x8) (dst arm.Uint16x8) {
+func ReinterpretqU16S16(a arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16S32: ARM NEON intrinsic 
+// ReinterpretqU16S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_s32'.
 // Requires NEON.
-func VreinterpretqU16S32(a arm.Int32x4) (dst arm.Uint16x8) {
+func ReinterpretqU16S32(a arm.Int32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16S64: ARM NEON intrinsic 
+// ReinterpretqU16S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_s64'.
 // Requires NEON.
-func VreinterpretqU16S64(a arm.Int64x2) (dst arm.Uint16x8) {
+func ReinterpretqU16S64(a arm.Int64x2) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16F32: ARM NEON intrinsic 
+// ReinterpretqU16F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_f32'.
 // Requires NEON.
-func VreinterpretqU16F32(a arm.Float32x4) (dst arm.Uint16x8) {
+func ReinterpretqU16F32(a arm.Float32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16U8: ARM NEON intrinsic 
+// ReinterpretqU16U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_u8'.
 // Requires NEON.
-func VreinterpretqU16U8(a arm.Uint8x16) (dst arm.Uint16x8) {
+func ReinterpretqU16U8(a arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16U32: ARM NEON intrinsic 
+// ReinterpretqU16U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_u32'.
 // Requires NEON.
-func VreinterpretqU16U32(a arm.Uint32x4) (dst arm.Uint16x8) {
+func ReinterpretqU16U32(a arm.Uint32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16U64: ARM NEON intrinsic 
+// ReinterpretqU16U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_u64'.
 // Requires NEON.
-func VreinterpretqU16U64(a arm.Uint64x2) (dst arm.Uint16x8) {
+func ReinterpretqU16U64(a arm.Uint64x2) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16P8: ARM NEON intrinsic 
+// ReinterpretqU16P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_p8'.
 // Requires NEON.
-func VreinterpretqU16P8(a arm.Poly8x16) (dst arm.Uint16x8) {
+func ReinterpretqU16P8(a arm.Poly8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretqU16P16: ARM NEON intrinsic 
+// ReinterpretqU16P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u16_p16'.
 // Requires NEON.
-func VreinterpretqU16P16(a arm.Poly16x8) (dst arm.Uint16x8) {
+func ReinterpretqU16P16(a arm.Poly16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VreinterpretU32F64: ARM NEON intrinsic 
+// ReinterpretU32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_f64'.
 // Requires NEON.
-func VreinterpretU32F64(a arm.Float64x1) (dst arm.Uint32x2) {
+func ReinterpretU32F64(a arm.Float64x1) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32S8: ARM NEON intrinsic 
+// ReinterpretU32S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_s8'.
 // Requires NEON.
-func VreinterpretU32S8(a arm.Int8x8) (dst arm.Uint32x2) {
+func ReinterpretU32S8(a arm.Int8x8) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32S16: ARM NEON intrinsic 
+// ReinterpretU32S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_s16'.
 // Requires NEON.
-func VreinterpretU32S16(a arm.Int16x4) (dst arm.Uint32x2) {
+func ReinterpretU32S16(a arm.Int16x4) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32S32: ARM NEON intrinsic 
+// ReinterpretU32S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_s32'.
 // Requires NEON.
-func VreinterpretU32S32(a arm.Int32x2) (dst arm.Uint32x2) {
+func ReinterpretU32S32(a arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32S64: ARM NEON intrinsic 
+// ReinterpretU32S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_s64'.
 // Requires NEON.
-func VreinterpretU32S64(a arm.Int64x1) (dst arm.Uint32x2) {
+func ReinterpretU32S64(a arm.Int64x1) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32F32: ARM NEON intrinsic 
+// ReinterpretU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_f32'.
 // Requires NEON.
-func VreinterpretU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
+func ReinterpretU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32U8: ARM NEON intrinsic 
+// ReinterpretU32U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_u8'.
 // Requires NEON.
-func VreinterpretU32U8(a arm.Uint8x8) (dst arm.Uint32x2) {
+func ReinterpretU32U8(a arm.Uint8x8) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32U16: ARM NEON intrinsic 
+// ReinterpretU32U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_u16'.
 // Requires NEON.
-func VreinterpretU32U16(a arm.Uint16x4) (dst arm.Uint32x2) {
+func ReinterpretU32U16(a arm.Uint16x4) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32U64: ARM NEON intrinsic 
+// ReinterpretU32U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_u64'.
 // Requires NEON.
-func VreinterpretU32U64(a arm.Uint64x1) (dst arm.Uint32x2) {
+func ReinterpretU32U64(a arm.Uint64x1) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32P8: ARM NEON intrinsic 
+// ReinterpretU32P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_p8'.
 // Requires NEON.
-func VreinterpretU32P8(a arm.Poly8x8) (dst arm.Uint32x2) {
+func ReinterpretU32P8(a arm.Poly8x8) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretU32P16: ARM NEON intrinsic 
+// ReinterpretU32P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpret_u32_p16'.
 // Requires NEON.
-func VreinterpretU32P16(a arm.Poly16x4) (dst arm.Uint32x2) {
+func ReinterpretU32P16(a arm.Poly16x4) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VreinterpretqU32F64: ARM NEON intrinsic 
+// ReinterpretqU32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_f64'.
 // Requires NEON.
-func VreinterpretqU32F64(a arm.Float64x2) (dst arm.Uint32x4) {
+func ReinterpretqU32F64(a arm.Float64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32S8: ARM NEON intrinsic 
+// ReinterpretqU32S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_s8'.
 // Requires NEON.
-func VreinterpretqU32S8(a arm.Int8x16) (dst arm.Uint32x4) {
+func ReinterpretqU32S8(a arm.Int8x16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32S16: ARM NEON intrinsic 
+// ReinterpretqU32S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_s16'.
 // Requires NEON.
-func VreinterpretqU32S16(a arm.Int16x8) (dst arm.Uint32x4) {
+func ReinterpretqU32S16(a arm.Int16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32S32: ARM NEON intrinsic 
+// ReinterpretqU32S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_s32'.
 // Requires NEON.
-func VreinterpretqU32S32(a arm.Int32x4) (dst arm.Uint32x4) {
+func ReinterpretqU32S32(a arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32S64: ARM NEON intrinsic 
+// ReinterpretqU32S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_s64'.
 // Requires NEON.
-func VreinterpretqU32S64(a arm.Int64x2) (dst arm.Uint32x4) {
+func ReinterpretqU32S64(a arm.Int64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32F32: ARM NEON intrinsic 
+// ReinterpretqU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_f32'.
 // Requires NEON.
-func VreinterpretqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
+func ReinterpretqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32U8: ARM NEON intrinsic 
+// ReinterpretqU32U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_u8'.
 // Requires NEON.
-func VreinterpretqU32U8(a arm.Uint8x16) (dst arm.Uint32x4) {
+func ReinterpretqU32U8(a arm.Uint8x16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32U16: ARM NEON intrinsic 
+// ReinterpretqU32U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_u16'.
 // Requires NEON.
-func VreinterpretqU32U16(a arm.Uint16x8) (dst arm.Uint32x4) {
+func ReinterpretqU32U16(a arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32U64: ARM NEON intrinsic 
+// ReinterpretqU32U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_u64'.
 // Requires NEON.
-func VreinterpretqU32U64(a arm.Uint64x2) (dst arm.Uint32x4) {
+func ReinterpretqU32U64(a arm.Uint64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32P8: ARM NEON intrinsic 
+// ReinterpretqU32P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_p8'.
 // Requires NEON.
-func VreinterpretqU32P8(a arm.Poly8x16) (dst arm.Uint32x4) {
+func ReinterpretqU32P8(a arm.Poly8x16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VreinterpretqU32P16: ARM NEON intrinsic 
+// ReinterpretqU32P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vreinterpretq_u32_p16'.
 // Requires NEON.
-func VreinterpretqU32P16(a arm.Poly16x8) (dst arm.Uint32x4) {
+func ReinterpretqU32P16(a arm.Poly16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsetLaneF32: ARM NEON intrinsic 
+// SetLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneF32(elem float32, vec arm.Float32x2, index int) (dst arm.Float32x2) {
+func SetLaneF32(elem float32, vec arm.Float32x2, index int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VsetLaneF64: ARM NEON intrinsic 
+// SetLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneF64(elem float64, vec arm.Float64x1, index int) (dst arm.Float64x1) {
+func SetLaneF64(elem float64, vec arm.Float64x1, index int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VsetLaneP8: ARM NEON intrinsic 
+// SetLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneP8(elem arm.Poly8, vec arm.Poly8x8, index int) (dst arm.Poly8x8) {
+func SetLaneP8(elem arm.Poly8, vec arm.Poly8x8, index int) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VsetLaneP16: ARM NEON intrinsic 
+// SetLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneP16(elem arm.Poly16, vec arm.Poly16x4, index int) (dst arm.Poly16x4) {
+func SetLaneP16(elem arm.Poly16, vec arm.Poly16x4, index int) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VsetLaneS8: ARM NEON intrinsic 
+// SetLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneS8(elem int8, vec arm.Int8x8, index int) (dst arm.Int8x8) {
+func SetLaneS8(elem int8, vec arm.Int8x8, index int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VsetLaneS16: ARM NEON intrinsic 
+// SetLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneS16(elem int16, vec arm.Int16x4, index int) (dst arm.Int16x4) {
+func SetLaneS16(elem int16, vec arm.Int16x4, index int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VsetLaneS32: ARM NEON intrinsic 
+// SetLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneS32(elem int32, vec arm.Int32x2, index int) (dst arm.Int32x2) {
+func SetLaneS32(elem int32, vec arm.Int32x2, index int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VsetLaneS64: ARM NEON intrinsic 
+// SetLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneS64(elem int64, vec arm.Int64x1, index int) (dst arm.Int64x1) {
+func SetLaneS64(elem int64, vec arm.Int64x1, index int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VsetLaneU8: ARM NEON intrinsic 
+// SetLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneU8(elem uint8, vec arm.Uint8x8, index int) (dst arm.Uint8x8) {
+func SetLaneU8(elem uint8, vec arm.Uint8x8, index int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VsetLaneU16: ARM NEON intrinsic 
+// SetLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneU16(elem uint16, vec arm.Uint16x4, index int) (dst arm.Uint16x4) {
+func SetLaneU16(elem uint16, vec arm.Uint16x4, index int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VsetLaneU32: ARM NEON intrinsic 
+// SetLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneU32(elem uint32, vec arm.Uint32x2, index int) (dst arm.Uint32x2) {
+func SetLaneU32(elem uint32, vec arm.Uint32x2, index int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VsetLaneU64: ARM NEON intrinsic 
+// SetLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vset_lane_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetLaneU64(elem uint64, vec arm.Uint64x1, index int) (dst arm.Uint64x1) {
+func SetLaneU64(elem uint64, vec arm.Uint64x1, index int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VsetqLaneF32: ARM NEON intrinsic 
+// SetqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneF32(elem float32, vec arm.Float32x4, index int) (dst arm.Float32x4) {
+func SetqLaneF32(elem float32, vec arm.Float32x4, index int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VsetqLaneF64: ARM NEON intrinsic 
+// SetqLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneF64(elem float64, vec arm.Float64x2, index int) (dst arm.Float64x2) {
+func SetqLaneF64(elem float64, vec arm.Float64x2, index int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VsetqLaneP8: ARM NEON intrinsic 
+// SetqLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneP8(elem arm.Poly8, vec arm.Poly8x16, index int) (dst arm.Poly8x16) {
+func SetqLaneP8(elem arm.Poly8, vec arm.Poly8x16, index int) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VsetqLaneP16: ARM NEON intrinsic 
+// SetqLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneP16(elem arm.Poly16, vec arm.Poly16x8, index int) (dst arm.Poly16x8) {
+func SetqLaneP16(elem arm.Poly16, vec arm.Poly16x8, index int) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VsetqLaneS8: ARM NEON intrinsic 
+// SetqLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneS8(elem int8, vec arm.Int8x16, index int) (dst arm.Int8x16) {
+func SetqLaneS8(elem int8, vec arm.Int8x16, index int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VsetqLaneS16: ARM NEON intrinsic 
+// SetqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneS16(elem int16, vec arm.Int16x8, index int) (dst arm.Int16x8) {
+func SetqLaneS16(elem int16, vec arm.Int16x8, index int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsetqLaneS32: ARM NEON intrinsic 
+// SetqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneS32(elem int32, vec arm.Int32x4, index int) (dst arm.Int32x4) {
+func SetqLaneS32(elem int32, vec arm.Int32x4, index int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsetqLaneS64: ARM NEON intrinsic 
+// SetqLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneS64(elem int64, vec arm.Int64x2, index int) (dst arm.Int64x2) {
+func SetqLaneS64(elem int64, vec arm.Int64x2, index int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsetqLaneU8: ARM NEON intrinsic 
+// SetqLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneU8(elem uint8, vec arm.Uint8x16, index int) (dst arm.Uint8x16) {
+func SetqLaneU8(elem uint8, vec arm.Uint8x16, index int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VsetqLaneU16: ARM NEON intrinsic 
+// SetqLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneU16(elem uint16, vec arm.Uint16x8, index int) (dst arm.Uint16x8) {
+func SetqLaneU16(elem uint16, vec arm.Uint16x8, index int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsetqLaneU32: ARM NEON intrinsic 
+// SetqLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneU32(elem uint32, vec arm.Uint32x4, index int) (dst arm.Uint32x4) {
+func SetqLaneU32(elem uint32, vec arm.Uint32x4, index int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsetqLaneU64: ARM NEON intrinsic 
+// SetqLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsetq_lane_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsetqLaneU64(elem uint64, vec arm.Uint64x2, index int) (dst arm.Uint64x2) {
+func SetqLaneU64(elem uint64, vec arm.Uint64x2, index int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VgetLowF32: ARM NEON intrinsic 
+// GetLowF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_f32'.
 // Requires NEON.
-func VgetLowF32(a arm.Float32x4) (dst arm.Float32x2) {
+func GetLowF32(a arm.Float32x4) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VgetLowF64: ARM NEON intrinsic 
+// GetLowF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_f64'.
 // Requires NEON.
-func VgetLowF64(a arm.Float64x2) (dst arm.Float64x1) {
+func GetLowF64(a arm.Float64x2) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VgetLowP8: ARM NEON intrinsic 
+// GetLowP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_p8'.
 // Requires NEON.
-func VgetLowP8(a arm.Poly8x16) (dst arm.Poly8x8) {
+func GetLowP8(a arm.Poly8x16) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VgetLowP16: ARM NEON intrinsic 
+// GetLowP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_p16'.
 // Requires NEON.
-func VgetLowP16(a arm.Poly16x8) (dst arm.Poly16x4) {
+func GetLowP16(a arm.Poly16x8) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VgetLowS8: ARM NEON intrinsic 
+// GetLowS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_s8'.
 // Requires NEON.
-func VgetLowS8(a arm.Int8x16) (dst arm.Int8x8) {
+func GetLowS8(a arm.Int8x16) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VgetLowS16: ARM NEON intrinsic 
+// GetLowS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_s16'.
 // Requires NEON.
-func VgetLowS16(a arm.Int16x8) (dst arm.Int16x4) {
+func GetLowS16(a arm.Int16x8) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VgetLowS32: ARM NEON intrinsic 
+// GetLowS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_s32'.
 // Requires NEON.
-func VgetLowS32(a arm.Int32x4) (dst arm.Int32x2) {
+func GetLowS32(a arm.Int32x4) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VgetLowS64: ARM NEON intrinsic 
+// GetLowS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_s64'.
 // Requires NEON.
-func VgetLowS64(a arm.Int64x2) (dst arm.Int64x1) {
+func GetLowS64(a arm.Int64x2) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VgetLowU8: ARM NEON intrinsic 
+// GetLowU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_u8'.
 // Requires NEON.
-func VgetLowU8(a arm.Uint8x16) (dst arm.Uint8x8) {
+func GetLowU8(a arm.Uint8x16) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VgetLowU16: ARM NEON intrinsic 
+// GetLowU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_u16'.
 // Requires NEON.
-func VgetLowU16(a arm.Uint16x8) (dst arm.Uint16x4) {
+func GetLowU16(a arm.Uint16x8) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VgetLowU32: ARM NEON intrinsic 
+// GetLowU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_u32'.
 // Requires NEON.
-func VgetLowU32(a arm.Uint32x4) (dst arm.Uint32x2) {
+func GetLowU32(a arm.Uint32x4) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VgetLowU64: ARM NEON intrinsic 
+// GetLowU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_low_u64'.
 // Requires NEON.
-func VgetLowU64(a arm.Uint64x2) (dst arm.Uint64x1) {
+func GetLowU64(a arm.Uint64x2) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VgetHighF32: ARM NEON intrinsic 
+// GetHighF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_f32'.
 // Requires NEON.
-func VgetHighF32(a arm.Float32x4) (dst arm.Float32x2) {
+func GetHighF32(a arm.Float32x4) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VgetHighF64: ARM NEON intrinsic 
+// GetHighF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_f64'.
 // Requires NEON.
-func VgetHighF64(a arm.Float64x2) (dst arm.Float64x1) {
+func GetHighF64(a arm.Float64x2) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VgetHighP8: ARM NEON intrinsic 
+// GetHighP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_p8'.
 // Requires NEON.
-func VgetHighP8(a arm.Poly8x16) (dst arm.Poly8x8) {
+func GetHighP8(a arm.Poly8x16) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VgetHighP16: ARM NEON intrinsic 
+// GetHighP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_p16'.
 // Requires NEON.
-func VgetHighP16(a arm.Poly16x8) (dst arm.Poly16x4) {
+func GetHighP16(a arm.Poly16x8) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VgetHighS8: ARM NEON intrinsic 
+// GetHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_s8'.
 // Requires NEON.
-func VgetHighS8(a arm.Int8x16) (dst arm.Int8x8) {
+func GetHighS8(a arm.Int8x16) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VgetHighS16: ARM NEON intrinsic 
+// GetHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_s16'.
 // Requires NEON.
-func VgetHighS16(a arm.Int16x8) (dst arm.Int16x4) {
+func GetHighS16(a arm.Int16x8) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VgetHighS32: ARM NEON intrinsic 
+// GetHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_s32'.
 // Requires NEON.
-func VgetHighS32(a arm.Int32x4) (dst arm.Int32x2) {
+func GetHighS32(a arm.Int32x4) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VgetHighS64: ARM NEON intrinsic 
+// GetHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_s64'.
 // Requires NEON.
-func VgetHighS64(a arm.Int64x2) (dst arm.Int64x1) {
+func GetHighS64(a arm.Int64x2) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VgetHighU8: ARM NEON intrinsic 
+// GetHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_u8'.
 // Requires NEON.
-func VgetHighU8(a arm.Uint8x16) (dst arm.Uint8x8) {
+func GetHighU8(a arm.Uint8x16) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VgetHighU16: ARM NEON intrinsic 
+// GetHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_u16'.
 // Requires NEON.
-func VgetHighU16(a arm.Uint16x8) (dst arm.Uint16x4) {
+func GetHighU16(a arm.Uint16x8) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VgetHighU32: ARM NEON intrinsic 
+// GetHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_u32'.
 // Requires NEON.
-func VgetHighU32(a arm.Uint32x4) (dst arm.Uint32x2) {
+func GetHighU32(a arm.Uint32x4) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VgetHighU64: ARM NEON intrinsic 
+// GetHighU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vget_high_u64'.
 // Requires NEON.
-func VgetHighU64(a arm.Uint64x2) (dst arm.Uint64x1) {
+func GetHighU64(a arm.Uint64x2) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcombineS8: ARM NEON intrinsic 
+// CombineS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_s8'.
 // Requires NEON.
-func VcombineS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x16) {
+func CombineS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VcombineS16: ARM NEON intrinsic 
+// CombineS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_s16'.
 // Requires NEON.
-func VcombineS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x8) {
+func CombineS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VcombineS32: ARM NEON intrinsic 
+// CombineS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_s32'.
 // Requires NEON.
-func VcombineS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x4) {
+func CombineS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VcombineS64: ARM NEON intrinsic 
+// CombineS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_s64'.
 // Requires NEON.
-func VcombineS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x2) {
+func CombineS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VcombineF32: ARM NEON intrinsic 
+// CombineF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_f32'.
 // Requires NEON.
-func VcombineF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x4) {
+func CombineF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VcombineU8: ARM NEON intrinsic 
+// CombineU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_u8'.
 // Requires NEON.
-func VcombineU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x16) {
+func CombineU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcombineU16: ARM NEON intrinsic 
+// CombineU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_u16'.
 // Requires NEON.
-func VcombineU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x8) {
+func CombineU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcombineU32: ARM NEON intrinsic 
+// CombineU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_u32'.
 // Requires NEON.
-func VcombineU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x4) {
+func CombineU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcombineU64: ARM NEON intrinsic 
+// CombineU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_u64'.
 // Requires NEON.
-func VcombineU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x2) {
+func CombineU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcombineF64: ARM NEON intrinsic 
+// CombineF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_f64'.
 // Requires NEON.
-func VcombineF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x2) {
+func CombineF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VcombineP8: ARM NEON intrinsic 
+// CombineP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_p8'.
 // Requires NEON.
-func VcombineP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x16) {
+func CombineP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VcombineP16: ARM NEON intrinsic 
+// CombineP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcombine_p16'.
 // Requires NEON.
-func VcombineP16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x8) {
+func CombineP16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VabaS8: ARM NEON intrinsic 
+// AbaS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaba_s8'.
 // Requires NEON.
-func VabaS8(a arm.Int8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
+func AbaS8(a arm.Int8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VabaS16: ARM NEON intrinsic 
+// AbaS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaba_s16'.
 // Requires NEON.
-func VabaS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
+func AbaS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VabaS32: ARM NEON intrinsic 
+// AbaS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaba_s32'.
 // Requires NEON.
-func VabaS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
+func AbaS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VabaU8: ARM NEON intrinsic 
+// AbaU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaba_u8'.
 // Requires NEON.
-func VabaU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
+func AbaU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VabaU16: ARM NEON intrinsic 
+// AbaU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaba_u16'.
 // Requires NEON.
-func VabaU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
+func AbaU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VabaU32: ARM NEON intrinsic 
+// AbaU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaba_u32'.
 // Requires NEON.
-func VabaU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
+func AbaU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VabalHighS8: ARM NEON intrinsic 
+// AbalHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_high_s8'.
 // Requires NEON.
-func VabalHighS8(a arm.Int16x8, b arm.Int8x16, c arm.Int8x16) (dst arm.Int16x8) {
+func AbalHighS8(a arm.Int16x8, b arm.Int8x16, c arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VabalHighS16: ARM NEON intrinsic 
+// AbalHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_high_s16'.
 // Requires NEON.
-func VabalHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
+func AbalHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VabalHighS32: ARM NEON intrinsic 
+// AbalHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_high_s32'.
 // Requires NEON.
-func VabalHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
+func AbalHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VabalHighU8: ARM NEON intrinsic 
+// AbalHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_high_u8'.
 // Requires NEON.
-func VabalHighU8(a arm.Uint16x8, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint16x8) {
+func AbalHighU8(a arm.Uint16x8, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VabalHighU16: ARM NEON intrinsic 
+// AbalHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_high_u16'.
 // Requires NEON.
-func VabalHighU16(a arm.Uint32x4, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint32x4) {
+func AbalHighU16(a arm.Uint32x4, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VabalHighU32: ARM NEON intrinsic 
+// AbalHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_high_u32'.
 // Requires NEON.
-func VabalHighU32(a arm.Uint64x2, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint64x2) {
+func AbalHighU32(a arm.Uint64x2, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VabalS8: ARM NEON intrinsic 
+// AbalS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_s8'.
 // Requires NEON.
-func VabalS8(a arm.Int16x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int16x8) {
+func AbalS8(a arm.Int16x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VabalS16: ARM NEON intrinsic 
+// AbalS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_s16'.
 // Requires NEON.
-func VabalS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
+func AbalS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VabalS32: ARM NEON intrinsic 
+// AbalS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_s32'.
 // Requires NEON.
-func VabalS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
+func AbalS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VabalU8: ARM NEON intrinsic 
+// AbalU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_u8'.
 // Requires NEON.
-func VabalU8(a arm.Uint16x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint16x8) {
+func AbalU8(a arm.Uint16x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VabalU16: ARM NEON intrinsic 
+// AbalU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_u16'.
 // Requires NEON.
-func VabalU16(a arm.Uint32x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint32x4) {
+func AbalU16(a arm.Uint32x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VabalU32: ARM NEON intrinsic 
+// AbalU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabal_u32'.
 // Requires NEON.
-func VabalU32(a arm.Uint64x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint64x2) {
+func AbalU32(a arm.Uint64x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VabaqS8: ARM NEON intrinsic 
+// AbaqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabaq_s8'.
 // Requires NEON.
-func VabaqS8(a arm.Int8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
+func AbaqS8(a arm.Int8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VabaqS16: ARM NEON intrinsic 
+// AbaqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabaq_s16'.
 // Requires NEON.
-func VabaqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
+func AbaqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VabaqS32: ARM NEON intrinsic 
+// AbaqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabaq_s32'.
 // Requires NEON.
-func VabaqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
+func AbaqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VabaqU8: ARM NEON intrinsic 
+// AbaqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabaq_u8'.
 // Requires NEON.
-func VabaqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
+func AbaqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VabaqU16: ARM NEON intrinsic 
+// AbaqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabaq_u16'.
 // Requires NEON.
-func VabaqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
+func AbaqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VabaqU32: ARM NEON intrinsic 
+// AbaqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabaq_u32'.
 // Requires NEON.
-func VabaqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
+func AbaqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VabdF32: ARM NEON intrinsic 
+// AbdF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabd_f32'.
 // Requires NEON.
-func VabdF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func AbdF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VabdS8: ARM NEON intrinsic 
+// AbdS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabd_s8'.
 // Requires NEON.
-func VabdS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func AbdS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VabdS16: ARM NEON intrinsic 
+// AbdS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabd_s16'.
 // Requires NEON.
-func VabdS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func AbdS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VabdS32: ARM NEON intrinsic 
+// AbdS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabd_s32'.
 // Requires NEON.
-func VabdS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func AbdS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VabdU8: ARM NEON intrinsic 
+// AbdU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabd_u8'.
 // Requires NEON.
-func VabdU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func AbdU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VabdU16: ARM NEON intrinsic 
+// AbdU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabd_u16'.
 // Requires NEON.
-func VabdU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func AbdU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VabdU32: ARM NEON intrinsic 
+// AbdU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabd_u32'.
 // Requires NEON.
-func VabdU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func AbdU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VabddF64: ARM NEON intrinsic 
+// AbddF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdd_f64'.
 // Requires NEON.
-func VabddF64(a float64, b float64) float64 {
+func AbddF64(a float64, b float64) float64 {
 	return 0
 }
 
-// VabdlHighS8: ARM NEON intrinsic 
+// AbdlHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_high_s8'.
 // Requires NEON.
-func VabdlHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
+func AbdlHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VabdlHighS16: ARM NEON intrinsic 
+// AbdlHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_high_s16'.
 // Requires NEON.
-func VabdlHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
+func AbdlHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VabdlHighS32: ARM NEON intrinsic 
+// AbdlHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_high_s32'.
 // Requires NEON.
-func VabdlHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
+func AbdlHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VabdlHighU8: ARM NEON intrinsic 
+// AbdlHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_high_u8'.
 // Requires NEON.
-func VabdlHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
+func AbdlHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VabdlHighU16: ARM NEON intrinsic 
+// AbdlHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_high_u16'.
 // Requires NEON.
-func VabdlHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
+func AbdlHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VabdlHighU32: ARM NEON intrinsic 
+// AbdlHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_high_u32'.
 // Requires NEON.
-func VabdlHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
+func AbdlHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VabdlS8: ARM NEON intrinsic 
+// AbdlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_s8'.
 // Requires NEON.
-func VabdlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
+func AbdlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VabdlS16: ARM NEON intrinsic 
+// AbdlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_s16'.
 // Requires NEON.
-func VabdlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
+func AbdlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VabdlS32: ARM NEON intrinsic 
+// AbdlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_s32'.
 // Requires NEON.
-func VabdlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
+func AbdlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VabdlU8: ARM NEON intrinsic 
+// AbdlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_u8'.
 // Requires NEON.
-func VabdlU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
+func AbdlU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VabdlU16: ARM NEON intrinsic 
+// AbdlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_u16'.
 // Requires NEON.
-func VabdlU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
+func AbdlU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VabdlU32: ARM NEON intrinsic 
+// AbdlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdl_u32'.
 // Requires NEON.
-func VabdlU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
+func AbdlU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VabdqF32: ARM NEON intrinsic 
+// AbdqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_f32'.
 // Requires NEON.
-func VabdqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func AbdqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VabdqF64: ARM NEON intrinsic 
+// AbdqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_f64'.
 // Requires NEON.
-func VabdqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func AbdqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VabdqS8: ARM NEON intrinsic 
+// AbdqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_s8'.
 // Requires NEON.
-func VabdqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func AbdqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VabdqS16: ARM NEON intrinsic 
+// AbdqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_s16'.
 // Requires NEON.
-func VabdqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func AbdqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VabdqS32: ARM NEON intrinsic 
+// AbdqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_s32'.
 // Requires NEON.
-func VabdqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func AbdqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VabdqU8: ARM NEON intrinsic 
+// AbdqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_u8'.
 // Requires NEON.
-func VabdqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func AbdqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VabdqU16: ARM NEON intrinsic 
+// AbdqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_u16'.
 // Requires NEON.
-func VabdqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func AbdqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VabdqU32: ARM NEON intrinsic 
+// AbdqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabdq_u32'.
 // Requires NEON.
-func VabdqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func AbdqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VabdsF32: ARM NEON intrinsic 
+// AbdsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabds_f32'.
 // Requires NEON.
-func VabdsF32(a float32, b float32) float32 {
+func AbdsF32(a float32, b float32) float32 {
 	return 0
 }
 
-// VaddlvS8: ARM NEON intrinsic 
+// AddlvS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlv_s8'.
 // Requires NEON.
-func VaddlvS8(a arm.Int8x8) int16 {
+func AddlvS8(a arm.Int8x8) int16 {
 	return 0
 }
 
-// VaddlvS16: ARM NEON intrinsic 
+// AddlvS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlv_s16'.
 // Requires NEON.
-func VaddlvS16(a arm.Int16x4) int32 {
+func AddlvS16(a arm.Int16x4) int32 {
 	return 0
 }
 
-// VaddlvU8: ARM NEON intrinsic 
+// AddlvU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlv_u8'.
 // Requires NEON.
-func VaddlvU8(a arm.Uint8x8) uint16 {
+func AddlvU8(a arm.Uint8x8) uint16 {
 	return 0
 }
 
-// VaddlvU16: ARM NEON intrinsic 
+// AddlvU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlv_u16'.
 // Requires NEON.
-func VaddlvU16(a arm.Uint16x4) uint32 {
+func AddlvU16(a arm.Uint16x4) uint32 {
 	return 0
 }
 
-// VaddlvqS8: ARM NEON intrinsic 
+// AddlvqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlvq_s8'.
 // Requires NEON.
-func VaddlvqS8(a arm.Int8x16) int16 {
+func AddlvqS8(a arm.Int8x16) int16 {
 	return 0
 }
 
-// VaddlvqS16: ARM NEON intrinsic 
+// AddlvqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlvq_s16'.
 // Requires NEON.
-func VaddlvqS16(a arm.Int16x8) int32 {
+func AddlvqS16(a arm.Int16x8) int32 {
 	return 0
 }
 
-// VaddlvqS32: ARM NEON intrinsic 
+// AddlvqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlvq_s32'.
 // Requires NEON.
-func VaddlvqS32(a arm.Int32x4) int64 {
+func AddlvqS32(a arm.Int32x4) int64 {
 	return 0
 }
 
-// VaddlvqU8: ARM NEON intrinsic 
+// AddlvqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlvq_u8'.
 // Requires NEON.
-func VaddlvqU8(a arm.Uint8x16) uint16 {
+func AddlvqU8(a arm.Uint8x16) uint16 {
 	return 0
 }
 
-// VaddlvqU16: ARM NEON intrinsic 
+// AddlvqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlvq_u16'.
 // Requires NEON.
-func VaddlvqU16(a arm.Uint16x8) uint32 {
+func AddlvqU16(a arm.Uint16x8) uint32 {
 	return 0
 }
 
-// VaddlvqU32: ARM NEON intrinsic 
+// AddlvqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlvq_u32'.
 // Requires NEON.
-func VaddlvqU32(a arm.Uint32x4) uint64 {
+func AddlvqU32(a arm.Uint32x4) uint64 {
 	return 0
 }
 
-// VcvtxF32F64: ARM NEON intrinsic 
+// CvtxF32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtx_f32_f64'.
 // Requires NEON.
-func VcvtxF32F64(a arm.Float64x2) (dst arm.Float32x2) {
+func CvtxF32F64(a arm.Float64x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VcvtxHighF32F64: ARM NEON intrinsic 
+// CvtxHighF32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtx_high_f32_f64'.
 // Requires NEON.
-func VcvtxHighF32F64(a arm.Float32x2, b arm.Float64x2) (dst arm.Float32x4) {
+func CvtxHighF32F64(a arm.Float32x2, b arm.Float64x2) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VcvtxdF32F64: ARM NEON intrinsic 
+// CvtxdF32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtxd_f32_f64'.
 // Requires NEON.
-func VcvtxdF32F64(a float64) float32 {
+func CvtxdF32F64(a float64) float32 {
 	return 0
 }
 
-// VmlaNF32: ARM NEON intrinsic 
+// MlaNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_n_f32'.
 // Requires NEON.
-func VmlaNF32(a arm.Float32x2, b arm.Float32x2, c float32) (dst arm.Float32x2) {
+func MlaNF32(a arm.Float32x2, b arm.Float32x2, c float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlaNS16: ARM NEON intrinsic 
+// MlaNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_n_s16'.
 // Requires NEON.
-func VmlaNS16(a arm.Int16x4, b arm.Int16x4, c int16) (dst arm.Int16x4) {
+func MlaNS16(a arm.Int16x4, b arm.Int16x4, c int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlaNS32: ARM NEON intrinsic 
+// MlaNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_n_s32'.
 // Requires NEON.
-func VmlaNS32(a arm.Int32x2, b arm.Int32x2, c int32) (dst arm.Int32x2) {
+func MlaNS32(a arm.Int32x2, b arm.Int32x2, c int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlaNU16: ARM NEON intrinsic 
+// MlaNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_n_u16'.
 // Requires NEON.
-func VmlaNU16(a arm.Uint16x4, b arm.Uint16x4, c uint16) (dst arm.Uint16x4) {
+func MlaNU16(a arm.Uint16x4, b arm.Uint16x4, c uint16) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlaNU32: ARM NEON intrinsic 
+// MlaNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_n_u32'.
 // Requires NEON.
-func VmlaNU32(a arm.Uint32x2, b arm.Uint32x2, c uint32) (dst arm.Uint32x2) {
+func MlaNU32(a arm.Uint32x2, b arm.Uint32x2, c uint32) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlaS8: ARM NEON intrinsic 
+// MlaS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_s8'.
 // Requires NEON.
-func VmlaS8(a arm.Int8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
+func MlaS8(a arm.Int8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VmlaS16: ARM NEON intrinsic 
+// MlaS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_s16'.
 // Requires NEON.
-func VmlaS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
+func MlaS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlaS32: ARM NEON intrinsic 
+// MlaS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_s32'.
 // Requires NEON.
-func VmlaS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
+func MlaS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlaU8: ARM NEON intrinsic 
+// MlaU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_u8'.
 // Requires NEON.
-func VmlaU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
+func MlaU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VmlaU16: ARM NEON intrinsic 
+// MlaU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_u16'.
 // Requires NEON.
-func VmlaU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
+func MlaU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlaU32: ARM NEON intrinsic 
+// MlaU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_u32'.
 // Requires NEON.
-func VmlaU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
+func MlaU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlalHighNS16: ARM NEON intrinsic 
+// MlalHighNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_n_s16'.
 // Requires NEON.
-func VmlalHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
+func MlalHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlalHighNS32: ARM NEON intrinsic 
+// MlalHighNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_n_s32'.
 // Requires NEON.
-func VmlalHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
+func MlalHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlalHighNU16: ARM NEON intrinsic 
+// MlalHighNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_n_u16'.
 // Requires NEON.
-func VmlalHighNU16(a arm.Uint32x4, b arm.Uint16x8, c uint16) (dst arm.Uint32x4) {
+func MlalHighNU16(a arm.Uint32x4, b arm.Uint16x8, c uint16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlalHighNU32: ARM NEON intrinsic 
+// MlalHighNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_n_u32'.
 // Requires NEON.
-func VmlalHighNU32(a arm.Uint64x2, b arm.Uint32x4, c uint32) (dst arm.Uint64x2) {
+func MlalHighNU32(a arm.Uint64x2, b arm.Uint32x4, c uint32) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlalHighS8: ARM NEON intrinsic 
+// MlalHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_s8'.
 // Requires NEON.
-func VmlalHighS8(a arm.Int16x8, b arm.Int8x16, c arm.Int8x16) (dst arm.Int16x8) {
+func MlalHighS8(a arm.Int16x8, b arm.Int8x16, c arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlalHighS16: ARM NEON intrinsic 
+// MlalHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_s16'.
 // Requires NEON.
-func VmlalHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
+func MlalHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlalHighS32: ARM NEON intrinsic 
+// MlalHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_s32'.
 // Requires NEON.
-func VmlalHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
+func MlalHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlalHighU8: ARM NEON intrinsic 
+// MlalHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_u8'.
 // Requires NEON.
-func VmlalHighU8(a arm.Uint16x8, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint16x8) {
+func MlalHighU8(a arm.Uint16x8, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlalHighU16: ARM NEON intrinsic 
+// MlalHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_u16'.
 // Requires NEON.
-func VmlalHighU16(a arm.Uint32x4, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint32x4) {
+func MlalHighU16(a arm.Uint32x4, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlalHighU32: ARM NEON intrinsic 
+// MlalHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_high_u32'.
 // Requires NEON.
-func VmlalHighU32(a arm.Uint64x2, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint64x2) {
+func MlalHighU32(a arm.Uint64x2, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlalNS16: ARM NEON intrinsic 
+// MlalNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_n_s16'.
 // Requires NEON.
-func VmlalNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
+func MlalNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlalNS32: ARM NEON intrinsic 
+// MlalNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_n_s32'.
 // Requires NEON.
-func VmlalNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
+func MlalNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlalNU16: ARM NEON intrinsic 
+// MlalNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_n_u16'.
 // Requires NEON.
-func VmlalNU16(a arm.Uint32x4, b arm.Uint16x4, c uint16) (dst arm.Uint32x4) {
+func MlalNU16(a arm.Uint32x4, b arm.Uint16x4, c uint16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlalNU32: ARM NEON intrinsic 
+// MlalNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_n_u32'.
 // Requires NEON.
-func VmlalNU32(a arm.Uint64x2, b arm.Uint32x2, c uint32) (dst arm.Uint64x2) {
+func MlalNU32(a arm.Uint64x2, b arm.Uint32x2, c uint32) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlalS8: ARM NEON intrinsic 
+// MlalS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_s8'.
 // Requires NEON.
-func VmlalS8(a arm.Int16x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int16x8) {
+func MlalS8(a arm.Int16x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlalS16: ARM NEON intrinsic 
+// MlalS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_s16'.
 // Requires NEON.
-func VmlalS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
+func MlalS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlalS32: ARM NEON intrinsic 
+// MlalS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_s32'.
 // Requires NEON.
-func VmlalS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
+func MlalS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlalU8: ARM NEON intrinsic 
+// MlalU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_u8'.
 // Requires NEON.
-func VmlalU8(a arm.Uint16x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint16x8) {
+func MlalU8(a arm.Uint16x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlalU16: ARM NEON intrinsic 
+// MlalU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_u16'.
 // Requires NEON.
-func VmlalU16(a arm.Uint32x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint32x4) {
+func MlalU16(a arm.Uint32x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlalU32: ARM NEON intrinsic 
+// MlalU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlal_u32'.
 // Requires NEON.
-func VmlalU32(a arm.Uint64x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint64x2) {
+func MlalU32(a arm.Uint64x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlaqNF32: ARM NEON intrinsic 
+// MlaqNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_n_f32'.
 // Requires NEON.
-func VmlaqNF32(a arm.Float32x4, b arm.Float32x4, c float32) (dst arm.Float32x4) {
+func MlaqNF32(a arm.Float32x4, b arm.Float32x4, c float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlaqNS16: ARM NEON intrinsic 
+// MlaqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_n_s16'.
 // Requires NEON.
-func VmlaqNS16(a arm.Int16x8, b arm.Int16x8, c int16) (dst arm.Int16x8) {
+func MlaqNS16(a arm.Int16x8, b arm.Int16x8, c int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlaqNS32: ARM NEON intrinsic 
+// MlaqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_n_s32'.
 // Requires NEON.
-func VmlaqNS32(a arm.Int32x4, b arm.Int32x4, c int32) (dst arm.Int32x4) {
+func MlaqNS32(a arm.Int32x4, b arm.Int32x4, c int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlaqNU16: ARM NEON intrinsic 
+// MlaqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_n_u16'.
 // Requires NEON.
-func VmlaqNU16(a arm.Uint16x8, b arm.Uint16x8, c uint16) (dst arm.Uint16x8) {
+func MlaqNU16(a arm.Uint16x8, b arm.Uint16x8, c uint16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlaqNU32: ARM NEON intrinsic 
+// MlaqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_n_u32'.
 // Requires NEON.
-func VmlaqNU32(a arm.Uint32x4, b arm.Uint32x4, c uint32) (dst arm.Uint32x4) {
+func MlaqNU32(a arm.Uint32x4, b arm.Uint32x4, c uint32) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlaqS8: ARM NEON intrinsic 
+// MlaqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_s8'.
 // Requires NEON.
-func VmlaqS8(a arm.Int8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
+func MlaqS8(a arm.Int8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VmlaqS16: ARM NEON intrinsic 
+// MlaqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_s16'.
 // Requires NEON.
-func VmlaqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
+func MlaqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlaqS32: ARM NEON intrinsic 
+// MlaqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_s32'.
 // Requires NEON.
-func VmlaqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
+func MlaqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlaqU8: ARM NEON intrinsic 
+// MlaqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_u8'.
 // Requires NEON.
-func VmlaqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
+func MlaqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VmlaqU16: ARM NEON intrinsic 
+// MlaqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_u16'.
 // Requires NEON.
-func VmlaqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
+func MlaqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlaqU32: ARM NEON intrinsic 
+// MlaqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_u32'.
 // Requires NEON.
-func VmlaqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
+func MlaqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlsNF32: ARM NEON intrinsic 
+// MlsNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_n_f32'.
 // Requires NEON.
-func VmlsNF32(a arm.Float32x2, b arm.Float32x2, c float32) (dst arm.Float32x2) {
+func MlsNF32(a arm.Float32x2, b arm.Float32x2, c float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlsNS16: ARM NEON intrinsic 
+// MlsNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_n_s16'.
 // Requires NEON.
-func VmlsNS16(a arm.Int16x4, b arm.Int16x4, c int16) (dst arm.Int16x4) {
+func MlsNS16(a arm.Int16x4, b arm.Int16x4, c int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlsNS32: ARM NEON intrinsic 
+// MlsNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_n_s32'.
 // Requires NEON.
-func VmlsNS32(a arm.Int32x2, b arm.Int32x2, c int32) (dst arm.Int32x2) {
+func MlsNS32(a arm.Int32x2, b arm.Int32x2, c int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlsNU16: ARM NEON intrinsic 
+// MlsNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_n_u16'.
 // Requires NEON.
-func VmlsNU16(a arm.Uint16x4, b arm.Uint16x4, c uint16) (dst arm.Uint16x4) {
+func MlsNU16(a arm.Uint16x4, b arm.Uint16x4, c uint16) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlsNU32: ARM NEON intrinsic 
+// MlsNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_n_u32'.
 // Requires NEON.
-func VmlsNU32(a arm.Uint32x2, b arm.Uint32x2, c uint32) (dst arm.Uint32x2) {
+func MlsNU32(a arm.Uint32x2, b arm.Uint32x2, c uint32) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlsS8: ARM NEON intrinsic 
+// MlsS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_s8'.
 // Requires NEON.
-func VmlsS8(a arm.Int8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
+func MlsS8(a arm.Int8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VmlsS16: ARM NEON intrinsic 
+// MlsS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_s16'.
 // Requires NEON.
-func VmlsS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
+func MlsS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlsS32: ARM NEON intrinsic 
+// MlsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_s32'.
 // Requires NEON.
-func VmlsS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
+func MlsS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlsU8: ARM NEON intrinsic 
+// MlsU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_u8'.
 // Requires NEON.
-func VmlsU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
+func MlsU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VmlsU16: ARM NEON intrinsic 
+// MlsU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_u16'.
 // Requires NEON.
-func VmlsU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
+func MlsU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlsU32: ARM NEON intrinsic 
+// MlsU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_u32'.
 // Requires NEON.
-func VmlsU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
+func MlsU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlslHighNS16: ARM NEON intrinsic 
+// MlslHighNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_n_s16'.
 // Requires NEON.
-func VmlslHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
+func MlslHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlslHighNS32: ARM NEON intrinsic 
+// MlslHighNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_n_s32'.
 // Requires NEON.
-func VmlslHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
+func MlslHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlslHighNU16: ARM NEON intrinsic 
+// MlslHighNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_n_u16'.
 // Requires NEON.
-func VmlslHighNU16(a arm.Uint32x4, b arm.Uint16x8, c uint16) (dst arm.Uint32x4) {
+func MlslHighNU16(a arm.Uint32x4, b arm.Uint16x8, c uint16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlslHighNU32: ARM NEON intrinsic 
+// MlslHighNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_n_u32'.
 // Requires NEON.
-func VmlslHighNU32(a arm.Uint64x2, b arm.Uint32x4, c uint32) (dst arm.Uint64x2) {
+func MlslHighNU32(a arm.Uint64x2, b arm.Uint32x4, c uint32) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlslHighS8: ARM NEON intrinsic 
+// MlslHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_s8'.
 // Requires NEON.
-func VmlslHighS8(a arm.Int16x8, b arm.Int8x16, c arm.Int8x16) (dst arm.Int16x8) {
+func MlslHighS8(a arm.Int16x8, b arm.Int8x16, c arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlslHighS16: ARM NEON intrinsic 
+// MlslHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_s16'.
 // Requires NEON.
-func VmlslHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
+func MlslHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlslHighS32: ARM NEON intrinsic 
+// MlslHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_s32'.
 // Requires NEON.
-func VmlslHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
+func MlslHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlslHighU8: ARM NEON intrinsic 
+// MlslHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_u8'.
 // Requires NEON.
-func VmlslHighU8(a arm.Uint16x8, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint16x8) {
+func MlslHighU8(a arm.Uint16x8, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlslHighU16: ARM NEON intrinsic 
+// MlslHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_u16'.
 // Requires NEON.
-func VmlslHighU16(a arm.Uint32x4, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint32x4) {
+func MlslHighU16(a arm.Uint32x4, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlslHighU32: ARM NEON intrinsic 
+// MlslHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_high_u32'.
 // Requires NEON.
-func VmlslHighU32(a arm.Uint64x2, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint64x2) {
+func MlslHighU32(a arm.Uint64x2, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlslNS16: ARM NEON intrinsic 
+// MlslNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_n_s16'.
 // Requires NEON.
-func VmlslNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
+func MlslNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlslNS32: ARM NEON intrinsic 
+// MlslNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_n_s32'.
 // Requires NEON.
-func VmlslNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
+func MlslNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlslNU16: ARM NEON intrinsic 
+// MlslNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_n_u16'.
 // Requires NEON.
-func VmlslNU16(a arm.Uint32x4, b arm.Uint16x4, c uint16) (dst arm.Uint32x4) {
+func MlslNU16(a arm.Uint32x4, b arm.Uint16x4, c uint16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlslNU32: ARM NEON intrinsic 
+// MlslNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_n_u32'.
 // Requires NEON.
-func VmlslNU32(a arm.Uint64x2, b arm.Uint32x2, c uint32) (dst arm.Uint64x2) {
+func MlslNU32(a arm.Uint64x2, b arm.Uint32x2, c uint32) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlslS8: ARM NEON intrinsic 
+// MlslS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_s8'.
 // Requires NEON.
-func VmlslS8(a arm.Int16x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int16x8) {
+func MlslS8(a arm.Int16x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlslS16: ARM NEON intrinsic 
+// MlslS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_s16'.
 // Requires NEON.
-func VmlslS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
+func MlslS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlslS32: ARM NEON intrinsic 
+// MlslS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_s32'.
 // Requires NEON.
-func VmlslS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
+func MlslS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmlslU8: ARM NEON intrinsic 
+// MlslU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_u8'.
 // Requires NEON.
-func VmlslU8(a arm.Uint16x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint16x8) {
+func MlslU8(a arm.Uint16x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlslU16: ARM NEON intrinsic 
+// MlslU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_u16'.
 // Requires NEON.
-func VmlslU16(a arm.Uint32x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint32x4) {
+func MlslU16(a arm.Uint32x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlslU32: ARM NEON intrinsic 
+// MlslU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsl_u32'.
 // Requires NEON.
-func VmlslU32(a arm.Uint64x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint64x2) {
+func MlslU32(a arm.Uint64x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmlsqNF32: ARM NEON intrinsic 
+// MlsqNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_n_f32'.
 // Requires NEON.
-func VmlsqNF32(a arm.Float32x4, b arm.Float32x4, c float32) (dst arm.Float32x4) {
+func MlsqNF32(a arm.Float32x4, b arm.Float32x4, c float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlsqNS16: ARM NEON intrinsic 
+// MlsqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_n_s16'.
 // Requires NEON.
-func VmlsqNS16(a arm.Int16x8, b arm.Int16x8, c int16) (dst arm.Int16x8) {
+func MlsqNS16(a arm.Int16x8, b arm.Int16x8, c int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlsqNS32: ARM NEON intrinsic 
+// MlsqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_n_s32'.
 // Requires NEON.
-func VmlsqNS32(a arm.Int32x4, b arm.Int32x4, c int32) (dst arm.Int32x4) {
+func MlsqNS32(a arm.Int32x4, b arm.Int32x4, c int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlsqNU16: ARM NEON intrinsic 
+// MlsqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_n_u16'.
 // Requires NEON.
-func VmlsqNU16(a arm.Uint16x8, b arm.Uint16x8, c uint16) (dst arm.Uint16x8) {
+func MlsqNU16(a arm.Uint16x8, b arm.Uint16x8, c uint16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlsqNU32: ARM NEON intrinsic 
+// MlsqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_n_u32'.
 // Requires NEON.
-func VmlsqNU32(a arm.Uint32x4, b arm.Uint32x4, c uint32) (dst arm.Uint32x4) {
+func MlsqNU32(a arm.Uint32x4, b arm.Uint32x4, c uint32) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlsqS8: ARM NEON intrinsic 
+// MlsqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_s8'.
 // Requires NEON.
-func VmlsqS8(a arm.Int8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
+func MlsqS8(a arm.Int8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VmlsqS16: ARM NEON intrinsic 
+// MlsqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_s16'.
 // Requires NEON.
-func VmlsqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
+func MlsqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlsqS32: ARM NEON intrinsic 
+// MlsqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_s32'.
 // Requires NEON.
-func VmlsqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
+func MlsqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlsqU8: ARM NEON intrinsic 
+// MlsqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_u8'.
 // Requires NEON.
-func VmlsqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
+func MlsqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VmlsqU16: ARM NEON intrinsic 
+// MlsqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_u16'.
 // Requires NEON.
-func VmlsqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
+func MlsqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlsqU32: ARM NEON intrinsic 
+// MlsqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_u32'.
 // Requires NEON.
-func VmlsqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
+func MlsqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmovlHighS8: ARM NEON intrinsic 
+// MovlHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_high_s8'.
 // Requires NEON.
-func VmovlHighS8(a arm.Int8x16) (dst arm.Int16x8) {
+func MovlHighS8(a arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmovlHighS16: ARM NEON intrinsic 
+// MovlHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_high_s16'.
 // Requires NEON.
-func VmovlHighS16(a arm.Int16x8) (dst arm.Int32x4) {
+func MovlHighS16(a arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmovlHighS32: ARM NEON intrinsic 
+// MovlHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_high_s32'.
 // Requires NEON.
-func VmovlHighS32(a arm.Int32x4) (dst arm.Int64x2) {
+func MovlHighS32(a arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmovlHighU8: ARM NEON intrinsic 
+// MovlHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_high_u8'.
 // Requires NEON.
-func VmovlHighU8(a arm.Uint8x16) (dst arm.Uint16x8) {
+func MovlHighU8(a arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmovlHighU16: ARM NEON intrinsic 
+// MovlHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_high_u16'.
 // Requires NEON.
-func VmovlHighU16(a arm.Uint16x8) (dst arm.Uint32x4) {
+func MovlHighU16(a arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmovlHighU32: ARM NEON intrinsic 
+// MovlHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_high_u32'.
 // Requires NEON.
-func VmovlHighU32(a arm.Uint32x4) (dst arm.Uint64x2) {
+func MovlHighU32(a arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmovlS8: ARM NEON intrinsic 
+// MovlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_s8'.
 // Requires NEON.
-func VmovlS8(a arm.Int8x8) (dst arm.Int16x8) {
+func MovlS8(a arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmovlS16: ARM NEON intrinsic 
+// MovlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_s16'.
 // Requires NEON.
-func VmovlS16(a arm.Int16x4) (dst arm.Int32x4) {
+func MovlS16(a arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmovlS32: ARM NEON intrinsic 
+// MovlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_s32'.
 // Requires NEON.
-func VmovlS32(a arm.Int32x2) (dst arm.Int64x2) {
+func MovlS32(a arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmovlU8: ARM NEON intrinsic 
+// MovlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_u8'.
 // Requires NEON.
-func VmovlU8(a arm.Uint8x8) (dst arm.Uint16x8) {
+func MovlU8(a arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmovlU16: ARM NEON intrinsic 
+// MovlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_u16'.
 // Requires NEON.
-func VmovlU16(a arm.Uint16x4) (dst arm.Uint32x4) {
+func MovlU16(a arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmovlU32: ARM NEON intrinsic 
+// MovlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovl_u32'.
 // Requires NEON.
-func VmovlU32(a arm.Uint32x2) (dst arm.Uint64x2) {
+func MovlU32(a arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmovnHighS16: ARM NEON intrinsic 
+// MovnHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_high_s16'.
 // Requires NEON.
-func VmovnHighS16(a arm.Int8x8, b arm.Int16x8) (dst arm.Int8x16) {
+func MovnHighS16(a arm.Int8x8, b arm.Int16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VmovnHighS32: ARM NEON intrinsic 
+// MovnHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_high_s32'.
 // Requires NEON.
-func VmovnHighS32(a arm.Int16x4, b arm.Int32x4) (dst arm.Int16x8) {
+func MovnHighS32(a arm.Int16x4, b arm.Int32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmovnHighS64: ARM NEON intrinsic 
+// MovnHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_high_s64'.
 // Requires NEON.
-func VmovnHighS64(a arm.Int32x2, b arm.Int64x2) (dst arm.Int32x4) {
+func MovnHighS64(a arm.Int32x2, b arm.Int64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmovnHighU16: ARM NEON intrinsic 
+// MovnHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_high_u16'.
 // Requires NEON.
-func VmovnHighU16(a arm.Uint8x8, b arm.Uint16x8) (dst arm.Uint8x16) {
+func MovnHighU16(a arm.Uint8x8, b arm.Uint16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VmovnHighU32: ARM NEON intrinsic 
+// MovnHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_high_u32'.
 // Requires NEON.
-func VmovnHighU32(a arm.Uint16x4, b arm.Uint32x4) (dst arm.Uint16x8) {
+func MovnHighU32(a arm.Uint16x4, b arm.Uint32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmovnHighU64: ARM NEON intrinsic 
+// MovnHighU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_high_u64'.
 // Requires NEON.
-func VmovnHighU64(a arm.Uint32x2, b arm.Uint64x2) (dst arm.Uint32x4) {
+func MovnHighU64(a arm.Uint32x2, b arm.Uint64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmovnS16: ARM NEON intrinsic 
+// MovnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_s16'.
 // Requires NEON.
-func VmovnS16(a arm.Int16x8) (dst arm.Int8x8) {
+func MovnS16(a arm.Int16x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VmovnS32: ARM NEON intrinsic 
+// MovnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_s32'.
 // Requires NEON.
-func VmovnS32(a arm.Int32x4) (dst arm.Int16x4) {
+func MovnS32(a arm.Int32x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmovnS64: ARM NEON intrinsic 
+// MovnS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_s64'.
 // Requires NEON.
-func VmovnS64(a arm.Int64x2) (dst arm.Int32x2) {
+func MovnS64(a arm.Int64x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmovnU16: ARM NEON intrinsic 
+// MovnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_u16'.
 // Requires NEON.
-func VmovnU16(a arm.Uint16x8) (dst arm.Uint8x8) {
+func MovnU16(a arm.Uint16x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VmovnU32: ARM NEON intrinsic 
+// MovnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_u32'.
 // Requires NEON.
-func VmovnU32(a arm.Uint32x4) (dst arm.Uint16x4) {
+func MovnU32(a arm.Uint32x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmovnU64: ARM NEON intrinsic 
+// MovnU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovn_u64'.
 // Requires NEON.
-func VmovnU64(a arm.Uint64x2) (dst arm.Uint32x2) {
+func MovnU64(a arm.Uint64x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmulNF32: ARM NEON intrinsic 
+// MulNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_n_f32'.
 // Requires NEON.
-func VmulNF32(a arm.Float32x2, b float32) (dst arm.Float32x2) {
+func MulNF32(a arm.Float32x2, b float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmulNS16: ARM NEON intrinsic 
+// MulNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_n_s16'.
 // Requires NEON.
-func VmulNS16(a arm.Int16x4, b int16) (dst arm.Int16x4) {
+func MulNS16(a arm.Int16x4, b int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmulNS32: ARM NEON intrinsic 
+// MulNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_n_s32'.
 // Requires NEON.
-func VmulNS32(a arm.Int32x2, b int32) (dst arm.Int32x2) {
+func MulNS32(a arm.Int32x2, b int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmulNU16: ARM NEON intrinsic 
+// MulNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_n_u16'.
 // Requires NEON.
-func VmulNU16(a arm.Uint16x4, b uint16) (dst arm.Uint16x4) {
+func MulNU16(a arm.Uint16x4, b uint16) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmulNU32: ARM NEON intrinsic 
+// MulNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_n_u32'.
 // Requires NEON.
-func VmulNU32(a arm.Uint32x2, b uint32) (dst arm.Uint32x2) {
+func MulNU32(a arm.Uint32x2, b uint32) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmullHighNS16: ARM NEON intrinsic 
+// MullHighNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_n_s16'.
 // Requires NEON.
-func VmullHighNS16(a arm.Int16x8, b int16) (dst arm.Int32x4) {
+func MullHighNS16(a arm.Int16x8, b int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmullHighNS32: ARM NEON intrinsic 
+// MullHighNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_n_s32'.
 // Requires NEON.
-func VmullHighNS32(a arm.Int32x4, b int32) (dst arm.Int64x2) {
+func MullHighNS32(a arm.Int32x4, b int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmullHighNU16: ARM NEON intrinsic 
+// MullHighNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_n_u16'.
 // Requires NEON.
-func VmullHighNU16(a arm.Uint16x8, b uint16) (dst arm.Uint32x4) {
+func MullHighNU16(a arm.Uint16x8, b uint16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmullHighNU32: ARM NEON intrinsic 
+// MullHighNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_n_u32'.
 // Requires NEON.
-func VmullHighNU32(a arm.Uint32x4, b uint32) (dst arm.Uint64x2) {
+func MullHighNU32(a arm.Uint32x4, b uint32) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmullHighP8: ARM NEON intrinsic 
+// MullHighP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_p8'.
 // Requires NEON.
-func VmullHighP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly16x8) {
+func MullHighP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VmullHighS8: ARM NEON intrinsic 
+// MullHighS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_s8'.
 // Requires NEON.
-func VmullHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
+func MullHighS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmullHighS16: ARM NEON intrinsic 
+// MullHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_s16'.
 // Requires NEON.
-func VmullHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
+func MullHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmullHighS32: ARM NEON intrinsic 
+// MullHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_s32'.
 // Requires NEON.
-func VmullHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
+func MullHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmullHighU8: ARM NEON intrinsic 
+// MullHighU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_u8'.
 // Requires NEON.
-func VmullHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
+func MullHighU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmullHighU16: ARM NEON intrinsic 
+// MullHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_u16'.
 // Requires NEON.
-func VmullHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
+func MullHighU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmullHighU32: ARM NEON intrinsic 
+// MullHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_u32'.
 // Requires NEON.
-func VmullHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
+func MullHighU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmullNS16: ARM NEON intrinsic 
+// MullNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_n_s16'.
 // Requires NEON.
-func VmullNS16(a arm.Int16x4, b int16) (dst arm.Int32x4) {
+func MullNS16(a arm.Int16x4, b int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmullNS32: ARM NEON intrinsic 
+// MullNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_n_s32'.
 // Requires NEON.
-func VmullNS32(a arm.Int32x2, b int32) (dst arm.Int64x2) {
+func MullNS32(a arm.Int32x2, b int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmullNU16: ARM NEON intrinsic 
+// MullNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_n_u16'.
 // Requires NEON.
-func VmullNU16(a arm.Uint16x4, b uint16) (dst arm.Uint32x4) {
+func MullNU16(a arm.Uint16x4, b uint16) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmullNU32: ARM NEON intrinsic 
+// MullNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_n_u32'.
 // Requires NEON.
-func VmullNU32(a arm.Uint32x2, b uint32) (dst arm.Uint64x2) {
+func MullNU32(a arm.Uint32x2, b uint32) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmullP8: ARM NEON intrinsic 
+// MullP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_p8'.
 // Requires NEON.
-func VmullP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly16x8) {
+func MullP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VmullS8: ARM NEON intrinsic 
+// MullS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_s8'.
 // Requires NEON.
-func VmullS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
+func MullS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmullS16: ARM NEON intrinsic 
+// MullS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_s16'.
 // Requires NEON.
-func VmullS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
+func MullS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmullS32: ARM NEON intrinsic 
+// MullS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_s32'.
 // Requires NEON.
-func VmullS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
+func MullS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmullU8: ARM NEON intrinsic 
+// MullU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_u8'.
 // Requires NEON.
-func VmullU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
+func MullU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmullU16: ARM NEON intrinsic 
+// MullU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_u16'.
 // Requires NEON.
-func VmullU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
+func MullU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmullU32: ARM NEON intrinsic 
+// MullU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_u32'.
 // Requires NEON.
-func VmullU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
+func MullU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmulqNF32: ARM NEON intrinsic 
+// MulqNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_n_f32'.
 // Requires NEON.
-func VmulqNF32(a arm.Float32x4, b float32) (dst arm.Float32x4) {
+func MulqNF32(a arm.Float32x4, b float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmulqNF64: ARM NEON intrinsic 
+// MulqNF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_n_f64'.
 // Requires NEON.
-func VmulqNF64(a arm.Float64x2, b float64) (dst arm.Float64x2) {
+func MulqNF64(a arm.Float64x2, b float64) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmulqNS16: ARM NEON intrinsic 
+// MulqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_n_s16'.
 // Requires NEON.
-func VmulqNS16(a arm.Int16x8, b int16) (dst arm.Int16x8) {
+func MulqNS16(a arm.Int16x8, b int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmulqNS32: ARM NEON intrinsic 
+// MulqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_n_s32'.
 // Requires NEON.
-func VmulqNS32(a arm.Int32x4, b int32) (dst arm.Int32x4) {
+func MulqNS32(a arm.Int32x4, b int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmulqNU16: ARM NEON intrinsic 
+// MulqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_n_u16'.
 // Requires NEON.
-func VmulqNU16(a arm.Uint16x8, b uint16) (dst arm.Uint16x8) {
+func MulqNU16(a arm.Uint16x8, b uint16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmulqNU32: ARM NEON intrinsic 
+// MulqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_n_u32'.
 // Requires NEON.
-func VmulqNU32(a arm.Uint32x4, b uint32) (dst arm.Uint32x4) {
+func MulqNU32(a arm.Uint32x4, b uint32) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmulxF32: ARM NEON intrinsic 
+// MulxF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulx_f32'.
 // Requires NEON.
-func VmulxF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func MulxF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmulxdF64: ARM NEON intrinsic 
+// MulxdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulxd_f64'.
 // Requires NEON.
-func VmulxdF64(a float64, b float64) float64 {
+func MulxdF64(a float64, b float64) float64 {
 	return 0
 }
 
-// VmulxqF32: ARM NEON intrinsic 
+// MulxqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulxq_f32'.
 // Requires NEON.
-func VmulxqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func MulxqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmulxqF64: ARM NEON intrinsic 
+// MulxqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulxq_f64'.
 // Requires NEON.
-func VmulxqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func MulxqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmulxsF32: ARM NEON intrinsic 
+// MulxsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulxs_f32'.
 // Requires NEON.
-func VmulxsF32(a float32, b float32) float32 {
+func MulxsF32(a float32, b float32) float32 {
 	return 0
 }
 
-// VmvnP8: ARM NEON intrinsic 
+// MvnP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvn_p8'.
 // Requires NEON.
-func VmvnP8(a arm.Poly8x8) (dst arm.Poly8x8) {
+func MvnP8(a arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VmvnS8: ARM NEON intrinsic 
+// MvnS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvn_s8'.
 // Requires NEON.
-func VmvnS8(a arm.Int8x8) (dst arm.Int8x8) {
+func MvnS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VmvnS16: ARM NEON intrinsic 
+// MvnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvn_s16'.
 // Requires NEON.
-func VmvnS16(a arm.Int16x4) (dst arm.Int16x4) {
+func MvnS16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmvnS32: ARM NEON intrinsic 
+// MvnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvn_s32'.
 // Requires NEON.
-func VmvnS32(a arm.Int32x2) (dst arm.Int32x2) {
+func MvnS32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmvnU8: ARM NEON intrinsic 
+// MvnU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvn_u8'.
 // Requires NEON.
-func VmvnU8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func MvnU8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VmvnU16: ARM NEON intrinsic 
+// MvnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvn_u16'.
 // Requires NEON.
-func VmvnU16(a arm.Uint16x4) (dst arm.Uint16x4) {
+func MvnU16(a arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmvnU32: ARM NEON intrinsic 
+// MvnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvn_u32'.
 // Requires NEON.
-func VmvnU32(a arm.Uint32x2) (dst arm.Uint32x2) {
+func MvnU32(a arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmvnqP8: ARM NEON intrinsic 
+// MvnqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvnq_p8'.
 // Requires NEON.
-func VmvnqP8(a arm.Poly8x16) (dst arm.Poly8x16) {
+func MvnqP8(a arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VmvnqS8: ARM NEON intrinsic 
+// MvnqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvnq_s8'.
 // Requires NEON.
-func VmvnqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func MvnqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VmvnqS16: ARM NEON intrinsic 
+// MvnqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvnq_s16'.
 // Requires NEON.
-func VmvnqS16(a arm.Int16x8) (dst arm.Int16x8) {
+func MvnqS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmvnqS32: ARM NEON intrinsic 
+// MvnqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvnq_s32'.
 // Requires NEON.
-func VmvnqS32(a arm.Int32x4) (dst arm.Int32x4) {
+func MvnqS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmvnqU8: ARM NEON intrinsic 
+// MvnqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvnq_u8'.
 // Requires NEON.
-func VmvnqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func MvnqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VmvnqU16: ARM NEON intrinsic 
+// MvnqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvnq_u16'.
 // Requires NEON.
-func VmvnqU16(a arm.Uint16x8) (dst arm.Uint16x8) {
+func MvnqU16(a arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmvnqU32: ARM NEON intrinsic 
+// MvnqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmvnq_u32'.
 // Requires NEON.
-func VmvnqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
+func MvnqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VpadalS8: ARM NEON intrinsic 
+// PadalS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadal_s8'.
 // Requires NEON.
-func VpadalS8(a arm.Int16x4, b arm.Int8x8) (dst arm.Int16x4) {
+func PadalS8(a arm.Int16x4, b arm.Int8x8) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VpadalS16: ARM NEON intrinsic 
+// PadalS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadal_s16'.
 // Requires NEON.
-func VpadalS16(a arm.Int32x2, b arm.Int16x4) (dst arm.Int32x2) {
+func PadalS16(a arm.Int32x2, b arm.Int16x4) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VpadalS32: ARM NEON intrinsic 
+// PadalS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadal_s32'.
 // Requires NEON.
-func VpadalS32(a arm.Int64x1, b arm.Int32x2) (dst arm.Int64x1) {
+func PadalS32(a arm.Int64x1, b arm.Int32x2) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VpadalU8: ARM NEON intrinsic 
+// PadalU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadal_u8'.
 // Requires NEON.
-func VpadalU8(a arm.Uint16x4, b arm.Uint8x8) (dst arm.Uint16x4) {
+func PadalU8(a arm.Uint16x4, b arm.Uint8x8) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VpadalU16: ARM NEON intrinsic 
+// PadalU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadal_u16'.
 // Requires NEON.
-func VpadalU16(a arm.Uint32x2, b arm.Uint16x4) (dst arm.Uint32x2) {
+func PadalU16(a arm.Uint32x2, b arm.Uint16x4) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VpadalU32: ARM NEON intrinsic 
+// PadalU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadal_u32'.
 // Requires NEON.
-func VpadalU32(a arm.Uint64x1, b arm.Uint32x2) (dst arm.Uint64x1) {
+func PadalU32(a arm.Uint64x1, b arm.Uint32x2) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VpadalqS8: ARM NEON intrinsic 
+// PadalqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadalq_s8'.
 // Requires NEON.
-func VpadalqS8(a arm.Int16x8, b arm.Int8x16) (dst arm.Int16x8) {
+func PadalqS8(a arm.Int16x8, b arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VpadalqS16: ARM NEON intrinsic 
+// PadalqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadalq_s16'.
 // Requires NEON.
-func VpadalqS16(a arm.Int32x4, b arm.Int16x8) (dst arm.Int32x4) {
+func PadalqS16(a arm.Int32x4, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VpadalqS32: ARM NEON intrinsic 
+// PadalqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadalq_s32'.
 // Requires NEON.
-func VpadalqS32(a arm.Int64x2, b arm.Int32x4) (dst arm.Int64x2) {
+func PadalqS32(a arm.Int64x2, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VpadalqU8: ARM NEON intrinsic 
+// PadalqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadalq_u8'.
 // Requires NEON.
-func VpadalqU8(a arm.Uint16x8, b arm.Uint8x16) (dst arm.Uint16x8) {
+func PadalqU8(a arm.Uint16x8, b arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VpadalqU16: ARM NEON intrinsic 
+// PadalqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadalq_u16'.
 // Requires NEON.
-func VpadalqU16(a arm.Uint32x4, b arm.Uint16x8) (dst arm.Uint32x4) {
+func PadalqU16(a arm.Uint32x4, b arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VpadalqU32: ARM NEON intrinsic 
+// PadalqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadalq_u32'.
 // Requires NEON.
-func VpadalqU32(a arm.Uint64x2, b arm.Uint32x4) (dst arm.Uint64x2) {
+func PadalqU32(a arm.Uint64x2, b arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VpaddF32: ARM NEON intrinsic 
+// PaddF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadd_f32'.
 // Requires NEON.
-func VpaddF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func PaddF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VpaddlS8: ARM NEON intrinsic 
+// PaddlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddl_s8'.
 // Requires NEON.
-func VpaddlS8(a arm.Int8x8) (dst arm.Int16x4) {
+func PaddlS8(a arm.Int8x8) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VpaddlS16: ARM NEON intrinsic 
+// PaddlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddl_s16'.
 // Requires NEON.
-func VpaddlS16(a arm.Int16x4) (dst arm.Int32x2) {
+func PaddlS16(a arm.Int16x4) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VpaddlS32: ARM NEON intrinsic 
+// PaddlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddl_s32'.
 // Requires NEON.
-func VpaddlS32(a arm.Int32x2) (dst arm.Int64x1) {
+func PaddlS32(a arm.Int32x2) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VpaddlU8: ARM NEON intrinsic 
+// PaddlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddl_u8'.
 // Requires NEON.
-func VpaddlU8(a arm.Uint8x8) (dst arm.Uint16x4) {
+func PaddlU8(a arm.Uint8x8) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VpaddlU16: ARM NEON intrinsic 
+// PaddlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddl_u16'.
 // Requires NEON.
-func VpaddlU16(a arm.Uint16x4) (dst arm.Uint32x2) {
+func PaddlU16(a arm.Uint16x4) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VpaddlU32: ARM NEON intrinsic 
+// PaddlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddl_u32'.
 // Requires NEON.
-func VpaddlU32(a arm.Uint32x2) (dst arm.Uint64x1) {
+func PaddlU32(a arm.Uint32x2) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VpaddlqS8: ARM NEON intrinsic 
+// PaddlqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddlq_s8'.
 // Requires NEON.
-func VpaddlqS8(a arm.Int8x16) (dst arm.Int16x8) {
+func PaddlqS8(a arm.Int8x16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VpaddlqS16: ARM NEON intrinsic 
+// PaddlqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddlq_s16'.
 // Requires NEON.
-func VpaddlqS16(a arm.Int16x8) (dst arm.Int32x4) {
+func PaddlqS16(a arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VpaddlqS32: ARM NEON intrinsic 
+// PaddlqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddlq_s32'.
 // Requires NEON.
-func VpaddlqS32(a arm.Int32x4) (dst arm.Int64x2) {
+func PaddlqS32(a arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VpaddlqU8: ARM NEON intrinsic 
+// PaddlqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddlq_u8'.
 // Requires NEON.
-func VpaddlqU8(a arm.Uint8x16) (dst arm.Uint16x8) {
+func PaddlqU8(a arm.Uint8x16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VpaddlqU16: ARM NEON intrinsic 
+// PaddlqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddlq_u16'.
 // Requires NEON.
-func VpaddlqU16(a arm.Uint16x8) (dst arm.Uint32x4) {
+func PaddlqU16(a arm.Uint16x8) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VpaddlqU32: ARM NEON intrinsic 
+// PaddlqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddlq_u32'.
 // Requires NEON.
-func VpaddlqU32(a arm.Uint32x4) (dst arm.Uint64x2) {
+func PaddlqU32(a arm.Uint32x4) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VpaddqF32: ARM NEON intrinsic 
+// PaddqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_f32'.
 // Requires NEON.
-func VpaddqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func PaddqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VpaddqF64: ARM NEON intrinsic 
+// PaddqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_f64'.
 // Requires NEON.
-func VpaddqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func PaddqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VpaddqS8: ARM NEON intrinsic 
+// PaddqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_s8'.
 // Requires NEON.
-func VpaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func PaddqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VpaddqS16: ARM NEON intrinsic 
+// PaddqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_s16'.
 // Requires NEON.
-func VpaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func PaddqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VpaddqS32: ARM NEON intrinsic 
+// PaddqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_s32'.
 // Requires NEON.
-func VpaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func PaddqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VpaddqS64: ARM NEON intrinsic 
+// PaddqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_s64'.
 // Requires NEON.
-func VpaddqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func PaddqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VpaddqU8: ARM NEON intrinsic 
+// PaddqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_u8'.
 // Requires NEON.
-func VpaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func PaddqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VpaddqU16: ARM NEON intrinsic 
+// PaddqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_u16'.
 // Requires NEON.
-func VpaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func PaddqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VpaddqU32: ARM NEON intrinsic 
+// PaddqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_u32'.
 // Requires NEON.
-func VpaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func PaddqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VpaddqU64: ARM NEON intrinsic 
+// PaddqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddq_u64'.
 // Requires NEON.
-func VpaddqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func PaddqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VpaddsF32: ARM NEON intrinsic 
+// PaddsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadds_f32'.
 // Requires NEON.
-func VpaddsF32(a arm.Float32x2) float32 {
+func PaddsF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VqdmulhNS16: ARM NEON intrinsic 
+// QdmulhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_n_s16'.
 // Requires NEON.
-func VqdmulhNS16(a arm.Int16x4, b int16) (dst arm.Int16x4) {
+func QdmulhNS16(a arm.Int16x4, b int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqdmulhNS32: ARM NEON intrinsic 
+// QdmulhNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_n_s32'.
 // Requires NEON.
-func VqdmulhNS32(a arm.Int32x2, b int32) (dst arm.Int32x2) {
+func QdmulhNS32(a arm.Int32x2, b int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqdmulhqNS16: ARM NEON intrinsic 
+// QdmulhqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_n_s16'.
 // Requires NEON.
-func VqdmulhqNS16(a arm.Int16x8, b int16) (dst arm.Int16x8) {
+func QdmulhqNS16(a arm.Int16x8, b int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqdmulhqNS32: ARM NEON intrinsic 
+// QdmulhqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_n_s32'.
 // Requires NEON.
-func VqdmulhqNS32(a arm.Int32x4, b int32) (dst arm.Int32x4) {
+func QdmulhqNS32(a arm.Int32x4, b int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqmovnHighS16: ARM NEON intrinsic 
+// QmovnHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_high_s16'.
 // Requires NEON.
-func VqmovnHighS16(a arm.Int8x8, b arm.Int16x8) (dst arm.Int8x16) {
+func QmovnHighS16(a arm.Int8x8, b arm.Int16x8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqmovnHighS32: ARM NEON intrinsic 
+// QmovnHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_high_s32'.
 // Requires NEON.
-func VqmovnHighS32(a arm.Int16x4, b arm.Int32x4) (dst arm.Int16x8) {
+func QmovnHighS32(a arm.Int16x4, b arm.Int32x4) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqmovnHighS64: ARM NEON intrinsic 
+// QmovnHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_high_s64'.
 // Requires NEON.
-func VqmovnHighS64(a arm.Int32x2, b arm.Int64x2) (dst arm.Int32x4) {
+func QmovnHighS64(a arm.Int32x2, b arm.Int64x2) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqmovnHighU16: ARM NEON intrinsic 
+// QmovnHighU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_high_u16'.
 // Requires NEON.
-func VqmovnHighU16(a arm.Uint8x8, b arm.Uint16x8) (dst arm.Uint8x16) {
+func QmovnHighU16(a arm.Uint8x8, b arm.Uint16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqmovnHighU32: ARM NEON intrinsic 
+// QmovnHighU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_high_u32'.
 // Requires NEON.
-func VqmovnHighU32(a arm.Uint16x4, b arm.Uint32x4) (dst arm.Uint16x8) {
+func QmovnHighU32(a arm.Uint16x4, b arm.Uint32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqmovnHighU64: ARM NEON intrinsic 
+// QmovnHighU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_high_u64'.
 // Requires NEON.
-func VqmovnHighU64(a arm.Uint32x2, b arm.Uint64x2) (dst arm.Uint32x4) {
+func QmovnHighU64(a arm.Uint32x2, b arm.Uint64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqmovunHighS16: ARM NEON intrinsic 
+// QmovunHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovun_high_s16'.
 // Requires NEON.
-func VqmovunHighS16(a arm.Uint8x8, b arm.Int16x8) (dst arm.Uint8x16) {
+func QmovunHighS16(a arm.Uint8x8, b arm.Int16x8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqmovunHighS32: ARM NEON intrinsic 
+// QmovunHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovun_high_s32'.
 // Requires NEON.
-func VqmovunHighS32(a arm.Uint16x4, b arm.Int32x4) (dst arm.Uint16x8) {
+func QmovunHighS32(a arm.Uint16x4, b arm.Int32x4) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqmovunHighS64: ARM NEON intrinsic 
+// QmovunHighS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovun_high_s64'.
 // Requires NEON.
-func VqmovunHighS64(a arm.Uint32x2, b arm.Int64x2) (dst arm.Uint32x4) {
+func QmovunHighS64(a arm.Uint32x2, b arm.Int64x2) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqrdmulhNS16: ARM NEON intrinsic 
+// QrdmulhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_n_s16'.
 // Requires NEON.
-func VqrdmulhNS16(a arm.Int16x4, b int16) (dst arm.Int16x4) {
+func QrdmulhNS16(a arm.Int16x4, b int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqrdmulhNS32: ARM NEON intrinsic 
+// QrdmulhNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_n_s32'.
 // Requires NEON.
-func VqrdmulhNS32(a arm.Int32x2, b int32) (dst arm.Int32x2) {
+func QrdmulhNS32(a arm.Int32x2, b int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqrdmulhqNS16: ARM NEON intrinsic 
+// QrdmulhqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_n_s16'.
 // Requires NEON.
-func VqrdmulhqNS16(a arm.Int16x8, b int16) (dst arm.Int16x8) {
+func QrdmulhqNS16(a arm.Int16x8, b int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqrdmulhqNS32: ARM NEON intrinsic 
+// QrdmulhqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_n_s32'.
 // Requires NEON.
-func VqrdmulhqNS32(a arm.Int32x4, b int32) (dst arm.Int32x4) {
+func QrdmulhqNS32(a arm.Int32x4, b int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VrsqrteF32: ARM NEON intrinsic 
+// RsqrteF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrte_f32'.
 // Requires NEON.
-func VrsqrteF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RsqrteF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrsqrteF64: ARM NEON intrinsic 
+// RsqrteF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrte_f64'.
 // Requires NEON.
-func VrsqrteF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RsqrteF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrsqrteU32: ARM NEON intrinsic 
+// RsqrteU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrte_u32'.
 // Requires NEON.
-func VrsqrteU32(a arm.Uint32x2) (dst arm.Uint32x2) {
+func RsqrteU32(a arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrsqrtedF64: ARM NEON intrinsic 
+// RsqrtedF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrted_f64'.
 // Requires NEON.
-func VrsqrtedF64(a float64) float64 {
+func RsqrtedF64(a float64) float64 {
 	return 0
 }
 
-// VrsqrteqF32: ARM NEON intrinsic 
+// RsqrteqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrteq_f32'.
 // Requires NEON.
-func VrsqrteqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RsqrteqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrsqrteqF64: ARM NEON intrinsic 
+// RsqrteqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrteq_f64'.
 // Requires NEON.
-func VrsqrteqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RsqrteqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrsqrteqU32: ARM NEON intrinsic 
+// RsqrteqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrteq_u32'.
 // Requires NEON.
-func VrsqrteqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
+func RsqrteqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VrsqrtesF32: ARM NEON intrinsic 
+// RsqrtesF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrtes_f32'.
 // Requires NEON.
-func VrsqrtesF32(a float32) float32 {
+func RsqrtesF32(a float32) float32 {
 	return 0
 }
 
-// VrsqrtsF32: ARM NEON intrinsic 
+// RsqrtsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrts_f32'.
 // Requires NEON.
-func VrsqrtsF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func RsqrtsF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrsqrtsdF64: ARM NEON intrinsic 
+// RsqrtsdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrtsd_f64'.
 // Requires NEON.
-func VrsqrtsdF64(a float64, b float64) float64 {
+func RsqrtsdF64(a float64, b float64) float64 {
 	return 0
 }
 
-// VrsqrtsqF32: ARM NEON intrinsic 
+// RsqrtsqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrtsq_f32'.
 // Requires NEON.
-func VrsqrtsqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func RsqrtsqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrsqrtsqF64: ARM NEON intrinsic 
+// RsqrtsqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrtsq_f64'.
 // Requires NEON.
-func VrsqrtsqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func RsqrtsqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrsqrtssF32: ARM NEON intrinsic 
+// RsqrtssF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsqrtss_f32'.
 // Requires NEON.
-func VrsqrtssF32(a float32, b float32) float32 {
+func RsqrtssF32(a float32, b float32) float32 {
 	return 0
 }
 
-// VtstP8: ARM NEON intrinsic 
+// TstP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_p8'.
 // Requires NEON.
-func VtstP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Uint8x8) {
+func TstP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VtstP16: ARM NEON intrinsic 
+// TstP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_p16'.
 // Requires NEON.
-func VtstP16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Uint16x4) {
+func TstP16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VtstqP8: ARM NEON intrinsic 
+// TstqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_p8'.
 // Requires NEON.
-func VtstqP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Uint8x16) {
+func TstqP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VtstqP16: ARM NEON intrinsic 
+// TstqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_p16'.
 // Requires NEON.
-func VtstqP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Uint16x8) {
+func TstqP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vst2LaneF32: ARM NEON intrinsic 
+// St2LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_f32'.
 // Requires NEON.
@@ -7981,11 +7981,11 @@ func VtstqP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneF32(ptr *float32, b [2]arm.Float32x2, c int)  {
+func St2LaneF32(ptr *float32, b [2]arm.Float32x2, c int)  {
 
 }
 
-// Vst2LaneF64: ARM NEON intrinsic 
+// St2LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_f64'.
 // Requires NEON.
@@ -7993,11 +7993,11 @@ func Vst2LaneF32(ptr *float32, b [2]arm.Float32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneF64(ptr *float64, b [2]arm.Float64x1, c int)  {
+func St2LaneF64(ptr *float64, b [2]arm.Float64x1, c int)  {
 
 }
 
-// Vst2LaneP8: ARM NEON intrinsic 
+// St2LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_p8'.
 // Requires NEON.
@@ -8005,11 +8005,11 @@ func Vst2LaneF64(ptr *float64, b [2]arm.Float64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneP8(ptr *arm.Poly8, b [2]arm.Poly8x8, c int)  {
+func St2LaneP8(ptr *arm.Poly8, b [2]arm.Poly8x8, c int)  {
 
 }
 
-// Vst2LaneP16: ARM NEON intrinsic 
+// St2LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_p16'.
 // Requires NEON.
@@ -8017,11 +8017,11 @@ func Vst2LaneP8(ptr *arm.Poly8, b [2]arm.Poly8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneP16(ptr *arm.Poly16, b [2]arm.Poly16x4, c int)  {
+func St2LaneP16(ptr *arm.Poly16, b [2]arm.Poly16x4, c int)  {
 
 }
 
-// Vst2LaneS8: ARM NEON intrinsic 
+// St2LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_s8'.
 // Requires NEON.
@@ -8029,11 +8029,11 @@ func Vst2LaneP16(ptr *arm.Poly16, b [2]arm.Poly16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneS8(ptr *int8, b [2]arm.Int8x8, c int)  {
+func St2LaneS8(ptr *int8, b [2]arm.Int8x8, c int)  {
 
 }
 
-// Vst2LaneS16: ARM NEON intrinsic 
+// St2LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_s16'.
 // Requires NEON.
@@ -8041,11 +8041,11 @@ func Vst2LaneS8(ptr *int8, b [2]arm.Int8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneS16(ptr *int16, b [2]arm.Int16x4, c int)  {
+func St2LaneS16(ptr *int16, b [2]arm.Int16x4, c int)  {
 
 }
 
-// Vst2LaneS32: ARM NEON intrinsic 
+// St2LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_s32'.
 // Requires NEON.
@@ -8053,11 +8053,11 @@ func Vst2LaneS16(ptr *int16, b [2]arm.Int16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneS32(ptr *int32, b [2]arm.Int32x2, c int)  {
+func St2LaneS32(ptr *int32, b [2]arm.Int32x2, c int)  {
 
 }
 
-// Vst2LaneS64: ARM NEON intrinsic 
+// St2LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_s64'.
 // Requires NEON.
@@ -8065,11 +8065,11 @@ func Vst2LaneS32(ptr *int32, b [2]arm.Int32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneS64(ptr *int64, b [2]arm.Int64x1, c int)  {
+func St2LaneS64(ptr *int64, b [2]arm.Int64x1, c int)  {
 
 }
 
-// Vst2LaneU8: ARM NEON intrinsic 
+// St2LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_u8'.
 // Requires NEON.
@@ -8077,11 +8077,11 @@ func Vst2LaneS64(ptr *int64, b [2]arm.Int64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneU8(ptr *uint8, b [2]arm.Uint8x8, c int)  {
+func St2LaneU8(ptr *uint8, b [2]arm.Uint8x8, c int)  {
 
 }
 
-// Vst2LaneU16: ARM NEON intrinsic 
+// St2LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_u16'.
 // Requires NEON.
@@ -8089,11 +8089,11 @@ func Vst2LaneU8(ptr *uint8, b [2]arm.Uint8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneU16(ptr *uint16, b [2]arm.Uint16x4, c int)  {
+func St2LaneU16(ptr *uint16, b [2]arm.Uint16x4, c int)  {
 
 }
 
-// Vst2LaneU32: ARM NEON intrinsic 
+// St2LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_u32'.
 // Requires NEON.
@@ -8101,11 +8101,11 @@ func Vst2LaneU16(ptr *uint16, b [2]arm.Uint16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneU32(ptr *uint32, b [2]arm.Uint32x2, c int)  {
+func St2LaneU32(ptr *uint32, b [2]arm.Uint32x2, c int)  {
 
 }
 
-// Vst2LaneU64: ARM NEON intrinsic 
+// St2LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_lane_u64'.
 // Requires NEON.
@@ -8113,11 +8113,11 @@ func Vst2LaneU32(ptr *uint32, b [2]arm.Uint32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2LaneU64(ptr *uint64, b [2]arm.Uint64x1, c int)  {
+func St2LaneU64(ptr *uint64, b [2]arm.Uint64x1, c int)  {
 
 }
 
-// Vst2qLaneF32: ARM NEON intrinsic 
+// St2qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_f32'.
 // Requires NEON.
@@ -8125,11 +8125,11 @@ func Vst2LaneU64(ptr *uint64, b [2]arm.Uint64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneF32(ptr *float32, b [2]arm.Float32x4, c int)  {
+func St2qLaneF32(ptr *float32, b [2]arm.Float32x4, c int)  {
 
 }
 
-// Vst2qLaneF64: ARM NEON intrinsic 
+// St2qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_f64'.
 // Requires NEON.
@@ -8137,11 +8137,11 @@ func Vst2qLaneF32(ptr *float32, b [2]arm.Float32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneF64(ptr *float64, b [2]arm.Float64x2, c int)  {
+func St2qLaneF64(ptr *float64, b [2]arm.Float64x2, c int)  {
 
 }
 
-// Vst2qLaneP8: ARM NEON intrinsic 
+// St2qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_p8'.
 // Requires NEON.
@@ -8149,11 +8149,11 @@ func Vst2qLaneF64(ptr *float64, b [2]arm.Float64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneP8(ptr *arm.Poly8, b [2]arm.Poly8x16, c int)  {
+func St2qLaneP8(ptr *arm.Poly8, b [2]arm.Poly8x16, c int)  {
 
 }
 
-// Vst2qLaneP16: ARM NEON intrinsic 
+// St2qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_p16'.
 // Requires NEON.
@@ -8161,11 +8161,11 @@ func Vst2qLaneP8(ptr *arm.Poly8, b [2]arm.Poly8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneP16(ptr *arm.Poly16, b [2]arm.Poly16x8, c int)  {
+func St2qLaneP16(ptr *arm.Poly16, b [2]arm.Poly16x8, c int)  {
 
 }
 
-// Vst2qLaneS8: ARM NEON intrinsic 
+// St2qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_s8'.
 // Requires NEON.
@@ -8173,11 +8173,11 @@ func Vst2qLaneP16(ptr *arm.Poly16, b [2]arm.Poly16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneS8(ptr *int8, b [2]arm.Int8x16, c int)  {
+func St2qLaneS8(ptr *int8, b [2]arm.Int8x16, c int)  {
 
 }
 
-// Vst2qLaneS16: ARM NEON intrinsic 
+// St2qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_s16'.
 // Requires NEON.
@@ -8185,11 +8185,11 @@ func Vst2qLaneS8(ptr *int8, b [2]arm.Int8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneS16(ptr *int16, b [2]arm.Int16x8, c int)  {
+func St2qLaneS16(ptr *int16, b [2]arm.Int16x8, c int)  {
 
 }
 
-// Vst2qLaneS32: ARM NEON intrinsic 
+// St2qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_s32'.
 // Requires NEON.
@@ -8197,11 +8197,11 @@ func Vst2qLaneS16(ptr *int16, b [2]arm.Int16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneS32(ptr *int32, b [2]arm.Int32x4, c int)  {
+func St2qLaneS32(ptr *int32, b [2]arm.Int32x4, c int)  {
 
 }
 
-// Vst2qLaneS64: ARM NEON intrinsic 
+// St2qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_s64'.
 // Requires NEON.
@@ -8209,11 +8209,11 @@ func Vst2qLaneS32(ptr *int32, b [2]arm.Int32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneS64(ptr *int64, b [2]arm.Int64x2, c int)  {
+func St2qLaneS64(ptr *int64, b [2]arm.Int64x2, c int)  {
 
 }
 
-// Vst2qLaneU8: ARM NEON intrinsic 
+// St2qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_u8'.
 // Requires NEON.
@@ -8221,11 +8221,11 @@ func Vst2qLaneS64(ptr *int64, b [2]arm.Int64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneU8(ptr *uint8, b [2]arm.Uint8x16, c int)  {
+func St2qLaneU8(ptr *uint8, b [2]arm.Uint8x16, c int)  {
 
 }
 
-// Vst2qLaneU16: ARM NEON intrinsic 
+// St2qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_u16'.
 // Requires NEON.
@@ -8233,11 +8233,11 @@ func Vst2qLaneU8(ptr *uint8, b [2]arm.Uint8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneU16(ptr *uint16, b [2]arm.Uint16x8, c int)  {
+func St2qLaneU16(ptr *uint16, b [2]arm.Uint16x8, c int)  {
 
 }
 
-// Vst2qLaneU32: ARM NEON intrinsic 
+// St2qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_u32'.
 // Requires NEON.
@@ -8245,11 +8245,11 @@ func Vst2qLaneU16(ptr *uint16, b [2]arm.Uint16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneU32(ptr *uint32, b [2]arm.Uint32x4, c int)  {
+func St2qLaneU32(ptr *uint32, b [2]arm.Uint32x4, c int)  {
 
 }
 
-// Vst2qLaneU64: ARM NEON intrinsic 
+// St2qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_lane_u64'.
 // Requires NEON.
@@ -8257,11 +8257,11 @@ func Vst2qLaneU32(ptr *uint32, b [2]arm.Uint32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst2qLaneU64(ptr *uint64, b [2]arm.Uint64x2, c int)  {
+func St2qLaneU64(ptr *uint64, b [2]arm.Uint64x2, c int)  {
 
 }
 
-// Vst3LaneF32: ARM NEON intrinsic 
+// St3LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_f32'.
 // Requires NEON.
@@ -8269,11 +8269,11 @@ func Vst2qLaneU64(ptr *uint64, b [2]arm.Uint64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneF32(ptr *float32, b [3]arm.Float32x2, c int)  {
+func St3LaneF32(ptr *float32, b [3]arm.Float32x2, c int)  {
 
 }
 
-// Vst3LaneF64: ARM NEON intrinsic 
+// St3LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_f64'.
 // Requires NEON.
@@ -8281,11 +8281,11 @@ func Vst3LaneF32(ptr *float32, b [3]arm.Float32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneF64(ptr *float64, b [3]arm.Float64x1, c int)  {
+func St3LaneF64(ptr *float64, b [3]arm.Float64x1, c int)  {
 
 }
 
-// Vst3LaneP8: ARM NEON intrinsic 
+// St3LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_p8'.
 // Requires NEON.
@@ -8293,11 +8293,11 @@ func Vst3LaneF64(ptr *float64, b [3]arm.Float64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneP8(ptr *arm.Poly8, b [3]arm.Poly8x8, c int)  {
+func St3LaneP8(ptr *arm.Poly8, b [3]arm.Poly8x8, c int)  {
 
 }
 
-// Vst3LaneP16: ARM NEON intrinsic 
+// St3LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_p16'.
 // Requires NEON.
@@ -8305,11 +8305,11 @@ func Vst3LaneP8(ptr *arm.Poly8, b [3]arm.Poly8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneP16(ptr *arm.Poly16, b [3]arm.Poly16x4, c int)  {
+func St3LaneP16(ptr *arm.Poly16, b [3]arm.Poly16x4, c int)  {
 
 }
 
-// Vst3LaneS8: ARM NEON intrinsic 
+// St3LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_s8'.
 // Requires NEON.
@@ -8317,11 +8317,11 @@ func Vst3LaneP16(ptr *arm.Poly16, b [3]arm.Poly16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneS8(ptr *int8, b [3]arm.Int8x8, c int)  {
+func St3LaneS8(ptr *int8, b [3]arm.Int8x8, c int)  {
 
 }
 
-// Vst3LaneS16: ARM NEON intrinsic 
+// St3LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_s16'.
 // Requires NEON.
@@ -8329,11 +8329,11 @@ func Vst3LaneS8(ptr *int8, b [3]arm.Int8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneS16(ptr *int16, b [3]arm.Int16x4, c int)  {
+func St3LaneS16(ptr *int16, b [3]arm.Int16x4, c int)  {
 
 }
 
-// Vst3LaneS32: ARM NEON intrinsic 
+// St3LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_s32'.
 // Requires NEON.
@@ -8341,11 +8341,11 @@ func Vst3LaneS16(ptr *int16, b [3]arm.Int16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneS32(ptr *int32, b [3]arm.Int32x2, c int)  {
+func St3LaneS32(ptr *int32, b [3]arm.Int32x2, c int)  {
 
 }
 
-// Vst3LaneS64: ARM NEON intrinsic 
+// St3LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_s64'.
 // Requires NEON.
@@ -8353,11 +8353,11 @@ func Vst3LaneS32(ptr *int32, b [3]arm.Int32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneS64(ptr *int64, b [3]arm.Int64x1, c int)  {
+func St3LaneS64(ptr *int64, b [3]arm.Int64x1, c int)  {
 
 }
 
-// Vst3LaneU8: ARM NEON intrinsic 
+// St3LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_u8'.
 // Requires NEON.
@@ -8365,11 +8365,11 @@ func Vst3LaneS64(ptr *int64, b [3]arm.Int64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneU8(ptr *uint8, b [3]arm.Uint8x8, c int)  {
+func St3LaneU8(ptr *uint8, b [3]arm.Uint8x8, c int)  {
 
 }
 
-// Vst3LaneU16: ARM NEON intrinsic 
+// St3LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_u16'.
 // Requires NEON.
@@ -8377,11 +8377,11 @@ func Vst3LaneU8(ptr *uint8, b [3]arm.Uint8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneU16(ptr *uint16, b [3]arm.Uint16x4, c int)  {
+func St3LaneU16(ptr *uint16, b [3]arm.Uint16x4, c int)  {
 
 }
 
-// Vst3LaneU32: ARM NEON intrinsic 
+// St3LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_u32'.
 // Requires NEON.
@@ -8389,11 +8389,11 @@ func Vst3LaneU16(ptr *uint16, b [3]arm.Uint16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneU32(ptr *uint32, b [3]arm.Uint32x2, c int)  {
+func St3LaneU32(ptr *uint32, b [3]arm.Uint32x2, c int)  {
 
 }
 
-// Vst3LaneU64: ARM NEON intrinsic 
+// St3LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_lane_u64'.
 // Requires NEON.
@@ -8401,11 +8401,11 @@ func Vst3LaneU32(ptr *uint32, b [3]arm.Uint32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3LaneU64(ptr *uint64, b [3]arm.Uint64x1, c int)  {
+func St3LaneU64(ptr *uint64, b [3]arm.Uint64x1, c int)  {
 
 }
 
-// Vst3qLaneF32: ARM NEON intrinsic 
+// St3qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_f32'.
 // Requires NEON.
@@ -8413,11 +8413,11 @@ func Vst3LaneU64(ptr *uint64, b [3]arm.Uint64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneF32(ptr *float32, b [3]arm.Float32x4, c int)  {
+func St3qLaneF32(ptr *float32, b [3]arm.Float32x4, c int)  {
 
 }
 
-// Vst3qLaneF64: ARM NEON intrinsic 
+// St3qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_f64'.
 // Requires NEON.
@@ -8425,11 +8425,11 @@ func Vst3qLaneF32(ptr *float32, b [3]arm.Float32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneF64(ptr *float64, b [3]arm.Float64x2, c int)  {
+func St3qLaneF64(ptr *float64, b [3]arm.Float64x2, c int)  {
 
 }
 
-// Vst3qLaneP8: ARM NEON intrinsic 
+// St3qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_p8'.
 // Requires NEON.
@@ -8437,11 +8437,11 @@ func Vst3qLaneF64(ptr *float64, b [3]arm.Float64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneP8(ptr *arm.Poly8, b [3]arm.Poly8x16, c int)  {
+func St3qLaneP8(ptr *arm.Poly8, b [3]arm.Poly8x16, c int)  {
 
 }
 
-// Vst3qLaneP16: ARM NEON intrinsic 
+// St3qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_p16'.
 // Requires NEON.
@@ -8449,11 +8449,11 @@ func Vst3qLaneP8(ptr *arm.Poly8, b [3]arm.Poly8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneP16(ptr *arm.Poly16, b [3]arm.Poly16x8, c int)  {
+func St3qLaneP16(ptr *arm.Poly16, b [3]arm.Poly16x8, c int)  {
 
 }
 
-// Vst3qLaneS8: ARM NEON intrinsic 
+// St3qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_s8'.
 // Requires NEON.
@@ -8461,11 +8461,11 @@ func Vst3qLaneP16(ptr *arm.Poly16, b [3]arm.Poly16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneS8(ptr *int8, b [3]arm.Int8x16, c int)  {
+func St3qLaneS8(ptr *int8, b [3]arm.Int8x16, c int)  {
 
 }
 
-// Vst3qLaneS16: ARM NEON intrinsic 
+// St3qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_s16'.
 // Requires NEON.
@@ -8473,11 +8473,11 @@ func Vst3qLaneS8(ptr *int8, b [3]arm.Int8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneS16(ptr *int16, b [3]arm.Int16x8, c int)  {
+func St3qLaneS16(ptr *int16, b [3]arm.Int16x8, c int)  {
 
 }
 
-// Vst3qLaneS32: ARM NEON intrinsic 
+// St3qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_s32'.
 // Requires NEON.
@@ -8485,11 +8485,11 @@ func Vst3qLaneS16(ptr *int16, b [3]arm.Int16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneS32(ptr *int32, b [3]arm.Int32x4, c int)  {
+func St3qLaneS32(ptr *int32, b [3]arm.Int32x4, c int)  {
 
 }
 
-// Vst3qLaneS64: ARM NEON intrinsic 
+// St3qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_s64'.
 // Requires NEON.
@@ -8497,11 +8497,11 @@ func Vst3qLaneS32(ptr *int32, b [3]arm.Int32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneS64(ptr *int64, b [3]arm.Int64x2, c int)  {
+func St3qLaneS64(ptr *int64, b [3]arm.Int64x2, c int)  {
 
 }
 
-// Vst3qLaneU8: ARM NEON intrinsic 
+// St3qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_u8'.
 // Requires NEON.
@@ -8509,11 +8509,11 @@ func Vst3qLaneS64(ptr *int64, b [3]arm.Int64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneU8(ptr *uint8, b [3]arm.Uint8x16, c int)  {
+func St3qLaneU8(ptr *uint8, b [3]arm.Uint8x16, c int)  {
 
 }
 
-// Vst3qLaneU16: ARM NEON intrinsic 
+// St3qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_u16'.
 // Requires NEON.
@@ -8521,11 +8521,11 @@ func Vst3qLaneU8(ptr *uint8, b [3]arm.Uint8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneU16(ptr *uint16, b [3]arm.Uint16x8, c int)  {
+func St3qLaneU16(ptr *uint16, b [3]arm.Uint16x8, c int)  {
 
 }
 
-// Vst3qLaneU32: ARM NEON intrinsic 
+// St3qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_u32'.
 // Requires NEON.
@@ -8533,11 +8533,11 @@ func Vst3qLaneU16(ptr *uint16, b [3]arm.Uint16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneU32(ptr *uint32, b [3]arm.Uint32x4, c int)  {
+func St3qLaneU32(ptr *uint32, b [3]arm.Uint32x4, c int)  {
 
 }
 
-// Vst3qLaneU64: ARM NEON intrinsic 
+// St3qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_lane_u64'.
 // Requires NEON.
@@ -8545,11 +8545,11 @@ func Vst3qLaneU32(ptr *uint32, b [3]arm.Uint32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst3qLaneU64(ptr *uint64, b [3]arm.Uint64x2, c int)  {
+func St3qLaneU64(ptr *uint64, b [3]arm.Uint64x2, c int)  {
 
 }
 
-// Vst4LaneF32: ARM NEON intrinsic 
+// St4LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_f32'.
 // Requires NEON.
@@ -8557,11 +8557,11 @@ func Vst3qLaneU64(ptr *uint64, b [3]arm.Uint64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneF32(ptr *float32, b [4]arm.Float32x2, c int)  {
+func St4LaneF32(ptr *float32, b [4]arm.Float32x2, c int)  {
 
 }
 
-// Vst4LaneF64: ARM NEON intrinsic 
+// St4LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_f64'.
 // Requires NEON.
@@ -8569,11 +8569,11 @@ func Vst4LaneF32(ptr *float32, b [4]arm.Float32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneF64(ptr *float64, b [4]arm.Float64x1, c int)  {
+func St4LaneF64(ptr *float64, b [4]arm.Float64x1, c int)  {
 
 }
 
-// Vst4LaneP8: ARM NEON intrinsic 
+// St4LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_p8'.
 // Requires NEON.
@@ -8581,11 +8581,11 @@ func Vst4LaneF64(ptr *float64, b [4]arm.Float64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneP8(ptr *arm.Poly8, b [4]arm.Poly8x8, c int)  {
+func St4LaneP8(ptr *arm.Poly8, b [4]arm.Poly8x8, c int)  {
 
 }
 
-// Vst4LaneP16: ARM NEON intrinsic 
+// St4LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_p16'.
 // Requires NEON.
@@ -8593,11 +8593,11 @@ func Vst4LaneP8(ptr *arm.Poly8, b [4]arm.Poly8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneP16(ptr *arm.Poly16, b [4]arm.Poly16x4, c int)  {
+func St4LaneP16(ptr *arm.Poly16, b [4]arm.Poly16x4, c int)  {
 
 }
 
-// Vst4LaneS8: ARM NEON intrinsic 
+// St4LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_s8'.
 // Requires NEON.
@@ -8605,11 +8605,11 @@ func Vst4LaneP16(ptr *arm.Poly16, b [4]arm.Poly16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneS8(ptr *int8, b [4]arm.Int8x8, c int)  {
+func St4LaneS8(ptr *int8, b [4]arm.Int8x8, c int)  {
 
 }
 
-// Vst4LaneS16: ARM NEON intrinsic 
+// St4LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_s16'.
 // Requires NEON.
@@ -8617,11 +8617,11 @@ func Vst4LaneS8(ptr *int8, b [4]arm.Int8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneS16(ptr *int16, b [4]arm.Int16x4, c int)  {
+func St4LaneS16(ptr *int16, b [4]arm.Int16x4, c int)  {
 
 }
 
-// Vst4LaneS32: ARM NEON intrinsic 
+// St4LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_s32'.
 // Requires NEON.
@@ -8629,11 +8629,11 @@ func Vst4LaneS16(ptr *int16, b [4]arm.Int16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneS32(ptr *int32, b [4]arm.Int32x2, c int)  {
+func St4LaneS32(ptr *int32, b [4]arm.Int32x2, c int)  {
 
 }
 
-// Vst4LaneS64: ARM NEON intrinsic 
+// St4LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_s64'.
 // Requires NEON.
@@ -8641,11 +8641,11 @@ func Vst4LaneS32(ptr *int32, b [4]arm.Int32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneS64(ptr *int64, b [4]arm.Int64x1, c int)  {
+func St4LaneS64(ptr *int64, b [4]arm.Int64x1, c int)  {
 
 }
 
-// Vst4LaneU8: ARM NEON intrinsic 
+// St4LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_u8'.
 // Requires NEON.
@@ -8653,11 +8653,11 @@ func Vst4LaneS64(ptr *int64, b [4]arm.Int64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneU8(ptr *uint8, b [4]arm.Uint8x8, c int)  {
+func St4LaneU8(ptr *uint8, b [4]arm.Uint8x8, c int)  {
 
 }
 
-// Vst4LaneU16: ARM NEON intrinsic 
+// St4LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_u16'.
 // Requires NEON.
@@ -8665,11 +8665,11 @@ func Vst4LaneU8(ptr *uint8, b [4]arm.Uint8x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneU16(ptr *uint16, b [4]arm.Uint16x4, c int)  {
+func St4LaneU16(ptr *uint16, b [4]arm.Uint16x4, c int)  {
 
 }
 
-// Vst4LaneU32: ARM NEON intrinsic 
+// St4LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_u32'.
 // Requires NEON.
@@ -8677,11 +8677,11 @@ func Vst4LaneU16(ptr *uint16, b [4]arm.Uint16x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneU32(ptr *uint32, b [4]arm.Uint32x2, c int)  {
+func St4LaneU32(ptr *uint32, b [4]arm.Uint32x2, c int)  {
 
 }
 
-// Vst4LaneU64: ARM NEON intrinsic 
+// St4LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_lane_u64'.
 // Requires NEON.
@@ -8689,11 +8689,11 @@ func Vst4LaneU32(ptr *uint32, b [4]arm.Uint32x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4LaneU64(ptr *uint64, b [4]arm.Uint64x1, c int)  {
+func St4LaneU64(ptr *uint64, b [4]arm.Uint64x1, c int)  {
 
 }
 
-// Vst4qLaneF32: ARM NEON intrinsic 
+// St4qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_f32'.
 // Requires NEON.
@@ -8701,11 +8701,11 @@ func Vst4LaneU64(ptr *uint64, b [4]arm.Uint64x1, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneF32(ptr *float32, b [4]arm.Float32x4, c int)  {
+func St4qLaneF32(ptr *float32, b [4]arm.Float32x4, c int)  {
 
 }
 
-// Vst4qLaneF64: ARM NEON intrinsic 
+// St4qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_f64'.
 // Requires NEON.
@@ -8713,11 +8713,11 @@ func Vst4qLaneF32(ptr *float32, b [4]arm.Float32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneF64(ptr *float64, b [4]arm.Float64x2, c int)  {
+func St4qLaneF64(ptr *float64, b [4]arm.Float64x2, c int)  {
 
 }
 
-// Vst4qLaneP8: ARM NEON intrinsic 
+// St4qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_p8'.
 // Requires NEON.
@@ -8725,11 +8725,11 @@ func Vst4qLaneF64(ptr *float64, b [4]arm.Float64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneP8(ptr *arm.Poly8, b [4]arm.Poly8x16, c int)  {
+func St4qLaneP8(ptr *arm.Poly8, b [4]arm.Poly8x16, c int)  {
 
 }
 
-// Vst4qLaneP16: ARM NEON intrinsic 
+// St4qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_p16'.
 // Requires NEON.
@@ -8737,11 +8737,11 @@ func Vst4qLaneP8(ptr *arm.Poly8, b [4]arm.Poly8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneP16(ptr *arm.Poly16, b [4]arm.Poly16x8, c int)  {
+func St4qLaneP16(ptr *arm.Poly16, b [4]arm.Poly16x8, c int)  {
 
 }
 
-// Vst4qLaneS8: ARM NEON intrinsic 
+// St4qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_s8'.
 // Requires NEON.
@@ -8749,11 +8749,11 @@ func Vst4qLaneP16(ptr *arm.Poly16, b [4]arm.Poly16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneS8(ptr *int8, b [4]arm.Int8x16, c int)  {
+func St4qLaneS8(ptr *int8, b [4]arm.Int8x16, c int)  {
 
 }
 
-// Vst4qLaneS16: ARM NEON intrinsic 
+// St4qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_s16'.
 // Requires NEON.
@@ -8761,11 +8761,11 @@ func Vst4qLaneS8(ptr *int8, b [4]arm.Int8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneS16(ptr *int16, b [4]arm.Int16x8, c int)  {
+func St4qLaneS16(ptr *int16, b [4]arm.Int16x8, c int)  {
 
 }
 
-// Vst4qLaneS32: ARM NEON intrinsic 
+// St4qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_s32'.
 // Requires NEON.
@@ -8773,11 +8773,11 @@ func Vst4qLaneS16(ptr *int16, b [4]arm.Int16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneS32(ptr *int32, b [4]arm.Int32x4, c int)  {
+func St4qLaneS32(ptr *int32, b [4]arm.Int32x4, c int)  {
 
 }
 
-// Vst4qLaneS64: ARM NEON intrinsic 
+// St4qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_s64'.
 // Requires NEON.
@@ -8785,11 +8785,11 @@ func Vst4qLaneS32(ptr *int32, b [4]arm.Int32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneS64(ptr *int64, b [4]arm.Int64x2, c int)  {
+func St4qLaneS64(ptr *int64, b [4]arm.Int64x2, c int)  {
 
 }
 
-// Vst4qLaneU8: ARM NEON intrinsic 
+// St4qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_u8'.
 // Requires NEON.
@@ -8797,11 +8797,11 @@ func Vst4qLaneS64(ptr *int64, b [4]arm.Int64x2, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneU8(ptr *uint8, b [4]arm.Uint8x16, c int)  {
+func St4qLaneU8(ptr *uint8, b [4]arm.Uint8x16, c int)  {
 
 }
 
-// Vst4qLaneU16: ARM NEON intrinsic 
+// St4qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_u16'.
 // Requires NEON.
@@ -8809,11 +8809,11 @@ func Vst4qLaneU8(ptr *uint8, b [4]arm.Uint8x16, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneU16(ptr *uint16, b [4]arm.Uint16x8, c int)  {
+func St4qLaneU16(ptr *uint16, b [4]arm.Uint16x8, c int)  {
 
 }
 
-// Vst4qLaneU32: ARM NEON intrinsic 
+// St4qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_u32'.
 // Requires NEON.
@@ -8821,11 +8821,11 @@ func Vst4qLaneU16(ptr *uint16, b [4]arm.Uint16x8, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneU32(ptr *uint32, b [4]arm.Uint32x4, c int)  {
+func St4qLaneU32(ptr *uint32, b [4]arm.Uint32x4, c int)  {
 
 }
 
-// Vst4qLaneU64: ARM NEON intrinsic 
+// St4qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_lane_u64'.
 // Requires NEON.
@@ -8833,5147 +8833,5147 @@ func Vst4qLaneU32(ptr *uint32, b [4]arm.Uint32x4, c int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst4qLaneU64(ptr *uint64, b [4]arm.Uint64x2, c int)  {
+func St4qLaneU64(ptr *uint64, b [4]arm.Uint64x2, c int)  {
 
 }
 
-// VaddlvS32: ARM NEON intrinsic 
+// AddlvS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlv_s32'.
 // Requires NEON.
-func VaddlvS32(a arm.Int32x2) int64 {
+func AddlvS32(a arm.Int32x2) int64 {
 	return 0
 }
 
-// VaddlvU32: ARM NEON intrinsic 
+// AddlvU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddlv_u32'.
 // Requires NEON.
-func VaddlvU32(a arm.Uint32x2) uint64 {
+func AddlvU32(a arm.Uint32x2) uint64 {
 	return 0
 }
 
-// VqdmulhLaneqS16: ARM NEON intrinsic 
+// QdmulhLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhLaneqS16(a arm.Int16x4, b arm.Int16x8, c int) (dst arm.Int16x4) {
+func QdmulhLaneqS16(a arm.Int16x4, b arm.Int16x8, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqdmulhLaneqS32: ARM NEON intrinsic 
+// QdmulhLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhLaneqS32(a arm.Int32x2, b arm.Int32x4, c int) (dst arm.Int32x2) {
+func QdmulhLaneqS32(a arm.Int32x2, b arm.Int32x4, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqdmulhqLaneqS16: ARM NEON intrinsic 
+// QdmulhqLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhqLaneqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
+func QdmulhqLaneqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqdmulhqLaneqS32: ARM NEON intrinsic 
+// QdmulhqLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhqLaneqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
+func QdmulhqLaneqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqrdmulhLaneqS16: ARM NEON intrinsic 
+// QrdmulhLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhLaneqS16(a arm.Int16x4, b arm.Int16x8, c int) (dst arm.Int16x4) {
+func QrdmulhLaneqS16(a arm.Int16x4, b arm.Int16x8, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqrdmulhLaneqS32: ARM NEON intrinsic 
+// QrdmulhLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhLaneqS32(a arm.Int32x2, b arm.Int32x4, c int) (dst arm.Int32x2) {
+func QrdmulhLaneqS32(a arm.Int32x2, b arm.Int32x4, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqrdmulhqLaneqS16: ARM NEON intrinsic 
+// QrdmulhqLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhqLaneqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
+func QrdmulhqLaneqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqrdmulhqLaneqS32: ARM NEON intrinsic 
+// QrdmulhqLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhqLaneqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
+func QrdmulhqLaneqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vqtbl1P8: ARM NEON intrinsic 
+// Qtbl1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl1_p8'.
 // Requires NEON.
-func Vqtbl1P8(a arm.Poly8x16, b arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbl1P8(a arm.Poly8x16, b arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbl1S8: ARM NEON intrinsic 
+// Qtbl1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl1_s8'.
 // Requires NEON.
-func Vqtbl1S8(a arm.Int8x16, b arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbl1S8(a arm.Int8x16, b arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbl1U8: ARM NEON intrinsic 
+// Qtbl1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl1_u8'.
 // Requires NEON.
-func Vqtbl1U8(a arm.Uint8x16, b arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbl1U8(a arm.Uint8x16, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbl1qP8: ARM NEON intrinsic 
+// Qtbl1qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl1q_p8'.
 // Requires NEON.
-func Vqtbl1qP8(a arm.Poly8x16, b arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbl1qP8(a arm.Poly8x16, b arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vqtbl1qS8: ARM NEON intrinsic 
+// Qtbl1qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl1q_s8'.
 // Requires NEON.
-func Vqtbl1qS8(a arm.Int8x16, b arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbl1qS8(a arm.Int8x16, b arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbl1qU8: ARM NEON intrinsic 
+// Qtbl1qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl1q_u8'.
 // Requires NEON.
-func Vqtbl1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbl1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbl2S8: ARM NEON intrinsic 
+// Qtbl2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl2_s8'.
 // Requires NEON.
-func Vqtbl2S8(tab [2]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbl2S8(tab [2]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbl2U8: ARM NEON intrinsic 
+// Qtbl2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl2_u8'.
 // Requires NEON.
-func Vqtbl2U8(tab [2]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbl2U8(tab [2]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbl2P8: ARM NEON intrinsic 
+// Qtbl2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl2_p8'.
 // Requires NEON.
-func Vqtbl2P8(tab [2]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbl2P8(tab [2]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbl2qS8: ARM NEON intrinsic 
+// Qtbl2qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl2q_s8'.
 // Requires NEON.
-func Vqtbl2qS8(tab [2]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbl2qS8(tab [2]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbl2qU8: ARM NEON intrinsic 
+// Qtbl2qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl2q_u8'.
 // Requires NEON.
-func Vqtbl2qU8(tab [2]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbl2qU8(tab [2]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbl2qP8: ARM NEON intrinsic 
+// Qtbl2qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl2q_p8'.
 // Requires NEON.
-func Vqtbl2qP8(tab [2]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbl2qP8(tab [2]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vqtbl3S8: ARM NEON intrinsic 
+// Qtbl3S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl3_s8'.
 // Requires NEON.
-func Vqtbl3S8(tab [3]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbl3S8(tab [3]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbl3U8: ARM NEON intrinsic 
+// Qtbl3U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl3_u8'.
 // Requires NEON.
-func Vqtbl3U8(tab [3]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbl3U8(tab [3]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbl3P8: ARM NEON intrinsic 
+// Qtbl3P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl3_p8'.
 // Requires NEON.
-func Vqtbl3P8(tab [3]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbl3P8(tab [3]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbl3qS8: ARM NEON intrinsic 
+// Qtbl3qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl3q_s8'.
 // Requires NEON.
-func Vqtbl3qS8(tab [3]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbl3qS8(tab [3]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbl3qU8: ARM NEON intrinsic 
+// Qtbl3qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl3q_u8'.
 // Requires NEON.
-func Vqtbl3qU8(tab [3]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbl3qU8(tab [3]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbl3qP8: ARM NEON intrinsic 
+// Qtbl3qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl3q_p8'.
 // Requires NEON.
-func Vqtbl3qP8(tab [3]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbl3qP8(tab [3]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vqtbl4S8: ARM NEON intrinsic 
+// Qtbl4S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl4_s8'.
 // Requires NEON.
-func Vqtbl4S8(tab [4]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbl4S8(tab [4]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbl4U8: ARM NEON intrinsic 
+// Qtbl4U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl4_u8'.
 // Requires NEON.
-func Vqtbl4U8(tab [4]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbl4U8(tab [4]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbl4P8: ARM NEON intrinsic 
+// Qtbl4P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl4_p8'.
 // Requires NEON.
-func Vqtbl4P8(tab [4]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbl4P8(tab [4]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbl4qS8: ARM NEON intrinsic 
+// Qtbl4qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl4q_s8'.
 // Requires NEON.
-func Vqtbl4qS8(tab [4]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbl4qS8(tab [4]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbl4qU8: ARM NEON intrinsic 
+// Qtbl4qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl4q_u8'.
 // Requires NEON.
-func Vqtbl4qU8(tab [4]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbl4qU8(tab [4]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbl4qP8: ARM NEON intrinsic 
+// Qtbl4qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbl4q_p8'.
 // Requires NEON.
-func Vqtbl4qP8(tab [4]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbl4qP8(tab [4]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vqtbx1S8: ARM NEON intrinsic 
+// Qtbx1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx1_s8'.
 // Requires NEON.
-func Vqtbx1S8(r arm.Int8x8, tab arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbx1S8(r arm.Int8x8, tab arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbx1U8: ARM NEON intrinsic 
+// Qtbx1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx1_u8'.
 // Requires NEON.
-func Vqtbx1U8(r arm.Uint8x8, tab arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbx1U8(r arm.Uint8x8, tab arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbx1P8: ARM NEON intrinsic 
+// Qtbx1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx1_p8'.
 // Requires NEON.
-func Vqtbx1P8(r arm.Poly8x8, tab arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbx1P8(r arm.Poly8x8, tab arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbx1qS8: ARM NEON intrinsic 
+// Qtbx1qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx1q_s8'.
 // Requires NEON.
-func Vqtbx1qS8(r arm.Int8x16, tab arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbx1qS8(r arm.Int8x16, tab arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbx1qU8: ARM NEON intrinsic 
+// Qtbx1qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx1q_u8'.
 // Requires NEON.
-func Vqtbx1qU8(r arm.Uint8x16, tab arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbx1qU8(r arm.Uint8x16, tab arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbx1qP8: ARM NEON intrinsic 
+// Qtbx1qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx1q_p8'.
 // Requires NEON.
-func Vqtbx1qP8(r arm.Poly8x16, tab arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbx1qP8(r arm.Poly8x16, tab arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vqtbx2S8: ARM NEON intrinsic 
+// Qtbx2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx2_s8'.
 // Requires NEON.
-func Vqtbx2S8(r arm.Int8x8, tab [2]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbx2S8(r arm.Int8x8, tab [2]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbx2U8: ARM NEON intrinsic 
+// Qtbx2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx2_u8'.
 // Requires NEON.
-func Vqtbx2U8(r arm.Uint8x8, tab [2]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbx2U8(r arm.Uint8x8, tab [2]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbx2P8: ARM NEON intrinsic 
+// Qtbx2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx2_p8'.
 // Requires NEON.
-func Vqtbx2P8(r arm.Poly8x8, tab [2]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbx2P8(r arm.Poly8x8, tab [2]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbx2qS8: ARM NEON intrinsic 
+// Qtbx2qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx2q_s8'.
 // Requires NEON.
-func Vqtbx2qS8(r arm.Int8x16, tab [2]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbx2qS8(r arm.Int8x16, tab [2]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbx2qU8: ARM NEON intrinsic 
+// Qtbx2qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx2q_u8'.
 // Requires NEON.
-func Vqtbx2qU8(r arm.Uint8x16, tab [2]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbx2qU8(r arm.Uint8x16, tab [2]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbx2qP8: ARM NEON intrinsic 
+// Qtbx2qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx2q_p8'.
 // Requires NEON.
-func Vqtbx2qP8(r arm.Poly8x16, tab [2]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbx2qP8(r arm.Poly8x16, tab [2]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vqtbx3S8: ARM NEON intrinsic 
+// Qtbx3S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx3_s8'.
 // Requires NEON.
-func Vqtbx3S8(r arm.Int8x8, tab [3]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbx3S8(r arm.Int8x8, tab [3]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbx3U8: ARM NEON intrinsic 
+// Qtbx3U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx3_u8'.
 // Requires NEON.
-func Vqtbx3U8(r arm.Uint8x8, tab [3]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbx3U8(r arm.Uint8x8, tab [3]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbx3P8: ARM NEON intrinsic 
+// Qtbx3P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx3_p8'.
 // Requires NEON.
-func Vqtbx3P8(r arm.Poly8x8, tab [3]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbx3P8(r arm.Poly8x8, tab [3]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbx3qS8: ARM NEON intrinsic 
+// Qtbx3qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx3q_s8'.
 // Requires NEON.
-func Vqtbx3qS8(r arm.Int8x16, tab [3]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbx3qS8(r arm.Int8x16, tab [3]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbx3qU8: ARM NEON intrinsic 
+// Qtbx3qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx3q_u8'.
 // Requires NEON.
-func Vqtbx3qU8(r arm.Uint8x16, tab [3]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbx3qU8(r arm.Uint8x16, tab [3]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbx3qP8: ARM NEON intrinsic 
+// Qtbx3qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx3q_p8'.
 // Requires NEON.
-func Vqtbx3qP8(r arm.Poly8x16, tab [3]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbx3qP8(r arm.Poly8x16, tab [3]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vqtbx4S8: ARM NEON intrinsic 
+// Qtbx4S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx4_s8'.
 // Requires NEON.
-func Vqtbx4S8(r arm.Int8x8, tab [4]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
+func Qtbx4S8(r arm.Int8x8, tab [4]arm.Int8x16, idx arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vqtbx4U8: ARM NEON intrinsic 
+// Qtbx4U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx4_u8'.
 // Requires NEON.
-func Vqtbx4U8(r arm.Uint8x8, tab [4]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Qtbx4U8(r arm.Uint8x8, tab [4]arm.Uint8x16, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vqtbx4P8: ARM NEON intrinsic 
+// Qtbx4P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx4_p8'.
 // Requires NEON.
-func Vqtbx4P8(r arm.Poly8x8, tab [4]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Qtbx4P8(r arm.Poly8x8, tab [4]arm.Poly8x16, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vqtbx4qS8: ARM NEON intrinsic 
+// Qtbx4qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx4q_s8'.
 // Requires NEON.
-func Vqtbx4qS8(r arm.Int8x16, tab [4]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
+func Qtbx4qS8(r arm.Int8x16, tab [4]arm.Int8x16, idx arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vqtbx4qU8: ARM NEON intrinsic 
+// Qtbx4qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx4q_u8'.
 // Requires NEON.
-func Vqtbx4qU8(r arm.Uint8x16, tab [4]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
+func Qtbx4qU8(r arm.Uint8x16, tab [4]arm.Uint8x16, idx arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vqtbx4qP8: ARM NEON intrinsic 
+// Qtbx4qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqtbx4q_p8'.
 // Requires NEON.
-func Vqtbx4qP8(r arm.Poly8x16, tab [4]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
+func Qtbx4qP8(r arm.Poly8x16, tab [4]arm.Poly8x16, idx arm.Uint8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vtbl1S8: ARM NEON intrinsic 
+// Tbl1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl1_s8'.
 // Requires NEON.
-func Vtbl1S8(tab arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbl1S8(tab arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbl1U8: ARM NEON intrinsic 
+// Tbl1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl1_u8'.
 // Requires NEON.
-func Vtbl1U8(tab arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbl1U8(tab arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbl1P8: ARM NEON intrinsic 
+// Tbl1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl1_p8'.
 // Requires NEON.
-func Vtbl1P8(tab arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbl1P8(tab arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtbl2S8: ARM NEON intrinsic 
+// Tbl2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl2_s8'.
 // Requires NEON.
-func Vtbl2S8(tab [2]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbl2S8(tab [2]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbl2U8: ARM NEON intrinsic 
+// Tbl2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl2_u8'.
 // Requires NEON.
-func Vtbl2U8(tab [2]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbl2U8(tab [2]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbl2P8: ARM NEON intrinsic 
+// Tbl2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl2_p8'.
 // Requires NEON.
-func Vtbl2P8(tab [2]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbl2P8(tab [2]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtbl3S8: ARM NEON intrinsic 
+// Tbl3S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl3_s8'.
 // Requires NEON.
-func Vtbl3S8(tab [3]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbl3S8(tab [3]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbl3U8: ARM NEON intrinsic 
+// Tbl3U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl3_u8'.
 // Requires NEON.
-func Vtbl3U8(tab [3]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbl3U8(tab [3]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbl3P8: ARM NEON intrinsic 
+// Tbl3P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl3_p8'.
 // Requires NEON.
-func Vtbl3P8(tab [3]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbl3P8(tab [3]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtbl4S8: ARM NEON intrinsic 
+// Tbl4S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl4_s8'.
 // Requires NEON.
-func Vtbl4S8(tab [4]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbl4S8(tab [4]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbl4U8: ARM NEON intrinsic 
+// Tbl4U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl4_u8'.
 // Requires NEON.
-func Vtbl4U8(tab [4]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbl4U8(tab [4]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbl4P8: ARM NEON intrinsic 
+// Tbl4P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbl4_p8'.
 // Requires NEON.
-func Vtbl4P8(tab [4]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbl4P8(tab [4]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtbx2S8: ARM NEON intrinsic 
+// Tbx2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx2_s8'.
 // Requires NEON.
-func Vtbx2S8(r arm.Int8x8, tab [2]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbx2S8(r arm.Int8x8, tab [2]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbx2U8: ARM NEON intrinsic 
+// Tbx2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx2_u8'.
 // Requires NEON.
-func Vtbx2U8(r arm.Uint8x8, tab [2]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbx2U8(r arm.Uint8x8, tab [2]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbx2P8: ARM NEON intrinsic 
+// Tbx2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx2_p8'.
 // Requires NEON.
-func Vtbx2P8(r arm.Poly8x8, tab [2]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbx2P8(r arm.Poly8x8, tab [2]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtbx4S8: ARM NEON intrinsic 
+// Tbx4S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx4_s8'.
 // Requires NEON.
-func Vtbx4S8(r arm.Int8x8, tab [4]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbx4S8(r arm.Int8x8, tab [4]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbx4U8: ARM NEON intrinsic 
+// Tbx4U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx4_u8'.
 // Requires NEON.
-func Vtbx4U8(r arm.Uint8x8, tab [4]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbx4U8(r arm.Uint8x8, tab [4]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbx4P8: ARM NEON intrinsic 
+// Tbx4P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx4_p8'.
 // Requires NEON.
-func Vtbx4P8(r arm.Poly8x8, tab [4]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbx4P8(r arm.Poly8x8, tab [4]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VabsF32: ARM NEON intrinsic 
+// AbsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabs_f32'.
 // Requires NEON.
-func VabsF32(a arm.Float32x2) (dst arm.Float32x2) {
+func AbsF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VabsF64: ARM NEON intrinsic 
+// AbsF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabs_f64'.
 // Requires NEON.
-func VabsF64(a arm.Float64x1) (dst arm.Float64x1) {
+func AbsF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VabsS8: ARM NEON intrinsic 
+// AbsS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabs_s8'.
 // Requires NEON.
-func VabsS8(a arm.Int8x8) (dst arm.Int8x8) {
+func AbsS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VabsS16: ARM NEON intrinsic 
+// AbsS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabs_s16'.
 // Requires NEON.
-func VabsS16(a arm.Int16x4) (dst arm.Int16x4) {
+func AbsS16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VabsS32: ARM NEON intrinsic 
+// AbsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabs_s32'.
 // Requires NEON.
-func VabsS32(a arm.Int32x2) (dst arm.Int32x2) {
+func AbsS32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VabsS64: ARM NEON intrinsic 
+// AbsS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabs_s64'.
 // Requires NEON.
-func VabsS64(a arm.Int64x1) (dst arm.Int64x1) {
+func AbsS64(a arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VabsqF32: ARM NEON intrinsic 
+// AbsqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabsq_f32'.
 // Requires NEON.
-func VabsqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func AbsqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VabsqF64: ARM NEON intrinsic 
+// AbsqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabsq_f64'.
 // Requires NEON.
-func VabsqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func AbsqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VabsqS8: ARM NEON intrinsic 
+// AbsqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabsq_s8'.
 // Requires NEON.
-func VabsqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func AbsqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VabsqS16: ARM NEON intrinsic 
+// AbsqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabsq_s16'.
 // Requires NEON.
-func VabsqS16(a arm.Int16x8) (dst arm.Int16x8) {
+func AbsqS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VabsqS32: ARM NEON intrinsic 
+// AbsqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabsq_s32'.
 // Requires NEON.
-func VabsqS32(a arm.Int32x4) (dst arm.Int32x4) {
+func AbsqS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VabsqS64: ARM NEON intrinsic 
+// AbsqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vabsq_s64'.
 // Requires NEON.
-func VabsqS64(a arm.Int64x2) (dst arm.Int64x2) {
+func AbsqS64(a arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VadddS64: ARM NEON intrinsic 
+// AdddS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddd_s64'.
 // Requires NEON.
-func VadddS64(a int64, b int64) int64 {
+func AdddS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VadddU64: ARM NEON intrinsic 
+// AdddU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddd_u64'.
 // Requires NEON.
-func VadddU64(a uint64, b uint64) uint64 {
+func AdddU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VaddvS8: ARM NEON intrinsic 
+// AddvS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddv_s8'.
 // Requires NEON.
-func VaddvS8(a arm.Int8x8) int8 {
+func AddvS8(a arm.Int8x8) int8 {
 	return 0
 }
 
-// VaddvS16: ARM NEON intrinsic 
+// AddvS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddv_s16'.
 // Requires NEON.
-func VaddvS16(a arm.Int16x4) int16 {
+func AddvS16(a arm.Int16x4) int16 {
 	return 0
 }
 
-// VaddvS32: ARM NEON intrinsic 
+// AddvS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddv_s32'.
 // Requires NEON.
-func VaddvS32(a arm.Int32x2) int32 {
+func AddvS32(a arm.Int32x2) int32 {
 	return 0
 }
 
-// VaddvU8: ARM NEON intrinsic 
+// AddvU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddv_u8'.
 // Requires NEON.
-func VaddvU8(a arm.Uint8x8) uint8 {
+func AddvU8(a arm.Uint8x8) uint8 {
 	return 0
 }
 
-// VaddvU16: ARM NEON intrinsic 
+// AddvU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddv_u16'.
 // Requires NEON.
-func VaddvU16(a arm.Uint16x4) uint16 {
+func AddvU16(a arm.Uint16x4) uint16 {
 	return 0
 }
 
-// VaddvU32: ARM NEON intrinsic 
+// AddvU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddv_u32'.
 // Requires NEON.
-func VaddvU32(a arm.Uint32x2) uint32 {
+func AddvU32(a arm.Uint32x2) uint32 {
 	return 0
 }
 
-// VaddvqS8: ARM NEON intrinsic 
+// AddvqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_s8'.
 // Requires NEON.
-func VaddvqS8(a arm.Int8x16) int8 {
+func AddvqS8(a arm.Int8x16) int8 {
 	return 0
 }
 
-// VaddvqS16: ARM NEON intrinsic 
+// AddvqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_s16'.
 // Requires NEON.
-func VaddvqS16(a arm.Int16x8) int16 {
+func AddvqS16(a arm.Int16x8) int16 {
 	return 0
 }
 
-// VaddvqS32: ARM NEON intrinsic 
+// AddvqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_s32'.
 // Requires NEON.
-func VaddvqS32(a arm.Int32x4) int32 {
+func AddvqS32(a arm.Int32x4) int32 {
 	return 0
 }
 
-// VaddvqS64: ARM NEON intrinsic 
+// AddvqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_s64'.
 // Requires NEON.
-func VaddvqS64(a arm.Int64x2) int64 {
+func AddvqS64(a arm.Int64x2) int64 {
 	return 0
 }
 
-// VaddvqU8: ARM NEON intrinsic 
+// AddvqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_u8'.
 // Requires NEON.
-func VaddvqU8(a arm.Uint8x16) uint8 {
+func AddvqU8(a arm.Uint8x16) uint8 {
 	return 0
 }
 
-// VaddvqU16: ARM NEON intrinsic 
+// AddvqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_u16'.
 // Requires NEON.
-func VaddvqU16(a arm.Uint16x8) uint16 {
+func AddvqU16(a arm.Uint16x8) uint16 {
 	return 0
 }
 
-// VaddvqU32: ARM NEON intrinsic 
+// AddvqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_u32'.
 // Requires NEON.
-func VaddvqU32(a arm.Uint32x4) uint32 {
+func AddvqU32(a arm.Uint32x4) uint32 {
 	return 0
 }
 
-// VaddvqU64: ARM NEON intrinsic 
+// AddvqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_u64'.
 // Requires NEON.
-func VaddvqU64(a arm.Uint64x2) uint64 {
+func AddvqU64(a arm.Uint64x2) uint64 {
 	return 0
 }
 
-// VaddvF32: ARM NEON intrinsic 
+// AddvF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddv_f32'.
 // Requires NEON.
-func VaddvF32(a arm.Float32x2) float32 {
+func AddvF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VaddvqF32: ARM NEON intrinsic 
+// AddvqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_f32'.
 // Requires NEON.
-func VaddvqF32(a arm.Float32x4) float32 {
+func AddvqF32(a arm.Float32x4) float32 {
 	return 0
 }
 
-// VaddvqF64: ARM NEON intrinsic 
+// AddvqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaddvq_f64'.
 // Requires NEON.
-func VaddvqF64(a arm.Float64x2) float64 {
+func AddvqF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VbslF32: ARM NEON intrinsic 
+// BslF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_f32'.
 // Requires NEON.
-func VbslF32(a arm.Uint32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
+func BslF32(a arm.Uint32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VbslF64: ARM NEON intrinsic 
+// BslF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_f64'.
 // Requires NEON.
-func VbslF64(a arm.Uint64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
+func BslF64(a arm.Uint64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VbslP8: ARM NEON intrinsic 
+// BslP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_p8'.
 // Requires NEON.
-func VbslP8(a arm.Uint8x8, b arm.Poly8x8, c arm.Poly8x8) (dst arm.Poly8x8) {
+func BslP8(a arm.Uint8x8, b arm.Poly8x8, c arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VbslP16: ARM NEON intrinsic 
+// BslP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_p16'.
 // Requires NEON.
-func VbslP16(a arm.Uint16x4, b arm.Poly16x4, c arm.Poly16x4) (dst arm.Poly16x4) {
+func BslP16(a arm.Uint16x4, b arm.Poly16x4, c arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VbslS8: ARM NEON intrinsic 
+// BslS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_s8'.
 // Requires NEON.
-func VbslS8(a arm.Uint8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
+func BslS8(a arm.Uint8x8, b arm.Int8x8, c arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VbslS16: ARM NEON intrinsic 
+// BslS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_s16'.
 // Requires NEON.
-func VbslS16(a arm.Uint16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
+func BslS16(a arm.Uint16x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VbslS32: ARM NEON intrinsic 
+// BslS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_s32'.
 // Requires NEON.
-func VbslS32(a arm.Uint32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
+func BslS32(a arm.Uint32x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VbslS64: ARM NEON intrinsic 
+// BslS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_s64'.
 // Requires NEON.
-func VbslS64(a arm.Uint64x1, b arm.Int64x1, c arm.Int64x1) (dst arm.Int64x1) {
+func BslS64(a arm.Uint64x1, b arm.Int64x1, c arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VbslU8: ARM NEON intrinsic 
+// BslU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_u8'.
 // Requires NEON.
-func VbslU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
+func BslU8(a arm.Uint8x8, b arm.Uint8x8, c arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VbslU16: ARM NEON intrinsic 
+// BslU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_u16'.
 // Requires NEON.
-func VbslU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
+func BslU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VbslU32: ARM NEON intrinsic 
+// BslU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_u32'.
 // Requires NEON.
-func VbslU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
+func BslU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VbslU64: ARM NEON intrinsic 
+// BslU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbsl_u64'.
 // Requires NEON.
-func VbslU64(a arm.Uint64x1, b arm.Uint64x1, c arm.Uint64x1) (dst arm.Uint64x1) {
+func BslU64(a arm.Uint64x1, b arm.Uint64x1, c arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VbslqF32: ARM NEON intrinsic 
+// BslqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_f32'.
 // Requires NEON.
-func VbslqF32(a arm.Uint32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
+func BslqF32(a arm.Uint32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VbslqF64: ARM NEON intrinsic 
+// BslqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_f64'.
 // Requires NEON.
-func VbslqF64(a arm.Uint64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
+func BslqF64(a arm.Uint64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VbslqP8: ARM NEON intrinsic 
+// BslqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_p8'.
 // Requires NEON.
-func VbslqP8(a arm.Uint8x16, b arm.Poly8x16, c arm.Poly8x16) (dst arm.Poly8x16) {
+func BslqP8(a arm.Uint8x16, b arm.Poly8x16, c arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VbslqP16: ARM NEON intrinsic 
+// BslqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_p16'.
 // Requires NEON.
-func VbslqP16(a arm.Uint16x8, b arm.Poly16x8, c arm.Poly16x8) (dst arm.Poly16x8) {
+func BslqP16(a arm.Uint16x8, b arm.Poly16x8, c arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VbslqS8: ARM NEON intrinsic 
+// BslqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_s8'.
 // Requires NEON.
-func VbslqS8(a arm.Uint8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
+func BslqS8(a arm.Uint8x16, b arm.Int8x16, c arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VbslqS16: ARM NEON intrinsic 
+// BslqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_s16'.
 // Requires NEON.
-func VbslqS16(a arm.Uint16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
+func BslqS16(a arm.Uint16x8, b arm.Int16x8, c arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VbslqS32: ARM NEON intrinsic 
+// BslqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_s32'.
 // Requires NEON.
-func VbslqS32(a arm.Uint32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
+func BslqS32(a arm.Uint32x4, b arm.Int32x4, c arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VbslqS64: ARM NEON intrinsic 
+// BslqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_s64'.
 // Requires NEON.
-func VbslqS64(a arm.Uint64x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int64x2) {
+func BslqS64(a arm.Uint64x2, b arm.Int64x2, c arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VbslqU8: ARM NEON intrinsic 
+// BslqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_u8'.
 // Requires NEON.
-func VbslqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
+func BslqU8(a arm.Uint8x16, b arm.Uint8x16, c arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VbslqU16: ARM NEON intrinsic 
+// BslqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_u16'.
 // Requires NEON.
-func VbslqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
+func BslqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VbslqU32: ARM NEON intrinsic 
+// BslqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_u32'.
 // Requires NEON.
-func VbslqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
+func BslqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VbslqU64: ARM NEON intrinsic 
+// BslqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vbslq_u64'.
 // Requires NEON.
-func VbslqU64(a arm.Uint64x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint64x2) {
+func BslqU64(a arm.Uint64x2, b arm.Uint64x2, c arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VaeseqU8: ARM NEON intrinsic 
+// AeseqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaeseq_u8'.
 // Requires NEON.
-func VaeseqU8(data arm.Uint8x16, key arm.Uint8x16) (dst arm.Uint8x16) {
+func AeseqU8(data arm.Uint8x16, key arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VaesdqU8: ARM NEON intrinsic 
+// AesdqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaesdq_u8'.
 // Requires NEON.
-func VaesdqU8(data arm.Uint8x16, key arm.Uint8x16) (dst arm.Uint8x16) {
+func AesdqU8(data arm.Uint8x16, key arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VaesmcqU8: ARM NEON intrinsic 
+// AesmcqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaesmcq_u8'.
 // Requires NEON.
-func VaesmcqU8(data arm.Uint8x16) (dst arm.Uint8x16) {
+func AesmcqU8(data arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VaesimcqU8: ARM NEON intrinsic 
+// AesimcqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vaesimcq_u8'.
 // Requires NEON.
-func VaesimcqU8(data arm.Uint8x16) (dst arm.Uint8x16) {
+func AesimcqU8(data arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcageF64: ARM NEON intrinsic 
+// CageF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcage_f64'.
 // Requires NEON.
-func VcageF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CageF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcagesF32: ARM NEON intrinsic 
+// CagesF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcages_f32'.
 // Requires NEON.
-func VcagesF32(a float32, b float32) uint32 {
+func CagesF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VcageF32: ARM NEON intrinsic 
+// CageF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcage_f32'.
 // Requires NEON.
-func VcageF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CageF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcageqF32: ARM NEON intrinsic 
+// CageqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcageq_f32'.
 // Requires NEON.
-func VcageqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CageqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcagedF64: ARM NEON intrinsic 
+// CagedF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcaged_f64'.
 // Requires NEON.
-func VcagedF64(a float64, b float64) uint64 {
+func CagedF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VcageqF64: ARM NEON intrinsic 
+// CageqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcageq_f64'.
 // Requires NEON.
-func VcageqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CageqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcagtsF32: ARM NEON intrinsic 
+// CagtsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcagts_f32'.
 // Requires NEON.
-func VcagtsF32(a float32, b float32) uint32 {
+func CagtsF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VcagtF32: ARM NEON intrinsic 
+// CagtF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcagt_f32'.
 // Requires NEON.
-func VcagtF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CagtF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcagtF64: ARM NEON intrinsic 
+// CagtF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcagt_f64'.
 // Requires NEON.
-func VcagtF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CagtF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcagtqF32: ARM NEON intrinsic 
+// CagtqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcagtq_f32'.
 // Requires NEON.
-func VcagtqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CagtqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcagtdF64: ARM NEON intrinsic 
+// CagtdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcagtd_f64'.
 // Requires NEON.
-func VcagtdF64(a float64, b float64) uint64 {
+func CagtdF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VcagtqF64: ARM NEON intrinsic 
+// CagtqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcagtq_f64'.
 // Requires NEON.
-func VcagtqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CagtqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcaleF32: ARM NEON intrinsic 
+// CaleF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcale_f32'.
 // Requires NEON.
-func VcaleF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CaleF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcaleF64: ARM NEON intrinsic 
+// CaleF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcale_f64'.
 // Requires NEON.
-func VcaleF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CaleF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcaledF64: ARM NEON intrinsic 
+// CaledF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcaled_f64'.
 // Requires NEON.
-func VcaledF64(a float64, b float64) uint64 {
+func CaledF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VcalesF32: ARM NEON intrinsic 
+// CalesF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcales_f32'.
 // Requires NEON.
-func VcalesF32(a float32, b float32) uint32 {
+func CalesF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VcaleqF32: ARM NEON intrinsic 
+// CaleqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcaleq_f32'.
 // Requires NEON.
-func VcaleqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CaleqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcaleqF64: ARM NEON intrinsic 
+// CaleqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcaleq_f64'.
 // Requires NEON.
-func VcaleqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CaleqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcaltF32: ARM NEON intrinsic 
+// CaltF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcalt_f32'.
 // Requires NEON.
-func VcaltF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CaltF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcaltF64: ARM NEON intrinsic 
+// CaltF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcalt_f64'.
 // Requires NEON.
-func VcaltF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CaltF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcaltdF64: ARM NEON intrinsic 
+// CaltdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcaltd_f64'.
 // Requires NEON.
-func VcaltdF64(a float64, b float64) uint64 {
+func CaltdF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VcaltqF32: ARM NEON intrinsic 
+// CaltqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcaltq_f32'.
 // Requires NEON.
-func VcaltqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CaltqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcaltqF64: ARM NEON intrinsic 
+// CaltqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcaltq_f64'.
 // Requires NEON.
-func VcaltqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CaltqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcaltsF32: ARM NEON intrinsic 
+// CaltsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcalts_f32'.
 // Requires NEON.
-func VcaltsF32(a float32, b float32) uint32 {
+func CaltsF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VceqF32: ARM NEON intrinsic 
+// CeqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_f32'.
 // Requires NEON.
-func VceqF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CeqF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VceqF64: ARM NEON intrinsic 
+// CeqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_f64'.
 // Requires NEON.
-func VceqF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CeqF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VceqP8: ARM NEON intrinsic 
+// CeqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_p8'.
 // Requires NEON.
-func VceqP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Uint8x8) {
+func CeqP8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VceqS8: ARM NEON intrinsic 
+// CeqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_s8'.
 // Requires NEON.
-func VceqS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func CeqS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VceqS16: ARM NEON intrinsic 
+// CeqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_s16'.
 // Requires NEON.
-func VceqS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func CeqS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VceqS32: ARM NEON intrinsic 
+// CeqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_s32'.
 // Requires NEON.
-func VceqS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func CeqS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VceqS64: ARM NEON intrinsic 
+// CeqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_s64'.
 // Requires NEON.
-func VceqS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func CeqS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VceqU8: ARM NEON intrinsic 
+// CeqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_u8'.
 // Requires NEON.
-func VceqU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func CeqU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VceqU16: ARM NEON intrinsic 
+// CeqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_u16'.
 // Requires NEON.
-func VceqU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func CeqU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VceqU32: ARM NEON intrinsic 
+// CeqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_u32'.
 // Requires NEON.
-func VceqU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func CeqU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VceqU64: ARM NEON intrinsic 
+// CeqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceq_u64'.
 // Requires NEON.
-func VceqU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func CeqU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VceqqF32: ARM NEON intrinsic 
+// CeqqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_f32'.
 // Requires NEON.
-func VceqqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CeqqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VceqqF64: ARM NEON intrinsic 
+// CeqqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_f64'.
 // Requires NEON.
-func VceqqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CeqqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VceqqP8: ARM NEON intrinsic 
+// CeqqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_p8'.
 // Requires NEON.
-func VceqqP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Uint8x16) {
+func CeqqP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VceqqS8: ARM NEON intrinsic 
+// CeqqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_s8'.
 // Requires NEON.
-func VceqqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func CeqqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VceqqS16: ARM NEON intrinsic 
+// CeqqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_s16'.
 // Requires NEON.
-func VceqqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func CeqqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VceqqS32: ARM NEON intrinsic 
+// CeqqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_s32'.
 // Requires NEON.
-func VceqqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func CeqqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VceqqS64: ARM NEON intrinsic 
+// CeqqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_s64'.
 // Requires NEON.
-func VceqqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func CeqqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VceqqU8: ARM NEON intrinsic 
+// CeqqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_u8'.
 // Requires NEON.
-func VceqqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func CeqqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VceqqU16: ARM NEON intrinsic 
+// CeqqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_u16'.
 // Requires NEON.
-func VceqqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func CeqqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VceqqU32: ARM NEON intrinsic 
+// CeqqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_u32'.
 // Requires NEON.
-func VceqqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func CeqqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VceqqU64: ARM NEON intrinsic 
+// CeqqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqq_u64'.
 // Requires NEON.
-func VceqqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func CeqqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VceqsF32: ARM NEON intrinsic 
+// CeqsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqs_f32'.
 // Requires NEON.
-func VceqsF32(a float32, b float32) uint32 {
+func CeqsF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VceqdS64: ARM NEON intrinsic 
+// CeqdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqd_s64'.
 // Requires NEON.
-func VceqdS64(a int64, b int64) uint64 {
+func CeqdS64(a int64, b int64) uint64 {
 	return 0
 }
 
-// VceqdU64: ARM NEON intrinsic 
+// CeqdU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqd_u64'.
 // Requires NEON.
-func VceqdU64(a uint64, b uint64) uint64 {
+func CeqdU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VceqdF64: ARM NEON intrinsic 
+// CeqdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqd_f64'.
 // Requires NEON.
-func VceqdF64(a float64, b float64) uint64 {
+func CeqdF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VceqzF32: ARM NEON intrinsic 
+// CeqzF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_f32'.
 // Requires NEON.
-func VceqzF32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CeqzF32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VceqzF64: ARM NEON intrinsic 
+// CeqzF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_f64'.
 // Requires NEON.
-func VceqzF64(a arm.Float64x1) (dst arm.Uint64x1) {
+func CeqzF64(a arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VceqzP8: ARM NEON intrinsic 
+// CeqzP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_p8'.
 // Requires NEON.
-func VceqzP8(a arm.Poly8x8) (dst arm.Uint8x8) {
+func CeqzP8(a arm.Poly8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VceqzS8: ARM NEON intrinsic 
+// CeqzS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_s8'.
 // Requires NEON.
-func VceqzS8(a arm.Int8x8) (dst arm.Uint8x8) {
+func CeqzS8(a arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VceqzS16: ARM NEON intrinsic 
+// CeqzS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_s16'.
 // Requires NEON.
-func VceqzS16(a arm.Int16x4) (dst arm.Uint16x4) {
+func CeqzS16(a arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VceqzS32: ARM NEON intrinsic 
+// CeqzS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_s32'.
 // Requires NEON.
-func VceqzS32(a arm.Int32x2) (dst arm.Uint32x2) {
+func CeqzS32(a arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VceqzS64: ARM NEON intrinsic 
+// CeqzS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_s64'.
 // Requires NEON.
-func VceqzS64(a arm.Int64x1) (dst arm.Uint64x1) {
+func CeqzS64(a arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VceqzU8: ARM NEON intrinsic 
+// CeqzU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_u8'.
 // Requires NEON.
-func VceqzU8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func CeqzU8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VceqzU16: ARM NEON intrinsic 
+// CeqzU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_u16'.
 // Requires NEON.
-func VceqzU16(a arm.Uint16x4) (dst arm.Uint16x4) {
+func CeqzU16(a arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VceqzU32: ARM NEON intrinsic 
+// CeqzU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_u32'.
 // Requires NEON.
-func VceqzU32(a arm.Uint32x2) (dst arm.Uint32x2) {
+func CeqzU32(a arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VceqzU64: ARM NEON intrinsic 
+// CeqzU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqz_u64'.
 // Requires NEON.
-func VceqzU64(a arm.Uint64x1) (dst arm.Uint64x1) {
+func CeqzU64(a arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VceqzqF32: ARM NEON intrinsic 
+// CeqzqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_f32'.
 // Requires NEON.
-func VceqzqF32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CeqzqF32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VceqzqF64: ARM NEON intrinsic 
+// CeqzqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_f64'.
 // Requires NEON.
-func VceqzqF64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CeqzqF64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VceqzqP8: ARM NEON intrinsic 
+// CeqzqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_p8'.
 // Requires NEON.
-func VceqzqP8(a arm.Poly8x16) (dst arm.Uint8x16) {
+func CeqzqP8(a arm.Poly8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VceqzqS8: ARM NEON intrinsic 
+// CeqzqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_s8'.
 // Requires NEON.
-func VceqzqS8(a arm.Int8x16) (dst arm.Uint8x16) {
+func CeqzqS8(a arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VceqzqS16: ARM NEON intrinsic 
+// CeqzqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_s16'.
 // Requires NEON.
-func VceqzqS16(a arm.Int16x8) (dst arm.Uint16x8) {
+func CeqzqS16(a arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VceqzqS32: ARM NEON intrinsic 
+// CeqzqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_s32'.
 // Requires NEON.
-func VceqzqS32(a arm.Int32x4) (dst arm.Uint32x4) {
+func CeqzqS32(a arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VceqzqS64: ARM NEON intrinsic 
+// CeqzqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_s64'.
 // Requires NEON.
-func VceqzqS64(a arm.Int64x2) (dst arm.Uint64x2) {
+func CeqzqS64(a arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VceqzqU8: ARM NEON intrinsic 
+// CeqzqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_u8'.
 // Requires NEON.
-func VceqzqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func CeqzqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VceqzqU16: ARM NEON intrinsic 
+// CeqzqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_u16'.
 // Requires NEON.
-func VceqzqU16(a arm.Uint16x8) (dst arm.Uint16x8) {
+func CeqzqU16(a arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VceqzqU32: ARM NEON intrinsic 
+// CeqzqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_u32'.
 // Requires NEON.
-func VceqzqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
+func CeqzqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VceqzqU64: ARM NEON intrinsic 
+// CeqzqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzq_u64'.
 // Requires NEON.
-func VceqzqU64(a arm.Uint64x2) (dst arm.Uint64x2) {
+func CeqzqU64(a arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VceqzsF32: ARM NEON intrinsic 
+// CeqzsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzs_f32'.
 // Requires NEON.
-func VceqzsF32(a float32) uint32 {
+func CeqzsF32(a float32) uint32 {
 	return 0
 }
 
-// VceqzdS64: ARM NEON intrinsic 
+// CeqzdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzd_s64'.
 // Requires NEON.
-func VceqzdS64(a int64) uint64 {
+func CeqzdS64(a int64) uint64 {
 	return 0
 }
 
-// VceqzdU64: ARM NEON intrinsic 
+// CeqzdU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzd_u64'.
 // Requires NEON.
-func VceqzdU64(a uint64) uint64 {
+func CeqzdU64(a uint64) uint64 {
 	return 0
 }
 
-// VceqzdF64: ARM NEON intrinsic 
+// CeqzdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vceqzd_f64'.
 // Requires NEON.
-func VceqzdF64(a float64) uint64 {
+func CeqzdF64(a float64) uint64 {
 	return 0
 }
 
-// VcgeF32: ARM NEON intrinsic 
+// CgeF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_f32'.
 // Requires NEON.
-func VcgeF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CgeF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgeF64: ARM NEON intrinsic 
+// CgeF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_f64'.
 // Requires NEON.
-func VcgeF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CgeF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgeS8: ARM NEON intrinsic 
+// CgeS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_s8'.
 // Requires NEON.
-func VcgeS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func CgeS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcgeS16: ARM NEON intrinsic 
+// CgeS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_s16'.
 // Requires NEON.
-func VcgeS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func CgeS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcgeS32: ARM NEON intrinsic 
+// CgeS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_s32'.
 // Requires NEON.
-func VcgeS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func CgeS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgeS64: ARM NEON intrinsic 
+// CgeS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_s64'.
 // Requires NEON.
-func VcgeS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func CgeS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgeU8: ARM NEON intrinsic 
+// CgeU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_u8'.
 // Requires NEON.
-func VcgeU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func CgeU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcgeU16: ARM NEON intrinsic 
+// CgeU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_u16'.
 // Requires NEON.
-func VcgeU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func CgeU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcgeU32: ARM NEON intrinsic 
+// CgeU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_u32'.
 // Requires NEON.
-func VcgeU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func CgeU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgeU64: ARM NEON intrinsic 
+// CgeU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcge_u64'.
 // Requires NEON.
-func VcgeU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func CgeU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgeqF32: ARM NEON intrinsic 
+// CgeqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_f32'.
 // Requires NEON.
-func VcgeqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CgeqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgeqF64: ARM NEON intrinsic 
+// CgeqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_f64'.
 // Requires NEON.
-func VcgeqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CgeqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgeqS8: ARM NEON intrinsic 
+// CgeqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_s8'.
 // Requires NEON.
-func VcgeqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func CgeqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcgeqS16: ARM NEON intrinsic 
+// CgeqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_s16'.
 // Requires NEON.
-func VcgeqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func CgeqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcgeqS32: ARM NEON intrinsic 
+// CgeqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_s32'.
 // Requires NEON.
-func VcgeqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func CgeqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgeqS64: ARM NEON intrinsic 
+// CgeqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_s64'.
 // Requires NEON.
-func VcgeqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func CgeqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgeqU8: ARM NEON intrinsic 
+// CgeqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_u8'.
 // Requires NEON.
-func VcgeqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func CgeqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcgeqU16: ARM NEON intrinsic 
+// CgeqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_u16'.
 // Requires NEON.
-func VcgeqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func CgeqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcgeqU32: ARM NEON intrinsic 
+// CgeqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_u32'.
 // Requires NEON.
-func VcgeqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func CgeqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgeqU64: ARM NEON intrinsic 
+// CgeqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgeq_u64'.
 // Requires NEON.
-func VcgeqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func CgeqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgesF32: ARM NEON intrinsic 
+// CgesF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcges_f32'.
 // Requires NEON.
-func VcgesF32(a float32, b float32) uint32 {
+func CgesF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VcgedS64: ARM NEON intrinsic 
+// CgedS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcged_s64'.
 // Requires NEON.
-func VcgedS64(a int64, b int64) uint64 {
+func CgedS64(a int64, b int64) uint64 {
 	return 0
 }
 
-// VcgedU64: ARM NEON intrinsic 
+// CgedU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcged_u64'.
 // Requires NEON.
-func VcgedU64(a uint64, b uint64) uint64 {
+func CgedU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VcgedF64: ARM NEON intrinsic 
+// CgedF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcged_f64'.
 // Requires NEON.
-func VcgedF64(a float64, b float64) uint64 {
+func CgedF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VcgezF32: ARM NEON intrinsic 
+// CgezF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgez_f32'.
 // Requires NEON.
-func VcgezF32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CgezF32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgezF64: ARM NEON intrinsic 
+// CgezF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgez_f64'.
 // Requires NEON.
-func VcgezF64(a arm.Float64x1) (dst arm.Uint64x1) {
+func CgezF64(a arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgezS8: ARM NEON intrinsic 
+// CgezS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgez_s8'.
 // Requires NEON.
-func VcgezS8(a arm.Int8x8) (dst arm.Uint8x8) {
+func CgezS8(a arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcgezS16: ARM NEON intrinsic 
+// CgezS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgez_s16'.
 // Requires NEON.
-func VcgezS16(a arm.Int16x4) (dst arm.Uint16x4) {
+func CgezS16(a arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcgezS32: ARM NEON intrinsic 
+// CgezS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgez_s32'.
 // Requires NEON.
-func VcgezS32(a arm.Int32x2) (dst arm.Uint32x2) {
+func CgezS32(a arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgezS64: ARM NEON intrinsic 
+// CgezS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgez_s64'.
 // Requires NEON.
-func VcgezS64(a arm.Int64x1) (dst arm.Uint64x1) {
+func CgezS64(a arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgezqF32: ARM NEON intrinsic 
+// CgezqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezq_f32'.
 // Requires NEON.
-func VcgezqF32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CgezqF32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgezqF64: ARM NEON intrinsic 
+// CgezqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezq_f64'.
 // Requires NEON.
-func VcgezqF64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CgezqF64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgezqS8: ARM NEON intrinsic 
+// CgezqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezq_s8'.
 // Requires NEON.
-func VcgezqS8(a arm.Int8x16) (dst arm.Uint8x16) {
+func CgezqS8(a arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcgezqS16: ARM NEON intrinsic 
+// CgezqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezq_s16'.
 // Requires NEON.
-func VcgezqS16(a arm.Int16x8) (dst arm.Uint16x8) {
+func CgezqS16(a arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcgezqS32: ARM NEON intrinsic 
+// CgezqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezq_s32'.
 // Requires NEON.
-func VcgezqS32(a arm.Int32x4) (dst arm.Uint32x4) {
+func CgezqS32(a arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgezqS64: ARM NEON intrinsic 
+// CgezqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezq_s64'.
 // Requires NEON.
-func VcgezqS64(a arm.Int64x2) (dst arm.Uint64x2) {
+func CgezqS64(a arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgezsF32: ARM NEON intrinsic 
+// CgezsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezs_f32'.
 // Requires NEON.
-func VcgezsF32(a float32) uint32 {
+func CgezsF32(a float32) uint32 {
 	return 0
 }
 
-// VcgezdS64: ARM NEON intrinsic 
+// CgezdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezd_s64'.
 // Requires NEON.
-func VcgezdS64(a int64) uint64 {
+func CgezdS64(a int64) uint64 {
 	return 0
 }
 
-// VcgezdF64: ARM NEON intrinsic 
+// CgezdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgezd_f64'.
 // Requires NEON.
-func VcgezdF64(a float64) uint64 {
+func CgezdF64(a float64) uint64 {
 	return 0
 }
 
-// VcgtF32: ARM NEON intrinsic 
+// CgtF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_f32'.
 // Requires NEON.
-func VcgtF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CgtF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgtF64: ARM NEON intrinsic 
+// CgtF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_f64'.
 // Requires NEON.
-func VcgtF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CgtF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgtS8: ARM NEON intrinsic 
+// CgtS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_s8'.
 // Requires NEON.
-func VcgtS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func CgtS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcgtS16: ARM NEON intrinsic 
+// CgtS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_s16'.
 // Requires NEON.
-func VcgtS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func CgtS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcgtS32: ARM NEON intrinsic 
+// CgtS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_s32'.
 // Requires NEON.
-func VcgtS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func CgtS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgtS64: ARM NEON intrinsic 
+// CgtS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_s64'.
 // Requires NEON.
-func VcgtS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func CgtS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgtU8: ARM NEON intrinsic 
+// CgtU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_u8'.
 // Requires NEON.
-func VcgtU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func CgtU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcgtU16: ARM NEON intrinsic 
+// CgtU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_u16'.
 // Requires NEON.
-func VcgtU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func CgtU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcgtU32: ARM NEON intrinsic 
+// CgtU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_u32'.
 // Requires NEON.
-func VcgtU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func CgtU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgtU64: ARM NEON intrinsic 
+// CgtU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgt_u64'.
 // Requires NEON.
-func VcgtU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func CgtU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgtqF32: ARM NEON intrinsic 
+// CgtqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_f32'.
 // Requires NEON.
-func VcgtqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CgtqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgtqF64: ARM NEON intrinsic 
+// CgtqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_f64'.
 // Requires NEON.
-func VcgtqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CgtqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgtqS8: ARM NEON intrinsic 
+// CgtqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_s8'.
 // Requires NEON.
-func VcgtqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func CgtqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcgtqS16: ARM NEON intrinsic 
+// CgtqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_s16'.
 // Requires NEON.
-func VcgtqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func CgtqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcgtqS32: ARM NEON intrinsic 
+// CgtqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_s32'.
 // Requires NEON.
-func VcgtqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func CgtqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgtqS64: ARM NEON intrinsic 
+// CgtqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_s64'.
 // Requires NEON.
-func VcgtqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func CgtqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgtqU8: ARM NEON intrinsic 
+// CgtqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_u8'.
 // Requires NEON.
-func VcgtqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func CgtqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcgtqU16: ARM NEON intrinsic 
+// CgtqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_u16'.
 // Requires NEON.
-func VcgtqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func CgtqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcgtqU32: ARM NEON intrinsic 
+// CgtqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_u32'.
 // Requires NEON.
-func VcgtqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func CgtqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgtqU64: ARM NEON intrinsic 
+// CgtqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtq_u64'.
 // Requires NEON.
-func VcgtqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func CgtqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgtsF32: ARM NEON intrinsic 
+// CgtsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgts_f32'.
 // Requires NEON.
-func VcgtsF32(a float32, b float32) uint32 {
+func CgtsF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VcgtdS64: ARM NEON intrinsic 
+// CgtdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtd_s64'.
 // Requires NEON.
-func VcgtdS64(a int64, b int64) uint64 {
+func CgtdS64(a int64, b int64) uint64 {
 	return 0
 }
 
-// VcgtdU64: ARM NEON intrinsic 
+// CgtdU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtd_u64'.
 // Requires NEON.
-func VcgtdU64(a uint64, b uint64) uint64 {
+func CgtdU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VcgtdF64: ARM NEON intrinsic 
+// CgtdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtd_f64'.
 // Requires NEON.
-func VcgtdF64(a float64, b float64) uint64 {
+func CgtdF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VcgtzF32: ARM NEON intrinsic 
+// CgtzF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtz_f32'.
 // Requires NEON.
-func VcgtzF32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CgtzF32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgtzF64: ARM NEON intrinsic 
+// CgtzF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtz_f64'.
 // Requires NEON.
-func VcgtzF64(a arm.Float64x1) (dst arm.Uint64x1) {
+func CgtzF64(a arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgtzS8: ARM NEON intrinsic 
+// CgtzS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtz_s8'.
 // Requires NEON.
-func VcgtzS8(a arm.Int8x8) (dst arm.Uint8x8) {
+func CgtzS8(a arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcgtzS16: ARM NEON intrinsic 
+// CgtzS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtz_s16'.
 // Requires NEON.
-func VcgtzS16(a arm.Int16x4) (dst arm.Uint16x4) {
+func CgtzS16(a arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcgtzS32: ARM NEON intrinsic 
+// CgtzS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtz_s32'.
 // Requires NEON.
-func VcgtzS32(a arm.Int32x2) (dst arm.Uint32x2) {
+func CgtzS32(a arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcgtzS64: ARM NEON intrinsic 
+// CgtzS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtz_s64'.
 // Requires NEON.
-func VcgtzS64(a arm.Int64x1) (dst arm.Uint64x1) {
+func CgtzS64(a arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcgtzqF32: ARM NEON intrinsic 
+// CgtzqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzq_f32'.
 // Requires NEON.
-func VcgtzqF32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CgtzqF32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgtzqF64: ARM NEON intrinsic 
+// CgtzqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzq_f64'.
 // Requires NEON.
-func VcgtzqF64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CgtzqF64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgtzqS8: ARM NEON intrinsic 
+// CgtzqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzq_s8'.
 // Requires NEON.
-func VcgtzqS8(a arm.Int8x16) (dst arm.Uint8x16) {
+func CgtzqS8(a arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcgtzqS16: ARM NEON intrinsic 
+// CgtzqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzq_s16'.
 // Requires NEON.
-func VcgtzqS16(a arm.Int16x8) (dst arm.Uint16x8) {
+func CgtzqS16(a arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcgtzqS32: ARM NEON intrinsic 
+// CgtzqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzq_s32'.
 // Requires NEON.
-func VcgtzqS32(a arm.Int32x4) (dst arm.Uint32x4) {
+func CgtzqS32(a arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcgtzqS64: ARM NEON intrinsic 
+// CgtzqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzq_s64'.
 // Requires NEON.
-func VcgtzqS64(a arm.Int64x2) (dst arm.Uint64x2) {
+func CgtzqS64(a arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcgtzsF32: ARM NEON intrinsic 
+// CgtzsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzs_f32'.
 // Requires NEON.
-func VcgtzsF32(a float32) uint32 {
+func CgtzsF32(a float32) uint32 {
 	return 0
 }
 
-// VcgtzdS64: ARM NEON intrinsic 
+// CgtzdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzd_s64'.
 // Requires NEON.
-func VcgtzdS64(a int64) uint64 {
+func CgtzdS64(a int64) uint64 {
 	return 0
 }
 
-// VcgtzdF64: ARM NEON intrinsic 
+// CgtzdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcgtzd_f64'.
 // Requires NEON.
-func VcgtzdF64(a float64) uint64 {
+func CgtzdF64(a float64) uint64 {
 	return 0
 }
 
-// VcleF32: ARM NEON intrinsic 
+// CleF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_f32'.
 // Requires NEON.
-func VcleF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CleF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcleF64: ARM NEON intrinsic 
+// CleF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_f64'.
 // Requires NEON.
-func VcleF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CleF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcleS8: ARM NEON intrinsic 
+// CleS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_s8'.
 // Requires NEON.
-func VcleS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func CleS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcleS16: ARM NEON intrinsic 
+// CleS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_s16'.
 // Requires NEON.
-func VcleS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func CleS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcleS32: ARM NEON intrinsic 
+// CleS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_s32'.
 // Requires NEON.
-func VcleS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func CleS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcleS64: ARM NEON intrinsic 
+// CleS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_s64'.
 // Requires NEON.
-func VcleS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func CleS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcleU8: ARM NEON intrinsic 
+// CleU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_u8'.
 // Requires NEON.
-func VcleU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func CleU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcleU16: ARM NEON intrinsic 
+// CleU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_u16'.
 // Requires NEON.
-func VcleU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func CleU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcleU32: ARM NEON intrinsic 
+// CleU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_u32'.
 // Requires NEON.
-func VcleU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func CleU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcleU64: ARM NEON intrinsic 
+// CleU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcle_u64'.
 // Requires NEON.
-func VcleU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func CleU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcleqF32: ARM NEON intrinsic 
+// CleqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_f32'.
 // Requires NEON.
-func VcleqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CleqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcleqF64: ARM NEON intrinsic 
+// CleqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_f64'.
 // Requires NEON.
-func VcleqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CleqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcleqS8: ARM NEON intrinsic 
+// CleqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_s8'.
 // Requires NEON.
-func VcleqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func CleqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcleqS16: ARM NEON intrinsic 
+// CleqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_s16'.
 // Requires NEON.
-func VcleqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func CleqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcleqS32: ARM NEON intrinsic 
+// CleqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_s32'.
 // Requires NEON.
-func VcleqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func CleqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcleqS64: ARM NEON intrinsic 
+// CleqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_s64'.
 // Requires NEON.
-func VcleqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func CleqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcleqU8: ARM NEON intrinsic 
+// CleqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_u8'.
 // Requires NEON.
-func VcleqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func CleqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcleqU16: ARM NEON intrinsic 
+// CleqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_u16'.
 // Requires NEON.
-func VcleqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func CleqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcleqU32: ARM NEON intrinsic 
+// CleqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_u32'.
 // Requires NEON.
-func VcleqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func CleqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcleqU64: ARM NEON intrinsic 
+// CleqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcleq_u64'.
 // Requires NEON.
-func VcleqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func CleqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VclesF32: ARM NEON intrinsic 
+// ClesF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcles_f32'.
 // Requires NEON.
-func VclesF32(a float32, b float32) uint32 {
+func ClesF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VcledS64: ARM NEON intrinsic 
+// CledS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcled_s64'.
 // Requires NEON.
-func VcledS64(a int64, b int64) uint64 {
+func CledS64(a int64, b int64) uint64 {
 	return 0
 }
 
-// VcledU64: ARM NEON intrinsic 
+// CledU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcled_u64'.
 // Requires NEON.
-func VcledU64(a uint64, b uint64) uint64 {
+func CledU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VcledF64: ARM NEON intrinsic 
+// CledF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcled_f64'.
 // Requires NEON.
-func VcledF64(a float64, b float64) uint64 {
+func CledF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VclezF32: ARM NEON intrinsic 
+// ClezF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclez_f32'.
 // Requires NEON.
-func VclezF32(a arm.Float32x2) (dst arm.Uint32x2) {
+func ClezF32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VclezF64: ARM NEON intrinsic 
+// ClezF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclez_f64'.
 // Requires NEON.
-func VclezF64(a arm.Float64x1) (dst arm.Uint64x1) {
+func ClezF64(a arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VclezS8: ARM NEON intrinsic 
+// ClezS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclez_s8'.
 // Requires NEON.
-func VclezS8(a arm.Int8x8) (dst arm.Uint8x8) {
+func ClezS8(a arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VclezS16: ARM NEON intrinsic 
+// ClezS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclez_s16'.
 // Requires NEON.
-func VclezS16(a arm.Int16x4) (dst arm.Uint16x4) {
+func ClezS16(a arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VclezS32: ARM NEON intrinsic 
+// ClezS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclez_s32'.
 // Requires NEON.
-func VclezS32(a arm.Int32x2) (dst arm.Uint32x2) {
+func ClezS32(a arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VclezS64: ARM NEON intrinsic 
+// ClezS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclez_s64'.
 // Requires NEON.
-func VclezS64(a arm.Int64x1) (dst arm.Uint64x1) {
+func ClezS64(a arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VclezqF32: ARM NEON intrinsic 
+// ClezqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezq_f32'.
 // Requires NEON.
-func VclezqF32(a arm.Float32x4) (dst arm.Uint32x4) {
+func ClezqF32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VclezqF64: ARM NEON intrinsic 
+// ClezqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezq_f64'.
 // Requires NEON.
-func VclezqF64(a arm.Float64x2) (dst arm.Uint64x2) {
+func ClezqF64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VclezqS8: ARM NEON intrinsic 
+// ClezqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezq_s8'.
 // Requires NEON.
-func VclezqS8(a arm.Int8x16) (dst arm.Uint8x16) {
+func ClezqS8(a arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VclezqS16: ARM NEON intrinsic 
+// ClezqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezq_s16'.
 // Requires NEON.
-func VclezqS16(a arm.Int16x8) (dst arm.Uint16x8) {
+func ClezqS16(a arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VclezqS32: ARM NEON intrinsic 
+// ClezqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezq_s32'.
 // Requires NEON.
-func VclezqS32(a arm.Int32x4) (dst arm.Uint32x4) {
+func ClezqS32(a arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VclezqS64: ARM NEON intrinsic 
+// ClezqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezq_s64'.
 // Requires NEON.
-func VclezqS64(a arm.Int64x2) (dst arm.Uint64x2) {
+func ClezqS64(a arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VclezsF32: ARM NEON intrinsic 
+// ClezsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezs_f32'.
 // Requires NEON.
-func VclezsF32(a float32) uint32 {
+func ClezsF32(a float32) uint32 {
 	return 0
 }
 
-// VclezdS64: ARM NEON intrinsic 
+// ClezdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezd_s64'.
 // Requires NEON.
-func VclezdS64(a int64) uint64 {
+func ClezdS64(a int64) uint64 {
 	return 0
 }
 
-// VclezdF64: ARM NEON intrinsic 
+// ClezdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclezd_f64'.
 // Requires NEON.
-func VclezdF64(a float64) uint64 {
+func ClezdF64(a float64) uint64 {
 	return 0
 }
 
-// VcltF32: ARM NEON intrinsic 
+// CltF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_f32'.
 // Requires NEON.
-func VcltF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
+func CltF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcltF64: ARM NEON intrinsic 
+// CltF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_f64'.
 // Requires NEON.
-func VcltF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
+func CltF64(a arm.Float64x1, b arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcltS8: ARM NEON intrinsic 
+// CltS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_s8'.
 // Requires NEON.
-func VcltS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func CltS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcltS16: ARM NEON intrinsic 
+// CltS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_s16'.
 // Requires NEON.
-func VcltS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func CltS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcltS32: ARM NEON intrinsic 
+// CltS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_s32'.
 // Requires NEON.
-func VcltS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func CltS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcltS64: ARM NEON intrinsic 
+// CltS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_s64'.
 // Requires NEON.
-func VcltS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func CltS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcltU8: ARM NEON intrinsic 
+// CltU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_u8'.
 // Requires NEON.
-func VcltU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func CltU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcltU16: ARM NEON intrinsic 
+// CltU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_u16'.
 // Requires NEON.
-func VcltU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func CltU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcltU32: ARM NEON intrinsic 
+// CltU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_u32'.
 // Requires NEON.
-func VcltU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func CltU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcltU64: ARM NEON intrinsic 
+// CltU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclt_u64'.
 // Requires NEON.
-func VcltU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func CltU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcltqF32: ARM NEON intrinsic 
+// CltqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_f32'.
 // Requires NEON.
-func VcltqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
+func CltqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcltqF64: ARM NEON intrinsic 
+// CltqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_f64'.
 // Requires NEON.
-func VcltqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
+func CltqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcltqS8: ARM NEON intrinsic 
+// CltqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_s8'.
 // Requires NEON.
-func VcltqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func CltqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcltqS16: ARM NEON intrinsic 
+// CltqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_s16'.
 // Requires NEON.
-func VcltqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func CltqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcltqS32: ARM NEON intrinsic 
+// CltqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_s32'.
 // Requires NEON.
-func VcltqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func CltqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcltqS64: ARM NEON intrinsic 
+// CltqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_s64'.
 // Requires NEON.
-func VcltqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func CltqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcltqU8: ARM NEON intrinsic 
+// CltqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_u8'.
 // Requires NEON.
-func VcltqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func CltqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcltqU16: ARM NEON intrinsic 
+// CltqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_u16'.
 // Requires NEON.
-func VcltqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func CltqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcltqU32: ARM NEON intrinsic 
+// CltqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_u32'.
 // Requires NEON.
-func VcltqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func CltqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcltqU64: ARM NEON intrinsic 
+// CltqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltq_u64'.
 // Requires NEON.
-func VcltqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func CltqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcltsF32: ARM NEON intrinsic 
+// CltsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclts_f32'.
 // Requires NEON.
-func VcltsF32(a float32, b float32) uint32 {
+func CltsF32(a float32, b float32) uint32 {
 	return 0
 }
 
-// VcltdS64: ARM NEON intrinsic 
+// CltdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltd_s64'.
 // Requires NEON.
-func VcltdS64(a int64, b int64) uint64 {
+func CltdS64(a int64, b int64) uint64 {
 	return 0
 }
 
-// VcltdU64: ARM NEON intrinsic 
+// CltdU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltd_u64'.
 // Requires NEON.
-func VcltdU64(a uint64, b uint64) uint64 {
+func CltdU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VcltdF64: ARM NEON intrinsic 
+// CltdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltd_f64'.
 // Requires NEON.
-func VcltdF64(a float64, b float64) uint64 {
+func CltdF64(a float64, b float64) uint64 {
 	return 0
 }
 
-// VcltzF32: ARM NEON intrinsic 
+// CltzF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltz_f32'.
 // Requires NEON.
-func VcltzF32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CltzF32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcltzF64: ARM NEON intrinsic 
+// CltzF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltz_f64'.
 // Requires NEON.
-func VcltzF64(a arm.Float64x1) (dst arm.Uint64x1) {
+func CltzF64(a arm.Float64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcltzS8: ARM NEON intrinsic 
+// CltzS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltz_s8'.
 // Requires NEON.
-func VcltzS8(a arm.Int8x8) (dst arm.Uint8x8) {
+func CltzS8(a arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcltzS16: ARM NEON intrinsic 
+// CltzS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltz_s16'.
 // Requires NEON.
-func VcltzS16(a arm.Int16x4) (dst arm.Uint16x4) {
+func CltzS16(a arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VcltzS32: ARM NEON intrinsic 
+// CltzS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltz_s32'.
 // Requires NEON.
-func VcltzS32(a arm.Int32x2) (dst arm.Uint32x2) {
+func CltzS32(a arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcltzS64: ARM NEON intrinsic 
+// CltzS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltz_s64'.
 // Requires NEON.
-func VcltzS64(a arm.Int64x1) (dst arm.Uint64x1) {
+func CltzS64(a arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VcltzqF32: ARM NEON intrinsic 
+// CltzqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzq_f32'.
 // Requires NEON.
-func VcltzqF32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CltzqF32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcltzqF64: ARM NEON intrinsic 
+// CltzqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzq_f64'.
 // Requires NEON.
-func VcltzqF64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CltzqF64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcltzqS8: ARM NEON intrinsic 
+// CltzqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzq_s8'.
 // Requires NEON.
-func VcltzqS8(a arm.Int8x16) (dst arm.Uint8x16) {
+func CltzqS8(a arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcltzqS16: ARM NEON intrinsic 
+// CltzqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzq_s16'.
 // Requires NEON.
-func VcltzqS16(a arm.Int16x8) (dst arm.Uint16x8) {
+func CltzqS16(a arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VcltzqS32: ARM NEON intrinsic 
+// CltzqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzq_s32'.
 // Requires NEON.
-func VcltzqS32(a arm.Int32x4) (dst arm.Uint32x4) {
+func CltzqS32(a arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcltzqS64: ARM NEON intrinsic 
+// CltzqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzq_s64'.
 // Requires NEON.
-func VcltzqS64(a arm.Int64x2) (dst arm.Uint64x2) {
+func CltzqS64(a arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcltzsF32: ARM NEON intrinsic 
+// CltzsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzs_f32'.
 // Requires NEON.
-func VcltzsF32(a float32) uint32 {
+func CltzsF32(a float32) uint32 {
 	return 0
 }
 
-// VcltzdS64: ARM NEON intrinsic 
+// CltzdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzd_s64'.
 // Requires NEON.
-func VcltzdS64(a int64) uint64 {
+func CltzdS64(a int64) uint64 {
 	return 0
 }
 
-// VcltzdF64: ARM NEON intrinsic 
+// CltzdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcltzd_f64'.
 // Requires NEON.
-func VcltzdF64(a float64) uint64 {
+func CltzdF64(a float64) uint64 {
 	return 0
 }
 
-// VclsS8: ARM NEON intrinsic 
+// ClsS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcls_s8'.
 // Requires NEON.
-func VclsS8(a arm.Int8x8) (dst arm.Int8x8) {
+func ClsS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VclsS16: ARM NEON intrinsic 
+// ClsS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcls_s16'.
 // Requires NEON.
-func VclsS16(a arm.Int16x4) (dst arm.Int16x4) {
+func ClsS16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VclsS32: ARM NEON intrinsic 
+// ClsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcls_s32'.
 // Requires NEON.
-func VclsS32(a arm.Int32x2) (dst arm.Int32x2) {
+func ClsS32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VclsqS8: ARM NEON intrinsic 
+// ClsqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclsq_s8'.
 // Requires NEON.
-func VclsqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func ClsqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VclsqS16: ARM NEON intrinsic 
+// ClsqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclsq_s16'.
 // Requires NEON.
-func VclsqS16(a arm.Int16x8) (dst arm.Int16x8) {
+func ClsqS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VclsqS32: ARM NEON intrinsic 
+// ClsqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclsq_s32'.
 // Requires NEON.
-func VclsqS32(a arm.Int32x4) (dst arm.Int32x4) {
+func ClsqS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VclzS8: ARM NEON intrinsic 
+// ClzS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclz_s8'.
 // Requires NEON.
-func VclzS8(a arm.Int8x8) (dst arm.Int8x8) {
+func ClzS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VclzS16: ARM NEON intrinsic 
+// ClzS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclz_s16'.
 // Requires NEON.
-func VclzS16(a arm.Int16x4) (dst arm.Int16x4) {
+func ClzS16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VclzS32: ARM NEON intrinsic 
+// ClzS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclz_s32'.
 // Requires NEON.
-func VclzS32(a arm.Int32x2) (dst arm.Int32x2) {
+func ClzS32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VclzU8: ARM NEON intrinsic 
+// ClzU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclz_u8'.
 // Requires NEON.
-func VclzU8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func ClzU8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VclzU16: ARM NEON intrinsic 
+// ClzU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclz_u16'.
 // Requires NEON.
-func VclzU16(a arm.Uint16x4) (dst arm.Uint16x4) {
+func ClzU16(a arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VclzU32: ARM NEON intrinsic 
+// ClzU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclz_u32'.
 // Requires NEON.
-func VclzU32(a arm.Uint32x2) (dst arm.Uint32x2) {
+func ClzU32(a arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VclzqS8: ARM NEON intrinsic 
+// ClzqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclzq_s8'.
 // Requires NEON.
-func VclzqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func ClzqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VclzqS16: ARM NEON intrinsic 
+// ClzqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclzq_s16'.
 // Requires NEON.
-func VclzqS16(a arm.Int16x8) (dst arm.Int16x8) {
+func ClzqS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VclzqS32: ARM NEON intrinsic 
+// ClzqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclzq_s32'.
 // Requires NEON.
-func VclzqS32(a arm.Int32x4) (dst arm.Int32x4) {
+func ClzqS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VclzqU8: ARM NEON intrinsic 
+// ClzqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclzq_u8'.
 // Requires NEON.
-func VclzqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func ClzqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VclzqU16: ARM NEON intrinsic 
+// ClzqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclzq_u16'.
 // Requires NEON.
-func VclzqU16(a arm.Uint16x8) (dst arm.Uint16x8) {
+func ClzqU16(a arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VclzqU32: ARM NEON intrinsic 
+// ClzqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vclzq_u32'.
 // Requires NEON.
-func VclzqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
+func ClzqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcntP8: ARM NEON intrinsic 
+// CntP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcnt_p8'.
 // Requires NEON.
-func VcntP8(a arm.Poly8x8) (dst arm.Poly8x8) {
+func CntP8(a arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VcntS8: ARM NEON intrinsic 
+// CntS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcnt_s8'.
 // Requires NEON.
-func VcntS8(a arm.Int8x8) (dst arm.Int8x8) {
+func CntS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VcntU8: ARM NEON intrinsic 
+// CntU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcnt_u8'.
 // Requires NEON.
-func VcntU8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func CntU8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VcntqP8: ARM NEON intrinsic 
+// CntqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcntq_p8'.
 // Requires NEON.
-func VcntqP8(a arm.Poly8x16) (dst arm.Poly8x16) {
+func CntqP8(a arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VcntqS8: ARM NEON intrinsic 
+// CntqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcntq_s8'.
 // Requires NEON.
-func VcntqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func CntqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VcntqU8: ARM NEON intrinsic 
+// CntqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcntq_u8'.
 // Requires NEON.
-func VcntqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func CntqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VcvtF32F64: ARM NEON intrinsic 
+// CvtF32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_f32_f64'.
 // Requires NEON.
-func VcvtF32F64(a arm.Float64x2) (dst arm.Float32x2) {
+func CvtF32F64(a arm.Float64x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VcvtHighF32F64: ARM NEON intrinsic 
+// CvtHighF32F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_high_f32_f64'.
 // Requires NEON.
-func VcvtHighF32F64(a arm.Float32x2, b arm.Float64x2) (dst arm.Float32x4) {
+func CvtHighF32F64(a arm.Float32x2, b arm.Float64x2) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VcvtF64F32: ARM NEON intrinsic 
+// CvtF64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_f64_f32'.
 // Requires NEON.
-func VcvtF64F32(a arm.Float32x2) (dst arm.Float64x2) {
+func CvtF64F32(a arm.Float32x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VcvtHighF64F32: ARM NEON intrinsic 
+// CvtHighF64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_high_f64_f32'.
 // Requires NEON.
-func VcvtHighF64F32(a arm.Float32x4) (dst arm.Float64x2) {
+func CvtHighF64F32(a arm.Float32x4) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VcvtdF64S64: ARM NEON intrinsic 
+// CvtdF64S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtd_f64_s64'.
 // Requires NEON.
-func VcvtdF64S64(a int64) float64 {
+func CvtdF64S64(a int64) float64 {
 	return 0
 }
 
-// VcvtdF64U64: ARM NEON intrinsic 
+// CvtdF64U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtd_f64_u64'.
 // Requires NEON.
-func VcvtdF64U64(a uint64) float64 {
+func CvtdF64U64(a uint64) float64 {
 	return 0
 }
 
-// VcvtsF32S32: ARM NEON intrinsic 
+// CvtsF32S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvts_f32_s32'.
 // Requires NEON.
-func VcvtsF32S32(a int32) float32 {
+func CvtsF32S32(a int32) float32 {
 	return 0
 }
 
-// VcvtsF32U32: ARM NEON intrinsic 
+// CvtsF32U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvts_f32_u32'.
 // Requires NEON.
-func VcvtsF32U32(a uint32) float32 {
+func CvtsF32U32(a uint32) float32 {
 	return 0
 }
 
-// VcvtF32S32: ARM NEON intrinsic 
+// CvtF32S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_f32_s32'.
 // Requires NEON.
-func VcvtF32S32(a arm.Int32x2) (dst arm.Float32x2) {
+func CvtF32S32(a arm.Int32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VcvtF32U32: ARM NEON intrinsic 
+// CvtF32U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_f32_u32'.
 // Requires NEON.
-func VcvtF32U32(a arm.Uint32x2) (dst arm.Float32x2) {
+func CvtF32U32(a arm.Uint32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VcvtqF32S32: ARM NEON intrinsic 
+// CvtqF32S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_f32_s32'.
 // Requires NEON.
-func VcvtqF32S32(a arm.Int32x4) (dst arm.Float32x4) {
+func CvtqF32S32(a arm.Int32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VcvtqF32U32: ARM NEON intrinsic 
+// CvtqF32U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_f32_u32'.
 // Requires NEON.
-func VcvtqF32U32(a arm.Uint32x4) (dst arm.Float32x4) {
+func CvtqF32U32(a arm.Uint32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VcvtqF64S64: ARM NEON intrinsic 
+// CvtqF64S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_f64_s64'.
 // Requires NEON.
-func VcvtqF64S64(a arm.Int64x2) (dst arm.Float64x2) {
+func CvtqF64S64(a arm.Int64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VcvtqF64U64: ARM NEON intrinsic 
+// CvtqF64U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_f64_u64'.
 // Requires NEON.
-func VcvtqF64U64(a arm.Uint64x2) (dst arm.Float64x2) {
+func CvtqF64U64(a arm.Uint64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VcvtdS64F64: ARM NEON intrinsic 
+// CvtdS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtd_s64_f64'.
 // Requires NEON.
-func VcvtdS64F64(a float64) int64 {
+func CvtdS64F64(a float64) int64 {
 	return 0
 }
 
-// VcvtdU64F64: ARM NEON intrinsic 
+// CvtdU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtd_u64_f64'.
 // Requires NEON.
-func VcvtdU64F64(a float64) uint64 {
+func CvtdU64F64(a float64) uint64 {
 	return 0
 }
 
-// VcvtsS32F32: ARM NEON intrinsic 
+// CvtsS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvts_s32_f32'.
 // Requires NEON.
-func VcvtsS32F32(a float32) int32 {
+func CvtsS32F32(a float32) int32 {
 	return 0
 }
 
-// VcvtsU32F32: ARM NEON intrinsic 
+// CvtsU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvts_u32_f32'.
 // Requires NEON.
-func VcvtsU32F32(a float32) uint32 {
+func CvtsU32F32(a float32) uint32 {
 	return 0
 }
 
-// VcvtS32F32: ARM NEON intrinsic 
+// CvtS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_s32_f32'.
 // Requires NEON.
-func VcvtS32F32(a arm.Float32x2) (dst arm.Int32x2) {
+func CvtS32F32(a arm.Float32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VcvtU32F32: ARM NEON intrinsic 
+// CvtU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvt_u32_f32'.
 // Requires NEON.
-func VcvtU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CvtU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcvtqS32F32: ARM NEON intrinsic 
+// CvtqS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_s32_f32'.
 // Requires NEON.
-func VcvtqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
+func CvtqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VcvtqU32F32: ARM NEON intrinsic 
+// CvtqU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_u32_f32'.
 // Requires NEON.
-func VcvtqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CvtqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcvtqS64F64: ARM NEON intrinsic 
+// CvtqS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_s64_f64'.
 // Requires NEON.
-func VcvtqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
+func CvtqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VcvtqU64F64: ARM NEON intrinsic 
+// CvtqU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtq_u64_f64'.
 // Requires NEON.
-func VcvtqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CvtqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcvtadS64F64: ARM NEON intrinsic 
+// CvtadS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtad_s64_f64'.
 // Requires NEON.
-func VcvtadS64F64(a float64) int64 {
+func CvtadS64F64(a float64) int64 {
 	return 0
 }
 
-// VcvtadU64F64: ARM NEON intrinsic 
+// CvtadU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtad_u64_f64'.
 // Requires NEON.
-func VcvtadU64F64(a float64) uint64 {
+func CvtadU64F64(a float64) uint64 {
 	return 0
 }
 
-// VcvtasS32F32: ARM NEON intrinsic 
+// CvtasS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtas_s32_f32'.
 // Requires NEON.
-func VcvtasS32F32(a float32) int32 {
+func CvtasS32F32(a float32) int32 {
 	return 0
 }
 
-// VcvtasU32F32: ARM NEON intrinsic 
+// CvtasU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtas_u32_f32'.
 // Requires NEON.
-func VcvtasU32F32(a float32) uint32 {
+func CvtasU32F32(a float32) uint32 {
 	return 0
 }
 
-// VcvtaS32F32: ARM NEON intrinsic 
+// CvtaS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvta_s32_f32'.
 // Requires NEON.
-func VcvtaS32F32(a arm.Float32x2) (dst arm.Int32x2) {
+func CvtaS32F32(a arm.Float32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VcvtaU32F32: ARM NEON intrinsic 
+// CvtaU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvta_u32_f32'.
 // Requires NEON.
-func VcvtaU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CvtaU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcvtaqS32F32: ARM NEON intrinsic 
+// CvtaqS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtaq_s32_f32'.
 // Requires NEON.
-func VcvtaqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
+func CvtaqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VcvtaqU32F32: ARM NEON intrinsic 
+// CvtaqU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtaq_u32_f32'.
 // Requires NEON.
-func VcvtaqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CvtaqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcvtaqS64F64: ARM NEON intrinsic 
+// CvtaqS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtaq_s64_f64'.
 // Requires NEON.
-func VcvtaqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
+func CvtaqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VcvtaqU64F64: ARM NEON intrinsic 
+// CvtaqU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtaq_u64_f64'.
 // Requires NEON.
-func VcvtaqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CvtaqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcvtmdS64F64: ARM NEON intrinsic 
+// CvtmdS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtmd_s64_f64'.
 // Requires NEON.
-func VcvtmdS64F64(a float64) int64 {
+func CvtmdS64F64(a float64) int64 {
 	return 0
 }
 
-// VcvtmdU64F64: ARM NEON intrinsic 
+// CvtmdU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtmd_u64_f64'.
 // Requires NEON.
-func VcvtmdU64F64(a float64) uint64 {
+func CvtmdU64F64(a float64) uint64 {
 	return 0
 }
 
-// VcvtmsS32F32: ARM NEON intrinsic 
+// CvtmsS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtms_s32_f32'.
 // Requires NEON.
-func VcvtmsS32F32(a float32) int32 {
+func CvtmsS32F32(a float32) int32 {
 	return 0
 }
 
-// VcvtmsU32F32: ARM NEON intrinsic 
+// CvtmsU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtms_u32_f32'.
 // Requires NEON.
-func VcvtmsU32F32(a float32) uint32 {
+func CvtmsU32F32(a float32) uint32 {
 	return 0
 }
 
-// VcvtmS32F32: ARM NEON intrinsic 
+// CvtmS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtm_s32_f32'.
 // Requires NEON.
-func VcvtmS32F32(a arm.Float32x2) (dst arm.Int32x2) {
+func CvtmS32F32(a arm.Float32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VcvtmU32F32: ARM NEON intrinsic 
+// CvtmU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtm_u32_f32'.
 // Requires NEON.
-func VcvtmU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CvtmU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcvtmqS32F32: ARM NEON intrinsic 
+// CvtmqS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtmq_s32_f32'.
 // Requires NEON.
-func VcvtmqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
+func CvtmqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VcvtmqU32F32: ARM NEON intrinsic 
+// CvtmqU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtmq_u32_f32'.
 // Requires NEON.
-func VcvtmqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CvtmqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcvtmqS64F64: ARM NEON intrinsic 
+// CvtmqS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtmq_s64_f64'.
 // Requires NEON.
-func VcvtmqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
+func CvtmqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VcvtmqU64F64: ARM NEON intrinsic 
+// CvtmqU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtmq_u64_f64'.
 // Requires NEON.
-func VcvtmqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CvtmqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcvtndS64F64: ARM NEON intrinsic 
+// CvtndS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtnd_s64_f64'.
 // Requires NEON.
-func VcvtndS64F64(a float64) int64 {
+func CvtndS64F64(a float64) int64 {
 	return 0
 }
 
-// VcvtndU64F64: ARM NEON intrinsic 
+// CvtndU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtnd_u64_f64'.
 // Requires NEON.
-func VcvtndU64F64(a float64) uint64 {
+func CvtndU64F64(a float64) uint64 {
 	return 0
 }
 
-// VcvtnsS32F32: ARM NEON intrinsic 
+// CvtnsS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtns_s32_f32'.
 // Requires NEON.
-func VcvtnsS32F32(a float32) int32 {
+func CvtnsS32F32(a float32) int32 {
 	return 0
 }
 
-// VcvtnsU32F32: ARM NEON intrinsic 
+// CvtnsU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtns_u32_f32'.
 // Requires NEON.
-func VcvtnsU32F32(a float32) uint32 {
+func CvtnsU32F32(a float32) uint32 {
 	return 0
 }
 
-// VcvtnS32F32: ARM NEON intrinsic 
+// CvtnS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtn_s32_f32'.
 // Requires NEON.
-func VcvtnS32F32(a arm.Float32x2) (dst arm.Int32x2) {
+func CvtnS32F32(a arm.Float32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VcvtnU32F32: ARM NEON intrinsic 
+// CvtnU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtn_u32_f32'.
 // Requires NEON.
-func VcvtnU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CvtnU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcvtnqS32F32: ARM NEON intrinsic 
+// CvtnqS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtnq_s32_f32'.
 // Requires NEON.
-func VcvtnqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
+func CvtnqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VcvtnqU32F32: ARM NEON intrinsic 
+// CvtnqU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtnq_u32_f32'.
 // Requires NEON.
-func VcvtnqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CvtnqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcvtnqS64F64: ARM NEON intrinsic 
+// CvtnqS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtnq_s64_f64'.
 // Requires NEON.
-func VcvtnqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
+func CvtnqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VcvtnqU64F64: ARM NEON intrinsic 
+// CvtnqU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtnq_u64_f64'.
 // Requires NEON.
-func VcvtnqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CvtnqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VcvtpdS64F64: ARM NEON intrinsic 
+// CvtpdS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtpd_s64_f64'.
 // Requires NEON.
-func VcvtpdS64F64(a float64) int64 {
+func CvtpdS64F64(a float64) int64 {
 	return 0
 }
 
-// VcvtpdU64F64: ARM NEON intrinsic 
+// CvtpdU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtpd_u64_f64'.
 // Requires NEON.
-func VcvtpdU64F64(a float64) uint64 {
+func CvtpdU64F64(a float64) uint64 {
 	return 0
 }
 
-// VcvtpsS32F32: ARM NEON intrinsic 
+// CvtpsS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtps_s32_f32'.
 // Requires NEON.
-func VcvtpsS32F32(a float32) int32 {
+func CvtpsS32F32(a float32) int32 {
 	return 0
 }
 
-// VcvtpsU32F32: ARM NEON intrinsic 
+// CvtpsU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtps_u32_f32'.
 // Requires NEON.
-func VcvtpsU32F32(a float32) uint32 {
+func CvtpsU32F32(a float32) uint32 {
 	return 0
 }
 
-// VcvtpS32F32: ARM NEON intrinsic 
+// CvtpS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtp_s32_f32'.
 // Requires NEON.
-func VcvtpS32F32(a arm.Float32x2) (dst arm.Int32x2) {
+func CvtpS32F32(a arm.Float32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VcvtpU32F32: ARM NEON intrinsic 
+// CvtpU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtp_u32_f32'.
 // Requires NEON.
-func VcvtpU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
+func CvtpU32F32(a arm.Float32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VcvtpqS32F32: ARM NEON intrinsic 
+// CvtpqS32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtpq_s32_f32'.
 // Requires NEON.
-func VcvtpqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
+func CvtpqS32F32(a arm.Float32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VcvtpqU32F32: ARM NEON intrinsic 
+// CvtpqU32F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtpq_u32_f32'.
 // Requires NEON.
-func VcvtpqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
+func CvtpqU32F32(a arm.Float32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VcvtpqS64F64: ARM NEON intrinsic 
+// CvtpqS64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtpq_s64_f64'.
 // Requires NEON.
-func VcvtpqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
+func CvtpqS64F64(a arm.Float64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VcvtpqU64F64: ARM NEON intrinsic 
+// CvtpqU64F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vcvtpq_u64_f64'.
 // Requires NEON.
-func VcvtpqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
+func CvtpqU64F64(a arm.Float64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VdupNF32: ARM NEON intrinsic 
+// DupNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_f32'.
 // Requires NEON.
-func VdupNF32(a float32) (dst arm.Float32x2) {
+func DupNF32(a float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VdupNF64: ARM NEON intrinsic 
+// DupNF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_f64'.
 // Requires NEON.
-func VdupNF64(a float64) (dst arm.Float64x1) {
+func DupNF64(a float64) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VdupNP8: ARM NEON intrinsic 
+// DupNP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_p8'.
 // Requires NEON.
-func VdupNP8(a arm.Poly8) (dst arm.Poly8x8) {
+func DupNP8(a arm.Poly8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VdupNP16: ARM NEON intrinsic 
+// DupNP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_p16'.
 // Requires NEON.
-func VdupNP16(a arm.Poly16) (dst arm.Poly16x4) {
+func DupNP16(a arm.Poly16) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VdupNS8: ARM NEON intrinsic 
+// DupNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_s8'.
 // Requires NEON.
-func VdupNS8(a int8) (dst arm.Int8x8) {
+func DupNS8(a int8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VdupNS16: ARM NEON intrinsic 
+// DupNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_s16'.
 // Requires NEON.
-func VdupNS16(a int16) (dst arm.Int16x4) {
+func DupNS16(a int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VdupNS32: ARM NEON intrinsic 
+// DupNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_s32'.
 // Requires NEON.
-func VdupNS32(a int32) (dst arm.Int32x2) {
+func DupNS32(a int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VdupNS64: ARM NEON intrinsic 
+// DupNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_s64'.
 // Requires NEON.
-func VdupNS64(a int64) (dst arm.Int64x1) {
+func DupNS64(a int64) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VdupNU8: ARM NEON intrinsic 
+// DupNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_u8'.
 // Requires NEON.
-func VdupNU8(a uint8) (dst arm.Uint8x8) {
+func DupNU8(a uint8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VdupNU16: ARM NEON intrinsic 
+// DupNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_u16'.
 // Requires NEON.
-func VdupNU16(a uint16) (dst arm.Uint16x4) {
+func DupNU16(a uint16) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VdupNU32: ARM NEON intrinsic 
+// DupNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_u32'.
 // Requires NEON.
-func VdupNU32(a uint32) (dst arm.Uint32x2) {
+func DupNU32(a uint32) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VdupNU64: ARM NEON intrinsic 
+// DupNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_n_u64'.
 // Requires NEON.
-func VdupNU64(a uint64) (dst arm.Uint64x1) {
+func DupNU64(a uint64) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VdupqNF32: ARM NEON intrinsic 
+// DupqNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_f32'.
 // Requires NEON.
-func VdupqNF32(a float32) (dst arm.Float32x4) {
+func DupqNF32(a float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VdupqNF64: ARM NEON intrinsic 
+// DupqNF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_f64'.
 // Requires NEON.
-func VdupqNF64(a float64) (dst arm.Float64x2) {
+func DupqNF64(a float64) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VdupqNP8: ARM NEON intrinsic 
+// DupqNP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_p8'.
 // Requires NEON.
-func VdupqNP8(a uint32) (dst arm.Poly8x16) {
+func DupqNP8(a uint32) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VdupqNP16: ARM NEON intrinsic 
+// DupqNP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_p16'.
 // Requires NEON.
-func VdupqNP16(a uint32) (dst arm.Poly16x8) {
+func DupqNP16(a uint32) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VdupqNS8: ARM NEON intrinsic 
+// DupqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_s8'.
 // Requires NEON.
-func VdupqNS8(a int32) (dst arm.Int8x16) {
+func DupqNS8(a int32) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VdupqNS16: ARM NEON intrinsic 
+// DupqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_s16'.
 // Requires NEON.
-func VdupqNS16(a int32) (dst arm.Int16x8) {
+func DupqNS16(a int32) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VdupqNS32: ARM NEON intrinsic 
+// DupqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_s32'.
 // Requires NEON.
-func VdupqNS32(a int32) (dst arm.Int32x4) {
+func DupqNS32(a int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VdupqNS64: ARM NEON intrinsic 
+// DupqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_s64'.
 // Requires NEON.
-func VdupqNS64(a int64) (dst arm.Int64x2) {
+func DupqNS64(a int64) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VdupqNU8: ARM NEON intrinsic 
+// DupqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_u8'.
 // Requires NEON.
-func VdupqNU8(a uint32) (dst arm.Uint8x16) {
+func DupqNU8(a uint32) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VdupqNU16: ARM NEON intrinsic 
+// DupqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_u16'.
 // Requires NEON.
-func VdupqNU16(a uint32) (dst arm.Uint16x8) {
+func DupqNU16(a uint32) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VdupqNU32: ARM NEON intrinsic 
+// DupqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_u32'.
 // Requires NEON.
-func VdupqNU32(a uint32) (dst arm.Uint32x4) {
+func DupqNU32(a uint32) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VdupqNU64: ARM NEON intrinsic 
+// DupqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_n_u64'.
 // Requires NEON.
-func VdupqNU64(a uint64) (dst arm.Uint64x2) {
+func DupqNU64(a uint64) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VdupLaneF32: ARM NEON intrinsic 
+// DupLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneF32(a arm.Float32x2, b int) (dst arm.Float32x2) {
+func DupLaneF32(a arm.Float32x2, b int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VdupLaneF64: ARM NEON intrinsic 
+// DupLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneF64(a arm.Float64x1, b int) (dst arm.Float64x1) {
+func DupLaneF64(a arm.Float64x1, b int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VdupLaneP8: ARM NEON intrinsic 
+// DupLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8x8) {
+func DupLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VdupLaneP16: ARM NEON intrinsic 
+// DupLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16x4) {
+func DupLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VdupLaneS8: ARM NEON intrinsic 
+// DupLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
+func DupLaneS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VdupLaneS16: ARM NEON intrinsic 
+// DupLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
+func DupLaneS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VdupLaneS32: ARM NEON intrinsic 
+// DupLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
+func DupLaneS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VdupLaneS64: ARM NEON intrinsic 
+// DupLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
+func DupLaneS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VdupLaneU8: ARM NEON intrinsic 
+// DupLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
+func DupLaneU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VdupLaneU16: ARM NEON intrinsic 
+// DupLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
+func DupLaneU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VdupLaneU32: ARM NEON intrinsic 
+// DupLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
+func DupLaneU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VdupLaneU64: ARM NEON intrinsic 
+// DupLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_lane_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
+func DupLaneU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VdupLaneqF32: ARM NEON intrinsic 
+// DupLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqF32(a arm.Float32x4, b int) (dst arm.Float32x2) {
+func DupLaneqF32(a arm.Float32x4, b int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VdupLaneqF64: ARM NEON intrinsic 
+// DupLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqF64(a arm.Float64x2, b int) (dst arm.Float64x1) {
+func DupLaneqF64(a arm.Float64x2, b int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VdupLaneqP8: ARM NEON intrinsic 
+// DupLaneqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqP8(a arm.Poly8x16, b int) (dst arm.Poly8x8) {
+func DupLaneqP8(a arm.Poly8x16, b int) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VdupLaneqP16: ARM NEON intrinsic 
+// DupLaneqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqP16(a arm.Poly16x8, b int) (dst arm.Poly16x4) {
+func DupLaneqP16(a arm.Poly16x8, b int) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VdupLaneqS8: ARM NEON intrinsic 
+// DupLaneqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqS8(a arm.Int8x16, b int) (dst arm.Int8x8) {
+func DupLaneqS8(a arm.Int8x16, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VdupLaneqS16: ARM NEON intrinsic 
+// DupLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqS16(a arm.Int16x8, b int) (dst arm.Int16x4) {
+func DupLaneqS16(a arm.Int16x8, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VdupLaneqS32: ARM NEON intrinsic 
+// DupLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqS32(a arm.Int32x4, b int) (dst arm.Int32x2) {
+func DupLaneqS32(a arm.Int32x4, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VdupLaneqS64: ARM NEON intrinsic 
+// DupLaneqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqS64(a arm.Int64x2, b int) (dst arm.Int64x1) {
+func DupLaneqS64(a arm.Int64x2, b int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VdupLaneqU8: ARM NEON intrinsic 
+// DupLaneqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqU8(a arm.Uint8x16, b int) (dst arm.Uint8x8) {
+func DupLaneqU8(a arm.Uint8x16, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VdupLaneqU16: ARM NEON intrinsic 
+// DupLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqU16(a arm.Uint16x8, b int) (dst arm.Uint16x4) {
+func DupLaneqU16(a arm.Uint16x8, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VdupLaneqU32: ARM NEON intrinsic 
+// DupLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqU32(a arm.Uint32x4, b int) (dst arm.Uint32x2) {
+func DupLaneqU32(a arm.Uint32x4, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VdupLaneqU64: ARM NEON intrinsic 
+// DupLaneqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdup_laneq_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupLaneqU64(a arm.Uint64x2, b int) (dst arm.Uint64x1) {
+func DupLaneqU64(a arm.Uint64x2, b int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VdupqLaneF32: ARM NEON intrinsic 
+// DupqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneF32(a arm.Float32x2, b int) (dst arm.Float32x4) {
+func DupqLaneF32(a arm.Float32x2, b int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VdupqLaneF64: ARM NEON intrinsic 
+// DupqLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneF64(a arm.Float64x1, b int) (dst arm.Float64x2) {
+func DupqLaneF64(a arm.Float64x1, b int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VdupqLaneP8: ARM NEON intrinsic 
+// DupqLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8x16) {
+func DupqLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VdupqLaneP16: ARM NEON intrinsic 
+// DupqLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16x8) {
+func DupqLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VdupqLaneS8: ARM NEON intrinsic 
+// DupqLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneS8(a arm.Int8x8, b int) (dst arm.Int8x16) {
+func DupqLaneS8(a arm.Int8x8, b int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VdupqLaneS16: ARM NEON intrinsic 
+// DupqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneS16(a arm.Int16x4, b int) (dst arm.Int16x8) {
+func DupqLaneS16(a arm.Int16x4, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VdupqLaneS32: ARM NEON intrinsic 
+// DupqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneS32(a arm.Int32x2, b int) (dst arm.Int32x4) {
+func DupqLaneS32(a arm.Int32x2, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VdupqLaneS64: ARM NEON intrinsic 
+// DupqLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneS64(a arm.Int64x1, b int) (dst arm.Int64x2) {
+func DupqLaneS64(a arm.Int64x1, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VdupqLaneU8: ARM NEON intrinsic 
+// DupqLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneU8(a arm.Uint8x8, b int) (dst arm.Uint8x16) {
+func DupqLaneU8(a arm.Uint8x8, b int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VdupqLaneU16: ARM NEON intrinsic 
+// DupqLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneU16(a arm.Uint16x4, b int) (dst arm.Uint16x8) {
+func DupqLaneU16(a arm.Uint16x4, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VdupqLaneU32: ARM NEON intrinsic 
+// DupqLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneU32(a arm.Uint32x2, b int) (dst arm.Uint32x4) {
+func DupqLaneU32(a arm.Uint32x2, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VdupqLaneU64: ARM NEON intrinsic 
+// DupqLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_lane_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneU64(a arm.Uint64x1, b int) (dst arm.Uint64x2) {
+func DupqLaneU64(a arm.Uint64x1, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VdupqLaneqF32: ARM NEON intrinsic 
+// DupqLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqF32(a arm.Float32x4, b int) (dst arm.Float32x4) {
+func DupqLaneqF32(a arm.Float32x4, b int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VdupqLaneqF64: ARM NEON intrinsic 
+// DupqLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqF64(a arm.Float64x2, b int) (dst arm.Float64x2) {
+func DupqLaneqF64(a arm.Float64x2, b int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VdupqLaneqP8: ARM NEON intrinsic 
+// DupqLaneqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqP8(a arm.Poly8x16, b int) (dst arm.Poly8x16) {
+func DupqLaneqP8(a arm.Poly8x16, b int) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VdupqLaneqP16: ARM NEON intrinsic 
+// DupqLaneqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqP16(a arm.Poly16x8, b int) (dst arm.Poly16x8) {
+func DupqLaneqP16(a arm.Poly16x8, b int) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VdupqLaneqS8: ARM NEON intrinsic 
+// DupqLaneqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
+func DupqLaneqS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VdupqLaneqS16: ARM NEON intrinsic 
+// DupqLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
+func DupqLaneqS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VdupqLaneqS32: ARM NEON intrinsic 
+// DupqLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
+func DupqLaneqS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VdupqLaneqS64: ARM NEON intrinsic 
+// DupqLaneqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
+func DupqLaneqS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VdupqLaneqU8: ARM NEON intrinsic 
+// DupqLaneqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
+func DupqLaneqU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VdupqLaneqU16: ARM NEON intrinsic 
+// DupqLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
+func DupqLaneqU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VdupqLaneqU32: ARM NEON intrinsic 
+// DupqLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
+func DupqLaneqU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VdupqLaneqU64: ARM NEON intrinsic 
+// DupqLaneqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupq_laneq_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupqLaneqU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
+func DupqLaneqU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VdupbLaneP8: ARM NEON intrinsic 
+// DupbLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupb_lane_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupbLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8) {
+func DupbLaneP8(a arm.Poly8x8, b int) (dst arm.Poly8) {
 	return arm.Poly8{}
 }
 
-// VdupbLaneS8: ARM NEON intrinsic 
+// DupbLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupb_lane_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupbLaneS8(a arm.Int8x8, b int) int8 {
+func DupbLaneS8(a arm.Int8x8, b int) int8 {
 	return 0
 }
 
-// VdupbLaneU8: ARM NEON intrinsic 
+// DupbLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupb_lane_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupbLaneU8(a arm.Uint8x8, b int) uint8 {
+func DupbLaneU8(a arm.Uint8x8, b int) uint8 {
 	return 0
 }
 
-// VduphLaneP16: ARM NEON intrinsic 
+// DuphLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vduph_lane_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VduphLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16) {
+func DuphLaneP16(a arm.Poly16x4, b int) (dst arm.Poly16) {
 	return arm.Poly16{}
 }
 
-// VduphLaneS16: ARM NEON intrinsic 
+// DuphLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vduph_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VduphLaneS16(a arm.Int16x4, b int) int16 {
+func DuphLaneS16(a arm.Int16x4, b int) int16 {
 	return 0
 }
 
-// VduphLaneU16: ARM NEON intrinsic 
+// DuphLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vduph_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VduphLaneU16(a arm.Uint16x4, b int) uint16 {
+func DuphLaneU16(a arm.Uint16x4, b int) uint16 {
 	return 0
 }
 
-// VdupsLaneF32: ARM NEON intrinsic 
+// DupsLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdups_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupsLaneF32(a arm.Float32x2, b int) float32 {
+func DupsLaneF32(a arm.Float32x2, b int) float32 {
 	return 0
 }
 
-// VdupsLaneS32: ARM NEON intrinsic 
+// DupsLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdups_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupsLaneS32(a arm.Int32x2, b int) int32 {
+func DupsLaneS32(a arm.Int32x2, b int) int32 {
 	return 0
 }
 
-// VdupsLaneU32: ARM NEON intrinsic 
+// DupsLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdups_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupsLaneU32(a arm.Uint32x2, b int) uint32 {
+func DupsLaneU32(a arm.Uint32x2, b int) uint32 {
 	return 0
 }
 
-// VdupdLaneF64: ARM NEON intrinsic 
+// DupdLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupd_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupdLaneF64(a arm.Float64x1, b int) float64 {
+func DupdLaneF64(a arm.Float64x1, b int) float64 {
 	return 0
 }
 
-// VdupdLaneS64: ARM NEON intrinsic 
+// DupdLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupd_lane_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupdLaneS64(a arm.Int64x1, b int) int64 {
+func DupdLaneS64(a arm.Int64x1, b int) int64 {
 	return 0
 }
 
-// VdupdLaneU64: ARM NEON intrinsic 
+// DupdLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupd_lane_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupdLaneU64(a arm.Uint64x1, b int) uint64 {
+func DupdLaneU64(a arm.Uint64x1, b int) uint64 {
 	return 0
 }
 
-// VdupbLaneqP8: ARM NEON intrinsic 
+// DupbLaneqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupb_laneq_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupbLaneqP8(a arm.Poly8x16, b int) (dst arm.Poly8) {
+func DupbLaneqP8(a arm.Poly8x16, b int) (dst arm.Poly8) {
 	return arm.Poly8{}
 }
 
-// VdupbLaneqS8: ARM NEON intrinsic 
+// DupbLaneqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupb_laneq_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupbLaneqS8(a arm.Int8x16, b int) int8 {
+func DupbLaneqS8(a arm.Int8x16, b int) int8 {
 	return 0
 }
 
-// VdupbLaneqU8: ARM NEON intrinsic 
+// DupbLaneqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupb_laneq_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupbLaneqU8(a arm.Uint8x16, b int) uint8 {
+func DupbLaneqU8(a arm.Uint8x16, b int) uint8 {
 	return 0
 }
 
-// VduphLaneqP16: ARM NEON intrinsic 
+// DuphLaneqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vduph_laneq_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VduphLaneqP16(a arm.Poly16x8, b int) (dst arm.Poly16) {
+func DuphLaneqP16(a arm.Poly16x8, b int) (dst arm.Poly16) {
 	return arm.Poly16{}
 }
 
-// VduphLaneqS16: ARM NEON intrinsic 
+// DuphLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vduph_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VduphLaneqS16(a arm.Int16x8, b int) int16 {
+func DuphLaneqS16(a arm.Int16x8, b int) int16 {
 	return 0
 }
 
-// VduphLaneqU16: ARM NEON intrinsic 
+// DuphLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vduph_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VduphLaneqU16(a arm.Uint16x8, b int) uint16 {
+func DuphLaneqU16(a arm.Uint16x8, b int) uint16 {
 	return 0
 }
 
-// VdupsLaneqF32: ARM NEON intrinsic 
+// DupsLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdups_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupsLaneqF32(a arm.Float32x4, b int) float32 {
+func DupsLaneqF32(a arm.Float32x4, b int) float32 {
 	return 0
 }
 
-// VdupsLaneqS32: ARM NEON intrinsic 
+// DupsLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdups_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupsLaneqS32(a arm.Int32x4, b int) int32 {
+func DupsLaneqS32(a arm.Int32x4, b int) int32 {
 	return 0
 }
 
-// VdupsLaneqU32: ARM NEON intrinsic 
+// DupsLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdups_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupsLaneqU32(a arm.Uint32x4, b int) uint32 {
+func DupsLaneqU32(a arm.Uint32x4, b int) uint32 {
 	return 0
 }
 
-// VdupdLaneqF64: ARM NEON intrinsic 
+// DupdLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupd_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupdLaneqF64(a arm.Float64x2, b int) float64 {
+func DupdLaneqF64(a arm.Float64x2, b int) float64 {
 	return 0
 }
 
-// VdupdLaneqS64: ARM NEON intrinsic 
+// DupdLaneqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupd_laneq_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupdLaneqS64(a arm.Int64x2, b int) int64 {
+func DupdLaneqS64(a arm.Int64x2, b int) int64 {
 	return 0
 }
 
-// VdupdLaneqU64: ARM NEON intrinsic 
+// DupdLaneqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vdupd_laneq_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VdupdLaneqU64(a arm.Uint64x2, b int) uint64 {
+func DupdLaneqU64(a arm.Uint64x2, b int) uint64 {
 	return 0
 }
 
-// VextF32: ARM NEON intrinsic 
+// ExtF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextF32(a arm.Float32x2, b arm.Float32x2, c int) (dst arm.Float32x2) {
+func ExtF32(a arm.Float32x2, b arm.Float32x2, c int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VextF64: ARM NEON intrinsic 
+// ExtF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextF64(a arm.Float64x1, b arm.Float64x1, c int) (dst arm.Float64x1) {
+func ExtF64(a arm.Float64x1, b arm.Float64x1, c int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VextP8: ARM NEON intrinsic 
+// ExtP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextP8(a arm.Poly8x8, b arm.Poly8x8, c int) (dst arm.Poly8x8) {
+func ExtP8(a arm.Poly8x8, b arm.Poly8x8, c int) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VextP16: ARM NEON intrinsic 
+// ExtP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextP16(a arm.Poly16x4, b arm.Poly16x4, c int) (dst arm.Poly16x4) {
+func ExtP16(a arm.Poly16x4, b arm.Poly16x4, c int) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VextS8: ARM NEON intrinsic 
+// ExtS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
+func ExtS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VextS16: ARM NEON intrinsic 
+// ExtS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
+func ExtS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VextS32: ARM NEON intrinsic 
+// ExtS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
+func ExtS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VextS64: ARM NEON intrinsic 
+// ExtS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
+func ExtS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VextU8: ARM NEON intrinsic 
+// ExtU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
+func ExtU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VextU16: ARM NEON intrinsic 
+// ExtU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
+func ExtU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VextU32: ARM NEON intrinsic 
+// ExtU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
+func ExtU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VextU64: ARM NEON intrinsic 
+// ExtU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vext_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
+func ExtU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VextqF32: ARM NEON intrinsic 
+// ExtqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqF32(a arm.Float32x4, b arm.Float32x4, c int) (dst arm.Float32x4) {
+func ExtqF32(a arm.Float32x4, b arm.Float32x4, c int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VextqF64: ARM NEON intrinsic 
+// ExtqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqF64(a arm.Float64x2, b arm.Float64x2, c int) (dst arm.Float64x2) {
+func ExtqF64(a arm.Float64x2, b arm.Float64x2, c int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VextqP8: ARM NEON intrinsic 
+// ExtqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_p8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqP8(a arm.Poly8x16, b arm.Poly8x16, c int) (dst arm.Poly8x16) {
+func ExtqP8(a arm.Poly8x16, b arm.Poly8x16, c int) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VextqP16: ARM NEON intrinsic 
+// ExtqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_p16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqP16(a arm.Poly16x8, b arm.Poly16x8, c int) (dst arm.Poly16x8) {
+func ExtqP16(a arm.Poly16x8, b arm.Poly16x8, c int) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VextqS8: ARM NEON intrinsic 
+// ExtqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
+func ExtqS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VextqS16: ARM NEON intrinsic 
+// ExtqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
+func ExtqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VextqS32: ARM NEON intrinsic 
+// ExtqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
+func ExtqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VextqS64: ARM NEON intrinsic 
+// ExtqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
+func ExtqS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VextqU8: ARM NEON intrinsic 
+// ExtqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
+func ExtqU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VextqU16: ARM NEON intrinsic 
+// ExtqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
+func ExtqU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VextqU32: ARM NEON intrinsic 
+// ExtqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
+func ExtqU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VextqU64: ARM NEON intrinsic 
+// ExtqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vextq_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VextqU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
+func ExtqU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VfmaF64: ARM NEON intrinsic 
+// FmaF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfma_f64'.
 // Requires NEON.
-func VfmaF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
+func FmaF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VfmaF32: ARM NEON intrinsic 
+// FmaF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfma_f32'.
 // Requires NEON.
-func VfmaF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
+func FmaF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VfmaqF32: ARM NEON intrinsic 
+// FmaqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_f32'.
 // Requires NEON.
-func VfmaqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
+func FmaqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VfmaqF64: ARM NEON intrinsic 
+// FmaqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_f64'.
 // Requires NEON.
-func VfmaqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
+func FmaqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VfmaNF32: ARM NEON intrinsic 
+// FmaNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfma_n_f32'.
 // Requires NEON.
-func VfmaNF32(a arm.Float32x2, b arm.Float32x2, c float32) (dst arm.Float32x2) {
+func FmaNF32(a arm.Float32x2, b arm.Float32x2, c float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VfmaqNF32: ARM NEON intrinsic 
+// FmaqNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_n_f32'.
 // Requires NEON.
-func VfmaqNF32(a arm.Float32x4, b arm.Float32x4, c float32) (dst arm.Float32x4) {
+func FmaqNF32(a arm.Float32x4, b arm.Float32x4, c float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VfmaqNF64: ARM NEON intrinsic 
+// FmaqNF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_n_f64'.
 // Requires NEON.
-func VfmaqNF64(a arm.Float64x2, b arm.Float64x2, c float64) (dst arm.Float64x2) {
+func FmaqNF64(a arm.Float64x2, b arm.Float64x2, c float64) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VfmaLaneF32: ARM NEON intrinsic 
+// FmaLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfma_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
+func FmaLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VfmaLaneF64: ARM NEON intrinsic 
+// FmaLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfma_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaLaneF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1, lane int) (dst arm.Float64x1) {
+func FmaLaneF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1, lane int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VfmadLaneF64: ARM NEON intrinsic 
+// FmadLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmad_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmadLaneF64(a float64, b float64, c arm.Float64x1, lane int) float64 {
+func FmadLaneF64(a float64, b float64, c arm.Float64x1, lane int) float64 {
 	return 0
 }
 
-// VfmasLaneF32: ARM NEON intrinsic 
+// FmasLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmas_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmasLaneF32(a float32, b float32, c arm.Float32x2, lane int) float32 {
+func FmasLaneF32(a float32, b float32, c arm.Float32x2, lane int) float32 {
 	return 0
 }
 
-// VfmaLaneqF32: ARM NEON intrinsic 
+// FmaLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfma_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
+func FmaLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VfmaLaneqF64: ARM NEON intrinsic 
+// FmaLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfma_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaLaneqF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x2, lane int) (dst arm.Float64x1) {
+func FmaLaneqF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x2, lane int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VfmadLaneqF64: ARM NEON intrinsic 
+// FmadLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmad_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmadLaneqF64(a float64, b float64, c arm.Float64x2, lane int) float64 {
+func FmadLaneqF64(a float64, b float64, c arm.Float64x2, lane int) float64 {
 	return 0
 }
 
-// VfmasLaneqF32: ARM NEON intrinsic 
+// FmasLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmas_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmasLaneqF32(a float32, b float32, c arm.Float32x4, lane int) float32 {
+func FmasLaneqF32(a float32, b float32, c arm.Float32x4, lane int) float32 {
 	return 0
 }
 
-// VfmaqLaneF32: ARM NEON intrinsic 
+// FmaqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
+func FmaqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VfmaqLaneF64: ARM NEON intrinsic 
+// FmaqLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaqLaneF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x1, lane int) (dst arm.Float64x2) {
+func FmaqLaneF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x1, lane int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VfmaqLaneqF32: ARM NEON intrinsic 
+// FmaqLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
+func FmaqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VfmaqLaneqF64: ARM NEON intrinsic 
+// FmaqLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmaq_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmaqLaneqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2, lane int) (dst arm.Float64x2) {
+func FmaqLaneqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2, lane int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VfmsF64: ARM NEON intrinsic 
+// FmsF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfms_f64'.
 // Requires NEON.
-func VfmsF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
+func FmsF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VfmsF32: ARM NEON intrinsic 
+// FmsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfms_f32'.
 // Requires NEON.
-func VfmsF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
+func FmsF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VfmsqF32: ARM NEON intrinsic 
+// FmsqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsq_f32'.
 // Requires NEON.
-func VfmsqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
+func FmsqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VfmsqF64: ARM NEON intrinsic 
+// FmsqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsq_f64'.
 // Requires NEON.
-func VfmsqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
+func FmsqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VfmsLaneF32: ARM NEON intrinsic 
+// FmsLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfms_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
+func FmsLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VfmsLaneF64: ARM NEON intrinsic 
+// FmsLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfms_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsLaneF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1, lane int) (dst arm.Float64x1) {
+func FmsLaneF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1, lane int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VfmsdLaneF64: ARM NEON intrinsic 
+// FmsdLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsd_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsdLaneF64(a float64, b float64, c arm.Float64x1, lane int) float64 {
+func FmsdLaneF64(a float64, b float64, c arm.Float64x1, lane int) float64 {
 	return 0
 }
 
-// VfmssLaneF32: ARM NEON intrinsic 
+// FmssLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmss_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmssLaneF32(a float32, b float32, c arm.Float32x2, lane int) float32 {
+func FmssLaneF32(a float32, b float32, c arm.Float32x2, lane int) float32 {
 	return 0
 }
 
-// VfmsLaneqF32: ARM NEON intrinsic 
+// FmsLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfms_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
+func FmsLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VfmsLaneqF64: ARM NEON intrinsic 
+// FmsLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfms_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsLaneqF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x2, lane int) (dst arm.Float64x1) {
+func FmsLaneqF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x2, lane int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VfmsdLaneqF64: ARM NEON intrinsic 
+// FmsdLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsd_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsdLaneqF64(a float64, b float64, c arm.Float64x2, lane int) float64 {
+func FmsdLaneqF64(a float64, b float64, c arm.Float64x2, lane int) float64 {
 	return 0
 }
 
-// VfmssLaneqF32: ARM NEON intrinsic 
+// FmssLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmss_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmssLaneqF32(a float32, b float32, c arm.Float32x4, lane int) float32 {
+func FmssLaneqF32(a float32, b float32, c arm.Float32x4, lane int) float32 {
 	return 0
 }
 
-// VfmsqLaneF32: ARM NEON intrinsic 
+// FmsqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
+func FmsqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VfmsqLaneF64: ARM NEON intrinsic 
+// FmsqLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsq_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsqLaneF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x1, lane int) (dst arm.Float64x2) {
+func FmsqLaneF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x1, lane int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VfmsqLaneqF32: ARM NEON intrinsic 
+// FmsqLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsq_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
+func FmsqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VfmsqLaneqF64: ARM NEON intrinsic 
+// FmsqLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vfmsq_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VfmsqLaneqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2, lane int) (dst arm.Float64x2) {
+func FmsqLaneqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2, lane int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vld1F32: ARM NEON intrinsic 
+// Ld1F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_f32'.
 // Requires NEON.
@@ -13981,11 +13981,11 @@ func VfmsqLaneqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2, lane int) 
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1F32(a *float32) (dst arm.Float32x2) {
+func Ld1F32(a *float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vld1F64: ARM NEON intrinsic 
+// Ld1F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_f64'.
 // Requires NEON.
@@ -13993,11 +13993,11 @@ func Vld1F32(a *float32) (dst arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1F64(a *float64) (dst arm.Float64x1) {
+func Ld1F64(a *float64) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// Vld1P8: ARM NEON intrinsic 
+// Ld1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_p8'.
 // Requires NEON.
@@ -14005,11 +14005,11 @@ func Vld1F64(a *float64) (dst arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1P8(a *arm.Poly8) (dst arm.Poly8x8) {
+func Ld1P8(a *arm.Poly8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vld1P16: ARM NEON intrinsic 
+// Ld1P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_p16'.
 // Requires NEON.
@@ -14017,11 +14017,11 @@ func Vld1P8(a *arm.Poly8) (dst arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1P16(a *arm.Poly16) (dst arm.Poly16x4) {
+func Ld1P16(a *arm.Poly16) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vld1S8: ARM NEON intrinsic 
+// Ld1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_s8'.
 // Requires NEON.
@@ -14029,11 +14029,11 @@ func Vld1P16(a *arm.Poly16) (dst arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1S8(a *int8) (dst arm.Int8x8) {
+func Ld1S8(a *int8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vld1S16: ARM NEON intrinsic 
+// Ld1S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_s16'.
 // Requires NEON.
@@ -14041,11 +14041,11 @@ func Vld1S8(a *int8) (dst arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1S16(a *int16) (dst arm.Int16x4) {
+func Ld1S16(a *int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vld1S32: ARM NEON intrinsic 
+// Ld1S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_s32'.
 // Requires NEON.
@@ -14053,11 +14053,11 @@ func Vld1S16(a *int16) (dst arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1S32(a *int32) (dst arm.Int32x2) {
+func Ld1S32(a *int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vld1S64: ARM NEON intrinsic 
+// Ld1S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_s64'.
 // Requires NEON.
@@ -14065,11 +14065,11 @@ func Vld1S32(a *int32) (dst arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1S64(a *int64) (dst arm.Int64x1) {
+func Ld1S64(a *int64) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// Vld1U8: ARM NEON intrinsic 
+// Ld1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_u8'.
 // Requires NEON.
@@ -14077,11 +14077,11 @@ func Vld1S64(a *int64) (dst arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1U8(a *uint8) (dst arm.Uint8x8) {
+func Ld1U8(a *uint8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vld1U16: ARM NEON intrinsic 
+// Ld1U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_u16'.
 // Requires NEON.
@@ -14089,11 +14089,11 @@ func Vld1U8(a *uint8) (dst arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1U16(a *uint16) (dst arm.Uint16x4) {
+func Ld1U16(a *uint16) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vld1U32: ARM NEON intrinsic 
+// Ld1U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_u32'.
 // Requires NEON.
@@ -14101,11 +14101,11 @@ func Vld1U16(a *uint16) (dst arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1U32(a *uint32) (dst arm.Uint32x2) {
+func Ld1U32(a *uint32) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vld1U64: ARM NEON intrinsic 
+// Ld1U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_u64'.
 // Requires NEON.
@@ -14113,11 +14113,11 @@ func Vld1U32(a *uint32) (dst arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1U64(a *uint64) (dst arm.Uint64x1) {
+func Ld1U64(a *uint64) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// Vld1qF32: ARM NEON intrinsic 
+// Ld1qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_f32'.
 // Requires NEON.
@@ -14125,11 +14125,11 @@ func Vld1U64(a *uint64) (dst arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qF32(a *float32) (dst arm.Float32x4) {
+func Ld1qF32(a *float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vld1qF64: ARM NEON intrinsic 
+// Ld1qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_f64'.
 // Requires NEON.
@@ -14137,11 +14137,11 @@ func Vld1qF32(a *float32) (dst arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qF64(a *float64) (dst arm.Float64x2) {
+func Ld1qF64(a *float64) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vld1qP8: ARM NEON intrinsic 
+// Ld1qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_p8'.
 // Requires NEON.
@@ -14149,11 +14149,11 @@ func Vld1qF64(a *float64) (dst arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qP8(a *arm.Poly8) (dst arm.Poly8x16) {
+func Ld1qP8(a *arm.Poly8) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vld1qP16: ARM NEON intrinsic 
+// Ld1qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_p16'.
 // Requires NEON.
@@ -14161,11 +14161,11 @@ func Vld1qP8(a *arm.Poly8) (dst arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qP16(a *arm.Poly16) (dst arm.Poly16x8) {
+func Ld1qP16(a *arm.Poly16) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vld1qS8: ARM NEON intrinsic 
+// Ld1qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_s8'.
 // Requires NEON.
@@ -14173,11 +14173,11 @@ func Vld1qP16(a *arm.Poly16) (dst arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qS8(a *int8) (dst arm.Int8x16) {
+func Ld1qS8(a *int8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vld1qS16: ARM NEON intrinsic 
+// Ld1qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_s16'.
 // Requires NEON.
@@ -14185,11 +14185,11 @@ func Vld1qS8(a *int8) (dst arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qS16(a *int16) (dst arm.Int16x8) {
+func Ld1qS16(a *int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vld1qS32: ARM NEON intrinsic 
+// Ld1qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_s32'.
 // Requires NEON.
@@ -14197,11 +14197,11 @@ func Vld1qS16(a *int16) (dst arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qS32(a *int32) (dst arm.Int32x4) {
+func Ld1qS32(a *int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vld1qS64: ARM NEON intrinsic 
+// Ld1qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_s64'.
 // Requires NEON.
@@ -14209,11 +14209,11 @@ func Vld1qS32(a *int32) (dst arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qS64(a *int64) (dst arm.Int64x2) {
+func Ld1qS64(a *int64) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vld1qU8: ARM NEON intrinsic 
+// Ld1qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_u8'.
 // Requires NEON.
@@ -14221,11 +14221,11 @@ func Vld1qS64(a *int64) (dst arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qU8(a *uint8) (dst arm.Uint8x16) {
+func Ld1qU8(a *uint8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vld1qU16: ARM NEON intrinsic 
+// Ld1qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_u16'.
 // Requires NEON.
@@ -14233,11 +14233,11 @@ func Vld1qU8(a *uint8) (dst arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qU16(a *uint16) (dst arm.Uint16x8) {
+func Ld1qU16(a *uint16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vld1qU32: ARM NEON intrinsic 
+// Ld1qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_u32'.
 // Requires NEON.
@@ -14245,11 +14245,11 @@ func Vld1qU16(a *uint16) (dst arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qU32(a *uint32) (dst arm.Uint32x4) {
+func Ld1qU32(a *uint32) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vld1qU64: ARM NEON intrinsic 
+// Ld1qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_u64'.
 // Requires NEON.
@@ -14257,11 +14257,11 @@ func Vld1qU32(a *uint32) (dst arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qU64(a *uint64) (dst arm.Uint64x2) {
+func Ld1qU64(a *uint64) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// Vld1DupF32: ARM NEON intrinsic 
+// Ld1DupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_f32'.
 // Requires NEON.
@@ -14269,11 +14269,11 @@ func Vld1qU64(a *uint64) (dst arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupF32(a *float32) (dst arm.Float32x2) {
+func Ld1DupF32(a *float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vld1DupF64: ARM NEON intrinsic 
+// Ld1DupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_f64'.
 // Requires NEON.
@@ -14281,11 +14281,11 @@ func Vld1DupF32(a *float32) (dst arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupF64(a *float64) (dst arm.Float64x1) {
+func Ld1DupF64(a *float64) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// Vld1DupP8: ARM NEON intrinsic 
+// Ld1DupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_p8'.
 // Requires NEON.
@@ -14293,11 +14293,11 @@ func Vld1DupF64(a *float64) (dst arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupP8(a *uint8) (dst arm.Poly8x8) {
+func Ld1DupP8(a *uint8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vld1DupP16: ARM NEON intrinsic 
+// Ld1DupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_p16'.
 // Requires NEON.
@@ -14305,11 +14305,11 @@ func Vld1DupP8(a *uint8) (dst arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupP16(a *uint16) (dst arm.Poly16x4) {
+func Ld1DupP16(a *uint16) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vld1DupS8: ARM NEON intrinsic 
+// Ld1DupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_s8'.
 // Requires NEON.
@@ -14317,11 +14317,11 @@ func Vld1DupP16(a *uint16) (dst arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupS8(a *int8) (dst arm.Int8x8) {
+func Ld1DupS8(a *int8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vld1DupS16: ARM NEON intrinsic 
+// Ld1DupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_s16'.
 // Requires NEON.
@@ -14329,11 +14329,11 @@ func Vld1DupS8(a *int8) (dst arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupS16(a *int16) (dst arm.Int16x4) {
+func Ld1DupS16(a *int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vld1DupS32: ARM NEON intrinsic 
+// Ld1DupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_s32'.
 // Requires NEON.
@@ -14341,11 +14341,11 @@ func Vld1DupS16(a *int16) (dst arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupS32(a *int32) (dst arm.Int32x2) {
+func Ld1DupS32(a *int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vld1DupS64: ARM NEON intrinsic 
+// Ld1DupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_s64'.
 // Requires NEON.
@@ -14353,11 +14353,11 @@ func Vld1DupS32(a *int32) (dst arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupS64(a *int64) (dst arm.Int64x1) {
+func Ld1DupS64(a *int64) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// Vld1DupU8: ARM NEON intrinsic 
+// Ld1DupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_u8'.
 // Requires NEON.
@@ -14365,11 +14365,11 @@ func Vld1DupS64(a *int64) (dst arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupU8(a *uint8) (dst arm.Uint8x8) {
+func Ld1DupU8(a *uint8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vld1DupU16: ARM NEON intrinsic 
+// Ld1DupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_u16'.
 // Requires NEON.
@@ -14377,11 +14377,11 @@ func Vld1DupU8(a *uint8) (dst arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupU16(a *uint16) (dst arm.Uint16x4) {
+func Ld1DupU16(a *uint16) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vld1DupU32: ARM NEON intrinsic 
+// Ld1DupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_u32'.
 // Requires NEON.
@@ -14389,11 +14389,11 @@ func Vld1DupU16(a *uint16) (dst arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupU32(a *uint32) (dst arm.Uint32x2) {
+func Ld1DupU32(a *uint32) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vld1DupU64: ARM NEON intrinsic 
+// Ld1DupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_dup_u64'.
 // Requires NEON.
@@ -14401,11 +14401,11 @@ func Vld1DupU32(a *uint32) (dst arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1DupU64(a *uint64) (dst arm.Uint64x1) {
+func Ld1DupU64(a *uint64) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// Vld1qDupF32: ARM NEON intrinsic 
+// Ld1qDupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_f32'.
 // Requires NEON.
@@ -14413,11 +14413,11 @@ func Vld1DupU64(a *uint64) (dst arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupF32(a *float32) (dst arm.Float32x4) {
+func Ld1qDupF32(a *float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vld1qDupF64: ARM NEON intrinsic 
+// Ld1qDupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_f64'.
 // Requires NEON.
@@ -14425,11 +14425,11 @@ func Vld1qDupF32(a *float32) (dst arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupF64(a *float64) (dst arm.Float64x2) {
+func Ld1qDupF64(a *float64) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vld1qDupP8: ARM NEON intrinsic 
+// Ld1qDupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_p8'.
 // Requires NEON.
@@ -14437,11 +14437,11 @@ func Vld1qDupF64(a *float64) (dst arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupP8(a *uint8) (dst arm.Poly8x16) {
+func Ld1qDupP8(a *uint8) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vld1qDupP16: ARM NEON intrinsic 
+// Ld1qDupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_p16'.
 // Requires NEON.
@@ -14449,11 +14449,11 @@ func Vld1qDupP8(a *uint8) (dst arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupP16(a *uint16) (dst arm.Poly16x8) {
+func Ld1qDupP16(a *uint16) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vld1qDupS8: ARM NEON intrinsic 
+// Ld1qDupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_s8'.
 // Requires NEON.
@@ -14461,11 +14461,11 @@ func Vld1qDupP16(a *uint16) (dst arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupS8(a *int8) (dst arm.Int8x16) {
+func Ld1qDupS8(a *int8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vld1qDupS16: ARM NEON intrinsic 
+// Ld1qDupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_s16'.
 // Requires NEON.
@@ -14473,11 +14473,11 @@ func Vld1qDupS8(a *int8) (dst arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupS16(a *int16) (dst arm.Int16x8) {
+func Ld1qDupS16(a *int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vld1qDupS32: ARM NEON intrinsic 
+// Ld1qDupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_s32'.
 // Requires NEON.
@@ -14485,11 +14485,11 @@ func Vld1qDupS16(a *int16) (dst arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupS32(a *int32) (dst arm.Int32x4) {
+func Ld1qDupS32(a *int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vld1qDupS64: ARM NEON intrinsic 
+// Ld1qDupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_s64'.
 // Requires NEON.
@@ -14497,11 +14497,11 @@ func Vld1qDupS32(a *int32) (dst arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupS64(a *int64) (dst arm.Int64x2) {
+func Ld1qDupS64(a *int64) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vld1qDupU8: ARM NEON intrinsic 
+// Ld1qDupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_u8'.
 // Requires NEON.
@@ -14509,11 +14509,11 @@ func Vld1qDupS64(a *int64) (dst arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupU8(a *uint8) (dst arm.Uint8x16) {
+func Ld1qDupU8(a *uint8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vld1qDupU16: ARM NEON intrinsic 
+// Ld1qDupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_u16'.
 // Requires NEON.
@@ -14521,11 +14521,11 @@ func Vld1qDupU8(a *uint8) (dst arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupU16(a *uint16) (dst arm.Uint16x8) {
+func Ld1qDupU16(a *uint16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vld1qDupU32: ARM NEON intrinsic 
+// Ld1qDupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_u32'.
 // Requires NEON.
@@ -14533,11 +14533,11 @@ func Vld1qDupU16(a *uint16) (dst arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupU32(a *uint32) (dst arm.Uint32x4) {
+func Ld1qDupU32(a *uint32) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vld1qDupU64: ARM NEON intrinsic 
+// Ld1qDupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_dup_u64'.
 // Requires NEON.
@@ -14545,11 +14545,11 @@ func Vld1qDupU32(a *uint32) (dst arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qDupU64(a *uint64) (dst arm.Uint64x2) {
+func Ld1qDupU64(a *uint64) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// Vld1LaneF32: ARM NEON intrinsic 
+// Ld1LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_f32'.
 // Requires NEON.
@@ -14557,11 +14557,11 @@ func Vld1qDupU64(a *uint64) (dst arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneF32(src *float32, vec arm.Float32x2, lane int) (dst arm.Float32x2) {
+func Ld1LaneF32(src *float32, vec arm.Float32x2, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vld1LaneF64: ARM NEON intrinsic 
+// Ld1LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_f64'.
 // Requires NEON.
@@ -14569,11 +14569,11 @@ func Vld1LaneF32(src *float32, vec arm.Float32x2, lane int) (dst arm.Float32x2) 
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneF64(src *float64, vec arm.Float64x1, lane int) (dst arm.Float64x1) {
+func Ld1LaneF64(src *float64, vec arm.Float64x1, lane int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// Vld1LaneP8: ARM NEON intrinsic 
+// Ld1LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_p8'.
 // Requires NEON.
@@ -14581,11 +14581,11 @@ func Vld1LaneF64(src *float64, vec arm.Float64x1, lane int) (dst arm.Float64x1) 
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneP8(src *arm.Poly8, vec arm.Poly8x8, lane int) (dst arm.Poly8x8) {
+func Ld1LaneP8(src *arm.Poly8, vec arm.Poly8x8, lane int) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vld1LaneP16: ARM NEON intrinsic 
+// Ld1LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_p16'.
 // Requires NEON.
@@ -14593,11 +14593,11 @@ func Vld1LaneP8(src *arm.Poly8, vec arm.Poly8x8, lane int) (dst arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneP16(src *arm.Poly16, vec arm.Poly16x4, lane int) (dst arm.Poly16x4) {
+func Ld1LaneP16(src *arm.Poly16, vec arm.Poly16x4, lane int) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vld1LaneS8: ARM NEON intrinsic 
+// Ld1LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_s8'.
 // Requires NEON.
@@ -14605,11 +14605,11 @@ func Vld1LaneP16(src *arm.Poly16, vec arm.Poly16x4, lane int) (dst arm.Poly16x4)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneS8(src *int8, vec arm.Int8x8, lane int) (dst arm.Int8x8) {
+func Ld1LaneS8(src *int8, vec arm.Int8x8, lane int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vld1LaneS16: ARM NEON intrinsic 
+// Ld1LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_s16'.
 // Requires NEON.
@@ -14617,11 +14617,11 @@ func Vld1LaneS8(src *int8, vec arm.Int8x8, lane int) (dst arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneS16(src *int16, vec arm.Int16x4, lane int) (dst arm.Int16x4) {
+func Ld1LaneS16(src *int16, vec arm.Int16x4, lane int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vld1LaneS32: ARM NEON intrinsic 
+// Ld1LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_s32'.
 // Requires NEON.
@@ -14629,11 +14629,11 @@ func Vld1LaneS16(src *int16, vec arm.Int16x4, lane int) (dst arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneS32(src *int32, vec arm.Int32x2, lane int) (dst arm.Int32x2) {
+func Ld1LaneS32(src *int32, vec arm.Int32x2, lane int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vld1LaneS64: ARM NEON intrinsic 
+// Ld1LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_s64'.
 // Requires NEON.
@@ -14641,11 +14641,11 @@ func Vld1LaneS32(src *int32, vec arm.Int32x2, lane int) (dst arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneS64(src *int64, vec arm.Int64x1, lane int) (dst arm.Int64x1) {
+func Ld1LaneS64(src *int64, vec arm.Int64x1, lane int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// Vld1LaneU8: ARM NEON intrinsic 
+// Ld1LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_u8'.
 // Requires NEON.
@@ -14653,11 +14653,11 @@ func Vld1LaneS64(src *int64, vec arm.Int64x1, lane int) (dst arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneU8(src *uint8, vec arm.Uint8x8, lane int) (dst arm.Uint8x8) {
+func Ld1LaneU8(src *uint8, vec arm.Uint8x8, lane int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vld1LaneU16: ARM NEON intrinsic 
+// Ld1LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_u16'.
 // Requires NEON.
@@ -14665,11 +14665,11 @@ func Vld1LaneU8(src *uint8, vec arm.Uint8x8, lane int) (dst arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneU16(src *uint16, vec arm.Uint16x4, lane int) (dst arm.Uint16x4) {
+func Ld1LaneU16(src *uint16, vec arm.Uint16x4, lane int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vld1LaneU32: ARM NEON intrinsic 
+// Ld1LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_u32'.
 // Requires NEON.
@@ -14677,11 +14677,11 @@ func Vld1LaneU16(src *uint16, vec arm.Uint16x4, lane int) (dst arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneU32(src *uint32, vec arm.Uint32x2, lane int) (dst arm.Uint32x2) {
+func Ld1LaneU32(src *uint32, vec arm.Uint32x2, lane int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vld1LaneU64: ARM NEON intrinsic 
+// Ld1LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1_lane_u64'.
 // Requires NEON.
@@ -14689,11 +14689,11 @@ func Vld1LaneU32(src *uint32, vec arm.Uint32x2, lane int) (dst arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1LaneU64(src *uint64, vec arm.Uint64x1, lane int) (dst arm.Uint64x1) {
+func Ld1LaneU64(src *uint64, vec arm.Uint64x1, lane int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// Vld1qLaneF32: ARM NEON intrinsic 
+// Ld1qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_f32'.
 // Requires NEON.
@@ -14701,11 +14701,11 @@ func Vld1LaneU64(src *uint64, vec arm.Uint64x1, lane int) (dst arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneF32(src *float32, vec arm.Float32x4, lane int) (dst arm.Float32x4) {
+func Ld1qLaneF32(src *float32, vec arm.Float32x4, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vld1qLaneF64: ARM NEON intrinsic 
+// Ld1qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_f64'.
 // Requires NEON.
@@ -14713,11 +14713,11 @@ func Vld1qLaneF32(src *float32, vec arm.Float32x4, lane int) (dst arm.Float32x4)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneF64(src *float64, vec arm.Float64x2, lane int) (dst arm.Float64x2) {
+func Ld1qLaneF64(src *float64, vec arm.Float64x2, lane int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vld1qLaneP8: ARM NEON intrinsic 
+// Ld1qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_p8'.
 // Requires NEON.
@@ -14725,11 +14725,11 @@ func Vld1qLaneF64(src *float64, vec arm.Float64x2, lane int) (dst arm.Float64x2)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneP8(src *arm.Poly8, vec arm.Poly8x16, lane int) (dst arm.Poly8x16) {
+func Ld1qLaneP8(src *arm.Poly8, vec arm.Poly8x16, lane int) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vld1qLaneP16: ARM NEON intrinsic 
+// Ld1qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_p16'.
 // Requires NEON.
@@ -14737,11 +14737,11 @@ func Vld1qLaneP8(src *arm.Poly8, vec arm.Poly8x16, lane int) (dst arm.Poly8x16) 
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneP16(src *arm.Poly16, vec arm.Poly16x8, lane int) (dst arm.Poly16x8) {
+func Ld1qLaneP16(src *arm.Poly16, vec arm.Poly16x8, lane int) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vld1qLaneS8: ARM NEON intrinsic 
+// Ld1qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_s8'.
 // Requires NEON.
@@ -14749,11 +14749,11 @@ func Vld1qLaneP16(src *arm.Poly16, vec arm.Poly16x8, lane int) (dst arm.Poly16x8
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneS8(src *int8, vec arm.Int8x16, lane int) (dst arm.Int8x16) {
+func Ld1qLaneS8(src *int8, vec arm.Int8x16, lane int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vld1qLaneS16: ARM NEON intrinsic 
+// Ld1qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_s16'.
 // Requires NEON.
@@ -14761,11 +14761,11 @@ func Vld1qLaneS8(src *int8, vec arm.Int8x16, lane int) (dst arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneS16(src *int16, vec arm.Int16x8, lane int) (dst arm.Int16x8) {
+func Ld1qLaneS16(src *int16, vec arm.Int16x8, lane int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vld1qLaneS32: ARM NEON intrinsic 
+// Ld1qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_s32'.
 // Requires NEON.
@@ -14773,11 +14773,11 @@ func Vld1qLaneS16(src *int16, vec arm.Int16x8, lane int) (dst arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneS32(src *int32, vec arm.Int32x4, lane int) (dst arm.Int32x4) {
+func Ld1qLaneS32(src *int32, vec arm.Int32x4, lane int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vld1qLaneS64: ARM NEON intrinsic 
+// Ld1qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_s64'.
 // Requires NEON.
@@ -14785,11 +14785,11 @@ func Vld1qLaneS32(src *int32, vec arm.Int32x4, lane int) (dst arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneS64(src *int64, vec arm.Int64x2, lane int) (dst arm.Int64x2) {
+func Ld1qLaneS64(src *int64, vec arm.Int64x2, lane int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vld1qLaneU8: ARM NEON intrinsic 
+// Ld1qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_u8'.
 // Requires NEON.
@@ -14797,11 +14797,11 @@ func Vld1qLaneS64(src *int64, vec arm.Int64x2, lane int) (dst arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneU8(src *uint8, vec arm.Uint8x16, lane int) (dst arm.Uint8x16) {
+func Ld1qLaneU8(src *uint8, vec arm.Uint8x16, lane int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vld1qLaneU16: ARM NEON intrinsic 
+// Ld1qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_u16'.
 // Requires NEON.
@@ -14809,11 +14809,11 @@ func Vld1qLaneU8(src *uint8, vec arm.Uint8x16, lane int) (dst arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneU16(src *uint16, vec arm.Uint16x8, lane int) (dst arm.Uint16x8) {
+func Ld1qLaneU16(src *uint16, vec arm.Uint16x8, lane int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vld1qLaneU32: ARM NEON intrinsic 
+// Ld1qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_u32'.
 // Requires NEON.
@@ -14821,11 +14821,11 @@ func Vld1qLaneU16(src *uint16, vec arm.Uint16x8, lane int) (dst arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneU32(src *uint32, vec arm.Uint32x4, lane int) (dst arm.Uint32x4) {
+func Ld1qLaneU32(src *uint32, vec arm.Uint32x4, lane int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vld1qLaneU64: ARM NEON intrinsic 
+// Ld1qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld1q_lane_u64'.
 // Requires NEON.
@@ -14833,11 +14833,11 @@ func Vld1qLaneU32(src *uint32, vec arm.Uint32x4, lane int) (dst arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld1qLaneU64(src *uint64, vec arm.Uint64x2, lane int) (dst arm.Uint64x2) {
+func Ld1qLaneU64(src *uint64, vec arm.Uint64x2, lane int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// Vld2S64: ARM NEON intrinsic 
+// Ld2S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_s64'.
 // Requires NEON.
@@ -14845,11 +14845,11 @@ func Vld1qLaneU64(src *uint64, vec arm.Uint64x2, lane int) (dst arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2S64(a *int64) (dst [2]arm.Int64x1) {
+func Ld2S64(a *int64) (dst [2]arm.Int64x1) {
 	return [2]arm.Int64x1{}
 }
 
-// Vld2U64: ARM NEON intrinsic 
+// Ld2U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_u64'.
 // Requires NEON.
@@ -14857,11 +14857,11 @@ func Vld2S64(a *int64) (dst [2]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2U64(a *uint64) (dst [2]arm.Uint64x1) {
+func Ld2U64(a *uint64) (dst [2]arm.Uint64x1) {
 	return [2]arm.Uint64x1{}
 }
 
-// Vld2F64: ARM NEON intrinsic 
+// Ld2F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_f64'.
 // Requires NEON.
@@ -14869,11 +14869,11 @@ func Vld2U64(a *uint64) (dst [2]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2F64(a *float64) (dst [2]arm.Float64x1) {
+func Ld2F64(a *float64) (dst [2]arm.Float64x1) {
 	return [2]arm.Float64x1{}
 }
 
-// Vld2S8: ARM NEON intrinsic 
+// Ld2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_s8'.
 // Requires NEON.
@@ -14881,11 +14881,11 @@ func Vld2F64(a *float64) (dst [2]arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2S8(a *int8) (dst [2]arm.Int8x8) {
+func Ld2S8(a *int8) (dst [2]arm.Int8x8) {
 	return [2]arm.Int8x8{}
 }
 
-// Vld2P8: ARM NEON intrinsic 
+// Ld2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_p8'.
 // Requires NEON.
@@ -14893,11 +14893,11 @@ func Vld2S8(a *int8) (dst [2]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2P8(a *arm.Poly8) (dst [2]arm.Poly8x8) {
+func Ld2P8(a *arm.Poly8) (dst [2]arm.Poly8x8) {
 	return [2]arm.Poly8x8{}
 }
 
-// Vld2S16: ARM NEON intrinsic 
+// Ld2S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_s16'.
 // Requires NEON.
@@ -14905,11 +14905,11 @@ func Vld2P8(a *arm.Poly8) (dst [2]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2S16(a *int16) (dst [2]arm.Int16x4) {
+func Ld2S16(a *int16) (dst [2]arm.Int16x4) {
 	return [2]arm.Int16x4{}
 }
 
-// Vld2P16: ARM NEON intrinsic 
+// Ld2P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_p16'.
 // Requires NEON.
@@ -14917,11 +14917,11 @@ func Vld2S16(a *int16) (dst [2]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2P16(a *arm.Poly16) (dst [2]arm.Poly16x4) {
+func Ld2P16(a *arm.Poly16) (dst [2]arm.Poly16x4) {
 	return [2]arm.Poly16x4{}
 }
 
-// Vld2S32: ARM NEON intrinsic 
+// Ld2S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_s32'.
 // Requires NEON.
@@ -14929,11 +14929,11 @@ func Vld2P16(a *arm.Poly16) (dst [2]arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2S32(a *int32) (dst [2]arm.Int32x2) {
+func Ld2S32(a *int32) (dst [2]arm.Int32x2) {
 	return [2]arm.Int32x2{}
 }
 
-// Vld2U8: ARM NEON intrinsic 
+// Ld2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_u8'.
 // Requires NEON.
@@ -14941,11 +14941,11 @@ func Vld2S32(a *int32) (dst [2]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2U8(a *uint8) (dst [2]arm.Uint8x8) {
+func Ld2U8(a *uint8) (dst [2]arm.Uint8x8) {
 	return [2]arm.Uint8x8{}
 }
 
-// Vld2U16: ARM NEON intrinsic 
+// Ld2U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_u16'.
 // Requires NEON.
@@ -14953,11 +14953,11 @@ func Vld2U8(a *uint8) (dst [2]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2U16(a *uint16) (dst [2]arm.Uint16x4) {
+func Ld2U16(a *uint16) (dst [2]arm.Uint16x4) {
 	return [2]arm.Uint16x4{}
 }
 
-// Vld2U32: ARM NEON intrinsic 
+// Ld2U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_u32'.
 // Requires NEON.
@@ -14965,11 +14965,11 @@ func Vld2U16(a *uint16) (dst [2]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2U32(a *uint32) (dst [2]arm.Uint32x2) {
+func Ld2U32(a *uint32) (dst [2]arm.Uint32x2) {
 	return [2]arm.Uint32x2{}
 }
 
-// Vld2F32: ARM NEON intrinsic 
+// Ld2F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_f32'.
 // Requires NEON.
@@ -14977,11 +14977,11 @@ func Vld2U32(a *uint32) (dst [2]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2F32(a *float32) (dst [2]arm.Float32x2) {
+func Ld2F32(a *float32) (dst [2]arm.Float32x2) {
 	return [2]arm.Float32x2{}
 }
 
-// Vld2qS8: ARM NEON intrinsic 
+// Ld2qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_s8'.
 // Requires NEON.
@@ -14989,11 +14989,11 @@ func Vld2F32(a *float32) (dst [2]arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qS8(a *int8) (dst [2]arm.Int8x16) {
+func Ld2qS8(a *int8) (dst [2]arm.Int8x16) {
 	return [2]arm.Int8x16{}
 }
 
-// Vld2qP8: ARM NEON intrinsic 
+// Ld2qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_p8'.
 // Requires NEON.
@@ -15001,11 +15001,11 @@ func Vld2qS8(a *int8) (dst [2]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qP8(a *arm.Poly8) (dst [2]arm.Poly8x16) {
+func Ld2qP8(a *arm.Poly8) (dst [2]arm.Poly8x16) {
 	return [2]arm.Poly8x16{}
 }
 
-// Vld2qS16: ARM NEON intrinsic 
+// Ld2qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_s16'.
 // Requires NEON.
@@ -15013,11 +15013,11 @@ func Vld2qP8(a *arm.Poly8) (dst [2]arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qS16(a *int16) (dst [2]arm.Int16x8) {
+func Ld2qS16(a *int16) (dst [2]arm.Int16x8) {
 	return [2]arm.Int16x8{}
 }
 
-// Vld2qP16: ARM NEON intrinsic 
+// Ld2qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_p16'.
 // Requires NEON.
@@ -15025,11 +15025,11 @@ func Vld2qS16(a *int16) (dst [2]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qP16(a *arm.Poly16) (dst [2]arm.Poly16x8) {
+func Ld2qP16(a *arm.Poly16) (dst [2]arm.Poly16x8) {
 	return [2]arm.Poly16x8{}
 }
 
-// Vld2qS32: ARM NEON intrinsic 
+// Ld2qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_s32'.
 // Requires NEON.
@@ -15037,11 +15037,11 @@ func Vld2qP16(a *arm.Poly16) (dst [2]arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qS32(a *int32) (dst [2]arm.Int32x4) {
+func Ld2qS32(a *int32) (dst [2]arm.Int32x4) {
 	return [2]arm.Int32x4{}
 }
 
-// Vld2qS64: ARM NEON intrinsic 
+// Ld2qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_s64'.
 // Requires NEON.
@@ -15049,11 +15049,11 @@ func Vld2qS32(a *int32) (dst [2]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qS64(a *int64) (dst [2]arm.Int64x2) {
+func Ld2qS64(a *int64) (dst [2]arm.Int64x2) {
 	return [2]arm.Int64x2{}
 }
 
-// Vld2qU8: ARM NEON intrinsic 
+// Ld2qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_u8'.
 // Requires NEON.
@@ -15061,11 +15061,11 @@ func Vld2qS64(a *int64) (dst [2]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qU8(a *uint8) (dst [2]arm.Uint8x16) {
+func Ld2qU8(a *uint8) (dst [2]arm.Uint8x16) {
 	return [2]arm.Uint8x16{}
 }
 
-// Vld2qU16: ARM NEON intrinsic 
+// Ld2qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_u16'.
 // Requires NEON.
@@ -15073,11 +15073,11 @@ func Vld2qU8(a *uint8) (dst [2]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qU16(a *uint16) (dst [2]arm.Uint16x8) {
+func Ld2qU16(a *uint16) (dst [2]arm.Uint16x8) {
 	return [2]arm.Uint16x8{}
 }
 
-// Vld2qU32: ARM NEON intrinsic 
+// Ld2qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_u32'.
 // Requires NEON.
@@ -15085,11 +15085,11 @@ func Vld2qU16(a *uint16) (dst [2]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qU32(a *uint32) (dst [2]arm.Uint32x4) {
+func Ld2qU32(a *uint32) (dst [2]arm.Uint32x4) {
 	return [2]arm.Uint32x4{}
 }
 
-// Vld2qU64: ARM NEON intrinsic 
+// Ld2qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_u64'.
 // Requires NEON.
@@ -15097,11 +15097,11 @@ func Vld2qU32(a *uint32) (dst [2]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qU64(a *uint64) (dst [2]arm.Uint64x2) {
+func Ld2qU64(a *uint64) (dst [2]arm.Uint64x2) {
 	return [2]arm.Uint64x2{}
 }
 
-// Vld2qF32: ARM NEON intrinsic 
+// Ld2qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_f32'.
 // Requires NEON.
@@ -15109,11 +15109,11 @@ func Vld2qU64(a *uint64) (dst [2]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qF32(a *float32) (dst [2]arm.Float32x4) {
+func Ld2qF32(a *float32) (dst [2]arm.Float32x4) {
 	return [2]arm.Float32x4{}
 }
 
-// Vld2qF64: ARM NEON intrinsic 
+// Ld2qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_f64'.
 // Requires NEON.
@@ -15121,11 +15121,11 @@ func Vld2qF32(a *float32) (dst [2]arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qF64(a *float64) (dst [2]arm.Float64x2) {
+func Ld2qF64(a *float64) (dst [2]arm.Float64x2) {
 	return [2]arm.Float64x2{}
 }
 
-// Vld3S64: ARM NEON intrinsic 
+// Ld3S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_s64'.
 // Requires NEON.
@@ -15133,11 +15133,11 @@ func Vld2qF64(a *float64) (dst [2]arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3S64(a *int64) (dst [3]arm.Int64x1) {
+func Ld3S64(a *int64) (dst [3]arm.Int64x1) {
 	return [3]arm.Int64x1{}
 }
 
-// Vld3U64: ARM NEON intrinsic 
+// Ld3U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_u64'.
 // Requires NEON.
@@ -15145,11 +15145,11 @@ func Vld3S64(a *int64) (dst [3]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3U64(a *uint64) (dst [3]arm.Uint64x1) {
+func Ld3U64(a *uint64) (dst [3]arm.Uint64x1) {
 	return [3]arm.Uint64x1{}
 }
 
-// Vld3F64: ARM NEON intrinsic 
+// Ld3F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_f64'.
 // Requires NEON.
@@ -15157,11 +15157,11 @@ func Vld3U64(a *uint64) (dst [3]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3F64(a *float64) (dst [3]arm.Float64x1) {
+func Ld3F64(a *float64) (dst [3]arm.Float64x1) {
 	return [3]arm.Float64x1{}
 }
 
-// Vld3S8: ARM NEON intrinsic 
+// Ld3S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_s8'.
 // Requires NEON.
@@ -15169,11 +15169,11 @@ func Vld3F64(a *float64) (dst [3]arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3S8(a *int8) (dst [3]arm.Int8x8) {
+func Ld3S8(a *int8) (dst [3]arm.Int8x8) {
 	return [3]arm.Int8x8{}
 }
 
-// Vld3P8: ARM NEON intrinsic 
+// Ld3P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_p8'.
 // Requires NEON.
@@ -15181,11 +15181,11 @@ func Vld3S8(a *int8) (dst [3]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3P8(a *arm.Poly8) (dst [3]arm.Poly8x8) {
+func Ld3P8(a *arm.Poly8) (dst [3]arm.Poly8x8) {
 	return [3]arm.Poly8x8{}
 }
 
-// Vld3S16: ARM NEON intrinsic 
+// Ld3S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_s16'.
 // Requires NEON.
@@ -15193,11 +15193,11 @@ func Vld3P8(a *arm.Poly8) (dst [3]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3S16(a *int16) (dst [3]arm.Int16x4) {
+func Ld3S16(a *int16) (dst [3]arm.Int16x4) {
 	return [3]arm.Int16x4{}
 }
 
-// Vld3P16: ARM NEON intrinsic 
+// Ld3P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_p16'.
 // Requires NEON.
@@ -15205,11 +15205,11 @@ func Vld3S16(a *int16) (dst [3]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3P16(a *arm.Poly16) (dst [3]arm.Poly16x4) {
+func Ld3P16(a *arm.Poly16) (dst [3]arm.Poly16x4) {
 	return [3]arm.Poly16x4{}
 }
 
-// Vld3S32: ARM NEON intrinsic 
+// Ld3S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_s32'.
 // Requires NEON.
@@ -15217,11 +15217,11 @@ func Vld3P16(a *arm.Poly16) (dst [3]arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3S32(a *int32) (dst [3]arm.Int32x2) {
+func Ld3S32(a *int32) (dst [3]arm.Int32x2) {
 	return [3]arm.Int32x2{}
 }
 
-// Vld3U8: ARM NEON intrinsic 
+// Ld3U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_u8'.
 // Requires NEON.
@@ -15229,11 +15229,11 @@ func Vld3S32(a *int32) (dst [3]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3U8(a *uint8) (dst [3]arm.Uint8x8) {
+func Ld3U8(a *uint8) (dst [3]arm.Uint8x8) {
 	return [3]arm.Uint8x8{}
 }
 
-// Vld3U16: ARM NEON intrinsic 
+// Ld3U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_u16'.
 // Requires NEON.
@@ -15241,11 +15241,11 @@ func Vld3U8(a *uint8) (dst [3]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3U16(a *uint16) (dst [3]arm.Uint16x4) {
+func Ld3U16(a *uint16) (dst [3]arm.Uint16x4) {
 	return [3]arm.Uint16x4{}
 }
 
-// Vld3U32: ARM NEON intrinsic 
+// Ld3U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_u32'.
 // Requires NEON.
@@ -15253,11 +15253,11 @@ func Vld3U16(a *uint16) (dst [3]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3U32(a *uint32) (dst [3]arm.Uint32x2) {
+func Ld3U32(a *uint32) (dst [3]arm.Uint32x2) {
 	return [3]arm.Uint32x2{}
 }
 
-// Vld3F32: ARM NEON intrinsic 
+// Ld3F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_f32'.
 // Requires NEON.
@@ -15265,11 +15265,11 @@ func Vld3U32(a *uint32) (dst [3]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3F32(a *float32) (dst [3]arm.Float32x2) {
+func Ld3F32(a *float32) (dst [3]arm.Float32x2) {
 	return [3]arm.Float32x2{}
 }
 
-// Vld3qS8: ARM NEON intrinsic 
+// Ld3qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_s8'.
 // Requires NEON.
@@ -15277,11 +15277,11 @@ func Vld3F32(a *float32) (dst [3]arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qS8(a *int8) (dst [3]arm.Int8x16) {
+func Ld3qS8(a *int8) (dst [3]arm.Int8x16) {
 	return [3]arm.Int8x16{}
 }
 
-// Vld3qP8: ARM NEON intrinsic 
+// Ld3qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_p8'.
 // Requires NEON.
@@ -15289,11 +15289,11 @@ func Vld3qS8(a *int8) (dst [3]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qP8(a *arm.Poly8) (dst [3]arm.Poly8x16) {
+func Ld3qP8(a *arm.Poly8) (dst [3]arm.Poly8x16) {
 	return [3]arm.Poly8x16{}
 }
 
-// Vld3qS16: ARM NEON intrinsic 
+// Ld3qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_s16'.
 // Requires NEON.
@@ -15301,11 +15301,11 @@ func Vld3qP8(a *arm.Poly8) (dst [3]arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qS16(a *int16) (dst [3]arm.Int16x8) {
+func Ld3qS16(a *int16) (dst [3]arm.Int16x8) {
 	return [3]arm.Int16x8{}
 }
 
-// Vld3qP16: ARM NEON intrinsic 
+// Ld3qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_p16'.
 // Requires NEON.
@@ -15313,11 +15313,11 @@ func Vld3qS16(a *int16) (dst [3]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qP16(a *arm.Poly16) (dst [3]arm.Poly16x8) {
+func Ld3qP16(a *arm.Poly16) (dst [3]arm.Poly16x8) {
 	return [3]arm.Poly16x8{}
 }
 
-// Vld3qS32: ARM NEON intrinsic 
+// Ld3qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_s32'.
 // Requires NEON.
@@ -15325,11 +15325,11 @@ func Vld3qP16(a *arm.Poly16) (dst [3]arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qS32(a *int32) (dst [3]arm.Int32x4) {
+func Ld3qS32(a *int32) (dst [3]arm.Int32x4) {
 	return [3]arm.Int32x4{}
 }
 
-// Vld3qS64: ARM NEON intrinsic 
+// Ld3qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_s64'.
 // Requires NEON.
@@ -15337,11 +15337,11 @@ func Vld3qS32(a *int32) (dst [3]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qS64(a *int64) (dst [3]arm.Int64x2) {
+func Ld3qS64(a *int64) (dst [3]arm.Int64x2) {
 	return [3]arm.Int64x2{}
 }
 
-// Vld3qU8: ARM NEON intrinsic 
+// Ld3qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_u8'.
 // Requires NEON.
@@ -15349,11 +15349,11 @@ func Vld3qS64(a *int64) (dst [3]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qU8(a *uint8) (dst [3]arm.Uint8x16) {
+func Ld3qU8(a *uint8) (dst [3]arm.Uint8x16) {
 	return [3]arm.Uint8x16{}
 }
 
-// Vld3qU16: ARM NEON intrinsic 
+// Ld3qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_u16'.
 // Requires NEON.
@@ -15361,11 +15361,11 @@ func Vld3qU8(a *uint8) (dst [3]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qU16(a *uint16) (dst [3]arm.Uint16x8) {
+func Ld3qU16(a *uint16) (dst [3]arm.Uint16x8) {
 	return [3]arm.Uint16x8{}
 }
 
-// Vld3qU32: ARM NEON intrinsic 
+// Ld3qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_u32'.
 // Requires NEON.
@@ -15373,11 +15373,11 @@ func Vld3qU16(a *uint16) (dst [3]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qU32(a *uint32) (dst [3]arm.Uint32x4) {
+func Ld3qU32(a *uint32) (dst [3]arm.Uint32x4) {
 	return [3]arm.Uint32x4{}
 }
 
-// Vld3qU64: ARM NEON intrinsic 
+// Ld3qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_u64'.
 // Requires NEON.
@@ -15385,11 +15385,11 @@ func Vld3qU32(a *uint32) (dst [3]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qU64(a *uint64) (dst [3]arm.Uint64x2) {
+func Ld3qU64(a *uint64) (dst [3]arm.Uint64x2) {
 	return [3]arm.Uint64x2{}
 }
 
-// Vld3qF32: ARM NEON intrinsic 
+// Ld3qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_f32'.
 // Requires NEON.
@@ -15397,11 +15397,11 @@ func Vld3qU64(a *uint64) (dst [3]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qF32(a *float32) (dst [3]arm.Float32x4) {
+func Ld3qF32(a *float32) (dst [3]arm.Float32x4) {
 	return [3]arm.Float32x4{}
 }
 
-// Vld3qF64: ARM NEON intrinsic 
+// Ld3qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_f64'.
 // Requires NEON.
@@ -15409,11 +15409,11 @@ func Vld3qF32(a *float32) (dst [3]arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qF64(a *float64) (dst [3]arm.Float64x2) {
+func Ld3qF64(a *float64) (dst [3]arm.Float64x2) {
 	return [3]arm.Float64x2{}
 }
 
-// Vld4S64: ARM NEON intrinsic 
+// Ld4S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_s64'.
 // Requires NEON.
@@ -15421,11 +15421,11 @@ func Vld3qF64(a *float64) (dst [3]arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4S64(a *int64) (dst [4]arm.Int64x1) {
+func Ld4S64(a *int64) (dst [4]arm.Int64x1) {
 	return [4]arm.Int64x1{}
 }
 
-// Vld4U64: ARM NEON intrinsic 
+// Ld4U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_u64'.
 // Requires NEON.
@@ -15433,11 +15433,11 @@ func Vld4S64(a *int64) (dst [4]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4U64(a *uint64) (dst [4]arm.Uint64x1) {
+func Ld4U64(a *uint64) (dst [4]arm.Uint64x1) {
 	return [4]arm.Uint64x1{}
 }
 
-// Vld4F64: ARM NEON intrinsic 
+// Ld4F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_f64'.
 // Requires NEON.
@@ -15445,11 +15445,11 @@ func Vld4U64(a *uint64) (dst [4]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4F64(a *float64) (dst [4]arm.Float64x1) {
+func Ld4F64(a *float64) (dst [4]arm.Float64x1) {
 	return [4]arm.Float64x1{}
 }
 
-// Vld4S8: ARM NEON intrinsic 
+// Ld4S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_s8'.
 // Requires NEON.
@@ -15457,11 +15457,11 @@ func Vld4F64(a *float64) (dst [4]arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4S8(a *int8) (dst [4]arm.Int8x8) {
+func Ld4S8(a *int8) (dst [4]arm.Int8x8) {
 	return [4]arm.Int8x8{}
 }
 
-// Vld4P8: ARM NEON intrinsic 
+// Ld4P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_p8'.
 // Requires NEON.
@@ -15469,11 +15469,11 @@ func Vld4S8(a *int8) (dst [4]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4P8(a *arm.Poly8) (dst [4]arm.Poly8x8) {
+func Ld4P8(a *arm.Poly8) (dst [4]arm.Poly8x8) {
 	return [4]arm.Poly8x8{}
 }
 
-// Vld4S16: ARM NEON intrinsic 
+// Ld4S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_s16'.
 // Requires NEON.
@@ -15481,11 +15481,11 @@ func Vld4P8(a *arm.Poly8) (dst [4]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4S16(a *int16) (dst [4]arm.Int16x4) {
+func Ld4S16(a *int16) (dst [4]arm.Int16x4) {
 	return [4]arm.Int16x4{}
 }
 
-// Vld4P16: ARM NEON intrinsic 
+// Ld4P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_p16'.
 // Requires NEON.
@@ -15493,11 +15493,11 @@ func Vld4S16(a *int16) (dst [4]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4P16(a *arm.Poly16) (dst [4]arm.Poly16x4) {
+func Ld4P16(a *arm.Poly16) (dst [4]arm.Poly16x4) {
 	return [4]arm.Poly16x4{}
 }
 
-// Vld4S32: ARM NEON intrinsic 
+// Ld4S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_s32'.
 // Requires NEON.
@@ -15505,11 +15505,11 @@ func Vld4P16(a *arm.Poly16) (dst [4]arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4S32(a *int32) (dst [4]arm.Int32x2) {
+func Ld4S32(a *int32) (dst [4]arm.Int32x2) {
 	return [4]arm.Int32x2{}
 }
 
-// Vld4U8: ARM NEON intrinsic 
+// Ld4U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_u8'.
 // Requires NEON.
@@ -15517,11 +15517,11 @@ func Vld4S32(a *int32) (dst [4]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4U8(a *uint8) (dst [4]arm.Uint8x8) {
+func Ld4U8(a *uint8) (dst [4]arm.Uint8x8) {
 	return [4]arm.Uint8x8{}
 }
 
-// Vld4U16: ARM NEON intrinsic 
+// Ld4U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_u16'.
 // Requires NEON.
@@ -15529,11 +15529,11 @@ func Vld4U8(a *uint8) (dst [4]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4U16(a *uint16) (dst [4]arm.Uint16x4) {
+func Ld4U16(a *uint16) (dst [4]arm.Uint16x4) {
 	return [4]arm.Uint16x4{}
 }
 
-// Vld4U32: ARM NEON intrinsic 
+// Ld4U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_u32'.
 // Requires NEON.
@@ -15541,11 +15541,11 @@ func Vld4U16(a *uint16) (dst [4]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4U32(a *uint32) (dst [4]arm.Uint32x2) {
+func Ld4U32(a *uint32) (dst [4]arm.Uint32x2) {
 	return [4]arm.Uint32x2{}
 }
 
-// Vld4F32: ARM NEON intrinsic 
+// Ld4F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_f32'.
 // Requires NEON.
@@ -15553,11 +15553,11 @@ func Vld4U32(a *uint32) (dst [4]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4F32(a *float32) (dst [4]arm.Float32x2) {
+func Ld4F32(a *float32) (dst [4]arm.Float32x2) {
 	return [4]arm.Float32x2{}
 }
 
-// Vld4qS8: ARM NEON intrinsic 
+// Ld4qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_s8'.
 // Requires NEON.
@@ -15565,11 +15565,11 @@ func Vld4F32(a *float32) (dst [4]arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qS8(a *int8) (dst [4]arm.Int8x16) {
+func Ld4qS8(a *int8) (dst [4]arm.Int8x16) {
 	return [4]arm.Int8x16{}
 }
 
-// Vld4qP8: ARM NEON intrinsic 
+// Ld4qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_p8'.
 // Requires NEON.
@@ -15577,11 +15577,11 @@ func Vld4qS8(a *int8) (dst [4]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qP8(a *arm.Poly8) (dst [4]arm.Poly8x16) {
+func Ld4qP8(a *arm.Poly8) (dst [4]arm.Poly8x16) {
 	return [4]arm.Poly8x16{}
 }
 
-// Vld4qS16: ARM NEON intrinsic 
+// Ld4qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_s16'.
 // Requires NEON.
@@ -15589,11 +15589,11 @@ func Vld4qP8(a *arm.Poly8) (dst [4]arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qS16(a *int16) (dst [4]arm.Int16x8) {
+func Ld4qS16(a *int16) (dst [4]arm.Int16x8) {
 	return [4]arm.Int16x8{}
 }
 
-// Vld4qP16: ARM NEON intrinsic 
+// Ld4qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_p16'.
 // Requires NEON.
@@ -15601,11 +15601,11 @@ func Vld4qS16(a *int16) (dst [4]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qP16(a *arm.Poly16) (dst [4]arm.Poly16x8) {
+func Ld4qP16(a *arm.Poly16) (dst [4]arm.Poly16x8) {
 	return [4]arm.Poly16x8{}
 }
 
-// Vld4qS32: ARM NEON intrinsic 
+// Ld4qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_s32'.
 // Requires NEON.
@@ -15613,11 +15613,11 @@ func Vld4qP16(a *arm.Poly16) (dst [4]arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qS32(a *int32) (dst [4]arm.Int32x4) {
+func Ld4qS32(a *int32) (dst [4]arm.Int32x4) {
 	return [4]arm.Int32x4{}
 }
 
-// Vld4qS64: ARM NEON intrinsic 
+// Ld4qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_s64'.
 // Requires NEON.
@@ -15625,11 +15625,11 @@ func Vld4qS32(a *int32) (dst [4]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qS64(a *int64) (dst [4]arm.Int64x2) {
+func Ld4qS64(a *int64) (dst [4]arm.Int64x2) {
 	return [4]arm.Int64x2{}
 }
 
-// Vld4qU8: ARM NEON intrinsic 
+// Ld4qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_u8'.
 // Requires NEON.
@@ -15637,11 +15637,11 @@ func Vld4qS64(a *int64) (dst [4]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qU8(a *uint8) (dst [4]arm.Uint8x16) {
+func Ld4qU8(a *uint8) (dst [4]arm.Uint8x16) {
 	return [4]arm.Uint8x16{}
 }
 
-// Vld4qU16: ARM NEON intrinsic 
+// Ld4qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_u16'.
 // Requires NEON.
@@ -15649,11 +15649,11 @@ func Vld4qU8(a *uint8) (dst [4]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qU16(a *uint16) (dst [4]arm.Uint16x8) {
+func Ld4qU16(a *uint16) (dst [4]arm.Uint16x8) {
 	return [4]arm.Uint16x8{}
 }
 
-// Vld4qU32: ARM NEON intrinsic 
+// Ld4qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_u32'.
 // Requires NEON.
@@ -15661,11 +15661,11 @@ func Vld4qU16(a *uint16) (dst [4]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qU32(a *uint32) (dst [4]arm.Uint32x4) {
+func Ld4qU32(a *uint32) (dst [4]arm.Uint32x4) {
 	return [4]arm.Uint32x4{}
 }
 
-// Vld4qU64: ARM NEON intrinsic 
+// Ld4qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_u64'.
 // Requires NEON.
@@ -15673,11 +15673,11 @@ func Vld4qU32(a *uint32) (dst [4]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qU64(a *uint64) (dst [4]arm.Uint64x2) {
+func Ld4qU64(a *uint64) (dst [4]arm.Uint64x2) {
 	return [4]arm.Uint64x2{}
 }
 
-// Vld4qF32: ARM NEON intrinsic 
+// Ld4qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_f32'.
 // Requires NEON.
@@ -15685,11 +15685,11 @@ func Vld4qU64(a *uint64) (dst [4]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qF32(a *float32) (dst [4]arm.Float32x4) {
+func Ld4qF32(a *float32) (dst [4]arm.Float32x4) {
 	return [4]arm.Float32x4{}
 }
 
-// Vld4qF64: ARM NEON intrinsic 
+// Ld4qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_f64'.
 // Requires NEON.
@@ -15697,11 +15697,11 @@ func Vld4qF32(a *float32) (dst [4]arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qF64(a *float64) (dst [4]arm.Float64x2) {
+func Ld4qF64(a *float64) (dst [4]arm.Float64x2) {
 	return [4]arm.Float64x2{}
 }
 
-// Vld2DupS8: ARM NEON intrinsic 
+// Ld2DupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_s8'.
 // Requires NEON.
@@ -15709,11 +15709,11 @@ func Vld4qF64(a *float64) (dst [4]arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupS8(a *int8) (dst [2]arm.Int8x8) {
+func Ld2DupS8(a *int8) (dst [2]arm.Int8x8) {
 	return [2]arm.Int8x8{}
 }
 
-// Vld2DupS16: ARM NEON intrinsic 
+// Ld2DupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_s16'.
 // Requires NEON.
@@ -15721,11 +15721,11 @@ func Vld2DupS8(a *int8) (dst [2]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupS16(a *int16) (dst [2]arm.Int16x4) {
+func Ld2DupS16(a *int16) (dst [2]arm.Int16x4) {
 	return [2]arm.Int16x4{}
 }
 
-// Vld2DupS32: ARM NEON intrinsic 
+// Ld2DupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_s32'.
 // Requires NEON.
@@ -15733,11 +15733,11 @@ func Vld2DupS16(a *int16) (dst [2]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupS32(a *int32) (dst [2]arm.Int32x2) {
+func Ld2DupS32(a *int32) (dst [2]arm.Int32x2) {
 	return [2]arm.Int32x2{}
 }
 
-// Vld2DupF32: ARM NEON intrinsic 
+// Ld2DupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_f32'.
 // Requires NEON.
@@ -15745,11 +15745,11 @@ func Vld2DupS32(a *int32) (dst [2]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupF32(a *float32) (dst [2]arm.Float32x2) {
+func Ld2DupF32(a *float32) (dst [2]arm.Float32x2) {
 	return [2]arm.Float32x2{}
 }
 
-// Vld2DupF64: ARM NEON intrinsic 
+// Ld2DupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_f64'.
 // Requires NEON.
@@ -15757,11 +15757,11 @@ func Vld2DupF32(a *float32) (dst [2]arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupF64(a *float64) (dst [2]arm.Float64x1) {
+func Ld2DupF64(a *float64) (dst [2]arm.Float64x1) {
 	return [2]arm.Float64x1{}
 }
 
-// Vld2DupU8: ARM NEON intrinsic 
+// Ld2DupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_u8'.
 // Requires NEON.
@@ -15769,11 +15769,11 @@ func Vld2DupF64(a *float64) (dst [2]arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupU8(a *uint8) (dst [2]arm.Uint8x8) {
+func Ld2DupU8(a *uint8) (dst [2]arm.Uint8x8) {
 	return [2]arm.Uint8x8{}
 }
 
-// Vld2DupU16: ARM NEON intrinsic 
+// Ld2DupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_u16'.
 // Requires NEON.
@@ -15781,11 +15781,11 @@ func Vld2DupU8(a *uint8) (dst [2]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupU16(a *uint16) (dst [2]arm.Uint16x4) {
+func Ld2DupU16(a *uint16) (dst [2]arm.Uint16x4) {
 	return [2]arm.Uint16x4{}
 }
 
-// Vld2DupU32: ARM NEON intrinsic 
+// Ld2DupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_u32'.
 // Requires NEON.
@@ -15793,11 +15793,11 @@ func Vld2DupU16(a *uint16) (dst [2]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupU32(a *uint32) (dst [2]arm.Uint32x2) {
+func Ld2DupU32(a *uint32) (dst [2]arm.Uint32x2) {
 	return [2]arm.Uint32x2{}
 }
 
-// Vld2DupP8: ARM NEON intrinsic 
+// Ld2DupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_p8'.
 // Requires NEON.
@@ -15805,11 +15805,11 @@ func Vld2DupU32(a *uint32) (dst [2]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupP8(a *arm.Poly8) (dst [2]arm.Poly8x8) {
+func Ld2DupP8(a *arm.Poly8) (dst [2]arm.Poly8x8) {
 	return [2]arm.Poly8x8{}
 }
 
-// Vld2DupP16: ARM NEON intrinsic 
+// Ld2DupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_p16'.
 // Requires NEON.
@@ -15817,11 +15817,11 @@ func Vld2DupP8(a *arm.Poly8) (dst [2]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupP16(a *arm.Poly16) (dst [2]arm.Poly16x4) {
+func Ld2DupP16(a *arm.Poly16) (dst [2]arm.Poly16x4) {
 	return [2]arm.Poly16x4{}
 }
 
-// Vld2DupS64: ARM NEON intrinsic 
+// Ld2DupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_s64'.
 // Requires NEON.
@@ -15829,11 +15829,11 @@ func Vld2DupP16(a *arm.Poly16) (dst [2]arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupS64(a *int64) (dst [2]arm.Int64x1) {
+func Ld2DupS64(a *int64) (dst [2]arm.Int64x1) {
 	return [2]arm.Int64x1{}
 }
 
-// Vld2DupU64: ARM NEON intrinsic 
+// Ld2DupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_dup_u64'.
 // Requires NEON.
@@ -15841,11 +15841,11 @@ func Vld2DupS64(a *int64) (dst [2]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2DupU64(a *uint64) (dst [2]arm.Uint64x1) {
+func Ld2DupU64(a *uint64) (dst [2]arm.Uint64x1) {
 	return [2]arm.Uint64x1{}
 }
 
-// Vld2qDupS8: ARM NEON intrinsic 
+// Ld2qDupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_s8'.
 // Requires NEON.
@@ -15853,11 +15853,11 @@ func Vld2DupU64(a *uint64) (dst [2]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupS8(a *int8) (dst [2]arm.Int8x16) {
+func Ld2qDupS8(a *int8) (dst [2]arm.Int8x16) {
 	return [2]arm.Int8x16{}
 }
 
-// Vld2qDupP8: ARM NEON intrinsic 
+// Ld2qDupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_p8'.
 // Requires NEON.
@@ -15865,11 +15865,11 @@ func Vld2qDupS8(a *int8) (dst [2]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupP8(a *arm.Poly8) (dst [2]arm.Poly8x16) {
+func Ld2qDupP8(a *arm.Poly8) (dst [2]arm.Poly8x16) {
 	return [2]arm.Poly8x16{}
 }
 
-// Vld2qDupS16: ARM NEON intrinsic 
+// Ld2qDupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_s16'.
 // Requires NEON.
@@ -15877,11 +15877,11 @@ func Vld2qDupP8(a *arm.Poly8) (dst [2]arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupS16(a *int16) (dst [2]arm.Int16x8) {
+func Ld2qDupS16(a *int16) (dst [2]arm.Int16x8) {
 	return [2]arm.Int16x8{}
 }
 
-// Vld2qDupP16: ARM NEON intrinsic 
+// Ld2qDupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_p16'.
 // Requires NEON.
@@ -15889,11 +15889,11 @@ func Vld2qDupS16(a *int16) (dst [2]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupP16(a *arm.Poly16) (dst [2]arm.Poly16x8) {
+func Ld2qDupP16(a *arm.Poly16) (dst [2]arm.Poly16x8) {
 	return [2]arm.Poly16x8{}
 }
 
-// Vld2qDupS32: ARM NEON intrinsic 
+// Ld2qDupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_s32'.
 // Requires NEON.
@@ -15901,11 +15901,11 @@ func Vld2qDupP16(a *arm.Poly16) (dst [2]arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupS32(a *int32) (dst [2]arm.Int32x4) {
+func Ld2qDupS32(a *int32) (dst [2]arm.Int32x4) {
 	return [2]arm.Int32x4{}
 }
 
-// Vld2qDupS64: ARM NEON intrinsic 
+// Ld2qDupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_s64'.
 // Requires NEON.
@@ -15913,11 +15913,11 @@ func Vld2qDupS32(a *int32) (dst [2]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupS64(a *int64) (dst [2]arm.Int64x2) {
+func Ld2qDupS64(a *int64) (dst [2]arm.Int64x2) {
 	return [2]arm.Int64x2{}
 }
 
-// Vld2qDupU8: ARM NEON intrinsic 
+// Ld2qDupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_u8'.
 // Requires NEON.
@@ -15925,11 +15925,11 @@ func Vld2qDupS64(a *int64) (dst [2]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupU8(a *uint8) (dst [2]arm.Uint8x16) {
+func Ld2qDupU8(a *uint8) (dst [2]arm.Uint8x16) {
 	return [2]arm.Uint8x16{}
 }
 
-// Vld2qDupU16: ARM NEON intrinsic 
+// Ld2qDupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_u16'.
 // Requires NEON.
@@ -15937,11 +15937,11 @@ func Vld2qDupU8(a *uint8) (dst [2]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupU16(a *uint16) (dst [2]arm.Uint16x8) {
+func Ld2qDupU16(a *uint16) (dst [2]arm.Uint16x8) {
 	return [2]arm.Uint16x8{}
 }
 
-// Vld2qDupU32: ARM NEON intrinsic 
+// Ld2qDupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_u32'.
 // Requires NEON.
@@ -15949,11 +15949,11 @@ func Vld2qDupU16(a *uint16) (dst [2]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupU32(a *uint32) (dst [2]arm.Uint32x4) {
+func Ld2qDupU32(a *uint32) (dst [2]arm.Uint32x4) {
 	return [2]arm.Uint32x4{}
 }
 
-// Vld2qDupU64: ARM NEON intrinsic 
+// Ld2qDupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_u64'.
 // Requires NEON.
@@ -15961,11 +15961,11 @@ func Vld2qDupU32(a *uint32) (dst [2]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupU64(a *uint64) (dst [2]arm.Uint64x2) {
+func Ld2qDupU64(a *uint64) (dst [2]arm.Uint64x2) {
 	return [2]arm.Uint64x2{}
 }
 
-// Vld2qDupF32: ARM NEON intrinsic 
+// Ld2qDupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_f32'.
 // Requires NEON.
@@ -15973,11 +15973,11 @@ func Vld2qDupU64(a *uint64) (dst [2]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupF32(a *float32) (dst [2]arm.Float32x4) {
+func Ld2qDupF32(a *float32) (dst [2]arm.Float32x4) {
 	return [2]arm.Float32x4{}
 }
 
-// Vld2qDupF64: ARM NEON intrinsic 
+// Ld2qDupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_dup_f64'.
 // Requires NEON.
@@ -15985,11 +15985,11 @@ func Vld2qDupF32(a *float32) (dst [2]arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qDupF64(a *float64) (dst [2]arm.Float64x2) {
+func Ld2qDupF64(a *float64) (dst [2]arm.Float64x2) {
 	return [2]arm.Float64x2{}
 }
 
-// Vld3DupS64: ARM NEON intrinsic 
+// Ld3DupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_s64'.
 // Requires NEON.
@@ -15997,11 +15997,11 @@ func Vld2qDupF64(a *float64) (dst [2]arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupS64(a *int64) (dst [3]arm.Int64x1) {
+func Ld3DupS64(a *int64) (dst [3]arm.Int64x1) {
 	return [3]arm.Int64x1{}
 }
 
-// Vld3DupU64: ARM NEON intrinsic 
+// Ld3DupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_u64'.
 // Requires NEON.
@@ -16009,11 +16009,11 @@ func Vld3DupS64(a *int64) (dst [3]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupU64(a *uint64) (dst [3]arm.Uint64x1) {
+func Ld3DupU64(a *uint64) (dst [3]arm.Uint64x1) {
 	return [3]arm.Uint64x1{}
 }
 
-// Vld3DupF64: ARM NEON intrinsic 
+// Ld3DupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_f64'.
 // Requires NEON.
@@ -16021,11 +16021,11 @@ func Vld3DupU64(a *uint64) (dst [3]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupF64(a *float64) (dst [3]arm.Float64x1) {
+func Ld3DupF64(a *float64) (dst [3]arm.Float64x1) {
 	return [3]arm.Float64x1{}
 }
 
-// Vld3DupS8: ARM NEON intrinsic 
+// Ld3DupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_s8'.
 // Requires NEON.
@@ -16033,11 +16033,11 @@ func Vld3DupF64(a *float64) (dst [3]arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupS8(a *int8) (dst [3]arm.Int8x8) {
+func Ld3DupS8(a *int8) (dst [3]arm.Int8x8) {
 	return [3]arm.Int8x8{}
 }
 
-// Vld3DupP8: ARM NEON intrinsic 
+// Ld3DupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_p8'.
 // Requires NEON.
@@ -16045,11 +16045,11 @@ func Vld3DupS8(a *int8) (dst [3]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupP8(a *arm.Poly8) (dst [3]arm.Poly8x8) {
+func Ld3DupP8(a *arm.Poly8) (dst [3]arm.Poly8x8) {
 	return [3]arm.Poly8x8{}
 }
 
-// Vld3DupS16: ARM NEON intrinsic 
+// Ld3DupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_s16'.
 // Requires NEON.
@@ -16057,11 +16057,11 @@ func Vld3DupP8(a *arm.Poly8) (dst [3]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupS16(a *int16) (dst [3]arm.Int16x4) {
+func Ld3DupS16(a *int16) (dst [3]arm.Int16x4) {
 	return [3]arm.Int16x4{}
 }
 
-// Vld3DupP16: ARM NEON intrinsic 
+// Ld3DupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_p16'.
 // Requires NEON.
@@ -16069,11 +16069,11 @@ func Vld3DupS16(a *int16) (dst [3]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupP16(a *arm.Poly16) (dst [3]arm.Poly16x4) {
+func Ld3DupP16(a *arm.Poly16) (dst [3]arm.Poly16x4) {
 	return [3]arm.Poly16x4{}
 }
 
-// Vld3DupS32: ARM NEON intrinsic 
+// Ld3DupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_s32'.
 // Requires NEON.
@@ -16081,11 +16081,11 @@ func Vld3DupP16(a *arm.Poly16) (dst [3]arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupS32(a *int32) (dst [3]arm.Int32x2) {
+func Ld3DupS32(a *int32) (dst [3]arm.Int32x2) {
 	return [3]arm.Int32x2{}
 }
 
-// Vld3DupU8: ARM NEON intrinsic 
+// Ld3DupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_u8'.
 // Requires NEON.
@@ -16093,11 +16093,11 @@ func Vld3DupS32(a *int32) (dst [3]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupU8(a *uint8) (dst [3]arm.Uint8x8) {
+func Ld3DupU8(a *uint8) (dst [3]arm.Uint8x8) {
 	return [3]arm.Uint8x8{}
 }
 
-// Vld3DupU16: ARM NEON intrinsic 
+// Ld3DupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_u16'.
 // Requires NEON.
@@ -16105,11 +16105,11 @@ func Vld3DupU8(a *uint8) (dst [3]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupU16(a *uint16) (dst [3]arm.Uint16x4) {
+func Ld3DupU16(a *uint16) (dst [3]arm.Uint16x4) {
 	return [3]arm.Uint16x4{}
 }
 
-// Vld3DupU32: ARM NEON intrinsic 
+// Ld3DupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_u32'.
 // Requires NEON.
@@ -16117,11 +16117,11 @@ func Vld3DupU16(a *uint16) (dst [3]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupU32(a *uint32) (dst [3]arm.Uint32x2) {
+func Ld3DupU32(a *uint32) (dst [3]arm.Uint32x2) {
 	return [3]arm.Uint32x2{}
 }
 
-// Vld3DupF32: ARM NEON intrinsic 
+// Ld3DupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_dup_f32'.
 // Requires NEON.
@@ -16129,11 +16129,11 @@ func Vld3DupU32(a *uint32) (dst [3]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3DupF32(a *float32) (dst [3]arm.Float32x2) {
+func Ld3DupF32(a *float32) (dst [3]arm.Float32x2) {
 	return [3]arm.Float32x2{}
 }
 
-// Vld3qDupS8: ARM NEON intrinsic 
+// Ld3qDupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_s8'.
 // Requires NEON.
@@ -16141,11 +16141,11 @@ func Vld3DupF32(a *float32) (dst [3]arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupS8(a *int8) (dst [3]arm.Int8x16) {
+func Ld3qDupS8(a *int8) (dst [3]arm.Int8x16) {
 	return [3]arm.Int8x16{}
 }
 
-// Vld3qDupP8: ARM NEON intrinsic 
+// Ld3qDupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_p8'.
 // Requires NEON.
@@ -16153,11 +16153,11 @@ func Vld3qDupS8(a *int8) (dst [3]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupP8(a *arm.Poly8) (dst [3]arm.Poly8x16) {
+func Ld3qDupP8(a *arm.Poly8) (dst [3]arm.Poly8x16) {
 	return [3]arm.Poly8x16{}
 }
 
-// Vld3qDupS16: ARM NEON intrinsic 
+// Ld3qDupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_s16'.
 // Requires NEON.
@@ -16165,11 +16165,11 @@ func Vld3qDupP8(a *arm.Poly8) (dst [3]arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupS16(a *int16) (dst [3]arm.Int16x8) {
+func Ld3qDupS16(a *int16) (dst [3]arm.Int16x8) {
 	return [3]arm.Int16x8{}
 }
 
-// Vld3qDupP16: ARM NEON intrinsic 
+// Ld3qDupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_p16'.
 // Requires NEON.
@@ -16177,11 +16177,11 @@ func Vld3qDupS16(a *int16) (dst [3]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupP16(a *arm.Poly16) (dst [3]arm.Poly16x8) {
+func Ld3qDupP16(a *arm.Poly16) (dst [3]arm.Poly16x8) {
 	return [3]arm.Poly16x8{}
 }
 
-// Vld3qDupS32: ARM NEON intrinsic 
+// Ld3qDupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_s32'.
 // Requires NEON.
@@ -16189,11 +16189,11 @@ func Vld3qDupP16(a *arm.Poly16) (dst [3]arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupS32(a *int32) (dst [3]arm.Int32x4) {
+func Ld3qDupS32(a *int32) (dst [3]arm.Int32x4) {
 	return [3]arm.Int32x4{}
 }
 
-// Vld3qDupS64: ARM NEON intrinsic 
+// Ld3qDupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_s64'.
 // Requires NEON.
@@ -16201,11 +16201,11 @@ func Vld3qDupS32(a *int32) (dst [3]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupS64(a *int64) (dst [3]arm.Int64x2) {
+func Ld3qDupS64(a *int64) (dst [3]arm.Int64x2) {
 	return [3]arm.Int64x2{}
 }
 
-// Vld3qDupU8: ARM NEON intrinsic 
+// Ld3qDupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_u8'.
 // Requires NEON.
@@ -16213,11 +16213,11 @@ func Vld3qDupS64(a *int64) (dst [3]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupU8(a *uint8) (dst [3]arm.Uint8x16) {
+func Ld3qDupU8(a *uint8) (dst [3]arm.Uint8x16) {
 	return [3]arm.Uint8x16{}
 }
 
-// Vld3qDupU16: ARM NEON intrinsic 
+// Ld3qDupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_u16'.
 // Requires NEON.
@@ -16225,11 +16225,11 @@ func Vld3qDupU8(a *uint8) (dst [3]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupU16(a *uint16) (dst [3]arm.Uint16x8) {
+func Ld3qDupU16(a *uint16) (dst [3]arm.Uint16x8) {
 	return [3]arm.Uint16x8{}
 }
 
-// Vld3qDupU32: ARM NEON intrinsic 
+// Ld3qDupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_u32'.
 // Requires NEON.
@@ -16237,11 +16237,11 @@ func Vld3qDupU16(a *uint16) (dst [3]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupU32(a *uint32) (dst [3]arm.Uint32x4) {
+func Ld3qDupU32(a *uint32) (dst [3]arm.Uint32x4) {
 	return [3]arm.Uint32x4{}
 }
 
-// Vld3qDupU64: ARM NEON intrinsic 
+// Ld3qDupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_u64'.
 // Requires NEON.
@@ -16249,11 +16249,11 @@ func Vld3qDupU32(a *uint32) (dst [3]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupU64(a *uint64) (dst [3]arm.Uint64x2) {
+func Ld3qDupU64(a *uint64) (dst [3]arm.Uint64x2) {
 	return [3]arm.Uint64x2{}
 }
 
-// Vld3qDupF32: ARM NEON intrinsic 
+// Ld3qDupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_f32'.
 // Requires NEON.
@@ -16261,11 +16261,11 @@ func Vld3qDupU64(a *uint64) (dst [3]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupF32(a *float32) (dst [3]arm.Float32x4) {
+func Ld3qDupF32(a *float32) (dst [3]arm.Float32x4) {
 	return [3]arm.Float32x4{}
 }
 
-// Vld3qDupF64: ARM NEON intrinsic 
+// Ld3qDupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_dup_f64'.
 // Requires NEON.
@@ -16273,11 +16273,11 @@ func Vld3qDupF32(a *float32) (dst [3]arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qDupF64(a *float64) (dst [3]arm.Float64x2) {
+func Ld3qDupF64(a *float64) (dst [3]arm.Float64x2) {
 	return [3]arm.Float64x2{}
 }
 
-// Vld4DupS64: ARM NEON intrinsic 
+// Ld4DupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_s64'.
 // Requires NEON.
@@ -16285,11 +16285,11 @@ func Vld3qDupF64(a *float64) (dst [3]arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupS64(a *int64) (dst [4]arm.Int64x1) {
+func Ld4DupS64(a *int64) (dst [4]arm.Int64x1) {
 	return [4]arm.Int64x1{}
 }
 
-// Vld4DupU64: ARM NEON intrinsic 
+// Ld4DupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_u64'.
 // Requires NEON.
@@ -16297,11 +16297,11 @@ func Vld4DupS64(a *int64) (dst [4]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupU64(a *uint64) (dst [4]arm.Uint64x1) {
+func Ld4DupU64(a *uint64) (dst [4]arm.Uint64x1) {
 	return [4]arm.Uint64x1{}
 }
 
-// Vld4DupF64: ARM NEON intrinsic 
+// Ld4DupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_f64'.
 // Requires NEON.
@@ -16309,11 +16309,11 @@ func Vld4DupU64(a *uint64) (dst [4]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupF64(a *float64) (dst [4]arm.Float64x1) {
+func Ld4DupF64(a *float64) (dst [4]arm.Float64x1) {
 	return [4]arm.Float64x1{}
 }
 
-// Vld4DupS8: ARM NEON intrinsic 
+// Ld4DupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_s8'.
 // Requires NEON.
@@ -16321,11 +16321,11 @@ func Vld4DupF64(a *float64) (dst [4]arm.Float64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupS8(a *int8) (dst [4]arm.Int8x8) {
+func Ld4DupS8(a *int8) (dst [4]arm.Int8x8) {
 	return [4]arm.Int8x8{}
 }
 
-// Vld4DupP8: ARM NEON intrinsic 
+// Ld4DupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_p8'.
 // Requires NEON.
@@ -16333,11 +16333,11 @@ func Vld4DupS8(a *int8) (dst [4]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupP8(a *arm.Poly8) (dst [4]arm.Poly8x8) {
+func Ld4DupP8(a *arm.Poly8) (dst [4]arm.Poly8x8) {
 	return [4]arm.Poly8x8{}
 }
 
-// Vld4DupS16: ARM NEON intrinsic 
+// Ld4DupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_s16'.
 // Requires NEON.
@@ -16345,11 +16345,11 @@ func Vld4DupP8(a *arm.Poly8) (dst [4]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupS16(a *int16) (dst [4]arm.Int16x4) {
+func Ld4DupS16(a *int16) (dst [4]arm.Int16x4) {
 	return [4]arm.Int16x4{}
 }
 
-// Vld4DupP16: ARM NEON intrinsic 
+// Ld4DupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_p16'.
 // Requires NEON.
@@ -16357,11 +16357,11 @@ func Vld4DupS16(a *int16) (dst [4]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupP16(a *arm.Poly16) (dst [4]arm.Poly16x4) {
+func Ld4DupP16(a *arm.Poly16) (dst [4]arm.Poly16x4) {
 	return [4]arm.Poly16x4{}
 }
 
-// Vld4DupS32: ARM NEON intrinsic 
+// Ld4DupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_s32'.
 // Requires NEON.
@@ -16369,11 +16369,11 @@ func Vld4DupP16(a *arm.Poly16) (dst [4]arm.Poly16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupS32(a *int32) (dst [4]arm.Int32x2) {
+func Ld4DupS32(a *int32) (dst [4]arm.Int32x2) {
 	return [4]arm.Int32x2{}
 }
 
-// Vld4DupU8: ARM NEON intrinsic 
+// Ld4DupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_u8'.
 // Requires NEON.
@@ -16381,11 +16381,11 @@ func Vld4DupS32(a *int32) (dst [4]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupU8(a *uint8) (dst [4]arm.Uint8x8) {
+func Ld4DupU8(a *uint8) (dst [4]arm.Uint8x8) {
 	return [4]arm.Uint8x8{}
 }
 
-// Vld4DupU16: ARM NEON intrinsic 
+// Ld4DupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_u16'.
 // Requires NEON.
@@ -16393,11 +16393,11 @@ func Vld4DupU8(a *uint8) (dst [4]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupU16(a *uint16) (dst [4]arm.Uint16x4) {
+func Ld4DupU16(a *uint16) (dst [4]arm.Uint16x4) {
 	return [4]arm.Uint16x4{}
 }
 
-// Vld4DupU32: ARM NEON intrinsic 
+// Ld4DupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_u32'.
 // Requires NEON.
@@ -16405,11 +16405,11 @@ func Vld4DupU16(a *uint16) (dst [4]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupU32(a *uint32) (dst [4]arm.Uint32x2) {
+func Ld4DupU32(a *uint32) (dst [4]arm.Uint32x2) {
 	return [4]arm.Uint32x2{}
 }
 
-// Vld4DupF32: ARM NEON intrinsic 
+// Ld4DupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_dup_f32'.
 // Requires NEON.
@@ -16417,11 +16417,11 @@ func Vld4DupU32(a *uint32) (dst [4]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4DupF32(a *float32) (dst [4]arm.Float32x2) {
+func Ld4DupF32(a *float32) (dst [4]arm.Float32x2) {
 	return [4]arm.Float32x2{}
 }
 
-// Vld4qDupS8: ARM NEON intrinsic 
+// Ld4qDupS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_s8'.
 // Requires NEON.
@@ -16429,11 +16429,11 @@ func Vld4DupF32(a *float32) (dst [4]arm.Float32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupS8(a *int8) (dst [4]arm.Int8x16) {
+func Ld4qDupS8(a *int8) (dst [4]arm.Int8x16) {
 	return [4]arm.Int8x16{}
 }
 
-// Vld4qDupP8: ARM NEON intrinsic 
+// Ld4qDupP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_p8'.
 // Requires NEON.
@@ -16441,11 +16441,11 @@ func Vld4qDupS8(a *int8) (dst [4]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupP8(a *arm.Poly8) (dst [4]arm.Poly8x16) {
+func Ld4qDupP8(a *arm.Poly8) (dst [4]arm.Poly8x16) {
 	return [4]arm.Poly8x16{}
 }
 
-// Vld4qDupS16: ARM NEON intrinsic 
+// Ld4qDupS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_s16'.
 // Requires NEON.
@@ -16453,11 +16453,11 @@ func Vld4qDupP8(a *arm.Poly8) (dst [4]arm.Poly8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupS16(a *int16) (dst [4]arm.Int16x8) {
+func Ld4qDupS16(a *int16) (dst [4]arm.Int16x8) {
 	return [4]arm.Int16x8{}
 }
 
-// Vld4qDupP16: ARM NEON intrinsic 
+// Ld4qDupP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_p16'.
 // Requires NEON.
@@ -16465,11 +16465,11 @@ func Vld4qDupS16(a *int16) (dst [4]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupP16(a *arm.Poly16) (dst [4]arm.Poly16x8) {
+func Ld4qDupP16(a *arm.Poly16) (dst [4]arm.Poly16x8) {
 	return [4]arm.Poly16x8{}
 }
 
-// Vld4qDupS32: ARM NEON intrinsic 
+// Ld4qDupS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_s32'.
 // Requires NEON.
@@ -16477,11 +16477,11 @@ func Vld4qDupP16(a *arm.Poly16) (dst [4]arm.Poly16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupS32(a *int32) (dst [4]arm.Int32x4) {
+func Ld4qDupS32(a *int32) (dst [4]arm.Int32x4) {
 	return [4]arm.Int32x4{}
 }
 
-// Vld4qDupS64: ARM NEON intrinsic 
+// Ld4qDupS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_s64'.
 // Requires NEON.
@@ -16489,11 +16489,11 @@ func Vld4qDupS32(a *int32) (dst [4]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupS64(a *int64) (dst [4]arm.Int64x2) {
+func Ld4qDupS64(a *int64) (dst [4]arm.Int64x2) {
 	return [4]arm.Int64x2{}
 }
 
-// Vld4qDupU8: ARM NEON intrinsic 
+// Ld4qDupU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_u8'.
 // Requires NEON.
@@ -16501,11 +16501,11 @@ func Vld4qDupS64(a *int64) (dst [4]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupU8(a *uint8) (dst [4]arm.Uint8x16) {
+func Ld4qDupU8(a *uint8) (dst [4]arm.Uint8x16) {
 	return [4]arm.Uint8x16{}
 }
 
-// Vld4qDupU16: ARM NEON intrinsic 
+// Ld4qDupU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_u16'.
 // Requires NEON.
@@ -16513,11 +16513,11 @@ func Vld4qDupU8(a *uint8) (dst [4]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupU16(a *uint16) (dst [4]arm.Uint16x8) {
+func Ld4qDupU16(a *uint16) (dst [4]arm.Uint16x8) {
 	return [4]arm.Uint16x8{}
 }
 
-// Vld4qDupU32: ARM NEON intrinsic 
+// Ld4qDupU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_u32'.
 // Requires NEON.
@@ -16525,11 +16525,11 @@ func Vld4qDupU16(a *uint16) (dst [4]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupU32(a *uint32) (dst [4]arm.Uint32x4) {
+func Ld4qDupU32(a *uint32) (dst [4]arm.Uint32x4) {
 	return [4]arm.Uint32x4{}
 }
 
-// Vld4qDupU64: ARM NEON intrinsic 
+// Ld4qDupU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_u64'.
 // Requires NEON.
@@ -16537,11 +16537,11 @@ func Vld4qDupU32(a *uint32) (dst [4]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupU64(a *uint64) (dst [4]arm.Uint64x2) {
+func Ld4qDupU64(a *uint64) (dst [4]arm.Uint64x2) {
 	return [4]arm.Uint64x2{}
 }
 
-// Vld4qDupF32: ARM NEON intrinsic 
+// Ld4qDupF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_f32'.
 // Requires NEON.
@@ -16549,11 +16549,11 @@ func Vld4qDupU64(a *uint64) (dst [4]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupF32(a *float32) (dst [4]arm.Float32x4) {
+func Ld4qDupF32(a *float32) (dst [4]arm.Float32x4) {
 	return [4]arm.Float32x4{}
 }
 
-// Vld4qDupF64: ARM NEON intrinsic 
+// Ld4qDupF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_dup_f64'.
 // Requires NEON.
@@ -16561,11 +16561,11 @@ func Vld4qDupF32(a *float32) (dst [4]arm.Float32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qDupF64(a *float64) (dst [4]arm.Float64x2) {
+func Ld4qDupF64(a *float64) (dst [4]arm.Float64x2) {
 	return [4]arm.Float64x2{}
 }
 
-// Vld2LaneF32: ARM NEON intrinsic 
+// Ld2LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_f32'.
 // Requires NEON.
@@ -16573,11 +16573,11 @@ func Vld4qDupF64(a *float64) (dst [4]arm.Float64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneF32(ptr *float32, b [2]arm.Float32x2, c int) (dst [2]arm.Float32x2) {
+func Ld2LaneF32(ptr *float32, b [2]arm.Float32x2, c int) (dst [2]arm.Float32x2) {
 	return [2]arm.Float32x2{}
 }
 
-// Vld2LaneF64: ARM NEON intrinsic 
+// Ld2LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_f64'.
 // Requires NEON.
@@ -16585,11 +16585,11 @@ func Vld2LaneF32(ptr *float32, b [2]arm.Float32x2, c int) (dst [2]arm.Float32x2)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneF64(ptr *float64, b [2]arm.Float64x1, c int) (dst [2]arm.Float64x1) {
+func Ld2LaneF64(ptr *float64, b [2]arm.Float64x1, c int) (dst [2]arm.Float64x1) {
 	return [2]arm.Float64x1{}
 }
 
-// Vld2LaneP8: ARM NEON intrinsic 
+// Ld2LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_p8'.
 // Requires NEON.
@@ -16597,11 +16597,11 @@ func Vld2LaneF64(ptr *float64, b [2]arm.Float64x1, c int) (dst [2]arm.Float64x1)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneP8(ptr *arm.Poly8, b [2]arm.Poly8x8, c int) (dst [2]arm.Poly8x8) {
+func Ld2LaneP8(ptr *arm.Poly8, b [2]arm.Poly8x8, c int) (dst [2]arm.Poly8x8) {
 	return [2]arm.Poly8x8{}
 }
 
-// Vld2LaneP16: ARM NEON intrinsic 
+// Ld2LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_p16'.
 // Requires NEON.
@@ -16609,11 +16609,11 @@ func Vld2LaneP8(ptr *arm.Poly8, b [2]arm.Poly8x8, c int) (dst [2]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneP16(ptr *arm.Poly16, b [2]arm.Poly16x4, c int) (dst [2]arm.Poly16x4) {
+func Ld2LaneP16(ptr *arm.Poly16, b [2]arm.Poly16x4, c int) (dst [2]arm.Poly16x4) {
 	return [2]arm.Poly16x4{}
 }
 
-// Vld2LaneS8: ARM NEON intrinsic 
+// Ld2LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_s8'.
 // Requires NEON.
@@ -16621,11 +16621,11 @@ func Vld2LaneP16(ptr *arm.Poly16, b [2]arm.Poly16x4, c int) (dst [2]arm.Poly16x4
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneS8(ptr *int8, b [2]arm.Int8x8, c int) (dst [2]arm.Int8x8) {
+func Ld2LaneS8(ptr *int8, b [2]arm.Int8x8, c int) (dst [2]arm.Int8x8) {
 	return [2]arm.Int8x8{}
 }
 
-// Vld2LaneS16: ARM NEON intrinsic 
+// Ld2LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_s16'.
 // Requires NEON.
@@ -16633,11 +16633,11 @@ func Vld2LaneS8(ptr *int8, b [2]arm.Int8x8, c int) (dst [2]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneS16(ptr *int16, b [2]arm.Int16x4, c int) (dst [2]arm.Int16x4) {
+func Ld2LaneS16(ptr *int16, b [2]arm.Int16x4, c int) (dst [2]arm.Int16x4) {
 	return [2]arm.Int16x4{}
 }
 
-// Vld2LaneS32: ARM NEON intrinsic 
+// Ld2LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_s32'.
 // Requires NEON.
@@ -16645,11 +16645,11 @@ func Vld2LaneS16(ptr *int16, b [2]arm.Int16x4, c int) (dst [2]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneS32(ptr *int32, b [2]arm.Int32x2, c int) (dst [2]arm.Int32x2) {
+func Ld2LaneS32(ptr *int32, b [2]arm.Int32x2, c int) (dst [2]arm.Int32x2) {
 	return [2]arm.Int32x2{}
 }
 
-// Vld2LaneS64: ARM NEON intrinsic 
+// Ld2LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_s64'.
 // Requires NEON.
@@ -16657,11 +16657,11 @@ func Vld2LaneS32(ptr *int32, b [2]arm.Int32x2, c int) (dst [2]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneS64(ptr *int64, b [2]arm.Int64x1, c int) (dst [2]arm.Int64x1) {
+func Ld2LaneS64(ptr *int64, b [2]arm.Int64x1, c int) (dst [2]arm.Int64x1) {
 	return [2]arm.Int64x1{}
 }
 
-// Vld2LaneU8: ARM NEON intrinsic 
+// Ld2LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_u8'.
 // Requires NEON.
@@ -16669,11 +16669,11 @@ func Vld2LaneS64(ptr *int64, b [2]arm.Int64x1, c int) (dst [2]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneU8(ptr *uint8, b [2]arm.Uint8x8, c int) (dst [2]arm.Uint8x8) {
+func Ld2LaneU8(ptr *uint8, b [2]arm.Uint8x8, c int) (dst [2]arm.Uint8x8) {
 	return [2]arm.Uint8x8{}
 }
 
-// Vld2LaneU16: ARM NEON intrinsic 
+// Ld2LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_u16'.
 // Requires NEON.
@@ -16681,11 +16681,11 @@ func Vld2LaneU8(ptr *uint8, b [2]arm.Uint8x8, c int) (dst [2]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneU16(ptr *uint16, b [2]arm.Uint16x4, c int) (dst [2]arm.Uint16x4) {
+func Ld2LaneU16(ptr *uint16, b [2]arm.Uint16x4, c int) (dst [2]arm.Uint16x4) {
 	return [2]arm.Uint16x4{}
 }
 
-// Vld2LaneU32: ARM NEON intrinsic 
+// Ld2LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_u32'.
 // Requires NEON.
@@ -16693,11 +16693,11 @@ func Vld2LaneU16(ptr *uint16, b [2]arm.Uint16x4, c int) (dst [2]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneU32(ptr *uint32, b [2]arm.Uint32x2, c int) (dst [2]arm.Uint32x2) {
+func Ld2LaneU32(ptr *uint32, b [2]arm.Uint32x2, c int) (dst [2]arm.Uint32x2) {
 	return [2]arm.Uint32x2{}
 }
 
-// Vld2LaneU64: ARM NEON intrinsic 
+// Ld2LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2_lane_u64'.
 // Requires NEON.
@@ -16705,11 +16705,11 @@ func Vld2LaneU32(ptr *uint32, b [2]arm.Uint32x2, c int) (dst [2]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2LaneU64(ptr *uint64, b [2]arm.Uint64x1, c int) (dst [2]arm.Uint64x1) {
+func Ld2LaneU64(ptr *uint64, b [2]arm.Uint64x1, c int) (dst [2]arm.Uint64x1) {
 	return [2]arm.Uint64x1{}
 }
 
-// Vld2qLaneF32: ARM NEON intrinsic 
+// Ld2qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_f32'.
 // Requires NEON.
@@ -16717,11 +16717,11 @@ func Vld2LaneU64(ptr *uint64, b [2]arm.Uint64x1, c int) (dst [2]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneF32(ptr *float32, b [2]arm.Float32x4, c int) (dst [2]arm.Float32x4) {
+func Ld2qLaneF32(ptr *float32, b [2]arm.Float32x4, c int) (dst [2]arm.Float32x4) {
 	return [2]arm.Float32x4{}
 }
 
-// Vld2qLaneF64: ARM NEON intrinsic 
+// Ld2qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_f64'.
 // Requires NEON.
@@ -16729,11 +16729,11 @@ func Vld2qLaneF32(ptr *float32, b [2]arm.Float32x4, c int) (dst [2]arm.Float32x4
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneF64(ptr *float64, b [2]arm.Float64x2, c int) (dst [2]arm.Float64x2) {
+func Ld2qLaneF64(ptr *float64, b [2]arm.Float64x2, c int) (dst [2]arm.Float64x2) {
 	return [2]arm.Float64x2{}
 }
 
-// Vld2qLaneP8: ARM NEON intrinsic 
+// Ld2qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_p8'.
 // Requires NEON.
@@ -16741,11 +16741,11 @@ func Vld2qLaneF64(ptr *float64, b [2]arm.Float64x2, c int) (dst [2]arm.Float64x2
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneP8(ptr *arm.Poly8, b [2]arm.Poly8x16, c int) (dst [2]arm.Poly8x16) {
+func Ld2qLaneP8(ptr *arm.Poly8, b [2]arm.Poly8x16, c int) (dst [2]arm.Poly8x16) {
 	return [2]arm.Poly8x16{}
 }
 
-// Vld2qLaneP16: ARM NEON intrinsic 
+// Ld2qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_p16'.
 // Requires NEON.
@@ -16753,11 +16753,11 @@ func Vld2qLaneP8(ptr *arm.Poly8, b [2]arm.Poly8x16, c int) (dst [2]arm.Poly8x16)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneP16(ptr *arm.Poly16, b [2]arm.Poly16x8, c int) (dst [2]arm.Poly16x8) {
+func Ld2qLaneP16(ptr *arm.Poly16, b [2]arm.Poly16x8, c int) (dst [2]arm.Poly16x8) {
 	return [2]arm.Poly16x8{}
 }
 
-// Vld2qLaneS8: ARM NEON intrinsic 
+// Ld2qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_s8'.
 // Requires NEON.
@@ -16765,11 +16765,11 @@ func Vld2qLaneP16(ptr *arm.Poly16, b [2]arm.Poly16x8, c int) (dst [2]arm.Poly16x
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneS8(ptr *int8, b [2]arm.Int8x16, c int) (dst [2]arm.Int8x16) {
+func Ld2qLaneS8(ptr *int8, b [2]arm.Int8x16, c int) (dst [2]arm.Int8x16) {
 	return [2]arm.Int8x16{}
 }
 
-// Vld2qLaneS16: ARM NEON intrinsic 
+// Ld2qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_s16'.
 // Requires NEON.
@@ -16777,11 +16777,11 @@ func Vld2qLaneS8(ptr *int8, b [2]arm.Int8x16, c int) (dst [2]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneS16(ptr *int16, b [2]arm.Int16x8, c int) (dst [2]arm.Int16x8) {
+func Ld2qLaneS16(ptr *int16, b [2]arm.Int16x8, c int) (dst [2]arm.Int16x8) {
 	return [2]arm.Int16x8{}
 }
 
-// Vld2qLaneS32: ARM NEON intrinsic 
+// Ld2qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_s32'.
 // Requires NEON.
@@ -16789,11 +16789,11 @@ func Vld2qLaneS16(ptr *int16, b [2]arm.Int16x8, c int) (dst [2]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneS32(ptr *int32, b [2]arm.Int32x4, c int) (dst [2]arm.Int32x4) {
+func Ld2qLaneS32(ptr *int32, b [2]arm.Int32x4, c int) (dst [2]arm.Int32x4) {
 	return [2]arm.Int32x4{}
 }
 
-// Vld2qLaneS64: ARM NEON intrinsic 
+// Ld2qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_s64'.
 // Requires NEON.
@@ -16801,11 +16801,11 @@ func Vld2qLaneS32(ptr *int32, b [2]arm.Int32x4, c int) (dst [2]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneS64(ptr *int64, b [2]arm.Int64x2, c int) (dst [2]arm.Int64x2) {
+func Ld2qLaneS64(ptr *int64, b [2]arm.Int64x2, c int) (dst [2]arm.Int64x2) {
 	return [2]arm.Int64x2{}
 }
 
-// Vld2qLaneU8: ARM NEON intrinsic 
+// Ld2qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_u8'.
 // Requires NEON.
@@ -16813,11 +16813,11 @@ func Vld2qLaneS64(ptr *int64, b [2]arm.Int64x2, c int) (dst [2]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneU8(ptr *uint8, b [2]arm.Uint8x16, c int) (dst [2]arm.Uint8x16) {
+func Ld2qLaneU8(ptr *uint8, b [2]arm.Uint8x16, c int) (dst [2]arm.Uint8x16) {
 	return [2]arm.Uint8x16{}
 }
 
-// Vld2qLaneU16: ARM NEON intrinsic 
+// Ld2qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_u16'.
 // Requires NEON.
@@ -16825,11 +16825,11 @@ func Vld2qLaneU8(ptr *uint8, b [2]arm.Uint8x16, c int) (dst [2]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneU16(ptr *uint16, b [2]arm.Uint16x8, c int) (dst [2]arm.Uint16x8) {
+func Ld2qLaneU16(ptr *uint16, b [2]arm.Uint16x8, c int) (dst [2]arm.Uint16x8) {
 	return [2]arm.Uint16x8{}
 }
 
-// Vld2qLaneU32: ARM NEON intrinsic 
+// Ld2qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_u32'.
 // Requires NEON.
@@ -16837,11 +16837,11 @@ func Vld2qLaneU16(ptr *uint16, b [2]arm.Uint16x8, c int) (dst [2]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneU32(ptr *uint32, b [2]arm.Uint32x4, c int) (dst [2]arm.Uint32x4) {
+func Ld2qLaneU32(ptr *uint32, b [2]arm.Uint32x4, c int) (dst [2]arm.Uint32x4) {
 	return [2]arm.Uint32x4{}
 }
 
-// Vld2qLaneU64: ARM NEON intrinsic 
+// Ld2qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld2q_lane_u64'.
 // Requires NEON.
@@ -16849,11 +16849,11 @@ func Vld2qLaneU32(ptr *uint32, b [2]arm.Uint32x4, c int) (dst [2]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld2qLaneU64(ptr *uint64, b [2]arm.Uint64x2, c int) (dst [2]arm.Uint64x2) {
+func Ld2qLaneU64(ptr *uint64, b [2]arm.Uint64x2, c int) (dst [2]arm.Uint64x2) {
 	return [2]arm.Uint64x2{}
 }
 
-// Vld3LaneF32: ARM NEON intrinsic 
+// Ld3LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_f32'.
 // Requires NEON.
@@ -16861,11 +16861,11 @@ func Vld2qLaneU64(ptr *uint64, b [2]arm.Uint64x2, c int) (dst [2]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneF32(ptr *float32, b [3]arm.Float32x2, c int) (dst [3]arm.Float32x2) {
+func Ld3LaneF32(ptr *float32, b [3]arm.Float32x2, c int) (dst [3]arm.Float32x2) {
 	return [3]arm.Float32x2{}
 }
 
-// Vld3LaneF64: ARM NEON intrinsic 
+// Ld3LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_f64'.
 // Requires NEON.
@@ -16873,11 +16873,11 @@ func Vld3LaneF32(ptr *float32, b [3]arm.Float32x2, c int) (dst [3]arm.Float32x2)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneF64(ptr *float64, b [3]arm.Float64x1, c int) (dst [3]arm.Float64x1) {
+func Ld3LaneF64(ptr *float64, b [3]arm.Float64x1, c int) (dst [3]arm.Float64x1) {
 	return [3]arm.Float64x1{}
 }
 
-// Vld3LaneP8: ARM NEON intrinsic 
+// Ld3LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_p8'.
 // Requires NEON.
@@ -16885,11 +16885,11 @@ func Vld3LaneF64(ptr *float64, b [3]arm.Float64x1, c int) (dst [3]arm.Float64x1)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneP8(ptr *arm.Poly8, b [3]arm.Poly8x8, c int) (dst [3]arm.Poly8x8) {
+func Ld3LaneP8(ptr *arm.Poly8, b [3]arm.Poly8x8, c int) (dst [3]arm.Poly8x8) {
 	return [3]arm.Poly8x8{}
 }
 
-// Vld3LaneP16: ARM NEON intrinsic 
+// Ld3LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_p16'.
 // Requires NEON.
@@ -16897,11 +16897,11 @@ func Vld3LaneP8(ptr *arm.Poly8, b [3]arm.Poly8x8, c int) (dst [3]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneP16(ptr *arm.Poly16, b [3]arm.Poly16x4, c int) (dst [3]arm.Poly16x4) {
+func Ld3LaneP16(ptr *arm.Poly16, b [3]arm.Poly16x4, c int) (dst [3]arm.Poly16x4) {
 	return [3]arm.Poly16x4{}
 }
 
-// Vld3LaneS8: ARM NEON intrinsic 
+// Ld3LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_s8'.
 // Requires NEON.
@@ -16909,11 +16909,11 @@ func Vld3LaneP16(ptr *arm.Poly16, b [3]arm.Poly16x4, c int) (dst [3]arm.Poly16x4
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneS8(ptr *int8, b [3]arm.Int8x8, c int) (dst [3]arm.Int8x8) {
+func Ld3LaneS8(ptr *int8, b [3]arm.Int8x8, c int) (dst [3]arm.Int8x8) {
 	return [3]arm.Int8x8{}
 }
 
-// Vld3LaneS16: ARM NEON intrinsic 
+// Ld3LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_s16'.
 // Requires NEON.
@@ -16921,11 +16921,11 @@ func Vld3LaneS8(ptr *int8, b [3]arm.Int8x8, c int) (dst [3]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneS16(ptr *int16, b [3]arm.Int16x4, c int) (dst [3]arm.Int16x4) {
+func Ld3LaneS16(ptr *int16, b [3]arm.Int16x4, c int) (dst [3]arm.Int16x4) {
 	return [3]arm.Int16x4{}
 }
 
-// Vld3LaneS32: ARM NEON intrinsic 
+// Ld3LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_s32'.
 // Requires NEON.
@@ -16933,11 +16933,11 @@ func Vld3LaneS16(ptr *int16, b [3]arm.Int16x4, c int) (dst [3]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneS32(ptr *int32, b [3]arm.Int32x2, c int) (dst [3]arm.Int32x2) {
+func Ld3LaneS32(ptr *int32, b [3]arm.Int32x2, c int) (dst [3]arm.Int32x2) {
 	return [3]arm.Int32x2{}
 }
 
-// Vld3LaneS64: ARM NEON intrinsic 
+// Ld3LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_s64'.
 // Requires NEON.
@@ -16945,11 +16945,11 @@ func Vld3LaneS32(ptr *int32, b [3]arm.Int32x2, c int) (dst [3]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneS64(ptr *int64, b [3]arm.Int64x1, c int) (dst [3]arm.Int64x1) {
+func Ld3LaneS64(ptr *int64, b [3]arm.Int64x1, c int) (dst [3]arm.Int64x1) {
 	return [3]arm.Int64x1{}
 }
 
-// Vld3LaneU8: ARM NEON intrinsic 
+// Ld3LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_u8'.
 // Requires NEON.
@@ -16957,11 +16957,11 @@ func Vld3LaneS64(ptr *int64, b [3]arm.Int64x1, c int) (dst [3]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneU8(ptr *uint8, b [3]arm.Uint8x8, c int) (dst [3]arm.Uint8x8) {
+func Ld3LaneU8(ptr *uint8, b [3]arm.Uint8x8, c int) (dst [3]arm.Uint8x8) {
 	return [3]arm.Uint8x8{}
 }
 
-// Vld3LaneU16: ARM NEON intrinsic 
+// Ld3LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_u16'.
 // Requires NEON.
@@ -16969,11 +16969,11 @@ func Vld3LaneU8(ptr *uint8, b [3]arm.Uint8x8, c int) (dst [3]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneU16(ptr *uint16, b [3]arm.Uint16x4, c int) (dst [3]arm.Uint16x4) {
+func Ld3LaneU16(ptr *uint16, b [3]arm.Uint16x4, c int) (dst [3]arm.Uint16x4) {
 	return [3]arm.Uint16x4{}
 }
 
-// Vld3LaneU32: ARM NEON intrinsic 
+// Ld3LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_u32'.
 // Requires NEON.
@@ -16981,11 +16981,11 @@ func Vld3LaneU16(ptr *uint16, b [3]arm.Uint16x4, c int) (dst [3]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneU32(ptr *uint32, b [3]arm.Uint32x2, c int) (dst [3]arm.Uint32x2) {
+func Ld3LaneU32(ptr *uint32, b [3]arm.Uint32x2, c int) (dst [3]arm.Uint32x2) {
 	return [3]arm.Uint32x2{}
 }
 
-// Vld3LaneU64: ARM NEON intrinsic 
+// Ld3LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3_lane_u64'.
 // Requires NEON.
@@ -16993,11 +16993,11 @@ func Vld3LaneU32(ptr *uint32, b [3]arm.Uint32x2, c int) (dst [3]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3LaneU64(ptr *uint64, b [3]arm.Uint64x1, c int) (dst [3]arm.Uint64x1) {
+func Ld3LaneU64(ptr *uint64, b [3]arm.Uint64x1, c int) (dst [3]arm.Uint64x1) {
 	return [3]arm.Uint64x1{}
 }
 
-// Vld3qLaneF32: ARM NEON intrinsic 
+// Ld3qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_f32'.
 // Requires NEON.
@@ -17005,11 +17005,11 @@ func Vld3LaneU64(ptr *uint64, b [3]arm.Uint64x1, c int) (dst [3]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneF32(ptr *float32, b [3]arm.Float32x4, c int) (dst [3]arm.Float32x4) {
+func Ld3qLaneF32(ptr *float32, b [3]arm.Float32x4, c int) (dst [3]arm.Float32x4) {
 	return [3]arm.Float32x4{}
 }
 
-// Vld3qLaneF64: ARM NEON intrinsic 
+// Ld3qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_f64'.
 // Requires NEON.
@@ -17017,11 +17017,11 @@ func Vld3qLaneF32(ptr *float32, b [3]arm.Float32x4, c int) (dst [3]arm.Float32x4
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneF64(ptr *float64, b [3]arm.Float64x2, c int) (dst [3]arm.Float64x2) {
+func Ld3qLaneF64(ptr *float64, b [3]arm.Float64x2, c int) (dst [3]arm.Float64x2) {
 	return [3]arm.Float64x2{}
 }
 
-// Vld3qLaneP8: ARM NEON intrinsic 
+// Ld3qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_p8'.
 // Requires NEON.
@@ -17029,11 +17029,11 @@ func Vld3qLaneF64(ptr *float64, b [3]arm.Float64x2, c int) (dst [3]arm.Float64x2
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneP8(ptr *arm.Poly8, b [3]arm.Poly8x16, c int) (dst [3]arm.Poly8x16) {
+func Ld3qLaneP8(ptr *arm.Poly8, b [3]arm.Poly8x16, c int) (dst [3]arm.Poly8x16) {
 	return [3]arm.Poly8x16{}
 }
 
-// Vld3qLaneP16: ARM NEON intrinsic 
+// Ld3qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_p16'.
 // Requires NEON.
@@ -17041,11 +17041,11 @@ func Vld3qLaneP8(ptr *arm.Poly8, b [3]arm.Poly8x16, c int) (dst [3]arm.Poly8x16)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneP16(ptr *arm.Poly16, b [3]arm.Poly16x8, c int) (dst [3]arm.Poly16x8) {
+func Ld3qLaneP16(ptr *arm.Poly16, b [3]arm.Poly16x8, c int) (dst [3]arm.Poly16x8) {
 	return [3]arm.Poly16x8{}
 }
 
-// Vld3qLaneS8: ARM NEON intrinsic 
+// Ld3qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_s8'.
 // Requires NEON.
@@ -17053,11 +17053,11 @@ func Vld3qLaneP16(ptr *arm.Poly16, b [3]arm.Poly16x8, c int) (dst [3]arm.Poly16x
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneS8(ptr *int8, b [3]arm.Int8x16, c int) (dst [3]arm.Int8x16) {
+func Ld3qLaneS8(ptr *int8, b [3]arm.Int8x16, c int) (dst [3]arm.Int8x16) {
 	return [3]arm.Int8x16{}
 }
 
-// Vld3qLaneS16: ARM NEON intrinsic 
+// Ld3qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_s16'.
 // Requires NEON.
@@ -17065,11 +17065,11 @@ func Vld3qLaneS8(ptr *int8, b [3]arm.Int8x16, c int) (dst [3]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneS16(ptr *int16, b [3]arm.Int16x8, c int) (dst [3]arm.Int16x8) {
+func Ld3qLaneS16(ptr *int16, b [3]arm.Int16x8, c int) (dst [3]arm.Int16x8) {
 	return [3]arm.Int16x8{}
 }
 
-// Vld3qLaneS32: ARM NEON intrinsic 
+// Ld3qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_s32'.
 // Requires NEON.
@@ -17077,11 +17077,11 @@ func Vld3qLaneS16(ptr *int16, b [3]arm.Int16x8, c int) (dst [3]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneS32(ptr *int32, b [3]arm.Int32x4, c int) (dst [3]arm.Int32x4) {
+func Ld3qLaneS32(ptr *int32, b [3]arm.Int32x4, c int) (dst [3]arm.Int32x4) {
 	return [3]arm.Int32x4{}
 }
 
-// Vld3qLaneS64: ARM NEON intrinsic 
+// Ld3qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_s64'.
 // Requires NEON.
@@ -17089,11 +17089,11 @@ func Vld3qLaneS32(ptr *int32, b [3]arm.Int32x4, c int) (dst [3]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneS64(ptr *int64, b [3]arm.Int64x2, c int) (dst [3]arm.Int64x2) {
+func Ld3qLaneS64(ptr *int64, b [3]arm.Int64x2, c int) (dst [3]arm.Int64x2) {
 	return [3]arm.Int64x2{}
 }
 
-// Vld3qLaneU8: ARM NEON intrinsic 
+// Ld3qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_u8'.
 // Requires NEON.
@@ -17101,11 +17101,11 @@ func Vld3qLaneS64(ptr *int64, b [3]arm.Int64x2, c int) (dst [3]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneU8(ptr *uint8, b [3]arm.Uint8x16, c int) (dst [3]arm.Uint8x16) {
+func Ld3qLaneU8(ptr *uint8, b [3]arm.Uint8x16, c int) (dst [3]arm.Uint8x16) {
 	return [3]arm.Uint8x16{}
 }
 
-// Vld3qLaneU16: ARM NEON intrinsic 
+// Ld3qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_u16'.
 // Requires NEON.
@@ -17113,11 +17113,11 @@ func Vld3qLaneU8(ptr *uint8, b [3]arm.Uint8x16, c int) (dst [3]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneU16(ptr *uint16, b [3]arm.Uint16x8, c int) (dst [3]arm.Uint16x8) {
+func Ld3qLaneU16(ptr *uint16, b [3]arm.Uint16x8, c int) (dst [3]arm.Uint16x8) {
 	return [3]arm.Uint16x8{}
 }
 
-// Vld3qLaneU32: ARM NEON intrinsic 
+// Ld3qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_u32'.
 // Requires NEON.
@@ -17125,11 +17125,11 @@ func Vld3qLaneU16(ptr *uint16, b [3]arm.Uint16x8, c int) (dst [3]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneU32(ptr *uint32, b [3]arm.Uint32x4, c int) (dst [3]arm.Uint32x4) {
+func Ld3qLaneU32(ptr *uint32, b [3]arm.Uint32x4, c int) (dst [3]arm.Uint32x4) {
 	return [3]arm.Uint32x4{}
 }
 
-// Vld3qLaneU64: ARM NEON intrinsic 
+// Ld3qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld3q_lane_u64'.
 // Requires NEON.
@@ -17137,11 +17137,11 @@ func Vld3qLaneU32(ptr *uint32, b [3]arm.Uint32x4, c int) (dst [3]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld3qLaneU64(ptr *uint64, b [3]arm.Uint64x2, c int) (dst [3]arm.Uint64x2) {
+func Ld3qLaneU64(ptr *uint64, b [3]arm.Uint64x2, c int) (dst [3]arm.Uint64x2) {
 	return [3]arm.Uint64x2{}
 }
 
-// Vld4LaneF32: ARM NEON intrinsic 
+// Ld4LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_f32'.
 // Requires NEON.
@@ -17149,11 +17149,11 @@ func Vld3qLaneU64(ptr *uint64, b [3]arm.Uint64x2, c int) (dst [3]arm.Uint64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneF32(ptr *float32, b [4]arm.Float32x2, c int) (dst [4]arm.Float32x2) {
+func Ld4LaneF32(ptr *float32, b [4]arm.Float32x2, c int) (dst [4]arm.Float32x2) {
 	return [4]arm.Float32x2{}
 }
 
-// Vld4LaneF64: ARM NEON intrinsic 
+// Ld4LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_f64'.
 // Requires NEON.
@@ -17161,11 +17161,11 @@ func Vld4LaneF32(ptr *float32, b [4]arm.Float32x2, c int) (dst [4]arm.Float32x2)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneF64(ptr *float64, b [4]arm.Float64x1, c int) (dst [4]arm.Float64x1) {
+func Ld4LaneF64(ptr *float64, b [4]arm.Float64x1, c int) (dst [4]arm.Float64x1) {
 	return [4]arm.Float64x1{}
 }
 
-// Vld4LaneP8: ARM NEON intrinsic 
+// Ld4LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_p8'.
 // Requires NEON.
@@ -17173,11 +17173,11 @@ func Vld4LaneF64(ptr *float64, b [4]arm.Float64x1, c int) (dst [4]arm.Float64x1)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneP8(ptr *arm.Poly8, b [4]arm.Poly8x8, c int) (dst [4]arm.Poly8x8) {
+func Ld4LaneP8(ptr *arm.Poly8, b [4]arm.Poly8x8, c int) (dst [4]arm.Poly8x8) {
 	return [4]arm.Poly8x8{}
 }
 
-// Vld4LaneP16: ARM NEON intrinsic 
+// Ld4LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_p16'.
 // Requires NEON.
@@ -17185,11 +17185,11 @@ func Vld4LaneP8(ptr *arm.Poly8, b [4]arm.Poly8x8, c int) (dst [4]arm.Poly8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneP16(ptr *arm.Poly16, b [4]arm.Poly16x4, c int) (dst [4]arm.Poly16x4) {
+func Ld4LaneP16(ptr *arm.Poly16, b [4]arm.Poly16x4, c int) (dst [4]arm.Poly16x4) {
 	return [4]arm.Poly16x4{}
 }
 
-// Vld4LaneS8: ARM NEON intrinsic 
+// Ld4LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_s8'.
 // Requires NEON.
@@ -17197,11 +17197,11 @@ func Vld4LaneP16(ptr *arm.Poly16, b [4]arm.Poly16x4, c int) (dst [4]arm.Poly16x4
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneS8(ptr *int8, b [4]arm.Int8x8, c int) (dst [4]arm.Int8x8) {
+func Ld4LaneS8(ptr *int8, b [4]arm.Int8x8, c int) (dst [4]arm.Int8x8) {
 	return [4]arm.Int8x8{}
 }
 
-// Vld4LaneS16: ARM NEON intrinsic 
+// Ld4LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_s16'.
 // Requires NEON.
@@ -17209,11 +17209,11 @@ func Vld4LaneS8(ptr *int8, b [4]arm.Int8x8, c int) (dst [4]arm.Int8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneS16(ptr *int16, b [4]arm.Int16x4, c int) (dst [4]arm.Int16x4) {
+func Ld4LaneS16(ptr *int16, b [4]arm.Int16x4, c int) (dst [4]arm.Int16x4) {
 	return [4]arm.Int16x4{}
 }
 
-// Vld4LaneS32: ARM NEON intrinsic 
+// Ld4LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_s32'.
 // Requires NEON.
@@ -17221,11 +17221,11 @@ func Vld4LaneS16(ptr *int16, b [4]arm.Int16x4, c int) (dst [4]arm.Int16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneS32(ptr *int32, b [4]arm.Int32x2, c int) (dst [4]arm.Int32x2) {
+func Ld4LaneS32(ptr *int32, b [4]arm.Int32x2, c int) (dst [4]arm.Int32x2) {
 	return [4]arm.Int32x2{}
 }
 
-// Vld4LaneS64: ARM NEON intrinsic 
+// Ld4LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_s64'.
 // Requires NEON.
@@ -17233,11 +17233,11 @@ func Vld4LaneS32(ptr *int32, b [4]arm.Int32x2, c int) (dst [4]arm.Int32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneS64(ptr *int64, b [4]arm.Int64x1, c int) (dst [4]arm.Int64x1) {
+func Ld4LaneS64(ptr *int64, b [4]arm.Int64x1, c int) (dst [4]arm.Int64x1) {
 	return [4]arm.Int64x1{}
 }
 
-// Vld4LaneU8: ARM NEON intrinsic 
+// Ld4LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_u8'.
 // Requires NEON.
@@ -17245,11 +17245,11 @@ func Vld4LaneS64(ptr *int64, b [4]arm.Int64x1, c int) (dst [4]arm.Int64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneU8(ptr *uint8, b [4]arm.Uint8x8, c int) (dst [4]arm.Uint8x8) {
+func Ld4LaneU8(ptr *uint8, b [4]arm.Uint8x8, c int) (dst [4]arm.Uint8x8) {
 	return [4]arm.Uint8x8{}
 }
 
-// Vld4LaneU16: ARM NEON intrinsic 
+// Ld4LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_u16'.
 // Requires NEON.
@@ -17257,11 +17257,11 @@ func Vld4LaneU8(ptr *uint8, b [4]arm.Uint8x8, c int) (dst [4]arm.Uint8x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneU16(ptr *uint16, b [4]arm.Uint16x4, c int) (dst [4]arm.Uint16x4) {
+func Ld4LaneU16(ptr *uint16, b [4]arm.Uint16x4, c int) (dst [4]arm.Uint16x4) {
 	return [4]arm.Uint16x4{}
 }
 
-// Vld4LaneU32: ARM NEON intrinsic 
+// Ld4LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_u32'.
 // Requires NEON.
@@ -17269,11 +17269,11 @@ func Vld4LaneU16(ptr *uint16, b [4]arm.Uint16x4, c int) (dst [4]arm.Uint16x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneU32(ptr *uint32, b [4]arm.Uint32x2, c int) (dst [4]arm.Uint32x2) {
+func Ld4LaneU32(ptr *uint32, b [4]arm.Uint32x2, c int) (dst [4]arm.Uint32x2) {
 	return [4]arm.Uint32x2{}
 }
 
-// Vld4LaneU64: ARM NEON intrinsic 
+// Ld4LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4_lane_u64'.
 // Requires NEON.
@@ -17281,11 +17281,11 @@ func Vld4LaneU32(ptr *uint32, b [4]arm.Uint32x2, c int) (dst [4]arm.Uint32x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4LaneU64(ptr *uint64, b [4]arm.Uint64x1, c int) (dst [4]arm.Uint64x1) {
+func Ld4LaneU64(ptr *uint64, b [4]arm.Uint64x1, c int) (dst [4]arm.Uint64x1) {
 	return [4]arm.Uint64x1{}
 }
 
-// Vld4qLaneF32: ARM NEON intrinsic 
+// Ld4qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_f32'.
 // Requires NEON.
@@ -17293,11 +17293,11 @@ func Vld4LaneU64(ptr *uint64, b [4]arm.Uint64x1, c int) (dst [4]arm.Uint64x1) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneF32(ptr *float32, b [4]arm.Float32x4, c int) (dst [4]arm.Float32x4) {
+func Ld4qLaneF32(ptr *float32, b [4]arm.Float32x4, c int) (dst [4]arm.Float32x4) {
 	return [4]arm.Float32x4{}
 }
 
-// Vld4qLaneF64: ARM NEON intrinsic 
+// Ld4qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_f64'.
 // Requires NEON.
@@ -17305,11 +17305,11 @@ func Vld4qLaneF32(ptr *float32, b [4]arm.Float32x4, c int) (dst [4]arm.Float32x4
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneF64(ptr *float64, b [4]arm.Float64x2, c int) (dst [4]arm.Float64x2) {
+func Ld4qLaneF64(ptr *float64, b [4]arm.Float64x2, c int) (dst [4]arm.Float64x2) {
 	return [4]arm.Float64x2{}
 }
 
-// Vld4qLaneP8: ARM NEON intrinsic 
+// Ld4qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_p8'.
 // Requires NEON.
@@ -17317,11 +17317,11 @@ func Vld4qLaneF64(ptr *float64, b [4]arm.Float64x2, c int) (dst [4]arm.Float64x2
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneP8(ptr *arm.Poly8, b [4]arm.Poly8x16, c int) (dst [4]arm.Poly8x16) {
+func Ld4qLaneP8(ptr *arm.Poly8, b [4]arm.Poly8x16, c int) (dst [4]arm.Poly8x16) {
 	return [4]arm.Poly8x16{}
 }
 
-// Vld4qLaneP16: ARM NEON intrinsic 
+// Ld4qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_p16'.
 // Requires NEON.
@@ -17329,11 +17329,11 @@ func Vld4qLaneP8(ptr *arm.Poly8, b [4]arm.Poly8x16, c int) (dst [4]arm.Poly8x16)
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneP16(ptr *arm.Poly16, b [4]arm.Poly16x8, c int) (dst [4]arm.Poly16x8) {
+func Ld4qLaneP16(ptr *arm.Poly16, b [4]arm.Poly16x8, c int) (dst [4]arm.Poly16x8) {
 	return [4]arm.Poly16x8{}
 }
 
-// Vld4qLaneS8: ARM NEON intrinsic 
+// Ld4qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_s8'.
 // Requires NEON.
@@ -17341,11 +17341,11 @@ func Vld4qLaneP16(ptr *arm.Poly16, b [4]arm.Poly16x8, c int) (dst [4]arm.Poly16x
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneS8(ptr *int8, b [4]arm.Int8x16, c int) (dst [4]arm.Int8x16) {
+func Ld4qLaneS8(ptr *int8, b [4]arm.Int8x16, c int) (dst [4]arm.Int8x16) {
 	return [4]arm.Int8x16{}
 }
 
-// Vld4qLaneS16: ARM NEON intrinsic 
+// Ld4qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_s16'.
 // Requires NEON.
@@ -17353,11 +17353,11 @@ func Vld4qLaneS8(ptr *int8, b [4]arm.Int8x16, c int) (dst [4]arm.Int8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneS16(ptr *int16, b [4]arm.Int16x8, c int) (dst [4]arm.Int16x8) {
+func Ld4qLaneS16(ptr *int16, b [4]arm.Int16x8, c int) (dst [4]arm.Int16x8) {
 	return [4]arm.Int16x8{}
 }
 
-// Vld4qLaneS32: ARM NEON intrinsic 
+// Ld4qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_s32'.
 // Requires NEON.
@@ -17365,11 +17365,11 @@ func Vld4qLaneS16(ptr *int16, b [4]arm.Int16x8, c int) (dst [4]arm.Int16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneS32(ptr *int32, b [4]arm.Int32x4, c int) (dst [4]arm.Int32x4) {
+func Ld4qLaneS32(ptr *int32, b [4]arm.Int32x4, c int) (dst [4]arm.Int32x4) {
 	return [4]arm.Int32x4{}
 }
 
-// Vld4qLaneS64: ARM NEON intrinsic 
+// Ld4qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_s64'.
 // Requires NEON.
@@ -17377,11 +17377,11 @@ func Vld4qLaneS32(ptr *int32, b [4]arm.Int32x4, c int) (dst [4]arm.Int32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneS64(ptr *int64, b [4]arm.Int64x2, c int) (dst [4]arm.Int64x2) {
+func Ld4qLaneS64(ptr *int64, b [4]arm.Int64x2, c int) (dst [4]arm.Int64x2) {
 	return [4]arm.Int64x2{}
 }
 
-// Vld4qLaneU8: ARM NEON intrinsic 
+// Ld4qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_u8'.
 // Requires NEON.
@@ -17389,11 +17389,11 @@ func Vld4qLaneS64(ptr *int64, b [4]arm.Int64x2, c int) (dst [4]arm.Int64x2) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneU8(ptr *uint8, b [4]arm.Uint8x16, c int) (dst [4]arm.Uint8x16) {
+func Ld4qLaneU8(ptr *uint8, b [4]arm.Uint8x16, c int) (dst [4]arm.Uint8x16) {
 	return [4]arm.Uint8x16{}
 }
 
-// Vld4qLaneU16: ARM NEON intrinsic 
+// Ld4qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_u16'.
 // Requires NEON.
@@ -17401,11 +17401,11 @@ func Vld4qLaneU8(ptr *uint8, b [4]arm.Uint8x16, c int) (dst [4]arm.Uint8x16) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneU16(ptr *uint16, b [4]arm.Uint16x8, c int) (dst [4]arm.Uint16x8) {
+func Ld4qLaneU16(ptr *uint16, b [4]arm.Uint16x8, c int) (dst [4]arm.Uint16x8) {
 	return [4]arm.Uint16x8{}
 }
 
-// Vld4qLaneU32: ARM NEON intrinsic 
+// Ld4qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_u32'.
 // Requires NEON.
@@ -17413,11 +17413,11 @@ func Vld4qLaneU16(ptr *uint16, b [4]arm.Uint16x8, c int) (dst [4]arm.Uint16x8) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneU32(ptr *uint32, b [4]arm.Uint32x4, c int) (dst [4]arm.Uint32x4) {
+func Ld4qLaneU32(ptr *uint32, b [4]arm.Uint32x4, c int) (dst [4]arm.Uint32x4) {
 	return [4]arm.Uint32x4{}
 }
 
-// Vld4qLaneU64: ARM NEON intrinsic 
+// Ld4qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vld4q_lane_u64'.
 // Requires NEON.
@@ -17425,7103 +17425,7103 @@ func Vld4qLaneU32(ptr *uint32, b [4]arm.Uint32x4, c int) (dst [4]arm.Uint32x4) {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vld4qLaneU64(ptr *uint64, b [4]arm.Uint64x2, c int) (dst [4]arm.Uint64x2) {
+func Ld4qLaneU64(ptr *uint64, b [4]arm.Uint64x2, c int) (dst [4]arm.Uint64x2) {
 	return [4]arm.Uint64x2{}
 }
 
-// VmaxF32: ARM NEON intrinsic 
+// MaxF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmax_f32'.
 // Requires NEON.
-func VmaxF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func MaxF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmaxS8: ARM NEON intrinsic 
+// MaxS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmax_s8'.
 // Requires NEON.
-func VmaxS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func MaxS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VmaxS16: ARM NEON intrinsic 
+// MaxS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmax_s16'.
 // Requires NEON.
-func VmaxS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func MaxS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmaxS32: ARM NEON intrinsic 
+// MaxS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmax_s32'.
 // Requires NEON.
-func VmaxS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func MaxS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmaxU8: ARM NEON intrinsic 
+// MaxU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmax_u8'.
 // Requires NEON.
-func VmaxU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func MaxU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VmaxU16: ARM NEON intrinsic 
+// MaxU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmax_u16'.
 // Requires NEON.
-func VmaxU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func MaxU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmaxU32: ARM NEON intrinsic 
+// MaxU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmax_u32'.
 // Requires NEON.
-func VmaxU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func MaxU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmaxqF32: ARM NEON intrinsic 
+// MaxqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_f32'.
 // Requires NEON.
-func VmaxqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func MaxqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmaxqF64: ARM NEON intrinsic 
+// MaxqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_f64'.
 // Requires NEON.
-func VmaxqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func MaxqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmaxqS8: ARM NEON intrinsic 
+// MaxqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_s8'.
 // Requires NEON.
-func VmaxqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func MaxqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VmaxqS16: ARM NEON intrinsic 
+// MaxqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_s16'.
 // Requires NEON.
-func VmaxqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func MaxqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmaxqS32: ARM NEON intrinsic 
+// MaxqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_s32'.
 // Requires NEON.
-func VmaxqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func MaxqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmaxqU8: ARM NEON intrinsic 
+// MaxqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_u8'.
 // Requires NEON.
-func VmaxqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func MaxqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VmaxqU16: ARM NEON intrinsic 
+// MaxqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_u16'.
 // Requires NEON.
-func VmaxqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func MaxqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmaxqU32: ARM NEON intrinsic 
+// MaxqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxq_u32'.
 // Requires NEON.
-func VmaxqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func MaxqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VpmaxS8: ARM NEON intrinsic 
+// PmaxS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmax_s8'.
 // Requires NEON.
-func VpmaxS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func PmaxS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VpmaxS16: ARM NEON intrinsic 
+// PmaxS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmax_s16'.
 // Requires NEON.
-func VpmaxS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func PmaxS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VpmaxS32: ARM NEON intrinsic 
+// PmaxS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmax_s32'.
 // Requires NEON.
-func VpmaxS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func PmaxS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VpmaxU8: ARM NEON intrinsic 
+// PmaxU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmax_u8'.
 // Requires NEON.
-func VpmaxU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func PmaxU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VpmaxU16: ARM NEON intrinsic 
+// PmaxU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmax_u16'.
 // Requires NEON.
-func VpmaxU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func PmaxU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VpmaxU32: ARM NEON intrinsic 
+// PmaxU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmax_u32'.
 // Requires NEON.
-func VpmaxU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func PmaxU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VpmaxqS8: ARM NEON intrinsic 
+// PmaxqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_s8'.
 // Requires NEON.
-func VpmaxqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func PmaxqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VpmaxqS16: ARM NEON intrinsic 
+// PmaxqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_s16'.
 // Requires NEON.
-func VpmaxqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func PmaxqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VpmaxqS32: ARM NEON intrinsic 
+// PmaxqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_s32'.
 // Requires NEON.
-func VpmaxqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func PmaxqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VpmaxqU8: ARM NEON intrinsic 
+// PmaxqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_u8'.
 // Requires NEON.
-func VpmaxqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func PmaxqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VpmaxqU16: ARM NEON intrinsic 
+// PmaxqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_u16'.
 // Requires NEON.
-func VpmaxqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func PmaxqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VpmaxqU32: ARM NEON intrinsic 
+// PmaxqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_u32'.
 // Requires NEON.
-func VpmaxqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func PmaxqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VpmaxF32: ARM NEON intrinsic 
+// PmaxF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmax_f32'.
 // Requires NEON.
-func VpmaxF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func PmaxF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VpmaxqF32: ARM NEON intrinsic 
+// PmaxqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_f32'.
 // Requires NEON.
-func VpmaxqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func PmaxqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VpmaxqF64: ARM NEON intrinsic 
+// PmaxqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxq_f64'.
 // Requires NEON.
-func VpmaxqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func PmaxqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VpmaxqdF64: ARM NEON intrinsic 
+// PmaxqdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxqd_f64'.
 // Requires NEON.
-func VpmaxqdF64(a arm.Float64x2) float64 {
+func PmaxqdF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VpmaxsF32: ARM NEON intrinsic 
+// PmaxsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxs_f32'.
 // Requires NEON.
-func VpmaxsF32(a arm.Float32x2) float32 {
+func PmaxsF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VpmaxnmF32: ARM NEON intrinsic 
+// PmaxnmF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxnm_f32'.
 // Requires NEON.
-func VpmaxnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func PmaxnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VpmaxnmqF32: ARM NEON intrinsic 
+// PmaxnmqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxnmq_f32'.
 // Requires NEON.
-func VpmaxnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func PmaxnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VpmaxnmqF64: ARM NEON intrinsic 
+// PmaxnmqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxnmq_f64'.
 // Requires NEON.
-func VpmaxnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func PmaxnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VpmaxnmqdF64: ARM NEON intrinsic 
+// PmaxnmqdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxnmqd_f64'.
 // Requires NEON.
-func VpmaxnmqdF64(a arm.Float64x2) float64 {
+func PmaxnmqdF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VpmaxnmsF32: ARM NEON intrinsic 
+// PmaxnmsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmaxnms_f32'.
 // Requires NEON.
-func VpmaxnmsF32(a arm.Float32x2) float32 {
+func PmaxnmsF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VpminS8: ARM NEON intrinsic 
+// PminS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmin_s8'.
 // Requires NEON.
-func VpminS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func PminS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VpminS16: ARM NEON intrinsic 
+// PminS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmin_s16'.
 // Requires NEON.
-func VpminS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func PminS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VpminS32: ARM NEON intrinsic 
+// PminS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmin_s32'.
 // Requires NEON.
-func VpminS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func PminS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VpminU8: ARM NEON intrinsic 
+// PminU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmin_u8'.
 // Requires NEON.
-func VpminU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func PminU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VpminU16: ARM NEON intrinsic 
+// PminU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmin_u16'.
 // Requires NEON.
-func VpminU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func PminU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VpminU32: ARM NEON intrinsic 
+// PminU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmin_u32'.
 // Requires NEON.
-func VpminU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func PminU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VpminqS8: ARM NEON intrinsic 
+// PminqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_s8'.
 // Requires NEON.
-func VpminqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func PminqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VpminqS16: ARM NEON intrinsic 
+// PminqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_s16'.
 // Requires NEON.
-func VpminqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func PminqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VpminqS32: ARM NEON intrinsic 
+// PminqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_s32'.
 // Requires NEON.
-func VpminqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func PminqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VpminqU8: ARM NEON intrinsic 
+// PminqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_u8'.
 // Requires NEON.
-func VpminqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func PminqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VpminqU16: ARM NEON intrinsic 
+// PminqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_u16'.
 // Requires NEON.
-func VpminqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func PminqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VpminqU32: ARM NEON intrinsic 
+// PminqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_u32'.
 // Requires NEON.
-func VpminqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func PminqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VpminF32: ARM NEON intrinsic 
+// PminF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmin_f32'.
 // Requires NEON.
-func VpminF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func PminF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VpminqF32: ARM NEON intrinsic 
+// PminqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_f32'.
 // Requires NEON.
-func VpminqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func PminqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VpminqF64: ARM NEON intrinsic 
+// PminqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminq_f64'.
 // Requires NEON.
-func VpminqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func PminqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VpminqdF64: ARM NEON intrinsic 
+// PminqdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminqd_f64'.
 // Requires NEON.
-func VpminqdF64(a arm.Float64x2) float64 {
+func PminqdF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VpminsF32: ARM NEON intrinsic 
+// PminsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpmins_f32'.
 // Requires NEON.
-func VpminsF32(a arm.Float32x2) float32 {
+func PminsF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VpminnmF32: ARM NEON intrinsic 
+// PminnmF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminnm_f32'.
 // Requires NEON.
-func VpminnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func PminnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VpminnmqF32: ARM NEON intrinsic 
+// PminnmqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminnmq_f32'.
 // Requires NEON.
-func VpminnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func PminnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VpminnmqF64: ARM NEON intrinsic 
+// PminnmqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminnmq_f64'.
 // Requires NEON.
-func VpminnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func PminnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VpminnmqdF64: ARM NEON intrinsic 
+// PminnmqdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminnmqd_f64'.
 // Requires NEON.
-func VpminnmqdF64(a arm.Float64x2) float64 {
+func PminnmqdF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VpminnmsF32: ARM NEON intrinsic 
+// PminnmsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpminnms_f32'.
 // Requires NEON.
-func VpminnmsF32(a arm.Float32x2) float32 {
+func PminnmsF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VmaxnmF32: ARM NEON intrinsic 
+// MaxnmF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxnm_f32'.
 // Requires NEON.
-func VmaxnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func MaxnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmaxnmqF32: ARM NEON intrinsic 
+// MaxnmqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxnmq_f32'.
 // Requires NEON.
-func VmaxnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func MaxnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmaxnmqF64: ARM NEON intrinsic 
+// MaxnmqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxnmq_f64'.
 // Requires NEON.
-func VmaxnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func MaxnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmaxvF32: ARM NEON intrinsic 
+// MaxvF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxv_f32'.
 // Requires NEON.
-func VmaxvF32(a arm.Float32x2) float32 {
+func MaxvF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VmaxvS8: ARM NEON intrinsic 
+// MaxvS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxv_s8'.
 // Requires NEON.
-func VmaxvS8(a arm.Int8x8) int8 {
+func MaxvS8(a arm.Int8x8) int8 {
 	return 0
 }
 
-// VmaxvS16: ARM NEON intrinsic 
+// MaxvS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxv_s16'.
 // Requires NEON.
-func VmaxvS16(a arm.Int16x4) int16 {
+func MaxvS16(a arm.Int16x4) int16 {
 	return 0
 }
 
-// VmaxvS32: ARM NEON intrinsic 
+// MaxvS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxv_s32'.
 // Requires NEON.
-func VmaxvS32(a arm.Int32x2) int32 {
+func MaxvS32(a arm.Int32x2) int32 {
 	return 0
 }
 
-// VmaxvU8: ARM NEON intrinsic 
+// MaxvU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxv_u8'.
 // Requires NEON.
-func VmaxvU8(a arm.Uint8x8) uint8 {
+func MaxvU8(a arm.Uint8x8) uint8 {
 	return 0
 }
 
-// VmaxvU16: ARM NEON intrinsic 
+// MaxvU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxv_u16'.
 // Requires NEON.
-func VmaxvU16(a arm.Uint16x4) uint16 {
+func MaxvU16(a arm.Uint16x4) uint16 {
 	return 0
 }
 
-// VmaxvU32: ARM NEON intrinsic 
+// MaxvU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxv_u32'.
 // Requires NEON.
-func VmaxvU32(a arm.Uint32x2) uint32 {
+func MaxvU32(a arm.Uint32x2) uint32 {
 	return 0
 }
 
-// VmaxvqF32: ARM NEON intrinsic 
+// MaxvqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_f32'.
 // Requires NEON.
-func VmaxvqF32(a arm.Float32x4) float32 {
+func MaxvqF32(a arm.Float32x4) float32 {
 	return 0
 }
 
-// VmaxvqF64: ARM NEON intrinsic 
+// MaxvqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_f64'.
 // Requires NEON.
-func VmaxvqF64(a arm.Float64x2) float64 {
+func MaxvqF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VmaxvqS8: ARM NEON intrinsic 
+// MaxvqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_s8'.
 // Requires NEON.
-func VmaxvqS8(a arm.Int8x16) int8 {
+func MaxvqS8(a arm.Int8x16) int8 {
 	return 0
 }
 
-// VmaxvqS16: ARM NEON intrinsic 
+// MaxvqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_s16'.
 // Requires NEON.
-func VmaxvqS16(a arm.Int16x8) int16 {
+func MaxvqS16(a arm.Int16x8) int16 {
 	return 0
 }
 
-// VmaxvqS32: ARM NEON intrinsic 
+// MaxvqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_s32'.
 // Requires NEON.
-func VmaxvqS32(a arm.Int32x4) int32 {
+func MaxvqS32(a arm.Int32x4) int32 {
 	return 0
 }
 
-// VmaxvqU8: ARM NEON intrinsic 
+// MaxvqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_u8'.
 // Requires NEON.
-func VmaxvqU8(a arm.Uint8x16) uint8 {
+func MaxvqU8(a arm.Uint8x16) uint8 {
 	return 0
 }
 
-// VmaxvqU16: ARM NEON intrinsic 
+// MaxvqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_u16'.
 // Requires NEON.
-func VmaxvqU16(a arm.Uint16x8) uint16 {
+func MaxvqU16(a arm.Uint16x8) uint16 {
 	return 0
 }
 
-// VmaxvqU32: ARM NEON intrinsic 
+// MaxvqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxvq_u32'.
 // Requires NEON.
-func VmaxvqU32(a arm.Uint32x4) uint32 {
+func MaxvqU32(a arm.Uint32x4) uint32 {
 	return 0
 }
 
-// VmaxnmvF32: ARM NEON intrinsic 
+// MaxnmvF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxnmv_f32'.
 // Requires NEON.
-func VmaxnmvF32(a arm.Float32x2) float32 {
+func MaxnmvF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VmaxnmvqF32: ARM NEON intrinsic 
+// MaxnmvqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxnmvq_f32'.
 // Requires NEON.
-func VmaxnmvqF32(a arm.Float32x4) float32 {
+func MaxnmvqF32(a arm.Float32x4) float32 {
 	return 0
 }
 
-// VmaxnmvqF64: ARM NEON intrinsic 
+// MaxnmvqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmaxnmvq_f64'.
 // Requires NEON.
-func VmaxnmvqF64(a arm.Float64x2) float64 {
+func MaxnmvqF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VminF32: ARM NEON intrinsic 
+// MinF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmin_f32'.
 // Requires NEON.
-func VminF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func MinF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VminS8: ARM NEON intrinsic 
+// MinS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmin_s8'.
 // Requires NEON.
-func VminS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func MinS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VminS16: ARM NEON intrinsic 
+// MinS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmin_s16'.
 // Requires NEON.
-func VminS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func MinS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VminS32: ARM NEON intrinsic 
+// MinS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmin_s32'.
 // Requires NEON.
-func VminS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func MinS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VminU8: ARM NEON intrinsic 
+// MinU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmin_u8'.
 // Requires NEON.
-func VminU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func MinU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VminU16: ARM NEON intrinsic 
+// MinU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmin_u16'.
 // Requires NEON.
-func VminU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func MinU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VminU32: ARM NEON intrinsic 
+// MinU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmin_u32'.
 // Requires NEON.
-func VminU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func MinU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VminqF32: ARM NEON intrinsic 
+// MinqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_f32'.
 // Requires NEON.
-func VminqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func MinqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VminqF64: ARM NEON intrinsic 
+// MinqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_f64'.
 // Requires NEON.
-func VminqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func MinqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VminqS8: ARM NEON intrinsic 
+// MinqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_s8'.
 // Requires NEON.
-func VminqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func MinqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VminqS16: ARM NEON intrinsic 
+// MinqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_s16'.
 // Requires NEON.
-func VminqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func MinqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VminqS32: ARM NEON intrinsic 
+// MinqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_s32'.
 // Requires NEON.
-func VminqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func MinqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VminqU8: ARM NEON intrinsic 
+// MinqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_u8'.
 // Requires NEON.
-func VminqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func MinqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VminqU16: ARM NEON intrinsic 
+// MinqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_u16'.
 // Requires NEON.
-func VminqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func MinqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VminqU32: ARM NEON intrinsic 
+// MinqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminq_u32'.
 // Requires NEON.
-func VminqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func MinqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VminnmF32: ARM NEON intrinsic 
+// MinnmF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminnm_f32'.
 // Requires NEON.
-func VminnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func MinnmF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VminnmqF32: ARM NEON intrinsic 
+// MinnmqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminnmq_f32'.
 // Requires NEON.
-func VminnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func MinnmqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VminnmqF64: ARM NEON intrinsic 
+// MinnmqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminnmq_f64'.
 // Requires NEON.
-func VminnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func MinnmqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VminvF32: ARM NEON intrinsic 
+// MinvF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminv_f32'.
 // Requires NEON.
-func VminvF32(a arm.Float32x2) float32 {
+func MinvF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VminvS8: ARM NEON intrinsic 
+// MinvS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminv_s8'.
 // Requires NEON.
-func VminvS8(a arm.Int8x8) int8 {
+func MinvS8(a arm.Int8x8) int8 {
 	return 0
 }
 
-// VminvS16: ARM NEON intrinsic 
+// MinvS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminv_s16'.
 // Requires NEON.
-func VminvS16(a arm.Int16x4) int16 {
+func MinvS16(a arm.Int16x4) int16 {
 	return 0
 }
 
-// VminvS32: ARM NEON intrinsic 
+// MinvS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminv_s32'.
 // Requires NEON.
-func VminvS32(a arm.Int32x2) int32 {
+func MinvS32(a arm.Int32x2) int32 {
 	return 0
 }
 
-// VminvU8: ARM NEON intrinsic 
+// MinvU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminv_u8'.
 // Requires NEON.
-func VminvU8(a arm.Uint8x8) uint8 {
+func MinvU8(a arm.Uint8x8) uint8 {
 	return 0
 }
 
-// VminvU16: ARM NEON intrinsic 
+// MinvU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminv_u16'.
 // Requires NEON.
-func VminvU16(a arm.Uint16x4) uint16 {
+func MinvU16(a arm.Uint16x4) uint16 {
 	return 0
 }
 
-// VminvU32: ARM NEON intrinsic 
+// MinvU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminv_u32'.
 // Requires NEON.
-func VminvU32(a arm.Uint32x2) uint32 {
+func MinvU32(a arm.Uint32x2) uint32 {
 	return 0
 }
 
-// VminvqF32: ARM NEON intrinsic 
+// MinvqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_f32'.
 // Requires NEON.
-func VminvqF32(a arm.Float32x4) float32 {
+func MinvqF32(a arm.Float32x4) float32 {
 	return 0
 }
 
-// VminvqF64: ARM NEON intrinsic 
+// MinvqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_f64'.
 // Requires NEON.
-func VminvqF64(a arm.Float64x2) float64 {
+func MinvqF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VminvqS8: ARM NEON intrinsic 
+// MinvqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_s8'.
 // Requires NEON.
-func VminvqS8(a arm.Int8x16) int8 {
+func MinvqS8(a arm.Int8x16) int8 {
 	return 0
 }
 
-// VminvqS16: ARM NEON intrinsic 
+// MinvqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_s16'.
 // Requires NEON.
-func VminvqS16(a arm.Int16x8) int16 {
+func MinvqS16(a arm.Int16x8) int16 {
 	return 0
 }
 
-// VminvqS32: ARM NEON intrinsic 
+// MinvqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_s32'.
 // Requires NEON.
-func VminvqS32(a arm.Int32x4) int32 {
+func MinvqS32(a arm.Int32x4) int32 {
 	return 0
 }
 
-// VminvqU8: ARM NEON intrinsic 
+// MinvqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_u8'.
 // Requires NEON.
-func VminvqU8(a arm.Uint8x16) uint8 {
+func MinvqU8(a arm.Uint8x16) uint8 {
 	return 0
 }
 
-// VminvqU16: ARM NEON intrinsic 
+// MinvqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_u16'.
 // Requires NEON.
-func VminvqU16(a arm.Uint16x8) uint16 {
+func MinvqU16(a arm.Uint16x8) uint16 {
 	return 0
 }
 
-// VminvqU32: ARM NEON intrinsic 
+// MinvqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminvq_u32'.
 // Requires NEON.
-func VminvqU32(a arm.Uint32x4) uint32 {
+func MinvqU32(a arm.Uint32x4) uint32 {
 	return 0
 }
 
-// VminnmvF32: ARM NEON intrinsic 
+// MinnmvF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminnmv_f32'.
 // Requires NEON.
-func VminnmvF32(a arm.Float32x2) float32 {
+func MinnmvF32(a arm.Float32x2) float32 {
 	return 0
 }
 
-// VminnmvqF32: ARM NEON intrinsic 
+// MinnmvqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminnmvq_f32'.
 // Requires NEON.
-func VminnmvqF32(a arm.Float32x4) float32 {
+func MinnmvqF32(a arm.Float32x4) float32 {
 	return 0
 }
 
-// VminnmvqF64: ARM NEON intrinsic 
+// MinnmvqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vminnmvq_f64'.
 // Requires NEON.
-func VminnmvqF64(a arm.Float64x2) float64 {
+func MinnmvqF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VmlaF32: ARM NEON intrinsic 
+// MlaF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_f32'.
 // Requires NEON.
-func VmlaF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
+func MlaF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlaF64: ARM NEON intrinsic 
+// MlaF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_f64'.
 // Requires NEON.
-func VmlaF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
+func MlaF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VmlaqF32: ARM NEON intrinsic 
+// MlaqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_f32'.
 // Requires NEON.
-func VmlaqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
+func MlaqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlaqF64: ARM NEON intrinsic 
+// MlaqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_f64'.
 // Requires NEON.
-func VmlaqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
+func MlaqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmlaLaneF32: ARM NEON intrinsic 
+// MlaLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
+func MlaLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlaLaneS16: ARM NEON intrinsic 
+// MlaLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4, lane int) (dst arm.Int16x4) {
+func MlaLaneS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4, lane int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlaLaneS32: ARM NEON intrinsic 
+// MlaLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2, lane int) (dst arm.Int32x2) {
+func MlaLaneS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2, lane int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlaLaneU16: ARM NEON intrinsic 
+// MlaLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4, lane int) (dst arm.Uint16x4) {
+func MlaLaneU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4, lane int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlaLaneU32: ARM NEON intrinsic 
+// MlaLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2, lane int) (dst arm.Uint32x2) {
+func MlaLaneU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2, lane int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlaLaneqF32: ARM NEON intrinsic 
+// MlaLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
+func MlaLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlaLaneqS16: ARM NEON intrinsic 
+// MlaLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneqS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x8, lane int) (dst arm.Int16x4) {
+func MlaLaneqS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x8, lane int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlaLaneqS32: ARM NEON intrinsic 
+// MlaLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneqS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x4, lane int) (dst arm.Int32x2) {
+func MlaLaneqS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x4, lane int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlaLaneqU16: ARM NEON intrinsic 
+// MlaLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneqU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x8, lane int) (dst arm.Uint16x4) {
+func MlaLaneqU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x8, lane int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlaLaneqU32: ARM NEON intrinsic 
+// MlaLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmla_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaLaneqU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x4, lane int) (dst arm.Uint32x2) {
+func MlaLaneqU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x4, lane int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlaqLaneF32: ARM NEON intrinsic 
+// MlaqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
+func MlaqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlaqLaneS16: ARM NEON intrinsic 
+// MlaqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x4, lane int) (dst arm.Int16x8) {
+func MlaqLaneS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x4, lane int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlaqLaneS32: ARM NEON intrinsic 
+// MlaqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x2, lane int) (dst arm.Int32x4) {
+func MlaqLaneS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x2, lane int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlaqLaneU16: ARM NEON intrinsic 
+// MlaqLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x4, lane int) (dst arm.Uint16x8) {
+func MlaqLaneU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x4, lane int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlaqLaneU32: ARM NEON intrinsic 
+// MlaqLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x2, lane int) (dst arm.Uint32x4) {
+func MlaqLaneU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x2, lane int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlaqLaneqF32: ARM NEON intrinsic 
+// MlaqLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
+func MlaqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlaqLaneqS16: ARM NEON intrinsic 
+// MlaqLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8, lane int) (dst arm.Int16x8) {
+func MlaqLaneqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8, lane int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlaqLaneqS32: ARM NEON intrinsic 
+// MlaqLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4, lane int) (dst arm.Int32x4) {
+func MlaqLaneqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4, lane int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlaqLaneqU16: ARM NEON intrinsic 
+// MlaqLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8, lane int) (dst arm.Uint16x8) {
+func MlaqLaneqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8, lane int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlaqLaneqU32: ARM NEON intrinsic 
+// MlaqLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlaq_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlaqLaneqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4, lane int) (dst arm.Uint32x4) {
+func MlaqLaneqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4, lane int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlsF32: ARM NEON intrinsic 
+// MlsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_f32'.
 // Requires NEON.
-func VmlsF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
+func MlsF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlsF64: ARM NEON intrinsic 
+// MlsF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_f64'.
 // Requires NEON.
-func VmlsF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
+func MlsF64(a arm.Float64x1, b arm.Float64x1, c arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VmlsqF32: ARM NEON intrinsic 
+// MlsqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_f32'.
 // Requires NEON.
-func VmlsqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
+func MlsqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlsqF64: ARM NEON intrinsic 
+// MlsqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_f64'.
 // Requires NEON.
-func VmlsqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
+func MlsqF64(a arm.Float64x2, b arm.Float64x2, c arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmlsLaneF32: ARM NEON intrinsic 
+// MlsLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
+func MlsLaneF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x2, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlsLaneS16: ARM NEON intrinsic 
+// MlsLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4, lane int) (dst arm.Int16x4) {
+func MlsLaneS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x4, lane int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlsLaneS32: ARM NEON intrinsic 
+// MlsLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2, lane int) (dst arm.Int32x2) {
+func MlsLaneS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x2, lane int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlsLaneU16: ARM NEON intrinsic 
+// MlsLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4, lane int) (dst arm.Uint16x4) {
+func MlsLaneU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x4, lane int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlsLaneU32: ARM NEON intrinsic 
+// MlsLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2, lane int) (dst arm.Uint32x2) {
+func MlsLaneU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x2, lane int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlsLaneqF32: ARM NEON intrinsic 
+// MlsLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
+func MlsLaneqF32(a arm.Float32x2, b arm.Float32x2, c arm.Float32x4, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmlsLaneqS16: ARM NEON intrinsic 
+// MlsLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneqS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x8, lane int) (dst arm.Int16x4) {
+func MlsLaneqS16(a arm.Int16x4, b arm.Int16x4, c arm.Int16x8, lane int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmlsLaneqS32: ARM NEON intrinsic 
+// MlsLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneqS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x4, lane int) (dst arm.Int32x2) {
+func MlsLaneqS32(a arm.Int32x2, b arm.Int32x2, c arm.Int32x4, lane int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmlsLaneqU16: ARM NEON intrinsic 
+// MlsLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneqU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x8, lane int) (dst arm.Uint16x4) {
+func MlsLaneqU16(a arm.Uint16x4, b arm.Uint16x4, c arm.Uint16x8, lane int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmlsLaneqU32: ARM NEON intrinsic 
+// MlsLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmls_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsLaneqU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x4, lane int) (dst arm.Uint32x2) {
+func MlsLaneqU32(a arm.Uint32x2, b arm.Uint32x2, c arm.Uint32x4, lane int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmlsqLaneF32: ARM NEON intrinsic 
+// MlsqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
+func MlsqLaneF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x2, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlsqLaneS16: ARM NEON intrinsic 
+// MlsqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x4, lane int) (dst arm.Int16x8) {
+func MlsqLaneS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x4, lane int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlsqLaneS32: ARM NEON intrinsic 
+// MlsqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x2, lane int) (dst arm.Int32x4) {
+func MlsqLaneS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x2, lane int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlsqLaneU16: ARM NEON intrinsic 
+// MlsqLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x4, lane int) (dst arm.Uint16x8) {
+func MlsqLaneU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x4, lane int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlsqLaneU32: ARM NEON intrinsic 
+// MlsqLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x2, lane int) (dst arm.Uint32x4) {
+func MlsqLaneU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x2, lane int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmlsqLaneqF32: ARM NEON intrinsic 
+// MlsqLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
+func MlsqLaneqF32(a arm.Float32x4, b arm.Float32x4, c arm.Float32x4, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmlsqLaneqS16: ARM NEON intrinsic 
+// MlsqLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8, lane int) (dst arm.Int16x8) {
+func MlsqLaneqS16(a arm.Int16x8, b arm.Int16x8, c arm.Int16x8, lane int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmlsqLaneqS32: ARM NEON intrinsic 
+// MlsqLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4, lane int) (dst arm.Int32x4) {
+func MlsqLaneqS32(a arm.Int32x4, b arm.Int32x4, c arm.Int32x4, lane int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmlsqLaneqU16: ARM NEON intrinsic 
+// MlsqLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8, lane int) (dst arm.Uint16x8) {
+func MlsqLaneqU16(a arm.Uint16x8, b arm.Uint16x8, c arm.Uint16x8, lane int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmlsqLaneqU32: ARM NEON intrinsic 
+// MlsqLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmlsq_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmlsqLaneqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4, lane int) (dst arm.Uint32x4) {
+func MlsqLaneqU32(a arm.Uint32x4, b arm.Uint32x4, c arm.Uint32x4, lane int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmovNF32: ARM NEON intrinsic 
+// MovNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_f32'.
 // Requires NEON.
-func VmovNF32(a float32) (dst arm.Float32x2) {
+func MovNF32(a float32) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmovNF64: ARM NEON intrinsic 
+// MovNF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_f64'.
 // Requires NEON.
-func VmovNF64(a float64) (dst arm.Float64x1) {
+func MovNF64(a float64) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VmovNP8: ARM NEON intrinsic 
+// MovNP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_p8'.
 // Requires NEON.
-func VmovNP8(a arm.Poly8) (dst arm.Poly8x8) {
+func MovNP8(a arm.Poly8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VmovNP16: ARM NEON intrinsic 
+// MovNP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_p16'.
 // Requires NEON.
-func VmovNP16(a arm.Poly16) (dst arm.Poly16x4) {
+func MovNP16(a arm.Poly16) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// VmovNS8: ARM NEON intrinsic 
+// MovNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_s8'.
 // Requires NEON.
-func VmovNS8(a int8) (dst arm.Int8x8) {
+func MovNS8(a int8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VmovNS16: ARM NEON intrinsic 
+// MovNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_s16'.
 // Requires NEON.
-func VmovNS16(a int16) (dst arm.Int16x4) {
+func MovNS16(a int16) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmovNS32: ARM NEON intrinsic 
+// MovNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_s32'.
 // Requires NEON.
-func VmovNS32(a int32) (dst arm.Int32x2) {
+func MovNS32(a int32) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmovNS64: ARM NEON intrinsic 
+// MovNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_s64'.
 // Requires NEON.
-func VmovNS64(a int64) (dst arm.Int64x1) {
+func MovNS64(a int64) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VmovNU8: ARM NEON intrinsic 
+// MovNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_u8'.
 // Requires NEON.
-func VmovNU8(a uint8) (dst arm.Uint8x8) {
+func MovNU8(a uint8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VmovNU16: ARM NEON intrinsic 
+// MovNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_u16'.
 // Requires NEON.
-func VmovNU16(a uint16) (dst arm.Uint16x4) {
+func MovNU16(a uint16) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmovNU32: ARM NEON intrinsic 
+// MovNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_u32'.
 // Requires NEON.
-func VmovNU32(a uint32) (dst arm.Uint32x2) {
+func MovNU32(a uint32) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmovNU64: ARM NEON intrinsic 
+// MovNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmov_n_u64'.
 // Requires NEON.
-func VmovNU64(a uint64) (dst arm.Uint64x1) {
+func MovNU64(a uint64) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VmovqNF32: ARM NEON intrinsic 
+// MovqNF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_f32'.
 // Requires NEON.
-func VmovqNF32(a float32) (dst arm.Float32x4) {
+func MovqNF32(a float32) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmovqNF64: ARM NEON intrinsic 
+// MovqNF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_f64'.
 // Requires NEON.
-func VmovqNF64(a float64) (dst arm.Float64x2) {
+func MovqNF64(a float64) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmovqNP8: ARM NEON intrinsic 
+// MovqNP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_p8'.
 // Requires NEON.
-func VmovqNP8(a arm.Poly8) (dst arm.Poly8x16) {
+func MovqNP8(a arm.Poly8) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VmovqNP16: ARM NEON intrinsic 
+// MovqNP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_p16'.
 // Requires NEON.
-func VmovqNP16(a arm.Poly16) (dst arm.Poly16x8) {
+func MovqNP16(a arm.Poly16) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// VmovqNS8: ARM NEON intrinsic 
+// MovqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_s8'.
 // Requires NEON.
-func VmovqNS8(a int8) (dst arm.Int8x16) {
+func MovqNS8(a int8) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VmovqNS16: ARM NEON intrinsic 
+// MovqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_s16'.
 // Requires NEON.
-func VmovqNS16(a int16) (dst arm.Int16x8) {
+func MovqNS16(a int16) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmovqNS32: ARM NEON intrinsic 
+// MovqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_s32'.
 // Requires NEON.
-func VmovqNS32(a int32) (dst arm.Int32x4) {
+func MovqNS32(a int32) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmovqNS64: ARM NEON intrinsic 
+// MovqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_s64'.
 // Requires NEON.
-func VmovqNS64(a int64) (dst arm.Int64x2) {
+func MovqNS64(a int64) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VmovqNU8: ARM NEON intrinsic 
+// MovqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_u8'.
 // Requires NEON.
-func VmovqNU8(a uint8) (dst arm.Uint8x16) {
+func MovqNU8(a uint8) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VmovqNU16: ARM NEON intrinsic 
+// MovqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_u16'.
 // Requires NEON.
-func VmovqNU16(a uint16) (dst arm.Uint16x8) {
+func MovqNU16(a uint16) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmovqNU32: ARM NEON intrinsic 
+// MovqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_u32'.
 // Requires NEON.
-func VmovqNU32(a uint32) (dst arm.Uint32x4) {
+func MovqNU32(a uint32) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmovqNU64: ARM NEON intrinsic 
+// MovqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmovq_n_u64'.
 // Requires NEON.
-func VmovqNU64(a uint64) (dst arm.Uint64x2) {
+func MovqNU64(a uint64) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VmulLaneF32: ARM NEON intrinsic 
+// MulLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneF32(a arm.Float32x2, b arm.Float32x2, lane int) (dst arm.Float32x2) {
+func MulLaneF32(a arm.Float32x2, b arm.Float32x2, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmulLaneF64: ARM NEON intrinsic 
+// MulLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneF64(a arm.Float64x1, b arm.Float64x1, lane int) (dst arm.Float64x1) {
+func MulLaneF64(a arm.Float64x1, b arm.Float64x1, lane int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VmulLaneS16: ARM NEON intrinsic 
+// MulLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneS16(a arm.Int16x4, b arm.Int16x4, lane int) (dst arm.Int16x4) {
+func MulLaneS16(a arm.Int16x4, b arm.Int16x4, lane int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmulLaneS32: ARM NEON intrinsic 
+// MulLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneS32(a arm.Int32x2, b arm.Int32x2, lane int) (dst arm.Int32x2) {
+func MulLaneS32(a arm.Int32x2, b arm.Int32x2, lane int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmulLaneU16: ARM NEON intrinsic 
+// MulLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneU16(a arm.Uint16x4, b arm.Uint16x4, lane int) (dst arm.Uint16x4) {
+func MulLaneU16(a arm.Uint16x4, b arm.Uint16x4, lane int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmulLaneU32: ARM NEON intrinsic 
+// MulLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneU32(a arm.Uint32x2, b arm.Uint32x2, lane int) (dst arm.Uint32x2) {
+func MulLaneU32(a arm.Uint32x2, b arm.Uint32x2, lane int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmuldLaneF64: ARM NEON intrinsic 
+// MuldLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmuld_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmuldLaneF64(a float64, b arm.Float64x1, lane int) float64 {
+func MuldLaneF64(a float64, b arm.Float64x1, lane int) float64 {
 	return 0
 }
 
-// VmuldLaneqF64: ARM NEON intrinsic 
+// MuldLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmuld_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmuldLaneqF64(a float64, b arm.Float64x2, lane int) float64 {
+func MuldLaneqF64(a float64, b arm.Float64x2, lane int) float64 {
 	return 0
 }
 
-// VmulsLaneF32: ARM NEON intrinsic 
+// MulsLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmuls_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulsLaneF32(a float32, b arm.Float32x2, lane int) float32 {
+func MulsLaneF32(a float32, b arm.Float32x2, lane int) float32 {
 	return 0
 }
 
-// VmulsLaneqF32: ARM NEON intrinsic 
+// MulsLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmuls_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulsLaneqF32(a float32, b arm.Float32x4, lane int) float32 {
+func MulsLaneqF32(a float32, b arm.Float32x4, lane int) float32 {
 	return 0
 }
 
-// VmulLaneqF32: ARM NEON intrinsic 
+// MulLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneqF32(a arm.Float32x2, b arm.Float32x4, lane int) (dst arm.Float32x2) {
+func MulLaneqF32(a arm.Float32x2, b arm.Float32x4, lane int) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VmulLaneqF64: ARM NEON intrinsic 
+// MulLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneqF64(a arm.Float64x1, b arm.Float64x2, lane int) (dst arm.Float64x1) {
+func MulLaneqF64(a arm.Float64x1, b arm.Float64x2, lane int) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VmulLaneqS16: ARM NEON intrinsic 
+// MulLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneqS16(a arm.Int16x4, b arm.Int16x8, lane int) (dst arm.Int16x4) {
+func MulLaneqS16(a arm.Int16x4, b arm.Int16x8, lane int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VmulLaneqS32: ARM NEON intrinsic 
+// MulLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneqS32(a arm.Int32x2, b arm.Int32x4, lane int) (dst arm.Int32x2) {
+func MulLaneqS32(a arm.Int32x2, b arm.Int32x4, lane int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VmulLaneqU16: ARM NEON intrinsic 
+// MulLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneqU16(a arm.Uint16x4, b arm.Uint16x8, lane int) (dst arm.Uint16x4) {
+func MulLaneqU16(a arm.Uint16x4, b arm.Uint16x8, lane int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VmulLaneqU32: ARM NEON intrinsic 
+// MulLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulLaneqU32(a arm.Uint32x2, b arm.Uint32x4, lane int) (dst arm.Uint32x2) {
+func MulLaneqU32(a arm.Uint32x2, b arm.Uint32x4, lane int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VmulNF64: ARM NEON intrinsic 
+// MulNF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmul_n_f64'.
 // Requires NEON.
-func VmulNF64(a arm.Float64x1, b float64) (dst arm.Float64x1) {
+func MulNF64(a arm.Float64x1, b float64) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VmulqLaneF32: ARM NEON intrinsic 
+// MulqLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_lane_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneF32(a arm.Float32x4, b arm.Float32x2, lane int) (dst arm.Float32x4) {
+func MulqLaneF32(a arm.Float32x4, b arm.Float32x2, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmulqLaneF64: ARM NEON intrinsic 
+// MulqLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_lane_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneF64(a arm.Float64x2, b arm.Float64x1, lane int) (dst arm.Float64x2) {
+func MulqLaneF64(a arm.Float64x2, b arm.Float64x1, lane int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmulqLaneS16: ARM NEON intrinsic 
+// MulqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneS16(a arm.Int16x8, b arm.Int16x4, lane int) (dst arm.Int16x8) {
+func MulqLaneS16(a arm.Int16x8, b arm.Int16x4, lane int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmulqLaneS32: ARM NEON intrinsic 
+// MulqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneS32(a arm.Int32x4, b arm.Int32x2, lane int) (dst arm.Int32x4) {
+func MulqLaneS32(a arm.Int32x4, b arm.Int32x2, lane int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmulqLaneU16: ARM NEON intrinsic 
+// MulqLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_lane_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneU16(a arm.Uint16x8, b arm.Uint16x4, lane int) (dst arm.Uint16x8) {
+func MulqLaneU16(a arm.Uint16x8, b arm.Uint16x4, lane int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmulqLaneU32: ARM NEON intrinsic 
+// MulqLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_lane_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneU32(a arm.Uint32x4, b arm.Uint32x2, lane int) (dst arm.Uint32x4) {
+func MulqLaneU32(a arm.Uint32x4, b arm.Uint32x2, lane int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmulqLaneqF32: ARM NEON intrinsic 
+// MulqLaneqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_laneq_f32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneqF32(a arm.Float32x4, b arm.Float32x4, lane int) (dst arm.Float32x4) {
+func MulqLaneqF32(a arm.Float32x4, b arm.Float32x4, lane int) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VmulqLaneqF64: ARM NEON intrinsic 
+// MulqLaneqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_laneq_f64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneqF64(a arm.Float64x2, b arm.Float64x2, lane int) (dst arm.Float64x2) {
+func MulqLaneqF64(a arm.Float64x2, b arm.Float64x2, lane int) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VmulqLaneqS16: ARM NEON intrinsic 
+// MulqLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneqS16(a arm.Int16x8, b arm.Int16x8, lane int) (dst arm.Int16x8) {
+func MulqLaneqS16(a arm.Int16x8, b arm.Int16x8, lane int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VmulqLaneqS32: ARM NEON intrinsic 
+// MulqLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneqS32(a arm.Int32x4, b arm.Int32x4, lane int) (dst arm.Int32x4) {
+func MulqLaneqS32(a arm.Int32x4, b arm.Int32x4, lane int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VmulqLaneqU16: ARM NEON intrinsic 
+// MulqLaneqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_laneq_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneqU16(a arm.Uint16x8, b arm.Uint16x8, lane int) (dst arm.Uint16x8) {
+func MulqLaneqU16(a arm.Uint16x8, b arm.Uint16x8, lane int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VmulqLaneqU32: ARM NEON intrinsic 
+// MulqLaneqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmulq_laneq_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VmulqLaneqU32(a arm.Uint32x4, b arm.Uint32x4, lane int) (dst arm.Uint32x4) {
+func MulqLaneqU32(a arm.Uint32x4, b arm.Uint32x4, lane int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VnegF32: ARM NEON intrinsic 
+// NegF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vneg_f32'.
 // Requires NEON.
-func VnegF32(a arm.Float32x2) (dst arm.Float32x2) {
+func NegF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VnegF64: ARM NEON intrinsic 
+// NegF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vneg_f64'.
 // Requires NEON.
-func VnegF64(a arm.Float64x1) (dst arm.Float64x1) {
+func NegF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VnegS8: ARM NEON intrinsic 
+// NegS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vneg_s8'.
 // Requires NEON.
-func VnegS8(a arm.Int8x8) (dst arm.Int8x8) {
+func NegS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VnegS16: ARM NEON intrinsic 
+// NegS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vneg_s16'.
 // Requires NEON.
-func VnegS16(a arm.Int16x4) (dst arm.Int16x4) {
+func NegS16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VnegS32: ARM NEON intrinsic 
+// NegS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vneg_s32'.
 // Requires NEON.
-func VnegS32(a arm.Int32x2) (dst arm.Int32x2) {
+func NegS32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VnegS64: ARM NEON intrinsic 
+// NegS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vneg_s64'.
 // Requires NEON.
-func VnegS64(a arm.Int64x1) (dst arm.Int64x1) {
+func NegS64(a arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VnegqF32: ARM NEON intrinsic 
+// NegqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vnegq_f32'.
 // Requires NEON.
-func VnegqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func NegqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VnegqF64: ARM NEON intrinsic 
+// NegqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vnegq_f64'.
 // Requires NEON.
-func VnegqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func NegqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VnegqS8: ARM NEON intrinsic 
+// NegqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vnegq_s8'.
 // Requires NEON.
-func VnegqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func NegqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VnegqS16: ARM NEON intrinsic 
+// NegqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vnegq_s16'.
 // Requires NEON.
-func VnegqS16(a arm.Int16x8) (dst arm.Int16x8) {
+func NegqS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VnegqS32: ARM NEON intrinsic 
+// NegqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vnegq_s32'.
 // Requires NEON.
-func VnegqS32(a arm.Int32x4) (dst arm.Int32x4) {
+func NegqS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VnegqS64: ARM NEON intrinsic 
+// NegqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vnegq_s64'.
 // Requires NEON.
-func VnegqS64(a arm.Int64x2) (dst arm.Int64x2) {
+func NegqS64(a arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VpaddS8: ARM NEON intrinsic 
+// PaddS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadd_s8'.
 // Requires NEON.
-func VpaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func PaddS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VpaddS16: ARM NEON intrinsic 
+// PaddS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadd_s16'.
 // Requires NEON.
-func VpaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func PaddS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VpaddS32: ARM NEON intrinsic 
+// PaddS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadd_s32'.
 // Requires NEON.
-func VpaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func PaddS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VpaddU8: ARM NEON intrinsic 
+// PaddU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadd_u8'.
 // Requires NEON.
-func VpaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func PaddU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VpaddU16: ARM NEON intrinsic 
+// PaddU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadd_u16'.
 // Requires NEON.
-func VpaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func PaddU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VpaddU32: ARM NEON intrinsic 
+// PaddU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpadd_u32'.
 // Requires NEON.
-func VpaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func PaddU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VpadddF64: ARM NEON intrinsic 
+// PadddF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddd_f64'.
 // Requires NEON.
-func VpadddF64(a arm.Float64x2) float64 {
+func PadddF64(a arm.Float64x2) float64 {
 	return 0
 }
 
-// VpadddS64: ARM NEON intrinsic 
+// PadddS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddd_s64'.
 // Requires NEON.
-func VpadddS64(a arm.Int64x2) int64 {
+func PadddS64(a arm.Int64x2) int64 {
 	return 0
 }
 
-// VpadddU64: ARM NEON intrinsic 
+// PadddU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vpaddd_u64'.
 // Requires NEON.
-func VpadddU64(a arm.Uint64x2) uint64 {
+func PadddU64(a arm.Uint64x2) uint64 {
 	return 0
 }
 
-// VqabsqS64: ARM NEON intrinsic 
+// QabsqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabsq_s64'.
 // Requires NEON.
-func VqabsqS64(a arm.Int64x2) (dst arm.Int64x2) {
+func QabsqS64(a arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqabsbS8: ARM NEON intrinsic 
+// QabsbS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabsb_s8'.
 // Requires NEON.
-func VqabsbS8(a int8) int8 {
+func QabsbS8(a int8) int8 {
 	return 0
 }
 
-// VqabshS16: ARM NEON intrinsic 
+// QabshS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabsh_s16'.
 // Requires NEON.
-func VqabshS16(a int16) int16 {
+func QabshS16(a int16) int16 {
 	return 0
 }
 
-// VqabssS32: ARM NEON intrinsic 
+// QabssS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabss_s32'.
 // Requires NEON.
-func VqabssS32(a int32) int32 {
+func QabssS32(a int32) int32 {
 	return 0
 }
 
-// VqabsdS64: ARM NEON intrinsic 
+// QabsdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqabsd_s64'.
 // Requires NEON.
-func VqabsdS64(a int64) int64 {
+func QabsdS64(a int64) int64 {
 	return 0
 }
 
-// VqaddbS8: ARM NEON intrinsic 
+// QaddbS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddb_s8'.
 // Requires NEON.
-func VqaddbS8(a int8, b int8) int8 {
+func QaddbS8(a int8, b int8) int8 {
 	return 0
 }
 
-// VqaddhS16: ARM NEON intrinsic 
+// QaddhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddh_s16'.
 // Requires NEON.
-func VqaddhS16(a int16, b int16) int16 {
+func QaddhS16(a int16, b int16) int16 {
 	return 0
 }
 
-// VqaddsS32: ARM NEON intrinsic 
+// QaddsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadds_s32'.
 // Requires NEON.
-func VqaddsS32(a int32, b int32) int32 {
+func QaddsS32(a int32, b int32) int32 {
 	return 0
 }
 
-// VqadddS64: ARM NEON intrinsic 
+// QadddS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddd_s64'.
 // Requires NEON.
-func VqadddS64(a int64, b int64) int64 {
+func QadddS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VqaddbU8: ARM NEON intrinsic 
+// QaddbU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddb_u8'.
 // Requires NEON.
-func VqaddbU8(a uint8, b uint8) uint8 {
+func QaddbU8(a uint8, b uint8) uint8 {
 	return 0
 }
 
-// VqaddhU16: ARM NEON intrinsic 
+// QaddhU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddh_u16'.
 // Requires NEON.
-func VqaddhU16(a uint16, b uint16) uint16 {
+func QaddhU16(a uint16, b uint16) uint16 {
 	return 0
 }
 
-// VqaddsU32: ARM NEON intrinsic 
+// QaddsU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqadds_u32'.
 // Requires NEON.
-func VqaddsU32(a uint32, b uint32) uint32 {
+func QaddsU32(a uint32, b uint32) uint32 {
 	return 0
 }
 
-// VqadddU64: ARM NEON intrinsic 
+// QadddU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqaddd_u64'.
 // Requires NEON.
-func VqadddU64(a uint64, b uint64) uint64 {
+func QadddU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VqdmlalS16: ARM NEON intrinsic 
+// QdmlalS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_s16'.
 // Requires NEON.
-func VqdmlalS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
+func QdmlalS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalHighS16: ARM NEON intrinsic 
+// QdmlalHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_s16'.
 // Requires NEON.
-func VqdmlalHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
+func QdmlalHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalHighLaneS16: ARM NEON intrinsic 
+// QdmlalHighLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalHighLaneS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x4, d int) (dst arm.Int32x4) {
+func QdmlalHighLaneS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x4, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalHighLaneqS16: ARM NEON intrinsic 
+// QdmlalHighLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalHighLaneqS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8, d int) (dst arm.Int32x4) {
+func QdmlalHighLaneqS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalHighNS16: ARM NEON intrinsic 
+// QdmlalHighNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_n_s16'.
 // Requires NEON.
-func VqdmlalHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
+func QdmlalHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalLaneS16: ARM NEON intrinsic 
+// QdmlalLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalLaneS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4, d int) (dst arm.Int32x4) {
+func QdmlalLaneS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalLaneqS16: ARM NEON intrinsic 
+// QdmlalLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalLaneqS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x8, d int) (dst arm.Int32x4) {
+func QdmlalLaneqS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x8, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalNS16: ARM NEON intrinsic 
+// QdmlalNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_n_s16'.
 // Requires NEON.
-func VqdmlalNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
+func QdmlalNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlalS32: ARM NEON intrinsic 
+// QdmlalS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_s32'.
 // Requires NEON.
-func VqdmlalS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
+func QdmlalS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalHighS32: ARM NEON intrinsic 
+// QdmlalHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_s32'.
 // Requires NEON.
-func VqdmlalHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
+func QdmlalHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalHighLaneS32: ARM NEON intrinsic 
+// QdmlalHighLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalHighLaneS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x2, d int) (dst arm.Int64x2) {
+func QdmlalHighLaneS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x2, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalHighLaneqS32: ARM NEON intrinsic 
+// QdmlalHighLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalHighLaneqS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4, d int) (dst arm.Int64x2) {
+func QdmlalHighLaneqS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalHighNS32: ARM NEON intrinsic 
+// QdmlalHighNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_high_n_s32'.
 // Requires NEON.
-func VqdmlalHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
+func QdmlalHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalLaneS32: ARM NEON intrinsic 
+// QdmlalLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalLaneS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2, d int) (dst arm.Int64x2) {
+func QdmlalLaneS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalLaneqS32: ARM NEON intrinsic 
+// QdmlalLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalLaneqS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x4, d int) (dst arm.Int64x2) {
+func QdmlalLaneqS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x4, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalNS32: ARM NEON intrinsic 
+// QdmlalNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlal_n_s32'.
 // Requires NEON.
-func VqdmlalNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
+func QdmlalNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlalhS16: ARM NEON intrinsic 
+// QdmlalhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlalh_s16'.
 // Requires NEON.
-func VqdmlalhS16(a int32, b int16, c int16) int32 {
+func QdmlalhS16(a int32, b int16, c int16) int32 {
 	return 0
 }
 
-// VqdmlalhLaneS16: ARM NEON intrinsic 
+// QdmlalhLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlalh_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalhLaneS16(a int32, b int16, c arm.Int16x4, d int) int32 {
+func QdmlalhLaneS16(a int32, b int16, c arm.Int16x4, d int) int32 {
 	return 0
 }
 
-// VqdmlalhLaneqS16: ARM NEON intrinsic 
+// QdmlalhLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlalh_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalhLaneqS16(a int32, b int16, c arm.Int16x8, d int) int32 {
+func QdmlalhLaneqS16(a int32, b int16, c arm.Int16x8, d int) int32 {
 	return 0
 }
 
-// VqdmlalsS32: ARM NEON intrinsic 
+// QdmlalsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlals_s32'.
 // Requires NEON.
-func VqdmlalsS32(a int64, b int32, c int32) int64 {
+func QdmlalsS32(a int64, b int32, c int32) int64 {
 	return 0
 }
 
-// VqdmlalsLaneS32: ARM NEON intrinsic 
+// QdmlalsLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlals_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalsLaneS32(a int64, b int32, c arm.Int32x2, d int) int64 {
+func QdmlalsLaneS32(a int64, b int32, c arm.Int32x2, d int) int64 {
 	return 0
 }
 
-// VqdmlalsLaneqS32: ARM NEON intrinsic 
+// QdmlalsLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlals_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlalsLaneqS32(a int64, b int32, c arm.Int32x4, d int) int64 {
+func QdmlalsLaneqS32(a int64, b int32, c arm.Int32x4, d int) int64 {
 	return 0
 }
 
-// VqdmlslS16: ARM NEON intrinsic 
+// QdmlslS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_s16'.
 // Requires NEON.
-func VqdmlslS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
+func QdmlslS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslHighS16: ARM NEON intrinsic 
+// QdmlslHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_s16'.
 // Requires NEON.
-func VqdmlslHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
+func QdmlslHighS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslHighLaneS16: ARM NEON intrinsic 
+// QdmlslHighLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslHighLaneS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x4, d int) (dst arm.Int32x4) {
+func QdmlslHighLaneS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x4, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslHighLaneqS16: ARM NEON intrinsic 
+// QdmlslHighLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslHighLaneqS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8, d int) (dst arm.Int32x4) {
+func QdmlslHighLaneqS16(a arm.Int32x4, b arm.Int16x8, c arm.Int16x8, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslHighNS16: ARM NEON intrinsic 
+// QdmlslHighNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_n_s16'.
 // Requires NEON.
-func VqdmlslHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
+func QdmlslHighNS16(a arm.Int32x4, b arm.Int16x8, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslLaneS16: ARM NEON intrinsic 
+// QdmlslLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslLaneS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4, d int) (dst arm.Int32x4) {
+func QdmlslLaneS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x4, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslLaneqS16: ARM NEON intrinsic 
+// QdmlslLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslLaneqS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x8, d int) (dst arm.Int32x4) {
+func QdmlslLaneqS16(a arm.Int32x4, b arm.Int16x4, c arm.Int16x8, d int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslNS16: ARM NEON intrinsic 
+// QdmlslNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_n_s16'.
 // Requires NEON.
-func VqdmlslNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
+func QdmlslNS16(a arm.Int32x4, b arm.Int16x4, c int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmlslS32: ARM NEON intrinsic 
+// QdmlslS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_s32'.
 // Requires NEON.
-func VqdmlslS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
+func QdmlslS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslHighS32: ARM NEON intrinsic 
+// QdmlslHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_s32'.
 // Requires NEON.
-func VqdmlslHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
+func QdmlslHighS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslHighLaneS32: ARM NEON intrinsic 
+// QdmlslHighLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslHighLaneS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x2, d int) (dst arm.Int64x2) {
+func QdmlslHighLaneS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x2, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslHighLaneqS32: ARM NEON intrinsic 
+// QdmlslHighLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslHighLaneqS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4, d int) (dst arm.Int64x2) {
+func QdmlslHighLaneqS32(a arm.Int64x2, b arm.Int32x4, c arm.Int32x4, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslHighNS32: ARM NEON intrinsic 
+// QdmlslHighNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_high_n_s32'.
 // Requires NEON.
-func VqdmlslHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
+func QdmlslHighNS32(a arm.Int64x2, b arm.Int32x4, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslLaneS32: ARM NEON intrinsic 
+// QdmlslLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslLaneS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2, d int) (dst arm.Int64x2) {
+func QdmlslLaneS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x2, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslLaneqS32: ARM NEON intrinsic 
+// QdmlslLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslLaneqS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x4, d int) (dst arm.Int64x2) {
+func QdmlslLaneqS32(a arm.Int64x2, b arm.Int32x2, c arm.Int32x4, d int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslNS32: ARM NEON intrinsic 
+// QdmlslNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsl_n_s32'.
 // Requires NEON.
-func VqdmlslNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
+func QdmlslNS32(a arm.Int64x2, b arm.Int32x2, c int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmlslhS16: ARM NEON intrinsic 
+// QdmlslhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlslh_s16'.
 // Requires NEON.
-func VqdmlslhS16(a int32, b int16, c int16) int32 {
+func QdmlslhS16(a int32, b int16, c int16) int32 {
 	return 0
 }
 
-// VqdmlslhLaneS16: ARM NEON intrinsic 
+// QdmlslhLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlslh_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslhLaneS16(a int32, b int16, c arm.Int16x4, d int) int32 {
+func QdmlslhLaneS16(a int32, b int16, c arm.Int16x4, d int) int32 {
 	return 0
 }
 
-// VqdmlslhLaneqS16: ARM NEON intrinsic 
+// QdmlslhLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlslh_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslhLaneqS16(a int32, b int16, c arm.Int16x8, d int) int32 {
+func QdmlslhLaneqS16(a int32, b int16, c arm.Int16x8, d int) int32 {
 	return 0
 }
 
-// VqdmlslsS32: ARM NEON intrinsic 
+// QdmlslsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsls_s32'.
 // Requires NEON.
-func VqdmlslsS32(a int64, b int32, c int32) int64 {
+func QdmlslsS32(a int64, b int32, c int32) int64 {
 	return 0
 }
 
-// VqdmlslsLaneS32: ARM NEON intrinsic 
+// QdmlslsLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsls_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslsLaneS32(a int64, b int32, c arm.Int32x2, d int) int64 {
+func QdmlslsLaneS32(a int64, b int32, c arm.Int32x2, d int) int64 {
 	return 0
 }
 
-// VqdmlslsLaneqS32: ARM NEON intrinsic 
+// QdmlslsLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmlsls_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmlslsLaneqS32(a int64, b int32, c arm.Int32x4, d int) int64 {
+func QdmlslsLaneqS32(a int64, b int32, c arm.Int32x4, d int) int64 {
 	return 0
 }
 
-// VqdmulhLaneS16: ARM NEON intrinsic 
+// QdmulhLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhLaneS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
+func QdmulhLaneS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqdmulhLaneS32: ARM NEON intrinsic 
+// QdmulhLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulh_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhLaneS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
+func QdmulhLaneS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqdmulhqLaneS16: ARM NEON intrinsic 
+// QdmulhqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhqLaneS16(a arm.Int16x8, b arm.Int16x4, c int) (dst arm.Int16x8) {
+func QdmulhqLaneS16(a arm.Int16x8, b arm.Int16x4, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqdmulhqLaneS32: ARM NEON intrinsic 
+// QdmulhqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhqLaneS32(a arm.Int32x4, b arm.Int32x2, c int) (dst arm.Int32x4) {
+func QdmulhqLaneS32(a arm.Int32x4, b arm.Int32x2, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmulhhS16: ARM NEON intrinsic 
+// QdmulhhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhh_s16'.
 // Requires NEON.
-func VqdmulhhS16(a int16, b int16) int16 {
+func QdmulhhS16(a int16, b int16) int16 {
 	return 0
 }
 
-// VqdmulhhLaneS16: ARM NEON intrinsic 
+// QdmulhhLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhh_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhhLaneS16(a int16, b arm.Int16x4, c int) int16 {
+func QdmulhhLaneS16(a int16, b arm.Int16x4, c int) int16 {
 	return 0
 }
 
-// VqdmulhhLaneqS16: ARM NEON intrinsic 
+// QdmulhhLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhh_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhhLaneqS16(a int16, b arm.Int16x8, c int) int16 {
+func QdmulhhLaneqS16(a int16, b arm.Int16x8, c int) int16 {
 	return 0
 }
 
-// VqdmulhsS32: ARM NEON intrinsic 
+// QdmulhsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhs_s32'.
 // Requires NEON.
-func VqdmulhsS32(a int32, b int32) int32 {
+func QdmulhsS32(a int32, b int32) int32 {
 	return 0
 }
 
-// VqdmulhsLaneS32: ARM NEON intrinsic 
+// QdmulhsLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhs_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhsLaneS32(a int32, b arm.Int32x2, c int) int32 {
+func QdmulhsLaneS32(a int32, b arm.Int32x2, c int) int32 {
 	return 0
 }
 
-// VqdmulhsLaneqS32: ARM NEON intrinsic 
+// QdmulhsLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulhs_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmulhsLaneqS32(a int32, b arm.Int32x4, c int) int32 {
+func QdmulhsLaneqS32(a int32, b arm.Int32x4, c int) int32 {
 	return 0
 }
 
-// VqdmullS16: ARM NEON intrinsic 
+// QdmullS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_s16'.
 // Requires NEON.
-func VqdmullS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
+func QdmullS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullHighS16: ARM NEON intrinsic 
+// QdmullHighS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_s16'.
 // Requires NEON.
-func VqdmullHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
+func QdmullHighS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullHighLaneS16: ARM NEON intrinsic 
+// QdmullHighLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullHighLaneS16(a arm.Int16x8, b arm.Int16x4, c int) (dst arm.Int32x4) {
+func QdmullHighLaneS16(a arm.Int16x8, b arm.Int16x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullHighLaneqS16: ARM NEON intrinsic 
+// QdmullHighLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullHighLaneqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int32x4) {
+func QdmullHighLaneqS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullHighNS16: ARM NEON intrinsic 
+// QdmullHighNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_n_s16'.
 // Requires NEON.
-func VqdmullHighNS16(a arm.Int16x8, b int16) (dst arm.Int32x4) {
+func QdmullHighNS16(a arm.Int16x8, b int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullLaneS16: ARM NEON intrinsic 
+// QdmullLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullLaneS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int32x4) {
+func QdmullLaneS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullLaneqS16: ARM NEON intrinsic 
+// QdmullLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullLaneqS16(a arm.Int16x4, b arm.Int16x8, c int) (dst arm.Int32x4) {
+func QdmullLaneqS16(a arm.Int16x4, b arm.Int16x8, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullNS16: ARM NEON intrinsic 
+// QdmullNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_n_s16'.
 // Requires NEON.
-func VqdmullNS16(a arm.Int16x4, b int16) (dst arm.Int32x4) {
+func QdmullNS16(a arm.Int16x4, b int16) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqdmullS32: ARM NEON intrinsic 
+// QdmullS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_s32'.
 // Requires NEON.
-func VqdmullS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
+func QdmullS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullHighS32: ARM NEON intrinsic 
+// QdmullHighS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_s32'.
 // Requires NEON.
-func VqdmullHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
+func QdmullHighS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullHighLaneS32: ARM NEON intrinsic 
+// QdmullHighLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullHighLaneS32(a arm.Int32x4, b arm.Int32x2, c int) (dst arm.Int64x2) {
+func QdmullHighLaneS32(a arm.Int32x4, b arm.Int32x2, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullHighLaneqS32: ARM NEON intrinsic 
+// QdmullHighLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullHighLaneqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int64x2) {
+func QdmullHighLaneqS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullHighNS32: ARM NEON intrinsic 
+// QdmullHighNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_high_n_s32'.
 // Requires NEON.
-func VqdmullHighNS32(a arm.Int32x4, b int32) (dst arm.Int64x2) {
+func QdmullHighNS32(a arm.Int32x4, b int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullLaneS32: ARM NEON intrinsic 
+// QdmullLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullLaneS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int64x2) {
+func QdmullLaneS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullLaneqS32: ARM NEON intrinsic 
+// QdmullLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullLaneqS32(a arm.Int32x2, b arm.Int32x4, c int) (dst arm.Int64x2) {
+func QdmullLaneqS32(a arm.Int32x2, b arm.Int32x4, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullNS32: ARM NEON intrinsic 
+// QdmullNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmull_n_s32'.
 // Requires NEON.
-func VqdmullNS32(a arm.Int32x2, b int32) (dst arm.Int64x2) {
+func QdmullNS32(a arm.Int32x2, b int32) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqdmullhS16: ARM NEON intrinsic 
+// QdmullhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmullh_s16'.
 // Requires NEON.
-func VqdmullhS16(a int16, b int16) int32 {
+func QdmullhS16(a int16, b int16) int32 {
 	return 0
 }
 
-// VqdmullhLaneS16: ARM NEON intrinsic 
+// QdmullhLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmullh_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullhLaneS16(a int16, b arm.Int16x4, c int) int32 {
+func QdmullhLaneS16(a int16, b arm.Int16x4, c int) int32 {
 	return 0
 }
 
-// VqdmullhLaneqS16: ARM NEON intrinsic 
+// QdmullhLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmullh_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullhLaneqS16(a int16, b arm.Int16x8, c int) int32 {
+func QdmullhLaneqS16(a int16, b arm.Int16x8, c int) int32 {
 	return 0
 }
 
-// VqdmullsS32: ARM NEON intrinsic 
+// QdmullsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulls_s32'.
 // Requires NEON.
-func VqdmullsS32(a int32, b int32) int64 {
+func QdmullsS32(a int32, b int32) int64 {
 	return 0
 }
 
-// VqdmullsLaneS32: ARM NEON intrinsic 
+// QdmullsLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulls_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullsLaneS32(a int32, b arm.Int32x2, c int) int64 {
+func QdmullsLaneS32(a int32, b arm.Int32x2, c int) int64 {
 	return 0
 }
 
-// VqdmullsLaneqS32: ARM NEON intrinsic 
+// QdmullsLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqdmulls_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqdmullsLaneqS32(a int32, b arm.Int32x4, c int) int64 {
+func QdmullsLaneqS32(a int32, b arm.Int32x4, c int) int64 {
 	return 0
 }
 
-// VqmovnS16: ARM NEON intrinsic 
+// QmovnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_s16'.
 // Requires NEON.
-func VqmovnS16(a arm.Int16x8) (dst arm.Int8x8) {
+func QmovnS16(a arm.Int16x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqmovnS32: ARM NEON intrinsic 
+// QmovnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_s32'.
 // Requires NEON.
-func VqmovnS32(a arm.Int32x4) (dst arm.Int16x4) {
+func QmovnS32(a arm.Int32x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqmovnS64: ARM NEON intrinsic 
+// QmovnS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_s64'.
 // Requires NEON.
-func VqmovnS64(a arm.Int64x2) (dst arm.Int32x2) {
+func QmovnS64(a arm.Int64x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqmovnU16: ARM NEON intrinsic 
+// QmovnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_u16'.
 // Requires NEON.
-func VqmovnU16(a arm.Uint16x8) (dst arm.Uint8x8) {
+func QmovnU16(a arm.Uint16x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqmovnU32: ARM NEON intrinsic 
+// QmovnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_u32'.
 // Requires NEON.
-func VqmovnU32(a arm.Uint32x4) (dst arm.Uint16x4) {
+func QmovnU32(a arm.Uint32x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqmovnU64: ARM NEON intrinsic 
+// QmovnU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovn_u64'.
 // Requires NEON.
-func VqmovnU64(a arm.Uint64x2) (dst arm.Uint32x2) {
+func QmovnU64(a arm.Uint64x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqmovnhS16: ARM NEON intrinsic 
+// QmovnhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovnh_s16'.
 // Requires NEON.
-func VqmovnhS16(a int16) int8 {
+func QmovnhS16(a int16) int8 {
 	return 0
 }
 
-// VqmovnsS32: ARM NEON intrinsic 
+// QmovnsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovns_s32'.
 // Requires NEON.
-func VqmovnsS32(a int32) int16 {
+func QmovnsS32(a int32) int16 {
 	return 0
 }
 
-// VqmovndS64: ARM NEON intrinsic 
+// QmovndS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovnd_s64'.
 // Requires NEON.
-func VqmovndS64(a int64) int32 {
+func QmovndS64(a int64) int32 {
 	return 0
 }
 
-// VqmovnhU16: ARM NEON intrinsic 
+// QmovnhU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovnh_u16'.
 // Requires NEON.
-func VqmovnhU16(a uint16) uint8 {
+func QmovnhU16(a uint16) uint8 {
 	return 0
 }
 
-// VqmovnsU32: ARM NEON intrinsic 
+// QmovnsU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovns_u32'.
 // Requires NEON.
-func VqmovnsU32(a uint32) uint16 {
+func QmovnsU32(a uint32) uint16 {
 	return 0
 }
 
-// VqmovndU64: ARM NEON intrinsic 
+// QmovndU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovnd_u64'.
 // Requires NEON.
-func VqmovndU64(a uint64) uint32 {
+func QmovndU64(a uint64) uint32 {
 	return 0
 }
 
-// VqmovunS16: ARM NEON intrinsic 
+// QmovunS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovun_s16'.
 // Requires NEON.
-func VqmovunS16(a arm.Int16x8) (dst arm.Uint8x8) {
+func QmovunS16(a arm.Int16x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqmovunS32: ARM NEON intrinsic 
+// QmovunS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovun_s32'.
 // Requires NEON.
-func VqmovunS32(a arm.Int32x4) (dst arm.Uint16x4) {
+func QmovunS32(a arm.Int32x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqmovunS64: ARM NEON intrinsic 
+// QmovunS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovun_s64'.
 // Requires NEON.
-func VqmovunS64(a arm.Int64x2) (dst arm.Uint32x2) {
+func QmovunS64(a arm.Int64x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqmovunhS16: ARM NEON intrinsic 
+// QmovunhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovunh_s16'.
 // Requires NEON.
-func VqmovunhS16(a int16) int8 {
+func QmovunhS16(a int16) int8 {
 	return 0
 }
 
-// VqmovunsS32: ARM NEON intrinsic 
+// QmovunsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovuns_s32'.
 // Requires NEON.
-func VqmovunsS32(a int32) int16 {
+func QmovunsS32(a int32) int16 {
 	return 0
 }
 
-// VqmovundS64: ARM NEON intrinsic 
+// QmovundS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqmovund_s64'.
 // Requires NEON.
-func VqmovundS64(a int64) int32 {
+func QmovundS64(a int64) int32 {
 	return 0
 }
 
-// VqnegqS64: ARM NEON intrinsic 
+// QnegqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegq_s64'.
 // Requires NEON.
-func VqnegqS64(a arm.Int64x2) (dst arm.Int64x2) {
+func QnegqS64(a arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqnegbS8: ARM NEON intrinsic 
+// QnegbS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegb_s8'.
 // Requires NEON.
-func VqnegbS8(a int8) int8 {
+func QnegbS8(a int8) int8 {
 	return 0
 }
 
-// VqneghS16: ARM NEON intrinsic 
+// QneghS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegh_s16'.
 // Requires NEON.
-func VqneghS16(a int16) int16 {
+func QneghS16(a int16) int16 {
 	return 0
 }
 
-// VqnegsS32: ARM NEON intrinsic 
+// QnegsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegs_s32'.
 // Requires NEON.
-func VqnegsS32(a int32) int32 {
+func QnegsS32(a int32) int32 {
 	return 0
 }
 
-// VqnegdS64: ARM NEON intrinsic 
+// QnegdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqnegd_s64'.
 // Requires NEON.
-func VqnegdS64(a int64) int64 {
+func QnegdS64(a int64) int64 {
 	return 0
 }
 
-// VqrdmulhLaneS16: ARM NEON intrinsic 
+// QrdmulhLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhLaneS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
+func QrdmulhLaneS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqrdmulhLaneS32: ARM NEON intrinsic 
+// QrdmulhLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulh_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhLaneS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
+func QrdmulhLaneS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqrdmulhqLaneS16: ARM NEON intrinsic 
+// QrdmulhqLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhqLaneS16(a arm.Int16x8, b arm.Int16x4, c int) (dst arm.Int16x8) {
+func QrdmulhqLaneS16(a arm.Int16x8, b arm.Int16x4, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqrdmulhqLaneS32: ARM NEON intrinsic 
+// QrdmulhqLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhq_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhqLaneS32(a arm.Int32x4, b arm.Int32x2, c int) (dst arm.Int32x4) {
+func QrdmulhqLaneS32(a arm.Int32x4, b arm.Int32x2, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqrdmulhhS16: ARM NEON intrinsic 
+// QrdmulhhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhh_s16'.
 // Requires NEON.
-func VqrdmulhhS16(a int16, b int16) int16 {
+func QrdmulhhS16(a int16, b int16) int16 {
 	return 0
 }
 
-// VqrdmulhhLaneS16: ARM NEON intrinsic 
+// QrdmulhhLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhh_lane_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhhLaneS16(a int16, b arm.Int16x4, c int) int16 {
+func QrdmulhhLaneS16(a int16, b arm.Int16x4, c int) int16 {
 	return 0
 }
 
-// VqrdmulhhLaneqS16: ARM NEON intrinsic 
+// QrdmulhhLaneqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhh_laneq_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhhLaneqS16(a int16, b arm.Int16x8, c int) int16 {
+func QrdmulhhLaneqS16(a int16, b arm.Int16x8, c int) int16 {
 	return 0
 }
 
-// VqrdmulhsS32: ARM NEON intrinsic 
+// QrdmulhsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhs_s32'.
 // Requires NEON.
-func VqrdmulhsS32(a int32, b int32) int32 {
+func QrdmulhsS32(a int32, b int32) int32 {
 	return 0
 }
 
-// VqrdmulhsLaneS32: ARM NEON intrinsic 
+// QrdmulhsLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhs_lane_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhsLaneS32(a int32, b arm.Int32x2, c int) int32 {
+func QrdmulhsLaneS32(a int32, b arm.Int32x2, c int) int32 {
 	return 0
 }
 
-// VqrdmulhsLaneqS32: ARM NEON intrinsic 
+// QrdmulhsLaneqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrdmulhs_laneq_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrdmulhsLaneqS32(a int32, b arm.Int32x4, c int) int32 {
+func QrdmulhsLaneqS32(a int32, b arm.Int32x4, c int) int32 {
 	return 0
 }
 
-// VqrshlS8: ARM NEON intrinsic 
+// QrshlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_s8'.
 // Requires NEON.
-func VqrshlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func QrshlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqrshlS16: ARM NEON intrinsic 
+// QrshlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_s16'.
 // Requires NEON.
-func VqrshlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func QrshlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqrshlS32: ARM NEON intrinsic 
+// QrshlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_s32'.
 // Requires NEON.
-func VqrshlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func QrshlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqrshlS64: ARM NEON intrinsic 
+// QrshlS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_s64'.
 // Requires NEON.
-func VqrshlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func QrshlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VqrshlU8: ARM NEON intrinsic 
+// QrshlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_u8'.
 // Requires NEON.
-func VqrshlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func QrshlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqrshlU16: ARM NEON intrinsic 
+// QrshlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_u16'.
 // Requires NEON.
-func VqrshlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func QrshlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqrshlU32: ARM NEON intrinsic 
+// QrshlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_u32'.
 // Requires NEON.
-func VqrshlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func QrshlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqrshlU64: ARM NEON intrinsic 
+// QrshlU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshl_u64'.
 // Requires NEON.
-func VqrshlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func QrshlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VqrshlqS8: ARM NEON intrinsic 
+// QrshlqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_s8'.
 // Requires NEON.
-func VqrshlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func QrshlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqrshlqS16: ARM NEON intrinsic 
+// QrshlqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_s16'.
 // Requires NEON.
-func VqrshlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func QrshlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqrshlqS32: ARM NEON intrinsic 
+// QrshlqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_s32'.
 // Requires NEON.
-func VqrshlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func QrshlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqrshlqS64: ARM NEON intrinsic 
+// QrshlqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_s64'.
 // Requires NEON.
-func VqrshlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func QrshlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqrshlqU8: ARM NEON intrinsic 
+// QrshlqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_u8'.
 // Requires NEON.
-func VqrshlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func QrshlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqrshlqU16: ARM NEON intrinsic 
+// QrshlqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_u16'.
 // Requires NEON.
-func VqrshlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func QrshlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqrshlqU32: ARM NEON intrinsic 
+// QrshlqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_u32'.
 // Requires NEON.
-func VqrshlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func QrshlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqrshlqU64: ARM NEON intrinsic 
+// QrshlqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlq_u64'.
 // Requires NEON.
-func VqrshlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func QrshlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VqrshlbS8: ARM NEON intrinsic 
+// QrshlbS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlb_s8'.
 // Requires NEON.
-func VqrshlbS8(a int8, b int8) int8 {
+func QrshlbS8(a int8, b int8) int8 {
 	return 0
 }
 
-// VqrshlhS16: ARM NEON intrinsic 
+// QrshlhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlh_s16'.
 // Requires NEON.
-func VqrshlhS16(a int16, b int16) int16 {
+func QrshlhS16(a int16, b int16) int16 {
 	return 0
 }
 
-// VqrshlsS32: ARM NEON intrinsic 
+// QrshlsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshls_s32'.
 // Requires NEON.
-func VqrshlsS32(a int32, b int32) int32 {
+func QrshlsS32(a int32, b int32) int32 {
 	return 0
 }
 
-// VqrshldS64: ARM NEON intrinsic 
+// QrshldS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshld_s64'.
 // Requires NEON.
-func VqrshldS64(a int64, b int64) int64 {
+func QrshldS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VqrshlbU8: ARM NEON intrinsic 
+// QrshlbU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlb_u8'.
 // Requires NEON.
-func VqrshlbU8(a uint8, b uint8) uint8 {
+func QrshlbU8(a uint8, b uint8) uint8 {
 	return 0
 }
 
-// VqrshlhU16: ARM NEON intrinsic 
+// QrshlhU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshlh_u16'.
 // Requires NEON.
-func VqrshlhU16(a uint16, b uint16) uint16 {
+func QrshlhU16(a uint16, b uint16) uint16 {
 	return 0
 }
 
-// VqrshlsU32: ARM NEON intrinsic 
+// QrshlsU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshls_u32'.
 // Requires NEON.
-func VqrshlsU32(a uint32, b uint32) uint32 {
+func QrshlsU32(a uint32, b uint32) uint32 {
 	return 0
 }
 
-// VqrshldU64: ARM NEON intrinsic 
+// QrshldU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshld_u64'.
 // Requires NEON.
-func VqrshldU64(a uint64, b uint64) uint64 {
+func QrshldU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VqrshrnNS16: ARM NEON intrinsic 
+// QrshrnNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrn_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnNS16(a arm.Int16x8, b int) (dst arm.Int8x8) {
+func QrshrnNS16(a arm.Int16x8, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqrshrnNS32: ARM NEON intrinsic 
+// QrshrnNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrn_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnNS32(a arm.Int32x4, b int) (dst arm.Int16x4) {
+func QrshrnNS32(a arm.Int32x4, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqrshrnNS64: ARM NEON intrinsic 
+// QrshrnNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrn_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnNS64(a arm.Int64x2, b int) (dst arm.Int32x2) {
+func QrshrnNS64(a arm.Int64x2, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqrshrnNU16: ARM NEON intrinsic 
+// QrshrnNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrn_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnNU16(a arm.Uint16x8, b int) (dst arm.Uint8x8) {
+func QrshrnNU16(a arm.Uint16x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqrshrnNU32: ARM NEON intrinsic 
+// QrshrnNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrn_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnNU32(a arm.Uint32x4, b int) (dst arm.Uint16x4) {
+func QrshrnNU32(a arm.Uint32x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqrshrnNU64: ARM NEON intrinsic 
+// QrshrnNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrn_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnNU64(a arm.Uint64x2, b int) (dst arm.Uint32x2) {
+func QrshrnNU64(a arm.Uint64x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqrshrnhNS16: ARM NEON intrinsic 
+// QrshrnhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrnh_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnhNS16(a int16, b int) int8 {
+func QrshrnhNS16(a int16, b int) int8 {
 	return 0
 }
 
-// VqrshrnsNS32: ARM NEON intrinsic 
+// QrshrnsNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrns_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnsNS32(a int32, b int) int16 {
+func QrshrnsNS32(a int32, b int) int16 {
 	return 0
 }
 
-// VqrshrndNS64: ARM NEON intrinsic 
+// QrshrndNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrnd_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrndNS64(a int64, b int) int32 {
+func QrshrndNS64(a int64, b int) int32 {
 	return 0
 }
 
-// VqrshrnhNU16: ARM NEON intrinsic 
+// QrshrnhNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrnh_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnhNU16(a uint16, b int) uint8 {
+func QrshrnhNU16(a uint16, b int) uint8 {
 	return 0
 }
 
-// VqrshrnsNU32: ARM NEON intrinsic 
+// QrshrnsNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrns_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrnsNU32(a uint32, b int) uint16 {
+func QrshrnsNU32(a uint32, b int) uint16 {
 	return 0
 }
 
-// VqrshrndNU64: ARM NEON intrinsic 
+// QrshrndNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrnd_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrndNU64(a uint64, b int) uint32 {
+func QrshrndNU64(a uint64, b int) uint32 {
 	return 0
 }
 
-// VqrshrunNS16: ARM NEON intrinsic 
+// QrshrunNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrun_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrunNS16(a arm.Int16x8, b int) (dst arm.Uint8x8) {
+func QrshrunNS16(a arm.Int16x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqrshrunNS32: ARM NEON intrinsic 
+// QrshrunNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrun_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrunNS32(a arm.Int32x4, b int) (dst arm.Uint16x4) {
+func QrshrunNS32(a arm.Int32x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqrshrunNS64: ARM NEON intrinsic 
+// QrshrunNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrun_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrunNS64(a arm.Int64x2, b int) (dst arm.Uint32x2) {
+func QrshrunNS64(a arm.Int64x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqrshrunhNS16: ARM NEON intrinsic 
+// QrshrunhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrunh_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrunhNS16(a int16, b int) int8 {
+func QrshrunhNS16(a int16, b int) int8 {
 	return 0
 }
 
-// VqrshrunsNS32: ARM NEON intrinsic 
+// QrshrunsNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshruns_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrunsNS32(a int32, b int) int16 {
+func QrshrunsNS32(a int32, b int) int16 {
 	return 0
 }
 
-// VqrshrundNS64: ARM NEON intrinsic 
+// QrshrundNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqrshrund_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqrshrundNS64(a int64, b int) int32 {
+func QrshrundNS64(a int64, b int) int32 {
 	return 0
 }
 
-// VqshlS8: ARM NEON intrinsic 
+// QshlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_s8'.
 // Requires NEON.
-func VqshlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func QshlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqshlS16: ARM NEON intrinsic 
+// QshlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_s16'.
 // Requires NEON.
-func VqshlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func QshlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqshlS32: ARM NEON intrinsic 
+// QshlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_s32'.
 // Requires NEON.
-func VqshlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func QshlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqshlS64: ARM NEON intrinsic 
+// QshlS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_s64'.
 // Requires NEON.
-func VqshlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func QshlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VqshlU8: ARM NEON intrinsic 
+// QshlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_u8'.
 // Requires NEON.
-func VqshlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func QshlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqshlU16: ARM NEON intrinsic 
+// QshlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_u16'.
 // Requires NEON.
-func VqshlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func QshlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqshlU32: ARM NEON intrinsic 
+// QshlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_u32'.
 // Requires NEON.
-func VqshlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func QshlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqshlU64: ARM NEON intrinsic 
+// QshlU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_u64'.
 // Requires NEON.
-func VqshlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func QshlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VqshlqS8: ARM NEON intrinsic 
+// QshlqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_s8'.
 // Requires NEON.
-func VqshlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func QshlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqshlqS16: ARM NEON intrinsic 
+// QshlqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_s16'.
 // Requires NEON.
-func VqshlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func QshlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqshlqS32: ARM NEON intrinsic 
+// QshlqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_s32'.
 // Requires NEON.
-func VqshlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func QshlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqshlqS64: ARM NEON intrinsic 
+// QshlqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_s64'.
 // Requires NEON.
-func VqshlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func QshlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqshlqU8: ARM NEON intrinsic 
+// QshlqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_u8'.
 // Requires NEON.
-func VqshlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func QshlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqshlqU16: ARM NEON intrinsic 
+// QshlqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_u16'.
 // Requires NEON.
-func VqshlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func QshlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqshlqU32: ARM NEON intrinsic 
+// QshlqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_u32'.
 // Requires NEON.
-func VqshlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func QshlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqshlqU64: ARM NEON intrinsic 
+// QshlqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_u64'.
 // Requires NEON.
-func VqshlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func QshlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VqshlbS8: ARM NEON intrinsic 
+// QshlbS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlb_s8'.
 // Requires NEON.
-func VqshlbS8(a int8, b int8) int8 {
+func QshlbS8(a int8, b int8) int8 {
 	return 0
 }
 
-// VqshlhS16: ARM NEON intrinsic 
+// QshlhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlh_s16'.
 // Requires NEON.
-func VqshlhS16(a int16, b int16) int16 {
+func QshlhS16(a int16, b int16) int16 {
 	return 0
 }
 
-// VqshlsS32: ARM NEON intrinsic 
+// QshlsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshls_s32'.
 // Requires NEON.
-func VqshlsS32(a int32, b int32) int32 {
+func QshlsS32(a int32, b int32) int32 {
 	return 0
 }
 
-// VqshldS64: ARM NEON intrinsic 
+// QshldS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshld_s64'.
 // Requires NEON.
-func VqshldS64(a int64, b int64) int64 {
+func QshldS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VqshlbU8: ARM NEON intrinsic 
+// QshlbU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlb_u8'.
 // Requires NEON.
-func VqshlbU8(a uint8, b uint8) uint8 {
+func QshlbU8(a uint8, b uint8) uint8 {
 	return 0
 }
 
-// VqshlhU16: ARM NEON intrinsic 
+// QshlhU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlh_u16'.
 // Requires NEON.
-func VqshlhU16(a uint16, b uint16) uint16 {
+func QshlhU16(a uint16, b uint16) uint16 {
 	return 0
 }
 
-// VqshlsU32: ARM NEON intrinsic 
+// QshlsU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshls_u32'.
 // Requires NEON.
-func VqshlsU32(a uint32, b uint32) uint32 {
+func QshlsU32(a uint32, b uint32) uint32 {
 	return 0
 }
 
-// VqshldU64: ARM NEON intrinsic 
+// QshldU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshld_u64'.
 // Requires NEON.
-func VqshldU64(a uint64, b uint64) uint64 {
+func QshldU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VqshlNS8: ARM NEON intrinsic 
+// QshlNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
+func QshlNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqshlNS16: ARM NEON intrinsic 
+// QshlNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
+func QshlNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqshlNS32: ARM NEON intrinsic 
+// QshlNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
+func QshlNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqshlNS64: ARM NEON intrinsic 
+// QshlNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
+func QshlNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VqshlNU8: ARM NEON intrinsic 
+// QshlNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
+func QshlNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqshlNU16: ARM NEON intrinsic 
+// QshlNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
+func QshlNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqshlNU32: ARM NEON intrinsic 
+// QshlNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
+func QshlNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqshlNU64: ARM NEON intrinsic 
+// QshlNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshl_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
+func QshlNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VqshlqNS8: ARM NEON intrinsic 
+// QshlqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
+func QshlqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VqshlqNS16: ARM NEON intrinsic 
+// QshlqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
+func QshlqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VqshlqNS32: ARM NEON intrinsic 
+// QshlqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
+func QshlqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VqshlqNS64: ARM NEON intrinsic 
+// QshlqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
+func QshlqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VqshlqNU8: ARM NEON intrinsic 
+// QshlqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
+func QshlqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqshlqNU16: ARM NEON intrinsic 
+// QshlqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
+func QshlqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqshlqNU32: ARM NEON intrinsic 
+// QshlqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
+func QshlqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqshlqNU64: ARM NEON intrinsic 
+// QshlqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
+func QshlqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VqshlbNS8: ARM NEON intrinsic 
+// QshlbNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlb_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlbNS8(a int8, b int) int8 {
+func QshlbNS8(a int8, b int) int8 {
 	return 0
 }
 
-// VqshlhNS16: ARM NEON intrinsic 
+// QshlhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlh_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlhNS16(a int16, b int) int16 {
+func QshlhNS16(a int16, b int) int16 {
 	return 0
 }
 
-// VqshlsNS32: ARM NEON intrinsic 
+// QshlsNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshls_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlsNS32(a int32, b int) int32 {
+func QshlsNS32(a int32, b int) int32 {
 	return 0
 }
 
-// VqshldNS64: ARM NEON intrinsic 
+// QshldNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshld_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshldNS64(a int64, b int) int64 {
+func QshldNS64(a int64, b int) int64 {
 	return 0
 }
 
-// VqshlbNU8: ARM NEON intrinsic 
+// QshlbNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlb_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlbNU8(a uint8, b int) uint8 {
+func QshlbNU8(a uint8, b int) uint8 {
 	return 0
 }
 
-// VqshlhNU16: ARM NEON intrinsic 
+// QshlhNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlh_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlhNU16(a uint16, b int) uint16 {
+func QshlhNU16(a uint16, b int) uint16 {
 	return 0
 }
 
-// VqshlsNU32: ARM NEON intrinsic 
+// QshlsNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshls_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlsNU32(a uint32, b int) uint32 {
+func QshlsNU32(a uint32, b int) uint32 {
 	return 0
 }
 
-// VqshldNU64: ARM NEON intrinsic 
+// QshldNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshld_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshldNU64(a uint64, b int) uint64 {
+func QshldNU64(a uint64, b int) uint64 {
 	return 0
 }
 
-// VqshluNS8: ARM NEON intrinsic 
+// QshluNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlu_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluNS8(a arm.Int8x8, b int) (dst arm.Uint8x8) {
+func QshluNS8(a arm.Int8x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqshluNS16: ARM NEON intrinsic 
+// QshluNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlu_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluNS16(a arm.Int16x4, b int) (dst arm.Uint16x4) {
+func QshluNS16(a arm.Int16x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqshluNS32: ARM NEON intrinsic 
+// QshluNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlu_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluNS32(a arm.Int32x2, b int) (dst arm.Uint32x2) {
+func QshluNS32(a arm.Int32x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqshluNS64: ARM NEON intrinsic 
+// QshluNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlu_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluNS64(a arm.Int64x1, b int) (dst arm.Uint64x1) {
+func QshluNS64(a arm.Int64x1, b int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VqshluqNS8: ARM NEON intrinsic 
+// QshluqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshluq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluqNS8(a arm.Int8x16, b int) (dst arm.Uint8x16) {
+func QshluqNS8(a arm.Int8x16, b int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VqshluqNS16: ARM NEON intrinsic 
+// QshluqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshluq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluqNS16(a arm.Int16x8, b int) (dst arm.Uint16x8) {
+func QshluqNS16(a arm.Int16x8, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VqshluqNS32: ARM NEON intrinsic 
+// QshluqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshluq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluqNS32(a arm.Int32x4, b int) (dst arm.Uint32x4) {
+func QshluqNS32(a arm.Int32x4, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VqshluqNS64: ARM NEON intrinsic 
+// QshluqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshluq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluqNS64(a arm.Int64x2, b int) (dst arm.Uint64x2) {
+func QshluqNS64(a arm.Int64x2, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VqshlubNS8: ARM NEON intrinsic 
+// QshlubNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlub_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlubNS8(a int8, b int) int8 {
+func QshlubNS8(a int8, b int) int8 {
 	return 0
 }
 
-// VqshluhNS16: ARM NEON intrinsic 
+// QshluhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshluh_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshluhNS16(a int16, b int) int16 {
+func QshluhNS16(a int16, b int) int16 {
 	return 0
 }
 
-// VqshlusNS32: ARM NEON intrinsic 
+// QshlusNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlus_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshlusNS32(a int32, b int) int32 {
+func QshlusNS32(a int32, b int) int32 {
 	return 0
 }
 
-// VqshludNS64: ARM NEON intrinsic 
+// QshludNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshlud_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshludNS64(a int64, b int) uint64 {
+func QshludNS64(a int64, b int) uint64 {
 	return 0
 }
 
-// VqshrnNS16: ARM NEON intrinsic 
+// QshrnNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrn_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnNS16(a arm.Int16x8, b int) (dst arm.Int8x8) {
+func QshrnNS16(a arm.Int16x8, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VqshrnNS32: ARM NEON intrinsic 
+// QshrnNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrn_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnNS32(a arm.Int32x4, b int) (dst arm.Int16x4) {
+func QshrnNS32(a arm.Int32x4, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VqshrnNS64: ARM NEON intrinsic 
+// QshrnNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrn_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnNS64(a arm.Int64x2, b int) (dst arm.Int32x2) {
+func QshrnNS64(a arm.Int64x2, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VqshrnNU16: ARM NEON intrinsic 
+// QshrnNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrn_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnNU16(a arm.Uint16x8, b int) (dst arm.Uint8x8) {
+func QshrnNU16(a arm.Uint16x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqshrnNU32: ARM NEON intrinsic 
+// QshrnNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrn_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnNU32(a arm.Uint32x4, b int) (dst arm.Uint16x4) {
+func QshrnNU32(a arm.Uint32x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqshrnNU64: ARM NEON intrinsic 
+// QshrnNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrn_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnNU64(a arm.Uint64x2, b int) (dst arm.Uint32x2) {
+func QshrnNU64(a arm.Uint64x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqshrnhNS16: ARM NEON intrinsic 
+// QshrnhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrnh_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnhNS16(a int16, b int) int8 {
+func QshrnhNS16(a int16, b int) int8 {
 	return 0
 }
 
-// VqshrnsNS32: ARM NEON intrinsic 
+// QshrnsNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrns_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnsNS32(a int32, b int) int16 {
+func QshrnsNS32(a int32, b int) int16 {
 	return 0
 }
 
-// VqshrndNS64: ARM NEON intrinsic 
+// QshrndNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrnd_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrndNS64(a int64, b int) int32 {
+func QshrndNS64(a int64, b int) int32 {
 	return 0
 }
 
-// VqshrnhNU16: ARM NEON intrinsic 
+// QshrnhNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrnh_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnhNU16(a uint16, b int) uint8 {
+func QshrnhNU16(a uint16, b int) uint8 {
 	return 0
 }
 
-// VqshrnsNU32: ARM NEON intrinsic 
+// QshrnsNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrns_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrnsNU32(a uint32, b int) uint16 {
+func QshrnsNU32(a uint32, b int) uint16 {
 	return 0
 }
 
-// VqshrndNU64: ARM NEON intrinsic 
+// QshrndNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrnd_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrndNU64(a uint64, b int) uint32 {
+func QshrndNU64(a uint64, b int) uint32 {
 	return 0
 }
 
-// VqshrunNS16: ARM NEON intrinsic 
+// QshrunNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrun_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrunNS16(a arm.Int16x8, b int) (dst arm.Uint8x8) {
+func QshrunNS16(a arm.Int16x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VqshrunNS32: ARM NEON intrinsic 
+// QshrunNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrun_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrunNS32(a arm.Int32x4, b int) (dst arm.Uint16x4) {
+func QshrunNS32(a arm.Int32x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VqshrunNS64: ARM NEON intrinsic 
+// QshrunNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrun_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrunNS64(a arm.Int64x2, b int) (dst arm.Uint32x2) {
+func QshrunNS64(a arm.Int64x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VqshrunhNS16: ARM NEON intrinsic 
+// QshrunhNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrunh_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrunhNS16(a int16, b int) int8 {
+func QshrunhNS16(a int16, b int) int8 {
 	return 0
 }
 
-// VqshrunsNS32: ARM NEON intrinsic 
+// QshrunsNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshruns_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrunsNS32(a int32, b int) int16 {
+func QshrunsNS32(a int32, b int) int16 {
 	return 0
 }
 
-// VqshrundNS64: ARM NEON intrinsic 
+// QshrundNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqshrund_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VqshrundNS64(a int64, b int) int32 {
+func QshrundNS64(a int64, b int) int32 {
 	return 0
 }
 
-// VqsubbS8: ARM NEON intrinsic 
+// QsubbS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubb_s8'.
 // Requires NEON.
-func VqsubbS8(a int8, b int8) int8 {
+func QsubbS8(a int8, b int8) int8 {
 	return 0
 }
 
-// VqsubhS16: ARM NEON intrinsic 
+// QsubhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubh_s16'.
 // Requires NEON.
-func VqsubhS16(a int16, b int16) int16 {
+func QsubhS16(a int16, b int16) int16 {
 	return 0
 }
 
-// VqsubsS32: ARM NEON intrinsic 
+// QsubsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubs_s32'.
 // Requires NEON.
-func VqsubsS32(a int32, b int32) int32 {
+func QsubsS32(a int32, b int32) int32 {
 	return 0
 }
 
-// VqsubdS64: ARM NEON intrinsic 
+// QsubdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubd_s64'.
 // Requires NEON.
-func VqsubdS64(a int64, b int64) int64 {
+func QsubdS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VqsubbU8: ARM NEON intrinsic 
+// QsubbU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubb_u8'.
 // Requires NEON.
-func VqsubbU8(a uint8, b uint8) uint8 {
+func QsubbU8(a uint8, b uint8) uint8 {
 	return 0
 }
 
-// VqsubhU16: ARM NEON intrinsic 
+// QsubhU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubh_u16'.
 // Requires NEON.
-func VqsubhU16(a uint16, b uint16) uint16 {
+func QsubhU16(a uint16, b uint16) uint16 {
 	return 0
 }
 
-// VqsubsU32: ARM NEON intrinsic 
+// QsubsU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubs_u32'.
 // Requires NEON.
-func VqsubsU32(a uint32, b uint32) uint32 {
+func QsubsU32(a uint32, b uint32) uint32 {
 	return 0
 }
 
-// VqsubdU64: ARM NEON intrinsic 
+// QsubdU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vqsubd_u64'.
 // Requires NEON.
-func VqsubdU64(a uint64, b uint64) uint64 {
+func QsubdU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VrbitP8: ARM NEON intrinsic 
+// RbitP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrbit_p8'.
 // Requires NEON.
-func VrbitP8(a arm.Poly8x8) (dst arm.Poly8x8) {
+func RbitP8(a arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// VrbitS8: ARM NEON intrinsic 
+// RbitS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrbit_s8'.
 // Requires NEON.
-func VrbitS8(a arm.Int8x8) (dst arm.Int8x8) {
+func RbitS8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VrbitU8: ARM NEON intrinsic 
+// RbitU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrbit_u8'.
 // Requires NEON.
-func VrbitU8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func RbitU8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VrbitqP8: ARM NEON intrinsic 
+// RbitqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrbitq_p8'.
 // Requires NEON.
-func VrbitqP8(a arm.Poly8x16) (dst arm.Poly8x16) {
+func RbitqP8(a arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// VrbitqS8: ARM NEON intrinsic 
+// RbitqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrbitq_s8'.
 // Requires NEON.
-func VrbitqS8(a arm.Int8x16) (dst arm.Int8x16) {
+func RbitqS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VrbitqU8: ARM NEON intrinsic 
+// RbitqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrbitq_u8'.
 // Requires NEON.
-func VrbitqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func RbitqU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VrecpeU32: ARM NEON intrinsic 
+// RecpeU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpe_u32'.
 // Requires NEON.
-func VrecpeU32(a arm.Uint32x2) (dst arm.Uint32x2) {
+func RecpeU32(a arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrecpeqU32: ARM NEON intrinsic 
+// RecpeqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpeq_u32'.
 // Requires NEON.
-func VrecpeqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
+func RecpeqU32(a arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VrecpesF32: ARM NEON intrinsic 
+// RecpesF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpes_f32'.
 // Requires NEON.
-func VrecpesF32(a float32) float32 {
+func RecpesF32(a float32) float32 {
 	return 0
 }
 
-// VrecpedF64: ARM NEON intrinsic 
+// RecpedF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecped_f64'.
 // Requires NEON.
-func VrecpedF64(a float64) float64 {
+func RecpedF64(a float64) float64 {
 	return 0
 }
 
-// VrecpeF32: ARM NEON intrinsic 
+// RecpeF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpe_f32'.
 // Requires NEON.
-func VrecpeF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RecpeF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrecpeqF32: ARM NEON intrinsic 
+// RecpeqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpeq_f32'.
 // Requires NEON.
-func VrecpeqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RecpeqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrecpeqF64: ARM NEON intrinsic 
+// RecpeqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpeq_f64'.
 // Requires NEON.
-func VrecpeqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RecpeqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrecpssF32: ARM NEON intrinsic 
+// RecpssF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpss_f32'.
 // Requires NEON.
-func VrecpssF32(a float32, b float32) float32 {
+func RecpssF32(a float32, b float32) float32 {
 	return 0
 }
 
-// VrecpsdF64: ARM NEON intrinsic 
+// RecpsdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpsd_f64'.
 // Requires NEON.
-func VrecpsdF64(a float64, b float64) float64 {
+func RecpsdF64(a float64, b float64) float64 {
 	return 0
 }
 
-// VrecpsF32: ARM NEON intrinsic 
+// RecpsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecps_f32'.
 // Requires NEON.
-func VrecpsF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func RecpsF32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrecpsqF32: ARM NEON intrinsic 
+// RecpsqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpsq_f32'.
 // Requires NEON.
-func VrecpsqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func RecpsqF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrecpsqF64: ARM NEON intrinsic 
+// RecpsqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpsq_f64'.
 // Requires NEON.
-func VrecpsqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func RecpsqF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrecpxsF32: ARM NEON intrinsic 
+// RecpxsF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpxs_f32'.
 // Requires NEON.
-func VrecpxsF32(a float32) float32 {
+func RecpxsF32(a float32) float32 {
 	return 0
 }
 
-// VrecpxdF64: ARM NEON intrinsic 
+// RecpxdF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrecpxd_f64'.
 // Requires NEON.
-func VrecpxdF64(a float64) float64 {
+func RecpxdF64(a float64) float64 {
 	return 0
 }
 
-// Vrev16P8: ARM NEON intrinsic 
+// Rev16P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev16_p8'.
 // Requires NEON.
-func Vrev16P8(a arm.Poly8x8) (dst arm.Poly8x8) {
+func Rev16P8(a arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vrev16S8: ARM NEON intrinsic 
+// Rev16S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev16_s8'.
 // Requires NEON.
-func Vrev16S8(a arm.Int8x8) (dst arm.Int8x8) {
+func Rev16S8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vrev16U8: ARM NEON intrinsic 
+// Rev16U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev16_u8'.
 // Requires NEON.
-func Vrev16U8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func Rev16U8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vrev16qP8: ARM NEON intrinsic 
+// Rev16qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev16q_p8'.
 // Requires NEON.
-func Vrev16qP8(a arm.Poly8x16) (dst arm.Poly8x16) {
+func Rev16qP8(a arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vrev16qS8: ARM NEON intrinsic 
+// Rev16qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev16q_s8'.
 // Requires NEON.
-func Vrev16qS8(a arm.Int8x16) (dst arm.Int8x16) {
+func Rev16qS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vrev16qU8: ARM NEON intrinsic 
+// Rev16qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev16q_u8'.
 // Requires NEON.
-func Vrev16qU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func Rev16qU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vrev32P8: ARM NEON intrinsic 
+// Rev32P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32_p8'.
 // Requires NEON.
-func Vrev32P8(a arm.Poly8x8) (dst arm.Poly8x8) {
+func Rev32P8(a arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vrev32P16: ARM NEON intrinsic 
+// Rev32P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32_p16'.
 // Requires NEON.
-func Vrev32P16(a arm.Poly16x4) (dst arm.Poly16x4) {
+func Rev32P16(a arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vrev32S8: ARM NEON intrinsic 
+// Rev32S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32_s8'.
 // Requires NEON.
-func Vrev32S8(a arm.Int8x8) (dst arm.Int8x8) {
+func Rev32S8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vrev32S16: ARM NEON intrinsic 
+// Rev32S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32_s16'.
 // Requires NEON.
-func Vrev32S16(a arm.Int16x4) (dst arm.Int16x4) {
+func Rev32S16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vrev32U8: ARM NEON intrinsic 
+// Rev32U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32_u8'.
 // Requires NEON.
-func Vrev32U8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func Rev32U8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vrev32U16: ARM NEON intrinsic 
+// Rev32U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32_u16'.
 // Requires NEON.
-func Vrev32U16(a arm.Uint16x4) (dst arm.Uint16x4) {
+func Rev32U16(a arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vrev32qP8: ARM NEON intrinsic 
+// Rev32qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32q_p8'.
 // Requires NEON.
-func Vrev32qP8(a arm.Poly8x16) (dst arm.Poly8x16) {
+func Rev32qP8(a arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vrev32qP16: ARM NEON intrinsic 
+// Rev32qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32q_p16'.
 // Requires NEON.
-func Vrev32qP16(a arm.Poly16x8) (dst arm.Poly16x8) {
+func Rev32qP16(a arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vrev32qS8: ARM NEON intrinsic 
+// Rev32qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32q_s8'.
 // Requires NEON.
-func Vrev32qS8(a arm.Int8x16) (dst arm.Int8x16) {
+func Rev32qS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vrev32qS16: ARM NEON intrinsic 
+// Rev32qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32q_s16'.
 // Requires NEON.
-func Vrev32qS16(a arm.Int16x8) (dst arm.Int16x8) {
+func Rev32qS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vrev32qU8: ARM NEON intrinsic 
+// Rev32qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32q_u8'.
 // Requires NEON.
-func Vrev32qU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func Rev32qU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vrev32qU16: ARM NEON intrinsic 
+// Rev32qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev32q_u16'.
 // Requires NEON.
-func Vrev32qU16(a arm.Uint16x8) (dst arm.Uint16x8) {
+func Rev32qU16(a arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vrev64F32: ARM NEON intrinsic 
+// Rev64F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_f32'.
 // Requires NEON.
-func Vrev64F32(a arm.Float32x2) (dst arm.Float32x2) {
+func Rev64F32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vrev64P8: ARM NEON intrinsic 
+// Rev64P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_p8'.
 // Requires NEON.
-func Vrev64P8(a arm.Poly8x8) (dst arm.Poly8x8) {
+func Rev64P8(a arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vrev64P16: ARM NEON intrinsic 
+// Rev64P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_p16'.
 // Requires NEON.
-func Vrev64P16(a arm.Poly16x4) (dst arm.Poly16x4) {
+func Rev64P16(a arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vrev64S8: ARM NEON intrinsic 
+// Rev64S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_s8'.
 // Requires NEON.
-func Vrev64S8(a arm.Int8x8) (dst arm.Int8x8) {
+func Rev64S8(a arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vrev64S16: ARM NEON intrinsic 
+// Rev64S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_s16'.
 // Requires NEON.
-func Vrev64S16(a arm.Int16x4) (dst arm.Int16x4) {
+func Rev64S16(a arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vrev64S32: ARM NEON intrinsic 
+// Rev64S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_s32'.
 // Requires NEON.
-func Vrev64S32(a arm.Int32x2) (dst arm.Int32x2) {
+func Rev64S32(a arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vrev64U8: ARM NEON intrinsic 
+// Rev64U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_u8'.
 // Requires NEON.
-func Vrev64U8(a arm.Uint8x8) (dst arm.Uint8x8) {
+func Rev64U8(a arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vrev64U16: ARM NEON intrinsic 
+// Rev64U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_u16'.
 // Requires NEON.
-func Vrev64U16(a arm.Uint16x4) (dst arm.Uint16x4) {
+func Rev64U16(a arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vrev64U32: ARM NEON intrinsic 
+// Rev64U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64_u32'.
 // Requires NEON.
-func Vrev64U32(a arm.Uint32x2) (dst arm.Uint32x2) {
+func Rev64U32(a arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vrev64qF32: ARM NEON intrinsic 
+// Rev64qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_f32'.
 // Requires NEON.
-func Vrev64qF32(a arm.Float32x4) (dst arm.Float32x4) {
+func Rev64qF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vrev64qP8: ARM NEON intrinsic 
+// Rev64qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_p8'.
 // Requires NEON.
-func Vrev64qP8(a arm.Poly8x16) (dst arm.Poly8x16) {
+func Rev64qP8(a arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vrev64qP16: ARM NEON intrinsic 
+// Rev64qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_p16'.
 // Requires NEON.
-func Vrev64qP16(a arm.Poly16x8) (dst arm.Poly16x8) {
+func Rev64qP16(a arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vrev64qS8: ARM NEON intrinsic 
+// Rev64qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_s8'.
 // Requires NEON.
-func Vrev64qS8(a arm.Int8x16) (dst arm.Int8x16) {
+func Rev64qS8(a arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vrev64qS16: ARM NEON intrinsic 
+// Rev64qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_s16'.
 // Requires NEON.
-func Vrev64qS16(a arm.Int16x8) (dst arm.Int16x8) {
+func Rev64qS16(a arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vrev64qS32: ARM NEON intrinsic 
+// Rev64qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_s32'.
 // Requires NEON.
-func Vrev64qS32(a arm.Int32x4) (dst arm.Int32x4) {
+func Rev64qS32(a arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vrev64qU8: ARM NEON intrinsic 
+// Rev64qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_u8'.
 // Requires NEON.
-func Vrev64qU8(a arm.Uint8x16) (dst arm.Uint8x16) {
+func Rev64qU8(a arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vrev64qU16: ARM NEON intrinsic 
+// Rev64qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_u16'.
 // Requires NEON.
-func Vrev64qU16(a arm.Uint16x8) (dst arm.Uint16x8) {
+func Rev64qU16(a arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vrev64qU32: ARM NEON intrinsic 
+// Rev64qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrev64q_u32'.
 // Requires NEON.
-func Vrev64qU32(a arm.Uint32x4) (dst arm.Uint32x4) {
+func Rev64qU32(a arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VrndF32: ARM NEON intrinsic 
+// RndF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrnd_f32'.
 // Requires NEON.
-func VrndF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RndF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrndF64: ARM NEON intrinsic 
+// RndF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrnd_f64'.
 // Requires NEON.
-func VrndF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RndF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrndqF32: ARM NEON intrinsic 
+// RndqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndq_f32'.
 // Requires NEON.
-func VrndqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RndqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrndqF64: ARM NEON intrinsic 
+// RndqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndq_f64'.
 // Requires NEON.
-func VrndqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RndqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrndaF32: ARM NEON intrinsic 
+// RndaF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrnda_f32'.
 // Requires NEON.
-func VrndaF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RndaF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrndaF64: ARM NEON intrinsic 
+// RndaF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrnda_f64'.
 // Requires NEON.
-func VrndaF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RndaF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrndaqF32: ARM NEON intrinsic 
+// RndaqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndaq_f32'.
 // Requires NEON.
-func VrndaqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RndaqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrndaqF64: ARM NEON intrinsic 
+// RndaqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndaq_f64'.
 // Requires NEON.
-func VrndaqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RndaqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrndiF32: ARM NEON intrinsic 
+// RndiF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndi_f32'.
 // Requires NEON.
-func VrndiF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RndiF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrndiF64: ARM NEON intrinsic 
+// RndiF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndi_f64'.
 // Requires NEON.
-func VrndiF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RndiF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrndiqF32: ARM NEON intrinsic 
+// RndiqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndiq_f32'.
 // Requires NEON.
-func VrndiqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RndiqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrndiqF64: ARM NEON intrinsic 
+// RndiqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndiq_f64'.
 // Requires NEON.
-func VrndiqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RndiqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrndmF32: ARM NEON intrinsic 
+// RndmF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndm_f32'.
 // Requires NEON.
-func VrndmF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RndmF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrndmF64: ARM NEON intrinsic 
+// RndmF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndm_f64'.
 // Requires NEON.
-func VrndmF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RndmF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrndmqF32: ARM NEON intrinsic 
+// RndmqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndmq_f32'.
 // Requires NEON.
-func VrndmqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RndmqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrndmqF64: ARM NEON intrinsic 
+// RndmqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndmq_f64'.
 // Requires NEON.
-func VrndmqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RndmqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrndnF32: ARM NEON intrinsic 
+// RndnF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndn_f32'.
 // Requires NEON.
-func VrndnF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RndnF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrndnF64: ARM NEON intrinsic 
+// RndnF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndn_f64'.
 // Requires NEON.
-func VrndnF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RndnF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrndnqF32: ARM NEON intrinsic 
+// RndnqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndnq_f32'.
 // Requires NEON.
-func VrndnqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RndnqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrndnqF64: ARM NEON intrinsic 
+// RndnqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndnq_f64'.
 // Requires NEON.
-func VrndnqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RndnqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrndpF32: ARM NEON intrinsic 
+// RndpF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndp_f32'.
 // Requires NEON.
-func VrndpF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RndpF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrndpF64: ARM NEON intrinsic 
+// RndpF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndp_f64'.
 // Requires NEON.
-func VrndpF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RndpF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrndpqF32: ARM NEON intrinsic 
+// RndpqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndpq_f32'.
 // Requires NEON.
-func VrndpqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RndpqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrndpqF64: ARM NEON intrinsic 
+// RndpqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndpq_f64'.
 // Requires NEON.
-func VrndpqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RndpqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrndxF32: ARM NEON intrinsic 
+// RndxF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndx_f32'.
 // Requires NEON.
-func VrndxF32(a arm.Float32x2) (dst arm.Float32x2) {
+func RndxF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VrndxF64: ARM NEON intrinsic 
+// RndxF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndx_f64'.
 // Requires NEON.
-func VrndxF64(a arm.Float64x1) (dst arm.Float64x1) {
+func RndxF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VrndxqF32: ARM NEON intrinsic 
+// RndxqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndxq_f32'.
 // Requires NEON.
-func VrndxqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func RndxqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VrndxqF64: ARM NEON intrinsic 
+// RndxqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrndxq_f64'.
 // Requires NEON.
-func VrndxqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func RndxqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VrshlS8: ARM NEON intrinsic 
+// RshlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_s8'.
 // Requires NEON.
-func VrshlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func RshlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VrshlS16: ARM NEON intrinsic 
+// RshlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_s16'.
 // Requires NEON.
-func VrshlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func RshlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VrshlS32: ARM NEON intrinsic 
+// RshlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_s32'.
 // Requires NEON.
-func VrshlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func RshlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VrshlS64: ARM NEON intrinsic 
+// RshlS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_s64'.
 // Requires NEON.
-func VrshlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func RshlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VrshlU8: ARM NEON intrinsic 
+// RshlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_u8'.
 // Requires NEON.
-func VrshlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func RshlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VrshlU16: ARM NEON intrinsic 
+// RshlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_u16'.
 // Requires NEON.
-func VrshlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func RshlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VrshlU32: ARM NEON intrinsic 
+// RshlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_u32'.
 // Requires NEON.
-func VrshlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func RshlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrshlU64: ARM NEON intrinsic 
+// RshlU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshl_u64'.
 // Requires NEON.
-func VrshlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func RshlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VrshlqS8: ARM NEON intrinsic 
+// RshlqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_s8'.
 // Requires NEON.
-func VrshlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func RshlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VrshlqS16: ARM NEON intrinsic 
+// RshlqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_s16'.
 // Requires NEON.
-func VrshlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func RshlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VrshlqS32: ARM NEON intrinsic 
+// RshlqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_s32'.
 // Requires NEON.
-func VrshlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func RshlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VrshlqS64: ARM NEON intrinsic 
+// RshlqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_s64'.
 // Requires NEON.
-func VrshlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func RshlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VrshlqU8: ARM NEON intrinsic 
+// RshlqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_u8'.
 // Requires NEON.
-func VrshlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func RshlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VrshlqU16: ARM NEON intrinsic 
+// RshlqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_u16'.
 // Requires NEON.
-func VrshlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func RshlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VrshlqU32: ARM NEON intrinsic 
+// RshlqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_u32'.
 // Requires NEON.
-func VrshlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func RshlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VrshlqU64: ARM NEON intrinsic 
+// RshlqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshlq_u64'.
 // Requires NEON.
-func VrshlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func RshlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VrshldS64: ARM NEON intrinsic 
+// RshldS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshld_s64'.
 // Requires NEON.
-func VrshldS64(a int64, b int64) int64 {
+func RshldS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VrshldU64: ARM NEON intrinsic 
+// RshldU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshld_u64'.
 // Requires NEON.
-func VrshldU64(a uint64, b int64) uint64 {
+func RshldU64(a uint64, b int64) uint64 {
 	return 0
 }
 
-// VrshrNS8: ARM NEON intrinsic 
+// RshrNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
+func RshrNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VrshrNS16: ARM NEON intrinsic 
+// RshrNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
+func RshrNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VrshrNS32: ARM NEON intrinsic 
+// RshrNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
+func RshrNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VrshrNS64: ARM NEON intrinsic 
+// RshrNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
+func RshrNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VrshrNU8: ARM NEON intrinsic 
+// RshrNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
+func RshrNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VrshrNU16: ARM NEON intrinsic 
+// RshrNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
+func RshrNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VrshrNU32: ARM NEON intrinsic 
+// RshrNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
+func RshrNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrshrNU64: ARM NEON intrinsic 
+// RshrNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshr_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
+func RshrNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VrshrqNS8: ARM NEON intrinsic 
+// RshrqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
+func RshrqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VrshrqNS16: ARM NEON intrinsic 
+// RshrqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
+func RshrqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VrshrqNS32: ARM NEON intrinsic 
+// RshrqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
+func RshrqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VrshrqNS64: ARM NEON intrinsic 
+// RshrqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
+func RshrqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VrshrqNU8: ARM NEON intrinsic 
+// RshrqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
+func RshrqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VrshrqNU16: ARM NEON intrinsic 
+// RshrqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
+func RshrqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VrshrqNU32: ARM NEON intrinsic 
+// RshrqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
+func RshrqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VrshrqNU64: ARM NEON intrinsic 
+// RshrqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
+func RshrqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VrshrdNS64: ARM NEON intrinsic 
+// RshrdNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrd_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrdNS64(a int64, b int) int64 {
+func RshrdNS64(a int64, b int) int64 {
 	return 0
 }
 
-// VrshrdNU64: ARM NEON intrinsic 
+// RshrdNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrshrd_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrshrdNU64(a uint64, b int) uint64 {
+func RshrdNU64(a uint64, b int) uint64 {
 	return 0
 }
 
-// VrsraNS8: ARM NEON intrinsic 
+// RsraNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
+func RsraNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VrsraNS16: ARM NEON intrinsic 
+// RsraNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
+func RsraNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VrsraNS32: ARM NEON intrinsic 
+// RsraNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
+func RsraNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VrsraNS64: ARM NEON intrinsic 
+// RsraNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
+func RsraNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VrsraNU8: ARM NEON intrinsic 
+// RsraNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
+func RsraNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VrsraNU16: ARM NEON intrinsic 
+// RsraNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
+func RsraNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VrsraNU32: ARM NEON intrinsic 
+// RsraNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
+func RsraNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VrsraNU64: ARM NEON intrinsic 
+// RsraNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsra_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
+func RsraNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VrsraqNS8: ARM NEON intrinsic 
+// RsraqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
+func RsraqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VrsraqNS16: ARM NEON intrinsic 
+// RsraqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
+func RsraqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VrsraqNS32: ARM NEON intrinsic 
+// RsraqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
+func RsraqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VrsraqNS64: ARM NEON intrinsic 
+// RsraqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
+func RsraqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VrsraqNU8: ARM NEON intrinsic 
+// RsraqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
+func RsraqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VrsraqNU16: ARM NEON intrinsic 
+// RsraqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
+func RsraqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VrsraqNU32: ARM NEON intrinsic 
+// RsraqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
+func RsraqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VrsraqNU64: ARM NEON intrinsic 
+// RsraqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsraq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsraqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
+func RsraqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VrsradNS64: ARM NEON intrinsic 
+// RsradNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsrad_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsradNS64(a int64, b int64, c int) int64 {
+func RsradNS64(a int64, b int64, c int) int64 {
 	return 0
 }
 
-// VrsradNU64: ARM NEON intrinsic 
+// RsradNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vrsrad_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VrsradNU64(a uint64, b uint64, c int) uint64 {
+func RsradNU64(a uint64, b uint64, c int) uint64 {
 	return 0
 }
 
-// Vsha1cqU32: ARM NEON intrinsic 
+// Sha1cqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha1cq_u32'.
 // Requires NEON.
-func Vsha1cqU32(hash_abcd arm.Uint32x4, hash_e uint32, wk arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha1cqU32(hash_abcd arm.Uint32x4, hash_e uint32, wk arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha1mqU32: ARM NEON intrinsic 
+// Sha1mqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha1mq_u32'.
 // Requires NEON.
-func Vsha1mqU32(hash_abcd arm.Uint32x4, hash_e uint32, wk arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha1mqU32(hash_abcd arm.Uint32x4, hash_e uint32, wk arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha1pqU32: ARM NEON intrinsic 
+// Sha1pqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha1pq_u32'.
 // Requires NEON.
-func Vsha1pqU32(hash_abcd arm.Uint32x4, hash_e uint32, wk arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha1pqU32(hash_abcd arm.Uint32x4, hash_e uint32, wk arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha1hU32: ARM NEON intrinsic 
+// Sha1hU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha1h_u32'.
 // Requires NEON.
-func Vsha1hU32(hash_e uint32) uint32 {
+func Sha1hU32(hash_e uint32) uint32 {
 	return 0
 }
 
-// Vsha1su0qU32: ARM NEON intrinsic 
+// Sha1su0qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha1su0q_u32'.
 // Requires NEON.
-func Vsha1su0qU32(w0_3 arm.Uint32x4, w4_7 arm.Uint32x4, w8_11 arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha1su0qU32(w0_3 arm.Uint32x4, w4_7 arm.Uint32x4, w8_11 arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha1su1qU32: ARM NEON intrinsic 
+// Sha1su1qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha1su1q_u32'.
 // Requires NEON.
-func Vsha1su1qU32(tw0_3 arm.Uint32x4, w12_15 arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha1su1qU32(tw0_3 arm.Uint32x4, w12_15 arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha256hqU32: ARM NEON intrinsic 
+// Sha256hqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha256hq_u32'.
 // Requires NEON.
-func Vsha256hqU32(hash_abcd arm.Uint32x4, hash_efgh arm.Uint32x4, wk arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha256hqU32(hash_abcd arm.Uint32x4, hash_efgh arm.Uint32x4, wk arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha256h2qU32: ARM NEON intrinsic 
+// Sha256h2qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha256h2q_u32'.
 // Requires NEON.
-func Vsha256h2qU32(hash_efgh arm.Uint32x4, hash_abcd arm.Uint32x4, wk arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha256h2qU32(hash_efgh arm.Uint32x4, hash_abcd arm.Uint32x4, wk arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha256su0qU32: ARM NEON intrinsic 
+// Sha256su0qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha256su0q_u32'.
 // Requires NEON.
-func Vsha256su0qU32(w0_3 arm.Uint32x4, w4_7 arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha256su0qU32(w0_3 arm.Uint32x4, w4_7 arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vsha256su1qU32: ARM NEON intrinsic 
+// Sha256su1qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsha256su1q_u32'.
 // Requires NEON.
-func Vsha256su1qU32(tw0_3 arm.Uint32x4, w8_11 arm.Uint32x4, w12_15 arm.Uint32x4) (dst arm.Uint32x4) {
+func Sha256su1qU32(tw0_3 arm.Uint32x4, w8_11 arm.Uint32x4, w12_15 arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VmullP64: ARM NEON intrinsic 
+// MullP64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_p64'.
 // Requires NEON.
-func VmullP64(a arm.Poly64, b arm.Poly64) (dst arm.Poly128) {
+func MullP64(a arm.Poly64, b arm.Poly64) (dst arm.Poly128) {
 	return arm.Poly128{}
 }
 
-// VmullHighP64: ARM NEON intrinsic 
+// MullHighP64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vmull_high_p64'.
 // Requires NEON.
-func VmullHighP64(a arm.Poly64x2, b arm.Poly64x2) (dst arm.Poly128) {
+func MullHighP64(a arm.Poly64x2, b arm.Poly64x2) (dst arm.Poly128) {
 	return arm.Poly128{}
 }
 
-// VshlNS8: ARM NEON intrinsic 
+// ShlNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
+func ShlNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VshlNS16: ARM NEON intrinsic 
+// ShlNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
+func ShlNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VshlNS32: ARM NEON intrinsic 
+// ShlNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
+func ShlNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VshlNS64: ARM NEON intrinsic 
+// ShlNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
+func ShlNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VshlNU8: ARM NEON intrinsic 
+// ShlNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
+func ShlNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VshlNU16: ARM NEON intrinsic 
+// ShlNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
+func ShlNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VshlNU32: ARM NEON intrinsic 
+// ShlNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
+func ShlNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VshlNU64: ARM NEON intrinsic 
+// ShlNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
+func ShlNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VshlqNS8: ARM NEON intrinsic 
+// ShlqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
+func ShlqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VshlqNS16: ARM NEON intrinsic 
+// ShlqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
+func ShlqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VshlqNS32: ARM NEON intrinsic 
+// ShlqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
+func ShlqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VshlqNS64: ARM NEON intrinsic 
+// ShlqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
+func ShlqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VshlqNU8: ARM NEON intrinsic 
+// ShlqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
+func ShlqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VshlqNU16: ARM NEON intrinsic 
+// ShlqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
+func ShlqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VshlqNU32: ARM NEON intrinsic 
+// ShlqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
+func ShlqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VshlqNU64: ARM NEON intrinsic 
+// ShlqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshlqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
+func ShlqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VshldNS64: ARM NEON intrinsic 
+// ShldNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshld_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshldNS64(a int64, b int) int64 {
+func ShldNS64(a int64, b int) int64 {
 	return 0
 }
 
-// VshldNU64: ARM NEON intrinsic 
+// ShldNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshld_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshldNU64(a uint64, b int) uint64 {
+func ShldNU64(a uint64, b int) uint64 {
 	return 0
 }
 
-// VshlS8: ARM NEON intrinsic 
+// ShlS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_s8'.
 // Requires NEON.
-func VshlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func ShlS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VshlS16: ARM NEON intrinsic 
+// ShlS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_s16'.
 // Requires NEON.
-func VshlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func ShlS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VshlS32: ARM NEON intrinsic 
+// ShlS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_s32'.
 // Requires NEON.
-func VshlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func ShlS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VshlS64: ARM NEON intrinsic 
+// ShlS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_s64'.
 // Requires NEON.
-func VshlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
+func ShlS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VshlU8: ARM NEON intrinsic 
+// ShlU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_u8'.
 // Requires NEON.
-func VshlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func ShlU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VshlU16: ARM NEON intrinsic 
+// ShlU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_u16'.
 // Requires NEON.
-func VshlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func ShlU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VshlU32: ARM NEON intrinsic 
+// ShlU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_u32'.
 // Requires NEON.
-func VshlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func ShlU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VshlU64: ARM NEON intrinsic 
+// ShlU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshl_u64'.
 // Requires NEON.
-func VshlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func ShlU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VshlqS8: ARM NEON intrinsic 
+// ShlqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_s8'.
 // Requires NEON.
-func VshlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func ShlqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VshlqS16: ARM NEON intrinsic 
+// ShlqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_s16'.
 // Requires NEON.
-func VshlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func ShlqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VshlqS32: ARM NEON intrinsic 
+// ShlqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_s32'.
 // Requires NEON.
-func VshlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func ShlqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VshlqS64: ARM NEON intrinsic 
+// ShlqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_s64'.
 // Requires NEON.
-func VshlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func ShlqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VshlqU8: ARM NEON intrinsic 
+// ShlqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_u8'.
 // Requires NEON.
-func VshlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func ShlqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VshlqU16: ARM NEON intrinsic 
+// ShlqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_u16'.
 // Requires NEON.
-func VshlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func ShlqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VshlqU32: ARM NEON intrinsic 
+// ShlqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_u32'.
 // Requires NEON.
-func VshlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func ShlqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VshlqU64: ARM NEON intrinsic 
+// ShlqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshlq_u64'.
 // Requires NEON.
-func VshlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func ShlqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VshldS64: ARM NEON intrinsic 
+// ShldS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshld_s64'.
 // Requires NEON.
-func VshldS64(a int64, b int64) int64 {
+func ShldS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VshldU64: ARM NEON intrinsic 
+// ShldU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshld_u64'.
 // Requires NEON.
-func VshldU64(a uint64, b uint64) uint64 {
+func ShldU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VshllHighNS8: ARM NEON intrinsic 
+// ShllHighNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_high_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllHighNS8(a arm.Int8x16, b int) (dst arm.Int16x8) {
+func ShllHighNS8(a arm.Int8x16, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VshllHighNS16: ARM NEON intrinsic 
+// ShllHighNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_high_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllHighNS16(a arm.Int16x8, b int) (dst arm.Int32x4) {
+func ShllHighNS16(a arm.Int16x8, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VshllHighNS32: ARM NEON intrinsic 
+// ShllHighNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_high_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllHighNS32(a arm.Int32x4, b int) (dst arm.Int64x2) {
+func ShllHighNS32(a arm.Int32x4, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VshllHighNU8: ARM NEON intrinsic 
+// ShllHighNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_high_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllHighNU8(a arm.Uint8x16, b int) (dst arm.Uint16x8) {
+func ShllHighNU8(a arm.Uint8x16, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VshllHighNU16: ARM NEON intrinsic 
+// ShllHighNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_high_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllHighNU16(a arm.Uint16x8, b int) (dst arm.Uint32x4) {
+func ShllHighNU16(a arm.Uint16x8, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VshllHighNU32: ARM NEON intrinsic 
+// ShllHighNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_high_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllHighNU32(a arm.Uint32x4, b int) (dst arm.Uint64x2) {
+func ShllHighNU32(a arm.Uint32x4, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VshllNS8: ARM NEON intrinsic 
+// ShllNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllNS8(a arm.Int8x8, b int) (dst arm.Int16x8) {
+func ShllNS8(a arm.Int8x8, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VshllNS16: ARM NEON intrinsic 
+// ShllNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllNS16(a arm.Int16x4, b int) (dst arm.Int32x4) {
+func ShllNS16(a arm.Int16x4, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VshllNS32: ARM NEON intrinsic 
+// ShllNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllNS32(a arm.Int32x2, b int) (dst arm.Int64x2) {
+func ShllNS32(a arm.Int32x2, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VshllNU8: ARM NEON intrinsic 
+// ShllNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllNU8(a arm.Uint8x8, b int) (dst arm.Uint16x8) {
+func ShllNU8(a arm.Uint8x8, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VshllNU16: ARM NEON intrinsic 
+// ShllNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllNU16(a arm.Uint16x4, b int) (dst arm.Uint32x4) {
+func ShllNU16(a arm.Uint16x4, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VshllNU32: ARM NEON intrinsic 
+// ShllNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshll_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshllNU32(a arm.Uint32x2, b int) (dst arm.Uint64x2) {
+func ShllNU32(a arm.Uint32x2, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VshrNS8: ARM NEON intrinsic 
+// ShrNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
+func ShrNS8(a arm.Int8x8, b int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VshrNS16: ARM NEON intrinsic 
+// ShrNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
+func ShrNS16(a arm.Int16x4, b int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VshrNS32: ARM NEON intrinsic 
+// ShrNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
+func ShrNS32(a arm.Int32x2, b int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VshrNS64: ARM NEON intrinsic 
+// ShrNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
+func ShrNS64(a arm.Int64x1, b int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VshrNU8: ARM NEON intrinsic 
+// ShrNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
+func ShrNU8(a arm.Uint8x8, b int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VshrNU16: ARM NEON intrinsic 
+// ShrNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
+func ShrNU16(a arm.Uint16x4, b int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VshrNU32: ARM NEON intrinsic 
+// ShrNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
+func ShrNU32(a arm.Uint32x2, b int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VshrNU64: ARM NEON intrinsic 
+// ShrNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshr_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
+func ShrNU64(a arm.Uint64x1, b int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VshrqNS8: ARM NEON intrinsic 
+// ShrqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
+func ShrqNS8(a arm.Int8x16, b int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VshrqNS16: ARM NEON intrinsic 
+// ShrqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
+func ShrqNS16(a arm.Int16x8, b int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VshrqNS32: ARM NEON intrinsic 
+// ShrqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
+func ShrqNS32(a arm.Int32x4, b int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VshrqNS64: ARM NEON intrinsic 
+// ShrqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
+func ShrqNS64(a arm.Int64x2, b int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VshrqNU8: ARM NEON intrinsic 
+// ShrqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
+func ShrqNU8(a arm.Uint8x16, b int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VshrqNU16: ARM NEON intrinsic 
+// ShrqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
+func ShrqNU16(a arm.Uint16x8, b int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VshrqNU32: ARM NEON intrinsic 
+// ShrqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
+func ShrqNU32(a arm.Uint32x4, b int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VshrqNU64: ARM NEON intrinsic 
+// ShrqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
+func ShrqNU64(a arm.Uint64x2, b int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VshrdNS64: ARM NEON intrinsic 
+// ShrdNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrd_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrdNS64(a int64, b int) int64 {
+func ShrdNS64(a int64, b int) int64 {
 	return 0
 }
 
-// VshrdNU64: ARM NEON intrinsic 
+// ShrdNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vshrd_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VshrdNU64(a uint64, b int) uint64 {
+func ShrdNU64(a uint64, b int) uint64 {
 	return 0
 }
 
-// VsliNS8: ARM NEON intrinsic 
+// SliNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
+func SliNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VsliNS16: ARM NEON intrinsic 
+// SliNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
+func SliNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VsliNS32: ARM NEON intrinsic 
+// SliNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
+func SliNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VsliNS64: ARM NEON intrinsic 
+// SliNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
+func SliNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VsliNU8: ARM NEON intrinsic 
+// SliNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
+func SliNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VsliNU16: ARM NEON intrinsic 
+// SliNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
+func SliNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VsliNU32: ARM NEON intrinsic 
+// SliNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
+func SliNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VsliNU64: ARM NEON intrinsic 
+// SliNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsli_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
+func SliNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VsliqNS8: ARM NEON intrinsic 
+// SliqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
+func SliqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VsliqNS16: ARM NEON intrinsic 
+// SliqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
+func SliqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsliqNS32: ARM NEON intrinsic 
+// SliqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
+func SliqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsliqNS64: ARM NEON intrinsic 
+// SliqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
+func SliqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsliqNU8: ARM NEON intrinsic 
+// SliqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
+func SliqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VsliqNU16: ARM NEON intrinsic 
+// SliqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
+func SliqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsliqNU32: ARM NEON intrinsic 
+// SliqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
+func SliqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsliqNU64: ARM NEON intrinsic 
+// SliqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsliq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsliqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
+func SliqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VslidNS64: ARM NEON intrinsic 
+// SlidNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vslid_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VslidNS64(a int64, b int64, c int) int64 {
+func SlidNS64(a int64, b int64, c int) int64 {
 	return 0
 }
 
-// VslidNU64: ARM NEON intrinsic 
+// SlidNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vslid_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VslidNU64(a uint64, b uint64, c int) uint64 {
+func SlidNU64(a uint64, b uint64, c int) uint64 {
 	return 0
 }
 
-// VsqaddU8: ARM NEON intrinsic 
+// SqaddU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqadd_u8'.
 // Requires NEON.
-func VsqaddU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func SqaddU8(a arm.Uint8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VsqaddU16: ARM NEON intrinsic 
+// SqaddU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqadd_u16'.
 // Requires NEON.
-func VsqaddU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func SqaddU16(a arm.Uint16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VsqaddU32: ARM NEON intrinsic 
+// SqaddU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqadd_u32'.
 // Requires NEON.
-func VsqaddU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func SqaddU32(a arm.Uint32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VsqaddU64: ARM NEON intrinsic 
+// SqaddU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqadd_u64'.
 // Requires NEON.
-func VsqaddU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func SqaddU64(a arm.Uint64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VsqaddqU8: ARM NEON intrinsic 
+// SqaddqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqaddq_u8'.
 // Requires NEON.
-func VsqaddqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func SqaddqU8(a arm.Uint8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VsqaddqU16: ARM NEON intrinsic 
+// SqaddqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqaddq_u16'.
 // Requires NEON.
-func VsqaddqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func SqaddqU16(a arm.Uint16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsqaddqU32: ARM NEON intrinsic 
+// SqaddqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqaddq_u32'.
 // Requires NEON.
-func VsqaddqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func SqaddqU32(a arm.Uint32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsqaddqU64: ARM NEON intrinsic 
+// SqaddqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqaddq_u64'.
 // Requires NEON.
-func VsqaddqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func SqaddqU64(a arm.Uint64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsqaddbU8: ARM NEON intrinsic 
+// SqaddbU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqaddb_u8'.
 // Requires NEON.
-func VsqaddbU8(a uint8, b int8) uint8 {
+func SqaddbU8(a uint8, b int8) uint8 {
 	return 0
 }
 
-// VsqaddhU16: ARM NEON intrinsic 
+// SqaddhU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqaddh_u16'.
 // Requires NEON.
-func VsqaddhU16(a uint16, b int16) uint16 {
+func SqaddhU16(a uint16, b int16) uint16 {
 	return 0
 }
 
-// VsqaddsU32: ARM NEON intrinsic 
+// SqaddsU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqadds_u32'.
 // Requires NEON.
-func VsqaddsU32(a uint32, b int32) uint32 {
+func SqaddsU32(a uint32, b int32) uint32 {
 	return 0
 }
 
-// VsqadddU64: ARM NEON intrinsic 
+// SqadddU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqaddd_u64'.
 // Requires NEON.
-func VsqadddU64(a uint64, b int64) uint64 {
+func SqadddU64(a uint64, b int64) uint64 {
 	return 0
 }
 
-// VsqrtF32: ARM NEON intrinsic 
+// SqrtF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqrt_f32'.
 // Requires NEON.
-func VsqrtF32(a arm.Float32x2) (dst arm.Float32x2) {
+func SqrtF32(a arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// VsqrtqF32: ARM NEON intrinsic 
+// SqrtqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqrtq_f32'.
 // Requires NEON.
-func VsqrtqF32(a arm.Float32x4) (dst arm.Float32x4) {
+func SqrtqF32(a arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// VsqrtF64: ARM NEON intrinsic 
+// SqrtF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqrt_f64'.
 // Requires NEON.
-func VsqrtF64(a arm.Float64x1) (dst arm.Float64x1) {
+func SqrtF64(a arm.Float64x1) (dst arm.Float64x1) {
 	return arm.Float64x1{}
 }
 
-// VsqrtqF64: ARM NEON intrinsic 
+// SqrtqF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsqrtq_f64'.
 // Requires NEON.
-func VsqrtqF64(a arm.Float64x2) (dst arm.Float64x2) {
+func SqrtqF64(a arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// VsraNS8: ARM NEON intrinsic 
+// SraNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
+func SraNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VsraNS16: ARM NEON intrinsic 
+// SraNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
+func SraNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VsraNS32: ARM NEON intrinsic 
+// SraNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
+func SraNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VsraNS64: ARM NEON intrinsic 
+// SraNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
+func SraNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VsraNU8: ARM NEON intrinsic 
+// SraNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
+func SraNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VsraNU16: ARM NEON intrinsic 
+// SraNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
+func SraNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VsraNU32: ARM NEON intrinsic 
+// SraNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
+func SraNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VsraNU64: ARM NEON intrinsic 
+// SraNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsra_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
+func SraNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VsraqNS8: ARM NEON intrinsic 
+// SraqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
+func SraqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VsraqNS16: ARM NEON intrinsic 
+// SraqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
+func SraqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsraqNS32: ARM NEON intrinsic 
+// SraqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
+func SraqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsraqNS64: ARM NEON intrinsic 
+// SraqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
+func SraqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsraqNU8: ARM NEON intrinsic 
+// SraqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
+func SraqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VsraqNU16: ARM NEON intrinsic 
+// SraqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
+func SraqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsraqNU32: ARM NEON intrinsic 
+// SraqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
+func SraqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsraqNU64: ARM NEON intrinsic 
+// SraqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsraq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsraqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
+func SraqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsradNS64: ARM NEON intrinsic 
+// SradNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsrad_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsradNS64(a int64, b int64, c int) int64 {
+func SradNS64(a int64, b int64, c int) int64 {
 	return 0
 }
 
-// VsradNU64: ARM NEON intrinsic 
+// SradNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsrad_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsradNU64(a uint64, b uint64, c int) uint64 {
+func SradNU64(a uint64, b uint64, c int) uint64 {
 	return 0
 }
 
-// VsriNS8: ARM NEON intrinsic 
+// SriNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
+func SriNS8(a arm.Int8x8, b arm.Int8x8, c int) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VsriNS16: ARM NEON intrinsic 
+// SriNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
+func SriNS16(a arm.Int16x4, b arm.Int16x4, c int) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VsriNS32: ARM NEON intrinsic 
+// SriNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
+func SriNS32(a arm.Int32x2, b arm.Int32x2, c int) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VsriNS64: ARM NEON intrinsic 
+// SriNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
+func SriNS64(a arm.Int64x1, b arm.Int64x1, c int) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VsriNU8: ARM NEON intrinsic 
+// SriNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
+func SriNU8(a arm.Uint8x8, b arm.Uint8x8, c int) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VsriNU16: ARM NEON intrinsic 
+// SriNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
+func SriNU16(a arm.Uint16x4, b arm.Uint16x4, c int) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VsriNU32: ARM NEON intrinsic 
+// SriNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
+func SriNU32(a arm.Uint32x2, b arm.Uint32x2, c int) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VsriNU64: ARM NEON intrinsic 
+// SriNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsri_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
+func SriNU64(a arm.Uint64x1, b arm.Uint64x1, c int) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VsriqNS8: ARM NEON intrinsic 
+// SriqNS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_s8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
+func SriqNS8(a arm.Int8x16, b arm.Int8x16, c int) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VsriqNS16: ARM NEON intrinsic 
+// SriqNS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_s16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
+func SriqNS16(a arm.Int16x8, b arm.Int16x8, c int) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VsriqNS32: ARM NEON intrinsic 
+// SriqNS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_s32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
+func SriqNS32(a arm.Int32x4, b arm.Int32x4, c int) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VsriqNS64: ARM NEON intrinsic 
+// SriqNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
+func SriqNS64(a arm.Int64x2, b arm.Int64x2, c int) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VsriqNU8: ARM NEON intrinsic 
+// SriqNU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_u8'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
+func SriqNU8(a arm.Uint8x16, b arm.Uint8x16, c int) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VsriqNU16: ARM NEON intrinsic 
+// SriqNU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_u16'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
+func SriqNU16(a arm.Uint16x8, b arm.Uint16x8, c int) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VsriqNU32: ARM NEON intrinsic 
+// SriqNU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_u32'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
+func SriqNU32(a arm.Uint32x4, b arm.Uint32x4, c int) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VsriqNU64: ARM NEON intrinsic 
+// SriqNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsriq_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsriqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
+func SriqNU64(a arm.Uint64x2, b arm.Uint64x2, c int) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VsridNS64: ARM NEON intrinsic 
+// SridNS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsrid_n_s64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsridNS64(a int64, b int64, c int) int64 {
+func SridNS64(a int64, b int64, c int) int64 {
 	return 0
 }
 
-// VsridNU64: ARM NEON intrinsic 
+// SridNU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsrid_n_u64'.
 // Requires NEON.
 //
 // FIXME: Requires compiler support (has immediate)
-func VsridNU64(a uint64, b uint64, c int) uint64 {
+func SridNU64(a uint64, b uint64, c int) uint64 {
 	return 0
 }
 
-// Vst1F32: ARM NEON intrinsic 
+// St1F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1F32(a *float32, b arm.Float32x2)  {
+func St1F32(a *float32, b arm.Float32x2)  {
 
 }
 
-// Vst1F64: ARM NEON intrinsic 
+// St1F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1F64(a *float64, b arm.Float64x1)  {
+func St1F64(a *float64, b arm.Float64x1)  {
 
 }
 
-// Vst1P8: ARM NEON intrinsic 
+// St1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1P8(a *arm.Poly8, b arm.Poly8x8)  {
+func St1P8(a *arm.Poly8, b arm.Poly8x8)  {
 
 }
 
-// Vst1P16: ARM NEON intrinsic 
+// St1P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1P16(a *arm.Poly16, b arm.Poly16x4)  {
+func St1P16(a *arm.Poly16, b arm.Poly16x4)  {
 
 }
 
-// Vst1S8: ARM NEON intrinsic 
+// St1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1S8(a *int8, b arm.Int8x8)  {
+func St1S8(a *int8, b arm.Int8x8)  {
 
 }
 
-// Vst1S16: ARM NEON intrinsic 
+// St1S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1S16(a *int16, b arm.Int16x4)  {
+func St1S16(a *int16, b arm.Int16x4)  {
 
 }
 
-// Vst1S32: ARM NEON intrinsic 
+// St1S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1S32(a *int32, b arm.Int32x2)  {
+func St1S32(a *int32, b arm.Int32x2)  {
 
 }
 
-// Vst1S64: ARM NEON intrinsic 
+// St1S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1S64(a *int64, b arm.Int64x1)  {
+func St1S64(a *int64, b arm.Int64x1)  {
 
 }
 
-// Vst1U8: ARM NEON intrinsic 
+// St1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1U8(a *uint8, b arm.Uint8x8)  {
+func St1U8(a *uint8, b arm.Uint8x8)  {
 
 }
 
-// Vst1U16: ARM NEON intrinsic 
+// St1U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1U16(a *uint16, b arm.Uint16x4)  {
+func St1U16(a *uint16, b arm.Uint16x4)  {
 
 }
 
-// Vst1U32: ARM NEON intrinsic 
+// St1U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1U32(a *uint32, b arm.Uint32x2)  {
+func St1U32(a *uint32, b arm.Uint32x2)  {
 
 }
 
-// Vst1U64: ARM NEON intrinsic 
+// St1U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1U64(a *uint64, b arm.Uint64x1)  {
+func St1U64(a *uint64, b arm.Uint64x1)  {
 
 }
 
-// Vst1qF32: ARM NEON intrinsic 
+// St1qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qF32(a *float32, b arm.Float32x4)  {
+func St1qF32(a *float32, b arm.Float32x4)  {
 
 }
 
-// Vst1qF64: ARM NEON intrinsic 
+// St1qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qF64(a *float64, b arm.Float64x2)  {
+func St1qF64(a *float64, b arm.Float64x2)  {
 
 }
 
-// Vst1qP8: ARM NEON intrinsic 
+// St1qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qP8(a *arm.Poly8, b arm.Poly8x16)  {
+func St1qP8(a *arm.Poly8, b arm.Poly8x16)  {
 
 }
 
-// Vst1qP16: ARM NEON intrinsic 
+// St1qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qP16(a *arm.Poly16, b arm.Poly16x8)  {
+func St1qP16(a *arm.Poly16, b arm.Poly16x8)  {
 
 }
 
-// Vst1qS8: ARM NEON intrinsic 
+// St1qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qS8(a *int8, b arm.Int8x16)  {
+func St1qS8(a *int8, b arm.Int8x16)  {
 
 }
 
-// Vst1qS16: ARM NEON intrinsic 
+// St1qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qS16(a *int16, b arm.Int16x8)  {
+func St1qS16(a *int16, b arm.Int16x8)  {
 
 }
 
-// Vst1qS32: ARM NEON intrinsic 
+// St1qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qS32(a *int32, b arm.Int32x4)  {
+func St1qS32(a *int32, b arm.Int32x4)  {
 
 }
 
-// Vst1qS64: ARM NEON intrinsic 
+// St1qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qS64(a *int64, b arm.Int64x2)  {
+func St1qS64(a *int64, b arm.Int64x2)  {
 
 }
 
-// Vst1qU8: ARM NEON intrinsic 
+// St1qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qU8(a *uint8, b arm.Uint8x16)  {
+func St1qU8(a *uint8, b arm.Uint8x16)  {
 
 }
 
-// Vst1qU16: ARM NEON intrinsic 
+// St1qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qU16(a *uint16, b arm.Uint16x8)  {
+func St1qU16(a *uint16, b arm.Uint16x8)  {
 
 }
 
-// Vst1qU32: ARM NEON intrinsic 
+// St1qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qU32(a *uint32, b arm.Uint32x4)  {
+func St1qU32(a *uint32, b arm.Uint32x4)  {
 
 }
 
-// Vst1qU64: ARM NEON intrinsic 
+// St1qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst1qU64(a *uint64, b arm.Uint64x2)  {
+func St1qU64(a *uint64, b arm.Uint64x2)  {
 
 }
 
-// Vst1LaneF32: ARM NEON intrinsic 
+// St1LaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_f32'.
 // Requires NEON.
@@ -24529,11 +24529,11 @@ func Vst1qU64(a *uint64, b arm.Uint64x2)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneF32(a *float32, b arm.Float32x2, lane int)  {
+func St1LaneF32(a *float32, b arm.Float32x2, lane int)  {
 
 }
 
-// Vst1LaneF64: ARM NEON intrinsic 
+// St1LaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_f64'.
 // Requires NEON.
@@ -24541,11 +24541,11 @@ func Vst1LaneF32(a *float32, b arm.Float32x2, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneF64(a *float64, b arm.Float64x1, lane int)  {
+func St1LaneF64(a *float64, b arm.Float64x1, lane int)  {
 
 }
 
-// Vst1LaneP8: ARM NEON intrinsic 
+// St1LaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_p8'.
 // Requires NEON.
@@ -24553,11 +24553,11 @@ func Vst1LaneF64(a *float64, b arm.Float64x1, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneP8(a *arm.Poly8, b arm.Poly8x8, lane int)  {
+func St1LaneP8(a *arm.Poly8, b arm.Poly8x8, lane int)  {
 
 }
 
-// Vst1LaneP16: ARM NEON intrinsic 
+// St1LaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_p16'.
 // Requires NEON.
@@ -24565,11 +24565,11 @@ func Vst1LaneP8(a *arm.Poly8, b arm.Poly8x8, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneP16(a *arm.Poly16, b arm.Poly16x4, lane int)  {
+func St1LaneP16(a *arm.Poly16, b arm.Poly16x4, lane int)  {
 
 }
 
-// Vst1LaneS8: ARM NEON intrinsic 
+// St1LaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_s8'.
 // Requires NEON.
@@ -24577,11 +24577,11 @@ func Vst1LaneP16(a *arm.Poly16, b arm.Poly16x4, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneS8(a *int8, b arm.Int8x8, lane int)  {
+func St1LaneS8(a *int8, b arm.Int8x8, lane int)  {
 
 }
 
-// Vst1LaneS16: ARM NEON intrinsic 
+// St1LaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_s16'.
 // Requires NEON.
@@ -24589,11 +24589,11 @@ func Vst1LaneS8(a *int8, b arm.Int8x8, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneS16(a *int16, b arm.Int16x4, lane int)  {
+func St1LaneS16(a *int16, b arm.Int16x4, lane int)  {
 
 }
 
-// Vst1LaneS32: ARM NEON intrinsic 
+// St1LaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_s32'.
 // Requires NEON.
@@ -24601,11 +24601,11 @@ func Vst1LaneS16(a *int16, b arm.Int16x4, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneS32(a *int32, b arm.Int32x2, lane int)  {
+func St1LaneS32(a *int32, b arm.Int32x2, lane int)  {
 
 }
 
-// Vst1LaneS64: ARM NEON intrinsic 
+// St1LaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_s64'.
 // Requires NEON.
@@ -24613,11 +24613,11 @@ func Vst1LaneS32(a *int32, b arm.Int32x2, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneS64(a *int64, b arm.Int64x1, lane int)  {
+func St1LaneS64(a *int64, b arm.Int64x1, lane int)  {
 
 }
 
-// Vst1LaneU8: ARM NEON intrinsic 
+// St1LaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_u8'.
 // Requires NEON.
@@ -24625,11 +24625,11 @@ func Vst1LaneS64(a *int64, b arm.Int64x1, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneU8(a *uint8, b arm.Uint8x8, lane int)  {
+func St1LaneU8(a *uint8, b arm.Uint8x8, lane int)  {
 
 }
 
-// Vst1LaneU16: ARM NEON intrinsic 
+// St1LaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_u16'.
 // Requires NEON.
@@ -24637,11 +24637,11 @@ func Vst1LaneU8(a *uint8, b arm.Uint8x8, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneU16(a *uint16, b arm.Uint16x4, lane int)  {
+func St1LaneU16(a *uint16, b arm.Uint16x4, lane int)  {
 
 }
 
-// Vst1LaneU32: ARM NEON intrinsic 
+// St1LaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_u32'.
 // Requires NEON.
@@ -24649,11 +24649,11 @@ func Vst1LaneU16(a *uint16, b arm.Uint16x4, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneU32(a *uint32, b arm.Uint32x2, lane int)  {
+func St1LaneU32(a *uint32, b arm.Uint32x2, lane int)  {
 
 }
 
-// Vst1LaneU64: ARM NEON intrinsic 
+// St1LaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1_lane_u64'.
 // Requires NEON.
@@ -24661,11 +24661,11 @@ func Vst1LaneU32(a *uint32, b arm.Uint32x2, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1LaneU64(a *uint64, b arm.Uint64x1, lane int)  {
+func St1LaneU64(a *uint64, b arm.Uint64x1, lane int)  {
 
 }
 
-// Vst1qLaneF32: ARM NEON intrinsic 
+// St1qLaneF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_f32'.
 // Requires NEON.
@@ -24673,11 +24673,11 @@ func Vst1LaneU64(a *uint64, b arm.Uint64x1, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneF32(a *float32, b arm.Float32x4, lane int)  {
+func St1qLaneF32(a *float32, b arm.Float32x4, lane int)  {
 
 }
 
-// Vst1qLaneF64: ARM NEON intrinsic 
+// St1qLaneF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_f64'.
 // Requires NEON.
@@ -24685,11 +24685,11 @@ func Vst1qLaneF32(a *float32, b arm.Float32x4, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneF64(a *float64, b arm.Float64x2, lane int)  {
+func St1qLaneF64(a *float64, b arm.Float64x2, lane int)  {
 
 }
 
-// Vst1qLaneP8: ARM NEON intrinsic 
+// St1qLaneP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_p8'.
 // Requires NEON.
@@ -24697,11 +24697,11 @@ func Vst1qLaneF64(a *float64, b arm.Float64x2, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneP8(a *arm.Poly8, b arm.Poly8x16, lane int)  {
+func St1qLaneP8(a *arm.Poly8, b arm.Poly8x16, lane int)  {
 
 }
 
-// Vst1qLaneP16: ARM NEON intrinsic 
+// St1qLaneP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_p16'.
 // Requires NEON.
@@ -24709,11 +24709,11 @@ func Vst1qLaneP8(a *arm.Poly8, b arm.Poly8x16, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneP16(a *arm.Poly16, b arm.Poly16x8, lane int)  {
+func St1qLaneP16(a *arm.Poly16, b arm.Poly16x8, lane int)  {
 
 }
 
-// Vst1qLaneS8: ARM NEON intrinsic 
+// St1qLaneS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_s8'.
 // Requires NEON.
@@ -24721,11 +24721,11 @@ func Vst1qLaneP16(a *arm.Poly16, b arm.Poly16x8, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneS8(a *int8, b arm.Int8x16, lane int)  {
+func St1qLaneS8(a *int8, b arm.Int8x16, lane int)  {
 
 }
 
-// Vst1qLaneS16: ARM NEON intrinsic 
+// St1qLaneS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_s16'.
 // Requires NEON.
@@ -24733,11 +24733,11 @@ func Vst1qLaneS8(a *int8, b arm.Int8x16, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneS16(a *int16, b arm.Int16x8, lane int)  {
+func St1qLaneS16(a *int16, b arm.Int16x8, lane int)  {
 
 }
 
-// Vst1qLaneS32: ARM NEON intrinsic 
+// St1qLaneS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_s32'.
 // Requires NEON.
@@ -24745,11 +24745,11 @@ func Vst1qLaneS16(a *int16, b arm.Int16x8, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneS32(a *int32, b arm.Int32x4, lane int)  {
+func St1qLaneS32(a *int32, b arm.Int32x4, lane int)  {
 
 }
 
-// Vst1qLaneS64: ARM NEON intrinsic 
+// St1qLaneS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_s64'.
 // Requires NEON.
@@ -24757,11 +24757,11 @@ func Vst1qLaneS32(a *int32, b arm.Int32x4, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneS64(a *int64, b arm.Int64x2, lane int)  {
+func St1qLaneS64(a *int64, b arm.Int64x2, lane int)  {
 
 }
 
-// Vst1qLaneU8: ARM NEON intrinsic 
+// St1qLaneU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_u8'.
 // Requires NEON.
@@ -24769,11 +24769,11 @@ func Vst1qLaneS64(a *int64, b arm.Int64x2, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneU8(a *uint8, b arm.Uint8x16, lane int)  {
+func St1qLaneU8(a *uint8, b arm.Uint8x16, lane int)  {
 
 }
 
-// Vst1qLaneU16: ARM NEON intrinsic 
+// St1qLaneU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_u16'.
 // Requires NEON.
@@ -24781,11 +24781,11 @@ func Vst1qLaneU8(a *uint8, b arm.Uint8x16, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneU16(a *uint16, b arm.Uint16x8, lane int)  {
+func St1qLaneU16(a *uint16, b arm.Uint16x8, lane int)  {
 
 }
 
-// Vst1qLaneU32: ARM NEON intrinsic 
+// St1qLaneU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_u32'.
 // Requires NEON.
@@ -24793,11 +24793,11 @@ func Vst1qLaneU16(a *uint16, b arm.Uint16x8, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneU32(a *uint32, b arm.Uint32x4, lane int)  {
+func St1qLaneU32(a *uint32, b arm.Uint32x4, lane int)  {
 
 }
 
-// Vst1qLaneU64: ARM NEON intrinsic 
+// St1qLaneU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst1q_lane_u64'.
 // Requires NEON.
@@ -24805,2470 +24805,2470 @@ func Vst1qLaneU32(a *uint32, b arm.Uint32x4, lane int)  {
 // FIXME: Will likely need to be reworked (has pointer parameter).
 //
 // FIXME: Requires compiler support (has immediate)
-func Vst1qLaneU64(a *uint64, b arm.Uint64x2, lane int)  {
+func St1qLaneU64(a *uint64, b arm.Uint64x2, lane int)  {
 
 }
 
-// Vst2S64: ARM NEON intrinsic 
+// St2S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2S64(a *int64, val [2]arm.Int64x1)  {
+func St2S64(a *int64, val [2]arm.Int64x1)  {
 
 }
 
-// Vst2U64: ARM NEON intrinsic 
+// St2U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2U64(a *uint64, val [2]arm.Uint64x1)  {
+func St2U64(a *uint64, val [2]arm.Uint64x1)  {
 
 }
 
-// Vst2F64: ARM NEON intrinsic 
+// St2F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2F64(a *float64, val [2]arm.Float64x1)  {
+func St2F64(a *float64, val [2]arm.Float64x1)  {
 
 }
 
-// Vst2S8: ARM NEON intrinsic 
+// St2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2S8(a *int8, val [2]arm.Int8x8)  {
+func St2S8(a *int8, val [2]arm.Int8x8)  {
 
 }
 
-// Vst2P8: ARM NEON intrinsic 
+// St2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2P8(a *arm.Poly8, val [2]arm.Poly8x8)  {
+func St2P8(a *arm.Poly8, val [2]arm.Poly8x8)  {
 
 }
 
-// Vst2S16: ARM NEON intrinsic 
+// St2S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2S16(a *int16, val [2]arm.Int16x4)  {
+func St2S16(a *int16, val [2]arm.Int16x4)  {
 
 }
 
-// Vst2P16: ARM NEON intrinsic 
+// St2P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2P16(a *arm.Poly16, val [2]arm.Poly16x4)  {
+func St2P16(a *arm.Poly16, val [2]arm.Poly16x4)  {
 
 }
 
-// Vst2S32: ARM NEON intrinsic 
+// St2S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2S32(a *int32, val [2]arm.Int32x2)  {
+func St2S32(a *int32, val [2]arm.Int32x2)  {
 
 }
 
-// Vst2U8: ARM NEON intrinsic 
+// St2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2U8(a *uint8, val [2]arm.Uint8x8)  {
+func St2U8(a *uint8, val [2]arm.Uint8x8)  {
 
 }
 
-// Vst2U16: ARM NEON intrinsic 
+// St2U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2U16(a *uint16, val [2]arm.Uint16x4)  {
+func St2U16(a *uint16, val [2]arm.Uint16x4)  {
 
 }
 
-// Vst2U32: ARM NEON intrinsic 
+// St2U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2U32(a *uint32, val [2]arm.Uint32x2)  {
+func St2U32(a *uint32, val [2]arm.Uint32x2)  {
 
 }
 
-// Vst2F32: ARM NEON intrinsic 
+// St2F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2F32(a *float32, val [2]arm.Float32x2)  {
+func St2F32(a *float32, val [2]arm.Float32x2)  {
 
 }
 
-// Vst2qS8: ARM NEON intrinsic 
+// St2qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qS8(a *int8, val [2]arm.Int8x16)  {
+func St2qS8(a *int8, val [2]arm.Int8x16)  {
 
 }
 
-// Vst2qP8: ARM NEON intrinsic 
+// St2qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qP8(a *arm.Poly8, val [2]arm.Poly8x16)  {
+func St2qP8(a *arm.Poly8, val [2]arm.Poly8x16)  {
 
 }
 
-// Vst2qS16: ARM NEON intrinsic 
+// St2qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qS16(a *int16, val [2]arm.Int16x8)  {
+func St2qS16(a *int16, val [2]arm.Int16x8)  {
 
 }
 
-// Vst2qP16: ARM NEON intrinsic 
+// St2qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qP16(a *arm.Poly16, val [2]arm.Poly16x8)  {
+func St2qP16(a *arm.Poly16, val [2]arm.Poly16x8)  {
 
 }
 
-// Vst2qS32: ARM NEON intrinsic 
+// St2qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qS32(a *int32, val [2]arm.Int32x4)  {
+func St2qS32(a *int32, val [2]arm.Int32x4)  {
 
 }
 
-// Vst2qS64: ARM NEON intrinsic 
+// St2qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qS64(a *int64, val [2]arm.Int64x2)  {
+func St2qS64(a *int64, val [2]arm.Int64x2)  {
 
 }
 
-// Vst2qU8: ARM NEON intrinsic 
+// St2qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qU8(a *uint8, val [2]arm.Uint8x16)  {
+func St2qU8(a *uint8, val [2]arm.Uint8x16)  {
 
 }
 
-// Vst2qU16: ARM NEON intrinsic 
+// St2qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qU16(a *uint16, val [2]arm.Uint16x8)  {
+func St2qU16(a *uint16, val [2]arm.Uint16x8)  {
 
 }
 
-// Vst2qU32: ARM NEON intrinsic 
+// St2qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qU32(a *uint32, val [2]arm.Uint32x4)  {
+func St2qU32(a *uint32, val [2]arm.Uint32x4)  {
 
 }
 
-// Vst2qU64: ARM NEON intrinsic 
+// St2qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qU64(a *uint64, val [2]arm.Uint64x2)  {
+func St2qU64(a *uint64, val [2]arm.Uint64x2)  {
 
 }
 
-// Vst2qF32: ARM NEON intrinsic 
+// St2qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qF32(a *float32, val [2]arm.Float32x4)  {
+func St2qF32(a *float32, val [2]arm.Float32x4)  {
 
 }
 
-// Vst2qF64: ARM NEON intrinsic 
+// St2qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst2q_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst2qF64(a *float64, val [2]arm.Float64x2)  {
+func St2qF64(a *float64, val [2]arm.Float64x2)  {
 
 }
 
-// Vst3S64: ARM NEON intrinsic 
+// St3S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3S64(a *int64, val [3]arm.Int64x1)  {
+func St3S64(a *int64, val [3]arm.Int64x1)  {
 
 }
 
-// Vst3U64: ARM NEON intrinsic 
+// St3U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3U64(a *uint64, val [3]arm.Uint64x1)  {
+func St3U64(a *uint64, val [3]arm.Uint64x1)  {
 
 }
 
-// Vst3F64: ARM NEON intrinsic 
+// St3F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3F64(a *float64, val [3]arm.Float64x1)  {
+func St3F64(a *float64, val [3]arm.Float64x1)  {
 
 }
 
-// Vst3S8: ARM NEON intrinsic 
+// St3S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3S8(a *int8, val [3]arm.Int8x8)  {
+func St3S8(a *int8, val [3]arm.Int8x8)  {
 
 }
 
-// Vst3P8: ARM NEON intrinsic 
+// St3P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3P8(a *arm.Poly8, val [3]arm.Poly8x8)  {
+func St3P8(a *arm.Poly8, val [3]arm.Poly8x8)  {
 
 }
 
-// Vst3S16: ARM NEON intrinsic 
+// St3S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3S16(a *int16, val [3]arm.Int16x4)  {
+func St3S16(a *int16, val [3]arm.Int16x4)  {
 
 }
 
-// Vst3P16: ARM NEON intrinsic 
+// St3P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3P16(a *arm.Poly16, val [3]arm.Poly16x4)  {
+func St3P16(a *arm.Poly16, val [3]arm.Poly16x4)  {
 
 }
 
-// Vst3S32: ARM NEON intrinsic 
+// St3S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3S32(a *int32, val [3]arm.Int32x2)  {
+func St3S32(a *int32, val [3]arm.Int32x2)  {
 
 }
 
-// Vst3U8: ARM NEON intrinsic 
+// St3U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3U8(a *uint8, val [3]arm.Uint8x8)  {
+func St3U8(a *uint8, val [3]arm.Uint8x8)  {
 
 }
 
-// Vst3U16: ARM NEON intrinsic 
+// St3U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3U16(a *uint16, val [3]arm.Uint16x4)  {
+func St3U16(a *uint16, val [3]arm.Uint16x4)  {
 
 }
 
-// Vst3U32: ARM NEON intrinsic 
+// St3U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3U32(a *uint32, val [3]arm.Uint32x2)  {
+func St3U32(a *uint32, val [3]arm.Uint32x2)  {
 
 }
 
-// Vst3F32: ARM NEON intrinsic 
+// St3F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3F32(a *float32, val [3]arm.Float32x2)  {
+func St3F32(a *float32, val [3]arm.Float32x2)  {
 
 }
 
-// Vst3qS8: ARM NEON intrinsic 
+// St3qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qS8(a *int8, val [3]arm.Int8x16)  {
+func St3qS8(a *int8, val [3]arm.Int8x16)  {
 
 }
 
-// Vst3qP8: ARM NEON intrinsic 
+// St3qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qP8(a *arm.Poly8, val [3]arm.Poly8x16)  {
+func St3qP8(a *arm.Poly8, val [3]arm.Poly8x16)  {
 
 }
 
-// Vst3qS16: ARM NEON intrinsic 
+// St3qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qS16(a *int16, val [3]arm.Int16x8)  {
+func St3qS16(a *int16, val [3]arm.Int16x8)  {
 
 }
 
-// Vst3qP16: ARM NEON intrinsic 
+// St3qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qP16(a *arm.Poly16, val [3]arm.Poly16x8)  {
+func St3qP16(a *arm.Poly16, val [3]arm.Poly16x8)  {
 
 }
 
-// Vst3qS32: ARM NEON intrinsic 
+// St3qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qS32(a *int32, val [3]arm.Int32x4)  {
+func St3qS32(a *int32, val [3]arm.Int32x4)  {
 
 }
 
-// Vst3qS64: ARM NEON intrinsic 
+// St3qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qS64(a *int64, val [3]arm.Int64x2)  {
+func St3qS64(a *int64, val [3]arm.Int64x2)  {
 
 }
 
-// Vst3qU8: ARM NEON intrinsic 
+// St3qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qU8(a *uint8, val [3]arm.Uint8x16)  {
+func St3qU8(a *uint8, val [3]arm.Uint8x16)  {
 
 }
 
-// Vst3qU16: ARM NEON intrinsic 
+// St3qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qU16(a *uint16, val [3]arm.Uint16x8)  {
+func St3qU16(a *uint16, val [3]arm.Uint16x8)  {
 
 }
 
-// Vst3qU32: ARM NEON intrinsic 
+// St3qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qU32(a *uint32, val [3]arm.Uint32x4)  {
+func St3qU32(a *uint32, val [3]arm.Uint32x4)  {
 
 }
 
-// Vst3qU64: ARM NEON intrinsic 
+// St3qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qU64(a *uint64, val [3]arm.Uint64x2)  {
+func St3qU64(a *uint64, val [3]arm.Uint64x2)  {
 
 }
 
-// Vst3qF32: ARM NEON intrinsic 
+// St3qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qF32(a *float32, val [3]arm.Float32x4)  {
+func St3qF32(a *float32, val [3]arm.Float32x4)  {
 
 }
 
-// Vst3qF64: ARM NEON intrinsic 
+// St3qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst3q_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst3qF64(a *float64, val [3]arm.Float64x2)  {
+func St3qF64(a *float64, val [3]arm.Float64x2)  {
 
 }
 
-// Vst4S64: ARM NEON intrinsic 
+// St4S64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4S64(a *int64, val [4]arm.Int64x1)  {
+func St4S64(a *int64, val [4]arm.Int64x1)  {
 
 }
 
-// Vst4U64: ARM NEON intrinsic 
+// St4U64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4U64(a *uint64, val [4]arm.Uint64x1)  {
+func St4U64(a *uint64, val [4]arm.Uint64x1)  {
 
 }
 
-// Vst4F64: ARM NEON intrinsic 
+// St4F64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4F64(a *float64, val [4]arm.Float64x1)  {
+func St4F64(a *float64, val [4]arm.Float64x1)  {
 
 }
 
-// Vst4S8: ARM NEON intrinsic 
+// St4S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4S8(a *int8, val [4]arm.Int8x8)  {
+func St4S8(a *int8, val [4]arm.Int8x8)  {
 
 }
 
-// Vst4P8: ARM NEON intrinsic 
+// St4P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4P8(a *arm.Poly8, val [4]arm.Poly8x8)  {
+func St4P8(a *arm.Poly8, val [4]arm.Poly8x8)  {
 
 }
 
-// Vst4S16: ARM NEON intrinsic 
+// St4S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4S16(a *int16, val [4]arm.Int16x4)  {
+func St4S16(a *int16, val [4]arm.Int16x4)  {
 
 }
 
-// Vst4P16: ARM NEON intrinsic 
+// St4P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4P16(a *arm.Poly16, val [4]arm.Poly16x4)  {
+func St4P16(a *arm.Poly16, val [4]arm.Poly16x4)  {
 
 }
 
-// Vst4S32: ARM NEON intrinsic 
+// St4S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4S32(a *int32, val [4]arm.Int32x2)  {
+func St4S32(a *int32, val [4]arm.Int32x2)  {
 
 }
 
-// Vst4U8: ARM NEON intrinsic 
+// St4U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4U8(a *uint8, val [4]arm.Uint8x8)  {
+func St4U8(a *uint8, val [4]arm.Uint8x8)  {
 
 }
 
-// Vst4U16: ARM NEON intrinsic 
+// St4U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4U16(a *uint16, val [4]arm.Uint16x4)  {
+func St4U16(a *uint16, val [4]arm.Uint16x4)  {
 
 }
 
-// Vst4U32: ARM NEON intrinsic 
+// St4U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4U32(a *uint32, val [4]arm.Uint32x2)  {
+func St4U32(a *uint32, val [4]arm.Uint32x2)  {
 
 }
 
-// Vst4F32: ARM NEON intrinsic 
+// St4F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4F32(a *float32, val [4]arm.Float32x2)  {
+func St4F32(a *float32, val [4]arm.Float32x2)  {
 
 }
 
-// Vst4qS8: ARM NEON intrinsic 
+// St4qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_s8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qS8(a *int8, val [4]arm.Int8x16)  {
+func St4qS8(a *int8, val [4]arm.Int8x16)  {
 
 }
 
-// Vst4qP8: ARM NEON intrinsic 
+// St4qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_p8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qP8(a *arm.Poly8, val [4]arm.Poly8x16)  {
+func St4qP8(a *arm.Poly8, val [4]arm.Poly8x16)  {
 
 }
 
-// Vst4qS16: ARM NEON intrinsic 
+// St4qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_s16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qS16(a *int16, val [4]arm.Int16x8)  {
+func St4qS16(a *int16, val [4]arm.Int16x8)  {
 
 }
 
-// Vst4qP16: ARM NEON intrinsic 
+// St4qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_p16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qP16(a *arm.Poly16, val [4]arm.Poly16x8)  {
+func St4qP16(a *arm.Poly16, val [4]arm.Poly16x8)  {
 
 }
 
-// Vst4qS32: ARM NEON intrinsic 
+// St4qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_s32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qS32(a *int32, val [4]arm.Int32x4)  {
+func St4qS32(a *int32, val [4]arm.Int32x4)  {
 
 }
 
-// Vst4qS64: ARM NEON intrinsic 
+// St4qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_s64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qS64(a *int64, val [4]arm.Int64x2)  {
+func St4qS64(a *int64, val [4]arm.Int64x2)  {
 
 }
 
-// Vst4qU8: ARM NEON intrinsic 
+// St4qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_u8'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qU8(a *uint8, val [4]arm.Uint8x16)  {
+func St4qU8(a *uint8, val [4]arm.Uint8x16)  {
 
 }
 
-// Vst4qU16: ARM NEON intrinsic 
+// St4qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_u16'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qU16(a *uint16, val [4]arm.Uint16x8)  {
+func St4qU16(a *uint16, val [4]arm.Uint16x8)  {
 
 }
 
-// Vst4qU32: ARM NEON intrinsic 
+// St4qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_u32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qU32(a *uint32, val [4]arm.Uint32x4)  {
+func St4qU32(a *uint32, val [4]arm.Uint32x4)  {
 
 }
 
-// Vst4qU64: ARM NEON intrinsic 
+// St4qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_u64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qU64(a *uint64, val [4]arm.Uint64x2)  {
+func St4qU64(a *uint64, val [4]arm.Uint64x2)  {
 
 }
 
-// Vst4qF32: ARM NEON intrinsic 
+// St4qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_f32'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qF32(a *float32, val [4]arm.Float32x4)  {
+func St4qF32(a *float32, val [4]arm.Float32x4)  {
 
 }
 
-// Vst4qF64: ARM NEON intrinsic 
+// St4qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vst4q_f64'.
 // Requires NEON.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Vst4qF64(a *float64, val [4]arm.Float64x2)  {
+func St4qF64(a *float64, val [4]arm.Float64x2)  {
 
 }
 
-// VsubdS64: ARM NEON intrinsic 
+// SubdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubd_s64'.
 // Requires NEON.
-func VsubdS64(a int64, b int64) int64 {
+func SubdS64(a int64, b int64) int64 {
 	return 0
 }
 
-// VsubdU64: ARM NEON intrinsic 
+// SubdU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vsubd_u64'.
 // Requires NEON.
-func VsubdU64(a uint64, b uint64) uint64 {
+func SubdU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// Vtbx1S8: ARM NEON intrinsic 
+// Tbx1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx1_s8'.
 // Requires NEON.
-func Vtbx1S8(r arm.Int8x8, tab arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbx1S8(r arm.Int8x8, tab arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbx1U8: ARM NEON intrinsic 
+// Tbx1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx1_u8'.
 // Requires NEON.
-func Vtbx1U8(r arm.Uint8x8, tab arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbx1U8(r arm.Uint8x8, tab arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbx1P8: ARM NEON intrinsic 
+// Tbx1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx1_p8'.
 // Requires NEON.
-func Vtbx1P8(r arm.Poly8x8, tab arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbx1P8(r arm.Poly8x8, tab arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtbx3S8: ARM NEON intrinsic 
+// Tbx3S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx3_s8'.
 // Requires NEON.
-func Vtbx3S8(r arm.Int8x8, tab [3]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
+func Tbx3S8(r arm.Int8x8, tab [3]arm.Int8x8, idx arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtbx3U8: ARM NEON intrinsic 
+// Tbx3U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx3_u8'.
 // Requires NEON.
-func Vtbx3U8(r arm.Uint8x8, tab [3]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
+func Tbx3U8(r arm.Uint8x8, tab [3]arm.Uint8x8, idx arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtbx3P8: ARM NEON intrinsic 
+// Tbx3P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtbx3_p8'.
 // Requires NEON.
-func Vtbx3P8(r arm.Poly8x8, tab [3]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
+func Tbx3P8(r arm.Poly8x8, tab [3]arm.Poly8x8, idx arm.Uint8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtrn1F32: ARM NEON intrinsic 
+// Trn1F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_f32'.
 // Requires NEON.
-func Vtrn1F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func Trn1F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vtrn1P8: ARM NEON intrinsic 
+// Trn1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_p8'.
 // Requires NEON.
-func Vtrn1P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
+func Trn1P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtrn1P16: ARM NEON intrinsic 
+// Trn1P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_p16'.
 // Requires NEON.
-func Vtrn1P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
+func Trn1P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vtrn1S8: ARM NEON intrinsic 
+// Trn1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_s8'.
 // Requires NEON.
-func Vtrn1S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func Trn1S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtrn1S16: ARM NEON intrinsic 
+// Trn1S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_s16'.
 // Requires NEON.
-func Vtrn1S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func Trn1S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vtrn1S32: ARM NEON intrinsic 
+// Trn1S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_s32'.
 // Requires NEON.
-func Vtrn1S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func Trn1S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vtrn1U8: ARM NEON intrinsic 
+// Trn1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_u8'.
 // Requires NEON.
-func Vtrn1U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func Trn1U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtrn1U16: ARM NEON intrinsic 
+// Trn1U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_u16'.
 // Requires NEON.
-func Vtrn1U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func Trn1U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vtrn1U32: ARM NEON intrinsic 
+// Trn1U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1_u32'.
 // Requires NEON.
-func Vtrn1U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func Trn1U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vtrn1qF32: ARM NEON intrinsic 
+// Trn1qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_f32'.
 // Requires NEON.
-func Vtrn1qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func Trn1qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vtrn1qF64: ARM NEON intrinsic 
+// Trn1qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_f64'.
 // Requires NEON.
-func Vtrn1qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func Trn1qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vtrn1qP8: ARM NEON intrinsic 
+// Trn1qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_p8'.
 // Requires NEON.
-func Vtrn1qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
+func Trn1qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vtrn1qP16: ARM NEON intrinsic 
+// Trn1qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_p16'.
 // Requires NEON.
-func Vtrn1qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
+func Trn1qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vtrn1qS8: ARM NEON intrinsic 
+// Trn1qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_s8'.
 // Requires NEON.
-func Vtrn1qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func Trn1qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vtrn1qS16: ARM NEON intrinsic 
+// Trn1qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_s16'.
 // Requires NEON.
-func Vtrn1qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func Trn1qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vtrn1qS32: ARM NEON intrinsic 
+// Trn1qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_s32'.
 // Requires NEON.
-func Vtrn1qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func Trn1qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vtrn1qS64: ARM NEON intrinsic 
+// Trn1qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_s64'.
 // Requires NEON.
-func Vtrn1qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func Trn1qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vtrn1qU8: ARM NEON intrinsic 
+// Trn1qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_u8'.
 // Requires NEON.
-func Vtrn1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func Trn1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vtrn1qU16: ARM NEON intrinsic 
+// Trn1qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_u16'.
 // Requires NEON.
-func Vtrn1qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func Trn1qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vtrn1qU32: ARM NEON intrinsic 
+// Trn1qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_u32'.
 // Requires NEON.
-func Vtrn1qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func Trn1qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vtrn1qU64: ARM NEON intrinsic 
+// Trn1qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn1q_u64'.
 // Requires NEON.
-func Vtrn1qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func Trn1qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// Vtrn2F32: ARM NEON intrinsic 
+// Trn2F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_f32'.
 // Requires NEON.
-func Vtrn2F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func Trn2F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vtrn2P8: ARM NEON intrinsic 
+// Trn2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_p8'.
 // Requires NEON.
-func Vtrn2P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
+func Trn2P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vtrn2P16: ARM NEON intrinsic 
+// Trn2P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_p16'.
 // Requires NEON.
-func Vtrn2P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
+func Trn2P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vtrn2S8: ARM NEON intrinsic 
+// Trn2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_s8'.
 // Requires NEON.
-func Vtrn2S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func Trn2S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vtrn2S16: ARM NEON intrinsic 
+// Trn2S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_s16'.
 // Requires NEON.
-func Vtrn2S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func Trn2S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vtrn2S32: ARM NEON intrinsic 
+// Trn2S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_s32'.
 // Requires NEON.
-func Vtrn2S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func Trn2S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vtrn2U8: ARM NEON intrinsic 
+// Trn2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_u8'.
 // Requires NEON.
-func Vtrn2U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func Trn2U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vtrn2U16: ARM NEON intrinsic 
+// Trn2U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_u16'.
 // Requires NEON.
-func Vtrn2U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func Trn2U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vtrn2U32: ARM NEON intrinsic 
+// Trn2U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2_u32'.
 // Requires NEON.
-func Vtrn2U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func Trn2U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vtrn2qF32: ARM NEON intrinsic 
+// Trn2qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_f32'.
 // Requires NEON.
-func Vtrn2qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func Trn2qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vtrn2qF64: ARM NEON intrinsic 
+// Trn2qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_f64'.
 // Requires NEON.
-func Vtrn2qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func Trn2qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vtrn2qP8: ARM NEON intrinsic 
+// Trn2qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_p8'.
 // Requires NEON.
-func Vtrn2qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
+func Trn2qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vtrn2qP16: ARM NEON intrinsic 
+// Trn2qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_p16'.
 // Requires NEON.
-func Vtrn2qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
+func Trn2qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vtrn2qS8: ARM NEON intrinsic 
+// Trn2qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_s8'.
 // Requires NEON.
-func Vtrn2qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func Trn2qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vtrn2qS16: ARM NEON intrinsic 
+// Trn2qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_s16'.
 // Requires NEON.
-func Vtrn2qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func Trn2qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vtrn2qS32: ARM NEON intrinsic 
+// Trn2qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_s32'.
 // Requires NEON.
-func Vtrn2qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func Trn2qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vtrn2qS64: ARM NEON intrinsic 
+// Trn2qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_s64'.
 // Requires NEON.
-func Vtrn2qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func Trn2qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vtrn2qU8: ARM NEON intrinsic 
+// Trn2qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_u8'.
 // Requires NEON.
-func Vtrn2qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func Trn2qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vtrn2qU16: ARM NEON intrinsic 
+// Trn2qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_u16'.
 // Requires NEON.
-func Vtrn2qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func Trn2qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vtrn2qU32: ARM NEON intrinsic 
+// Trn2qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_u32'.
 // Requires NEON.
-func Vtrn2qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func Trn2qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vtrn2qU64: ARM NEON intrinsic 
+// Trn2qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn2q_u64'.
 // Requires NEON.
-func Vtrn2qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func Trn2qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VtrnF32: ARM NEON intrinsic 
+// TrnF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_f32'.
 // Requires NEON.
-func VtrnF32(a arm.Float32x2, b arm.Float32x2) (dst [2]arm.Float32x2) {
+func TrnF32(a arm.Float32x2, b arm.Float32x2) (dst [2]arm.Float32x2) {
 	return [2]arm.Float32x2{}
 }
 
-// VtrnP8: ARM NEON intrinsic 
+// TrnP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_p8'.
 // Requires NEON.
-func VtrnP8(a arm.Poly8x8, b arm.Poly8x8) (dst [2]arm.Poly8x8) {
+func TrnP8(a arm.Poly8x8, b arm.Poly8x8) (dst [2]arm.Poly8x8) {
 	return [2]arm.Poly8x8{}
 }
 
-// VtrnP16: ARM NEON intrinsic 
+// TrnP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_p16'.
 // Requires NEON.
-func VtrnP16(a arm.Poly16x4, b arm.Poly16x4) (dst [2]arm.Poly16x4) {
+func TrnP16(a arm.Poly16x4, b arm.Poly16x4) (dst [2]arm.Poly16x4) {
 	return [2]arm.Poly16x4{}
 }
 
-// VtrnS8: ARM NEON intrinsic 
+// TrnS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_s8'.
 // Requires NEON.
-func VtrnS8(a arm.Int8x8, b arm.Int8x8) (dst [2]arm.Int8x8) {
+func TrnS8(a arm.Int8x8, b arm.Int8x8) (dst [2]arm.Int8x8) {
 	return [2]arm.Int8x8{}
 }
 
-// VtrnS16: ARM NEON intrinsic 
+// TrnS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_s16'.
 // Requires NEON.
-func VtrnS16(a arm.Int16x4, b arm.Int16x4) (dst [2]arm.Int16x4) {
+func TrnS16(a arm.Int16x4, b arm.Int16x4) (dst [2]arm.Int16x4) {
 	return [2]arm.Int16x4{}
 }
 
-// VtrnS32: ARM NEON intrinsic 
+// TrnS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_s32'.
 // Requires NEON.
-func VtrnS32(a arm.Int32x2, b arm.Int32x2) (dst [2]arm.Int32x2) {
+func TrnS32(a arm.Int32x2, b arm.Int32x2) (dst [2]arm.Int32x2) {
 	return [2]arm.Int32x2{}
 }
 
-// VtrnU8: ARM NEON intrinsic 
+// TrnU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_u8'.
 // Requires NEON.
-func VtrnU8(a arm.Uint8x8, b arm.Uint8x8) (dst [2]arm.Uint8x8) {
+func TrnU8(a arm.Uint8x8, b arm.Uint8x8) (dst [2]arm.Uint8x8) {
 	return [2]arm.Uint8x8{}
 }
 
-// VtrnU16: ARM NEON intrinsic 
+// TrnU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_u16'.
 // Requires NEON.
-func VtrnU16(a arm.Uint16x4, b arm.Uint16x4) (dst [2]arm.Uint16x4) {
+func TrnU16(a arm.Uint16x4, b arm.Uint16x4) (dst [2]arm.Uint16x4) {
 	return [2]arm.Uint16x4{}
 }
 
-// VtrnU32: ARM NEON intrinsic 
+// TrnU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrn_u32'.
 // Requires NEON.
-func VtrnU32(a arm.Uint32x2, b arm.Uint32x2) (dst [2]arm.Uint32x2) {
+func TrnU32(a arm.Uint32x2, b arm.Uint32x2) (dst [2]arm.Uint32x2) {
 	return [2]arm.Uint32x2{}
 }
 
-// VtrnqF32: ARM NEON intrinsic 
+// TrnqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_f32'.
 // Requires NEON.
-func VtrnqF32(a arm.Float32x4, b arm.Float32x4) (dst [2]arm.Float32x4) {
+func TrnqF32(a arm.Float32x4, b arm.Float32x4) (dst [2]arm.Float32x4) {
 	return [2]arm.Float32x4{}
 }
 
-// VtrnqP8: ARM NEON intrinsic 
+// TrnqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_p8'.
 // Requires NEON.
-func VtrnqP8(a arm.Poly8x16, b arm.Poly8x16) (dst [2]arm.Poly8x16) {
+func TrnqP8(a arm.Poly8x16, b arm.Poly8x16) (dst [2]arm.Poly8x16) {
 	return [2]arm.Poly8x16{}
 }
 
-// VtrnqP16: ARM NEON intrinsic 
+// TrnqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_p16'.
 // Requires NEON.
-func VtrnqP16(a arm.Poly16x8, b arm.Poly16x8) (dst [2]arm.Poly16x8) {
+func TrnqP16(a arm.Poly16x8, b arm.Poly16x8) (dst [2]arm.Poly16x8) {
 	return [2]arm.Poly16x8{}
 }
 
-// VtrnqS8: ARM NEON intrinsic 
+// TrnqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_s8'.
 // Requires NEON.
-func VtrnqS8(a arm.Int8x16, b arm.Int8x16) (dst [2]arm.Int8x16) {
+func TrnqS8(a arm.Int8x16, b arm.Int8x16) (dst [2]arm.Int8x16) {
 	return [2]arm.Int8x16{}
 }
 
-// VtrnqS16: ARM NEON intrinsic 
+// TrnqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_s16'.
 // Requires NEON.
-func VtrnqS16(a arm.Int16x8, b arm.Int16x8) (dst [2]arm.Int16x8) {
+func TrnqS16(a arm.Int16x8, b arm.Int16x8) (dst [2]arm.Int16x8) {
 	return [2]arm.Int16x8{}
 }
 
-// VtrnqS32: ARM NEON intrinsic 
+// TrnqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_s32'.
 // Requires NEON.
-func VtrnqS32(a arm.Int32x4, b arm.Int32x4) (dst [2]arm.Int32x4) {
+func TrnqS32(a arm.Int32x4, b arm.Int32x4) (dst [2]arm.Int32x4) {
 	return [2]arm.Int32x4{}
 }
 
-// VtrnqU8: ARM NEON intrinsic 
+// TrnqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_u8'.
 // Requires NEON.
-func VtrnqU8(a arm.Uint8x16, b arm.Uint8x16) (dst [2]arm.Uint8x16) {
+func TrnqU8(a arm.Uint8x16, b arm.Uint8x16) (dst [2]arm.Uint8x16) {
 	return [2]arm.Uint8x16{}
 }
 
-// VtrnqU16: ARM NEON intrinsic 
+// TrnqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_u16'.
 // Requires NEON.
-func VtrnqU16(a arm.Uint16x8, b arm.Uint16x8) (dst [2]arm.Uint16x8) {
+func TrnqU16(a arm.Uint16x8, b arm.Uint16x8) (dst [2]arm.Uint16x8) {
 	return [2]arm.Uint16x8{}
 }
 
-// VtrnqU32: ARM NEON intrinsic 
+// TrnqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtrnq_u32'.
 // Requires NEON.
-func VtrnqU32(a arm.Uint32x4, b arm.Uint32x4) (dst [2]arm.Uint32x4) {
+func TrnqU32(a arm.Uint32x4, b arm.Uint32x4) (dst [2]arm.Uint32x4) {
 	return [2]arm.Uint32x4{}
 }
 
-// VtstS8: ARM NEON intrinsic 
+// TstS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_s8'.
 // Requires NEON.
-func VtstS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
+func TstS8(a arm.Int8x8, b arm.Int8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VtstS16: ARM NEON intrinsic 
+// TstS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_s16'.
 // Requires NEON.
-func VtstS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
+func TstS16(a arm.Int16x4, b arm.Int16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VtstS32: ARM NEON intrinsic 
+// TstS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_s32'.
 // Requires NEON.
-func VtstS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
+func TstS32(a arm.Int32x2, b arm.Int32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VtstS64: ARM NEON intrinsic 
+// TstS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_s64'.
 // Requires NEON.
-func VtstS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
+func TstS64(a arm.Int64x1, b arm.Int64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VtstU8: ARM NEON intrinsic 
+// TstU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_u8'.
 // Requires NEON.
-func VtstU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func TstU8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// VtstU16: ARM NEON intrinsic 
+// TstU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_u16'.
 // Requires NEON.
-func VtstU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func TstU16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// VtstU32: ARM NEON intrinsic 
+// TstU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_u32'.
 // Requires NEON.
-func VtstU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func TstU32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// VtstU64: ARM NEON intrinsic 
+// TstU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtst_u64'.
 // Requires NEON.
-func VtstU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
+func TstU64(a arm.Uint64x1, b arm.Uint64x1) (dst arm.Uint64x1) {
 	return arm.Uint64x1{}
 }
 
-// VtstqS8: ARM NEON intrinsic 
+// TstqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_s8'.
 // Requires NEON.
-func VtstqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
+func TstqS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VtstqS16: ARM NEON intrinsic 
+// TstqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_s16'.
 // Requires NEON.
-func VtstqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
+func TstqS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VtstqS32: ARM NEON intrinsic 
+// TstqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_s32'.
 // Requires NEON.
-func VtstqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
+func TstqS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VtstqS64: ARM NEON intrinsic 
+// TstqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_s64'.
 // Requires NEON.
-func VtstqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
+func TstqS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VtstqU8: ARM NEON intrinsic 
+// TstqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_u8'.
 // Requires NEON.
-func VtstqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func TstqU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// VtstqU16: ARM NEON intrinsic 
+// TstqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_u16'.
 // Requires NEON.
-func VtstqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func TstqU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// VtstqU32: ARM NEON intrinsic 
+// TstqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_u32'.
 // Requires NEON.
-func VtstqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func TstqU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// VtstqU64: ARM NEON intrinsic 
+// TstqU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstq_u64'.
 // Requires NEON.
-func VtstqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func TstqU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VtstdS64: ARM NEON intrinsic 
+// TstdS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstd_s64'.
 // Requires NEON.
-func VtstdS64(a int64, b int64) uint64 {
+func TstdS64(a int64, b int64) uint64 {
 	return 0
 }
 
-// VtstdU64: ARM NEON intrinsic 
+// TstdU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vtstd_u64'.
 // Requires NEON.
-func VtstdU64(a uint64, b uint64) uint64 {
+func TstdU64(a uint64, b uint64) uint64 {
 	return 0
 }
 
-// VuqaddS8: ARM NEON intrinsic 
+// UqaddS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqadd_s8'.
 // Requires NEON.
-func VuqaddS8(a arm.Int8x8, b arm.Uint8x8) (dst arm.Int8x8) {
+func UqaddS8(a arm.Int8x8, b arm.Uint8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// VuqaddS16: ARM NEON intrinsic 
+// UqaddS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqadd_s16'.
 // Requires NEON.
-func VuqaddS16(a arm.Int16x4, b arm.Uint16x4) (dst arm.Int16x4) {
+func UqaddS16(a arm.Int16x4, b arm.Uint16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// VuqaddS32: ARM NEON intrinsic 
+// UqaddS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqadd_s32'.
 // Requires NEON.
-func VuqaddS32(a arm.Int32x2, b arm.Uint32x2) (dst arm.Int32x2) {
+func UqaddS32(a arm.Int32x2, b arm.Uint32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// VuqaddS64: ARM NEON intrinsic 
+// UqaddS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqadd_s64'.
 // Requires NEON.
-func VuqaddS64(a arm.Int64x1, b arm.Uint64x1) (dst arm.Int64x1) {
+func UqaddS64(a arm.Int64x1, b arm.Uint64x1) (dst arm.Int64x1) {
 	return arm.Int64x1{}
 }
 
-// VuqaddqS8: ARM NEON intrinsic 
+// UqaddqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqaddq_s8'.
 // Requires NEON.
-func VuqaddqS8(a arm.Int8x16, b arm.Uint8x16) (dst arm.Int8x16) {
+func UqaddqS8(a arm.Int8x16, b arm.Uint8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// VuqaddqS16: ARM NEON intrinsic 
+// UqaddqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqaddq_s16'.
 // Requires NEON.
-func VuqaddqS16(a arm.Int16x8, b arm.Uint16x8) (dst arm.Int16x8) {
+func UqaddqS16(a arm.Int16x8, b arm.Uint16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// VuqaddqS32: ARM NEON intrinsic 
+// UqaddqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqaddq_s32'.
 // Requires NEON.
-func VuqaddqS32(a arm.Int32x4, b arm.Uint32x4) (dst arm.Int32x4) {
+func UqaddqS32(a arm.Int32x4, b arm.Uint32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// VuqaddqS64: ARM NEON intrinsic 
+// UqaddqS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqaddq_s64'.
 // Requires NEON.
-func VuqaddqS64(a arm.Int64x2, b arm.Uint64x2) (dst arm.Int64x2) {
+func UqaddqS64(a arm.Int64x2, b arm.Uint64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// VuqaddbS8: ARM NEON intrinsic 
+// UqaddbS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqaddb_s8'.
 // Requires NEON.
-func VuqaddbS8(a int8, b uint8) int8 {
+func UqaddbS8(a int8, b uint8) int8 {
 	return 0
 }
 
-// VuqaddhS16: ARM NEON intrinsic 
+// UqaddhS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqaddh_s16'.
 // Requires NEON.
-func VuqaddhS16(a int16, b uint16) int16 {
+func UqaddhS16(a int16, b uint16) int16 {
 	return 0
 }
 
-// VuqaddsS32: ARM NEON intrinsic 
+// UqaddsS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqadds_s32'.
 // Requires NEON.
-func VuqaddsS32(a int32, b uint32) int32 {
+func UqaddsS32(a int32, b uint32) int32 {
 	return 0
 }
 
-// VuqadddS64: ARM NEON intrinsic 
+// UqadddS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuqaddd_s64'.
 // Requires NEON.
-func VuqadddS64(a int64, b uint64) int64 {
+func UqadddS64(a int64, b uint64) int64 {
 	return 0
 }
 
-// Vuzp1F32: ARM NEON intrinsic 
+// Uzp1F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_f32'.
 // Requires NEON.
-func Vuzp1F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func Uzp1F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vuzp1P8: ARM NEON intrinsic 
+// Uzp1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_p8'.
 // Requires NEON.
-func Vuzp1P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
+func Uzp1P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vuzp1P16: ARM NEON intrinsic 
+// Uzp1P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_p16'.
 // Requires NEON.
-func Vuzp1P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
+func Uzp1P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vuzp1S8: ARM NEON intrinsic 
+// Uzp1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_s8'.
 // Requires NEON.
-func Vuzp1S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func Uzp1S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vuzp1S16: ARM NEON intrinsic 
+// Uzp1S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_s16'.
 // Requires NEON.
-func Vuzp1S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func Uzp1S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vuzp1S32: ARM NEON intrinsic 
+// Uzp1S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_s32'.
 // Requires NEON.
-func Vuzp1S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func Uzp1S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vuzp1U8: ARM NEON intrinsic 
+// Uzp1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_u8'.
 // Requires NEON.
-func Vuzp1U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func Uzp1U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vuzp1U16: ARM NEON intrinsic 
+// Uzp1U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_u16'.
 // Requires NEON.
-func Vuzp1U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func Uzp1U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vuzp1U32: ARM NEON intrinsic 
+// Uzp1U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1_u32'.
 // Requires NEON.
-func Vuzp1U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func Uzp1U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vuzp1qF32: ARM NEON intrinsic 
+// Uzp1qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_f32'.
 // Requires NEON.
-func Vuzp1qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func Uzp1qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vuzp1qF64: ARM NEON intrinsic 
+// Uzp1qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_f64'.
 // Requires NEON.
-func Vuzp1qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func Uzp1qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vuzp1qP8: ARM NEON intrinsic 
+// Uzp1qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_p8'.
 // Requires NEON.
-func Vuzp1qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
+func Uzp1qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vuzp1qP16: ARM NEON intrinsic 
+// Uzp1qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_p16'.
 // Requires NEON.
-func Vuzp1qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
+func Uzp1qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vuzp1qS8: ARM NEON intrinsic 
+// Uzp1qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_s8'.
 // Requires NEON.
-func Vuzp1qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func Uzp1qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vuzp1qS16: ARM NEON intrinsic 
+// Uzp1qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_s16'.
 // Requires NEON.
-func Vuzp1qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func Uzp1qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vuzp1qS32: ARM NEON intrinsic 
+// Uzp1qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_s32'.
 // Requires NEON.
-func Vuzp1qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func Uzp1qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vuzp1qS64: ARM NEON intrinsic 
+// Uzp1qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_s64'.
 // Requires NEON.
-func Vuzp1qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func Uzp1qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vuzp1qU8: ARM NEON intrinsic 
+// Uzp1qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_u8'.
 // Requires NEON.
-func Vuzp1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func Uzp1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vuzp1qU16: ARM NEON intrinsic 
+// Uzp1qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_u16'.
 // Requires NEON.
-func Vuzp1qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func Uzp1qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vuzp1qU32: ARM NEON intrinsic 
+// Uzp1qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_u32'.
 // Requires NEON.
-func Vuzp1qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func Uzp1qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vuzp1qU64: ARM NEON intrinsic 
+// Uzp1qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp1q_u64'.
 // Requires NEON.
-func Vuzp1qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func Uzp1qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// Vuzp2F32: ARM NEON intrinsic 
+// Uzp2F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_f32'.
 // Requires NEON.
-func Vuzp2F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func Uzp2F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vuzp2P8: ARM NEON intrinsic 
+// Uzp2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_p8'.
 // Requires NEON.
-func Vuzp2P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
+func Uzp2P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vuzp2P16: ARM NEON intrinsic 
+// Uzp2P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_p16'.
 // Requires NEON.
-func Vuzp2P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
+func Uzp2P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vuzp2S8: ARM NEON intrinsic 
+// Uzp2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_s8'.
 // Requires NEON.
-func Vuzp2S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func Uzp2S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vuzp2S16: ARM NEON intrinsic 
+// Uzp2S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_s16'.
 // Requires NEON.
-func Vuzp2S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func Uzp2S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vuzp2S32: ARM NEON intrinsic 
+// Uzp2S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_s32'.
 // Requires NEON.
-func Vuzp2S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func Uzp2S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vuzp2U8: ARM NEON intrinsic 
+// Uzp2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_u8'.
 // Requires NEON.
-func Vuzp2U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func Uzp2U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vuzp2U16: ARM NEON intrinsic 
+// Uzp2U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_u16'.
 // Requires NEON.
-func Vuzp2U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func Uzp2U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vuzp2U32: ARM NEON intrinsic 
+// Uzp2U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2_u32'.
 // Requires NEON.
-func Vuzp2U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func Uzp2U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vuzp2qF32: ARM NEON intrinsic 
+// Uzp2qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_f32'.
 // Requires NEON.
-func Vuzp2qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func Uzp2qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vuzp2qF64: ARM NEON intrinsic 
+// Uzp2qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_f64'.
 // Requires NEON.
-func Vuzp2qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func Uzp2qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vuzp2qP8: ARM NEON intrinsic 
+// Uzp2qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_p8'.
 // Requires NEON.
-func Vuzp2qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
+func Uzp2qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vuzp2qP16: ARM NEON intrinsic 
+// Uzp2qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_p16'.
 // Requires NEON.
-func Vuzp2qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
+func Uzp2qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vuzp2qS8: ARM NEON intrinsic 
+// Uzp2qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_s8'.
 // Requires NEON.
-func Vuzp2qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func Uzp2qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vuzp2qS16: ARM NEON intrinsic 
+// Uzp2qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_s16'.
 // Requires NEON.
-func Vuzp2qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func Uzp2qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vuzp2qS32: ARM NEON intrinsic 
+// Uzp2qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_s32'.
 // Requires NEON.
-func Vuzp2qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func Uzp2qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vuzp2qS64: ARM NEON intrinsic 
+// Uzp2qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_s64'.
 // Requires NEON.
-func Vuzp2qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func Uzp2qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vuzp2qU8: ARM NEON intrinsic 
+// Uzp2qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_u8'.
 // Requires NEON.
-func Vuzp2qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func Uzp2qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vuzp2qU16: ARM NEON intrinsic 
+// Uzp2qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_u16'.
 // Requires NEON.
-func Vuzp2qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func Uzp2qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vuzp2qU32: ARM NEON intrinsic 
+// Uzp2qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_u32'.
 // Requires NEON.
-func Vuzp2qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func Uzp2qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vuzp2qU64: ARM NEON intrinsic 
+// Uzp2qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp2q_u64'.
 // Requires NEON.
-func Vuzp2qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func Uzp2qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VuzpF32: ARM NEON intrinsic 
+// UzpF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_f32'.
 // Requires NEON.
-func VuzpF32(a arm.Float32x2, b arm.Float32x2) (dst [2]arm.Float32x2) {
+func UzpF32(a arm.Float32x2, b arm.Float32x2) (dst [2]arm.Float32x2) {
 	return [2]arm.Float32x2{}
 }
 
-// VuzpP8: ARM NEON intrinsic 
+// UzpP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_p8'.
 // Requires NEON.
-func VuzpP8(a arm.Poly8x8, b arm.Poly8x8) (dst [2]arm.Poly8x8) {
+func UzpP8(a arm.Poly8x8, b arm.Poly8x8) (dst [2]arm.Poly8x8) {
 	return [2]arm.Poly8x8{}
 }
 
-// VuzpP16: ARM NEON intrinsic 
+// UzpP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_p16'.
 // Requires NEON.
-func VuzpP16(a arm.Poly16x4, b arm.Poly16x4) (dst [2]arm.Poly16x4) {
+func UzpP16(a arm.Poly16x4, b arm.Poly16x4) (dst [2]arm.Poly16x4) {
 	return [2]arm.Poly16x4{}
 }
 
-// VuzpS8: ARM NEON intrinsic 
+// UzpS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_s8'.
 // Requires NEON.
-func VuzpS8(a arm.Int8x8, b arm.Int8x8) (dst [2]arm.Int8x8) {
+func UzpS8(a arm.Int8x8, b arm.Int8x8) (dst [2]arm.Int8x8) {
 	return [2]arm.Int8x8{}
 }
 
-// VuzpS16: ARM NEON intrinsic 
+// UzpS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_s16'.
 // Requires NEON.
-func VuzpS16(a arm.Int16x4, b arm.Int16x4) (dst [2]arm.Int16x4) {
+func UzpS16(a arm.Int16x4, b arm.Int16x4) (dst [2]arm.Int16x4) {
 	return [2]arm.Int16x4{}
 }
 
-// VuzpS32: ARM NEON intrinsic 
+// UzpS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_s32'.
 // Requires NEON.
-func VuzpS32(a arm.Int32x2, b arm.Int32x2) (dst [2]arm.Int32x2) {
+func UzpS32(a arm.Int32x2, b arm.Int32x2) (dst [2]arm.Int32x2) {
 	return [2]arm.Int32x2{}
 }
 
-// VuzpU8: ARM NEON intrinsic 
+// UzpU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_u8'.
 // Requires NEON.
-func VuzpU8(a arm.Uint8x8, b arm.Uint8x8) (dst [2]arm.Uint8x8) {
+func UzpU8(a arm.Uint8x8, b arm.Uint8x8) (dst [2]arm.Uint8x8) {
 	return [2]arm.Uint8x8{}
 }
 
-// VuzpU16: ARM NEON intrinsic 
+// UzpU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_u16'.
 // Requires NEON.
-func VuzpU16(a arm.Uint16x4, b arm.Uint16x4) (dst [2]arm.Uint16x4) {
+func UzpU16(a arm.Uint16x4, b arm.Uint16x4) (dst [2]arm.Uint16x4) {
 	return [2]arm.Uint16x4{}
 }
 
-// VuzpU32: ARM NEON intrinsic 
+// UzpU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzp_u32'.
 // Requires NEON.
-func VuzpU32(a arm.Uint32x2, b arm.Uint32x2) (dst [2]arm.Uint32x2) {
+func UzpU32(a arm.Uint32x2, b arm.Uint32x2) (dst [2]arm.Uint32x2) {
 	return [2]arm.Uint32x2{}
 }
 
-// VuzpqF32: ARM NEON intrinsic 
+// UzpqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_f32'.
 // Requires NEON.
-func VuzpqF32(a arm.Float32x4, b arm.Float32x4) (dst [2]arm.Float32x4) {
+func UzpqF32(a arm.Float32x4, b arm.Float32x4) (dst [2]arm.Float32x4) {
 	return [2]arm.Float32x4{}
 }
 
-// VuzpqP8: ARM NEON intrinsic 
+// UzpqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_p8'.
 // Requires NEON.
-func VuzpqP8(a arm.Poly8x16, b arm.Poly8x16) (dst [2]arm.Poly8x16) {
+func UzpqP8(a arm.Poly8x16, b arm.Poly8x16) (dst [2]arm.Poly8x16) {
 	return [2]arm.Poly8x16{}
 }
 
-// VuzpqP16: ARM NEON intrinsic 
+// UzpqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_p16'.
 // Requires NEON.
-func VuzpqP16(a arm.Poly16x8, b arm.Poly16x8) (dst [2]arm.Poly16x8) {
+func UzpqP16(a arm.Poly16x8, b arm.Poly16x8) (dst [2]arm.Poly16x8) {
 	return [2]arm.Poly16x8{}
 }
 
-// VuzpqS8: ARM NEON intrinsic 
+// UzpqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_s8'.
 // Requires NEON.
-func VuzpqS8(a arm.Int8x16, b arm.Int8x16) (dst [2]arm.Int8x16) {
+func UzpqS8(a arm.Int8x16, b arm.Int8x16) (dst [2]arm.Int8x16) {
 	return [2]arm.Int8x16{}
 }
 
-// VuzpqS16: ARM NEON intrinsic 
+// UzpqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_s16'.
 // Requires NEON.
-func VuzpqS16(a arm.Int16x8, b arm.Int16x8) (dst [2]arm.Int16x8) {
+func UzpqS16(a arm.Int16x8, b arm.Int16x8) (dst [2]arm.Int16x8) {
 	return [2]arm.Int16x8{}
 }
 
-// VuzpqS32: ARM NEON intrinsic 
+// UzpqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_s32'.
 // Requires NEON.
-func VuzpqS32(a arm.Int32x4, b arm.Int32x4) (dst [2]arm.Int32x4) {
+func UzpqS32(a arm.Int32x4, b arm.Int32x4) (dst [2]arm.Int32x4) {
 	return [2]arm.Int32x4{}
 }
 
-// VuzpqU8: ARM NEON intrinsic 
+// UzpqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_u8'.
 // Requires NEON.
-func VuzpqU8(a arm.Uint8x16, b arm.Uint8x16) (dst [2]arm.Uint8x16) {
+func UzpqU8(a arm.Uint8x16, b arm.Uint8x16) (dst [2]arm.Uint8x16) {
 	return [2]arm.Uint8x16{}
 }
 
-// VuzpqU16: ARM NEON intrinsic 
+// UzpqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_u16'.
 // Requires NEON.
-func VuzpqU16(a arm.Uint16x8, b arm.Uint16x8) (dst [2]arm.Uint16x8) {
+func UzpqU16(a arm.Uint16x8, b arm.Uint16x8) (dst [2]arm.Uint16x8) {
 	return [2]arm.Uint16x8{}
 }
 
-// VuzpqU32: ARM NEON intrinsic 
+// UzpqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vuzpq_u32'.
 // Requires NEON.
-func VuzpqU32(a arm.Uint32x4, b arm.Uint32x4) (dst [2]arm.Uint32x4) {
+func UzpqU32(a arm.Uint32x4, b arm.Uint32x4) (dst [2]arm.Uint32x4) {
 	return [2]arm.Uint32x4{}
 }
 
-// Vzip1F32: ARM NEON intrinsic 
+// Zip1F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_f32'.
 // Requires NEON.
-func Vzip1F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func Zip1F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vzip1P8: ARM NEON intrinsic 
+// Zip1P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_p8'.
 // Requires NEON.
-func Vzip1P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
+func Zip1P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vzip1P16: ARM NEON intrinsic 
+// Zip1P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_p16'.
 // Requires NEON.
-func Vzip1P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
+func Zip1P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vzip1S8: ARM NEON intrinsic 
+// Zip1S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_s8'.
 // Requires NEON.
-func Vzip1S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func Zip1S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vzip1S16: ARM NEON intrinsic 
+// Zip1S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_s16'.
 // Requires NEON.
-func Vzip1S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func Zip1S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vzip1S32: ARM NEON intrinsic 
+// Zip1S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_s32'.
 // Requires NEON.
-func Vzip1S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func Zip1S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vzip1U8: ARM NEON intrinsic 
+// Zip1U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_u8'.
 // Requires NEON.
-func Vzip1U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func Zip1U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vzip1U16: ARM NEON intrinsic 
+// Zip1U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_u16'.
 // Requires NEON.
-func Vzip1U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func Zip1U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vzip1U32: ARM NEON intrinsic 
+// Zip1U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1_u32'.
 // Requires NEON.
-func Vzip1U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func Zip1U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vzip1qF32: ARM NEON intrinsic 
+// Zip1qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_f32'.
 // Requires NEON.
-func Vzip1qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func Zip1qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vzip1qF64: ARM NEON intrinsic 
+// Zip1qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_f64'.
 // Requires NEON.
-func Vzip1qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func Zip1qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vzip1qP8: ARM NEON intrinsic 
+// Zip1qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_p8'.
 // Requires NEON.
-func Vzip1qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
+func Zip1qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vzip1qP16: ARM NEON intrinsic 
+// Zip1qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_p16'.
 // Requires NEON.
-func Vzip1qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
+func Zip1qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vzip1qS8: ARM NEON intrinsic 
+// Zip1qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_s8'.
 // Requires NEON.
-func Vzip1qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func Zip1qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vzip1qS16: ARM NEON intrinsic 
+// Zip1qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_s16'.
 // Requires NEON.
-func Vzip1qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func Zip1qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vzip1qS32: ARM NEON intrinsic 
+// Zip1qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_s32'.
 // Requires NEON.
-func Vzip1qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func Zip1qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vzip1qS64: ARM NEON intrinsic 
+// Zip1qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_s64'.
 // Requires NEON.
-func Vzip1qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func Zip1qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vzip1qU8: ARM NEON intrinsic 
+// Zip1qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_u8'.
 // Requires NEON.
-func Vzip1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func Zip1qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vzip1qU16: ARM NEON intrinsic 
+// Zip1qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_u16'.
 // Requires NEON.
-func Vzip1qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func Zip1qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vzip1qU32: ARM NEON intrinsic 
+// Zip1qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_u32'.
 // Requires NEON.
-func Vzip1qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func Zip1qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vzip1qU64: ARM NEON intrinsic 
+// Zip1qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip1q_u64'.
 // Requires NEON.
-func Vzip1qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func Zip1qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// Vzip2F32: ARM NEON intrinsic 
+// Zip2F32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_f32'.
 // Requires NEON.
-func Vzip2F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
+func Zip2F32(a arm.Float32x2, b arm.Float32x2) (dst arm.Float32x2) {
 	return arm.Float32x2{}
 }
 
-// Vzip2P8: ARM NEON intrinsic 
+// Zip2P8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_p8'.
 // Requires NEON.
-func Vzip2P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
+func Zip2P8(a arm.Poly8x8, b arm.Poly8x8) (dst arm.Poly8x8) {
 	return arm.Poly8x8{}
 }
 
-// Vzip2P16: ARM NEON intrinsic 
+// Zip2P16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_p16'.
 // Requires NEON.
-func Vzip2P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
+func Zip2P16(a arm.Poly16x4, b arm.Poly16x4) (dst arm.Poly16x4) {
 	return arm.Poly16x4{}
 }
 
-// Vzip2S8: ARM NEON intrinsic 
+// Zip2S8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_s8'.
 // Requires NEON.
-func Vzip2S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
+func Zip2S8(a arm.Int8x8, b arm.Int8x8) (dst arm.Int8x8) {
 	return arm.Int8x8{}
 }
 
-// Vzip2S16: ARM NEON intrinsic 
+// Zip2S16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_s16'.
 // Requires NEON.
-func Vzip2S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
+func Zip2S16(a arm.Int16x4, b arm.Int16x4) (dst arm.Int16x4) {
 	return arm.Int16x4{}
 }
 
-// Vzip2S32: ARM NEON intrinsic 
+// Zip2S32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_s32'.
 // Requires NEON.
-func Vzip2S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
+func Zip2S32(a arm.Int32x2, b arm.Int32x2) (dst arm.Int32x2) {
 	return arm.Int32x2{}
 }
 
-// Vzip2U8: ARM NEON intrinsic 
+// Zip2U8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_u8'.
 // Requires NEON.
-func Vzip2U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
+func Zip2U8(a arm.Uint8x8, b arm.Uint8x8) (dst arm.Uint8x8) {
 	return arm.Uint8x8{}
 }
 
-// Vzip2U16: ARM NEON intrinsic 
+// Zip2U16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_u16'.
 // Requires NEON.
-func Vzip2U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
+func Zip2U16(a arm.Uint16x4, b arm.Uint16x4) (dst arm.Uint16x4) {
 	return arm.Uint16x4{}
 }
 
-// Vzip2U32: ARM NEON intrinsic 
+// Zip2U32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2_u32'.
 // Requires NEON.
-func Vzip2U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
+func Zip2U32(a arm.Uint32x2, b arm.Uint32x2) (dst arm.Uint32x2) {
 	return arm.Uint32x2{}
 }
 
-// Vzip2qF32: ARM NEON intrinsic 
+// Zip2qF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_f32'.
 // Requires NEON.
-func Vzip2qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
+func Zip2qF32(a arm.Float32x4, b arm.Float32x4) (dst arm.Float32x4) {
 	return arm.Float32x4{}
 }
 
-// Vzip2qF64: ARM NEON intrinsic 
+// Zip2qF64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_f64'.
 // Requires NEON.
-func Vzip2qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
+func Zip2qF64(a arm.Float64x2, b arm.Float64x2) (dst arm.Float64x2) {
 	return arm.Float64x2{}
 }
 
-// Vzip2qP8: ARM NEON intrinsic 
+// Zip2qP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_p8'.
 // Requires NEON.
-func Vzip2qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
+func Zip2qP8(a arm.Poly8x16, b arm.Poly8x16) (dst arm.Poly8x16) {
 	return arm.Poly8x16{}
 }
 
-// Vzip2qP16: ARM NEON intrinsic 
+// Zip2qP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_p16'.
 // Requires NEON.
-func Vzip2qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
+func Zip2qP16(a arm.Poly16x8, b arm.Poly16x8) (dst arm.Poly16x8) {
 	return arm.Poly16x8{}
 }
 
-// Vzip2qS8: ARM NEON intrinsic 
+// Zip2qS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_s8'.
 // Requires NEON.
-func Vzip2qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
+func Zip2qS8(a arm.Int8x16, b arm.Int8x16) (dst arm.Int8x16) {
 	return arm.Int8x16{}
 }
 
-// Vzip2qS16: ARM NEON intrinsic 
+// Zip2qS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_s16'.
 // Requires NEON.
-func Vzip2qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
+func Zip2qS16(a arm.Int16x8, b arm.Int16x8) (dst arm.Int16x8) {
 	return arm.Int16x8{}
 }
 
-// Vzip2qS32: ARM NEON intrinsic 
+// Zip2qS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_s32'.
 // Requires NEON.
-func Vzip2qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
+func Zip2qS32(a arm.Int32x4, b arm.Int32x4) (dst arm.Int32x4) {
 	return arm.Int32x4{}
 }
 
-// Vzip2qS64: ARM NEON intrinsic 
+// Zip2qS64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_s64'.
 // Requires NEON.
-func Vzip2qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
+func Zip2qS64(a arm.Int64x2, b arm.Int64x2) (dst arm.Int64x2) {
 	return arm.Int64x2{}
 }
 
-// Vzip2qU8: ARM NEON intrinsic 
+// Zip2qU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_u8'.
 // Requires NEON.
-func Vzip2qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
+func Zip2qU8(a arm.Uint8x16, b arm.Uint8x16) (dst arm.Uint8x16) {
 	return arm.Uint8x16{}
 }
 
-// Vzip2qU16: ARM NEON intrinsic 
+// Zip2qU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_u16'.
 // Requires NEON.
-func Vzip2qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
+func Zip2qU16(a arm.Uint16x8, b arm.Uint16x8) (dst arm.Uint16x8) {
 	return arm.Uint16x8{}
 }
 
-// Vzip2qU32: ARM NEON intrinsic 
+// Zip2qU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_u32'.
 // Requires NEON.
-func Vzip2qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
+func Zip2qU32(a arm.Uint32x4, b arm.Uint32x4) (dst arm.Uint32x4) {
 	return arm.Uint32x4{}
 }
 
-// Vzip2qU64: ARM NEON intrinsic 
+// Zip2qU64: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip2q_u64'.
 // Requires NEON.
-func Vzip2qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
+func Zip2qU64(a arm.Uint64x2, b arm.Uint64x2) (dst arm.Uint64x2) {
 	return arm.Uint64x2{}
 }
 
-// VzipF32: ARM NEON intrinsic 
+// ZipF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_f32'.
 // Requires NEON.
-func VzipF32(a arm.Float32x2, b arm.Float32x2) (dst [2]arm.Float32x2) {
+func ZipF32(a arm.Float32x2, b arm.Float32x2) (dst [2]arm.Float32x2) {
 	return [2]arm.Float32x2{}
 }
 
-// VzipP8: ARM NEON intrinsic 
+// ZipP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_p8'.
 // Requires NEON.
-func VzipP8(a arm.Poly8x8, b arm.Poly8x8) (dst [2]arm.Poly8x8) {
+func ZipP8(a arm.Poly8x8, b arm.Poly8x8) (dst [2]arm.Poly8x8) {
 	return [2]arm.Poly8x8{}
 }
 
-// VzipP16: ARM NEON intrinsic 
+// ZipP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_p16'.
 // Requires NEON.
-func VzipP16(a arm.Poly16x4, b arm.Poly16x4) (dst [2]arm.Poly16x4) {
+func ZipP16(a arm.Poly16x4, b arm.Poly16x4) (dst [2]arm.Poly16x4) {
 	return [2]arm.Poly16x4{}
 }
 
-// VzipS8: ARM NEON intrinsic 
+// ZipS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_s8'.
 // Requires NEON.
-func VzipS8(a arm.Int8x8, b arm.Int8x8) (dst [2]arm.Int8x8) {
+func ZipS8(a arm.Int8x8, b arm.Int8x8) (dst [2]arm.Int8x8) {
 	return [2]arm.Int8x8{}
 }
 
-// VzipS16: ARM NEON intrinsic 
+// ZipS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_s16'.
 // Requires NEON.
-func VzipS16(a arm.Int16x4, b arm.Int16x4) (dst [2]arm.Int16x4) {
+func ZipS16(a arm.Int16x4, b arm.Int16x4) (dst [2]arm.Int16x4) {
 	return [2]arm.Int16x4{}
 }
 
-// VzipS32: ARM NEON intrinsic 
+// ZipS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_s32'.
 // Requires NEON.
-func VzipS32(a arm.Int32x2, b arm.Int32x2) (dst [2]arm.Int32x2) {
+func ZipS32(a arm.Int32x2, b arm.Int32x2) (dst [2]arm.Int32x2) {
 	return [2]arm.Int32x2{}
 }
 
-// VzipU8: ARM NEON intrinsic 
+// ZipU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_u8'.
 // Requires NEON.
-func VzipU8(a arm.Uint8x8, b arm.Uint8x8) (dst [2]arm.Uint8x8) {
+func ZipU8(a arm.Uint8x8, b arm.Uint8x8) (dst [2]arm.Uint8x8) {
 	return [2]arm.Uint8x8{}
 }
 
-// VzipU16: ARM NEON intrinsic 
+// ZipU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_u16'.
 // Requires NEON.
-func VzipU16(a arm.Uint16x4, b arm.Uint16x4) (dst [2]arm.Uint16x4) {
+func ZipU16(a arm.Uint16x4, b arm.Uint16x4) (dst [2]arm.Uint16x4) {
 	return [2]arm.Uint16x4{}
 }
 
-// VzipU32: ARM NEON intrinsic 
+// ZipU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzip_u32'.
 // Requires NEON.
-func VzipU32(a arm.Uint32x2, b arm.Uint32x2) (dst [2]arm.Uint32x2) {
+func ZipU32(a arm.Uint32x2, b arm.Uint32x2) (dst [2]arm.Uint32x2) {
 	return [2]arm.Uint32x2{}
 }
 
-// VzipqF32: ARM NEON intrinsic 
+// ZipqF32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_f32'.
 // Requires NEON.
-func VzipqF32(a arm.Float32x4, b arm.Float32x4) (dst [2]arm.Float32x4) {
+func ZipqF32(a arm.Float32x4, b arm.Float32x4) (dst [2]arm.Float32x4) {
 	return [2]arm.Float32x4{}
 }
 
-// VzipqP8: ARM NEON intrinsic 
+// ZipqP8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_p8'.
 // Requires NEON.
-func VzipqP8(a arm.Poly8x16, b arm.Poly8x16) (dst [2]arm.Poly8x16) {
+func ZipqP8(a arm.Poly8x16, b arm.Poly8x16) (dst [2]arm.Poly8x16) {
 	return [2]arm.Poly8x16{}
 }
 
-// VzipqP16: ARM NEON intrinsic 
+// ZipqP16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_p16'.
 // Requires NEON.
-func VzipqP16(a arm.Poly16x8, b arm.Poly16x8) (dst [2]arm.Poly16x8) {
+func ZipqP16(a arm.Poly16x8, b arm.Poly16x8) (dst [2]arm.Poly16x8) {
 	return [2]arm.Poly16x8{}
 }
 
-// VzipqS8: ARM NEON intrinsic 
+// ZipqS8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_s8'.
 // Requires NEON.
-func VzipqS8(a arm.Int8x16, b arm.Int8x16) (dst [2]arm.Int8x16) {
+func ZipqS8(a arm.Int8x16, b arm.Int8x16) (dst [2]arm.Int8x16) {
 	return [2]arm.Int8x16{}
 }
 
-// VzipqS16: ARM NEON intrinsic 
+// ZipqS16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_s16'.
 // Requires NEON.
-func VzipqS16(a arm.Int16x8, b arm.Int16x8) (dst [2]arm.Int16x8) {
+func ZipqS16(a arm.Int16x8, b arm.Int16x8) (dst [2]arm.Int16x8) {
 	return [2]arm.Int16x8{}
 }
 
-// VzipqS32: ARM NEON intrinsic 
+// ZipqS32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_s32'.
 // Requires NEON.
-func VzipqS32(a arm.Int32x4, b arm.Int32x4) (dst [2]arm.Int32x4) {
+func ZipqS32(a arm.Int32x4, b arm.Int32x4) (dst [2]arm.Int32x4) {
 	return [2]arm.Int32x4{}
 }
 
-// VzipqU8: ARM NEON intrinsic 
+// ZipqU8: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_u8'.
 // Requires NEON.
-func VzipqU8(a arm.Uint8x16, b arm.Uint8x16) (dst [2]arm.Uint8x16) {
+func ZipqU8(a arm.Uint8x16, b arm.Uint8x16) (dst [2]arm.Uint8x16) {
 	return [2]arm.Uint8x16{}
 }
 
-// VzipqU16: ARM NEON intrinsic 
+// ZipqU16: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_u16'.
 // Requires NEON.
-func VzipqU16(a arm.Uint16x8, b arm.Uint16x8) (dst [2]arm.Uint16x8) {
+func ZipqU16(a arm.Uint16x8, b arm.Uint16x8) (dst [2]arm.Uint16x8) {
 	return [2]arm.Uint16x8{}
 }
 
-// VzipqU32: ARM NEON intrinsic 
+// ZipqU32: ARM NEON intrinsic 
 //
 // Intrinsic: 'vzipq_u32'.
 // Requires NEON.
-func VzipqU32(a arm.Uint32x4, b arm.Uint32x4) (dst [2]arm.Uint32x4) {
+func ZipqU32(a arm.Uint32x4, b arm.Uint32x4) (dst [2]arm.Uint32x4) {
 	return [2]arm.Uint32x4{}
 }

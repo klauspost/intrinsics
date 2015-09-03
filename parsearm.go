@@ -179,20 +179,10 @@ func (i Intrinsic) getFiles() pack {
 }
 
 func fixFuncName(in string) string {
-	if strings.HasPrefix(in, "_m_") {
-		in = strings.TrimPrefix(in, "_m_")
-	}
 	out := CamelCase(in)
-	if strings.HasPrefix(out, "mm512") {
-		out = strings.TrimPrefix(out, "m")
+	if strings.HasPrefix(in, "v") {
+		out = strings.TrimPrefix(out, "v")
 	}
-	if strings.HasPrefix(out, "mm256") {
-		out = strings.TrimPrefix(out, "m")
-	}
-	if strings.HasPrefix(out, "mm512") {
-		out = strings.TrimPrefix(out, "m")
-	}
-	out = strings.TrimPrefix(out, "mm")
 	out = strings.Title(out)
 	return out
 }
