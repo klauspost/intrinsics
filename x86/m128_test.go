@@ -93,7 +93,7 @@ func TestComplex(t *testing.T) {
 
 	for y := 0; y < height; y++ {
 		// Convert current line to []M128i
-		line := x86.Slice2M128i(input[y*width*2:y*width*2+width*2], nil)
+		line := x86.BytesToM128i(input[y*width*2 : y*width*2+width*2])
 
 		var sserandom x86.M128i
 		if mDitherScale {
@@ -272,10 +272,9 @@ func Transform8sRGB() {
 	matPs[7] = sse.Set1Ps(matrix[2][1])
 	matPs[8] = sse.Set1Ps(matrix[2][2])
 
-	var i, o []x86.M128i
 	for y := 0; y < h; y++ {
-		i = x86.Slice2M128i(input[y*w*8:y*w*8+w*8], i)
-		o = x86.Slice2M128i(output[y*w*4:y*w*4+w*4], o)
+		i := x86.BytesToM128i(input[y*w*8 : y*w*8+w*8])
+		o := x86.BytesToM128i(output[y*w*4 : y*w*4+w*4])
 
 		// Converts 4 pixels per loop
 		for x := 0; x < w/4; x++ {
