@@ -62,9 +62,6 @@ func main() {
 	}
 	defer f.Close()
 
-	/*	fmt.Println("package intrin")
-		fmt.Println("")
-		fmt.Println("import \"unsafe\"")*/
 	parseHTML(f)
 	for _, pk := range packages {
 		pk.goFile.Close()
@@ -465,6 +462,15 @@ func (in Intrinsic) shouldRework() bool {
 	return false
 }
 
+func (in Intrinsic) hasImmediate() bool {
+	for _, param := range in.Params {
+		if strings.Contains(param.Name, "imm") {
+			return true
+		}
+	}
+	return false
+}
+
 func (in Intrinsic) Finish() {
 	if in.Name == "" {
 		return
@@ -494,7 +500,10 @@ func (in Intrinsic) Finish() {
 		fmt.Fprintln(out, "// Requires", in.CpuID+".")
 	}
 	if rework {
-		fmt.Fprintln(out, "// FIXME: Will likely need to be reworked.")
+		fmt.Fprintln(out, "//\n// FIXME: Will likely need to be reworked (has pointer parameter).")
+	}
+	if in.hasImmediate() {
+		fmt.Fprintln(out, "//\n// FIXME: Requires compiler support (has immediate)")
 	}
 	fmt.Fprint(out, "func ", in.Name, "(")
 	params := []string{}

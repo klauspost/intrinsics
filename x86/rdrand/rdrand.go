@@ -18,7 +18,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDRAND'. Intrinsic: '_rdrand16_step'.
 // Requires RDRAND.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdrand16Step(val *uint16) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -37,7 +38,8 @@ func Rdrand16Step(val *uint16) int {
 //
 // Instruction: 'RDRAND'. Intrinsic: '_rdrand32_step'.
 // Requires RDRAND.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdrand32Step(val *uint32) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -56,7 +58,8 @@ func Rdrand32Step(val *uint32) int {
 //
 // Instruction: 'RDRAND'. Intrinsic: '_rdrand64_step'.
 // Requires RDRAND.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdrand64Step(val *uint64) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0

@@ -12,7 +12,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //		dst:out[31:0] := a[31:0] + b[31:0] + c_in;
 //
 // Instruction: 'ADC'. Intrinsic: '_addcarry_u32'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -25,7 +26,8 @@ func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
 //		dst:out[63:0] := a[63:0] + b[63:0] + c_in;
 //
 // Instruction: 'ADC'. Intrinsic: '_addcarry_u64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func AddcarryU64(c_in uint8, a uint64, b uint64, out *uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -135,7 +137,8 @@ func bitScanReverse(a int) int
 //		FI
 //
 // Instruction: 'BSF'. Intrinsic: '_BitScanForward'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanForward2(index *uint32, mask uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -157,7 +160,8 @@ func BitScanForward2(index *uint32, mask uint32) uint8 {
 //		FI
 //
 // Instruction: 'BSF'. Intrinsic: '_BitScanForward64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanForward64(index *uint32, mask uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -179,7 +183,8 @@ func BitScanForward64(index *uint32, mask uint64) uint8 {
 //		FI
 //
 // Instruction: 'BSR'. Intrinsic: '_BitScanReverse'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanReverse2(index *uint32, mask uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -201,7 +206,8 @@ func BitScanReverse2(index *uint32, mask uint32) uint8 {
 //		FI
 //
 // Instruction: 'BSR'. Intrinsic: '_BitScanReverse64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanReverse64(index *uint32, mask uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -212,7 +218,8 @@ func BitScanReverse64(index *uint32, mask uint64) uint8 {
 //		dst := a[b]
 //
 // Instruction: 'BT'. Intrinsic: '_bittest'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittest(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -223,7 +230,8 @@ func Bittest(a *int32, b int32) uint8 {
 //		dst := a[b]
 //
 // Instruction: 'BT'. Intrinsic: '_bittest64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittest64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -236,7 +244,8 @@ func Bittest64(a *int64, b int64) uint8 {
 //		a[b] := ~a[b]
 //
 // Instruction: 'BTC'. Intrinsic: '_bittestandcomplement'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandcomplement(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -249,7 +258,8 @@ func Bittestandcomplement(a *int32, b int32) uint8 {
 //		a[b] := ~a[b]
 //
 // Instruction: 'BTC'. Intrinsic: '_bittestandcomplement64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandcomplement64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -262,7 +272,8 @@ func Bittestandcomplement64(a *int64, b int64) uint8 {
 //		a[b] := 0
 //
 // Instruction: 'BTR'. Intrinsic: '_bittestandreset'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandreset(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -275,7 +286,8 @@ func Bittestandreset(a *int32, b int32) uint8 {
 //		a[b] := 0
 //
 // Instruction: 'BTR'. Intrinsic: '_bittestandreset64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandreset64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -288,7 +300,8 @@ func Bittestandreset64(a *int64, b int64) uint8 {
 //		a[b] := 1
 //
 // Instruction: 'BTS'. Intrinsic: '_bittestandset'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandset(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -301,7 +314,8 @@ func Bittestandset(a *int32, b int32) uint8 {
 //		a[b] := 1
 //
 // Instruction: 'BTS'. Intrinsic: '_bittestandset64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandset64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -425,6 +439,8 @@ func cvtshSs(a uint16) float32
 //		dst[15:0] := Convert_FP32_To_FP16(a[31:0])
 //
 // Instruction: '...'. Intrinsic: '_cvtss_sh'.
+//
+// FIXME: Requires compiler support (has immediate)
 func CvtssSh(a float32, imm8 int) uint16 {
 	return uint16(cvtssSh(a, imm8))
 }
@@ -658,7 +674,8 @@ func rotwr(a uint16, shift int) uint16
 //		dst:out[31:0] := (b[31:0] - (a[31:0] + b_in));
 //
 // Instruction: 'SBB'. Intrinsic: '_subborrow_u32'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -672,7 +689,8 @@ func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) uint8 {
 //		dst:out[63:0] := (b[63:0] - (a[63:0] + b_in));
 //
 // Instruction: 'SBB'. Intrinsic: '_subborrow_u64'.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func SubborrowU64(b_in uint8, a uint64, b uint64, out *uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0

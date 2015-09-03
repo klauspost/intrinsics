@@ -28,6 +28,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'XABORT'. Intrinsic: '_xabort'.
 // Requires RTM.
+//
+// FIXME: Requires compiler support (has immediate)
 func Xabort(imm8 uint)  {
 	xabort(imm8)
 }

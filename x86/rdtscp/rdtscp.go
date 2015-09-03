@@ -14,7 +14,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDTSCP'. Intrinsic: '__rdtscp'.
 // Requires RDTSCP.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdtscp(mem_addr *uint32) uint64 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0

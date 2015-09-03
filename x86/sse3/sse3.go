@@ -121,7 +121,8 @@ func hsubPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'LDDQU'. Intrinsic: '_mm_lddqu_si128'.
 // Requires SSE3.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func LddquSi128(mem_addr *x86.M128iConst) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}

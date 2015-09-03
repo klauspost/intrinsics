@@ -441,6 +441,8 @@ func m256AtanhPs(a [8]float32) [8]float32
 //
 // Instruction: 'VBLENDPD'. Intrinsic: '_mm256_blend_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256BlendPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
 	return x86.M256d(m256BlendPd([4]float64(a), [4]float64(b), imm8))
 }
@@ -463,6 +465,8 @@ func m256BlendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VBLENDPS'. Intrinsic: '_mm256_blend_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256BlendPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
 	return x86.M256(m256BlendPs([8]float32(a), [8]float32(b), imm8))
 }
@@ -524,7 +528,8 @@ func m256BlendvPs(a [8]float32, b [8]float32, mask [8]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_pd'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256BroadcastPd(mem_addr *x86.M128dConst) x86.M256d {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256d{}
@@ -540,7 +545,8 @@ func M256BroadcastPd(mem_addr *x86.M128dConst) x86.M256d {
 //
 // Instruction: 'VBROADCASTF128'. Intrinsic: '_mm256_broadcast_ps'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256BroadcastPs(mem_addr *x86.M128Const) x86.M256 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256{}
@@ -971,6 +977,8 @@ func m256ClogPs(a [8]float32) [8]float32
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm_cmp_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func CmpPd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
 	return x86.M128d(cmpPd([2]float64(a), [2]float64(b), imm8))
 }
@@ -1024,6 +1032,8 @@ func cmpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm256_cmp_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256CmpPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
 	return x86.M256d(m256CmpPd([4]float64(a), [4]float64(b), imm8))
 }
@@ -1077,6 +1087,8 @@ func m256CmpPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm_cmp_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func CmpPs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
 	return x86.M128(cmpPs([4]float32(a), [4]float32(b), imm8))
 }
@@ -1130,6 +1142,8 @@ func cmpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm256_cmp_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256CmpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
 	return x86.M256(m256CmpPs([8]float32(a), [8]float32(b), imm8))
 }
@@ -1183,6 +1197,8 @@ func m256CmpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VCMPSD'. Intrinsic: '_mm_cmp_sd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func CmpSd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
 	return x86.M128d(cmpSd([2]float64(a), [2]float64(b), imm8))
 }
@@ -1236,6 +1252,8 @@ func cmpSd(a [2]float64, b [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VCMPSS'. Intrinsic: '_mm_cmp_ss'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func CmpSs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
 	return x86.M128(cmpSs([4]float32(a), [4]float32(b), imm8))
 }
@@ -1744,6 +1762,8 @@ func m256DivPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VDPPS'. Intrinsic: '_mm256_dp_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256DpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
 	return x86.M256(m256DpPs([8]float32(a), [8]float32(b), imm8))
 }
@@ -2119,6 +2139,8 @@ func m256ExtractEpi8(a [32]byte, index int) int8
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Extractf128Pd(a x86.M256d, imm8 int) x86.M128d {
 	return x86.M128d(m256Extractf128Pd([4]float64(a), imm8))
 }
@@ -2138,6 +2160,8 @@ func m256Extractf128Pd(a [4]float64, imm8 int) [2]float64
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Extractf128Ps(a x86.M256, imm8 int) x86.M128 {
 	return x86.M128(m256Extractf128Ps([8]float32(a), imm8))
 }
@@ -2156,6 +2180,8 @@ func m256Extractf128Ps(a [8]float32, imm8 int) [4]float32
 //
 // Instruction: 'VEXTRACTF128'. Intrinsic: '_mm256_extractf128_si256'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Extractf128Si256(a x86.M256i, imm8 int) x86.M128i {
 	return x86.M128i(m256Extractf128Si256([32]byte(a), imm8))
 }
@@ -2353,7 +2379,8 @@ func m256IdivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_idivrem_epi32'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256IdivremEpi32(mem_addr *x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -2436,6 +2463,8 @@ func m256InsertEpi8(a [32]byte, i int8, index int) [32]byte
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Insertf128Pd(a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
 	return x86.M256d(m256Insertf128Pd([4]float64(a), [2]float64(b), imm8))
 }
@@ -2456,6 +2485,8 @@ func m256Insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Insertf128Ps(a x86.M256, b x86.M128, imm8 int) x86.M256 {
 	return x86.M256(m256Insertf128Ps([8]float32(a), [4]float32(b), imm8))
 }
@@ -2475,6 +2506,8 @@ func m256Insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
 //
 // Instruction: 'VINSERTF128'. Intrinsic: '_mm256_insertf128_si256'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Insertf128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
 	return x86.M256i(m256Insertf128Si256([32]byte(a), [16]byte(b), imm8))
 }
@@ -2581,7 +2614,8 @@ func m256IremEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VLDDQU'. Intrinsic: '_mm256_lddqu_si256'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256LddquSi256(mem_addr *x86.M256iConst) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -2602,7 +2636,8 @@ func M256LddquSi256(mem_addr *x86.M256iConst) x86.M256i {
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_load_si256'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256LoadSi256(mem_addr *x86.M256iConst) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -2622,7 +2657,8 @@ func M256LoadSi256(mem_addr *x86.M256iConst) x86.M256i {
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_loadu_si256'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256LoaduSi256(mem_addr *x86.M256iConst) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -2644,7 +2680,8 @@ func M256LoaduSi256(mem_addr *x86.M256iConst) x86.M256i {
 //
 // Instruction: '...'. Intrinsic: '_mm256_loadu2_m128i'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256Loadu2M128i(hiaddr *x86.M128iConst, loaddr *x86.M128iConst) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -2860,7 +2897,8 @@ func m256LogbPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm_maskstore_pd'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskstorePd(mem_addr *float64, mask x86.M128i, a x86.M128d)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -2878,7 +2916,8 @@ func MaskstorePd(mem_addr *float64, mask x86.M128i, a x86.M128d)  {
 //
 // Instruction: 'VMASKMOVPD'. Intrinsic: '_mm256_maskstore_pd'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskstorePd(mem_addr *float64, mask x86.M256i, a x86.M256d)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -2896,7 +2935,8 @@ func M256MaskstorePd(mem_addr *float64, mask x86.M256i, a x86.M256d)  {
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm_maskstore_ps'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskstorePs(mem_addr *float32, mask x86.M128i, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -2914,7 +2954,8 @@ func MaskstorePs(mem_addr *float32, mask x86.M128i, a x86.M128)  {
 //
 // Instruction: 'VMASKMOVPS'. Intrinsic: '_mm256_maskstore_ps'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskstorePs(mem_addr *float32, mask x86.M256i, a x86.M256)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3183,6 +3224,8 @@ func m256OrPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm_permute_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func PermutePd(a x86.M128d, imm8 int) x86.M128d {
 	return x86.M128d(permutePd([2]float64(a), imm8))
 }
@@ -3206,6 +3249,8 @@ func permutePd(a [2]float64, imm8 int) [2]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm256_permute_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256PermutePd(a x86.M256d, imm8 int) x86.M256d {
 	return x86.M256d(m256PermutePd([4]float64(a), imm8))
 }
@@ -3234,6 +3279,8 @@ func m256PermutePd(a [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm_permute_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func PermutePs(a x86.M128, imm8 int) x86.M128 {
 	return x86.M128(permutePs([4]float32(a), imm8))
 }
@@ -3267,6 +3314,8 @@ func permutePs(a [4]float32, imm8 int) [4]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm256_permute_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256PermutePs(a x86.M256, imm8 int) x86.M256 {
 	return x86.M256(m256PermutePs([8]float32(a), imm8))
 }
@@ -3297,6 +3346,8 @@ func m256PermutePs(a [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Permute2f128Pd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
 	return x86.M256d(m256Permute2f128Pd([4]float64(a), [4]float64(b), imm8))
 }
@@ -3327,6 +3378,8 @@ func m256Permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Permute2f128Ps(a x86.M256, b x86.M256, imm8 int) x86.M256 {
 	return x86.M256(m256Permute2f128Ps([8]float32(a), [8]float32(b), imm8))
 }
@@ -3356,6 +3409,8 @@ func m256Permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
 //
 // Instruction: 'VPERM2F128'. Intrinsic: '_mm256_permute2f128_si256'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Permute2f128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256Permute2f128Si256([32]byte(a), [32]byte(b), imm8))
 }
@@ -4301,6 +4356,8 @@ func m256SetzeroSi256() [32]byte
 //
 // Instruction: 'VSHUFPD'. Intrinsic: '_mm256_shuffle_pd'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256ShufflePd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
 	return x86.M256d(m256ShufflePd([4]float64(a), [4]float64(b), imm8))
 }
@@ -4334,6 +4391,8 @@ func m256ShufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
 //
 // Instruction: 'VSHUFPS'. Intrinsic: '_mm256_shuffle_ps'.
 // Requires AVX.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256ShufflePs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
 	return x86.M256(m256ShufflePs([8]float32(a), [8]float32(b), imm8))
 }
@@ -4392,7 +4451,8 @@ func m256SinPs(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_pd'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256SincosPd(mem_addr *x86.M256d, a x86.M256d) x86.M256d {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256d{}
@@ -4411,7 +4471,8 @@ func M256SincosPd(mem_addr *x86.M256d, a x86.M256d) x86.M256d {
 //
 // Instruction: '...'. Intrinsic: '_mm256_sincos_ps'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256SincosPs(mem_addr *x86.M256, a x86.M256) x86.M256 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256{}
@@ -4538,7 +4599,8 @@ func m256SqrtPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_store_pd'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StorePd(mem_addr *float64, a x86.M256d)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4553,7 +4615,8 @@ func M256StorePd(mem_addr *float64, a x86.M256d)  {
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_store_ps'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StorePs(mem_addr *float32, a x86.M256)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4567,7 +4630,8 @@ func M256StorePs(mem_addr *float32, a x86.M256)  {
 //
 // Instruction: 'VMOVDQA'. Intrinsic: '_mm256_store_si256'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StoreSi256(mem_addr *x86.M256i, a x86.M256i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4581,7 +4645,8 @@ func M256StoreSi256(mem_addr *x86.M256i, a x86.M256i)  {
 //
 // Instruction: 'VMOVUPD'. Intrinsic: '_mm256_storeu_pd'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StoreuPd(mem_addr *float64, a x86.M256d)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4595,7 +4660,8 @@ func M256StoreuPd(mem_addr *float64, a x86.M256d)  {
 //
 // Instruction: 'VMOVUPS'. Intrinsic: '_mm256_storeu_ps'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StoreuPs(mem_addr *float32, a x86.M256)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4608,7 +4674,8 @@ func M256StoreuPs(mem_addr *float32, a x86.M256)  {
 //
 // Instruction: 'VMOVDQU'. Intrinsic: '_mm256_storeu_si256'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StoreuSi256(mem_addr *x86.M256i, a x86.M256i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4624,7 +4691,8 @@ func M256StoreuSi256(mem_addr *x86.M256i, a x86.M256i)  {
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256Storeu2M128(hiaddr *float32, loaddr *float32, a x86.M256)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4640,7 +4708,8 @@ func M256Storeu2M128(hiaddr *float32, loaddr *float32, a x86.M256)  {
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128d'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256Storeu2M128d(hiaddr *float64, loaddr *float64, a x86.M256d)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4655,7 +4724,8 @@ func M256Storeu2M128d(hiaddr *float64, loaddr *float64, a x86.M256d)  {
 //
 // Instruction: '...'. Intrinsic: '_mm256_storeu2_m128i'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256Storeu2M128i(hiaddr *x86.M128i, loaddr *x86.M128i, a x86.M256i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4671,7 +4741,8 @@ func M256Storeu2M128i(hiaddr *x86.M128i, loaddr *x86.M128i, a x86.M256i)  {
 //
 // Instruction: 'VMOVNTPD'. Intrinsic: '_mm256_stream_pd'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StreamPd(mem_addr *float64, a x86.M256d)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4687,7 +4758,8 @@ func M256StreamPd(mem_addr *float64, a x86.M256d)  {
 //
 // Instruction: 'VMOVNTPS'. Intrinsic: '_mm256_stream_ps'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StreamPs(mem_addr *float32, a x86.M256)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4702,7 +4774,8 @@ func M256StreamPs(mem_addr *float32, a x86.M256)  {
 //
 // Instruction: 'VMOVNTDQ'. Intrinsic: '_mm256_stream_si256'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StreamSi256(mem_addr *x86.M256i, a x86.M256i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -5564,7 +5637,8 @@ func m256UdivEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm256_udivrem_epi32'.
 // Requires AVX.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256UdivremEpi32(mem_addr *x86.M256i, a x86.M256i, b x86.M256i) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}

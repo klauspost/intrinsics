@@ -108,6 +108,8 @@ func aesimcSi128(a [16]byte) [16]byte
 //
 // Instruction: 'AESKEYGENASSIST'. Intrinsic: '_mm_aeskeygenassist_si128'.
 // Requires AES.
+//
+// FIXME: Requires compiler support (has immediate)
 func AeskeygenassistSi128(a x86.M128i, imm8 int) x86.M128i {
 	return x86.M128i(aeskeygenassistSi128([16]byte(a), imm8))
 }

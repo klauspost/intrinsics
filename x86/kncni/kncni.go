@@ -102,7 +102,8 @@ func m512MaskAbsPs(src [16]float32, k uint16, v2 [16]float32) [16]float32
 //
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_adc_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512AdcEpi32(v2 x86.M512i, k2 x86.Mmask16, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -127,7 +128,8 @@ func M512AdcEpi32(v2 x86.M512i, k2 x86.Mmask16, v3 x86.M512i, k2_res *x86.Mmask1
 //
 // Instruction: 'VPADCD'. Intrinsic: '_mm512_mask_adc_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskAdcEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -579,7 +581,8 @@ func m512MaskAddnRoundPs(src [16]float32, k uint16, v2 [16]float32, v3 [16]float
 //
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_addsetc_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512AddsetcEpi32(v2 x86.M512i, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -604,7 +607,8 @@ func M512AddsetcEpi32(v2 x86.M512i, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i
 //
 // Instruction: 'VPADDSETCD'. Intrinsic: '_mm512_mask_addsetc_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskAddsetcEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, k2_res *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -623,7 +627,8 @@ func M512MaskAddsetcEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86
 //
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_addsets_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512AddsetsEpi32(v2 x86.M512i, v3 x86.M512i, sign *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -648,7 +653,8 @@ func M512AddsetsEpi32(v2 x86.M512i, v3 x86.M512i, sign *x86.Mmask16) x86.M512i {
 //
 // Instruction: 'VPADDSETSD'. Intrinsic: '_mm512_mask_addsets_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskAddsetsEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M512i, sign *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -667,7 +673,8 @@ func M512MaskAddsetsEpi32(src x86.M512i, k x86.Mmask16, v2 x86.M512i, v3 x86.M51
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_addsets_ps'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512AddsetsPs(v2 x86.M512, v3 x86.M512, sign *x86.Mmask16) x86.M512 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512{}
@@ -692,7 +699,8 @@ func M512AddsetsPs(v2 x86.M512, v3 x86.M512, sign *x86.Mmask16) x86.M512 {
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_mask_addsets_ps'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskAddsetsPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign *x86.Mmask16) x86.M512 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512{}
@@ -718,7 +726,8 @@ func M512MaskAddsetsPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, si
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_addsets_round_ps'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512AddsetsRoundPs(v2 x86.M512, v3 x86.M512, sign *x86.Mmask16, rounding int) x86.M512 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512{}
@@ -750,7 +759,8 @@ func M512AddsetsRoundPs(v2 x86.M512, v3 x86.M512, sign *x86.Mmask16, rounding in
 //
 // Instruction: 'VADDSETSPS'. Intrinsic: '_mm512_mask_addsets_round_ps'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskAddsetsRoundPs(src x86.M512, k x86.Mmask16, v2 x86.M512, v3 x86.M512, sign *x86.Mmask16, rounding int) x86.M512 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512{}
@@ -1196,6 +1206,8 @@ func m512Castsi512Ps(a [64]byte) [16]float32
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmp_epi32_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512CmpEpi32Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
 	return x86.Mmask16(m512CmpEpi32Mask([64]byte(a), [64]byte(b), imm8))
 }
@@ -1230,6 +1242,8 @@ func m512CmpEpi32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmp_epi32_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskCmpEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
 	return x86.Mmask16(m512MaskCmpEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
 }
@@ -1259,6 +1273,8 @@ func m512MaskCmpEpi32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_cmp_epu32_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512CmpEpu32Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
 	return x86.Mmask16(m512CmpEpu32Mask([64]byte(a), [64]byte(b), imm8))
 }
@@ -1293,6 +1309,8 @@ func m512CmpEpu32Mask(a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm512_mask_cmp_epu32_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskCmpEpu32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask16 {
 	return x86.Mmask16(m512MaskCmpEpu32Mask(uint16(k1), [64]byte(a), [64]byte(b), imm8))
 }
@@ -1346,6 +1364,8 @@ func m512MaskCmpEpu32Mask(k1 uint16, a [64]byte, b [64]byte, imm8 uint8) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmp_pd_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512CmpPdMask(a x86.M512d, b x86.M512d, imm8 int) x86.Mmask8 {
 	return x86.Mmask8(m512CmpPdMask([8]float64(a), [8]float64(b), imm8))
 }
@@ -1404,6 +1424,8 @@ func m512CmpPdMask(a [8]float64, b [8]float64, imm8 int) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmp_pd_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskCmpPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.Mmask8 {
 	return x86.Mmask8(m512MaskCmpPdMask(uint8(k1), [8]float64(a), [8]float64(b), imm8))
 }
@@ -1457,6 +1479,8 @@ func m512MaskCmpPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int) uint8
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmp_ps_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512CmpPsMask(a x86.M512, b x86.M512, imm8 int) x86.Mmask16 {
 	return x86.Mmask16(m512CmpPsMask([16]float32(a), [16]float32(b), imm8))
 }
@@ -1515,6 +1539,8 @@ func m512CmpPsMask(a [16]float32, b [16]float32, imm8 int) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmp_ps_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskCmpPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.Mmask16 {
 	return x86.Mmask16(m512MaskCmpPsMask(uint16(k1), [16]float32(a), [16]float32(b), imm8))
 }
@@ -1569,6 +1595,8 @@ func m512MaskCmpPsMask(k1 uint16, a [16]float32, b [16]float32, imm8 int) uint16
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_cmp_round_pd_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512CmpRoundPdMask(a x86.M512d, b x86.M512d, imm8 int, sae int) x86.Mmask8 {
 	return x86.Mmask8(m512CmpRoundPdMask([8]float64(a), [8]float64(b), imm8, sae))
 }
@@ -1628,6 +1656,8 @@ func m512CmpRoundPdMask(a [8]float64, b [8]float64, imm8 int, sae int) uint8
 //
 // Instruction: 'VCMPPD'. Intrinsic: '_mm512_mask_cmp_round_pd_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskCmpRoundPdMask(k1 x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int, sae int) x86.Mmask8 {
 	return x86.Mmask8(m512MaskCmpRoundPdMask(uint8(k1), [8]float64(a), [8]float64(b), imm8, sae))
 }
@@ -1682,6 +1712,8 @@ func m512MaskCmpRoundPdMask(k1 uint8, a [8]float64, b [8]float64, imm8 int, sae 
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_cmp_round_ps_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512CmpRoundPsMask(a x86.M512, b x86.M512, imm8 int, sae int) x86.Mmask16 {
 	return x86.Mmask16(m512CmpRoundPsMask([16]float32(a), [16]float32(b), imm8, sae))
 }
@@ -1741,6 +1773,8 @@ func m512CmpRoundPsMask(a [16]float32, b [16]float32, imm8 int, sae int) uint16
 //
 // Instruction: 'VCMPPS'. Intrinsic: '_mm512_mask_cmp_round_ps_mask'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskCmpRoundPsMask(k1 x86.Mmask16, a x86.M512, b x86.M512, imm8 int, sae int) x86.Mmask16 {
 	return x86.Mmask16(m512MaskCmpRoundPsMask(uint16(k1), [16]float32(a), [16]float32(b), imm8, sae))
 }
@@ -7465,6 +7499,8 @@ func m512OrSi512(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_mask_permute4f128_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskPermute4f128Epi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 MMPERMENUM) x86.M512i {
 	return x86.M512i(m512MaskPermute4f128Epi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
@@ -7494,6 +7530,8 @@ func m512MaskPermute4f128Epi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMEN
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_permute4f128_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512Permute4f128Epi32(a x86.M512i, imm8 MMPERMENUM) x86.M512i {
 	return x86.M512i(m512Permute4f128Epi32([64]byte(a), imm8))
 }
@@ -7533,6 +7571,8 @@ func m512Permute4f128Epi32(a [64]byte, imm8 MMPERMENUM) [64]byte
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_mask_permute4f128_ps'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskPermute4f128Ps(src x86.M512, k x86.Mmask16, a x86.M512, imm8 MMPERMENUM) x86.M512 {
 	return x86.M512(m512MaskPermute4f128Ps([16]float32(src), uint16(k), [16]float32(a), imm8))
 }
@@ -7563,6 +7603,8 @@ func m512MaskPermute4f128Ps(src [16]float32, k uint16, a [16]float32, imm8 MMPER
 //
 // Instruction: 'VPERMF32X4'. Intrinsic: '_mm512_permute4f128_ps'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512Permute4f128Ps(a x86.M512, imm8 MMPERMENUM) x86.M512 {
 	return x86.M512(m512Permute4f128Ps([16]float32(a), imm8))
 }
@@ -7628,7 +7670,8 @@ func m512PermutevarEpi32(idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPREFETCH0, VPREFETCH1, VPREFETCH2, VPREFETCHNTA, VPREFETCHE0, VPREFETCHE1, VPREFETCHE2, VPREFETCHENTA'. Intrinsic: '_mm_prefetch'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Prefetch(p *byte, i int)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -9151,7 +9194,8 @@ func m512Rsqrt23Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_mask_sbb_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskSbbEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -9172,7 +9216,8 @@ func M512MaskSbbEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i
 //
 // Instruction: 'VPSBBD'. Intrinsic: '_mm512_sbb_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512SbbEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -9198,7 +9243,8 @@ func M512SbbEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16
 //
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_mask_sbbr_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskSbbrEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -9219,7 +9265,8 @@ func M512MaskSbbrEpi32(v2 x86.M512i, k1 x86.Mmask16, k2 x86.Mmask16, v3 x86.M512
 //
 // Instruction: 'VPSBBRD'. Intrinsic: '_mm512_sbbr_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512SbbrEpi32(v2 x86.M512i, k x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -9371,6 +9418,8 @@ func m512ScaleRoundPs(a [16]float32, b [64]byte, rounding int) [16]float32
 //
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm512_mask_shuffle_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskShuffleEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 MMPERMENUM) x86.M512i {
 	return x86.M512i(m512MaskShuffleEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
@@ -9411,6 +9460,8 @@ func m512MaskShuffleEpi32(src [64]byte, k uint16, a [64]byte, imm8 MMPERMENUM) [
 //
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm512_shuffle_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512ShuffleEpi32(a x86.M512i, imm8 MMPERMENUM) x86.M512i {
 	return x86.M512i(m512ShuffleEpi32([64]byte(a), imm8))
 }
@@ -9438,6 +9489,8 @@ func m512ShuffleEpi32(a [64]byte, imm8 MMPERMENUM) [64]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_mask_slli_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskSlliEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
 	return x86.M512i(m512MaskSlliEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
@@ -9460,6 +9513,8 @@ func m512MaskSlliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_slli_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512SlliEpi32(a x86.M512i, imm8 uint32) x86.M512i {
 	return x86.M512i(m512SlliEpi32([64]byte(a), imm8))
 }
@@ -9558,6 +9613,8 @@ func spflt64(r1 uint64)
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_mask_srai_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskSraiEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
 	return x86.M512i(m512MaskSraiEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
@@ -9580,6 +9637,8 @@ func m512MaskSraiEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_srai_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512SraiEpi32(a x86.M512i, imm8 uint32) x86.M512i {
 	return x86.M512i(m512SraiEpi32([64]byte(a), imm8))
 }
@@ -9650,6 +9709,8 @@ func m512SravEpi32(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_mask_srli_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512MaskSrliEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
 	return x86.M512i(m512MaskSrliEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
@@ -9672,6 +9733,8 @@ func m512MaskSrliEpi32(src [64]byte, k uint16, a [64]byte, imm8 uint32) [64]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_srli_epi32'.
 // Requires KNCNI.
+//
+// FIXME: Requires compiler support (has immediate)
 func M512SrliEpi32(a x86.M512i, imm8 uint32) x86.M512i {
 	return x86.M512i(m512SrliEpi32([64]byte(a), imm8))
 }
@@ -10266,7 +10329,8 @@ func m512SubrRoundPs(v2 [16]float32, v3 [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_mask_subrsetb_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskSubrsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -10286,7 +10350,8 @@ func M512MaskSubrsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x8
 //
 // Instruction: 'VPSUBRSETBD'. Intrinsic: '_mm512_subrsetb_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512SubrsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -10312,7 +10377,8 @@ func M512SubrsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow *x86.Mmask16) x86.M512
 //
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_mask_subsetb_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512MaskSubsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}
@@ -10331,7 +10397,8 @@ func M512MaskSubsetbEpi32(v2 x86.M512i, k x86.Mmask16, k_old x86.Mmask16, v3 x86
 //
 // Instruction: 'VPSUBSETBD'. Intrinsic: '_mm512_subsetb_epi32'.
 // Requires KNCNI.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M512SubsetbEpi32(v2 x86.M512i, v3 x86.M512i, borrow *x86.Mmask16) x86.M512i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512i{}

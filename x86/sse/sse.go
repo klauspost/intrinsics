@@ -2021,6 +2021,8 @@ func expm1Ps(a [4]float32) [4]float32
 //
 // Instruction: 'PEXTRW'. Intrinsic: '_mm_extract_pi16'.
 // Requires SSE.
+//
+// FIXME: Requires compiler support (has immediate)
 func ExtractPi16(a x86.M64, imm8 int) int {
 	return int(extractPi16(a, imm8))
 }
@@ -2179,7 +2181,8 @@ func idivEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_idivrem_epi32'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func IdivremEpi32(mem_addr *x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -2194,6 +2197,8 @@ func IdivremEpi32(mem_addr *x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
 //
 // Instruction: 'PINSRW'. Intrinsic: '_mm_insert_pi16'.
 // Requires SSE.
+//
+// FIXME: Requires compiler support (has immediate)
 func InsertPi16(a x86.M64, i int, imm8 int) x86.M64 {
 	return x86.M64(insertPi16(a, i, imm8))
 }
@@ -2315,7 +2320,8 @@ func iremEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'MOVHPS'. Intrinsic: '_mm_loadh_pi'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func LoadhPi(a x86.M128, mem_addr *x86.M64Const) x86.M128 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128{}
@@ -2333,7 +2339,8 @@ func LoadhPi(a x86.M128, mem_addr *x86.M64Const) x86.M128 {
 //
 // Instruction: 'MOVLPS'. Intrinsic: '_mm_loadl_pi'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func LoadlPi(a x86.M128, mem_addr *x86.M64Const) x86.M128 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128{}
@@ -2554,7 +2561,8 @@ func logbPs(a [4]float32) [4]float32
 //
 // Instruction: 'MASKMOVQ'. Intrinsic: '_mm_maskmove_si64'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskmoveSi64(a x86.M64, mask x86.M64, mem_addr *byte)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -2573,7 +2581,8 @@ func MaskmoveSi64(a x86.M64, mask x86.M64, mem_addr *byte)  {
 //
 // Instruction: 'MASKMOVQ'. Intrinsic: '_m_maskmovq'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Maskmovq(a x86.M64, mask x86.M64, mem_addr *byte)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -2935,6 +2944,8 @@ func pavgw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PEXTRW'. Intrinsic: '_m_pextrw'.
 // Requires SSE.
+//
+// FIXME: Requires compiler support (has immediate)
 func Pextrw(a x86.M64, imm8 int) int {
 	return int(pextrw(a, imm8))
 }
@@ -2951,6 +2962,8 @@ func pextrw(a x86.M64, imm8 int) int
 //
 // Instruction: 'PINSRW'. Intrinsic: '_m_pinsrw'.
 // Requires SSE.
+//
+// FIXME: Requires compiler support (has immediate)
 func Pinsrw(a x86.M64, i int, imm8 int) x86.M64 {
 	return x86.M64(pinsrw(a, i, imm8))
 }
@@ -3124,7 +3137,8 @@ func powPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'PREFETCHNTA, PREFETCHT0, PREFETCHT1, PREFETCHT2'. Intrinsic: '_mm_prefetch'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Prefetch(p *byte, i int)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3172,6 +3186,8 @@ func psadbw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSHUFW'. Intrinsic: '_m_pshufw'.
 // Requires SSE.
+//
+// FIXME: Requires compiler support (has immediate)
 func Pshufw(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(pshufw(a, imm8))
 }
@@ -3633,6 +3649,8 @@ func sfence()
 //
 // Instruction: 'PSHUFW'. Intrinsic: '_mm_shuffle_pi16'.
 // Requires SSE.
+//
+// FIXME: Requires compiler support (has immediate)
 func ShufflePi16(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(shufflePi16(a, imm8))
 }
@@ -3660,6 +3678,8 @@ func shufflePi16(a x86.M64, imm8 int) x86.M64
 //
 // Instruction: 'SHUFPS'. Intrinsic: '_mm_shuffle_ps'.
 // Requires SSE.
+//
+// FIXME: Requires compiler support (has immediate)
 func ShufflePs(a x86.M128, b x86.M128, imm8 uint32) x86.M128 {
 	return x86.M128(shufflePs([4]float32(a), [4]float32(b), imm8))
 }
@@ -3716,7 +3736,8 @@ func sinPs(a [4]float32) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm_sincos_pd'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func SincosPd(mem_addr *x86.M128d, a x86.M128d) x86.M128d {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128d{}
@@ -3735,7 +3756,8 @@ func SincosPd(mem_addr *x86.M128d, a x86.M128d) x86.M128d {
 //
 // Instruction: '...'. Intrinsic: '_mm_sincos_ps'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func SincosPs(mem_addr *x86.M128, a x86.M128) x86.M128 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128{}
@@ -3858,7 +3880,8 @@ func sqrtSs(a [4]float32) [4]float32
 //
 // Instruction: 'MOVAPS'. Intrinsic: '_mm_store_ps'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StorePs(mem_addr *float32, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3875,7 +3898,8 @@ func StorePs(mem_addr *float32, a x86.M128)  {
 //
 // Instruction: '...'. Intrinsic: '_mm_store_ps1'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StorePs1(mem_addr *float32, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3889,7 +3913,8 @@ func StorePs1(mem_addr *float32, a x86.M128)  {
 //
 // Instruction: 'MOVSS'. Intrinsic: '_mm_store_ss'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StoreSs(mem_addr *float32, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3906,7 +3931,8 @@ func StoreSs(mem_addr *float32, a x86.M128)  {
 //
 // Instruction: '...'. Intrinsic: '_mm_store1_ps'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Store1Ps(mem_addr *float32, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3920,7 +3946,8 @@ func Store1Ps(mem_addr *float32, a x86.M128)  {
 //
 // Instruction: 'MOVHPS'. Intrinsic: '_mm_storeh_pi'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StorehPi(mem_addr *x86.M64, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3934,7 +3961,8 @@ func StorehPi(mem_addr *x86.M64, a x86.M128)  {
 //
 // Instruction: 'MOVLPS'. Intrinsic: '_mm_storel_pi'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StorelPi(mem_addr *x86.M64, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3952,7 +3980,8 @@ func StorelPi(mem_addr *x86.M64, a x86.M128)  {
 //
 // Instruction: '...'. Intrinsic: '_mm_storer_ps'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StorerPs(mem_addr *float32, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3966,7 +3995,8 @@ func StorerPs(mem_addr *float32, a x86.M128)  {
 //
 // Instruction: 'MOVUPS'. Intrinsic: '_mm_storeu_ps'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StoreuPs(mem_addr *float32, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -3988,7 +4018,8 @@ func StoreuPs(mem_addr *float32, a x86.M128)  {
 //
 // Instruction: 'MOVNTQ'. Intrinsic: '_mm_stream_pi'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StreamPi(mem_addr *x86.M64, a x86.M64)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4004,7 +4035,8 @@ func StreamPi(mem_addr *x86.M64, a x86.M64)  {
 //
 // Instruction: 'MOVNTPS'. Intrinsic: '_mm_stream_ps'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func StreamPs(mem_addr *float32, a x86.M128)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -4502,7 +4534,8 @@ func udivEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_udivrem_epi32'.
 // Requires SSE.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func UdivremEpi32(mem_addr *x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}

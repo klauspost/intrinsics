@@ -19,7 +19,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDSEED'. Intrinsic: '_rdseed16_step'.
 // Requires RDSEED.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdseed16Step(val *uint16) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -39,7 +40,8 @@ func Rdseed16Step(val *uint16) int {
 //
 // Instruction: 'RDSEED'. Intrinsic: '_rdseed32_step'.
 // Requires RDSEED.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdseed32Step(val *uint32) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
@@ -59,7 +61,8 @@ func Rdseed32Step(val *uint32) int {
 //
 // Instruction: 'RDSEED'. Intrinsic: '_rdseed64_step'.
 // Requires RDSEED.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdseed64Step(val *uint64) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0

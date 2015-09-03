@@ -38,6 +38,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'PCLMULQDQ'. Intrinsic: '_mm_clmulepi64_si128'.
 // Requires PCLMULQDQ.
+//
+// FIXME: Requires compiler support (has immediate)
 func Clmulepi64Si128(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
 	return x86.M128i(clmulepi64Si128([16]byte(a), [16]byte(b), imm8))
 }

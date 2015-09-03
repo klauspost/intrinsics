@@ -304,6 +304,8 @@ func m256AvgEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPBLENDW'. Intrinsic: '_mm256_blend_epi16'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256BlendEpi16(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256BlendEpi16([32]byte(a), [32]byte(b), imm8))
 }
@@ -326,6 +328,8 @@ func m256BlendEpi16(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPBLENDD'. Intrinsic: '_mm_blend_epi32'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func BlendEpi32(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
 	return x86.M128i(blendEpi32([16]byte(a), [16]byte(b), imm8))
 }
@@ -348,6 +352,8 @@ func blendEpi32(a [16]byte, b [16]byte, imm8 int) [16]byte
 //
 // Instruction: 'VPBLENDD'. Intrinsic: '_mm256_blend_epi32'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256BlendEpi32(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256BlendEpi32([32]byte(a), [32]byte(b), imm8))
 }
@@ -622,6 +628,8 @@ func m256BroadcastwEpi16(a [16]byte) [32]byte
 //
 // Instruction: 'VPSLLDQ'. Intrinsic: '_mm256_bslli_epi128'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256BslliEpi128(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256BslliEpi128([32]byte(a), imm8))
 }
@@ -642,6 +650,8 @@ func m256BslliEpi128(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLDQ'. Intrinsic: '_mm256_bsrli_epi128'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256BsrliEpi128(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256BsrliEpi128([32]byte(a), imm8))
 }
@@ -1032,6 +1042,8 @@ func m256Cvtepu8Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VEXTRACTI128'. Intrinsic: '_mm256_extracti128_si256'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Extracti128Si256(a x86.M256i, imm8 int) x86.M128i {
 	return x86.M128i(m256Extracti128Si256([32]byte(a), imm8))
 }
@@ -1217,7 +1229,8 @@ func m256HsubsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm_i32gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func I32gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1244,7 +1257,8 @@ func I32gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm_mask_i32gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskI32gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1264,7 +1278,8 @@ func MaskI32gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm256_i32gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256I32gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1291,7 +1306,8 @@ func M256I32gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
 //
 // Instruction: 'VPGATHERDD'. Intrinsic: '_mm256_mask_i32gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskI32gatherEpi32(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1312,7 +1328,8 @@ func M256MaskI32gatherEpi32(src x86.M256i, base_addr *int, vindex x86.M256i, mas
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm_i32gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1340,7 +1357,8 @@ func I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm_mask_i32gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskI32gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1361,7 +1379,8 @@ func MaskI32gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm256_i32gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1389,7 +1408,8 @@ func M256I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M256i {
 //
 // Instruction: 'VPGATHERDQ'. Intrinsic: '_mm256_mask_i32gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskI32gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M128i, mask x86.M256i, scale int) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1434,7 +1454,8 @@ func M256MaskI32gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M128i, mas
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm_i64gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func I64gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1462,7 +1483,8 @@ func I64gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm_mask_i64gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1483,7 +1505,8 @@ func MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm256_i64gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256I64gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1511,7 +1534,8 @@ func M256I64gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M128i {
 //
 // Instruction: 'VPGATHERQD'. Intrinsic: '_mm256_mask_i64gather_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M256i, mask x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1531,7 +1555,8 @@ func M256MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M256i, mas
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm_i64gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func I64gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1558,7 +1583,8 @@ func I64gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm_mask_i64gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskI64gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1578,7 +1604,8 @@ func MaskI64gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm256_i64gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256I64gatherEpi64(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1605,7 +1632,8 @@ func M256I64gatherEpi64(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
 //
 // Instruction: 'VPGATHERQQ'. Intrinsic: '_mm256_mask_i64gather_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskI64gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1647,6 +1675,8 @@ func M256MaskI64gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M256i, mas
 //
 // Instruction: 'VINSERTI128'. Intrinsic: '_mm256_inserti128_si256'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Inserti128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
 	return x86.M256i(m256Inserti128Si256([32]byte(a), [16]byte(b), imm8))
 }
@@ -1709,7 +1739,8 @@ func m256MaddubsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm_maskload_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskloadEpi32(mem_addr *int, mask x86.M128i) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1731,7 +1762,8 @@ func MaskloadEpi32(mem_addr *int, mask x86.M128i) x86.M128i {
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm256_maskload_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskloadEpi32(mem_addr *int, mask x86.M256i) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1753,7 +1785,8 @@ func M256MaskloadEpi32(mem_addr *int, mask x86.M256i) x86.M256i {
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm_maskload_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskloadEpi64(mem_addr *int, mask x86.M128i) x86.M128i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
@@ -1775,7 +1808,8 @@ func MaskloadEpi64(mem_addr *int, mask x86.M128i) x86.M128i {
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm256_maskload_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskloadEpi64(mem_addr *int, mask x86.M256i) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
@@ -1794,7 +1828,8 @@ func M256MaskloadEpi64(mem_addr *int, mask x86.M256i) x86.M256i {
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm_maskstore_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskstoreEpi32(mem_addr *int, mask x86.M128i, a x86.M128i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -1813,7 +1848,8 @@ func MaskstoreEpi32(mem_addr *int, mask x86.M128i, a x86.M128i)  {
 //
 // Instruction: 'VPMASKMOVD'. Intrinsic: '_mm256_maskstore_epi32'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskstoreEpi32(mem_addr *int, mask x86.M256i, a x86.M256i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -1832,7 +1868,8 @@ func M256MaskstoreEpi32(mem_addr *int, mask x86.M256i, a x86.M256i)  {
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm_maskstore_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskstoreEpi64(mem_addr *int64, mask x86.M128i, a x86.M128i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -1851,7 +1888,8 @@ func MaskstoreEpi64(mem_addr *int64, mask x86.M128i, a x86.M128i)  {
 //
 // Instruction: 'VPMASKMOVQ'. Intrinsic: '_mm256_maskstore_epi64'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256MaskstoreEpi64(mem_addr *int64, mask x86.M256i, a x86.M256i)  {
 	// FIXME: Rework to avoid possible return value as parameter.
 
@@ -2165,6 +2203,8 @@ func m256MovemaskEpi8(a [32]byte) int
 //
 // Instruction: 'VMPSADBW'. Intrinsic: '_mm256_mpsadbw_epu8'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256MpsadbwEpu8(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256MpsadbwEpu8([32]byte(a), [32]byte(b), imm8))
 }
@@ -2499,6 +2539,8 @@ func m256PackusEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPERM2I128'. Intrinsic: '_mm256_permute2x128_si256'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Permute2x128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256Permute2x128Si256([32]byte(a), [32]byte(b), imm8))
 }
@@ -2527,6 +2569,8 @@ func m256Permute2x128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm256_permute4x64_epi64'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Permute4x64Epi64(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256Permute4x64Epi64([32]byte(a), imm8))
 }
@@ -2556,6 +2600,8 @@ func m256Permute4x64Epi64(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm256_permute4x64_pd'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256Permute4x64Pd(a x86.M256d, imm8 int) x86.M256d {
 	return x86.M256d(m256Permute4x64Pd([4]float64(a), imm8))
 }
@@ -2651,6 +2697,8 @@ func m256SadEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFD'. Intrinsic: '_mm256_shuffle_epi32'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256ShuffleEpi32(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256ShuffleEpi32([32]byte(a), imm8))
 }
@@ -2707,6 +2755,8 @@ func m256ShuffleEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSHUFHW'. Intrinsic: '_mm256_shufflehi_epi16'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256ShufflehiEpi16(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256ShufflehiEpi16([32]byte(a), imm8))
 }
@@ -2733,6 +2783,8 @@ func m256ShufflehiEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSHUFLW'. Intrinsic: '_mm256_shufflelo_epi16'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256ShuffleloEpi16(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256ShuffleloEpi16([32]byte(a), imm8))
 }
@@ -2899,6 +2951,8 @@ func m256SllEpi64(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_slli_epi16'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SlliEpi16(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SlliEpi16([32]byte(a), imm8))
 }
@@ -2921,6 +2975,8 @@ func m256SlliEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm256_slli_epi32'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SlliEpi32(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SlliEpi32([32]byte(a), imm8))
 }
@@ -2943,6 +2999,8 @@ func m256SlliEpi32(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm256_slli_epi64'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SlliEpi64(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SlliEpi64([32]byte(a), imm8))
 }
@@ -2963,6 +3021,8 @@ func m256SlliEpi64(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSLLDQ'. Intrinsic: '_mm256_slli_si256'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SlliSi256(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SlliSi256([32]byte(a), imm8))
 }
@@ -3105,6 +3165,8 @@ func m256SraEpi32(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_srai_epi16'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SraiEpi16(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SraiEpi16([32]byte(a), imm8))
 }
@@ -3127,6 +3189,8 @@ func m256SraiEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm256_srai_epi32'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SraiEpi32(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SraiEpi32([32]byte(a), imm8))
 }
@@ -3253,6 +3317,8 @@ func m256SrlEpi64(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_srli_epi16'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SrliEpi16(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SrliEpi16([32]byte(a), imm8))
 }
@@ -3275,6 +3341,8 @@ func m256SrliEpi16(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm256_srli_epi32'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SrliEpi32(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SrliEpi32([32]byte(a), imm8))
 }
@@ -3297,6 +3365,8 @@ func m256SrliEpi32(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm256_srli_epi64'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SrliEpi64(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SrliEpi64([32]byte(a), imm8))
 }
@@ -3317,6 +3387,8 @@ func m256SrliEpi64(a [32]byte, imm8 int) [32]byte
 //
 // Instruction: 'VPSRLDQ'. Intrinsic: '_mm256_srli_si256'.
 // Requires AVX2.
+//
+// FIXME: Requires compiler support (has immediate)
 func M256SrliSi256(a x86.M256i, imm8 int) x86.M256i {
 	return x86.M256i(m256SrliSi256([32]byte(a), imm8))
 }
@@ -3410,7 +3482,8 @@ func m256SrlvEpi64(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VMOVNTDQA'. Intrinsic: '_mm256_stream_load_si256'.
 // Requires AVX2.
-// FIXME: Will likely need to be reworked.
+//
+// FIXME: Will likely need to be reworked (has pointer parameter).
 func M256StreamLoadSi256(mem_addr *x86.M256iConst) x86.M256i {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}

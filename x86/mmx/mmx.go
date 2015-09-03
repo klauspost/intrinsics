@@ -908,6 +908,8 @@ func pslld(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSLLD'. Intrinsic: '_m_pslldi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Pslldi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(pslldi(a, imm8))
 }
@@ -944,6 +946,8 @@ func psllq(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSLLQ'. Intrinsic: '_m_psllqi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Psllqi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(psllqi(a, imm8))
 }
@@ -986,6 +990,8 @@ func psllw(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSLLW'. Intrinsic: '_m_psllwi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Psllwi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(psllwi(a, imm8))
 }
@@ -1028,6 +1034,8 @@ func psrad(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRAD'. Intrinsic: '_m_psradi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Psradi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(psradi(a, imm8))
 }
@@ -1070,6 +1078,8 @@ func psraw(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRAW'. Intrinsic: '_m_psrawi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Psrawi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(psrawi(a, imm8))
 }
@@ -1112,6 +1122,8 @@ func psrld(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRLD'. Intrinsic: '_m_psrldi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Psrldi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(psrldi(a, imm8))
 }
@@ -1148,6 +1160,8 @@ func psrlq(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRLQ'. Intrinsic: '_m_psrlqi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Psrlqi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(psrlqi(a, imm8))
 }
@@ -1190,6 +1204,8 @@ func psrlw(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRLW'. Intrinsic: '_m_psrlwi'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func Psrlwi(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(psrlwi(a, imm8))
 }
@@ -1696,6 +1712,8 @@ func sllSi64(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSLLW'. Intrinsic: '_mm_slli_pi16'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SlliPi16(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(slliPi16(a, imm8))
 }
@@ -1717,6 +1735,8 @@ func slliPi16(a x86.M64, imm8 int) x86.M64
 //
 // Instruction: 'PSLLD'. Intrinsic: '_mm_slli_pi32'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SlliPi32(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(slliPi32(a, imm8))
 }
@@ -1735,6 +1755,8 @@ func slliPi32(a x86.M64, imm8 int) x86.M64
 //
 // Instruction: 'PSLLQ'. Intrinsic: '_mm_slli_si64'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SlliSi64(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(slliSi64(a, imm8))
 }
@@ -1798,6 +1820,8 @@ func sraPi32(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRAW'. Intrinsic: '_mm_srai_pi16'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SraiPi16(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(sraiPi16(a, imm8))
 }
@@ -1819,6 +1843,8 @@ func sraiPi16(a x86.M64, imm8 int) x86.M64
 //
 // Instruction: 'PSRAD'. Intrinsic: '_mm_srai_pi32'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SraiPi32(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(sraiPi32(a, imm8))
 }
@@ -1900,6 +1926,8 @@ func srlSi64(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRLW'. Intrinsic: '_mm_srli_pi16'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SrliPi16(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(srliPi16(a, imm8))
 }
@@ -1921,6 +1949,8 @@ func srliPi16(a x86.M64, imm8 int) x86.M64
 //
 // Instruction: 'PSRLD'. Intrinsic: '_mm_srli_pi32'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SrliPi32(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(srliPi32(a, imm8))
 }
@@ -1939,6 +1969,8 @@ func srliPi32(a x86.M64, imm8 int) x86.M64
 //
 // Instruction: 'PSRLQ'. Intrinsic: '_mm_srli_si64'.
 // Requires MMX.
+//
+// FIXME: Requires compiler support (has immediate)
 func SrliSi64(a x86.M64, imm8 int) x86.M64 {
 	return x86.M64(srliSi64(a, imm8))
 }
