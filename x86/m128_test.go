@@ -246,6 +246,7 @@ func TestMixedSSE(t *testing.T) {
 // Mixed sse+sse2
 // Applies a 3x3 matrix and sRGB gamma corrects input
 // and writes it to output.
+// https://github.com/rawstudio/rawstudio/blob/master/plugins/colorspace-transform/colorspace_transform_sse2.c#L205
 func Transform8sRGB() {
 	w := 1048
 	h := 1024
@@ -373,7 +374,145 @@ func sseMatrix3Mul(mul []x86.M128, a, b, c x86.M128) x86.M128 {
 	return acc
 }
 
-// Not implemented
+// Return x^y for all 4 elements
 func FastPowPs(x, y x86.M128) x86.M128 {
-	return x86.M128{}
+	return exp2f4(sse.MulPs(log2f4(x), y))
+}
+
+/* SSE2 Polynomial pow function from Mesa3d (MIT License) */
+
+func poly0(x x86.M128, c0 float32) x86.M128 {
+	return sse.Set1Ps(c0)
+}
+
+func poly1(x x86.M128, c0, c1 float32) x86.M128 {
+	return sse.AddPs(sse.MulPs(poly0(x, c1), x), sse.Set1Ps(c0))
+}
+
+func poly2(x x86.M128, c0, c1, c2 float32) x86.M128 {
+	return sse.AddPs(sse.MulPs(poly1(x, c1, c2), x), sse.Set1Ps(c0))
+}
+
+func poly3(x x86.M128, c0, c1, c2, c3 float32) x86.M128 {
+	return sse.AddPs(sse.MulPs(poly2(x, c1, c2, c3), x), sse.Set1Ps(c0))
+}
+
+func poly4(x x86.M128, c0, c1, c2, c3, c4 float32) x86.M128 {
+	return sse.AddPs(sse.MulPs(poly3(x, c1, c2, c3, c4), x), sse.Set1Ps(c0))
+}
+
+func poly5(x x86.M128, c0, c1, c2, c3, c4, c5 float32) x86.M128 {
+	return sse.AddPs(sse.MulPs(poly4(x, c1, c2, c3, c4, c5), x), sse.Set1Ps(c0))
+}
+
+const LOG_poly_DEGREE = 4
+
+const log_p5_0 = 3.1157899
+const log_p5_1 = -3.3241990
+const log_p5_2 = 2.5988452
+const log_p5_3 = -1.2315303
+const log_p5_4 = 3.1821337e-1
+const log_p5_5 = -3.4436006e-2
+
+const log_p4_0 = 2.8882704548164776201
+const log_p4_1 = -2.52074962577807006663
+const log_p4_2 = 1.48116647521213171641
+const log_p4_3 = -0.465725644288844778798
+const log_p4_4 = 0.0596515482674574969533
+
+const log_p3_0 = 2.61761038894603480148
+const log_p3_1 = -1.75647175389045657003
+const log_p3_2 = 0.688243882994381274313
+const log_p3_3 = -0.107254423828329604454
+
+const log_p2_0 = 2.28330284476918490682
+const log_p2_1 = -1.04913055217340124191
+const log_p2_2 = 0.204446009836232697516
+
+const exp_mask = 0x7F800000
+const mantissa_mask = 0x007FFFFF
+
+func log2f4(x x86.M128) x86.M128 {
+	exp := sse2.Set1Epi32(exp_mask)
+	mant := sse2.Set1Epi32(mantissa_mask)
+	one := sse.Set1Ps(1.0)
+	i := sse2.CastpsSi128(x)
+	e := sse2.Cvtepi32Ps(sse2.SubEpi32(sse2.SrliEpi32(sse2.AndSi128(i, exp), 23), sse2.Set1Epi32(127)))
+	m := sse.OrPs(sse2.Castsi128Ps(sse2.AndSi128(i, mant)), one)
+	var p x86.M128
+
+	/* Minimax polynomial fit of log2(x)/(x - 1), for x in range [1, 2[ */
+
+	if LOG_poly_DEGREE == 6 {
+		p = poly5(m, log_p5_0, log_p5_1, log_p5_2, log_p5_3, log_p5_4, log_p5_5)
+	} else if LOG_poly_DEGREE == 5 {
+		p = poly4(m, log_p4_0, log_p4_1, log_p4_2, log_p4_3, log_p4_4)
+	} else if LOG_poly_DEGREE == 4 {
+		p = poly3(m, log_p3_0, log_p3_1, log_p3_2, log_p3_3)
+	} else if LOG_poly_DEGREE == 3 {
+		p = poly2(m, log_p2_0, log_p2_1, log_p2_2)
+	} else {
+		panic("unsupported poly degree")
+	}
+
+	/* This effectively increases the polynomial degree by one, but ensures that log2(1) == 0*/
+	p = sse.MulPs(p, sse.SubPs(m, one))
+
+	return sse.AddPs(p, e)
+}
+
+const EXP_poly_DEGREE = 2
+
+const exp_p5_0 = 9.9999994e-1
+const exp_p5_1 = 6.9315308e-1
+const exp_p5_2 = 2.4015361e-1
+const exp_p5_3 = 5.5826318e-2
+const exp_p5_4 = 8.9893397e-3
+const exp_p5_5 = 1.8775767e-3
+
+const exp_p4_0 = 1.0000026
+const exp_p4_1 = 6.9300383e-1
+const exp_p4_2 = 2.4144275e-1
+const exp_p4_3 = 5.2011464e-2
+const exp_p4_4 = 1.3534167e-2
+
+const exp_p3_0 = 9.9992520e-1
+const exp_p3_1 = 6.9583356e-1
+const exp_p3_2 = 2.2606716e-1
+const exp_p3_3 = 7.8024521e-2
+
+const exp_p2_0 = 1.0017247
+const exp_p2_1 = 6.5763628e-1
+const exp_p2_2 = 3.3718944e-1
+
+func exp2f4(x x86.M128) x86.M128 {
+	var ipart x86.M128i
+	var fpart, expipart, expfpart x86.M128
+
+	x = sse.MinPs(x, sse.Set1Ps(129))
+	x = sse.MaxPs(x, sse.Set1Ps(-126.99999))
+
+	/* ipart = int(x - 0.5) */
+	ipart = sse2.CvtpsEpi32(sse.SubPs(x, sse.Set1Ps(0.5)))
+
+	/* fpart = x - ipart */
+	fpart = sse.SubPs(x, sse2.Cvtepi32Ps(ipart))
+
+	/* expipart = (float) (1 << ipart) */
+	expipart = sse2.Castsi128Ps(sse2.SlliEpi32(sse2.AddEpi32(ipart, sse2.Set1Epi32(127)), 23))
+
+	/* minimax polynomial fit of 2**x, in range [-0.5, 0.5[ */
+	if EXP_poly_DEGREE == 5 {
+		expfpart = poly5(fpart, exp_p5_0, exp_p5_1, exp_p5_2, exp_p5_3, exp_p5_4, exp_p5_5)
+	} else if EXP_poly_DEGREE == 4 {
+		expfpart = poly4(fpart, exp_p4_0, exp_p4_1, exp_p4_2, exp_p4_3, exp_p4_4)
+	} else if EXP_poly_DEGREE == 3 {
+		expfpart = poly3(fpart, exp_p3_0, exp_p3_1, exp_p3_2, exp_p3_3)
+	} else if EXP_poly_DEGREE == 2 {
+		expfpart = poly2(fpart, exp_p2_0, exp_p2_1, exp_p2_2)
+	} else {
+		panic("invalid poly degree")
+	}
+
+	return sse.MulPs(expipart, expfpart)
 }
