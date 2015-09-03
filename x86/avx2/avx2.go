@@ -306,11 +306,11 @@ func m256AvgEpu8(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BlendEpi16(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256BlendEpi16(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256BlendEpi16([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256BlendEpi16(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256BlendEpi16(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // BlendEpi32: Blend packed 32-bit integers from 'a' and 'b' using control mask
@@ -330,11 +330,11 @@ func m256BlendEpi16(a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func BlendEpi32(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func BlendEpi32(a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(blendEpi32([16]byte(a), [16]byte(b), imm8))
 }
 
-func blendEpi32(a [16]byte, b [16]byte, imm8 int) [16]byte
+func blendEpi32(a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // M256BlendEpi32: Blend packed 32-bit integers from 'a' and 'b' using control
@@ -354,11 +354,11 @@ func blendEpi32(a [16]byte, b [16]byte, imm8 int) [16]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BlendEpi32(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256BlendEpi32(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256BlendEpi32([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256BlendEpi32(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256BlendEpi32(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256BlendvEpi8: Blend packed 8-bit integers from 'a' and 'b' using 'mask',
@@ -630,11 +630,11 @@ func m256BroadcastwEpi16(a [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BslliEpi128(a x86.M256i, imm8 int) x86.M256i {
+func M256BslliEpi128(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256BslliEpi128([32]byte(a), imm8))
 }
 
-func m256BslliEpi128(a [32]byte, imm8 int) [32]byte
+func m256BslliEpi128(a [32]byte, imm8 byte) [32]byte
 
 
 // M256BsrliEpi128: Shift 128-bit lanes in 'a' right by 'imm8' bytes while
@@ -652,11 +652,11 @@ func m256BslliEpi128(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BsrliEpi128(a x86.M256i, imm8 int) x86.M256i {
+func M256BsrliEpi128(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256BsrliEpi128([32]byte(a), imm8))
 }
 
-func m256BsrliEpi128(a [32]byte, imm8 int) [32]byte
+func m256BsrliEpi128(a [32]byte, imm8 byte) [32]byte
 
 
 // M256CmpeqEpi16: Compare packed 16-bit integers in 'a' and 'b' for equality,
@@ -1044,11 +1044,11 @@ func m256Cvtepu8Epi64(a [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extracti128Si256(a x86.M256i, imm8 int) x86.M128i {
+func M256Extracti128Si256(a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256Extracti128Si256([32]byte(a), imm8))
 }
 
-func m256Extracti128Si256(a [32]byte, imm8 int) [16]byte
+func m256Extracti128Si256(a [32]byte, imm8 byte) [16]byte
 
 
 // M256HaddEpi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and
@@ -1677,11 +1677,11 @@ func M256MaskI64gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M256i, mas
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Inserti128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256Inserti128Si256(a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256Inserti128Si256([32]byte(a), [16]byte(b), imm8))
 }
 
-func m256Inserti128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256Inserti128Si256(a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M256MaddEpi16: Multiply packed signed 16-bit integers in 'a' and 'b',
@@ -2205,11 +2205,11 @@ func m256MovemaskEpi8(a [32]byte) int
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MpsadbwEpu8(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MpsadbwEpu8(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MpsadbwEpu8([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MpsadbwEpu8(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MpsadbwEpu8(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256MulEpi32: Multiply the low 32-bit integers from each packed 64-bit
@@ -2541,11 +2541,11 @@ func m256PackusEpi32(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute2x128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256Permute2x128Si256(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256Permute2x128Si256([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256Permute2x128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256Permute2x128Si256(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256Permute4x64Epi64: Shuffle 64-bit integers in 'a' across lanes using the
@@ -2571,11 +2571,11 @@ func m256Permute2x128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute4x64Epi64(a x86.M256i, imm8 int) x86.M256i {
+func M256Permute4x64Epi64(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256Permute4x64Epi64([32]byte(a), imm8))
 }
 
-func m256Permute4x64Epi64(a [32]byte, imm8 int) [32]byte
+func m256Permute4x64Epi64(a [32]byte, imm8 byte) [32]byte
 
 
 // M256Permute4x64Pd: Shuffle double-precision (64-bit) floating-point elements
@@ -2602,11 +2602,11 @@ func m256Permute4x64Epi64(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute4x64Pd(a x86.M256d, imm8 int) x86.M256d {
+func M256Permute4x64Pd(a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256Permute4x64Pd([4]float64(a), imm8))
 }
 
-func m256Permute4x64Pd(a [4]float64, imm8 int) [4]float64
+func m256Permute4x64Pd(a [4]float64, imm8 byte) [4]float64
 
 
 // M256Permutevar8x32Epi32: Shuffle 32-bit integers in 'a' across lanes using
@@ -2699,11 +2699,11 @@ func m256SadEpu8(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleEpi32(a x86.M256i, imm8 int) x86.M256i {
+func M256ShuffleEpi32(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256ShuffleEpi32([32]byte(a), imm8))
 }
 
-func m256ShuffleEpi32(a [32]byte, imm8 int) [32]byte
+func m256ShuffleEpi32(a [32]byte, imm8 byte) [32]byte
 
 
 // M256ShuffleEpi8: Shuffle 8-bit integers in 'a' within 128-bit lanes
@@ -2757,11 +2757,11 @@ func m256ShuffleEpi8(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShufflehiEpi16(a x86.M256i, imm8 int) x86.M256i {
+func M256ShufflehiEpi16(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256ShufflehiEpi16([32]byte(a), imm8))
 }
 
-func m256ShufflehiEpi16(a [32]byte, imm8 int) [32]byte
+func m256ShufflehiEpi16(a [32]byte, imm8 byte) [32]byte
 
 
 // M256ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 128-bit
@@ -2785,11 +2785,11 @@ func m256ShufflehiEpi16(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleloEpi16(a x86.M256i, imm8 int) x86.M256i {
+func M256ShuffleloEpi16(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256ShuffleloEpi16([32]byte(a), imm8))
 }
 
-func m256ShuffleloEpi16(a [32]byte, imm8 int) [32]byte
+func m256ShuffleloEpi16(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SignEpi16: Negate packed 16-bit integers in 'a' when the corresponding
@@ -2953,11 +2953,11 @@ func m256SllEpi64(a [32]byte, count [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliEpi16(a x86.M256i, imm8 int) x86.M256i {
+func M256SlliEpi16(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SlliEpi16([32]byte(a), imm8))
 }
 
-func m256SlliEpi16(a [32]byte, imm8 int) [32]byte
+func m256SlliEpi16(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
@@ -2977,11 +2977,11 @@ func m256SlliEpi16(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliEpi32(a x86.M256i, imm8 int) x86.M256i {
+func M256SlliEpi32(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SlliEpi32([32]byte(a), imm8))
 }
 
-func m256SlliEpi32(a [32]byte, imm8 int) [32]byte
+func m256SlliEpi32(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -3001,11 +3001,11 @@ func m256SlliEpi32(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliEpi64(a x86.M256i, imm8 int) x86.M256i {
+func M256SlliEpi64(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SlliEpi64([32]byte(a), imm8))
 }
 
-func m256SlliEpi64(a [32]byte, imm8 int) [32]byte
+func m256SlliEpi64(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SlliSi256: Shift 128-bit lanes in 'a' left by 'imm8' bytes while
@@ -3023,11 +3023,11 @@ func m256SlliEpi64(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliSi256(a x86.M256i, imm8 int) x86.M256i {
+func M256SlliSi256(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SlliSi256([32]byte(a), imm8))
 }
 
-func m256SlliSi256(a [32]byte, imm8 int) [32]byte
+func m256SlliSi256(a [32]byte, imm8 byte) [32]byte
 
 
 // SllvEpi32: Shift packed 32-bit integers in 'a' left by the amount specified
@@ -3167,11 +3167,11 @@ func m256SraEpi32(a [32]byte, count [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SraiEpi16(a x86.M256i, imm8 int) x86.M256i {
+func M256SraiEpi16(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SraiEpi16([32]byte(a), imm8))
 }
 
-func m256SraiEpi16(a [32]byte, imm8 int) [32]byte
+func m256SraiEpi16(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -3191,11 +3191,11 @@ func m256SraiEpi16(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SraiEpi32(a x86.M256i, imm8 int) x86.M256i {
+func M256SraiEpi32(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SraiEpi32([32]byte(a), imm8))
 }
 
-func m256SraiEpi32(a [32]byte, imm8 int) [32]byte
+func m256SraiEpi32(a [32]byte, imm8 byte) [32]byte
 
 
 // SravEpi32: Shift packed 32-bit integers in 'a' right by the amount specified
@@ -3319,11 +3319,11 @@ func m256SrlEpi64(a [32]byte, count [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliEpi16(a x86.M256i, imm8 int) x86.M256i {
+func M256SrliEpi16(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SrliEpi16([32]byte(a), imm8))
 }
 
-func m256SrliEpi16(a [32]byte, imm8 int) [32]byte
+func m256SrliEpi16(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -3343,11 +3343,11 @@ func m256SrliEpi16(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliEpi32(a x86.M256i, imm8 int) x86.M256i {
+func M256SrliEpi32(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SrliEpi32([32]byte(a), imm8))
 }
 
-func m256SrliEpi32(a [32]byte, imm8 int) [32]byte
+func m256SrliEpi32(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -3367,11 +3367,11 @@ func m256SrliEpi32(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliEpi64(a x86.M256i, imm8 int) x86.M256i {
+func M256SrliEpi64(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SrliEpi64([32]byte(a), imm8))
 }
 
-func m256SrliEpi64(a [32]byte, imm8 int) [32]byte
+func m256SrliEpi64(a [32]byte, imm8 byte) [32]byte
 
 
 // M256SrliSi256: Shift 128-bit lanes in 'a' right by 'imm8' bytes while
@@ -3389,11 +3389,11 @@ func m256SrliEpi64(a [32]byte, imm8 int) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliSi256(a x86.M256i, imm8 int) x86.M256i {
+func M256SrliSi256(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SrliSi256([32]byte(a), imm8))
 }
 
-func m256SrliSi256(a [32]byte, imm8 int) [32]byte
+func m256SrliSi256(a [32]byte, imm8 byte) [32]byte
 
 
 // SrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount specified

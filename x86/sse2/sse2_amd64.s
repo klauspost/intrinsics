@@ -185,26 +185,26 @@ TEXT ·avgEpu8(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func bslliSi128(a [16]byte, imm8 int) [16]byte
+// func bslliSi128(a [16]byte, imm8 byte) [16]byte
 TEXT ·bslliSi128(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLDQ X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func bsrliSi128(a [16]byte, imm8 int) [16]byte
+// func bsrliSi128(a [16]byte, imm8 byte) [16]byte
 TEXT ·bsrliSi128(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLDQ X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
 // func castpdPs(a [2]float64) [4]float32
@@ -1007,26 +1007,26 @@ TEXT ·divSd(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func extractEpi16(a [16]byte, imm8 int) int
+// func extractEpi16(a [16]byte, imm8 byte) int
 TEXT ·extractEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PEXTRW X0, R9
 
-	MOVQ $0, ret+24(FP)
+	MOVQ $0, ret+20(FP)
 	RET
 
-// func insertEpi16(a [16]byte, i int, imm8 int) [16]byte
+// func insertEpi16(a [16]byte, i int, imm8 byte) [16]byte
 TEXT ·insertEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ i+16(FP),R9
-	MOVQ imm8+24(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PINSRW
 
-	MOVOU X2, ret+32(FP)
+	MOVOU X2, ret+28(FP)
 	RET
 
 // func lfence() 
@@ -1565,48 +1565,48 @@ TEXT ·setzeroSi128(SB),7,$0
 	MOVOU X0, ret+0(FP)
 	RET
 
-// func shuffleEpi32(a [16]byte, imm8 int) [16]byte
+// func shuffleEpi32(a [16]byte, imm8 byte) [16]byte
 TEXT ·shuffleEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSHUFD X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func shufflePd(a [2]float64, b [2]float64, imm8 int) [2]float64
+// func shufflePd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 TEXT ·shufflePd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: SHUFPD
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
-// func shufflehiEpi16(a [16]byte, imm8 int) [16]byte
+// func shufflehiEpi16(a [16]byte, imm8 byte) [16]byte
 TEXT ·shufflehiEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSHUFHW X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func shuffleloEpi16(a [16]byte, imm8 int) [16]byte
+// func shuffleloEpi16(a [16]byte, imm8 byte) [16]byte
 TEXT ·shuffleloEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSHUFLW X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
 // func sllEpi16(a [16]byte, count [16]byte) [16]byte
@@ -1642,48 +1642,48 @@ TEXT ·sllEpi64(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func slliEpi16(a [16]byte, imm8 int) [16]byte
+// func slliEpi16(a [16]byte, imm8 byte) [16]byte
 TEXT ·slliEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLW X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func slliEpi32(a [16]byte, imm8 int) [16]byte
+// func slliEpi32(a [16]byte, imm8 byte) [16]byte
 TEXT ·slliEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLD X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func slliEpi64(a [16]byte, imm8 int) [16]byte
+// func slliEpi64(a [16]byte, imm8 byte) [16]byte
 TEXT ·slliEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLQ X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func slliSi128(a [16]byte, imm8 int) [16]byte
+// func slliSi128(a [16]byte, imm8 byte) [16]byte
 TEXT ·slliSi128(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLDQ X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
 // func sqrtPd(a [2]float64) [2]float64
@@ -1729,26 +1729,26 @@ TEXT ·sraEpi32(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func sraiEpi16(a [16]byte, imm8 int) [16]byte
+// func sraiEpi16(a [16]byte, imm8 byte) [16]byte
 TEXT ·sraiEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRAW X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func sraiEpi32(a [16]byte, imm8 int) [16]byte
+// func sraiEpi32(a [16]byte, imm8 byte) [16]byte
 TEXT ·sraiEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRAD X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
 // func srlEpi16(a [16]byte, count [16]byte) [16]byte
@@ -1784,48 +1784,48 @@ TEXT ·srlEpi64(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func srliEpi16(a [16]byte, imm8 int) [16]byte
+// func srliEpi16(a [16]byte, imm8 byte) [16]byte
 TEXT ·srliEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLW X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func srliEpi32(a [16]byte, imm8 int) [16]byte
+// func srliEpi32(a [16]byte, imm8 byte) [16]byte
 TEXT ·srliEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLD X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func srliEpi64(a [16]byte, imm8 int) [16]byte
+// func srliEpi64(a [16]byte, imm8 byte) [16]byte
 TEXT ·srliEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLQ X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
-// func srliSi128(a [16]byte, imm8 int) [16]byte
+// func srliSi128(a [16]byte, imm8 byte) [16]byte
 TEXT ·srliSi128(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLDQ X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 
 // func subEpi16(a [16]byte, b [16]byte) [16]byte

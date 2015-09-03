@@ -30,11 +30,11 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Requires RTM.
 //
 // FIXME: Requires compiler support (has immediate)
-func Xabort(imm8 uint)  {
+func Xabort(imm8 byte)  {
 	xabort(imm8)
 }
 
-func xabort(imm8 uint) 
+func xabort(imm8 byte) 
 
 
 // Xbegin: Specify the start of an RTM code region. 

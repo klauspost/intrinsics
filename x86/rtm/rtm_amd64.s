@@ -1,6 +1,6 @@
-// func xabort(imm8 uint) 
+// func xabort(imm8 byte) 
 TEXT ·xabort(SB),7,$0
-	MOVQ imm8+0(FP),R8
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// XABORT R8

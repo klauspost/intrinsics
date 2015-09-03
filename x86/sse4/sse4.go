@@ -21,11 +21,11 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func BlendEpi16(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func BlendEpi16(a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(blendEpi16([16]byte(a), [16]byte(b), imm8))
 }
 
-func blendEpi16(a [16]byte, b [16]byte, imm8 int) [16]byte
+func blendEpi16(a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // BlendPd: Blend packed double-precision (64-bit) floating-point elements from
@@ -44,11 +44,11 @@ func blendEpi16(a [16]byte, b [16]byte, imm8 int) [16]byte
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func BlendPd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func BlendPd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(blendPd([2]float64(a), [2]float64(b), imm8))
 }
 
-func blendPd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func blendPd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // BlendPs: Blend packed single-precision (32-bit) floating-point elements from
@@ -67,11 +67,11 @@ func blendPd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func BlendPs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func BlendPs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(blendPs([4]float32(a), [4]float32(b), imm8))
 }
 
-func blendPs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func blendPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // BlendvEpi8: Blend packed 8-bit integers from 'a' and 'b' using 'mask', and
@@ -357,11 +357,11 @@ func cmpeqEpi64(a [16]byte, b [16]byte) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestra(a x86.M128i, la int, b x86.M128i, lb int, imm8 int) int {
+func Cmpestra(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestra([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 
 
 // Cmpestrc: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -497,11 +497,11 @@ func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestrc(a x86.M128i, la int, b x86.M128i, lb int, imm8 int) int {
+func Cmpestrc(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestrc([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 
 
 // Cmpestri: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -650,11 +650,11 @@ func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestri(a x86.M128i, la int, b x86.M128i, lb int, imm8 int) int {
+func Cmpestri(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestri([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestri(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+func cmpestri(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 
 
 // Cmpestrm: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -801,11 +801,11 @@ func cmpestri(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestrm(a x86.M128i, la int, b x86.M128i, lb int, imm8 int) x86.M128i {
+func Cmpestrm(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) x86.M128i {
 	return x86.M128i(cmpestrm([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 int) [16]byte
+func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 byte) [16]byte
 
 
 // Cmpestro: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -940,11 +940,11 @@ func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 int) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestro(a x86.M128i, la int, b x86.M128i, lb int, imm8 int) int {
+func Cmpestro(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestro([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 
 
 // Cmpestrs: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -975,11 +975,11 @@ func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestrs(a x86.M128i, la int, b x86.M128i, lb int, imm8 int) int {
+func Cmpestrs(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestrs([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 
 
 // Cmpestrz: Compare packed strings in 'a' and 'b' with lengths 'la' and 'lb'
@@ -1010,11 +1010,11 @@ func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestrz(a x86.M128i, la int, b x86.M128i, lb int, imm8 int) int {
+func Cmpestrz(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestrz([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
-func cmpestrz(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+func cmpestrz(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 
 
 // CmpgtEpi64: Compare packed 64-bit integers in 'a' and 'b' for greater-than,
@@ -1171,11 +1171,11 @@ func cmpgtEpi64(a [16]byte, b [16]byte) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistra(a x86.M128i, b x86.M128i, imm8 int) int {
+func Cmpistra(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistra([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistra(a [16]byte, b [16]byte, imm8 int) int
+func cmpistra(a [16]byte, b [16]byte, imm8 byte) int
 
 
 // Cmpistrc: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1315,11 +1315,11 @@ func cmpistra(a [16]byte, b [16]byte, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistrc(a x86.M128i, b x86.M128i, imm8 int) int {
+func Cmpistrc(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistrc([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrc(a [16]byte, b [16]byte, imm8 int) int
+func cmpistrc(a [16]byte, b [16]byte, imm8 byte) int
 
 
 // Cmpistri: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1472,11 +1472,11 @@ func cmpistrc(a [16]byte, b [16]byte, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistri(a x86.M128i, b x86.M128i, imm8 int) int {
+func Cmpistri(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistri([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistri(a [16]byte, b [16]byte, imm8 int) int
+func cmpistri(a [16]byte, b [16]byte, imm8 byte) int
 
 
 // Cmpistrm: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1627,11 +1627,11 @@ func cmpistri(a [16]byte, b [16]byte, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistrm(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func Cmpistrm(a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(cmpistrm([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrm(a [16]byte, b [16]byte, imm8 int) [16]byte
+func cmpistrm(a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // Cmpistro: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1770,11 +1770,11 @@ func cmpistrm(a [16]byte, b [16]byte, imm8 int) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistro(a x86.M128i, b x86.M128i, imm8 int) int {
+func Cmpistro(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistro([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistro(a [16]byte, b [16]byte, imm8 int) int
+func cmpistro(a [16]byte, b [16]byte, imm8 byte) int
 
 
 // Cmpistrs: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1813,11 +1813,11 @@ func cmpistro(a [16]byte, b [16]byte, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistrs(a x86.M128i, b x86.M128i, imm8 int) int {
+func Cmpistrs(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistrs([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrs(a [16]byte, b [16]byte, imm8 int) int
+func cmpistrs(a [16]byte, b [16]byte, imm8 byte) int
 
 
 // Cmpistrz: Compare packed strings with implicit lengths in 'a' and 'b' using
@@ -1856,11 +1856,11 @@ func cmpistrs(a [16]byte, b [16]byte, imm8 int) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistrz(a x86.M128i, b x86.M128i, imm8 int) int {
+func Cmpistrz(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistrz([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpistrz(a [16]byte, b [16]byte, imm8 int) int
+func cmpistrz(a [16]byte, b [16]byte, imm8 byte) int
 
 
 // Crc32U16: Starting with the initial value in 'crc', accumulates a CRC32
@@ -2193,11 +2193,11 @@ func cvtepu8Epi64(a [16]byte) [16]byte
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func DpPd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func DpPd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(dpPd([2]float64(a), [2]float64(b), imm8))
 }
 
-func dpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func dpPd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // DpPs: Conditionally multiply the packed single-precision (32-bit)
@@ -2234,11 +2234,11 @@ func dpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func DpPs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func DpPs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(dpPs([4]float32(a), [4]float32(b), imm8))
 }
 
-func dpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func dpPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // ExtractEpi32: Extract a 32-bit integer from 'a', selected with 'imm8', and
@@ -2250,11 +2250,11 @@ func dpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi32(a x86.M128i, imm8 int) int {
+func ExtractEpi32(a x86.M128i, imm8 byte) int {
 	return int(extractEpi32([16]byte(a), imm8))
 }
 
-func extractEpi32(a [16]byte, imm8 int) int
+func extractEpi32(a [16]byte, imm8 byte) int
 
 
 // ExtractEpi64: Extract a 64-bit integer from 'a', selected with 'imm8', and
@@ -2266,11 +2266,11 @@ func extractEpi32(a [16]byte, imm8 int) int
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi64(a x86.M128i, imm8 int) int64 {
+func ExtractEpi64(a x86.M128i, imm8 byte) int64 {
 	return int64(extractEpi64([16]byte(a), imm8))
 }
 
-func extractEpi64(a [16]byte, imm8 int) int64
+func extractEpi64(a [16]byte, imm8 byte) int64
 
 
 // ExtractEpi8: Extract an 8-bit integer from 'a', selected with 'imm8', and
@@ -2283,11 +2283,11 @@ func extractEpi64(a [16]byte, imm8 int) int64
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi8(a x86.M128i, imm8 int) int {
+func ExtractEpi8(a x86.M128i, imm8 byte) int {
 	return int(extractEpi8([16]byte(a), imm8))
 }
 
-func extractEpi8(a [16]byte, imm8 int) int
+func extractEpi8(a [16]byte, imm8 byte) int
 
 
 // ExtractPs: Extract a single-precision (32-bit) floating-point element from
@@ -2299,11 +2299,11 @@ func extractEpi8(a [16]byte, imm8 int) int
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractPs(a x86.M128, imm8 int) int {
+func ExtractPs(a x86.M128, imm8 byte) int {
 	return int(extractPs([4]float32(a), imm8))
 }
 
-func extractPs(a [4]float32, imm8 int) int
+func extractPs(a [4]float32, imm8 byte) int
 
 
 // FloorPd: Round the packed double-precision (64-bit) floating-point elements
@@ -2387,11 +2387,11 @@ func floorSs(a [4]float32, b [4]float32) [4]float32
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func InsertEpi32(a x86.M128i, i int, imm8 int) x86.M128i {
+func InsertEpi32(a x86.M128i, i int, imm8 byte) x86.M128i {
 	return x86.M128i(insertEpi32([16]byte(a), i, imm8))
 }
 
-func insertEpi32(a [16]byte, i int, imm8 int) [16]byte
+func insertEpi32(a [16]byte, i int, imm8 byte) [16]byte
 
 
 // InsertEpi64: Copy 'a' to 'dst', and insert the 64-bit integer 'i' into 'dst'
@@ -2405,11 +2405,11 @@ func insertEpi32(a [16]byte, i int, imm8 int) [16]byte
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func InsertEpi64(a x86.M128i, i int64, imm8 int) x86.M128i {
+func InsertEpi64(a x86.M128i, i int64, imm8 byte) x86.M128i {
 	return x86.M128i(insertEpi64([16]byte(a), i, imm8))
 }
 
-func insertEpi64(a [16]byte, i int64, imm8 int) [16]byte
+func insertEpi64(a [16]byte, i int64, imm8 byte) [16]byte
 
 
 // InsertEpi8: Copy 'a' to 'dst', and insert the lower 8-bit integer from 'i'
@@ -2423,11 +2423,11 @@ func insertEpi64(a [16]byte, i int64, imm8 int) [16]byte
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func InsertEpi8(a x86.M128i, i int, imm8 int) x86.M128i {
+func InsertEpi8(a x86.M128i, i int, imm8 byte) x86.M128i {
 	return x86.M128i(insertEpi8([16]byte(a), i, imm8))
 }
 
-func insertEpi8(a [16]byte, i int, imm8 int) [16]byte
+func insertEpi8(a [16]byte, i int, imm8 byte) [16]byte
 
 
 // InsertPs: Copy 'a' to 'tmp', then insert a single-precision (32-bit)
@@ -2461,11 +2461,11 @@ func insertEpi8(a [16]byte, i int, imm8 int) [16]byte
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func InsertPs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func InsertPs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(insertPs([4]float32(a), [4]float32(b), imm8))
 }
 
-func insertPs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func insertPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaxEpi32: Compare packed 32-bit integers in 'a' and 'b', and store packed
@@ -2688,11 +2688,11 @@ func minposEpu16(a [16]byte) [16]byte
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func MpsadbwEpu8(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func MpsadbwEpu8(a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(mpsadbwEpu8([16]byte(a), [16]byte(b), imm8))
 }
 
-func mpsadbwEpu8(a [16]byte, b [16]byte, imm8 int) [16]byte
+func mpsadbwEpu8(a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // MulEpi32: Multiply the low 32-bit integers from each packed 64-bit element

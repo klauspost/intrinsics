@@ -2023,11 +2023,11 @@ func expm1Ps(a [4]float32) [4]float32
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractPi16(a x86.M64, imm8 int) int {
+func ExtractPi16(a x86.M64, imm8 byte) int {
 	return int(extractPi16(a, imm8))
 }
 
-func extractPi16(a x86.M64, imm8 int) int
+func extractPi16(a x86.M64, imm8 byte) int
 
 
 // Skipped: _mm_free. Contains pointer parameter.
@@ -2199,11 +2199,11 @@ func IdivremEpi32(mem_addr *x86.M128i, a x86.M128i, b x86.M128i) x86.M128i {
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func InsertPi16(a x86.M64, i int, imm8 int) x86.M64 {
+func InsertPi16(a x86.M64, i int, imm8 byte) x86.M64 {
 	return x86.M64(insertPi16(a, i, imm8))
 }
 
-func insertPi16(a x86.M64, i int, imm8 int) x86.M64
+func insertPi16(a x86.M64, i int, imm8 byte) x86.M64
 
 
 // InvcbrtPd: Compute the inverse cube root of packed double-precision (64-bit)
@@ -2946,11 +2946,11 @@ func pavgw(a x86.M64, b x86.M64) x86.M64
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func Pextrw(a x86.M64, imm8 int) int {
+func Pextrw(a x86.M64, imm8 byte) int {
 	return int(pextrw(a, imm8))
 }
 
-func pextrw(a x86.M64, imm8 int) int
+func pextrw(a x86.M64, imm8 byte) int
 
 
 // Pinsrw: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst' at
@@ -2964,11 +2964,11 @@ func pextrw(a x86.M64, imm8 int) int
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func Pinsrw(a x86.M64, i int, imm8 int) x86.M64 {
+func Pinsrw(a x86.M64, i int, imm8 byte) x86.M64 {
 	return x86.M64(pinsrw(a, i, imm8))
 }
 
-func pinsrw(a x86.M64, i int, imm8 int) x86.M64
+func pinsrw(a x86.M64, i int, imm8 byte) x86.M64
 
 
 // Pmaxsw: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -3188,11 +3188,11 @@ func psadbw(a x86.M64, b x86.M64) x86.M64
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func Pshufw(a x86.M64, imm8 int) x86.M64 {
+func Pshufw(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(pshufw(a, imm8))
 }
 
-func pshufw(a x86.M64, imm8 int) x86.M64
+func pshufw(a x86.M64, imm8 byte) x86.M64
 
 
 // RcpPs: Compute the approximate reciprocal of packed single-precision
@@ -3651,11 +3651,11 @@ func sfence()
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShufflePi16(a x86.M64, imm8 int) x86.M64 {
+func ShufflePi16(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(shufflePi16(a, imm8))
 }
 
-func shufflePi16(a x86.M64, imm8 int) x86.M64
+func shufflePi16(a x86.M64, imm8 byte) x86.M64
 
 
 // ShufflePs: Shuffle single-precision (32-bit) floating-point elements in 'a'
@@ -3680,11 +3680,11 @@ func shufflePi16(a x86.M64, imm8 int) x86.M64
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShufflePs(a x86.M128, b x86.M128, imm8 uint32) x86.M128 {
+func ShufflePs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(shufflePs([4]float32(a), [4]float32(b), imm8))
 }
 
-func shufflePs(a [4]float32, b [4]float32, imm8 uint32) [4]float32
+func shufflePs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // SinPd: Compute the sine of packed double-precision (64-bit) floating-point

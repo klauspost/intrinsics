@@ -910,11 +910,11 @@ func pslld(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Pslldi(a x86.M64, imm8 int) x86.M64 {
+func Pslldi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(pslldi(a, imm8))
 }
 
-func pslldi(a x86.M64, imm8 int) x86.M64
+func pslldi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psllq: Shift 64-bit integer 'a' left by 'count' while shifting in zeros, and
@@ -948,11 +948,11 @@ func psllq(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psllqi(a x86.M64, imm8 int) x86.M64 {
+func Psllqi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(psllqi(a, imm8))
 }
 
-func psllqi(a x86.M64, imm8 int) x86.M64
+func psllqi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psllw: Shift packed 16-bit integers in 'a' left by 'count' while shifting in
@@ -992,11 +992,11 @@ func psllw(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psllwi(a x86.M64, imm8 int) x86.M64 {
+func Psllwi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(psllwi(a, imm8))
 }
 
-func psllwi(a x86.M64, imm8 int) x86.M64
+func psllwi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrad: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -1036,11 +1036,11 @@ func psrad(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psradi(a x86.M64, imm8 int) x86.M64 {
+func Psradi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(psradi(a, imm8))
 }
 
-func psradi(a x86.M64, imm8 int) x86.M64
+func psradi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psraw: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1080,11 +1080,11 @@ func psraw(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrawi(a x86.M64, imm8 int) x86.M64 {
+func Psrawi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(psrawi(a, imm8))
 }
 
-func psrawi(a x86.M64, imm8 int) x86.M64
+func psrawi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrld: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -1124,11 +1124,11 @@ func psrld(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrldi(a x86.M64, imm8 int) x86.M64 {
+func Psrldi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(psrldi(a, imm8))
 }
 
-func psrldi(a x86.M64, imm8 int) x86.M64
+func psrldi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrlq: Shift 64-bit integer 'a' right by 'count' while shifting in zeros,
@@ -1162,11 +1162,11 @@ func psrlq(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrlqi(a x86.M64, imm8 int) x86.M64 {
+func Psrlqi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(psrlqi(a, imm8))
 }
 
-func psrlqi(a x86.M64, imm8 int) x86.M64
+func psrlqi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrlw: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1206,11 +1206,11 @@ func psrlw(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrlwi(a x86.M64, imm8 int) x86.M64 {
+func Psrlwi(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(psrlwi(a, imm8))
 }
 
-func psrlwi(a x86.M64, imm8 int) x86.M64
+func psrlwi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psubb: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -1714,11 +1714,11 @@ func sllSi64(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliPi16(a x86.M64, imm8 int) x86.M64 {
+func SlliPi16(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(slliPi16(a, imm8))
 }
 
-func slliPi16(a x86.M64, imm8 int) x86.M64
+func slliPi16(a x86.M64, imm8 byte) x86.M64
 
 
 // SlliPi32: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting
@@ -1737,11 +1737,11 @@ func slliPi16(a x86.M64, imm8 int) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliPi32(a x86.M64, imm8 int) x86.M64 {
+func SlliPi32(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(slliPi32(a, imm8))
 }
 
-func slliPi32(a x86.M64, imm8 int) x86.M64
+func slliPi32(a x86.M64, imm8 byte) x86.M64
 
 
 // SlliSi64: Shift 64-bit integer 'a' left by 'imm8' while shifting in zeros,
@@ -1757,11 +1757,11 @@ func slliPi32(a x86.M64, imm8 int) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliSi64(a x86.M64, imm8 int) x86.M64 {
+func SlliSi64(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(slliSi64(a, imm8))
 }
 
-func slliSi64(a x86.M64, imm8 int) x86.M64
+func slliSi64(a x86.M64, imm8 byte) x86.M64
 
 
 // SraPi16: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1822,11 +1822,11 @@ func sraPi32(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiPi16(a x86.M64, imm8 int) x86.M64 {
+func SraiPi16(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(sraiPi16(a, imm8))
 }
 
-func sraiPi16(a x86.M64, imm8 int) x86.M64
+func sraiPi16(a x86.M64, imm8 byte) x86.M64
 
 
 // SraiPi32: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -1845,11 +1845,11 @@ func sraiPi16(a x86.M64, imm8 int) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiPi32(a x86.M64, imm8 int) x86.M64 {
+func SraiPi32(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(sraiPi32(a, imm8))
 }
 
-func sraiPi32(a x86.M64, imm8 int) x86.M64
+func sraiPi32(a x86.M64, imm8 byte) x86.M64
 
 
 // SrlPi16: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1928,11 +1928,11 @@ func srlSi64(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliPi16(a x86.M64, imm8 int) x86.M64 {
+func SrliPi16(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(srliPi16(a, imm8))
 }
 
-func srliPi16(a x86.M64, imm8 int) x86.M64
+func srliPi16(a x86.M64, imm8 byte) x86.M64
 
 
 // SrliPi32: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -1951,11 +1951,11 @@ func srliPi16(a x86.M64, imm8 int) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliPi32(a x86.M64, imm8 int) x86.M64 {
+func SrliPi32(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(srliPi32(a, imm8))
 }
 
-func srliPi32(a x86.M64, imm8 int) x86.M64
+func srliPi32(a x86.M64, imm8 byte) x86.M64
 
 
 // SrliSi64: Shift 64-bit integer 'a' right by 'imm8' while shifting in zeros,
@@ -1971,11 +1971,11 @@ func srliPi32(a x86.M64, imm8 int) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliSi64(a x86.M64, imm8 int) x86.M64 {
+func SrliSi64(a x86.M64, imm8 byte) x86.M64 {
 	return x86.M64(srliSi64(a, imm8))
 }
 
-func srliSi64(a x86.M64, imm8 int) x86.M64
+func srliSi64(a x86.M64, imm8 byte) x86.M64
 
 
 // SubPi16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers

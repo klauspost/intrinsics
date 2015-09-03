@@ -443,11 +443,11 @@ func m256AtanhPs(a [8]float32) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BlendPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256BlendPd(a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256BlendPd([4]float64(a), [4]float64(b), imm8))
 }
 
-func m256BlendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256BlendPd(a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256BlendPs: Blend packed single-precision (32-bit) floating-point elements
@@ -467,11 +467,11 @@ func m256BlendPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BlendPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256BlendPs(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256BlendPs([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256BlendPs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256BlendPs(a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256BlendvPd: Blend packed double-precision (64-bit) floating-point elements
@@ -979,11 +979,11 @@ func m256ClogPs(a [8]float32) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpPd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func CmpPd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(cmpPd([2]float64(a), [2]float64(b), imm8))
 }
 
-func cmpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func cmpPd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // M256CmpPd: Compare packed double-precision (64-bit) floating-point elements
@@ -1034,11 +1034,11 @@ func cmpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpPd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256CmpPd(a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256CmpPd([4]float64(a), [4]float64(b), imm8))
 }
 
-func m256CmpPd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256CmpPd(a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // CmpPs: Compare packed single-precision (32-bit) floating-point elements in
@@ -1089,11 +1089,11 @@ func m256CmpPd(a [4]float64, b [4]float64, imm8 int) [4]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpPs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func CmpPs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(cmpPs([4]float32(a), [4]float32(b), imm8))
 }
 
-func cmpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func cmpPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // M256CmpPs: Compare packed single-precision (32-bit) floating-point elements
@@ -1144,11 +1144,11 @@ func cmpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256CmpPs(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256CmpPs([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256CmpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256CmpPs(a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // CmpSd: Compare the lower double-precision (64-bit) floating-point element in
@@ -1199,11 +1199,11 @@ func m256CmpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpSd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func CmpSd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(cmpSd([2]float64(a), [2]float64(b), imm8))
 }
 
-func cmpSd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func cmpSd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // CmpSs: Compare the lower single-precision (32-bit) floating-point element in
@@ -1254,11 +1254,11 @@ func cmpSd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpSs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func CmpSs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(cmpSs([4]float32(a), [4]float32(b), imm8))
 }
 
-func cmpSs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func cmpSs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // M256CosPd: Compute the cosine of packed double-precision (64-bit)
@@ -1764,11 +1764,11 @@ func m256DivPs(a [8]float32, b [8]float32) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256DpPs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256DpPs(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256DpPs([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256DpPs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256DpPs(a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256ErfPd: Compute the error function of packed double-precision (64-bit)
@@ -2141,11 +2141,11 @@ func m256ExtractEpi8(a [32]byte, index int) int8
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extractf128Pd(a x86.M256d, imm8 int) x86.M128d {
+func M256Extractf128Pd(a x86.M256d, imm8 byte) x86.M128d {
 	return x86.M128d(m256Extractf128Pd([4]float64(a), imm8))
 }
 
-func m256Extractf128Pd(a [4]float64, imm8 int) [2]float64
+func m256Extractf128Pd(a [4]float64, imm8 byte) [2]float64
 
 
 // M256Extractf128Ps: Extract 128 bits (composed of 4 packed single-precision
@@ -2162,11 +2162,11 @@ func m256Extractf128Pd(a [4]float64, imm8 int) [2]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extractf128Ps(a x86.M256, imm8 int) x86.M128 {
+func M256Extractf128Ps(a x86.M256, imm8 byte) x86.M128 {
 	return x86.M128(m256Extractf128Ps([8]float32(a), imm8))
 }
 
-func m256Extractf128Ps(a [8]float32, imm8 int) [4]float32
+func m256Extractf128Ps(a [8]float32, imm8 byte) [4]float32
 
 
 // M256Extractf128Si256: Extract 128 bits (composed of integer data) from 'a',
@@ -2182,11 +2182,11 @@ func m256Extractf128Ps(a [8]float32, imm8 int) [4]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extractf128Si256(a x86.M256i, imm8 int) x86.M128i {
+func M256Extractf128Si256(a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256Extractf128Si256([32]byte(a), imm8))
 }
 
-func m256Extractf128Si256(a [32]byte, imm8 int) [16]byte
+func m256Extractf128Si256(a [32]byte, imm8 byte) [16]byte
 
 
 // M256FloorPd: Round the packed double-precision (64-bit) floating-point
@@ -2465,11 +2465,11 @@ func m256InsertEpi8(a [32]byte, i int8, index int) [32]byte
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Insertf128Pd(a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
+func M256Insertf128Pd(a x86.M256d, b x86.M128d, imm8 byte) x86.M256d {
 	return x86.M256d(m256Insertf128Pd([4]float64(a), [2]float64(b), imm8))
 }
 
-func m256Insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
+func m256Insertf128Pd(a [4]float64, b [2]float64, imm8 byte) [4]float64
 
 
 // M256Insertf128Ps: Copy 'a' to 'dst', then insert 128 bits (composed of 4
@@ -2487,11 +2487,11 @@ func m256Insertf128Pd(a [4]float64, b [2]float64, imm8 int) [4]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Insertf128Ps(a x86.M256, b x86.M128, imm8 int) x86.M256 {
+func M256Insertf128Ps(a x86.M256, b x86.M128, imm8 byte) x86.M256 {
 	return x86.M256(m256Insertf128Ps([8]float32(a), [4]float32(b), imm8))
 }
 
-func m256Insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
+func m256Insertf128Ps(a [8]float32, b [4]float32, imm8 byte) [8]float32
 
 
 // M256Insertf128Si256: Copy 'a' to 'dst', then insert 128 bits from 'b' into
@@ -2508,11 +2508,11 @@ func m256Insertf128Ps(a [8]float32, b [4]float32, imm8 int) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Insertf128Si256(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256Insertf128Si256(a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256Insertf128Si256([32]byte(a), [16]byte(b), imm8))
 }
 
-func m256Insertf128Si256(a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256Insertf128Si256(a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M256InvcbrtPd: Compute the inverse cube root of packed double-precision
@@ -3226,11 +3226,11 @@ func m256OrPs(a [8]float32, b [8]float32) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func PermutePd(a x86.M128d, imm8 int) x86.M128d {
+func PermutePd(a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(permutePd([2]float64(a), imm8))
 }
 
-func permutePd(a [2]float64, imm8 int) [2]float64
+func permutePd(a [2]float64, imm8 byte) [2]float64
 
 
 // M256PermutePd: Shuffle double-precision (64-bit) floating-point elements in
@@ -3251,11 +3251,11 @@ func permutePd(a [2]float64, imm8 int) [2]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256PermutePd(a x86.M256d, imm8 int) x86.M256d {
+func M256PermutePd(a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256PermutePd([4]float64(a), imm8))
 }
 
-func m256PermutePd(a [4]float64, imm8 int) [4]float64
+func m256PermutePd(a [4]float64, imm8 byte) [4]float64
 
 
 // PermutePs: Shuffle single-precision (32-bit) floating-point elements in 'a'
@@ -3281,11 +3281,11 @@ func m256PermutePd(a [4]float64, imm8 int) [4]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func PermutePs(a x86.M128, imm8 int) x86.M128 {
+func PermutePs(a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(permutePs([4]float32(a), imm8))
 }
 
-func permutePs(a [4]float32, imm8 int) [4]float32
+func permutePs(a [4]float32, imm8 byte) [4]float32
 
 
 // M256PermutePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -3316,11 +3316,11 @@ func permutePs(a [4]float32, imm8 int) [4]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256PermutePs(a x86.M256, imm8 int) x86.M256 {
+func M256PermutePs(a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256PermutePs([8]float32(a), imm8))
 }
 
-func m256PermutePs(a [8]float32, imm8 int) [8]float32
+func m256PermutePs(a [8]float32, imm8 byte) [8]float32
 
 
 // M256Permute2f128Pd: Shuffle 128-bits (composed of 2 packed double-precision
@@ -3348,11 +3348,11 @@ func m256PermutePs(a [8]float32, imm8 int) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute2f128Pd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256Permute2f128Pd(a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256Permute2f128Pd([4]float64(a), [4]float64(b), imm8))
 }
 
-func m256Permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256Permute2f128Pd(a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256Permute2f128Ps: Shuffle 128-bits (composed of 4 packed single-precision
@@ -3380,11 +3380,11 @@ func m256Permute2f128Pd(a [4]float64, b [4]float64, imm8 int) [4]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute2f128Ps(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256Permute2f128Ps(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256Permute2f128Ps([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256Permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256Permute2f128Ps(a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256Permute2f128Si256: Shuffle 128-bits (composed of integer data) selected
@@ -3411,11 +3411,11 @@ func m256Permute2f128Ps(a [8]float32, b [8]float32, imm8 int) [8]float32
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute2f128Si256(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256Permute2f128Si256(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256Permute2f128Si256([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256Permute2f128Si256(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256Permute2f128Si256(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // PermutevarPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -4358,11 +4358,11 @@ func m256SetzeroSi256() [32]byte
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShufflePd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256ShufflePd(a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256ShufflePd([4]float64(a), [4]float64(b), imm8))
 }
 
-func m256ShufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256ShufflePd(a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256ShufflePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -4393,11 +4393,11 @@ func m256ShufflePd(a [4]float64, b [4]float64, imm8 int) [4]float64
 // Requires AVX.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShufflePs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256ShufflePs(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256ShufflePs([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256ShufflePs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256ShufflePs(a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256SinPd: Compute the sine of packed double-precision (64-bit)

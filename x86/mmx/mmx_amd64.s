@@ -567,10 +567,10 @@ TEXT ·pslld(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pslldi(a x86.M64, imm8 int) x86.M64
+// func pslldi(a x86.M64, imm8 byte) x86.M64
 TEXT ·pslldi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLD M0, R9
@@ -589,10 +589,10 @@ TEXT ·psllq(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psllqi(a x86.M64, imm8 int) x86.M64
+// func psllqi(a x86.M64, imm8 byte) x86.M64
 TEXT ·psllqi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLQ M0, R9
@@ -611,10 +611,10 @@ TEXT ·psllw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psllwi(a x86.M64, imm8 int) x86.M64
+// func psllwi(a x86.M64, imm8 byte) x86.M64
 TEXT ·psllwi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLW M0, R9
@@ -633,10 +633,10 @@ TEXT ·psrad(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psradi(a x86.M64, imm8 int) x86.M64
+// func psradi(a x86.M64, imm8 byte) x86.M64
 TEXT ·psradi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRAD M0, R9
@@ -655,10 +655,10 @@ TEXT ·psraw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrawi(a x86.M64, imm8 int) x86.M64
+// func psrawi(a x86.M64, imm8 byte) x86.M64
 TEXT ·psrawi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRAW M0, R9
@@ -677,10 +677,10 @@ TEXT ·psrld(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrldi(a x86.M64, imm8 int) x86.M64
+// func psrldi(a x86.M64, imm8 byte) x86.M64
 TEXT ·psrldi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLD M0, R9
@@ -699,10 +699,10 @@ TEXT ·psrlq(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrlqi(a x86.M64, imm8 int) x86.M64
+// func psrlqi(a x86.M64, imm8 byte) x86.M64
 TEXT ·psrlqi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLQ M0, R9
@@ -721,10 +721,10 @@ TEXT ·psrlw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func psrlwi(a x86.M64, imm8 int) x86.M64
+// func psrlwi(a x86.M64, imm8 byte) x86.M64
 TEXT ·psrlwi(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLW M0, R9
@@ -1030,10 +1030,10 @@ TEXT ·sllSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func slliPi16(a x86.M64, imm8 int) x86.M64
+// func slliPi16(a x86.M64, imm8 byte) x86.M64
 TEXT ·slliPi16(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLW M0, R9
@@ -1041,10 +1041,10 @@ TEXT ·slliPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func slliPi32(a x86.M64, imm8 int) x86.M64
+// func slliPi32(a x86.M64, imm8 byte) x86.M64
 TEXT ·slliPi32(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLD M0, R9
@@ -1052,10 +1052,10 @@ TEXT ·slliPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func slliSi64(a x86.M64, imm8 int) x86.M64
+// func slliSi64(a x86.M64, imm8 byte) x86.M64
 TEXT ·slliSi64(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSLLQ M0, R9
@@ -1085,10 +1085,10 @@ TEXT ·sraPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sraiPi16(a x86.M64, imm8 int) x86.M64
+// func sraiPi16(a x86.M64, imm8 byte) x86.M64
 TEXT ·sraiPi16(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRAW M0, R9
@@ -1096,10 +1096,10 @@ TEXT ·sraiPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func sraiPi32(a x86.M64, imm8 int) x86.M64
+// func sraiPi32(a x86.M64, imm8 byte) x86.M64
 TEXT ·sraiPi32(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRAD M0, R9
@@ -1140,10 +1140,10 @@ TEXT ·srlSi64(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srliPi16(a x86.M64, imm8 int) x86.M64
+// func srliPi16(a x86.M64, imm8 byte) x86.M64
 TEXT ·srliPi16(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLW M0, R9
@@ -1151,10 +1151,10 @@ TEXT ·srliPi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srliPi32(a x86.M64, imm8 int) x86.M64
+// func srliPi32(a x86.M64, imm8 byte) x86.M64
 TEXT ·srliPi32(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLD M0, R9
@@ -1162,10 +1162,10 @@ TEXT ·srliPi32(SB),7,$0
 	// Return size: 8
 	RET
 
-// func srliSi64(a x86.M64, imm8 int) x86.M64
+// func srliSi64(a x86.M64, imm8 byte) x86.M64
 TEXT ·srliSi64(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSRLQ M0, R9

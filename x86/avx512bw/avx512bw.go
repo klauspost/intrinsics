@@ -2218,11 +2218,11 @@ func m512MaskzBroadcastwEpi16(k uint32, a [16]byte) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512BslliEpi128(a x86.M512i, imm8 int) x86.M512i {
+func M512BslliEpi128(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512BslliEpi128([64]byte(a), imm8))
 }
 
-func m512BslliEpi128(a [64]byte, imm8 int) [64]byte
+func m512BslliEpi128(a [64]byte, imm8 byte) [64]byte
 
 
 // M512BsrliEpi128: Shift 128-bit lanes in 'a' right by 'imm8' bytes while
@@ -2242,11 +2242,11 @@ func m512BslliEpi128(a [64]byte, imm8 int) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512BsrliEpi128(a x86.M512i, imm8 int) x86.M512i {
+func M512BsrliEpi128(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512BsrliEpi128([64]byte(a), imm8))
 }
 
-func m512BsrliEpi128(a [64]byte, imm8 int) [64]byte
+func m512BsrliEpi128(a [64]byte, imm8 byte) [64]byte
 
 
 // CmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
@@ -2273,11 +2273,11 @@ func m512BsrliEpi128(a [64]byte, imm8 int) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpi16Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+func CmpEpi16Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpEpi16Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpi16Mask(a [16]byte, b [16]byte, imm8 int) uint8
+func cmpEpi16Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // MaskCmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
@@ -2309,11 +2309,11 @@ func cmpEpi16Mask(a [16]byte, b [16]byte, imm8 int) uint8
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+func MaskCmpEpi16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpEpi16Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpi16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
+func maskCmpEpi16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // M256CmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
@@ -2340,11 +2340,11 @@ func maskCmpEpi16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpi16Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+func M256CmpEpi16Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(m256CmpEpi16Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpi16Mask(a [32]byte, b [32]byte, imm8 int) uint16
+func m256CmpEpi16Mask(a [32]byte, b [32]byte, imm8 byte) uint16
 
 
 // M256MaskCmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on
@@ -2376,11 +2376,11 @@ func m256CmpEpi16Mask(a [32]byte, b [32]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+func M256MaskCmpEpi16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(m256MaskCmpEpi16Mask(uint16(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpi16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
+func m256MaskCmpEpi16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 byte) uint16
 
 
 // M512CmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on the
@@ -2407,11 +2407,11 @@ func m256MaskCmpEpi16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpi16Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+func M512CmpEpi16Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m512CmpEpi16Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512CmpEpi16Mask(a [64]byte, b [64]byte, imm8 int) uint32
+func m512CmpEpi16Mask(a [64]byte, b [64]byte, imm8 byte) uint32
 
 
 // M512MaskCmpEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' based on
@@ -2443,11 +2443,11 @@ func m512CmpEpi16Mask(a [64]byte, b [64]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+func M512MaskCmpEpi16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m512MaskCmpEpi16Mask(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskCmpEpi16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
+func m512MaskCmpEpi16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 byte) uint32
 
 
 // CmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
@@ -2474,11 +2474,11 @@ func m512MaskCmpEpi16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpi8Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+func CmpEpi8Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(cmpEpi8Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpi8Mask(a [16]byte, b [16]byte, imm8 int) uint16
+func cmpEpi8Mask(a [16]byte, b [16]byte, imm8 byte) uint16
 
 
 // MaskCmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
@@ -2510,11 +2510,11 @@ func cmpEpi8Mask(a [16]byte, b [16]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+func MaskCmpEpi8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(maskCmpEpi8Mask(uint16(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpi8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
+func maskCmpEpi8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 byte) uint16
 
 
 // M256CmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
@@ -2541,11 +2541,11 @@ func maskCmpEpi8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpi8Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+func M256CmpEpi8Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m256CmpEpi8Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpi8Mask(a [32]byte, b [32]byte, imm8 int) uint32
+func m256CmpEpi8Mask(a [32]byte, b [32]byte, imm8 byte) uint32
 
 
 // M256MaskCmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on
@@ -2577,11 +2577,11 @@ func m256CmpEpi8Mask(a [32]byte, b [32]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+func M256MaskCmpEpi8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m256MaskCmpEpi8Mask(uint32(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpi8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
+func m256MaskCmpEpi8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 byte) uint32
 
 
 // M512CmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on the
@@ -2608,11 +2608,11 @@ func m256MaskCmpEpi8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpi8Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+func M512CmpEpi8Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask64 {
 	return x86.Mmask64(m512CmpEpi8Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512CmpEpi8Mask(a [64]byte, b [64]byte, imm8 int) uint64
+func m512CmpEpi8Mask(a [64]byte, b [64]byte, imm8 byte) uint64
 
 
 // M512MaskCmpEpi8Mask: Compare packed 8-bit integers in 'a' and 'b' based on
@@ -2644,11 +2644,11 @@ func m512CmpEpi8Mask(a [64]byte, b [64]byte, imm8 int) uint64
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+func M512MaskCmpEpi8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask64 {
 	return x86.Mmask64(m512MaskCmpEpi8Mask(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskCmpEpi8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
+func m512MaskCmpEpi8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 byte) uint64
 
 
 // CmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b' based
@@ -2675,11 +2675,11 @@ func m512MaskCmpEpi8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpu16Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+func CmpEpu16Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpEpu16Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpu16Mask(a [16]byte, b [16]byte, imm8 int) uint8
+func cmpEpu16Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // MaskCmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -2711,11 +2711,11 @@ func cmpEpu16Mask(a [16]byte, b [16]byte, imm8 int) uint8
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask8 {
+func MaskCmpEpu16Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpEpu16Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpu16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
+func maskCmpEpu16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // M256CmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -2742,11 +2742,11 @@ func maskCmpEpu16Mask(k1 uint8, a [16]byte, b [16]byte, imm8 int) uint8
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpu16Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+func M256CmpEpu16Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(m256CmpEpu16Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpu16Mask(a [32]byte, b [32]byte, imm8 int) uint16
+func m256CmpEpu16Mask(a [32]byte, b [32]byte, imm8 byte) uint16
 
 
 // M256MaskCmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -2778,11 +2778,11 @@ func m256CmpEpu16Mask(a [32]byte, b [32]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask16 {
+func M256MaskCmpEpu16Mask(k1 x86.Mmask16, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(m256MaskCmpEpu16Mask(uint16(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpu16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
+func m256MaskCmpEpu16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 byte) uint16
 
 
 // M512CmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -2809,11 +2809,11 @@ func m256MaskCmpEpu16Mask(k1 uint16, a [32]byte, b [32]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpu16Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+func M512CmpEpu16Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m512CmpEpu16Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512CmpEpu16Mask(a [64]byte, b [64]byte, imm8 int) uint32
+func m512CmpEpu16Mask(a [64]byte, b [64]byte, imm8 byte) uint32
 
 
 // M512MaskCmpEpu16Mask: Compare packed unsigned 16-bit integers in 'a' and 'b'
@@ -2845,11 +2845,11 @@ func m512CmpEpu16Mask(a [64]byte, b [64]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask32 {
+func M512MaskCmpEpu16Mask(k1 x86.Mmask32, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m512MaskCmpEpu16Mask(uint32(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskCmpEpu16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
+func m512MaskCmpEpu16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 byte) uint32
 
 
 // CmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based on
@@ -2876,11 +2876,11 @@ func m512MaskCmpEpu16Mask(k1 uint32, a [64]byte, b [64]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpu8Mask(a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+func CmpEpu8Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(cmpEpu8Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpu8Mask(a [16]byte, b [16]byte, imm8 int) uint16
+func cmpEpu8Mask(a [16]byte, b [16]byte, imm8 byte) uint16
 
 
 // MaskCmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based
@@ -2912,11 +2912,11 @@ func cmpEpu8Mask(a [16]byte, b [16]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 int) x86.Mmask16 {
+func MaskCmpEpu8Mask(k1 x86.Mmask16, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(maskCmpEpu8Mask(uint16(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpu8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
+func maskCmpEpu8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 byte) uint16
 
 
 // M256CmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based
@@ -2943,11 +2943,11 @@ func maskCmpEpu8Mask(k1 uint16, a [16]byte, b [16]byte, imm8 int) uint16
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpu8Mask(a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+func M256CmpEpu8Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m256CmpEpu8Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpu8Mask(a [32]byte, b [32]byte, imm8 int) uint32
+func m256CmpEpu8Mask(a [32]byte, b [32]byte, imm8 byte) uint32
 
 
 // M256MaskCmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
@@ -2979,11 +2979,11 @@ func m256CmpEpu8Mask(a [32]byte, b [32]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 int) x86.Mmask32 {
+func M256MaskCmpEpu8Mask(k1 x86.Mmask32, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask32 {
 	return x86.Mmask32(m256MaskCmpEpu8Mask(uint32(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpu8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
+func m256MaskCmpEpu8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 byte) uint32
 
 
 // M512CmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b' based
@@ -3010,11 +3010,11 @@ func m256MaskCmpEpu8Mask(k1 uint32, a [32]byte, b [32]byte, imm8 int) uint32
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpu8Mask(a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+func M512CmpEpu8Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask64 {
 	return x86.Mmask64(m512CmpEpu8Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512CmpEpu8Mask(a [64]byte, b [64]byte, imm8 int) uint64
+func m512CmpEpu8Mask(a [64]byte, b [64]byte, imm8 byte) uint64
 
 
 // M512MaskCmpEpu8Mask: Compare packed unsigned 8-bit integers in 'a' and 'b'
@@ -3046,11 +3046,11 @@ func m512CmpEpu8Mask(a [64]byte, b [64]byte, imm8 int) uint64
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 int) x86.Mmask64 {
+func M512MaskCmpEpu8Mask(k1 x86.Mmask64, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask64 {
 	return x86.Mmask64(m512MaskCmpEpu8Mask(uint64(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskCmpEpu8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 int) uint64
+func m512MaskCmpEpu8Mask(k1 uint64, a [64]byte, b [64]byte, imm8 byte) uint64
 
 
 // CmpeqEpi16Mask: Compare packed 16-bit integers in 'a' and 'b' for equality,
@@ -7030,11 +7030,11 @@ func m512MaskzCvtusepi16Epi8(k uint32, a [64]byte) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func DbsadEpu8(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func DbsadEpu8(a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(dbsadEpu8([16]byte(a), [16]byte(b), imm8))
 }
 
-func dbsadEpu8(a [16]byte, b [16]byte, imm8 int) [16]byte
+func dbsadEpu8(a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // MaskDbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets
@@ -7081,11 +7081,11 @@ func dbsadEpu8(a [16]byte, b [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskDbsadEpu8(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func MaskDbsadEpu8(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskDbsadEpu8([16]byte(src), uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskDbsadEpu8(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
+func maskDbsadEpu8(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // MaskzDbsadEpu8: Compute the sum of absolute differences (SADs) of
@@ -7132,11 +7132,11 @@ func maskDbsadEpu8(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 int) [16]
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzDbsadEpu8(k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func MaskzDbsadEpu8(k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzDbsadEpu8(uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskzDbsadEpu8(k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
+func maskzDbsadEpu8(k uint8, a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // M256DbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets
@@ -7177,11 +7177,11 @@ func maskzDbsadEpu8(k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256DbsadEpu8(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256DbsadEpu8(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256DbsadEpu8([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256DbsadEpu8(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256DbsadEpu8(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskDbsadEpu8: Compute the sum of absolute differences (SADs) of
@@ -7232,11 +7232,11 @@ func m256DbsadEpu8(a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskDbsadEpu8(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskDbsadEpu8(src x86.M256i, k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskDbsadEpu8([32]byte(src), uint16(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskDbsadEpu8(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskDbsadEpu8(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzDbsadEpu8: Compute the sum of absolute differences (SADs) of
@@ -7287,11 +7287,11 @@ func m256MaskDbsadEpu8(src [32]byte, k uint16, a [32]byte, b [32]byte, imm8 int)
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzDbsadEpu8(k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskzDbsadEpu8(k x86.Mmask16, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzDbsadEpu8(uint16(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskzDbsadEpu8(k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskzDbsadEpu8(k uint16, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M512DbsadEpu8: Compute the sum of absolute differences (SADs) of quadruplets
@@ -7332,11 +7332,11 @@ func m256MaskzDbsadEpu8(k uint16, a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512DbsadEpu8(a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512DbsadEpu8(a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512DbsadEpu8([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512DbsadEpu8(a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512DbsadEpu8(a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskDbsadEpu8: Compute the sum of absolute differences (SADs) of
@@ -7387,11 +7387,11 @@ func m512DbsadEpu8(a [64]byte, b [64]byte, imm8 int) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskDbsadEpu8(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskDbsadEpu8(src x86.M512i, k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskDbsadEpu8([64]byte(src), uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskDbsadEpu8(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskDbsadEpu8(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzDbsadEpu8: Compute the sum of absolute differences (SADs) of
@@ -7442,11 +7442,11 @@ func m512MaskDbsadEpu8(src [64]byte, k uint32, a [64]byte, b [64]byte, imm8 int)
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzDbsadEpu8(k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskzDbsadEpu8(k x86.Mmask32, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzDbsadEpu8(uint32(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskzDbsadEpu8(k uint32, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskzDbsadEpu8(k uint32, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512Kunpackd: Unpack and interleave 32 bits from masks 'a' and 'b', and
@@ -13062,11 +13062,11 @@ func m512ShuffleEpi8(a [64]byte, b [64]byte) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShufflehiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskShufflehiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskShufflehiEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskShufflehiEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
+func maskShufflehiEpi16(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 'a'
@@ -13094,11 +13094,11 @@ func maskShufflehiEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShufflehiEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskzShufflehiEpi16(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzShufflehiEpi16(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzShufflehiEpi16(k uint8, a [16]byte, imm8 int) [16]byte
+func maskzShufflehiEpi16(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
@@ -13132,11 +13132,11 @@ func maskzShufflehiEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShufflehiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskShufflehiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskShufflehiEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskShufflehiEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskShufflehiEpi16(src [32]byte, k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
@@ -13170,11 +13170,11 @@ func m256MaskShufflehiEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]by
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShufflehiEpi16(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzShufflehiEpi16(k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzShufflehiEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskzShufflehiEpi16(k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskzShufflehiEpi16(k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
@@ -13218,11 +13218,11 @@ func m256MaskzShufflehiEpi16(k uint16, a [32]byte, imm8 int) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShufflehiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskShufflehiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskShufflehiEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskShufflehiEpi16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskShufflehiEpi16(src [64]byte, k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of
@@ -13266,11 +13266,11 @@ func m512MaskShufflehiEpi16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]by
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShufflehiEpi16(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzShufflehiEpi16(k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzShufflehiEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskzShufflehiEpi16(k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskzShufflehiEpi16(k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512ShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 128-bit
@@ -13304,11 +13304,11 @@ func m512MaskzShufflehiEpi16(k uint32, a [64]byte, imm8 int) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShufflehiEpi16(a x86.M512i, imm8 int) x86.M512i {
+func M512ShufflehiEpi16(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512ShufflehiEpi16([64]byte(a), imm8))
 }
 
-func m512ShufflehiEpi16(a [64]byte, imm8 int) [64]byte
+func m512ShufflehiEpi16(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 'a' using
@@ -13336,11 +13336,11 @@ func m512ShufflehiEpi16(a [64]byte, imm8 int) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShuffleloEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskShuffleloEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskShuffleloEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskShuffleloEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
+func maskShuffleloEpi16(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 'a' using
@@ -13368,11 +13368,11 @@ func maskShuffleloEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShuffleloEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskzShuffleloEpi16(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzShuffleloEpi16(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzShuffleloEpi16(k uint8, a [16]byte, imm8 int) [16]byte
+func maskzShuffleloEpi16(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
@@ -13406,11 +13406,11 @@ func maskzShuffleloEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleloEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskShuffleloEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskShuffleloEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskShuffleloEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskShuffleloEpi16(src [32]byte, k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
@@ -13444,11 +13444,11 @@ func m256MaskShuffleloEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]by
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleloEpi16(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzShuffleloEpi16(k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzShuffleloEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskzShuffleloEpi16(k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskzShuffleloEpi16(k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
@@ -13492,11 +13492,11 @@ func m256MaskzShuffleloEpi16(k uint16, a [32]byte, imm8 int) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleloEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskShuffleloEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskShuffleloEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskShuffleloEpi16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskShuffleloEpi16(src [64]byte, k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of
@@ -13540,11 +13540,11 @@ func m512MaskShuffleloEpi16(src [64]byte, k uint32, a [64]byte, imm8 int) [64]by
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleloEpi16(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzShuffleloEpi16(k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzShuffleloEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskzShuffleloEpi16(k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskzShuffleloEpi16(k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 128-bit
@@ -13578,11 +13578,11 @@ func m512MaskzShuffleloEpi16(k uint32, a [64]byte, imm8 int) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleloEpi16(a x86.M512i, imm8 int) x86.M512i {
+func M512ShuffleloEpi16(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512ShuffleloEpi16([64]byte(a), imm8))
 }
 
-func m512ShuffleloEpi16(a [64]byte, imm8 int) [64]byte
+func m512ShuffleloEpi16(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while
@@ -13791,11 +13791,11 @@ func m512SllEpi16(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSlliEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSlliEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSlliEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSlliEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSlliEpi16(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -13820,11 +13820,11 @@ func maskSlliEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSlliEpi16(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSlliEpi16(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSlliEpi16(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSlliEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSlliEpi16(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -13849,11 +13849,11 @@ func maskzSlliEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSlliEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSlliEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSlliEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskSlliEpi16(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSlliEpi16(src [32]byte, k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -13878,11 +13878,11 @@ func m256MaskSlliEpi16(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSlliEpi16(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSlliEpi16(k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSlliEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSlliEpi16(k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSlliEpi16(k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -13907,11 +13907,11 @@ func m256MaskzSlliEpi16(k uint16, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSlliEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskSlliEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskSlliEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskSlliEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSlliEpi16(src [64]byte, k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzSlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -13936,11 +13936,11 @@ func m512MaskSlliEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSlliEpi16(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSlliEpi16(k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSlliEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSlliEpi16(k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSlliEpi16(k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512SlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while
@@ -13960,11 +13960,11 @@ func m512MaskzSlliEpi16(k uint32, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SlliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+func M512SlliEpi16(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512SlliEpi16([64]byte(a), imm8))
 }
 
-func m512SlliEpi16(a [64]byte, imm8 uint32) [64]byte
+func m512SlliEpi16(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSllvEpi16: Shift packed 16-bit integers in 'a' left by the amount
@@ -14386,11 +14386,11 @@ func m512SraEpi16(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSraiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSraiEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSraiEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSraiEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSraiEpi16(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -14415,11 +14415,11 @@ func maskSraiEpi16(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSraiEpi16(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSraiEpi16(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSraiEpi16(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSraiEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSraiEpi16(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -14444,11 +14444,11 @@ func maskzSraiEpi16(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSraiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSraiEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSraiEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskSraiEpi16(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSraiEpi16(src [32]byte, k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
@@ -14473,11 +14473,11 @@ func m256MaskSraiEpi16(src [32]byte, k uint16, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSraiEpi16(k x86.Mmask16, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSraiEpi16(k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSraiEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSraiEpi16(k uint16, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSraiEpi16(k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -14502,11 +14502,11 @@ func m256MaskzSraiEpi16(k uint16, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSraiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskSraiEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskSraiEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskSraiEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSraiEpi16(src [64]byte, k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzSraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
@@ -14531,11 +14531,11 @@ func m512MaskSraiEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSraiEpi16(k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSraiEpi16(k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSraiEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSraiEpi16(k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSraiEpi16(k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512SraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -14555,11 +14555,11 @@ func m512MaskzSraiEpi16(k uint32, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SraiEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+func M512SraiEpi16(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512SraiEpi16([64]byte(a), imm8))
 }
 
-func m512SraiEpi16(a [64]byte, imm8 uint32) [64]byte
+func m512SraiEpi16(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSravEpi16: Shift packed 16-bit integers in 'a' right by the amount
@@ -14969,11 +14969,11 @@ func m512SrlEpi16(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSrliEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskSrliEpi16(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSrliEpi16([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSrliEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
+func maskSrliEpi16(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -14998,11 +14998,11 @@ func maskSrliEpi16(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSrliEpi16(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskzSrliEpi16(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSrliEpi16(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSrliEpi16(k uint8, a [16]byte, imm8 int) [16]byte
+func maskzSrliEpi16(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -15027,11 +15027,11 @@ func maskzSrliEpi16(k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSrliEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskSrliEpi16(src x86.M256i, k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSrliEpi16([32]byte(src), uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskSrliEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskSrliEpi16(src [32]byte, k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
@@ -15056,11 +15056,11 @@ func m256MaskSrliEpi16(src [32]byte, k uint16, a [32]byte, imm8 int) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSrliEpi16(k x86.Mmask16, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzSrliEpi16(k x86.Mmask16, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSrliEpi16(uint16(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSrliEpi16(k uint16, a [32]byte, imm8 int) [32]byte
+func m256MaskzSrliEpi16(k uint16, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -15085,11 +15085,11 @@ func m256MaskzSrliEpi16(k uint16, a [32]byte, imm8 int) [32]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSrliEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskSrliEpi16(src x86.M512i, k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskSrliEpi16([64]byte(src), uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskSrliEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSrliEpi16(src [64]byte, k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzSrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8'
@@ -15114,11 +15114,11 @@ func m512MaskSrliEpi16(src [64]byte, k uint32, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSrliEpi16(k x86.Mmask32, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzSrliEpi16(k x86.Mmask32, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSrliEpi16(uint32(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSrliEpi16(k uint32, a [64]byte, imm8 int) [64]byte
+func m512MaskzSrliEpi16(k uint32, a [64]byte, imm8 byte) [64]byte
 
 
 // M512SrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -15138,11 +15138,11 @@ func m512MaskzSrliEpi16(k uint32, a [64]byte, imm8 int) [64]byte
 // Requires AVX512BW.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SrliEpi16(a x86.M512i, imm8 uint32) x86.M512i {
+func M512SrliEpi16(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512SrliEpi16([64]byte(a), imm8))
 }
 
-func m512SrliEpi16(a [64]byte, imm8 uint32) [64]byte
+func m512SrliEpi16(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSrlvEpi16: Shift packed 16-bit integers in 'a' right by the amount

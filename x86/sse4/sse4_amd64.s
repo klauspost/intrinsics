@@ -1,34 +1,34 @@
-// func blendEpi16(a [16]byte, b [16]byte, imm8 int) [16]byte
+// func blendEpi16(a [16]byte, b [16]byte, imm8 byte) [16]byte
 TEXT ·blendEpi16(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PBLENDW
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
-// func blendPd(a [2]float64, b [2]float64, imm8 int) [2]float64
+// func blendPd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 TEXT ·blendPd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: BLENDPD
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
-// func blendPs(a [4]float32, b [4]float32, imm8 int) [4]float32
+// func blendPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 TEXT ·blendPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: BLENDPS
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
 // func blendvEpi8(a [16]byte, b [16]byte, mask [16]byte) [16]byte
@@ -117,95 +117,95 @@ TEXT ·cmpeqEpi64(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+// func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 TEXT ·cmpestra(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
 	MOVOU b+24(FP),X2
 	MOVQ lb+40(FP),R11
-	MOVQ imm8+48(FP),R12
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPESTRI
 
-	MOVQ $0, ret+56(FP)
+	MOVQ $0, ret+52(FP)
 	RET
 
-// func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+// func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 TEXT ·cmpestrc(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
 	MOVOU b+24(FP),X2
 	MOVQ lb+40(FP),R11
-	MOVQ imm8+48(FP),R12
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPESTRI
 
-	MOVQ $0, ret+56(FP)
+	MOVQ $0, ret+52(FP)
 	RET
 
-// func cmpestri(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+// func cmpestri(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 TEXT ·cmpestri(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
 	MOVOU b+24(FP),X2
 	MOVQ lb+40(FP),R11
-	MOVQ imm8+48(FP),R12
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPESTRI
 
-	MOVQ $0, ret+56(FP)
+	MOVQ $0, ret+52(FP)
 	RET
 
-// func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 int) [16]byte
+// func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 byte) [16]byte
 TEXT ·cmpestrm(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
 	MOVOU b+24(FP),X2
 	MOVQ lb+40(FP),R11
-	MOVQ imm8+48(FP),R12
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPESTRM
 
-	MOVOU X4, ret+56(FP)
+	MOVOU X4, ret+52(FP)
 	RET
 
-// func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+// func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 TEXT ·cmpestro(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
 	MOVOU b+24(FP),X2
 	MOVQ lb+40(FP),R11
-	MOVQ imm8+48(FP),R12
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPESTRI
 
-	MOVQ $0, ret+56(FP)
+	MOVQ $0, ret+52(FP)
 	RET
 
-// func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+// func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 TEXT ·cmpestrs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
 	MOVOU b+24(FP),X2
 	MOVQ lb+40(FP),R11
-	MOVQ imm8+48(FP),R12
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPESTRI
 
-	MOVQ $0, ret+56(FP)
+	MOVQ $0, ret+52(FP)
 	RET
 
-// func cmpestrz(a [16]byte, la int, b [16]byte, lb int, imm8 int) int
+// func cmpestrz(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 TEXT ·cmpestrz(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ la+16(FP),R9
 	MOVOU b+24(FP),X2
 	MOVQ lb+40(FP),R11
-	MOVQ imm8+48(FP),R12
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPESTRI
 
-	MOVQ $0, ret+56(FP)
+	MOVQ $0, ret+52(FP)
 	RET
 
 // func cmpgtEpi64(a [16]byte, b [16]byte) [16]byte
@@ -219,81 +219,81 @@ TEXT ·cmpgtEpi64(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func cmpistra(a [16]byte, b [16]byte, imm8 int) int
+// func cmpistra(a [16]byte, b [16]byte, imm8 byte) int
 TEXT ·cmpistra(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPISTRI
 
-	MOVQ $0, ret+40(FP)
+	MOVQ $0, ret+36(FP)
 	RET
 
-// func cmpistrc(a [16]byte, b [16]byte, imm8 int) int
+// func cmpistrc(a [16]byte, b [16]byte, imm8 byte) int
 TEXT ·cmpistrc(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPISTRI
 
-	MOVQ $0, ret+40(FP)
+	MOVQ $0, ret+36(FP)
 	RET
 
-// func cmpistri(a [16]byte, b [16]byte, imm8 int) int
+// func cmpistri(a [16]byte, b [16]byte, imm8 byte) int
 TEXT ·cmpistri(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPISTRI
 
-	MOVQ $0, ret+40(FP)
+	MOVQ $0, ret+36(FP)
 	RET
 
-// func cmpistrm(a [16]byte, b [16]byte, imm8 int) [16]byte
+// func cmpistrm(a [16]byte, b [16]byte, imm8 byte) [16]byte
 TEXT ·cmpistrm(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPISTRM
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
-// func cmpistro(a [16]byte, b [16]byte, imm8 int) int
+// func cmpistro(a [16]byte, b [16]byte, imm8 byte) int
 TEXT ·cmpistro(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPISTRI
 
-	MOVQ $0, ret+40(FP)
+	MOVQ $0, ret+36(FP)
 	RET
 
-// func cmpistrs(a [16]byte, b [16]byte, imm8 int) int
+// func cmpistrs(a [16]byte, b [16]byte, imm8 byte) int
 TEXT ·cmpistrs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPISTRI
 
-	MOVQ $0, ret+40(FP)
+	MOVQ $0, ret+36(FP)
 	RET
 
-// func cmpistrz(a [16]byte, b [16]byte, imm8 int) int
+// func cmpistrz(a [16]byte, b [16]byte, imm8 byte) int
 TEXT ·cmpistrz(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PCMPISTRI
 
-	MOVQ $0, ret+40(FP)
+	MOVQ $0, ret+36(FP)
 	RET
 
 // func crc32U16(crc uint32, v uint16) uint32
@@ -460,70 +460,70 @@ TEXT ·cvtepu8Epi64(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func dpPd(a [2]float64, b [2]float64, imm8 int) [2]float64
+// func dpPd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 TEXT ·dpPd(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: DPPD
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
-// func dpPs(a [4]float32, b [4]float32, imm8 int) [4]float32
+// func dpPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 TEXT ·dpPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: DPPS
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
-// func extractEpi32(a [16]byte, imm8 int) int
+// func extractEpi32(a [16]byte, imm8 byte) int
 TEXT ·extractEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PEXTRD X0, R9
 
-	MOVQ $0, ret+24(FP)
+	MOVQ $0, ret+20(FP)
 	RET
 
-// func extractEpi64(a [16]byte, imm8 int) int64
+// func extractEpi64(a [16]byte, imm8 byte) int64
 TEXT ·extractEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PEXTRQ X0, R9
 
-	MOVQ $0, ret+24(FP)
+	MOVQ $0, ret+20(FP)
 	RET
 
-// func extractEpi8(a [16]byte, imm8 int) int
+// func extractEpi8(a [16]byte, imm8 byte) int
 TEXT ·extractEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PEXTRB X0, R9
 
-	MOVQ $0, ret+24(FP)
+	MOVQ $0, ret+20(FP)
 	RET
 
-// func extractPs(a [4]float32, imm8 int) int
+// func extractPs(a [4]float32, imm8 byte) int
 TEXT ·extractPs(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// EXTRACTPS X0, R9
 
-	MOVQ $0, ret+24(FP)
+	MOVQ $0, ret+20(FP)
 	RET
 
 // func floorPd(a [2]float64) [2]float64
@@ -568,48 +568,48 @@ TEXT ·floorSs(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func insertEpi32(a [16]byte, i int, imm8 int) [16]byte
+// func insertEpi32(a [16]byte, i int, imm8 byte) [16]byte
 TEXT ·insertEpi32(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ i+16(FP),R9
-	MOVQ imm8+24(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PINSRD
 
-	MOVOU X2, ret+32(FP)
+	MOVOU X2, ret+28(FP)
 	RET
 
-// func insertEpi64(a [16]byte, i int64, imm8 int) [16]byte
+// func insertEpi64(a [16]byte, i int64, imm8 byte) [16]byte
 TEXT ·insertEpi64(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ i+16(FP),R9
-	MOVQ imm8+24(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PINSRQ
 
-	MOVOU X2, ret+32(FP)
+	MOVOU X2, ret+28(FP)
 	RET
 
-// func insertEpi8(a [16]byte, i int, imm8 int) [16]byte
+// func insertEpi8(a [16]byte, i int, imm8 byte) [16]byte
 TEXT ·insertEpi8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVQ i+16(FP),R9
-	MOVQ imm8+24(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PINSRB
 
-	MOVOU X2, ret+32(FP)
+	MOVOU X2, ret+28(FP)
 	RET
 
-// func insertPs(a [4]float32, b [4]float32, imm8 int) [4]float32
+// func insertPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 TEXT ·insertPs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: INSERTPS
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
 // func maxEpi32(a [16]byte, b [16]byte) [16]byte
@@ -710,15 +710,15 @@ TEXT ·minposEpu16(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func mpsadbwEpu8(a [16]byte, b [16]byte, imm8 int) [16]byte
+// func mpsadbwEpu8(a [16]byte, b [16]byte, imm8 byte) [16]byte
 TEXT ·mpsadbwEpu8(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVQ imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: MPSADBW
 
-	MOVOU X2, ret+40(FP)
+	MOVOU X2, ret+36(FP)
 	RET
 
 // func mulEpi32(a [16]byte, b [16]byte) [16]byte

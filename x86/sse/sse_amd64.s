@@ -1132,15 +1132,15 @@ TEXT ·expm1Ps(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func extractPi16(a x86.M64, imm8 int) int
+// func extractPi16(a x86.M64, imm8 byte) int
 TEXT ·extractPi16(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PEXTRW M0, R9
 
-	MOVQ $0, ret+16(FP)
+	MOVQ $0, ret+12(FP)
 	RET
 
 // func mMGETEXCEPTIONMASK() uint32
@@ -1213,11 +1213,11 @@ TEXT ·idivEpi32(SB),7,$0
 	MOVOU X1, ret+32(FP)
 	RET
 
-// func insertPi16(a x86.M64, i int, imm8 int) x86.M64
+// func insertPi16(a x86.M64, i int, imm8 byte) x86.M64
 TEXT ·insertPi16(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ i+8(FP),R9
-	MOVQ imm8+16(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PINSRW
 
@@ -1567,22 +1567,22 @@ TEXT ·pavgw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pextrw(a x86.M64, imm8 int) int
+// func pextrw(a x86.M64, imm8 byte) int
 TEXT ·pextrw(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PEXTRW M0, R9
 
-	MOVQ $0, ret+16(FP)
+	MOVQ $0, ret+12(FP)
 	RET
 
-// func pinsrw(a x86.M64, i int, imm8 int) x86.M64
+// func pinsrw(a x86.M64, i int, imm8 byte) x86.M64
 TEXT ·pinsrw(SB),7,$0
 	MOVQ a+0(FP),M0
 	MOVQ i+8(FP),R9
-	MOVQ imm8+16(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: PINSRW
 
@@ -1685,10 +1685,10 @@ TEXT ·psadbw(SB),7,$0
 	// Return size: 8
 	RET
 
-// func pshufw(a x86.M64, imm8 int) x86.M64
+// func pshufw(a x86.M64, imm8 byte) x86.M64
 TEXT ·pshufw(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSHUFW M0, R9
@@ -1934,10 +1934,10 @@ TEXT ·sfence(SB),7,$0
 
 	RET
 
-// func shufflePi16(a x86.M64, imm8 int) x86.M64
+// func shufflePi16(a x86.M64, imm8 byte) x86.M64
 TEXT ·shufflePi16(SB),7,$0
 	MOVQ a+0(FP),M0
-	MOVQ imm8+8(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// PSHUFW M0, R9
@@ -1945,11 +1945,11 @@ TEXT ·shufflePi16(SB),7,$0
 	// Return size: 8
 	RET
 
-// func shufflePs(a [4]float32, b [4]float32, imm8 uint32) [4]float32
+// func shufflePs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 TEXT ·shufflePs(SB),7,$0
 	MOVOU a+0(FP),X0
 	MOVOU b+16(FP),X1
-	MOVL imm8+32(FP),R10
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - uses instrunction: SHUFPS
 

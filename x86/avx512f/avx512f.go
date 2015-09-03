@@ -3858,11 +3858,11 @@ func m512MaskCeilPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpi32Mask(a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func CmpEpi32Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpEpi32Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpi32Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
+func cmpEpi32Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // MaskCmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
@@ -3894,11 +3894,11 @@ func cmpEpi32Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpi32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
+func maskCmpEpi32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // M256CmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on the
@@ -3925,11 +3925,11 @@ func maskCmpEpi32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpi32Mask(a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256CmpEpi32Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256CmpEpi32Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpi32Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256CmpEpi32Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // M256MaskCmpEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' based on
@@ -3961,11 +3961,11 @@ func m256CmpEpi32Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskCmpEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpi32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256MaskCmpEpi32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // CmpEpi64Mask: Compare packed 64-bit integers in 'a' and 'b' based on the
@@ -3992,11 +3992,11 @@ func m256MaskCmpEpi32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpi64Mask(a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func CmpEpi64Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpEpi64Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpi64Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
+func cmpEpi64Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // MaskCmpEpi64Mask: Compare packed 64-bit integers in 'a' and 'b' based on the
@@ -4028,11 +4028,11 @@ func cmpEpi64Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpi64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
+func maskCmpEpi64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // M256CmpEpi64Mask: Compare packed 64-bit integers in 'a' and 'b' based on the
@@ -4059,11 +4059,11 @@ func maskCmpEpi64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpi64Mask(a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256CmpEpi64Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256CmpEpi64Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpi64Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256CmpEpi64Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // M256MaskCmpEpi64Mask: Compare packed 64-bit integers in 'a' and 'b' based on
@@ -4095,11 +4095,11 @@ func m256CmpEpi64Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskCmpEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpi64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256MaskCmpEpi64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // M512CmpEpi64Mask: Compare packed 64-bit integers in 'a' and 'b' based on the
@@ -4126,11 +4126,11 @@ func m256MaskCmpEpi64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpi64Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask8 {
+func M512CmpEpi64Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m512CmpEpi64Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512CmpEpi64Mask(a [64]byte, b [64]byte, imm8 uint8) uint8
+func m512CmpEpi64Mask(a [64]byte, b [64]byte, imm8 byte) uint8
 
 
 // M512MaskCmpEpi64Mask: Compare packed 64-bit integers in 'a' and 'b' based on
@@ -4162,11 +4162,11 @@ func m512CmpEpi64Mask(a [64]byte, b [64]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask8 {
+func M512MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m512MaskCmpEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskCmpEpi64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 uint8) uint8
+func m512MaskCmpEpi64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 byte) uint8
 
 
 // CmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b' based
@@ -4193,11 +4193,11 @@ func m512MaskCmpEpi64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpu32Mask(a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func CmpEpu32Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpEpu32Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpu32Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
+func cmpEpu32Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // MaskCmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -4229,11 +4229,11 @@ func cmpEpu32Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpu32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
+func maskCmpEpu32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // M256CmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -4260,11 +4260,11 @@ func maskCmpEpu32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpu32Mask(a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256CmpEpu32Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256CmpEpu32Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpu32Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256CmpEpu32Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // M256MaskCmpEpu32Mask: Compare packed unsigned 32-bit integers in 'a' and 'b'
@@ -4296,11 +4296,11 @@ func m256CmpEpu32Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskCmpEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpu32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256MaskCmpEpu32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // CmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b' based
@@ -4327,11 +4327,11 @@ func m256MaskCmpEpu32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpu64Mask(a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func CmpEpu64Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpEpu64Mask([16]byte(a), [16]byte(b), imm8))
 }
 
-func cmpEpu64Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
+func cmpEpu64Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // MaskCmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -4363,11 +4363,11 @@ func cmpEpu64Mask(a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 uint8) x86.Mmask8 {
+func MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskCmpEpu64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
+func maskCmpEpu64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 
 
 // M256CmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -4394,11 +4394,11 @@ func maskCmpEpu64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpu64Mask(a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256CmpEpu64Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256CmpEpu64Mask([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256CmpEpu64Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256CmpEpu64Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // M256MaskCmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -4430,11 +4430,11 @@ func m256CmpEpu64Mask(a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 uint8) x86.Mmask8 {
+func M256MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskCmpEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskCmpEpu64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
+func m256MaskCmpEpu64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 
 
 // M512CmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -4461,11 +4461,11 @@ func m256MaskCmpEpu64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpu64Mask(a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask8 {
+func M512CmpEpu64Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m512CmpEpu64Mask([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512CmpEpu64Mask(a [64]byte, b [64]byte, imm8 uint8) uint8
+func m512CmpEpu64Mask(a [64]byte, b [64]byte, imm8 byte) uint8
 
 
 // M512MaskCmpEpu64Mask: Compare packed unsigned 64-bit integers in 'a' and 'b'
@@ -4497,11 +4497,11 @@ func m512CmpEpu64Mask(a [64]byte, b [64]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 uint8) x86.Mmask8 {
+func M512MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m512MaskCmpEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskCmpEpu64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 uint8) uint8
+func m512MaskCmpEpu64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 byte) uint8
 
 
 // CmpPdMask: Compare packed double-precision (64-bit) floating-point elements
@@ -4552,11 +4552,11 @@ func m512MaskCmpEpu64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 uint8) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpPdMask(a x86.M128d, b x86.M128d, imm8 int) x86.Mmask8 {
+func CmpPdMask(a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpPdMask([2]float64(a), [2]float64(b), imm8))
 }
 
-func cmpPdMask(a [2]float64, b [2]float64, imm8 int) uint8
+func cmpPdMask(a [2]float64, b [2]float64, imm8 byte) uint8
 
 
 // MaskCmpPdMask: Compare packed double-precision (64-bit) floating-point
@@ -4612,11 +4612,11 @@ func cmpPdMask(a [2]float64, b [2]float64, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpPdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.Mmask8 {
+func MaskCmpPdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpPdMask(uint8(k1), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskCmpPdMask(k1 uint8, a [2]float64, b [2]float64, imm8 int) uint8
+func maskCmpPdMask(k1 uint8, a [2]float64, b [2]float64, imm8 byte) uint8
 
 
 // M256CmpPdMask: Compare packed double-precision (64-bit) floating-point
@@ -4667,11 +4667,11 @@ func maskCmpPdMask(k1 uint8, a [2]float64, b [2]float64, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpPdMask(a x86.M256d, b x86.M256d, imm8 int) x86.Mmask8 {
+func M256CmpPdMask(a x86.M256d, b x86.M256d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256CmpPdMask([4]float64(a), [4]float64(b), imm8))
 }
 
-func m256CmpPdMask(a [4]float64, b [4]float64, imm8 int) uint8
+func m256CmpPdMask(a [4]float64, b [4]float64, imm8 byte) uint8
 
 
 // M256MaskCmpPdMask: Compare packed double-precision (64-bit) floating-point
@@ -4727,11 +4727,11 @@ func m256CmpPdMask(a [4]float64, b [4]float64, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpPdMask(k1 x86.Mmask8, a x86.M256d, b x86.M256d, imm8 int) x86.Mmask8 {
+func M256MaskCmpPdMask(k1 x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskCmpPdMask(uint8(k1), [4]float64(a), [4]float64(b), imm8))
 }
 
-func m256MaskCmpPdMask(k1 uint8, a [4]float64, b [4]float64, imm8 int) uint8
+func m256MaskCmpPdMask(k1 uint8, a [4]float64, b [4]float64, imm8 byte) uint8
 
 
 // CmpPsMask: Compare packed single-precision (32-bit) floating-point elements
@@ -4782,11 +4782,11 @@ func m256MaskCmpPdMask(k1 uint8, a [4]float64, b [4]float64, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpPsMask(a x86.M128, b x86.M128, imm8 int) x86.Mmask8 {
+func CmpPsMask(a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpPsMask([4]float32(a), [4]float32(b), imm8))
 }
 
-func cmpPsMask(a [4]float32, b [4]float32, imm8 int) uint8
+func cmpPsMask(a [4]float32, b [4]float32, imm8 byte) uint8
 
 
 // MaskCmpPsMask: Compare packed single-precision (32-bit) floating-point
@@ -4842,11 +4842,11 @@ func cmpPsMask(a [4]float32, b [4]float32, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpPsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.Mmask8 {
+func MaskCmpPsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpPsMask(uint8(k1), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskCmpPsMask(k1 uint8, a [4]float32, b [4]float32, imm8 int) uint8
+func maskCmpPsMask(k1 uint8, a [4]float32, b [4]float32, imm8 byte) uint8
 
 
 // M256CmpPsMask: Compare packed single-precision (32-bit) floating-point
@@ -4897,11 +4897,11 @@ func maskCmpPsMask(k1 uint8, a [4]float32, b [4]float32, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpPsMask(a x86.M256, b x86.M256, imm8 int) x86.Mmask8 {
+func M256CmpPsMask(a x86.M256, b x86.M256, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256CmpPsMask([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256CmpPsMask(a [8]float32, b [8]float32, imm8 int) uint8
+func m256CmpPsMask(a [8]float32, b [8]float32, imm8 byte) uint8
 
 
 // M256MaskCmpPsMask: Compare packed single-precision (32-bit) floating-point
@@ -4957,11 +4957,11 @@ func m256CmpPsMask(a [8]float32, b [8]float32, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpPsMask(k1 x86.Mmask8, a x86.M256, b x86.M256, imm8 int) x86.Mmask8 {
+func M256MaskCmpPsMask(k1 x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskCmpPsMask(uint8(k1), [8]float32(a), [8]float32(b), imm8))
 }
 
-func m256MaskCmpPsMask(k1 uint8, a [8]float32, b [8]float32, imm8 int) uint8
+func m256MaskCmpPsMask(k1 uint8, a [8]float32, b [8]float32, imm8 byte) uint8
 
 
 // CmpRoundSdMask: Compare the lower double-precision (64-bit) floating-point
@@ -5012,11 +5012,11 @@ func m256MaskCmpPsMask(k1 uint8, a [8]float32, b [8]float32, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpRoundSdMask(a x86.M128d, b x86.M128d, imm8 int, sae int) x86.Mmask8 {
+func CmpRoundSdMask(a x86.M128d, b x86.M128d, imm8 byte, sae int) x86.Mmask8 {
 	return x86.Mmask8(cmpRoundSdMask([2]float64(a), [2]float64(b), imm8, sae))
 }
 
-func cmpRoundSdMask(a [2]float64, b [2]float64, imm8 int, sae int) uint8
+func cmpRoundSdMask(a [2]float64, b [2]float64, imm8 byte, sae int) uint8
 
 
 // MaskCmpRoundSdMask: Compare the lower double-precision (64-bit)
@@ -5071,11 +5071,11 @@ func cmpRoundSdMask(a [2]float64, b [2]float64, imm8 int, sae int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpRoundSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int, sae int) x86.Mmask8 {
+func MaskCmpRoundSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, sae int) x86.Mmask8 {
 	return x86.Mmask8(maskCmpRoundSdMask(uint8(k1), [2]float64(a), [2]float64(b), imm8, sae))
 }
 
-func maskCmpRoundSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 int, sae int) uint8
+func maskCmpRoundSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 byte, sae int) uint8
 
 
 // CmpRoundSsMask: Compare the lower single-precision (32-bit) floating-point
@@ -5126,11 +5126,11 @@ func maskCmpRoundSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 int, sae int)
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpRoundSsMask(a x86.M128, b x86.M128, imm8 int, sae int) x86.Mmask8 {
+func CmpRoundSsMask(a x86.M128, b x86.M128, imm8 byte, sae int) x86.Mmask8 {
 	return x86.Mmask8(cmpRoundSsMask([4]float32(a), [4]float32(b), imm8, sae))
 }
 
-func cmpRoundSsMask(a [4]float32, b [4]float32, imm8 int, sae int) uint8
+func cmpRoundSsMask(a [4]float32, b [4]float32, imm8 byte, sae int) uint8
 
 
 // MaskCmpRoundSsMask: Compare the lower single-precision (32-bit)
@@ -5185,11 +5185,11 @@ func cmpRoundSsMask(a [4]float32, b [4]float32, imm8 int, sae int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpRoundSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 int, sae int) x86.Mmask8 {
+func MaskCmpRoundSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, sae int) x86.Mmask8 {
 	return x86.Mmask8(maskCmpRoundSsMask(uint8(k1), [4]float32(a), [4]float32(b), imm8, sae))
 }
 
-func maskCmpRoundSsMask(k1 uint8, a [4]float32, b [4]float32, imm8 int, sae int) uint8
+func maskCmpRoundSsMask(k1 uint8, a [4]float32, b [4]float32, imm8 byte, sae int) uint8
 
 
 // CmpSdMask: Compare the lower double-precision (64-bit) floating-point
@@ -5239,11 +5239,11 @@ func maskCmpRoundSsMask(k1 uint8, a [4]float32, b [4]float32, imm8 int, sae int)
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpSdMask(a x86.M128d, b x86.M128d, imm8 int) x86.Mmask8 {
+func CmpSdMask(a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpSdMask([2]float64(a), [2]float64(b), imm8))
 }
 
-func cmpSdMask(a [2]float64, b [2]float64, imm8 int) uint8
+func cmpSdMask(a [2]float64, b [2]float64, imm8 byte) uint8
 
 
 // MaskCmpSdMask: Compare the lower double-precision (64-bit) floating-point
@@ -5297,11 +5297,11 @@ func cmpSdMask(a [2]float64, b [2]float64, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.Mmask8 {
+func MaskCmpSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpSdMask(uint8(k1), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskCmpSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 int) uint8
+func maskCmpSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 byte) uint8
 
 
 // CmpSsMask: Compare the lower single-precision (32-bit) floating-point
@@ -5351,11 +5351,11 @@ func maskCmpSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpSsMask(a x86.M128, b x86.M128, imm8 int) x86.Mmask8 {
+func CmpSsMask(a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(cmpSsMask([4]float32(a), [4]float32(b), imm8))
 }
 
-func cmpSsMask(a [4]float32, b [4]float32, imm8 int) uint8
+func cmpSsMask(a [4]float32, b [4]float32, imm8 byte) uint8
 
 
 // MaskCmpSsMask: Compare the lower single-precision (32-bit) floating-point
@@ -5409,11 +5409,11 @@ func cmpSsMask(a [4]float32, b [4]float32, imm8 int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.Mmask8 {
+func MaskCmpSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskCmpSsMask(uint8(k1), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskCmpSsMask(k1 uint8, a [4]float32, b [4]float32, imm8 int) uint8
+func maskCmpSsMask(k1 uint8, a [4]float32, b [4]float32, imm8 byte) uint8
 
 
 // CmpeqEpi32Mask: Compare packed 32-bit integers in 'a' and 'b' for equality,
@@ -7981,11 +7981,11 @@ func m512MaskCmpneqEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func ComiRoundSd(a x86.M128d, b x86.M128d, imm8 int, sae int) int {
+func ComiRoundSd(a x86.M128d, b x86.M128d, imm8 byte, sae int) int {
 	return int(comiRoundSd([2]float64(a), [2]float64(b), imm8, sae))
 }
 
-func comiRoundSd(a [2]float64, b [2]float64, imm8 int, sae int) int
+func comiRoundSd(a [2]float64, b [2]float64, imm8 byte, sae int) int
 
 
 // ComiRoundSs: Compare the lower single-precision (32-bit) floating-point
@@ -8034,11 +8034,11 @@ func comiRoundSd(a [2]float64, b [2]float64, imm8 int, sae int) int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func ComiRoundSs(a x86.M128, b x86.M128, imm8 int, sae int) int {
+func ComiRoundSs(a x86.M128, b x86.M128, imm8 byte, sae int) int {
 	return int(comiRoundSs([4]float32(a), [4]float32(b), imm8, sae))
 }
 
-func comiRoundSs(a [4]float32, b [4]float32, imm8 int, sae int) int
+func comiRoundSs(a [4]float32, b [4]float32, imm8 byte, sae int) int
 
 
 // MaskCompressEpi32: Contiguously store the active 32-bit integers in 'a'
@@ -21537,11 +21537,11 @@ func m512MaskExpm1Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extractf32x4Ps(a x86.M256, imm8 int) x86.M128 {
+func M256Extractf32x4Ps(a x86.M256, imm8 byte) x86.M128 {
 	return x86.M128(m256Extractf32x4Ps([8]float32(a), imm8))
 }
 
-func m256Extractf32x4Ps(a [8]float32, imm8 int) [4]float32
+func m256Extractf32x4Ps(a [8]float32, imm8 byte) [4]float32
 
 
 // M256MaskExtractf32x4Ps: Extract 128 bits (composed of 4 packed
@@ -21567,11 +21567,11 @@ func m256Extractf32x4Ps(a [8]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M256, imm8 int) x86.M128 {
+func M256MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M256, imm8 byte) x86.M128 {
 	return x86.M128(m256MaskExtractf32x4Ps([4]float32(src), uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskExtractf32x4Ps(src [4]float32, k uint8, a [8]float32, imm8 int) [4]float32
+func m256MaskExtractf32x4Ps(src [4]float32, k uint8, a [8]float32, imm8 byte) [4]float32
 
 
 // M256MaskzExtractf32x4Ps: Extract 128 bits (composed of 4 packed
@@ -21597,11 +21597,11 @@ func m256MaskExtractf32x4Ps(src [4]float32, k uint8, a [8]float32, imm8 int) [4]
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M256, imm8 int) x86.M128 {
+func M256MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M256, imm8 byte) x86.M128 {
 	return x86.M128(m256MaskzExtractf32x4Ps(uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskzExtractf32x4Ps(k uint8, a [8]float32, imm8 int) [4]float32
+func m256MaskzExtractf32x4Ps(k uint8, a [8]float32, imm8 byte) [4]float32
 
 
 // M512Extractf32x4Ps: Extract 128 bits (composed of 4 packed single-precision
@@ -21620,11 +21620,11 @@ func m256MaskzExtractf32x4Ps(k uint8, a [8]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extractf32x4Ps(a x86.M512, imm8 int) x86.M128 {
+func M512Extractf32x4Ps(a x86.M512, imm8 byte) x86.M128 {
 	return x86.M128(m512Extractf32x4Ps([16]float32(a), imm8))
 }
 
-func m512Extractf32x4Ps(a [16]float32, imm8 int) [4]float32
+func m512Extractf32x4Ps(a [16]float32, imm8 byte) [4]float32
 
 
 // M512MaskExtractf32x4Ps: Extract 128 bits (composed of 4 packed
@@ -21652,11 +21652,11 @@ func m512Extractf32x4Ps(a [16]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M512, imm8 int) x86.M128 {
+func M512MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M512, imm8 byte) x86.M128 {
 	return x86.M128(m512MaskExtractf32x4Ps([4]float32(src), uint8(k), [16]float32(a), imm8))
 }
 
-func m512MaskExtractf32x4Ps(src [4]float32, k uint8, a [16]float32, imm8 int) [4]float32
+func m512MaskExtractf32x4Ps(src [4]float32, k uint8, a [16]float32, imm8 byte) [4]float32
 
 
 // M512MaskzExtractf32x4Ps: Extract 128 bits (composed of 4 packed
@@ -21684,11 +21684,11 @@ func m512MaskExtractf32x4Ps(src [4]float32, k uint8, a [16]float32, imm8 int) [4
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M512, imm8 int) x86.M128 {
+func M512MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M512, imm8 byte) x86.M128 {
 	return x86.M128(m512MaskzExtractf32x4Ps(uint8(k), [16]float32(a), imm8))
 }
 
-func m512MaskzExtractf32x4Ps(k uint8, a [16]float32, imm8 int) [4]float32
+func m512MaskzExtractf32x4Ps(k uint8, a [16]float32, imm8 byte) [4]float32
 
 
 // M512Extractf64x4Pd: Extract 256 bits (composed of 4 packed double-precision
@@ -21705,11 +21705,11 @@ func m512MaskzExtractf32x4Ps(k uint8, a [16]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extractf64x4Pd(a x86.M512d, imm8 int) x86.M256d {
+func M512Extractf64x4Pd(a x86.M512d, imm8 byte) x86.M256d {
 	return x86.M256d(m512Extractf64x4Pd([8]float64(a), imm8))
 }
 
-func m512Extractf64x4Pd(a [8]float64, imm8 int) [4]float64
+func m512Extractf64x4Pd(a [8]float64, imm8 byte) [4]float64
 
 
 // M512MaskExtractf64x4Pd: Extract 256 bits (composed of 4 packed
@@ -21735,11 +21735,11 @@ func m512Extractf64x4Pd(a [8]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtractf64x4Pd(src x86.M256d, k x86.Mmask8, a x86.M512d, imm8 int) x86.M256d {
+func M512MaskExtractf64x4Pd(src x86.M256d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M256d {
 	return x86.M256d(m512MaskExtractf64x4Pd([4]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskExtractf64x4Pd(src [4]float64, k uint8, a [8]float64, imm8 int) [4]float64
+func m512MaskExtractf64x4Pd(src [4]float64, k uint8, a [8]float64, imm8 byte) [4]float64
 
 
 // M512MaskzExtractf64x4Pd: Extract 256 bits (composed of 4 packed
@@ -21765,11 +21765,11 @@ func m512MaskExtractf64x4Pd(src [4]float64, k uint8, a [8]float64, imm8 int) [4]
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtractf64x4Pd(k x86.Mmask8, a x86.M512d, imm8 int) x86.M256d {
+func M512MaskzExtractf64x4Pd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M256d {
 	return x86.M256d(m512MaskzExtractf64x4Pd(uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskzExtractf64x4Pd(k uint8, a [8]float64, imm8 int) [4]float64
+func m512MaskzExtractf64x4Pd(k uint8, a [8]float64, imm8 byte) [4]float64
 
 
 // M256Extracti32x4Epi32: Extract 128 bits (composed of 4 packed 32-bit
@@ -21785,11 +21785,11 @@ func m512MaskzExtractf64x4Pd(k uint8, a [8]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extracti32x4Epi32(a x86.M256i, imm8 int) x86.M128i {
+func M256Extracti32x4Epi32(a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256Extracti32x4Epi32([32]byte(a), imm8))
 }
 
-func m256Extracti32x4Epi32(a [32]byte, imm8 int) [16]byte
+func m256Extracti32x4Epi32(a [32]byte, imm8 byte) [16]byte
 
 
 // M256MaskExtracti32x4Epi32: Extract 128 bits (composed of 4 packed 32-bit
@@ -21815,11 +21815,11 @@ func m256Extracti32x4Epi32(a [32]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i, imm8 int) x86.M128i {
+func M256MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256MaskExtracti32x4Epi32([16]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskExtracti32x4Epi32(src [16]byte, k uint8, a [32]byte, imm8 int) [16]byte
+func m256MaskExtracti32x4Epi32(src [16]byte, k uint8, a [32]byte, imm8 byte) [16]byte
 
 
 // M256MaskzExtracti32x4Epi32: Extract 128 bits (composed of 4 packed 32-bit
@@ -21845,11 +21845,11 @@ func m256MaskExtracti32x4Epi32(src [16]byte, k uint8, a [32]byte, imm8 int) [16]
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M256i, imm8 int) x86.M128i {
+func M256MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256MaskzExtracti32x4Epi32(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzExtracti32x4Epi32(k uint8, a [32]byte, imm8 int) [16]byte
+func m256MaskzExtracti32x4Epi32(k uint8, a [32]byte, imm8 byte) [16]byte
 
 
 // M512Extracti32x4Epi32: Extract 128 bits (composed of 4 packed 32-bit
@@ -21867,11 +21867,11 @@ func m256MaskzExtracti32x4Epi32(k uint8, a [32]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extracti32x4Epi32(a x86.M512i, imm8 int) x86.M128i {
+func M512Extracti32x4Epi32(a x86.M512i, imm8 byte) x86.M128i {
 	return x86.M128i(m512Extracti32x4Epi32([64]byte(a), imm8))
 }
 
-func m512Extracti32x4Epi32(a [64]byte, imm8 int) [16]byte
+func m512Extracti32x4Epi32(a [64]byte, imm8 byte) [16]byte
 
 
 // M512MaskExtracti32x4Epi32: Extract 128 bits (composed of 4 packed 32-bit
@@ -21899,11 +21899,11 @@ func m512Extracti32x4Epi32(a [64]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M512i, imm8 int) x86.M128i {
+func M512MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M128i {
 	return x86.M128i(m512MaskExtracti32x4Epi32([16]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskExtracti32x4Epi32(src [16]byte, k uint8, a [64]byte, imm8 int) [16]byte
+func m512MaskExtracti32x4Epi32(src [16]byte, k uint8, a [64]byte, imm8 byte) [16]byte
 
 
 // M512MaskzExtracti32x4Epi32: Extract 128 bits (composed of 4 packed 32-bit
@@ -21931,11 +21931,11 @@ func m512MaskExtracti32x4Epi32(src [16]byte, k uint8, a [64]byte, imm8 int) [16]
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M512i, imm8 int) x86.M128i {
+func M512MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M128i {
 	return x86.M128i(m512MaskzExtracti32x4Epi32(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzExtracti32x4Epi32(k uint8, a [64]byte, imm8 int) [16]byte
+func m512MaskzExtracti32x4Epi32(k uint8, a [64]byte, imm8 byte) [16]byte
 
 
 // M512Extracti64x4Epi64: Extract 256 bits (composed of 4 packed 64-bit
@@ -21951,11 +21951,11 @@ func m512MaskzExtracti32x4Epi32(k uint8, a [64]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extracti64x4Epi64(a x86.M512i, imm8 int) x86.M256i {
+func M512Extracti64x4Epi64(a x86.M512i, imm8 byte) x86.M256i {
 	return x86.M256i(m512Extracti64x4Epi64([64]byte(a), imm8))
 }
 
-func m512Extracti64x4Epi64(a [64]byte, imm8 int) [32]byte
+func m512Extracti64x4Epi64(a [64]byte, imm8 byte) [32]byte
 
 
 // M512MaskExtracti64x4Epi64: Extract 256 bits (composed of 4 packed 64-bit
@@ -21981,11 +21981,11 @@ func m512Extracti64x4Epi64(a [64]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtracti64x4Epi64(src x86.M256i, k x86.Mmask8, a x86.M512i, imm8 int) x86.M256i {
+func M512MaskExtracti64x4Epi64(src x86.M256i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M256i {
 	return x86.M256i(m512MaskExtracti64x4Epi64([32]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskExtracti64x4Epi64(src [32]byte, k uint8, a [64]byte, imm8 int) [32]byte
+func m512MaskExtracti64x4Epi64(src [32]byte, k uint8, a [64]byte, imm8 byte) [32]byte
 
 
 // M512MaskzExtracti64x4Epi64: Extract 256 bits (composed of 4 packed 64-bit
@@ -22011,11 +22011,11 @@ func m512MaskExtracti64x4Epi64(src [32]byte, k uint8, a [64]byte, imm8 int) [32]
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtracti64x4Epi64(k x86.Mmask8, a x86.M512i, imm8 int) x86.M256i {
+func M512MaskzExtracti64x4Epi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M256i {
 	return x86.M256i(m512MaskzExtracti64x4Epi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzExtracti64x4Epi64(k uint8, a [64]byte, imm8 int) [32]byte
+func m512MaskzExtracti64x4Epi64(k uint8, a [64]byte, imm8 byte) [32]byte
 
 
 // FixupimmPd: Fix up packed double-precision (64-bit) floating-point elements
@@ -22089,11 +22089,11 @@ func m512MaskzExtracti64x4Epi64(k uint8, a [64]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmPd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 int) x86.M128d {
+func FixupimmPd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
 	return x86.M128d(fixupimmPd([2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
-func fixupimmPd(a [2]float64, b [2]float64, c [16]byte, imm8 int) [2]float64
+func fixupimmPd(a [2]float64, b [2]float64, c [16]byte, imm8 byte) [2]float64
 
 
 // MaskFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22173,11 +22173,11 @@ func fixupimmPd(a [2]float64, b [2]float64, c [16]byte, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 int) x86.M128d {
+func MaskFixupimmPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
 	return x86.M128d(maskFixupimmPd([2]float64(a), uint8(k), [2]float64(b), [16]byte(c), imm8))
 }
 
-func maskFixupimmPd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 int) [2]float64
+func maskFixupimmPd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 byte) [2]float64
 
 
 // MaskzFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22257,11 +22257,11 @@ func maskFixupimmPd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 int) [
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 int) x86.M128d {
+func MaskzFixupimmPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
 	return x86.M128d(maskzFixupimmPd(uint8(k), [2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
-func maskzFixupimmPd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 int) [2]float64
+func maskzFixupimmPd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 byte) [2]float64
 
 
 // M256FixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22335,11 +22335,11 @@ func maskzFixupimmPd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 int) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256FixupimmPd(a x86.M256d, b x86.M256d, c x86.M256i, imm8 int) x86.M256d {
+func M256FixupimmPd(a x86.M256d, b x86.M256d, c x86.M256i, imm8 byte) x86.M256d {
 	return x86.M256d(m256FixupimmPd([4]float64(a), [4]float64(b), [32]byte(c), imm8))
 }
 
-func m256FixupimmPd(a [4]float64, b [4]float64, c [32]byte, imm8 int) [4]float64
+func m256FixupimmPd(a [4]float64, b [4]float64, c [32]byte, imm8 byte) [4]float64
 
 
 // M256MaskFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22419,11 +22419,11 @@ func m256FixupimmPd(a [4]float64, b [4]float64, c [32]byte, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskFixupimmPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256i, imm8 int) x86.M256d {
+func M256MaskFixupimmPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256i, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskFixupimmPd([4]float64(a), uint8(k), [4]float64(b), [32]byte(c), imm8))
 }
 
-func m256MaskFixupimmPd(a [4]float64, k uint8, b [4]float64, c [32]byte, imm8 int) [4]float64
+func m256MaskFixupimmPd(a [4]float64, k uint8, b [4]float64, c [32]byte, imm8 byte) [4]float64
 
 
 // M256MaskzFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22503,11 +22503,11 @@ func m256MaskFixupimmPd(a [4]float64, k uint8, b [4]float64, c [32]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzFixupimmPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256i, imm8 int) x86.M256d {
+func M256MaskzFixupimmPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256i, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzFixupimmPd(uint8(k), [4]float64(a), [4]float64(b), [32]byte(c), imm8))
 }
 
-func m256MaskzFixupimmPd(k uint8, a [4]float64, b [4]float64, c [32]byte, imm8 int) [4]float64
+func m256MaskzFixupimmPd(k uint8, a [4]float64, b [4]float64, c [32]byte, imm8 byte) [4]float64
 
 
 // M512FixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22581,11 +22581,11 @@ func m256MaskzFixupimmPd(k uint8, a [4]float64, b [4]float64, c [32]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 int) x86.M512d {
+func M512FixupimmPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte) x86.M512d {
 	return x86.M512d(m512FixupimmPd([8]float64(a), [8]float64(b), [64]byte(c), imm8))
 }
 
-func m512FixupimmPd(a [8]float64, b [8]float64, c [64]byte, imm8 int) [8]float64
+func m512FixupimmPd(a [8]float64, b [8]float64, c [64]byte, imm8 byte) [8]float64
 
 
 // M512MaskFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22665,11 +22665,11 @@ func m512FixupimmPd(a [8]float64, b [8]float64, c [64]byte, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 int) x86.M512d {
+func M512MaskFixupimmPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskFixupimmPd([8]float64(a), uint8(k), [8]float64(b), [64]byte(c), imm8))
 }
 
-func m512MaskFixupimmPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 int) [8]float64
+func m512MaskFixupimmPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 byte) [8]float64
 
 
 // M512MaskzFixupimmPd: Fix up packed double-precision (64-bit) floating-point
@@ -22749,11 +22749,11 @@ func m512MaskFixupimmPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 int) x86.M512d {
+func M512MaskzFixupimmPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzFixupimmPd(uint8(k), [8]float64(a), [8]float64(b), [64]byte(c), imm8))
 }
 
-func m512MaskzFixupimmPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 int) [8]float64
+func m512MaskzFixupimmPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 byte) [8]float64
 
 
 // FixupimmPs: Fix up packed single-precision (32-bit) floating-point elements
@@ -22827,11 +22827,11 @@ func m512MaskzFixupimmPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmPs(a x86.M128, b x86.M128, c x86.M128i, imm8 int) x86.M128 {
+func FixupimmPs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
 	return x86.M128(fixupimmPs([4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
-func fixupimmPs(a [4]float32, b [4]float32, c [16]byte, imm8 int) [4]float32
+func fixupimmPs(a [4]float32, b [4]float32, c [16]byte, imm8 byte) [4]float32
 
 
 // MaskFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -22911,11 +22911,11 @@ func fixupimmPs(a [4]float32, b [4]float32, c [16]byte, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 int) x86.M128 {
+func MaskFixupimmPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
 	return x86.M128(maskFixupimmPs([4]float32(a), uint8(k), [4]float32(b), [16]byte(c), imm8))
 }
 
-func maskFixupimmPs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 int) [4]float32
+func maskFixupimmPs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 byte) [4]float32
 
 
 // MaskzFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -22995,11 +22995,11 @@ func maskFixupimmPs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 int) [
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 int) x86.M128 {
+func MaskzFixupimmPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
 	return x86.M128(maskzFixupimmPs(uint8(k), [4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
-func maskzFixupimmPs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 int) [4]float32
+func maskzFixupimmPs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 byte) [4]float32
 
 
 // M256FixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -23073,11 +23073,11 @@ func maskzFixupimmPs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 int) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256FixupimmPs(a x86.M256, b x86.M256, c x86.M256i, imm8 int) x86.M256 {
+func M256FixupimmPs(a x86.M256, b x86.M256, c x86.M256i, imm8 byte) x86.M256 {
 	return x86.M256(m256FixupimmPs([8]float32(a), [8]float32(b), [32]byte(c), imm8))
 }
 
-func m256FixupimmPs(a [8]float32, b [8]float32, c [32]byte, imm8 int) [8]float32
+func m256FixupimmPs(a [8]float32, b [8]float32, c [32]byte, imm8 byte) [8]float32
 
 
 // M256MaskFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -23157,11 +23157,11 @@ func m256FixupimmPs(a [8]float32, b [8]float32, c [32]byte, imm8 int) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskFixupimmPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256i, imm8 int) x86.M256 {
+func M256MaskFixupimmPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256i, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskFixupimmPs([8]float32(a), uint8(k), [8]float32(b), [32]byte(c), imm8))
 }
 
-func m256MaskFixupimmPs(a [8]float32, k uint8, b [8]float32, c [32]byte, imm8 int) [8]float32
+func m256MaskFixupimmPs(a [8]float32, k uint8, b [8]float32, c [32]byte, imm8 byte) [8]float32
 
 
 // M256MaskzFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -23241,11 +23241,11 @@ func m256MaskFixupimmPs(a [8]float32, k uint8, b [8]float32, c [32]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzFixupimmPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256i, imm8 int) x86.M256 {
+func M256MaskzFixupimmPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256i, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzFixupimmPs(uint8(k), [8]float32(a), [8]float32(b), [32]byte(c), imm8))
 }
 
-func m256MaskzFixupimmPs(k uint8, a [8]float32, b [8]float32, c [32]byte, imm8 int) [8]float32
+func m256MaskzFixupimmPs(k uint8, a [8]float32, b [8]float32, c [32]byte, imm8 byte) [8]float32
 
 
 // M512FixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -23319,11 +23319,11 @@ func m256MaskzFixupimmPs(k uint8, a [8]float32, b [8]float32, c [32]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmPs(a x86.M512, b x86.M512, c x86.M512i, imm8 int) x86.M512 {
+func M512FixupimmPs(a x86.M512, b x86.M512, c x86.M512i, imm8 byte) x86.M512 {
 	return x86.M512(m512FixupimmPs([16]float32(a), [16]float32(b), [64]byte(c), imm8))
 }
 
-func m512FixupimmPs(a [16]float32, b [16]float32, c [64]byte, imm8 int) [16]float32
+func m512FixupimmPs(a [16]float32, b [16]float32, c [64]byte, imm8 byte) [16]float32
 
 
 // M512MaskFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -23403,11 +23403,11 @@ func m512FixupimmPs(a [16]float32, b [16]float32, c [64]byte, imm8 int) [16]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 int) x86.M512 {
+func M512MaskFixupimmPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskFixupimmPs([16]float32(a), uint16(k), [16]float32(b), [64]byte(c), imm8))
 }
 
-func m512MaskFixupimmPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8 int) [16]float32
+func m512MaskFixupimmPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8 byte) [16]float32
 
 
 // M512MaskzFixupimmPs: Fix up packed single-precision (32-bit) floating-point
@@ -23487,11 +23487,11 @@ func m512MaskFixupimmPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 int) x86.M512 {
+func M512MaskzFixupimmPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzFixupimmPs(uint16(k), [16]float32(a), [16]float32(b), [64]byte(c), imm8))
 }
 
-func m512MaskzFixupimmPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm8 int) [16]float32
+func m512MaskzFixupimmPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm8 byte) [16]float32
 
 
 // M512FixupimmRoundPd: Fix up packed double-precision (64-bit) floating-point
@@ -23572,11 +23572,11 @@ func m512MaskzFixupimmPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmRoundPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 int, rounding int) x86.M512d {
+func M512FixupimmRoundPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512FixupimmRoundPd([8]float64(a), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
-func m512FixupimmRoundPd(a [8]float64, b [8]float64, c [64]byte, imm8 int, rounding int) [8]float64
+func m512FixupimmRoundPd(a [8]float64, b [8]float64, c [64]byte, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskFixupimmRoundPd: Fix up packed double-precision (64-bit)
@@ -23663,11 +23663,11 @@ func m512FixupimmRoundPd(a [8]float64, b [8]float64, c [64]byte, imm8 int, round
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 int, rounding int) x86.M512d {
+func M512MaskFixupimmRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskFixupimmRoundPd([8]float64(a), uint8(k), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
-func m512MaskFixupimmRoundPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 int, rounding int) [8]float64
+func m512MaskFixupimmRoundPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskzFixupimmRoundPd: Fix up packed double-precision (64-bit)
@@ -23754,11 +23754,11 @@ func m512MaskFixupimmRoundPd(a [8]float64, k uint8, b [8]float64, c [64]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 int, rounding int) x86.M512d {
+func M512MaskzFixupimmRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskzFixupimmRoundPd(uint8(k), [8]float64(a), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
-func m512MaskzFixupimmRoundPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 int, rounding int) [8]float64
+func m512MaskzFixupimmRoundPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 byte, rounding int) [8]float64
 
 
 // M512FixupimmRoundPs: Fix up packed single-precision (32-bit) floating-point
@@ -23839,11 +23839,11 @@ func m512MaskzFixupimmRoundPd(k uint8, a [8]float64, b [8]float64, c [64]byte, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmRoundPs(a x86.M512, b x86.M512, c x86.M512i, imm8 int, rounding int) x86.M512 {
+func M512FixupimmRoundPs(a x86.M512, b x86.M512, c x86.M512i, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512FixupimmRoundPs([16]float32(a), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
-func m512FixupimmRoundPs(a [16]float32, b [16]float32, c [64]byte, imm8 int, rounding int) [16]float32
+func m512FixupimmRoundPs(a [16]float32, b [16]float32, c [64]byte, imm8 byte, rounding int) [16]float32
 
 
 // M512MaskFixupimmRoundPs: Fix up packed single-precision (32-bit)
@@ -23930,11 +23930,11 @@ func m512FixupimmRoundPs(a [16]float32, b [16]float32, c [64]byte, imm8 int, rou
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 int, rounding int) x86.M512 {
+func M512MaskFixupimmRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskFixupimmRoundPs([16]float32(a), uint16(k), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
-func m512MaskFixupimmRoundPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8 int, rounding int) [16]float32
+func m512MaskFixupimmRoundPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8 byte, rounding int) [16]float32
 
 
 // M512MaskzFixupimmRoundPs: Fix up packed single-precision (32-bit)
@@ -24021,11 +24021,11 @@ func m512MaskFixupimmRoundPs(a [16]float32, k uint16, b [16]float32, c [64]byte,
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 int, rounding int) x86.M512 {
+func M512MaskzFixupimmRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskzFixupimmRoundPs(uint16(k), [16]float32(a), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
-func m512MaskzFixupimmRoundPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm8 int, rounding int) [16]float32
+func m512MaskzFixupimmRoundPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm8 byte, rounding int) [16]float32
 
 
 // FixupimmRoundSd: Fix up the lower double-precision (64-bit) floating-point
@@ -24106,11 +24106,11 @@ func m512MaskzFixupimmRoundPs(k uint16, a [16]float32, b [16]float32, c [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmRoundSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 int, rounding int) x86.M128d {
+func FixupimmRoundSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(fixupimmRoundSd([2]float64(a), [2]float64(b), [16]byte(c), imm8, rounding))
 }
 
-func fixupimmRoundSd(a [2]float64, b [2]float64, c [16]byte, imm8 int, rounding int) [2]float64
+func fixupimmRoundSd(a [2]float64, b [2]float64, c [16]byte, imm8 byte, rounding int) [2]float64
 
 
 // MaskFixupimmRoundSd: Fix up the lower double-precision (64-bit)
@@ -24196,11 +24196,11 @@ func fixupimmRoundSd(a [2]float64, b [2]float64, c [16]byte, imm8 int, rounding 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 int, rounding int) x86.M128d {
+func MaskFixupimmRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskFixupimmRoundSd([2]float64(a), uint8(k), [2]float64(b), [16]byte(c), imm8, rounding))
 }
 
-func maskFixupimmRoundSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 int, rounding int) [2]float64
+func maskFixupimmRoundSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 byte, rounding int) [2]float64
 
 
 // MaskzFixupimmRoundSd: Fix up the lower double-precision (64-bit)
@@ -24286,11 +24286,11 @@ func maskFixupimmRoundSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 int, rounding int) x86.M128d {
+func MaskzFixupimmRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskzFixupimmRoundSd(uint8(k), [2]float64(a), [2]float64(b), [16]byte(c), imm8, rounding))
 }
 
-func maskzFixupimmRoundSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 int, rounding int) [2]float64
+func maskzFixupimmRoundSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 byte, rounding int) [2]float64
 
 
 // FixupimmRoundSs: Fix up the lower single-precision (32-bit) floating-point
@@ -24371,11 +24371,11 @@ func maskzFixupimmRoundSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmRoundSs(a x86.M128, b x86.M128, c x86.M128i, imm8 int, rounding int) x86.M128 {
+func FixupimmRoundSs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(fixupimmRoundSs([4]float32(a), [4]float32(b), [16]byte(c), imm8, rounding))
 }
 
-func fixupimmRoundSs(a [4]float32, b [4]float32, c [16]byte, imm8 int, rounding int) [4]float32
+func fixupimmRoundSs(a [4]float32, b [4]float32, c [16]byte, imm8 byte, rounding int) [4]float32
 
 
 // MaskFixupimmRoundSs: Fix up the lower single-precision (32-bit)
@@ -24461,11 +24461,11 @@ func fixupimmRoundSs(a [4]float32, b [4]float32, c [16]byte, imm8 int, rounding 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 int, rounding int) x86.M128 {
+func MaskFixupimmRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskFixupimmRoundSs([4]float32(a), uint8(k), [4]float32(b), [16]byte(c), imm8, rounding))
 }
 
-func maskFixupimmRoundSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 int, rounding int) [4]float32
+func maskFixupimmRoundSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 byte, rounding int) [4]float32
 
 
 // MaskzFixupimmRoundSs: Fix up the lower single-precision (32-bit)
@@ -24551,11 +24551,11 @@ func maskFixupimmRoundSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 int, rounding int) x86.M128 {
+func MaskzFixupimmRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskzFixupimmRoundSs(uint8(k), [4]float32(a), [4]float32(b), [16]byte(c), imm8, rounding))
 }
 
-func maskzFixupimmRoundSs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 int, rounding int) [4]float32
+func maskzFixupimmRoundSs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 byte, rounding int) [4]float32
 
 
 // FixupimmSd: Fix up the lower double-precision (64-bit) floating-point
@@ -24629,11 +24629,11 @@ func maskzFixupimmRoundSs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 int) x86.M128d {
+func FixupimmSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
 	return x86.M128d(fixupimmSd([2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
-func fixupimmSd(a [2]float64, b [2]float64, c [16]byte, imm8 int) [2]float64
+func fixupimmSd(a [2]float64, b [2]float64, c [16]byte, imm8 byte) [2]float64
 
 
 // MaskFixupimmSd: Fix up the lower double-precision (64-bit) floating-point
@@ -24712,11 +24712,11 @@ func fixupimmSd(a [2]float64, b [2]float64, c [16]byte, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 int) x86.M128d {
+func MaskFixupimmSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
 	return x86.M128d(maskFixupimmSd([2]float64(a), uint8(k), [2]float64(b), [16]byte(c), imm8))
 }
 
-func maskFixupimmSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 int) [2]float64
+func maskFixupimmSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 byte) [2]float64
 
 
 // MaskzFixupimmSd: Fix up the lower double-precision (64-bit) floating-point
@@ -24795,11 +24795,11 @@ func maskFixupimmSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 int) [
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 int) x86.M128d {
+func MaskzFixupimmSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
 	return x86.M128d(maskzFixupimmSd(uint8(k), [2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
-func maskzFixupimmSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 int) [2]float64
+func maskzFixupimmSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 byte) [2]float64
 
 
 // FixupimmSs: Fix up the lower single-precision (32-bit) floating-point
@@ -24873,11 +24873,11 @@ func maskzFixupimmSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 int) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmSs(a x86.M128, b x86.M128, c x86.M128i, imm8 int) x86.M128 {
+func FixupimmSs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
 	return x86.M128(fixupimmSs([4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
-func fixupimmSs(a [4]float32, b [4]float32, c [16]byte, imm8 int) [4]float32
+func fixupimmSs(a [4]float32, b [4]float32, c [16]byte, imm8 byte) [4]float32
 
 
 // MaskFixupimmSs: Fix up the lower single-precision (32-bit) floating-point
@@ -24956,11 +24956,11 @@ func fixupimmSs(a [4]float32, b [4]float32, c [16]byte, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 int) x86.M128 {
+func MaskFixupimmSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
 	return x86.M128(maskFixupimmSs([4]float32(a), uint8(k), [4]float32(b), [16]byte(c), imm8))
 }
 
-func maskFixupimmSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 int) [4]float32
+func maskFixupimmSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 byte) [4]float32
 
 
 // MaskzFixupimmSs: Fix up the lower single-precision (32-bit) floating-point
@@ -25039,11 +25039,11 @@ func maskFixupimmSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 int) [
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 int) x86.M128 {
+func MaskzFixupimmSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
 	return x86.M128(maskzFixupimmSs(uint8(k), [4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
-func maskzFixupimmSs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 int) [4]float32
+func maskzFixupimmSs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 byte) [4]float32
 
 
 // M512FloorPd: Round the packed double-precision (64-bit) floating-point
@@ -31720,11 +31720,11 @@ func m512MaskHypotPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [1
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Insertf32x4(a x86.M256, b x86.M128, imm8 int) x86.M256 {
+func M256Insertf32x4(a x86.M256, b x86.M128, imm8 byte) x86.M256 {
 	return x86.M256(m256Insertf32x4([8]float32(a), [4]float32(b), imm8))
 }
 
-func m256Insertf32x4(a [8]float32, b [4]float32, imm8 int) [8]float32
+func m256Insertf32x4(a [8]float32, b [4]float32, imm8 byte) [8]float32
 
 
 // M256MaskInsertf32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -31752,11 +31752,11 @@ func m256Insertf32x4(a [8]float32, b [4]float32, imm8 int) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskInsertf32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M128, imm8 int) x86.M256 {
+func M256MaskInsertf32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M128, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskInsertf32x4([8]float32(src), uint8(k), [8]float32(a), [4]float32(b), imm8))
 }
 
-func m256MaskInsertf32x4(src [8]float32, k uint8, a [8]float32, b [4]float32, imm8 int) [8]float32
+func m256MaskInsertf32x4(src [8]float32, k uint8, a [8]float32, b [4]float32, imm8 byte) [8]float32
 
 
 // M256MaskzInsertf32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -31784,11 +31784,11 @@ func m256MaskInsertf32x4(src [8]float32, k uint8, a [8]float32, b [4]float32, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzInsertf32x4(k x86.Mmask8, a x86.M256, b x86.M128, imm8 int) x86.M256 {
+func M256MaskzInsertf32x4(k x86.Mmask8, a x86.M256, b x86.M128, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzInsertf32x4(uint8(k), [8]float32(a), [4]float32(b), imm8))
 }
 
-func m256MaskzInsertf32x4(k uint8, a [8]float32, b [4]float32, imm8 int) [8]float32
+func m256MaskzInsertf32x4(k uint8, a [8]float32, b [4]float32, imm8 byte) [8]float32
 
 
 // M512Insertf32x4: Copy 'a' to 'dst', then insert 128 bits (composed of 4
@@ -31808,11 +31808,11 @@ func m256MaskzInsertf32x4(k uint8, a [8]float32, b [4]float32, imm8 int) [8]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Insertf32x4(a x86.M512, b x86.M128, imm8 int) x86.M512 {
+func M512Insertf32x4(a x86.M512, b x86.M128, imm8 byte) x86.M512 {
 	return x86.M512(m512Insertf32x4([16]float32(a), [4]float32(b), imm8))
 }
 
-func m512Insertf32x4(a [16]float32, b [4]float32, imm8 int) [16]float32
+func m512Insertf32x4(a [16]float32, b [4]float32, imm8 byte) [16]float32
 
 
 // M512MaskInsertf32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -31842,11 +31842,11 @@ func m512Insertf32x4(a [16]float32, b [4]float32, imm8 int) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInsertf32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M128, imm8 int) x86.M512 {
+func M512MaskInsertf32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M128, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskInsertf32x4([16]float32(src), uint16(k), [16]float32(a), [4]float32(b), imm8))
 }
 
-func m512MaskInsertf32x4(src [16]float32, k uint16, a [16]float32, b [4]float32, imm8 int) [16]float32
+func m512MaskInsertf32x4(src [16]float32, k uint16, a [16]float32, b [4]float32, imm8 byte) [16]float32
 
 
 // M512MaskzInsertf32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -31876,11 +31876,11 @@ func m512MaskInsertf32x4(src [16]float32, k uint16, a [16]float32, b [4]float32,
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInsertf32x4(k x86.Mmask16, a x86.M512, b x86.M128, imm8 int) x86.M512 {
+func M512MaskzInsertf32x4(k x86.Mmask16, a x86.M512, b x86.M128, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzInsertf32x4(uint16(k), [16]float32(a), [4]float32(b), imm8))
 }
 
-func m512MaskzInsertf32x4(k uint16, a [16]float32, b [4]float32, imm8 int) [16]float32
+func m512MaskzInsertf32x4(k uint16, a [16]float32, b [4]float32, imm8 byte) [16]float32
 
 
 // M512Insertf64x4: Copy 'a' to 'dst', then insert 256 bits (composed of 4
@@ -31898,11 +31898,11 @@ func m512MaskzInsertf32x4(k uint16, a [16]float32, b [4]float32, imm8 int) [16]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Insertf64x4(a x86.M512d, b x86.M256d, imm8 int) x86.M512d {
+func M512Insertf64x4(a x86.M512d, b x86.M256d, imm8 byte) x86.M512d {
 	return x86.M512d(m512Insertf64x4([8]float64(a), [4]float64(b), imm8))
 }
 
-func m512Insertf64x4(a [8]float64, b [4]float64, imm8 int) [8]float64
+func m512Insertf64x4(a [8]float64, b [4]float64, imm8 byte) [8]float64
 
 
 // M512MaskInsertf64x4: Copy 'a' to 'tmp', then insert 256 bits (composed of 4
@@ -31930,11 +31930,11 @@ func m512Insertf64x4(a [8]float64, b [4]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInsertf64x4(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 int) x86.M512d {
+func M512MaskInsertf64x4(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskInsertf64x4([8]float64(src), uint8(k), [8]float64(a), [4]float64(b), imm8))
 }
 
-func m512MaskInsertf64x4(src [8]float64, k uint8, a [8]float64, b [4]float64, imm8 int) [8]float64
+func m512MaskInsertf64x4(src [8]float64, k uint8, a [8]float64, b [4]float64, imm8 byte) [8]float64
 
 
 // M512MaskzInsertf64x4: Copy 'a' to 'tmp', then insert 256 bits (composed of 4
@@ -31962,11 +31962,11 @@ func m512MaskInsertf64x4(src [8]float64, k uint8, a [8]float64, b [4]float64, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInsertf64x4(k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 int) x86.M512d {
+func M512MaskzInsertf64x4(k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzInsertf64x4(uint8(k), [8]float64(a), [4]float64(b), imm8))
 }
 
-func m512MaskzInsertf64x4(k uint8, a [8]float64, b [4]float64, imm8 int) [8]float64
+func m512MaskzInsertf64x4(k uint8, a [8]float64, b [4]float64, imm8 byte) [8]float64
 
 
 // M256Inserti32x4: Copy 'a' to 'dst', then insert 128 bits (composed of 4
@@ -31984,11 +31984,11 @@ func m512MaskzInsertf64x4(k uint8, a [8]float64, b [4]float64, imm8 int) [8]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Inserti32x4(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256Inserti32x4(a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256Inserti32x4([32]byte(a), [16]byte(b), imm8))
 }
 
-func m256Inserti32x4(a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256Inserti32x4(a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M256MaskInserti32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -32015,11 +32015,11 @@ func m256Inserti32x4(a [32]byte, b [16]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskInserti32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256MaskInserti32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskInserti32x4([32]byte(src), uint8(k), [32]byte(a), [16]byte(b), imm8))
 }
 
-func m256MaskInserti32x4(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256MaskInserti32x4(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M256MaskzInserti32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -32046,11 +32046,11 @@ func m256MaskInserti32x4(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzInserti32x4(k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256MaskzInserti32x4(k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzInserti32x4(uint8(k), [32]byte(a), [16]byte(b), imm8))
 }
 
-func m256MaskzInserti32x4(k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256MaskzInserti32x4(k uint8, a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M512Inserti32x4: Copy 'a' to 'dst', then insert 128 bits (composed of 4
@@ -32070,11 +32070,11 @@ func m256MaskzInserti32x4(k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Inserti32x4(a x86.M512i, b x86.M128i, imm8 int) x86.M512i {
+func M512Inserti32x4(a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
 	return x86.M512i(m512Inserti32x4([64]byte(a), [16]byte(b), imm8))
 }
 
-func m512Inserti32x4(a [64]byte, b [16]byte, imm8 int) [64]byte
+func m512Inserti32x4(a [64]byte, b [16]byte, imm8 byte) [64]byte
 
 
 // M512MaskInserti32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -32103,11 +32103,11 @@ func m512Inserti32x4(a [64]byte, b [16]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInserti32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 int) x86.M512i {
+func M512MaskInserti32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskInserti32x4([64]byte(src), uint16(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func m512MaskInserti32x4(src [64]byte, k uint16, a [64]byte, b [16]byte, imm8 int) [64]byte
+func m512MaskInserti32x4(src [64]byte, k uint16, a [64]byte, b [16]byte, imm8 byte) [64]byte
 
 
 // M512MaskzInserti32x4: Copy 'a' to 'tmp', then insert 128 bits (composed of 4
@@ -32136,11 +32136,11 @@ func m512MaskInserti32x4(src [64]byte, k uint16, a [64]byte, b [16]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInserti32x4(k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 int) x86.M512i {
+func M512MaskzInserti32x4(k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzInserti32x4(uint16(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func m512MaskzInserti32x4(k uint16, a [64]byte, b [16]byte, imm8 int) [64]byte
+func m512MaskzInserti32x4(k uint16, a [64]byte, b [16]byte, imm8 byte) [64]byte
 
 
 // M512Inserti64x4: Copy 'a' to 'dst', then insert 256 bits (composed of 4
@@ -32158,11 +32158,11 @@ func m512MaskzInserti32x4(k uint16, a [64]byte, b [16]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Inserti64x4(a x86.M512i, b x86.M256i, imm8 int) x86.M512i {
+func M512Inserti64x4(a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
 	return x86.M512i(m512Inserti64x4([64]byte(a), [32]byte(b), imm8))
 }
 
-func m512Inserti64x4(a [64]byte, b [32]byte, imm8 int) [64]byte
+func m512Inserti64x4(a [64]byte, b [32]byte, imm8 byte) [64]byte
 
 
 // M512MaskInserti64x4: Copy 'a' to 'tmp', then insert 256 bits (composed of 4
@@ -32189,11 +32189,11 @@ func m512Inserti64x4(a [64]byte, b [32]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInserti64x4(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 int) x86.M512i {
+func M512MaskInserti64x4(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskInserti64x4([64]byte(src), uint8(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func m512MaskInserti64x4(src [64]byte, k uint8, a [64]byte, b [32]byte, imm8 int) [64]byte
+func m512MaskInserti64x4(src [64]byte, k uint8, a [64]byte, b [32]byte, imm8 byte) [64]byte
 
 
 // M512MaskzInserti64x4: Copy 'a' to 'tmp', then insert 256 bits (composed of 4
@@ -32220,11 +32220,11 @@ func m512MaskInserti64x4(src [64]byte, k uint8, a [64]byte, b [32]byte, imm8 int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInserti64x4(k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 int) x86.M512i {
+func M512MaskzInserti64x4(k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzInserti64x4(uint8(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func m512MaskzInserti64x4(k uint8, a [64]byte, b [32]byte, imm8 int) [64]byte
+func m512MaskzInserti64x4(k uint8, a [64]byte, b [32]byte, imm8 byte) [64]byte
 
 
 // M512InvsqrtPd: Compute the inverse square root of packed double-precision
@@ -38472,11 +38472,11 @@ func m512MaskzOrEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskPermutePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 int) x86.M128d {
+func MaskPermutePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskPermutePd([2]float64(src), uint8(k), [2]float64(a), imm8))
 }
 
-func maskPermutePd(src [2]float64, k uint8, a [2]float64, imm8 int) [2]float64
+func maskPermutePd(src [2]float64, k uint8, a [2]float64, imm8 byte) [2]float64
 
 
 // MaskzPermutePd: Shuffle double-precision (64-bit) floating-point elements in
@@ -38502,11 +38502,11 @@ func maskPermutePd(src [2]float64, k uint8, a [2]float64, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzPermutePd(k x86.Mmask8, a x86.M128d, imm8 int) x86.M128d {
+func MaskzPermutePd(k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzPermutePd(uint8(k), [2]float64(a), imm8))
 }
 
-func maskzPermutePd(k uint8, a [2]float64, imm8 int) [2]float64
+func maskzPermutePd(k uint8, a [2]float64, imm8 byte) [2]float64
 
 
 // M256MaskPermutePd: Shuffle double-precision (64-bit) floating-point elements
@@ -38536,11 +38536,11 @@ func maskzPermutePd(k uint8, a [2]float64, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskPermutePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskPermutePd([4]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskPermutePd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskPermutePd(src [4]float64, k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M256MaskzPermutePd: Shuffle double-precision (64-bit) floating-point
@@ -38570,11 +38570,11 @@ func m256MaskPermutePd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutePd(k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskzPermutePd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzPermutePd(uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskzPermutePd(k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskzPermutePd(k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M512MaskPermutePd: Shuffle double-precision (64-bit) floating-point elements
@@ -38612,11 +38612,11 @@ func m256MaskzPermutePd(k uint8, a [4]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskPermutePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskPermutePd([8]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskPermutePd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskPermutePd(src [8]float64, k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512MaskzPermutePd: Shuffle double-precision (64-bit) floating-point
@@ -38654,11 +38654,11 @@ func m512MaskPermutePd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutePd(k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskzPermutePd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzPermutePd(uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskzPermutePd(k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskzPermutePd(k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512PermutePd: Shuffle double-precision (64-bit) floating-point elements in
@@ -38687,11 +38687,11 @@ func m512MaskzPermutePd(k uint8, a [8]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutePd(a x86.M512d, imm8 int) x86.M512d {
+func M512PermutePd(a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512PermutePd([8]float64(a), imm8))
 }
 
-func m512PermutePd(a [8]float64, imm8 int) [8]float64
+func m512PermutePd(a [8]float64, imm8 byte) [8]float64
 
 
 // MaskPermutePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -38727,11 +38727,11 @@ func m512PermutePd(a [8]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskPermutePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 int) x86.M128 {
+func MaskPermutePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskPermutePs([4]float32(src), uint8(k), [4]float32(a), imm8))
 }
 
-func maskPermutePs(src [4]float32, k uint8, a [4]float32, imm8 int) [4]float32
+func maskPermutePs(src [4]float32, k uint8, a [4]float32, imm8 byte) [4]float32
 
 
 // MaskzPermutePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -38767,11 +38767,11 @@ func maskPermutePs(src [4]float32, k uint8, a [4]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzPermutePs(k x86.Mmask8, a x86.M128, imm8 int) x86.M128 {
+func MaskzPermutePs(k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzPermutePs(uint8(k), [4]float32(a), imm8))
 }
 
-func maskzPermutePs(k uint8, a [4]float32, imm8 int) [4]float32
+func maskzPermutePs(k uint8, a [4]float32, imm8 byte) [4]float32
 
 
 // M256MaskPermutePs: Shuffle single-precision (32-bit) floating-point elements
@@ -38811,11 +38811,11 @@ func maskzPermutePs(k uint8, a [4]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 int) x86.M256 {
+func M256MaskPermutePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskPermutePs([8]float32(src), uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskPermutePs(src [8]float32, k uint8, a [8]float32, imm8 int) [8]float32
+func m256MaskPermutePs(src [8]float32, k uint8, a [8]float32, imm8 byte) [8]float32
 
 
 // M256MaskzPermutePs: Shuffle single-precision (32-bit) floating-point
@@ -38855,11 +38855,11 @@ func m256MaskPermutePs(src [8]float32, k uint8, a [8]float32, imm8 int) [8]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutePs(k x86.Mmask8, a x86.M256, imm8 int) x86.M256 {
+func M256MaskzPermutePs(k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzPermutePs(uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskzPermutePs(k uint8, a [8]float32, imm8 int) [8]float32
+func m256MaskzPermutePs(k uint8, a [8]float32, imm8 byte) [8]float32
 
 
 // M512MaskPermutePs: Shuffle single-precision (32-bit) floating-point elements
@@ -38907,11 +38907,11 @@ func m256MaskzPermutePs(k uint8, a [8]float32, imm8 int) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 int) x86.M512 {
+func M512MaskPermutePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskPermutePs([16]float32(src), uint16(k), [16]float32(a), imm8))
 }
 
-func m512MaskPermutePs(src [16]float32, k uint16, a [16]float32, imm8 int) [16]float32
+func m512MaskPermutePs(src [16]float32, k uint16, a [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskzPermutePs: Shuffle single-precision (32-bit) floating-point
@@ -38959,11 +38959,11 @@ func m512MaskPermutePs(src [16]float32, k uint16, a [16]float32, imm8 int) [16]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutePs(k x86.Mmask16, a x86.M512, imm8 int) x86.M512 {
+func M512MaskzPermutePs(k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzPermutePs(uint16(k), [16]float32(a), imm8))
 }
 
-func m512MaskzPermutePs(k uint16, a [16]float32, imm8 int) [16]float32
+func m512MaskzPermutePs(k uint16, a [16]float32, imm8 byte) [16]float32
 
 
 // M512PermutePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -39002,11 +39002,11 @@ func m512MaskzPermutePs(k uint16, a [16]float32, imm8 int) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutePs(a x86.M512, imm8 int) x86.M512 {
+func M512PermutePs(a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512PermutePs([16]float32(a), imm8))
 }
 
-func m512PermutePs(a [16]float32, imm8 int) [16]float32
+func m512PermutePs(a [16]float32, imm8 byte) [16]float32
 
 
 // MaskPermutevarPd: Shuffle double-precision (64-bit) floating-point elements
@@ -39574,11 +39574,11 @@ func m512PermutevarPs(a [16]float32, b [64]byte) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutexEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskPermutexEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskPermutexEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskPermutexEpi64(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskPermutexEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzPermutexEpi64: Shuffle 64-bit integers in 'a' across lanes using
@@ -39613,11 +39613,11 @@ func m256MaskPermutexEpi64(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutexEpi64(k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzPermutexEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzPermutexEpi64(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzPermutexEpi64(k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskzPermutexEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256PermutexEpi64: Shuffle 64-bit integers in 'a' across lanes using the
@@ -39643,11 +39643,11 @@ func m256MaskzPermutexEpi64(k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256PermutexEpi64(a x86.M256i, imm8 int) x86.M256i {
+func M256PermutexEpi64(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256PermutexEpi64([32]byte(a), imm8))
 }
 
-func m256PermutexEpi64(a [32]byte, imm8 int) [32]byte
+func m256PermutexEpi64(a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskPermutexEpi64: Shuffle 64-bit integers in 'a' within 256-bit lanes
@@ -39687,11 +39687,11 @@ func m256PermutexEpi64(a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutexEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskPermutexEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskPermutexEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskPermutexEpi64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
+func m512MaskPermutexEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzPermutexEpi64: Shuffle 64-bit integers in 'a' within 256-bit lanes
@@ -39730,11 +39730,11 @@ func m512MaskPermutexEpi64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutexEpi64(k x86.Mmask8, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzPermutexEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzPermutexEpi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzPermutexEpi64(k uint8, a [64]byte, imm8 int) [64]byte
+func m512MaskzPermutexEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512PermutexEpi64: Shuffle 64-bit integers in 'a' within 256-bit lanes using
@@ -39764,11 +39764,11 @@ func m512MaskzPermutexEpi64(k uint8, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutexEpi64(a x86.M512i, imm8 int) x86.M512i {
+func M512PermutexEpi64(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512PermutexEpi64([64]byte(a), imm8))
 }
 
-func m512PermutexEpi64(a [64]byte, imm8 int) [64]byte
+func m512PermutexEpi64(a [64]byte, imm8 byte) [64]byte
 
 
 // M256MaskPermutexPd: Shuffle double-precision (64-bit) floating-point
@@ -39804,11 +39804,11 @@ func m512PermutexEpi64(a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutexPd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskPermutexPd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskPermutexPd([4]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskPermutexPd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskPermutexPd(src [4]float64, k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M256MaskzPermutexPd: Shuffle double-precision (64-bit) floating-point
@@ -39844,11 +39844,11 @@ func m256MaskPermutexPd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutexPd(k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskzPermutexPd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzPermutexPd(uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskzPermutexPd(k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskzPermutexPd(k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M256PermutexPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -39875,11 +39875,11 @@ func m256MaskzPermutexPd(k uint8, a [4]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256PermutexPd(a x86.M256d, imm8 int) x86.M256d {
+func M256PermutexPd(a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256PermutexPd([4]float64(a), imm8))
 }
 
-func m256PermutexPd(a [4]float64, imm8 int) [4]float64
+func m256PermutexPd(a [4]float64, imm8 byte) [4]float64
 
 
 // M512MaskPermutexPd: Shuffle double-precision (64-bit) floating-point
@@ -39919,11 +39919,11 @@ func m256PermutexPd(a [4]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutexPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskPermutexPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskPermutexPd([8]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskPermutexPd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskPermutexPd(src [8]float64, k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512MaskzPermutexPd: Shuffle double-precision (64-bit) floating-point
@@ -39963,11 +39963,11 @@ func m512MaskPermutexPd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutexPd(k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskzPermutexPd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzPermutexPd(uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskzPermutexPd(k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskzPermutexPd(k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512PermutexPd: Shuffle double-precision (64-bit) floating-point elements in
@@ -39998,11 +39998,11 @@ func m512MaskzPermutexPd(k uint8, a [8]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutexPd(a x86.M512d, imm8 int) x86.M512d {
+func M512PermutexPd(a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512PermutexPd([8]float64(a), imm8))
 }
 
-func m512PermutexPd(a [8]float64, imm8 int) [8]float64
+func m512PermutexPd(a [8]float64, imm8 byte) [8]float64
 
 
 // MaskPermutex2varEpi32: Shuffle 32-bit integers in 'a' and 'b' using the
@@ -42720,11 +42720,11 @@ func m512RintPs(a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRolEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskRolEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskRolEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskRolEpi32(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
+func maskRolEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzRolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -42750,11 +42750,11 @@ func maskRolEpi32(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRolEpi32(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskzRolEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzRolEpi32(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzRolEpi32(k uint8, a [16]byte, imm8 int) [16]byte
+func maskzRolEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // RolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the left
@@ -42774,11 +42774,11 @@ func maskzRolEpi32(k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RolEpi32(a x86.M128i, imm8 int) x86.M128i {
+func RolEpi32(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(rolEpi32([16]byte(a), imm8))
 }
 
-func rolEpi32(a [16]byte, imm8 int) [16]byte
+func rolEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskRolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -42804,11 +42804,11 @@ func rolEpi32(a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRolEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskRolEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskRolEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskRolEpi32(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskRolEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzRolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -42834,11 +42834,11 @@ func m256MaskRolEpi32(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRolEpi32(k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzRolEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzRolEpi32(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzRolEpi32(k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskzRolEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256RolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -42859,11 +42859,11 @@ func m256MaskzRolEpi32(k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RolEpi32(a x86.M256i, imm8 int) x86.M256i {
+func M256RolEpi32(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256RolEpi32([32]byte(a), imm8))
 }
 
-func m256RolEpi32(a [32]byte, imm8 int) [32]byte
+func m256RolEpi32(a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskRolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -42889,11 +42889,11 @@ func m256RolEpi32(a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRolEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskRolEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskRolEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskRolEpi32(src [64]byte, k uint16, a [64]byte, imm8 int) [64]byte
+func m512MaskRolEpi32(src [64]byte, k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzRolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -42919,11 +42919,11 @@ func m512MaskRolEpi32(src [64]byte, k uint16, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRolEpi32(k x86.Mmask16, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzRolEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzRolEpi32(uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskzRolEpi32(k uint16, a [64]byte, imm8 int) [64]byte
+func m512MaskzRolEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // M512RolEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -42944,11 +42944,11 @@ func m512MaskzRolEpi32(k uint16, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RolEpi32(a x86.M512i, imm8 int) x86.M512i {
+func M512RolEpi32(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512RolEpi32([64]byte(a), imm8))
 }
 
-func m512RolEpi32(a [64]byte, imm8 int) [64]byte
+func m512RolEpi32(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskRolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -42974,11 +42974,11 @@ func m512RolEpi32(a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRolEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskRolEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskRolEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskRolEpi64(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
+func maskRolEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzRolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43004,11 +43004,11 @@ func maskRolEpi64(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRolEpi64(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskzRolEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzRolEpi64(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzRolEpi64(k uint8, a [16]byte, imm8 int) [16]byte
+func maskzRolEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // RolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the left
@@ -43028,11 +43028,11 @@ func maskzRolEpi64(k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RolEpi64(a x86.M128i, imm8 int) x86.M128i {
+func RolEpi64(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(rolEpi64([16]byte(a), imm8))
 }
 
-func rolEpi64(a [16]byte, imm8 int) [16]byte
+func rolEpi64(a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskRolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -43058,11 +43058,11 @@ func rolEpi64(a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRolEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskRolEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskRolEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskRolEpi64(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskRolEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzRolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -43088,11 +43088,11 @@ func m256MaskRolEpi64(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRolEpi64(k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzRolEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzRolEpi64(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzRolEpi64(k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskzRolEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256RolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43113,11 +43113,11 @@ func m256MaskzRolEpi64(k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RolEpi64(a x86.M256i, imm8 int) x86.M256i {
+func M256RolEpi64(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256RolEpi64([32]byte(a), imm8))
 }
 
-func m256RolEpi64(a [32]byte, imm8 int) [32]byte
+func m256RolEpi64(a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskRolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -43143,11 +43143,11 @@ func m256RolEpi64(a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRolEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskRolEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskRolEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskRolEpi64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
+func m512MaskRolEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzRolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -43173,11 +43173,11 @@ func m512MaskRolEpi64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRolEpi64(k x86.Mmask8, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzRolEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzRolEpi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzRolEpi64(k uint8, a [64]byte, imm8 int) [64]byte
+func m512MaskzRolEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512RolEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43198,11 +43198,11 @@ func m512MaskzRolEpi64(k uint8, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RolEpi64(a x86.M512i, imm8 int) x86.M512i {
+func M512RolEpi64(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512RolEpi64([64]byte(a), imm8))
 }
 
-func m512RolEpi64(a [64]byte, imm8 int) [64]byte
+func m512RolEpi64(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskRolvEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43702,11 +43702,11 @@ func m512RolvEpi64(a [64]byte, b [64]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRorEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskRorEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskRorEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskRorEpi32(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
+func maskRorEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzRorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43732,11 +43732,11 @@ func maskRorEpi32(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRorEpi32(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskzRorEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzRorEpi32(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzRorEpi32(k uint8, a [16]byte, imm8 int) [16]byte
+func maskzRorEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // RorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the right
@@ -43756,11 +43756,11 @@ func maskzRorEpi32(k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RorEpi32(a x86.M128i, imm8 int) x86.M128i {
+func RorEpi32(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(rorEpi32([16]byte(a), imm8))
 }
 
-func rorEpi32(a [16]byte, imm8 int) [16]byte
+func rorEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskRorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -43786,11 +43786,11 @@ func rorEpi32(a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRorEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskRorEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskRorEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskRorEpi32(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskRorEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzRorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -43816,11 +43816,11 @@ func m256MaskRorEpi32(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRorEpi32(k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzRorEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzRorEpi32(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzRorEpi32(k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskzRorEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256RorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43841,11 +43841,11 @@ func m256MaskzRorEpi32(k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RorEpi32(a x86.M256i, imm8 int) x86.M256i {
+func M256RorEpi32(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256RorEpi32([32]byte(a), imm8))
 }
 
-func m256RorEpi32(a [32]byte, imm8 int) [32]byte
+func m256RorEpi32(a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskRorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -43871,11 +43871,11 @@ func m256RorEpi32(a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRorEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskRorEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskRorEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskRorEpi32(src [64]byte, k uint16, a [64]byte, imm8 int) [64]byte
+func m512MaskRorEpi32(src [64]byte, k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzRorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to
@@ -43901,11 +43901,11 @@ func m512MaskRorEpi32(src [64]byte, k uint16, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRorEpi32(k x86.Mmask16, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzRorEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzRorEpi32(uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskzRorEpi32(k uint16, a [64]byte, imm8 int) [64]byte
+func m512MaskzRorEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // M512RorEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -43926,11 +43926,11 @@ func m512MaskzRorEpi32(k uint16, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RorEpi32(a x86.M512i, imm8 int) x86.M512i {
+func M512RorEpi32(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512RorEpi32([64]byte(a), imm8))
 }
 
-func m512RorEpi32(a [64]byte, imm8 int) [64]byte
+func m512RorEpi32(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskRorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43956,11 +43956,11 @@ func m512RorEpi32(a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRorEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskRorEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskRorEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskRorEpi64(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
+func maskRorEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzRorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -43986,11 +43986,11 @@ func maskRorEpi64(src [16]byte, k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRorEpi64(k x86.Mmask8, a x86.M128i, imm8 int) x86.M128i {
+func MaskzRorEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzRorEpi64(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzRorEpi64(k uint8, a [16]byte, imm8 int) [16]byte
+func maskzRorEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // RorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the right
@@ -44010,11 +44010,11 @@ func maskzRorEpi64(k uint8, a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RorEpi64(a x86.M128i, imm8 int) x86.M128i {
+func RorEpi64(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(rorEpi64([16]byte(a), imm8))
 }
 
-func rorEpi64(a [16]byte, imm8 int) [16]byte
+func rorEpi64(a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskRorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -44040,11 +44040,11 @@ func rorEpi64(a [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRorEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskRorEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskRorEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskRorEpi64(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskRorEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzRorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -44070,11 +44070,11 @@ func m256MaskRorEpi64(src [32]byte, k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRorEpi64(k x86.Mmask8, a x86.M256i, imm8 int) x86.M256i {
+func M256MaskzRorEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzRorEpi64(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzRorEpi64(k uint8, a [32]byte, imm8 int) [32]byte
+func m256MaskzRorEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256RorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -44095,11 +44095,11 @@ func m256MaskzRorEpi64(k uint8, a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RorEpi64(a x86.M256i, imm8 int) x86.M256i {
+func M256RorEpi64(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256RorEpi64([32]byte(a), imm8))
 }
 
-func m256RorEpi64(a [32]byte, imm8 int) [32]byte
+func m256RorEpi64(a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskRorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -44125,11 +44125,11 @@ func m256RorEpi64(a [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRorEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskRorEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskRorEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskRorEpi64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
+func m512MaskRorEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzRorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to
@@ -44155,11 +44155,11 @@ func m512MaskRorEpi64(src [64]byte, k uint8, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRorEpi64(k x86.Mmask8, a x86.M512i, imm8 int) x86.M512i {
+func M512MaskzRorEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzRorEpi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzRorEpi64(k uint8, a [64]byte, imm8 int) [64]byte
+func m512MaskzRorEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512RorEpi64: Rotate the bits in each packed 64-bit integer in 'a' to the
@@ -44180,11 +44180,11 @@ func m512MaskzRorEpi64(k uint8, a [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RorEpi64(a x86.M512i, imm8 int) x86.M512i {
+func M512RorEpi64(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512RorEpi64([64]byte(a), imm8))
 }
 
-func m512RorEpi64(a [64]byte, imm8 int) [64]byte
+func m512RorEpi64(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskRorvEpi32: Rotate the bits in each packed 32-bit integer in 'a' to the
@@ -44706,11 +44706,11 @@ func m512RorvEpi64(a [64]byte, b [64]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscalePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 int) x86.M128d {
+func MaskRoundscalePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskRoundscalePd([2]float64(src), uint8(k), [2]float64(a), imm8))
 }
 
-func maskRoundscalePd(src [2]float64, k uint8, a [2]float64, imm8 int) [2]float64
+func maskRoundscalePd(src [2]float64, k uint8, a [2]float64, imm8 byte) [2]float64
 
 
 // MaskzRoundscalePd: Round packed double-precision (64-bit) floating-point
@@ -44758,11 +44758,11 @@ func maskRoundscalePd(src [2]float64, k uint8, a [2]float64, imm8 int) [2]float6
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscalePd(k x86.Mmask8, a x86.M128d, imm8 int) x86.M128d {
+func MaskzRoundscalePd(k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzRoundscalePd(uint8(k), [2]float64(a), imm8))
 }
 
-func maskzRoundscalePd(k uint8, a [2]float64, imm8 int) [2]float64
+func maskzRoundscalePd(k uint8, a [2]float64, imm8 byte) [2]float64
 
 
 // RoundscalePd: Round packed double-precision (64-bit) floating-point elements
@@ -44805,11 +44805,11 @@ func maskzRoundscalePd(k uint8, a [2]float64, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscalePd(a x86.M128d, imm8 int) x86.M128d {
+func RoundscalePd(a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(roundscalePd([2]float64(a), imm8))
 }
 
-func roundscalePd(a [2]float64, imm8 int) [2]float64
+func roundscalePd(a [2]float64, imm8 byte) [2]float64
 
 
 // M256MaskRoundscalePd: Round packed double-precision (64-bit) floating-point
@@ -44857,11 +44857,11 @@ func roundscalePd(a [2]float64, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRoundscalePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskRoundscalePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskRoundscalePd([4]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskRoundscalePd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskRoundscalePd(src [4]float64, k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M256MaskzRoundscalePd: Round packed double-precision (64-bit) floating-point
@@ -44909,11 +44909,11 @@ func m256MaskRoundscalePd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRoundscalePd(k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskzRoundscalePd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzRoundscalePd(uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskzRoundscalePd(k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskzRoundscalePd(k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M256RoundscalePd: Round packed double-precision (64-bit) floating-point
@@ -44956,11 +44956,11 @@ func m256MaskzRoundscalePd(k uint8, a [4]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RoundscalePd(a x86.M256d, imm8 int) x86.M256d {
+func M256RoundscalePd(a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256RoundscalePd([4]float64(a), imm8))
 }
 
-func m256RoundscalePd(a [4]float64, imm8 int) [4]float64
+func m256RoundscalePd(a [4]float64, imm8 byte) [4]float64
 
 
 // M512MaskRoundscalePd: Round packed double-precision (64-bit) floating-point
@@ -45008,11 +45008,11 @@ func m256RoundscalePd(a [4]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscalePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskRoundscalePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskRoundscalePd([8]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskRoundscalePd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskRoundscalePd(src [8]float64, k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512MaskzRoundscalePd: Round packed double-precision (64-bit) floating-point
@@ -45060,11 +45060,11 @@ func m512MaskRoundscalePd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscalePd(k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskzRoundscalePd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzRoundscalePd(uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskzRoundscalePd(k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskzRoundscalePd(k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512RoundscalePd: Round packed double-precision (64-bit) floating-point
@@ -45107,11 +45107,11 @@ func m512MaskzRoundscalePd(k uint8, a [8]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscalePd(a x86.M512d, imm8 int) x86.M512d {
+func M512RoundscalePd(a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512RoundscalePd([8]float64(a), imm8))
 }
 
-func m512RoundscalePd(a [8]float64, imm8 int) [8]float64
+func m512RoundscalePd(a [8]float64, imm8 byte) [8]float64
 
 
 // MaskRoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45159,11 +45159,11 @@ func m512RoundscalePd(a [8]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscalePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 int) x86.M128 {
+func MaskRoundscalePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskRoundscalePs([4]float32(src), uint8(k), [4]float32(a), imm8))
 }
 
-func maskRoundscalePs(src [4]float32, k uint8, a [4]float32, imm8 int) [4]float32
+func maskRoundscalePs(src [4]float32, k uint8, a [4]float32, imm8 byte) [4]float32
 
 
 // MaskzRoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45211,11 +45211,11 @@ func maskRoundscalePs(src [4]float32, k uint8, a [4]float32, imm8 int) [4]float3
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscalePs(k x86.Mmask8, a x86.M128, imm8 int) x86.M128 {
+func MaskzRoundscalePs(k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzRoundscalePs(uint8(k), [4]float32(a), imm8))
 }
 
-func maskzRoundscalePs(k uint8, a [4]float32, imm8 int) [4]float32
+func maskzRoundscalePs(k uint8, a [4]float32, imm8 byte) [4]float32
 
 
 // RoundscalePs: Round packed single-precision (32-bit) floating-point elements
@@ -45258,11 +45258,11 @@ func maskzRoundscalePs(k uint8, a [4]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscalePs(a x86.M128, imm8 int) x86.M128 {
+func RoundscalePs(a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(roundscalePs([4]float32(a), imm8))
 }
 
-func roundscalePs(a [4]float32, imm8 int) [4]float32
+func roundscalePs(a [4]float32, imm8 byte) [4]float32
 
 
 // M256MaskRoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45310,11 +45310,11 @@ func roundscalePs(a [4]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRoundscalePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 int) x86.M256 {
+func M256MaskRoundscalePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskRoundscalePs([8]float32(src), uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskRoundscalePs(src [8]float32, k uint8, a [8]float32, imm8 int) [8]float32
+func m256MaskRoundscalePs(src [8]float32, k uint8, a [8]float32, imm8 byte) [8]float32
 
 
 // M256MaskzRoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45362,11 +45362,11 @@ func m256MaskRoundscalePs(src [8]float32, k uint8, a [8]float32, imm8 int) [8]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRoundscalePs(k x86.Mmask8, a x86.M256, imm8 int) x86.M256 {
+func M256MaskzRoundscalePs(k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzRoundscalePs(uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskzRoundscalePs(k uint8, a [8]float32, imm8 int) [8]float32
+func m256MaskzRoundscalePs(k uint8, a [8]float32, imm8 byte) [8]float32
 
 
 // M256RoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45409,11 +45409,11 @@ func m256MaskzRoundscalePs(k uint8, a [8]float32, imm8 int) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RoundscalePs(a x86.M256, imm8 int) x86.M256 {
+func M256RoundscalePs(a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256RoundscalePs([8]float32(a), imm8))
 }
 
-func m256RoundscalePs(a [8]float32, imm8 int) [8]float32
+func m256RoundscalePs(a [8]float32, imm8 byte) [8]float32
 
 
 // M512MaskRoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45461,11 +45461,11 @@ func m256RoundscalePs(a [8]float32, imm8 int) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscalePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 int) x86.M512 {
+func M512MaskRoundscalePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskRoundscalePs([16]float32(src), uint16(k), [16]float32(a), imm8))
 }
 
-func m512MaskRoundscalePs(src [16]float32, k uint16, a [16]float32, imm8 int) [16]float32
+func m512MaskRoundscalePs(src [16]float32, k uint16, a [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskzRoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45513,11 +45513,11 @@ func m512MaskRoundscalePs(src [16]float32, k uint16, a [16]float32, imm8 int) [1
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscalePs(k x86.Mmask16, a x86.M512, imm8 int) x86.M512 {
+func M512MaskzRoundscalePs(k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzRoundscalePs(uint16(k), [16]float32(a), imm8))
 }
 
-func m512MaskzRoundscalePs(k uint16, a [16]float32, imm8 int) [16]float32
+func m512MaskzRoundscalePs(k uint16, a [16]float32, imm8 byte) [16]float32
 
 
 // M512RoundscalePs: Round packed single-precision (32-bit) floating-point
@@ -45560,11 +45560,11 @@ func m512MaskzRoundscalePs(k uint16, a [16]float32, imm8 int) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscalePs(a x86.M512, imm8 int) x86.M512 {
+func M512RoundscalePs(a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512RoundscalePs([16]float32(a), imm8))
 }
 
-func m512RoundscalePs(a [16]float32, imm8 int) [16]float32
+func m512RoundscalePs(a [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskRoundscaleRoundPd: Round packed double-precision (64-bit)
@@ -45619,11 +45619,11 @@ func m512RoundscalePs(a [16]float32, imm8 int) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscaleRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512MaskRoundscaleRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskRoundscaleRoundPd([8]float64(src), uint8(k), [8]float64(a), imm8, rounding))
 }
 
-func m512MaskRoundscaleRoundPd(src [8]float64, k uint8, a [8]float64, imm8 int, rounding int) [8]float64
+func m512MaskRoundscaleRoundPd(src [8]float64, k uint8, a [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskzRoundscaleRoundPd: Round packed double-precision (64-bit)
@@ -45678,11 +45678,11 @@ func m512MaskRoundscaleRoundPd(src [8]float64, k uint8, a [8]float64, imm8 int, 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscaleRoundPd(k x86.Mmask8, a x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512MaskzRoundscaleRoundPd(k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskzRoundscaleRoundPd(uint8(k), [8]float64(a), imm8, rounding))
 }
 
-func m512MaskzRoundscaleRoundPd(k uint8, a [8]float64, imm8 int, rounding int) [8]float64
+func m512MaskzRoundscaleRoundPd(k uint8, a [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512RoundscaleRoundPd: Round packed double-precision (64-bit) floating-point
@@ -45732,11 +45732,11 @@ func m512MaskzRoundscaleRoundPd(k uint8, a [8]float64, imm8 int, rounding int) [
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscaleRoundPd(a x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512RoundscaleRoundPd(a x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512RoundscaleRoundPd([8]float64(a), imm8, rounding))
 }
 
-func m512RoundscaleRoundPd(a [8]float64, imm8 int, rounding int) [8]float64
+func m512RoundscaleRoundPd(a [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskRoundscaleRoundPs: Round packed single-precision (32-bit)
@@ -45791,11 +45791,11 @@ func m512RoundscaleRoundPd(a [8]float64, imm8 int, rounding int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscaleRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 int, rounding int) x86.M512 {
+func M512MaskRoundscaleRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskRoundscaleRoundPs([16]float32(src), uint16(k), [16]float32(a), imm8, rounding))
 }
 
-func m512MaskRoundscaleRoundPs(src [16]float32, k uint16, a [16]float32, imm8 int, rounding int) [16]float32
+func m512MaskRoundscaleRoundPs(src [16]float32, k uint16, a [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // M512MaskzRoundscaleRoundPs: Round packed single-precision (32-bit)
@@ -45850,11 +45850,11 @@ func m512MaskRoundscaleRoundPs(src [16]float32, k uint16, a [16]float32, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscaleRoundPs(k x86.Mmask16, a x86.M512, imm8 int, rounding int) x86.M512 {
+func M512MaskzRoundscaleRoundPs(k x86.Mmask16, a x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskzRoundscaleRoundPs(uint16(k), [16]float32(a), imm8, rounding))
 }
 
-func m512MaskzRoundscaleRoundPs(k uint16, a [16]float32, imm8 int, rounding int) [16]float32
+func m512MaskzRoundscaleRoundPs(k uint16, a [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // M512RoundscaleRoundPs: Round packed single-precision (32-bit) floating-point
@@ -45904,11 +45904,11 @@ func m512MaskzRoundscaleRoundPs(k uint16, a [16]float32, imm8 int, rounding int)
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscaleRoundPs(a x86.M512, imm8 int, rounding int) x86.M512 {
+func M512RoundscaleRoundPs(a x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512RoundscaleRoundPs([16]float32(a), imm8, rounding))
 }
 
-func m512RoundscaleRoundPs(a [16]float32, imm8 int, rounding int) [16]float32
+func m512RoundscaleRoundPs(a [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // MaskRoundscaleRoundSd: Round the lower double-precision (64-bit)
@@ -45962,11 +45962,11 @@ func m512RoundscaleRoundPs(a [16]float32, imm8 int, rounding int) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func MaskRoundscaleRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskRoundscaleRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func maskRoundscaleRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func maskRoundscaleRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // MaskzRoundscaleRoundSd: Round the lower double-precision (64-bit)
@@ -46020,11 +46020,11 @@ func maskRoundscaleRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func MaskzRoundscaleRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskzRoundscaleRoundSd(uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func maskzRoundscaleRoundSd(k uint8, a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func maskzRoundscaleRoundSd(k uint8, a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // RoundscaleRoundSd: Round the lower double-precision (64-bit) floating-point
@@ -46073,11 +46073,11 @@ func maskzRoundscaleRoundSd(k uint8, a [2]float64, b [2]float64, imm8 int, round
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleRoundSd(a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func RoundscaleRoundSd(a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(roundscaleRoundSd([2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func roundscaleRoundSd(a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func roundscaleRoundSd(a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // MaskRoundscaleRoundSs: Round the lower single-precision (32-bit)
@@ -46131,11 +46131,11 @@ func roundscaleRoundSd(a [2]float64, b [2]float64, imm8 int, rounding int) [2]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func MaskRoundscaleRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskRoundscaleRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func maskRoundscaleRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func maskRoundscaleRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // MaskzRoundscaleRoundSs: Round the lower single-precision (32-bit)
@@ -46189,11 +46189,11 @@ func maskRoundscaleRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func MaskzRoundscaleRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskzRoundscaleRoundSs(uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func maskzRoundscaleRoundSs(k uint8, a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func maskzRoundscaleRoundSs(k uint8, a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // RoundscaleRoundSs: Round the lower single-precision (32-bit) floating-point
@@ -46242,11 +46242,11 @@ func maskzRoundscaleRoundSs(k uint8, a [4]float32, b [4]float32, imm8 int, round
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleRoundSs(a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func RoundscaleRoundSs(a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(roundscaleRoundSs([4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func roundscaleRoundSs(a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func roundscaleRoundSs(a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // MaskRoundscaleSd: Round the lower double-precision (64-bit) floating-point
@@ -46293,11 +46293,11 @@ func roundscaleRoundSs(a [4]float32, b [4]float32, imm8 int, rounding int) [4]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskRoundscaleSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskRoundscaleSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskRoundscaleSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskRoundscaleSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskzRoundscaleSd: Round the lower double-precision (64-bit) floating-point
@@ -46344,11 +46344,11 @@ func maskRoundscaleSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskzRoundscaleSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzRoundscaleSd(uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskzRoundscaleSd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskzRoundscaleSd(k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // RoundscaleSd: Round the lower double-precision (64-bit) floating-point
@@ -46390,11 +46390,11 @@ func maskzRoundscaleSd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleSd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func RoundscaleSd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(roundscaleSd([2]float64(a), [2]float64(b), imm8))
 }
 
-func roundscaleSd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func roundscaleSd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskRoundscaleSs: Round the lower single-precision (32-bit) floating-point
@@ -46441,11 +46441,11 @@ func roundscaleSd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskRoundscaleSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskRoundscaleSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskRoundscaleSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskRoundscaleSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskzRoundscaleSs: Round the lower single-precision (32-bit) floating-point
@@ -46492,11 +46492,11 @@ func maskRoundscaleSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskzRoundscaleSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzRoundscaleSs(uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskzRoundscaleSs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskzRoundscaleSs(k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // RoundscaleSs: Round the lower single-precision (32-bit) floating-point
@@ -46538,11 +46538,11 @@ func maskzRoundscaleSs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleSs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func RoundscaleSs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(roundscaleSs([4]float32(a), [4]float32(b), imm8))
 }
 
-func roundscaleSs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func roundscaleSs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskRsqrt14Pd: Compute the approximate reciprocal square root of packed
@@ -49714,11 +49714,11 @@ func m512SetzeroSi512() [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShuffleEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 MMPERMENUM) x86.M128i {
+func MaskShuffleEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskShuffleEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskShuffleEpi32(src [16]byte, k uint8, a [16]byte, imm8 MMPERMENUM) [16]byte
+func maskShuffleEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzShuffleEpi32: Shuffle 32-bit integers in 'a' using the control in
@@ -49753,11 +49753,11 @@ func maskShuffleEpi32(src [16]byte, k uint8, a [16]byte, imm8 MMPERMENUM) [16]by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShuffleEpi32(k x86.Mmask8, a x86.M128i, imm8 MMPERMENUM) x86.M128i {
+func MaskzShuffleEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzShuffleEpi32(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzShuffleEpi32(k uint8, a [16]byte, imm8 MMPERMENUM) [16]byte
+func maskzShuffleEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes
@@ -49797,11 +49797,11 @@ func maskzShuffleEpi32(k uint8, a [16]byte, imm8 MMPERMENUM) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 MMPERMENUM) x86.M256i {
+func M256MaskShuffleEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskShuffleEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskShuffleEpi32(src [32]byte, k uint8, a [32]byte, imm8 MMPERMENUM) [32]byte
+func m256MaskShuffleEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes
@@ -49840,11 +49840,11 @@ func m256MaskShuffleEpi32(src [32]byte, k uint8, a [32]byte, imm8 MMPERMENUM) [3
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleEpi32(k x86.Mmask8, a x86.M256i, imm8 MMPERMENUM) x86.M256i {
+func M256MaskzShuffleEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzShuffleEpi32(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzShuffleEpi32(k uint8, a [32]byte, imm8 MMPERMENUM) [32]byte
+func m256MaskzShuffleEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskzShuffleEpi32: Shuffle 32-bit integers in 'a' within 128-bit lanes
@@ -49891,11 +49891,11 @@ func m256MaskzShuffleEpi32(k uint8, a [32]byte, imm8 MMPERMENUM) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleEpi32(k x86.Mmask16, a x86.M512i, imm8 MMPERMENUM) x86.M512i {
+func M512MaskzShuffleEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzShuffleEpi32(uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskzShuffleEpi32(k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
+func m512MaskzShuffleEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // M256MaskShuffleF32x4: Shuffle 128-bits (composed of 4 single-precision
@@ -49928,11 +49928,11 @@ func m512MaskzShuffleEpi32(k uint16, a [64]byte, imm8 MMPERMENUM) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleF32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256MaskShuffleF32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskShuffleF32x4([8]float32(src), uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
-func m256MaskShuffleF32x4(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256MaskShuffleF32x4(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256MaskzShuffleF32x4: Shuffle 128-bits (composed of 4 single-precision
@@ -49965,11 +49965,11 @@ func m256MaskShuffleF32x4(src [8]float32, k uint8, a [8]float32, b [8]float32, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleF32x4(k x86.Mmask8, a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256MaskzShuffleF32x4(k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzShuffleF32x4(uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
-func m256MaskzShuffleF32x4(k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256MaskzShuffleF32x4(k uint8, a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256ShuffleF32x4: Shuffle 128-bits (composed of 4 single-precision (32-bit)
@@ -49992,11 +49992,11 @@ func m256MaskzShuffleF32x4(k uint8, a [8]float32, b [8]float32, imm8 int) [8]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleF32x4(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256ShuffleF32x4(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256ShuffleF32x4([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256ShuffleF32x4(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256ShuffleF32x4(a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M512MaskShuffleF32x4: Shuffle 128-bits (composed of 4 single-precision
@@ -50033,11 +50033,11 @@ func m256ShuffleF32x4(a [8]float32, b [8]float32, imm8 int) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleF32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512MaskShuffleF32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskShuffleF32x4([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
-func m512MaskShuffleF32x4(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512MaskShuffleF32x4(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskzShuffleF32x4: Shuffle 128-bits (composed of 4 single-precision
@@ -50074,11 +50074,11 @@ func m512MaskShuffleF32x4(src [16]float32, k uint16, a [16]float32, b [16]float3
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleF32x4(k x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512MaskzShuffleF32x4(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzShuffleF32x4(uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
-func m512MaskzShuffleF32x4(k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512MaskzShuffleF32x4(k uint16, a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512ShuffleF32x4: Shuffle 128-bits (composed of 4 single-precision (32-bit)
@@ -50105,11 +50105,11 @@ func m512MaskzShuffleF32x4(k uint16, a [16]float32, b [16]float32, imm8 int) [16
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleF32x4(a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512ShuffleF32x4(a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512ShuffleF32x4([16]float32(a), [16]float32(b), imm8))
 }
 
-func m512ShuffleF32x4(a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512ShuffleF32x4(a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M256MaskShuffleF64x2: Shuffle 128-bits (composed of 2 double-precision
@@ -50142,11 +50142,11 @@ func m512ShuffleF32x4(a [16]float32, b [16]float32, imm8 int) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleF64x2(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256MaskShuffleF64x2(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskShuffleF64x2([4]float64(src), uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
-func m256MaskShuffleF64x2(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256MaskShuffleF64x2(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256MaskzShuffleF64x2: Shuffle 128-bits (composed of 2 double-precision
@@ -50179,11 +50179,11 @@ func m256MaskShuffleF64x2(src [4]float64, k uint8, a [4]float64, b [4]float64, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleF64x2(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256MaskzShuffleF64x2(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzShuffleF64x2(uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
-func m256MaskzShuffleF64x2(k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256MaskzShuffleF64x2(k uint8, a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256ShuffleF64x2: Shuffle 128-bits (composed of 2 double-precision (64-bit)
@@ -50206,11 +50206,11 @@ func m256MaskzShuffleF64x2(k uint8, a [4]float64, b [4]float64, imm8 int) [4]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleF64x2(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256ShuffleF64x2(a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256ShuffleF64x2([4]float64(a), [4]float64(b), imm8))
 }
 
-func m256ShuffleF64x2(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256ShuffleF64x2(a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M512MaskShuffleF64x2: Shuffle 128-bits (composed of 2 double-precision
@@ -50247,11 +50247,11 @@ func m256ShuffleF64x2(a [4]float64, b [4]float64, imm8 int) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleF64x2(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512MaskShuffleF64x2(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskShuffleF64x2([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
-func m512MaskShuffleF64x2(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512MaskShuffleF64x2(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // M512MaskzShuffleF64x2: Shuffle 128-bits (composed of 2 double-precision
@@ -50288,11 +50288,11 @@ func m512MaskShuffleF64x2(src [8]float64, k uint8, a [8]float64, b [8]float64, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleF64x2(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512MaskzShuffleF64x2(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzShuffleF64x2(uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
-func m512MaskzShuffleF64x2(k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512MaskzShuffleF64x2(k uint8, a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // M512ShuffleF64x2: Shuffle 128-bits (composed of 2 double-precision (64-bit)
@@ -50319,11 +50319,11 @@ func m512MaskzShuffleF64x2(k uint8, a [8]float64, b [8]float64, imm8 int) [8]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleF64x2(a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512ShuffleF64x2(a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512ShuffleF64x2([8]float64(a), [8]float64(b), imm8))
 }
 
-func m512ShuffleF64x2(a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512ShuffleF64x2(a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // M256MaskShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers)
@@ -50356,11 +50356,11 @@ func m512ShuffleF64x2(a [8]float64, b [8]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleI32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskShuffleI32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskShuffleI32x4([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskShuffleI32x4(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskShuffleI32x4(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers)
@@ -50393,11 +50393,11 @@ func m256MaskShuffleI32x4(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleI32x4(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskzShuffleI32x4(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzShuffleI32x4(uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskzShuffleI32x4(k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskzShuffleI32x4(k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256ShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers) selected
@@ -50419,11 +50419,11 @@ func m256MaskzShuffleI32x4(k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleI32x4(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256ShuffleI32x4(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256ShuffleI32x4([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256ShuffleI32x4(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256ShuffleI32x4(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers)
@@ -50460,11 +50460,11 @@ func m256ShuffleI32x4(a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleI32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskShuffleI32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskShuffleI32x4([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskShuffleI32x4(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskShuffleI32x4(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers)
@@ -50501,11 +50501,11 @@ func m512MaskShuffleI32x4(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleI32x4(k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskzShuffleI32x4(k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzShuffleI32x4(uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskzShuffleI32x4(k uint16, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskzShuffleI32x4(k uint16, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512ShuffleI32x4: Shuffle 128-bits (composed of 4 32-bit integers) selected
@@ -50531,11 +50531,11 @@ func m512MaskzShuffleI32x4(k uint16, a [64]byte, b [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleI32x4(a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512ShuffleI32x4(a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512ShuffleI32x4([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512ShuffleI32x4(a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512ShuffleI32x4(a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M256MaskShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers)
@@ -50568,11 +50568,11 @@ func m512ShuffleI32x4(a [64]byte, b [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleI64x2(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskShuffleI64x2(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskShuffleI64x2([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskShuffleI64x2(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskShuffleI64x2(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers)
@@ -50605,11 +50605,11 @@ func m256MaskShuffleI64x2(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleI64x2(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskzShuffleI64x2(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzShuffleI64x2(uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskzShuffleI64x2(k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskzShuffleI64x2(k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256ShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers) selected
@@ -50631,11 +50631,11 @@ func m256MaskzShuffleI64x2(k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleI64x2(a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256ShuffleI64x2(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256ShuffleI64x2([32]byte(a), [32]byte(b), imm8))
 }
 
-func m256ShuffleI64x2(a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256ShuffleI64x2(a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers)
@@ -50672,11 +50672,11 @@ func m256ShuffleI64x2(a [32]byte, b [32]byte, imm8 int) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleI64x2(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskShuffleI64x2(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskShuffleI64x2([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskShuffleI64x2(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskShuffleI64x2(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers)
@@ -50713,11 +50713,11 @@ func m512MaskShuffleI64x2(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleI64x2(k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskzShuffleI64x2(k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzShuffleI64x2(uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskzShuffleI64x2(k uint8, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskzShuffleI64x2(k uint8, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512ShuffleI64x2: Shuffle 128-bits (composed of 2 64-bit integers) selected
@@ -50743,11 +50743,11 @@ func m512MaskzShuffleI64x2(k uint8, a [64]byte, b [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleI64x2(a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512ShuffleI64x2(a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512ShuffleI64x2([64]byte(a), [64]byte(b), imm8))
 }
 
-func m512ShuffleI64x2(a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512ShuffleI64x2(a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // MaskShufflePd: Shuffle double-precision (64-bit) floating-point elements
@@ -50772,11 +50772,11 @@ func m512ShuffleI64x2(a [64]byte, b [64]byte, imm8 int) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShufflePd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskShufflePd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskShufflePd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskShufflePd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskShufflePd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskzShufflePd: Shuffle double-precision (64-bit) floating-point elements
@@ -50800,11 +50800,11 @@ func maskShufflePd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShufflePd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskzShufflePd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzShufflePd(uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskzShufflePd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskzShufflePd(k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // M256MaskShufflePd: Shuffle double-precision (64-bit) floating-point elements
@@ -50831,11 +50831,11 @@ func maskzShufflePd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShufflePd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256MaskShufflePd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskShufflePd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
-func m256MaskShufflePd(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256MaskShufflePd(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256MaskzShufflePd: Shuffle double-precision (64-bit) floating-point
@@ -50862,11 +50862,11 @@ func m256MaskShufflePd(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShufflePd(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256MaskzShufflePd(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzShufflePd(uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
-func m256MaskzShufflePd(k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256MaskzShufflePd(k uint8, a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M512MaskShufflePd: Shuffle double-precision (64-bit) floating-point elements
@@ -50897,11 +50897,11 @@ func m256MaskzShufflePd(k uint8, a [4]float64, b [4]float64, imm8 int) [4]float6
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShufflePd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512MaskShufflePd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskShufflePd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
-func m512MaskShufflePd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512MaskShufflePd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // M512MaskzShufflePd: Shuffle double-precision (64-bit) floating-point
@@ -50932,11 +50932,11 @@ func m512MaskShufflePd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShufflePd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512MaskzShufflePd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzShufflePd(uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
-func m512MaskzShufflePd(k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512MaskzShufflePd(k uint8, a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // M512ShufflePd: Shuffle double-precision (64-bit) floating-point elements
@@ -50957,11 +50957,11 @@ func m512MaskzShufflePd(k uint8, a [8]float64, b [8]float64, imm8 int) [8]float6
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShufflePd(a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512ShufflePd(a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512ShufflePd([8]float64(a), [8]float64(b), imm8))
 }
 
-func m512ShufflePd(a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512ShufflePd(a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // MaskShufflePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -50998,11 +50998,11 @@ func m512ShufflePd(a [8]float64, b [8]float64, imm8 int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShufflePs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskShufflePs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskShufflePs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskShufflePs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskShufflePs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskzShufflePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -51039,11 +51039,11 @@ func maskShufflePs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShufflePs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskzShufflePs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzShufflePs(uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskzShufflePs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskzShufflePs(k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // M256MaskShufflePs: Shuffle single-precision (32-bit) floating-point elements
@@ -51084,11 +51084,11 @@ func maskzShufflePs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShufflePs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256MaskShufflePs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskShufflePs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
-func m256MaskShufflePs(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256MaskShufflePs(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256MaskzShufflePs: Shuffle single-precision (32-bit) floating-point
@@ -51129,11 +51129,11 @@ func m256MaskShufflePs(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShufflePs(k x86.Mmask8, a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256MaskzShufflePs(k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzShufflePs(uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
-func m256MaskzShufflePs(k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256MaskzShufflePs(k uint8, a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M512MaskShufflePs: Shuffle single-precision (32-bit) floating-point elements
@@ -51182,11 +51182,11 @@ func m256MaskzShufflePs(k uint8, a [8]float32, b [8]float32, imm8 int) [8]float3
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShufflePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512MaskShufflePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskShufflePs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
-func m512MaskShufflePs(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512MaskShufflePs(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskzShufflePs: Shuffle single-precision (32-bit) floating-point
@@ -51235,11 +51235,11 @@ func m512MaskShufflePs(src [16]float32, k uint16, a [16]float32, b [16]float32, 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShufflePs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512MaskzShufflePs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzShufflePs(uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
-func m512MaskzShufflePs(k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512MaskzShufflePs(k uint16, a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512ShufflePs: Shuffle single-precision (32-bit) floating-point elements in
@@ -51278,11 +51278,11 @@ func m512MaskzShufflePs(k uint16, a [16]float32, b [16]float32, imm8 int) [16]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShufflePs(a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512ShufflePs(a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512ShufflePs([16]float32(a), [16]float32(b), imm8))
 }
 
-func m512ShufflePs(a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512ShufflePs(a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskSinPd: Compute the sine of packed double-precision (64-bit)
@@ -52033,11 +52033,11 @@ func m512SllEpi64(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSlliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSlliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSlliEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSlliEpi32(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSlliEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
@@ -52062,11 +52062,11 @@ func maskSlliEpi32(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSlliEpi32(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSlliEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSlliEpi32(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSlliEpi32(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSlliEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
@@ -52091,11 +52091,11 @@ func maskzSlliEpi32(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSlliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSlliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSlliEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskSlliEpi32(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSlliEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
@@ -52120,11 +52120,11 @@ func m256MaskSlliEpi32(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSlliEpi32(k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSlliEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSlliEpi32(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSlliEpi32(k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSlliEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskzSlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while
@@ -52149,11 +52149,11 @@ func m256MaskzSlliEpi32(k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSlliEpi32(k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSlliEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSlliEpi32(uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSlliEpi32(k uint16, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSlliEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -52178,11 +52178,11 @@ func m512MaskzSlliEpi32(k uint16, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSlliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSlliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSlliEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSlliEpi64(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSlliEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -52207,11 +52207,11 @@ func maskSlliEpi64(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSlliEpi64(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSlliEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSlliEpi64(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSlliEpi64(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSlliEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -52236,11 +52236,11 @@ func maskzSlliEpi64(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSlliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSlliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSlliEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskSlliEpi64(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSlliEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -52265,11 +52265,11 @@ func m256MaskSlliEpi64(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSlliEpi64(k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSlliEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSlliEpi64(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSlliEpi64(k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSlliEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskSlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -52294,11 +52294,11 @@ func m256MaskzSlliEpi64(k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSlliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskSlliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskSlliEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskSlliEpi64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSlliEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzSlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -52323,11 +52323,11 @@ func m512MaskSlliEpi64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSlliEpi64(k x86.Mmask8, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSlliEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSlliEpi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSlliEpi64(k uint8, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSlliEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512SlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while
@@ -52347,11 +52347,11 @@ func m512MaskzSlliEpi64(k uint8, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SlliEpi64(a x86.M512i, imm8 uint32) x86.M512i {
+func M512SlliEpi64(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512SlliEpi64([64]byte(a), imm8))
 }
 
-func m512SlliEpi64(a [64]byte, imm8 uint32) [64]byte
+func m512SlliEpi64(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSllvEpi32: Shift packed 32-bit integers in 'a' left by the amount
@@ -53829,11 +53829,11 @@ func m512SraEpi64(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSraiEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSraiEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSraiEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSraiEpi32(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSraiEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -53858,11 +53858,11 @@ func maskSraiEpi32(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSraiEpi32(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSraiEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSraiEpi32(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSraiEpi32(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSraiEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -53887,11 +53887,11 @@ func maskzSraiEpi32(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSraiEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSraiEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSraiEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskSraiEpi32(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSraiEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8'
@@ -53916,11 +53916,11 @@ func m256MaskSraiEpi32(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSraiEpi32(k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSraiEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSraiEpi32(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSraiEpi32(k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSraiEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskzSraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8'
@@ -53945,11 +53945,11 @@ func m256MaskzSraiEpi32(k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSraiEpi32(k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSraiEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSraiEpi32(uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSraiEpi32(k uint16, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSraiEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -53974,11 +53974,11 @@ func m512MaskzSraiEpi32(k uint16, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSraiEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSraiEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSraiEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSraiEpi64(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSraiEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -54003,11 +54003,11 @@ func maskSraiEpi64(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSraiEpi64(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSraiEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSraiEpi64(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSraiEpi64(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSraiEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // SraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -54027,11 +54027,11 @@ func maskzSraiEpi64(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiEpi64(a x86.M128i, imm8 uint32) x86.M128i {
+func SraiEpi64(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(sraiEpi64([16]byte(a), imm8))
 }
 
-func sraiEpi64(a [16]byte, imm8 uint32) [16]byte
+func sraiEpi64(a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -54056,11 +54056,11 @@ func sraiEpi64(a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSraiEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSraiEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSraiEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskSraiEpi64(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSraiEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8'
@@ -54085,11 +54085,11 @@ func m256MaskSraiEpi64(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSraiEpi64(k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSraiEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSraiEpi64(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSraiEpi64(k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSraiEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256SraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -54109,11 +54109,11 @@ func m256MaskzSraiEpi64(k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SraiEpi64(a x86.M256i, imm8 uint32) x86.M256i {
+func M256SraiEpi64(a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256SraiEpi64([32]byte(a), imm8))
 }
 
-func m256SraiEpi64(a [32]byte, imm8 uint32) [32]byte
+func m256SraiEpi64(a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskSraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -54138,11 +54138,11 @@ func m256SraiEpi64(a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSraiEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskSraiEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskSraiEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskSraiEpi64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSraiEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzSraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8'
@@ -54167,11 +54167,11 @@ func m512MaskSraiEpi64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSraiEpi64(k x86.Mmask8, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSraiEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSraiEpi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSraiEpi64(k uint8, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSraiEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512SraiEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -54191,11 +54191,11 @@ func m512MaskzSraiEpi64(k uint8, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SraiEpi64(a x86.M512i, imm8 uint32) x86.M512i {
+func M512SraiEpi64(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512SraiEpi64([64]byte(a), imm8))
 }
 
-func m512SraiEpi64(a [64]byte, imm8 uint32) [64]byte
+func m512SraiEpi64(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSravEpi32: Shift packed 32-bit integers in 'a' right by the amount
@@ -54909,11 +54909,11 @@ func m512SrlEpi64(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSrliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSrliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSrliEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSrliEpi32(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSrliEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -54938,11 +54938,11 @@ func maskSrliEpi32(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSrliEpi32(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSrliEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSrliEpi32(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSrliEpi32(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSrliEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -54967,11 +54967,11 @@ func maskzSrliEpi32(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSrliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSrliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSrliEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskSrliEpi32(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSrliEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8'
@@ -54996,11 +54996,11 @@ func m256MaskSrliEpi32(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSrliEpi32(k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSrliEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSrliEpi32(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSrliEpi32(k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSrliEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskzSrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8'
@@ -55025,11 +55025,11 @@ func m256MaskzSrliEpi32(k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSrliEpi32(k x86.Mmask16, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSrliEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSrliEpi32(uint16(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSrliEpi32(k uint16, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSrliEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -55054,11 +55054,11 @@ func m512MaskzSrliEpi32(k uint16, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSrliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskSrliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskSrliEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
-func maskSrliEpi64(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskSrliEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // MaskzSrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -55083,11 +55083,11 @@ func maskSrliEpi64(src [16]byte, k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSrliEpi64(k x86.Mmask8, a x86.M128i, imm8 uint32) x86.M128i {
+func MaskzSrliEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzSrliEpi64(uint8(k), [16]byte(a), imm8))
 }
 
-func maskzSrliEpi64(k uint8, a [16]byte, imm8 uint32) [16]byte
+func maskzSrliEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskSrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -55112,11 +55112,11 @@ func maskzSrliEpi64(k uint8, a [16]byte, imm8 uint32) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSrliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskSrliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskSrliEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskSrliEpi64(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskSrliEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzSrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8'
@@ -55141,11 +55141,11 @@ func m256MaskSrliEpi64(src [32]byte, k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSrliEpi64(k x86.Mmask8, a x86.M256i, imm8 uint32) x86.M256i {
+func M256MaskzSrliEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzSrliEpi64(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzSrliEpi64(k uint8, a [32]byte, imm8 uint32) [32]byte
+func m256MaskzSrliEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskSrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -55170,11 +55170,11 @@ func m256MaskzSrliEpi64(k uint8, a [32]byte, imm8 uint32) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSrliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskSrliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskSrliEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskSrliEpi64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
+func m512MaskSrliEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzSrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8'
@@ -55199,11 +55199,11 @@ func m512MaskSrliEpi64(src [64]byte, k uint8, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSrliEpi64(k x86.Mmask8, a x86.M512i, imm8 uint32) x86.M512i {
+func M512MaskzSrliEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzSrliEpi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzSrliEpi64(k uint8, a [64]byte, imm8 uint32) [64]byte
+func m512MaskzSrliEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 
 
 // M512SrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -55223,11 +55223,11 @@ func m512MaskzSrliEpi64(k uint8, a [64]byte, imm8 uint32) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SrliEpi64(a x86.M512i, imm8 uint32) x86.M512i {
+func M512SrliEpi64(a x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512SrliEpi64([64]byte(a), imm8))
 }
 
-func m512SrliEpi64(a [64]byte, imm8 uint32) [64]byte
+func m512SrliEpi64(a [64]byte, imm8 byte) [64]byte
 
 
 // MaskSrlvEpi32: Shift packed 32-bit integers in 'a' right by the amount
@@ -56803,11 +56803,11 @@ func m512TanhPs(a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskTernarylogicEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func MaskTernarylogicEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskTernarylogicEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskTernarylogicEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
+func maskTernarylogicEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // MaskzTernarylogicEpi32: Bitwise ternary logic that provides the capability
@@ -56835,11 +56835,11 @@ func maskTernarylogicEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 int) x86.M128i {
+func MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzTernarylogicEpi32(uint8(k), [16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
-func maskzTernarylogicEpi32(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 int) [16]byte
+func maskzTernarylogicEpi32(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 byte) [16]byte
 
 
 // TernarylogicEpi32: Bitwise ternary logic that provides the capability to
@@ -56862,11 +56862,11 @@ func maskzTernarylogicEpi32(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func TernarylogicEpi32(a x86.M128i, b x86.M128i, c x86.M128i, imm8 int) x86.M128i {
+func TernarylogicEpi32(a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(ternarylogicEpi32([16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
-func ternarylogicEpi32(a [16]byte, b [16]byte, c [16]byte, imm8 int) [16]byte
+func ternarylogicEpi32(a [16]byte, b [16]byte, c [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskTernarylogicEpi32: Bitwise ternary logic that provides the
@@ -56895,11 +56895,11 @@ func ternarylogicEpi32(a [16]byte, b [16]byte, c [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskTernarylogicEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskTernarylogicEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskTernarylogicEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskTernarylogicEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskTernarylogicEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzTernarylogicEpi32: Bitwise ternary logic that provides the
@@ -56928,11 +56928,11 @@ func m256MaskTernarylogicEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 int) x86.M256i {
+func M256MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzTernarylogicEpi32(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
-func m256MaskzTernarylogicEpi32(k uint8, a [32]byte, b [32]byte, c [32]byte, imm8 int) [32]byte
+func m256MaskzTernarylogicEpi32(k uint8, a [32]byte, b [32]byte, c [32]byte, imm8 byte) [32]byte
 
 
 // M256TernarylogicEpi32: Bitwise ternary logic that provides the capability to
@@ -56955,11 +56955,11 @@ func m256MaskzTernarylogicEpi32(k uint8, a [32]byte, b [32]byte, c [32]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256TernarylogicEpi32(a x86.M256i, b x86.M256i, c x86.M256i, imm8 int) x86.M256i {
+func M256TernarylogicEpi32(a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256TernarylogicEpi32([32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
-func m256TernarylogicEpi32(a [32]byte, b [32]byte, c [32]byte, imm8 int) [32]byte
+func m256TernarylogicEpi32(a [32]byte, b [32]byte, c [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskTernarylogicEpi32: Bitwise ternary logic that provides the
@@ -56988,11 +56988,11 @@ func m256TernarylogicEpi32(a [32]byte, b [32]byte, c [32]byte, imm8 int) [32]byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskTernarylogicEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskTernarylogicEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskTernarylogicEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskTernarylogicEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskTernarylogicEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzTernarylogicEpi32: Bitwise ternary logic that provides the
@@ -57021,11 +57021,11 @@ func m512MaskTernarylogicEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzTernarylogicEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i, c x86.M512i, imm8 int) x86.M512i {
+func M512MaskzTernarylogicEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzTernarylogicEpi32(uint16(k), [64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func m512MaskzTernarylogicEpi32(k uint16, a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
+func m512MaskzTernarylogicEpi32(k uint16, a [64]byte, b [64]byte, c [64]byte, imm8 byte) [64]byte
 
 
 // M512TernarylogicEpi32: Bitwise ternary logic that provides the capability to
@@ -57048,11 +57048,11 @@ func m512MaskzTernarylogicEpi32(k uint16, a [64]byte, b [64]byte, c [64]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512TernarylogicEpi32(a x86.M512i, b x86.M512i, c x86.M512i, imm8 int) x86.M512i {
+func M512TernarylogicEpi32(a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512TernarylogicEpi32([64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func m512TernarylogicEpi32(a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
+func m512TernarylogicEpi32(a [64]byte, b [64]byte, c [64]byte, imm8 byte) [64]byte
 
 
 // MaskTernarylogicEpi64: Bitwise ternary logic that provides the capability to
@@ -57080,11 +57080,11 @@ func m512TernarylogicEpi32(a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskTernarylogicEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func MaskTernarylogicEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskTernarylogicEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
-func maskTernarylogicEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 int) [16]byte
+func maskTernarylogicEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 byte) [16]byte
 
 
 // MaskzTernarylogicEpi64: Bitwise ternary logic that provides the capability
@@ -57112,11 +57112,11 @@ func maskTernarylogicEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 int) x86.M128i {
+func MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(maskzTernarylogicEpi64(uint8(k), [16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
-func maskzTernarylogicEpi64(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 int) [16]byte
+func maskzTernarylogicEpi64(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 byte) [16]byte
 
 
 // TernarylogicEpi64: Bitwise ternary logic that provides the capability to
@@ -57139,11 +57139,11 @@ func maskzTernarylogicEpi64(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 in
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func TernarylogicEpi64(a x86.M128i, b x86.M128i, c x86.M128i, imm8 int) x86.M128i {
+func TernarylogicEpi64(a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(ternarylogicEpi64([16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
-func ternarylogicEpi64(a [16]byte, b [16]byte, c [16]byte, imm8 int) [16]byte
+func ternarylogicEpi64(a [16]byte, b [16]byte, c [16]byte, imm8 byte) [16]byte
 
 
 // M256MaskTernarylogicEpi64: Bitwise ternary logic that provides the
@@ -57172,11 +57172,11 @@ func ternarylogicEpi64(a [16]byte, b [16]byte, c [16]byte, imm8 int) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskTernarylogicEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 int) x86.M256i {
+func M256MaskTernarylogicEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskTernarylogicEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
-func m256MaskTernarylogicEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 int) [32]byte
+func m256MaskTernarylogicEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 
 
 // M256MaskzTernarylogicEpi64: Bitwise ternary logic that provides the
@@ -57205,11 +57205,11 @@ func m256MaskTernarylogicEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 int) x86.M256i {
+func M256MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzTernarylogicEpi64(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
-func m256MaskzTernarylogicEpi64(k uint8, a [32]byte, b [32]byte, c [32]byte, imm8 int) [32]byte
+func m256MaskzTernarylogicEpi64(k uint8, a [32]byte, b [32]byte, c [32]byte, imm8 byte) [32]byte
 
 
 // M256TernarylogicEpi64: Bitwise ternary logic that provides the capability to
@@ -57232,11 +57232,11 @@ func m256MaskzTernarylogicEpi64(k uint8, a [32]byte, b [32]byte, c [32]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256TernarylogicEpi64(a x86.M256i, b x86.M256i, c x86.M256i, imm8 int) x86.M256i {
+func M256TernarylogicEpi64(a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
 	return x86.M256i(m256TernarylogicEpi64([32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
-func m256TernarylogicEpi64(a [32]byte, b [32]byte, c [32]byte, imm8 int) [32]byte
+func m256TernarylogicEpi64(a [32]byte, b [32]byte, c [32]byte, imm8 byte) [32]byte
 
 
 // M512MaskTernarylogicEpi64: Bitwise ternary logic that provides the
@@ -57265,11 +57265,11 @@ func m256TernarylogicEpi64(a [32]byte, b [32]byte, c [32]byte, imm8 int) [32]byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskTernarylogicEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 int) x86.M512i {
+func M512MaskTernarylogicEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskTernarylogicEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
-func m512MaskTernarylogicEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 int) [64]byte
+func m512MaskTernarylogicEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 byte) [64]byte
 
 
 // M512MaskzTernarylogicEpi64: Bitwise ternary logic that provides the
@@ -57298,11 +57298,11 @@ func m512MaskTernarylogicEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i, imm8 int) x86.M512i {
+func M512MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzTernarylogicEpi64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func m512MaskzTernarylogicEpi64(k uint8, a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
+func m512MaskzTernarylogicEpi64(k uint8, a [64]byte, b [64]byte, c [64]byte, imm8 byte) [64]byte
 
 
 // M512TernarylogicEpi64: Bitwise ternary logic that provides the capability to
@@ -57325,11 +57325,11 @@ func m512MaskzTernarylogicEpi64(k uint8, a [64]byte, b [64]byte, c [64]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512TernarylogicEpi64(a x86.M512i, b x86.M512i, c x86.M512i, imm8 int) x86.M512i {
+func M512TernarylogicEpi64(a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
 	return x86.M512i(m512TernarylogicEpi64([64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
-func m512TernarylogicEpi64(a [64]byte, b [64]byte, c [64]byte, imm8 int) [64]byte
+func m512TernarylogicEpi64(a [64]byte, b [64]byte, c [64]byte, imm8 byte) [64]byte
 
 
 // MaskTestEpi32Mask: Compute the bitwise AND of packed 32-bit integers in 'a'

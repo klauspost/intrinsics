@@ -296,11 +296,11 @@ func avgEpu8(a [16]byte, b [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func BslliSi128(a x86.M128i, imm8 int) x86.M128i {
+func BslliSi128(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(bslliSi128([16]byte(a), imm8))
 }
 
-func bslliSi128(a [16]byte, imm8 int) [16]byte
+func bslliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // BsrliSi128: Shift 'a' right by 'imm8' bytes while shifting in zeros, and
@@ -316,11 +316,11 @@ func bslliSi128(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func BsrliSi128(a x86.M128i, imm8 int) x86.M128i {
+func BsrliSi128(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(bsrliSi128([16]byte(a), imm8))
 }
 
-func bsrliSi128(a [16]byte, imm8 int) [16]byte
+func bsrliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // CastpdPs: Cast vector of type __m128d to type __m128. This intrinsic is only
@@ -1579,11 +1579,11 @@ func divSd(a [2]float64, b [2]float64) [2]float64
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi16(a x86.M128i, imm8 int) int {
+func ExtractEpi16(a x86.M128i, imm8 byte) int {
 	return int(extractEpi16([16]byte(a), imm8))
 }
 
-func extractEpi16(a [16]byte, imm8 int) int
+func extractEpi16(a [16]byte, imm8 byte) int
 
 
 // InsertEpi16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst'
@@ -1597,11 +1597,11 @@ func extractEpi16(a [16]byte, imm8 int) int
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func InsertEpi16(a x86.M128i, i int, imm8 int) x86.M128i {
+func InsertEpi16(a x86.M128i, i int, imm8 byte) x86.M128i {
 	return x86.M128i(insertEpi16([16]byte(a), i, imm8))
 }
 
-func insertEpi16(a [16]byte, i int, imm8 int) [16]byte
+func insertEpi16(a [16]byte, i int, imm8 byte) [16]byte
 
 
 // Lfence: Perform a serializing operation on all load-from-memory instructions
@@ -2650,11 +2650,11 @@ func setzeroSi128() [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShuffleEpi32(a x86.M128i, imm8 int) x86.M128i {
+func ShuffleEpi32(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(shuffleEpi32([16]byte(a), imm8))
 }
 
-func shuffleEpi32(a [16]byte, imm8 int) [16]byte
+func shuffleEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // ShufflePd: Shuffle double-precision (64-bit) floating-point elements using
@@ -2667,11 +2667,11 @@ func shuffleEpi32(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShufflePd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func ShufflePd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(shufflePd([2]float64(a), [2]float64(b), imm8))
 }
 
-func shufflePd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func shufflePd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // ShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 'a' using the
@@ -2688,11 +2688,11 @@ func shufflePd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShufflehiEpi16(a x86.M128i, imm8 int) x86.M128i {
+func ShufflehiEpi16(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(shufflehiEpi16([16]byte(a), imm8))
 }
 
-func shufflehiEpi16(a [16]byte, imm8 int) [16]byte
+func shufflehiEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 'a' using the
@@ -2709,11 +2709,11 @@ func shufflehiEpi16(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShuffleloEpi16(a x86.M128i, imm8 int) x86.M128i {
+func ShuffleloEpi16(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(shuffleloEpi16([16]byte(a), imm8))
 }
 
-func shuffleloEpi16(a [16]byte, imm8 int) [16]byte
+func shuffleloEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while shifting
@@ -2795,11 +2795,11 @@ func sllEpi64(a [16]byte, count [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliEpi16(a x86.M128i, imm8 int) x86.M128i {
+func SlliEpi16(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(slliEpi16([16]byte(a), imm8))
 }
 
-func slliEpi16(a [16]byte, imm8 int) [16]byte
+func slliEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting
@@ -2818,11 +2818,11 @@ func slliEpi16(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliEpi32(a x86.M128i, imm8 int) x86.M128i {
+func SlliEpi32(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(slliEpi32([16]byte(a), imm8))
 }
 
-func slliEpi32(a [16]byte, imm8 int) [16]byte
+func slliEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // SlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while shifting
@@ -2841,11 +2841,11 @@ func slliEpi32(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliEpi64(a x86.M128i, imm8 int) x86.M128i {
+func SlliEpi64(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(slliEpi64([16]byte(a), imm8))
 }
 
-func slliEpi64(a [16]byte, imm8 int) [16]byte
+func slliEpi64(a [16]byte, imm8 byte) [16]byte
 
 
 // SlliSi128: Shift 'a' left by 'imm8' bytes while shifting in zeros, and store
@@ -2861,11 +2861,11 @@ func slliEpi64(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliSi128(a x86.M128i, imm8 int) x86.M128i {
+func SlliSi128(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(slliSi128([16]byte(a), imm8))
 }
 
-func slliSi128(a [16]byte, imm8 int) [16]byte
+func slliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // SqrtPd: Compute the square root of packed double-precision (64-bit)
@@ -2959,11 +2959,11 @@ func sraEpi32(a [16]byte, count [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiEpi16(a x86.M128i, imm8 int) x86.M128i {
+func SraiEpi16(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(sraiEpi16([16]byte(a), imm8))
 }
 
-func sraiEpi16(a [16]byte, imm8 int) [16]byte
+func sraiEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -2982,11 +2982,11 @@ func sraiEpi16(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiEpi32(a x86.M128i, imm8 int) x86.M128i {
+func SraiEpi32(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(sraiEpi32([16]byte(a), imm8))
 }
 
-func sraiEpi32(a [16]byte, imm8 int) [16]byte
+func sraiEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // SrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -3068,11 +3068,11 @@ func srlEpi64(a [16]byte, count [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliEpi16(a x86.M128i, imm8 int) x86.M128i {
+func SrliEpi16(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(srliEpi16([16]byte(a), imm8))
 }
 
-func srliEpi16(a [16]byte, imm8 int) [16]byte
+func srliEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -3091,11 +3091,11 @@ func srliEpi16(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliEpi32(a x86.M128i, imm8 int) x86.M128i {
+func SrliEpi32(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(srliEpi32([16]byte(a), imm8))
 }
 
-func srliEpi32(a [16]byte, imm8 int) [16]byte
+func srliEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // SrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -3114,11 +3114,11 @@ func srliEpi32(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliEpi64(a x86.M128i, imm8 int) x86.M128i {
+func SrliEpi64(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(srliEpi64([16]byte(a), imm8))
 }
 
-func srliEpi64(a [16]byte, imm8 int) [16]byte
+func srliEpi64(a [16]byte, imm8 byte) [16]byte
 
 
 // SrliSi128: Shift 'a' right by 'imm8' bytes while shifting in zeros, and
@@ -3134,11 +3134,11 @@ func srliEpi64(a [16]byte, imm8 int) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliSi128(a x86.M128i, imm8 int) x86.M128i {
+func SrliSi128(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(srliSi128([16]byte(a), imm8))
 }
 
-func srliSi128(a [16]byte, imm8 int) [16]byte
+func srliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // StorePd: Store 128-bits (composed of 2 packed double-precision (64-bit)

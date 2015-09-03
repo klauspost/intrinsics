@@ -4869,11 +4869,11 @@ func m512MaskzCvttpsEpu64(k uint8, a [8]float32) [64]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extractf32x8Ps(a x86.M512, imm8 int) x86.M256 {
+func M512Extractf32x8Ps(a x86.M512, imm8 byte) x86.M256 {
 	return x86.M256(m512Extractf32x8Ps([16]float32(a), imm8))
 }
 
-func m512Extractf32x8Ps(a [16]float32, imm8 int) [8]float32
+func m512Extractf32x8Ps(a [16]float32, imm8 byte) [8]float32
 
 
 // M512MaskExtractf32x8Ps: Extract 256 bits (composed of 8 packed
@@ -4900,11 +4900,11 @@ func m512Extractf32x8Ps(a [16]float32, imm8 int) [8]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtractf32x8Ps(src x86.M256, k x86.Mmask8, a x86.M512, imm8 int) x86.M256 {
+func M512MaskExtractf32x8Ps(src x86.M256, k x86.Mmask8, a x86.M512, imm8 byte) x86.M256 {
 	return x86.M256(m512MaskExtractf32x8Ps([8]float32(src), uint8(k), [16]float32(a), imm8))
 }
 
-func m512MaskExtractf32x8Ps(src [8]float32, k uint8, a [16]float32, imm8 int) [8]float32
+func m512MaskExtractf32x8Ps(src [8]float32, k uint8, a [16]float32, imm8 byte) [8]float32
 
 
 // M512MaskzExtractf32x8Ps: Extract 256 bits (composed of 8 packed
@@ -4931,11 +4931,11 @@ func m512MaskExtractf32x8Ps(src [8]float32, k uint8, a [16]float32, imm8 int) [8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtractf32x8Ps(k x86.Mmask8, a x86.M512, imm8 int) x86.M256 {
+func M512MaskzExtractf32x8Ps(k x86.Mmask8, a x86.M512, imm8 byte) x86.M256 {
 	return x86.M256(m512MaskzExtractf32x8Ps(uint8(k), [16]float32(a), imm8))
 }
 
-func m512MaskzExtractf32x8Ps(k uint8, a [16]float32, imm8 int) [8]float32
+func m512MaskzExtractf32x8Ps(k uint8, a [16]float32, imm8 byte) [8]float32
 
 
 // M256Extractf64x2Pd: Extract 128 bits (composed of 2 packed double-precision
@@ -4952,11 +4952,11 @@ func m512MaskzExtractf32x8Ps(k uint8, a [16]float32, imm8 int) [8]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extractf64x2Pd(a x86.M256d, imm8 int) x86.M128d {
+func M256Extractf64x2Pd(a x86.M256d, imm8 byte) x86.M128d {
 	return x86.M128d(m256Extractf64x2Pd([4]float64(a), imm8))
 }
 
-func m256Extractf64x2Pd(a [4]float64, imm8 int) [2]float64
+func m256Extractf64x2Pd(a [4]float64, imm8 byte) [2]float64
 
 
 // M256MaskExtractf64x2Pd: Extract 128 bits (composed of 2 packed
@@ -4983,11 +4983,11 @@ func m256Extractf64x2Pd(a [4]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskExtractf64x2Pd(src x86.M128d, k x86.Mmask8, a x86.M256d, imm8 int) x86.M128d {
+func M256MaskExtractf64x2Pd(src x86.M128d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M128d {
 	return x86.M128d(m256MaskExtractf64x2Pd([2]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskExtractf64x2Pd(src [2]float64, k uint8, a [4]float64, imm8 int) [2]float64
+func m256MaskExtractf64x2Pd(src [2]float64, k uint8, a [4]float64, imm8 byte) [2]float64
 
 
 // M256MaskzExtractf64x2Pd: Extract 128 bits (composed of 2 packed
@@ -5014,11 +5014,11 @@ func m256MaskExtractf64x2Pd(src [2]float64, k uint8, a [4]float64, imm8 int) [2]
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzExtractf64x2Pd(k x86.Mmask8, a x86.M256d, imm8 int) x86.M128d {
+func M256MaskzExtractf64x2Pd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M128d {
 	return x86.M128d(m256MaskzExtractf64x2Pd(uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskzExtractf64x2Pd(k uint8, a [4]float64, imm8 int) [2]float64
+func m256MaskzExtractf64x2Pd(k uint8, a [4]float64, imm8 byte) [2]float64
 
 
 // M512Extractf64x2Pd: Extract 128 bits (composed of 2 packed double-precision
@@ -5037,11 +5037,11 @@ func m256MaskzExtractf64x2Pd(k uint8, a [4]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extractf64x2Pd(a x86.M512d, imm8 int) x86.M128d {
+func M512Extractf64x2Pd(a x86.M512d, imm8 byte) x86.M128d {
 	return x86.M128d(m512Extractf64x2Pd([8]float64(a), imm8))
 }
 
-func m512Extractf64x2Pd(a [8]float64, imm8 int) [2]float64
+func m512Extractf64x2Pd(a [8]float64, imm8 byte) [2]float64
 
 
 // M512MaskExtractf64x2Pd: Extract 128 bits (composed of 2 packed
@@ -5070,11 +5070,11 @@ func m512Extractf64x2Pd(a [8]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtractf64x2Pd(src x86.M128d, k x86.Mmask8, a x86.M512d, imm8 int) x86.M128d {
+func M512MaskExtractf64x2Pd(src x86.M128d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M128d {
 	return x86.M128d(m512MaskExtractf64x2Pd([2]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskExtractf64x2Pd(src [2]float64, k uint8, a [8]float64, imm8 int) [2]float64
+func m512MaskExtractf64x2Pd(src [2]float64, k uint8, a [8]float64, imm8 byte) [2]float64
 
 
 // M512MaskzExtractf64x2Pd: Extract 128 bits (composed of 2 packed
@@ -5103,11 +5103,11 @@ func m512MaskExtractf64x2Pd(src [2]float64, k uint8, a [8]float64, imm8 int) [2]
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtractf64x2Pd(k x86.Mmask8, a x86.M512d, imm8 int) x86.M128d {
+func M512MaskzExtractf64x2Pd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M128d {
 	return x86.M128d(m512MaskzExtractf64x2Pd(uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskzExtractf64x2Pd(k uint8, a [8]float64, imm8 int) [2]float64
+func m512MaskzExtractf64x2Pd(k uint8, a [8]float64, imm8 byte) [2]float64
 
 
 // M512Extracti32x8Epi32: Extract 256 bits (composed of 8 packed 32-bit
@@ -5123,11 +5123,11 @@ func m512MaskzExtractf64x2Pd(k uint8, a [8]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extracti32x8Epi32(a x86.M512i, imm8 int) x86.M256i {
+func M512Extracti32x8Epi32(a x86.M512i, imm8 byte) x86.M256i {
 	return x86.M256i(m512Extracti32x8Epi32([64]byte(a), imm8))
 }
 
-func m512Extracti32x8Epi32(a [64]byte, imm8 int) [32]byte
+func m512Extracti32x8Epi32(a [64]byte, imm8 byte) [32]byte
 
 
 // M512MaskExtracti32x8Epi32: Extract 256 bits (composed of 8 packed 32-bit
@@ -5154,11 +5154,11 @@ func m512Extracti32x8Epi32(a [64]byte, imm8 int) [32]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtracti32x8Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i, imm8 int) x86.M256i {
+func M512MaskExtracti32x8Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M256i {
 	return x86.M256i(m512MaskExtracti32x8Epi32([32]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskExtracti32x8Epi32(src [32]byte, k uint8, a [64]byte, imm8 int) [32]byte
+func m512MaskExtracti32x8Epi32(src [32]byte, k uint8, a [64]byte, imm8 byte) [32]byte
 
 
 // M512MaskzExtracti32x8Epi32: Extract 256 bits (composed of 8 packed 32-bit
@@ -5185,11 +5185,11 @@ func m512MaskExtracti32x8Epi32(src [32]byte, k uint8, a [64]byte, imm8 int) [32]
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtracti32x8Epi32(k x86.Mmask8, a x86.M512i, imm8 int) x86.M256i {
+func M512MaskzExtracti32x8Epi32(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M256i {
 	return x86.M256i(m512MaskzExtracti32x8Epi32(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzExtracti32x8Epi32(k uint8, a [64]byte, imm8 int) [32]byte
+func m512MaskzExtracti32x8Epi32(k uint8, a [64]byte, imm8 byte) [32]byte
 
 
 // M256Extracti64x2Epi64: Extract 128 bits (composed of 2 packed 64-bit
@@ -5205,11 +5205,11 @@ func m512MaskzExtracti32x8Epi32(k uint8, a [64]byte, imm8 int) [32]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extracti64x2Epi64(a x86.M256i, imm8 int) x86.M128i {
+func M256Extracti64x2Epi64(a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256Extracti64x2Epi64([32]byte(a), imm8))
 }
 
-func m256Extracti64x2Epi64(a [32]byte, imm8 int) [16]byte
+func m256Extracti64x2Epi64(a [32]byte, imm8 byte) [16]byte
 
 
 // M256MaskExtracti64x2Epi64: Extract 128 bits (composed of 2 packed 64-bit
@@ -5236,11 +5236,11 @@ func m256Extracti64x2Epi64(a [32]byte, imm8 int) [16]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskExtracti64x2Epi64(src x86.M128i, k x86.Mmask8, a x86.M256i, imm8 int) x86.M128i {
+func M256MaskExtracti64x2Epi64(src x86.M128i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256MaskExtracti64x2Epi64([16]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskExtracti64x2Epi64(src [16]byte, k uint8, a [32]byte, imm8 int) [16]byte
+func m256MaskExtracti64x2Epi64(src [16]byte, k uint8, a [32]byte, imm8 byte) [16]byte
 
 
 // M256MaskzExtracti64x2Epi64: Extract 128 bits (composed of 2 packed 64-bit
@@ -5267,11 +5267,11 @@ func m256MaskExtracti64x2Epi64(src [16]byte, k uint8, a [32]byte, imm8 int) [16]
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzExtracti64x2Epi64(k x86.Mmask8, a x86.M256i, imm8 int) x86.M128i {
+func M256MaskzExtracti64x2Epi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M128i {
 	return x86.M128i(m256MaskzExtracti64x2Epi64(uint8(k), [32]byte(a), imm8))
 }
 
-func m256MaskzExtracti64x2Epi64(k uint8, a [32]byte, imm8 int) [16]byte
+func m256MaskzExtracti64x2Epi64(k uint8, a [32]byte, imm8 byte) [16]byte
 
 
 // M512Extracti64x2Epi64: Extract 128 bits (composed of 2 packed 64-bit
@@ -5289,11 +5289,11 @@ func m256MaskzExtracti64x2Epi64(k uint8, a [32]byte, imm8 int) [16]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extracti64x2Epi64(a x86.M512i, imm8 int) x86.M128i {
+func M512Extracti64x2Epi64(a x86.M512i, imm8 byte) x86.M128i {
 	return x86.M128i(m512Extracti64x2Epi64([64]byte(a), imm8))
 }
 
-func m512Extracti64x2Epi64(a [64]byte, imm8 int) [16]byte
+func m512Extracti64x2Epi64(a [64]byte, imm8 byte) [16]byte
 
 
 // M512MaskExtracti64x2Epi64: Extract 128 bits (composed of 2 packed 64-bit
@@ -5322,11 +5322,11 @@ func m512Extracti64x2Epi64(a [64]byte, imm8 int) [16]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtracti64x2Epi64(src x86.M128i, k x86.Mmask8, a x86.M512i, imm8 int) x86.M128i {
+func M512MaskExtracti64x2Epi64(src x86.M128i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M128i {
 	return x86.M128i(m512MaskExtracti64x2Epi64([16]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskExtracti64x2Epi64(src [16]byte, k uint8, a [64]byte, imm8 int) [16]byte
+func m512MaskExtracti64x2Epi64(src [16]byte, k uint8, a [64]byte, imm8 byte) [16]byte
 
 
 // M512MaskzExtracti64x2Epi64: Extract 128 bits (composed of 2 packed 64-bit
@@ -5355,11 +5355,11 @@ func m512MaskExtracti64x2Epi64(src [16]byte, k uint8, a [64]byte, imm8 int) [16]
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtracti64x2Epi64(k x86.Mmask8, a x86.M512i, imm8 int) x86.M128i {
+func M512MaskzExtracti64x2Epi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M128i {
 	return x86.M128i(m512MaskzExtracti64x2Epi64(uint8(k), [64]byte(a), imm8))
 }
 
-func m512MaskzExtracti64x2Epi64(k uint8, a [64]byte, imm8 int) [16]byte
+func m512MaskzExtracti64x2Epi64(k uint8, a [64]byte, imm8 byte) [16]byte
 
 
 // FpclassPdMask: Test packed double-precision (64-bit) floating-point elements
@@ -5385,11 +5385,11 @@ func m512MaskzExtracti64x2Epi64(k uint8, a [64]byte, imm8 int) [16]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func FpclassPdMask(a x86.M128d, imm8 int) x86.Mmask8 {
+func FpclassPdMask(a x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(fpclassPdMask([2]float64(a), imm8))
 }
 
-func fpclassPdMask(a [2]float64, imm8 int) uint8
+func fpclassPdMask(a [2]float64, imm8 byte) uint8
 
 
 // MaskFpclassPdMask: Test packed double-precision (64-bit) floating-point
@@ -5420,11 +5420,11 @@ func fpclassPdMask(a [2]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFpclassPdMask(k1 x86.Mmask8, a x86.M128d, imm8 int) x86.Mmask8 {
+func MaskFpclassPdMask(k1 x86.Mmask8, a x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskFpclassPdMask(uint8(k1), [2]float64(a), imm8))
 }
 
-func maskFpclassPdMask(k1 uint8, a [2]float64, imm8 int) uint8
+func maskFpclassPdMask(k1 uint8, a [2]float64, imm8 byte) uint8
 
 
 // M256FpclassPdMask: Test packed double-precision (64-bit) floating-point
@@ -5450,11 +5450,11 @@ func maskFpclassPdMask(k1 uint8, a [2]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256FpclassPdMask(a x86.M256d, imm8 int) x86.Mmask8 {
+func M256FpclassPdMask(a x86.M256d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256FpclassPdMask([4]float64(a), imm8))
 }
 
-func m256FpclassPdMask(a [4]float64, imm8 int) uint8
+func m256FpclassPdMask(a [4]float64, imm8 byte) uint8
 
 
 // M256MaskFpclassPdMask: Test packed double-precision (64-bit) floating-point
@@ -5485,11 +5485,11 @@ func m256FpclassPdMask(a [4]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskFpclassPdMask(k1 x86.Mmask8, a x86.M256d, imm8 int) x86.Mmask8 {
+func M256MaskFpclassPdMask(k1 x86.Mmask8, a x86.M256d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskFpclassPdMask(uint8(k1), [4]float64(a), imm8))
 }
 
-func m256MaskFpclassPdMask(k1 uint8, a [4]float64, imm8 int) uint8
+func m256MaskFpclassPdMask(k1 uint8, a [4]float64, imm8 byte) uint8
 
 
 // M512FpclassPdMask: Test packed double-precision (64-bit) floating-point
@@ -5515,11 +5515,11 @@ func m256MaskFpclassPdMask(k1 uint8, a [4]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FpclassPdMask(a x86.M512d, imm8 int) x86.Mmask8 {
+func M512FpclassPdMask(a x86.M512d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m512FpclassPdMask([8]float64(a), imm8))
 }
 
-func m512FpclassPdMask(a [8]float64, imm8 int) uint8
+func m512FpclassPdMask(a [8]float64, imm8 byte) uint8
 
 
 // M512MaskFpclassPdMask: Test packed double-precision (64-bit) floating-point
@@ -5550,11 +5550,11 @@ func m512FpclassPdMask(a [8]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFpclassPdMask(k1 x86.Mmask8, a x86.M512d, imm8 int) x86.Mmask8 {
+func M512MaskFpclassPdMask(k1 x86.Mmask8, a x86.M512d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m512MaskFpclassPdMask(uint8(k1), [8]float64(a), imm8))
 }
 
-func m512MaskFpclassPdMask(k1 uint8, a [8]float64, imm8 int) uint8
+func m512MaskFpclassPdMask(k1 uint8, a [8]float64, imm8 byte) uint8
 
 
 // FpclassPsMask: Test packed single-precision (32-bit) floating-point elements
@@ -5580,11 +5580,11 @@ func m512MaskFpclassPdMask(k1 uint8, a [8]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func FpclassPsMask(a x86.M128, imm8 int) x86.Mmask8 {
+func FpclassPsMask(a x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(fpclassPsMask([4]float32(a), imm8))
 }
 
-func fpclassPsMask(a [4]float32, imm8 int) uint8
+func fpclassPsMask(a [4]float32, imm8 byte) uint8
 
 
 // MaskFpclassPsMask: Test packed single-precision (32-bit) floating-point
@@ -5615,11 +5615,11 @@ func fpclassPsMask(a [4]float32, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFpclassPsMask(k1 x86.Mmask8, a x86.M128, imm8 int) x86.Mmask8 {
+func MaskFpclassPsMask(k1 x86.Mmask8, a x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskFpclassPsMask(uint8(k1), [4]float32(a), imm8))
 }
 
-func maskFpclassPsMask(k1 uint8, a [4]float32, imm8 int) uint8
+func maskFpclassPsMask(k1 uint8, a [4]float32, imm8 byte) uint8
 
 
 // M256FpclassPsMask: Test packed single-precision (32-bit) floating-point
@@ -5645,11 +5645,11 @@ func maskFpclassPsMask(k1 uint8, a [4]float32, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256FpclassPsMask(a x86.M256, imm8 int) x86.Mmask8 {
+func M256FpclassPsMask(a x86.M256, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256FpclassPsMask([8]float32(a), imm8))
 }
 
-func m256FpclassPsMask(a [8]float32, imm8 int) uint8
+func m256FpclassPsMask(a [8]float32, imm8 byte) uint8
 
 
 // M256MaskFpclassPsMask: Test packed single-precision (32-bit) floating-point
@@ -5680,11 +5680,11 @@ func m256FpclassPsMask(a [8]float32, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskFpclassPsMask(k1 x86.Mmask8, a x86.M256, imm8 int) x86.Mmask8 {
+func M256MaskFpclassPsMask(k1 x86.Mmask8, a x86.M256, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(m256MaskFpclassPsMask(uint8(k1), [8]float32(a), imm8))
 }
 
-func m256MaskFpclassPsMask(k1 uint8, a [8]float32, imm8 int) uint8
+func m256MaskFpclassPsMask(k1 uint8, a [8]float32, imm8 byte) uint8
 
 
 // M512FpclassPsMask: Test packed single-precision (32-bit) floating-point
@@ -5710,11 +5710,11 @@ func m256MaskFpclassPsMask(k1 uint8, a [8]float32, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FpclassPsMask(a x86.M512, imm8 int) x86.Mmask16 {
+func M512FpclassPsMask(a x86.M512, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(m512FpclassPsMask([16]float32(a), imm8))
 }
 
-func m512FpclassPsMask(a [16]float32, imm8 int) uint16
+func m512FpclassPsMask(a [16]float32, imm8 byte) uint16
 
 
 // M512MaskFpclassPsMask: Test packed single-precision (32-bit) floating-point
@@ -5745,11 +5745,11 @@ func m512FpclassPsMask(a [16]float32, imm8 int) uint16
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFpclassPsMask(k1 x86.Mmask16, a x86.M512, imm8 int) x86.Mmask16 {
+func M512MaskFpclassPsMask(k1 x86.Mmask16, a x86.M512, imm8 byte) x86.Mmask16 {
 	return x86.Mmask16(m512MaskFpclassPsMask(uint16(k1), [16]float32(a), imm8))
 }
 
-func m512MaskFpclassPsMask(k1 uint16, a [16]float32, imm8 int) uint16
+func m512MaskFpclassPsMask(k1 uint16, a [16]float32, imm8 byte) uint16
 
 
 // FpclassSdMask: Test the lower double-precision (64-bit) floating-point
@@ -5772,11 +5772,11 @@ func m512MaskFpclassPsMask(k1 uint16, a [16]float32, imm8 int) uint16
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func FpclassSdMask(a x86.M128d, imm8 int) x86.Mmask8 {
+func FpclassSdMask(a x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(fpclassSdMask([2]float64(a), imm8))
 }
 
-func fpclassSdMask(a [2]float64, imm8 int) uint8
+func fpclassSdMask(a [2]float64, imm8 byte) uint8
 
 
 // MaskFpclassSdMask: Test the lower double-precision (64-bit) floating-point
@@ -5804,11 +5804,11 @@ func fpclassSdMask(a [2]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFpclassSdMask(k1 x86.Mmask8, a x86.M128d, imm8 int) x86.Mmask8 {
+func MaskFpclassSdMask(k1 x86.Mmask8, a x86.M128d, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskFpclassSdMask(uint8(k1), [2]float64(a), imm8))
 }
 
-func maskFpclassSdMask(k1 uint8, a [2]float64, imm8 int) uint8
+func maskFpclassSdMask(k1 uint8, a [2]float64, imm8 byte) uint8
 
 
 // FpclassSsMask: Test the lower single-precision (32-bit) floating-point
@@ -5831,11 +5831,11 @@ func maskFpclassSdMask(k1 uint8, a [2]float64, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func FpclassSsMask(a x86.M128, imm8 int) x86.Mmask8 {
+func FpclassSsMask(a x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(fpclassSsMask([4]float32(a), imm8))
 }
 
-func fpclassSsMask(a [4]float32, imm8 int) uint8
+func fpclassSsMask(a [4]float32, imm8 byte) uint8
 
 
 // MaskFpclassSsMask: Test the lower single-precision (32-bit) floating-point
@@ -5863,11 +5863,11 @@ func fpclassSsMask(a [4]float32, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFpclassSsMask(k1 x86.Mmask8, a x86.M128, imm8 int) x86.Mmask8 {
+func MaskFpclassSsMask(k1 x86.Mmask8, a x86.M128, imm8 byte) x86.Mmask8 {
 	return x86.Mmask8(maskFpclassSsMask(uint8(k1), [4]float32(a), imm8))
 }
 
-func maskFpclassSsMask(k1 uint8, a [4]float32, imm8 int) uint8
+func maskFpclassSsMask(k1 uint8, a [4]float32, imm8 byte) uint8
 
 
 // M512Insertf32x8: Copy 'a' to 'dst', then insert 256 bits (composed of 8
@@ -5885,11 +5885,11 @@ func maskFpclassSsMask(k1 uint8, a [4]float32, imm8 int) uint8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Insertf32x8(a x86.M512, b x86.M256, imm8 int) x86.M512 {
+func M512Insertf32x8(a x86.M512, b x86.M256, imm8 byte) x86.M512 {
 	return x86.M512(m512Insertf32x8([16]float32(a), [8]float32(b), imm8))
 }
 
-func m512Insertf32x8(a [16]float32, b [8]float32, imm8 int) [16]float32
+func m512Insertf32x8(a [16]float32, b [8]float32, imm8 byte) [16]float32
 
 
 // M512MaskInsertf32x8: Copy 'a' to 'tmp', then insert 256 bits (composed of 8
@@ -5917,11 +5917,11 @@ func m512Insertf32x8(a [16]float32, b [8]float32, imm8 int) [16]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInsertf32x8(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M256, imm8 int) x86.M512 {
+func M512MaskInsertf32x8(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M256, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskInsertf32x8([16]float32(src), uint16(k), [16]float32(a), [8]float32(b), imm8))
 }
 
-func m512MaskInsertf32x8(src [16]float32, k uint16, a [16]float32, b [8]float32, imm8 int) [16]float32
+func m512MaskInsertf32x8(src [16]float32, k uint16, a [16]float32, b [8]float32, imm8 byte) [16]float32
 
 
 // M512MaskzInsertf32x8: Copy 'a' to 'tmp', then insert 256 bits (composed of 8
@@ -5949,11 +5949,11 @@ func m512MaskInsertf32x8(src [16]float32, k uint16, a [16]float32, b [8]float32,
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInsertf32x8(k x86.Mmask16, a x86.M512, b x86.M256, imm8 int) x86.M512 {
+func M512MaskzInsertf32x8(k x86.Mmask16, a x86.M512, b x86.M256, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzInsertf32x8(uint16(k), [16]float32(a), [8]float32(b), imm8))
 }
 
-func m512MaskzInsertf32x8(k uint16, a [16]float32, b [8]float32, imm8 int) [16]float32
+func m512MaskzInsertf32x8(k uint16, a [16]float32, b [8]float32, imm8 byte) [16]float32
 
 
 // M256Insertf64x2: Copy 'a' to 'dst', then insert 128 bits (composed of 2
@@ -5971,11 +5971,11 @@ func m512MaskzInsertf32x8(k uint16, a [16]float32, b [8]float32, imm8 int) [16]f
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Insertf64x2(a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
+func M256Insertf64x2(a x86.M256d, b x86.M128d, imm8 byte) x86.M256d {
 	return x86.M256d(m256Insertf64x2([4]float64(a), [2]float64(b), imm8))
 }
 
-func m256Insertf64x2(a [4]float64, b [2]float64, imm8 int) [4]float64
+func m256Insertf64x2(a [4]float64, b [2]float64, imm8 byte) [4]float64
 
 
 // M256MaskInsertf64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6003,11 +6003,11 @@ func m256Insertf64x2(a [4]float64, b [2]float64, imm8 int) [4]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskInsertf64x2(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
+func M256MaskInsertf64x2(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M128d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskInsertf64x2([4]float64(src), uint8(k), [4]float64(a), [2]float64(b), imm8))
 }
 
-func m256MaskInsertf64x2(src [4]float64, k uint8, a [4]float64, b [2]float64, imm8 int) [4]float64
+func m256MaskInsertf64x2(src [4]float64, k uint8, a [4]float64, b [2]float64, imm8 byte) [4]float64
 
 
 // M256MaskzInsertf64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6035,11 +6035,11 @@ func m256MaskInsertf64x2(src [4]float64, k uint8, a [4]float64, b [2]float64, im
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzInsertf64x2(k x86.Mmask8, a x86.M256d, b x86.M128d, imm8 int) x86.M256d {
+func M256MaskzInsertf64x2(k x86.Mmask8, a x86.M256d, b x86.M128d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzInsertf64x2(uint8(k), [4]float64(a), [2]float64(b), imm8))
 }
 
-func m256MaskzInsertf64x2(k uint8, a [4]float64, b [2]float64, imm8 int) [4]float64
+func m256MaskzInsertf64x2(k uint8, a [4]float64, b [2]float64, imm8 byte) [4]float64
 
 
 // M512Insertf64x2: Copy 'a' to 'dst', then insert 128 bits (composed of 2
@@ -6059,11 +6059,11 @@ func m256MaskzInsertf64x2(k uint8, a [4]float64, b [2]float64, imm8 int) [4]floa
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Insertf64x2(a x86.M512d, b x86.M128d, imm8 int) x86.M512d {
+func M512Insertf64x2(a x86.M512d, b x86.M128d, imm8 byte) x86.M512d {
 	return x86.M512d(m512Insertf64x2([8]float64(a), [2]float64(b), imm8))
 }
 
-func m512Insertf64x2(a [8]float64, b [2]float64, imm8 int) [8]float64
+func m512Insertf64x2(a [8]float64, b [2]float64, imm8 byte) [8]float64
 
 
 // M512MaskInsertf64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6093,11 +6093,11 @@ func m512Insertf64x2(a [8]float64, b [2]float64, imm8 int) [8]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInsertf64x2(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M128d, imm8 int) x86.M512d {
+func M512MaskInsertf64x2(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M128d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskInsertf64x2([8]float64(src), uint8(k), [8]float64(a), [2]float64(b), imm8))
 }
 
-func m512MaskInsertf64x2(src [8]float64, k uint8, a [8]float64, b [2]float64, imm8 int) [8]float64
+func m512MaskInsertf64x2(src [8]float64, k uint8, a [8]float64, b [2]float64, imm8 byte) [8]float64
 
 
 // M512MaskzInsertf64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6127,11 +6127,11 @@ func m512MaskInsertf64x2(src [8]float64, k uint8, a [8]float64, b [2]float64, im
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInsertf64x2(k x86.Mmask8, a x86.M512d, b x86.M128d, imm8 int) x86.M512d {
+func M512MaskzInsertf64x2(k x86.Mmask8, a x86.M512d, b x86.M128d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzInsertf64x2(uint8(k), [8]float64(a), [2]float64(b), imm8))
 }
 
-func m512MaskzInsertf64x2(k uint8, a [8]float64, b [2]float64, imm8 int) [8]float64
+func m512MaskzInsertf64x2(k uint8, a [8]float64, b [2]float64, imm8 byte) [8]float64
 
 
 // M512Inserti32x8: Copy 'a' to 'dst', then insert 256 bits (composed of 8
@@ -6149,11 +6149,11 @@ func m512MaskzInsertf64x2(k uint8, a [8]float64, b [2]float64, imm8 int) [8]floa
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Inserti32x8(a x86.M512i, b x86.M256i, imm8 int) x86.M512i {
+func M512Inserti32x8(a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
 	return x86.M512i(m512Inserti32x8([64]byte(a), [32]byte(b), imm8))
 }
 
-func m512Inserti32x8(a [64]byte, b [32]byte, imm8 int) [64]byte
+func m512Inserti32x8(a [64]byte, b [32]byte, imm8 byte) [64]byte
 
 
 // M512MaskInserti32x8: Copy 'a' to 'tmp', then insert 256 bits (composed of 8
@@ -6180,11 +6180,11 @@ func m512Inserti32x8(a [64]byte, b [32]byte, imm8 int) [64]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInserti32x8(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M256i, imm8 int) x86.M512i {
+func M512MaskInserti32x8(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskInserti32x8([64]byte(src), uint16(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func m512MaskInserti32x8(src [64]byte, k uint16, a [64]byte, b [32]byte, imm8 int) [64]byte
+func m512MaskInserti32x8(src [64]byte, k uint16, a [64]byte, b [32]byte, imm8 byte) [64]byte
 
 
 // M512MaskzInserti32x8: Copy 'a' to 'tmp', then insert 256 bits (composed of 8
@@ -6211,11 +6211,11 @@ func m512MaskInserti32x8(src [64]byte, k uint16, a [64]byte, b [32]byte, imm8 in
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInserti32x8(k x86.Mmask16, a x86.M512i, b x86.M256i, imm8 int) x86.M512i {
+func M512MaskzInserti32x8(k x86.Mmask16, a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzInserti32x8(uint16(k), [64]byte(a), [32]byte(b), imm8))
 }
 
-func m512MaskzInserti32x8(k uint16, a [64]byte, b [32]byte, imm8 int) [64]byte
+func m512MaskzInserti32x8(k uint16, a [64]byte, b [32]byte, imm8 byte) [64]byte
 
 
 // M256Inserti64x2: Copy 'a' to 'dst', then insert 128 bits (composed of 2
@@ -6233,11 +6233,11 @@ func m512MaskzInserti32x8(k uint16, a [64]byte, b [32]byte, imm8 int) [64]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Inserti64x2(a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256Inserti64x2(a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256Inserti64x2([32]byte(a), [16]byte(b), imm8))
 }
 
-func m256Inserti64x2(a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256Inserti64x2(a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M256MaskInserti64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6264,11 +6264,11 @@ func m256Inserti64x2(a [32]byte, b [16]byte, imm8 int) [32]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskInserti64x2(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256MaskInserti64x2(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskInserti64x2([32]byte(src), uint8(k), [32]byte(a), [16]byte(b), imm8))
 }
 
-func m256MaskInserti64x2(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256MaskInserti64x2(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M256MaskzInserti64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6295,11 +6295,11 @@ func m256MaskInserti64x2(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 int
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzInserti64x2(k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 int) x86.M256i {
+func M256MaskzInserti64x2(k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
 	return x86.M256i(m256MaskzInserti64x2(uint8(k), [32]byte(a), [16]byte(b), imm8))
 }
 
-func m256MaskzInserti64x2(k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
+func m256MaskzInserti64x2(k uint8, a [32]byte, b [16]byte, imm8 byte) [32]byte
 
 
 // M512Inserti64x2: Copy 'a' to 'dst', then insert 128 bits (composed of 2
@@ -6319,11 +6319,11 @@ func m256MaskzInserti64x2(k uint8, a [32]byte, b [16]byte, imm8 int) [32]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Inserti64x2(a x86.M512i, b x86.M128i, imm8 int) x86.M512i {
+func M512Inserti64x2(a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
 	return x86.M512i(m512Inserti64x2([64]byte(a), [16]byte(b), imm8))
 }
 
-func m512Inserti64x2(a [64]byte, b [16]byte, imm8 int) [64]byte
+func m512Inserti64x2(a [64]byte, b [16]byte, imm8 byte) [64]byte
 
 
 // M512MaskInserti64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6352,11 +6352,11 @@ func m512Inserti64x2(a [64]byte, b [16]byte, imm8 int) [64]byte
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInserti64x2(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M128i, imm8 int) x86.M512i {
+func M512MaskInserti64x2(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskInserti64x2([64]byte(src), uint8(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func m512MaskInserti64x2(src [64]byte, k uint8, a [64]byte, b [16]byte, imm8 int) [64]byte
+func m512MaskInserti64x2(src [64]byte, k uint8, a [64]byte, b [16]byte, imm8 byte) [64]byte
 
 
 // M512MaskzInserti64x2: Copy 'a' to 'tmp', then insert 128 bits (composed of 2
@@ -6385,11 +6385,11 @@ func m512MaskInserti64x2(src [64]byte, k uint8, a [64]byte, b [16]byte, imm8 int
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInserti64x2(k x86.Mmask8, a x86.M512i, b x86.M128i, imm8 int) x86.M512i {
+func M512MaskzInserti64x2(k x86.Mmask8, a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
 	return x86.M512i(m512MaskzInserti64x2(uint8(k), [64]byte(a), [16]byte(b), imm8))
 }
 
-func m512MaskzInserti64x2(k uint8, a [64]byte, b [16]byte, imm8 int) [64]byte
+func m512MaskzInserti64x2(k uint8, a [64]byte, b [16]byte, imm8 byte) [64]byte
 
 
 // Movepi32Mask: Set each bit of mask register 'k' based on the most
@@ -7233,11 +7233,11 @@ func m512OrPs(a [16]float32, b [16]float32) [16]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRangePd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskRangePd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskRangePd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskRangePd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskRangePd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskzRangePd: Calculate the max, min, absolute max, or absolute min
@@ -7283,11 +7283,11 @@ func maskRangePd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int) 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRangePd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskzRangePd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzRangePd(uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskzRangePd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskzRangePd(k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // RangePd: Calculate the max, min, absolute max, or absolute min (depending on
@@ -7327,11 +7327,11 @@ func maskzRangePd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func RangePd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func RangePd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(rangePd([2]float64(a), [2]float64(b), imm8))
 }
 
-func rangePd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func rangePd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // M256MaskRangePd: Calculate the max, min, absolute max, or absolute min
@@ -7377,11 +7377,11 @@ func rangePd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRangePd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256MaskRangePd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskRangePd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
-func m256MaskRangePd(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256MaskRangePd(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256MaskzRangePd: Calculate the max, min, absolute max, or absolute min
@@ -7427,11 +7427,11 @@ func m256MaskRangePd(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8 i
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRangePd(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256MaskzRangePd(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzRangePd(uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
-func m256MaskzRangePd(k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256MaskzRangePd(k uint8, a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M256RangePd: Calculate the max, min, absolute max, or absolute min
@@ -7471,11 +7471,11 @@ func m256MaskzRangePd(k uint8, a [4]float64, b [4]float64, imm8 int) [4]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RangePd(a x86.M256d, b x86.M256d, imm8 int) x86.M256d {
+func M256RangePd(a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256RangePd([4]float64(a), [4]float64(b), imm8))
 }
 
-func m256RangePd(a [4]float64, b [4]float64, imm8 int) [4]float64
+func m256RangePd(a [4]float64, b [4]float64, imm8 byte) [4]float64
 
 
 // M512MaskRangePd: Calculate the max, min, absolute max, or absolute min
@@ -7521,11 +7521,11 @@ func m256RangePd(a [4]float64, b [4]float64, imm8 int) [4]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRangePd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512MaskRangePd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskRangePd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
-func m512MaskRangePd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512MaskRangePd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // M512MaskzRangePd: Calculate the max, min, absolute max, or absolute min
@@ -7571,11 +7571,11 @@ func m512MaskRangePd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 i
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRangePd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512MaskzRangePd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzRangePd(uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
-func m512MaskzRangePd(k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512MaskzRangePd(k uint8, a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // M512RangePd: Calculate the max, min, absolute max, or absolute min
@@ -7615,11 +7615,11 @@ func m512MaskzRangePd(k uint8, a [8]float64, b [8]float64, imm8 int) [8]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RangePd(a x86.M512d, b x86.M512d, imm8 int) x86.M512d {
+func M512RangePd(a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512RangePd([8]float64(a), [8]float64(b), imm8))
 }
 
-func m512RangePd(a [8]float64, b [8]float64, imm8 int) [8]float64
+func m512RangePd(a [8]float64, b [8]float64, imm8 byte) [8]float64
 
 
 // MaskRangePs: Calculate the max, min, absolute max, or absolute min
@@ -7665,11 +7665,11 @@ func m512RangePd(a [8]float64, b [8]float64, imm8 int) [8]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRangePs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskRangePs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskRangePs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskRangePs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskRangePs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskzRangePs: Calculate the max, min, absolute max, or absolute min
@@ -7715,11 +7715,11 @@ func maskRangePs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int) 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRangePs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskzRangePs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzRangePs(uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskzRangePs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskzRangePs(k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // RangePs: Calculate the max, min, absolute max, or absolute min (depending on
@@ -7759,11 +7759,11 @@ func maskzRangePs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func RangePs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func RangePs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(rangePs([4]float32(a), [4]float32(b), imm8))
 }
 
-func rangePs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func rangePs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // M256MaskRangePs: Calculate the max, min, absolute max, or absolute min
@@ -7809,11 +7809,11 @@ func rangePs(a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRangePs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256MaskRangePs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskRangePs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
-func m256MaskRangePs(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256MaskRangePs(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256MaskzRangePs: Calculate the max, min, absolute max, or absolute min
@@ -7859,11 +7859,11 @@ func m256MaskRangePs(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8 i
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRangePs(k x86.Mmask8, a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256MaskzRangePs(k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzRangePs(uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
-func m256MaskzRangePs(k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256MaskzRangePs(k uint8, a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M256RangePs: Calculate the max, min, absolute max, or absolute min
@@ -7903,11 +7903,11 @@ func m256MaskzRangePs(k uint8, a [8]float32, b [8]float32, imm8 int) [8]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RangePs(a x86.M256, b x86.M256, imm8 int) x86.M256 {
+func M256RangePs(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256RangePs([8]float32(a), [8]float32(b), imm8))
 }
 
-func m256RangePs(a [8]float32, b [8]float32, imm8 int) [8]float32
+func m256RangePs(a [8]float32, b [8]float32, imm8 byte) [8]float32
 
 
 // M512MaskRangePs: Calculate the max, min, absolute max, or absolute min
@@ -7953,11 +7953,11 @@ func m256RangePs(a [8]float32, b [8]float32, imm8 int) [8]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRangePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512MaskRangePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskRangePs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
-func m512MaskRangePs(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512MaskRangePs(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskzRangePs: Calculate the max, min, absolute max, or absolute min
@@ -8003,11 +8003,11 @@ func m512MaskRangePs(src [16]float32, k uint16, a [16]float32, b [16]float32, im
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRangePs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512MaskzRangePs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzRangePs(uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
-func m512MaskzRangePs(k uint16, a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512MaskzRangePs(k uint16, a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512RangePs: Calculate the max, min, absolute max, or absolute min
@@ -8047,11 +8047,11 @@ func m512MaskzRangePs(k uint16, a [16]float32, b [16]float32, imm8 int) [16]floa
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RangePs(a x86.M512, b x86.M512, imm8 int) x86.M512 {
+func M512RangePs(a x86.M512, b x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512RangePs([16]float32(a), [16]float32(b), imm8))
 }
 
-func m512RangePs(a [16]float32, b [16]float32, imm8 int) [16]float32
+func m512RangePs(a [16]float32, b [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskRangeRoundPd: Calculate the max, min, absolute max, or absolute min
@@ -8104,11 +8104,11 @@ func m512RangePs(a [16]float32, b [16]float32, imm8 int) [16]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRangeRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512MaskRangeRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskRangeRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), imm8, rounding))
 }
 
-func m512MaskRangeRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 int, rounding int) [8]float64
+func m512MaskRangeRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskzRangeRoundPd: Calculate the max, min, absolute max, or absolute min
@@ -8161,11 +8161,11 @@ func m512MaskRangeRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, i
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRangeRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512MaskzRangeRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskzRangeRoundPd(uint8(k), [8]float64(a), [8]float64(b), imm8, rounding))
 }
 
-func m512MaskzRangeRoundPd(k uint8, a [8]float64, b [8]float64, imm8 int, rounding int) [8]float64
+func m512MaskzRangeRoundPd(k uint8, a [8]float64, b [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512RangeRoundPd: Calculate the max, min, absolute max, or absolute min
@@ -8212,11 +8212,11 @@ func m512MaskzRangeRoundPd(k uint8, a [8]float64, b [8]float64, imm8 int, roundi
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RangeRoundPd(a x86.M512d, b x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512RangeRoundPd(a x86.M512d, b x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512RangeRoundPd([8]float64(a), [8]float64(b), imm8, rounding))
 }
 
-func m512RangeRoundPd(a [8]float64, b [8]float64, imm8 int, rounding int) [8]float64
+func m512RangeRoundPd(a [8]float64, b [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskRangeRoundPs: Calculate the max, min, absolute max, or absolute min
@@ -8269,11 +8269,11 @@ func m512RangeRoundPd(a [8]float64, b [8]float64, imm8 int, rounding int) [8]flo
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRangeRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 int, rounding int) x86.M512 {
+func M512MaskRangeRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskRangeRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), imm8, rounding))
 }
 
-func m512MaskRangeRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 int, rounding int) [16]float32
+func m512MaskRangeRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // M512MaskzRangeRoundPs: Calculate the max, min, absolute max, or absolute min
@@ -8326,11 +8326,11 @@ func m512MaskRangeRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float3
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRangeRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 int, rounding int) x86.M512 {
+func M512MaskzRangeRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskzRangeRoundPs(uint16(k), [16]float32(a), [16]float32(b), imm8, rounding))
 }
 
-func m512MaskzRangeRoundPs(k uint16, a [16]float32, b [16]float32, imm8 int, rounding int) [16]float32
+func m512MaskzRangeRoundPs(k uint16, a [16]float32, b [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // M512RangeRoundPs: Calculate the max, min, absolute max, or absolute min
@@ -8377,11 +8377,11 @@ func m512MaskzRangeRoundPs(k uint16, a [16]float32, b [16]float32, imm8 int, rou
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RangeRoundPs(a x86.M512, b x86.M512, imm8 int, rounding int) x86.M512 {
+func M512RangeRoundPs(a x86.M512, b x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512RangeRoundPs([16]float32(a), [16]float32(b), imm8, rounding))
 }
 
-func m512RangeRoundPs(a [16]float32, b [16]float32, imm8 int, rounding int) [16]float32
+func m512RangeRoundPs(a [16]float32, b [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // MaskRangeRoundSd: Calculate the max, min, absolute max, or absolute min
@@ -8433,11 +8433,11 @@ func m512RangeRoundPs(a [16]float32, b [16]float32, imm8 int, rounding int) [16]
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRangeRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func MaskRangeRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskRangeRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func maskRangeRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func maskRangeRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // MaskzRangeRoundSd: Calculate the max, min, absolute max, or absolute min
@@ -8488,11 +8488,11 @@ func maskRangeRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRangeRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func MaskzRangeRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskzRangeRoundSd(uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func maskzRangeRoundSd(k uint8, a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func maskzRangeRoundSd(k uint8, a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // RangeRoundSd: Calculate the max, min, absolute max, or absolute min
@@ -8538,11 +8538,11 @@ func maskzRangeRoundSd(k uint8, a [2]float64, b [2]float64, imm8 int, rounding i
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func RangeRoundSd(a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func RangeRoundSd(a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(rangeRoundSd([2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func rangeRoundSd(a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func rangeRoundSd(a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // MaskRangeRoundSs: Calculate the max, min, absolute max, or absolute min
@@ -8594,11 +8594,11 @@ func rangeRoundSd(a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRangeRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func MaskRangeRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskRangeRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func maskRangeRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func maskRangeRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // MaskzRangeRoundSs: Calculate the max, min, absolute max, or absolute min
@@ -8650,11 +8650,11 @@ func maskRangeRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRangeRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func MaskzRangeRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskzRangeRoundSs(uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func maskzRangeRoundSs(k uint8, a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func maskzRangeRoundSs(k uint8, a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // RangeRoundSs: Calculate the max, min, absolute max, or absolute min
@@ -8701,11 +8701,11 @@ func maskzRangeRoundSs(k uint8, a [4]float32, b [4]float32, imm8 int, rounding i
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func RangeRoundSs(a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func RangeRoundSs(a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(rangeRoundSs([4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func rangeRoundSs(a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func rangeRoundSs(a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // MaskRangeSd: Calculate the max, min, absolute max, or absolute min
@@ -8750,11 +8750,11 @@ func rangeRoundSs(a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRangeSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskRangeSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskRangeSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskRangeSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskRangeSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskzRangeSd: Calculate the max, min, absolute max, or absolute min
@@ -8798,11 +8798,11 @@ func maskRangeSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int) 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRangeSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskzRangeSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzRangeSd(uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskzRangeSd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskzRangeSd(k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskRangeSs: Calculate the max, min, absolute max, or absolute min
@@ -8847,11 +8847,11 @@ func maskzRangeSd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRangeSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskRangeSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskRangeSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskRangeSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskRangeSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskzRangeSs: Calculate the max, min, absolute max, or absolute min
@@ -8896,11 +8896,11 @@ func maskRangeSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int) 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRangeSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskzRangeSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzRangeSs(uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskzRangeSs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskzRangeSs(k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskReducePd: Extract the reduced argument of packed double-precision
@@ -8933,11 +8933,11 @@ func maskzRangeSs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskReducePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 int) x86.M128d {
+func MaskReducePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskReducePd([2]float64(src), uint8(k), [2]float64(a), imm8))
 }
 
-func maskReducePd(src [2]float64, k uint8, a [2]float64, imm8 int) [2]float64
+func maskReducePd(src [2]float64, k uint8, a [2]float64, imm8 byte) [2]float64
 
 
 // MaskzReducePd: Extract the reduced argument of packed double-precision
@@ -8970,11 +8970,11 @@ func maskReducePd(src [2]float64, k uint8, a [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzReducePd(k x86.Mmask8, a x86.M128d, imm8 int) x86.M128d {
+func MaskzReducePd(k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzReducePd(uint8(k), [2]float64(a), imm8))
 }
 
-func maskzReducePd(k uint8, a [2]float64, imm8 int) [2]float64
+func maskzReducePd(k uint8, a [2]float64, imm8 byte) [2]float64
 
 
 // ReducePd: Extract the reduced argument of packed double-precision (64-bit)
@@ -9002,11 +9002,11 @@ func maskzReducePd(k uint8, a [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func ReducePd(a x86.M128d, imm8 int) x86.M128d {
+func ReducePd(a x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(reducePd([2]float64(a), imm8))
 }
 
-func reducePd(a [2]float64, imm8 int) [2]float64
+func reducePd(a [2]float64, imm8 byte) [2]float64
 
 
 // M256MaskReducePd: Extract the reduced argument of packed double-precision
@@ -9039,11 +9039,11 @@ func reducePd(a [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskReducePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskReducePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskReducePd([4]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskReducePd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskReducePd(src [4]float64, k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M256MaskzReducePd: Extract the reduced argument of packed double-precision
@@ -9076,11 +9076,11 @@ func m256MaskReducePd(src [4]float64, k uint8, a [4]float64, imm8 int) [4]float6
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzReducePd(k x86.Mmask8, a x86.M256d, imm8 int) x86.M256d {
+func M256MaskzReducePd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256MaskzReducePd(uint8(k), [4]float64(a), imm8))
 }
 
-func m256MaskzReducePd(k uint8, a [4]float64, imm8 int) [4]float64
+func m256MaskzReducePd(k uint8, a [4]float64, imm8 byte) [4]float64
 
 
 // M256ReducePd: Extract the reduced argument of packed double-precision
@@ -9108,11 +9108,11 @@ func m256MaskzReducePd(k uint8, a [4]float64, imm8 int) [4]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ReducePd(a x86.M256d, imm8 int) x86.M256d {
+func M256ReducePd(a x86.M256d, imm8 byte) x86.M256d {
 	return x86.M256d(m256ReducePd([4]float64(a), imm8))
 }
 
-func m256ReducePd(a [4]float64, imm8 int) [4]float64
+func m256ReducePd(a [4]float64, imm8 byte) [4]float64
 
 
 // M512MaskReducePd: Extract the reduced argument of packed double-precision
@@ -9145,11 +9145,11 @@ func m256ReducePd(a [4]float64, imm8 int) [4]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskReducePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskReducePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskReducePd([8]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskReducePd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskReducePd(src [8]float64, k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512MaskzReducePd: Extract the reduced argument of packed double-precision
@@ -9182,11 +9182,11 @@ func m512MaskReducePd(src [8]float64, k uint8, a [8]float64, imm8 int) [8]float6
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzReducePd(k x86.Mmask8, a x86.M512d, imm8 int) x86.M512d {
+func M512MaskzReducePd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512MaskzReducePd(uint8(k), [8]float64(a), imm8))
 }
 
-func m512MaskzReducePd(k uint8, a [8]float64, imm8 int) [8]float64
+func m512MaskzReducePd(k uint8, a [8]float64, imm8 byte) [8]float64
 
 
 // M512ReducePd: Extract the reduced argument of packed double-precision
@@ -9214,11 +9214,11 @@ func m512MaskzReducePd(k uint8, a [8]float64, imm8 int) [8]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ReducePd(a x86.M512d, imm8 int) x86.M512d {
+func M512ReducePd(a x86.M512d, imm8 byte) x86.M512d {
 	return x86.M512d(m512ReducePd([8]float64(a), imm8))
 }
 
-func m512ReducePd(a [8]float64, imm8 int) [8]float64
+func m512ReducePd(a [8]float64, imm8 byte) [8]float64
 
 
 // MaskReducePs: Extract the reduced argument of packed single-precision
@@ -9254,11 +9254,11 @@ func m512ReducePd(a [8]float64, imm8 int) [8]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskReducePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 int) x86.M128 {
+func MaskReducePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskReducePs([4]float32(src), uint8(k), [4]float32(a), imm8))
 }
 
-func maskReducePs(src [4]float32, k uint8, a [4]float32, imm8 int) [4]float32
+func maskReducePs(src [4]float32, k uint8, a [4]float32, imm8 byte) [4]float32
 
 
 // MaskzReducePs: Extract the reduced argument of packed single-precision
@@ -9294,11 +9294,11 @@ func maskReducePs(src [4]float32, k uint8, a [4]float32, imm8 int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzReducePs(k x86.Mmask8, a x86.M128, imm8 int) x86.M128 {
+func MaskzReducePs(k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzReducePs(uint8(k), [4]float32(a), imm8))
 }
 
-func maskzReducePs(k uint8, a [4]float32, imm8 int) [4]float32
+func maskzReducePs(k uint8, a [4]float32, imm8 byte) [4]float32
 
 
 // ReducePs: Extract the reduced argument of packed single-precision (32-bit)
@@ -9329,11 +9329,11 @@ func maskzReducePs(k uint8, a [4]float32, imm8 int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func ReducePs(a x86.M128, imm8 int) x86.M128 {
+func ReducePs(a x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(reducePs([4]float32(a), imm8))
 }
 
-func reducePs(a [4]float32, imm8 int) [4]float32
+func reducePs(a [4]float32, imm8 byte) [4]float32
 
 
 // M256MaskReducePs: Extract the reduced argument of packed single-precision
@@ -9369,11 +9369,11 @@ func reducePs(a [4]float32, imm8 int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskReducePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 int) x86.M256 {
+func M256MaskReducePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskReducePs([8]float32(src), uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskReducePs(src [8]float32, k uint8, a [8]float32, imm8 int) [8]float32
+func m256MaskReducePs(src [8]float32, k uint8, a [8]float32, imm8 byte) [8]float32
 
 
 // M256MaskzReducePs: Extract the reduced argument of packed single-precision
@@ -9409,11 +9409,11 @@ func m256MaskReducePs(src [8]float32, k uint8, a [8]float32, imm8 int) [8]float3
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzReducePs(k x86.Mmask8, a x86.M256, imm8 int) x86.M256 {
+func M256MaskzReducePs(k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256MaskzReducePs(uint8(k), [8]float32(a), imm8))
 }
 
-func m256MaskzReducePs(k uint8, a [8]float32, imm8 int) [8]float32
+func m256MaskzReducePs(k uint8, a [8]float32, imm8 byte) [8]float32
 
 
 // M256ReducePs: Extract the reduced argument of packed single-precision
@@ -9444,11 +9444,11 @@ func m256MaskzReducePs(k uint8, a [8]float32, imm8 int) [8]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ReducePs(a x86.M256, imm8 int) x86.M256 {
+func M256ReducePs(a x86.M256, imm8 byte) x86.M256 {
 	return x86.M256(m256ReducePs([8]float32(a), imm8))
 }
 
-func m256ReducePs(a [8]float32, imm8 int) [8]float32
+func m256ReducePs(a [8]float32, imm8 byte) [8]float32
 
 
 // M512MaskReducePs: Extract the reduced argument of packed single-precision
@@ -9484,11 +9484,11 @@ func m256ReducePs(a [8]float32, imm8 int) [8]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskReducePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 int) x86.M512 {
+func M512MaskReducePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskReducePs([16]float32(src), uint16(k), [16]float32(a), imm8))
 }
 
-func m512MaskReducePs(src [16]float32, k uint16, a [16]float32, imm8 int) [16]float32
+func m512MaskReducePs(src [16]float32, k uint16, a [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskzReducePs: Extract the reduced argument of packed single-precision
@@ -9524,11 +9524,11 @@ func m512MaskReducePs(src [16]float32, k uint16, a [16]float32, imm8 int) [16]fl
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzReducePs(k x86.Mmask16, a x86.M512, imm8 int) x86.M512 {
+func M512MaskzReducePs(k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512MaskzReducePs(uint16(k), [16]float32(a), imm8))
 }
 
-func m512MaskzReducePs(k uint16, a [16]float32, imm8 int) [16]float32
+func m512MaskzReducePs(k uint16, a [16]float32, imm8 byte) [16]float32
 
 
 // M512ReducePs: Extract the reduced argument of packed single-precision
@@ -9559,11 +9559,11 @@ func m512MaskzReducePs(k uint16, a [16]float32, imm8 int) [16]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ReducePs(a x86.M512, imm8 int) x86.M512 {
+func M512ReducePs(a x86.M512, imm8 byte) x86.M512 {
 	return x86.M512(m512ReducePs([16]float32(a), imm8))
 }
 
-func m512ReducePs(a [16]float32, imm8 int) [16]float32
+func m512ReducePs(a [16]float32, imm8 byte) [16]float32
 
 
 // M512MaskReduceRoundPd: Extract the reduced argument of packed
@@ -9603,11 +9603,11 @@ func m512ReducePs(a [16]float32, imm8 int) [16]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskReduceRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512MaskReduceRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskReduceRoundPd([8]float64(src), uint8(k), [8]float64(a), imm8, rounding))
 }
 
-func m512MaskReduceRoundPd(src [8]float64, k uint8, a [8]float64, imm8 int, rounding int) [8]float64
+func m512MaskReduceRoundPd(src [8]float64, k uint8, a [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskzReduceRoundPd: Extract the reduced argument of packed
@@ -9647,11 +9647,11 @@ func m512MaskReduceRoundPd(src [8]float64, k uint8, a [8]float64, imm8 int, roun
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzReduceRoundPd(k x86.Mmask8, a x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512MaskzReduceRoundPd(k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512MaskzReduceRoundPd(uint8(k), [8]float64(a), imm8, rounding))
 }
 
-func m512MaskzReduceRoundPd(k uint8, a [8]float64, imm8 int, rounding int) [8]float64
+func m512MaskzReduceRoundPd(k uint8, a [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512ReduceRoundPd: Extract the reduced argument of packed double-precision
@@ -9686,11 +9686,11 @@ func m512MaskzReduceRoundPd(k uint8, a [8]float64, imm8 int, rounding int) [8]fl
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ReduceRoundPd(a x86.M512d, imm8 int, rounding int) x86.M512d {
+func M512ReduceRoundPd(a x86.M512d, imm8 byte, rounding int) x86.M512d {
 	return x86.M512d(m512ReduceRoundPd([8]float64(a), imm8, rounding))
 }
 
-func m512ReduceRoundPd(a [8]float64, imm8 int, rounding int) [8]float64
+func m512ReduceRoundPd(a [8]float64, imm8 byte, rounding int) [8]float64
 
 
 // M512MaskReduceRoundPs: Extract the reduced argument of packed
@@ -9733,11 +9733,11 @@ func m512ReduceRoundPd(a [8]float64, imm8 int, rounding int) [8]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskReduceRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 int, rounding int) x86.M512 {
+func M512MaskReduceRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskReduceRoundPs([16]float32(src), uint16(k), [16]float32(a), imm8, rounding))
 }
 
-func m512MaskReduceRoundPs(src [16]float32, k uint16, a [16]float32, imm8 int, rounding int) [16]float32
+func m512MaskReduceRoundPs(src [16]float32, k uint16, a [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // M512MaskzReduceRoundPs: Extract the reduced argument of packed
@@ -9780,11 +9780,11 @@ func m512MaskReduceRoundPs(src [16]float32, k uint16, a [16]float32, imm8 int, r
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzReduceRoundPs(k x86.Mmask16, a x86.M512, imm8 int, rounding int) x86.M512 {
+func M512MaskzReduceRoundPs(k x86.Mmask16, a x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512MaskzReduceRoundPs(uint16(k), [16]float32(a), imm8, rounding))
 }
 
-func m512MaskzReduceRoundPs(k uint16, a [16]float32, imm8 int, rounding int) [16]float32
+func m512MaskzReduceRoundPs(k uint16, a [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // M512ReduceRoundPs: Extract the reduced argument of packed single-precision
@@ -9822,11 +9822,11 @@ func m512MaskzReduceRoundPs(k uint16, a [16]float32, imm8 int, rounding int) [16
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ReduceRoundPs(a x86.M512, imm8 int, rounding int) x86.M512 {
+func M512ReduceRoundPs(a x86.M512, imm8 byte, rounding int) x86.M512 {
 	return x86.M512(m512ReduceRoundPs([16]float32(a), imm8, rounding))
 }
 
-func m512ReduceRoundPs(a [16]float32, imm8 int, rounding int) [16]float32
+func m512ReduceRoundPs(a [16]float32, imm8 byte, rounding int) [16]float32
 
 
 // MaskReduceRoundSd: Extract the reduced argument of the lower
@@ -9865,11 +9865,11 @@ func m512ReduceRoundPs(a [16]float32, imm8 int, rounding int) [16]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskReduceRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func MaskReduceRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskReduceRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func maskReduceRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func maskReduceRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // MaskzReduceRoundSd: Extract the reduced argument of the lower
@@ -9908,11 +9908,11 @@ func maskReduceRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzReduceRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func MaskzReduceRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(maskzReduceRoundSd(uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func maskzReduceRoundSd(k uint8, a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func maskzReduceRoundSd(k uint8, a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // ReduceRoundSd: Extract the reduced argument of the lower double-precision
@@ -9946,11 +9946,11 @@ func maskzReduceRoundSd(k uint8, a [2]float64, b [2]float64, imm8 int, rounding 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func ReduceRoundSd(a x86.M128d, b x86.M128d, imm8 int, rounding int) x86.M128d {
+func ReduceRoundSd(a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
 	return x86.M128d(reduceRoundSd([2]float64(a), [2]float64(b), imm8, rounding))
 }
 
-func reduceRoundSd(a [2]float64, b [2]float64, imm8 int, rounding int) [2]float64
+func reduceRoundSd(a [2]float64, b [2]float64, imm8 byte, rounding int) [2]float64
 
 
 // MaskReduceRoundSs: Extract the reduced argument of the lower
@@ -9994,11 +9994,11 @@ func reduceRoundSd(a [2]float64, b [2]float64, imm8 int, rounding int) [2]float6
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskReduceRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func MaskReduceRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskReduceRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func maskReduceRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func maskReduceRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // MaskzReduceRoundSs: Extract the reduced argument of the lower
@@ -10042,11 +10042,11 @@ func maskReduceRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzReduceRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func MaskzReduceRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(maskzReduceRoundSs(uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func maskzReduceRoundSs(k uint8, a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func maskzReduceRoundSs(k uint8, a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // ReduceRoundSs: Extract the reduced argument of the lower single-precision
@@ -10084,11 +10084,11 @@ func maskzReduceRoundSs(k uint8, a [4]float32, b [4]float32, imm8 int, rounding 
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func ReduceRoundSs(a x86.M128, b x86.M128, imm8 int, rounding int) x86.M128 {
+func ReduceRoundSs(a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
 	return x86.M128(reduceRoundSs([4]float32(a), [4]float32(b), imm8, rounding))
 }
 
-func reduceRoundSs(a [4]float32, b [4]float32, imm8 int, rounding int) [4]float32
+func reduceRoundSs(a [4]float32, b [4]float32, imm8 byte, rounding int) [4]float32
 
 
 // MaskReduceSd: Extract the reduced argument of the lower double-precision
@@ -10120,11 +10120,11 @@ func reduceRoundSs(a [4]float32, b [4]float32, imm8 int, rounding int) [4]float3
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskReduceSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskReduceSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskReduceSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskReduceSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskReduceSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskzReduceSd: Extract the reduced argument of the lower double-precision
@@ -10156,11 +10156,11 @@ func maskReduceSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 int)
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzReduceSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func MaskzReduceSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(maskzReduceSd(uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
-func maskzReduceSd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
+func maskzReduceSd(k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // ReduceSd: Extract the reduced argument of the lower double-precision
@@ -10187,11 +10187,11 @@ func maskzReduceSd(k uint8, a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func ReduceSd(a x86.M128d, b x86.M128d, imm8 int) x86.M128d {
+func ReduceSd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
 	return x86.M128d(reduceSd([2]float64(a), [2]float64(b), imm8))
 }
 
-func reduceSd(a [2]float64, b [2]float64, imm8 int) [2]float64
+func reduceSd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // MaskReduceSs: Extract the reduced argument of the lower single-precision
@@ -10227,11 +10227,11 @@ func reduceSd(a [2]float64, b [2]float64, imm8 int) [2]float64
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskReduceSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskReduceSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskReduceSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskReduceSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskReduceSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskzReduceSs: Extract the reduced argument of the lower single-precision
@@ -10267,11 +10267,11 @@ func maskReduceSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 int)
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzReduceSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func MaskzReduceSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(maskzReduceSs(uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
-func maskzReduceSs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
+func maskzReduceSs(k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // ReduceSs: Extract the reduced argument of the lower single-precision
@@ -10302,11 +10302,11 @@ func maskzReduceSs(k uint8, a [4]float32, b [4]float32, imm8 int) [4]float32
 // Requires AVX512DQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func ReduceSs(a x86.M128, b x86.M128, imm8 int) x86.M128 {
+func ReduceSs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
 	return x86.M128(reduceSs([4]float32(a), [4]float32(b), imm8))
 }
 
-func reduceSs(a [4]float32, b [4]float32, imm8 int) [4]float32
+func reduceSs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 
 
 // MaskXorPd: Compute the bitwise XOR of packed double-precision (64-bit)

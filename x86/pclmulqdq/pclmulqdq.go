@@ -40,9 +40,9 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Requires PCLMULQDQ.
 //
 // FIXME: Requires compiler support (has immediate)
-func Clmulepi64Si128(a x86.M128i, b x86.M128i, imm8 int) x86.M128i {
+func Clmulepi64Si128(a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(clmulepi64Si128([16]byte(a), [16]byte(b), imm8))
 }
 
-func clmulepi64Si128(a [16]byte, b [16]byte, imm8 int) [16]byte
+func clmulepi64Si128(a [16]byte, b [16]byte, imm8 byte) [16]byte
 

@@ -110,9 +110,9 @@ func aesimcSi128(a [16]byte) [16]byte
 // Requires AES.
 //
 // FIXME: Requires compiler support (has immediate)
-func AeskeygenassistSi128(a x86.M128i, imm8 int) x86.M128i {
+func AeskeygenassistSi128(a x86.M128i, imm8 byte) x86.M128i {
 	return x86.M128i(aeskeygenassistSi128([16]byte(a), imm8))
 }
 
-func aeskeygenassistSi128(a [16]byte, imm8 int) [16]byte
+func aeskeygenassistSi128(a [16]byte, imm8 byte) [16]byte
 

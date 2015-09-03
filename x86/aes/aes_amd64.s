@@ -52,14 +52,14 @@ TEXT ·aesimcSi128(SB),7,$0
 	MOVOU X0, ret+16(FP)
 	RET
 
-// func aeskeygenassistSi128(a [16]byte, imm8 int) [16]byte
+// func aeskeygenassistSi128(a [16]byte, imm8 byte) [16]byte
 TEXT ·aeskeygenassistSi128(SB),7,$0
 	MOVOU a+0(FP),X0
-	MOVQ imm8+16(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing - could be:
 	// AESKEYGENASSIST X0, R9
 
-	MOVOU X1, ret+24(FP)
+	MOVOU X1, ret+20(FP)
 	RET
 

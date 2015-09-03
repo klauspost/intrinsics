@@ -91,14 +91,14 @@ TEXT ·cvtshSs(SB),7,$0
 	MOVL $0, ret+4(FP)
 	RET
 
-// func cvtssSh(a float32, imm8 int) uint16
+// func cvtssSh(a float32, imm8 byte) uint16
 TEXT ·cvtssSh(SB),7,$0
 	MOVL a+0(FP),R8
-	MOVQ imm8+4(FP),R9
+	// FIXME: Immediate parameter should be removed (imm8 byte)
 
 	// TODO: Code missing
 
-	MOVW $0, ret+12(FP)
+	MOVW $0, ret+8(FP)
 	RET
 
 // func lrotl(a uint32, shift int) uint32

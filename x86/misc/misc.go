@@ -441,11 +441,11 @@ func cvtshSs(a uint16) float32
 // Instruction: '...'. Intrinsic: '_cvtss_sh'.
 //
 // FIXME: Requires compiler support (has immediate)
-func CvtssSh(a float32, imm8 int) uint16 {
+func CvtssSh(a float32, imm8 byte) uint16 {
 	return uint16(cvtssSh(a, imm8))
 }
 
-func cvtssSh(a float32, imm8 int) uint16
+func cvtssSh(a float32, imm8 byte) uint16
 
 
 // Skipped: _loadbe_i16. Contains pointer parameter.
