@@ -260,7 +260,7 @@ func cmpgtPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtm64_si64'.
 // Requires MMX.
-func Cvtm64Si64(a x86.M64) (dst int64) {
+func Cvtm64Si64(a x86.M64) int64 {
 	return int64(cvtm64Si64(a))
 }
 
@@ -301,7 +301,7 @@ func cvtsi64M64(a int64) x86.M64
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi64_si32'.
 // Requires MMX.
-func Cvtsi64Si32(a x86.M64) (dst int) {
+func Cvtsi64Si32(a x86.M64) int {
 	return int(cvtsi64Si32(a))
 }
 
@@ -2104,7 +2104,7 @@ func subsPu8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'MOVD'. Intrinsic: '_m_to_int'.
 // Requires MMX.
-func ToInt(a x86.M64) (dst int) {
+func ToInt(a x86.M64) int {
 	return int(toInt(a))
 }
 
@@ -2117,7 +2117,7 @@ func toInt(a x86.M64) int
 //
 // Instruction: 'MOVQ'. Intrinsic: '_m_to_int64'.
 // Requires MMX.
-func ToInt64(a x86.M64) (dst int64) {
+func ToInt64(a x86.M64) int64 {
 	return int64(toInt64(a))
 }
 

@@ -13,7 +13,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDFSBASE'. Intrinsic: '_readfsbase_u32'.
 // Requires FSGSBASE.
-func ReadfsbaseU32() (dst uint32) {
+func ReadfsbaseU32() uint32 {
 	return uint32(readfsbaseU32())
 }
 
@@ -27,7 +27,7 @@ func readfsbaseU32() uint32
 //
 // Instruction: 'RDFSBASE'. Intrinsic: '_readfsbase_u64'.
 // Requires FSGSBASE.
-func ReadfsbaseU64() (dst uint64) {
+func ReadfsbaseU64() uint64 {
 	return uint64(readfsbaseU64())
 }
 
@@ -42,7 +42,7 @@ func readfsbaseU64() uint64
 //
 // Instruction: 'RDGSBASE'. Intrinsic: '_readgsbase_u32'.
 // Requires FSGSBASE.
-func ReadgsbaseU32() (dst uint32) {
+func ReadgsbaseU32() uint32 {
 	return uint32(readgsbaseU32())
 }
 
@@ -56,7 +56,7 @@ func readgsbaseU32() uint32
 //
 // Instruction: 'RDGSBASE'. Intrinsic: '_readgsbase_u64'.
 // Requires FSGSBASE.
-func ReadgsbaseU64() (dst uint64) {
+func ReadgsbaseU64() uint64 {
 	return uint64(readgsbaseU64())
 }
 

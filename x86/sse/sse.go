@@ -937,7 +937,7 @@ func cmpunordSs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'COMISS'. Intrinsic: '_mm_comieq_ss'.
 // Requires SSE.
-func ComieqSs(a x86.M128, b x86.M128) (dst int) {
+func ComieqSs(a x86.M128, b x86.M128) int {
 	return int(comieqSs([4]float32(a), [4]float32(b)))
 }
 
@@ -952,7 +952,7 @@ func comieqSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'COMISS'. Intrinsic: '_mm_comige_ss'.
 // Requires SSE.
-func ComigeSs(a x86.M128, b x86.M128) (dst int) {
+func ComigeSs(a x86.M128, b x86.M128) int {
 	return int(comigeSs([4]float32(a), [4]float32(b)))
 }
 
@@ -966,7 +966,7 @@ func comigeSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'COMISS'. Intrinsic: '_mm_comigt_ss'.
 // Requires SSE.
-func ComigtSs(a x86.M128, b x86.M128) (dst int) {
+func ComigtSs(a x86.M128, b x86.M128) int {
 	return int(comigtSs([4]float32(a), [4]float32(b)))
 }
 
@@ -981,7 +981,7 @@ func comigtSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'COMISS'. Intrinsic: '_mm_comile_ss'.
 // Requires SSE.
-func ComileSs(a x86.M128, b x86.M128) (dst int) {
+func ComileSs(a x86.M128, b x86.M128) int {
 	return int(comileSs([4]float32(a), [4]float32(b)))
 }
 
@@ -995,7 +995,7 @@ func comileSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'COMISS'. Intrinsic: '_mm_comilt_ss'.
 // Requires SSE.
-func ComiltSs(a x86.M128, b x86.M128) (dst int) {
+func ComiltSs(a x86.M128, b x86.M128) int {
 	return int(comiltSs([4]float32(a), [4]float32(b)))
 }
 
@@ -1010,7 +1010,7 @@ func comiltSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'COMISS'. Intrinsic: '_mm_comineq_ss'.
 // Requires SSE.
-func ComineqSs(a x86.M128, b x86.M128) (dst int) {
+func ComineqSs(a x86.M128, b x86.M128) int {
 	return int(comineqSs([4]float32(a), [4]float32(b)))
 }
 
@@ -1206,7 +1206,7 @@ func cvtSi2ss(a [4]float32, b int) [4]float32
 //
 // Instruction: 'CVTSS2SI'. Intrinsic: '_mm_cvt_ss2si'.
 // Requires SSE.
-func CvtSs2si(a x86.M128) (dst int) {
+func CvtSs2si(a x86.M128) int {
 	return int(cvtSs2si([4]float32(a)))
 }
 
@@ -1421,7 +1421,7 @@ func cvtsi64Ss(a [4]float32, b int64) [4]float32
 //
 // Instruction: 'MOVSS'. Intrinsic: '_mm_cvtss_f32'.
 // Requires SSE.
-func CvtssF32(a x86.M128) (dst float32) {
+func CvtssF32(a x86.M128) float32 {
 	return float32(cvtssF32([4]float32(a)))
 }
 
@@ -1435,7 +1435,7 @@ func cvtssF32(a [4]float32) float32
 //
 // Instruction: 'CVTSS2SI'. Intrinsic: '_mm_cvtss_si32'.
 // Requires SSE.
-func CvtssSi32(a x86.M128) (dst int) {
+func CvtssSi32(a x86.M128) int {
 	return int(cvtssSi32([4]float32(a)))
 }
 
@@ -1449,7 +1449,7 @@ func cvtssSi32(a [4]float32) int
 //
 // Instruction: 'CVTSS2SI'. Intrinsic: '_mm_cvtss_si64'.
 // Requires SSE.
-func CvtssSi64(a x86.M128) (dst int64) {
+func CvtssSi64(a x86.M128) int64 {
 	return int64(cvtssSi64([4]float32(a)))
 }
 
@@ -1482,7 +1482,7 @@ func cvttPs2pi(a [4]float32) x86.M64
 //
 // Instruction: 'CVTTSS2SI'. Intrinsic: '_mm_cvtt_ss2si'.
 // Requires SSE.
-func CvttSs2si(a x86.M128) (dst int) {
+func CvttSs2si(a x86.M128) int {
 	return int(cvttSs2si([4]float32(a)))
 }
 
@@ -1515,7 +1515,7 @@ func cvttpsPi32(a [4]float32) x86.M64
 //
 // Instruction: 'CVTTSS2SI'. Intrinsic: '_mm_cvttss_si32'.
 // Requires SSE.
-func CvttssSi32(a x86.M128) (dst int) {
+func CvttssSi32(a x86.M128) int {
 	return int(cvttssSi32([4]float32(a)))
 }
 
@@ -1530,7 +1530,7 @@ func cvttssSi32(a [4]float32) int
 //
 // Instruction: 'CVTTSS2SI'. Intrinsic: '_mm_cvttss_si64'.
 // Requires SSE.
-func CvttssSi64(a x86.M128) (dst int64) {
+func CvttssSi64(a x86.M128) int64 {
 	return int64(cvttssSi64([4]float32(a)))
 }
 
@@ -2023,7 +2023,7 @@ func expm1Ps(a [4]float32) [4]float32
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractPi16(a x86.M64, imm8 byte) (dst int) {
+func ExtractPi16(a x86.M64, imm8 byte) int {
 	return int(extractPi16(a, imm8))
 }
 
@@ -2042,7 +2042,7 @@ func extractPi16(a x86.M64, imm8 byte) int
 //
 // Instruction: ''. Intrinsic: '_MM_GET_EXCEPTION_MASK'.
 // Requires SSE.
-func MMGETEXCEPTIONMASK() (dst uint32) {
+func MMGETEXCEPTIONMASK() uint32 {
 	return uint32(mMGETEXCEPTIONMASK())
 }
 
@@ -2058,7 +2058,7 @@ func mMGETEXCEPTIONMASK() uint32
 //
 // Instruction: ''. Intrinsic: '_MM_GET_EXCEPTION_STATE'.
 // Requires SSE.
-func MMGETEXCEPTIONSTATE() (dst uint32) {
+func MMGETEXCEPTIONSTATE() uint32 {
 	return uint32(mMGETEXCEPTIONSTATE())
 }
 
@@ -2073,7 +2073,7 @@ func mMGETEXCEPTIONSTATE() uint32
 //
 // Instruction: ''. Intrinsic: '_MM_GET_FLUSH_ZERO_MODE'.
 // Requires SSE.
-func MMGETFLUSHZEROMODE() (dst uint32) {
+func MMGETFLUSHZEROMODE() uint32 {
 	return uint32(mMGETFLUSHZEROMODE())
 }
 
@@ -2089,7 +2089,7 @@ func mMGETFLUSHZEROMODE() uint32
 //
 // Instruction: ''. Intrinsic: '_MM_GET_ROUNDING_MODE'.
 // Requires SSE.
-func MMGETROUNDINGMODE() (dst uint32) {
+func MMGETROUNDINGMODE() uint32 {
 	return uint32(mMGETROUNDINGMODE())
 }
 
@@ -2103,7 +2103,7 @@ func mMGETROUNDINGMODE() uint32
 //
 // Instruction: 'STMXCSR'. Intrinsic: '_mm_getcsr'.
 // Requires SSE.
-func Getcsr() (dst uint32) {
+func Getcsr() uint32 {
 	return uint32(getcsr())
 }
 
@@ -2803,7 +2803,7 @@ func movelhPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'PMOVMSKB'. Intrinsic: '_mm_movemask_pi8'.
 // Requires SSE.
-func MovemaskPi8(a x86.M64) (dst int) {
+func MovemaskPi8(a x86.M64) int {
 	return int(movemaskPi8(a))
 }
 
@@ -2826,7 +2826,7 @@ func movemaskPi8(a x86.M64) int
 //
 // Instruction: 'MOVMSKPS'. Intrinsic: '_mm_movemask_ps'.
 // Requires SSE.
-func MovemaskPs(a x86.M128) (dst int) {
+func MovemaskPs(a x86.M128) int {
 	return int(movemaskPs([4]float32(a)))
 }
 
@@ -2946,7 +2946,7 @@ func pavgw(a x86.M64, b x86.M64) x86.M64
 // Requires SSE.
 //
 // FIXME: Requires compiler support (has immediate)
-func Pextrw(a x86.M64, imm8 byte) (dst int) {
+func Pextrw(a x86.M64, imm8 byte) int {
 	return int(pextrw(a, imm8))
 }
 
@@ -3066,7 +3066,7 @@ func pminub(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMOVMSKB'. Intrinsic: '_m_pmovmskb'.
 // Requires SSE.
-func Pmovmskb(a x86.M64) (dst int) {
+func Pmovmskb(a x86.M64) int {
 	return int(pmovmskb(a))
 }
 
@@ -4421,7 +4421,7 @@ func truncPs(a [4]float32) [4]float32
 //
 // Instruction: 'UCOMISS'. Intrinsic: '_mm_ucomieq_ss'.
 // Requires SSE.
-func UcomieqSs(a x86.M128, b x86.M128) (dst int) {
+func UcomieqSs(a x86.M128, b x86.M128) int {
 	return int(ucomieqSs([4]float32(a), [4]float32(b)))
 }
 
@@ -4436,7 +4436,7 @@ func ucomieqSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'UCOMISS'. Intrinsic: '_mm_ucomige_ss'.
 // Requires SSE.
-func UcomigeSs(a x86.M128, b x86.M128) (dst int) {
+func UcomigeSs(a x86.M128, b x86.M128) int {
 	return int(ucomigeSs([4]float32(a), [4]float32(b)))
 }
 
@@ -4451,7 +4451,7 @@ func ucomigeSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'UCOMISS'. Intrinsic: '_mm_ucomigt_ss'.
 // Requires SSE.
-func UcomigtSs(a x86.M128, b x86.M128) (dst int) {
+func UcomigtSs(a x86.M128, b x86.M128) int {
 	return int(ucomigtSs([4]float32(a), [4]float32(b)))
 }
 
@@ -4466,7 +4466,7 @@ func ucomigtSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'UCOMISS'. Intrinsic: '_mm_ucomile_ss'.
 // Requires SSE.
-func UcomileSs(a x86.M128, b x86.M128) (dst int) {
+func UcomileSs(a x86.M128, b x86.M128) int {
 	return int(ucomileSs([4]float32(a), [4]float32(b)))
 }
 
@@ -4481,7 +4481,7 @@ func ucomileSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'UCOMISS'. Intrinsic: '_mm_ucomilt_ss'.
 // Requires SSE.
-func UcomiltSs(a x86.M128, b x86.M128) (dst int) {
+func UcomiltSs(a x86.M128, b x86.M128) int {
 	return int(ucomiltSs([4]float32(a), [4]float32(b)))
 }
 
@@ -4496,7 +4496,7 @@ func ucomiltSs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'UCOMISS'. Intrinsic: '_mm_ucomineq_ss'.
 // Requires SSE.
-func UcomineqSs(a x86.M128, b x86.M128) (dst int) {
+func UcomineqSs(a x86.M128, b x86.M128) int {
 	return int(ucomineqSs([4]float32(a), [4]float32(b)))
 }
 

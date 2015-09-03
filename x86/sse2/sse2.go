@@ -983,7 +983,7 @@ func cmpunordSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comieq_sd'.
 // Requires SSE2.
-func ComieqSd(a x86.M128d, b x86.M128d) (dst int) {
+func ComieqSd(a x86.M128d, b x86.M128d) int {
 	return int(comieqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -998,7 +998,7 @@ func comieqSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comige_sd'.
 // Requires SSE2.
-func ComigeSd(a x86.M128d, b x86.M128d) (dst int) {
+func ComigeSd(a x86.M128d, b x86.M128d) int {
 	return int(comigeSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1012,7 +1012,7 @@ func comigeSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comigt_sd'.
 // Requires SSE2.
-func ComigtSd(a x86.M128d, b x86.M128d) (dst int) {
+func ComigtSd(a x86.M128d, b x86.M128d) int {
 	return int(comigtSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1027,7 +1027,7 @@ func comigtSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comile_sd'.
 // Requires SSE2.
-func ComileSd(a x86.M128d, b x86.M128d) (dst int) {
+func ComileSd(a x86.M128d, b x86.M128d) int {
 	return int(comileSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1041,7 +1041,7 @@ func comileSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comilt_sd'.
 // Requires SSE2.
-func ComiltSd(a x86.M128d, b x86.M128d) (dst int) {
+func ComiltSd(a x86.M128d, b x86.M128d) int {
 	return int(comiltSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1056,7 +1056,7 @@ func comiltSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comineq_sd'.
 // Requires SSE2.
-func ComineqSd(a x86.M128d, b x86.M128d) (dst int) {
+func ComineqSd(a x86.M128d, b x86.M128d) int {
 	return int(comineqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1214,7 +1214,7 @@ func cvtpsPd(a [4]float32) [2]float64
 //
 // Instruction: 'MOVSD'. Intrinsic: '_mm_cvtsd_f64'.
 // Requires SSE2.
-func CvtsdF64(a x86.M128d) (dst float64) {
+func CvtsdF64(a x86.M128d) float64 {
 	return float64(cvtsdF64([2]float64(a)))
 }
 
@@ -1228,7 +1228,7 @@ func cvtsdF64(a [2]float64) float64
 //
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si32'.
 // Requires SSE2.
-func CvtsdSi32(a x86.M128d) (dst int) {
+func CvtsdSi32(a x86.M128d) int {
 	return int(cvtsdSi32([2]float64(a)))
 }
 
@@ -1242,7 +1242,7 @@ func cvtsdSi32(a [2]float64) int
 //
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si64'.
 // Requires SSE2.
-func CvtsdSi64(a x86.M128d) (dst int64) {
+func CvtsdSi64(a x86.M128d) int64 {
 	return int64(cvtsdSi64([2]float64(a)))
 }
 
@@ -1256,7 +1256,7 @@ func cvtsdSi64(a [2]float64) int64
 //
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si64x'.
 // Requires SSE2.
-func CvtsdSi64x(a x86.M128d) (dst int64) {
+func CvtsdSi64x(a x86.M128d) int64 {
 	return int64(cvtsdSi64x([2]float64(a)))
 }
 
@@ -1287,7 +1287,7 @@ func cvtsdSs(a [4]float32, b [2]float64) [4]float32
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi128_si32'.
 // Requires SSE2.
-func Cvtsi128Si32(a x86.M128i) (dst int) {
+func Cvtsi128Si32(a x86.M128i) int {
 	return int(cvtsi128Si32([16]byte(a)))
 }
 
@@ -1300,7 +1300,7 @@ func cvtsi128Si32(a [16]byte) int
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi128_si64'.
 // Requires SSE2.
-func Cvtsi128Si64(a x86.M128i) (dst int64) {
+func Cvtsi128Si64(a x86.M128i) int64 {
 	return int64(cvtsi128Si64([16]byte(a)))
 }
 
@@ -1313,7 +1313,7 @@ func cvtsi128Si64(a [16]byte) int64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi128_si64x'.
 // Requires SSE2.
-func Cvtsi128Si64x(a x86.M128i) (dst int64) {
+func Cvtsi128Si64x(a x86.M128i) int64 {
 	return int64(cvtsi128Si64x([16]byte(a)))
 }
 
@@ -1498,7 +1498,7 @@ func cvttpsEpi32(a [4]float32) [16]byte
 //
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si32'.
 // Requires SSE2.
-func CvttsdSi32(a x86.M128d) (dst int) {
+func CvttsdSi32(a x86.M128d) int {
 	return int(cvttsdSi32([2]float64(a)))
 }
 
@@ -1513,7 +1513,7 @@ func cvttsdSi32(a [2]float64) int
 //
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si64'.
 // Requires SSE2.
-func CvttsdSi64(a x86.M128d) (dst int64) {
+func CvttsdSi64(a x86.M128d) int64 {
 	return int64(cvttsdSi64([2]float64(a)))
 }
 
@@ -1528,7 +1528,7 @@ func cvttsdSi64(a [2]float64) int64
 //
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si64x'.
 // Requires SSE2.
-func CvttsdSi64x(a x86.M128d) (dst int64) {
+func CvttsdSi64x(a x86.M128d) int64 {
 	return int64(cvttsdSi64x([2]float64(a)))
 }
 
@@ -1579,7 +1579,7 @@ func divSd(a [2]float64, b [2]float64) [2]float64
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi16(a x86.M128i, imm8 byte) (dst int) {
+func ExtractEpi16(a x86.M128i, imm8 byte) int {
 	return int(extractEpi16([16]byte(a), imm8))
 }
 
@@ -1935,7 +1935,7 @@ func moveSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PMOVMSKB'. Intrinsic: '_mm_movemask_epi8'.
 // Requires SSE2.
-func MovemaskEpi8(a x86.M128i) (dst int) {
+func MovemaskEpi8(a x86.M128i) int {
 	return int(movemaskEpi8([16]byte(a)))
 }
 
@@ -1958,7 +1958,7 @@ func movemaskEpi8(a [16]byte) int
 //
 // Instruction: 'MOVMSKPD'. Intrinsic: '_mm_movemask_pd'.
 // Requires SSE2.
-func MovemaskPd(a x86.M128d) (dst int) {
+func MovemaskPd(a x86.M128d) int {
 	return int(movemaskPd([2]float64(a)))
 }
 
@@ -3564,7 +3564,7 @@ func subsEpu8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomieq_sd'.
 // Requires SSE2.
-func UcomieqSd(a x86.M128d, b x86.M128d) (dst int) {
+func UcomieqSd(a x86.M128d, b x86.M128d) int {
 	return int(ucomieqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3579,7 +3579,7 @@ func ucomieqSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomige_sd'.
 // Requires SSE2.
-func UcomigeSd(a x86.M128d, b x86.M128d) (dst int) {
+func UcomigeSd(a x86.M128d, b x86.M128d) int {
 	return int(ucomigeSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3594,7 +3594,7 @@ func ucomigeSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomigt_sd'.
 // Requires SSE2.
-func UcomigtSd(a x86.M128d, b x86.M128d) (dst int) {
+func UcomigtSd(a x86.M128d, b x86.M128d) int {
 	return int(ucomigtSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3609,7 +3609,7 @@ func ucomigtSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomile_sd'.
 // Requires SSE2.
-func UcomileSd(a x86.M128d, b x86.M128d) (dst int) {
+func UcomileSd(a x86.M128d, b x86.M128d) int {
 	return int(ucomileSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3624,7 +3624,7 @@ func ucomileSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomilt_sd'.
 // Requires SSE2.
-func UcomiltSd(a x86.M128d, b x86.M128d) (dst int) {
+func UcomiltSd(a x86.M128d, b x86.M128d) int {
 	return int(ucomiltSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3639,7 +3639,7 @@ func ucomiltSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomineq_sd'.
 // Requires SSE2.
-func UcomineqSd(a x86.M128d, b x86.M128d) (dst int) {
+func UcomineqSd(a x86.M128d, b x86.M128d) int {
 	return int(ucomineqSd([2]float64(a), [2]float64(b)))
 }
 

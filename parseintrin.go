@@ -512,8 +512,10 @@ func (in Intrinsic) Finish() {
 	for _, param := range in.Params {
 		params = append(params, fmt.Sprint(param.Name, " ", param.Type))
 	}
+
+	retparam := Param{Type: in.RetType}
 	rettypeprint := in.RetType
-	if len(rettypeprint) > 0 {
+	if strings.Contains(rettypeprint, ".") {
 		rettypeprint = "(dst " + rettypeprint + ")"
 	}
 
@@ -564,7 +566,6 @@ func (in Intrinsic) Finish() {
 		}
 		params = append(params, fmt.Sprint(param.Name, " ", typ))
 	}
-	retparam := Param{Type: in.RetType}
 	if retparam.getNative() != "" {
 		retparam = Param{Type: retparam.getNative()}
 	}
@@ -687,8 +688,6 @@ func (p Param) getNative() string {
 		return "uint16"
 	case "Mmask8":
 		return "uint8"
-	case "uintptr":
-		return "uintptr"
 	}
 	return ""
 }

@@ -7981,7 +7981,7 @@ func m512MaskCmpneqEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func ComiRoundSd(a x86.M128d, b x86.M128d, imm8 byte, sae int) (dst int) {
+func ComiRoundSd(a x86.M128d, b x86.M128d, imm8 byte, sae int) int {
 	return int(comiRoundSd([2]float64(a), [2]float64(b), imm8, sae))
 }
 
@@ -8034,7 +8034,7 @@ func comiRoundSd(a [2]float64, b [2]float64, imm8 byte, sae int) int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func ComiRoundSs(a x86.M128, b x86.M128, imm8 byte, sae int) (dst int) {
+func ComiRoundSs(a x86.M128, b x86.M128, imm8 byte, sae int) int {
 	return int(comiRoundSs([4]float32(a), [4]float32(b), imm8, sae))
 }
 
@@ -10009,7 +10009,7 @@ func m512MaskzCvtRoundpsPh(k uint16, a [16]float32, rounding int) [32]byte
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_i32'.
 // Requires AVX512F.
-func CvtRoundsdI32(a x86.M128d, rounding int) (dst int) {
+func CvtRoundsdI32(a x86.M128d, rounding int) int {
 	return int(cvtRoundsdI32([2]float64(a), rounding))
 }
 
@@ -10030,7 +10030,7 @@ func cvtRoundsdI32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_i64'.
 // Requires AVX512F.
-func CvtRoundsdI64(a x86.M128d, rounding int) (dst int64) {
+func CvtRoundsdI64(a x86.M128d, rounding int) int64 {
 	return int64(cvtRoundsdI64([2]float64(a), rounding))
 }
 
@@ -10051,7 +10051,7 @@ func cvtRoundsdI64(a [2]float64, rounding int) int64
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_si32'.
 // Requires AVX512F.
-func CvtRoundsdSi32(a x86.M128d, rounding int) (dst int) {
+func CvtRoundsdSi32(a x86.M128d, rounding int) int {
 	return int(cvtRoundsdSi32([2]float64(a), rounding))
 }
 
@@ -10072,7 +10072,7 @@ func cvtRoundsdSi32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_si64'.
 // Requires AVX512F.
-func CvtRoundsdSi64(a x86.M128d, rounding int) (dst int64) {
+func CvtRoundsdSi64(a x86.M128d, rounding int) int64 {
 	return int64(cvtRoundsdSi64([2]float64(a), rounding))
 }
 
@@ -10178,7 +10178,7 @@ func maskzCvtRoundsdSs(k uint8, a [4]float32, b [2]float64, rounding int) [4]flo
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvt_roundsd_u32'.
 // Requires AVX512F.
-func CvtRoundsdU32(a x86.M128d, rounding int) (dst uint32) {
+func CvtRoundsdU32(a x86.M128d, rounding int) uint32 {
 	return uint32(cvtRoundsdU32([2]float64(a), rounding))
 }
 
@@ -10199,7 +10199,7 @@ func cvtRoundsdU32(a [2]float64, rounding int) uint32
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvt_roundsd_u64'.
 // Requires AVX512F.
-func CvtRoundsdU64(a x86.M128d, rounding int) (dst uint64) {
+func CvtRoundsdU64(a x86.M128d, rounding int) uint64 {
 	return uint64(cvtRoundsdU64([2]float64(a), rounding))
 }
 
@@ -10294,7 +10294,7 @@ func cvtRoundsi64Ss(a [4]float32, b int64, rounding int) [4]float32
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_i32'.
 // Requires AVX512F.
-func CvtRoundssI32(a x86.M128, rounding int) (dst int) {
+func CvtRoundssI32(a x86.M128, rounding int) int {
 	return int(cvtRoundssI32([4]float32(a), rounding))
 }
 
@@ -10315,7 +10315,7 @@ func cvtRoundssI32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_i64'.
 // Requires AVX512F.
-func CvtRoundssI64(a x86.M128, rounding int) (dst int64) {
+func CvtRoundssI64(a x86.M128, rounding int) int64 {
 	return int64(cvtRoundssI64([4]float32(a), rounding))
 }
 
@@ -10421,7 +10421,7 @@ func maskzCvtRoundssSd(k uint8, a [2]float64, b [4]float32, rounding int) [2]flo
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_si32'.
 // Requires AVX512F.
-func CvtRoundssSi32(a x86.M128, rounding int) (dst int) {
+func CvtRoundssSi32(a x86.M128, rounding int) int {
 	return int(cvtRoundssSi32([4]float32(a), rounding))
 }
 
@@ -10442,7 +10442,7 @@ func cvtRoundssSi32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_si64'.
 // Requires AVX512F.
-func CvtRoundssSi64(a x86.M128, rounding int) (dst int64) {
+func CvtRoundssSi64(a x86.M128, rounding int) int64 {
 	return int64(cvtRoundssSi64([4]float32(a), rounding))
 }
 
@@ -10463,7 +10463,7 @@ func cvtRoundssSi64(a [4]float32, rounding int) int64
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvt_roundss_u32'.
 // Requires AVX512F.
-func CvtRoundssU32(a x86.M128, rounding int) (dst uint32) {
+func CvtRoundssU32(a x86.M128, rounding int) uint32 {
 	return uint32(cvtRoundssU32([4]float32(a), rounding))
 }
 
@@ -10484,7 +10484,7 @@ func cvtRoundssU32(a [4]float32, rounding int) uint32
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvt_roundss_u64'.
 // Requires AVX512F.
-func CvtRoundssU64(a x86.M128, rounding int) (dst uint64) {
+func CvtRoundssU64(a x86.M128, rounding int) uint64 {
 	return uint64(cvtRoundssU64([4]float32(a), rounding))
 }
 
@@ -15336,7 +15336,7 @@ func m512MaskzCvtpsPh(k uint16, a [16]float32, rounding int) [32]byte
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvtsd_i32'.
 // Requires AVX512F.
-func CvtsdI32(a x86.M128d) (dst int) {
+func CvtsdI32(a x86.M128d) int {
 	return int(cvtsdI32([2]float64(a)))
 }
 
@@ -15350,7 +15350,7 @@ func cvtsdI32(a [2]float64) int
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvtsd_i64'.
 // Requires AVX512F.
-func CvtsdI64(a x86.M128d) (dst int64) {
+func CvtsdI64(a x86.M128d) int64 {
 	return int64(cvtsdI64([2]float64(a)))
 }
 
@@ -15410,7 +15410,7 @@ func maskzCvtsdSs(k uint8, a [4]float32, b [2]float64) [4]float32
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvtsd_u32'.
 // Requires AVX512F.
-func CvtsdU32(a x86.M128d) (dst uint32) {
+func CvtsdU32(a x86.M128d) uint32 {
 	return uint32(cvtsdU32([2]float64(a)))
 }
 
@@ -15424,7 +15424,7 @@ func cvtsdU32(a [2]float64) uint32
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvtsd_u64'.
 // Requires AVX512F.
-func CvtsdU64(a x86.M128d) (dst uint64) {
+func CvtsdU64(a x86.M128d) uint64 {
 	return uint64(cvtsdU64([2]float64(a)))
 }
 
@@ -16518,7 +16518,7 @@ func m512MaskzCvtsepi64Epi8(k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvtss_i32'.
 // Requires AVX512F.
-func CvtssI32(a x86.M128) (dst int) {
+func CvtssI32(a x86.M128) int {
 	return int(cvtssI32([4]float32(a)))
 }
 
@@ -16532,7 +16532,7 @@ func cvtssI32(a [4]float32) int
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvtss_i64'.
 // Requires AVX512F.
-func CvtssI64(a x86.M128) (dst int64) {
+func CvtssI64(a x86.M128) int64 {
 	return int64(cvtssI64([4]float32(a)))
 }
 
@@ -16592,7 +16592,7 @@ func maskzCvtssSd(k uint8, a [2]float64, b [4]float32) [2]float64
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvtss_u32'.
 // Requires AVX512F.
-func CvtssU32(a x86.M128) (dst uint32) {
+func CvtssU32(a x86.M128) uint32 {
 	return uint32(cvtssU32([4]float32(a)))
 }
 
@@ -16606,7 +16606,7 @@ func cvtssU32(a [4]float32) uint32
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvtss_u64'.
 // Requires AVX512F.
-func CvtssU64(a x86.M128) (dst uint64) {
+func CvtssU64(a x86.M128) uint64 {
 	return uint64(cvtssU64([4]float32(a)))
 }
 
@@ -16914,7 +16914,7 @@ func m512MaskzCvttRoundpsEpu32(k uint16, a [16]float32, sae int) [64]byte
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_i32'.
 // Requires AVX512F.
-func CvttRoundsdI32(a x86.M128d, rounding int) (dst int) {
+func CvttRoundsdI32(a x86.M128d, rounding int) int {
 	return int(cvttRoundsdI32([2]float64(a), rounding))
 }
 
@@ -16936,7 +16936,7 @@ func cvttRoundsdI32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_i64'.
 // Requires AVX512F.
-func CvttRoundsdI64(a x86.M128d, rounding int) (dst int64) {
+func CvttRoundsdI64(a x86.M128d, rounding int) int64 {
 	return int64(cvttRoundsdI64([2]float64(a), rounding))
 }
 
@@ -16958,7 +16958,7 @@ func cvttRoundsdI64(a [2]float64, rounding int) int64
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_si32'.
 // Requires AVX512F.
-func CvttRoundsdSi32(a x86.M128d, rounding int) (dst int) {
+func CvttRoundsdSi32(a x86.M128d, rounding int) int {
 	return int(cvttRoundsdSi32([2]float64(a), rounding))
 }
 
@@ -16980,7 +16980,7 @@ func cvttRoundsdSi32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_si64'.
 // Requires AVX512F.
-func CvttRoundsdSi64(a x86.M128d, rounding int) (dst int64) {
+func CvttRoundsdSi64(a x86.M128d, rounding int) int64 {
 	return int64(cvttRoundsdSi64([2]float64(a), rounding))
 }
 
@@ -17002,7 +17002,7 @@ func cvttRoundsdSi64(a [2]float64, rounding int) int64
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvtt_roundsd_u32'.
 // Requires AVX512F.
-func CvttRoundsdU32(a x86.M128d, rounding int) (dst uint32) {
+func CvttRoundsdU32(a x86.M128d, rounding int) uint32 {
 	return uint32(cvttRoundsdU32([2]float64(a), rounding))
 }
 
@@ -17024,7 +17024,7 @@ func cvttRoundsdU32(a [2]float64, rounding int) uint32
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvtt_roundsd_u64'.
 // Requires AVX512F.
-func CvttRoundsdU64(a x86.M128d, rounding int) (dst uint64) {
+func CvttRoundsdU64(a x86.M128d, rounding int) uint64 {
 	return uint64(cvttRoundsdU64([2]float64(a), rounding))
 }
 
@@ -17046,7 +17046,7 @@ func cvttRoundsdU64(a [2]float64, rounding int) uint64
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_i32'.
 // Requires AVX512F.
-func CvttRoundssI32(a x86.M128, rounding int) (dst int) {
+func CvttRoundssI32(a x86.M128, rounding int) int {
 	return int(cvttRoundssI32([4]float32(a), rounding))
 }
 
@@ -17068,7 +17068,7 @@ func cvttRoundssI32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_i64'.
 // Requires AVX512F.
-func CvttRoundssI64(a x86.M128, rounding int) (dst int64) {
+func CvttRoundssI64(a x86.M128, rounding int) int64 {
 	return int64(cvttRoundssI64([4]float32(a), rounding))
 }
 
@@ -17090,7 +17090,7 @@ func cvttRoundssI64(a [4]float32, rounding int) int64
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_si32'.
 // Requires AVX512F.
-func CvttRoundssSi32(a x86.M128, rounding int) (dst int) {
+func CvttRoundssSi32(a x86.M128, rounding int) int {
 	return int(cvttRoundssSi32([4]float32(a), rounding))
 }
 
@@ -17112,7 +17112,7 @@ func cvttRoundssSi32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_si64'.
 // Requires AVX512F.
-func CvttRoundssSi64(a x86.M128, rounding int) (dst int64) {
+func CvttRoundssSi64(a x86.M128, rounding int) int64 {
 	return int64(cvttRoundssSi64([4]float32(a), rounding))
 }
 
@@ -17134,7 +17134,7 @@ func cvttRoundssSi64(a [4]float32, rounding int) int64
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvtt_roundss_u32'.
 // Requires AVX512F.
-func CvttRoundssU32(a x86.M128, rounding int) (dst uint32) {
+func CvttRoundssU32(a x86.M128, rounding int) uint32 {
 	return uint32(cvttRoundssU32([4]float32(a), rounding))
 }
 
@@ -17156,7 +17156,7 @@ func cvttRoundssU32(a [4]float32, rounding int) uint32
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvtt_roundss_u64'.
 // Requires AVX512F.
-func CvttRoundssU64(a x86.M128, rounding int) (dst uint64) {
+func CvttRoundssU64(a x86.M128, rounding int) uint64 {
 	return uint64(cvttRoundssU64([4]float32(a), rounding))
 }
 
@@ -17915,7 +17915,7 @@ func m512MaskzCvttpsEpu32(k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvttsd_i32'.
 // Requires AVX512F.
-func CvttsdI32(a x86.M128d) (dst int) {
+func CvttsdI32(a x86.M128d) int {
 	return int(cvttsdI32([2]float64(a)))
 }
 
@@ -17930,7 +17930,7 @@ func cvttsdI32(a [2]float64) int
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvttsd_i64'.
 // Requires AVX512F.
-func CvttsdI64(a x86.M128d) (dst int64) {
+func CvttsdI64(a x86.M128d) int64 {
 	return int64(cvttsdI64([2]float64(a)))
 }
 
@@ -17945,7 +17945,7 @@ func cvttsdI64(a [2]float64) int64
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvttsd_u32'.
 // Requires AVX512F.
-func CvttsdU32(a x86.M128d) (dst uint32) {
+func CvttsdU32(a x86.M128d) uint32 {
 	return uint32(cvttsdU32([2]float64(a)))
 }
 
@@ -17960,7 +17960,7 @@ func cvttsdU32(a [2]float64) uint32
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvttsd_u64'.
 // Requires AVX512F.
-func CvttsdU64(a x86.M128d) (dst uint64) {
+func CvttsdU64(a x86.M128d) uint64 {
 	return uint64(cvttsdU64([2]float64(a)))
 }
 
@@ -17975,7 +17975,7 @@ func cvttsdU64(a [2]float64) uint64
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvttss_i32'.
 // Requires AVX512F.
-func CvttssI32(a x86.M128) (dst int) {
+func CvttssI32(a x86.M128) int {
 	return int(cvttssI32([4]float32(a)))
 }
 
@@ -17990,7 +17990,7 @@ func cvttssI32(a [4]float32) int
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvttss_i64'.
 // Requires AVX512F.
-func CvttssI64(a x86.M128) (dst int64) {
+func CvttssI64(a x86.M128) int64 {
 	return int64(cvttssI64([4]float32(a)))
 }
 
@@ -18005,7 +18005,7 @@ func cvttssI64(a [4]float32) int64
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvttss_u32'.
 // Requires AVX512F.
-func CvttssU32(a x86.M128) (dst uint32) {
+func CvttssU32(a x86.M128) uint32 {
 	return uint32(cvttssU32([4]float32(a)))
 }
 
@@ -18020,7 +18020,7 @@ func cvttssU32(a [4]float32) uint32
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvttss_u64'.
 // Requires AVX512F.
-func CvttssU64(a x86.M128) (dst uint64) {
+func CvttssU64(a x86.M128) uint64 {
 	return uint64(cvttssU64([4]float32(a)))
 }
 
@@ -32395,7 +32395,7 @@ func m512Kor(a uint16, b uint16) uint16
 //
 // Instruction: 'KORTESTW'. Intrinsic: '_mm512_kortestc'.
 // Requires AVX512F.
-func M512Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) (dst int) {
+func M512Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) int {
 	return int(m512Kortestc(uint16(k1), uint16(k2)))
 }
 
@@ -32412,7 +32412,7 @@ func m512Kortestc(k1 uint16, k2 uint16) int
 //
 // Instruction: 'KORTESTW'. Intrinsic: '_mm512_kortestz'.
 // Requires AVX512F.
-func M512Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) (dst int) {
+func M512Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) int {
 	return int(m512Kortestz(uint16(k1), uint16(k2)))
 }
 

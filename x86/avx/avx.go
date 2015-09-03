@@ -2078,7 +2078,7 @@ func m256Expm1Ps(a [8]float32) [8]float32
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi16'.
 // Requires AVX.
-func M256ExtractEpi16(a x86.M256i, index int) (dst int16) {
+func M256ExtractEpi16(a x86.M256i, index int) int16 {
 	return int16(m256ExtractEpi16([32]byte(a), index))
 }
 
@@ -2092,7 +2092,7 @@ func m256ExtractEpi16(a [32]byte, index int) int16
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi32'.
 // Requires AVX.
-func M256ExtractEpi32(a x86.M256i, index int) (dst int32) {
+func M256ExtractEpi32(a x86.M256i, index int) int32 {
 	return int32(m256ExtractEpi32([32]byte(a), index))
 }
 
@@ -2106,7 +2106,7 @@ func m256ExtractEpi32(a [32]byte, index int) int32
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi64'.
 // Requires AVX.
-func M256ExtractEpi64(a x86.M256i, index int) (dst int64) {
+func M256ExtractEpi64(a x86.M256i, index int) int64 {
 	return int64(m256ExtractEpi64([32]byte(a), index))
 }
 
@@ -2120,7 +2120,7 @@ func m256ExtractEpi64(a [32]byte, index int) int64
 //
 // Instruction: '...'. Intrinsic: '_mm256_extract_epi8'.
 // Requires AVX.
-func M256ExtractEpi8(a x86.M256i, index int) (dst int8) {
+func M256ExtractEpi8(a x86.M256i, index int) int8 {
 	return int8(m256ExtractEpi8([32]byte(a), index))
 }
 
@@ -3111,7 +3111,7 @@ func m256MoveldupPs(a [8]float32) [8]float32
 //
 // Instruction: 'VMOVMSKPD'. Intrinsic: '_mm256_movemask_pd'.
 // Requires AVX.
-func M256MovemaskPd(a x86.M256d) (dst int) {
+func M256MovemaskPd(a x86.M256d) int {
 	return int(m256MovemaskPd([4]float64(a)))
 }
 
@@ -3134,7 +3134,7 @@ func m256MovemaskPd(a [4]float64) int
 //
 // Instruction: 'VMOVMSKPS'. Intrinsic: '_mm256_movemask_ps'.
 // Requires AVX.
-func M256MovemaskPs(a x86.M256) (dst int) {
+func M256MovemaskPs(a x86.M256) int {
 	return int(m256MovemaskPs([8]float32(a)))
 }
 
@@ -5115,7 +5115,7 @@ func m256TanhPs(a [8]float32) [8]float32
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm_testc_pd'.
 // Requires AVX.
-func TestcPd(a x86.M128d, b x86.M128d) (dst int) {
+func TestcPd(a x86.M128d, b x86.M128d) int {
 	return int(testcPd([2]float64(a), [2]float64(b)))
 }
 
@@ -5146,7 +5146,7 @@ func testcPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testc_pd'.
 // Requires AVX.
-func M256TestcPd(a x86.M256d, b x86.M256d) (dst int) {
+func M256TestcPd(a x86.M256d, b x86.M256d) int {
 	return int(m256TestcPd([4]float64(a), [4]float64(b)))
 }
 
@@ -5177,7 +5177,7 @@ func m256TestcPd(a [4]float64, b [4]float64) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm_testc_ps'.
 // Requires AVX.
-func TestcPs(a x86.M128, b x86.M128) (dst int) {
+func TestcPs(a x86.M128, b x86.M128) int {
 	return int(testcPs([4]float32(a), [4]float32(b)))
 }
 
@@ -5208,7 +5208,7 @@ func testcPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testc_ps'.
 // Requires AVX.
-func M256TestcPs(a x86.M256, b x86.M256) (dst int) {
+func M256TestcPs(a x86.M256, b x86.M256) int {
 	return int(m256TestcPs([8]float32(a), [8]float32(b)))
 }
 
@@ -5234,7 +5234,7 @@ func m256TestcPs(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testc_si256'.
 // Requires AVX.
-func M256TestcSi256(a x86.M256i, b x86.M256i) (dst int) {
+func M256TestcSi256(a x86.M256i, b x86.M256i) int {
 	return int(m256TestcSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -5270,7 +5270,7 @@ func m256TestcSi256(a [32]byte, b [32]byte) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm_testnzc_pd'.
 // Requires AVX.
-func TestnzcPd(a x86.M128d, b x86.M128d) (dst int) {
+func TestnzcPd(a x86.M128d, b x86.M128d) int {
 	return int(testnzcPd([2]float64(a), [2]float64(b)))
 }
 
@@ -5306,7 +5306,7 @@ func testnzcPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testnzc_pd'.
 // Requires AVX.
-func M256TestnzcPd(a x86.M256d, b x86.M256d) (dst int) {
+func M256TestnzcPd(a x86.M256d, b x86.M256d) int {
 	return int(m256TestnzcPd([4]float64(a), [4]float64(b)))
 }
 
@@ -5342,7 +5342,7 @@ func m256TestnzcPd(a [4]float64, b [4]float64) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm_testnzc_ps'.
 // Requires AVX.
-func TestnzcPs(a x86.M128, b x86.M128) (dst int) {
+func TestnzcPs(a x86.M128, b x86.M128) int {
 	return int(testnzcPs([4]float32(a), [4]float32(b)))
 }
 
@@ -5378,7 +5378,7 @@ func testnzcPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testnzc_ps'.
 // Requires AVX.
-func M256TestnzcPs(a x86.M256, b x86.M256) (dst int) {
+func M256TestnzcPs(a x86.M256, b x86.M256) int {
 	return int(m256TestnzcPs([8]float32(a), [8]float32(b)))
 }
 
@@ -5409,7 +5409,7 @@ func m256TestnzcPs(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testnzc_si256'.
 // Requires AVX.
-func M256TestnzcSi256(a x86.M256i, b x86.M256i) (dst int) {
+func M256TestnzcSi256(a x86.M256i, b x86.M256i) int {
 	return int(m256TestnzcSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -5440,7 +5440,7 @@ func m256TestnzcSi256(a [32]byte, b [32]byte) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm_testz_pd'.
 // Requires AVX.
-func TestzPd(a x86.M128d, b x86.M128d) (dst int) {
+func TestzPd(a x86.M128d, b x86.M128d) int {
 	return int(testzPd([2]float64(a), [2]float64(b)))
 }
 
@@ -5471,7 +5471,7 @@ func testzPd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'VTESTPD'. Intrinsic: '_mm256_testz_pd'.
 // Requires AVX.
-func M256TestzPd(a x86.M256d, b x86.M256d) (dst int) {
+func M256TestzPd(a x86.M256d, b x86.M256d) int {
 	return int(m256TestzPd([4]float64(a), [4]float64(b)))
 }
 
@@ -5502,7 +5502,7 @@ func m256TestzPd(a [4]float64, b [4]float64) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm_testz_ps'.
 // Requires AVX.
-func TestzPs(a x86.M128, b x86.M128) (dst int) {
+func TestzPs(a x86.M128, b x86.M128) int {
 	return int(testzPs([4]float32(a), [4]float32(b)))
 }
 
@@ -5533,7 +5533,7 @@ func testzPs(a [4]float32, b [4]float32) int
 //
 // Instruction: 'VTESTPS'. Intrinsic: '_mm256_testz_ps'.
 // Requires AVX.
-func M256TestzPs(a x86.M256, b x86.M256) (dst int) {
+func M256TestzPs(a x86.M256, b x86.M256) int {
 	return int(m256TestzPs([8]float32(a), [8]float32(b)))
 }
 
@@ -5559,7 +5559,7 @@ func m256TestzPs(a [8]float32, b [8]float32) int
 //
 // Instruction: 'VPTEST'. Intrinsic: '_mm256_testz_si256'.
 // Requires AVX.
-func M256TestzSi256(a x86.M256i, b x86.M256i) (dst int) {
+func M256TestzSi256(a x86.M256i, b x86.M256i) int {
 	return int(m256TestzSi256([32]byte(a), [32]byte(b)))
 }
 

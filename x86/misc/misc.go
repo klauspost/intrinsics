@@ -14,7 +14,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'ADC'. Intrinsic: '_addcarry_u32'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) (dst uint8) {
+func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -28,7 +28,7 @@ func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) (dst uint8) {
 // Instruction: 'ADC'. Intrinsic: '_addcarry_u64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func AddcarryU64(c_in uint8, a uint64, b uint64, out *uint64) (dst uint8) {
+func AddcarryU64(c_in uint8, a uint64, b uint64, out *uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -93,7 +93,7 @@ func allowCpuFeatures(a uint64)
 //		FI
 //
 // Instruction: 'BSF'. Intrinsic: '_bit_scan_forward'.
-func BitScanForward(a int) (dst int) {
+func BitScanForward(a int) int {
 	return int(bitScanForward(a))
 }
 
@@ -114,7 +114,7 @@ func bitScanForward(a int) int
 //		FI
 //
 // Instruction: 'BSR'. Intrinsic: '_bit_scan_reverse'.
-func BitScanReverse(a int) (dst int) {
+func BitScanReverse(a int) int {
 	return int(bitScanReverse(a))
 }
 
@@ -139,7 +139,7 @@ func bitScanReverse(a int) int
 // Instruction: 'BSF'. Intrinsic: '_BitScanForward'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func BitScanForward2(index *uint32, mask uint32) (dst uint8) {
+func BitScanForward2(index *uint32, mask uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -162,7 +162,7 @@ func BitScanForward2(index *uint32, mask uint32) (dst uint8) {
 // Instruction: 'BSF'. Intrinsic: '_BitScanForward64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func BitScanForward64(index *uint32, mask uint64) (dst uint8) {
+func BitScanForward64(index *uint32, mask uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -185,7 +185,7 @@ func BitScanForward64(index *uint32, mask uint64) (dst uint8) {
 // Instruction: 'BSR'. Intrinsic: '_BitScanReverse'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func BitScanReverse2(index *uint32, mask uint32) (dst uint8) {
+func BitScanReverse2(index *uint32, mask uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -208,7 +208,7 @@ func BitScanReverse2(index *uint32, mask uint32) (dst uint8) {
 // Instruction: 'BSR'. Intrinsic: '_BitScanReverse64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func BitScanReverse64(index *uint32, mask uint64) (dst uint8) {
+func BitScanReverse64(index *uint32, mask uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -220,7 +220,7 @@ func BitScanReverse64(index *uint32, mask uint64) (dst uint8) {
 // Instruction: 'BT'. Intrinsic: '_bittest'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittest(a *int32, b int32) (dst uint8) {
+func Bittest(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -232,7 +232,7 @@ func Bittest(a *int32, b int32) (dst uint8) {
 // Instruction: 'BT'. Intrinsic: '_bittest64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittest64(a *int64, b int64) (dst uint8) {
+func Bittest64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -246,7 +246,7 @@ func Bittest64(a *int64, b int64) (dst uint8) {
 // Instruction: 'BTC'. Intrinsic: '_bittestandcomplement'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittestandcomplement(a *int32, b int32) (dst uint8) {
+func Bittestandcomplement(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -260,7 +260,7 @@ func Bittestandcomplement(a *int32, b int32) (dst uint8) {
 // Instruction: 'BTC'. Intrinsic: '_bittestandcomplement64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittestandcomplement64(a *int64, b int64) (dst uint8) {
+func Bittestandcomplement64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -274,7 +274,7 @@ func Bittestandcomplement64(a *int64, b int64) (dst uint8) {
 // Instruction: 'BTR'. Intrinsic: '_bittestandreset'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittestandreset(a *int32, b int32) (dst uint8) {
+func Bittestandreset(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -288,7 +288,7 @@ func Bittestandreset(a *int32, b int32) (dst uint8) {
 // Instruction: 'BTR'. Intrinsic: '_bittestandreset64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittestandreset64(a *int64, b int64) (dst uint8) {
+func Bittestandreset64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -302,7 +302,7 @@ func Bittestandreset64(a *int64, b int64) (dst uint8) {
 // Instruction: 'BTS'. Intrinsic: '_bittestandset'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittestandset(a *int32, b int32) (dst uint8) {
+func Bittestandset(a *int32, b int32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -316,7 +316,7 @@ func Bittestandset(a *int32, b int32) (dst uint8) {
 // Instruction: 'BTS'. Intrinsic: '_bittestandset64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Bittestandset64(a *int64, b int64) (dst uint8) {
+func Bittestandset64(a *int64, b int64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -331,7 +331,7 @@ func Bittestandset64(a *int64, b int64) (dst uint8) {
 //		dst[31:24] := a[7:0]
 //
 // Instruction: 'BSWAP'. Intrinsic: '_bswap'.
-func Bswap(a int) (dst int) {
+func Bswap(a int) int {
 	return int(bswap(a))
 }
 
@@ -352,7 +352,7 @@ func bswap(a int) int
 //		dst[63:56] := a[7:0]
 //
 // Instruction: 'BSWAP'. Intrinsic: '_bswap64'.
-func Bswap64(a int64) (dst int64) {
+func Bswap64(a int64) int64 {
 	return int64(bswap64(a))
 }
 
@@ -367,7 +367,7 @@ func bswap64(a int64) int64
 //		
 //
 // Instruction: ''. Intrinsic: '_castf32_u32'.
-func Castf32U32(a float32) (dst uint32) {
+func Castf32U32(a float32) uint32 {
 	return uint32(castf32U32(a))
 }
 
@@ -382,7 +382,7 @@ func castf32U32(a float32) uint32
 //		
 //
 // Instruction: ''. Intrinsic: '_castf64_u64'.
-func Castf64U64(a float64) (dst uint64) {
+func Castf64U64(a float64) uint64 {
 	return uint64(castf64U64(a))
 }
 
@@ -397,7 +397,7 @@ func castf64U64(a float64) uint64
 //		
 //
 // Instruction: ''. Intrinsic: '_castu32_f32'.
-func Castu32F32(a uint32) (dst float32) {
+func Castu32F32(a uint32) float32 {
 	return float32(castu32F32(a))
 }
 
@@ -412,7 +412,7 @@ func castu32F32(a uint32) float32
 //		
 //
 // Instruction: ''. Intrinsic: '_castu64_f64'.
-func Castu64F64(a uint64) (dst float64) {
+func Castu64F64(a uint64) float64 {
 	return float64(castu64F64(a))
 }
 
@@ -426,7 +426,7 @@ func castu64F64(a uint64) float64
 //		dst[31:0] := Convert_FP16_To_FP32(a[15:0])
 //
 // Instruction: '...'. Intrinsic: '_cvtsh_ss'.
-func CvtshSs(a uint16) (dst float32) {
+func CvtshSs(a uint16) float32 {
 	return float32(cvtshSs(a))
 }
 
@@ -441,7 +441,7 @@ func cvtshSs(a uint16) float32
 // Instruction: '...'. Intrinsic: '_cvtss_sh'.
 //
 // FIXME: Requires compiler support (has immediate)
-func CvtssSh(a float32, imm8 byte) (dst uint16) {
+func CvtssSh(a float32, imm8 byte) uint16 {
 	return uint16(cvtssSh(a, imm8))
 }
 
@@ -479,7 +479,7 @@ func cvtssSh(a float32, imm8 byte) uint16
 //		OD
 //
 // Instruction: 'ROL'. Intrinsic: '_lrotl'.
-func Lrotl(a uint32, shift int) (dst uint32) {
+func Lrotl(a uint32, shift int) uint32 {
 	return uint32(lrotl(a, shift))
 }
 
@@ -499,7 +499,7 @@ func lrotl(a uint32, shift int) uint32
 //		OD
 //
 // Instruction: 'ROR'. Intrinsic: '_lrotr'.
-func Lrotr(a uint32, shift int) (dst uint32) {
+func Lrotr(a uint32, shift int) uint32 {
 	return uint32(lrotr(a, shift))
 }
 
@@ -547,7 +547,7 @@ func lrotr(a uint32, shift int) uint32
 //		_FEATURE_MPX
 //
 // Instruction: '...'. Intrinsic: '_may_i_use_cpu_feature'.
-func MayIUseCpuFeature(a uint64) (dst int) {
+func MayIUseCpuFeature(a uint64) int {
 	return int(mayIUseCpuFeature(a))
 }
 
@@ -561,7 +561,7 @@ func mayIUseCpuFeature(a uint64) int
 //		dst[63:0] := ReadPMC(a)
 //
 // Instruction: 'RDPMC'. Intrinsic: '_rdpmc'.
-func Rdpmc(a int) (dst int64) {
+func Rdpmc(a int) int64 {
 	return int64(rdpmc(a))
 }
 
@@ -581,7 +581,7 @@ func rdpmc(a int) int64
 //		OD
 //
 // Instruction: 'ROL'. Intrinsic: '_rotl'.
-func Rotl(a uint32, shift int) (dst uint32) {
+func Rotl(a uint32, shift int) uint32 {
 	return uint32(rotl(a, shift))
 }
 
@@ -601,7 +601,7 @@ func rotl(a uint32, shift int) uint32
 //		OD
 //
 // Instruction: 'ROR'. Intrinsic: '_rotr'.
-func Rotr(a uint32, shift int) (dst uint32) {
+func Rotr(a uint32, shift int) uint32 {
 	return uint32(rotr(a, shift))
 }
 
@@ -621,7 +621,7 @@ func rotr(a uint32, shift int) uint32
 //		OD
 //
 // Instruction: 'ROL'. Intrinsic: '_rotwl'.
-func Rotwl(a uint16, shift int) (dst uint16) {
+func Rotwl(a uint16, shift int) uint16 {
 	return uint16(rotwl(a, shift))
 }
 
@@ -641,7 +641,7 @@ func rotwl(a uint16, shift int) uint16
 //		OD
 //
 // Instruction: 'ROR'. Intrinsic: '_rotwr'.
-func Rotwr(a uint16, shift int) (dst uint16) {
+func Rotwr(a uint16, shift int) uint16 {
 	return uint16(rotwr(a, shift))
 }
 
@@ -676,7 +676,7 @@ func rotwr(a uint16, shift int) uint16
 // Instruction: 'SBB'. Intrinsic: '_subborrow_u32'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) (dst uint8) {
+func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -691,7 +691,7 @@ func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) (dst uint8) {
 // Instruction: 'SBB'. Intrinsic: '_subborrow_u64'.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func SubborrowU64(b_in uint8, a uint64, b uint64, out *uint64) (dst uint8) {
+func SubborrowU64(b_in uint8, a uint64, b uint64, out *uint64) uint8 {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }

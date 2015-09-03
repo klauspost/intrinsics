@@ -16,7 +16,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'BZHI'. Intrinsic: '_bzhi_u32'.
 // Requires BMI2.
-func BzhiU32(a uint32, index uint32) (dst uint32) {
+func BzhiU32(a uint32, index uint32) uint32 {
 	return uint32(bzhiU32(a, index))
 }
 
@@ -34,7 +34,7 @@ func bzhiU32(a uint32, index uint32) uint32
 //
 // Instruction: 'BZHI'. Intrinsic: '_bzhi_u64'.
 // Requires BMI2.
-func BzhiU64(a uint64, index uint32) (dst uint64) {
+func BzhiU64(a uint64, index uint32) uint64 {
 	return uint64(bzhiU64(a, index))
 }
 
@@ -59,7 +59,7 @@ func bzhiU64(a uint64, index uint32) uint64
 //
 // Instruction: 'PDEP'. Intrinsic: '_pdep_u32'.
 // Requires BMI2.
-func PdepU32(a uint32, mask uint32) (dst uint32) {
+func PdepU32(a uint32, mask uint32) uint32 {
 	return uint32(pdepU32(a, mask))
 }
 
@@ -84,7 +84,7 @@ func pdepU32(a uint32, mask uint32) uint32
 //
 // Instruction: 'PDEP'. Intrinsic: '_pdep_u64'.
 // Requires BMI2.
-func PdepU64(a uint64, mask uint64) (dst uint64) {
+func PdepU64(a uint64, mask uint64) uint64 {
 	return uint64(pdepU64(a, mask))
 }
 
@@ -109,7 +109,7 @@ func pdepU64(a uint64, mask uint64) uint64
 //
 // Instruction: 'PEXT'. Intrinsic: '_pext_u32'.
 // Requires BMI2.
-func PextU32(a uint32, mask uint32) (dst uint32) {
+func PextU32(a uint32, mask uint32) uint32 {
 	return uint32(pextU32(a, mask))
 }
 
@@ -134,7 +134,7 @@ func pextU32(a uint32, mask uint32) uint32
 //
 // Instruction: 'PEXT'. Intrinsic: '_pext_u64'.
 // Requires BMI2.
-func PextU64(a uint64, mask uint64) (dst uint64) {
+func PextU64(a uint64, mask uint64) uint64 {
 	return uint64(pextU64(a, mask))
 }
 

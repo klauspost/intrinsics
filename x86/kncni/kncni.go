@@ -2974,7 +2974,7 @@ func m512MaskCmpunordPsMask(k1 uint16, a [16]float32, b [16]float32) uint16
 //
 // Instruction: 'POPCNT'. Intrinsic: '_mm_countbits_32'.
 // Requires KNCNI.
-func Countbits32(r1 uint32) (dst uint32) {
+func Countbits32(r1 uint32) uint32 {
 	return uint32(countbits32(r1))
 }
 
@@ -2988,7 +2988,7 @@ func countbits32(r1 uint32) uint32
 //
 // Instruction: 'POPCNT'. Intrinsic: '_mm_countbits_64'.
 // Requires KNCNI.
-func Countbits64(r1 uint64) (dst uint64) {
+func Countbits64(r1 uint64) uint64 {
 	return uint64(countbits64(r1))
 }
 
@@ -6275,7 +6275,7 @@ func m512Kandnr(k1 uint16, k2 uint16) uint16
 //
 // Instruction: 'KCONCATH'. Intrinsic: '_mm512_kconcathi_64'.
 // Requires KNCNI.
-func M512Kconcathi64(k1 x86.Mmask16, k2 x86.Mmask16) (dst int64) {
+func M512Kconcathi64(k1 x86.Mmask16, k2 x86.Mmask16) int64 {
 	return int64(m512Kconcathi64(uint16(k1), uint16(k2)))
 }
 
@@ -6291,7 +6291,7 @@ func m512Kconcathi64(k1 uint16, k2 uint16) int64
 //
 // Instruction: 'KCONCATL'. Intrinsic: '_mm512_kconcatlo_64'.
 // Requires KNCNI.
-func M512Kconcatlo64(k1 x86.Mmask16, k2 x86.Mmask16) (dst int64) {
+func M512Kconcatlo64(k1 x86.Mmask16, k2 x86.Mmask16) int64 {
 	return int64(m512Kconcatlo64(uint16(k1), uint16(k2)))
 }
 
@@ -6417,7 +6417,7 @@ func m512Kor(a uint16, b uint16) uint16
 //
 // Instruction: 'KORTEST'. Intrinsic: '_mm512_kortestc'.
 // Requires KNCNI.
-func M512Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) (dst int) {
+func M512Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) int {
 	return int(m512Kortestc(uint16(k1), uint16(k2)))
 }
 
@@ -6434,7 +6434,7 @@ func m512Kortestc(k1 uint16, k2 uint16) int
 //
 // Instruction: 'KORTEST'. Intrinsic: '_mm512_kortestz'.
 // Requires KNCNI.
-func M512Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) (dst int) {
+func M512Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) int {
 	return int(m512Kortestz(uint16(k1), uint16(k2)))
 }
 
@@ -6658,7 +6658,7 @@ func m512MaskLog2ae23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'KMOV'. Intrinsic: '_mm512_mask2int'.
 // Requires KNCNI.
-func M512Mask2int(k1 x86.Mmask16) (dst int) {
+func M512Mask2int(k1 x86.Mmask16) int {
 	return int(m512Mask2int(uint16(k1)))
 }
 
@@ -7758,7 +7758,7 @@ func m512Rcp23Ps(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_epi32'.
 // Requires KNCNI.
-func M512MaskReduceAddEpi32(k x86.Mmask16, a x86.M512i) (dst int) {
+func M512MaskReduceAddEpi32(k x86.Mmask16, a x86.M512i) int {
 	return int(m512MaskReduceAddEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -7777,7 +7777,7 @@ func m512MaskReduceAddEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_epi32'.
 // Requires KNCNI.
-func M512ReduceAddEpi32(a x86.M512i) (dst int) {
+func M512ReduceAddEpi32(a x86.M512i) int {
 	return int(m512ReduceAddEpi32([64]byte(a)))
 }
 
@@ -7798,7 +7798,7 @@ func m512ReduceAddEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_epi64'.
 // Requires KNCNI.
-func M512MaskReduceAddEpi64(k x86.Mmask8, a x86.M512i) (dst int64) {
+func M512MaskReduceAddEpi64(k x86.Mmask8, a x86.M512i) int64 {
 	return int64(m512MaskReduceAddEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -7817,7 +7817,7 @@ func m512MaskReduceAddEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_epi64'.
 // Requires KNCNI.
-func M512ReduceAddEpi64(a x86.M512i) (dst int64) {
+func M512ReduceAddEpi64(a x86.M512i) int64 {
 	return int64(m512ReduceAddEpi64([64]byte(a)))
 }
 
@@ -7839,7 +7839,7 @@ func m512ReduceAddEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_pd'.
 // Requires KNCNI.
-func M512MaskReduceAddPd(k x86.Mmask8, a x86.M512d) (dst float64) {
+func M512MaskReduceAddPd(k x86.Mmask8, a x86.M512d) float64 {
 	return float64(m512MaskReduceAddPd(uint8(k), [8]float64(a)))
 }
 
@@ -7858,7 +7858,7 @@ func m512MaskReduceAddPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_pd'.
 // Requires KNCNI.
-func M512ReduceAddPd(a x86.M512d) (dst float64) {
+func M512ReduceAddPd(a x86.M512d) float64 {
 	return float64(m512ReduceAddPd([8]float64(a)))
 }
 
@@ -7880,7 +7880,7 @@ func m512ReduceAddPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_add_ps'.
 // Requires KNCNI.
-func M512MaskReduceAddPs(k x86.Mmask16, a x86.M512) (dst float32) {
+func M512MaskReduceAddPs(k x86.Mmask16, a x86.M512) float32 {
 	return float32(m512MaskReduceAddPs(uint16(k), [16]float32(a)))
 }
 
@@ -7899,7 +7899,7 @@ func m512MaskReduceAddPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_add_ps'.
 // Requires KNCNI.
-func M512ReduceAddPs(a x86.M512) (dst float32) {
+func M512ReduceAddPs(a x86.M512) float32 {
 	return float32(m512ReduceAddPs([16]float32(a)))
 }
 
@@ -7920,7 +7920,7 @@ func m512ReduceAddPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_and_epi32'.
 // Requires KNCNI.
-func M512MaskReduceAndEpi32(k x86.Mmask16, a x86.M512i) (dst int) {
+func M512MaskReduceAndEpi32(k x86.Mmask16, a x86.M512i) int {
 	return int(m512MaskReduceAndEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -7939,7 +7939,7 @@ func m512MaskReduceAndEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_and_epi32'.
 // Requires KNCNI.
-func M512ReduceAndEpi32(a x86.M512i) (dst int) {
+func M512ReduceAndEpi32(a x86.M512i) int {
 	return int(m512ReduceAndEpi32([64]byte(a)))
 }
 
@@ -7960,7 +7960,7 @@ func m512ReduceAndEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_and_epi64'.
 // Requires KNCNI.
-func M512MaskReduceAndEpi64(k x86.Mmask8, a x86.M512i) (dst int64) {
+func M512MaskReduceAndEpi64(k x86.Mmask8, a x86.M512i) int64 {
 	return int64(m512MaskReduceAndEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -7979,7 +7979,7 @@ func m512MaskReduceAndEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_and_epi64'.
 // Requires KNCNI.
-func M512ReduceAndEpi64(a x86.M512i) (dst int64) {
+func M512ReduceAndEpi64(a x86.M512i) int64 {
 	return int64(m512ReduceAndEpi64([64]byte(a)))
 }
 
@@ -8004,7 +8004,7 @@ func m512ReduceAndEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmax_pd'.
 // Requires KNCNI.
-func M512MaskReduceGmaxPd(k x86.Mmask8, a x86.M512d) (dst float64) {
+func M512MaskReduceGmaxPd(k x86.Mmask8, a x86.M512d) float64 {
 	return float64(m512MaskReduceGmaxPd(uint8(k), [8]float64(a)))
 }
 
@@ -8024,7 +8024,7 @@ func m512MaskReduceGmaxPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmax_pd'.
 // Requires KNCNI.
-func M512ReduceGmaxPd(a x86.M512d) (dst float64) {
+func M512ReduceGmaxPd(a x86.M512d) float64 {
 	return float64(m512ReduceGmaxPd([8]float64(a)))
 }
 
@@ -8049,7 +8049,7 @@ func m512ReduceGmaxPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmax_ps'.
 // Requires KNCNI.
-func M512MaskReduceGmaxPs(k x86.Mmask16, a x86.M512) (dst float32) {
+func M512MaskReduceGmaxPs(k x86.Mmask16, a x86.M512) float32 {
 	return float32(m512MaskReduceGmaxPs(uint16(k), [16]float32(a)))
 }
 
@@ -8069,7 +8069,7 @@ func m512MaskReduceGmaxPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmax_ps'.
 // Requires KNCNI.
-func M512ReduceGmaxPs(a x86.M512) (dst float32) {
+func M512ReduceGmaxPs(a x86.M512) float32 {
 	return float32(m512ReduceGmaxPs([16]float32(a)))
 }
 
@@ -8094,7 +8094,7 @@ func m512ReduceGmaxPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmin_pd'.
 // Requires KNCNI.
-func M512MaskReduceGminPd(k x86.Mmask8, a x86.M512d) (dst float64) {
+func M512MaskReduceGminPd(k x86.Mmask8, a x86.M512d) float64 {
 	return float64(m512MaskReduceGminPd(uint8(k), [8]float64(a)))
 }
 
@@ -8114,7 +8114,7 @@ func m512MaskReduceGminPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmin_pd'.
 // Requires KNCNI.
-func M512ReduceGminPd(a x86.M512d) (dst float64) {
+func M512ReduceGminPd(a x86.M512d) float64 {
 	return float64(m512ReduceGminPd([8]float64(a)))
 }
 
@@ -8139,7 +8139,7 @@ func m512ReduceGminPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_gmin_ps'.
 // Requires KNCNI.
-func M512MaskReduceGminPs(k x86.Mmask16, a x86.M512) (dst float32) {
+func M512MaskReduceGminPs(k x86.Mmask16, a x86.M512) float32 {
 	return float32(m512MaskReduceGminPs(uint16(k), [16]float32(a)))
 }
 
@@ -8159,7 +8159,7 @@ func m512MaskReduceGminPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_gmin_ps'.
 // Requires KNCNI.
-func M512ReduceGminPs(a x86.M512) (dst float32) {
+func M512ReduceGminPs(a x86.M512) float32 {
 	return float32(m512ReduceGminPs([16]float32(a)))
 }
 
@@ -8180,7 +8180,7 @@ func m512ReduceGminPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epi32'.
 // Requires KNCNI.
-func M512MaskReduceMaxEpi32(k x86.Mmask16, a x86.M512i) (dst int) {
+func M512MaskReduceMaxEpi32(k x86.Mmask16, a x86.M512i) int {
 	return int(m512MaskReduceMaxEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -8199,7 +8199,7 @@ func m512MaskReduceMaxEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epi32'.
 // Requires KNCNI.
-func M512ReduceMaxEpi32(a x86.M512i) (dst int) {
+func M512ReduceMaxEpi32(a x86.M512i) int {
 	return int(m512ReduceMaxEpi32([64]byte(a)))
 }
 
@@ -8220,7 +8220,7 @@ func m512ReduceMaxEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epi64'.
 // Requires KNCNI.
-func M512MaskReduceMaxEpi64(k x86.Mmask8, a x86.M512i) (dst int64) {
+func M512MaskReduceMaxEpi64(k x86.Mmask8, a x86.M512i) int64 {
 	return int64(m512MaskReduceMaxEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -8239,7 +8239,7 @@ func m512MaskReduceMaxEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epi64'.
 // Requires KNCNI.
-func M512ReduceMaxEpi64(a x86.M512i) (dst int64) {
+func M512ReduceMaxEpi64(a x86.M512i) int64 {
 	return int64(m512ReduceMaxEpi64([64]byte(a)))
 }
 
@@ -8260,7 +8260,7 @@ func m512ReduceMaxEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epu32'.
 // Requires KNCNI.
-func M512MaskReduceMaxEpu32(k x86.Mmask16, a x86.M512i) (dst uint32) {
+func M512MaskReduceMaxEpu32(k x86.Mmask16, a x86.M512i) uint32 {
 	return uint32(m512MaskReduceMaxEpu32(uint16(k), [64]byte(a)))
 }
 
@@ -8279,7 +8279,7 @@ func m512MaskReduceMaxEpu32(k uint16, a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epu32'.
 // Requires KNCNI.
-func M512ReduceMaxEpu32(a x86.M512i) (dst uint32) {
+func M512ReduceMaxEpu32(a x86.M512i) uint32 {
 	return uint32(m512ReduceMaxEpu32([64]byte(a)))
 }
 
@@ -8300,7 +8300,7 @@ func m512ReduceMaxEpu32(a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_epu64'.
 // Requires KNCNI.
-func M512MaskReduceMaxEpu64(k x86.Mmask8, a x86.M512i) (dst uint64) {
+func M512MaskReduceMaxEpu64(k x86.Mmask8, a x86.M512i) uint64 {
 	return uint64(m512MaskReduceMaxEpu64(uint8(k), [64]byte(a)))
 }
 
@@ -8319,7 +8319,7 @@ func m512MaskReduceMaxEpu64(k uint8, a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_epu64'.
 // Requires KNCNI.
-func M512ReduceMaxEpu64(a x86.M512i) (dst uint64) {
+func M512ReduceMaxEpu64(a x86.M512i) uint64 {
 	return uint64(m512ReduceMaxEpu64([64]byte(a)))
 }
 
@@ -8341,7 +8341,7 @@ func m512ReduceMaxEpu64(a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_pd'.
 // Requires KNCNI.
-func M512MaskReduceMaxPd(k x86.Mmask8, a x86.M512d) (dst float64) {
+func M512MaskReduceMaxPd(k x86.Mmask8, a x86.M512d) float64 {
 	return float64(m512MaskReduceMaxPd(uint8(k), [8]float64(a)))
 }
 
@@ -8360,7 +8360,7 @@ func m512MaskReduceMaxPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_pd'.
 // Requires KNCNI.
-func M512ReduceMaxPd(a x86.M512d) (dst float64) {
+func M512ReduceMaxPd(a x86.M512d) float64 {
 	return float64(m512ReduceMaxPd([8]float64(a)))
 }
 
@@ -8382,7 +8382,7 @@ func m512ReduceMaxPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_max_ps'.
 // Requires KNCNI.
-func M512MaskReduceMaxPs(k x86.Mmask16, a x86.M512) (dst float32) {
+func M512MaskReduceMaxPs(k x86.Mmask16, a x86.M512) float32 {
 	return float32(m512MaskReduceMaxPs(uint16(k), [16]float32(a)))
 }
 
@@ -8401,7 +8401,7 @@ func m512MaskReduceMaxPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_max_ps'.
 // Requires KNCNI.
-func M512ReduceMaxPs(a x86.M512) (dst float32) {
+func M512ReduceMaxPs(a x86.M512) float32 {
 	return float32(m512ReduceMaxPs([16]float32(a)))
 }
 
@@ -8422,7 +8422,7 @@ func m512ReduceMaxPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epi32'.
 // Requires KNCNI.
-func M512MaskReduceMinEpi32(k x86.Mmask16, a x86.M512i) (dst int) {
+func M512MaskReduceMinEpi32(k x86.Mmask16, a x86.M512i) int {
 	return int(m512MaskReduceMinEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -8441,7 +8441,7 @@ func m512MaskReduceMinEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epi32'.
 // Requires KNCNI.
-func M512ReduceMinEpi32(a x86.M512i) (dst int) {
+func M512ReduceMinEpi32(a x86.M512i) int {
 	return int(m512ReduceMinEpi32([64]byte(a)))
 }
 
@@ -8462,7 +8462,7 @@ func m512ReduceMinEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epi64'.
 // Requires KNCNI.
-func M512MaskReduceMinEpi64(k x86.Mmask8, a x86.M512i) (dst int64) {
+func M512MaskReduceMinEpi64(k x86.Mmask8, a x86.M512i) int64 {
 	return int64(m512MaskReduceMinEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -8481,7 +8481,7 @@ func m512MaskReduceMinEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epi64'.
 // Requires KNCNI.
-func M512ReduceMinEpi64(a x86.M512i) (dst int64) {
+func M512ReduceMinEpi64(a x86.M512i) int64 {
 	return int64(m512ReduceMinEpi64([64]byte(a)))
 }
 
@@ -8502,7 +8502,7 @@ func m512ReduceMinEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epu32'.
 // Requires KNCNI.
-func M512MaskReduceMinEpu32(k x86.Mmask16, a x86.M512i) (dst uint32) {
+func M512MaskReduceMinEpu32(k x86.Mmask16, a x86.M512i) uint32 {
 	return uint32(m512MaskReduceMinEpu32(uint16(k), [64]byte(a)))
 }
 
@@ -8521,7 +8521,7 @@ func m512MaskReduceMinEpu32(k uint16, a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epu32'.
 // Requires KNCNI.
-func M512ReduceMinEpu32(a x86.M512i) (dst uint32) {
+func M512ReduceMinEpu32(a x86.M512i) uint32 {
 	return uint32(m512ReduceMinEpu32([64]byte(a)))
 }
 
@@ -8542,7 +8542,7 @@ func m512ReduceMinEpu32(a [64]byte) uint32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_epu64'.
 // Requires KNCNI.
-func M512MaskReduceMinEpu64(k x86.Mmask8, a x86.M512i) (dst uint64) {
+func M512MaskReduceMinEpu64(k x86.Mmask8, a x86.M512i) uint64 {
 	return uint64(m512MaskReduceMinEpu64(uint8(k), [64]byte(a)))
 }
 
@@ -8561,7 +8561,7 @@ func m512MaskReduceMinEpu64(k uint8, a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_epu64'.
 // Requires KNCNI.
-func M512ReduceMinEpu64(a x86.M512i) (dst uint64) {
+func M512ReduceMinEpu64(a x86.M512i) uint64 {
 	return uint64(m512ReduceMinEpu64([64]byte(a)))
 }
 
@@ -8583,7 +8583,7 @@ func m512ReduceMinEpu64(a [64]byte) uint64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_pd'.
 // Requires KNCNI.
-func M512MaskReduceMinPd(k x86.Mmask8, a x86.M512d) (dst float64) {
+func M512MaskReduceMinPd(k x86.Mmask8, a x86.M512d) float64 {
 	return float64(m512MaskReduceMinPd(uint8(k), [8]float64(a)))
 }
 
@@ -8602,7 +8602,7 @@ func m512MaskReduceMinPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_pd'.
 // Requires KNCNI.
-func M512ReduceMinPd(a x86.M512d) (dst float64) {
+func M512ReduceMinPd(a x86.M512d) float64 {
 	return float64(m512ReduceMinPd([8]float64(a)))
 }
 
@@ -8624,7 +8624,7 @@ func m512ReduceMinPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_min_ps'.
 // Requires KNCNI.
-func M512MaskReduceMinPs(k x86.Mmask16, a x86.M512) (dst float32) {
+func M512MaskReduceMinPs(k x86.Mmask16, a x86.M512) float32 {
 	return float32(m512MaskReduceMinPs(uint16(k), [16]float32(a)))
 }
 
@@ -8643,7 +8643,7 @@ func m512MaskReduceMinPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_min_ps'.
 // Requires KNCNI.
-func M512ReduceMinPs(a x86.M512) (dst float32) {
+func M512ReduceMinPs(a x86.M512) float32 {
 	return float32(m512ReduceMinPs([16]float32(a)))
 }
 
@@ -8665,7 +8665,7 @@ func m512ReduceMinPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_epi32'.
 // Requires KNCNI.
-func M512MaskReduceMulEpi32(k x86.Mmask16, a x86.M512i) (dst int) {
+func M512MaskReduceMulEpi32(k x86.Mmask16, a x86.M512i) int {
 	return int(m512MaskReduceMulEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -8684,7 +8684,7 @@ func m512MaskReduceMulEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_epi32'.
 // Requires KNCNI.
-func M512ReduceMulEpi32(a x86.M512i) (dst int) {
+func M512ReduceMulEpi32(a x86.M512i) int {
 	return int(m512ReduceMulEpi32([64]byte(a)))
 }
 
@@ -8706,7 +8706,7 @@ func m512ReduceMulEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_epi64'.
 // Requires KNCNI.
-func M512MaskReduceMulEpi64(k x86.Mmask8, a x86.M512i) (dst int64) {
+func M512MaskReduceMulEpi64(k x86.Mmask8, a x86.M512i) int64 {
 	return int64(m512MaskReduceMulEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -8725,7 +8725,7 @@ func m512MaskReduceMulEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_epi64'.
 // Requires KNCNI.
-func M512ReduceMulEpi64(a x86.M512i) (dst int64) {
+func M512ReduceMulEpi64(a x86.M512i) int64 {
 	return int64(m512ReduceMulEpi64([64]byte(a)))
 }
 
@@ -8747,7 +8747,7 @@ func m512ReduceMulEpi64(a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_pd'.
 // Requires KNCNI.
-func M512MaskReduceMulPd(k x86.Mmask8, a x86.M512d) (dst float64) {
+func M512MaskReduceMulPd(k x86.Mmask8, a x86.M512d) float64 {
 	return float64(m512MaskReduceMulPd(uint8(k), [8]float64(a)))
 }
 
@@ -8767,7 +8767,7 @@ func m512MaskReduceMulPd(k uint8, a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_pd'.
 // Requires KNCNI.
-func M512ReduceMulPd(a x86.M512d) (dst float64) {
+func M512ReduceMulPd(a x86.M512d) float64 {
 	return float64(m512ReduceMulPd([8]float64(a)))
 }
 
@@ -8789,7 +8789,7 @@ func m512ReduceMulPd(a [8]float64) float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_mul_ps'.
 // Requires KNCNI.
-func M512MaskReduceMulPs(k x86.Mmask16, a x86.M512) (dst float32) {
+func M512MaskReduceMulPs(k x86.Mmask16, a x86.M512) float32 {
 	return float32(m512MaskReduceMulPs(uint16(k), [16]float32(a)))
 }
 
@@ -8809,7 +8809,7 @@ func m512MaskReduceMulPs(k uint16, a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_mul_ps'.
 // Requires KNCNI.
-func M512ReduceMulPs(a x86.M512) (dst float32) {
+func M512ReduceMulPs(a x86.M512) float32 {
 	return float32(m512ReduceMulPs([16]float32(a)))
 }
 
@@ -8830,7 +8830,7 @@ func m512ReduceMulPs(a [16]float32) float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_or_epi32'.
 // Requires KNCNI.
-func M512MaskReduceOrEpi32(k x86.Mmask16, a x86.M512i) (dst int) {
+func M512MaskReduceOrEpi32(k x86.Mmask16, a x86.M512i) int {
 	return int(m512MaskReduceOrEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -8849,7 +8849,7 @@ func m512MaskReduceOrEpi32(k uint16, a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_or_epi32'.
 // Requires KNCNI.
-func M512ReduceOrEpi32(a x86.M512i) (dst int) {
+func M512ReduceOrEpi32(a x86.M512i) int {
 	return int(m512ReduceOrEpi32([64]byte(a)))
 }
 
@@ -8870,7 +8870,7 @@ func m512ReduceOrEpi32(a [64]byte) int
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_reduce_or_epi64'.
 // Requires KNCNI.
-func M512MaskReduceOrEpi64(k x86.Mmask8, a x86.M512i) (dst int64) {
+func M512MaskReduceOrEpi64(k x86.Mmask8, a x86.M512i) int64 {
 	return int64(m512MaskReduceOrEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -8889,7 +8889,7 @@ func m512MaskReduceOrEpi64(k uint8, a [64]byte) int64
 //
 // Instruction: '...'. Intrinsic: '_mm512_reduce_or_epi64'.
 // Requires KNCNI.
-func M512ReduceOrEpi64(a x86.M512i) (dst int64) {
+func M512ReduceOrEpi64(a x86.M512i) int64 {
 	return int64(m512ReduceOrEpi64([64]byte(a)))
 }
 
@@ -11482,7 +11482,7 @@ func m512TestEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'TZCNTI'. Intrinsic: '_mm_tzcnti_32'.
 // Requires KNCNI.
-func Tzcnti32(a int, x uint32) (dst int) {
+func Tzcnti32(a int, x uint32) int {
 	return int(tzcnti32(a, x))
 }
 
@@ -11502,7 +11502,7 @@ func tzcnti32(a int, x uint32) int
 //
 // Instruction: 'TZCNTI'. Intrinsic: '_mm_tzcnti_64'.
 // Requires KNCNI.
-func Tzcnti64(a int64, x uint64) (dst int64) {
+func Tzcnti64(a int64, x uint64) int64 {
 	return int64(tzcnti64(a, x))
 }
 

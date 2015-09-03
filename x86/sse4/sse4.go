@@ -357,7 +357,7 @@ func cmpeqEpi64(a [16]byte, b [16]byte) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestra(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) (dst int) {
+func Cmpestra(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestra([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
@@ -497,7 +497,7 @@ func cmpestra(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestrc(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) (dst int) {
+func Cmpestrc(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestrc([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
@@ -650,7 +650,7 @@ func cmpestrc(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestri(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) (dst int) {
+func Cmpestri(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestri([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
@@ -940,7 +940,7 @@ func cmpestrm(a [16]byte, la int, b [16]byte, lb int, imm8 byte) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestro(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) (dst int) {
+func Cmpestro(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestro([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
@@ -975,7 +975,7 @@ func cmpestro(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestrs(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) (dst int) {
+func Cmpestrs(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestrs([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
@@ -1010,7 +1010,7 @@ func cmpestrs(a [16]byte, la int, b [16]byte, lb int, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpestrz(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) (dst int) {
+func Cmpestrz(a x86.M128i, la int, b x86.M128i, lb int, imm8 byte) int {
 	return int(cmpestrz([16]byte(a), la, [16]byte(b), lb, imm8))
 }
 
@@ -1171,7 +1171,7 @@ func cmpgtEpi64(a [16]byte, b [16]byte) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistra(a x86.M128i, b x86.M128i, imm8 byte) (dst int) {
+func Cmpistra(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistra([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -1315,7 +1315,7 @@ func cmpistra(a [16]byte, b [16]byte, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistrc(a x86.M128i, b x86.M128i, imm8 byte) (dst int) {
+func Cmpistrc(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistrc([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -1472,7 +1472,7 @@ func cmpistrc(a [16]byte, b [16]byte, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistri(a x86.M128i, b x86.M128i, imm8 byte) (dst int) {
+func Cmpistri(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistri([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -1770,7 +1770,7 @@ func cmpistrm(a [16]byte, b [16]byte, imm8 byte) [16]byte
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistro(a x86.M128i, b x86.M128i, imm8 byte) (dst int) {
+func Cmpistro(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistro([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -1813,7 +1813,7 @@ func cmpistro(a [16]byte, b [16]byte, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistrs(a x86.M128i, b x86.M128i, imm8 byte) (dst int) {
+func Cmpistrs(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistrs([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -1856,7 +1856,7 @@ func cmpistrs(a [16]byte, b [16]byte, imm8 byte) int
 // Requires SSE4.2.
 //
 // FIXME: Requires compiler support (has immediate)
-func Cmpistrz(a x86.M128i, b x86.M128i, imm8 byte) (dst int) {
+func Cmpistrz(a x86.M128i, b x86.M128i, imm8 byte) int {
 	return int(cmpistrz([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -1876,7 +1876,7 @@ func cmpistrz(a [16]byte, b [16]byte, imm8 byte) int
 //
 // Instruction: 'CRC32'. Intrinsic: '_mm_crc32_u16'.
 // Requires SSE4.2.
-func Crc32U16(crc uint32, v uint16) (dst uint32) {
+func Crc32U16(crc uint32, v uint16) uint32 {
 	return uint32(crc32U16(crc, v))
 }
 
@@ -1896,7 +1896,7 @@ func crc32U16(crc uint32, v uint16) uint32
 //
 // Instruction: 'CRC32'. Intrinsic: '_mm_crc32_u32'.
 // Requires SSE4.2.
-func Crc32U32(crc uint32, v uint32) (dst uint32) {
+func Crc32U32(crc uint32, v uint32) uint32 {
 	return uint32(crc32U32(crc, v))
 }
 
@@ -1916,7 +1916,7 @@ func crc32U32(crc uint32, v uint32) uint32
 //
 // Instruction: 'CRC32'. Intrinsic: '_mm_crc32_u64'.
 // Requires SSE4.2.
-func Crc32U64(crc uint64, v uint64) (dst uint64) {
+func Crc32U64(crc uint64, v uint64) uint64 {
 	return uint64(crc32U64(crc, v))
 }
 
@@ -1936,7 +1936,7 @@ func crc32U64(crc uint64, v uint64) uint64
 //
 // Instruction: 'CRC32'. Intrinsic: '_mm_crc32_u8'.
 // Requires SSE4.2.
-func Crc32U8(crc uint32, v uint8) (dst uint32) {
+func Crc32U8(crc uint32, v uint8) uint32 {
 	return uint32(crc32U8(crc, v))
 }
 
@@ -2250,7 +2250,7 @@ func dpPs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi32(a x86.M128i, imm8 byte) (dst int) {
+func ExtractEpi32(a x86.M128i, imm8 byte) int {
 	return int(extractEpi32([16]byte(a), imm8))
 }
 
@@ -2266,7 +2266,7 @@ func extractEpi32(a [16]byte, imm8 byte) int
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi64(a x86.M128i, imm8 byte) (dst int64) {
+func ExtractEpi64(a x86.M128i, imm8 byte) int64 {
 	return int64(extractEpi64([16]byte(a), imm8))
 }
 
@@ -2283,7 +2283,7 @@ func extractEpi64(a [16]byte, imm8 byte) int64
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi8(a x86.M128i, imm8 byte) (dst int) {
+func ExtractEpi8(a x86.M128i, imm8 byte) int {
 	return int(extractEpi8([16]byte(a), imm8))
 }
 
@@ -2299,7 +2299,7 @@ func extractEpi8(a [16]byte, imm8 byte) int
 // Requires SSE4.1.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractPs(a x86.M128, imm8 byte) (dst int) {
+func ExtractPs(a x86.M128, imm8 byte) int {
 	return int(extractPs([4]float32(a), imm8))
 }
 
@@ -2878,7 +2878,7 @@ func StreamLoadSi128(mem_addr *x86.M128i) (dst x86.M128i) {
 //
 // Instruction: '...'. Intrinsic: '_mm_test_all_ones'.
 // Requires SSE4.1.
-func TestAllOnes(a x86.M128i) (dst int) {
+func TestAllOnes(a x86.M128i) int {
 	return int(testAllOnes([16]byte(a)))
 }
 
@@ -2898,7 +2898,7 @@ func testAllOnes(a [16]byte) int
 //
 // Instruction: 'PTEST'. Intrinsic: '_mm_test_all_zeros'.
 // Requires SSE4.1.
-func TestAllZeros(a x86.M128i, mask x86.M128i) (dst int) {
+func TestAllZeros(a x86.M128i, mask x86.M128i) int {
 	return int(testAllZeros([16]byte(a), [16]byte(mask)))
 }
 
@@ -2929,7 +2929,7 @@ func testAllZeros(a [16]byte, mask [16]byte) int
 //
 // Instruction: 'PTEST'. Intrinsic: '_mm_test_mix_ones_zeros'.
 // Requires SSE4.1.
-func TestMixOnesZeros(a x86.M128i, mask x86.M128i) (dst int) {
+func TestMixOnesZeros(a x86.M128i, mask x86.M128i) int {
 	return int(testMixOnesZeros([16]byte(a), [16]byte(mask)))
 }
 
@@ -2955,7 +2955,7 @@ func testMixOnesZeros(a [16]byte, mask [16]byte) int
 //
 // Instruction: 'PTEST'. Intrinsic: '_mm_testc_si128'.
 // Requires SSE4.1.
-func TestcSi128(a x86.M128i, b x86.M128i) (dst int) {
+func TestcSi128(a x86.M128i, b x86.M128i) int {
 	return int(testcSi128([16]byte(a), [16]byte(b)))
 }
 
@@ -2986,7 +2986,7 @@ func testcSi128(a [16]byte, b [16]byte) int
 //
 // Instruction: 'PTEST'. Intrinsic: '_mm_testnzc_si128'.
 // Requires SSE4.1.
-func TestnzcSi128(a x86.M128i, b x86.M128i) (dst int) {
+func TestnzcSi128(a x86.M128i, b x86.M128i) int {
 	return int(testnzcSi128([16]byte(a), [16]byte(b)))
 }
 
@@ -3012,7 +3012,7 @@ func testnzcSi128(a [16]byte, b [16]byte) int
 //
 // Instruction: 'PTEST'. Intrinsic: '_mm_testz_si128'.
 // Requires SSE4.1.
-func TestzSi128(a x86.M128i, b x86.M128i) (dst int) {
+func TestzSi128(a x86.M128i, b x86.M128i) int {
 	return int(testzSi128([16]byte(a), [16]byte(b)))
 }
 

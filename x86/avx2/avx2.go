@@ -2169,7 +2169,7 @@ func m256MinEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMOVMSKB'. Intrinsic: '_mm256_movemask_epi8'.
 // Requires AVX2.
-func M256MovemaskEpi8(a x86.M256i) (dst int) {
+func M256MovemaskEpi8(a x86.M256i) int {
 	return int(m256MovemaskEpi8([32]byte(a)))
 }
 

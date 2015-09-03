@@ -21,7 +21,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Requires RDSEED.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Rdseed16Step(val *uint16) (dst int) {
+func Rdseed16Step(val *uint16) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -42,7 +42,7 @@ func Rdseed16Step(val *uint16) (dst int) {
 // Requires RDSEED.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Rdseed32Step(val *uint32) (dst int) {
+func Rdseed32Step(val *uint32) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -63,7 +63,7 @@ func Rdseed32Step(val *uint32) (dst int) {
 // Requires RDSEED.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Rdseed64Step(val *uint64) (dst int) {
+func Rdseed64Step(val *uint64) int {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
