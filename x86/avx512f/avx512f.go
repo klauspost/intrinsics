@@ -21,7 +21,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm_mask_abs_epi32'.
 // Requires AVX512F.
-func MaskAbsEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskAbsEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAbsEpi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -44,7 +44,7 @@ func maskAbsEpi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm_maskz_abs_epi32'.
 // Requires AVX512F.
-func MaskzAbsEpi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzAbsEpi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAbsEpi32(uint8(k), [16]byte(a)))
 }
 
@@ -67,7 +67,7 @@ func maskzAbsEpi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm256_mask_abs_epi32'.
 // Requires AVX512F.
-func M256MaskAbsEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskAbsEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAbsEpi32([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -90,7 +90,7 @@ func m256MaskAbsEpi32(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm256_maskz_abs_epi32'.
 // Requires AVX512F.
-func M256MaskzAbsEpi32(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzAbsEpi32(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAbsEpi32(uint8(k), [32]byte(a)))
 }
 
@@ -108,7 +108,7 @@ func m256MaskzAbsEpi32(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm512_abs_epi32'.
 // Requires AVX512F.
-func M512AbsEpi32(a x86.M512i) x86.M512i {
+func M512AbsEpi32(a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512AbsEpi32([64]byte(a)))
 }
 
@@ -131,7 +131,7 @@ func m512AbsEpi32(a [64]byte) [64]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm512_mask_abs_epi32'.
 // Requires AVX512F.
-func M512MaskAbsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
+func M512MaskAbsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskAbsEpi32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -154,7 +154,7 @@ func m512MaskAbsEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm512_maskz_abs_epi32'.
 // Requires AVX512F.
-func M512MaskzAbsEpi32(k x86.Mmask16, a x86.M512i) x86.M512i {
+func M512MaskzAbsEpi32(k x86.Mmask16, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAbsEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -172,7 +172,7 @@ func m512MaskzAbsEpi32(k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm_abs_epi64'.
 // Requires AVX512F.
-func AbsEpi64(a x86.M128i) x86.M128i {
+func AbsEpi64(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(absEpi64([16]byte(a)))
 }
 
@@ -195,7 +195,7 @@ func absEpi64(a [16]byte) [16]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm_mask_abs_epi64'.
 // Requires AVX512F.
-func MaskAbsEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskAbsEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAbsEpi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -218,7 +218,7 @@ func maskAbsEpi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm_maskz_abs_epi64'.
 // Requires AVX512F.
-func MaskzAbsEpi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzAbsEpi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAbsEpi64(uint8(k), [16]byte(a)))
 }
 
@@ -236,7 +236,7 @@ func maskzAbsEpi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm256_abs_epi64'.
 // Requires AVX512F.
-func M256AbsEpi64(a x86.M256i) x86.M256i {
+func M256AbsEpi64(a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AbsEpi64([32]byte(a)))
 }
 
@@ -259,7 +259,7 @@ func m256AbsEpi64(a [32]byte) [32]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm256_mask_abs_epi64'.
 // Requires AVX512F.
-func M256MaskAbsEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskAbsEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAbsEpi64([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -282,7 +282,7 @@ func m256MaskAbsEpi64(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm256_maskz_abs_epi64'.
 // Requires AVX512F.
-func M256MaskzAbsEpi64(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzAbsEpi64(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAbsEpi64(uint8(k), [32]byte(a)))
 }
 
@@ -300,7 +300,7 @@ func m256MaskzAbsEpi64(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm512_abs_epi64'.
 // Requires AVX512F.
-func M512AbsEpi64(a x86.M512i) x86.M512i {
+func M512AbsEpi64(a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512AbsEpi64([64]byte(a)))
 }
 
@@ -323,7 +323,7 @@ func m512AbsEpi64(a [64]byte) [64]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm512_mask_abs_epi64'.
 // Requires AVX512F.
-func M512MaskAbsEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
+func M512MaskAbsEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskAbsEpi64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -346,7 +346,7 @@ func m512MaskAbsEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VPABSQ'. Intrinsic: '_mm512_maskz_abs_epi64'.
 // Requires AVX512F.
-func M512MaskzAbsEpi64(k x86.Mmask8, a x86.M512i) x86.M512i {
+func M512MaskzAbsEpi64(k x86.Mmask8, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAbsEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -365,7 +365,7 @@ func m512MaskzAbsEpi64(k uint8, a [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_acos_pd'.
 // Requires AVX512F.
-func M512AcosPd(a x86.M512d) x86.M512d {
+func M512AcosPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512AcosPd([8]float64(a)))
 }
 
@@ -389,7 +389,7 @@ func m512AcosPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_acos_pd'.
 // Requires AVX512F.
-func M512MaskAcosPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskAcosPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskAcosPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -408,7 +408,7 @@ func m512MaskAcosPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_acos_ps'.
 // Requires AVX512F.
-func M512AcosPs(a x86.M512) x86.M512 {
+func M512AcosPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512AcosPs([16]float32(a)))
 }
 
@@ -432,7 +432,7 @@ func m512AcosPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_acos_ps'.
 // Requires AVX512F.
-func M512MaskAcosPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskAcosPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskAcosPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -451,7 +451,7 @@ func m512MaskAcosPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_acosh_pd'.
 // Requires AVX512F.
-func M512AcoshPd(a x86.M512d) x86.M512d {
+func M512AcoshPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512AcoshPd([8]float64(a)))
 }
 
@@ -475,7 +475,7 @@ func m512AcoshPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_acosh_pd'.
 // Requires AVX512F.
-func M512MaskAcoshPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskAcoshPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskAcoshPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -494,7 +494,7 @@ func m512MaskAcoshPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_acosh_ps'.
 // Requires AVX512F.
-func M512AcoshPs(a x86.M512) x86.M512 {
+func M512AcoshPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512AcoshPs([16]float32(a)))
 }
 
@@ -518,7 +518,7 @@ func m512AcoshPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_acosh_ps'.
 // Requires AVX512F.
-func M512MaskAcoshPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskAcoshPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskAcoshPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -541,7 +541,7 @@ func m512MaskAcoshPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm_mask_add_epi32'.
 // Requires AVX512F.
-func MaskAddEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskAddEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAddEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -564,7 +564,7 @@ func maskAddEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm_maskz_add_epi32'.
 // Requires AVX512F.
-func MaskzAddEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzAddEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAddEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -587,7 +587,7 @@ func maskzAddEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm256_mask_add_epi32'.
 // Requires AVX512F.
-func M256MaskAddEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskAddEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAddEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -610,7 +610,7 @@ func m256MaskAddEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm256_maskz_add_epi32'.
 // Requires AVX512F.
-func M256MaskzAddEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzAddEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAddEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -633,7 +633,7 @@ func m256MaskzAddEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm512_maskz_add_epi32'.
 // Requires AVX512F.
-func M512MaskzAddEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzAddEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAddEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -656,7 +656,7 @@ func m512MaskzAddEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm_mask_add_epi64'.
 // Requires AVX512F.
-func MaskAddEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskAddEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAddEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -679,7 +679,7 @@ func maskAddEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm_maskz_add_epi64'.
 // Requires AVX512F.
-func MaskzAddEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzAddEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAddEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -702,7 +702,7 @@ func maskzAddEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm256_mask_add_epi64'.
 // Requires AVX512F.
-func M256MaskAddEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskAddEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAddEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -725,7 +725,7 @@ func m256MaskAddEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm256_maskz_add_epi64'.
 // Requires AVX512F.
-func M256MaskzAddEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzAddEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAddEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -743,7 +743,7 @@ func m256MaskzAddEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm512_add_epi64'.
 // Requires AVX512F.
-func M512AddEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512AddEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512AddEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -766,7 +766,7 @@ func m512AddEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm512_mask_add_epi64'.
 // Requires AVX512F.
-func M512MaskAddEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskAddEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskAddEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -789,7 +789,7 @@ func m512MaskAddEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm512_maskz_add_epi64'.
 // Requires AVX512F.
-func M512MaskzAddEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzAddEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAddEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -812,7 +812,7 @@ func m512MaskzAddEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm512_maskz_add_pd'.
 // Requires AVX512F.
-func M512MaskzAddPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzAddPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzAddPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -835,7 +835,7 @@ func m512MaskzAddPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm512_maskz_add_ps'.
 // Requires AVX512F.
-func M512MaskzAddPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzAddPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzAddPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -865,7 +865,7 @@ func m512MaskzAddPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VADDPD'. Intrinsic: '_mm512_maskz_add_round_pd'.
 // Requires AVX512F.
-func M512MaskzAddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512MaskzAddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzAddRoundPd(uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
@@ -895,7 +895,7 @@ func m512MaskzAddRoundPd(k uint8, a [8]float64, b [8]float64, rounding int) [8]f
 //
 // Instruction: 'VADDPS'. Intrinsic: '_mm512_maskz_add_round_ps'.
 // Requires AVX512F.
-func M512MaskzAddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512MaskzAddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzAddRoundPs(uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
@@ -919,7 +919,7 @@ func m512MaskzAddRoundPs(k uint16, a [16]float32, b [16]float32, rounding int) [
 //
 // Instruction: 'VADDSD'. Intrinsic: '_mm_add_round_sd'.
 // Requires AVX512F.
-func AddRoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func AddRoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(addRoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
@@ -948,7 +948,7 @@ func addRoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VADDSD'. Intrinsic: '_mm_mask_add_round_sd'.
 // Requires AVX512F.
-func MaskAddRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskAddRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskAddRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -977,7 +977,7 @@ func maskAddRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, roundin
 //
 // Instruction: 'VADDSD'. Intrinsic: '_mm_maskz_add_round_sd'.
 // Requires AVX512F.
-func MaskzAddRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskzAddRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzAddRoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -1001,7 +1001,7 @@ func maskzAddRoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float
 //
 // Instruction: 'VADDSS'. Intrinsic: '_mm_add_round_ss'.
 // Requires AVX512F.
-func AddRoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+func AddRoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(addRoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
@@ -1031,7 +1031,7 @@ func addRoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VADDSS'. Intrinsic: '_mm_mask_add_round_ss'.
 // Requires AVX512F.
-func MaskAddRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskAddRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskAddRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -1060,7 +1060,7 @@ func maskAddRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, roundin
 //
 // Instruction: 'VADDSS'. Intrinsic: '_mm_maskz_add_round_ss'.
 // Requires AVX512F.
-func MaskzAddRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskzAddRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzAddRoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -1082,7 +1082,7 @@ func maskzAddRoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float
 //
 // Instruction: 'VADDSD'. Intrinsic: '_mm_mask_add_sd'.
 // Requires AVX512F.
-func MaskAddSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskAddSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskAddSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -1104,7 +1104,7 @@ func maskAddSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VADDSD'. Intrinsic: '_mm_maskz_add_sd'.
 // Requires AVX512F.
-func MaskzAddSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzAddSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzAddSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -1126,7 +1126,7 @@ func maskzAddSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VADDSS'. Intrinsic: '_mm_mask_add_ss'.
 // Requires AVX512F.
-func MaskAddSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskAddSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskAddSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -1148,7 +1148,7 @@ func maskAddSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VADDSS'. Intrinsic: '_mm_maskz_add_ss'.
 // Requires AVX512F.
-func MaskzAddSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzAddSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzAddSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -1175,7 +1175,7 @@ func maskzAddSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VALIGND'. Intrinsic: '_mm512_maskz_alignr_epi32'.
 // Requires AVX512F.
-func M512MaskzAlignrEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i, count int) x86.M512i {
+func M512MaskzAlignrEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i, count int) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAlignrEpi32(uint16(k), [64]byte(a), [64]byte(b), count))
 }
 
@@ -1194,7 +1194,7 @@ func m512MaskzAlignrEpi32(k uint16, a [64]byte, b [64]byte, count int) [64]byte
 //
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm512_alignr_epi64'.
 // Requires AVX512F.
-func M512AlignrEpi64(a x86.M512i, b x86.M512i, count int) x86.M512i {
+func M512AlignrEpi64(a x86.M512i, b x86.M512i, count int) (dst x86.M512i) {
 	return x86.M512i(m512AlignrEpi64([64]byte(a), [64]byte(b), count))
 }
 
@@ -1221,7 +1221,7 @@ func m512AlignrEpi64(a [64]byte, b [64]byte, count int) [64]byte
 //
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm512_mask_alignr_epi64'.
 // Requires AVX512F.
-func M512MaskAlignrEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, count int) x86.M512i {
+func M512MaskAlignrEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, count int) (dst x86.M512i) {
 	return x86.M512i(m512MaskAlignrEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), count))
 }
 
@@ -1248,7 +1248,7 @@ func m512MaskAlignrEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte, count in
 //
 // Instruction: 'VALIGNQ'. Intrinsic: '_mm512_maskz_alignr_epi64'.
 // Requires AVX512F.
-func M512MaskzAlignrEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i, count int) x86.M512i {
+func M512MaskzAlignrEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i, count int) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAlignrEpi64(uint8(k), [64]byte(a), [64]byte(b), count))
 }
 
@@ -1271,7 +1271,7 @@ func m512MaskzAlignrEpi64(k uint8, a [64]byte, b [64]byte, count int) [64]byte
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm_mask_and_epi32'.
 // Requires AVX512F.
-func MaskAndEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskAndEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAndEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1294,7 +1294,7 @@ func maskAndEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm_maskz_and_epi32'.
 // Requires AVX512F.
-func MaskzAndEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzAndEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAndEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1317,7 +1317,7 @@ func maskzAndEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm256_mask_and_epi32'.
 // Requires AVX512F.
-func M256MaskAndEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskAndEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAndEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1340,7 +1340,7 @@ func m256MaskAndEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm256_maskz_and_epi32'.
 // Requires AVX512F.
-func M256MaskzAndEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzAndEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAndEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1363,7 +1363,7 @@ func m256MaskzAndEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDD'. Intrinsic: '_mm512_maskz_and_epi32'.
 // Requires AVX512F.
-func M512MaskzAndEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzAndEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAndEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -1386,7 +1386,7 @@ func m512MaskzAndEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm_mask_and_epi64'.
 // Requires AVX512F.
-func MaskAndEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskAndEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAndEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1409,7 +1409,7 @@ func maskAndEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm_maskz_and_epi64'.
 // Requires AVX512F.
-func MaskzAndEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzAndEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAndEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1432,7 +1432,7 @@ func maskzAndEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm256_mask_and_epi64'.
 // Requires AVX512F.
-func M256MaskAndEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskAndEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAndEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1455,7 +1455,7 @@ func m256MaskAndEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm256_maskz_and_epi64'.
 // Requires AVX512F.
-func M256MaskzAndEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzAndEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAndEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1478,7 +1478,7 @@ func m256MaskzAndEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDQ'. Intrinsic: '_mm512_maskz_and_epi64'.
 // Requires AVX512F.
-func M512MaskzAndEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzAndEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAndEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -1501,7 +1501,7 @@ func m512MaskzAndEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm_mask_andnot_epi32'.
 // Requires AVX512F.
-func MaskAndnotEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskAndnotEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAndnotEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1524,7 +1524,7 @@ func maskAndnotEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm_maskz_andnot_epi32'.
 // Requires AVX512F.
-func MaskzAndnotEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzAndnotEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAndnotEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1547,7 +1547,7 @@ func maskzAndnotEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm256_mask_andnot_epi32'.
 // Requires AVX512F.
-func M256MaskAndnotEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskAndnotEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAndnotEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1570,7 +1570,7 @@ func m256MaskAndnotEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm256_maskz_andnot_epi32'.
 // Requires AVX512F.
-func M256MaskzAndnotEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzAndnotEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAndnotEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1593,7 +1593,7 @@ func m256MaskzAndnotEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDND'. Intrinsic: '_mm512_maskz_andnot_epi32'.
 // Requires AVX512F.
-func M512MaskzAndnotEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzAndnotEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAndnotEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -1616,7 +1616,7 @@ func m512MaskzAndnotEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm_mask_andnot_epi64'.
 // Requires AVX512F.
-func MaskAndnotEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskAndnotEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskAndnotEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1639,7 +1639,7 @@ func maskAndnotEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm_maskz_andnot_epi64'.
 // Requires AVX512F.
-func MaskzAndnotEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzAndnotEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzAndnotEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -1662,7 +1662,7 @@ func maskzAndnotEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm256_mask_andnot_epi64'.
 // Requires AVX512F.
-func M256MaskAndnotEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskAndnotEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskAndnotEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1685,7 +1685,7 @@ func m256MaskAndnotEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm256_maskz_andnot_epi64'.
 // Requires AVX512F.
-func M256MaskzAndnotEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzAndnotEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzAndnotEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -1708,7 +1708,7 @@ func m256MaskzAndnotEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDNQ'. Intrinsic: '_mm512_maskz_andnot_epi64'.
 // Requires AVX512F.
-func M512MaskzAndnotEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzAndnotEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzAndnotEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -1727,7 +1727,7 @@ func m512MaskzAndnotEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_asin_pd'.
 // Requires AVX512F.
-func M512AsinPd(a x86.M512d) x86.M512d {
+func M512AsinPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512AsinPd([8]float64(a)))
 }
 
@@ -1751,7 +1751,7 @@ func m512AsinPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_asin_pd'.
 // Requires AVX512F.
-func M512MaskAsinPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskAsinPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskAsinPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -1770,7 +1770,7 @@ func m512MaskAsinPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_asin_ps'.
 // Requires AVX512F.
-func M512AsinPs(a x86.M512) x86.M512 {
+func M512AsinPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512AsinPs([16]float32(a)))
 }
 
@@ -1794,7 +1794,7 @@ func m512AsinPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_asin_ps'.
 // Requires AVX512F.
-func M512MaskAsinPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskAsinPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskAsinPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -1813,7 +1813,7 @@ func m512MaskAsinPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_asinh_pd'.
 // Requires AVX512F.
-func M512AsinhPd(a x86.M512d) x86.M512d {
+func M512AsinhPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512AsinhPd([8]float64(a)))
 }
 
@@ -1837,7 +1837,7 @@ func m512AsinhPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_asinh_pd'.
 // Requires AVX512F.
-func M512MaskAsinhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskAsinhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskAsinhPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -1856,7 +1856,7 @@ func m512MaskAsinhPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_asinh_ps'.
 // Requires AVX512F.
-func M512AsinhPs(a x86.M512) x86.M512 {
+func M512AsinhPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512AsinhPs([16]float32(a)))
 }
 
@@ -1880,7 +1880,7 @@ func m512AsinhPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_asinh_ps'.
 // Requires AVX512F.
-func M512MaskAsinhPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskAsinhPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskAsinhPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -1899,7 +1899,7 @@ func m512MaskAsinhPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_atan_pd'.
 // Requires AVX512F.
-func M512AtanPd(a x86.M512d) x86.M512d {
+func M512AtanPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512AtanPd([8]float64(a)))
 }
 
@@ -1923,7 +1923,7 @@ func m512AtanPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_atan_pd'.
 // Requires AVX512F.
-func M512MaskAtanPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskAtanPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskAtanPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -1942,7 +1942,7 @@ func m512MaskAtanPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_atan_ps'.
 // Requires AVX512F.
-func M512AtanPs(a x86.M512) x86.M512 {
+func M512AtanPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512AtanPs([16]float32(a)))
 }
 
@@ -1966,7 +1966,7 @@ func m512AtanPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_atan_ps'.
 // Requires AVX512F.
-func M512MaskAtanPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskAtanPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskAtanPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -1985,7 +1985,7 @@ func m512MaskAtanPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_atan2_pd'.
 // Requires AVX512F.
-func M512Atan2Pd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512Atan2Pd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Atan2Pd([8]float64(a), [8]float64(b)))
 }
 
@@ -2009,7 +2009,7 @@ func m512Atan2Pd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_atan2_pd'.
 // Requires AVX512F.
-func M512MaskAtan2Pd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskAtan2Pd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskAtan2Pd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -2028,7 +2028,7 @@ func m512MaskAtan2Pd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]flo
 //
 // Instruction: '...'. Intrinsic: '_mm512_atan2_ps'.
 // Requires AVX512F.
-func M512Atan2Ps(a x86.M512, b x86.M512) x86.M512 {
+func M512Atan2Ps(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512Atan2Ps([16]float32(a), [16]float32(b)))
 }
 
@@ -2052,7 +2052,7 @@ func m512Atan2Ps(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_atan2_ps'.
 // Requires AVX512F.
-func M512MaskAtan2Ps(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskAtan2Ps(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskAtan2Ps([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -2071,7 +2071,7 @@ func m512MaskAtan2Ps(src [16]float32, k uint16, a [16]float32, b [16]float32) [1
 //
 // Instruction: '...'. Intrinsic: '_mm512_atanh_pd'.
 // Requires AVX512F.
-func M512AtanhPd(a x86.M512d) x86.M512d {
+func M512AtanhPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512AtanhPd([8]float64(a)))
 }
 
@@ -2095,7 +2095,7 @@ func m512AtanhPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_atanh_pd'.
 // Requires AVX512F.
-func M512MaskAtanhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskAtanhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskAtanhPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -2114,7 +2114,7 @@ func m512MaskAtanhPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_atanh_ps'.
 // Requires AVX512F.
-func M512AtanhPs(a x86.M512) x86.M512 {
+func M512AtanhPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512AtanhPs([16]float32(a)))
 }
 
@@ -2138,7 +2138,7 @@ func m512AtanhPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_atanh_ps'.
 // Requires AVX512F.
-func M512MaskAtanhPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskAtanhPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskAtanhPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -2160,7 +2160,7 @@ func m512MaskAtanhPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VPBLENDMD'. Intrinsic: '_mm_mask_blend_epi32'.
 // Requires AVX512F.
-func MaskBlendEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskBlendEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskBlendEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -2182,7 +2182,7 @@ func maskBlendEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPBLENDMD'. Intrinsic: '_mm256_mask_blend_epi32'.
 // Requires AVX512F.
-func M256MaskBlendEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskBlendEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskBlendEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -2204,7 +2204,7 @@ func m256MaskBlendEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPBLENDMQ'. Intrinsic: '_mm_mask_blend_epi64'.
 // Requires AVX512F.
-func MaskBlendEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskBlendEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskBlendEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -2226,7 +2226,7 @@ func maskBlendEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPBLENDMQ'. Intrinsic: '_mm256_mask_blend_epi64'.
 // Requires AVX512F.
-func M256MaskBlendEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskBlendEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskBlendEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -2248,7 +2248,7 @@ func m256MaskBlendEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VBLENDMPD'. Intrinsic: '_mm_mask_blend_pd'.
 // Requires AVX512F.
-func MaskBlendPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskBlendPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskBlendPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -2271,7 +2271,7 @@ func maskBlendPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VBLENDMPD'. Intrinsic: '_mm256_mask_blend_pd'.
 // Requires AVX512F.
-func M256MaskBlendPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskBlendPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskBlendPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -2293,7 +2293,7 @@ func m256MaskBlendPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VBLENDMPS'. Intrinsic: '_mm_mask_blend_ps'.
 // Requires AVX512F.
-func MaskBlendPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskBlendPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskBlendPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -2316,7 +2316,7 @@ func maskBlendPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VBLENDMPS'. Intrinsic: '_mm256_mask_blend_ps'.
 // Requires AVX512F.
-func M256MaskBlendPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskBlendPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskBlendPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -2335,7 +2335,7 @@ func m256MaskBlendPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF32X4'. Intrinsic: '_mm256_broadcast_f32x4'.
 // Requires AVX512F.
-func M256BroadcastF32x4(a x86.M128) x86.M256 {
+func M256BroadcastF32x4(a x86.M128) (dst x86.M256) {
 	return x86.M256(m256BroadcastF32x4([4]float32(a)))
 }
 
@@ -2360,7 +2360,7 @@ func m256BroadcastF32x4(a [4]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF32X4'. Intrinsic: '_mm256_mask_broadcast_f32x4'.
 // Requires AVX512F.
-func M256MaskBroadcastF32x4(src x86.M256, k x86.Mmask8, a x86.M128) x86.M256 {
+func M256MaskBroadcastF32x4(src x86.M256, k x86.Mmask8, a x86.M128) (dst x86.M256) {
 	return x86.M256(m256MaskBroadcastF32x4([8]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -2384,7 +2384,7 @@ func m256MaskBroadcastF32x4(src [8]float32, k uint8, a [4]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF32X4'. Intrinsic: '_mm256_maskz_broadcast_f32x4'.
 // Requires AVX512F.
-func M256MaskzBroadcastF32x4(k x86.Mmask8, a x86.M128) x86.M256 {
+func M256MaskzBroadcastF32x4(k x86.Mmask8, a x86.M128) (dst x86.M256) {
 	return x86.M256(m256MaskzBroadcastF32x4(uint8(k), [4]float32(a)))
 }
 
@@ -2403,7 +2403,7 @@ func m256MaskzBroadcastF32x4(k uint8, a [4]float32) [8]float32
 //
 // Instruction: 'VBROADCASTF32X4'. Intrinsic: '_mm512_broadcast_f32x4'.
 // Requires AVX512F.
-func M512BroadcastF32x4(a x86.M128) x86.M512 {
+func M512BroadcastF32x4(a x86.M128) (dst x86.M512) {
 	return x86.M512(m512BroadcastF32x4([4]float32(a)))
 }
 
@@ -2428,7 +2428,7 @@ func m512BroadcastF32x4(a [4]float32) [16]float32
 //
 // Instruction: 'VBROADCASTF32X4'. Intrinsic: '_mm512_mask_broadcast_f32x4'.
 // Requires AVX512F.
-func M512MaskBroadcastF32x4(src x86.M512, k x86.Mmask16, a x86.M128) x86.M512 {
+func M512MaskBroadcastF32x4(src x86.M512, k x86.Mmask16, a x86.M128) (dst x86.M512) {
 	return x86.M512(m512MaskBroadcastF32x4([16]float32(src), uint16(k), [4]float32(a)))
 }
 
@@ -2452,7 +2452,7 @@ func m512MaskBroadcastF32x4(src [16]float32, k uint16, a [4]float32) [16]float32
 //
 // Instruction: 'VBROADCASTF32X4'. Intrinsic: '_mm512_maskz_broadcast_f32x4'.
 // Requires AVX512F.
-func M512MaskzBroadcastF32x4(k x86.Mmask16, a x86.M128) x86.M512 {
+func M512MaskzBroadcastF32x4(k x86.Mmask16, a x86.M128) (dst x86.M512) {
 	return x86.M512(m512MaskzBroadcastF32x4(uint16(k), [4]float32(a)))
 }
 
@@ -2471,7 +2471,7 @@ func m512MaskzBroadcastF32x4(k uint16, a [4]float32) [16]float32
 //
 // Instruction: 'VBROADCASTF64X4'. Intrinsic: '_mm512_broadcast_f64x4'.
 // Requires AVX512F.
-func M512BroadcastF64x4(a x86.M256d) x86.M512d {
+func M512BroadcastF64x4(a x86.M256d) (dst x86.M512d) {
 	return x86.M512d(m512BroadcastF64x4([4]float64(a)))
 }
 
@@ -2496,7 +2496,7 @@ func m512BroadcastF64x4(a [4]float64) [8]float64
 //
 // Instruction: 'VBROADCASTF64X4'. Intrinsic: '_mm512_mask_broadcast_f64x4'.
 // Requires AVX512F.
-func M512MaskBroadcastF64x4(src x86.M512d, k x86.Mmask8, a x86.M256d) x86.M512d {
+func M512MaskBroadcastF64x4(src x86.M512d, k x86.Mmask8, a x86.M256d) (dst x86.M512d) {
 	return x86.M512d(m512MaskBroadcastF64x4([8]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -2520,7 +2520,7 @@ func m512MaskBroadcastF64x4(src [8]float64, k uint8, a [4]float64) [8]float64
 //
 // Instruction: 'VBROADCASTF64X4'. Intrinsic: '_mm512_maskz_broadcast_f64x4'.
 // Requires AVX512F.
-func M512MaskzBroadcastF64x4(k x86.Mmask8, a x86.M256d) x86.M512d {
+func M512MaskzBroadcastF64x4(k x86.Mmask8, a x86.M256d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzBroadcastF64x4(uint8(k), [4]float64(a)))
 }
 
@@ -2539,7 +2539,7 @@ func m512MaskzBroadcastF64x4(k uint8, a [4]float64) [8]float64
 //
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm256_broadcast_i32x4'.
 // Requires AVX512F.
-func M256BroadcastI32x4(a x86.M128i) x86.M256i {
+func M256BroadcastI32x4(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256BroadcastI32x4([16]byte(a)))
 }
 
@@ -2563,7 +2563,7 @@ func m256BroadcastI32x4(a [16]byte) [32]byte
 //
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm256_mask_broadcast_i32x4'.
 // Requires AVX512F.
-func M256MaskBroadcastI32x4(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskBroadcastI32x4(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskBroadcastI32x4([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -2587,7 +2587,7 @@ func m256MaskBroadcastI32x4(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm256_maskz_broadcast_i32x4'.
 // Requires AVX512F.
-func M256MaskzBroadcastI32x4(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzBroadcastI32x4(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzBroadcastI32x4(uint8(k), [16]byte(a)))
 }
 
@@ -2606,7 +2606,7 @@ func m256MaskzBroadcastI32x4(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm512_broadcast_i32x4'.
 // Requires AVX512F.
-func M512BroadcastI32x4(a x86.M128i) x86.M512i {
+func M512BroadcastI32x4(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512BroadcastI32x4([16]byte(a)))
 }
 
@@ -2630,7 +2630,7 @@ func m512BroadcastI32x4(a [16]byte) [64]byte
 //
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm512_mask_broadcast_i32x4'.
 // Requires AVX512F.
-func M512MaskBroadcastI32x4(src x86.M512i, k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskBroadcastI32x4(src x86.M512i, k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskBroadcastI32x4([64]byte(src), uint16(k), [16]byte(a)))
 }
 
@@ -2654,7 +2654,7 @@ func m512MaskBroadcastI32x4(src [64]byte, k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VBROADCASTI32X4'. Intrinsic: '_mm512_maskz_broadcast_i32x4'.
 // Requires AVX512F.
-func M512MaskzBroadcastI32x4(k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskzBroadcastI32x4(k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzBroadcastI32x4(uint16(k), [16]byte(a)))
 }
 
@@ -2673,7 +2673,7 @@ func m512MaskzBroadcastI32x4(k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VBROADCASTI64X4'. Intrinsic: '_mm512_broadcast_i64x4'.
 // Requires AVX512F.
-func M512BroadcastI64x4(a x86.M256i) x86.M512i {
+func M512BroadcastI64x4(a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512BroadcastI64x4([32]byte(a)))
 }
 
@@ -2697,7 +2697,7 @@ func m512BroadcastI64x4(a [32]byte) [64]byte
 //
 // Instruction: 'VBROADCASTI64X4'. Intrinsic: '_mm512_mask_broadcast_i64x4'.
 // Requires AVX512F.
-func M512MaskBroadcastI64x4(src x86.M512i, k x86.Mmask8, a x86.M256i) x86.M512i {
+func M512MaskBroadcastI64x4(src x86.M512i, k x86.Mmask8, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskBroadcastI64x4([64]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -2721,7 +2721,7 @@ func m512MaskBroadcastI64x4(src [64]byte, k uint8, a [32]byte) [64]byte
 //
 // Instruction: 'VBROADCASTI64X4'. Intrinsic: '_mm512_maskz_broadcast_i64x4'.
 // Requires AVX512F.
-func M512MaskzBroadcastI64x4(k x86.Mmask8, a x86.M256i) x86.M512i {
+func M512MaskzBroadcastI64x4(k x86.Mmask8, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzBroadcastI64x4(uint8(k), [32]byte(a)))
 }
 
@@ -2744,7 +2744,7 @@ func m512MaskzBroadcastI64x4(k uint8, a [32]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm_mask_broadcastd_epi32'.
 // Requires AVX512F.
-func MaskBroadcastdEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskBroadcastdEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskBroadcastdEpi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -2767,7 +2767,7 @@ func maskBroadcastdEpi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm_maskz_broadcastd_epi32'.
 // Requires AVX512F.
-func MaskzBroadcastdEpi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzBroadcastdEpi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzBroadcastdEpi32(uint8(k), [16]byte(a)))
 }
 
@@ -2790,7 +2790,7 @@ func maskzBroadcastdEpi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm256_mask_broadcastd_epi32'.
 // Requires AVX512F.
-func M256MaskBroadcastdEpi32(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskBroadcastdEpi32(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskBroadcastdEpi32([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -2813,7 +2813,7 @@ func m256MaskBroadcastdEpi32(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm256_maskz_broadcastd_epi32'.
 // Requires AVX512F.
-func M256MaskzBroadcastdEpi32(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzBroadcastdEpi32(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzBroadcastdEpi32(uint8(k), [16]byte(a)))
 }
 
@@ -2831,7 +2831,7 @@ func m256MaskzBroadcastdEpi32(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_broadcastd_epi32'.
 // Requires AVX512F.
-func M512BroadcastdEpi32(a x86.M128i) x86.M512i {
+func M512BroadcastdEpi32(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512BroadcastdEpi32([16]byte(a)))
 }
 
@@ -2854,7 +2854,7 @@ func m512BroadcastdEpi32(a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_mask_broadcastd_epi32'.
 // Requires AVX512F.
-func M512MaskBroadcastdEpi32(src x86.M512i, k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskBroadcastdEpi32(src x86.M512i, k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskBroadcastdEpi32([64]byte(src), uint16(k), [16]byte(a)))
 }
 
@@ -2877,7 +2877,7 @@ func m512MaskBroadcastdEpi32(src [64]byte, k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_maskz_broadcastd_epi32'.
 // Requires AVX512F.
-func M512MaskzBroadcastdEpi32(k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskzBroadcastdEpi32(k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzBroadcastdEpi32(uint16(k), [16]byte(a)))
 }
 
@@ -2900,7 +2900,7 @@ func m512MaskzBroadcastdEpi32(k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm_mask_broadcastq_epi64'.
 // Requires AVX512F.
-func MaskBroadcastqEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskBroadcastqEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskBroadcastqEpi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -2923,7 +2923,7 @@ func maskBroadcastqEpi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm_maskz_broadcastq_epi64'.
 // Requires AVX512F.
-func MaskzBroadcastqEpi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzBroadcastqEpi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzBroadcastqEpi64(uint8(k), [16]byte(a)))
 }
 
@@ -2946,7 +2946,7 @@ func maskzBroadcastqEpi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm256_mask_broadcastq_epi64'.
 // Requires AVX512F.
-func M256MaskBroadcastqEpi64(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskBroadcastqEpi64(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskBroadcastqEpi64([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -2969,7 +2969,7 @@ func m256MaskBroadcastqEpi64(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm256_maskz_broadcastq_epi64'.
 // Requires AVX512F.
-func M256MaskzBroadcastqEpi64(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzBroadcastqEpi64(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzBroadcastqEpi64(uint8(k), [16]byte(a)))
 }
 
@@ -2987,7 +2987,7 @@ func m256MaskzBroadcastqEpi64(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_broadcastq_epi64'.
 // Requires AVX512F.
-func M512BroadcastqEpi64(a x86.M128i) x86.M512i {
+func M512BroadcastqEpi64(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512BroadcastqEpi64([16]byte(a)))
 }
 
@@ -3010,7 +3010,7 @@ func m512BroadcastqEpi64(a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_mask_broadcastq_epi64'.
 // Requires AVX512F.
-func M512MaskBroadcastqEpi64(src x86.M512i, k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskBroadcastqEpi64(src x86.M512i, k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskBroadcastqEpi64([64]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -3033,7 +3033,7 @@ func m512MaskBroadcastqEpi64(src [64]byte, k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_maskz_broadcastq_epi64'.
 // Requires AVX512F.
-func M512MaskzBroadcastqEpi64(k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskzBroadcastqEpi64(k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzBroadcastqEpi64(uint8(k), [16]byte(a)))
 }
 
@@ -3056,7 +3056,7 @@ func m512MaskzBroadcastqEpi64(k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm256_mask_broadcastsd_pd'.
 // Requires AVX512F.
-func M256MaskBroadcastsdPd(src x86.M256d, k x86.Mmask8, a x86.M128d) x86.M256d {
+func M256MaskBroadcastsdPd(src x86.M256d, k x86.Mmask8, a x86.M128d) (dst x86.M256d) {
 	return x86.M256d(m256MaskBroadcastsdPd([4]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -3079,7 +3079,7 @@ func m256MaskBroadcastsdPd(src [4]float64, k uint8, a [2]float64) [4]float64
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm256_maskz_broadcastsd_pd'.
 // Requires AVX512F.
-func M256MaskzBroadcastsdPd(k x86.Mmask8, a x86.M128d) x86.M256d {
+func M256MaskzBroadcastsdPd(k x86.Mmask8, a x86.M128d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzBroadcastsdPd(uint8(k), [2]float64(a)))
 }
 
@@ -3097,7 +3097,7 @@ func m256MaskzBroadcastsdPd(k uint8, a [2]float64) [4]float64
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm512_broadcastsd_pd'.
 // Requires AVX512F.
-func M512BroadcastsdPd(a x86.M128d) x86.M512d {
+func M512BroadcastsdPd(a x86.M128d) (dst x86.M512d) {
 	return x86.M512d(m512BroadcastsdPd([2]float64(a)))
 }
 
@@ -3120,7 +3120,7 @@ func m512BroadcastsdPd(a [2]float64) [8]float64
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm512_mask_broadcastsd_pd'.
 // Requires AVX512F.
-func M512MaskBroadcastsdPd(src x86.M512d, k x86.Mmask8, a x86.M128d) x86.M512d {
+func M512MaskBroadcastsdPd(src x86.M512d, k x86.Mmask8, a x86.M128d) (dst x86.M512d) {
 	return x86.M512d(m512MaskBroadcastsdPd([8]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -3143,7 +3143,7 @@ func m512MaskBroadcastsdPd(src [8]float64, k uint8, a [2]float64) [8]float64
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm512_maskz_broadcastsd_pd'.
 // Requires AVX512F.
-func M512MaskzBroadcastsdPd(k x86.Mmask8, a x86.M128d) x86.M512d {
+func M512MaskzBroadcastsdPd(k x86.Mmask8, a x86.M128d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzBroadcastsdPd(uint8(k), [2]float64(a)))
 }
 
@@ -3166,7 +3166,7 @@ func m512MaskzBroadcastsdPd(k uint8, a [2]float64) [8]float64
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm_mask_broadcastss_ps'.
 // Requires AVX512F.
-func MaskBroadcastssPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskBroadcastssPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskBroadcastssPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -3189,7 +3189,7 @@ func maskBroadcastssPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm_maskz_broadcastss_ps'.
 // Requires AVX512F.
-func MaskzBroadcastssPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzBroadcastssPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzBroadcastssPs(uint8(k), [4]float32(a)))
 }
 
@@ -3212,7 +3212,7 @@ func maskzBroadcastssPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm256_mask_broadcastss_ps'.
 // Requires AVX512F.
-func M256MaskBroadcastssPs(src x86.M256, k x86.Mmask8, a x86.M128) x86.M256 {
+func M256MaskBroadcastssPs(src x86.M256, k x86.Mmask8, a x86.M128) (dst x86.M256) {
 	return x86.M256(m256MaskBroadcastssPs([8]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -3235,7 +3235,7 @@ func m256MaskBroadcastssPs(src [8]float32, k uint8, a [4]float32) [8]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm256_maskz_broadcastss_ps'.
 // Requires AVX512F.
-func M256MaskzBroadcastssPs(k x86.Mmask8, a x86.M128) x86.M256 {
+func M256MaskzBroadcastssPs(k x86.Mmask8, a x86.M128) (dst x86.M256) {
 	return x86.M256(m256MaskzBroadcastssPs(uint8(k), [4]float32(a)))
 }
 
@@ -3253,7 +3253,7 @@ func m256MaskzBroadcastssPs(k uint8, a [4]float32) [8]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm512_broadcastss_ps'.
 // Requires AVX512F.
-func M512BroadcastssPs(a x86.M128) x86.M512 {
+func M512BroadcastssPs(a x86.M128) (dst x86.M512) {
 	return x86.M512(m512BroadcastssPs([4]float32(a)))
 }
 
@@ -3276,7 +3276,7 @@ func m512BroadcastssPs(a [4]float32) [16]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm512_mask_broadcastss_ps'.
 // Requires AVX512F.
-func M512MaskBroadcastssPs(src x86.M512, k x86.Mmask16, a x86.M128) x86.M512 {
+func M512MaskBroadcastssPs(src x86.M512, k x86.Mmask16, a x86.M128) (dst x86.M512) {
 	return x86.M512(m512MaskBroadcastssPs([16]float32(src), uint16(k), [4]float32(a)))
 }
 
@@ -3299,7 +3299,7 @@ func m512MaskBroadcastssPs(src [16]float32, k uint16, a [4]float32) [16]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm512_maskz_broadcastss_ps'.
 // Requires AVX512F.
-func M512MaskzBroadcastssPs(k x86.Mmask16, a x86.M128) x86.M512 {
+func M512MaskzBroadcastssPs(k x86.Mmask16, a x86.M128) (dst x86.M512) {
 	return x86.M512(m512MaskzBroadcastssPs(uint16(k), [4]float32(a)))
 }
 
@@ -3315,7 +3315,7 @@ func m512MaskzBroadcastssPs(k uint16, a [4]float32) [16]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_castpd128_pd512'.
 // Requires AVX512F.
-func M512Castpd128Pd512(a x86.M128d) x86.M512d {
+func M512Castpd128Pd512(a x86.M128d) (dst x86.M512d) {
 	return x86.M512d(m512Castpd128Pd512([2]float64(a)))
 }
 
@@ -3331,7 +3331,7 @@ func m512Castpd128Pd512(a [2]float64) [8]float64
 //
 // Instruction: ''. Intrinsic: '_mm512_castpd256_pd512'.
 // Requires AVX512F.
-func M512Castpd256Pd512(a x86.M256d) x86.M512d {
+func M512Castpd256Pd512(a x86.M256d) (dst x86.M512d) {
 	return x86.M512d(m512Castpd256Pd512([4]float64(a)))
 }
 
@@ -3346,7 +3346,7 @@ func m512Castpd256Pd512(a [4]float64) [8]float64
 //
 // Instruction: ''. Intrinsic: '_mm512_castpd512_pd128'.
 // Requires AVX512F.
-func M512Castpd512Pd128(a x86.M512d) x86.M128d {
+func M512Castpd512Pd128(a x86.M512d) (dst x86.M128d) {
 	return x86.M128d(m512Castpd512Pd128([8]float64(a)))
 }
 
@@ -3361,7 +3361,7 @@ func m512Castpd512Pd128(a [8]float64) [2]float64
 //
 // Instruction: ''. Intrinsic: '_mm512_castpd512_pd256'.
 // Requires AVX512F.
-func M512Castpd512Pd256(a x86.M512d) x86.M256d {
+func M512Castpd512Pd256(a x86.M512d) (dst x86.M256d) {
 	return x86.M256d(m512Castpd512Pd256([8]float64(a)))
 }
 
@@ -3377,7 +3377,7 @@ func m512Castpd512Pd256(a [8]float64) [4]float64
 //
 // Instruction: ''. Intrinsic: '_mm512_castps128_ps512'.
 // Requires AVX512F.
-func M512Castps128Ps512(a x86.M128) x86.M512 {
+func M512Castps128Ps512(a x86.M128) (dst x86.M512) {
 	return x86.M512(m512Castps128Ps512([4]float32(a)))
 }
 
@@ -3393,7 +3393,7 @@ func m512Castps128Ps512(a [4]float32) [16]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_castps256_ps512'.
 // Requires AVX512F.
-func M512Castps256Ps512(a x86.M256) x86.M512 {
+func M512Castps256Ps512(a x86.M256) (dst x86.M512) {
 	return x86.M512(m512Castps256Ps512([8]float32(a)))
 }
 
@@ -3408,7 +3408,7 @@ func m512Castps256Ps512(a [8]float32) [16]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_castps512_ps128'.
 // Requires AVX512F.
-func M512Castps512Ps128(a x86.M512) x86.M128 {
+func M512Castps512Ps128(a x86.M512) (dst x86.M128) {
 	return x86.M128(m512Castps512Ps128([16]float32(a)))
 }
 
@@ -3423,7 +3423,7 @@ func m512Castps512Ps128(a [16]float32) [4]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_castps512_ps256'.
 // Requires AVX512F.
-func M512Castps512Ps256(a x86.M512) x86.M256 {
+func M512Castps512Ps256(a x86.M512) (dst x86.M256) {
 	return x86.M256(m512Castps512Ps256([16]float32(a)))
 }
 
@@ -3439,7 +3439,7 @@ func m512Castps512Ps256(a [16]float32) [8]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_castsi128_si512'.
 // Requires AVX512F.
-func M512Castsi128Si512(a x86.M128i) x86.M512i {
+func M512Castsi128Si512(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512Castsi128Si512([16]byte(a)))
 }
 
@@ -3455,7 +3455,7 @@ func m512Castsi128Si512(a [16]byte) [64]byte
 //
 // Instruction: ''. Intrinsic: '_mm512_castsi256_si512'.
 // Requires AVX512F.
-func M512Castsi256Si512(a x86.M256i) x86.M512i {
+func M512Castsi256Si512(a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512Castsi256Si512([32]byte(a)))
 }
 
@@ -3470,7 +3470,7 @@ func m512Castsi256Si512(a [32]byte) [64]byte
 //
 // Instruction: ''. Intrinsic: '_mm512_castsi512_si128'.
 // Requires AVX512F.
-func M512Castsi512Si128(a x86.M512i) x86.M128i {
+func M512Castsi512Si128(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Castsi512Si128([64]byte(a)))
 }
 
@@ -3485,7 +3485,7 @@ func m512Castsi512Si128(a [64]byte) [16]byte
 //
 // Instruction: ''. Intrinsic: '_mm512_castsi512_si256'.
 // Requires AVX512F.
-func M512Castsi512Si256(a x86.M512i) x86.M256i {
+func M512Castsi512Si256(a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512Castsi512Si256([64]byte(a)))
 }
 
@@ -3503,7 +3503,7 @@ func m512Castsi512Si256(a [64]byte) [32]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_cbrt_pd'.
 // Requires AVX512F.
-func M512CbrtPd(a x86.M512d) x86.M512d {
+func M512CbrtPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512CbrtPd([8]float64(a)))
 }
 
@@ -3527,7 +3527,7 @@ func m512CbrtPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cbrt_pd'.
 // Requires AVX512F.
-func M512MaskCbrtPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCbrtPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCbrtPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -3545,7 +3545,7 @@ func m512MaskCbrtPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_cbrt_ps'.
 // Requires AVX512F.
-func M512CbrtPs(a x86.M512) x86.M512 {
+func M512CbrtPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512CbrtPs([16]float32(a)))
 }
 
@@ -3569,7 +3569,7 @@ func m512CbrtPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cbrt_ps'.
 // Requires AVX512F.
-func M512MaskCbrtPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCbrtPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCbrtPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -3588,7 +3588,7 @@ func m512MaskCbrtPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_cdfnorm_pd'.
 // Requires AVX512F.
-func M512CdfnormPd(a x86.M512d) x86.M512d {
+func M512CdfnormPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512CdfnormPd([8]float64(a)))
 }
 
@@ -3612,7 +3612,7 @@ func m512CdfnormPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cdfnorm_pd'.
 // Requires AVX512F.
-func M512MaskCdfnormPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCdfnormPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCdfnormPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -3631,7 +3631,7 @@ func m512MaskCdfnormPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_cdfnorm_ps'.
 // Requires AVX512F.
-func M512CdfnormPs(a x86.M512) x86.M512 {
+func M512CdfnormPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512CdfnormPs([16]float32(a)))
 }
 
@@ -3655,7 +3655,7 @@ func m512CdfnormPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cdfnorm_ps'.
 // Requires AVX512F.
-func M512MaskCdfnormPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCdfnormPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCdfnormPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -3674,7 +3674,7 @@ func m512MaskCdfnormPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_cdfnorminv_pd'.
 // Requires AVX512F.
-func M512CdfnorminvPd(a x86.M512d) x86.M512d {
+func M512CdfnorminvPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512CdfnorminvPd([8]float64(a)))
 }
 
@@ -3698,7 +3698,7 @@ func m512CdfnorminvPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cdfnorminv_pd'.
 // Requires AVX512F.
-func M512MaskCdfnorminvPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCdfnorminvPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCdfnorminvPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -3717,7 +3717,7 @@ func m512MaskCdfnorminvPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_cdfnorminv_ps'.
 // Requires AVX512F.
-func M512CdfnorminvPs(a x86.M512) x86.M512 {
+func M512CdfnorminvPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512CdfnorminvPs([16]float32(a)))
 }
 
@@ -3741,7 +3741,7 @@ func m512CdfnorminvPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cdfnorminv_ps'.
 // Requires AVX512F.
-func M512MaskCdfnorminvPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCdfnorminvPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCdfnorminvPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -3760,7 +3760,7 @@ func m512MaskCdfnorminvPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_ceil_pd'.
 // Requires AVX512F.
-func M512CeilPd(a x86.M512d) x86.M512d {
+func M512CeilPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512CeilPd([8]float64(a)))
 }
 
@@ -3784,7 +3784,7 @@ func m512CeilPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_ceil_pd'.
 // Requires AVX512F.
-func M512MaskCeilPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCeilPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCeilPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -3803,7 +3803,7 @@ func m512MaskCeilPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_ceil_ps'.
 // Requires AVX512F.
-func M512CeilPs(a x86.M512) x86.M512 {
+func M512CeilPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512CeilPs([16]float32(a)))
 }
 
@@ -3827,7 +3827,7 @@ func m512CeilPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_ceil_ps'.
 // Requires AVX512F.
-func M512MaskCeilPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCeilPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCeilPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -3858,7 +3858,7 @@ func m512MaskCeilPs(src [16]float32, k uint16, a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpi32Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func CmpEpi32Mask(a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpEpi32Mask([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -3894,7 +3894,7 @@ func cmpEpi32Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
@@ -3925,7 +3925,7 @@ func maskCmpEpi32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpi32Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256CmpEpi32Mask(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpEpi32Mask([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -3961,7 +3961,7 @@ func m256CmpEpi32Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256MaskCmpEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -3992,7 +3992,7 @@ func m256MaskCmpEpi32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpi64Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func CmpEpi64Mask(a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpEpi64Mask([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -4028,7 +4028,7 @@ func cmpEpi64Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
@@ -4059,7 +4059,7 @@ func maskCmpEpi64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpi64Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256CmpEpi64Mask(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpEpi64Mask([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -4095,7 +4095,7 @@ func m256CmpEpi64Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -4126,7 +4126,7 @@ func m256MaskCmpEpi64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpi64Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
+func M512CmpEpi64Mask(a x86.M512i, b x86.M512i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpEpi64Mask([64]byte(a), [64]byte(b), imm8))
 }
 
@@ -4162,7 +4162,7 @@ func m512CmpEpi64Mask(a [64]byte, b [64]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
+func M512MaskCmpEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -4193,7 +4193,7 @@ func m512MaskCmpEpi64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpu32Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func CmpEpu32Mask(a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpEpu32Mask([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -4229,7 +4229,7 @@ func cmpEpu32Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
@@ -4260,7 +4260,7 @@ func maskCmpEpu32Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpu32Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256CmpEpu32Mask(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpEpu32Mask([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -4296,7 +4296,7 @@ func m256CmpEpu32Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256MaskCmpEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -4327,7 +4327,7 @@ func m256MaskCmpEpu32Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpEpu64Mask(a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func CmpEpu64Mask(a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpEpu64Mask([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -4363,7 +4363,7 @@ func cmpEpu64Mask(a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.Mmask8 {
+func MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b), imm8))
 }
 
@@ -4394,7 +4394,7 @@ func maskCmpEpu64Mask(k1 uint8, a [16]byte, b [16]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpEpu64Mask(a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256CmpEpu64Mask(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpEpu64Mask([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -4430,7 +4430,7 @@ func m256CmpEpu64Mask(a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.Mmask8 {
+func M256MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -4461,7 +4461,7 @@ func m256MaskCmpEpu64Mask(k1 uint8, a [32]byte, b [32]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512CmpEpu64Mask(a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
+func M512CmpEpu64Mask(a x86.M512i, b x86.M512i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpEpu64Mask([64]byte(a), [64]byte(b), imm8))
 }
 
@@ -4497,7 +4497,7 @@ func m512CmpEpu64Mask(a [64]byte, b [64]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.Mmask8 {
+func M512MaskCmpEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -4552,7 +4552,7 @@ func m512MaskCmpEpu64Mask(k1 uint8, a [64]byte, b [64]byte, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpPdMask(a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
+func CmpPdMask(a x86.M128d, b x86.M128d, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpPdMask([2]float64(a), [2]float64(b), imm8))
 }
 
@@ -4612,7 +4612,7 @@ func cmpPdMask(a [2]float64, b [2]float64, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpPdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
+func MaskCmpPdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpPdMask(uint8(k1), [2]float64(a), [2]float64(b), imm8))
 }
 
@@ -4667,7 +4667,7 @@ func maskCmpPdMask(k1 uint8, a [2]float64, b [2]float64, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpPdMask(a x86.M256d, b x86.M256d, imm8 byte) x86.Mmask8 {
+func M256CmpPdMask(a x86.M256d, b x86.M256d, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpPdMask([4]float64(a), [4]float64(b), imm8))
 }
 
@@ -4727,7 +4727,7 @@ func m256CmpPdMask(a [4]float64, b [4]float64, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpPdMask(k1 x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.Mmask8 {
+func M256MaskCmpPdMask(k1 x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpPdMask(uint8(k1), [4]float64(a), [4]float64(b), imm8))
 }
 
@@ -4782,7 +4782,7 @@ func m256MaskCmpPdMask(k1 uint8, a [4]float64, b [4]float64, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpPsMask(a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
+func CmpPsMask(a x86.M128, b x86.M128, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpPsMask([4]float32(a), [4]float32(b), imm8))
 }
 
@@ -4842,7 +4842,7 @@ func cmpPsMask(a [4]float32, b [4]float32, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpPsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
+func MaskCmpPsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpPsMask(uint8(k1), [4]float32(a), [4]float32(b), imm8))
 }
 
@@ -4897,7 +4897,7 @@ func maskCmpPsMask(k1 uint8, a [4]float32, b [4]float32, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256CmpPsMask(a x86.M256, b x86.M256, imm8 byte) x86.Mmask8 {
+func M256CmpPsMask(a x86.M256, b x86.M256, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpPsMask([8]float32(a), [8]float32(b), imm8))
 }
 
@@ -4957,7 +4957,7 @@ func m256CmpPsMask(a [8]float32, b [8]float32, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskCmpPsMask(k1 x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.Mmask8 {
+func M256MaskCmpPsMask(k1 x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpPsMask(uint8(k1), [8]float32(a), [8]float32(b), imm8))
 }
 
@@ -5012,7 +5012,7 @@ func m256MaskCmpPsMask(k1 uint8, a [8]float32, b [8]float32, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpRoundSdMask(a x86.M128d, b x86.M128d, imm8 byte, sae int) x86.Mmask8 {
+func CmpRoundSdMask(a x86.M128d, b x86.M128d, imm8 byte, sae int) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpRoundSdMask([2]float64(a), [2]float64(b), imm8, sae))
 }
 
@@ -5071,7 +5071,7 @@ func cmpRoundSdMask(a [2]float64, b [2]float64, imm8 byte, sae int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpRoundSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, sae int) x86.Mmask8 {
+func MaskCmpRoundSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, sae int) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpRoundSdMask(uint8(k1), [2]float64(a), [2]float64(b), imm8, sae))
 }
 
@@ -5126,7 +5126,7 @@ func maskCmpRoundSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 byte, sae int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpRoundSsMask(a x86.M128, b x86.M128, imm8 byte, sae int) x86.Mmask8 {
+func CmpRoundSsMask(a x86.M128, b x86.M128, imm8 byte, sae int) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpRoundSsMask([4]float32(a), [4]float32(b), imm8, sae))
 }
 
@@ -5185,7 +5185,7 @@ func cmpRoundSsMask(a [4]float32, b [4]float32, imm8 byte, sae int) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpRoundSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, sae int) x86.Mmask8 {
+func MaskCmpRoundSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, sae int) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpRoundSsMask(uint8(k1), [4]float32(a), [4]float32(b), imm8, sae))
 }
 
@@ -5239,7 +5239,7 @@ func maskCmpRoundSsMask(k1 uint8, a [4]float32, b [4]float32, imm8 byte, sae int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpSdMask(a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
+func CmpSdMask(a x86.M128d, b x86.M128d, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpSdMask([2]float64(a), [2]float64(b), imm8))
 }
 
@@ -5297,7 +5297,7 @@ func cmpSdMask(a [2]float64, b [2]float64, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.Mmask8 {
+func MaskCmpSdMask(k1 x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpSdMask(uint8(k1), [2]float64(a), [2]float64(b), imm8))
 }
 
@@ -5351,7 +5351,7 @@ func maskCmpSdMask(k1 uint8, a [2]float64, b [2]float64, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func CmpSsMask(a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
+func CmpSsMask(a x86.M128, b x86.M128, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpSsMask([4]float32(a), [4]float32(b), imm8))
 }
 
@@ -5409,7 +5409,7 @@ func cmpSsMask(a [4]float32, b [4]float32, imm8 byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskCmpSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.Mmask8 {
+func MaskCmpSsMask(k1 x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpSsMask(uint8(k1), [4]float32(a), [4]float32(b), imm8))
 }
 
@@ -5427,7 +5427,7 @@ func maskCmpSsMask(k1 uint8, a [4]float32, b [4]float32, imm8 byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_cmpeq_epi32_mask'.
 // Requires AVX512F.
-func CmpeqEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpeqEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpeqEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -5450,7 +5450,7 @@ func cmpeqEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_mask_cmpeq_epi32_mask'.
 // Requires AVX512F.
-func MaskCmpeqEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpeqEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpeqEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -5468,7 +5468,7 @@ func maskCmpeqEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_cmpeq_epi32_mask'.
 // Requires AVX512F.
-func M256CmpeqEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpeqEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpeqEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -5491,7 +5491,7 @@ func m256CmpeqEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_mask_cmpeq_epi32_mask'.
 // Requires AVX512F.
-func M256MaskCmpeqEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpeqEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpeqEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -5509,7 +5509,7 @@ func m256MaskCmpeqEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_cmpeq_epi64_mask'.
 // Requires AVX512F.
-func CmpeqEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpeqEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpeqEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -5532,7 +5532,7 @@ func cmpeqEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_mask_cmpeq_epi64_mask'.
 // Requires AVX512F.
-func MaskCmpeqEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpeqEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpeqEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -5550,7 +5550,7 @@ func maskCmpeqEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_cmpeq_epi64_mask'.
 // Requires AVX512F.
-func M256CmpeqEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpeqEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpeqEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -5573,7 +5573,7 @@ func m256CmpeqEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_mask_cmpeq_epi64_mask'.
 // Requires AVX512F.
-func M256MaskCmpeqEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpeqEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpeqEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -5591,7 +5591,7 @@ func m256MaskCmpeqEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPEQQ'. Intrinsic: '_mm512_cmpeq_epi64_mask'.
 // Requires AVX512F.
-func M512CmpeqEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpeqEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpeqEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -5614,7 +5614,7 @@ func m512CmpeqEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPEQQ'. Intrinsic: '_mm512_mask_cmpeq_epi64_mask'.
 // Requires AVX512F.
-func M512MaskCmpeqEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpeqEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpeqEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -5632,7 +5632,7 @@ func m512MaskCmpeqEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_cmpeq_epu32_mask'.
 // Requires AVX512F.
-func CmpeqEpu32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpeqEpu32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpeqEpu32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -5655,7 +5655,7 @@ func cmpeqEpu32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_mask_cmpeq_epu32_mask'.
 // Requires AVX512F.
-func MaskCmpeqEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpeqEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpeqEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -5673,7 +5673,7 @@ func maskCmpeqEpu32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_cmpeq_epu32_mask'.
 // Requires AVX512F.
-func M256CmpeqEpu32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpeqEpu32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpeqEpu32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -5696,7 +5696,7 @@ func m256CmpeqEpu32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_mask_cmpeq_epu32_mask'.
 // Requires AVX512F.
-func M256MaskCmpeqEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpeqEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpeqEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -5714,7 +5714,7 @@ func m256MaskCmpeqEpu32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_cmpeq_epu64_mask'.
 // Requires AVX512F.
-func CmpeqEpu64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpeqEpu64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpeqEpu64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -5737,7 +5737,7 @@ func cmpeqEpu64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_mask_cmpeq_epu64_mask'.
 // Requires AVX512F.
-func MaskCmpeqEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpeqEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpeqEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -5755,7 +5755,7 @@ func maskCmpeqEpu64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_cmpeq_epu64_mask'.
 // Requires AVX512F.
-func M256CmpeqEpu64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpeqEpu64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpeqEpu64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -5778,7 +5778,7 @@ func m256CmpeqEpu64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_mask_cmpeq_epu64_mask'.
 // Requires AVX512F.
-func M256MaskCmpeqEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpeqEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpeqEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -5796,7 +5796,7 @@ func m256MaskCmpeqEpu64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpeq_epu64_mask'.
 // Requires AVX512F.
-func M512CmpeqEpu64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpeqEpu64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpeqEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -5819,7 +5819,7 @@ func m512CmpeqEpu64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpeq_epu64_mask'.
 // Requires AVX512F.
-func M512MaskCmpeqEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpeqEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpeqEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -5837,7 +5837,7 @@ func m512MaskCmpeqEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_cmpge_epi32_mask'.
 // Requires AVX512F.
-func CmpgeEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgeEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgeEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -5861,7 +5861,7 @@ func cmpgeEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_mask_cmpge_epi32_mask'.
 // Requires AVX512F.
-func MaskCmpgeEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgeEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgeEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -5879,7 +5879,7 @@ func maskCmpgeEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_cmpge_epi32_mask'.
 // Requires AVX512F.
-func M256CmpgeEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgeEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgeEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -5903,7 +5903,7 @@ func m256CmpgeEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_mask_cmpge_epi32_mask'.
 // Requires AVX512F.
-func M256MaskCmpgeEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgeEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgeEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -5921,7 +5921,7 @@ func m256MaskCmpgeEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_cmpge_epi64_mask'.
 // Requires AVX512F.
-func CmpgeEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgeEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgeEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -5945,7 +5945,7 @@ func cmpgeEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_mask_cmpge_epi64_mask'.
 // Requires AVX512F.
-func MaskCmpgeEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgeEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgeEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -5963,7 +5963,7 @@ func maskCmpgeEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_cmpge_epi64_mask'.
 // Requires AVX512F.
-func M256CmpgeEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgeEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgeEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -5987,7 +5987,7 @@ func m256CmpgeEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_mask_cmpge_epi64_mask'.
 // Requires AVX512F.
-func M256MaskCmpgeEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgeEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgeEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6005,7 +6005,7 @@ func m256MaskCmpgeEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmpge_epi64_mask'.
 // Requires AVX512F.
-func M512CmpgeEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpgeEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpgeEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -6029,7 +6029,7 @@ func m512CmpgeEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmpge_epi64_mask'.
 // Requires AVX512F.
-func M512MaskCmpgeEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpgeEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpgeEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -6047,7 +6047,7 @@ func m512MaskCmpgeEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_cmpge_epu32_mask'.
 // Requires AVX512F.
-func CmpgeEpu32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgeEpu32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgeEpu32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6071,7 +6071,7 @@ func cmpgeEpu32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_mask_cmpge_epu32_mask'.
 // Requires AVX512F.
-func MaskCmpgeEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgeEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgeEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6089,7 +6089,7 @@ func maskCmpgeEpu32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_cmpge_epu32_mask'.
 // Requires AVX512F.
-func M256CmpgeEpu32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgeEpu32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgeEpu32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6113,7 +6113,7 @@ func m256CmpgeEpu32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_mask_cmpge_epu32_mask'.
 // Requires AVX512F.
-func M256MaskCmpgeEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgeEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgeEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6131,7 +6131,7 @@ func m256MaskCmpgeEpu32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_cmpge_epu64_mask'.
 // Requires AVX512F.
-func CmpgeEpu64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgeEpu64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgeEpu64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6155,7 +6155,7 @@ func cmpgeEpu64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_mask_cmpge_epu64_mask'.
 // Requires AVX512F.
-func MaskCmpgeEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgeEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgeEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6173,7 +6173,7 @@ func maskCmpgeEpu64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_cmpge_epu64_mask'.
 // Requires AVX512F.
-func M256CmpgeEpu64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgeEpu64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgeEpu64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6197,7 +6197,7 @@ func m256CmpgeEpu64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_mask_cmpge_epu64_mask'.
 // Requires AVX512F.
-func M256MaskCmpgeEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgeEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgeEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6215,7 +6215,7 @@ func m256MaskCmpgeEpu64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpge_epu64_mask'.
 // Requires AVX512F.
-func M512CmpgeEpu64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpgeEpu64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpgeEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -6239,7 +6239,7 @@ func m512CmpgeEpu64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpge_epu64_mask'.
 // Requires AVX512F.
-func M512MaskCmpgeEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpgeEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpgeEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -6257,7 +6257,7 @@ func m512MaskCmpgeEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_cmpgt_epi32_mask'.
 // Requires AVX512F.
-func CmpgtEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgtEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgtEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6280,7 +6280,7 @@ func cmpgtEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_mask_cmpgt_epi32_mask'.
 // Requires AVX512F.
-func MaskCmpgtEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgtEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgtEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6298,7 +6298,7 @@ func maskCmpgtEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_cmpgt_epi32_mask'.
 // Requires AVX512F.
-func M256CmpgtEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgtEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgtEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6321,7 +6321,7 @@ func m256CmpgtEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_mask_cmpgt_epi32_mask'.
 // Requires AVX512F.
-func M256MaskCmpgtEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgtEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgtEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6339,7 +6339,7 @@ func m256MaskCmpgtEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_cmpgt_epi64_mask'.
 // Requires AVX512F.
-func CmpgtEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgtEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgtEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6362,7 +6362,7 @@ func cmpgtEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_mask_cmpgt_epi64_mask'.
 // Requires AVX512F.
-func MaskCmpgtEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgtEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgtEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6380,7 +6380,7 @@ func maskCmpgtEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_cmpgt_epi64_mask'.
 // Requires AVX512F.
-func M256CmpgtEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgtEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgtEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6403,7 +6403,7 @@ func m256CmpgtEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_mask_cmpgt_epi64_mask'.
 // Requires AVX512F.
-func M256MaskCmpgtEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgtEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgtEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6421,7 +6421,7 @@ func m256MaskCmpgtEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPGTQ'. Intrinsic: '_mm512_cmpgt_epi64_mask'.
 // Requires AVX512F.
-func M512CmpgtEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpgtEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpgtEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -6444,7 +6444,7 @@ func m512CmpgtEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPGTQ'. Intrinsic: '_mm512_mask_cmpgt_epi64_mask'.
 // Requires AVX512F.
-func M512MaskCmpgtEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpgtEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpgtEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -6462,7 +6462,7 @@ func m512MaskCmpgtEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_cmpgt_epu32_mask'.
 // Requires AVX512F.
-func CmpgtEpu32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgtEpu32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgtEpu32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6485,7 +6485,7 @@ func cmpgtEpu32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_mask_cmpgt_epu32_mask'.
 // Requires AVX512F.
-func MaskCmpgtEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgtEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgtEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6503,7 +6503,7 @@ func maskCmpgtEpu32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_cmpgt_epu32_mask'.
 // Requires AVX512F.
-func M256CmpgtEpu32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgtEpu32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgtEpu32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6527,7 +6527,7 @@ func m256CmpgtEpu32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_mask_cmpgt_epu32_mask'.
 // Requires AVX512F.
-func M256MaskCmpgtEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgtEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgtEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6545,7 +6545,7 @@ func m256MaskCmpgtEpu32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_cmpgt_epu64_mask'.
 // Requires AVX512F.
-func CmpgtEpu64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpgtEpu64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpgtEpu64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6568,7 +6568,7 @@ func cmpgtEpu64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_mask_cmpgt_epu64_mask'.
 // Requires AVX512F.
-func MaskCmpgtEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpgtEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpgtEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6586,7 +6586,7 @@ func maskCmpgtEpu64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_cmpgt_epu64_mask'.
 // Requires AVX512F.
-func M256CmpgtEpu64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpgtEpu64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpgtEpu64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6610,7 +6610,7 @@ func m256CmpgtEpu64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_mask_cmpgt_epu64_mask'.
 // Requires AVX512F.
-func M256MaskCmpgtEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpgtEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpgtEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6628,7 +6628,7 @@ func m256MaskCmpgtEpu64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpgt_epu64_mask'.
 // Requires AVX512F.
-func M512CmpgtEpu64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpgtEpu64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpgtEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -6652,7 +6652,7 @@ func m512CmpgtEpu64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpgt_epu64_mask'.
 // Requires AVX512F.
-func M512MaskCmpgtEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpgtEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpgtEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -6670,7 +6670,7 @@ func m512MaskCmpgtEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_cmple_epi32_mask'.
 // Requires AVX512F.
-func CmpleEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpleEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpleEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6693,7 +6693,7 @@ func cmpleEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_mask_cmple_epi32_mask'.
 // Requires AVX512F.
-func MaskCmpleEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpleEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpleEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6711,7 +6711,7 @@ func maskCmpleEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_cmple_epi32_mask'.
 // Requires AVX512F.
-func M256CmpleEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpleEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpleEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6734,7 +6734,7 @@ func m256CmpleEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_mask_cmple_epi32_mask'.
 // Requires AVX512F.
-func M256MaskCmpleEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpleEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpleEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6752,7 +6752,7 @@ func m256MaskCmpleEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_cmple_epi64_mask'.
 // Requires AVX512F.
-func CmpleEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpleEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpleEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6775,7 +6775,7 @@ func cmpleEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_mask_cmple_epi64_mask'.
 // Requires AVX512F.
-func MaskCmpleEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpleEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpleEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6793,7 +6793,7 @@ func maskCmpleEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_cmple_epi64_mask'.
 // Requires AVX512F.
-func M256CmpleEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpleEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpleEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6816,7 +6816,7 @@ func m256CmpleEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_mask_cmple_epi64_mask'.
 // Requires AVX512F.
-func M256MaskCmpleEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpleEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpleEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6834,7 +6834,7 @@ func m256MaskCmpleEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmple_epi64_mask'.
 // Requires AVX512F.
-func M512CmpleEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpleEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpleEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -6857,7 +6857,7 @@ func m512CmpleEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmple_epi64_mask'.
 // Requires AVX512F.
-func M512MaskCmpleEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpleEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpleEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -6875,7 +6875,7 @@ func m512MaskCmpleEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_cmple_epu32_mask'.
 // Requires AVX512F.
-func CmpleEpu32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpleEpu32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpleEpu32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6899,7 +6899,7 @@ func cmpleEpu32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_mask_cmple_epu32_mask'.
 // Requires AVX512F.
-func MaskCmpleEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpleEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpleEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -6917,7 +6917,7 @@ func maskCmpleEpu32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_cmple_epu32_mask'.
 // Requires AVX512F.
-func M256CmpleEpu32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpleEpu32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpleEpu32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -6941,7 +6941,7 @@ func m256CmpleEpu32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_mask_cmple_epu32_mask'.
 // Requires AVX512F.
-func M256MaskCmpleEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpleEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpleEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -6959,7 +6959,7 @@ func m256MaskCmpleEpu32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_cmple_epu64_mask'.
 // Requires AVX512F.
-func CmpleEpu64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpleEpu64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpleEpu64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -6983,7 +6983,7 @@ func cmpleEpu64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_mask_cmple_epu64_mask'.
 // Requires AVX512F.
-func MaskCmpleEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpleEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpleEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7001,7 +7001,7 @@ func maskCmpleEpu64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_cmple_epu64_mask'.
 // Requires AVX512F.
-func M256CmpleEpu64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpleEpu64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpleEpu64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7025,7 +7025,7 @@ func m256CmpleEpu64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_mask_cmple_epu64_mask'.
 // Requires AVX512F.
-func M256MaskCmpleEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpleEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpleEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7043,7 +7043,7 @@ func m256MaskCmpleEpu64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmple_epu64_mask'.
 // Requires AVX512F.
-func M512CmpleEpu64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpleEpu64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpleEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -7067,7 +7067,7 @@ func m512CmpleEpu64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmple_epu64_mask'.
 // Requires AVX512F.
-func M512MaskCmpleEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpleEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpleEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -7085,7 +7085,7 @@ func m512MaskCmpleEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_cmplt_epi32_mask'.
 // Requires AVX512F.
-func CmpltEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpltEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpltEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7108,7 +7108,7 @@ func cmpltEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_mask_cmplt_epi32_mask'.
 // Requires AVX512F.
-func MaskCmpltEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpltEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpltEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7126,7 +7126,7 @@ func maskCmpltEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_cmplt_epi32_mask'.
 // Requires AVX512F.
-func M256CmpltEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpltEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpltEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7149,7 +7149,7 @@ func m256CmpltEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_mask_cmplt_epi32_mask'.
 // Requires AVX512F.
-func M256MaskCmpltEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpltEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpltEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7167,7 +7167,7 @@ func m256MaskCmpltEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_cmplt_epi32_mask'.
 // Requires AVX512F.
-func M512CmpltEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+func M512CmpltEpi32Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask16) {
 	return x86.Mmask16(m512CmpltEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -7190,7 +7190,7 @@ func m512CmpltEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm512_mask_cmplt_epi32_mask'.
 // Requires AVX512F.
-func M512MaskCmpltEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+func M512MaskCmpltEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.Mmask16) {
 	return x86.Mmask16(m512MaskCmpltEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -7208,7 +7208,7 @@ func m512MaskCmpltEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_cmplt_epi64_mask'.
 // Requires AVX512F.
-func CmpltEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpltEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpltEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7231,7 +7231,7 @@ func cmpltEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_mask_cmplt_epi64_mask'.
 // Requires AVX512F.
-func MaskCmpltEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpltEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpltEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7249,7 +7249,7 @@ func maskCmpltEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_cmplt_epi64_mask'.
 // Requires AVX512F.
-func M256CmpltEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpltEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpltEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7272,7 +7272,7 @@ func m256CmpltEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_mask_cmplt_epi64_mask'.
 // Requires AVX512F.
-func M256MaskCmpltEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpltEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpltEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7290,7 +7290,7 @@ func m256MaskCmpltEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmplt_epi64_mask'.
 // Requires AVX512F.
-func M512CmpltEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpltEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpltEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -7313,7 +7313,7 @@ func m512CmpltEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmplt_epi64_mask'.
 // Requires AVX512F.
-func M512MaskCmpltEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpltEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpltEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -7331,7 +7331,7 @@ func m512MaskCmpltEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_cmplt_epu32_mask'.
 // Requires AVX512F.
-func CmpltEpu32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpltEpu32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpltEpu32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7354,7 +7354,7 @@ func cmpltEpu32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_mask_cmplt_epu32_mask'.
 // Requires AVX512F.
-func MaskCmpltEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpltEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpltEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7372,7 +7372,7 @@ func maskCmpltEpu32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_cmplt_epu32_mask'.
 // Requires AVX512F.
-func M256CmpltEpu32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpltEpu32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpltEpu32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7395,7 +7395,7 @@ func m256CmpltEpu32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_mask_cmplt_epu32_mask'.
 // Requires AVX512F.
-func M256MaskCmpltEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpltEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpltEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7413,7 +7413,7 @@ func m256MaskCmpltEpu32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_cmplt_epu64_mask'.
 // Requires AVX512F.
-func CmpltEpu64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpltEpu64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpltEpu64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7436,7 +7436,7 @@ func cmpltEpu64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_mask_cmplt_epu64_mask'.
 // Requires AVX512F.
-func MaskCmpltEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpltEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpltEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7454,7 +7454,7 @@ func maskCmpltEpu64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_cmplt_epu64_mask'.
 // Requires AVX512F.
-func M256CmpltEpu64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpltEpu64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpltEpu64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7477,7 +7477,7 @@ func m256CmpltEpu64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_mask_cmplt_epu64_mask'.
 // Requires AVX512F.
-func M256MaskCmpltEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpltEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpltEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7495,7 +7495,7 @@ func m256MaskCmpltEpu64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmplt_epu64_mask'.
 // Requires AVX512F.
-func M512CmpltEpu64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpltEpu64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpltEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -7518,7 +7518,7 @@ func m512CmpltEpu64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmplt_epu64_mask'.
 // Requires AVX512F.
-func M512MaskCmpltEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpltEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpltEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -7536,7 +7536,7 @@ func m512MaskCmpltEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_cmpneq_epi32_mask'.
 // Requires AVX512F.
-func CmpneqEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpneqEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpneqEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7559,7 +7559,7 @@ func cmpneqEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm_mask_cmpneq_epi32_mask'.
 // Requires AVX512F.
-func MaskCmpneqEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpneqEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpneqEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7577,7 +7577,7 @@ func maskCmpneqEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_cmpneq_epi32_mask'.
 // Requires AVX512F.
-func M256CmpneqEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpneqEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpneqEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7600,7 +7600,7 @@ func m256CmpneqEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPD'. Intrinsic: '_mm256_mask_cmpneq_epi32_mask'.
 // Requires AVX512F.
-func M256MaskCmpneqEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpneqEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpneqEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7618,7 +7618,7 @@ func m256MaskCmpneqEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_cmpneq_epi64_mask'.
 // Requires AVX512F.
-func CmpneqEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpneqEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpneqEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7641,7 +7641,7 @@ func cmpneqEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm_mask_cmpneq_epi64_mask'.
 // Requires AVX512F.
-func MaskCmpneqEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpneqEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpneqEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7659,7 +7659,7 @@ func maskCmpneqEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_cmpneq_epi64_mask'.
 // Requires AVX512F.
-func M256CmpneqEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpneqEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpneqEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7682,7 +7682,7 @@ func m256CmpneqEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm256_mask_cmpneq_epi64_mask'.
 // Requires AVX512F.
-func M256MaskCmpneqEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpneqEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpneqEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7700,7 +7700,7 @@ func m256MaskCmpneqEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_cmpneq_epi64_mask'.
 // Requires AVX512F.
-func M512CmpneqEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpneqEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpneqEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -7723,7 +7723,7 @@ func m512CmpneqEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPQ'. Intrinsic: '_mm512_mask_cmpneq_epi64_mask'.
 // Requires AVX512F.
-func M512MaskCmpneqEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpneqEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpneqEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -7741,7 +7741,7 @@ func m512MaskCmpneqEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_cmpneq_epu32_mask'.
 // Requires AVX512F.
-func CmpneqEpu32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpneqEpu32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpneqEpu32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7764,7 +7764,7 @@ func cmpneqEpu32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm_mask_cmpneq_epu32_mask'.
 // Requires AVX512F.
-func MaskCmpneqEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpneqEpu32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpneqEpu32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7782,7 +7782,7 @@ func maskCmpneqEpu32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_cmpneq_epu32_mask'.
 // Requires AVX512F.
-func M256CmpneqEpu32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpneqEpu32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpneqEpu32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7805,7 +7805,7 @@ func m256CmpneqEpu32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUD'. Intrinsic: '_mm256_mask_cmpneq_epu32_mask'.
 // Requires AVX512F.
-func M256MaskCmpneqEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpneqEpu32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpneqEpu32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7823,7 +7823,7 @@ func m256MaskCmpneqEpu32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_cmpneq_epu64_mask'.
 // Requires AVX512F.
-func CmpneqEpu64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func CmpneqEpu64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(cmpneqEpu64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -7846,7 +7846,7 @@ func cmpneqEpu64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm_mask_cmpneq_epu64_mask'.
 // Requires AVX512F.
-func MaskCmpneqEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskCmpneqEpu64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskCmpneqEpu64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -7864,7 +7864,7 @@ func maskCmpneqEpu64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_cmpneq_epu64_mask'.
 // Requires AVX512F.
-func M256CmpneqEpu64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256CmpneqEpu64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256CmpneqEpu64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -7887,7 +7887,7 @@ func m256CmpneqEpu64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm256_mask_cmpneq_epu64_mask'.
 // Requires AVX512F.
-func M256MaskCmpneqEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskCmpneqEpu64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskCmpneqEpu64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -7905,7 +7905,7 @@ func m256MaskCmpneqEpu64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_cmpneq_epu64_mask'.
 // Requires AVX512F.
-func M512CmpneqEpu64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512CmpneqEpu64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512CmpneqEpu64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -7928,7 +7928,7 @@ func m512CmpneqEpu64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPCMPUQ'. Intrinsic: '_mm512_mask_cmpneq_epu64_mask'.
 // Requires AVX512F.
-func M512MaskCmpneqEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskCmpneqEpu64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskCmpneqEpu64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -7981,7 +7981,7 @@ func m512MaskCmpneqEpu64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func ComiRoundSd(a x86.M128d, b x86.M128d, imm8 byte, sae int) int {
+func ComiRoundSd(a x86.M128d, b x86.M128d, imm8 byte, sae int) (dst int) {
 	return int(comiRoundSd([2]float64(a), [2]float64(b), imm8, sae))
 }
 
@@ -8034,7 +8034,7 @@ func comiRoundSd(a [2]float64, b [2]float64, imm8 byte, sae int) int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func ComiRoundSs(a x86.M128, b x86.M128, imm8 byte, sae int) int {
+func ComiRoundSs(a x86.M128, b x86.M128, imm8 byte, sae int) (dst int) {
 	return int(comiRoundSs([4]float32(a), [4]float32(b), imm8, sae))
 }
 
@@ -8059,7 +8059,7 @@ func comiRoundSs(a [4]float32, b [4]float32, imm8 byte, sae int) int
 //
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm_mask_compress_epi32'.
 // Requires AVX512F.
-func MaskCompressEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCompressEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCompressEpi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -8084,7 +8084,7 @@ func maskCompressEpi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm_maskz_compress_epi32'.
 // Requires AVX512F.
-func MaskzCompressEpi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCompressEpi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCompressEpi32(uint8(k), [16]byte(a)))
 }
 
@@ -8109,7 +8109,7 @@ func maskzCompressEpi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm256_mask_compress_epi32'.
 // Requires AVX512F.
-func M256MaskCompressEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskCompressEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCompressEpi32([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -8134,7 +8134,7 @@ func m256MaskCompressEpi32(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm256_maskz_compress_epi32'.
 // Requires AVX512F.
-func M256MaskzCompressEpi32(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzCompressEpi32(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCompressEpi32(uint8(k), [32]byte(a)))
 }
 
@@ -8159,7 +8159,7 @@ func m256MaskzCompressEpi32(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm512_mask_compress_epi32'.
 // Requires AVX512F.
-func M512MaskCompressEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
+func M512MaskCompressEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCompressEpi32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -8184,7 +8184,7 @@ func m512MaskCompressEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPCOMPRESSD'. Intrinsic: '_mm512_maskz_compress_epi32'.
 // Requires AVX512F.
-func M512MaskzCompressEpi32(k x86.Mmask16, a x86.M512i) x86.M512i {
+func M512MaskzCompressEpi32(k x86.Mmask16, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCompressEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -8209,7 +8209,7 @@ func m512MaskzCompressEpi32(k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm_mask_compress_epi64'.
 // Requires AVX512F.
-func MaskCompressEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCompressEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCompressEpi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -8234,7 +8234,7 @@ func maskCompressEpi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm_maskz_compress_epi64'.
 // Requires AVX512F.
-func MaskzCompressEpi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCompressEpi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCompressEpi64(uint8(k), [16]byte(a)))
 }
 
@@ -8259,7 +8259,7 @@ func maskzCompressEpi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm256_mask_compress_epi64'.
 // Requires AVX512F.
-func M256MaskCompressEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskCompressEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCompressEpi64([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -8284,7 +8284,7 @@ func m256MaskCompressEpi64(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm256_maskz_compress_epi64'.
 // Requires AVX512F.
-func M256MaskzCompressEpi64(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzCompressEpi64(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCompressEpi64(uint8(k), [32]byte(a)))
 }
 
@@ -8309,7 +8309,7 @@ func m256MaskzCompressEpi64(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm512_mask_compress_epi64'.
 // Requires AVX512F.
-func M512MaskCompressEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
+func M512MaskCompressEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCompressEpi64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -8334,7 +8334,7 @@ func m512MaskCompressEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VPCOMPRESSQ'. Intrinsic: '_mm512_maskz_compress_epi64'.
 // Requires AVX512F.
-func M512MaskzCompressEpi64(k x86.Mmask8, a x86.M512i) x86.M512i {
+func M512MaskzCompressEpi64(k x86.Mmask8, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCompressEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -8359,7 +8359,7 @@ func m512MaskzCompressEpi64(k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm_mask_compress_pd'.
 // Requires AVX512F.
-func MaskCompressPd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskCompressPd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskCompressPd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -8384,7 +8384,7 @@ func maskCompressPd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm_maskz_compress_pd'.
 // Requires AVX512F.
-func MaskzCompressPd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzCompressPd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzCompressPd(uint8(k), [2]float64(a)))
 }
 
@@ -8409,7 +8409,7 @@ func maskzCompressPd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm256_mask_compress_pd'.
 // Requires AVX512F.
-func M256MaskCompressPd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskCompressPd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskCompressPd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -8434,7 +8434,7 @@ func m256MaskCompressPd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm256_maskz_compress_pd'.
 // Requires AVX512F.
-func M256MaskzCompressPd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzCompressPd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzCompressPd(uint8(k), [4]float64(a)))
 }
 
@@ -8459,7 +8459,7 @@ func m256MaskzCompressPd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm512_mask_compress_pd'.
 // Requires AVX512F.
-func M512MaskCompressPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCompressPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCompressPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -8484,7 +8484,7 @@ func m512MaskCompressPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VCOMPRESSPD'. Intrinsic: '_mm512_maskz_compress_pd'.
 // Requires AVX512F.
-func M512MaskzCompressPd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzCompressPd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzCompressPd(uint8(k), [8]float64(a)))
 }
 
@@ -8509,7 +8509,7 @@ func m512MaskzCompressPd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm_mask_compress_ps'.
 // Requires AVX512F.
-func MaskCompressPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskCompressPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskCompressPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -8534,7 +8534,7 @@ func maskCompressPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm_maskz_compress_ps'.
 // Requires AVX512F.
-func MaskzCompressPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzCompressPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzCompressPs(uint8(k), [4]float32(a)))
 }
 
@@ -8559,7 +8559,7 @@ func maskzCompressPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm256_mask_compress_ps'.
 // Requires AVX512F.
-func M256MaskCompressPs(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskCompressPs(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskCompressPs([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -8584,7 +8584,7 @@ func m256MaskCompressPs(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm256_maskz_compress_ps'.
 // Requires AVX512F.
-func M256MaskzCompressPs(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzCompressPs(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzCompressPs(uint8(k), [8]float32(a)))
 }
 
@@ -8609,7 +8609,7 @@ func m256MaskzCompressPs(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm512_mask_compress_ps'.
 // Requires AVX512F.
-func M512MaskCompressPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCompressPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCompressPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -8634,7 +8634,7 @@ func m512MaskCompressPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VCOMPRESSPS'. Intrinsic: '_mm512_maskz_compress_ps'.
 // Requires AVX512F.
-func M512MaskzCompressPs(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzCompressPs(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzCompressPs(uint16(k), [16]float32(a)))
 }
 
@@ -8689,7 +8689,7 @@ func m512MaskzCompressPs(k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_cos_pd'.
 // Requires AVX512F.
-func M512CosPd(a x86.M512d) x86.M512d {
+func M512CosPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512CosPd([8]float64(a)))
 }
 
@@ -8713,7 +8713,7 @@ func m512CosPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cos_pd'.
 // Requires AVX512F.
-func M512MaskCosPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCosPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCosPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -8732,7 +8732,7 @@ func m512MaskCosPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_cos_ps'.
 // Requires AVX512F.
-func M512CosPs(a x86.M512) x86.M512 {
+func M512CosPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512CosPs([16]float32(a)))
 }
 
@@ -8756,7 +8756,7 @@ func m512CosPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cos_ps'.
 // Requires AVX512F.
-func M512MaskCosPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCosPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCosPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -8775,7 +8775,7 @@ func m512MaskCosPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_cosd_pd'.
 // Requires AVX512F.
-func M512CosdPd(a x86.M512d) x86.M512d {
+func M512CosdPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512CosdPd([8]float64(a)))
 }
 
@@ -8799,7 +8799,7 @@ func m512CosdPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cosd_pd'.
 // Requires AVX512F.
-func M512MaskCosdPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCosdPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCosdPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -8818,7 +8818,7 @@ func m512MaskCosdPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_cosd_ps'.
 // Requires AVX512F.
-func M512CosdPs(a x86.M512) x86.M512 {
+func M512CosdPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512CosdPs([16]float32(a)))
 }
 
@@ -8842,7 +8842,7 @@ func m512CosdPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cosd_ps'.
 // Requires AVX512F.
-func M512MaskCosdPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCosdPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCosdPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -8861,7 +8861,7 @@ func m512MaskCosdPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_cosh_pd'.
 // Requires AVX512F.
-func M512CoshPd(a x86.M512d) x86.M512d {
+func M512CoshPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512CoshPd([8]float64(a)))
 }
 
@@ -8885,7 +8885,7 @@ func m512CoshPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cosh_pd'.
 // Requires AVX512F.
-func M512MaskCoshPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskCoshPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskCoshPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -8904,7 +8904,7 @@ func m512MaskCoshPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_cosh_ps'.
 // Requires AVX512F.
-func M512CoshPs(a x86.M512) x86.M512 {
+func M512CoshPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512CoshPs([16]float32(a)))
 }
 
@@ -8928,7 +8928,7 @@ func m512CoshPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_cosh_ps'.
 // Requires AVX512F.
-func M512MaskCoshPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskCoshPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskCoshPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -8954,7 +8954,7 @@ func m512MaskCoshPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_cvt_roundepi32_ps'.
 // Requires AVX512F.
-func M512CvtRoundepi32Ps(a x86.M512i, rounding int) x86.M512 {
+func M512CvtRoundepi32Ps(a x86.M512i, rounding int) (dst x86.M512) {
 	return x86.M512(m512CvtRoundepi32Ps([64]byte(a), rounding))
 }
 
@@ -8985,7 +8985,7 @@ func m512CvtRoundepi32Ps(a [64]byte, rounding int) [16]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_mask_cvt_roundepi32_ps'.
 // Requires AVX512F.
-func M512MaskCvtRoundepi32Ps(src x86.M512, k x86.Mmask16, a x86.M512i, rounding int) x86.M512 {
+func M512MaskCvtRoundepi32Ps(src x86.M512, k x86.Mmask16, a x86.M512i, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskCvtRoundepi32Ps([16]float32(src), uint16(k), [64]byte(a), rounding))
 }
 
@@ -9016,7 +9016,7 @@ func m512MaskCvtRoundepi32Ps(src [16]float32, k uint16, a [64]byte, rounding int
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_maskz_cvt_roundepi32_ps'.
 // Requires AVX512F.
-func M512MaskzCvtRoundepi32Ps(k x86.Mmask16, a x86.M512i, rounding int) x86.M512 {
+func M512MaskzCvtRoundepi32Ps(k x86.Mmask16, a x86.M512i, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzCvtRoundepi32Ps(uint16(k), [64]byte(a), rounding))
 }
 
@@ -9042,7 +9042,7 @@ func m512MaskzCvtRoundepi32Ps(k uint16, a [64]byte, rounding int) [16]float32
 //
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_cvt_roundepu32_ps'.
 // Requires AVX512F.
-func M512CvtRoundepu32Ps(a x86.M512i, rounding int) x86.M512 {
+func M512CvtRoundepu32Ps(a x86.M512i, rounding int) (dst x86.M512) {
 	return x86.M512(m512CvtRoundepu32Ps([64]byte(a), rounding))
 }
 
@@ -9073,7 +9073,7 @@ func m512CvtRoundepu32Ps(a [64]byte, rounding int) [16]float32
 //
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_mask_cvt_roundepu32_ps'.
 // Requires AVX512F.
-func M512MaskCvtRoundepu32Ps(src x86.M512, k x86.Mmask16, a x86.M512i, rounding int) x86.M512 {
+func M512MaskCvtRoundepu32Ps(src x86.M512, k x86.Mmask16, a x86.M512i, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskCvtRoundepu32Ps([16]float32(src), uint16(k), [64]byte(a), rounding))
 }
 
@@ -9104,7 +9104,7 @@ func m512MaskCvtRoundepu32Ps(src [16]float32, k uint16, a [64]byte, rounding int
 //
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_maskz_cvt_roundepu32_ps'.
 // Requires AVX512F.
-func M512MaskzCvtRoundepu32Ps(k x86.Mmask16, a x86.M512i, rounding int) x86.M512 {
+func M512MaskzCvtRoundepu32Ps(k x86.Mmask16, a x86.M512i, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzCvtRoundepu32Ps(uint16(k), [64]byte(a), rounding))
 }
 
@@ -9128,7 +9128,7 @@ func m512MaskzCvtRoundepu32Ps(k uint16, a [64]byte, rounding int) [16]float32
 //
 // Instruction: 'VCVTSI2SS'. Intrinsic: '_mm_cvt_roundi32_ss'.
 // Requires AVX512F.
-func CvtRoundi32Ss(a x86.M128, b int, rounding int) x86.M128 {
+func CvtRoundi32Ss(a x86.M128, b int, rounding int) (dst x86.M128) {
 	return x86.M128(cvtRoundi32Ss([4]float32(a), b, rounding))
 }
 
@@ -9152,7 +9152,7 @@ func cvtRoundi32Ss(a [4]float32, b int, rounding int) [4]float32
 //
 // Instruction: 'VCVTSI2SD'. Intrinsic: '_mm_cvt_roundi64_sd'.
 // Requires AVX512F.
-func CvtRoundi64Sd(a x86.M128d, b int64, rounding int) x86.M128d {
+func CvtRoundi64Sd(a x86.M128d, b int64, rounding int) (dst x86.M128d) {
 	return x86.M128d(cvtRoundi64Sd([2]float64(a), b, rounding))
 }
 
@@ -9176,7 +9176,7 @@ func cvtRoundi64Sd(a [2]float64, b int64, rounding int) [2]float64
 //
 // Instruction: 'VCVTSI2SS'. Intrinsic: '_mm_cvt_roundi64_ss'.
 // Requires AVX512F.
-func CvtRoundi64Ss(a x86.M128, b int64, rounding int) x86.M128 {
+func CvtRoundi64Ss(a x86.M128, b int64, rounding int) (dst x86.M128) {
 	return x86.M128(cvtRoundi64Ss([4]float32(a), b, rounding))
 }
 
@@ -9202,7 +9202,7 @@ func cvtRoundi64Ss(a [4]float32, b int64, rounding int) [4]float32
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_cvt_roundpd_epi32'.
 // Requires AVX512F.
-func M512CvtRoundpdEpi32(a x86.M512d, rounding int) x86.M256i {
+func M512CvtRoundpdEpi32(a x86.M512d, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512CvtRoundpdEpi32([8]float64(a), rounding))
 }
 
@@ -9234,7 +9234,7 @@ func m512CvtRoundpdEpi32(a [8]float64, rounding int) [32]byte
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_mask_cvt_roundpd_epi32'.
 // Requires AVX512F.
-func M512MaskCvtRoundpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d, rounding int) x86.M256i {
+func M512MaskCvtRoundpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtRoundpdEpi32([32]byte(src), uint8(k), [8]float64(a), rounding))
 }
 
@@ -9266,7 +9266,7 @@ func m512MaskCvtRoundpdEpi32(src [32]byte, k uint8, a [8]float64, rounding int) 
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_maskz_cvt_roundpd_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtRoundpdEpi32(k x86.Mmask8, a x86.M512d, rounding int) x86.M256i {
+func M512MaskzCvtRoundpdEpi32(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtRoundpdEpi32(uint8(k), [8]float64(a), rounding))
 }
 
@@ -9293,7 +9293,7 @@ func m512MaskzCvtRoundpdEpi32(k uint8, a [8]float64, rounding int) [32]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_cvt_roundpd_epu32'.
 // Requires AVX512F.
-func M512CvtRoundpdEpu32(a x86.M512d, rounding int) x86.M256i {
+func M512CvtRoundpdEpu32(a x86.M512d, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512CvtRoundpdEpu32([8]float64(a), rounding))
 }
 
@@ -9325,7 +9325,7 @@ func m512CvtRoundpdEpu32(a [8]float64, rounding int) [32]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_mask_cvt_roundpd_epu32'.
 // Requires AVX512F.
-func M512MaskCvtRoundpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d, rounding int) x86.M256i {
+func M512MaskCvtRoundpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtRoundpdEpu32([32]byte(src), uint8(k), [8]float64(a), rounding))
 }
 
@@ -9357,7 +9357,7 @@ func m512MaskCvtRoundpdEpu32(src [32]byte, k uint8, a [8]float64, rounding int) 
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_maskz_cvt_roundpd_epu32'.
 // Requires AVX512F.
-func M512MaskzCvtRoundpdEpu32(k x86.Mmask8, a x86.M512d, rounding int) x86.M256i {
+func M512MaskzCvtRoundpdEpu32(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtRoundpdEpu32(uint8(k), [8]float64(a), rounding))
 }
 
@@ -9384,7 +9384,7 @@ func m512MaskzCvtRoundpdEpu32(k uint8, a [8]float64, rounding int) [32]byte
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_cvt_roundpd_ps'.
 // Requires AVX512F.
-func M512CvtRoundpdPs(a x86.M512d, rounding int) x86.M256 {
+func M512CvtRoundpdPs(a x86.M512d, rounding int) (dst x86.M256) {
 	return x86.M256(m512CvtRoundpdPs([8]float64(a), rounding))
 }
 
@@ -9416,7 +9416,7 @@ func m512CvtRoundpdPs(a [8]float64, rounding int) [8]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_mask_cvt_roundpd_ps'.
 // Requires AVX512F.
-func M512MaskCvtRoundpdPs(src x86.M256, k x86.Mmask8, a x86.M512d, rounding int) x86.M256 {
+func M512MaskCvtRoundpdPs(src x86.M256, k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M256) {
 	return x86.M256(m512MaskCvtRoundpdPs([8]float32(src), uint8(k), [8]float64(a), rounding))
 }
 
@@ -9448,7 +9448,7 @@ func m512MaskCvtRoundpdPs(src [8]float32, k uint8, a [8]float64, rounding int) [
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_maskz_cvt_roundpd_ps'.
 // Requires AVX512F.
-func M512MaskzCvtRoundpdPs(k x86.Mmask8, a x86.M512d, rounding int) x86.M256 {
+func M512MaskzCvtRoundpdPs(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M256) {
 	return x86.M256(m512MaskzCvtRoundpdPs(uint8(k), [8]float64(a), rounding))
 }
 
@@ -9469,7 +9469,7 @@ func m512MaskzCvtRoundpdPs(k uint8, a [8]float64, rounding int) [8]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_cvt_roundph_ps'.
 // Requires AVX512F.
-func M512CvtRoundphPs(a x86.M256i, sae int) x86.M512 {
+func M512CvtRoundphPs(a x86.M256i, sae int) (dst x86.M512) {
 	return x86.M512(m512CvtRoundphPs([32]byte(a), sae))
 }
 
@@ -9495,7 +9495,7 @@ func m512CvtRoundphPs(a [32]byte, sae int) [16]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_mask_cvt_roundph_ps'.
 // Requires AVX512F.
-func M512MaskCvtRoundphPs(src x86.M512, k x86.Mmask16, a x86.M256i, sae int) x86.M512 {
+func M512MaskCvtRoundphPs(src x86.M512, k x86.Mmask16, a x86.M256i, sae int) (dst x86.M512) {
 	return x86.M512(m512MaskCvtRoundphPs([16]float32(src), uint16(k), [32]byte(a), sae))
 }
 
@@ -9521,7 +9521,7 @@ func m512MaskCvtRoundphPs(src [16]float32, k uint16, a [32]byte, sae int) [16]fl
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_maskz_cvt_roundph_ps'.
 // Requires AVX512F.
-func M512MaskzCvtRoundphPs(k x86.Mmask16, a x86.M256i, sae int) x86.M512 {
+func M512MaskzCvtRoundphPs(k x86.Mmask16, a x86.M256i, sae int) (dst x86.M512) {
 	return x86.M512(m512MaskzCvtRoundphPs(uint16(k), [32]byte(a), sae))
 }
 
@@ -9546,7 +9546,7 @@ func m512MaskzCvtRoundphPs(k uint16, a [32]byte, sae int) [16]float32
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_cvt_roundps_epi32'.
 // Requires AVX512F.
-func M512CvtRoundpsEpi32(a x86.M512, rounding int) x86.M512i {
+func M512CvtRoundpsEpi32(a x86.M512, rounding int) (dst x86.M512i) {
 	return x86.M512i(m512CvtRoundpsEpi32([16]float32(a), rounding))
 }
 
@@ -9577,7 +9577,7 @@ func m512CvtRoundpsEpi32(a [16]float32, rounding int) [64]byte
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_mask_cvt_roundps_epi32'.
 // Requires AVX512F.
-func M512MaskCvtRoundpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512, rounding int) x86.M512i {
+func M512MaskCvtRoundpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtRoundpsEpi32([64]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
@@ -9608,7 +9608,7 @@ func m512MaskCvtRoundpsEpi32(src [64]byte, k uint16, a [16]float32, rounding int
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_maskz_cvt_roundps_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtRoundpsEpi32(k x86.Mmask16, a x86.M512, rounding int) x86.M512i {
+func M512MaskzCvtRoundpsEpi32(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtRoundpsEpi32(uint16(k), [16]float32(a), rounding))
 }
 
@@ -9634,7 +9634,7 @@ func m512MaskzCvtRoundpsEpi32(k uint16, a [16]float32, rounding int) [64]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_cvt_roundps_epu32'.
 // Requires AVX512F.
-func M512CvtRoundpsEpu32(a x86.M512, rounding int) x86.M512i {
+func M512CvtRoundpsEpu32(a x86.M512, rounding int) (dst x86.M512i) {
 	return x86.M512i(m512CvtRoundpsEpu32([16]float32(a), rounding))
 }
 
@@ -9665,7 +9665,7 @@ func m512CvtRoundpsEpu32(a [16]float32, rounding int) [64]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_mask_cvt_roundps_epu32'.
 // Requires AVX512F.
-func M512MaskCvtRoundpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512, rounding int) x86.M512i {
+func M512MaskCvtRoundpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtRoundpsEpu32([64]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
@@ -9696,7 +9696,7 @@ func m512MaskCvtRoundpsEpu32(src [64]byte, k uint16, a [16]float32, rounding int
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_maskz_cvt_roundps_epu32'.
 // Requires AVX512F.
-func M512MaskzCvtRoundpsEpu32(k x86.Mmask16, a x86.M512, rounding int) x86.M512i {
+func M512MaskzCvtRoundpsEpu32(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtRoundpsEpu32(uint16(k), [16]float32(a), rounding))
 }
 
@@ -9717,7 +9717,7 @@ func m512MaskzCvtRoundpsEpu32(k uint16, a [16]float32, rounding int) [64]byte
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_cvt_roundps_pd'.
 // Requires AVX512F.
-func M512CvtRoundpsPd(a x86.M256, sae int) x86.M512d {
+func M512CvtRoundpsPd(a x86.M256, sae int) (dst x86.M512d) {
 	return x86.M512d(m512CvtRoundpsPd([8]float32(a), sae))
 }
 
@@ -9743,7 +9743,7 @@ func m512CvtRoundpsPd(a [8]float32, sae int) [8]float64
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_mask_cvt_roundps_pd'.
 // Requires AVX512F.
-func M512MaskCvtRoundpsPd(src x86.M512d, k x86.Mmask8, a x86.M256, sae int) x86.M512d {
+func M512MaskCvtRoundpsPd(src x86.M512d, k x86.Mmask8, a x86.M256, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MaskCvtRoundpsPd([8]float64(src), uint8(k), [8]float32(a), sae))
 }
 
@@ -9769,7 +9769,7 @@ func m512MaskCvtRoundpsPd(src [8]float64, k uint8, a [8]float32, sae int) [8]flo
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_maskz_cvt_roundps_pd'.
 // Requires AVX512F.
-func M512MaskzCvtRoundpsPd(k x86.Mmask8, a x86.M256, sae int) x86.M512d {
+func M512MaskzCvtRoundpsPd(k x86.Mmask8, a x86.M256, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzCvtRoundpsPd(uint8(k), [8]float32(a), sae))
 }
 
@@ -9801,7 +9801,7 @@ func m512MaskzCvtRoundpsPd(k uint8, a [8]float32, sae int) [8]float64
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm_mask_cvt_roundps_ph'.
 // Requires AVX512F.
-func MaskCvtRoundpsPh(src x86.M128i, k x86.Mmask8, a x86.M128, rounding int) x86.M128i {
+func MaskCvtRoundpsPh(src x86.M128i, k x86.Mmask8, a x86.M128, rounding int) (dst x86.M128i) {
 	return x86.M128i(maskCvtRoundpsPh([16]byte(src), uint8(k), [4]float32(a), rounding))
 }
 
@@ -9833,7 +9833,7 @@ func maskCvtRoundpsPh(src [16]byte, k uint8, a [4]float32, rounding int) [16]byt
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm_maskz_cvt_roundps_ph'.
 // Requires AVX512F.
-func MaskzCvtRoundpsPh(k x86.Mmask8, a x86.M128, rounding int) x86.M128i {
+func MaskzCvtRoundpsPh(k x86.Mmask8, a x86.M128, rounding int) (dst x86.M128i) {
 	return x86.M128i(maskzCvtRoundpsPh(uint8(k), [4]float32(a), rounding))
 }
 
@@ -9865,7 +9865,7 @@ func maskzCvtRoundpsPh(k uint8, a [4]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm256_mask_cvt_roundps_ph'.
 // Requires AVX512F.
-func M256MaskCvtRoundpsPh(src x86.M128i, k x86.Mmask8, a x86.M256, rounding int) x86.M128i {
+func M256MaskCvtRoundpsPh(src x86.M128i, k x86.Mmask8, a x86.M256, rounding int) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtRoundpsPh([16]byte(src), uint8(k), [8]float32(a), rounding))
 }
 
@@ -9897,7 +9897,7 @@ func m256MaskCvtRoundpsPh(src [16]byte, k uint8, a [8]float32, rounding int) [16
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm256_maskz_cvt_roundps_ph'.
 // Requires AVX512F.
-func M256MaskzCvtRoundpsPh(k x86.Mmask8, a x86.M256, rounding int) x86.M128i {
+func M256MaskzCvtRoundpsPh(k x86.Mmask8, a x86.M256, rounding int) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtRoundpsPh(uint8(k), [8]float32(a), rounding))
 }
 
@@ -9924,7 +9924,7 @@ func m256MaskzCvtRoundpsPh(k uint8, a [8]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_cvt_roundps_ph'.
 // Requires AVX512F.
-func M512CvtRoundpsPh(a x86.M512, rounding int) x86.M256i {
+func M512CvtRoundpsPh(a x86.M512, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512CvtRoundpsPh([16]float32(a), rounding))
 }
 
@@ -9956,7 +9956,7 @@ func m512CvtRoundpsPh(a [16]float32, rounding int) [32]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_mask_cvt_roundps_ph'.
 // Requires AVX512F.
-func M512MaskCvtRoundpsPh(src x86.M256i, k x86.Mmask16, a x86.M512, rounding int) x86.M256i {
+func M512MaskCvtRoundpsPh(src x86.M256i, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtRoundpsPh([32]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
@@ -9988,7 +9988,7 @@ func m512MaskCvtRoundpsPh(src [32]byte, k uint16, a [16]float32, rounding int) [
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_maskz_cvt_roundps_ph'.
 // Requires AVX512F.
-func M512MaskzCvtRoundpsPh(k x86.Mmask16, a x86.M512, rounding int) x86.M256i {
+func M512MaskzCvtRoundpsPh(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtRoundpsPh(uint16(k), [16]float32(a), rounding))
 }
 
@@ -10009,7 +10009,7 @@ func m512MaskzCvtRoundpsPh(k uint16, a [16]float32, rounding int) [32]byte
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_i32'.
 // Requires AVX512F.
-func CvtRoundsdI32(a x86.M128d, rounding int) int {
+func CvtRoundsdI32(a x86.M128d, rounding int) (dst int) {
 	return int(cvtRoundsdI32([2]float64(a), rounding))
 }
 
@@ -10030,7 +10030,7 @@ func cvtRoundsdI32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_i64'.
 // Requires AVX512F.
-func CvtRoundsdI64(a x86.M128d, rounding int) int64 {
+func CvtRoundsdI64(a x86.M128d, rounding int) (dst int64) {
 	return int64(cvtRoundsdI64([2]float64(a), rounding))
 }
 
@@ -10051,7 +10051,7 @@ func cvtRoundsdI64(a [2]float64, rounding int) int64
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_si32'.
 // Requires AVX512F.
-func CvtRoundsdSi32(a x86.M128d, rounding int) int {
+func CvtRoundsdSi32(a x86.M128d, rounding int) (dst int) {
 	return int(cvtRoundsdSi32([2]float64(a), rounding))
 }
 
@@ -10072,7 +10072,7 @@ func cvtRoundsdSi32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvt_roundsd_si64'.
 // Requires AVX512F.
-func CvtRoundsdSi64(a x86.M128d, rounding int) int64 {
+func CvtRoundsdSi64(a x86.M128d, rounding int) (dst int64) {
 	return int64(cvtRoundsdSi64([2]float64(a), rounding))
 }
 
@@ -10097,7 +10097,7 @@ func cvtRoundsdSi64(a [2]float64, rounding int) int64
 //
 // Instruction: 'VCVTSD2SS'. Intrinsic: '_mm_cvt_roundsd_ss'.
 // Requires AVX512F.
-func CvtRoundsdSs(a x86.M128, b x86.M128d, rounding int) x86.M128 {
+func CvtRoundsdSs(a x86.M128, b x86.M128d, rounding int) (dst x86.M128) {
 	return x86.M128(cvtRoundsdSs([4]float32(a), [2]float64(b), rounding))
 }
 
@@ -10127,7 +10127,7 @@ func cvtRoundsdSs(a [4]float32, b [2]float64, rounding int) [4]float32
 //
 // Instruction: 'VCVTSD2SS'. Intrinsic: '_mm_mask_cvt_roundsd_ss'.
 // Requires AVX512F.
-func MaskCvtRoundsdSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128d, rounding int) x86.M128 {
+func MaskCvtRoundsdSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128d, rounding int) (dst x86.M128) {
 	return x86.M128(maskCvtRoundsdSs([4]float32(src), uint8(k), [4]float32(a), [2]float64(b), rounding))
 }
 
@@ -10157,7 +10157,7 @@ func maskCvtRoundsdSs(src [4]float32, k uint8, a [4]float32, b [2]float64, round
 //
 // Instruction: 'VCVTSD2SS'. Intrinsic: '_mm_maskz_cvt_roundsd_ss'.
 // Requires AVX512F.
-func MaskzCvtRoundsdSs(k x86.Mmask8, a x86.M128, b x86.M128d, rounding int) x86.M128 {
+func MaskzCvtRoundsdSs(k x86.Mmask8, a x86.M128, b x86.M128d, rounding int) (dst x86.M128) {
 	return x86.M128(maskzCvtRoundsdSs(uint8(k), [4]float32(a), [2]float64(b), rounding))
 }
 
@@ -10178,7 +10178,7 @@ func maskzCvtRoundsdSs(k uint8, a [4]float32, b [2]float64, rounding int) [4]flo
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvt_roundsd_u32'.
 // Requires AVX512F.
-func CvtRoundsdU32(a x86.M128d, rounding int) uint32 {
+func CvtRoundsdU32(a x86.M128d, rounding int) (dst uint32) {
 	return uint32(cvtRoundsdU32([2]float64(a), rounding))
 }
 
@@ -10199,7 +10199,7 @@ func cvtRoundsdU32(a [2]float64, rounding int) uint32
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvt_roundsd_u64'.
 // Requires AVX512F.
-func CvtRoundsdU64(a x86.M128d, rounding int) uint64 {
+func CvtRoundsdU64(a x86.M128d, rounding int) (dst uint64) {
 	return uint64(cvtRoundsdU64([2]float64(a), rounding))
 }
 
@@ -10224,7 +10224,7 @@ func cvtRoundsdU64(a [2]float64, rounding int) uint64
 //
 // Instruction: 'VCVTSI2SS'. Intrinsic: '_mm_cvt_roundsi32_ss'.
 // Requires AVX512F.
-func CvtRoundsi32Ss(a x86.M128, b int, rounding int) x86.M128 {
+func CvtRoundsi32Ss(a x86.M128, b int, rounding int) (dst x86.M128) {
 	return x86.M128(cvtRoundsi32Ss([4]float32(a), b, rounding))
 }
 
@@ -10248,7 +10248,7 @@ func cvtRoundsi32Ss(a [4]float32, b int, rounding int) [4]float32
 //
 // Instruction: 'VCVTSI2SD'. Intrinsic: '_mm_cvt_roundsi64_sd'.
 // Requires AVX512F.
-func CvtRoundsi64Sd(a x86.M128d, b int64, rounding int) x86.M128d {
+func CvtRoundsi64Sd(a x86.M128d, b int64, rounding int) (dst x86.M128d) {
 	return x86.M128d(cvtRoundsi64Sd([2]float64(a), b, rounding))
 }
 
@@ -10273,7 +10273,7 @@ func cvtRoundsi64Sd(a [2]float64, b int64, rounding int) [2]float64
 //
 // Instruction: 'VCVTSI2SS'. Intrinsic: '_mm_cvt_roundsi64_ss'.
 // Requires AVX512F.
-func CvtRoundsi64Ss(a x86.M128, b int64, rounding int) x86.M128 {
+func CvtRoundsi64Ss(a x86.M128, b int64, rounding int) (dst x86.M128) {
 	return x86.M128(cvtRoundsi64Ss([4]float32(a), b, rounding))
 }
 
@@ -10294,7 +10294,7 @@ func cvtRoundsi64Ss(a [4]float32, b int64, rounding int) [4]float32
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_i32'.
 // Requires AVX512F.
-func CvtRoundssI32(a x86.M128, rounding int) int {
+func CvtRoundssI32(a x86.M128, rounding int) (dst int) {
 	return int(cvtRoundssI32([4]float32(a), rounding))
 }
 
@@ -10315,7 +10315,7 @@ func cvtRoundssI32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_i64'.
 // Requires AVX512F.
-func CvtRoundssI64(a x86.M128, rounding int) int64 {
+func CvtRoundssI64(a x86.M128, rounding int) (dst int64) {
 	return int64(cvtRoundssI64([4]float32(a), rounding))
 }
 
@@ -10340,7 +10340,7 @@ func cvtRoundssI64(a [4]float32, rounding int) int64
 //
 // Instruction: 'VCVTSS2SD'. Intrinsic: '_mm_cvt_roundss_sd'.
 // Requires AVX512F.
-func CvtRoundssSd(a x86.M128d, b x86.M128, rounding int) x86.M128d {
+func CvtRoundssSd(a x86.M128d, b x86.M128, rounding int) (dst x86.M128d) {
 	return x86.M128d(cvtRoundssSd([2]float64(a), [4]float32(b), rounding))
 }
 
@@ -10370,7 +10370,7 @@ func cvtRoundssSd(a [2]float64, b [4]float32, rounding int) [2]float64
 //
 // Instruction: 'VCVTSS2SD'. Intrinsic: '_mm_mask_cvt_roundss_sd'.
 // Requires AVX512F.
-func MaskCvtRoundssSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128, rounding int) x86.M128d {
+func MaskCvtRoundssSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskCvtRoundssSd([2]float64(src), uint8(k), [2]float64(a), [4]float32(b), rounding))
 }
 
@@ -10400,7 +10400,7 @@ func maskCvtRoundssSd(src [2]float64, k uint8, a [2]float64, b [4]float32, round
 //
 // Instruction: 'VCVTSS2SD'. Intrinsic: '_mm_maskz_cvt_roundss_sd'.
 // Requires AVX512F.
-func MaskzCvtRoundssSd(k x86.Mmask8, a x86.M128d, b x86.M128, rounding int) x86.M128d {
+func MaskzCvtRoundssSd(k x86.Mmask8, a x86.M128d, b x86.M128, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzCvtRoundssSd(uint8(k), [2]float64(a), [4]float32(b), rounding))
 }
 
@@ -10421,7 +10421,7 @@ func maskzCvtRoundssSd(k uint8, a [2]float64, b [4]float32, rounding int) [2]flo
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_si32'.
 // Requires AVX512F.
-func CvtRoundssSi32(a x86.M128, rounding int) int {
+func CvtRoundssSi32(a x86.M128, rounding int) (dst int) {
 	return int(cvtRoundssSi32([4]float32(a), rounding))
 }
 
@@ -10442,7 +10442,7 @@ func cvtRoundssSi32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvt_roundss_si64'.
 // Requires AVX512F.
-func CvtRoundssSi64(a x86.M128, rounding int) int64 {
+func CvtRoundssSi64(a x86.M128, rounding int) (dst int64) {
 	return int64(cvtRoundssSi64([4]float32(a), rounding))
 }
 
@@ -10463,7 +10463,7 @@ func cvtRoundssSi64(a [4]float32, rounding int) int64
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvt_roundss_u32'.
 // Requires AVX512F.
-func CvtRoundssU32(a x86.M128, rounding int) uint32 {
+func CvtRoundssU32(a x86.M128, rounding int) (dst uint32) {
 	return uint32(cvtRoundssU32([4]float32(a), rounding))
 }
 
@@ -10484,7 +10484,7 @@ func cvtRoundssU32(a [4]float32, rounding int) uint32
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvt_roundss_u64'.
 // Requires AVX512F.
-func CvtRoundssU64(a x86.M128, rounding int) uint64 {
+func CvtRoundssU64(a x86.M128, rounding int) (dst uint64) {
 	return uint64(cvtRoundssU64([4]float32(a), rounding))
 }
 
@@ -10509,7 +10509,7 @@ func cvtRoundssU64(a [4]float32, rounding int) uint64
 //
 // Instruction: 'VCVTUSI2SS'. Intrinsic: '_mm_cvt_roundu32_ss'.
 // Requires AVX512F.
-func CvtRoundu32Ss(a x86.M128, b uint32, rounding int) x86.M128 {
+func CvtRoundu32Ss(a x86.M128, b uint32, rounding int) (dst x86.M128) {
 	return x86.M128(cvtRoundu32Ss([4]float32(a), b, rounding))
 }
 
@@ -10533,7 +10533,7 @@ func cvtRoundu32Ss(a [4]float32, b uint32, rounding int) [4]float32
 //
 // Instruction: 'VCVTUSI2SD'. Intrinsic: '_mm_cvt_roundu64_sd'.
 // Requires AVX512F.
-func CvtRoundu64Sd(a x86.M128d, b uint64, rounding int) x86.M128d {
+func CvtRoundu64Sd(a x86.M128d, b uint64, rounding int) (dst x86.M128d) {
 	return x86.M128d(cvtRoundu64Sd([2]float64(a), b, rounding))
 }
 
@@ -10558,7 +10558,7 @@ func cvtRoundu64Sd(a [2]float64, b uint64, rounding int) [2]float64
 //
 // Instruction: 'VCVTUSI2SS'. Intrinsic: '_mm_cvt_roundu64_ss'.
 // Requires AVX512F.
-func CvtRoundu64Ss(a x86.M128, b uint64, rounding int) x86.M128 {
+func CvtRoundu64Ss(a x86.M128, b uint64, rounding int) (dst x86.M128) {
 	return x86.M128(cvtRoundu64Ss([4]float32(a), b, rounding))
 }
 
@@ -10582,7 +10582,7 @@ func cvtRoundu64Ss(a [4]float32, b uint64, rounding int) [4]float32
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm_mask_cvtepi16_epi32'.
 // Requires AVX512F.
-func MaskCvtepi16Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi16Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi16Epi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -10606,7 +10606,7 @@ func maskCvtepi16Epi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm_maskz_cvtepi16_epi32'.
 // Requires AVX512F.
-func MaskzCvtepi16Epi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi16Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi16Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -10630,7 +10630,7 @@ func maskzCvtepi16Epi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm256_mask_cvtepi16_epi32'.
 // Requires AVX512F.
-func M256MaskCvtepi16Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepi16Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepi16Epi32([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -10654,7 +10654,7 @@ func m256MaskCvtepi16Epi32(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm256_maskz_cvtepi16_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtepi16Epi32(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepi16Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepi16Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -10673,7 +10673,7 @@ func m256MaskzCvtepi16Epi32(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm512_cvtepi16_epi32'.
 // Requires AVX512F.
-func M512Cvtepi16Epi32(a x86.M256i) x86.M512i {
+func M512Cvtepi16Epi32(a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepi16Epi32([32]byte(a)))
 }
 
@@ -10697,7 +10697,7 @@ func m512Cvtepi16Epi32(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm512_mask_cvtepi16_epi32'.
 // Requires AVX512F.
-func M512MaskCvtepi16Epi32(src x86.M512i, k x86.Mmask16, a x86.M256i) x86.M512i {
+func M512MaskCvtepi16Epi32(src x86.M512i, k x86.Mmask16, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepi16Epi32([64]byte(src), uint16(k), [32]byte(a)))
 }
 
@@ -10721,7 +10721,7 @@ func m512MaskCvtepi16Epi32(src [64]byte, k uint16, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm512_maskz_cvtepi16_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtepi16Epi32(k x86.Mmask16, a x86.M256i) x86.M512i {
+func M512MaskzCvtepi16Epi32(k x86.Mmask16, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepi16Epi32(uint16(k), [32]byte(a)))
 }
 
@@ -10746,7 +10746,7 @@ func m512MaskzCvtepi16Epi32(k uint16, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm_mask_cvtepi16_epi64'.
 // Requires AVX512F.
-func MaskCvtepi16Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi16Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi16Epi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -10770,7 +10770,7 @@ func maskCvtepi16Epi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm_maskz_cvtepi16_epi64'.
 // Requires AVX512F.
-func MaskzCvtepi16Epi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi16Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi16Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -10795,7 +10795,7 @@ func maskzCvtepi16Epi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm256_mask_cvtepi16_epi64'.
 // Requires AVX512F.
-func M256MaskCvtepi16Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepi16Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepi16Epi64([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -10820,7 +10820,7 @@ func m256MaskCvtepi16Epi64(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm256_maskz_cvtepi16_epi64'.
 // Requires AVX512F.
-func M256MaskzCvtepi16Epi64(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepi16Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepi16Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -10839,7 +10839,7 @@ func m256MaskzCvtepi16Epi64(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm512_cvtepi16_epi64'.
 // Requires AVX512F.
-func M512Cvtepi16Epi64(a x86.M128i) x86.M512i {
+func M512Cvtepi16Epi64(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepi16Epi64([16]byte(a)))
 }
 
@@ -10863,7 +10863,7 @@ func m512Cvtepi16Epi64(a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm512_mask_cvtepi16_epi64'.
 // Requires AVX512F.
-func M512MaskCvtepi16Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskCvtepi16Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepi16Epi64([64]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -10887,7 +10887,7 @@ func m512MaskCvtepi16Epi64(src [64]byte, k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm512_maskz_cvtepi16_epi64'.
 // Requires AVX512F.
-func M512MaskzCvtepi16Epi64(k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskzCvtepi16Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepi16Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -10906,7 +10906,7 @@ func m512MaskzCvtepi16Epi64(k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm_cvtepi32_epi16'.
 // Requires AVX512F.
-func Cvtepi32Epi16(a x86.M128i) x86.M128i {
+func Cvtepi32Epi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtepi32Epi16([16]byte(a)))
 }
 
@@ -10930,7 +10930,7 @@ func cvtepi32Epi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm_mask_cvtepi32_epi16'.
 // Requires AVX512F.
-func MaskCvtepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi32Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -10954,7 +10954,7 @@ func maskCvtepi32Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm_maskz_cvtepi32_epi16'.
 // Requires AVX512F.
-func MaskzCvtepi32Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi32Epi16(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi32Epi16(uint8(k), [16]byte(a)))
 }
 
@@ -10973,7 +10973,7 @@ func maskzCvtepi32Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm256_cvtepi32_epi16'.
 // Requires AVX512F.
-func M256Cvtepi32Epi16(a x86.M256i) x86.M128i {
+func M256Cvtepi32Epi16(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtepi32Epi16([32]byte(a)))
 }
 
@@ -10998,7 +10998,7 @@ func m256Cvtepi32Epi16(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm256_mask_cvtepi32_epi16'.
 // Requires AVX512F.
-func M256MaskCvtepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtepi32Epi16([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -11023,7 +11023,7 @@ func m256MaskCvtepi32Epi16(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm256_maskz_cvtepi32_epi16'.
 // Requires AVX512F.
-func M256MaskzCvtepi32Epi16(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtepi32Epi16(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtepi32Epi16(uint8(k), [32]byte(a)))
 }
 
@@ -11042,7 +11042,7 @@ func m256MaskzCvtepi32Epi16(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm512_cvtepi32_epi16'.
 // Requires AVX512F.
-func M512Cvtepi32Epi16(a x86.M512i) x86.M256i {
+func M512Cvtepi32Epi16(a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512Cvtepi32Epi16([64]byte(a)))
 }
 
@@ -11067,7 +11067,7 @@ func m512Cvtepi32Epi16(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm512_mask_cvtepi32_epi16'.
 // Requires AVX512F.
-func M512MaskCvtepi32Epi16(src x86.M256i, k x86.Mmask16, a x86.M512i) x86.M256i {
+func M512MaskCvtepi32Epi16(src x86.M256i, k x86.Mmask16, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtepi32Epi16([32]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -11092,7 +11092,7 @@ func m512MaskCvtepi32Epi16(src [32]byte, k uint16, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVDW'. Intrinsic: '_mm512_maskz_cvtepi32_epi16'.
 // Requires AVX512F.
-func M512MaskzCvtepi32Epi16(k x86.Mmask16, a x86.M512i) x86.M256i {
+func M512MaskzCvtepi32Epi16(k x86.Mmask16, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtepi32Epi16(uint16(k), [64]byte(a)))
 }
 
@@ -11116,7 +11116,7 @@ func m512MaskzCvtepi32Epi16(k uint16, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm_mask_cvtepi32_epi64'.
 // Requires AVX512F.
-func MaskCvtepi32Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi32Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi32Epi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -11140,7 +11140,7 @@ func maskCvtepi32Epi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm_maskz_cvtepi32_epi64'.
 // Requires AVX512F.
-func MaskzCvtepi32Epi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi32Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi32Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -11164,7 +11164,7 @@ func maskzCvtepi32Epi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm256_mask_cvtepi32_epi64'.
 // Requires AVX512F.
-func M256MaskCvtepi32Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepi32Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepi32Epi64([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -11188,7 +11188,7 @@ func m256MaskCvtepi32Epi64(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm256_maskz_cvtepi32_epi64'.
 // Requires AVX512F.
-func M256MaskzCvtepi32Epi64(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepi32Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepi32Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -11207,7 +11207,7 @@ func m256MaskzCvtepi32Epi64(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm512_cvtepi32_epi64'.
 // Requires AVX512F.
-func M512Cvtepi32Epi64(a x86.M256i) x86.M512i {
+func M512Cvtepi32Epi64(a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepi32Epi64([32]byte(a)))
 }
 
@@ -11231,7 +11231,7 @@ func m512Cvtepi32Epi64(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm512_mask_cvtepi32_epi64'.
 // Requires AVX512F.
-func M512MaskCvtepi32Epi64(src x86.M512i, k x86.Mmask8, a x86.M256i) x86.M512i {
+func M512MaskCvtepi32Epi64(src x86.M512i, k x86.Mmask8, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepi32Epi64([64]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -11255,7 +11255,7 @@ func m512MaskCvtepi32Epi64(src [64]byte, k uint8, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm512_maskz_cvtepi32_epi64'.
 // Requires AVX512F.
-func M512MaskzCvtepi32Epi64(k x86.Mmask8, a x86.M256i) x86.M512i {
+func M512MaskzCvtepi32Epi64(k x86.Mmask8, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepi32Epi64(uint8(k), [32]byte(a)))
 }
 
@@ -11274,7 +11274,7 @@ func m512MaskzCvtepi32Epi64(k uint8, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm_cvtepi32_epi8'.
 // Requires AVX512F.
-func Cvtepi32Epi8(a x86.M128i) x86.M128i {
+func Cvtepi32Epi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtepi32Epi8([16]byte(a)))
 }
 
@@ -11298,7 +11298,7 @@ func cvtepi32Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm_mask_cvtepi32_epi8'.
 // Requires AVX512F.
-func MaskCvtepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi32Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -11322,7 +11322,7 @@ func maskCvtepi32Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm_maskz_cvtepi32_epi8'.
 // Requires AVX512F.
-func MaskzCvtepi32Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi32Epi8(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi32Epi8(uint8(k), [16]byte(a)))
 }
 
@@ -11341,7 +11341,7 @@ func maskzCvtepi32Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm256_cvtepi32_epi8'.
 // Requires AVX512F.
-func M256Cvtepi32Epi8(a x86.M256i) x86.M128i {
+func M256Cvtepi32Epi8(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtepi32Epi8([32]byte(a)))
 }
 
@@ -11365,7 +11365,7 @@ func m256Cvtepi32Epi8(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm256_mask_cvtepi32_epi8'.
 // Requires AVX512F.
-func M256MaskCvtepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtepi32Epi8([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -11389,7 +11389,7 @@ func m256MaskCvtepi32Epi8(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm256_maskz_cvtepi32_epi8'.
 // Requires AVX512F.
-func M256MaskzCvtepi32Epi8(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtepi32Epi8(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtepi32Epi8(uint8(k), [32]byte(a)))
 }
 
@@ -11408,7 +11408,7 @@ func m256MaskzCvtepi32Epi8(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm512_cvtepi32_epi8'.
 // Requires AVX512F.
-func M512Cvtepi32Epi8(a x86.M512i) x86.M128i {
+func M512Cvtepi32Epi8(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtepi32Epi8([64]byte(a)))
 }
 
@@ -11432,7 +11432,7 @@ func m512Cvtepi32Epi8(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm512_mask_cvtepi32_epi8'.
 // Requires AVX512F.
-func M512MaskCvtepi32Epi8(src x86.M128i, k x86.Mmask16, a x86.M512i) x86.M128i {
+func M512MaskCvtepi32Epi8(src x86.M128i, k x86.Mmask16, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtepi32Epi8([16]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -11456,7 +11456,7 @@ func m512MaskCvtepi32Epi8(src [16]byte, k uint16, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVDB'. Intrinsic: '_mm512_maskz_cvtepi32_epi8'.
 // Requires AVX512F.
-func M512MaskzCvtepi32Epi8(k x86.Mmask16, a x86.M512i) x86.M128i {
+func M512MaskzCvtepi32Epi8(k x86.Mmask16, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtepi32Epi8(uint16(k), [64]byte(a)))
 }
 
@@ -11481,7 +11481,7 @@ func m512MaskzCvtepi32Epi8(k uint16, a [64]byte) [16]byte
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm_mask_cvtepi32_pd'.
 // Requires AVX512F.
-func MaskCvtepi32Pd(src x86.M128d, k x86.Mmask8, a x86.M128i) x86.M128d {
+func MaskCvtepi32Pd(src x86.M128d, k x86.Mmask8, a x86.M128i) (dst x86.M128d) {
 	return x86.M128d(maskCvtepi32Pd([2]float64(src), uint8(k), [16]byte(a)))
 }
 
@@ -11506,7 +11506,7 @@ func maskCvtepi32Pd(src [2]float64, k uint8, a [16]byte) [2]float64
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm_maskz_cvtepi32_pd'.
 // Requires AVX512F.
-func MaskzCvtepi32Pd(k x86.Mmask8, a x86.M128i) x86.M128d {
+func MaskzCvtepi32Pd(k x86.Mmask8, a x86.M128i) (dst x86.M128d) {
 	return x86.M128d(maskzCvtepi32Pd(uint8(k), [16]byte(a)))
 }
 
@@ -11531,7 +11531,7 @@ func maskzCvtepi32Pd(k uint8, a [16]byte) [2]float64
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm256_mask_cvtepi32_pd'.
 // Requires AVX512F.
-func M256MaskCvtepi32Pd(src x86.M256d, k x86.Mmask8, a x86.M128i) x86.M256d {
+func M256MaskCvtepi32Pd(src x86.M256d, k x86.Mmask8, a x86.M128i) (dst x86.M256d) {
 	return x86.M256d(m256MaskCvtepi32Pd([4]float64(src), uint8(k), [16]byte(a)))
 }
 
@@ -11556,7 +11556,7 @@ func m256MaskCvtepi32Pd(src [4]float64, k uint8, a [16]byte) [4]float64
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm256_maskz_cvtepi32_pd'.
 // Requires AVX512F.
-func M256MaskzCvtepi32Pd(k x86.Mmask8, a x86.M128i) x86.M256d {
+func M256MaskzCvtepi32Pd(k x86.Mmask8, a x86.M128i) (dst x86.M256d) {
 	return x86.M256d(m256MaskzCvtepi32Pd(uint8(k), [16]byte(a)))
 }
 
@@ -11576,7 +11576,7 @@ func m256MaskzCvtepi32Pd(k uint8, a [16]byte) [4]float64
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_cvtepi32_pd'.
 // Requires AVX512F.
-func M512Cvtepi32Pd(a x86.M256i) x86.M512d {
+func M512Cvtepi32Pd(a x86.M256i) (dst x86.M512d) {
 	return x86.M512d(m512Cvtepi32Pd([32]byte(a)))
 }
 
@@ -11601,7 +11601,7 @@ func m512Cvtepi32Pd(a [32]byte) [8]float64
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_mask_cvtepi32_pd'.
 // Requires AVX512F.
-func M512MaskCvtepi32Pd(src x86.M512d, k x86.Mmask8, a x86.M256i) x86.M512d {
+func M512MaskCvtepi32Pd(src x86.M512d, k x86.Mmask8, a x86.M256i) (dst x86.M512d) {
 	return x86.M512d(m512MaskCvtepi32Pd([8]float64(src), uint8(k), [32]byte(a)))
 }
 
@@ -11626,7 +11626,7 @@ func m512MaskCvtepi32Pd(src [8]float64, k uint8, a [32]byte) [8]float64
 //
 // Instruction: 'VCVTDQ2PD'. Intrinsic: '_mm512_maskz_cvtepi32_pd'.
 // Requires AVX512F.
-func M512MaskzCvtepi32Pd(k x86.Mmask8, a x86.M256i) x86.M512d {
+func M512MaskzCvtepi32Pd(k x86.Mmask8, a x86.M256i) (dst x86.M512d) {
 	return x86.M512d(m512MaskzCvtepi32Pd(uint8(k), [32]byte(a)))
 }
 
@@ -11650,7 +11650,7 @@ func m512MaskzCvtepi32Pd(k uint8, a [32]byte) [8]float64
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm_mask_cvtepi32_ps'.
 // Requires AVX512F.
-func MaskCvtepi32Ps(src x86.M128, k x86.Mmask8, a x86.M128i) x86.M128 {
+func MaskCvtepi32Ps(src x86.M128, k x86.Mmask8, a x86.M128i) (dst x86.M128) {
 	return x86.M128(maskCvtepi32Ps([4]float32(src), uint8(k), [16]byte(a)))
 }
 
@@ -11674,7 +11674,7 @@ func maskCvtepi32Ps(src [4]float32, k uint8, a [16]byte) [4]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm_maskz_cvtepi32_ps'.
 // Requires AVX512F.
-func MaskzCvtepi32Ps(k x86.Mmask8, a x86.M128i) x86.M128 {
+func MaskzCvtepi32Ps(k x86.Mmask8, a x86.M128i) (dst x86.M128) {
 	return x86.M128(maskzCvtepi32Ps(uint8(k), [16]byte(a)))
 }
 
@@ -11698,7 +11698,7 @@ func maskzCvtepi32Ps(k uint8, a [16]byte) [4]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm256_mask_cvtepi32_ps'.
 // Requires AVX512F.
-func M256MaskCvtepi32Ps(src x86.M256, k x86.Mmask8, a x86.M256i) x86.M256 {
+func M256MaskCvtepi32Ps(src x86.M256, k x86.Mmask8, a x86.M256i) (dst x86.M256) {
 	return x86.M256(m256MaskCvtepi32Ps([8]float32(src), uint8(k), [32]byte(a)))
 }
 
@@ -11722,7 +11722,7 @@ func m256MaskCvtepi32Ps(src [8]float32, k uint8, a [32]byte) [8]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm256_maskz_cvtepi32_ps'.
 // Requires AVX512F.
-func M256MaskzCvtepi32Ps(k x86.Mmask8, a x86.M256i) x86.M256 {
+func M256MaskzCvtepi32Ps(k x86.Mmask8, a x86.M256i) (dst x86.M256) {
 	return x86.M256(m256MaskzCvtepi32Ps(uint8(k), [32]byte(a)))
 }
 
@@ -11741,7 +11741,7 @@ func m256MaskzCvtepi32Ps(k uint8, a [32]byte) [8]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_cvtepi32_ps'.
 // Requires AVX512F.
-func M512Cvtepi32Ps(a x86.M512i) x86.M512 {
+func M512Cvtepi32Ps(a x86.M512i) (dst x86.M512) {
 	return x86.M512(m512Cvtepi32Ps([64]byte(a)))
 }
 
@@ -11765,7 +11765,7 @@ func m512Cvtepi32Ps(a [64]byte) [16]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_mask_cvtepi32_ps'.
 // Requires AVX512F.
-func M512MaskCvtepi32Ps(src x86.M512, k x86.Mmask16, a x86.M512i) x86.M512 {
+func M512MaskCvtepi32Ps(src x86.M512, k x86.Mmask16, a x86.M512i) (dst x86.M512) {
 	return x86.M512(m512MaskCvtepi32Ps([16]float32(src), uint16(k), [64]byte(a)))
 }
 
@@ -11789,7 +11789,7 @@ func m512MaskCvtepi32Ps(src [16]float32, k uint16, a [64]byte) [16]float32
 //
 // Instruction: 'VCVTDQ2PS'. Intrinsic: '_mm512_maskz_cvtepi32_ps'.
 // Requires AVX512F.
-func M512MaskzCvtepi32Ps(k x86.Mmask16, a x86.M512i) x86.M512 {
+func M512MaskzCvtepi32Ps(k x86.Mmask16, a x86.M512i) (dst x86.M512) {
 	return x86.M512(m512MaskzCvtepi32Ps(uint16(k), [64]byte(a)))
 }
 
@@ -11826,7 +11826,7 @@ func m512MaskzCvtepi32Ps(k uint16, a [64]byte) [16]float32
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm_cvtepi64_epi16'.
 // Requires AVX512F.
-func Cvtepi64Epi16(a x86.M128i) x86.M128i {
+func Cvtepi64Epi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtepi64Epi16([16]byte(a)))
 }
 
@@ -11850,7 +11850,7 @@ func cvtepi64Epi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm_mask_cvtepi64_epi16'.
 // Requires AVX512F.
-func MaskCvtepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi64Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -11874,7 +11874,7 @@ func maskCvtepi64Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm_maskz_cvtepi64_epi16'.
 // Requires AVX512F.
-func MaskzCvtepi64Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi64Epi16(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi64Epi16(uint8(k), [16]byte(a)))
 }
 
@@ -11893,7 +11893,7 @@ func maskzCvtepi64Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm256_cvtepi64_epi16'.
 // Requires AVX512F.
-func M256Cvtepi64Epi16(a x86.M256i) x86.M128i {
+func M256Cvtepi64Epi16(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtepi64Epi16([32]byte(a)))
 }
 
@@ -11918,7 +11918,7 @@ func m256Cvtepi64Epi16(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm256_mask_cvtepi64_epi16'.
 // Requires AVX512F.
-func M256MaskCvtepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtepi64Epi16([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -11943,7 +11943,7 @@ func m256MaskCvtepi64Epi16(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm256_maskz_cvtepi64_epi16'.
 // Requires AVX512F.
-func M256MaskzCvtepi64Epi16(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtepi64Epi16(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtepi64Epi16(uint8(k), [32]byte(a)))
 }
 
@@ -11962,7 +11962,7 @@ func m256MaskzCvtepi64Epi16(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm512_cvtepi64_epi16'.
 // Requires AVX512F.
-func M512Cvtepi64Epi16(a x86.M512i) x86.M128i {
+func M512Cvtepi64Epi16(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtepi64Epi16([64]byte(a)))
 }
 
@@ -11987,7 +11987,7 @@ func m512Cvtepi64Epi16(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm512_mask_cvtepi64_epi16'.
 // Requires AVX512F.
-func M512MaskCvtepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskCvtepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtepi64Epi16([16]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -12012,7 +12012,7 @@ func m512MaskCvtepi64Epi16(src [16]byte, k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVQW'. Intrinsic: '_mm512_maskz_cvtepi64_epi16'.
 // Requires AVX512F.
-func M512MaskzCvtepi64Epi16(k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskzCvtepi64Epi16(k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtepi64Epi16(uint8(k), [64]byte(a)))
 }
 
@@ -12031,7 +12031,7 @@ func m512MaskzCvtepi64Epi16(k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm_cvtepi64_epi32'.
 // Requires AVX512F.
-func Cvtepi64Epi32(a x86.M128i) x86.M128i {
+func Cvtepi64Epi32(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtepi64Epi32([16]byte(a)))
 }
 
@@ -12055,7 +12055,7 @@ func cvtepi64Epi32(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm_mask_cvtepi64_epi32'.
 // Requires AVX512F.
-func MaskCvtepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi64Epi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12079,7 +12079,7 @@ func maskCvtepi64Epi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm_maskz_cvtepi64_epi32'.
 // Requires AVX512F.
-func MaskzCvtepi64Epi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi64Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi64Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -12098,7 +12098,7 @@ func maskzCvtepi64Epi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm256_cvtepi64_epi32'.
 // Requires AVX512F.
-func M256Cvtepi64Epi32(a x86.M256i) x86.M128i {
+func M256Cvtepi64Epi32(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtepi64Epi32([32]byte(a)))
 }
 
@@ -12123,7 +12123,7 @@ func m256Cvtepi64Epi32(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm256_mask_cvtepi64_epi32'.
 // Requires AVX512F.
-func M256MaskCvtepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtepi64Epi32([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -12148,7 +12148,7 @@ func m256MaskCvtepi64Epi32(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm256_maskz_cvtepi64_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtepi64Epi32(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtepi64Epi32(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtepi64Epi32(uint8(k), [32]byte(a)))
 }
 
@@ -12167,7 +12167,7 @@ func m256MaskzCvtepi64Epi32(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm512_cvtepi64_epi32'.
 // Requires AVX512F.
-func M512Cvtepi64Epi32(a x86.M512i) x86.M256i {
+func M512Cvtepi64Epi32(a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512Cvtepi64Epi32([64]byte(a)))
 }
 
@@ -12192,7 +12192,7 @@ func m512Cvtepi64Epi32(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm512_mask_cvtepi64_epi32'.
 // Requires AVX512F.
-func M512MaskCvtepi64Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i) x86.M256i {
+func M512MaskCvtepi64Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtepi64Epi32([32]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -12217,7 +12217,7 @@ func m512MaskCvtepi64Epi32(src [32]byte, k uint8, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVQD'. Intrinsic: '_mm512_maskz_cvtepi64_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtepi64Epi32(k x86.Mmask8, a x86.M512i) x86.M256i {
+func M512MaskzCvtepi64Epi32(k x86.Mmask8, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtepi64Epi32(uint8(k), [64]byte(a)))
 }
 
@@ -12236,7 +12236,7 @@ func m512MaskzCvtepi64Epi32(k uint8, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm_cvtepi64_epi8'.
 // Requires AVX512F.
-func Cvtepi64Epi8(a x86.M128i) x86.M128i {
+func Cvtepi64Epi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtepi64Epi8([16]byte(a)))
 }
 
@@ -12260,7 +12260,7 @@ func cvtepi64Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm_mask_cvtepi64_epi8'.
 // Requires AVX512F.
-func MaskCvtepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi64Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12284,7 +12284,7 @@ func maskCvtepi64Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm_maskz_cvtepi64_epi8'.
 // Requires AVX512F.
-func MaskzCvtepi64Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi64Epi8(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi64Epi8(uint8(k), [16]byte(a)))
 }
 
@@ -12303,7 +12303,7 @@ func maskzCvtepi64Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm256_cvtepi64_epi8'.
 // Requires AVX512F.
-func M256Cvtepi64Epi8(a x86.M256i) x86.M128i {
+func M256Cvtepi64Epi8(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtepi64Epi8([32]byte(a)))
 }
 
@@ -12327,7 +12327,7 @@ func m256Cvtepi64Epi8(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm256_mask_cvtepi64_epi8'.
 // Requires AVX512F.
-func M256MaskCvtepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtepi64Epi8([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -12351,7 +12351,7 @@ func m256MaskCvtepi64Epi8(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm256_maskz_cvtepi64_epi8'.
 // Requires AVX512F.
-func M256MaskzCvtepi64Epi8(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtepi64Epi8(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtepi64Epi8(uint8(k), [32]byte(a)))
 }
 
@@ -12370,7 +12370,7 @@ func m256MaskzCvtepi64Epi8(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm512_cvtepi64_epi8'.
 // Requires AVX512F.
-func M512Cvtepi64Epi8(a x86.M512i) x86.M128i {
+func M512Cvtepi64Epi8(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtepi64Epi8([64]byte(a)))
 }
 
@@ -12394,7 +12394,7 @@ func m512Cvtepi64Epi8(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm512_mask_cvtepi64_epi8'.
 // Requires AVX512F.
-func M512MaskCvtepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskCvtepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtepi64Epi8([16]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -12418,7 +12418,7 @@ func m512MaskCvtepi64Epi8(src [16]byte, k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVQB'. Intrinsic: '_mm512_maskz_cvtepi64_epi8'.
 // Requires AVX512F.
-func M512MaskzCvtepi64Epi8(k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskzCvtepi64Epi8(k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtepi64Epi8(uint8(k), [64]byte(a)))
 }
 
@@ -12470,7 +12470,7 @@ func m512MaskzCvtepi64Epi8(k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm_mask_cvtepi8_epi32'.
 // Requires AVX512F.
-func MaskCvtepi8Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi8Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi8Epi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12494,7 +12494,7 @@ func maskCvtepi8Epi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm_maskz_cvtepi8_epi32'.
 // Requires AVX512F.
-func MaskzCvtepi8Epi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi8Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi8Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -12519,7 +12519,7 @@ func maskzCvtepi8Epi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm256_mask_cvtepi8_epi32'.
 // Requires AVX512F.
-func M256MaskCvtepi8Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepi8Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepi8Epi32([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12544,7 +12544,7 @@ func m256MaskCvtepi8Epi32(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm256_maskz_cvtepi8_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtepi8Epi32(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepi8Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepi8Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -12563,7 +12563,7 @@ func m256MaskzCvtepi8Epi32(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm512_cvtepi8_epi32'.
 // Requires AVX512F.
-func M512Cvtepi8Epi32(a x86.M128i) x86.M512i {
+func M512Cvtepi8Epi32(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepi8Epi32([16]byte(a)))
 }
 
@@ -12587,7 +12587,7 @@ func m512Cvtepi8Epi32(a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm512_mask_cvtepi8_epi32'.
 // Requires AVX512F.
-func M512MaskCvtepi8Epi32(src x86.M512i, k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskCvtepi8Epi32(src x86.M512i, k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepi8Epi32([64]byte(src), uint16(k), [16]byte(a)))
 }
 
@@ -12611,7 +12611,7 @@ func m512MaskCvtepi8Epi32(src [64]byte, k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm512_maskz_cvtepi8_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtepi8Epi32(k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskzCvtepi8Epi32(k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepi8Epi32(uint16(k), [16]byte(a)))
 }
 
@@ -12636,7 +12636,7 @@ func m512MaskzCvtepi8Epi32(k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm_mask_cvtepi8_epi64'.
 // Requires AVX512F.
-func MaskCvtepi8Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepi8Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepi8Epi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12660,7 +12660,7 @@ func maskCvtepi8Epi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm_maskz_cvtepi8_epi64'.
 // Requires AVX512F.
-func MaskzCvtepi8Epi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepi8Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepi8Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -12685,7 +12685,7 @@ func maskzCvtepi8Epi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm256_mask_cvtepi8_epi64'.
 // Requires AVX512F.
-func M256MaskCvtepi8Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepi8Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepi8Epi64([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12710,7 +12710,7 @@ func m256MaskCvtepi8Epi64(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm256_maskz_cvtepi8_epi64'.
 // Requires AVX512F.
-func M256MaskzCvtepi8Epi64(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepi8Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepi8Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -12729,7 +12729,7 @@ func m256MaskzCvtepi8Epi64(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm512_cvtepi8_epi64'.
 // Requires AVX512F.
-func M512Cvtepi8Epi64(a x86.M128i) x86.M512i {
+func M512Cvtepi8Epi64(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepi8Epi64([16]byte(a)))
 }
 
@@ -12754,7 +12754,7 @@ func m512Cvtepi8Epi64(a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm512_mask_cvtepi8_epi64'.
 // Requires AVX512F.
-func M512MaskCvtepi8Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskCvtepi8Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepi8Epi64([64]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12779,7 +12779,7 @@ func m512MaskCvtepi8Epi64(src [64]byte, k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm512_maskz_cvtepi8_epi64'.
 // Requires AVX512F.
-func M512MaskzCvtepi8Epi64(k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskzCvtepi8Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepi8Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -12803,7 +12803,7 @@ func m512MaskzCvtepi8Epi64(k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm_mask_cvtepu16_epi32'.
 // Requires AVX512F.
-func MaskCvtepu16Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepu16Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepu16Epi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12827,7 +12827,7 @@ func maskCvtepu16Epi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm_maskz_cvtepu16_epi32'.
 // Requires AVX512F.
-func MaskzCvtepu16Epi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepu16Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepu16Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -12851,7 +12851,7 @@ func maskzCvtepu16Epi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm256_mask_cvtepu16_epi32'.
 // Requires AVX512F.
-func M256MaskCvtepu16Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepu16Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepu16Epi32([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12875,7 +12875,7 @@ func m256MaskCvtepu16Epi32(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm256_maskz_cvtepu16_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtepu16Epi32(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepu16Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepu16Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -12894,7 +12894,7 @@ func m256MaskzCvtepu16Epi32(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm512_cvtepu16_epi32'.
 // Requires AVX512F.
-func M512Cvtepu16Epi32(a x86.M256i) x86.M512i {
+func M512Cvtepu16Epi32(a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepu16Epi32([32]byte(a)))
 }
 
@@ -12918,7 +12918,7 @@ func m512Cvtepu16Epi32(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm512_mask_cvtepu16_epi32'.
 // Requires AVX512F.
-func M512MaskCvtepu16Epi32(src x86.M512i, k x86.Mmask16, a x86.M256i) x86.M512i {
+func M512MaskCvtepu16Epi32(src x86.M512i, k x86.Mmask16, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepu16Epi32([64]byte(src), uint16(k), [32]byte(a)))
 }
 
@@ -12942,7 +12942,7 @@ func m512MaskCvtepu16Epi32(src [64]byte, k uint16, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm512_maskz_cvtepu16_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtepu16Epi32(k x86.Mmask16, a x86.M256i) x86.M512i {
+func M512MaskzCvtepu16Epi32(k x86.Mmask16, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepu16Epi32(uint16(k), [32]byte(a)))
 }
 
@@ -12967,7 +12967,7 @@ func m512MaskzCvtepu16Epi32(k uint16, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm_mask_cvtepu16_epi64'.
 // Requires AVX512F.
-func MaskCvtepu16Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepu16Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepu16Epi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -12992,7 +12992,7 @@ func maskCvtepu16Epi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm_maskz_cvtepu16_epi64'.
 // Requires AVX512F.
-func MaskzCvtepu16Epi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepu16Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepu16Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13017,7 +13017,7 @@ func maskzCvtepu16Epi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm256_mask_cvtepu16_epi64'.
 // Requires AVX512F.
-func M256MaskCvtepu16Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepu16Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepu16Epi64([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13042,7 +13042,7 @@ func m256MaskCvtepu16Epi64(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm256_maskz_cvtepu16_epi64'.
 // Requires AVX512F.
-func M256MaskzCvtepu16Epi64(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepu16Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepu16Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13061,7 +13061,7 @@ func m256MaskzCvtepu16Epi64(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm512_cvtepu16_epi64'.
 // Requires AVX512F.
-func M512Cvtepu16Epi64(a x86.M128i) x86.M512i {
+func M512Cvtepu16Epi64(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepu16Epi64([16]byte(a)))
 }
 
@@ -13085,7 +13085,7 @@ func m512Cvtepu16Epi64(a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm512_mask_cvtepu16_epi64'.
 // Requires AVX512F.
-func M512MaskCvtepu16Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskCvtepu16Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepu16Epi64([64]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13109,7 +13109,7 @@ func m512MaskCvtepu16Epi64(src [64]byte, k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm512_maskz_cvtepu16_epi64'.
 // Requires AVX512F.
-func M512MaskzCvtepu16Epi64(k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskzCvtepu16Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepu16Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13133,7 +13133,7 @@ func m512MaskzCvtepu16Epi64(k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm_mask_cvtepu32_epi64'.
 // Requires AVX512F.
-func MaskCvtepu32Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepu32Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepu32Epi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13157,7 +13157,7 @@ func maskCvtepu32Epi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm_maskz_cvtepu32_epi64'.
 // Requires AVX512F.
-func MaskzCvtepu32Epi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepu32Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepu32Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13181,7 +13181,7 @@ func maskzCvtepu32Epi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm256_mask_cvtepu32_epi64'.
 // Requires AVX512F.
-func M256MaskCvtepu32Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepu32Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepu32Epi64([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13205,7 +13205,7 @@ func m256MaskCvtepu32Epi64(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm256_maskz_cvtepu32_epi64'.
 // Requires AVX512F.
-func M256MaskzCvtepu32Epi64(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepu32Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepu32Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13224,7 +13224,7 @@ func m256MaskzCvtepu32Epi64(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm512_cvtepu32_epi64'.
 // Requires AVX512F.
-func M512Cvtepu32Epi64(a x86.M256i) x86.M512i {
+func M512Cvtepu32Epi64(a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepu32Epi64([32]byte(a)))
 }
 
@@ -13248,7 +13248,7 @@ func m512Cvtepu32Epi64(a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm512_mask_cvtepu32_epi64'.
 // Requires AVX512F.
-func M512MaskCvtepu32Epi64(src x86.M512i, k x86.Mmask8, a x86.M256i) x86.M512i {
+func M512MaskCvtepu32Epi64(src x86.M512i, k x86.Mmask8, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepu32Epi64([64]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -13272,7 +13272,7 @@ func m512MaskCvtepu32Epi64(src [64]byte, k uint8, a [32]byte) [64]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm512_maskz_cvtepu32_epi64'.
 // Requires AVX512F.
-func M512MaskzCvtepu32Epi64(k x86.Mmask8, a x86.M256i) x86.M512i {
+func M512MaskzCvtepu32Epi64(k x86.Mmask8, a x86.M256i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepu32Epi64(uint8(k), [32]byte(a)))
 }
 
@@ -13292,7 +13292,7 @@ func m512MaskzCvtepu32Epi64(k uint8, a [32]byte) [64]byte
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm_cvtepu32_pd'.
 // Requires AVX512F.
-func Cvtepu32Pd(a x86.M128i) x86.M128d {
+func Cvtepu32Pd(a x86.M128i) (dst x86.M128d) {
 	return x86.M128d(cvtepu32Pd([16]byte(a)))
 }
 
@@ -13317,7 +13317,7 @@ func cvtepu32Pd(a [16]byte) [2]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm_mask_cvtepu32_pd'.
 // Requires AVX512F.
-func MaskCvtepu32Pd(src x86.M128d, k x86.Mmask8, a x86.M128i) x86.M128d {
+func MaskCvtepu32Pd(src x86.M128d, k x86.Mmask8, a x86.M128i) (dst x86.M128d) {
 	return x86.M128d(maskCvtepu32Pd([2]float64(src), uint8(k), [16]byte(a)))
 }
 
@@ -13342,7 +13342,7 @@ func maskCvtepu32Pd(src [2]float64, k uint8, a [16]byte) [2]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm_maskz_cvtepu32_pd'.
 // Requires AVX512F.
-func MaskzCvtepu32Pd(k x86.Mmask8, a x86.M128i) x86.M128d {
+func MaskzCvtepu32Pd(k x86.Mmask8, a x86.M128i) (dst x86.M128d) {
 	return x86.M128d(maskzCvtepu32Pd(uint8(k), [16]byte(a)))
 }
 
@@ -13362,7 +13362,7 @@ func maskzCvtepu32Pd(k uint8, a [16]byte) [2]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm256_cvtepu32_pd'.
 // Requires AVX512F.
-func M256Cvtepu32Pd(a x86.M128i) x86.M256d {
+func M256Cvtepu32Pd(a x86.M128i) (dst x86.M256d) {
 	return x86.M256d(m256Cvtepu32Pd([16]byte(a)))
 }
 
@@ -13387,7 +13387,7 @@ func m256Cvtepu32Pd(a [16]byte) [4]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm256_mask_cvtepu32_pd'.
 // Requires AVX512F.
-func M256MaskCvtepu32Pd(src x86.M256d, k x86.Mmask8, a x86.M128i) x86.M256d {
+func M256MaskCvtepu32Pd(src x86.M256d, k x86.Mmask8, a x86.M128i) (dst x86.M256d) {
 	return x86.M256d(m256MaskCvtepu32Pd([4]float64(src), uint8(k), [16]byte(a)))
 }
 
@@ -13412,7 +13412,7 @@ func m256MaskCvtepu32Pd(src [4]float64, k uint8, a [16]byte) [4]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm256_maskz_cvtepu32_pd'.
 // Requires AVX512F.
-func M256MaskzCvtepu32Pd(k x86.Mmask8, a x86.M128i) x86.M256d {
+func M256MaskzCvtepu32Pd(k x86.Mmask8, a x86.M128i) (dst x86.M256d) {
 	return x86.M256d(m256MaskzCvtepu32Pd(uint8(k), [16]byte(a)))
 }
 
@@ -13432,7 +13432,7 @@ func m256MaskzCvtepu32Pd(k uint8, a [16]byte) [4]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_cvtepu32_pd'.
 // Requires AVX512F.
-func M512Cvtepu32Pd(a x86.M256i) x86.M512d {
+func M512Cvtepu32Pd(a x86.M256i) (dst x86.M512d) {
 	return x86.M512d(m512Cvtepu32Pd([32]byte(a)))
 }
 
@@ -13457,7 +13457,7 @@ func m512Cvtepu32Pd(a [32]byte) [8]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_mask_cvtepu32_pd'.
 // Requires AVX512F.
-func M512MaskCvtepu32Pd(src x86.M512d, k x86.Mmask8, a x86.M256i) x86.M512d {
+func M512MaskCvtepu32Pd(src x86.M512d, k x86.Mmask8, a x86.M256i) (dst x86.M512d) {
 	return x86.M512d(m512MaskCvtepu32Pd([8]float64(src), uint8(k), [32]byte(a)))
 }
 
@@ -13482,7 +13482,7 @@ func m512MaskCvtepu32Pd(src [8]float64, k uint8, a [32]byte) [8]float64
 //
 // Instruction: 'VCVTUDQ2PD'. Intrinsic: '_mm512_maskz_cvtepu32_pd'.
 // Requires AVX512F.
-func M512MaskzCvtepu32Pd(k x86.Mmask8, a x86.M256i) x86.M512d {
+func M512MaskzCvtepu32Pd(k x86.Mmask8, a x86.M256i) (dst x86.M512d) {
 	return x86.M512d(m512MaskzCvtepu32Pd(uint8(k), [32]byte(a)))
 }
 
@@ -13501,7 +13501,7 @@ func m512MaskzCvtepu32Pd(k uint8, a [32]byte) [8]float64
 //
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_cvtepu32_ps'.
 // Requires AVX512F.
-func M512Cvtepu32Ps(a x86.M512i) x86.M512 {
+func M512Cvtepu32Ps(a x86.M512i) (dst x86.M512) {
 	return x86.M512(m512Cvtepu32Ps([64]byte(a)))
 }
 
@@ -13525,7 +13525,7 @@ func m512Cvtepu32Ps(a [64]byte) [16]float32
 //
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_mask_cvtepu32_ps'.
 // Requires AVX512F.
-func M512MaskCvtepu32Ps(src x86.M512, k x86.Mmask16, a x86.M512i) x86.M512 {
+func M512MaskCvtepu32Ps(src x86.M512, k x86.Mmask16, a x86.M512i) (dst x86.M512) {
 	return x86.M512(m512MaskCvtepu32Ps([16]float32(src), uint16(k), [64]byte(a)))
 }
 
@@ -13549,7 +13549,7 @@ func m512MaskCvtepu32Ps(src [16]float32, k uint16, a [64]byte) [16]float32
 //
 // Instruction: 'VCVTUDQ2PS'. Intrinsic: '_mm512_maskz_cvtepu32_ps'.
 // Requires AVX512F.
-func M512MaskzCvtepu32Ps(k x86.Mmask16, a x86.M512i) x86.M512 {
+func M512MaskzCvtepu32Ps(k x86.Mmask16, a x86.M512i) (dst x86.M512) {
 	return x86.M512(m512MaskzCvtepu32Ps(uint16(k), [64]byte(a)))
 }
 
@@ -13574,7 +13574,7 @@ func m512MaskzCvtepu32Ps(k uint16, a [64]byte) [16]float32
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm_mask_cvtepu8_epi32'.
 // Requires AVX512F.
-func MaskCvtepu8Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepu8Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepu8Epi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13599,7 +13599,7 @@ func maskCvtepu8Epi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm_maskz_cvtepu8_epi32'.
 // Requires AVX512F.
-func MaskzCvtepu8Epi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepu8Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepu8Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -13624,7 +13624,7 @@ func maskzCvtepu8Epi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm256_mask_cvtepu8_epi32'.
 // Requires AVX512F.
-func M256MaskCvtepu8Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepu8Epi32(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepu8Epi32([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13649,7 +13649,7 @@ func m256MaskCvtepu8Epi32(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm256_maskz_cvtepu8_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtepu8Epi32(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepu8Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepu8Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -13668,7 +13668,7 @@ func m256MaskzCvtepu8Epi32(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm512_cvtepu8_epi32'.
 // Requires AVX512F.
-func M512Cvtepu8Epi32(a x86.M128i) x86.M512i {
+func M512Cvtepu8Epi32(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepu8Epi32([16]byte(a)))
 }
 
@@ -13692,7 +13692,7 @@ func m512Cvtepu8Epi32(a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm512_mask_cvtepu8_epi32'.
 // Requires AVX512F.
-func M512MaskCvtepu8Epi32(src x86.M512i, k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskCvtepu8Epi32(src x86.M512i, k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepu8Epi32([64]byte(src), uint16(k), [16]byte(a)))
 }
 
@@ -13716,7 +13716,7 @@ func m512MaskCvtepu8Epi32(src [64]byte, k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm512_maskz_cvtepu8_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtepu8Epi32(k x86.Mmask16, a x86.M128i) x86.M512i {
+func M512MaskzCvtepu8Epi32(k x86.Mmask16, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepu8Epi32(uint16(k), [16]byte(a)))
 }
 
@@ -13741,7 +13741,7 @@ func m512MaskzCvtepu8Epi32(k uint16, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm_mask_cvtepu8_epi64'.
 // Requires AVX512F.
-func MaskCvtepu8Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtepu8Epi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtepu8Epi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13766,7 +13766,7 @@ func maskCvtepu8Epi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm_maskz_cvtepu8_epi64'.
 // Requires AVX512F.
-func MaskzCvtepu8Epi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtepu8Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtepu8Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13791,7 +13791,7 @@ func maskzCvtepu8Epi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm256_mask_cvtepu8_epi64'.
 // Requires AVX512F.
-func M256MaskCvtepu8Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskCvtepu8Epi64(src x86.M256i, k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtepu8Epi64([32]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13816,7 +13816,7 @@ func m256MaskCvtepu8Epi64(src [32]byte, k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm256_maskz_cvtepu8_epi64'.
 // Requires AVX512F.
-func M256MaskzCvtepu8Epi64(k x86.Mmask8, a x86.M128i) x86.M256i {
+func M256MaskzCvtepu8Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtepu8Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13835,7 +13835,7 @@ func m256MaskzCvtepu8Epi64(k uint8, a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm512_cvtepu8_epi64'.
 // Requires AVX512F.
-func M512Cvtepu8Epi64(a x86.M128i) x86.M512i {
+func M512Cvtepu8Epi64(a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512Cvtepu8Epi64([16]byte(a)))
 }
 
@@ -13860,7 +13860,7 @@ func m512Cvtepu8Epi64(a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm512_mask_cvtepu8_epi64'.
 // Requires AVX512F.
-func M512MaskCvtepu8Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskCvtepu8Epi64(src x86.M512i, k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtepu8Epi64([64]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -13885,7 +13885,7 @@ func m512MaskCvtepu8Epi64(src [64]byte, k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm512_maskz_cvtepu8_epi64'.
 // Requires AVX512F.
-func M512MaskzCvtepu8Epi64(k x86.Mmask8, a x86.M128i) x86.M512i {
+func M512MaskzCvtepu8Epi64(k x86.Mmask8, a x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtepu8Epi64(uint8(k), [16]byte(a)))
 }
 
@@ -13902,7 +13902,7 @@ func m512MaskzCvtepu8Epi64(k uint8, a [16]byte) [64]byte
 //
 // Instruction: 'VCVTSI2SD'. Intrinsic: '_mm_cvti32_sd'.
 // Requires AVX512F.
-func Cvti32Sd(a x86.M128d, b int) x86.M128d {
+func Cvti32Sd(a x86.M128d, b int) (dst x86.M128d) {
 	return x86.M128d(cvti32Sd([2]float64(a), b))
 }
 
@@ -13919,7 +13919,7 @@ func cvti32Sd(a [2]float64, b int) [2]float64
 //
 // Instruction: 'VCVTSI2SS'. Intrinsic: '_mm_cvti32_ss'.
 // Requires AVX512F.
-func Cvti32Ss(a x86.M128, b int) x86.M128 {
+func Cvti32Ss(a x86.M128, b int) (dst x86.M128) {
 	return x86.M128(cvti32Ss([4]float32(a), b))
 }
 
@@ -13936,7 +13936,7 @@ func cvti32Ss(a [4]float32, b int) [4]float32
 //
 // Instruction: 'VCVTSI2SD'. Intrinsic: '_mm_cvti64_sd'.
 // Requires AVX512F.
-func Cvti64Sd(a x86.M128d, b int64) x86.M128d {
+func Cvti64Sd(a x86.M128d, b int64) (dst x86.M128d) {
 	return x86.M128d(cvti64Sd([2]float64(a), b))
 }
 
@@ -13953,7 +13953,7 @@ func cvti64Sd(a [2]float64, b int64) [2]float64
 //
 // Instruction: 'VCVTSI2SS'. Intrinsic: '_mm_cvti64_ss'.
 // Requires AVX512F.
-func Cvti64Ss(a x86.M128, b int64) x86.M128 {
+func Cvti64Ss(a x86.M128, b int64) (dst x86.M128) {
 	return x86.M128(cvti64Ss([4]float32(a), b))
 }
 
@@ -13978,7 +13978,7 @@ func cvti64Ss(a [4]float32, b int64) [4]float32
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm_mask_cvtpd_epi32'.
 // Requires AVX512F.
-func MaskCvtpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskCvtpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskCvtpdEpi32([16]byte(src), uint8(k), [2]float64(a)))
 }
 
@@ -14003,7 +14003,7 @@ func maskCvtpdEpi32(src [16]byte, k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm_maskz_cvtpd_epi32'.
 // Requires AVX512F.
-func MaskzCvtpdEpi32(k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskzCvtpdEpi32(k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskzCvtpdEpi32(uint8(k), [2]float64(a)))
 }
 
@@ -14028,7 +14028,7 @@ func maskzCvtpdEpi32(k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm256_mask_cvtpd_epi32'.
 // Requires AVX512F.
-func M256MaskCvtpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskCvtpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtpdEpi32([16]byte(src), uint8(k), [4]float64(a)))
 }
 
@@ -14053,7 +14053,7 @@ func m256MaskCvtpdEpi32(src [16]byte, k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm256_maskz_cvtpd_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtpdEpi32(k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskzCvtpdEpi32(k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtpdEpi32(uint8(k), [4]float64(a)))
 }
 
@@ -14072,7 +14072,7 @@ func m256MaskzCvtpdEpi32(k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_cvtpd_epi32'.
 // Requires AVX512F.
-func M512CvtpdEpi32(a x86.M512d) x86.M256i {
+func M512CvtpdEpi32(a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512CvtpdEpi32([8]float64(a)))
 }
 
@@ -14097,7 +14097,7 @@ func m512CvtpdEpi32(a [8]float64) [32]byte
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_mask_cvtpd_epi32'.
 // Requires AVX512F.
-func M512MaskCvtpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskCvtpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtpdEpi32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
@@ -14122,7 +14122,7 @@ func m512MaskCvtpdEpi32(src [32]byte, k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTPD2DQ'. Intrinsic: '_mm512_maskz_cvtpd_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtpdEpi32(k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskzCvtpdEpi32(k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtpdEpi32(uint8(k), [8]float64(a)))
 }
 
@@ -14141,7 +14141,7 @@ func m512MaskzCvtpdEpi32(k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm_cvtpd_epu32'.
 // Requires AVX512F.
-func CvtpdEpu32(a x86.M128d) x86.M128i {
+func CvtpdEpu32(a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(cvtpdEpu32([2]float64(a)))
 }
 
@@ -14166,7 +14166,7 @@ func cvtpdEpu32(a [2]float64) [16]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm_mask_cvtpd_epu32'.
 // Requires AVX512F.
-func MaskCvtpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskCvtpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskCvtpdEpu32([16]byte(src), uint8(k), [2]float64(a)))
 }
 
@@ -14191,7 +14191,7 @@ func maskCvtpdEpu32(src [16]byte, k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm_maskz_cvtpd_epu32'.
 // Requires AVX512F.
-func MaskzCvtpdEpu32(k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskzCvtpdEpu32(k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskzCvtpdEpu32(uint8(k), [2]float64(a)))
 }
 
@@ -14211,7 +14211,7 @@ func maskzCvtpdEpu32(k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm256_cvtpd_epu32'.
 // Requires AVX512F.
-func M256CvtpdEpu32(a x86.M256d) x86.M128i {
+func M256CvtpdEpu32(a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256CvtpdEpu32([4]float64(a)))
 }
 
@@ -14236,7 +14236,7 @@ func m256CvtpdEpu32(a [4]float64) [16]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm256_mask_cvtpd_epu32'.
 // Requires AVX512F.
-func M256MaskCvtpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskCvtpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtpdEpu32([16]byte(src), uint8(k), [4]float64(a)))
 }
 
@@ -14261,7 +14261,7 @@ func m256MaskCvtpdEpu32(src [16]byte, k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm256_maskz_cvtpd_epu32'.
 // Requires AVX512F.
-func M256MaskzCvtpdEpu32(k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskzCvtpdEpu32(k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtpdEpu32(uint8(k), [4]float64(a)))
 }
 
@@ -14281,7 +14281,7 @@ func m256MaskzCvtpdEpu32(k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_cvtpd_epu32'.
 // Requires AVX512F.
-func M512CvtpdEpu32(a x86.M512d) x86.M256i {
+func M512CvtpdEpu32(a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512CvtpdEpu32([8]float64(a)))
 }
 
@@ -14306,7 +14306,7 @@ func m512CvtpdEpu32(a [8]float64) [32]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_mask_cvtpd_epu32'.
 // Requires AVX512F.
-func M512MaskCvtpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskCvtpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtpdEpu32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
@@ -14331,7 +14331,7 @@ func m512MaskCvtpdEpu32(src [32]byte, k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTPD2UDQ'. Intrinsic: '_mm512_maskz_cvtpd_epu32'.
 // Requires AVX512F.
-func M512MaskzCvtpdEpu32(k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskzCvtpdEpu32(k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtpdEpu32(uint8(k), [8]float64(a)))
 }
 
@@ -14356,7 +14356,7 @@ func m512MaskzCvtpdEpu32(k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm_mask_cvtpd_ps'.
 // Requires AVX512F.
-func MaskCvtpdPs(src x86.M128, k x86.Mmask8, a x86.M128d) x86.M128 {
+func MaskCvtpdPs(src x86.M128, k x86.Mmask8, a x86.M128d) (dst x86.M128) {
 	return x86.M128(maskCvtpdPs([4]float32(src), uint8(k), [2]float64(a)))
 }
 
@@ -14381,7 +14381,7 @@ func maskCvtpdPs(src [4]float32, k uint8, a [2]float64) [4]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm_maskz_cvtpd_ps'.
 // Requires AVX512F.
-func MaskzCvtpdPs(k x86.Mmask8, a x86.M128d) x86.M128 {
+func MaskzCvtpdPs(k x86.Mmask8, a x86.M128d) (dst x86.M128) {
 	return x86.M128(maskzCvtpdPs(uint8(k), [2]float64(a)))
 }
 
@@ -14406,7 +14406,7 @@ func maskzCvtpdPs(k uint8, a [2]float64) [4]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm256_mask_cvtpd_ps'.
 // Requires AVX512F.
-func M256MaskCvtpdPs(src x86.M128, k x86.Mmask8, a x86.M256d) x86.M128 {
+func M256MaskCvtpdPs(src x86.M128, k x86.Mmask8, a x86.M256d) (dst x86.M128) {
 	return x86.M128(m256MaskCvtpdPs([4]float32(src), uint8(k), [4]float64(a)))
 }
 
@@ -14431,7 +14431,7 @@ func m256MaskCvtpdPs(src [4]float32, k uint8, a [4]float64) [4]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm256_maskz_cvtpd_ps'.
 // Requires AVX512F.
-func M256MaskzCvtpdPs(k x86.Mmask8, a x86.M256d) x86.M128 {
+func M256MaskzCvtpdPs(k x86.Mmask8, a x86.M256d) (dst x86.M128) {
 	return x86.M128(m256MaskzCvtpdPs(uint8(k), [4]float64(a)))
 }
 
@@ -14451,7 +14451,7 @@ func m256MaskzCvtpdPs(k uint8, a [4]float64) [4]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_cvtpd_ps'.
 // Requires AVX512F.
-func M512CvtpdPs(a x86.M512d) x86.M256 {
+func M512CvtpdPs(a x86.M512d) (dst x86.M256) {
 	return x86.M256(m512CvtpdPs([8]float64(a)))
 }
 
@@ -14476,7 +14476,7 @@ func m512CvtpdPs(a [8]float64) [8]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_mask_cvtpd_ps'.
 // Requires AVX512F.
-func M512MaskCvtpdPs(src x86.M256, k x86.Mmask8, a x86.M512d) x86.M256 {
+func M512MaskCvtpdPs(src x86.M256, k x86.Mmask8, a x86.M512d) (dst x86.M256) {
 	return x86.M256(m512MaskCvtpdPs([8]float32(src), uint8(k), [8]float64(a)))
 }
 
@@ -14501,7 +14501,7 @@ func m512MaskCvtpdPs(src [8]float32, k uint8, a [8]float64) [8]float32
 //
 // Instruction: 'VCVTPD2PS'. Intrinsic: '_mm512_maskz_cvtpd_ps'.
 // Requires AVX512F.
-func M512MaskzCvtpdPs(k x86.Mmask8, a x86.M512d) x86.M256 {
+func M512MaskzCvtpdPs(k x86.Mmask8, a x86.M512d) (dst x86.M256) {
 	return x86.M256(m512MaskzCvtpdPs(uint8(k), [8]float64(a)))
 }
 
@@ -14526,7 +14526,7 @@ func m512MaskzCvtpdPs(k uint8, a [8]float64) [8]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm_mask_cvtph_ps'.
 // Requires AVX512F.
-func MaskCvtphPs(src x86.M128, k x86.Mmask8, a x86.M128i) x86.M128 {
+func MaskCvtphPs(src x86.M128, k x86.Mmask8, a x86.M128i) (dst x86.M128) {
 	return x86.M128(maskCvtphPs([4]float32(src), uint8(k), [16]byte(a)))
 }
 
@@ -14551,7 +14551,7 @@ func maskCvtphPs(src [4]float32, k uint8, a [16]byte) [4]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm_maskz_cvtph_ps'.
 // Requires AVX512F.
-func MaskzCvtphPs(k x86.Mmask8, a x86.M128i) x86.M128 {
+func MaskzCvtphPs(k x86.Mmask8, a x86.M128i) (dst x86.M128) {
 	return x86.M128(maskzCvtphPs(uint8(k), [16]byte(a)))
 }
 
@@ -14576,7 +14576,7 @@ func maskzCvtphPs(k uint8, a [16]byte) [4]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm256_mask_cvtph_ps'.
 // Requires AVX512F.
-func M256MaskCvtphPs(src x86.M256, k x86.Mmask8, a x86.M128i) x86.M256 {
+func M256MaskCvtphPs(src x86.M256, k x86.Mmask8, a x86.M128i) (dst x86.M256) {
 	return x86.M256(m256MaskCvtphPs([8]float32(src), uint8(k), [16]byte(a)))
 }
 
@@ -14601,7 +14601,7 @@ func m256MaskCvtphPs(src [8]float32, k uint8, a [16]byte) [8]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm256_maskz_cvtph_ps'.
 // Requires AVX512F.
-func M256MaskzCvtphPs(k x86.Mmask8, a x86.M128i) x86.M256 {
+func M256MaskzCvtphPs(k x86.Mmask8, a x86.M128i) (dst x86.M256) {
 	return x86.M256(m256MaskzCvtphPs(uint8(k), [16]byte(a)))
 }
 
@@ -14621,7 +14621,7 @@ func m256MaskzCvtphPs(k uint8, a [16]byte) [8]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_cvtph_ps'.
 // Requires AVX512F.
-func M512CvtphPs(a x86.M256i) x86.M512 {
+func M512CvtphPs(a x86.M256i) (dst x86.M512) {
 	return x86.M512(m512CvtphPs([32]byte(a)))
 }
 
@@ -14646,7 +14646,7 @@ func m512CvtphPs(a [32]byte) [16]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_mask_cvtph_ps'.
 // Requires AVX512F.
-func M512MaskCvtphPs(src x86.M512, k x86.Mmask16, a x86.M256i) x86.M512 {
+func M512MaskCvtphPs(src x86.M512, k x86.Mmask16, a x86.M256i) (dst x86.M512) {
 	return x86.M512(m512MaskCvtphPs([16]float32(src), uint16(k), [32]byte(a)))
 }
 
@@ -14671,7 +14671,7 @@ func m512MaskCvtphPs(src [16]float32, k uint16, a [32]byte) [16]float32
 //
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm512_maskz_cvtph_ps'.
 // Requires AVX512F.
-func M512MaskzCvtphPs(k x86.Mmask16, a x86.M256i) x86.M512 {
+func M512MaskzCvtphPs(k x86.Mmask16, a x86.M256i) (dst x86.M512) {
 	return x86.M512(m512MaskzCvtphPs(uint16(k), [32]byte(a)))
 }
 
@@ -14695,7 +14695,7 @@ func m512MaskzCvtphPs(k uint16, a [32]byte) [16]float32
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm_mask_cvtps_epi32'.
 // Requires AVX512F.
-func MaskCvtpsEpi32(src x86.M128i, k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskCvtpsEpi32(src x86.M128i, k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskCvtpsEpi32([16]byte(src), uint8(k), [4]float32(a)))
 }
 
@@ -14719,7 +14719,7 @@ func maskCvtpsEpi32(src [16]byte, k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm_maskz_cvtps_epi32'.
 // Requires AVX512F.
-func MaskzCvtpsEpi32(k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskzCvtpsEpi32(k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskzCvtpsEpi32(uint8(k), [4]float32(a)))
 }
 
@@ -14743,7 +14743,7 @@ func maskzCvtpsEpi32(k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm256_mask_cvtps_epi32'.
 // Requires AVX512F.
-func M256MaskCvtpsEpi32(src x86.M256i, k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskCvtpsEpi32(src x86.M256i, k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtpsEpi32([32]byte(src), uint8(k), [8]float32(a)))
 }
 
@@ -14767,7 +14767,7 @@ func m256MaskCvtpsEpi32(src [32]byte, k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm256_maskz_cvtps_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtpsEpi32(k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskzCvtpsEpi32(k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtpsEpi32(uint8(k), [8]float32(a)))
 }
 
@@ -14785,7 +14785,7 @@ func m256MaskzCvtpsEpi32(k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_cvtps_epi32'.
 // Requires AVX512F.
-func M512CvtpsEpi32(a x86.M512) x86.M512i {
+func M512CvtpsEpi32(a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512CvtpsEpi32([16]float32(a)))
 }
 
@@ -14809,7 +14809,7 @@ func m512CvtpsEpi32(a [16]float32) [64]byte
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_mask_cvtps_epi32'.
 // Requires AVX512F.
-func M512MaskCvtpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskCvtpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtpsEpi32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
@@ -14833,7 +14833,7 @@ func m512MaskCvtpsEpi32(src [64]byte, k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTPS2DQ'. Intrinsic: '_mm512_maskz_cvtps_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtpsEpi32(k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskzCvtpsEpi32(k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtpsEpi32(uint16(k), [16]float32(a)))
 }
 
@@ -14851,7 +14851,7 @@ func m512MaskzCvtpsEpi32(k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm_cvtps_epu32'.
 // Requires AVX512F.
-func CvtpsEpu32(a x86.M128) x86.M128i {
+func CvtpsEpu32(a x86.M128) (dst x86.M128i) {
 	return x86.M128i(cvtpsEpu32([4]float32(a)))
 }
 
@@ -14875,7 +14875,7 @@ func cvtpsEpu32(a [4]float32) [16]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm_mask_cvtps_epu32'.
 // Requires AVX512F.
-func MaskCvtpsEpu32(src x86.M128i, k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskCvtpsEpu32(src x86.M128i, k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskCvtpsEpu32([16]byte(src), uint8(k), [4]float32(a)))
 }
 
@@ -14899,7 +14899,7 @@ func maskCvtpsEpu32(src [16]byte, k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm_maskz_cvtps_epu32'.
 // Requires AVX512F.
-func MaskzCvtpsEpu32(k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskzCvtpsEpu32(k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskzCvtpsEpu32(uint8(k), [4]float32(a)))
 }
 
@@ -14918,7 +14918,7 @@ func maskzCvtpsEpu32(k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm256_cvtps_epu32'.
 // Requires AVX512F.
-func M256CvtpsEpu32(a x86.M256) x86.M256i {
+func M256CvtpsEpu32(a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256CvtpsEpu32([8]float32(a)))
 }
 
@@ -14942,7 +14942,7 @@ func m256CvtpsEpu32(a [8]float32) [32]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm256_mask_cvtps_epu32'.
 // Requires AVX512F.
-func M256MaskCvtpsEpu32(src x86.M256i, k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskCvtpsEpu32(src x86.M256i, k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvtpsEpu32([32]byte(src), uint8(k), [8]float32(a)))
 }
 
@@ -14966,7 +14966,7 @@ func m256MaskCvtpsEpu32(src [32]byte, k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm256_maskz_cvtps_epu32'.
 // Requires AVX512F.
-func M256MaskzCvtpsEpu32(k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskzCvtpsEpu32(k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvtpsEpu32(uint8(k), [8]float32(a)))
 }
 
@@ -14985,7 +14985,7 @@ func m256MaskzCvtpsEpu32(k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_cvtps_epu32'.
 // Requires AVX512F.
-func M512CvtpsEpu32(a x86.M512) x86.M512i {
+func M512CvtpsEpu32(a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512CvtpsEpu32([16]float32(a)))
 }
 
@@ -15009,7 +15009,7 @@ func m512CvtpsEpu32(a [16]float32) [64]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_mask_cvtps_epu32'.
 // Requires AVX512F.
-func M512MaskCvtpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskCvtpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvtpsEpu32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
@@ -15033,7 +15033,7 @@ func m512MaskCvtpsEpu32(src [64]byte, k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTPS2UDQ'. Intrinsic: '_mm512_maskz_cvtps_epu32'.
 // Requires AVX512F.
-func M512MaskzCvtpsEpu32(k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskzCvtpsEpu32(k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvtpsEpu32(uint16(k), [16]float32(a)))
 }
 
@@ -15053,7 +15053,7 @@ func m512MaskzCvtpsEpu32(k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_cvtps_pd'.
 // Requires AVX512F.
-func M512CvtpsPd(a x86.M256) x86.M512d {
+func M512CvtpsPd(a x86.M256) (dst x86.M512d) {
 	return x86.M512d(m512CvtpsPd([8]float32(a)))
 }
 
@@ -15078,7 +15078,7 @@ func m512CvtpsPd(a [8]float32) [8]float64
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_mask_cvtps_pd'.
 // Requires AVX512F.
-func M512MaskCvtpsPd(src x86.M512d, k x86.Mmask8, a x86.M256) x86.M512d {
+func M512MaskCvtpsPd(src x86.M512d, k x86.Mmask8, a x86.M256) (dst x86.M512d) {
 	return x86.M512d(m512MaskCvtpsPd([8]float64(src), uint8(k), [8]float32(a)))
 }
 
@@ -15103,7 +15103,7 @@ func m512MaskCvtpsPd(src [8]float64, k uint8, a [8]float32) [8]float64
 //
 // Instruction: 'VCVTPS2PD'. Intrinsic: '_mm512_maskz_cvtps_pd'.
 // Requires AVX512F.
-func M512MaskzCvtpsPd(k x86.Mmask8, a x86.M256) x86.M512d {
+func M512MaskzCvtpsPd(k x86.Mmask8, a x86.M256) (dst x86.M512d) {
 	return x86.M512d(m512MaskzCvtpsPd(uint8(k), [8]float32(a)))
 }
 
@@ -15135,7 +15135,7 @@ func m512MaskzCvtpsPd(k uint8, a [8]float32) [8]float64
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm_mask_cvtps_ph'.
 // Requires AVX512F.
-func MaskCvtpsPh(src x86.M128i, k x86.Mmask8, a x86.M128, rounding int) x86.M128i {
+func MaskCvtpsPh(src x86.M128i, k x86.Mmask8, a x86.M128, rounding int) (dst x86.M128i) {
 	return x86.M128i(maskCvtpsPh([16]byte(src), uint8(k), [4]float32(a), rounding))
 }
 
@@ -15167,7 +15167,7 @@ func maskCvtpsPh(src [16]byte, k uint8, a [4]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm_maskz_cvtps_ph'.
 // Requires AVX512F.
-func MaskzCvtpsPh(k x86.Mmask8, a x86.M128, rounding int) x86.M128i {
+func MaskzCvtpsPh(k x86.Mmask8, a x86.M128, rounding int) (dst x86.M128i) {
 	return x86.M128i(maskzCvtpsPh(uint8(k), [4]float32(a), rounding))
 }
 
@@ -15199,7 +15199,7 @@ func maskzCvtpsPh(k uint8, a [4]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm256_mask_cvtps_ph'.
 // Requires AVX512F.
-func M256MaskCvtpsPh(src x86.M128i, k x86.Mmask8, a x86.M256, rounding int) x86.M128i {
+func M256MaskCvtpsPh(src x86.M128i, k x86.Mmask8, a x86.M256, rounding int) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtpsPh([16]byte(src), uint8(k), [8]float32(a), rounding))
 }
 
@@ -15231,7 +15231,7 @@ func m256MaskCvtpsPh(src [16]byte, k uint8, a [8]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm256_maskz_cvtps_ph'.
 // Requires AVX512F.
-func M256MaskzCvtpsPh(k x86.Mmask8, a x86.M256, rounding int) x86.M128i {
+func M256MaskzCvtpsPh(k x86.Mmask8, a x86.M256, rounding int) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtpsPh(uint8(k), [8]float32(a), rounding))
 }
 
@@ -15258,7 +15258,7 @@ func m256MaskzCvtpsPh(k uint8, a [8]float32, rounding int) [16]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_cvtps_ph'.
 // Requires AVX512F.
-func M512CvtpsPh(a x86.M512, rounding int) x86.M256i {
+func M512CvtpsPh(a x86.M512, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512CvtpsPh([16]float32(a), rounding))
 }
 
@@ -15290,7 +15290,7 @@ func m512CvtpsPh(a [16]float32, rounding int) [32]byte
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_mask_cvtps_ph'.
 // Requires AVX512F.
-func M512MaskCvtpsPh(src x86.M256i, k x86.Mmask16, a x86.M512, rounding int) x86.M256i {
+func M512MaskCvtpsPh(src x86.M256i, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtpsPh([32]byte(src), uint16(k), [16]float32(a), rounding))
 }
 
@@ -15322,7 +15322,7 @@ func m512MaskCvtpsPh(src [32]byte, k uint16, a [16]float32, rounding int) [32]by
 //
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm512_maskz_cvtps_ph'.
 // Requires AVX512F.
-func M512MaskzCvtpsPh(k x86.Mmask16, a x86.M512, rounding int) x86.M256i {
+func M512MaskzCvtpsPh(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtpsPh(uint16(k), [16]float32(a), rounding))
 }
 
@@ -15336,7 +15336,7 @@ func m512MaskzCvtpsPh(k uint16, a [16]float32, rounding int) [32]byte
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvtsd_i32'.
 // Requires AVX512F.
-func CvtsdI32(a x86.M128d) int {
+func CvtsdI32(a x86.M128d) (dst int) {
 	return int(cvtsdI32([2]float64(a)))
 }
 
@@ -15350,7 +15350,7 @@ func cvtsdI32(a [2]float64) int
 //
 // Instruction: 'VCVTSD2SI'. Intrinsic: '_mm_cvtsd_i64'.
 // Requires AVX512F.
-func CvtsdI64(a x86.M128d) int64 {
+func CvtsdI64(a x86.M128d) (dst int64) {
 	return int64(cvtsdI64([2]float64(a)))
 }
 
@@ -15373,7 +15373,7 @@ func cvtsdI64(a [2]float64) int64
 //
 // Instruction: 'VCVTSD2SS'. Intrinsic: '_mm_mask_cvtsd_ss'.
 // Requires AVX512F.
-func MaskCvtsdSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128d) x86.M128 {
+func MaskCvtsdSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128d) (dst x86.M128) {
 	return x86.M128(maskCvtsdSs([4]float32(src), uint8(k), [4]float32(a), [2]float64(b)))
 }
 
@@ -15396,7 +15396,7 @@ func maskCvtsdSs(src [4]float32, k uint8, a [4]float32, b [2]float64) [4]float32
 //
 // Instruction: 'VCVTSD2SS'. Intrinsic: '_mm_maskz_cvtsd_ss'.
 // Requires AVX512F.
-func MaskzCvtsdSs(k x86.Mmask8, a x86.M128, b x86.M128d) x86.M128 {
+func MaskzCvtsdSs(k x86.Mmask8, a x86.M128, b x86.M128d) (dst x86.M128) {
 	return x86.M128(maskzCvtsdSs(uint8(k), [4]float32(a), [2]float64(b)))
 }
 
@@ -15410,7 +15410,7 @@ func maskzCvtsdSs(k uint8, a [4]float32, b [2]float64) [4]float32
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvtsd_u32'.
 // Requires AVX512F.
-func CvtsdU32(a x86.M128d) uint32 {
+func CvtsdU32(a x86.M128d) (dst uint32) {
 	return uint32(cvtsdU32([2]float64(a)))
 }
 
@@ -15424,7 +15424,7 @@ func cvtsdU32(a [2]float64) uint32
 //
 // Instruction: 'VCVTSD2USI'. Intrinsic: '_mm_cvtsd_u64'.
 // Requires AVX512F.
-func CvtsdU64(a x86.M128d) uint64 {
+func CvtsdU64(a x86.M128d) (dst uint64) {
 	return uint64(cvtsdU64([2]float64(a)))
 }
 
@@ -15443,7 +15443,7 @@ func cvtsdU64(a [2]float64) uint64
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm_cvtsepi32_epi16'.
 // Requires AVX512F.
-func Cvtsepi32Epi16(a x86.M128i) x86.M128i {
+func Cvtsepi32Epi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtsepi32Epi16([16]byte(a)))
 }
 
@@ -15468,7 +15468,7 @@ func cvtsepi32Epi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm_mask_cvtsepi32_epi16'.
 // Requires AVX512F.
-func MaskCvtsepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtsepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtsepi32Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -15493,7 +15493,7 @@ func maskCvtsepi32Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm_maskz_cvtsepi32_epi16'.
 // Requires AVX512F.
-func MaskzCvtsepi32Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtsepi32Epi16(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtsepi32Epi16(uint8(k), [16]byte(a)))
 }
 
@@ -15512,7 +15512,7 @@ func maskzCvtsepi32Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm256_cvtsepi32_epi16'.
 // Requires AVX512F.
-func M256Cvtsepi32Epi16(a x86.M256i) x86.M128i {
+func M256Cvtsepi32Epi16(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtsepi32Epi16([32]byte(a)))
 }
 
@@ -15537,7 +15537,7 @@ func m256Cvtsepi32Epi16(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm256_mask_cvtsepi32_epi16'.
 // Requires AVX512F.
-func M256MaskCvtsepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtsepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtsepi32Epi16([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -15562,7 +15562,7 @@ func m256MaskCvtsepi32Epi16(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm256_maskz_cvtsepi32_epi16'.
 // Requires AVX512F.
-func M256MaskzCvtsepi32Epi16(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtsepi32Epi16(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtsepi32Epi16(uint8(k), [32]byte(a)))
 }
 
@@ -15581,7 +15581,7 @@ func m256MaskzCvtsepi32Epi16(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_cvtsepi32_epi16'.
 // Requires AVX512F.
-func M512Cvtsepi32Epi16(a x86.M512i) x86.M256i {
+func M512Cvtsepi32Epi16(a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512Cvtsepi32Epi16([64]byte(a)))
 }
 
@@ -15606,7 +15606,7 @@ func m512Cvtsepi32Epi16(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_mask_cvtsepi32_epi16'.
 // Requires AVX512F.
-func M512MaskCvtsepi32Epi16(src x86.M256i, k x86.Mmask16, a x86.M512i) x86.M256i {
+func M512MaskCvtsepi32Epi16(src x86.M256i, k x86.Mmask16, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtsepi32Epi16([32]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -15631,7 +15631,7 @@ func m512MaskCvtsepi32Epi16(src [32]byte, k uint16, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSDW'. Intrinsic: '_mm512_maskz_cvtsepi32_epi16'.
 // Requires AVX512F.
-func M512MaskzCvtsepi32Epi16(k x86.Mmask16, a x86.M512i) x86.M256i {
+func M512MaskzCvtsepi32Epi16(k x86.Mmask16, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtsepi32Epi16(uint16(k), [64]byte(a)))
 }
 
@@ -15650,7 +15650,7 @@ func m512MaskzCvtsepi32Epi16(k uint16, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm_cvtsepi32_epi8'.
 // Requires AVX512F.
-func Cvtsepi32Epi8(a x86.M128i) x86.M128i {
+func Cvtsepi32Epi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtsepi32Epi8([16]byte(a)))
 }
 
@@ -15675,7 +15675,7 @@ func cvtsepi32Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm_mask_cvtsepi32_epi8'.
 // Requires AVX512F.
-func MaskCvtsepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtsepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtsepi32Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -15700,7 +15700,7 @@ func maskCvtsepi32Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm_maskz_cvtsepi32_epi8'.
 // Requires AVX512F.
-func MaskzCvtsepi32Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtsepi32Epi8(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtsepi32Epi8(uint8(k), [16]byte(a)))
 }
 
@@ -15719,7 +15719,7 @@ func maskzCvtsepi32Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm256_cvtsepi32_epi8'.
 // Requires AVX512F.
-func M256Cvtsepi32Epi8(a x86.M256i) x86.M128i {
+func M256Cvtsepi32Epi8(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtsepi32Epi8([32]byte(a)))
 }
 
@@ -15744,7 +15744,7 @@ func m256Cvtsepi32Epi8(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm256_mask_cvtsepi32_epi8'.
 // Requires AVX512F.
-func M256MaskCvtsepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtsepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtsepi32Epi8([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -15769,7 +15769,7 @@ func m256MaskCvtsepi32Epi8(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm256_maskz_cvtsepi32_epi8'.
 // Requires AVX512F.
-func M256MaskzCvtsepi32Epi8(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtsepi32Epi8(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtsepi32Epi8(uint8(k), [32]byte(a)))
 }
 
@@ -15788,7 +15788,7 @@ func m256MaskzCvtsepi32Epi8(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_cvtsepi32_epi8'.
 // Requires AVX512F.
-func M512Cvtsepi32Epi8(a x86.M512i) x86.M128i {
+func M512Cvtsepi32Epi8(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtsepi32Epi8([64]byte(a)))
 }
 
@@ -15813,7 +15813,7 @@ func m512Cvtsepi32Epi8(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_mask_cvtsepi32_epi8'.
 // Requires AVX512F.
-func M512MaskCvtsepi32Epi8(src x86.M128i, k x86.Mmask16, a x86.M512i) x86.M128i {
+func M512MaskCvtsepi32Epi8(src x86.M128i, k x86.Mmask16, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtsepi32Epi8([16]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -15838,7 +15838,7 @@ func m512MaskCvtsepi32Epi8(src [16]byte, k uint16, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSDB'. Intrinsic: '_mm512_maskz_cvtsepi32_epi8'.
 // Requires AVX512F.
-func M512MaskzCvtsepi32Epi8(k x86.Mmask16, a x86.M512i) x86.M128i {
+func M512MaskzCvtsepi32Epi8(k x86.Mmask16, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtsepi32Epi8(uint16(k), [64]byte(a)))
 }
 
@@ -15875,7 +15875,7 @@ func m512MaskzCvtsepi32Epi8(k uint16, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm_cvtsepi64_epi16'.
 // Requires AVX512F.
-func Cvtsepi64Epi16(a x86.M128i) x86.M128i {
+func Cvtsepi64Epi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtsepi64Epi16([16]byte(a)))
 }
 
@@ -15900,7 +15900,7 @@ func cvtsepi64Epi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm_mask_cvtsepi64_epi16'.
 // Requires AVX512F.
-func MaskCvtsepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtsepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtsepi64Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -15925,7 +15925,7 @@ func maskCvtsepi64Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm_maskz_cvtsepi64_epi16'.
 // Requires AVX512F.
-func MaskzCvtsepi64Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtsepi64Epi16(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtsepi64Epi16(uint8(k), [16]byte(a)))
 }
 
@@ -15944,7 +15944,7 @@ func maskzCvtsepi64Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm256_cvtsepi64_epi16'.
 // Requires AVX512F.
-func M256Cvtsepi64Epi16(a x86.M256i) x86.M128i {
+func M256Cvtsepi64Epi16(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtsepi64Epi16([32]byte(a)))
 }
 
@@ -15969,7 +15969,7 @@ func m256Cvtsepi64Epi16(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm256_mask_cvtsepi64_epi16'.
 // Requires AVX512F.
-func M256MaskCvtsepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtsepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtsepi64Epi16([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -15994,7 +15994,7 @@ func m256MaskCvtsepi64Epi16(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm256_maskz_cvtsepi64_epi16'.
 // Requires AVX512F.
-func M256MaskzCvtsepi64Epi16(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtsepi64Epi16(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtsepi64Epi16(uint8(k), [32]byte(a)))
 }
 
@@ -16013,7 +16013,7 @@ func m256MaskzCvtsepi64Epi16(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_cvtsepi64_epi16'.
 // Requires AVX512F.
-func M512Cvtsepi64Epi16(a x86.M512i) x86.M128i {
+func M512Cvtsepi64Epi16(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtsepi64Epi16([64]byte(a)))
 }
 
@@ -16038,7 +16038,7 @@ func m512Cvtsepi64Epi16(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_mask_cvtsepi64_epi16'.
 // Requires AVX512F.
-func M512MaskCvtsepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskCvtsepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtsepi64Epi16([16]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -16063,7 +16063,7 @@ func m512MaskCvtsepi64Epi16(src [16]byte, k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSQW'. Intrinsic: '_mm512_maskz_cvtsepi64_epi16'.
 // Requires AVX512F.
-func M512MaskzCvtsepi64Epi16(k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskzCvtsepi64Epi16(k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtsepi64Epi16(uint8(k), [64]byte(a)))
 }
 
@@ -16082,7 +16082,7 @@ func m512MaskzCvtsepi64Epi16(k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm_cvtsepi64_epi32'.
 // Requires AVX512F.
-func Cvtsepi64Epi32(a x86.M128i) x86.M128i {
+func Cvtsepi64Epi32(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtsepi64Epi32([16]byte(a)))
 }
 
@@ -16107,7 +16107,7 @@ func cvtsepi64Epi32(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm_mask_cvtsepi64_epi32'.
 // Requires AVX512F.
-func MaskCvtsepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtsepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtsepi64Epi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -16132,7 +16132,7 @@ func maskCvtsepi64Epi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm_maskz_cvtsepi64_epi32'.
 // Requires AVX512F.
-func MaskzCvtsepi64Epi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtsepi64Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtsepi64Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -16151,7 +16151,7 @@ func maskzCvtsepi64Epi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm256_cvtsepi64_epi32'.
 // Requires AVX512F.
-func M256Cvtsepi64Epi32(a x86.M256i) x86.M128i {
+func M256Cvtsepi64Epi32(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtsepi64Epi32([32]byte(a)))
 }
 
@@ -16176,7 +16176,7 @@ func m256Cvtsepi64Epi32(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm256_mask_cvtsepi64_epi32'.
 // Requires AVX512F.
-func M256MaskCvtsepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtsepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtsepi64Epi32([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -16201,7 +16201,7 @@ func m256MaskCvtsepi64Epi32(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm256_maskz_cvtsepi64_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtsepi64Epi32(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtsepi64Epi32(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtsepi64Epi32(uint8(k), [32]byte(a)))
 }
 
@@ -16220,7 +16220,7 @@ func m256MaskzCvtsepi64Epi32(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_cvtsepi64_epi32'.
 // Requires AVX512F.
-func M512Cvtsepi64Epi32(a x86.M512i) x86.M256i {
+func M512Cvtsepi64Epi32(a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512Cvtsepi64Epi32([64]byte(a)))
 }
 
@@ -16245,7 +16245,7 @@ func m512Cvtsepi64Epi32(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_mask_cvtsepi64_epi32'.
 // Requires AVX512F.
-func M512MaskCvtsepi64Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i) x86.M256i {
+func M512MaskCvtsepi64Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtsepi64Epi32([32]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -16270,7 +16270,7 @@ func m512MaskCvtsepi64Epi32(src [32]byte, k uint8, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSQD'. Intrinsic: '_mm512_maskz_cvtsepi64_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtsepi64Epi32(k x86.Mmask8, a x86.M512i) x86.M256i {
+func M512MaskzCvtsepi64Epi32(k x86.Mmask8, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtsepi64Epi32(uint8(k), [64]byte(a)))
 }
 
@@ -16289,7 +16289,7 @@ func m512MaskzCvtsepi64Epi32(k uint8, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm_cvtsepi64_epi8'.
 // Requires AVX512F.
-func Cvtsepi64Epi8(a x86.M128i) x86.M128i {
+func Cvtsepi64Epi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtsepi64Epi8([16]byte(a)))
 }
 
@@ -16314,7 +16314,7 @@ func cvtsepi64Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm_mask_cvtsepi64_epi8'.
 // Requires AVX512F.
-func MaskCvtsepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtsepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtsepi64Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -16339,7 +16339,7 @@ func maskCvtsepi64Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm_maskz_cvtsepi64_epi8'.
 // Requires AVX512F.
-func MaskzCvtsepi64Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtsepi64Epi8(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtsepi64Epi8(uint8(k), [16]byte(a)))
 }
 
@@ -16358,7 +16358,7 @@ func maskzCvtsepi64Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm256_cvtsepi64_epi8'.
 // Requires AVX512F.
-func M256Cvtsepi64Epi8(a x86.M256i) x86.M128i {
+func M256Cvtsepi64Epi8(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtsepi64Epi8([32]byte(a)))
 }
 
@@ -16383,7 +16383,7 @@ func m256Cvtsepi64Epi8(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm256_mask_cvtsepi64_epi8'.
 // Requires AVX512F.
-func M256MaskCvtsepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtsepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtsepi64Epi8([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -16408,7 +16408,7 @@ func m256MaskCvtsepi64Epi8(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm256_maskz_cvtsepi64_epi8'.
 // Requires AVX512F.
-func M256MaskzCvtsepi64Epi8(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtsepi64Epi8(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtsepi64Epi8(uint8(k), [32]byte(a)))
 }
 
@@ -16427,7 +16427,7 @@ func m256MaskzCvtsepi64Epi8(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_cvtsepi64_epi8'.
 // Requires AVX512F.
-func M512Cvtsepi64Epi8(a x86.M512i) x86.M128i {
+func M512Cvtsepi64Epi8(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtsepi64Epi8([64]byte(a)))
 }
 
@@ -16452,7 +16452,7 @@ func m512Cvtsepi64Epi8(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_mask_cvtsepi64_epi8'.
 // Requires AVX512F.
-func M512MaskCvtsepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskCvtsepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtsepi64Epi8([16]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -16477,7 +16477,7 @@ func m512MaskCvtsepi64Epi8(src [16]byte, k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVSQB'. Intrinsic: '_mm512_maskz_cvtsepi64_epi8'.
 // Requires AVX512F.
-func M512MaskzCvtsepi64Epi8(k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskzCvtsepi64Epi8(k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtsepi64Epi8(uint8(k), [64]byte(a)))
 }
 
@@ -16518,7 +16518,7 @@ func m512MaskzCvtsepi64Epi8(k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvtss_i32'.
 // Requires AVX512F.
-func CvtssI32(a x86.M128) int {
+func CvtssI32(a x86.M128) (dst int) {
 	return int(cvtssI32([4]float32(a)))
 }
 
@@ -16532,7 +16532,7 @@ func cvtssI32(a [4]float32) int
 //
 // Instruction: 'VCVTSS2SI'. Intrinsic: '_mm_cvtss_i64'.
 // Requires AVX512F.
-func CvtssI64(a x86.M128) int64 {
+func CvtssI64(a x86.M128) (dst int64) {
 	return int64(cvtssI64([4]float32(a)))
 }
 
@@ -16555,7 +16555,7 @@ func cvtssI64(a [4]float32) int64
 //
 // Instruction: 'VCVTSS2SD'. Intrinsic: '_mm_mask_cvtss_sd'.
 // Requires AVX512F.
-func MaskCvtssSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128) x86.M128d {
+func MaskCvtssSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128) (dst x86.M128d) {
 	return x86.M128d(maskCvtssSd([2]float64(src), uint8(k), [2]float64(a), [4]float32(b)))
 }
 
@@ -16578,7 +16578,7 @@ func maskCvtssSd(src [2]float64, k uint8, a [2]float64, b [4]float32) [2]float64
 //
 // Instruction: 'VCVTSS2SD'. Intrinsic: '_mm_maskz_cvtss_sd'.
 // Requires AVX512F.
-func MaskzCvtssSd(k x86.Mmask8, a x86.M128d, b x86.M128) x86.M128d {
+func MaskzCvtssSd(k x86.Mmask8, a x86.M128d, b x86.M128) (dst x86.M128d) {
 	return x86.M128d(maskzCvtssSd(uint8(k), [2]float64(a), [4]float32(b)))
 }
 
@@ -16592,7 +16592,7 @@ func maskzCvtssSd(k uint8, a [2]float64, b [4]float32) [2]float64
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvtss_u32'.
 // Requires AVX512F.
-func CvtssU32(a x86.M128) uint32 {
+func CvtssU32(a x86.M128) (dst uint32) {
 	return uint32(cvtssU32([4]float32(a)))
 }
 
@@ -16606,7 +16606,7 @@ func cvtssU32(a [4]float32) uint32
 //
 // Instruction: 'VCVTSS2USI'. Intrinsic: '_mm_cvtss_u64'.
 // Requires AVX512F.
-func CvtssU64(a x86.M128) uint64 {
+func CvtssU64(a x86.M128) (dst uint64) {
 	return uint64(cvtssU64([4]float32(a)))
 }
 
@@ -16627,7 +16627,7 @@ func cvtssU64(a [4]float32) uint64
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_cvtt_roundpd_epi32'.
 // Requires AVX512F.
-func M512CvttRoundpdEpi32(a x86.M512d, sae int) x86.M256i {
+func M512CvttRoundpdEpi32(a x86.M512d, sae int) (dst x86.M256i) {
 	return x86.M256i(m512CvttRoundpdEpi32([8]float64(a), sae))
 }
 
@@ -16653,7 +16653,7 @@ func m512CvttRoundpdEpi32(a [8]float64, sae int) [32]byte
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_mask_cvtt_roundpd_epi32'.
 // Requires AVX512F.
-func M512MaskCvttRoundpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d, sae int) x86.M256i {
+func M512MaskCvttRoundpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d, sae int) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvttRoundpdEpi32([32]byte(src), uint8(k), [8]float64(a), sae))
 }
 
@@ -16679,7 +16679,7 @@ func m512MaskCvttRoundpdEpi32(src [32]byte, k uint8, a [8]float64, sae int) [32]
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_maskz_cvtt_roundpd_epi32'.
 // Requires AVX512F.
-func M512MaskzCvttRoundpdEpi32(k x86.Mmask8, a x86.M512d, sae int) x86.M256i {
+func M512MaskzCvttRoundpdEpi32(k x86.Mmask8, a x86.M512d, sae int) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvttRoundpdEpi32(uint8(k), [8]float64(a), sae))
 }
 
@@ -16700,7 +16700,7 @@ func m512MaskzCvttRoundpdEpi32(k uint8, a [8]float64, sae int) [32]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_cvtt_roundpd_epu32'.
 // Requires AVX512F.
-func M512CvttRoundpdEpu32(a x86.M512d, sae int) x86.M256i {
+func M512CvttRoundpdEpu32(a x86.M512d, sae int) (dst x86.M256i) {
 	return x86.M256i(m512CvttRoundpdEpu32([8]float64(a), sae))
 }
 
@@ -16726,7 +16726,7 @@ func m512CvttRoundpdEpu32(a [8]float64, sae int) [32]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_mask_cvtt_roundpd_epu32'.
 // Requires AVX512F.
-func M512MaskCvttRoundpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d, sae int) x86.M256i {
+func M512MaskCvttRoundpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d, sae int) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvttRoundpdEpu32([32]byte(src), uint8(k), [8]float64(a), sae))
 }
 
@@ -16752,7 +16752,7 @@ func m512MaskCvttRoundpdEpu32(src [32]byte, k uint8, a [8]float64, sae int) [32]
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_maskz_cvtt_roundpd_epu32'.
 // Requires AVX512F.
-func M512MaskzCvttRoundpdEpu32(k x86.Mmask8, a x86.M512d, sae int) x86.M256i {
+func M512MaskzCvttRoundpdEpu32(k x86.Mmask8, a x86.M512d, sae int) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvttRoundpdEpu32(uint8(k), [8]float64(a), sae))
 }
 
@@ -16772,7 +16772,7 @@ func m512MaskzCvttRoundpdEpu32(k uint8, a [8]float64, sae int) [32]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_cvtt_roundps_epi32'.
 // Requires AVX512F.
-func M512CvttRoundpsEpi32(a x86.M512, sae int) x86.M512i {
+func M512CvttRoundpsEpi32(a x86.M512, sae int) (dst x86.M512i) {
 	return x86.M512i(m512CvttRoundpsEpi32([16]float32(a), sae))
 }
 
@@ -16797,7 +16797,7 @@ func m512CvttRoundpsEpi32(a [16]float32, sae int) [64]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_mask_cvtt_roundps_epi32'.
 // Requires AVX512F.
-func M512MaskCvttRoundpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512, sae int) x86.M512i {
+func M512MaskCvttRoundpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512, sae int) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvttRoundpsEpi32([64]byte(src), uint16(k), [16]float32(a), sae))
 }
 
@@ -16822,7 +16822,7 @@ func m512MaskCvttRoundpsEpi32(src [64]byte, k uint16, a [16]float32, sae int) [6
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_maskz_cvtt_roundps_epi32'.
 // Requires AVX512F.
-func M512MaskzCvttRoundpsEpi32(k x86.Mmask16, a x86.M512, sae int) x86.M512i {
+func M512MaskzCvttRoundpsEpi32(k x86.Mmask16, a x86.M512, sae int) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvttRoundpsEpi32(uint16(k), [16]float32(a), sae))
 }
 
@@ -16842,7 +16842,7 @@ func m512MaskzCvttRoundpsEpi32(k uint16, a [16]float32, sae int) [64]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_cvtt_roundps_epu32'.
 // Requires AVX512F.
-func M512CvttRoundpsEpu32(a x86.M512, sae int) x86.M512i {
+func M512CvttRoundpsEpu32(a x86.M512, sae int) (dst x86.M512i) {
 	return x86.M512i(m512CvttRoundpsEpu32([16]float32(a), sae))
 }
 
@@ -16867,7 +16867,7 @@ func m512CvttRoundpsEpu32(a [16]float32, sae int) [64]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_mask_cvtt_roundps_epu32'.
 // Requires AVX512F.
-func M512MaskCvttRoundpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512, sae int) x86.M512i {
+func M512MaskCvttRoundpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512, sae int) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvttRoundpsEpu32([64]byte(src), uint16(k), [16]float32(a), sae))
 }
 
@@ -16892,7 +16892,7 @@ func m512MaskCvttRoundpsEpu32(src [64]byte, k uint16, a [16]float32, sae int) [6
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_maskz_cvtt_roundps_epu32'.
 // Requires AVX512F.
-func M512MaskzCvttRoundpsEpu32(k x86.Mmask16, a x86.M512, sae int) x86.M512i {
+func M512MaskzCvttRoundpsEpu32(k x86.Mmask16, a x86.M512, sae int) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvttRoundpsEpu32(uint16(k), [16]float32(a), sae))
 }
 
@@ -16914,7 +16914,7 @@ func m512MaskzCvttRoundpsEpu32(k uint16, a [16]float32, sae int) [64]byte
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_i32'.
 // Requires AVX512F.
-func CvttRoundsdI32(a x86.M128d, rounding int) int {
+func CvttRoundsdI32(a x86.M128d, rounding int) (dst int) {
 	return int(cvttRoundsdI32([2]float64(a), rounding))
 }
 
@@ -16936,7 +16936,7 @@ func cvttRoundsdI32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_i64'.
 // Requires AVX512F.
-func CvttRoundsdI64(a x86.M128d, rounding int) int64 {
+func CvttRoundsdI64(a x86.M128d, rounding int) (dst int64) {
 	return int64(cvttRoundsdI64([2]float64(a), rounding))
 }
 
@@ -16958,7 +16958,7 @@ func cvttRoundsdI64(a [2]float64, rounding int) int64
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_si32'.
 // Requires AVX512F.
-func CvttRoundsdSi32(a x86.M128d, rounding int) int {
+func CvttRoundsdSi32(a x86.M128d, rounding int) (dst int) {
 	return int(cvttRoundsdSi32([2]float64(a), rounding))
 }
 
@@ -16980,7 +16980,7 @@ func cvttRoundsdSi32(a [2]float64, rounding int) int
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvtt_roundsd_si64'.
 // Requires AVX512F.
-func CvttRoundsdSi64(a x86.M128d, rounding int) int64 {
+func CvttRoundsdSi64(a x86.M128d, rounding int) (dst int64) {
 	return int64(cvttRoundsdSi64([2]float64(a), rounding))
 }
 
@@ -17002,7 +17002,7 @@ func cvttRoundsdSi64(a [2]float64, rounding int) int64
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvtt_roundsd_u32'.
 // Requires AVX512F.
-func CvttRoundsdU32(a x86.M128d, rounding int) uint32 {
+func CvttRoundsdU32(a x86.M128d, rounding int) (dst uint32) {
 	return uint32(cvttRoundsdU32([2]float64(a), rounding))
 }
 
@@ -17024,7 +17024,7 @@ func cvttRoundsdU32(a [2]float64, rounding int) uint32
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvtt_roundsd_u64'.
 // Requires AVX512F.
-func CvttRoundsdU64(a x86.M128d, rounding int) uint64 {
+func CvttRoundsdU64(a x86.M128d, rounding int) (dst uint64) {
 	return uint64(cvttRoundsdU64([2]float64(a), rounding))
 }
 
@@ -17046,7 +17046,7 @@ func cvttRoundsdU64(a [2]float64, rounding int) uint64
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_i32'.
 // Requires AVX512F.
-func CvttRoundssI32(a x86.M128, rounding int) int {
+func CvttRoundssI32(a x86.M128, rounding int) (dst int) {
 	return int(cvttRoundssI32([4]float32(a), rounding))
 }
 
@@ -17068,7 +17068,7 @@ func cvttRoundssI32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_i64'.
 // Requires AVX512F.
-func CvttRoundssI64(a x86.M128, rounding int) int64 {
+func CvttRoundssI64(a x86.M128, rounding int) (dst int64) {
 	return int64(cvttRoundssI64([4]float32(a), rounding))
 }
 
@@ -17090,7 +17090,7 @@ func cvttRoundssI64(a [4]float32, rounding int) int64
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_si32'.
 // Requires AVX512F.
-func CvttRoundssSi32(a x86.M128, rounding int) int {
+func CvttRoundssSi32(a x86.M128, rounding int) (dst int) {
 	return int(cvttRoundssSi32([4]float32(a), rounding))
 }
 
@@ -17112,7 +17112,7 @@ func cvttRoundssSi32(a [4]float32, rounding int) int
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvtt_roundss_si64'.
 // Requires AVX512F.
-func CvttRoundssSi64(a x86.M128, rounding int) int64 {
+func CvttRoundssSi64(a x86.M128, rounding int) (dst int64) {
 	return int64(cvttRoundssSi64([4]float32(a), rounding))
 }
 
@@ -17134,7 +17134,7 @@ func cvttRoundssSi64(a [4]float32, rounding int) int64
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvtt_roundss_u32'.
 // Requires AVX512F.
-func CvttRoundssU32(a x86.M128, rounding int) uint32 {
+func CvttRoundssU32(a x86.M128, rounding int) (dst uint32) {
 	return uint32(cvttRoundssU32([4]float32(a), rounding))
 }
 
@@ -17156,7 +17156,7 @@ func cvttRoundssU32(a [4]float32, rounding int) uint32
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvtt_roundss_u64'.
 // Requires AVX512F.
-func CvttRoundssU64(a x86.M128, rounding int) uint64 {
+func CvttRoundssU64(a x86.M128, rounding int) (dst uint64) {
 	return uint64(cvttRoundssU64([4]float32(a), rounding))
 }
 
@@ -17181,7 +17181,7 @@ func cvttRoundssU64(a [4]float32, rounding int) uint64
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm_mask_cvttpd_epi32'.
 // Requires AVX512F.
-func MaskCvttpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskCvttpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskCvttpdEpi32([16]byte(src), uint8(k), [2]float64(a)))
 }
 
@@ -17206,7 +17206,7 @@ func maskCvttpdEpi32(src [16]byte, k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm_maskz_cvttpd_epi32'.
 // Requires AVX512F.
-func MaskzCvttpdEpi32(k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskzCvttpdEpi32(k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskzCvttpdEpi32(uint8(k), [2]float64(a)))
 }
 
@@ -17231,7 +17231,7 @@ func maskzCvttpdEpi32(k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm256_mask_cvttpd_epi32'.
 // Requires AVX512F.
-func M256MaskCvttpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskCvttpdEpi32(src x86.M128i, k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvttpdEpi32([16]byte(src), uint8(k), [4]float64(a)))
 }
 
@@ -17256,7 +17256,7 @@ func m256MaskCvttpdEpi32(src [16]byte, k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm256_maskz_cvttpd_epi32'.
 // Requires AVX512F.
-func M256MaskzCvttpdEpi32(k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskzCvttpdEpi32(k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvttpdEpi32(uint8(k), [4]float64(a)))
 }
 
@@ -17276,7 +17276,7 @@ func m256MaskzCvttpdEpi32(k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_cvttpd_epi32'.
 // Requires AVX512F.
-func M512CvttpdEpi32(a x86.M512d) x86.M256i {
+func M512CvttpdEpi32(a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512CvttpdEpi32([8]float64(a)))
 }
 
@@ -17301,7 +17301,7 @@ func m512CvttpdEpi32(a [8]float64) [32]byte
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_mask_cvttpd_epi32'.
 // Requires AVX512F.
-func M512MaskCvttpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskCvttpdEpi32(src x86.M256i, k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvttpdEpi32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
@@ -17326,7 +17326,7 @@ func m512MaskCvttpdEpi32(src [32]byte, k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTTPD2DQ'. Intrinsic: '_mm512_maskz_cvttpd_epi32'.
 // Requires AVX512F.
-func M512MaskzCvttpdEpi32(k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskzCvttpdEpi32(k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvttpdEpi32(uint8(k), [8]float64(a)))
 }
 
@@ -17346,7 +17346,7 @@ func m512MaskzCvttpdEpi32(k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm_cvttpd_epu32'.
 // Requires AVX512F.
-func CvttpdEpu32(a x86.M128d) x86.M128i {
+func CvttpdEpu32(a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(cvttpdEpu32([2]float64(a)))
 }
 
@@ -17371,7 +17371,7 @@ func cvttpdEpu32(a [2]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm_mask_cvttpd_epu32'.
 // Requires AVX512F.
-func MaskCvttpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskCvttpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskCvttpdEpu32([16]byte(src), uint8(k), [2]float64(a)))
 }
 
@@ -17396,7 +17396,7 @@ func maskCvttpdEpu32(src [16]byte, k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm_maskz_cvttpd_epu32'.
 // Requires AVX512F.
-func MaskzCvttpdEpu32(k x86.Mmask8, a x86.M128d) x86.M128i {
+func MaskzCvttpdEpu32(k x86.Mmask8, a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(maskzCvttpdEpu32(uint8(k), [2]float64(a)))
 }
 
@@ -17416,7 +17416,7 @@ func maskzCvttpdEpu32(k uint8, a [2]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm256_cvttpd_epu32'.
 // Requires AVX512F.
-func M256CvttpdEpu32(a x86.M256d) x86.M128i {
+func M256CvttpdEpu32(a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256CvttpdEpu32([4]float64(a)))
 }
 
@@ -17441,7 +17441,7 @@ func m256CvttpdEpu32(a [4]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm256_mask_cvttpd_epu32'.
 // Requires AVX512F.
-func M256MaskCvttpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskCvttpdEpu32(src x86.M128i, k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvttpdEpu32([16]byte(src), uint8(k), [4]float64(a)))
 }
 
@@ -17466,7 +17466,7 @@ func m256MaskCvttpdEpu32(src [16]byte, k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm256_maskz_cvttpd_epu32'.
 // Requires AVX512F.
-func M256MaskzCvttpdEpu32(k x86.Mmask8, a x86.M256d) x86.M128i {
+func M256MaskzCvttpdEpu32(k x86.Mmask8, a x86.M256d) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvttpdEpu32(uint8(k), [4]float64(a)))
 }
 
@@ -17486,7 +17486,7 @@ func m256MaskzCvttpdEpu32(k uint8, a [4]float64) [16]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_cvttpd_epu32'.
 // Requires AVX512F.
-func M512CvttpdEpu32(a x86.M512d) x86.M256i {
+func M512CvttpdEpu32(a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512CvttpdEpu32([8]float64(a)))
 }
 
@@ -17511,7 +17511,7 @@ func m512CvttpdEpu32(a [8]float64) [32]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_mask_cvttpd_epu32'.
 // Requires AVX512F.
-func M512MaskCvttpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskCvttpdEpu32(src x86.M256i, k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvttpdEpu32([32]byte(src), uint8(k), [8]float64(a)))
 }
 
@@ -17536,7 +17536,7 @@ func m512MaskCvttpdEpu32(src [32]byte, k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTTPD2UDQ'. Intrinsic: '_mm512_maskz_cvttpd_epu32'.
 // Requires AVX512F.
-func M512MaskzCvttpdEpu32(k x86.Mmask8, a x86.M512d) x86.M256i {
+func M512MaskzCvttpdEpu32(k x86.Mmask8, a x86.M512d) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvttpdEpu32(uint8(k), [8]float64(a)))
 }
 
@@ -17560,7 +17560,7 @@ func m512MaskzCvttpdEpu32(k uint8, a [8]float64) [32]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm_mask_cvttps_epi32'.
 // Requires AVX512F.
-func MaskCvttpsEpi32(src x86.M128i, k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskCvttpsEpi32(src x86.M128i, k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskCvttpsEpi32([16]byte(src), uint8(k), [4]float32(a)))
 }
 
@@ -17584,7 +17584,7 @@ func maskCvttpsEpi32(src [16]byte, k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm_maskz_cvttps_epi32'.
 // Requires AVX512F.
-func MaskzCvttpsEpi32(k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskzCvttpsEpi32(k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskzCvttpsEpi32(uint8(k), [4]float32(a)))
 }
 
@@ -17608,7 +17608,7 @@ func maskzCvttpsEpi32(k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm256_mask_cvttps_epi32'.
 // Requires AVX512F.
-func M256MaskCvttpsEpi32(src x86.M256i, k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskCvttpsEpi32(src x86.M256i, k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvttpsEpi32([32]byte(src), uint8(k), [8]float32(a)))
 }
 
@@ -17632,7 +17632,7 @@ func m256MaskCvttpsEpi32(src [32]byte, k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm256_maskz_cvttps_epi32'.
 // Requires AVX512F.
-func M256MaskzCvttpsEpi32(k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskzCvttpsEpi32(k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvttpsEpi32(uint8(k), [8]float32(a)))
 }
 
@@ -17651,7 +17651,7 @@ func m256MaskzCvttpsEpi32(k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_cvttps_epi32'.
 // Requires AVX512F.
-func M512CvttpsEpi32(a x86.M512) x86.M512i {
+func M512CvttpsEpi32(a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512CvttpsEpi32([16]float32(a)))
 }
 
@@ -17675,7 +17675,7 @@ func m512CvttpsEpi32(a [16]float32) [64]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_mask_cvttps_epi32'.
 // Requires AVX512F.
-func M512MaskCvttpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskCvttpsEpi32(src x86.M512i, k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvttpsEpi32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
@@ -17699,7 +17699,7 @@ func m512MaskCvttpsEpi32(src [64]byte, k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTTPS2DQ'. Intrinsic: '_mm512_maskz_cvttps_epi32'.
 // Requires AVX512F.
-func M512MaskzCvttpsEpi32(k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskzCvttpsEpi32(k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvttpsEpi32(uint16(k), [16]float32(a)))
 }
 
@@ -17718,7 +17718,7 @@ func m512MaskzCvttpsEpi32(k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm_cvttps_epu32'.
 // Requires AVX512F.
-func CvttpsEpu32(a x86.M128) x86.M128i {
+func CvttpsEpu32(a x86.M128) (dst x86.M128i) {
 	return x86.M128i(cvttpsEpu32([4]float32(a)))
 }
 
@@ -17742,7 +17742,7 @@ func cvttpsEpu32(a [4]float32) [16]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm_mask_cvttps_epu32'.
 // Requires AVX512F.
-func MaskCvttpsEpu32(src x86.M128i, k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskCvttpsEpu32(src x86.M128i, k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskCvttpsEpu32([16]byte(src), uint8(k), [4]float32(a)))
 }
 
@@ -17766,7 +17766,7 @@ func maskCvttpsEpu32(src [16]byte, k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm_maskz_cvttps_epu32'.
 // Requires AVX512F.
-func MaskzCvttpsEpu32(k x86.Mmask8, a x86.M128) x86.M128i {
+func MaskzCvttpsEpu32(k x86.Mmask8, a x86.M128) (dst x86.M128i) {
 	return x86.M128i(maskzCvttpsEpu32(uint8(k), [4]float32(a)))
 }
 
@@ -17785,7 +17785,7 @@ func maskzCvttpsEpu32(k uint8, a [4]float32) [16]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm256_cvttps_epu32'.
 // Requires AVX512F.
-func M256CvttpsEpu32(a x86.M256) x86.M256i {
+func M256CvttpsEpu32(a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256CvttpsEpu32([8]float32(a)))
 }
 
@@ -17809,7 +17809,7 @@ func m256CvttpsEpu32(a [8]float32) [32]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm256_mask_cvttps_epu32'.
 // Requires AVX512F.
-func M256MaskCvttpsEpu32(src x86.M256i, k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskCvttpsEpu32(src x86.M256i, k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskCvttpsEpu32([32]byte(src), uint8(k), [8]float32(a)))
 }
 
@@ -17833,7 +17833,7 @@ func m256MaskCvttpsEpu32(src [32]byte, k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm256_maskz_cvttps_epu32'.
 // Requires AVX512F.
-func M256MaskzCvttpsEpu32(k x86.Mmask8, a x86.M256) x86.M256i {
+func M256MaskzCvttpsEpu32(k x86.Mmask8, a x86.M256) (dst x86.M256i) {
 	return x86.M256i(m256MaskzCvttpsEpu32(uint8(k), [8]float32(a)))
 }
 
@@ -17852,7 +17852,7 @@ func m256MaskzCvttpsEpu32(k uint8, a [8]float32) [32]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_cvttps_epu32'.
 // Requires AVX512F.
-func M512CvttpsEpu32(a x86.M512) x86.M512i {
+func M512CvttpsEpu32(a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512CvttpsEpu32([16]float32(a)))
 }
 
@@ -17876,7 +17876,7 @@ func m512CvttpsEpu32(a [16]float32) [64]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_mask_cvttps_epu32'.
 // Requires AVX512F.
-func M512MaskCvttpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskCvttpsEpu32(src x86.M512i, k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskCvttpsEpu32([64]byte(src), uint16(k), [16]float32(a)))
 }
 
@@ -17900,7 +17900,7 @@ func m512MaskCvttpsEpu32(src [64]byte, k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTTPS2UDQ'. Intrinsic: '_mm512_maskz_cvttps_epu32'.
 // Requires AVX512F.
-func M512MaskzCvttpsEpu32(k x86.Mmask16, a x86.M512) x86.M512i {
+func M512MaskzCvttpsEpu32(k x86.Mmask16, a x86.M512) (dst x86.M512i) {
 	return x86.M512i(m512MaskzCvttpsEpu32(uint16(k), [16]float32(a)))
 }
 
@@ -17915,7 +17915,7 @@ func m512MaskzCvttpsEpu32(k uint16, a [16]float32) [64]byte
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvttsd_i32'.
 // Requires AVX512F.
-func CvttsdI32(a x86.M128d) int {
+func CvttsdI32(a x86.M128d) (dst int) {
 	return int(cvttsdI32([2]float64(a)))
 }
 
@@ -17930,7 +17930,7 @@ func cvttsdI32(a [2]float64) int
 //
 // Instruction: 'VCVTTSD2SI'. Intrinsic: '_mm_cvttsd_i64'.
 // Requires AVX512F.
-func CvttsdI64(a x86.M128d) int64 {
+func CvttsdI64(a x86.M128d) (dst int64) {
 	return int64(cvttsdI64([2]float64(a)))
 }
 
@@ -17945,7 +17945,7 @@ func cvttsdI64(a [2]float64) int64
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvttsd_u32'.
 // Requires AVX512F.
-func CvttsdU32(a x86.M128d) uint32 {
+func CvttsdU32(a x86.M128d) (dst uint32) {
 	return uint32(cvttsdU32([2]float64(a)))
 }
 
@@ -17960,7 +17960,7 @@ func cvttsdU32(a [2]float64) uint32
 //
 // Instruction: 'VCVTTSD2USI'. Intrinsic: '_mm_cvttsd_u64'.
 // Requires AVX512F.
-func CvttsdU64(a x86.M128d) uint64 {
+func CvttsdU64(a x86.M128d) (dst uint64) {
 	return uint64(cvttsdU64([2]float64(a)))
 }
 
@@ -17975,7 +17975,7 @@ func cvttsdU64(a [2]float64) uint64
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvttss_i32'.
 // Requires AVX512F.
-func CvttssI32(a x86.M128) int {
+func CvttssI32(a x86.M128) (dst int) {
 	return int(cvttssI32([4]float32(a)))
 }
 
@@ -17990,7 +17990,7 @@ func cvttssI32(a [4]float32) int
 //
 // Instruction: 'VCVTTSS2SI'. Intrinsic: '_mm_cvttss_i64'.
 // Requires AVX512F.
-func CvttssI64(a x86.M128) int64 {
+func CvttssI64(a x86.M128) (dst int64) {
 	return int64(cvttssI64([4]float32(a)))
 }
 
@@ -18005,7 +18005,7 @@ func cvttssI64(a [4]float32) int64
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvttss_u32'.
 // Requires AVX512F.
-func CvttssU32(a x86.M128) uint32 {
+func CvttssU32(a x86.M128) (dst uint32) {
 	return uint32(cvttssU32([4]float32(a)))
 }
 
@@ -18020,7 +18020,7 @@ func cvttssU32(a [4]float32) uint32
 //
 // Instruction: 'VCVTTSS2USI'. Intrinsic: '_mm_cvttss_u64'.
 // Requires AVX512F.
-func CvttssU64(a x86.M128) uint64 {
+func CvttssU64(a x86.M128) (dst uint64) {
 	return uint64(cvttssU64([4]float32(a)))
 }
 
@@ -18037,7 +18037,7 @@ func cvttssU64(a [4]float32) uint64
 //
 // Instruction: 'VCVTUSI2SD'. Intrinsic: '_mm_cvtu32_sd'.
 // Requires AVX512F.
-func Cvtu32Sd(a x86.M128d, b uint32) x86.M128d {
+func Cvtu32Sd(a x86.M128d, b uint32) (dst x86.M128d) {
 	return x86.M128d(cvtu32Sd([2]float64(a), b))
 }
 
@@ -18055,7 +18055,7 @@ func cvtu32Sd(a [2]float64, b uint32) [2]float64
 //
 // Instruction: 'VCVTUSI2SS'. Intrinsic: '_mm_cvtu32_ss'.
 // Requires AVX512F.
-func Cvtu32Ss(a x86.M128, b uint32) x86.M128 {
+func Cvtu32Ss(a x86.M128, b uint32) (dst x86.M128) {
 	return x86.M128(cvtu32Ss([4]float32(a), b))
 }
 
@@ -18072,7 +18072,7 @@ func cvtu32Ss(a [4]float32, b uint32) [4]float32
 //
 // Instruction: 'VCVTUSI2SD'. Intrinsic: '_mm_cvtu64_sd'.
 // Requires AVX512F.
-func Cvtu64Sd(a x86.M128d, b uint64) x86.M128d {
+func Cvtu64Sd(a x86.M128d, b uint64) (dst x86.M128d) {
 	return x86.M128d(cvtu64Sd([2]float64(a), b))
 }
 
@@ -18090,7 +18090,7 @@ func cvtu64Sd(a [2]float64, b uint64) [2]float64
 //
 // Instruction: 'VCVTUSI2SS'. Intrinsic: '_mm_cvtu64_ss'.
 // Requires AVX512F.
-func Cvtu64Ss(a x86.M128, b uint64) x86.M128 {
+func Cvtu64Ss(a x86.M128, b uint64) (dst x86.M128) {
 	return x86.M128(cvtu64Ss([4]float32(a), b))
 }
 
@@ -18110,7 +18110,7 @@ func cvtu64Ss(a [4]float32, b uint64) [4]float32
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm_cvtusepi32_epi16'.
 // Requires AVX512F.
-func Cvtusepi32Epi16(a x86.M128i) x86.M128i {
+func Cvtusepi32Epi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtusepi32Epi16([16]byte(a)))
 }
 
@@ -18135,7 +18135,7 @@ func cvtusepi32Epi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm_mask_cvtusepi32_epi16'.
 // Requires AVX512F.
-func MaskCvtusepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtusepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtusepi32Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -18160,7 +18160,7 @@ func maskCvtusepi32Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm_maskz_cvtusepi32_epi16'.
 // Requires AVX512F.
-func MaskzCvtusepi32Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtusepi32Epi16(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtusepi32Epi16(uint8(k), [16]byte(a)))
 }
 
@@ -18180,7 +18180,7 @@ func maskzCvtusepi32Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm256_cvtusepi32_epi16'.
 // Requires AVX512F.
-func M256Cvtusepi32Epi16(a x86.M256i) x86.M128i {
+func M256Cvtusepi32Epi16(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtusepi32Epi16([32]byte(a)))
 }
 
@@ -18205,7 +18205,7 @@ func m256Cvtusepi32Epi16(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm256_mask_cvtusepi32_epi16'.
 // Requires AVX512F.
-func M256MaskCvtusepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtusepi32Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtusepi32Epi16([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -18230,7 +18230,7 @@ func m256MaskCvtusepi32Epi16(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm256_maskz_cvtusepi32_epi16'.
 // Requires AVX512F.
-func M256MaskzCvtusepi32Epi16(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtusepi32Epi16(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtusepi32Epi16(uint8(k), [32]byte(a)))
 }
 
@@ -18250,7 +18250,7 @@ func m256MaskzCvtusepi32Epi16(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_cvtusepi32_epi16'.
 // Requires AVX512F.
-func M512Cvtusepi32Epi16(a x86.M512i) x86.M256i {
+func M512Cvtusepi32Epi16(a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512Cvtusepi32Epi16([64]byte(a)))
 }
 
@@ -18275,7 +18275,7 @@ func m512Cvtusepi32Epi16(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_mask_cvtusepi32_epi16'.
 // Requires AVX512F.
-func M512MaskCvtusepi32Epi16(src x86.M256i, k x86.Mmask16, a x86.M512i) x86.M256i {
+func M512MaskCvtusepi32Epi16(src x86.M256i, k x86.Mmask16, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtusepi32Epi16([32]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -18300,7 +18300,7 @@ func m512MaskCvtusepi32Epi16(src [32]byte, k uint16, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSDW'. Intrinsic: '_mm512_maskz_cvtusepi32_epi16'.
 // Requires AVX512F.
-func M512MaskzCvtusepi32Epi16(k x86.Mmask16, a x86.M512i) x86.M256i {
+func M512MaskzCvtusepi32Epi16(k x86.Mmask16, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtusepi32Epi16(uint16(k), [64]byte(a)))
 }
 
@@ -18320,7 +18320,7 @@ func m512MaskzCvtusepi32Epi16(k uint16, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm_cvtusepi32_epi8'.
 // Requires AVX512F.
-func Cvtusepi32Epi8(a x86.M128i) x86.M128i {
+func Cvtusepi32Epi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtusepi32Epi8([16]byte(a)))
 }
 
@@ -18345,7 +18345,7 @@ func cvtusepi32Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm_mask_cvtusepi32_epi8'.
 // Requires AVX512F.
-func MaskCvtusepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtusepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtusepi32Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -18370,7 +18370,7 @@ func maskCvtusepi32Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm_maskz_cvtusepi32_epi8'.
 // Requires AVX512F.
-func MaskzCvtusepi32Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtusepi32Epi8(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtusepi32Epi8(uint8(k), [16]byte(a)))
 }
 
@@ -18390,7 +18390,7 @@ func maskzCvtusepi32Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm256_cvtusepi32_epi8'.
 // Requires AVX512F.
-func M256Cvtusepi32Epi8(a x86.M256i) x86.M128i {
+func M256Cvtusepi32Epi8(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtusepi32Epi8([32]byte(a)))
 }
 
@@ -18415,7 +18415,7 @@ func m256Cvtusepi32Epi8(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm256_mask_cvtusepi32_epi8'.
 // Requires AVX512F.
-func M256MaskCvtusepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtusepi32Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtusepi32Epi8([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -18440,7 +18440,7 @@ func m256MaskCvtusepi32Epi8(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm256_maskz_cvtusepi32_epi8'.
 // Requires AVX512F.
-func M256MaskzCvtusepi32Epi8(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtusepi32Epi8(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtusepi32Epi8(uint8(k), [32]byte(a)))
 }
 
@@ -18460,7 +18460,7 @@ func m256MaskzCvtusepi32Epi8(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_cvtusepi32_epi8'.
 // Requires AVX512F.
-func M512Cvtusepi32Epi8(a x86.M512i) x86.M128i {
+func M512Cvtusepi32Epi8(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtusepi32Epi8([64]byte(a)))
 }
 
@@ -18485,7 +18485,7 @@ func m512Cvtusepi32Epi8(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_mask_cvtusepi32_epi8'.
 // Requires AVX512F.
-func M512MaskCvtusepi32Epi8(src x86.M128i, k x86.Mmask16, a x86.M512i) x86.M128i {
+func M512MaskCvtusepi32Epi8(src x86.M128i, k x86.Mmask16, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtusepi32Epi8([16]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -18510,7 +18510,7 @@ func m512MaskCvtusepi32Epi8(src [16]byte, k uint16, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSDB'. Intrinsic: '_mm512_maskz_cvtusepi32_epi8'.
 // Requires AVX512F.
-func M512MaskzCvtusepi32Epi8(k x86.Mmask16, a x86.M512i) x86.M128i {
+func M512MaskzCvtusepi32Epi8(k x86.Mmask16, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtusepi32Epi8(uint16(k), [64]byte(a)))
 }
 
@@ -18548,7 +18548,7 @@ func m512MaskzCvtusepi32Epi8(k uint16, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm_cvtusepi64_epi16'.
 // Requires AVX512F.
-func Cvtusepi64Epi16(a x86.M128i) x86.M128i {
+func Cvtusepi64Epi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtusepi64Epi16([16]byte(a)))
 }
 
@@ -18573,7 +18573,7 @@ func cvtusepi64Epi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm_mask_cvtusepi64_epi16'.
 // Requires AVX512F.
-func MaskCvtusepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtusepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtusepi64Epi16([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -18598,7 +18598,7 @@ func maskCvtusepi64Epi16(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm_maskz_cvtusepi64_epi16'.
 // Requires AVX512F.
-func MaskzCvtusepi64Epi16(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtusepi64Epi16(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtusepi64Epi16(uint8(k), [16]byte(a)))
 }
 
@@ -18618,7 +18618,7 @@ func maskzCvtusepi64Epi16(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm256_cvtusepi64_epi16'.
 // Requires AVX512F.
-func M256Cvtusepi64Epi16(a x86.M256i) x86.M128i {
+func M256Cvtusepi64Epi16(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtusepi64Epi16([32]byte(a)))
 }
 
@@ -18643,7 +18643,7 @@ func m256Cvtusepi64Epi16(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm256_mask_cvtusepi64_epi16'.
 // Requires AVX512F.
-func M256MaskCvtusepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtusepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtusepi64Epi16([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -18668,7 +18668,7 @@ func m256MaskCvtusepi64Epi16(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm256_maskz_cvtusepi64_epi16'.
 // Requires AVX512F.
-func M256MaskzCvtusepi64Epi16(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtusepi64Epi16(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtusepi64Epi16(uint8(k), [32]byte(a)))
 }
 
@@ -18688,7 +18688,7 @@ func m256MaskzCvtusepi64Epi16(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_cvtusepi64_epi16'.
 // Requires AVX512F.
-func M512Cvtusepi64Epi16(a x86.M512i) x86.M128i {
+func M512Cvtusepi64Epi16(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtusepi64Epi16([64]byte(a)))
 }
 
@@ -18713,7 +18713,7 @@ func m512Cvtusepi64Epi16(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_mask_cvtusepi64_epi16'.
 // Requires AVX512F.
-func M512MaskCvtusepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskCvtusepi64Epi16(src x86.M128i, k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtusepi64Epi16([16]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -18738,7 +18738,7 @@ func m512MaskCvtusepi64Epi16(src [16]byte, k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQW'. Intrinsic: '_mm512_maskz_cvtusepi64_epi16'.
 // Requires AVX512F.
-func M512MaskzCvtusepi64Epi16(k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskzCvtusepi64Epi16(k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtusepi64Epi16(uint8(k), [64]byte(a)))
 }
 
@@ -18758,7 +18758,7 @@ func m512MaskzCvtusepi64Epi16(k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm_cvtusepi64_epi32'.
 // Requires AVX512F.
-func Cvtusepi64Epi32(a x86.M128i) x86.M128i {
+func Cvtusepi64Epi32(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtusepi64Epi32([16]byte(a)))
 }
 
@@ -18783,7 +18783,7 @@ func cvtusepi64Epi32(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm_mask_cvtusepi64_epi32'.
 // Requires AVX512F.
-func MaskCvtusepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtusepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtusepi64Epi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -18808,7 +18808,7 @@ func maskCvtusepi64Epi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm_maskz_cvtusepi64_epi32'.
 // Requires AVX512F.
-func MaskzCvtusepi64Epi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtusepi64Epi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtusepi64Epi32(uint8(k), [16]byte(a)))
 }
 
@@ -18828,7 +18828,7 @@ func maskzCvtusepi64Epi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm256_cvtusepi64_epi32'.
 // Requires AVX512F.
-func M256Cvtusepi64Epi32(a x86.M256i) x86.M128i {
+func M256Cvtusepi64Epi32(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtusepi64Epi32([32]byte(a)))
 }
 
@@ -18853,7 +18853,7 @@ func m256Cvtusepi64Epi32(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm256_mask_cvtusepi64_epi32'.
 // Requires AVX512F.
-func M256MaskCvtusepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtusepi64Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtusepi64Epi32([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -18878,7 +18878,7 @@ func m256MaskCvtusepi64Epi32(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm256_maskz_cvtusepi64_epi32'.
 // Requires AVX512F.
-func M256MaskzCvtusepi64Epi32(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtusepi64Epi32(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtusepi64Epi32(uint8(k), [32]byte(a)))
 }
 
@@ -18898,7 +18898,7 @@ func m256MaskzCvtusepi64Epi32(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_cvtusepi64_epi32'.
 // Requires AVX512F.
-func M512Cvtusepi64Epi32(a x86.M512i) x86.M256i {
+func M512Cvtusepi64Epi32(a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512Cvtusepi64Epi32([64]byte(a)))
 }
 
@@ -18923,7 +18923,7 @@ func m512Cvtusepi64Epi32(a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_mask_cvtusepi64_epi32'.
 // Requires AVX512F.
-func M512MaskCvtusepi64Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i) x86.M256i {
+func M512MaskCvtusepi64Epi32(src x86.M256i, k x86.Mmask8, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskCvtusepi64Epi32([32]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -18948,7 +18948,7 @@ func m512MaskCvtusepi64Epi32(src [32]byte, k uint8, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSQD'. Intrinsic: '_mm512_maskz_cvtusepi64_epi32'.
 // Requires AVX512F.
-func M512MaskzCvtusepi64Epi32(k x86.Mmask8, a x86.M512i) x86.M256i {
+func M512MaskzCvtusepi64Epi32(k x86.Mmask8, a x86.M512i) (dst x86.M256i) {
 	return x86.M256i(m512MaskzCvtusepi64Epi32(uint8(k), [64]byte(a)))
 }
 
@@ -18968,7 +18968,7 @@ func m512MaskzCvtusepi64Epi32(k uint8, a [64]byte) [32]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm_cvtusepi64_epi8'.
 // Requires AVX512F.
-func Cvtusepi64Epi8(a x86.M128i) x86.M128i {
+func Cvtusepi64Epi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cvtusepi64Epi8([16]byte(a)))
 }
 
@@ -18993,7 +18993,7 @@ func cvtusepi64Epi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm_mask_cvtusepi64_epi8'.
 // Requires AVX512F.
-func MaskCvtusepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskCvtusepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskCvtusepi64Epi8([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -19018,7 +19018,7 @@ func maskCvtusepi64Epi8(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm_maskz_cvtusepi64_epi8'.
 // Requires AVX512F.
-func MaskzCvtusepi64Epi8(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzCvtusepi64Epi8(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzCvtusepi64Epi8(uint8(k), [16]byte(a)))
 }
 
@@ -19038,7 +19038,7 @@ func maskzCvtusepi64Epi8(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm256_cvtusepi64_epi8'.
 // Requires AVX512F.
-func M256Cvtusepi64Epi8(a x86.M256i) x86.M128i {
+func M256Cvtusepi64Epi8(a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256Cvtusepi64Epi8([32]byte(a)))
 }
 
@@ -19063,7 +19063,7 @@ func m256Cvtusepi64Epi8(a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm256_mask_cvtusepi64_epi8'.
 // Requires AVX512F.
-func M256MaskCvtusepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskCvtusepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskCvtusepi64Epi8([16]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -19088,7 +19088,7 @@ func m256MaskCvtusepi64Epi8(src [16]byte, k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm256_maskz_cvtusepi64_epi8'.
 // Requires AVX512F.
-func M256MaskzCvtusepi64Epi8(k x86.Mmask8, a x86.M256i) x86.M128i {
+func M256MaskzCvtusepi64Epi8(k x86.Mmask8, a x86.M256i) (dst x86.M128i) {
 	return x86.M128i(m256MaskzCvtusepi64Epi8(uint8(k), [32]byte(a)))
 }
 
@@ -19108,7 +19108,7 @@ func m256MaskzCvtusepi64Epi8(k uint8, a [32]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_cvtusepi64_epi8'.
 // Requires AVX512F.
-func M512Cvtusepi64Epi8(a x86.M512i) x86.M128i {
+func M512Cvtusepi64Epi8(a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512Cvtusepi64Epi8([64]byte(a)))
 }
 
@@ -19133,7 +19133,7 @@ func m512Cvtusepi64Epi8(a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_mask_cvtusepi64_epi8'.
 // Requires AVX512F.
-func M512MaskCvtusepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskCvtusepi64Epi8(src x86.M128i, k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskCvtusepi64Epi8([16]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -19158,7 +19158,7 @@ func m512MaskCvtusepi64Epi8(src [16]byte, k uint8, a [64]byte) [16]byte
 //
 // Instruction: 'VPMOVUSQB'. Intrinsic: '_mm512_maskz_cvtusepi64_epi8'.
 // Requires AVX512F.
-func M512MaskzCvtusepi64Epi8(k x86.Mmask8, a x86.M512i) x86.M128i {
+func M512MaskzCvtusepi64Epi8(k x86.Mmask8, a x86.M512i) (dst x86.M128i) {
 	return x86.M128i(m512MaskzCvtusepi64Epi8(uint8(k), [64]byte(a)))
 }
 
@@ -19203,7 +19203,7 @@ func m512MaskzCvtusepi64Epi8(k uint8, a [64]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epi16'.
 // Requires AVX512F.
-func M512DivEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpi16(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpi16([64]byte(a), [64]byte(b)))
 }
 
@@ -19221,7 +19221,7 @@ func m512DivEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epi32'.
 // Requires AVX512F.
-func M512DivEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpi32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpi32([64]byte(a), [64]byte(b)))
 }
 
@@ -19244,7 +19244,7 @@ func m512DivEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_div_epi32'.
 // Requires AVX512F.
-func M512MaskDivEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskDivEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskDivEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -19262,7 +19262,7 @@ func m512MaskDivEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epi64'.
 // Requires AVX512F.
-func M512DivEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -19280,7 +19280,7 @@ func m512DivEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epi8'.
 // Requires AVX512F.
-func M512DivEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpi8(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpi8([64]byte(a), [64]byte(b)))
 }
 
@@ -19298,7 +19298,7 @@ func m512DivEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epu16'.
 // Requires AVX512F.
-func M512DivEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpu16(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpu16([64]byte(a), [64]byte(b)))
 }
 
@@ -19316,7 +19316,7 @@ func m512DivEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epu32'.
 // Requires AVX512F.
-func M512DivEpu32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpu32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpu32([64]byte(a), [64]byte(b)))
 }
 
@@ -19340,7 +19340,7 @@ func m512DivEpu32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_div_epu32'.
 // Requires AVX512F.
-func M512MaskDivEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskDivEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskDivEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -19358,7 +19358,7 @@ func m512MaskDivEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epu64'.
 // Requires AVX512F.
-func M512DivEpu64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpu64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpu64([64]byte(a), [64]byte(b)))
 }
 
@@ -19376,7 +19376,7 @@ func m512DivEpu64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_div_epu8'.
 // Requires AVX512F.
-func M512DivEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+func M512DivEpu8(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512DivEpu8([64]byte(a), [64]byte(b)))
 }
 
@@ -19400,7 +19400,7 @@ func m512DivEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm_mask_div_pd'.
 // Requires AVX512F.
-func MaskDivPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskDivPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskDivPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -19424,7 +19424,7 @@ func maskDivPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm_maskz_div_pd'.
 // Requires AVX512F.
-func MaskzDivPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzDivPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzDivPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -19448,7 +19448,7 @@ func maskzDivPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm256_mask_div_pd'.
 // Requires AVX512F.
-func M256MaskDivPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskDivPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskDivPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -19472,7 +19472,7 @@ func m256MaskDivPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm256_maskz_div_pd'.
 // Requires AVX512F.
-func M256MaskzDivPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzDivPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzDivPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -19490,7 +19490,7 @@ func m256MaskzDivPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm512_div_pd'.
 // Requires AVX512F.
-func M512DivPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512DivPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512DivPd([8]float64(a), [8]float64(b)))
 }
 
@@ -19514,7 +19514,7 @@ func m512DivPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm512_mask_div_pd'.
 // Requires AVX512F.
-func M512MaskDivPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskDivPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskDivPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -19538,7 +19538,7 @@ func m512MaskDivPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm512_maskz_div_pd'.
 // Requires AVX512F.
-func M512MaskzDivPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzDivPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzDivPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -19562,7 +19562,7 @@ func m512MaskzDivPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm_mask_div_ps'.
 // Requires AVX512F.
-func MaskDivPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskDivPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskDivPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -19586,7 +19586,7 @@ func maskDivPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm_maskz_div_ps'.
 // Requires AVX512F.
-func MaskzDivPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzDivPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzDivPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -19610,7 +19610,7 @@ func maskzDivPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm256_mask_div_ps'.
 // Requires AVX512F.
-func M256MaskDivPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskDivPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskDivPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -19634,7 +19634,7 @@ func m256MaskDivPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm256_maskz_div_ps'.
 // Requires AVX512F.
-func M256MaskzDivPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzDivPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzDivPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -19652,7 +19652,7 @@ func m256MaskzDivPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm512_div_ps'.
 // Requires AVX512F.
-func M512DivPs(a x86.M512, b x86.M512) x86.M512 {
+func M512DivPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512DivPs([16]float32(a), [16]float32(b)))
 }
 
@@ -19676,7 +19676,7 @@ func m512DivPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm512_mask_div_ps'.
 // Requires AVX512F.
-func M512MaskDivPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskDivPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskDivPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -19700,7 +19700,7 @@ func m512MaskDivPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm512_maskz_div_ps'.
 // Requires AVX512F.
-func M512MaskzDivPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzDivPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzDivPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -19725,7 +19725,7 @@ func m512MaskzDivPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm512_div_round_pd'.
 // Requires AVX512F.
-func M512DivRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512DivRoundPd(a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512DivRoundPd([8]float64(a), [8]float64(b), rounding))
 }
 
@@ -19756,7 +19756,7 @@ func m512DivRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm512_mask_div_round_pd'.
 // Requires AVX512F.
-func M512MaskDivRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512MaskDivRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskDivRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
@@ -19787,7 +19787,7 @@ func m512MaskDivRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, rou
 //
 // Instruction: 'VDIVPD'. Intrinsic: '_mm512_maskz_div_round_pd'.
 // Requires AVX512F.
-func M512MaskzDivRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512MaskzDivRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzDivRoundPd(uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
@@ -19812,7 +19812,7 @@ func m512MaskzDivRoundPd(k uint8, a [8]float64, b [8]float64, rounding int) [8]f
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm512_div_round_ps'.
 // Requires AVX512F.
-func M512DivRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512DivRoundPs(a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512DivRoundPs([16]float32(a), [16]float32(b), rounding))
 }
 
@@ -19843,7 +19843,7 @@ func m512DivRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm512_mask_div_round_ps'.
 // Requires AVX512F.
-func M512MaskDivRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512MaskDivRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskDivRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
@@ -19874,7 +19874,7 @@ func m512MaskDivRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32,
 //
 // Instruction: 'VDIVPS'. Intrinsic: '_mm512_maskz_div_round_ps'.
 // Requires AVX512F.
-func M512MaskzDivRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512MaskzDivRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzDivRoundPs(uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
@@ -19899,7 +19899,7 @@ func m512MaskzDivRoundPs(k uint16, a [16]float32, b [16]float32, rounding int) [
 //
 // Instruction: 'VDIVSD'. Intrinsic: '_mm_div_round_sd'.
 // Requires AVX512F.
-func DivRoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func DivRoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(divRoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
@@ -19929,7 +19929,7 @@ func divRoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VDIVSD'. Intrinsic: '_mm_mask_div_round_sd'.
 // Requires AVX512F.
-func MaskDivRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskDivRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskDivRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -19959,7 +19959,7 @@ func maskDivRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, roundin
 //
 // Instruction: 'VDIVSD'. Intrinsic: '_mm_maskz_div_round_sd'.
 // Requires AVX512F.
-func MaskzDivRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskzDivRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzDivRoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -19984,7 +19984,7 @@ func maskzDivRoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float
 //
 // Instruction: 'VDIVSS'. Intrinsic: '_mm_div_round_ss'.
 // Requires AVX512F.
-func DivRoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+func DivRoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(divRoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
@@ -20014,7 +20014,7 @@ func divRoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VDIVSS'. Intrinsic: '_mm_mask_div_round_ss'.
 // Requires AVX512F.
-func MaskDivRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskDivRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskDivRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -20044,7 +20044,7 @@ func maskDivRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, roundin
 //
 // Instruction: 'VDIVSS'. Intrinsic: '_mm_maskz_div_round_ss'.
 // Requires AVX512F.
-func MaskzDivRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskzDivRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzDivRoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -20067,7 +20067,7 @@ func maskzDivRoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float
 //
 // Instruction: 'VDIVSD'. Intrinsic: '_mm_mask_div_sd'.
 // Requires AVX512F.
-func MaskDivSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskDivSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskDivSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -20090,7 +20090,7 @@ func maskDivSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VDIVSD'. Intrinsic: '_mm_maskz_div_sd'.
 // Requires AVX512F.
-func MaskzDivSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzDivSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzDivSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -20113,7 +20113,7 @@ func maskzDivSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VDIVSS'. Intrinsic: '_mm_mask_div_ss'.
 // Requires AVX512F.
-func MaskDivSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskDivSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskDivSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -20136,7 +20136,7 @@ func maskDivSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VDIVSS'. Intrinsic: '_mm_maskz_div_ss'.
 // Requires AVX512F.
-func MaskzDivSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzDivSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzDivSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -20154,7 +20154,7 @@ func maskzDivSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_erf_pd'.
 // Requires AVX512F.
-func M512ErfPd(a x86.M512d) x86.M512d {
+func M512ErfPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512ErfPd([8]float64(a)))
 }
 
@@ -20178,7 +20178,7 @@ func m512ErfPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erf_pd'.
 // Requires AVX512F.
-func M512MaskErfPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskErfPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskErfPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -20196,7 +20196,7 @@ func m512MaskErfPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_erf_ps'.
 // Requires AVX512F.
-func M512ErfPs(a x86.M512) x86.M512 {
+func M512ErfPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512ErfPs([16]float32(a)))
 }
 
@@ -20220,7 +20220,7 @@ func m512ErfPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erf_ps'.
 // Requires AVX512F.
-func M512MaskErfPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskErfPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskErfPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -20239,7 +20239,7 @@ func m512MaskErfPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_erfc_pd'.
 // Requires AVX512F.
-func M512ErfcPd(a x86.M512d) x86.M512d {
+func M512ErfcPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512ErfcPd([8]float64(a)))
 }
 
@@ -20263,7 +20263,7 @@ func m512ErfcPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erfc_pd'.
 // Requires AVX512F.
-func M512MaskErfcPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskErfcPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskErfcPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -20282,7 +20282,7 @@ func m512MaskErfcPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_erfc_ps'.
 // Requires AVX512F.
-func M512ErfcPs(a x86.M512) x86.M512 {
+func M512ErfcPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512ErfcPs([16]float32(a)))
 }
 
@@ -20306,7 +20306,7 @@ func m512ErfcPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erfc_ps'.
 // Requires AVX512F.
-func M512MaskErfcPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskErfcPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskErfcPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -20325,7 +20325,7 @@ func m512MaskErfcPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_erfcinv_pd'.
 // Requires AVX512F.
-func M512ErfcinvPd(a x86.M512d) x86.M512d {
+func M512ErfcinvPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512ErfcinvPd([8]float64(a)))
 }
 
@@ -20349,7 +20349,7 @@ func m512ErfcinvPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erfcinv_pd'.
 // Requires AVX512F.
-func M512MaskErfcinvPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskErfcinvPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskErfcinvPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -20368,7 +20368,7 @@ func m512MaskErfcinvPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_erfcinv_ps'.
 // Requires AVX512F.
-func M512ErfcinvPs(a x86.M512) x86.M512 {
+func M512ErfcinvPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512ErfcinvPs([16]float32(a)))
 }
 
@@ -20392,7 +20392,7 @@ func m512ErfcinvPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erfcinv_ps'.
 // Requires AVX512F.
-func M512MaskErfcinvPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskErfcinvPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskErfcinvPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -20410,7 +20410,7 @@ func m512MaskErfcinvPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_erfinv_pd'.
 // Requires AVX512F.
-func M512ErfinvPd(a x86.M512d) x86.M512d {
+func M512ErfinvPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512ErfinvPd([8]float64(a)))
 }
 
@@ -20434,7 +20434,7 @@ func m512ErfinvPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erfinv_pd'.
 // Requires AVX512F.
-func M512MaskErfinvPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskErfinvPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskErfinvPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -20452,7 +20452,7 @@ func m512MaskErfinvPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_erfinv_ps'.
 // Requires AVX512F.
-func M512ErfinvPs(a x86.M512) x86.M512 {
+func M512ErfinvPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512ErfinvPs([16]float32(a)))
 }
 
@@ -20476,7 +20476,7 @@ func m512ErfinvPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_erfinv_ps'.
 // Requires AVX512F.
-func M512MaskErfinvPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskErfinvPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskErfinvPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -20495,7 +20495,7 @@ func m512MaskErfinvPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_exp_pd'.
 // Requires AVX512F.
-func M512ExpPd(a x86.M512d) x86.M512d {
+func M512ExpPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512ExpPd([8]float64(a)))
 }
 
@@ -20519,7 +20519,7 @@ func m512ExpPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_exp_pd'.
 // Requires AVX512F.
-func M512MaskExpPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskExpPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskExpPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -20538,7 +20538,7 @@ func m512MaskExpPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_exp_ps'.
 // Requires AVX512F.
-func M512ExpPs(a x86.M512) x86.M512 {
+func M512ExpPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512ExpPs([16]float32(a)))
 }
 
@@ -20562,7 +20562,7 @@ func m512ExpPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_exp_ps'.
 // Requires AVX512F.
-func M512MaskExpPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskExpPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskExpPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -20581,7 +20581,7 @@ func m512MaskExpPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_exp10_pd'.
 // Requires AVX512F.
-func M512Exp10Pd(a x86.M512d) x86.M512d {
+func M512Exp10Pd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Exp10Pd([8]float64(a)))
 }
 
@@ -20605,7 +20605,7 @@ func m512Exp10Pd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_exp10_pd'.
 // Requires AVX512F.
-func M512MaskExp10Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskExp10Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskExp10Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -20624,7 +20624,7 @@ func m512MaskExp10Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_exp10_ps'.
 // Requires AVX512F.
-func M512Exp10Ps(a x86.M512) x86.M512 {
+func M512Exp10Ps(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512Exp10Ps([16]float32(a)))
 }
 
@@ -20648,7 +20648,7 @@ func m512Exp10Ps(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_exp10_ps'.
 // Requires AVX512F.
-func M512MaskExp10Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskExp10Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskExp10Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -20667,7 +20667,7 @@ func m512MaskExp10Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_exp2_pd'.
 // Requires AVX512F.
-func M512Exp2Pd(a x86.M512d) x86.M512d {
+func M512Exp2Pd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Exp2Pd([8]float64(a)))
 }
 
@@ -20691,7 +20691,7 @@ func m512Exp2Pd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_exp2_pd'.
 // Requires AVX512F.
-func M512MaskExp2Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskExp2Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskExp2Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -20710,7 +20710,7 @@ func m512MaskExp2Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_exp2_ps'.
 // Requires AVX512F.
-func M512Exp2Ps(a x86.M512) x86.M512 {
+func M512Exp2Ps(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512Exp2Ps([16]float32(a)))
 }
 
@@ -20734,7 +20734,7 @@ func m512Exp2Ps(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_exp2_ps'.
 // Requires AVX512F.
-func M512MaskExp2Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskExp2Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskExp2Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -20760,7 +20760,7 @@ func m512MaskExp2Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm_mask_expand_epi32'.
 // Requires AVX512F.
-func MaskExpandEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskExpandEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskExpandEpi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -20786,7 +20786,7 @@ func maskExpandEpi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm_maskz_expand_epi32'.
 // Requires AVX512F.
-func MaskzExpandEpi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzExpandEpi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzExpandEpi32(uint8(k), [16]byte(a)))
 }
 
@@ -20812,7 +20812,7 @@ func maskzExpandEpi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm256_mask_expand_epi32'.
 // Requires AVX512F.
-func M256MaskExpandEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskExpandEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskExpandEpi32([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -20838,7 +20838,7 @@ func m256MaskExpandEpi32(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm256_maskz_expand_epi32'.
 // Requires AVX512F.
-func M256MaskzExpandEpi32(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzExpandEpi32(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzExpandEpi32(uint8(k), [32]byte(a)))
 }
 
@@ -20864,7 +20864,7 @@ func m256MaskzExpandEpi32(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm512_mask_expand_epi32'.
 // Requires AVX512F.
-func M512MaskExpandEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) x86.M512i {
+func M512MaskExpandEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskExpandEpi32([64]byte(src), uint16(k), [64]byte(a)))
 }
 
@@ -20890,7 +20890,7 @@ func m512MaskExpandEpi32(src [64]byte, k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPEXPANDD'. Intrinsic: '_mm512_maskz_expand_epi32'.
 // Requires AVX512F.
-func M512MaskzExpandEpi32(k x86.Mmask16, a x86.M512i) x86.M512i {
+func M512MaskzExpandEpi32(k x86.Mmask16, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzExpandEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -20916,7 +20916,7 @@ func m512MaskzExpandEpi32(k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm_mask_expand_epi64'.
 // Requires AVX512F.
-func MaskExpandEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskExpandEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskExpandEpi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -20942,7 +20942,7 @@ func maskExpandEpi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm_maskz_expand_epi64'.
 // Requires AVX512F.
-func MaskzExpandEpi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzExpandEpi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzExpandEpi64(uint8(k), [16]byte(a)))
 }
 
@@ -20968,7 +20968,7 @@ func maskzExpandEpi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm256_mask_expand_epi64'.
 // Requires AVX512F.
-func M256MaskExpandEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskExpandEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskExpandEpi64([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -20994,7 +20994,7 @@ func m256MaskExpandEpi64(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm256_maskz_expand_epi64'.
 // Requires AVX512F.
-func M256MaskzExpandEpi64(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzExpandEpi64(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzExpandEpi64(uint8(k), [32]byte(a)))
 }
 
@@ -21020,7 +21020,7 @@ func m256MaskzExpandEpi64(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm512_mask_expand_epi64'.
 // Requires AVX512F.
-func M512MaskExpandEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) x86.M512i {
+func M512MaskExpandEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskExpandEpi64([64]byte(src), uint8(k), [64]byte(a)))
 }
 
@@ -21046,7 +21046,7 @@ func m512MaskExpandEpi64(src [64]byte, k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VPEXPANDQ'. Intrinsic: '_mm512_maskz_expand_epi64'.
 // Requires AVX512F.
-func M512MaskzExpandEpi64(k x86.Mmask8, a x86.M512i) x86.M512i {
+func M512MaskzExpandEpi64(k x86.Mmask8, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzExpandEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -21072,7 +21072,7 @@ func m512MaskzExpandEpi64(k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VEXPANDPD'. Intrinsic: '_mm_mask_expand_pd'.
 // Requires AVX512F.
-func MaskExpandPd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskExpandPd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskExpandPd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -21098,7 +21098,7 @@ func maskExpandPd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VEXPANDPD'. Intrinsic: '_mm_maskz_expand_pd'.
 // Requires AVX512F.
-func MaskzExpandPd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzExpandPd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzExpandPd(uint8(k), [2]float64(a)))
 }
 
@@ -21124,7 +21124,7 @@ func maskzExpandPd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VEXPANDPD'. Intrinsic: '_mm256_mask_expand_pd'.
 // Requires AVX512F.
-func M256MaskExpandPd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskExpandPd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskExpandPd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -21150,7 +21150,7 @@ func m256MaskExpandPd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VEXPANDPD'. Intrinsic: '_mm256_maskz_expand_pd'.
 // Requires AVX512F.
-func M256MaskzExpandPd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzExpandPd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzExpandPd(uint8(k), [4]float64(a)))
 }
 
@@ -21176,7 +21176,7 @@ func m256MaskzExpandPd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VEXPANDPD'. Intrinsic: '_mm512_mask_expand_pd'.
 // Requires AVX512F.
-func M512MaskExpandPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskExpandPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskExpandPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -21202,7 +21202,7 @@ func m512MaskExpandPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VEXPANDPD'. Intrinsic: '_mm512_maskz_expand_pd'.
 // Requires AVX512F.
-func M512MaskzExpandPd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzExpandPd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzExpandPd(uint8(k), [8]float64(a)))
 }
 
@@ -21228,7 +21228,7 @@ func m512MaskzExpandPd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VEXPANDPS'. Intrinsic: '_mm_mask_expand_ps'.
 // Requires AVX512F.
-func MaskExpandPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskExpandPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskExpandPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -21254,7 +21254,7 @@ func maskExpandPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VEXPANDPS'. Intrinsic: '_mm_maskz_expand_ps'.
 // Requires AVX512F.
-func MaskzExpandPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzExpandPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzExpandPs(uint8(k), [4]float32(a)))
 }
 
@@ -21280,7 +21280,7 @@ func maskzExpandPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VEXPANDPS'. Intrinsic: '_mm256_mask_expand_ps'.
 // Requires AVX512F.
-func M256MaskExpandPs(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskExpandPs(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskExpandPs([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -21306,7 +21306,7 @@ func m256MaskExpandPs(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VEXPANDPS'. Intrinsic: '_mm256_maskz_expand_ps'.
 // Requires AVX512F.
-func M256MaskzExpandPs(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzExpandPs(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzExpandPs(uint8(k), [8]float32(a)))
 }
 
@@ -21332,7 +21332,7 @@ func m256MaskzExpandPs(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VEXPANDPS'. Intrinsic: '_mm512_mask_expand_ps'.
 // Requires AVX512F.
-func M512MaskExpandPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskExpandPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskExpandPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -21358,7 +21358,7 @@ func m512MaskExpandPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VEXPANDPS'. Intrinsic: '_mm512_maskz_expand_ps'.
 // Requires AVX512F.
-func M512MaskzExpandPs(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzExpandPs(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzExpandPs(uint16(k), [16]float32(a)))
 }
 
@@ -21449,7 +21449,7 @@ func m512MaskzExpandPs(k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_expm1_pd'.
 // Requires AVX512F.
-func M512Expm1Pd(a x86.M512d) x86.M512d {
+func M512Expm1Pd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Expm1Pd([8]float64(a)))
 }
 
@@ -21473,7 +21473,7 @@ func m512Expm1Pd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_expm1_pd'.
 // Requires AVX512F.
-func M512MaskExpm1Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskExpm1Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskExpm1Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -21492,7 +21492,7 @@ func m512MaskExpm1Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_expm1_ps'.
 // Requires AVX512F.
-func M512Expm1Ps(a x86.M512) x86.M512 {
+func M512Expm1Ps(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512Expm1Ps([16]float32(a)))
 }
 
@@ -21516,7 +21516,7 @@ func m512Expm1Ps(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_expm1_ps'.
 // Requires AVX512F.
-func M512MaskExpm1Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskExpm1Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskExpm1Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -21537,7 +21537,7 @@ func m512MaskExpm1Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extractf32x4Ps(a x86.M256, imm8 byte) x86.M128 {
+func M256Extractf32x4Ps(a x86.M256, imm8 byte) (dst x86.M128) {
 	return x86.M128(m256Extractf32x4Ps([8]float32(a), imm8))
 }
 
@@ -21567,7 +21567,7 @@ func m256Extractf32x4Ps(a [8]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M256, imm8 byte) x86.M128 {
+func M256MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M256, imm8 byte) (dst x86.M128) {
 	return x86.M128(m256MaskExtractf32x4Ps([4]float32(src), uint8(k), [8]float32(a), imm8))
 }
 
@@ -21597,7 +21597,7 @@ func m256MaskExtractf32x4Ps(src [4]float32, k uint8, a [8]float32, imm8 byte) [4
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M256, imm8 byte) x86.M128 {
+func M256MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M256, imm8 byte) (dst x86.M128) {
 	return x86.M128(m256MaskzExtractf32x4Ps(uint8(k), [8]float32(a), imm8))
 }
 
@@ -21620,7 +21620,7 @@ func m256MaskzExtractf32x4Ps(k uint8, a [8]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extractf32x4Ps(a x86.M512, imm8 byte) x86.M128 {
+func M512Extractf32x4Ps(a x86.M512, imm8 byte) (dst x86.M128) {
 	return x86.M128(m512Extractf32x4Ps([16]float32(a), imm8))
 }
 
@@ -21652,7 +21652,7 @@ func m512Extractf32x4Ps(a [16]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M512, imm8 byte) x86.M128 {
+func M512MaskExtractf32x4Ps(src x86.M128, k x86.Mmask8, a x86.M512, imm8 byte) (dst x86.M128) {
 	return x86.M128(m512MaskExtractf32x4Ps([4]float32(src), uint8(k), [16]float32(a), imm8))
 }
 
@@ -21684,7 +21684,7 @@ func m512MaskExtractf32x4Ps(src [4]float32, k uint8, a [16]float32, imm8 byte) [
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M512, imm8 byte) x86.M128 {
+func M512MaskzExtractf32x4Ps(k x86.Mmask8, a x86.M512, imm8 byte) (dst x86.M128) {
 	return x86.M128(m512MaskzExtractf32x4Ps(uint8(k), [16]float32(a), imm8))
 }
 
@@ -21705,7 +21705,7 @@ func m512MaskzExtractf32x4Ps(k uint8, a [16]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extractf64x4Pd(a x86.M512d, imm8 byte) x86.M256d {
+func M512Extractf64x4Pd(a x86.M512d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m512Extractf64x4Pd([8]float64(a), imm8))
 }
 
@@ -21735,7 +21735,7 @@ func m512Extractf64x4Pd(a [8]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtractf64x4Pd(src x86.M256d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M256d {
+func M512MaskExtractf64x4Pd(src x86.M256d, k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m512MaskExtractf64x4Pd([4]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
@@ -21765,7 +21765,7 @@ func m512MaskExtractf64x4Pd(src [4]float64, k uint8, a [8]float64, imm8 byte) [4
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtractf64x4Pd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M256d {
+func M512MaskzExtractf64x4Pd(k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m512MaskzExtractf64x4Pd(uint8(k), [8]float64(a), imm8))
 }
 
@@ -21785,7 +21785,7 @@ func m512MaskzExtractf64x4Pd(k uint8, a [8]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extracti32x4Epi32(a x86.M256i, imm8 byte) x86.M128i {
+func M256Extracti32x4Epi32(a x86.M256i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(m256Extracti32x4Epi32([32]byte(a), imm8))
 }
 
@@ -21815,7 +21815,7 @@ func m256Extracti32x4Epi32(a [32]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M128i {
+func M256MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(m256MaskExtracti32x4Epi32([16]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -21845,7 +21845,7 @@ func m256MaskExtracti32x4Epi32(src [16]byte, k uint8, a [32]byte, imm8 byte) [16
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M128i {
+func M256MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(m256MaskzExtracti32x4Epi32(uint8(k), [32]byte(a), imm8))
 }
 
@@ -21867,7 +21867,7 @@ func m256MaskzExtracti32x4Epi32(k uint8, a [32]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extracti32x4Epi32(a x86.M512i, imm8 byte) x86.M128i {
+func M512Extracti32x4Epi32(a x86.M512i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(m512Extracti32x4Epi32([64]byte(a), imm8))
 }
 
@@ -21899,7 +21899,7 @@ func m512Extracti32x4Epi32(a [64]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M128i {
+func M512MaskExtracti32x4Epi32(src x86.M128i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(m512MaskExtracti32x4Epi32([16]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -21931,7 +21931,7 @@ func m512MaskExtracti32x4Epi32(src [16]byte, k uint8, a [64]byte, imm8 byte) [16
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M128i {
+func M512MaskzExtracti32x4Epi32(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(m512MaskzExtracti32x4Epi32(uint8(k), [64]byte(a), imm8))
 }
 
@@ -21951,7 +21951,7 @@ func m512MaskzExtracti32x4Epi32(k uint8, a [64]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Extracti64x4Epi64(a x86.M512i, imm8 byte) x86.M256i {
+func M512Extracti64x4Epi64(a x86.M512i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m512Extracti64x4Epi64([64]byte(a), imm8))
 }
 
@@ -21981,7 +21981,7 @@ func m512Extracti64x4Epi64(a [64]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskExtracti64x4Epi64(src x86.M256i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M256i {
+func M512MaskExtracti64x4Epi64(src x86.M256i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m512MaskExtracti64x4Epi64([32]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -22011,7 +22011,7 @@ func m512MaskExtracti64x4Epi64(src [32]byte, k uint8, a [64]byte, imm8 byte) [32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzExtracti64x4Epi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M256i {
+func M512MaskzExtracti64x4Epi64(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m512MaskzExtracti64x4Epi64(uint8(k), [64]byte(a), imm8))
 }
 
@@ -22089,7 +22089,7 @@ func m512MaskzExtracti64x4Epi64(k uint8, a [64]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmPd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
+func FixupimmPd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(fixupimmPd([2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
@@ -22173,7 +22173,7 @@ func fixupimmPd(a [2]float64, b [2]float64, c [16]byte, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
+func MaskFixupimmPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskFixupimmPd([2]float64(a), uint8(k), [2]float64(b), [16]byte(c), imm8))
 }
 
@@ -22257,7 +22257,7 @@ func maskFixupimmPd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 byte) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
+func MaskzFixupimmPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskzFixupimmPd(uint8(k), [2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
@@ -22335,7 +22335,7 @@ func maskzFixupimmPd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 byte)
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256FixupimmPd(a x86.M256d, b x86.M256d, c x86.M256i, imm8 byte) x86.M256d {
+func M256FixupimmPd(a x86.M256d, b x86.M256d, c x86.M256i, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256FixupimmPd([4]float64(a), [4]float64(b), [32]byte(c), imm8))
 }
 
@@ -22419,7 +22419,7 @@ func m256FixupimmPd(a [4]float64, b [4]float64, c [32]byte, imm8 byte) [4]float6
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskFixupimmPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256i, imm8 byte) x86.M256d {
+func M256MaskFixupimmPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256i, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskFixupimmPd([4]float64(a), uint8(k), [4]float64(b), [32]byte(c), imm8))
 }
 
@@ -22503,7 +22503,7 @@ func m256MaskFixupimmPd(a [4]float64, k uint8, b [4]float64, c [32]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzFixupimmPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256i, imm8 byte) x86.M256d {
+func M256MaskzFixupimmPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256i, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskzFixupimmPd(uint8(k), [4]float64(a), [4]float64(b), [32]byte(c), imm8))
 }
 
@@ -22581,7 +22581,7 @@ func m256MaskzFixupimmPd(k uint8, a [4]float64, b [4]float64, c [32]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte) x86.M512d {
+func M512FixupimmPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512FixupimmPd([8]float64(a), [8]float64(b), [64]byte(c), imm8))
 }
 
@@ -22665,7 +22665,7 @@ func m512FixupimmPd(a [8]float64, b [8]float64, c [64]byte, imm8 byte) [8]float6
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 byte) x86.M512d {
+func M512MaskFixupimmPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskFixupimmPd([8]float64(a), uint8(k), [8]float64(b), [64]byte(c), imm8))
 }
 
@@ -22749,7 +22749,7 @@ func m512MaskFixupimmPd(a [8]float64, k uint8, b [8]float64, c [64]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte) x86.M512d {
+func M512MaskzFixupimmPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFixupimmPd(uint8(k), [8]float64(a), [8]float64(b), [64]byte(c), imm8))
 }
 
@@ -22827,7 +22827,7 @@ func m512MaskzFixupimmPd(k uint8, a [8]float64, b [8]float64, c [64]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmPs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
+func FixupimmPs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte) (dst x86.M128) {
 	return x86.M128(fixupimmPs([4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
@@ -22911,7 +22911,7 @@ func fixupimmPs(a [4]float32, b [4]float32, c [16]byte, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
+func MaskFixupimmPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskFixupimmPs([4]float32(a), uint8(k), [4]float32(b), [16]byte(c), imm8))
 }
 
@@ -22995,7 +22995,7 @@ func maskFixupimmPs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 byte) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
+func MaskzFixupimmPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskzFixupimmPs(uint8(k), [4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
@@ -23073,7 +23073,7 @@ func maskzFixupimmPs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 byte)
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256FixupimmPs(a x86.M256, b x86.M256, c x86.M256i, imm8 byte) x86.M256 {
+func M256FixupimmPs(a x86.M256, b x86.M256, c x86.M256i, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256FixupimmPs([8]float32(a), [8]float32(b), [32]byte(c), imm8))
 }
 
@@ -23157,7 +23157,7 @@ func m256FixupimmPs(a [8]float32, b [8]float32, c [32]byte, imm8 byte) [8]float3
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskFixupimmPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256i, imm8 byte) x86.M256 {
+func M256MaskFixupimmPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256i, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskFixupimmPs([8]float32(a), uint8(k), [8]float32(b), [32]byte(c), imm8))
 }
 
@@ -23241,7 +23241,7 @@ func m256MaskFixupimmPs(a [8]float32, k uint8, b [8]float32, c [32]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzFixupimmPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256i, imm8 byte) x86.M256 {
+func M256MaskzFixupimmPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256i, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskzFixupimmPs(uint8(k), [8]float32(a), [8]float32(b), [32]byte(c), imm8))
 }
 
@@ -23319,7 +23319,7 @@ func m256MaskzFixupimmPs(k uint8, a [8]float32, b [8]float32, c [32]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmPs(a x86.M512, b x86.M512, c x86.M512i, imm8 byte) x86.M512 {
+func M512FixupimmPs(a x86.M512, b x86.M512, c x86.M512i, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512FixupimmPs([16]float32(a), [16]float32(b), [64]byte(c), imm8))
 }
 
@@ -23403,7 +23403,7 @@ func m512FixupimmPs(a [16]float32, b [16]float32, c [64]byte, imm8 byte) [16]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 byte) x86.M512 {
+func M512MaskFixupimmPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskFixupimmPs([16]float32(a), uint16(k), [16]float32(b), [64]byte(c), imm8))
 }
 
@@ -23487,7 +23487,7 @@ func m512MaskFixupimmPs(a [16]float32, k uint16, b [16]float32, c [64]byte, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 byte) x86.M512 {
+func M512MaskzFixupimmPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskzFixupimmPs(uint16(k), [16]float32(a), [16]float32(b), [64]byte(c), imm8))
 }
 
@@ -23572,7 +23572,7 @@ func m512MaskzFixupimmPs(k uint16, a [16]float32, b [16]float32, c [64]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmRoundPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte, rounding int) x86.M512d {
+func M512FixupimmRoundPd(a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512FixupimmRoundPd([8]float64(a), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
@@ -23663,7 +23663,7 @@ func m512FixupimmRoundPd(a [8]float64, b [8]float64, c [64]byte, imm8 byte, roun
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 byte, rounding int) x86.M512d {
+func M512MaskFixupimmRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512i, imm8 byte, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskFixupimmRoundPd([8]float64(a), uint8(k), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
@@ -23754,7 +23754,7 @@ func m512MaskFixupimmRoundPd(a [8]float64, k uint8, b [8]float64, c [64]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte, rounding int) x86.M512d {
+func M512MaskzFixupimmRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512i, imm8 byte, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFixupimmRoundPd(uint8(k), [8]float64(a), [8]float64(b), [64]byte(c), imm8, rounding))
 }
 
@@ -23839,7 +23839,7 @@ func m512MaskzFixupimmRoundPd(k uint8, a [8]float64, b [8]float64, c [64]byte, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512FixupimmRoundPs(a x86.M512, b x86.M512, c x86.M512i, imm8 byte, rounding int) x86.M512 {
+func M512FixupimmRoundPs(a x86.M512, b x86.M512, c x86.M512i, imm8 byte, rounding int) (dst x86.M512) {
 	return x86.M512(m512FixupimmRoundPs([16]float32(a), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
@@ -23930,7 +23930,7 @@ func m512FixupimmRoundPs(a [16]float32, b [16]float32, c [64]byte, imm8 byte, ro
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskFixupimmRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 byte, rounding int) x86.M512 {
+func M512MaskFixupimmRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512i, imm8 byte, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskFixupimmRoundPs([16]float32(a), uint16(k), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
@@ -24021,7 +24021,7 @@ func m512MaskFixupimmRoundPs(a [16]float32, k uint16, b [16]float32, c [64]byte,
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzFixupimmRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 byte, rounding int) x86.M512 {
+func M512MaskzFixupimmRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512i, imm8 byte, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzFixupimmRoundPs(uint16(k), [16]float32(a), [16]float32(b), [64]byte(c), imm8, rounding))
 }
 
@@ -24106,7 +24106,7 @@ func m512MaskzFixupimmRoundPs(k uint16, a [16]float32, b [16]float32, c [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmRoundSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte, rounding int) x86.M128d {
+func FixupimmRoundSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte, rounding int) (dst x86.M128d) {
 	return x86.M128d(fixupimmRoundSd([2]float64(a), [2]float64(b), [16]byte(c), imm8, rounding))
 }
 
@@ -24196,7 +24196,7 @@ func fixupimmRoundSd(a [2]float64, b [2]float64, c [16]byte, imm8 byte, rounding
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte, rounding int) x86.M128d {
+func MaskFixupimmRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskFixupimmRoundSd([2]float64(a), uint8(k), [2]float64(b), [16]byte(c), imm8, rounding))
 }
 
@@ -24286,7 +24286,7 @@ func maskFixupimmRoundSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte, rounding int) x86.M128d {
+func MaskzFixupimmRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzFixupimmRoundSd(uint8(k), [2]float64(a), [2]float64(b), [16]byte(c), imm8, rounding))
 }
 
@@ -24371,7 +24371,7 @@ func maskzFixupimmRoundSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmRoundSs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte, rounding int) x86.M128 {
+func FixupimmRoundSs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte, rounding int) (dst x86.M128) {
 	return x86.M128(fixupimmRoundSs([4]float32(a), [4]float32(b), [16]byte(c), imm8, rounding))
 }
 
@@ -24461,7 +24461,7 @@ func fixupimmRoundSs(a [4]float32, b [4]float32, c [16]byte, imm8 byte, rounding
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte, rounding int) x86.M128 {
+func MaskFixupimmRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte, rounding int) (dst x86.M128) {
 	return x86.M128(maskFixupimmRoundSs([4]float32(a), uint8(k), [4]float32(b), [16]byte(c), imm8, rounding))
 }
 
@@ -24551,7 +24551,7 @@ func maskFixupimmRoundSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte, rounding int) x86.M128 {
+func MaskzFixupimmRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte, rounding int) (dst x86.M128) {
 	return x86.M128(maskzFixupimmRoundSs(uint8(k), [4]float32(a), [4]float32(b), [16]byte(c), imm8, rounding))
 }
 
@@ -24629,7 +24629,7 @@ func maskzFixupimmRoundSs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
+func FixupimmSd(a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(fixupimmSd([2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
@@ -24712,7 +24712,7 @@ func fixupimmSd(a [2]float64, b [2]float64, c [16]byte, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
+func MaskFixupimmSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128i, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskFixupimmSd([2]float64(a), uint8(k), [2]float64(b), [16]byte(c), imm8))
 }
 
@@ -24795,7 +24795,7 @@ func maskFixupimmSd(a [2]float64, k uint8, b [2]float64, c [16]byte, imm8 byte) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) x86.M128d {
+func MaskzFixupimmSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128i, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskzFixupimmSd(uint8(k), [2]float64(a), [2]float64(b), [16]byte(c), imm8))
 }
 
@@ -24873,7 +24873,7 @@ func maskzFixupimmSd(k uint8, a [2]float64, b [2]float64, c [16]byte, imm8 byte)
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func FixupimmSs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
+func FixupimmSs(a x86.M128, b x86.M128, c x86.M128i, imm8 byte) (dst x86.M128) {
 	return x86.M128(fixupimmSs([4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
@@ -24956,7 +24956,7 @@ func fixupimmSs(a [4]float32, b [4]float32, c [16]byte, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskFixupimmSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
+func MaskFixupimmSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128i, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskFixupimmSs([4]float32(a), uint8(k), [4]float32(b), [16]byte(c), imm8))
 }
 
@@ -25039,7 +25039,7 @@ func maskFixupimmSs(a [4]float32, k uint8, b [4]float32, c [16]byte, imm8 byte) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzFixupimmSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte) x86.M128 {
+func MaskzFixupimmSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128i, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskzFixupimmSs(uint8(k), [4]float32(a), [4]float32(b), [16]byte(c), imm8))
 }
 
@@ -25058,7 +25058,7 @@ func maskzFixupimmSs(k uint8, a [4]float32, b [4]float32, c [16]byte, imm8 byte)
 //
 // Instruction: '...'. Intrinsic: '_mm512_floor_pd'.
 // Requires AVX512F.
-func M512FloorPd(a x86.M512d) x86.M512d {
+func M512FloorPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512FloorPd([8]float64(a)))
 }
 
@@ -25082,7 +25082,7 @@ func m512FloorPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_floor_pd'.
 // Requires AVX512F.
-func M512MaskFloorPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskFloorPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskFloorPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -25101,7 +25101,7 @@ func m512MaskFloorPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_floor_ps'.
 // Requires AVX512F.
-func M512FloorPs(a x86.M512) x86.M512 {
+func M512FloorPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512FloorPs([16]float32(a)))
 }
 
@@ -25125,7 +25125,7 @@ func m512FloorPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_floor_ps'.
 // Requires AVX512F.
-func M512MaskFloorPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskFloorPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskFloorPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -25149,7 +25149,7 @@ func m512MaskFloorPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm_mask_fmadd_pd'.
 // Requires AVX512F.
-func MaskFmaddPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFmaddPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFmaddPd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -25173,7 +25173,7 @@ func maskFmaddPd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm_mask3_fmadd_pd'.
 // Requires AVX512F.
-func Mask3FmaddPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FmaddPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FmaddPd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -25197,7 +25197,7 @@ func mask3FmaddPd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm_maskz_fmadd_pd'.
 // Requires AVX512F.
-func MaskzFmaddPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFmaddPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFmaddPd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -25221,7 +25221,7 @@ func maskzFmaddPd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm256_mask_fmadd_pd'.
 // Requires AVX512F.
-func M256MaskFmaddPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskFmaddPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskFmaddPd([4]float64(a), uint8(k), [4]float64(b), [4]float64(c)))
 }
 
@@ -25245,7 +25245,7 @@ func m256MaskFmaddPd(a [4]float64, k uint8, b [4]float64, c [4]float64) [4]float
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm256_mask3_fmadd_pd'.
 // Requires AVX512F.
-func M256Mask3FmaddPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) x86.M256d {
+func M256Mask3FmaddPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) (dst x86.M256d) {
 	return x86.M256d(m256Mask3FmaddPd([4]float64(a), [4]float64(b), [4]float64(c), uint8(k)))
 }
 
@@ -25269,7 +25269,7 @@ func m256Mask3FmaddPd(a [4]float64, b [4]float64, c [4]float64, k uint8) [4]floa
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm256_maskz_fmadd_pd'.
 // Requires AVX512F.
-func M256MaskzFmaddPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskzFmaddPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzFmaddPd(uint8(k), [4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -25293,7 +25293,7 @@ func m256MaskzFmaddPd(k uint8, a [4]float64, b [4]float64, c [4]float64) [4]floa
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_maskz_fmadd_pd'.
 // Requires AVX512F.
-func M512MaskzFmaddPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskzFmaddPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmaddPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -25317,7 +25317,7 @@ func m512MaskzFmaddPd(k uint8, a [8]float64, b [8]float64, c [8]float64) [8]floa
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm_mask_fmadd_ps'.
 // Requires AVX512F.
-func MaskFmaddPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFmaddPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFmaddPs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -25341,7 +25341,7 @@ func maskFmaddPs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm_mask3_fmadd_ps'.
 // Requires AVX512F.
-func Mask3FmaddPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FmaddPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FmaddPs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -25365,7 +25365,7 @@ func mask3FmaddPs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm_maskz_fmadd_ps'.
 // Requires AVX512F.
-func MaskzFmaddPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFmaddPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFmaddPs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -25389,7 +25389,7 @@ func maskzFmaddPs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm256_mask_fmadd_ps'.
 // Requires AVX512F.
-func M256MaskFmaddPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskFmaddPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskFmaddPs([8]float32(a), uint8(k), [8]float32(b), [8]float32(c)))
 }
 
@@ -25413,7 +25413,7 @@ func m256MaskFmaddPs(a [8]float32, k uint8, b [8]float32, c [8]float32) [8]float
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm256_mask3_fmadd_ps'.
 // Requires AVX512F.
-func M256Mask3FmaddPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) x86.M256 {
+func M256Mask3FmaddPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) (dst x86.M256) {
 	return x86.M256(m256Mask3FmaddPs([8]float32(a), [8]float32(b), [8]float32(c), uint8(k)))
 }
 
@@ -25437,7 +25437,7 @@ func m256Mask3FmaddPs(a [8]float32, b [8]float32, c [8]float32, k uint8) [8]floa
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm256_maskz_fmadd_ps'.
 // Requires AVX512F.
-func M256MaskzFmaddPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskzFmaddPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzFmaddPs(uint8(k), [8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -25461,7 +25461,7 @@ func m256MaskzFmaddPs(k uint8, a [8]float32, b [8]float32, c [8]float32) [8]floa
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_maskz_fmadd_ps'.
 // Requires AVX512F.
-func M512MaskzFmaddPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskzFmaddPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzFmaddPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -25492,7 +25492,7 @@ func m512MaskzFmaddPs(k uint16, a [16]float32, b [16]float32, c [16]float32) [16
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm512_maskz_fmadd_round_pd'.
 // Requires AVX512F.
-func M512MaskzFmaddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskzFmaddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmaddRoundPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -25523,7 +25523,7 @@ func m512MaskzFmaddRoundPd(k uint8, a [8]float64, b [8]float64, c [8]float64, ro
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm512_maskz_fmadd_round_ps'.
 // Requires AVX512F.
-func M512MaskzFmaddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskzFmaddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzFmaddRoundPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -25553,7 +25553,7 @@ func m512MaskzFmaddRoundPs(k uint16, a [16]float32, b [16]float32, c [16]float32
 //
 // Instruction: 'VFMADD132SD, VFMADD213SD, VFMADD231SD'. Intrinsic: '_mm_mask_fmadd_round_sd'.
 // Requires AVX512F.
-func MaskFmaddRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskFmaddRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskFmaddRoundSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -25583,7 +25583,7 @@ func maskFmaddRoundSd(a [2]float64, k uint8, b [2]float64, c [2]float64, roundin
 //
 // Instruction: 'VFMADD132SD, VFMADD213SD, VFMADD231SD'. Intrinsic: '_mm_mask3_fmadd_round_sd'.
 // Requires AVX512F.
-func Mask3FmaddRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) x86.M128d {
+func Mask3FmaddRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) (dst x86.M128d) {
 	return x86.M128d(mask3FmaddRoundSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k), rounding))
 }
 
@@ -25613,7 +25613,7 @@ func mask3FmaddRoundSd(a [2]float64, b [2]float64, c [2]float64, k uint8, roundi
 //
 // Instruction: 'VFMADD132SD, VFMADD213SD, VFMADD231SD'. Intrinsic: '_mm_maskz_fmadd_round_sd'.
 // Requires AVX512F.
-func MaskzFmaddRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskzFmaddRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzFmaddRoundSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -25644,7 +25644,7 @@ func maskzFmaddRoundSd(k uint8, a [2]float64, b [2]float64, c [2]float64, roundi
 //
 // Instruction: 'VFMADD132SS, VFMADD213SS, VFMADD231SS'. Intrinsic: '_mm_mask_fmadd_round_ss'.
 // Requires AVX512F.
-func MaskFmaddRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskFmaddRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskFmaddRoundSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -25675,7 +25675,7 @@ func maskFmaddRoundSs(a [4]float32, k uint8, b [4]float32, c [4]float32, roundin
 //
 // Instruction: 'VFMADD132SS, VFMADD213SS, VFMADD231SS'. Intrinsic: '_mm_mask3_fmadd_round_ss'.
 // Requires AVX512F.
-func Mask3FmaddRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) x86.M128 {
+func Mask3FmaddRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) (dst x86.M128) {
 	return x86.M128(mask3FmaddRoundSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k), rounding))
 }
 
@@ -25706,7 +25706,7 @@ func mask3FmaddRoundSs(a [4]float32, b [4]float32, c [4]float32, k uint8, roundi
 //
 // Instruction: 'VFMADD132SS, VFMADD213SS, VFMADD231SS'. Intrinsic: '_mm_maskz_fmadd_round_ss'.
 // Requires AVX512F.
-func MaskzFmaddRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskzFmaddRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzFmaddRoundSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -25729,7 +25729,7 @@ func maskzFmaddRoundSs(k uint8, a [4]float32, b [4]float32, c [4]float32, roundi
 //
 // Instruction: 'VFMADD132SD, VFMADD213SD, VFMADD231SD'. Intrinsic: '_mm_mask_fmadd_sd'.
 // Requires AVX512F.
-func MaskFmaddSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFmaddSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFmaddSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -25752,7 +25752,7 @@ func maskFmaddSd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADD132SD, VFMADD213SD, VFMADD231SD'. Intrinsic: '_mm_mask3_fmadd_sd'.
 // Requires AVX512F.
-func Mask3FmaddSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FmaddSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FmaddSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -25775,7 +25775,7 @@ func mask3FmaddSd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFMADD132SD, VFMADD213SD, VFMADD231SD'. Intrinsic: '_mm_maskz_fmadd_sd'.
 // Requires AVX512F.
-func MaskzFmaddSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFmaddSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFmaddSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -25799,7 +25799,7 @@ func maskzFmaddSd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADD132SS, VFMADD213SS, VFMADD231SS'. Intrinsic: '_mm_mask_fmadd_ss'.
 // Requires AVX512F.
-func MaskFmaddSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFmaddSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFmaddSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -25823,7 +25823,7 @@ func maskFmaddSs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADD132SS, VFMADD213SS, VFMADD231SS'. Intrinsic: '_mm_mask3_fmadd_ss'.
 // Requires AVX512F.
-func Mask3FmaddSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FmaddSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FmaddSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -25846,7 +25846,7 @@ func mask3FmaddSs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFMADD132SS, VFMADD213SS, VFMADD231SS'. Intrinsic: '_mm_maskz_fmadd_ss'.
 // Requires AVX512F.
-func MaskzFmaddSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFmaddSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFmaddSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -25875,7 +25875,7 @@ func maskzFmaddSs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm_mask_fmaddsub_pd'.
 // Requires AVX512F.
-func MaskFmaddsubPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFmaddsubPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFmaddsubPd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -25904,7 +25904,7 @@ func maskFmaddsubPd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float6
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm_mask3_fmaddsub_pd'.
 // Requires AVX512F.
-func Mask3FmaddsubPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FmaddsubPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FmaddsubPd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -25933,7 +25933,7 @@ func mask3FmaddsubPd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm_maskz_fmaddsub_pd'.
 // Requires AVX512F.
-func MaskzFmaddsubPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFmaddsubPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFmaddsubPd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -25962,7 +25962,7 @@ func maskzFmaddsubPd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm256_mask_fmaddsub_pd'.
 // Requires AVX512F.
-func M256MaskFmaddsubPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskFmaddsubPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskFmaddsubPd([4]float64(a), uint8(k), [4]float64(b), [4]float64(c)))
 }
 
@@ -25991,7 +25991,7 @@ func m256MaskFmaddsubPd(a [4]float64, k uint8, b [4]float64, c [4]float64) [4]fl
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm256_mask3_fmaddsub_pd'.
 // Requires AVX512F.
-func M256Mask3FmaddsubPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) x86.M256d {
+func M256Mask3FmaddsubPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) (dst x86.M256d) {
 	return x86.M256d(m256Mask3FmaddsubPd([4]float64(a), [4]float64(b), [4]float64(c), uint8(k)))
 }
 
@@ -26020,7 +26020,7 @@ func m256Mask3FmaddsubPd(a [4]float64, b [4]float64, c [4]float64, k uint8) [4]f
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm256_maskz_fmaddsub_pd'.
 // Requires AVX512F.
-func M256MaskzFmaddsubPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskzFmaddsubPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzFmaddsubPd(uint8(k), [4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -26043,7 +26043,7 @@ func m256MaskzFmaddsubPd(k uint8, a [4]float64, b [4]float64, c [4]float64) [4]f
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_fmaddsub_pd'.
 // Requires AVX512F.
-func M512FmaddsubPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512FmaddsubPd(a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512FmaddsubPd([8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -26072,7 +26072,7 @@ func m512FmaddsubPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_mask_fmaddsub_pd'.
 // Requires AVX512F.
-func M512MaskFmaddsubPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskFmaddsubPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskFmaddsubPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
 }
 
@@ -26101,7 +26101,7 @@ func m512MaskFmaddsubPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]fl
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_mask3_fmaddsub_pd'.
 // Requires AVX512F.
-func M512Mask3FmaddsubPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
+func M512Mask3FmaddsubPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) (dst x86.M512d) {
 	return x86.M512d(m512Mask3FmaddsubPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
 }
 
@@ -26130,7 +26130,7 @@ func m512Mask3FmaddsubPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]f
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_maskz_fmaddsub_pd'.
 // Requires AVX512F.
-func M512MaskzFmaddsubPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskzFmaddsubPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmaddsubPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -26159,7 +26159,7 @@ func m512MaskzFmaddsubPd(k uint8, a [8]float64, b [8]float64, c [8]float64) [8]f
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm_mask_fmaddsub_ps'.
 // Requires AVX512F.
-func MaskFmaddsubPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFmaddsubPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFmaddsubPs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -26188,7 +26188,7 @@ func maskFmaddsubPs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float3
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm_mask3_fmaddsub_ps'.
 // Requires AVX512F.
-func Mask3FmaddsubPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FmaddsubPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FmaddsubPs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -26217,7 +26217,7 @@ func mask3FmaddsubPs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm_maskz_fmaddsub_ps'.
 // Requires AVX512F.
-func MaskzFmaddsubPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFmaddsubPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFmaddsubPs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -26246,7 +26246,7 @@ func maskzFmaddsubPs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm256_mask_fmaddsub_ps'.
 // Requires AVX512F.
-func M256MaskFmaddsubPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskFmaddsubPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskFmaddsubPs([8]float32(a), uint8(k), [8]float32(b), [8]float32(c)))
 }
 
@@ -26275,7 +26275,7 @@ func m256MaskFmaddsubPs(a [8]float32, k uint8, b [8]float32, c [8]float32) [8]fl
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm256_mask3_fmaddsub_ps'.
 // Requires AVX512F.
-func M256Mask3FmaddsubPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) x86.M256 {
+func M256Mask3FmaddsubPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) (dst x86.M256) {
 	return x86.M256(m256Mask3FmaddsubPs([8]float32(a), [8]float32(b), [8]float32(c), uint8(k)))
 }
 
@@ -26304,7 +26304,7 @@ func m256Mask3FmaddsubPs(a [8]float32, b [8]float32, c [8]float32, k uint8) [8]f
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm256_maskz_fmaddsub_ps'.
 // Requires AVX512F.
-func M256MaskzFmaddsubPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskzFmaddsubPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzFmaddsubPs(uint8(k), [8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -26327,7 +26327,7 @@ func m256MaskzFmaddsubPs(k uint8, a [8]float32, b [8]float32, c [8]float32) [8]f
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_fmaddsub_ps'.
 // Requires AVX512F.
-func M512FmaddsubPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512FmaddsubPs(a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512FmaddsubPs([16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -26356,7 +26356,7 @@ func m512FmaddsubPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_mask_fmaddsub_ps'.
 // Requires AVX512F.
-func M512MaskFmaddsubPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskFmaddsubPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskFmaddsubPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
 }
 
@@ -26385,7 +26385,7 @@ func m512MaskFmaddsubPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_mask3_fmaddsub_ps'.
 // Requires AVX512F.
-func M512Mask3FmaddsubPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
+func M512Mask3FmaddsubPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) (dst x86.M512) {
 	return x86.M512(m512Mask3FmaddsubPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
 }
 
@@ -26414,7 +26414,7 @@ func m512Mask3FmaddsubPs(a [16]float32, b [16]float32, c [16]float32, k uint16) 
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_maskz_fmaddsub_ps'.
 // Requires AVX512F.
-func M512MaskzFmaddsubPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskzFmaddsubPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzFmaddsubPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -26445,7 +26445,7 @@ func m512MaskzFmaddsubPs(k uint16, a [16]float32, b [16]float32, c [16]float32) 
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_fmaddsub_round_pd'.
 // Requires AVX512F.
-func M512FmaddsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512FmaddsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512FmaddsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -26480,7 +26480,7 @@ func m512FmaddsubRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int)
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_mask_fmaddsub_round_pd'.
 // Requires AVX512F.
-func M512MaskFmaddsubRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskFmaddsubRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskFmaddsubRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -26515,7 +26515,7 @@ func m512MaskFmaddsubRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, 
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_mask3_fmaddsub_round_pd'.
 // Requires AVX512F.
-func M512Mask3FmaddsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
+func M512Mask3FmaddsubRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512Mask3FmaddsubRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
 }
 
@@ -26551,7 +26551,7 @@ func m512Mask3FmaddsubRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8,
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm512_maskz_fmaddsub_round_pd'.
 // Requires AVX512F.
-func M512MaskzFmaddsubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskzFmaddsubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmaddsubRoundPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -26582,7 +26582,7 @@ func m512MaskzFmaddsubRoundPd(k uint8, a [8]float64, b [8]float64, c [8]float64,
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_fmaddsub_round_ps'.
 // Requires AVX512F.
-func M512FmaddsubRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512FmaddsubRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512FmaddsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -26617,7 +26617,7 @@ func m512FmaddsubRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding i
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_mask_fmaddsub_round_ps'.
 // Requires AVX512F.
-func M512MaskFmaddsubRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskFmaddsubRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskFmaddsubRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -26652,7 +26652,7 @@ func m512MaskFmaddsubRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_mask3_fmaddsub_round_ps'.
 // Requires AVX512F.
-func M512Mask3FmaddsubRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
+func M512Mask3FmaddsubRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) (dst x86.M512) {
 	return x86.M512(m512Mask3FmaddsubRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
 }
 
@@ -26688,7 +26688,7 @@ func m512Mask3FmaddsubRoundPs(a [16]float32, b [16]float32, c [16]float32, k uin
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm512_maskz_fmaddsub_round_ps'.
 // Requires AVX512F.
-func M512MaskzFmaddsubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskzFmaddsubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzFmaddsubRoundPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -26712,7 +26712,7 @@ func m512MaskzFmaddsubRoundPs(k uint16, a [16]float32, b [16]float32, c [16]floa
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm_mask_fmsub_pd'.
 // Requires AVX512F.
-func MaskFmsubPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFmsubPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFmsubPd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -26736,7 +26736,7 @@ func maskFmsubPd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm_mask3_fmsub_pd'.
 // Requires AVX512F.
-func Mask3FmsubPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FmsubPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FmsubPd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -26760,7 +26760,7 @@ func mask3FmsubPd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm_maskz_fmsub_pd'.
 // Requires AVX512F.
-func MaskzFmsubPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFmsubPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFmsubPd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -26784,7 +26784,7 @@ func maskzFmsubPd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm256_mask_fmsub_pd'.
 // Requires AVX512F.
-func M256MaskFmsubPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskFmsubPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskFmsubPd([4]float64(a), uint8(k), [4]float64(b), [4]float64(c)))
 }
 
@@ -26808,7 +26808,7 @@ func m256MaskFmsubPd(a [4]float64, k uint8, b [4]float64, c [4]float64) [4]float
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm256_mask3_fmsub_pd'.
 // Requires AVX512F.
-func M256Mask3FmsubPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) x86.M256d {
+func M256Mask3FmsubPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) (dst x86.M256d) {
 	return x86.M256d(m256Mask3FmsubPd([4]float64(a), [4]float64(b), [4]float64(c), uint8(k)))
 }
 
@@ -26832,7 +26832,7 @@ func m256Mask3FmsubPd(a [4]float64, b [4]float64, c [4]float64, k uint8) [4]floa
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm256_maskz_fmsub_pd'.
 // Requires AVX512F.
-func M256MaskzFmsubPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskzFmsubPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzFmsubPd(uint8(k), [4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -26856,7 +26856,7 @@ func m256MaskzFmsubPd(k uint8, a [4]float64, b [4]float64, c [4]float64) [4]floa
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_maskz_fmsub_pd'.
 // Requires AVX512F.
-func M512MaskzFmsubPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskzFmsubPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmsubPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -26880,7 +26880,7 @@ func m512MaskzFmsubPd(k uint8, a [8]float64, b [8]float64, c [8]float64) [8]floa
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm_mask_fmsub_ps'.
 // Requires AVX512F.
-func MaskFmsubPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFmsubPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFmsubPs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -26904,7 +26904,7 @@ func maskFmsubPs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm_mask3_fmsub_ps'.
 // Requires AVX512F.
-func Mask3FmsubPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FmsubPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FmsubPs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -26928,7 +26928,7 @@ func mask3FmsubPs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm_maskz_fmsub_ps'.
 // Requires AVX512F.
-func MaskzFmsubPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFmsubPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFmsubPs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -26952,7 +26952,7 @@ func maskzFmsubPs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm256_mask_fmsub_ps'.
 // Requires AVX512F.
-func M256MaskFmsubPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskFmsubPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskFmsubPs([8]float32(a), uint8(k), [8]float32(b), [8]float32(c)))
 }
 
@@ -26976,7 +26976,7 @@ func m256MaskFmsubPs(a [8]float32, k uint8, b [8]float32, c [8]float32) [8]float
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm256_mask3_fmsub_ps'.
 // Requires AVX512F.
-func M256Mask3FmsubPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) x86.M256 {
+func M256Mask3FmsubPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) (dst x86.M256) {
 	return x86.M256(m256Mask3FmsubPs([8]float32(a), [8]float32(b), [8]float32(c), uint8(k)))
 }
 
@@ -27000,7 +27000,7 @@ func m256Mask3FmsubPs(a [8]float32, b [8]float32, c [8]float32, k uint8) [8]floa
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm256_maskz_fmsub_ps'.
 // Requires AVX512F.
-func M256MaskzFmsubPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskzFmsubPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzFmsubPs(uint8(k), [8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -27024,7 +27024,7 @@ func m256MaskzFmsubPs(k uint8, a [8]float32, b [8]float32, c [8]float32) [8]floa
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_maskz_fmsub_ps'.
 // Requires AVX512F.
-func M512MaskzFmsubPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskzFmsubPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzFmsubPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -27055,7 +27055,7 @@ func m512MaskzFmsubPs(k uint16, a [16]float32, b [16]float32, c [16]float32) [16
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm512_maskz_fmsub_round_pd'.
 // Requires AVX512F.
-func M512MaskzFmsubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskzFmsubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmsubRoundPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -27086,7 +27086,7 @@ func m512MaskzFmsubRoundPd(k uint8, a [8]float64, b [8]float64, c [8]float64, ro
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm512_maskz_fmsub_round_ps'.
 // Requires AVX512F.
-func M512MaskzFmsubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskzFmsubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzFmsubRoundPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -27116,7 +27116,7 @@ func m512MaskzFmsubRoundPs(k uint16, a [16]float32, b [16]float32, c [16]float32
 //
 // Instruction: 'VFMSUB132SD, VFMSUB213SD, VFMSUB231SD'. Intrinsic: '_mm_mask_fmsub_round_sd'.
 // Requires AVX512F.
-func MaskFmsubRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskFmsubRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskFmsubRoundSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -27146,7 +27146,7 @@ func maskFmsubRoundSd(a [2]float64, k uint8, b [2]float64, c [2]float64, roundin
 //
 // Instruction: 'VFMSUB132SD, VFMSUB213SD, VFMSUB231SD'. Intrinsic: '_mm_mask3_fmsub_round_sd'.
 // Requires AVX512F.
-func Mask3FmsubRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) x86.M128d {
+func Mask3FmsubRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) (dst x86.M128d) {
 	return x86.M128d(mask3FmsubRoundSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k), rounding))
 }
 
@@ -27176,7 +27176,7 @@ func mask3FmsubRoundSd(a [2]float64, b [2]float64, c [2]float64, k uint8, roundi
 //
 // Instruction: 'VFMSUB132SD, VFMSUB213SD, VFMSUB231SD'. Intrinsic: '_mm_maskz_fmsub_round_sd'.
 // Requires AVX512F.
-func MaskzFmsubRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskzFmsubRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzFmsubRoundSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -27207,7 +27207,7 @@ func maskzFmsubRoundSd(k uint8, a [2]float64, b [2]float64, c [2]float64, roundi
 //
 // Instruction: 'VFMSUB132SS, VFMSUB213SS, VFMSUB231SS'. Intrinsic: '_mm_mask_fmsub_round_ss'.
 // Requires AVX512F.
-func MaskFmsubRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskFmsubRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskFmsubRoundSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -27238,7 +27238,7 @@ func maskFmsubRoundSs(a [4]float32, k uint8, b [4]float32, c [4]float32, roundin
 //
 // Instruction: 'VFMSUB132SS, VFMSUB213SS, VFMSUB231SS'. Intrinsic: '_mm_mask3_fmsub_round_ss'.
 // Requires AVX512F.
-func Mask3FmsubRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) x86.M128 {
+func Mask3FmsubRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) (dst x86.M128) {
 	return x86.M128(mask3FmsubRoundSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k), rounding))
 }
 
@@ -27269,7 +27269,7 @@ func mask3FmsubRoundSs(a [4]float32, b [4]float32, c [4]float32, k uint8, roundi
 //
 // Instruction: 'VFMSUB132SS, VFMSUB213SS, VFMSUB231SS'. Intrinsic: '_mm_maskz_fmsub_round_ss'.
 // Requires AVX512F.
-func MaskzFmsubRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskzFmsubRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzFmsubRoundSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -27292,7 +27292,7 @@ func maskzFmsubRoundSs(k uint8, a [4]float32, b [4]float32, c [4]float32, roundi
 //
 // Instruction: 'VFMSUB132SD, VFMSUB213SD, VFMSUB231SD'. Intrinsic: '_mm_mask_fmsub_sd'.
 // Requires AVX512F.
-func MaskFmsubSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFmsubSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFmsubSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -27315,7 +27315,7 @@ func maskFmsubSd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUB132SD, VFMSUB213SD, VFMSUB231SD'. Intrinsic: '_mm_mask3_fmsub_sd'.
 // Requires AVX512F.
-func Mask3FmsubSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FmsubSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FmsubSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -27338,7 +27338,7 @@ func mask3FmsubSd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFMSUB132SD, VFMSUB213SD, VFMSUB231SD'. Intrinsic: '_mm_maskz_fmsub_sd'.
 // Requires AVX512F.
-func MaskzFmsubSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFmsubSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFmsubSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -27362,7 +27362,7 @@ func maskzFmsubSd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUB132SS, VFMSUB213SS, VFMSUB231SS'. Intrinsic: '_mm_mask_fmsub_ss'.
 // Requires AVX512F.
-func MaskFmsubSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFmsubSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFmsubSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -27386,7 +27386,7 @@ func maskFmsubSs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUB132SS, VFMSUB213SS, VFMSUB231SS'. Intrinsic: '_mm_mask3_fmsub_ss'.
 // Requires AVX512F.
-func Mask3FmsubSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FmsubSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FmsubSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -27409,7 +27409,7 @@ func mask3FmsubSs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFMSUB132SS, VFMSUB213SS, VFMSUB231SS'. Intrinsic: '_mm_maskz_fmsub_ss'.
 // Requires AVX512F.
-func MaskzFmsubSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFmsubSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFmsubSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -27438,7 +27438,7 @@ func maskzFmsubSs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm_mask_fmsubadd_pd'.
 // Requires AVX512F.
-func MaskFmsubaddPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFmsubaddPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFmsubaddPd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -27467,7 +27467,7 @@ func maskFmsubaddPd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float6
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm_mask3_fmsubadd_pd'.
 // Requires AVX512F.
-func Mask3FmsubaddPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FmsubaddPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FmsubaddPd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -27496,7 +27496,7 @@ func mask3FmsubaddPd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm_maskz_fmsubadd_pd'.
 // Requires AVX512F.
-func MaskzFmsubaddPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFmsubaddPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFmsubaddPd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -27525,7 +27525,7 @@ func maskzFmsubaddPd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm256_mask_fmsubadd_pd'.
 // Requires AVX512F.
-func M256MaskFmsubaddPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskFmsubaddPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskFmsubaddPd([4]float64(a), uint8(k), [4]float64(b), [4]float64(c)))
 }
 
@@ -27554,7 +27554,7 @@ func m256MaskFmsubaddPd(a [4]float64, k uint8, b [4]float64, c [4]float64) [4]fl
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm256_mask3_fmsubadd_pd'.
 // Requires AVX512F.
-func M256Mask3FmsubaddPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) x86.M256d {
+func M256Mask3FmsubaddPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) (dst x86.M256d) {
 	return x86.M256d(m256Mask3FmsubaddPd([4]float64(a), [4]float64(b), [4]float64(c), uint8(k)))
 }
 
@@ -27583,7 +27583,7 @@ func m256Mask3FmsubaddPd(a [4]float64, b [4]float64, c [4]float64, k uint8) [4]f
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm256_maskz_fmsubadd_pd'.
 // Requires AVX512F.
-func M256MaskzFmsubaddPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskzFmsubaddPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzFmsubaddPd(uint8(k), [4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -27606,7 +27606,7 @@ func m256MaskzFmsubaddPd(k uint8, a [4]float64, b [4]float64, c [4]float64) [4]f
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_fmsubadd_pd'.
 // Requires AVX512F.
-func M512FmsubaddPd(a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512FmsubaddPd(a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512FmsubaddPd([8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -27635,7 +27635,7 @@ func m512FmsubaddPd(a [8]float64, b [8]float64, c [8]float64) [8]float64
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_mask_fmsubadd_pd'.
 // Requires AVX512F.
-func M512MaskFmsubaddPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskFmsubaddPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskFmsubaddPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c)))
 }
 
@@ -27664,7 +27664,7 @@ func m512MaskFmsubaddPd(a [8]float64, k uint8, b [8]float64, c [8]float64) [8]fl
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_mask3_fmsubadd_pd'.
 // Requires AVX512F.
-func M512Mask3FmsubaddPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) x86.M512d {
+func M512Mask3FmsubaddPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8) (dst x86.M512d) {
 	return x86.M512d(m512Mask3FmsubaddPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k)))
 }
 
@@ -27693,7 +27693,7 @@ func m512Mask3FmsubaddPd(a [8]float64, b [8]float64, c [8]float64, k uint8) [8]f
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_maskz_fmsubadd_pd'.
 // Requires AVX512F.
-func M512MaskzFmsubaddPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskzFmsubaddPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmsubaddPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -27722,7 +27722,7 @@ func m512MaskzFmsubaddPd(k uint8, a [8]float64, b [8]float64, c [8]float64) [8]f
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm_mask_fmsubadd_ps'.
 // Requires AVX512F.
-func MaskFmsubaddPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFmsubaddPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFmsubaddPs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -27751,7 +27751,7 @@ func maskFmsubaddPs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float3
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm_mask3_fmsubadd_ps'.
 // Requires AVX512F.
-func Mask3FmsubaddPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FmsubaddPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FmsubaddPs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -27780,7 +27780,7 @@ func mask3FmsubaddPs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm_maskz_fmsubadd_ps'.
 // Requires AVX512F.
-func MaskzFmsubaddPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFmsubaddPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFmsubaddPs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -27809,7 +27809,7 @@ func maskzFmsubaddPs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm256_mask_fmsubadd_ps'.
 // Requires AVX512F.
-func M256MaskFmsubaddPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskFmsubaddPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskFmsubaddPs([8]float32(a), uint8(k), [8]float32(b), [8]float32(c)))
 }
 
@@ -27838,7 +27838,7 @@ func m256MaskFmsubaddPs(a [8]float32, k uint8, b [8]float32, c [8]float32) [8]fl
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm256_mask3_fmsubadd_ps'.
 // Requires AVX512F.
-func M256Mask3FmsubaddPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) x86.M256 {
+func M256Mask3FmsubaddPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) (dst x86.M256) {
 	return x86.M256(m256Mask3FmsubaddPs([8]float32(a), [8]float32(b), [8]float32(c), uint8(k)))
 }
 
@@ -27867,7 +27867,7 @@ func m256Mask3FmsubaddPs(a [8]float32, b [8]float32, c [8]float32, k uint8) [8]f
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm256_maskz_fmsubadd_ps'.
 // Requires AVX512F.
-func M256MaskzFmsubaddPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskzFmsubaddPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzFmsubaddPs(uint8(k), [8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -27890,7 +27890,7 @@ func m256MaskzFmsubaddPs(k uint8, a [8]float32, b [8]float32, c [8]float32) [8]f
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_fmsubadd_ps'.
 // Requires AVX512F.
-func M512FmsubaddPs(a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512FmsubaddPs(a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512FmsubaddPs([16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -27919,7 +27919,7 @@ func m512FmsubaddPs(a [16]float32, b [16]float32, c [16]float32) [16]float32
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_mask_fmsubadd_ps'.
 // Requires AVX512F.
-func M512MaskFmsubaddPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskFmsubaddPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskFmsubaddPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c)))
 }
 
@@ -27948,7 +27948,7 @@ func m512MaskFmsubaddPs(a [16]float32, k uint16, b [16]float32, c [16]float32) [
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_mask3_fmsubadd_ps'.
 // Requires AVX512F.
-func M512Mask3FmsubaddPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) x86.M512 {
+func M512Mask3FmsubaddPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16) (dst x86.M512) {
 	return x86.M512(m512Mask3FmsubaddPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k)))
 }
 
@@ -27977,7 +27977,7 @@ func m512Mask3FmsubaddPs(a [16]float32, b [16]float32, c [16]float32, k uint16) 
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_maskz_fmsubadd_ps'.
 // Requires AVX512F.
-func M512MaskzFmsubaddPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskzFmsubaddPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzFmsubaddPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -28008,7 +28008,7 @@ func m512MaskzFmsubaddPs(k uint16, a [16]float32, b [16]float32, c [16]float32) 
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_fmsubadd_round_pd'.
 // Requires AVX512F.
-func M512FmsubaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512FmsubaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512FmsubaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -28043,7 +28043,7 @@ func m512FmsubaddRoundPd(a [8]float64, b [8]float64, c [8]float64, rounding int)
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_mask_fmsubadd_round_pd'.
 // Requires AVX512F.
-func M512MaskFmsubaddRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskFmsubaddRoundPd(a x86.M512d, k x86.Mmask8, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskFmsubaddRoundPd([8]float64(a), uint8(k), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -28078,7 +28078,7 @@ func m512MaskFmsubaddRoundPd(a [8]float64, k uint8, b [8]float64, c [8]float64, 
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_mask3_fmsubadd_round_pd'.
 // Requires AVX512F.
-func M512Mask3FmsubaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) x86.M512d {
+func M512Mask3FmsubaddRoundPd(a x86.M512d, b x86.M512d, c x86.M512d, k x86.Mmask8, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512Mask3FmsubaddRoundPd([8]float64(a), [8]float64(b), [8]float64(c), uint8(k), rounding))
 }
 
@@ -28114,7 +28114,7 @@ func m512Mask3FmsubaddRoundPd(a [8]float64, b [8]float64, c [8]float64, k uint8,
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm512_maskz_fmsubadd_round_pd'.
 // Requires AVX512F.
-func M512MaskzFmsubaddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskzFmsubaddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFmsubaddRoundPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -28145,7 +28145,7 @@ func m512MaskzFmsubaddRoundPd(k uint8, a [8]float64, b [8]float64, c [8]float64,
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_fmsubadd_round_ps'.
 // Requires AVX512F.
-func M512FmsubaddRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512FmsubaddRoundPs(a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512FmsubaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -28181,7 +28181,7 @@ func m512FmsubaddRoundPs(a [16]float32, b [16]float32, c [16]float32, rounding i
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_mask_fmsubadd_round_ps'.
 // Requires AVX512F.
-func M512MaskFmsubaddRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskFmsubaddRoundPs(a x86.M512, k x86.Mmask16, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskFmsubaddRoundPs([16]float32(a), uint16(k), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -28216,7 +28216,7 @@ func m512MaskFmsubaddRoundPs(a [16]float32, k uint16, b [16]float32, c [16]float
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_mask3_fmsubadd_round_ps'.
 // Requires AVX512F.
-func M512Mask3FmsubaddRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) x86.M512 {
+func M512Mask3FmsubaddRoundPs(a x86.M512, b x86.M512, c x86.M512, k x86.Mmask16, rounding int) (dst x86.M512) {
 	return x86.M512(m512Mask3FmsubaddRoundPs([16]float32(a), [16]float32(b), [16]float32(c), uint16(k), rounding))
 }
 
@@ -28252,7 +28252,7 @@ func m512Mask3FmsubaddRoundPs(a [16]float32, b [16]float32, c [16]float32, k uin
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm512_maskz_fmsubadd_round_ps'.
 // Requires AVX512F.
-func M512MaskzFmsubaddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskzFmsubaddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzFmsubaddRoundPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -28276,7 +28276,7 @@ func m512MaskzFmsubaddRoundPs(k uint16, a [16]float32, b [16]float32, c [16]floa
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm_mask_fnmadd_pd'.
 // Requires AVX512F.
-func MaskFnmaddPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFnmaddPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFnmaddPd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -28300,7 +28300,7 @@ func maskFnmaddPd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm_mask3_fnmadd_pd'.
 // Requires AVX512F.
-func Mask3FnmaddPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FnmaddPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FnmaddPd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -28324,7 +28324,7 @@ func mask3FnmaddPd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm_maskz_fnmadd_pd'.
 // Requires AVX512F.
-func MaskzFnmaddPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFnmaddPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFnmaddPd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -28348,7 +28348,7 @@ func maskzFnmaddPd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm256_mask_fnmadd_pd'.
 // Requires AVX512F.
-func M256MaskFnmaddPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskFnmaddPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskFnmaddPd([4]float64(a), uint8(k), [4]float64(b), [4]float64(c)))
 }
 
@@ -28372,7 +28372,7 @@ func m256MaskFnmaddPd(a [4]float64, k uint8, b [4]float64, c [4]float64) [4]floa
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm256_mask3_fnmadd_pd'.
 // Requires AVX512F.
-func M256Mask3FnmaddPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) x86.M256d {
+func M256Mask3FnmaddPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) (dst x86.M256d) {
 	return x86.M256d(m256Mask3FnmaddPd([4]float64(a), [4]float64(b), [4]float64(c), uint8(k)))
 }
 
@@ -28396,7 +28396,7 @@ func m256Mask3FnmaddPd(a [4]float64, b [4]float64, c [4]float64, k uint8) [4]flo
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm256_maskz_fnmadd_pd'.
 // Requires AVX512F.
-func M256MaskzFnmaddPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskzFnmaddPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzFnmaddPd(uint8(k), [4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -28420,7 +28420,7 @@ func m256MaskzFnmaddPd(k uint8, a [4]float64, b [4]float64, c [4]float64) [4]flo
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_maskz_fnmadd_pd'.
 // Requires AVX512F.
-func M512MaskzFnmaddPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskzFnmaddPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFnmaddPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -28444,7 +28444,7 @@ func m512MaskzFnmaddPd(k uint8, a [8]float64, b [8]float64, c [8]float64) [8]flo
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm_mask_fnmadd_ps'.
 // Requires AVX512F.
-func MaskFnmaddPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFnmaddPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFnmaddPs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -28468,7 +28468,7 @@ func maskFnmaddPs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm_mask3_fnmadd_ps'.
 // Requires AVX512F.
-func Mask3FnmaddPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FnmaddPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FnmaddPs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -28492,7 +28492,7 @@ func mask3FnmaddPs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm_maskz_fnmadd_ps'.
 // Requires AVX512F.
-func MaskzFnmaddPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFnmaddPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFnmaddPs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -28516,7 +28516,7 @@ func maskzFnmaddPs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm256_mask_fnmadd_ps'.
 // Requires AVX512F.
-func M256MaskFnmaddPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskFnmaddPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskFnmaddPs([8]float32(a), uint8(k), [8]float32(b), [8]float32(c)))
 }
 
@@ -28540,7 +28540,7 @@ func m256MaskFnmaddPs(a [8]float32, k uint8, b [8]float32, c [8]float32) [8]floa
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm256_mask3_fnmadd_ps'.
 // Requires AVX512F.
-func M256Mask3FnmaddPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) x86.M256 {
+func M256Mask3FnmaddPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) (dst x86.M256) {
 	return x86.M256(m256Mask3FnmaddPs([8]float32(a), [8]float32(b), [8]float32(c), uint8(k)))
 }
 
@@ -28564,7 +28564,7 @@ func m256Mask3FnmaddPs(a [8]float32, b [8]float32, c [8]float32, k uint8) [8]flo
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm256_maskz_fnmadd_ps'.
 // Requires AVX512F.
-func M256MaskzFnmaddPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskzFnmaddPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzFnmaddPs(uint8(k), [8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -28588,7 +28588,7 @@ func m256MaskzFnmaddPs(k uint8, a [8]float32, b [8]float32, c [8]float32) [8]flo
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_maskz_fnmadd_ps'.
 // Requires AVX512F.
-func M512MaskzFnmaddPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskzFnmaddPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzFnmaddPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -28618,7 +28618,7 @@ func m512MaskzFnmaddPs(k uint16, a [16]float32, b [16]float32, c [16]float32) [1
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm512_maskz_fnmadd_round_pd'.
 // Requires AVX512F.
-func M512MaskzFnmaddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskzFnmaddRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFnmaddRoundPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -28648,7 +28648,7 @@ func m512MaskzFnmaddRoundPd(k uint8, a [8]float64, b [8]float64, c [8]float64, r
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm512_maskz_fnmadd_round_ps'.
 // Requires AVX512F.
-func M512MaskzFnmaddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskzFnmaddRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzFnmaddRoundPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -28678,7 +28678,7 @@ func m512MaskzFnmaddRoundPs(k uint16, a [16]float32, b [16]float32, c [16]float3
 //
 // Instruction: 'VFNMADD132SD, VFNMADD213SD, VFNMADD231SD'. Intrinsic: '_mm_mask_fnmadd_round_sd'.
 // Requires AVX512F.
-func MaskFnmaddRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskFnmaddRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskFnmaddRoundSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -28708,7 +28708,7 @@ func maskFnmaddRoundSd(a [2]float64, k uint8, b [2]float64, c [2]float64, roundi
 //
 // Instruction: 'VFNMADD132SD, VFNMADD213SD, VFNMADD231SD'. Intrinsic: '_mm_mask3_fnmadd_round_sd'.
 // Requires AVX512F.
-func Mask3FnmaddRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) x86.M128d {
+func Mask3FnmaddRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) (dst x86.M128d) {
 	return x86.M128d(mask3FnmaddRoundSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k), rounding))
 }
 
@@ -28738,7 +28738,7 @@ func mask3FnmaddRoundSd(a [2]float64, b [2]float64, c [2]float64, k uint8, round
 //
 // Instruction: 'VFNMADD132SD, VFNMADD213SD, VFNMADD231SD'. Intrinsic: '_mm_maskz_fnmadd_round_sd'.
 // Requires AVX512F.
-func MaskzFnmaddRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskzFnmaddRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzFnmaddRoundSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -28769,7 +28769,7 @@ func maskzFnmaddRoundSd(k uint8, a [2]float64, b [2]float64, c [2]float64, round
 //
 // Instruction: 'VFNMADD132SS, VFNMADD213SS, VFNMADD231SS'. Intrinsic: '_mm_mask_fnmadd_round_ss'.
 // Requires AVX512F.
-func MaskFnmaddRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskFnmaddRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskFnmaddRoundSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -28800,7 +28800,7 @@ func maskFnmaddRoundSs(a [4]float32, k uint8, b [4]float32, c [4]float32, roundi
 //
 // Instruction: 'VFNMADD132SS, VFNMADD213SS, VFNMADD231SS'. Intrinsic: '_mm_mask3_fnmadd_round_ss'.
 // Requires AVX512F.
-func Mask3FnmaddRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) x86.M128 {
+func Mask3FnmaddRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) (dst x86.M128) {
 	return x86.M128(mask3FnmaddRoundSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k), rounding))
 }
 
@@ -28831,7 +28831,7 @@ func mask3FnmaddRoundSs(a [4]float32, b [4]float32, c [4]float32, k uint8, round
 //
 // Instruction: 'VFNMADD132SS, VFNMADD213SS, VFNMADD231SS'. Intrinsic: '_mm_maskz_fnmadd_round_ss'.
 // Requires AVX512F.
-func MaskzFnmaddRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskzFnmaddRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzFnmaddRoundSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -28854,7 +28854,7 @@ func maskzFnmaddRoundSs(k uint8, a [4]float32, b [4]float32, c [4]float32, round
 //
 // Instruction: 'VFNMADD132SD, VFNMADD213SD, VFNMADD231SD'. Intrinsic: '_mm_mask_fnmadd_sd'.
 // Requires AVX512F.
-func MaskFnmaddSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFnmaddSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFnmaddSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -28877,7 +28877,7 @@ func maskFnmaddSd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMADD132SD, VFNMADD213SD, VFNMADD231SD'. Intrinsic: '_mm_mask3_fnmadd_sd'.
 // Requires AVX512F.
-func Mask3FnmaddSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FnmaddSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FnmaddSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -28900,7 +28900,7 @@ func mask3FnmaddSd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFNMADD213SD, VFNMADD231SD, VFNMADD132SD'. Intrinsic: '_mm_maskz_fnmadd_sd'.
 // Requires AVX512F.
-func MaskzFnmaddSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFnmaddSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFnmaddSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -28924,7 +28924,7 @@ func maskzFnmaddSd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMADD132SS, VFNMADD213SS, VFNMADD231SS'. Intrinsic: '_mm_mask_fnmadd_ss'.
 // Requires AVX512F.
-func MaskFnmaddSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFnmaddSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFnmaddSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -28948,7 +28948,7 @@ func maskFnmaddSs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMADD132SS, VFNMADD213SS, VFNMADD231SS'. Intrinsic: '_mm_mask3_fnmadd_ss'.
 // Requires AVX512F.
-func Mask3FnmaddSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FnmaddSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FnmaddSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -28971,7 +28971,7 @@ func mask3FnmaddSs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFNMADD132SS, VFNMADD213SS, VFNMADD231SS'. Intrinsic: '_mm_maskz_fnmadd_ss'.
 // Requires AVX512F.
-func MaskzFnmaddSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFnmaddSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFnmaddSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -28995,7 +28995,7 @@ func maskzFnmaddSs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm_mask_fnmsub_pd'.
 // Requires AVX512F.
-func MaskFnmsubPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFnmsubPd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFnmsubPd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -29019,7 +29019,7 @@ func maskFnmsubPd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm_mask3_fnmsub_pd'.
 // Requires AVX512F.
-func Mask3FnmsubPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FnmsubPd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FnmsubPd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -29043,7 +29043,7 @@ func mask3FnmsubPd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm_maskz_fnmsub_pd'.
 // Requires AVX512F.
-func MaskzFnmsubPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFnmsubPd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFnmsubPd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -29067,7 +29067,7 @@ func maskzFnmsubPd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm256_mask_fnmsub_pd'.
 // Requires AVX512F.
-func M256MaskFnmsubPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskFnmsubPd(a x86.M256d, k x86.Mmask8, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskFnmsubPd([4]float64(a), uint8(k), [4]float64(b), [4]float64(c)))
 }
 
@@ -29091,7 +29091,7 @@ func m256MaskFnmsubPd(a [4]float64, k uint8, b [4]float64, c [4]float64) [4]floa
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm256_mask3_fnmsub_pd'.
 // Requires AVX512F.
-func M256Mask3FnmsubPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) x86.M256d {
+func M256Mask3FnmsubPd(a x86.M256d, b x86.M256d, c x86.M256d, k x86.Mmask8) (dst x86.M256d) {
 	return x86.M256d(m256Mask3FnmsubPd([4]float64(a), [4]float64(b), [4]float64(c), uint8(k)))
 }
 
@@ -29115,7 +29115,7 @@ func m256Mask3FnmsubPd(a [4]float64, b [4]float64, c [4]float64, k uint8) [4]flo
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm256_maskz_fnmsub_pd'.
 // Requires AVX512F.
-func M256MaskzFnmsubPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256MaskzFnmsubPd(k x86.Mmask8, a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzFnmsubPd(uint8(k), [4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -29139,7 +29139,7 @@ func m256MaskzFnmsubPd(k uint8, a [4]float64, b [4]float64, c [4]float64) [4]flo
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_maskz_fnmsub_pd'.
 // Requires AVX512F.
-func M512MaskzFnmsubPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) x86.M512d {
+func M512MaskzFnmsubPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFnmsubPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c)))
 }
 
@@ -29163,7 +29163,7 @@ func m512MaskzFnmsubPd(k uint8, a [8]float64, b [8]float64, c [8]float64) [8]flo
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm_mask_fnmsub_ps'.
 // Requires AVX512F.
-func MaskFnmsubPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFnmsubPs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFnmsubPs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -29187,7 +29187,7 @@ func maskFnmsubPs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm_mask3_fnmsub_ps'.
 // Requires AVX512F.
-func Mask3FnmsubPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FnmsubPs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FnmsubPs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -29211,7 +29211,7 @@ func mask3FnmsubPs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm_maskz_fnmsub_ps'.
 // Requires AVX512F.
-func MaskzFnmsubPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFnmsubPs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFnmsubPs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -29235,7 +29235,7 @@ func maskzFnmsubPs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm256_mask_fnmsub_ps'.
 // Requires AVX512F.
-func M256MaskFnmsubPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskFnmsubPs(a x86.M256, k x86.Mmask8, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskFnmsubPs([8]float32(a), uint8(k), [8]float32(b), [8]float32(c)))
 }
 
@@ -29259,7 +29259,7 @@ func m256MaskFnmsubPs(a [8]float32, k uint8, b [8]float32, c [8]float32) [8]floa
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm256_mask3_fnmsub_ps'.
 // Requires AVX512F.
-func M256Mask3FnmsubPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) x86.M256 {
+func M256Mask3FnmsubPs(a x86.M256, b x86.M256, c x86.M256, k x86.Mmask8) (dst x86.M256) {
 	return x86.M256(m256Mask3FnmsubPs([8]float32(a), [8]float32(b), [8]float32(c), uint8(k)))
 }
 
@@ -29283,7 +29283,7 @@ func m256Mask3FnmsubPs(a [8]float32, b [8]float32, c [8]float32, k uint8) [8]flo
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm256_maskz_fnmsub_ps'.
 // Requires AVX512F.
-func M256MaskzFnmsubPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256MaskzFnmsubPs(k x86.Mmask8, a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzFnmsubPs(uint8(k), [8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -29307,7 +29307,7 @@ func m256MaskzFnmsubPs(k uint8, a [8]float32, b [8]float32, c [8]float32) [8]flo
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_maskz_fnmsub_ps'.
 // Requires AVX512F.
-func M512MaskzFnmsubPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) x86.M512 {
+func M512MaskzFnmsubPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzFnmsubPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c)))
 }
 
@@ -29338,7 +29338,7 @@ func m512MaskzFnmsubPs(k uint16, a [16]float32, b [16]float32, c [16]float32) [1
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm512_maskz_fnmsub_round_pd'.
 // Requires AVX512F.
-func M512MaskzFnmsubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) x86.M512d {
+func M512MaskzFnmsubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, c x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzFnmsubRoundPd(uint8(k), [8]float64(a), [8]float64(b), [8]float64(c), rounding))
 }
 
@@ -29370,7 +29370,7 @@ func m512MaskzFnmsubRoundPd(k uint8, a [8]float64, b [8]float64, c [8]float64, r
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm512_maskz_fnmsub_round_ps'.
 // Requires AVX512F.
-func M512MaskzFnmsubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) x86.M512 {
+func M512MaskzFnmsubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, c x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzFnmsubRoundPs(uint16(k), [16]float32(a), [16]float32(b), [16]float32(c), rounding))
 }
 
@@ -29401,7 +29401,7 @@ func m512MaskzFnmsubRoundPs(k uint16, a [16]float32, b [16]float32, c [16]float3
 //
 // Instruction: 'VFNMSUB132SD, VFNMSUB213SD, VFNMSUB231SD'. Intrinsic: '_mm_mask_fnmsub_round_sd'.
 // Requires AVX512F.
-func MaskFnmsubRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskFnmsubRoundSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskFnmsubRoundSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -29432,7 +29432,7 @@ func maskFnmsubRoundSd(a [2]float64, k uint8, b [2]float64, c [2]float64, roundi
 //
 // Instruction: 'VFNMSUB132SD, VFNMSUB213SD, VFNMSUB231SD'. Intrinsic: '_mm_mask3_fnmsub_round_sd'.
 // Requires AVX512F.
-func Mask3FnmsubRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) x86.M128d {
+func Mask3FnmsubRoundSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8, rounding int) (dst x86.M128d) {
 	return x86.M128d(mask3FnmsubRoundSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k), rounding))
 }
 
@@ -29462,7 +29462,7 @@ func mask3FnmsubRoundSd(a [2]float64, b [2]float64, c [2]float64, k uint8, round
 //
 // Instruction: 'VFNMSUB132SD, VFNMSUB213SD, VFNMSUB231SD'. Intrinsic: '_mm_maskz_fnmsub_round_sd'.
 // Requires AVX512F.
-func MaskzFnmsubRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) x86.M128d {
+func MaskzFnmsubRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzFnmsubRoundSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c), rounding))
 }
 
@@ -29493,7 +29493,7 @@ func maskzFnmsubRoundSd(k uint8, a [2]float64, b [2]float64, c [2]float64, round
 //
 // Instruction: 'VFNMSUB132SS, VFNMSUB213SS, VFNMSUB231SS'. Intrinsic: '_mm_mask_fnmsub_round_ss'.
 // Requires AVX512F.
-func MaskFnmsubRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskFnmsubRoundSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskFnmsubRoundSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -29524,7 +29524,7 @@ func maskFnmsubRoundSs(a [4]float32, k uint8, b [4]float32, c [4]float32, roundi
 //
 // Instruction: 'VFNMSUB132SS, VFNMSUB213SS, VFNMSUB231SS'. Intrinsic: '_mm_mask3_fnmsub_round_ss'.
 // Requires AVX512F.
-func Mask3FnmsubRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) x86.M128 {
+func Mask3FnmsubRoundSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8, rounding int) (dst x86.M128) {
 	return x86.M128(mask3FnmsubRoundSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k), rounding))
 }
 
@@ -29555,7 +29555,7 @@ func mask3FnmsubRoundSs(a [4]float32, b [4]float32, c [4]float32, k uint8, round
 //
 // Instruction: 'VFNMSUB132SS, VFNMSUB213SS, VFNMSUB231SS'. Intrinsic: '_mm_maskz_fnmsub_round_ss'.
 // Requires AVX512F.
-func MaskzFnmsubRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) x86.M128 {
+func MaskzFnmsubRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzFnmsubRoundSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c), rounding))
 }
 
@@ -29578,7 +29578,7 @@ func maskzFnmsubRoundSs(k uint8, a [4]float32, b [4]float32, c [4]float32, round
 //
 // Instruction: 'VFNMSUB132SD, VFNMSUB213SD, VFNMSUB231SD'. Intrinsic: '_mm_mask_fnmsub_sd'.
 // Requires AVX512F.
-func MaskFnmsubSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskFnmsubSd(a x86.M128d, k x86.Mmask8, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskFnmsubSd([2]float64(a), uint8(k), [2]float64(b), [2]float64(c)))
 }
 
@@ -29601,7 +29601,7 @@ func maskFnmsubSd(a [2]float64, k uint8, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMSUB132SD, VFNMSUB213SD, VFNMSUB231SD'. Intrinsic: '_mm_mask3_fnmsub_sd'.
 // Requires AVX512F.
-func Mask3FnmsubSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) x86.M128d {
+func Mask3FnmsubSd(a x86.M128d, b x86.M128d, c x86.M128d, k x86.Mmask8) (dst x86.M128d) {
 	return x86.M128d(mask3FnmsubSd([2]float64(a), [2]float64(b), [2]float64(c), uint8(k)))
 }
 
@@ -29624,7 +29624,7 @@ func mask3FnmsubSd(a [2]float64, b [2]float64, c [2]float64, k uint8) [2]float64
 //
 // Instruction: 'VFNMSUB132SD, VFNMSUB213SD, VFNMSUB231SD'. Intrinsic: '_mm_maskz_fnmsub_sd'.
 // Requires AVX512F.
-func MaskzFnmsubSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func MaskzFnmsubSd(k x86.Mmask8, a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzFnmsubSd(uint8(k), [2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -29648,7 +29648,7 @@ func maskzFnmsubSd(k uint8, a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMSUB132SS, VFNMSUB213SS, VFNMSUB231SS'. Intrinsic: '_mm_mask_fnmsub_ss'.
 // Requires AVX512F.
-func MaskFnmsubSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) x86.M128 {
+func MaskFnmsubSs(a x86.M128, k x86.Mmask8, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskFnmsubSs([4]float32(a), uint8(k), [4]float32(b), [4]float32(c)))
 }
 
@@ -29672,7 +29672,7 @@ func maskFnmsubSs(a [4]float32, k uint8, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMSUB132SS, VFNMSUB213SS, VFNMSUB231SS'. Intrinsic: '_mm_mask3_fnmsub_ss'.
 // Requires AVX512F.
-func Mask3FnmsubSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) x86.M128 {
+func Mask3FnmsubSs(a x86.M128, b x86.M128, c x86.M128, k x86.Mmask8) (dst x86.M128) {
 	return x86.M128(mask3FnmsubSs([4]float32(a), [4]float32(b), [4]float32(c), uint8(k)))
 }
 
@@ -29696,7 +29696,7 @@ func mask3FnmsubSs(a [4]float32, b [4]float32, c [4]float32, k uint8) [4]float32
 //
 // Instruction: 'VFNMSUB132SS, VFNMSUB213SS, VFNMSUB231SS'. Intrinsic: '_mm_maskz_fnmsub_ss'.
 // Requires AVX512F.
-func MaskzFnmsubSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func MaskzFnmsubSs(k x86.Mmask8, a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(maskzFnmsubSs(uint8(k), [4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -29716,7 +29716,7 @@ func maskzFnmsubSs(k uint8, a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm_getexp_pd'.
 // Requires AVX512F.
-func GetexpPd(a x86.M128d) x86.M128d {
+func GetexpPd(a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(getexpPd([2]float64(a)))
 }
 
@@ -29742,7 +29742,7 @@ func getexpPd(a [2]float64) [2]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm_mask_getexp_pd'.
 // Requires AVX512F.
-func MaskGetexpPd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskGetexpPd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskGetexpPd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -29768,7 +29768,7 @@ func maskGetexpPd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm_maskz_getexp_pd'.
 // Requires AVX512F.
-func MaskzGetexpPd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzGetexpPd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzGetexpPd(uint8(k), [2]float64(a)))
 }
 
@@ -29788,7 +29788,7 @@ func maskzGetexpPd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm256_getexp_pd'.
 // Requires AVX512F.
-func M256GetexpPd(a x86.M256d) x86.M256d {
+func M256GetexpPd(a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256GetexpPd([4]float64(a)))
 }
 
@@ -29814,7 +29814,7 @@ func m256GetexpPd(a [4]float64) [4]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm256_mask_getexp_pd'.
 // Requires AVX512F.
-func M256MaskGetexpPd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskGetexpPd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskGetexpPd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -29840,7 +29840,7 @@ func m256MaskGetexpPd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm256_maskz_getexp_pd'.
 // Requires AVX512F.
-func M256MaskzGetexpPd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzGetexpPd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzGetexpPd(uint8(k), [4]float64(a)))
 }
 
@@ -29866,7 +29866,7 @@ func m256MaskzGetexpPd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm512_maskz_getexp_pd'.
 // Requires AVX512F.
-func M512MaskzGetexpPd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzGetexpPd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzGetexpPd(uint8(k), [8]float64(a)))
 }
 
@@ -29886,7 +29886,7 @@ func m512MaskzGetexpPd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm_getexp_ps'.
 // Requires AVX512F.
-func GetexpPs(a x86.M128) x86.M128 {
+func GetexpPs(a x86.M128) (dst x86.M128) {
 	return x86.M128(getexpPs([4]float32(a)))
 }
 
@@ -29912,7 +29912,7 @@ func getexpPs(a [4]float32) [4]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm_mask_getexp_ps'.
 // Requires AVX512F.
-func MaskGetexpPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskGetexpPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskGetexpPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -29938,7 +29938,7 @@ func maskGetexpPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm_maskz_getexp_ps'.
 // Requires AVX512F.
-func MaskzGetexpPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzGetexpPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzGetexpPs(uint8(k), [4]float32(a)))
 }
 
@@ -29958,7 +29958,7 @@ func maskzGetexpPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm256_getexp_ps'.
 // Requires AVX512F.
-func M256GetexpPs(a x86.M256) x86.M256 {
+func M256GetexpPs(a x86.M256) (dst x86.M256) {
 	return x86.M256(m256GetexpPs([8]float32(a)))
 }
 
@@ -29984,7 +29984,7 @@ func m256GetexpPs(a [8]float32) [8]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm256_mask_getexp_ps'.
 // Requires AVX512F.
-func M256MaskGetexpPs(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskGetexpPs(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskGetexpPs([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -30010,7 +30010,7 @@ func m256MaskGetexpPs(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm256_maskz_getexp_ps'.
 // Requires AVX512F.
-func M256MaskzGetexpPs(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzGetexpPs(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzGetexpPs(uint8(k), [8]float32(a)))
 }
 
@@ -30036,7 +30036,7 @@ func m256MaskzGetexpPs(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm512_maskz_getexp_ps'.
 // Requires AVX512F.
-func M512MaskzGetexpPs(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzGetexpPs(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzGetexpPs(uint16(k), [16]float32(a)))
 }
 
@@ -30069,7 +30069,7 @@ func m512MaskzGetexpPs(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VGETEXPPD'. Intrinsic: '_mm512_maskz_getexp_round_pd'.
 // Requires AVX512F.
-func M512MaskzGetexpRoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+func M512MaskzGetexpRoundPd(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzGetexpRoundPd(uint8(k), [8]float64(a), rounding))
 }
 
@@ -30102,7 +30102,7 @@ func m512MaskzGetexpRoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VGETEXPPS'. Intrinsic: '_mm512_maskz_getexp_round_ps'.
 // Requires AVX512F.
-func M512MaskzGetexpRoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+func M512MaskzGetexpRoundPs(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzGetexpRoundPs(uint16(k), [16]float32(a), rounding))
 }
 
@@ -30129,7 +30129,7 @@ func m512MaskzGetexpRoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VGETEXPSD'. Intrinsic: '_mm_getexp_round_sd'.
 // Requires AVX512F.
-func GetexpRoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func GetexpRoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(getexpRoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
@@ -30161,7 +30161,7 @@ func getexpRoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VGETEXPSD'. Intrinsic: '_mm_mask_getexp_round_sd'.
 // Requires AVX512F.
-func MaskGetexpRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskGetexpRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskGetexpRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -30193,7 +30193,7 @@ func maskGetexpRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, roun
 //
 // Instruction: 'VGETEXPSD'. Intrinsic: '_mm_maskz_getexp_round_sd'.
 // Requires AVX512F.
-func MaskzGetexpRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskzGetexpRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzGetexpRoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -30220,7 +30220,7 @@ func maskzGetexpRoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]fl
 //
 // Instruction: 'VGETEXPSS'. Intrinsic: '_mm_getexp_round_ss'.
 // Requires AVX512F.
-func GetexpRoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+func GetexpRoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(getexpRoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
@@ -30252,7 +30252,7 @@ func getexpRoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VGETEXPSS'. Intrinsic: '_mm_mask_getexp_round_ss'.
 // Requires AVX512F.
-func MaskGetexpRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskGetexpRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskGetexpRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -30284,7 +30284,7 @@ func maskGetexpRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, roun
 //
 // Instruction: 'VGETEXPSS'. Intrinsic: '_mm_maskz_getexp_round_ss'.
 // Requires AVX512F.
-func MaskzGetexpRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskzGetexpRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzGetexpRoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -30304,7 +30304,7 @@ func maskzGetexpRoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]fl
 //
 // Instruction: 'VGETEXPSD'. Intrinsic: '_mm_getexp_sd'.
 // Requires AVX512F.
-func GetexpSd(a x86.M128d, b x86.M128d) x86.M128d {
+func GetexpSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(getexpSd([2]float64(a), [2]float64(b)))
 }
 
@@ -30329,7 +30329,7 @@ func getexpSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VGETEXPSD'. Intrinsic: '_mm_mask_getexp_sd'.
 // Requires AVX512F.
-func MaskGetexpSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskGetexpSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskGetexpSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -30354,7 +30354,7 @@ func maskGetexpSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float6
 //
 // Instruction: 'VGETEXPSD'. Intrinsic: '_mm_maskz_getexp_sd'.
 // Requires AVX512F.
-func MaskzGetexpSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzGetexpSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzGetexpSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -30374,7 +30374,7 @@ func maskzGetexpSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VGETEXPSS'. Intrinsic: '_mm_getexp_ss'.
 // Requires AVX512F.
-func GetexpSs(a x86.M128, b x86.M128) x86.M128 {
+func GetexpSs(a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(getexpSs([4]float32(a), [4]float32(b)))
 }
 
@@ -30399,7 +30399,7 @@ func getexpSs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VGETEXPSS'. Intrinsic: '_mm_mask_getexp_ss'.
 // Requires AVX512F.
-func MaskGetexpSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskGetexpSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskGetexpSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -30424,7 +30424,7 @@ func maskGetexpSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float3
 //
 // Instruction: 'VGETEXPSS'. Intrinsic: '_mm_maskz_getexp_ss'.
 // Requires AVX512F.
-func MaskzGetexpSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzGetexpSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzGetexpSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -30454,7 +30454,7 @@ func maskzGetexpSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm_getmant_pd'.
 // Requires AVX512F.
-func GetmantPd(a x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128d {
+func GetmantPd(a x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128d) {
 	return x86.M128d(getmantPd([2]float64(a), interv, sc))
 }
 
@@ -30489,7 +30489,7 @@ func getmantPd(a [2]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm_mask_getmant_pd'.
 // Requires AVX512F.
-func MaskGetmantPd(src x86.M128d, k x86.Mmask8, a x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128d {
+func MaskGetmantPd(src x86.M128d, k x86.Mmask8, a x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128d) {
 	return x86.M128d(maskGetmantPd([2]float64(src), uint8(k), [2]float64(a), interv, sc))
 }
 
@@ -30524,7 +30524,7 @@ func maskGetmantPd(src [2]float64, k uint8, a [2]float64, interv MMMANTISSANORME
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm_maskz_getmant_pd'.
 // Requires AVX512F.
-func MaskzGetmantPd(k x86.Mmask8, a x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128d {
+func MaskzGetmantPd(k x86.Mmask8, a x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128d) {
 	return x86.M128d(maskzGetmantPd(uint8(k), [2]float64(a), interv, sc))
 }
 
@@ -30554,7 +30554,7 @@ func maskzGetmantPd(k uint8, a [2]float64, interv MMMANTISSANORMENUM, sc MMMANTI
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm256_getmant_pd'.
 // Requires AVX512F.
-func M256GetmantPd(a x86.M256d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M256d {
+func M256GetmantPd(a x86.M256d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M256d) {
 	return x86.M256d(m256GetmantPd([4]float64(a), interv, sc))
 }
 
@@ -30589,7 +30589,7 @@ func m256GetmantPd(a [4]float64, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENU
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm256_mask_getmant_pd'.
 // Requires AVX512F.
-func M256MaskGetmantPd(src x86.M256d, k x86.Mmask8, a x86.M256d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M256d {
+func M256MaskGetmantPd(src x86.M256d, k x86.Mmask8, a x86.M256d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M256d) {
 	return x86.M256d(m256MaskGetmantPd([4]float64(src), uint8(k), [4]float64(a), interv, sc))
 }
 
@@ -30624,7 +30624,7 @@ func m256MaskGetmantPd(src [4]float64, k uint8, a [4]float64, interv MMMANTISSAN
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm256_maskz_getmant_pd'.
 // Requires AVX512F.
-func M256MaskzGetmantPd(k x86.Mmask8, a x86.M256d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M256d {
+func M256MaskzGetmantPd(k x86.Mmask8, a x86.M256d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M256d) {
 	return x86.M256d(m256MaskzGetmantPd(uint8(k), [4]float64(a), interv, sc))
 }
 
@@ -30659,7 +30659,7 @@ func m256MaskzGetmantPd(k uint8, a [4]float64, interv MMMANTISSANORMENUM, sc MMM
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm512_maskz_getmant_pd'.
 // Requires AVX512F.
-func M512MaskzGetmantPd(k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512d {
+func M512MaskzGetmantPd(k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M512d) {
 	return x86.M512d(m512MaskzGetmantPd(uint8(k), [8]float64(a), interv, sc))
 }
 
@@ -30689,7 +30689,7 @@ func m512MaskzGetmantPd(k uint8, a [8]float64, interv MMMANTISSANORMENUM, sc MMM
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm_getmant_ps'.
 // Requires AVX512F.
-func GetmantPs(a x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128 {
+func GetmantPs(a x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128) {
 	return x86.M128(getmantPs([4]float32(a), interv, sc))
 }
 
@@ -30724,7 +30724,7 @@ func getmantPs(a [4]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) [
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm_mask_getmant_ps'.
 // Requires AVX512F.
-func MaskGetmantPs(src x86.M128, k x86.Mmask8, a x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128 {
+func MaskGetmantPs(src x86.M128, k x86.Mmask8, a x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128) {
 	return x86.M128(maskGetmantPs([4]float32(src), uint8(k), [4]float32(a), interv, sc))
 }
 
@@ -30759,7 +30759,7 @@ func maskGetmantPs(src [4]float32, k uint8, a [4]float32, interv MMMANTISSANORME
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm_maskz_getmant_ps'.
 // Requires AVX512F.
-func MaskzGetmantPs(k x86.Mmask8, a x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128 {
+func MaskzGetmantPs(k x86.Mmask8, a x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128) {
 	return x86.M128(maskzGetmantPs(uint8(k), [4]float32(a), interv, sc))
 }
 
@@ -30789,7 +30789,7 @@ func maskzGetmantPs(k uint8, a [4]float32, interv MMMANTISSANORMENUM, sc MMMANTI
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm256_getmant_ps'.
 // Requires AVX512F.
-func M256GetmantPs(a x86.M256, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M256 {
+func M256GetmantPs(a x86.M256, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M256) {
 	return x86.M256(m256GetmantPs([8]float32(a), interv, sc))
 }
 
@@ -30824,7 +30824,7 @@ func m256GetmantPs(a [8]float32, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENU
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm256_mask_getmant_ps'.
 // Requires AVX512F.
-func M256MaskGetmantPs(src x86.M256, k x86.Mmask8, a x86.M256, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M256 {
+func M256MaskGetmantPs(src x86.M256, k x86.Mmask8, a x86.M256, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M256) {
 	return x86.M256(m256MaskGetmantPs([8]float32(src), uint8(k), [8]float32(a), interv, sc))
 }
 
@@ -30859,7 +30859,7 @@ func m256MaskGetmantPs(src [8]float32, k uint8, a [8]float32, interv MMMANTISSAN
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm256_maskz_getmant_ps'.
 // Requires AVX512F.
-func M256MaskzGetmantPs(k x86.Mmask8, a x86.M256, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M256 {
+func M256MaskzGetmantPs(k x86.Mmask8, a x86.M256, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M256) {
 	return x86.M256(m256MaskzGetmantPs(uint8(k), [8]float32(a), interv, sc))
 }
 
@@ -30894,7 +30894,7 @@ func m256MaskzGetmantPs(k uint8, a [8]float32, interv MMMANTISSANORMENUM, sc MMM
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm512_maskz_getmant_ps'.
 // Requires AVX512F.
-func M512MaskzGetmantPs(k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M512 {
+func M512MaskzGetmantPs(k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M512) {
 	return x86.M512(m512MaskzGetmantPs(uint16(k), [16]float32(a), interv, sc))
 }
 
@@ -30934,7 +30934,7 @@ func m512MaskzGetmantPs(k uint16, a [16]float32, interv MMMANTISSANORMENUM, sc M
 //
 // Instruction: 'VGETMANTPD'. Intrinsic: '_mm512_maskz_getmant_round_pd'.
 // Requires AVX512F.
-func M512MaskzGetmantRoundPd(k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512d {
+func M512MaskzGetmantRoundPd(k x86.Mmask8, a x86.M512d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzGetmantRoundPd(uint8(k), [8]float64(a), interv, sc, rounding))
 }
 
@@ -30974,7 +30974,7 @@ func m512MaskzGetmantRoundPd(k uint8, a [8]float64, interv MMMANTISSANORMENUM, s
 //
 // Instruction: 'VGETMANTPS'. Intrinsic: '_mm512_maskz_getmant_round_ps'.
 // Requires AVX512F.
-func M512MaskzGetmantRoundPs(k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M512 {
+func M512MaskzGetmantRoundPs(k x86.Mmask16, a x86.M512, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzGetmantRoundPs(uint16(k), [16]float32(a), interv, sc, rounding))
 }
 
@@ -31008,7 +31008,7 @@ func m512MaskzGetmantRoundPs(k uint16, a [16]float32, interv MMMANTISSANORMENUM,
 //
 // Instruction: 'VGETMANTSD'. Intrinsic: '_mm_getmant_round_sd'.
 // Requires AVX512F.
-func GetmantRoundSd(a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M128d {
+func GetmantRoundSd(a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M128d) {
 	return x86.M128d(getmantRoundSd([2]float64(a), [2]float64(b), interv, sc, rounding))
 }
 
@@ -31047,7 +31047,7 @@ func getmantRoundSd(a [2]float64, b [2]float64, interv MMMANTISSANORMENUM, sc MM
 //
 // Instruction: 'VGETMANTSD'. Intrinsic: '_mm_mask_getmant_round_sd'.
 // Requires AVX512F.
-func MaskGetmantRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M128d {
+func MaskGetmantRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskGetmantRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), interv, sc, rounding))
 }
 
@@ -31086,7 +31086,7 @@ func maskGetmantRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, int
 //
 // Instruction: 'VGETMANTSD'. Intrinsic: '_mm_maskz_getmant_round_sd'.
 // Requires AVX512F.
-func MaskzGetmantRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M128d {
+func MaskzGetmantRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzGetmantRoundSd(uint8(k), [2]float64(a), [2]float64(b), interv, sc, rounding))
 }
 
@@ -31120,7 +31120,7 @@ func maskzGetmantRoundSd(k uint8, a [2]float64, b [2]float64, interv MMMANTISSAN
 //
 // Instruction: 'VGETMANTSS'. Intrinsic: '_mm_getmant_round_ss'.
 // Requires AVX512F.
-func GetmantRoundSs(a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M128 {
+func GetmantRoundSs(a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M128) {
 	return x86.M128(getmantRoundSs([4]float32(a), [4]float32(b), interv, sc, rounding))
 }
 
@@ -31159,7 +31159,7 @@ func getmantRoundSs(a [4]float32, b [4]float32, interv MMMANTISSANORMENUM, sc MM
 //
 // Instruction: 'VGETMANTSS'. Intrinsic: '_mm_mask_getmant_round_ss'.
 // Requires AVX512F.
-func MaskGetmantRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M128 {
+func MaskGetmantRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M128) {
 	return x86.M128(maskGetmantRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), interv, sc, rounding))
 }
 
@@ -31198,7 +31198,7 @@ func maskGetmantRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, int
 //
 // Instruction: 'VGETMANTSS'. Intrinsic: '_mm_maskz_getmant_round_ss'.
 // Requires AVX512F.
-func MaskzGetmantRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) x86.M128 {
+func MaskzGetmantRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM, rounding int) (dst x86.M128) {
 	return x86.M128(maskzGetmantRoundSs(uint8(k), [4]float32(a), [4]float32(b), interv, sc, rounding))
 }
 
@@ -31227,7 +31227,7 @@ func maskzGetmantRoundSs(k uint8, a [4]float32, b [4]float32, interv MMMANTISSAN
 //
 // Instruction: 'VGETMANTSD'. Intrinsic: '_mm_getmant_sd'.
 // Requires AVX512F.
-func GetmantSd(a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128d {
+func GetmantSd(a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128d) {
 	return x86.M128d(getmantSd([2]float64(a), [2]float64(b), interv, sc))
 }
 
@@ -31261,7 +31261,7 @@ func getmantSd(a [2]float64, b [2]float64, interv MMMANTISSANORMENUM, sc MMMANTI
 //
 // Instruction: 'VGETMANTSD'. Intrinsic: '_mm_mask_getmant_sd'.
 // Requires AVX512F.
-func MaskGetmantSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128d {
+func MaskGetmantSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128d) {
 	return x86.M128d(maskGetmantSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), interv, sc))
 }
 
@@ -31295,7 +31295,7 @@ func maskGetmantSd(src [2]float64, k uint8, a [2]float64, b [2]float64, interv M
 //
 // Instruction: 'VGETMANTSD'. Intrinsic: '_mm_maskz_getmant_sd'.
 // Requires AVX512F.
-func MaskzGetmantSd(k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128d {
+func MaskzGetmantSd(k x86.Mmask8, a x86.M128d, b x86.M128d, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128d) {
 	return x86.M128d(maskzGetmantSd(uint8(k), [2]float64(a), [2]float64(b), interv, sc))
 }
 
@@ -31324,7 +31324,7 @@ func maskzGetmantSd(k uint8, a [2]float64, b [2]float64, interv MMMANTISSANORMEN
 //
 // Instruction: 'VGETMANTSS'. Intrinsic: '_mm_getmant_ss'.
 // Requires AVX512F.
-func GetmantSs(a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128 {
+func GetmantSs(a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128) {
 	return x86.M128(getmantSs([4]float32(a), [4]float32(b), interv, sc))
 }
 
@@ -31358,7 +31358,7 @@ func getmantSs(a [4]float32, b [4]float32, interv MMMANTISSANORMENUM, sc MMMANTI
 //
 // Instruction: 'VGETMANTSS'. Intrinsic: '_mm_mask_getmant_ss'.
 // Requires AVX512F.
-func MaskGetmantSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128 {
+func MaskGetmantSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128) {
 	return x86.M128(maskGetmantSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), interv, sc))
 }
 
@@ -31392,7 +31392,7 @@ func maskGetmantSs(src [4]float32, k uint8, a [4]float32, b [4]float32, interv M
 //
 // Instruction: 'VGETMANTSS'. Intrinsic: '_mm_maskz_getmant_ss'.
 // Requires AVX512F.
-func MaskzGetmantSs(k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) x86.M128 {
+func MaskzGetmantSs(k x86.Mmask8, a x86.M128, b x86.M128, interv MMMANTISSANORMENUM, sc MMMANTISSASIGNENUM) (dst x86.M128) {
 	return x86.M128(maskzGetmantSs(uint8(k), [4]float32(a), [4]float32(b), interv, sc))
 }
 
@@ -31412,7 +31412,7 @@ func maskzGetmantSs(k uint8, a [4]float32, b [4]float32, interv MMMANTISSANORMEN
 //
 // Instruction: '...'. Intrinsic: '_mm512_hypot_pd'.
 // Requires AVX512F.
-func M512HypotPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512HypotPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512HypotPd([8]float64(a), [8]float64(b)))
 }
 
@@ -31437,7 +31437,7 @@ func m512HypotPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_hypot_pd'.
 // Requires AVX512F.
-func M512MaskHypotPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskHypotPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskHypotPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -31457,7 +31457,7 @@ func m512MaskHypotPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]flo
 //
 // Instruction: '...'. Intrinsic: '_mm512_hypot_ps'.
 // Requires AVX512F.
-func M512HypotPs(a x86.M512, b x86.M512) x86.M512 {
+func M512HypotPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512HypotPs([16]float32(a), [16]float32(b)))
 }
 
@@ -31482,7 +31482,7 @@ func m512HypotPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_hypot_ps'.
 // Requires AVX512F.
-func M512MaskHypotPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskHypotPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskHypotPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -31720,7 +31720,7 @@ func m512MaskHypotPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [1
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Insertf32x4(a x86.M256, b x86.M128, imm8 byte) x86.M256 {
+func M256Insertf32x4(a x86.M256, b x86.M128, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256Insertf32x4([8]float32(a), [4]float32(b), imm8))
 }
 
@@ -31752,7 +31752,7 @@ func m256Insertf32x4(a [8]float32, b [4]float32, imm8 byte) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskInsertf32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M128, imm8 byte) x86.M256 {
+func M256MaskInsertf32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M128, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskInsertf32x4([8]float32(src), uint8(k), [8]float32(a), [4]float32(b), imm8))
 }
 
@@ -31784,7 +31784,7 @@ func m256MaskInsertf32x4(src [8]float32, k uint8, a [8]float32, b [4]float32, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzInsertf32x4(k x86.Mmask8, a x86.M256, b x86.M128, imm8 byte) x86.M256 {
+func M256MaskzInsertf32x4(k x86.Mmask8, a x86.M256, b x86.M128, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskzInsertf32x4(uint8(k), [8]float32(a), [4]float32(b), imm8))
 }
 
@@ -31808,7 +31808,7 @@ func m256MaskzInsertf32x4(k uint8, a [8]float32, b [4]float32, imm8 byte) [8]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Insertf32x4(a x86.M512, b x86.M128, imm8 byte) x86.M512 {
+func M512Insertf32x4(a x86.M512, b x86.M128, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512Insertf32x4([16]float32(a), [4]float32(b), imm8))
 }
 
@@ -31842,7 +31842,7 @@ func m512Insertf32x4(a [16]float32, b [4]float32, imm8 byte) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInsertf32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M128, imm8 byte) x86.M512 {
+func M512MaskInsertf32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M128, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskInsertf32x4([16]float32(src), uint16(k), [16]float32(a), [4]float32(b), imm8))
 }
 
@@ -31876,7 +31876,7 @@ func m512MaskInsertf32x4(src [16]float32, k uint16, a [16]float32, b [4]float32,
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInsertf32x4(k x86.Mmask16, a x86.M512, b x86.M128, imm8 byte) x86.M512 {
+func M512MaskzInsertf32x4(k x86.Mmask16, a x86.M512, b x86.M128, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskzInsertf32x4(uint16(k), [16]float32(a), [4]float32(b), imm8))
 }
 
@@ -31898,7 +31898,7 @@ func m512MaskzInsertf32x4(k uint16, a [16]float32, b [4]float32, imm8 byte) [16]
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Insertf64x4(a x86.M512d, b x86.M256d, imm8 byte) x86.M512d {
+func M512Insertf64x4(a x86.M512d, b x86.M256d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512Insertf64x4([8]float64(a), [4]float64(b), imm8))
 }
 
@@ -31930,7 +31930,7 @@ func m512Insertf64x4(a [8]float64, b [4]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInsertf64x4(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 byte) x86.M512d {
+func M512MaskInsertf64x4(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskInsertf64x4([8]float64(src), uint8(k), [8]float64(a), [4]float64(b), imm8))
 }
 
@@ -31962,7 +31962,7 @@ func m512MaskInsertf64x4(src [8]float64, k uint8, a [8]float64, b [4]float64, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInsertf64x4(k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 byte) x86.M512d {
+func M512MaskzInsertf64x4(k x86.Mmask8, a x86.M512d, b x86.M256d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskzInsertf64x4(uint8(k), [8]float64(a), [4]float64(b), imm8))
 }
 
@@ -31984,7 +31984,7 @@ func m512MaskzInsertf64x4(k uint8, a [8]float64, b [4]float64, imm8 byte) [8]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Inserti32x4(a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
+func M256Inserti32x4(a x86.M256i, b x86.M128i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256Inserti32x4([32]byte(a), [16]byte(b), imm8))
 }
 
@@ -32015,7 +32015,7 @@ func m256Inserti32x4(a [32]byte, b [16]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskInserti32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
+func M256MaskInserti32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskInserti32x4([32]byte(src), uint8(k), [32]byte(a), [16]byte(b), imm8))
 }
 
@@ -32046,7 +32046,7 @@ func m256MaskInserti32x4(src [32]byte, k uint8, a [32]byte, b [16]byte, imm8 byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzInserti32x4(k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
+func M256MaskzInserti32x4(k x86.Mmask8, a x86.M256i, b x86.M128i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzInserti32x4(uint8(k), [32]byte(a), [16]byte(b), imm8))
 }
 
@@ -32070,7 +32070,7 @@ func m256MaskzInserti32x4(k uint8, a [32]byte, b [16]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Inserti32x4(a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
+func M512Inserti32x4(a x86.M512i, b x86.M128i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512Inserti32x4([64]byte(a), [16]byte(b), imm8))
 }
 
@@ -32103,7 +32103,7 @@ func m512Inserti32x4(a [64]byte, b [16]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInserti32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
+func M512MaskInserti32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskInserti32x4([64]byte(src), uint16(k), [64]byte(a), [16]byte(b), imm8))
 }
 
@@ -32136,7 +32136,7 @@ func m512MaskInserti32x4(src [64]byte, k uint16, a [64]byte, b [16]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInserti32x4(k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 byte) x86.M512i {
+func M512MaskzInserti32x4(k x86.Mmask16, a x86.M512i, b x86.M128i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzInserti32x4(uint16(k), [64]byte(a), [16]byte(b), imm8))
 }
 
@@ -32158,7 +32158,7 @@ func m512MaskzInserti32x4(k uint16, a [64]byte, b [16]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512Inserti64x4(a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
+func M512Inserti64x4(a x86.M512i, b x86.M256i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512Inserti64x4([64]byte(a), [32]byte(b), imm8))
 }
 
@@ -32189,7 +32189,7 @@ func m512Inserti64x4(a [64]byte, b [32]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskInserti64x4(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
+func M512MaskInserti64x4(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskInserti64x4([64]byte(src), uint8(k), [64]byte(a), [32]byte(b), imm8))
 }
 
@@ -32220,7 +32220,7 @@ func m512MaskInserti64x4(src [64]byte, k uint8, a [64]byte, b [32]byte, imm8 byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzInserti64x4(k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 byte) x86.M512i {
+func M512MaskzInserti64x4(k x86.Mmask8, a x86.M512i, b x86.M256i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzInserti64x4(uint8(k), [64]byte(a), [32]byte(b), imm8))
 }
 
@@ -32238,7 +32238,7 @@ func m512MaskzInserti64x4(k uint8, a [64]byte, b [32]byte, imm8 byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_invsqrt_pd'.
 // Requires AVX512F.
-func M512InvsqrtPd(a x86.M512d) x86.M512d {
+func M512InvsqrtPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512InvsqrtPd([8]float64(a)))
 }
 
@@ -32262,7 +32262,7 @@ func m512InvsqrtPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_invsqrt_pd'.
 // Requires AVX512F.
-func M512MaskInvsqrtPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskInvsqrtPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskInvsqrtPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -32280,7 +32280,7 @@ func m512MaskInvsqrtPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_invsqrt_ps'.
 // Requires AVX512F.
-func M512InvsqrtPs(a x86.M512) x86.M512 {
+func M512InvsqrtPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512InvsqrtPs([16]float32(a)))
 }
 
@@ -32304,7 +32304,7 @@ func m512InvsqrtPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_invsqrt_ps'.
 // Requires AVX512F.
-func M512MaskInvsqrtPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskInvsqrtPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskInvsqrtPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -32319,7 +32319,7 @@ func m512MaskInvsqrtPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'KANDW'. Intrinsic: '_mm512_kand'.
 // Requires AVX512F.
-func M512Kand(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+func M512Kand(a x86.Mmask16, b x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Kand(uint16(a), uint16(b)))
 }
 
@@ -32334,7 +32334,7 @@ func m512Kand(a uint16, b uint16) uint16
 //
 // Instruction: 'KANDNW'. Intrinsic: '_mm512_kandn'.
 // Requires AVX512F.
-func M512Kandn(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+func M512Kandn(a x86.Mmask16, b x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Kandn(uint16(a), uint16(b)))
 }
 
@@ -32348,7 +32348,7 @@ func m512Kandn(a uint16, b uint16) uint16
 //
 // Instruction: 'KMOVW'. Intrinsic: '_mm512_kmov'.
 // Requires AVX512F.
-func M512Kmov(a x86.Mmask16) x86.Mmask16 {
+func M512Kmov(a x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Kmov(uint16(a)))
 }
 
@@ -32363,7 +32363,7 @@ func m512Kmov(a uint16) uint16
 //
 // Instruction: 'KNOTW'. Intrinsic: '_mm512_knot'.
 // Requires AVX512F.
-func M512Knot(a x86.Mmask16) x86.Mmask16 {
+func M512Knot(a x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Knot(uint16(a)))
 }
 
@@ -32378,7 +32378,7 @@ func m512Knot(a uint16) uint16
 //
 // Instruction: 'KORW'. Intrinsic: '_mm512_kor'.
 // Requires AVX512F.
-func M512Kor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+func M512Kor(a x86.Mmask16, b x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Kor(uint16(a), uint16(b)))
 }
 
@@ -32395,7 +32395,7 @@ func m512Kor(a uint16, b uint16) uint16
 //
 // Instruction: 'KORTESTW'. Intrinsic: '_mm512_kortestc'.
 // Requires AVX512F.
-func M512Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) int {
+func M512Kortestc(k1 x86.Mmask16, k2 x86.Mmask16) (dst int) {
 	return int(m512Kortestc(uint16(k1), uint16(k2)))
 }
 
@@ -32412,7 +32412,7 @@ func m512Kortestc(k1 uint16, k2 uint16) int
 //
 // Instruction: 'KORTESTW'. Intrinsic: '_mm512_kortestz'.
 // Requires AVX512F.
-func M512Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) int {
+func M512Kortestz(k1 x86.Mmask16, k2 x86.Mmask16) (dst int) {
 	return int(m512Kortestz(uint16(k1), uint16(k2)))
 }
 
@@ -32428,7 +32428,7 @@ func m512Kortestz(k1 uint16, k2 uint16) int
 //
 // Instruction: 'KUNPCKBW'. Intrinsic: '_mm512_kunpackb'.
 // Requires AVX512F.
-func M512Kunpackb(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+func M512Kunpackb(a x86.Mmask16, b x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Kunpackb(uint16(a), uint16(b)))
 }
 
@@ -32443,7 +32443,7 @@ func m512Kunpackb(a uint16, b uint16) uint16
 //
 // Instruction: 'KXNORW'. Intrinsic: '_mm512_kxnor'.
 // Requires AVX512F.
-func M512Kxnor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+func M512Kxnor(a x86.Mmask16, b x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Kxnor(uint16(a), uint16(b)))
 }
 
@@ -32458,7 +32458,7 @@ func m512Kxnor(a uint16, b uint16) uint16
 //
 // Instruction: 'KXORW'. Intrinsic: '_mm512_kxor'.
 // Requires AVX512F.
-func M512Kxor(a x86.Mmask16, b x86.Mmask16) x86.Mmask16 {
+func M512Kxor(a x86.Mmask16, b x86.Mmask16) (dst x86.Mmask16) {
 	return x86.Mmask16(m512Kxor(uint16(a), uint16(b)))
 }
 
@@ -32542,7 +32542,7 @@ func m512Kxor(a uint16, b uint16) uint16
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskLoadSd(src x86.M128d, k x86.Mmask8, mem_addr *float64) x86.M128d {
+func MaskLoadSd(src x86.M128d, k x86.Mmask8, mem_addr *float64) (dst x86.M128d) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128d{}
 }
@@ -32564,7 +32564,7 @@ func MaskLoadSd(src x86.M128d, k x86.Mmask8, mem_addr *float64) x86.M128d {
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskzLoadSd(k x86.Mmask8, mem_addr *float64) x86.M128d {
+func MaskzLoadSd(k x86.Mmask8, mem_addr *float64) (dst x86.M128d) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128d{}
 }
@@ -32586,7 +32586,7 @@ func MaskzLoadSd(k x86.Mmask8, mem_addr *float64) x86.M128d {
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskLoadSs(src x86.M128, k x86.Mmask8, mem_addr *float32) x86.M128 {
+func MaskLoadSs(src x86.M128, k x86.Mmask8, mem_addr *float32) (dst x86.M128) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128{}
 }
@@ -32608,7 +32608,7 @@ func MaskLoadSs(src x86.M128, k x86.Mmask8, mem_addr *float32) x86.M128 {
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskzLoadSs(k x86.Mmask8, mem_addr *float32) x86.M128 {
+func MaskzLoadSs(k x86.Mmask8, mem_addr *float32) (dst x86.M128) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128{}
 }
@@ -32705,7 +32705,7 @@ func MaskzLoadSs(k x86.Mmask8, mem_addr *float32) x86.M128 {
 //
 // Instruction: '...'. Intrinsic: '_mm512_log_pd'.
 // Requires AVX512F.
-func M512LogPd(a x86.M512d) x86.M512d {
+func M512LogPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512LogPd([8]float64(a)))
 }
 
@@ -32729,7 +32729,7 @@ func m512LogPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_log_pd'.
 // Requires AVX512F.
-func M512MaskLogPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskLogPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskLogPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -32747,7 +32747,7 @@ func m512MaskLogPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_log_ps'.
 // Requires AVX512F.
-func M512LogPs(a x86.M512) x86.M512 {
+func M512LogPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512LogPs([16]float32(a)))
 }
 
@@ -32771,7 +32771,7 @@ func m512LogPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_log_ps'.
 // Requires AVX512F.
-func M512MaskLogPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskLogPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskLogPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -32789,7 +32789,7 @@ func m512MaskLogPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_log10_pd'.
 // Requires AVX512F.
-func M512Log10Pd(a x86.M512d) x86.M512d {
+func M512Log10Pd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Log10Pd([8]float64(a)))
 }
 
@@ -32813,7 +32813,7 @@ func m512Log10Pd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_log10_pd'.
 // Requires AVX512F.
-func M512MaskLog10Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskLog10Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskLog10Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -32831,7 +32831,7 @@ func m512MaskLog10Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_log10_ps'.
 // Requires AVX512F.
-func M512Log10Ps(a x86.M512) x86.M512 {
+func M512Log10Ps(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512Log10Ps([16]float32(a)))
 }
 
@@ -32855,7 +32855,7 @@ func m512Log10Ps(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_log10_ps'.
 // Requires AVX512F.
-func M512MaskLog10Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskLog10Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskLog10Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -32874,7 +32874,7 @@ func m512MaskLog10Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_log1p_pd'.
 // Requires AVX512F.
-func M512Log1pPd(a x86.M512d) x86.M512d {
+func M512Log1pPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Log1pPd([8]float64(a)))
 }
 
@@ -32898,7 +32898,7 @@ func m512Log1pPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_log1p_pd'.
 // Requires AVX512F.
-func M512MaskLog1pPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskLog1pPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskLog1pPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -32917,7 +32917,7 @@ func m512MaskLog1pPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_log1p_ps'.
 // Requires AVX512F.
-func M512Log1pPs(a x86.M512) x86.M512 {
+func M512Log1pPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512Log1pPs([16]float32(a)))
 }
 
@@ -32941,7 +32941,7 @@ func m512Log1pPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_log1p_ps'.
 // Requires AVX512F.
-func M512MaskLog1pPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskLog1pPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskLog1pPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -32959,7 +32959,7 @@ func m512MaskLog1pPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_log2_pd'.
 // Requires AVX512F.
-func M512Log2Pd(a x86.M512d) x86.M512d {
+func M512Log2Pd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Log2Pd([8]float64(a)))
 }
 
@@ -32983,7 +32983,7 @@ func m512Log2Pd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_log2_pd'.
 // Requires AVX512F.
-func M512MaskLog2Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskLog2Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskLog2Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -33003,7 +33003,7 @@ func m512MaskLog2Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_logb_pd'.
 // Requires AVX512F.
-func M512LogbPd(a x86.M512d) x86.M512d {
+func M512LogbPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512LogbPd([8]float64(a)))
 }
 
@@ -33029,7 +33029,7 @@ func m512LogbPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_logb_pd'.
 // Requires AVX512F.
-func M512MaskLogbPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskLogbPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskLogbPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -33049,7 +33049,7 @@ func m512MaskLogbPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_logb_ps'.
 // Requires AVX512F.
-func M512LogbPs(a x86.M512) x86.M512 {
+func M512LogbPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512LogbPs([16]float32(a)))
 }
 
@@ -33075,7 +33075,7 @@ func m512LogbPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_logb_ps'.
 // Requires AVX512F.
-func M512MaskLogbPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskLogbPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskLogbPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -33102,7 +33102,7 @@ func m512MaskLogbPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm_mask_max_epi32'.
 // Requires AVX512F.
-func MaskMaxEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMaxEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMaxEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33129,7 +33129,7 @@ func maskMaxEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm_maskz_max_epi32'.
 // Requires AVX512F.
-func MaskzMaxEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMaxEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMaxEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33156,7 +33156,7 @@ func maskzMaxEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm256_mask_max_epi32'.
 // Requires AVX512F.
-func M256MaskMaxEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMaxEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMaxEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33183,7 +33183,7 @@ func m256MaskMaxEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm256_maskz_max_epi32'.
 // Requires AVX512F.
-func M256MaskzMaxEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMaxEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMaxEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33210,7 +33210,7 @@ func m256MaskzMaxEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm512_maskz_max_epi32'.
 // Requires AVX512F.
-func M512MaskzMaxEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMaxEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMaxEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -33237,7 +33237,7 @@ func m512MaskzMaxEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm_mask_max_epi64'.
 // Requires AVX512F.
-func MaskMaxEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMaxEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMaxEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33264,7 +33264,7 @@ func maskMaxEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm_maskz_max_epi64'.
 // Requires AVX512F.
-func MaskzMaxEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMaxEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMaxEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33286,7 +33286,7 @@ func maskzMaxEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm_max_epi64'.
 // Requires AVX512F.
-func MaxEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func MaxEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maxEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -33313,7 +33313,7 @@ func maxEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm256_mask_max_epi64'.
 // Requires AVX512F.
-func M256MaskMaxEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMaxEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMaxEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33340,7 +33340,7 @@ func m256MaskMaxEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm256_maskz_max_epi64'.
 // Requires AVX512F.
-func M256MaskzMaxEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMaxEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMaxEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33362,7 +33362,7 @@ func m256MaskzMaxEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm256_max_epi64'.
 // Requires AVX512F.
-func M256MaxEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -33389,7 +33389,7 @@ func m256MaxEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm512_mask_max_epi64'.
 // Requires AVX512F.
-func M512MaskMaxEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMaxEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMaxEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -33416,7 +33416,7 @@ func m512MaskMaxEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm512_maskz_max_epi64'.
 // Requires AVX512F.
-func M512MaskzMaxEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMaxEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMaxEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -33438,7 +33438,7 @@ func m512MaskzMaxEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXSQ'. Intrinsic: '_mm512_max_epi64'.
 // Requires AVX512F.
-func M512MaxEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaxEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaxEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -33465,7 +33465,7 @@ func m512MaxEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm_mask_max_epu32'.
 // Requires AVX512F.
-func MaskMaxEpu32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMaxEpu32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMaxEpu32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33492,7 +33492,7 @@ func maskMaxEpu32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm_maskz_max_epu32'.
 // Requires AVX512F.
-func MaskzMaxEpu32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMaxEpu32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMaxEpu32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33519,7 +33519,7 @@ func maskzMaxEpu32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm256_mask_max_epu32'.
 // Requires AVX512F.
-func M256MaskMaxEpu32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMaxEpu32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMaxEpu32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33546,7 +33546,7 @@ func m256MaskMaxEpu32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm256_maskz_max_epu32'.
 // Requires AVX512F.
-func M256MaskzMaxEpu32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMaxEpu32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMaxEpu32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33573,7 +33573,7 @@ func m256MaskzMaxEpu32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm512_maskz_max_epu32'.
 // Requires AVX512F.
-func M512MaskzMaxEpu32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMaxEpu32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMaxEpu32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -33600,7 +33600,7 @@ func m512MaskzMaxEpu32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm_mask_max_epu64'.
 // Requires AVX512F.
-func MaskMaxEpu64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMaxEpu64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMaxEpu64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33627,7 +33627,7 @@ func maskMaxEpu64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm_maskz_max_epu64'.
 // Requires AVX512F.
-func MaskzMaxEpu64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMaxEpu64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMaxEpu64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -33649,7 +33649,7 @@ func maskzMaxEpu64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm_max_epu64'.
 // Requires AVX512F.
-func MaxEpu64(a x86.M128i, b x86.M128i) x86.M128i {
+func MaxEpu64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maxEpu64([16]byte(a), [16]byte(b)))
 }
 
@@ -33676,7 +33676,7 @@ func maxEpu64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm256_mask_max_epu64'.
 // Requires AVX512F.
-func M256MaskMaxEpu64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMaxEpu64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMaxEpu64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33703,7 +33703,7 @@ func m256MaskMaxEpu64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm256_maskz_max_epu64'.
 // Requires AVX512F.
-func M256MaskzMaxEpu64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMaxEpu64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMaxEpu64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -33725,7 +33725,7 @@ func m256MaskzMaxEpu64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm256_max_epu64'.
 // Requires AVX512F.
-func M256MaxEpu64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpu64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpu64([32]byte(a), [32]byte(b)))
 }
 
@@ -33752,7 +33752,7 @@ func m256MaxEpu64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm512_mask_max_epu64'.
 // Requires AVX512F.
-func M512MaskMaxEpu64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMaxEpu64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMaxEpu64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -33779,7 +33779,7 @@ func m512MaskMaxEpu64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm512_maskz_max_epu64'.
 // Requires AVX512F.
-func M512MaskzMaxEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMaxEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMaxEpu64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -33801,7 +33801,7 @@ func m512MaskzMaxEpu64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMAXUQ'. Intrinsic: '_mm512_max_epu64'.
 // Requires AVX512F.
-func M512MaxEpu64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaxEpu64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaxEpu64([64]byte(a), [64]byte(b)))
 }
 
@@ -33824,7 +33824,7 @@ func m512MaxEpu64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm_mask_max_pd'.
 // Requires AVX512F.
-func MaskMaxPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskMaxPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMaxPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -33847,7 +33847,7 @@ func maskMaxPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm_maskz_max_pd'.
 // Requires AVX512F.
-func MaskzMaxPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzMaxPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMaxPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -33871,7 +33871,7 @@ func maskzMaxPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm256_mask_max_pd'.
 // Requires AVX512F.
-func M256MaskMaxPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskMaxPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskMaxPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -33895,7 +33895,7 @@ func m256MaskMaxPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm256_maskz_max_pd'.
 // Requires AVX512F.
-func M256MaskzMaxPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzMaxPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzMaxPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -33919,7 +33919,7 @@ func m256MaskzMaxPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm512_mask_max_pd'.
 // Requires AVX512F.
-func M512MaskMaxPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskMaxPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskMaxPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -33943,7 +33943,7 @@ func m512MaskMaxPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm512_maskz_max_pd'.
 // Requires AVX512F.
-func M512MaskzMaxPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzMaxPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMaxPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -33961,7 +33961,7 @@ func m512MaskzMaxPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm512_max_pd'.
 // Requires AVX512F.
-func M512MaxPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaxPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaxPd([8]float64(a), [8]float64(b)))
 }
 
@@ -33984,7 +33984,7 @@ func m512MaxPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm_mask_max_ps'.
 // Requires AVX512F.
-func MaskMaxPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskMaxPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskMaxPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -34007,7 +34007,7 @@ func maskMaxPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm_maskz_max_ps'.
 // Requires AVX512F.
-func MaskzMaxPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzMaxPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMaxPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -34031,7 +34031,7 @@ func maskzMaxPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm256_mask_max_ps'.
 // Requires AVX512F.
-func M256MaskMaxPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskMaxPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskMaxPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -34055,7 +34055,7 @@ func m256MaskMaxPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm256_maskz_max_ps'.
 // Requires AVX512F.
-func M256MaskzMaxPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzMaxPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzMaxPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -34079,7 +34079,7 @@ func m256MaskzMaxPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm512_mask_max_ps'.
 // Requires AVX512F.
-func M512MaskMaxPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskMaxPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskMaxPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -34103,7 +34103,7 @@ func m512MaskMaxPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm512_maskz_max_ps'.
 // Requires AVX512F.
-func M512MaskzMaxPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzMaxPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzMaxPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -34121,7 +34121,7 @@ func m512MaskzMaxPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm512_max_ps'.
 // Requires AVX512F.
-func M512MaxPs(a x86.M512, b x86.M512) x86.M512 {
+func M512MaxPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaxPs([16]float32(a), [16]float32(b)))
 }
 
@@ -34146,7 +34146,7 @@ func m512MaxPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm512_mask_max_round_pd'.
 // Requires AVX512F.
-func M512MaskMaxRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) x86.M512d {
+func M512MaskMaxRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MaskMaxRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), sae))
 }
 
@@ -34171,7 +34171,7 @@ func m512MaskMaxRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, sae
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm512_maskz_max_round_pd'.
 // Requires AVX512F.
-func M512MaskzMaxRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) x86.M512d {
+func M512MaskzMaxRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMaxRoundPd(uint8(k), [8]float64(a), [8]float64(b), sae))
 }
 
@@ -34190,7 +34190,7 @@ func m512MaskzMaxRoundPd(k uint8, a [8]float64, b [8]float64, sae int) [8]float6
 //
 // Instruction: 'VMAXPD'. Intrinsic: '_mm512_max_round_pd'.
 // Requires AVX512F.
-func M512MaxRoundPd(a x86.M512d, b x86.M512d, sae int) x86.M512d {
+func M512MaxRoundPd(a x86.M512d, b x86.M512d, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MaxRoundPd([8]float64(a), [8]float64(b), sae))
 }
 
@@ -34215,7 +34215,7 @@ func m512MaxRoundPd(a [8]float64, b [8]float64, sae int) [8]float64
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm512_mask_max_round_ps'.
 // Requires AVX512F.
-func M512MaskMaxRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, sae int) x86.M512 {
+func M512MaskMaxRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, sae int) (dst x86.M512) {
 	return x86.M512(m512MaskMaxRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), sae))
 }
 
@@ -34240,7 +34240,7 @@ func m512MaskMaxRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32,
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm512_maskz_max_round_ps'.
 // Requires AVX512F.
-func M512MaskzMaxRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, sae int) x86.M512 {
+func M512MaskzMaxRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, sae int) (dst x86.M512) {
 	return x86.M512(m512MaskzMaxRoundPs(uint16(k), [16]float32(a), [16]float32(b), sae))
 }
 
@@ -34259,7 +34259,7 @@ func m512MaskzMaxRoundPs(k uint16, a [16]float32, b [16]float32, sae int) [16]fl
 //
 // Instruction: 'VMAXPS'. Intrinsic: '_mm512_max_round_ps'.
 // Requires AVX512F.
-func M512MaxRoundPs(a x86.M512, b x86.M512, sae int) x86.M512 {
+func M512MaxRoundPs(a x86.M512, b x86.M512, sae int) (dst x86.M512) {
 	return x86.M512(m512MaxRoundPs([16]float32(a), [16]float32(b), sae))
 }
 
@@ -34283,7 +34283,7 @@ func m512MaxRoundPs(a [16]float32, b [16]float32, sae int) [16]float32
 //
 // Instruction: 'VMAXSD'. Intrinsic: '_mm_mask_max_round_sd'.
 // Requires AVX512F.
-func MaskMaxRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) x86.M128d {
+func MaskMaxRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) (dst x86.M128d) {
 	return x86.M128d(maskMaxRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), sae))
 }
 
@@ -34306,7 +34306,7 @@ func maskMaxRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, sae int
 //
 // Instruction: 'VMAXSD'. Intrinsic: '_mm_maskz_max_round_sd'.
 // Requires AVX512F.
-func MaskzMaxRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) x86.M128d {
+func MaskzMaxRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) (dst x86.M128d) {
 	return x86.M128d(maskzMaxRoundSd(uint8(k), [2]float64(a), [2]float64(b), sae))
 }
 
@@ -34324,7 +34324,7 @@ func maskzMaxRoundSd(k uint8, a [2]float64, b [2]float64, sae int) [2]float64
 //
 // Instruction: 'VMAXSD'. Intrinsic: '_mm_max_round_sd'.
 // Requires AVX512F.
-func MaxRoundSd(a x86.M128d, b x86.M128d, sae int) x86.M128d {
+func MaxRoundSd(a x86.M128d, b x86.M128d, sae int) (dst x86.M128d) {
 	return x86.M128d(maxRoundSd([2]float64(a), [2]float64(b), sae))
 }
 
@@ -34348,7 +34348,7 @@ func maxRoundSd(a [2]float64, b [2]float64, sae int) [2]float64
 //
 // Instruction: 'VMAXSS'. Intrinsic: '_mm_mask_max_round_ss'.
 // Requires AVX512F.
-func MaskMaxRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, sae int) x86.M128 {
+func MaskMaxRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, sae int) (dst x86.M128) {
 	return x86.M128(maskMaxRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), sae))
 }
 
@@ -34371,7 +34371,7 @@ func maskMaxRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, sae int
 //
 // Instruction: 'VMAXSS'. Intrinsic: '_mm_maskz_max_round_ss'.
 // Requires AVX512F.
-func MaskzMaxRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, sae int) x86.M128 {
+func MaskzMaxRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, sae int) (dst x86.M128) {
 	return x86.M128(maskzMaxRoundSs(uint8(k), [4]float32(a), [4]float32(b), sae))
 }
 
@@ -34389,7 +34389,7 @@ func maskzMaxRoundSs(k uint8, a [4]float32, b [4]float32, sae int) [4]float32
 //
 // Instruction: 'VMAXSS'. Intrinsic: '_mm_max_round_ss'.
 // Requires AVX512F.
-func MaxRoundSs(a x86.M128, b x86.M128, sae int) x86.M128 {
+func MaxRoundSs(a x86.M128, b x86.M128, sae int) (dst x86.M128) {
 	return x86.M128(maxRoundSs([4]float32(a), [4]float32(b), sae))
 }
 
@@ -34412,7 +34412,7 @@ func maxRoundSs(a [4]float32, b [4]float32, sae int) [4]float32
 //
 // Instruction: 'VMAXSD'. Intrinsic: '_mm_mask_max_sd'.
 // Requires AVX512F.
-func MaskMaxSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskMaxSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMaxSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -34434,7 +34434,7 @@ func maskMaxSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMAXSD'. Intrinsic: '_mm_maskz_max_sd'.
 // Requires AVX512F.
-func MaskzMaxSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzMaxSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMaxSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -34457,7 +34457,7 @@ func maskzMaxSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMAXSS'. Intrinsic: '_mm_mask_max_ss'.
 // Requires AVX512F.
-func MaskMaxSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskMaxSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskMaxSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -34479,7 +34479,7 @@ func maskMaxSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMAXSS'. Intrinsic: '_mm_maskz_max_ss'.
 // Requires AVX512F.
-func MaskzMaxSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzMaxSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMaxSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -34506,7 +34506,7 @@ func maskzMaxSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm_mask_min_epi32'.
 // Requires AVX512F.
-func MaskMinEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMinEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMinEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -34533,7 +34533,7 @@ func maskMinEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm_maskz_min_epi32'.
 // Requires AVX512F.
-func MaskzMinEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMinEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMinEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -34560,7 +34560,7 @@ func maskzMinEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm256_mask_min_epi32'.
 // Requires AVX512F.
-func M256MaskMinEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMinEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMinEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -34587,7 +34587,7 @@ func m256MaskMinEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm256_maskz_min_epi32'.
 // Requires AVX512F.
-func M256MaskzMinEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMinEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMinEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -34614,7 +34614,7 @@ func m256MaskzMinEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm512_maskz_min_epi32'.
 // Requires AVX512F.
-func M512MaskzMinEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMinEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMinEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -34641,7 +34641,7 @@ func m512MaskzMinEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm_mask_min_epi64'.
 // Requires AVX512F.
-func MaskMinEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMinEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMinEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -34668,7 +34668,7 @@ func maskMinEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm_maskz_min_epi64'.
 // Requires AVX512F.
-func MaskzMinEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMinEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMinEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -34690,7 +34690,7 @@ func maskzMinEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm_min_epi64'.
 // Requires AVX512F.
-func MinEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func MinEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(minEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -34717,7 +34717,7 @@ func minEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm256_mask_min_epi64'.
 // Requires AVX512F.
-func M256MaskMinEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMinEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMinEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -34744,7 +34744,7 @@ func m256MaskMinEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm256_maskz_min_epi64'.
 // Requires AVX512F.
-func M256MaskzMinEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMinEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMinEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -34766,7 +34766,7 @@ func m256MaskzMinEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm256_min_epi64'.
 // Requires AVX512F.
-func M256MinEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -34793,7 +34793,7 @@ func m256MinEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm512_mask_min_epi64'.
 // Requires AVX512F.
-func M512MaskMinEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMinEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMinEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -34820,7 +34820,7 @@ func m512MaskMinEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm512_maskz_min_epi64'.
 // Requires AVX512F.
-func M512MaskzMinEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMinEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMinEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -34842,7 +34842,7 @@ func m512MaskzMinEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINSQ'. Intrinsic: '_mm512_min_epi64'.
 // Requires AVX512F.
-func M512MinEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MinEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MinEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -34869,7 +34869,7 @@ func m512MinEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm_mask_min_epu32'.
 // Requires AVX512F.
-func MaskMinEpu32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMinEpu32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMinEpu32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -34896,7 +34896,7 @@ func maskMinEpu32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm_maskz_min_epu32'.
 // Requires AVX512F.
-func MaskzMinEpu32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMinEpu32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMinEpu32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -34923,7 +34923,7 @@ func maskzMinEpu32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm256_mask_min_epu32'.
 // Requires AVX512F.
-func M256MaskMinEpu32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMinEpu32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMinEpu32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -34950,7 +34950,7 @@ func m256MaskMinEpu32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm256_maskz_min_epu32'.
 // Requires AVX512F.
-func M256MaskzMinEpu32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMinEpu32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMinEpu32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -34977,7 +34977,7 @@ func m256MaskzMinEpu32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm512_maskz_min_epu32'.
 // Requires AVX512F.
-func M512MaskzMinEpu32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMinEpu32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMinEpu32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -35004,7 +35004,7 @@ func m512MaskzMinEpu32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm_mask_min_epu64'.
 // Requires AVX512F.
-func MaskMinEpu64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMinEpu64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMinEpu64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -35031,7 +35031,7 @@ func maskMinEpu64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm_maskz_min_epu64'.
 // Requires AVX512F.
-func MaskzMinEpu64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMinEpu64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMinEpu64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -35053,7 +35053,7 @@ func maskzMinEpu64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm_min_epu64'.
 // Requires AVX512F.
-func MinEpu64(a x86.M128i, b x86.M128i) x86.M128i {
+func MinEpu64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(minEpu64([16]byte(a), [16]byte(b)))
 }
 
@@ -35080,7 +35080,7 @@ func minEpu64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm256_mask_min_epu64'.
 // Requires AVX512F.
-func M256MaskMinEpu64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMinEpu64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMinEpu64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -35107,7 +35107,7 @@ func m256MaskMinEpu64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm256_maskz_min_epu64'.
 // Requires AVX512F.
-func M256MaskzMinEpu64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMinEpu64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMinEpu64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -35129,7 +35129,7 @@ func m256MaskzMinEpu64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm256_min_epu64'.
 // Requires AVX512F.
-func M256MinEpu64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpu64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpu64([32]byte(a), [32]byte(b)))
 }
 
@@ -35156,7 +35156,7 @@ func m256MinEpu64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm512_mask_min_epu64'.
 // Requires AVX512F.
-func M512MaskMinEpu64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMinEpu64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMinEpu64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -35183,7 +35183,7 @@ func m512MaskMinEpu64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm512_maskz_min_epu64'.
 // Requires AVX512F.
-func M512MaskzMinEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMinEpu64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMinEpu64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -35205,7 +35205,7 @@ func m512MaskzMinEpu64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMINUQ'. Intrinsic: '_mm512_min_epu64'.
 // Requires AVX512F.
-func M512MinEpu64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MinEpu64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MinEpu64([64]byte(a), [64]byte(b)))
 }
 
@@ -35228,7 +35228,7 @@ func m512MinEpu64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm_mask_min_pd'.
 // Requires AVX512F.
-func MaskMinPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskMinPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMinPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -35251,7 +35251,7 @@ func maskMinPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm_maskz_min_pd'.
 // Requires AVX512F.
-func MaskzMinPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzMinPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMinPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -35275,7 +35275,7 @@ func maskzMinPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm256_mask_min_pd'.
 // Requires AVX512F.
-func M256MaskMinPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskMinPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskMinPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -35299,7 +35299,7 @@ func m256MaskMinPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm256_maskz_min_pd'.
 // Requires AVX512F.
-func M256MaskzMinPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzMinPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzMinPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -35323,7 +35323,7 @@ func m256MaskzMinPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm512_mask_min_pd'.
 // Requires AVX512F.
-func M512MaskMinPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskMinPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskMinPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -35347,7 +35347,7 @@ func m512MaskMinPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm512_maskz_min_pd'.
 // Requires AVX512F.
-func M512MaskzMinPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzMinPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMinPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -35365,7 +35365,7 @@ func m512MaskzMinPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm512_min_pd'.
 // Requires AVX512F.
-func M512MinPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512MinPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MinPd([8]float64(a), [8]float64(b)))
 }
 
@@ -35388,7 +35388,7 @@ func m512MinPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm_mask_min_ps'.
 // Requires AVX512F.
-func MaskMinPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskMinPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskMinPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -35411,7 +35411,7 @@ func maskMinPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm_maskz_min_ps'.
 // Requires AVX512F.
-func MaskzMinPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzMinPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMinPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -35435,7 +35435,7 @@ func maskzMinPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm256_mask_min_ps'.
 // Requires AVX512F.
-func M256MaskMinPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskMinPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskMinPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -35459,7 +35459,7 @@ func m256MaskMinPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm256_maskz_min_ps'.
 // Requires AVX512F.
-func M256MaskzMinPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzMinPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzMinPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -35483,7 +35483,7 @@ func m256MaskzMinPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm512_mask_min_ps'.
 // Requires AVX512F.
-func M512MaskMinPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskMinPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskMinPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -35507,7 +35507,7 @@ func m512MaskMinPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm512_maskz_min_ps'.
 // Requires AVX512F.
-func M512MaskzMinPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzMinPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzMinPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -35525,7 +35525,7 @@ func m512MaskzMinPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm512_min_ps'.
 // Requires AVX512F.
-func M512MinPs(a x86.M512, b x86.M512) x86.M512 {
+func M512MinPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MinPs([16]float32(a), [16]float32(b)))
 }
 
@@ -35550,7 +35550,7 @@ func m512MinPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm512_mask_min_round_pd'.
 // Requires AVX512F.
-func M512MaskMinRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) x86.M512d {
+func M512MaskMinRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MaskMinRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), sae))
 }
 
@@ -35575,7 +35575,7 @@ func m512MaskMinRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, sae
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm512_maskz_min_round_pd'.
 // Requires AVX512F.
-func M512MaskzMinRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) x86.M512d {
+func M512MaskzMinRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMinRoundPd(uint8(k), [8]float64(a), [8]float64(b), sae))
 }
 
@@ -35594,7 +35594,7 @@ func m512MaskzMinRoundPd(k uint8, a [8]float64, b [8]float64, sae int) [8]float6
 //
 // Instruction: 'VMINPD'. Intrinsic: '_mm512_min_round_pd'.
 // Requires AVX512F.
-func M512MinRoundPd(a x86.M512d, b x86.M512d, sae int) x86.M512d {
+func M512MinRoundPd(a x86.M512d, b x86.M512d, sae int) (dst x86.M512d) {
 	return x86.M512d(m512MinRoundPd([8]float64(a), [8]float64(b), sae))
 }
 
@@ -35619,7 +35619,7 @@ func m512MinRoundPd(a [8]float64, b [8]float64, sae int) [8]float64
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm512_mask_min_round_ps'.
 // Requires AVX512F.
-func M512MaskMinRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, sae int) x86.M512 {
+func M512MaskMinRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, sae int) (dst x86.M512) {
 	return x86.M512(m512MaskMinRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), sae))
 }
 
@@ -35644,7 +35644,7 @@ func m512MaskMinRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float32,
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm512_maskz_min_round_ps'.
 // Requires AVX512F.
-func M512MaskzMinRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, sae int) x86.M512 {
+func M512MaskzMinRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, sae int) (dst x86.M512) {
 	return x86.M512(m512MaskzMinRoundPs(uint16(k), [16]float32(a), [16]float32(b), sae))
 }
 
@@ -35663,7 +35663,7 @@ func m512MaskzMinRoundPs(k uint16, a [16]float32, b [16]float32, sae int) [16]fl
 //
 // Instruction: 'VMINPS'. Intrinsic: '_mm512_min_round_ps'.
 // Requires AVX512F.
-func M512MinRoundPs(a x86.M512, b x86.M512, sae int) x86.M512 {
+func M512MinRoundPs(a x86.M512, b x86.M512, sae int) (dst x86.M512) {
 	return x86.M512(m512MinRoundPs([16]float32(a), [16]float32(b), sae))
 }
 
@@ -35687,7 +35687,7 @@ func m512MinRoundPs(a [16]float32, b [16]float32, sae int) [16]float32
 //
 // Instruction: 'VMINSD'. Intrinsic: '_mm_mask_min_round_sd'.
 // Requires AVX512F.
-func MaskMinRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) x86.M128d {
+func MaskMinRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) (dst x86.M128d) {
 	return x86.M128d(maskMinRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), sae))
 }
 
@@ -35710,7 +35710,7 @@ func maskMinRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, sae int
 //
 // Instruction: 'VMINSD'. Intrinsic: '_mm_maskz_min_round_sd'.
 // Requires AVX512F.
-func MaskzMinRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) x86.M128d {
+func MaskzMinRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, sae int) (dst x86.M128d) {
 	return x86.M128d(maskzMinRoundSd(uint8(k), [2]float64(a), [2]float64(b), sae))
 }
 
@@ -35728,7 +35728,7 @@ func maskzMinRoundSd(k uint8, a [2]float64, b [2]float64, sae int) [2]float64
 //
 // Instruction: 'VMINSD'. Intrinsic: '_mm_min_round_sd'.
 // Requires AVX512F.
-func MinRoundSd(a x86.M128d, b x86.M128d, sae int) x86.M128d {
+func MinRoundSd(a x86.M128d, b x86.M128d, sae int) (dst x86.M128d) {
 	return x86.M128d(minRoundSd([2]float64(a), [2]float64(b), sae))
 }
 
@@ -35752,7 +35752,7 @@ func minRoundSd(a [2]float64, b [2]float64, sae int) [2]float64
 //
 // Instruction: 'VMINSS'. Intrinsic: '_mm_mask_min_round_ss'.
 // Requires AVX512F.
-func MaskMinRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, sae int) x86.M128 {
+func MaskMinRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, sae int) (dst x86.M128) {
 	return x86.M128(maskMinRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), sae))
 }
 
@@ -35775,7 +35775,7 @@ func maskMinRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, sae int
 //
 // Instruction: 'VMINSS'. Intrinsic: '_mm_maskz_min_round_ss'.
 // Requires AVX512F.
-func MaskzMinRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, sae int) x86.M128 {
+func MaskzMinRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, sae int) (dst x86.M128) {
 	return x86.M128(maskzMinRoundSs(uint8(k), [4]float32(a), [4]float32(b), sae))
 }
 
@@ -35793,7 +35793,7 @@ func maskzMinRoundSs(k uint8, a [4]float32, b [4]float32, sae int) [4]float32
 //
 // Instruction: 'VMINSS'. Intrinsic: '_mm_min_round_ss'.
 // Requires AVX512F.
-func MinRoundSs(a x86.M128, b x86.M128, sae int) x86.M128 {
+func MinRoundSs(a x86.M128, b x86.M128, sae int) (dst x86.M128) {
 	return x86.M128(minRoundSs([4]float32(a), [4]float32(b), sae))
 }
 
@@ -35816,7 +35816,7 @@ func minRoundSs(a [4]float32, b [4]float32, sae int) [4]float32
 //
 // Instruction: 'VMINSD'. Intrinsic: '_mm_mask_min_sd'.
 // Requires AVX512F.
-func MaskMinSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskMinSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMinSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -35838,7 +35838,7 @@ func maskMinSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMINSD'. Intrinsic: '_mm_maskz_min_sd'.
 // Requires AVX512F.
-func MaskzMinSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzMinSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMinSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -35861,7 +35861,7 @@ func maskzMinSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMINSS'. Intrinsic: '_mm_mask_min_ss'.
 // Requires AVX512F.
-func MaskMinSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskMinSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskMinSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -35883,7 +35883,7 @@ func maskMinSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMINSS'. Intrinsic: '_mm_maskz_min_ss'.
 // Requires AVX512F.
-func MaskzMinSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzMinSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMinSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -35906,7 +35906,7 @@ func maskzMinSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm_mask_mov_epi32'.
 // Requires AVX512F.
-func MaskMovEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskMovEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMovEpi32([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -35929,7 +35929,7 @@ func maskMovEpi32(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm_maskz_mov_epi32'.
 // Requires AVX512F.
-func MaskzMovEpi32(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzMovEpi32(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMovEpi32(uint8(k), [16]byte(a)))
 }
 
@@ -35952,7 +35952,7 @@ func maskzMovEpi32(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm256_mask_mov_epi32'.
 // Requires AVX512F.
-func M256MaskMovEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskMovEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMovEpi32([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -35975,7 +35975,7 @@ func m256MaskMovEpi32(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm256_maskz_mov_epi32'.
 // Requires AVX512F.
-func M256MaskzMovEpi32(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzMovEpi32(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMovEpi32(uint8(k), [32]byte(a)))
 }
 
@@ -35998,7 +35998,7 @@ func m256MaskzMovEpi32(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQA32'. Intrinsic: '_mm512_maskz_mov_epi32'.
 // Requires AVX512F.
-func M512MaskzMovEpi32(k x86.Mmask16, a x86.M512i) x86.M512i {
+func M512MaskzMovEpi32(k x86.Mmask16, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMovEpi32(uint16(k), [64]byte(a)))
 }
 
@@ -36021,7 +36021,7 @@ func m512MaskzMovEpi32(k uint16, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm_mask_mov_epi64'.
 // Requires AVX512F.
-func MaskMovEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskMovEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMovEpi64([16]byte(src), uint8(k), [16]byte(a)))
 }
 
@@ -36044,7 +36044,7 @@ func maskMovEpi64(src [16]byte, k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm_maskz_mov_epi64'.
 // Requires AVX512F.
-func MaskzMovEpi64(k x86.Mmask8, a x86.M128i) x86.M128i {
+func MaskzMovEpi64(k x86.Mmask8, a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMovEpi64(uint8(k), [16]byte(a)))
 }
 
@@ -36067,7 +36067,7 @@ func maskzMovEpi64(k uint8, a [16]byte) [16]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm256_mask_mov_epi64'.
 // Requires AVX512F.
-func M256MaskMovEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskMovEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMovEpi64([32]byte(src), uint8(k), [32]byte(a)))
 }
 
@@ -36090,7 +36090,7 @@ func m256MaskMovEpi64(src [32]byte, k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm256_maskz_mov_epi64'.
 // Requires AVX512F.
-func M256MaskzMovEpi64(k x86.Mmask8, a x86.M256i) x86.M256i {
+func M256MaskzMovEpi64(k x86.Mmask8, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMovEpi64(uint8(k), [32]byte(a)))
 }
 
@@ -36113,7 +36113,7 @@ func m256MaskzMovEpi64(k uint8, a [32]byte) [32]byte
 //
 // Instruction: 'VMOVDQA64'. Intrinsic: '_mm512_maskz_mov_epi64'.
 // Requires AVX512F.
-func M512MaskzMovEpi64(k x86.Mmask8, a x86.M512i) x86.M512i {
+func M512MaskzMovEpi64(k x86.Mmask8, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMovEpi64(uint8(k), [64]byte(a)))
 }
 
@@ -36136,7 +36136,7 @@ func m512MaskzMovEpi64(k uint8, a [64]byte) [64]byte
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm_mask_mov_pd'.
 // Requires AVX512F.
-func MaskMovPd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskMovPd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMovPd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -36159,7 +36159,7 @@ func maskMovPd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm_maskz_mov_pd'.
 // Requires AVX512F.
-func MaskzMovPd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzMovPd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMovPd(uint8(k), [2]float64(a)))
 }
 
@@ -36182,7 +36182,7 @@ func maskzMovPd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_mask_mov_pd'.
 // Requires AVX512F.
-func M256MaskMovPd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskMovPd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskMovPd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -36205,7 +36205,7 @@ func m256MaskMovPd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm256_maskz_mov_pd'.
 // Requires AVX512F.
-func M256MaskzMovPd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzMovPd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzMovPd(uint8(k), [4]float64(a)))
 }
 
@@ -36228,7 +36228,7 @@ func m256MaskzMovPd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VMOVAPD'. Intrinsic: '_mm512_maskz_mov_pd'.
 // Requires AVX512F.
-func M512MaskzMovPd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzMovPd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMovPd(uint8(k), [8]float64(a)))
 }
 
@@ -36251,7 +36251,7 @@ func m512MaskzMovPd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm_mask_mov_ps'.
 // Requires AVX512F.
-func MaskMovPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskMovPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskMovPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -36274,7 +36274,7 @@ func maskMovPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm_maskz_mov_ps'.
 // Requires AVX512F.
-func MaskzMovPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzMovPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMovPs(uint8(k), [4]float32(a)))
 }
 
@@ -36297,7 +36297,7 @@ func maskzMovPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_mask_mov_ps'.
 // Requires AVX512F.
-func M256MaskMovPs(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskMovPs(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskMovPs([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -36320,7 +36320,7 @@ func m256MaskMovPs(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm256_maskz_mov_ps'.
 // Requires AVX512F.
-func M256MaskzMovPs(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzMovPs(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzMovPs(uint8(k), [8]float32(a)))
 }
 
@@ -36343,7 +36343,7 @@ func m256MaskzMovPs(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VMOVAPS'. Intrinsic: '_mm512_maskz_mov_ps'.
 // Requires AVX512F.
-func M512MaskzMovPs(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzMovPs(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzMovPs(uint16(k), [16]float32(a)))
 }
 
@@ -36365,7 +36365,7 @@ func m512MaskzMovPs(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VMOVSD'. Intrinsic: '_mm_mask_move_sd'.
 // Requires AVX512F.
-func MaskMoveSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskMoveSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMoveSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -36387,7 +36387,7 @@ func maskMoveSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMOVSD'. Intrinsic: '_mm_maskz_move_sd'.
 // Requires AVX512F.
-func MaskzMoveSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzMoveSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMoveSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -36409,7 +36409,7 @@ func maskzMoveSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMOVSS'. Intrinsic: '_mm_mask_move_ss'.
 // Requires AVX512F.
-func MaskMoveSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskMoveSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskMoveSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -36431,7 +36431,7 @@ func maskMoveSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMOVSS'. Intrinsic: '_mm_maskz_move_ss'.
 // Requires AVX512F.
-func MaskzMoveSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzMoveSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMoveSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -36457,7 +36457,7 @@ func maskzMoveSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm_mask_movedup_pd'.
 // Requires AVX512F.
-func MaskMovedupPd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskMovedupPd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMovedupPd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -36483,7 +36483,7 @@ func maskMovedupPd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm_maskz_movedup_pd'.
 // Requires AVX512F.
-func MaskzMovedupPd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzMovedupPd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMovedupPd(uint8(k), [2]float64(a)))
 }
 
@@ -36511,7 +36511,7 @@ func maskzMovedupPd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm256_mask_movedup_pd'.
 // Requires AVX512F.
-func M256MaskMovedupPd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskMovedupPd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskMovedupPd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -36539,7 +36539,7 @@ func m256MaskMovedupPd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm256_maskz_movedup_pd'.
 // Requires AVX512F.
-func M256MaskzMovedupPd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzMovedupPd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzMovedupPd(uint8(k), [4]float64(a)))
 }
 
@@ -36571,7 +36571,7 @@ func m256MaskzMovedupPd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm512_mask_movedup_pd'.
 // Requires AVX512F.
-func M512MaskMovedupPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskMovedupPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskMovedupPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -36603,7 +36603,7 @@ func m512MaskMovedupPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm512_maskz_movedup_pd'.
 // Requires AVX512F.
-func M512MaskzMovedupPd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzMovedupPd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMovedupPd(uint8(k), [8]float64(a)))
 }
 
@@ -36625,7 +36625,7 @@ func m512MaskzMovedupPd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VMOVDDUP'. Intrinsic: '_mm512_movedup_pd'.
 // Requires AVX512F.
-func M512MovedupPd(a x86.M512d) x86.M512d {
+func M512MovedupPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MovedupPd([8]float64(a)))
 }
 
@@ -36653,7 +36653,7 @@ func m512MovedupPd(a [8]float64) [8]float64
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm_mask_movehdup_ps'.
 // Requires AVX512F.
-func MaskMovehdupPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskMovehdupPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskMovehdupPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -36681,7 +36681,7 @@ func maskMovehdupPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm_maskz_movehdup_ps'.
 // Requires AVX512F.
-func MaskzMovehdupPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzMovehdupPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMovehdupPs(uint8(k), [4]float32(a)))
 }
 
@@ -36713,7 +36713,7 @@ func maskzMovehdupPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm256_mask_movehdup_ps'.
 // Requires AVX512F.
-func M256MaskMovehdupPs(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskMovehdupPs(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskMovehdupPs([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -36745,7 +36745,7 @@ func m256MaskMovehdupPs(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm256_maskz_movehdup_ps'.
 // Requires AVX512F.
-func M256MaskzMovehdupPs(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzMovehdupPs(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzMovehdupPs(uint8(k), [8]float32(a)))
 }
 
@@ -36785,7 +36785,7 @@ func m256MaskzMovehdupPs(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm512_mask_movehdup_ps'.
 // Requires AVX512F.
-func M512MaskMovehdupPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskMovehdupPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskMovehdupPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -36825,7 +36825,7 @@ func m512MaskMovehdupPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm512_maskz_movehdup_ps'.
 // Requires AVX512F.
-func M512MaskzMovehdupPs(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzMovehdupPs(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzMovehdupPs(uint16(k), [16]float32(a)))
 }
 
@@ -36855,7 +36855,7 @@ func m512MaskzMovehdupPs(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VMOVSHDUP'. Intrinsic: '_mm512_movehdup_ps'.
 // Requires AVX512F.
-func M512MovehdupPs(a x86.M512) x86.M512 {
+func M512MovehdupPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MovehdupPs([16]float32(a)))
 }
 
@@ -36883,7 +36883,7 @@ func m512MovehdupPs(a [16]float32) [16]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm_mask_moveldup_ps'.
 // Requires AVX512F.
-func MaskMoveldupPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskMoveldupPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskMoveldupPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -36911,7 +36911,7 @@ func maskMoveldupPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm_maskz_moveldup_ps'.
 // Requires AVX512F.
-func MaskzMoveldupPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzMoveldupPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMoveldupPs(uint8(k), [4]float32(a)))
 }
 
@@ -36943,7 +36943,7 @@ func maskzMoveldupPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm256_mask_moveldup_ps'.
 // Requires AVX512F.
-func M256MaskMoveldupPs(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskMoveldupPs(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskMoveldupPs([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -36975,7 +36975,7 @@ func m256MaskMoveldupPs(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm256_maskz_moveldup_ps'.
 // Requires AVX512F.
-func M256MaskzMoveldupPs(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzMoveldupPs(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzMoveldupPs(uint8(k), [8]float32(a)))
 }
 
@@ -37015,7 +37015,7 @@ func m256MaskzMoveldupPs(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm512_mask_moveldup_ps'.
 // Requires AVX512F.
-func M512MaskMoveldupPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskMoveldupPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskMoveldupPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -37055,7 +37055,7 @@ func m512MaskMoveldupPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm512_maskz_moveldup_ps'.
 // Requires AVX512F.
-func M512MaskzMoveldupPs(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzMoveldupPs(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzMoveldupPs(uint16(k), [16]float32(a)))
 }
 
@@ -37085,7 +37085,7 @@ func m512MaskzMoveldupPs(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VMOVSLDUP'. Intrinsic: '_mm512_moveldup_ps'.
 // Requires AVX512F.
-func M512MoveldupPs(a x86.M512) x86.M512 {
+func M512MoveldupPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MoveldupPs([16]float32(a)))
 }
 
@@ -37109,7 +37109,7 @@ func m512MoveldupPs(a [16]float32) [16]float32
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm_mask_mul_epi32'.
 // Requires AVX512F.
-func MaskMulEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMulEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMulEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -37133,7 +37133,7 @@ func maskMulEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm_maskz_mul_epi32'.
 // Requires AVX512F.
-func MaskzMulEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMulEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMulEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -37157,7 +37157,7 @@ func maskzMulEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm256_mask_mul_epi32'.
 // Requires AVX512F.
-func M256MaskMulEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMulEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMulEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -37181,7 +37181,7 @@ func m256MaskMulEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm256_maskz_mul_epi32'.
 // Requires AVX512F.
-func M256MaskzMulEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMulEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMulEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -37205,7 +37205,7 @@ func m256MaskzMulEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm512_mask_mul_epi32'.
 // Requires AVX512F.
-func M512MaskMulEpi32(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMulEpi32(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMulEpi32([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -37229,7 +37229,7 @@ func m512MaskMulEpi32(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm512_maskz_mul_epi32'.
 // Requires AVX512F.
-func M512MaskzMulEpi32(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMulEpi32(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMulEpi32(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -37247,7 +37247,7 @@ func m512MaskzMulEpi32(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm512_mul_epi32'.
 // Requires AVX512F.
-func M512MulEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MulEpi32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MulEpi32([64]byte(a), [64]byte(b)))
 }
 
@@ -37271,7 +37271,7 @@ func m512MulEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm_mask_mul_epu32'.
 // Requires AVX512F.
-func MaskMulEpu32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMulEpu32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMulEpu32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -37295,7 +37295,7 @@ func maskMulEpu32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm_maskz_mul_epu32'.
 // Requires AVX512F.
-func MaskzMulEpu32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMulEpu32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMulEpu32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -37319,7 +37319,7 @@ func maskzMulEpu32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm256_mask_mul_epu32'.
 // Requires AVX512F.
-func M256MaskMulEpu32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMulEpu32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMulEpu32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -37343,7 +37343,7 @@ func m256MaskMulEpu32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm256_maskz_mul_epu32'.
 // Requires AVX512F.
-func M256MaskzMulEpu32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMulEpu32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMulEpu32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -37367,7 +37367,7 @@ func m256MaskzMulEpu32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm512_mask_mul_epu32'.
 // Requires AVX512F.
-func M512MaskMulEpu32(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMulEpu32(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMulEpu32([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -37391,7 +37391,7 @@ func m512MaskMulEpu32(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm512_maskz_mul_epu32'.
 // Requires AVX512F.
-func M512MaskzMulEpu32(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMulEpu32(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMulEpu32(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -37410,7 +37410,7 @@ func m512MaskzMulEpu32(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm512_mul_epu32'.
 // Requires AVX512F.
-func M512MulEpu32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MulEpu32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MulEpu32([64]byte(a), [64]byte(b)))
 }
 
@@ -37433,7 +37433,7 @@ func m512MulEpu32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm_mask_mul_pd'.
 // Requires AVX512F.
-func MaskMulPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskMulPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMulPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -37456,7 +37456,7 @@ func maskMulPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm_maskz_mul_pd'.
 // Requires AVX512F.
-func MaskzMulPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzMulPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMulPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -37479,7 +37479,7 @@ func maskzMulPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm256_mask_mul_pd'.
 // Requires AVX512F.
-func M256MaskMulPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskMulPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskMulPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -37502,7 +37502,7 @@ func m256MaskMulPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm256_maskz_mul_pd'.
 // Requires AVX512F.
-func M256MaskzMulPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzMulPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzMulPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -37525,7 +37525,7 @@ func m256MaskzMulPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm512_maskz_mul_pd'.
 // Requires AVX512F.
-func M512MaskzMulPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzMulPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMulPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -37548,7 +37548,7 @@ func m512MaskzMulPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm_mask_mul_ps'.
 // Requires AVX512F.
-func MaskMulPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskMulPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskMulPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -37571,7 +37571,7 @@ func maskMulPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm_maskz_mul_ps'.
 // Requires AVX512F.
-func MaskzMulPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzMulPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMulPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -37595,7 +37595,7 @@ func maskzMulPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm256_mask_mul_ps'.
 // Requires AVX512F.
-func M256MaskMulPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskMulPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskMulPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -37618,7 +37618,7 @@ func m256MaskMulPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm256_maskz_mul_ps'.
 // Requires AVX512F.
-func M256MaskzMulPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzMulPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzMulPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -37641,7 +37641,7 @@ func m256MaskzMulPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm512_maskz_mul_ps'.
 // Requires AVX512F.
-func M512MaskzMulPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzMulPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzMulPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -37672,7 +37672,7 @@ func m512MaskzMulPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VMULPD'. Intrinsic: '_mm512_maskz_mul_round_pd'.
 // Requires AVX512F.
-func M512MaskzMulRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512MaskzMulRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzMulRoundPd(uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
@@ -37703,7 +37703,7 @@ func m512MaskzMulRoundPd(k uint8, a [8]float64, b [8]float64, rounding int) [8]f
 //
 // Instruction: 'VMULPS'. Intrinsic: '_mm512_maskz_mul_round_ps'.
 // Requires AVX512F.
-func M512MaskzMulRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512MaskzMulRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzMulRoundPs(uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
@@ -37732,7 +37732,7 @@ func m512MaskzMulRoundPs(k uint16, a [16]float32, b [16]float32, rounding int) [
 //
 // Instruction: 'VMULSD'. Intrinsic: '_mm_mask_mul_round_sd'.
 // Requires AVX512F.
-func MaskMulRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskMulRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskMulRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -37761,7 +37761,7 @@ func maskMulRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, roundin
 //
 // Instruction: 'VMULSD'. Intrinsic: '_mm_maskz_mul_round_sd'.
 // Requires AVX512F.
-func MaskzMulRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskzMulRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzMulRoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -37785,7 +37785,7 @@ func maskzMulRoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float
 //
 // Instruction: 'VMULSD'. Intrinsic: '_mm_mul_round_sd'.
 // Requires AVX512F.
-func MulRoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MulRoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(mulRoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
@@ -37815,7 +37815,7 @@ func mulRoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VMULSS'. Intrinsic: '_mm_mask_mul_round_ss'.
 // Requires AVX512F.
-func MaskMulRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskMulRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskMulRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -37844,7 +37844,7 @@ func maskMulRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, roundin
 //
 // Instruction: 'VMULSS'. Intrinsic: '_mm_maskz_mul_round_ss'.
 // Requires AVX512F.
-func MaskzMulRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskzMulRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzMulRoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -37868,7 +37868,7 @@ func maskzMulRoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float
 //
 // Instruction: 'VMULSS'. Intrinsic: '_mm_mul_round_ss'.
 // Requires AVX512F.
-func MulRoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MulRoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(mulRoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
@@ -37890,7 +37890,7 @@ func mulRoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VMULSD'. Intrinsic: '_mm_mask_mul_sd'.
 // Requires AVX512F.
-func MaskMulSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskMulSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskMulSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -37912,7 +37912,7 @@ func maskMulSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMULSD'. Intrinsic: '_mm_maskz_mul_sd'.
 // Requires AVX512F.
-func MaskzMulSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzMulSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzMulSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -37935,7 +37935,7 @@ func maskzMulSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VMULSS'. Intrinsic: '_mm_mask_mul_ss'.
 // Requires AVX512F.
-func MaskMulSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskMulSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskMulSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -37957,7 +37957,7 @@ func maskMulSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VMULSS'. Intrinsic: '_mm_maskz_mul_ss'.
 // Requires AVX512F.
-func MaskzMulSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzMulSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzMulSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -37982,7 +37982,7 @@ func maskzMulSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm_mask_mullo_epi32'.
 // Requires AVX512F.
-func MaskMulloEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskMulloEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskMulloEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -38007,7 +38007,7 @@ func maskMulloEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm_maskz_mullo_epi32'.
 // Requires AVX512F.
-func MaskzMulloEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzMulloEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzMulloEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -38032,7 +38032,7 @@ func maskzMulloEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm256_mask_mullo_epi32'.
 // Requires AVX512F.
-func M256MaskMulloEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskMulloEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskMulloEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -38057,7 +38057,7 @@ func m256MaskMulloEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm256_maskz_mullo_epi32'.
 // Requires AVX512F.
-func M256MaskzMulloEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzMulloEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzMulloEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -38082,7 +38082,7 @@ func m256MaskzMulloEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm512_maskz_mullo_epi32'.
 // Requires AVX512F.
-func M512MaskzMulloEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMulloEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMulloEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -38106,7 +38106,7 @@ func m512MaskzMulloEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_mullox_epi64'.
 // Requires AVX512F.
-func M512MaskMulloxEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMulloxEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMulloxEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -38124,7 +38124,7 @@ func m512MaskMulloxEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mullox_epi64'.
 // Requires AVX512F.
-func M512MulloxEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MulloxEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MulloxEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -38149,7 +38149,7 @@ func m512MulloxEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_nearbyint_pd'.
 // Requires AVX512F.
-func M512MaskNearbyintPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskNearbyintPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskNearbyintPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -38168,7 +38168,7 @@ func m512MaskNearbyintPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_nearbyint_pd'.
 // Requires AVX512F.
-func M512NearbyintPd(a x86.M512d) x86.M512d {
+func M512NearbyintPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512NearbyintPd([8]float64(a)))
 }
 
@@ -38193,7 +38193,7 @@ func m512NearbyintPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_nearbyint_ps'.
 // Requires AVX512F.
-func M512MaskNearbyintPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskNearbyintPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskNearbyintPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -38212,7 +38212,7 @@ func m512MaskNearbyintPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_nearbyint_ps'.
 // Requires AVX512F.
-func M512NearbyintPs(a x86.M512) x86.M512 {
+func M512NearbyintPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512NearbyintPs([16]float32(a)))
 }
 
@@ -38235,7 +38235,7 @@ func m512NearbyintPs(a [16]float32) [16]float32
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm_mask_or_epi32'.
 // Requires AVX512F.
-func MaskOrEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskOrEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskOrEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -38258,7 +38258,7 @@ func maskOrEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm_maskz_or_epi32'.
 // Requires AVX512F.
-func MaskzOrEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzOrEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzOrEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -38281,7 +38281,7 @@ func maskzOrEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm256_mask_or_epi32'.
 // Requires AVX512F.
-func M256MaskOrEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskOrEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskOrEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -38304,7 +38304,7 @@ func m256MaskOrEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm256_maskz_or_epi32'.
 // Requires AVX512F.
-func M256MaskzOrEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzOrEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzOrEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -38327,7 +38327,7 @@ func m256MaskzOrEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPORD'. Intrinsic: '_mm512_maskz_or_epi32'.
 // Requires AVX512F.
-func M512MaskzOrEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzOrEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzOrEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -38350,7 +38350,7 @@ func m512MaskzOrEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPORQ'. Intrinsic: '_mm_mask_or_epi64'.
 // Requires AVX512F.
-func MaskOrEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskOrEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskOrEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -38373,7 +38373,7 @@ func maskOrEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPORQ'. Intrinsic: '_mm_maskz_or_epi64'.
 // Requires AVX512F.
-func MaskzOrEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzOrEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzOrEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -38396,7 +38396,7 @@ func maskzOrEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPORQ'. Intrinsic: '_mm256_mask_or_epi64'.
 // Requires AVX512F.
-func M256MaskOrEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskOrEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskOrEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -38419,7 +38419,7 @@ func m256MaskOrEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPORQ'. Intrinsic: '_mm256_maskz_or_epi64'.
 // Requires AVX512F.
-func M256MaskzOrEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzOrEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzOrEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -38442,7 +38442,7 @@ func m256MaskzOrEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPORQ'. Intrinsic: '_mm512_maskz_or_epi64'.
 // Requires AVX512F.
-func M512MaskzOrEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzOrEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzOrEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -38472,7 +38472,7 @@ func m512MaskzOrEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskPermutePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
+func MaskPermutePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskPermutePd([2]float64(src), uint8(k), [2]float64(a), imm8))
 }
 
@@ -38502,7 +38502,7 @@ func maskPermutePd(src [2]float64, k uint8, a [2]float64, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzPermutePd(k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
+func MaskzPermutePd(k x86.Mmask8, a x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskzPermutePd(uint8(k), [2]float64(a), imm8))
 }
 
@@ -38536,7 +38536,7 @@ func maskzPermutePd(k uint8, a [2]float64, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
+func M256MaskPermutePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskPermutePd([4]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
@@ -38570,7 +38570,7 @@ func m256MaskPermutePd(src [4]float64, k uint8, a [4]float64, imm8 byte) [4]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutePd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
+func M256MaskzPermutePd(k x86.Mmask8, a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskzPermutePd(uint8(k), [4]float64(a), imm8))
 }
 
@@ -38612,7 +38612,7 @@ func m256MaskzPermutePd(k uint8, a [4]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
+func M512MaskPermutePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskPermutePd([8]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
@@ -38654,7 +38654,7 @@ func m512MaskPermutePd(src [8]float64, k uint8, a [8]float64, imm8 byte) [8]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutePd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
+func M512MaskzPermutePd(k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskzPermutePd(uint8(k), [8]float64(a), imm8))
 }
 
@@ -38687,7 +38687,7 @@ func m512MaskzPermutePd(k uint8, a [8]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutePd(a x86.M512d, imm8 byte) x86.M512d {
+func M512PermutePd(a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512PermutePd([8]float64(a), imm8))
 }
 
@@ -38727,7 +38727,7 @@ func m512PermutePd(a [8]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskPermutePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
+func MaskPermutePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskPermutePs([4]float32(src), uint8(k), [4]float32(a), imm8))
 }
 
@@ -38767,7 +38767,7 @@ func maskPermutePs(src [4]float32, k uint8, a [4]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzPermutePs(k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
+func MaskzPermutePs(k x86.Mmask8, a x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskzPermutePs(uint8(k), [4]float32(a), imm8))
 }
 
@@ -38811,7 +38811,7 @@ func maskzPermutePs(k uint8, a [4]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
+func M256MaskPermutePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskPermutePs([8]float32(src), uint8(k), [8]float32(a), imm8))
 }
 
@@ -38855,7 +38855,7 @@ func m256MaskPermutePs(src [8]float32, k uint8, a [8]float32, imm8 byte) [8]floa
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutePs(k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
+func M256MaskzPermutePs(k x86.Mmask8, a x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskzPermutePs(uint8(k), [8]float32(a), imm8))
 }
 
@@ -38907,7 +38907,7 @@ func m256MaskzPermutePs(k uint8, a [8]float32, imm8 byte) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
+func M512MaskPermutePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskPermutePs([16]float32(src), uint16(k), [16]float32(a), imm8))
 }
 
@@ -38959,7 +38959,7 @@ func m512MaskPermutePs(src [16]float32, k uint16, a [16]float32, imm8 byte) [16]
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutePs(k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
+func M512MaskzPermutePs(k x86.Mmask16, a x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskzPermutePs(uint16(k), [16]float32(a), imm8))
 }
 
@@ -39002,7 +39002,7 @@ func m512MaskzPermutePs(k uint16, a [16]float32, imm8 byte) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutePs(a x86.M512, imm8 byte) x86.M512 {
+func M512PermutePs(a x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512PermutePs([16]float32(a), imm8))
 }
 
@@ -39030,7 +39030,7 @@ func m512PermutePs(a [16]float32, imm8 byte) [16]float32
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm_mask_permutevar_pd'.
 // Requires AVX512F.
-func MaskPermutevarPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128i) x86.M128d {
+func MaskPermutevarPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128i) (dst x86.M128d) {
 	return x86.M128d(maskPermutevarPd([2]float64(src), uint8(k), [2]float64(a), [16]byte(b)))
 }
 
@@ -39058,7 +39058,7 @@ func maskPermutevarPd(src [2]float64, k uint8, a [2]float64, b [16]byte) [2]floa
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm_maskz_permutevar_pd'.
 // Requires AVX512F.
-func MaskzPermutevarPd(k x86.Mmask8, a x86.M128d, b x86.M128i) x86.M128d {
+func MaskzPermutevarPd(k x86.Mmask8, a x86.M128d, b x86.M128i) (dst x86.M128d) {
 	return x86.M128d(maskzPermutevarPd(uint8(k), [2]float64(a), [16]byte(b)))
 }
 
@@ -39090,7 +39090,7 @@ func maskzPermutevarPd(k uint8, a [2]float64, b [16]byte) [2]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm256_mask_permutevar_pd'.
 // Requires AVX512F.
-func M256MaskPermutevarPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256i) x86.M256d {
+func M256MaskPermutevarPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256i) (dst x86.M256d) {
 	return x86.M256d(m256MaskPermutevarPd([4]float64(src), uint8(k), [4]float64(a), [32]byte(b)))
 }
 
@@ -39122,7 +39122,7 @@ func m256MaskPermutevarPd(src [4]float64, k uint8, a [4]float64, b [32]byte) [4]
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm256_maskz_permutevar_pd'.
 // Requires AVX512F.
-func M256MaskzPermutevarPd(k x86.Mmask8, a x86.M256d, b x86.M256i) x86.M256d {
+func M256MaskzPermutevarPd(k x86.Mmask8, a x86.M256d, b x86.M256i) (dst x86.M256d) {
 	return x86.M256d(m256MaskzPermutevarPd(uint8(k), [4]float64(a), [32]byte(b)))
 }
 
@@ -39162,7 +39162,7 @@ func m256MaskzPermutevarPd(k uint8, a [4]float64, b [32]byte) [4]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm512_mask_permutevar_pd'.
 // Requires AVX512F.
-func M512MaskPermutevarPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512i) x86.M512d {
+func M512MaskPermutevarPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512i) (dst x86.M512d) {
 	return x86.M512d(m512MaskPermutevarPd([8]float64(src), uint8(k), [8]float64(a), [64]byte(b)))
 }
 
@@ -39202,7 +39202,7 @@ func m512MaskPermutevarPd(src [8]float64, k uint8, a [8]float64, b [64]byte) [8]
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm512_maskz_permutevar_pd'.
 // Requires AVX512F.
-func M512MaskzPermutevarPd(k x86.Mmask8, a x86.M512d, b x86.M512i) x86.M512d {
+func M512MaskzPermutevarPd(k x86.Mmask8, a x86.M512d, b x86.M512i) (dst x86.M512d) {
 	return x86.M512d(m512MaskzPermutevarPd(uint8(k), [8]float64(a), [64]byte(b)))
 }
 
@@ -39233,7 +39233,7 @@ func m512MaskzPermutevarPd(k uint8, a [8]float64, b [64]byte) [8]float64
 //
 // Instruction: 'VPERMILPD'. Intrinsic: '_mm512_permutevar_pd'.
 // Requires AVX512F.
-func M512PermutevarPd(a x86.M512d, b x86.M512i) x86.M512d {
+func M512PermutevarPd(a x86.M512d, b x86.M512i) (dst x86.M512d) {
 	return x86.M512d(m512PermutevarPd([8]float64(a), [64]byte(b)))
 }
 
@@ -39271,7 +39271,7 @@ func m512PermutevarPd(a [8]float64, b [64]byte) [8]float64
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm_mask_permutevar_ps'.
 // Requires AVX512F.
-func MaskPermutevarPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128i) x86.M128 {
+func MaskPermutevarPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128i) (dst x86.M128) {
 	return x86.M128(maskPermutevarPs([4]float32(src), uint8(k), [4]float32(a), [16]byte(b)))
 }
 
@@ -39309,7 +39309,7 @@ func maskPermutevarPs(src [4]float32, k uint8, a [4]float32, b [16]byte) [4]floa
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm_maskz_permutevar_ps'.
 // Requires AVX512F.
-func MaskzPermutevarPs(k x86.Mmask8, a x86.M128, b x86.M128i) x86.M128 {
+func MaskzPermutevarPs(k x86.Mmask8, a x86.M128, b x86.M128i) (dst x86.M128) {
 	return x86.M128(maskzPermutevarPs(uint8(k), [4]float32(a), [16]byte(b)))
 }
 
@@ -39351,7 +39351,7 @@ func maskzPermutevarPs(k uint8, a [4]float32, b [16]byte) [4]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm256_mask_permutevar_ps'.
 // Requires AVX512F.
-func M256MaskPermutevarPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256i) x86.M256 {
+func M256MaskPermutevarPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256i) (dst x86.M256) {
 	return x86.M256(m256MaskPermutevarPs([8]float32(src), uint8(k), [8]float32(a), [32]byte(b)))
 }
 
@@ -39393,7 +39393,7 @@ func m256MaskPermutevarPs(src [8]float32, k uint8, a [8]float32, b [32]byte) [8]
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm256_maskz_permutevar_ps'.
 // Requires AVX512F.
-func M256MaskzPermutevarPs(k x86.Mmask8, a x86.M256, b x86.M256i) x86.M256 {
+func M256MaskzPermutevarPs(k x86.Mmask8, a x86.M256, b x86.M256i) (dst x86.M256) {
 	return x86.M256(m256MaskzPermutevarPs(uint8(k), [8]float32(a), [32]byte(b)))
 }
 
@@ -39443,7 +39443,7 @@ func m256MaskzPermutevarPs(k uint8, a [8]float32, b [32]byte) [8]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm512_mask_permutevar_ps'.
 // Requires AVX512F.
-func M512MaskPermutevarPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512i) x86.M512 {
+func M512MaskPermutevarPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512i) (dst x86.M512) {
 	return x86.M512(m512MaskPermutevarPs([16]float32(src), uint16(k), [16]float32(a), [64]byte(b)))
 }
 
@@ -39493,7 +39493,7 @@ func m512MaskPermutevarPs(src [16]float32, k uint16, a [16]float32, b [64]byte) 
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm512_maskz_permutevar_ps'.
 // Requires AVX512F.
-func M512MaskzPermutevarPs(k x86.Mmask16, a x86.M512, b x86.M512i) x86.M512 {
+func M512MaskzPermutevarPs(k x86.Mmask16, a x86.M512, b x86.M512i) (dst x86.M512) {
 	return x86.M512(m512MaskzPermutevarPs(uint16(k), [16]float32(a), [64]byte(b)))
 }
 
@@ -39534,7 +39534,7 @@ func m512MaskzPermutevarPs(k uint16, a [16]float32, b [64]byte) [16]float32
 //
 // Instruction: 'VPERMILPS'. Intrinsic: '_mm512_permutevar_ps'.
 // Requires AVX512F.
-func M512PermutevarPs(a x86.M512, b x86.M512i) x86.M512 {
+func M512PermutevarPs(a x86.M512, b x86.M512i) (dst x86.M512) {
 	return x86.M512(m512PermutevarPs([16]float32(a), [64]byte(b)))
 }
 
@@ -39574,7 +39574,7 @@ func m512PermutevarPs(a [16]float32, b [64]byte) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutexEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskPermutexEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskPermutexEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -39613,7 +39613,7 @@ func m256MaskPermutexEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutexEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzPermutexEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzPermutexEpi64(uint8(k), [32]byte(a), imm8))
 }
 
@@ -39643,7 +39643,7 @@ func m256MaskzPermutexEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256PermutexEpi64(a x86.M256i, imm8 byte) x86.M256i {
+func M256PermutexEpi64(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256PermutexEpi64([32]byte(a), imm8))
 }
 
@@ -39687,7 +39687,7 @@ func m256PermutexEpi64(a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutexEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskPermutexEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskPermutexEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -39730,7 +39730,7 @@ func m512MaskPermutexEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutexEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzPermutexEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzPermutexEpi64(uint8(k), [64]byte(a), imm8))
 }
 
@@ -39764,7 +39764,7 @@ func m512MaskzPermutexEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutexEpi64(a x86.M512i, imm8 byte) x86.M512i {
+func M512PermutexEpi64(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512PermutexEpi64([64]byte(a), imm8))
 }
 
@@ -39804,7 +39804,7 @@ func m512PermutexEpi64(a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskPermutexPd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
+func M256MaskPermutexPd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskPermutexPd([4]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
@@ -39844,7 +39844,7 @@ func m256MaskPermutexPd(src [4]float64, k uint8, a [4]float64, imm8 byte) [4]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzPermutexPd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
+func M256MaskzPermutexPd(k x86.Mmask8, a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskzPermutexPd(uint8(k), [4]float64(a), imm8))
 }
 
@@ -39875,7 +39875,7 @@ func m256MaskzPermutexPd(k uint8, a [4]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256PermutexPd(a x86.M256d, imm8 byte) x86.M256d {
+func M256PermutexPd(a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256PermutexPd([4]float64(a), imm8))
 }
 
@@ -39919,7 +39919,7 @@ func m256PermutexPd(a [4]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskPermutexPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
+func M512MaskPermutexPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskPermutexPd([8]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
@@ -39963,7 +39963,7 @@ func m512MaskPermutexPd(src [8]float64, k uint8, a [8]float64, imm8 byte) [8]flo
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzPermutexPd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
+func M512MaskzPermutexPd(k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskzPermutexPd(uint8(k), [8]float64(a), imm8))
 }
 
@@ -39998,7 +39998,7 @@ func m512MaskzPermutexPd(k uint8, a [8]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512PermutexPd(a x86.M512d, imm8 byte) x86.M512d {
+func M512PermutexPd(a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512PermutexPd([8]float64(a), imm8))
 }
 
@@ -40023,7 +40023,7 @@ func m512PermutexPd(a [8]float64, imm8 byte) [8]float64
 //
 // Instruction: 'VPERMT2D'. Intrinsic: '_mm_mask_permutex2var_epi32'.
 // Requires AVX512F.
-func MaskPermutex2varEpi32(a x86.M128i, k x86.Mmask8, idx x86.M128i, b x86.M128i) x86.M128i {
+func MaskPermutex2varEpi32(a x86.M128i, k x86.Mmask8, idx x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskPermutex2varEpi32([16]byte(a), uint8(k), [16]byte(idx), [16]byte(b)))
 }
 
@@ -40048,7 +40048,7 @@ func maskPermutex2varEpi32(a [16]byte, k uint8, idx [16]byte, b [16]byte) [16]by
 //
 // Instruction: 'VPERMI2D'. Intrinsic: '_mm_mask2_permutex2var_epi32'.
 // Requires AVX512F.
-func Mask2Permutex2varEpi32(a x86.M128i, idx x86.M128i, k x86.Mmask8, b x86.M128i) x86.M128i {
+func Mask2Permutex2varEpi32(a x86.M128i, idx x86.M128i, k x86.Mmask8, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(mask2Permutex2varEpi32([16]byte(a), [16]byte(idx), uint8(k), [16]byte(b)))
 }
 
@@ -40073,7 +40073,7 @@ func mask2Permutex2varEpi32(a [16]byte, idx [16]byte, k uint8, b [16]byte) [16]b
 //
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm_maskz_permutex2var_epi32'.
 // Requires AVX512F.
-func MaskzPermutex2varEpi32(k x86.Mmask8, a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
+func MaskzPermutex2varEpi32(k x86.Mmask8, a x86.M128i, idx x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzPermutex2varEpi32(uint8(k), [16]byte(a), [16]byte(idx), [16]byte(b)))
 }
 
@@ -40092,7 +40092,7 @@ func maskzPermutex2varEpi32(k uint8, a [16]byte, idx [16]byte, b [16]byte) [16]b
 //
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm_permutex2var_epi32'.
 // Requires AVX512F.
-func Permutex2varEpi32(a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
+func Permutex2varEpi32(a x86.M128i, idx x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(permutex2varEpi32([16]byte(a), [16]byte(idx), [16]byte(b)))
 }
 
@@ -40117,7 +40117,7 @@ func permutex2varEpi32(a [16]byte, idx [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPERMT2D'. Intrinsic: '_mm256_mask_permutex2var_epi32'.
 // Requires AVX512F.
-func M256MaskPermutex2varEpi32(a x86.M256i, k x86.Mmask8, idx x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskPermutex2varEpi32(a x86.M256i, k x86.Mmask8, idx x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskPermutex2varEpi32([32]byte(a), uint8(k), [32]byte(idx), [32]byte(b)))
 }
 
@@ -40142,7 +40142,7 @@ func m256MaskPermutex2varEpi32(a [32]byte, k uint8, idx [32]byte, b [32]byte) [3
 //
 // Instruction: 'VPERMI2D'. Intrinsic: '_mm256_mask2_permutex2var_epi32'.
 // Requires AVX512F.
-func M256Mask2Permutex2varEpi32(a x86.M256i, idx x86.M256i, k x86.Mmask8, b x86.M256i) x86.M256i {
+func M256Mask2Permutex2varEpi32(a x86.M256i, idx x86.M256i, k x86.Mmask8, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256Mask2Permutex2varEpi32([32]byte(a), [32]byte(idx), uint8(k), [32]byte(b)))
 }
 
@@ -40167,7 +40167,7 @@ func m256Mask2Permutex2varEpi32(a [32]byte, idx [32]byte, k uint8, b [32]byte) [
 //
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm256_maskz_permutex2var_epi32'.
 // Requires AVX512F.
-func M256MaskzPermutex2varEpi32(k x86.Mmask8, a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzPermutex2varEpi32(k x86.Mmask8, a x86.M256i, idx x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzPermutex2varEpi32(uint8(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
@@ -40187,7 +40187,7 @@ func m256MaskzPermutex2varEpi32(k uint8, a [32]byte, idx [32]byte, b [32]byte) [
 //
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm256_permutex2var_epi32'.
 // Requires AVX512F.
-func M256Permutex2varEpi32(a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+func M256Permutex2varEpi32(a x86.M256i, idx x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256Permutex2varEpi32([32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
@@ -40212,7 +40212,7 @@ func m256Permutex2varEpi32(a [32]byte, idx [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPERMT2D'. Intrinsic: '_mm512_mask_permutex2var_epi32'.
 // Requires AVX512F.
-func M512MaskPermutex2varEpi32(a x86.M512i, k x86.Mmask16, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskPermutex2varEpi32(a x86.M512i, k x86.Mmask16, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskPermutex2varEpi32([64]byte(a), uint16(k), [64]byte(idx), [64]byte(b)))
 }
 
@@ -40237,7 +40237,7 @@ func m512MaskPermutex2varEpi32(a [64]byte, k uint16, idx [64]byte, b [64]byte) [
 //
 // Instruction: 'VPERMI2D'. Intrinsic: '_mm512_mask2_permutex2var_epi32'.
 // Requires AVX512F.
-func M512Mask2Permutex2varEpi32(a x86.M512i, idx x86.M512i, k x86.Mmask16, b x86.M512i) x86.M512i {
+func M512Mask2Permutex2varEpi32(a x86.M512i, idx x86.M512i, k x86.Mmask16, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512Mask2Permutex2varEpi32([64]byte(a), [64]byte(idx), uint16(k), [64]byte(b)))
 }
 
@@ -40262,7 +40262,7 @@ func m512Mask2Permutex2varEpi32(a [64]byte, idx [64]byte, k uint16, b [64]byte) 
 //
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm512_maskz_permutex2var_epi32'.
 // Requires AVX512F.
-func M512MaskzPermutex2varEpi32(k x86.Mmask16, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzPermutex2varEpi32(k x86.Mmask16, a x86.M512i, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzPermutex2varEpi32(uint16(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
@@ -40282,7 +40282,7 @@ func m512MaskzPermutex2varEpi32(k uint16, a [64]byte, idx [64]byte, b [64]byte) 
 //
 // Instruction: 'VPERMI2D, VPERMT2D'. Intrinsic: '_mm512_permutex2var_epi32'.
 // Requires AVX512F.
-func M512Permutex2varEpi32(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512Permutex2varEpi32(a x86.M512i, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512Permutex2varEpi32([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
@@ -40307,7 +40307,7 @@ func m512Permutex2varEpi32(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMT2Q'. Intrinsic: '_mm_mask_permutex2var_epi64'.
 // Requires AVX512F.
-func MaskPermutex2varEpi64(a x86.M128i, k x86.Mmask8, idx x86.M128i, b x86.M128i) x86.M128i {
+func MaskPermutex2varEpi64(a x86.M128i, k x86.Mmask8, idx x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskPermutex2varEpi64([16]byte(a), uint8(k), [16]byte(idx), [16]byte(b)))
 }
 
@@ -40332,7 +40332,7 @@ func maskPermutex2varEpi64(a [16]byte, k uint8, idx [16]byte, b [16]byte) [16]by
 //
 // Instruction: 'VPERMI2Q'. Intrinsic: '_mm_mask2_permutex2var_epi64'.
 // Requires AVX512F.
-func Mask2Permutex2varEpi64(a x86.M128i, idx x86.M128i, k x86.Mmask8, b x86.M128i) x86.M128i {
+func Mask2Permutex2varEpi64(a x86.M128i, idx x86.M128i, k x86.Mmask8, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(mask2Permutex2varEpi64([16]byte(a), [16]byte(idx), uint8(k), [16]byte(b)))
 }
 
@@ -40357,7 +40357,7 @@ func mask2Permutex2varEpi64(a [16]byte, idx [16]byte, k uint8, b [16]byte) [16]b
 //
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm_maskz_permutex2var_epi64'.
 // Requires AVX512F.
-func MaskzPermutex2varEpi64(k x86.Mmask8, a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
+func MaskzPermutex2varEpi64(k x86.Mmask8, a x86.M128i, idx x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzPermutex2varEpi64(uint8(k), [16]byte(a), [16]byte(idx), [16]byte(b)))
 }
 
@@ -40376,7 +40376,7 @@ func maskzPermutex2varEpi64(k uint8, a [16]byte, idx [16]byte, b [16]byte) [16]b
 //
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm_permutex2var_epi64'.
 // Requires AVX512F.
-func Permutex2varEpi64(a x86.M128i, idx x86.M128i, b x86.M128i) x86.M128i {
+func Permutex2varEpi64(a x86.M128i, idx x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(permutex2varEpi64([16]byte(a), [16]byte(idx), [16]byte(b)))
 }
 
@@ -40401,7 +40401,7 @@ func permutex2varEpi64(a [16]byte, idx [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPERMT2Q'. Intrinsic: '_mm256_mask_permutex2var_epi64'.
 // Requires AVX512F.
-func M256MaskPermutex2varEpi64(a x86.M256i, k x86.Mmask8, idx x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskPermutex2varEpi64(a x86.M256i, k x86.Mmask8, idx x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskPermutex2varEpi64([32]byte(a), uint8(k), [32]byte(idx), [32]byte(b)))
 }
 
@@ -40426,7 +40426,7 @@ func m256MaskPermutex2varEpi64(a [32]byte, k uint8, idx [32]byte, b [32]byte) [3
 //
 // Instruction: 'VPERMI2Q'. Intrinsic: '_mm256_mask2_permutex2var_epi64'.
 // Requires AVX512F.
-func M256Mask2Permutex2varEpi64(a x86.M256i, idx x86.M256i, k x86.Mmask8, b x86.M256i) x86.M256i {
+func M256Mask2Permutex2varEpi64(a x86.M256i, idx x86.M256i, k x86.Mmask8, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256Mask2Permutex2varEpi64([32]byte(a), [32]byte(idx), uint8(k), [32]byte(b)))
 }
 
@@ -40451,7 +40451,7 @@ func m256Mask2Permutex2varEpi64(a [32]byte, idx [32]byte, k uint8, b [32]byte) [
 //
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm256_maskz_permutex2var_epi64'.
 // Requires AVX512F.
-func M256MaskzPermutex2varEpi64(k x86.Mmask8, a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzPermutex2varEpi64(k x86.Mmask8, a x86.M256i, idx x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzPermutex2varEpi64(uint8(k), [32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
@@ -40471,7 +40471,7 @@ func m256MaskzPermutex2varEpi64(k uint8, a [32]byte, idx [32]byte, b [32]byte) [
 //
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm256_permutex2var_epi64'.
 // Requires AVX512F.
-func M256Permutex2varEpi64(a x86.M256i, idx x86.M256i, b x86.M256i) x86.M256i {
+func M256Permutex2varEpi64(a x86.M256i, idx x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256Permutex2varEpi64([32]byte(a), [32]byte(idx), [32]byte(b)))
 }
 
@@ -40496,7 +40496,7 @@ func m256Permutex2varEpi64(a [32]byte, idx [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPERMT2Q'. Intrinsic: '_mm512_mask_permutex2var_epi64'.
 // Requires AVX512F.
-func M512MaskPermutex2varEpi64(a x86.M512i, k x86.Mmask8, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskPermutex2varEpi64(a x86.M512i, k x86.Mmask8, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskPermutex2varEpi64([64]byte(a), uint8(k), [64]byte(idx), [64]byte(b)))
 }
 
@@ -40521,7 +40521,7 @@ func m512MaskPermutex2varEpi64(a [64]byte, k uint8, idx [64]byte, b [64]byte) [6
 //
 // Instruction: 'VPERMI2Q'. Intrinsic: '_mm512_mask2_permutex2var_epi64'.
 // Requires AVX512F.
-func M512Mask2Permutex2varEpi64(a x86.M512i, idx x86.M512i, k x86.Mmask8, b x86.M512i) x86.M512i {
+func M512Mask2Permutex2varEpi64(a x86.M512i, idx x86.M512i, k x86.Mmask8, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512Mask2Permutex2varEpi64([64]byte(a), [64]byte(idx), uint8(k), [64]byte(b)))
 }
 
@@ -40546,7 +40546,7 @@ func m512Mask2Permutex2varEpi64(a [64]byte, idx [64]byte, k uint8, b [64]byte) [
 //
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm512_maskz_permutex2var_epi64'.
 // Requires AVX512F.
-func M512MaskzPermutex2varEpi64(k x86.Mmask8, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzPermutex2varEpi64(k x86.Mmask8, a x86.M512i, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzPermutex2varEpi64(uint8(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
@@ -40566,7 +40566,7 @@ func m512MaskzPermutex2varEpi64(k uint8, a [64]byte, idx [64]byte, b [64]byte) [
 //
 // Instruction: 'VPERMI2Q, VPERMT2Q'. Intrinsic: '_mm512_permutex2var_epi64'.
 // Requires AVX512F.
-func M512Permutex2varEpi64(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512Permutex2varEpi64(a x86.M512i, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512Permutex2varEpi64([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
@@ -40591,7 +40591,7 @@ func m512Permutex2varEpi64(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMT2PD'. Intrinsic: '_mm_mask_permutex2var_pd'.
 // Requires AVX512F.
-func MaskPermutex2varPd(a x86.M128d, k x86.Mmask8, idx x86.M128i, b x86.M128d) x86.M128d {
+func MaskPermutex2varPd(a x86.M128d, k x86.Mmask8, idx x86.M128i, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskPermutex2varPd([2]float64(a), uint8(k), [16]byte(idx), [2]float64(b)))
 }
 
@@ -40616,7 +40616,7 @@ func maskPermutex2varPd(a [2]float64, k uint8, idx [16]byte, b [2]float64) [2]fl
 //
 // Instruction: 'VPERMI2PD'. Intrinsic: '_mm_mask2_permutex2var_pd'.
 // Requires AVX512F.
-func Mask2Permutex2varPd(a x86.M128d, idx x86.M128i, k x86.Mmask8, b x86.M128d) x86.M128d {
+func Mask2Permutex2varPd(a x86.M128d, idx x86.M128i, k x86.Mmask8, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(mask2Permutex2varPd([2]float64(a), [16]byte(idx), uint8(k), [2]float64(b)))
 }
 
@@ -40641,7 +40641,7 @@ func mask2Permutex2varPd(a [2]float64, idx [16]byte, k uint8, b [2]float64) [2]f
 //
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm_maskz_permutex2var_pd'.
 // Requires AVX512F.
-func MaskzPermutex2varPd(k x86.Mmask8, a x86.M128d, idx x86.M128i, b x86.M128d) x86.M128d {
+func MaskzPermutex2varPd(k x86.Mmask8, a x86.M128d, idx x86.M128i, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzPermutex2varPd(uint8(k), [2]float64(a), [16]byte(idx), [2]float64(b)))
 }
 
@@ -40661,7 +40661,7 @@ func maskzPermutex2varPd(k uint8, a [2]float64, idx [16]byte, b [2]float64) [2]f
 //
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm_permutex2var_pd'.
 // Requires AVX512F.
-func Permutex2varPd(a x86.M128d, idx x86.M128i, b x86.M128d) x86.M128d {
+func Permutex2varPd(a x86.M128d, idx x86.M128i, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(permutex2varPd([2]float64(a), [16]byte(idx), [2]float64(b)))
 }
 
@@ -40686,7 +40686,7 @@ func permutex2varPd(a [2]float64, idx [16]byte, b [2]float64) [2]float64
 //
 // Instruction: 'VPERMT2PD'. Intrinsic: '_mm256_mask_permutex2var_pd'.
 // Requires AVX512F.
-func M256MaskPermutex2varPd(a x86.M256d, k x86.Mmask8, idx x86.M256i, b x86.M256d) x86.M256d {
+func M256MaskPermutex2varPd(a x86.M256d, k x86.Mmask8, idx x86.M256i, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskPermutex2varPd([4]float64(a), uint8(k), [32]byte(idx), [4]float64(b)))
 }
 
@@ -40711,7 +40711,7 @@ func m256MaskPermutex2varPd(a [4]float64, k uint8, idx [32]byte, b [4]float64) [
 //
 // Instruction: 'VPERMI2PD'. Intrinsic: '_mm256_mask2_permutex2var_pd'.
 // Requires AVX512F.
-func M256Mask2Permutex2varPd(a x86.M256d, idx x86.M256i, k x86.Mmask8, b x86.M256d) x86.M256d {
+func M256Mask2Permutex2varPd(a x86.M256d, idx x86.M256i, k x86.Mmask8, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256Mask2Permutex2varPd([4]float64(a), [32]byte(idx), uint8(k), [4]float64(b)))
 }
 
@@ -40736,7 +40736,7 @@ func m256Mask2Permutex2varPd(a [4]float64, idx [32]byte, k uint8, b [4]float64) 
 //
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm256_maskz_permutex2var_pd'.
 // Requires AVX512F.
-func M256MaskzPermutex2varPd(k x86.Mmask8, a x86.M256d, idx x86.M256i, b x86.M256d) x86.M256d {
+func M256MaskzPermutex2varPd(k x86.Mmask8, a x86.M256d, idx x86.M256i, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzPermutex2varPd(uint8(k), [4]float64(a), [32]byte(idx), [4]float64(b)))
 }
 
@@ -40756,7 +40756,7 @@ func m256MaskzPermutex2varPd(k uint8, a [4]float64, idx [32]byte, b [4]float64) 
 //
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm256_permutex2var_pd'.
 // Requires AVX512F.
-func M256Permutex2varPd(a x86.M256d, idx x86.M256i, b x86.M256d) x86.M256d {
+func M256Permutex2varPd(a x86.M256d, idx x86.M256i, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256Permutex2varPd([4]float64(a), [32]byte(idx), [4]float64(b)))
 }
 
@@ -40781,7 +40781,7 @@ func m256Permutex2varPd(a [4]float64, idx [32]byte, b [4]float64) [4]float64
 //
 // Instruction: 'VPERMT2PD'. Intrinsic: '_mm512_mask_permutex2var_pd'.
 // Requires AVX512F.
-func M512MaskPermutex2varPd(a x86.M512d, k x86.Mmask8, idx x86.M512i, b x86.M512d) x86.M512d {
+func M512MaskPermutex2varPd(a x86.M512d, k x86.Mmask8, idx x86.M512i, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskPermutex2varPd([8]float64(a), uint8(k), [64]byte(idx), [8]float64(b)))
 }
 
@@ -40806,7 +40806,7 @@ func m512MaskPermutex2varPd(a [8]float64, k uint8, idx [64]byte, b [8]float64) [
 //
 // Instruction: 'VPERMI2PD'. Intrinsic: '_mm512_mask2_permutex2var_pd'.
 // Requires AVX512F.
-func M512Mask2Permutex2varPd(a x86.M512d, idx x86.M512i, k x86.Mmask8, b x86.M512d) x86.M512d {
+func M512Mask2Permutex2varPd(a x86.M512d, idx x86.M512i, k x86.Mmask8, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Mask2Permutex2varPd([8]float64(a), [64]byte(idx), uint8(k), [8]float64(b)))
 }
 
@@ -40831,7 +40831,7 @@ func m512Mask2Permutex2varPd(a [8]float64, idx [64]byte, k uint8, b [8]float64) 
 //
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm512_maskz_permutex2var_pd'.
 // Requires AVX512F.
-func M512MaskzPermutex2varPd(k x86.Mmask8, a x86.M512d, idx x86.M512i, b x86.M512d) x86.M512d {
+func M512MaskzPermutex2varPd(k x86.Mmask8, a x86.M512d, idx x86.M512i, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzPermutex2varPd(uint8(k), [8]float64(a), [64]byte(idx), [8]float64(b)))
 }
 
@@ -40851,7 +40851,7 @@ func m512MaskzPermutex2varPd(k uint8, a [8]float64, idx [64]byte, b [8]float64) 
 //
 // Instruction: 'VPERMI2PD, VPERMT2PD'. Intrinsic: '_mm512_permutex2var_pd'.
 // Requires AVX512F.
-func M512Permutex2varPd(a x86.M512d, idx x86.M512i, b x86.M512d) x86.M512d {
+func M512Permutex2varPd(a x86.M512d, idx x86.M512i, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Permutex2varPd([8]float64(a), [64]byte(idx), [8]float64(b)))
 }
 
@@ -40876,7 +40876,7 @@ func m512Permutex2varPd(a [8]float64, idx [64]byte, b [8]float64) [8]float64
 //
 // Instruction: 'VPERMT2PS'. Intrinsic: '_mm_mask_permutex2var_ps'.
 // Requires AVX512F.
-func MaskPermutex2varPs(a x86.M128, k x86.Mmask8, idx x86.M128i, b x86.M128) x86.M128 {
+func MaskPermutex2varPs(a x86.M128, k x86.Mmask8, idx x86.M128i, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskPermutex2varPs([4]float32(a), uint8(k), [16]byte(idx), [4]float32(b)))
 }
 
@@ -40901,7 +40901,7 @@ func maskPermutex2varPs(a [4]float32, k uint8, idx [16]byte, b [4]float32) [4]fl
 //
 // Instruction: 'VPERMI2PS'. Intrinsic: '_mm_mask2_permutex2var_ps'.
 // Requires AVX512F.
-func Mask2Permutex2varPs(a x86.M128, idx x86.M128i, k x86.Mmask8, b x86.M128) x86.M128 {
+func Mask2Permutex2varPs(a x86.M128, idx x86.M128i, k x86.Mmask8, b x86.M128) (dst x86.M128) {
 	return x86.M128(mask2Permutex2varPs([4]float32(a), [16]byte(idx), uint8(k), [4]float32(b)))
 }
 
@@ -40926,7 +40926,7 @@ func mask2Permutex2varPs(a [4]float32, idx [16]byte, k uint8, b [4]float32) [4]f
 //
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm_maskz_permutex2var_ps'.
 // Requires AVX512F.
-func MaskzPermutex2varPs(k x86.Mmask8, a x86.M128, idx x86.M128i, b x86.M128) x86.M128 {
+func MaskzPermutex2varPs(k x86.Mmask8, a x86.M128, idx x86.M128i, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzPermutex2varPs(uint8(k), [4]float32(a), [16]byte(idx), [4]float32(b)))
 }
 
@@ -40946,7 +40946,7 @@ func maskzPermutex2varPs(k uint8, a [4]float32, idx [16]byte, b [4]float32) [4]f
 //
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm_permutex2var_ps'.
 // Requires AVX512F.
-func Permutex2varPs(a x86.M128, idx x86.M128i, b x86.M128) x86.M128 {
+func Permutex2varPs(a x86.M128, idx x86.M128i, b x86.M128) (dst x86.M128) {
 	return x86.M128(permutex2varPs([4]float32(a), [16]byte(idx), [4]float32(b)))
 }
 
@@ -40971,7 +40971,7 @@ func permutex2varPs(a [4]float32, idx [16]byte, b [4]float32) [4]float32
 //
 // Instruction: 'VPERMT2PS'. Intrinsic: '_mm256_mask_permutex2var_ps'.
 // Requires AVX512F.
-func M256MaskPermutex2varPs(a x86.M256, k x86.Mmask8, idx x86.M256i, b x86.M256) x86.M256 {
+func M256MaskPermutex2varPs(a x86.M256, k x86.Mmask8, idx x86.M256i, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskPermutex2varPs([8]float32(a), uint8(k), [32]byte(idx), [8]float32(b)))
 }
 
@@ -40996,7 +40996,7 @@ func m256MaskPermutex2varPs(a [8]float32, k uint8, idx [32]byte, b [8]float32) [
 //
 // Instruction: 'VPERMI2PS'. Intrinsic: '_mm256_mask2_permutex2var_ps'.
 // Requires AVX512F.
-func M256Mask2Permutex2varPs(a x86.M256, idx x86.M256i, k x86.Mmask8, b x86.M256) x86.M256 {
+func M256Mask2Permutex2varPs(a x86.M256, idx x86.M256i, k x86.Mmask8, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256Mask2Permutex2varPs([8]float32(a), [32]byte(idx), uint8(k), [8]float32(b)))
 }
 
@@ -41021,7 +41021,7 @@ func m256Mask2Permutex2varPs(a [8]float32, idx [32]byte, k uint8, b [8]float32) 
 //
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm256_maskz_permutex2var_ps'.
 // Requires AVX512F.
-func M256MaskzPermutex2varPs(k x86.Mmask8, a x86.M256, idx x86.M256i, b x86.M256) x86.M256 {
+func M256MaskzPermutex2varPs(k x86.Mmask8, a x86.M256, idx x86.M256i, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzPermutex2varPs(uint8(k), [8]float32(a), [32]byte(idx), [8]float32(b)))
 }
 
@@ -41041,7 +41041,7 @@ func m256MaskzPermutex2varPs(k uint8, a [8]float32, idx [32]byte, b [8]float32) 
 //
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm256_permutex2var_ps'.
 // Requires AVX512F.
-func M256Permutex2varPs(a x86.M256, idx x86.M256i, b x86.M256) x86.M256 {
+func M256Permutex2varPs(a x86.M256, idx x86.M256i, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256Permutex2varPs([8]float32(a), [32]byte(idx), [8]float32(b)))
 }
 
@@ -41066,7 +41066,7 @@ func m256Permutex2varPs(a [8]float32, idx [32]byte, b [8]float32) [8]float32
 //
 // Instruction: 'VPERMT2PS'. Intrinsic: '_mm512_mask_permutex2var_ps'.
 // Requires AVX512F.
-func M512MaskPermutex2varPs(a x86.M512, k x86.Mmask16, idx x86.M512i, b x86.M512) x86.M512 {
+func M512MaskPermutex2varPs(a x86.M512, k x86.Mmask16, idx x86.M512i, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskPermutex2varPs([16]float32(a), uint16(k), [64]byte(idx), [16]float32(b)))
 }
 
@@ -41091,7 +41091,7 @@ func m512MaskPermutex2varPs(a [16]float32, k uint16, idx [64]byte, b [16]float32
 //
 // Instruction: 'VPERMI2PS'. Intrinsic: '_mm512_mask2_permutex2var_ps'.
 // Requires AVX512F.
-func M512Mask2Permutex2varPs(a x86.M512, idx x86.M512i, k x86.Mmask16, b x86.M512) x86.M512 {
+func M512Mask2Permutex2varPs(a x86.M512, idx x86.M512i, k x86.Mmask16, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512Mask2Permutex2varPs([16]float32(a), [64]byte(idx), uint16(k), [16]float32(b)))
 }
 
@@ -41116,7 +41116,7 @@ func m512Mask2Permutex2varPs(a [16]float32, idx [64]byte, k uint16, b [16]float3
 //
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm512_maskz_permutex2var_ps'.
 // Requires AVX512F.
-func M512MaskzPermutex2varPs(k x86.Mmask16, a x86.M512, idx x86.M512i, b x86.M512) x86.M512 {
+func M512MaskzPermutex2varPs(k x86.Mmask16, a x86.M512, idx x86.M512i, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzPermutex2varPs(uint16(k), [16]float32(a), [64]byte(idx), [16]float32(b)))
 }
 
@@ -41136,7 +41136,7 @@ func m512MaskzPermutex2varPs(k uint16, a [16]float32, idx [64]byte, b [16]float3
 //
 // Instruction: 'VPERMI2PS, VPERMT2PS'. Intrinsic: '_mm512_permutex2var_ps'.
 // Requires AVX512F.
-func M512Permutex2varPs(a x86.M512, idx x86.M512i, b x86.M512) x86.M512 {
+func M512Permutex2varPs(a x86.M512, idx x86.M512i, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512Permutex2varPs([16]float32(a), [64]byte(idx), [16]float32(b)))
 }
 
@@ -41161,7 +41161,7 @@ func m512Permutex2varPs(a [16]float32, idx [64]byte, b [16]float32) [16]float32
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm256_mask_permutexvar_epi32'.
 // Requires AVX512F.
-func M256MaskPermutexvarEpi32(src x86.M256i, k x86.Mmask8, idx x86.M256i, a x86.M256i) x86.M256i {
+func M256MaskPermutexvarEpi32(src x86.M256i, k x86.Mmask8, idx x86.M256i, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskPermutexvarEpi32([32]byte(src), uint8(k), [32]byte(idx), [32]byte(a)))
 }
 
@@ -41186,7 +41186,7 @@ func m256MaskPermutexvarEpi32(src [32]byte, k uint8, idx [32]byte, a [32]byte) [
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm256_maskz_permutexvar_epi32'.
 // Requires AVX512F.
-func M256MaskzPermutexvarEpi32(k x86.Mmask8, idx x86.M256i, a x86.M256i) x86.M256i {
+func M256MaskzPermutexvarEpi32(k x86.Mmask8, idx x86.M256i, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzPermutexvarEpi32(uint8(k), [32]byte(idx), [32]byte(a)))
 }
 
@@ -41205,7 +41205,7 @@ func m256MaskzPermutexvarEpi32(k uint8, idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm256_permutexvar_epi32'.
 // Requires AVX512F.
-func M256PermutexvarEpi32(idx x86.M256i, a x86.M256i) x86.M256i {
+func M256PermutexvarEpi32(idx x86.M256i, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256PermutexvarEpi32([32]byte(idx), [32]byte(a)))
 }
 
@@ -41230,7 +41230,7 @@ func m256PermutexvarEpi32(idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_mask_permutexvar_epi32'.
 // Requires AVX512F.
-func M512MaskPermutexvarEpi32(src x86.M512i, k x86.Mmask16, idx x86.M512i, a x86.M512i) x86.M512i {
+func M512MaskPermutexvarEpi32(src x86.M512i, k x86.Mmask16, idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskPermutexvarEpi32([64]byte(src), uint16(k), [64]byte(idx), [64]byte(a)))
 }
 
@@ -41255,7 +41255,7 @@ func m512MaskPermutexvarEpi32(src [64]byte, k uint16, idx [64]byte, a [64]byte) 
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_maskz_permutexvar_epi32'.
 // Requires AVX512F.
-func M512MaskzPermutexvarEpi32(k x86.Mmask16, idx x86.M512i, a x86.M512i) x86.M512i {
+func M512MaskzPermutexvarEpi32(k x86.Mmask16, idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzPermutexvarEpi32(uint16(k), [64]byte(idx), [64]byte(a)))
 }
 
@@ -41274,7 +41274,7 @@ func m512MaskzPermutexvarEpi32(k uint16, idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm512_permutexvar_epi32'.
 // Requires AVX512F.
-func M512PermutexvarEpi32(idx x86.M512i, a x86.M512i) x86.M512i {
+func M512PermutexvarEpi32(idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512PermutexvarEpi32([64]byte(idx), [64]byte(a)))
 }
 
@@ -41299,7 +41299,7 @@ func m512PermutexvarEpi32(idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm256_mask_permutexvar_epi64'.
 // Requires AVX512F.
-func M256MaskPermutexvarEpi64(src x86.M256i, k x86.Mmask8, idx x86.M256i, a x86.M256i) x86.M256i {
+func M256MaskPermutexvarEpi64(src x86.M256i, k x86.Mmask8, idx x86.M256i, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskPermutexvarEpi64([32]byte(src), uint8(k), [32]byte(idx), [32]byte(a)))
 }
 
@@ -41324,7 +41324,7 @@ func m256MaskPermutexvarEpi64(src [32]byte, k uint8, idx [32]byte, a [32]byte) [
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm256_maskz_permutexvar_epi64'.
 // Requires AVX512F.
-func M256MaskzPermutexvarEpi64(k x86.Mmask8, idx x86.M256i, a x86.M256i) x86.M256i {
+func M256MaskzPermutexvarEpi64(k x86.Mmask8, idx x86.M256i, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzPermutexvarEpi64(uint8(k), [32]byte(idx), [32]byte(a)))
 }
 
@@ -41343,7 +41343,7 @@ func m256MaskzPermutexvarEpi64(k uint8, idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm256_permutexvar_epi64'.
 // Requires AVX512F.
-func M256PermutexvarEpi64(idx x86.M256i, a x86.M256i) x86.M256i {
+func M256PermutexvarEpi64(idx x86.M256i, a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256PermutexvarEpi64([32]byte(idx), [32]byte(a)))
 }
 
@@ -41368,7 +41368,7 @@ func m256PermutexvarEpi64(idx [32]byte, a [32]byte) [32]byte
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_mask_permutexvar_epi64'.
 // Requires AVX512F.
-func M512MaskPermutexvarEpi64(src x86.M512i, k x86.Mmask8, idx x86.M512i, a x86.M512i) x86.M512i {
+func M512MaskPermutexvarEpi64(src x86.M512i, k x86.Mmask8, idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskPermutexvarEpi64([64]byte(src), uint8(k), [64]byte(idx), [64]byte(a)))
 }
 
@@ -41393,7 +41393,7 @@ func m512MaskPermutexvarEpi64(src [64]byte, k uint8, idx [64]byte, a [64]byte) [
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_maskz_permutexvar_epi64'.
 // Requires AVX512F.
-func M512MaskzPermutexvarEpi64(k x86.Mmask8, idx x86.M512i, a x86.M512i) x86.M512i {
+func M512MaskzPermutexvarEpi64(k x86.Mmask8, idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzPermutexvarEpi64(uint8(k), [64]byte(idx), [64]byte(a)))
 }
 
@@ -41412,7 +41412,7 @@ func m512MaskzPermutexvarEpi64(k uint8, idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMQ'. Intrinsic: '_mm512_permutexvar_epi64'.
 // Requires AVX512F.
-func M512PermutexvarEpi64(idx x86.M512i, a x86.M512i) x86.M512i {
+func M512PermutexvarEpi64(idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512PermutexvarEpi64([64]byte(idx), [64]byte(a)))
 }
 
@@ -41437,7 +41437,7 @@ func m512PermutexvarEpi64(idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm256_mask_permutexvar_pd'.
 // Requires AVX512F.
-func M256MaskPermutexvarPd(src x86.M256d, k x86.Mmask8, idx x86.M256i, a x86.M256d) x86.M256d {
+func M256MaskPermutexvarPd(src x86.M256d, k x86.Mmask8, idx x86.M256i, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskPermutexvarPd([4]float64(src), uint8(k), [32]byte(idx), [4]float64(a)))
 }
 
@@ -41462,7 +41462,7 @@ func m256MaskPermutexvarPd(src [4]float64, k uint8, idx [32]byte, a [4]float64) 
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm256_maskz_permutexvar_pd'.
 // Requires AVX512F.
-func M256MaskzPermutexvarPd(k x86.Mmask8, idx x86.M256i, a x86.M256d) x86.M256d {
+func M256MaskzPermutexvarPd(k x86.Mmask8, idx x86.M256i, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzPermutexvarPd(uint8(k), [32]byte(idx), [4]float64(a)))
 }
 
@@ -41482,7 +41482,7 @@ func m256MaskzPermutexvarPd(k uint8, idx [32]byte, a [4]float64) [4]float64
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm256_permutexvar_pd'.
 // Requires AVX512F.
-func M256PermutexvarPd(idx x86.M256i, a x86.M256d) x86.M256d {
+func M256PermutexvarPd(idx x86.M256i, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256PermutexvarPd([32]byte(idx), [4]float64(a)))
 }
 
@@ -41507,7 +41507,7 @@ func m256PermutexvarPd(idx [32]byte, a [4]float64) [4]float64
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm512_mask_permutexvar_pd'.
 // Requires AVX512F.
-func M512MaskPermutexvarPd(src x86.M512d, k x86.Mmask8, idx x86.M512i, a x86.M512d) x86.M512d {
+func M512MaskPermutexvarPd(src x86.M512d, k x86.Mmask8, idx x86.M512i, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskPermutexvarPd([8]float64(src), uint8(k), [64]byte(idx), [8]float64(a)))
 }
 
@@ -41532,7 +41532,7 @@ func m512MaskPermutexvarPd(src [8]float64, k uint8, idx [64]byte, a [8]float64) 
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm512_maskz_permutexvar_pd'.
 // Requires AVX512F.
-func M512MaskzPermutexvarPd(k x86.Mmask8, idx x86.M512i, a x86.M512d) x86.M512d {
+func M512MaskzPermutexvarPd(k x86.Mmask8, idx x86.M512i, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzPermutexvarPd(uint8(k), [64]byte(idx), [8]float64(a)))
 }
 
@@ -41552,7 +41552,7 @@ func m512MaskzPermutexvarPd(k uint8, idx [64]byte, a [8]float64) [8]float64
 //
 // Instruction: 'VPERMPD'. Intrinsic: '_mm512_permutexvar_pd'.
 // Requires AVX512F.
-func M512PermutexvarPd(idx x86.M512i, a x86.M512d) x86.M512d {
+func M512PermutexvarPd(idx x86.M512i, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512PermutexvarPd([64]byte(idx), [8]float64(a)))
 }
 
@@ -41577,7 +41577,7 @@ func m512PermutexvarPd(idx [64]byte, a [8]float64) [8]float64
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm256_mask_permutexvar_ps'.
 // Requires AVX512F.
-func M256MaskPermutexvarPs(src x86.M256, k x86.Mmask8, idx x86.M256i, a x86.M256) x86.M256 {
+func M256MaskPermutexvarPs(src x86.M256, k x86.Mmask8, idx x86.M256i, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskPermutexvarPs([8]float32(src), uint8(k), [32]byte(idx), [8]float32(a)))
 }
 
@@ -41602,7 +41602,7 @@ func m256MaskPermutexvarPs(src [8]float32, k uint8, idx [32]byte, a [8]float32) 
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm256_maskz_permutexvar_ps'.
 // Requires AVX512F.
-func M256MaskzPermutexvarPs(k x86.Mmask8, idx x86.M256i, a x86.M256) x86.M256 {
+func M256MaskzPermutexvarPs(k x86.Mmask8, idx x86.M256i, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzPermutexvarPs(uint8(k), [32]byte(idx), [8]float32(a)))
 }
 
@@ -41621,7 +41621,7 @@ func m256MaskzPermutexvarPs(k uint8, idx [32]byte, a [8]float32) [8]float32
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm256_permutexvar_ps'.
 // Requires AVX512F.
-func M256PermutexvarPs(idx x86.M256i, a x86.M256) x86.M256 {
+func M256PermutexvarPs(idx x86.M256i, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256PermutexvarPs([32]byte(idx), [8]float32(a)))
 }
 
@@ -41646,7 +41646,7 @@ func m256PermutexvarPs(idx [32]byte, a [8]float32) [8]float32
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm512_mask_permutexvar_ps'.
 // Requires AVX512F.
-func M512MaskPermutexvarPs(src x86.M512, k x86.Mmask16, idx x86.M512i, a x86.M512) x86.M512 {
+func M512MaskPermutexvarPs(src x86.M512, k x86.Mmask16, idx x86.M512i, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskPermutexvarPs([16]float32(src), uint16(k), [64]byte(idx), [16]float32(a)))
 }
 
@@ -41671,7 +41671,7 @@ func m512MaskPermutexvarPs(src [16]float32, k uint16, idx [64]byte, a [16]float3
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm512_maskz_permutexvar_ps'.
 // Requires AVX512F.
-func M512MaskzPermutexvarPs(k x86.Mmask16, idx x86.M512i, a x86.M512) x86.M512 {
+func M512MaskzPermutexvarPs(k x86.Mmask16, idx x86.M512i, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzPermutexvarPs(uint16(k), [64]byte(idx), [16]float32(a)))
 }
 
@@ -41690,7 +41690,7 @@ func m512MaskzPermutexvarPs(k uint16, idx [64]byte, a [16]float32) [16]float32
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm512_permutexvar_ps'.
 // Requires AVX512F.
-func M512PermutexvarPs(idx x86.M512i, a x86.M512) x86.M512 {
+func M512PermutexvarPs(idx x86.M512i, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512PermutexvarPs([64]byte(idx), [16]float32(a)))
 }
 
@@ -41714,7 +41714,7 @@ func m512PermutexvarPs(idx [64]byte, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_pow_pd'.
 // Requires AVX512F.
-func M512MaskPowPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskPowPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskPowPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -41733,7 +41733,7 @@ func m512MaskPowPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]float
 //
 // Instruction: '...'. Intrinsic: '_mm512_pow_pd'.
 // Requires AVX512F.
-func M512PowPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512PowPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512PowPd([8]float64(a), [8]float64(b)))
 }
 
@@ -41757,7 +41757,7 @@ func m512PowPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_pow_ps'.
 // Requires AVX512F.
-func M512MaskPowPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskPowPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskPowPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -41776,7 +41776,7 @@ func m512MaskPowPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [16]
 //
 // Instruction: '...'. Intrinsic: '_mm512_pow_ps'.
 // Requires AVX512F.
-func M512PowPs(a x86.M512, b x86.M512) x86.M512 {
+func M512PowPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512PowPs([16]float32(a), [16]float32(b)))
 }
 
@@ -41801,7 +41801,7 @@ func m512PowPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm_mask_rcp14_pd'.
 // Requires AVX512F.
-func MaskRcp14Pd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskRcp14Pd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskRcp14Pd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -41826,7 +41826,7 @@ func maskRcp14Pd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm_maskz_rcp14_pd'.
 // Requires AVX512F.
-func MaskzRcp14Pd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzRcp14Pd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzRcp14Pd(uint8(k), [2]float64(a)))
 }
 
@@ -41845,7 +41845,7 @@ func maskzRcp14Pd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm_rcp14_pd'.
 // Requires AVX512F.
-func Rcp14Pd(a x86.M128d) x86.M128d {
+func Rcp14Pd(a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(rcp14Pd([2]float64(a)))
 }
 
@@ -41870,7 +41870,7 @@ func rcp14Pd(a [2]float64) [2]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm256_mask_rcp14_pd'.
 // Requires AVX512F.
-func M256MaskRcp14Pd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskRcp14Pd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskRcp14Pd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -41895,7 +41895,7 @@ func m256MaskRcp14Pd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm256_maskz_rcp14_pd'.
 // Requires AVX512F.
-func M256MaskzRcp14Pd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzRcp14Pd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzRcp14Pd(uint8(k), [4]float64(a)))
 }
 
@@ -41914,7 +41914,7 @@ func m256MaskzRcp14Pd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm256_rcp14_pd'.
 // Requires AVX512F.
-func M256Rcp14Pd(a x86.M256d) x86.M256d {
+func M256Rcp14Pd(a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256Rcp14Pd([4]float64(a)))
 }
 
@@ -41939,7 +41939,7 @@ func m256Rcp14Pd(a [4]float64) [4]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm512_mask_rcp14_pd'.
 // Requires AVX512F.
-func M512MaskRcp14Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskRcp14Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskRcp14Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -41964,7 +41964,7 @@ func m512MaskRcp14Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm512_maskz_rcp14_pd'.
 // Requires AVX512F.
-func M512MaskzRcp14Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzRcp14Pd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzRcp14Pd(uint8(k), [8]float64(a)))
 }
 
@@ -41983,7 +41983,7 @@ func m512MaskzRcp14Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRCP14PD'. Intrinsic: '_mm512_rcp14_pd'.
 // Requires AVX512F.
-func M512Rcp14Pd(a x86.M512d) x86.M512d {
+func M512Rcp14Pd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Rcp14Pd([8]float64(a)))
 }
 
@@ -42008,7 +42008,7 @@ func m512Rcp14Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm_mask_rcp14_ps'.
 // Requires AVX512F.
-func MaskRcp14Ps(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskRcp14Ps(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskRcp14Ps([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -42033,7 +42033,7 @@ func maskRcp14Ps(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm_maskz_rcp14_ps'.
 // Requires AVX512F.
-func MaskzRcp14Ps(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzRcp14Ps(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzRcp14Ps(uint8(k), [4]float32(a)))
 }
 
@@ -42052,7 +42052,7 @@ func maskzRcp14Ps(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm_rcp14_ps'.
 // Requires AVX512F.
-func Rcp14Ps(a x86.M128) x86.M128 {
+func Rcp14Ps(a x86.M128) (dst x86.M128) {
 	return x86.M128(rcp14Ps([4]float32(a)))
 }
 
@@ -42077,7 +42077,7 @@ func rcp14Ps(a [4]float32) [4]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm256_mask_rcp14_ps'.
 // Requires AVX512F.
-func M256MaskRcp14Ps(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskRcp14Ps(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskRcp14Ps([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -42102,7 +42102,7 @@ func m256MaskRcp14Ps(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm256_maskz_rcp14_ps'.
 // Requires AVX512F.
-func M256MaskzRcp14Ps(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzRcp14Ps(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzRcp14Ps(uint8(k), [8]float32(a)))
 }
 
@@ -42121,7 +42121,7 @@ func m256MaskzRcp14Ps(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm256_rcp14_ps'.
 // Requires AVX512F.
-func M256Rcp14Ps(a x86.M256) x86.M256 {
+func M256Rcp14Ps(a x86.M256) (dst x86.M256) {
 	return x86.M256(m256Rcp14Ps([8]float32(a)))
 }
 
@@ -42146,7 +42146,7 @@ func m256Rcp14Ps(a [8]float32) [8]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm512_mask_rcp14_ps'.
 // Requires AVX512F.
-func M512MaskRcp14Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskRcp14Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskRcp14Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -42171,7 +42171,7 @@ func m512MaskRcp14Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm512_maskz_rcp14_ps'.
 // Requires AVX512F.
-func M512MaskzRcp14Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzRcp14Ps(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzRcp14Ps(uint16(k), [16]float32(a)))
 }
 
@@ -42190,7 +42190,7 @@ func m512MaskzRcp14Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRCP14PS'. Intrinsic: '_mm512_rcp14_ps'.
 // Requires AVX512F.
-func M512Rcp14Ps(a x86.M512) x86.M512 {
+func M512Rcp14Ps(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512Rcp14Ps([16]float32(a)))
 }
 
@@ -42214,7 +42214,7 @@ func m512Rcp14Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VRCP14SD'. Intrinsic: '_mm_mask_rcp14_sd'.
 // Requires AVX512F.
-func MaskRcp14Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskRcp14Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskRcp14Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -42238,7 +42238,7 @@ func maskRcp14Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRCP14SD'. Intrinsic: '_mm_maskz_rcp14_sd'.
 // Requires AVX512F.
-func MaskzRcp14Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzRcp14Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzRcp14Sd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -42257,7 +42257,7 @@ func maskzRcp14Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRCP14SD'. Intrinsic: '_mm_rcp14_sd'.
 // Requires AVX512F.
-func Rcp14Sd(a x86.M128d, b x86.M128d) x86.M128d {
+func Rcp14Sd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(rcp14Sd([2]float64(a), [2]float64(b)))
 }
 
@@ -42281,7 +42281,7 @@ func rcp14Sd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRCP14SS'. Intrinsic: '_mm_mask_rcp14_ss'.
 // Requires AVX512F.
-func MaskRcp14Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskRcp14Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskRcp14Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -42305,7 +42305,7 @@ func maskRcp14Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRCP14SS'. Intrinsic: '_mm_maskz_rcp14_ss'.
 // Requires AVX512F.
-func MaskzRcp14Ss(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzRcp14Ss(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzRcp14Ss(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -42324,7 +42324,7 @@ func maskzRcp14Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRCP14SS'. Intrinsic: '_mm_rcp14_ss'.
 // Requires AVX512F.
-func Rcp14Ss(a x86.M128, b x86.M128) x86.M128 {
+func Rcp14Ss(a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(rcp14Ss([4]float32(a), [4]float32(b)))
 }
 
@@ -42348,7 +42348,7 @@ func rcp14Ss(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_recip_pd'.
 // Requires AVX512F.
-func M512MaskRecipPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskRecipPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskRecipPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -42366,7 +42366,7 @@ func m512MaskRecipPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_recip_pd'.
 // Requires AVX512F.
-func M512RecipPd(a x86.M512d) x86.M512d {
+func M512RecipPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512RecipPd([8]float64(a)))
 }
 
@@ -42390,7 +42390,7 @@ func m512RecipPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_recip_ps'.
 // Requires AVX512F.
-func M512MaskRecipPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskRecipPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskRecipPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -42408,7 +42408,7 @@ func m512MaskRecipPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_recip_ps'.
 // Requires AVX512F.
-func M512RecipPs(a x86.M512) x86.M512 {
+func M512RecipPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512RecipPs([16]float32(a)))
 }
 
@@ -42426,7 +42426,7 @@ func m512RecipPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi16'.
 // Requires AVX512F.
-func M512RemEpi16(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpi16(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpi16([64]byte(a), [64]byte(b)))
 }
 
@@ -42450,7 +42450,7 @@ func m512RemEpi16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_rem_epi32'.
 // Requires AVX512F.
-func M512MaskRemEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskRemEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskRemEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -42468,7 +42468,7 @@ func m512MaskRemEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi32'.
 // Requires AVX512F.
-func M512RemEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpi32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpi32([64]byte(a), [64]byte(b)))
 }
 
@@ -42486,7 +42486,7 @@ func m512RemEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi64'.
 // Requires AVX512F.
-func M512RemEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -42504,7 +42504,7 @@ func m512RemEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epi8'.
 // Requires AVX512F.
-func M512RemEpi8(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpi8(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpi8([64]byte(a), [64]byte(b)))
 }
 
@@ -42523,7 +42523,7 @@ func m512RemEpi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu16'.
 // Requires AVX512F.
-func M512RemEpu16(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpu16(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpu16([64]byte(a), [64]byte(b)))
 }
 
@@ -42547,7 +42547,7 @@ func m512RemEpu16(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_rem_epu32'.
 // Requires AVX512F.
-func M512MaskRemEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskRemEpu32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskRemEpu32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -42566,7 +42566,7 @@ func m512MaskRemEpu32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu32'.
 // Requires AVX512F.
-func M512RemEpu32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpu32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpu32([64]byte(a), [64]byte(b)))
 }
 
@@ -42585,7 +42585,7 @@ func m512RemEpu32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu64'.
 // Requires AVX512F.
-func M512RemEpu64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpu64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpu64([64]byte(a), [64]byte(b)))
 }
 
@@ -42604,7 +42604,7 @@ func m512RemEpu64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_rem_epu8'.
 // Requires AVX512F.
-func M512RemEpu8(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RemEpu8(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RemEpu8([64]byte(a), [64]byte(b)))
 }
 
@@ -42628,7 +42628,7 @@ func m512RemEpu8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_rint_pd'.
 // Requires AVX512F.
-func M512MaskRintPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskRintPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskRintPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -42647,7 +42647,7 @@ func m512MaskRintPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_rint_pd'.
 // Requires AVX512F.
-func M512RintPd(a x86.M512d) x86.M512d {
+func M512RintPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512RintPd([8]float64(a)))
 }
 
@@ -42671,7 +42671,7 @@ func m512RintPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_rint_ps'.
 // Requires AVX512F.
-func M512MaskRintPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskRintPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskRintPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -42690,7 +42690,7 @@ func m512MaskRintPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_rint_ps'.
 // Requires AVX512F.
-func M512RintPs(a x86.M512) x86.M512 {
+func M512RintPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512RintPs([16]float32(a)))
 }
 
@@ -42720,7 +42720,7 @@ func m512RintPs(a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRolEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskRolEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskRolEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -42750,7 +42750,7 @@ func maskRolEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRolEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzRolEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzRolEpi32(uint8(k), [16]byte(a), imm8))
 }
 
@@ -42774,7 +42774,7 @@ func maskzRolEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RolEpi32(a x86.M128i, imm8 byte) x86.M128i {
+func RolEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(rolEpi32([16]byte(a), imm8))
 }
 
@@ -42804,7 +42804,7 @@ func rolEpi32(a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRolEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskRolEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskRolEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -42834,7 +42834,7 @@ func m256MaskRolEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRolEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzRolEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRolEpi32(uint8(k), [32]byte(a), imm8))
 }
 
@@ -42859,7 +42859,7 @@ func m256MaskzRolEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RolEpi32(a x86.M256i, imm8 byte) x86.M256i {
+func M256RolEpi32(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256RolEpi32([32]byte(a), imm8))
 }
 
@@ -42889,7 +42889,7 @@ func m256RolEpi32(a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRolEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskRolEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskRolEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
@@ -42919,7 +42919,7 @@ func m512MaskRolEpi32(src [64]byte, k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRolEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzRolEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRolEpi32(uint16(k), [64]byte(a), imm8))
 }
 
@@ -42944,7 +42944,7 @@ func m512MaskzRolEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RolEpi32(a x86.M512i, imm8 byte) x86.M512i {
+func M512RolEpi32(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512RolEpi32([64]byte(a), imm8))
 }
 
@@ -42974,7 +42974,7 @@ func m512RolEpi32(a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRolEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskRolEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskRolEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -43004,7 +43004,7 @@ func maskRolEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRolEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzRolEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzRolEpi64(uint8(k), [16]byte(a), imm8))
 }
 
@@ -43028,7 +43028,7 @@ func maskzRolEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RolEpi64(a x86.M128i, imm8 byte) x86.M128i {
+func RolEpi64(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(rolEpi64([16]byte(a), imm8))
 }
 
@@ -43058,7 +43058,7 @@ func rolEpi64(a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRolEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskRolEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskRolEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -43088,7 +43088,7 @@ func m256MaskRolEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRolEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzRolEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRolEpi64(uint8(k), [32]byte(a), imm8))
 }
 
@@ -43113,7 +43113,7 @@ func m256MaskzRolEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RolEpi64(a x86.M256i, imm8 byte) x86.M256i {
+func M256RolEpi64(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256RolEpi64([32]byte(a), imm8))
 }
 
@@ -43143,7 +43143,7 @@ func m256RolEpi64(a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRolEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskRolEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskRolEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -43173,7 +43173,7 @@ func m512MaskRolEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRolEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzRolEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRolEpi64(uint8(k), [64]byte(a), imm8))
 }
 
@@ -43198,7 +43198,7 @@ func m512MaskzRolEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RolEpi64(a x86.M512i, imm8 byte) x86.M512i {
+func M512RolEpi64(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512RolEpi64([64]byte(a), imm8))
 }
 
@@ -43226,7 +43226,7 @@ func m512RolEpi64(a [64]byte, imm8 byte) [64]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm_mask_rolv_epi32'.
 // Requires AVX512F.
-func MaskRolvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskRolvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskRolvEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -43254,7 +43254,7 @@ func maskRolvEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm_maskz_rolv_epi32'.
 // Requires AVX512F.
-func MaskzRolvEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzRolvEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzRolvEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -43277,7 +43277,7 @@ func maskzRolvEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm_rolv_epi32'.
 // Requires AVX512F.
-func RolvEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func RolvEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(rolvEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -43305,7 +43305,7 @@ func rolvEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm256_mask_rolv_epi32'.
 // Requires AVX512F.
-func M256MaskRolvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskRolvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskRolvEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -43333,7 +43333,7 @@ func m256MaskRolvEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm256_maskz_rolv_epi32'.
 // Requires AVX512F.
-func M256MaskzRolvEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzRolvEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRolvEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -43356,7 +43356,7 @@ func m256MaskzRolvEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm256_rolv_epi32'.
 // Requires AVX512F.
-func M256RolvEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256RolvEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256RolvEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -43384,7 +43384,7 @@ func m256RolvEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm512_mask_rolv_epi32'.
 // Requires AVX512F.
-func M512MaskRolvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskRolvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskRolvEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -43412,7 +43412,7 @@ func m512MaskRolvEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm512_maskz_rolv_epi32'.
 // Requires AVX512F.
-func M512MaskzRolvEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzRolvEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRolvEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -43435,7 +43435,7 @@ func m512MaskzRolvEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPROLVD'. Intrinsic: '_mm512_rolv_epi32'.
 // Requires AVX512F.
-func M512RolvEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RolvEpi32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RolvEpi32([64]byte(a), [64]byte(b)))
 }
 
@@ -43463,7 +43463,7 @@ func m512RolvEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm_mask_rolv_epi64'.
 // Requires AVX512F.
-func MaskRolvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskRolvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskRolvEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -43491,7 +43491,7 @@ func maskRolvEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm_maskz_rolv_epi64'.
 // Requires AVX512F.
-func MaskzRolvEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzRolvEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzRolvEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -43514,7 +43514,7 @@ func maskzRolvEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm_rolv_epi64'.
 // Requires AVX512F.
-func RolvEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func RolvEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(rolvEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -43542,7 +43542,7 @@ func rolvEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm256_mask_rolv_epi64'.
 // Requires AVX512F.
-func M256MaskRolvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskRolvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskRolvEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -43570,7 +43570,7 @@ func m256MaskRolvEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm256_maskz_rolv_epi64'.
 // Requires AVX512F.
-func M256MaskzRolvEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzRolvEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRolvEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -43593,7 +43593,7 @@ func m256MaskzRolvEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm256_rolv_epi64'.
 // Requires AVX512F.
-func M256RolvEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256RolvEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256RolvEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -43621,7 +43621,7 @@ func m256RolvEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm512_mask_rolv_epi64'.
 // Requires AVX512F.
-func M512MaskRolvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskRolvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskRolvEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -43649,7 +43649,7 @@ func m512MaskRolvEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm512_maskz_rolv_epi64'.
 // Requires AVX512F.
-func M512MaskzRolvEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzRolvEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRolvEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -43672,7 +43672,7 @@ func m512MaskzRolvEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPROLVQ'. Intrinsic: '_mm512_rolv_epi64'.
 // Requires AVX512F.
-func M512RolvEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RolvEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RolvEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -43702,7 +43702,7 @@ func m512RolvEpi64(a [64]byte, b [64]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRorEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskRorEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskRorEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -43732,7 +43732,7 @@ func maskRorEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRorEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzRorEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzRorEpi32(uint8(k), [16]byte(a), imm8))
 }
 
@@ -43756,7 +43756,7 @@ func maskzRorEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RorEpi32(a x86.M128i, imm8 byte) x86.M128i {
+func RorEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(rorEpi32([16]byte(a), imm8))
 }
 
@@ -43786,7 +43786,7 @@ func rorEpi32(a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRorEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskRorEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskRorEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -43816,7 +43816,7 @@ func m256MaskRorEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRorEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzRorEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRorEpi32(uint8(k), [32]byte(a), imm8))
 }
 
@@ -43841,7 +43841,7 @@ func m256MaskzRorEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RorEpi32(a x86.M256i, imm8 byte) x86.M256i {
+func M256RorEpi32(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256RorEpi32([32]byte(a), imm8))
 }
 
@@ -43871,7 +43871,7 @@ func m256RorEpi32(a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRorEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskRorEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskRorEpi32([64]byte(src), uint16(k), [64]byte(a), imm8))
 }
 
@@ -43901,7 +43901,7 @@ func m512MaskRorEpi32(src [64]byte, k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRorEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzRorEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRorEpi32(uint16(k), [64]byte(a), imm8))
 }
 
@@ -43926,7 +43926,7 @@ func m512MaskzRorEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RorEpi32(a x86.M512i, imm8 byte) x86.M512i {
+func M512RorEpi32(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512RorEpi32([64]byte(a), imm8))
 }
 
@@ -43956,7 +43956,7 @@ func m512RorEpi32(a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRorEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskRorEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskRorEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -43986,7 +43986,7 @@ func maskRorEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRorEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzRorEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzRorEpi64(uint8(k), [16]byte(a), imm8))
 }
 
@@ -44010,7 +44010,7 @@ func maskzRorEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RorEpi64(a x86.M128i, imm8 byte) x86.M128i {
+func RorEpi64(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(rorEpi64([16]byte(a), imm8))
 }
 
@@ -44040,7 +44040,7 @@ func rorEpi64(a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRorEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskRorEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskRorEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -44070,7 +44070,7 @@ func m256MaskRorEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRorEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzRorEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRorEpi64(uint8(k), [32]byte(a), imm8))
 }
 
@@ -44095,7 +44095,7 @@ func m256MaskzRorEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RorEpi64(a x86.M256i, imm8 byte) x86.M256i {
+func M256RorEpi64(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256RorEpi64([32]byte(a), imm8))
 }
 
@@ -44125,7 +44125,7 @@ func m256RorEpi64(a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRorEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskRorEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskRorEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -44155,7 +44155,7 @@ func m512MaskRorEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRorEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzRorEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRorEpi64(uint8(k), [64]byte(a), imm8))
 }
 
@@ -44180,7 +44180,7 @@ func m512MaskzRorEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RorEpi64(a x86.M512i, imm8 byte) x86.M512i {
+func M512RorEpi64(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512RorEpi64([64]byte(a), imm8))
 }
 
@@ -44208,7 +44208,7 @@ func m512RorEpi64(a [64]byte, imm8 byte) [64]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm_mask_rorv_epi32'.
 // Requires AVX512F.
-func MaskRorvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskRorvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskRorvEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -44236,7 +44236,7 @@ func maskRorvEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm_maskz_rorv_epi32'.
 // Requires AVX512F.
-func MaskzRorvEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzRorvEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzRorvEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -44259,7 +44259,7 @@ func maskzRorvEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm_rorv_epi32'.
 // Requires AVX512F.
-func RorvEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func RorvEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(rorvEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -44287,7 +44287,7 @@ func rorvEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm256_mask_rorv_epi32'.
 // Requires AVX512F.
-func M256MaskRorvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskRorvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskRorvEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -44315,7 +44315,7 @@ func m256MaskRorvEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm256_maskz_rorv_epi32'.
 // Requires AVX512F.
-func M256MaskzRorvEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzRorvEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRorvEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -44338,7 +44338,7 @@ func m256MaskzRorvEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm256_rorv_epi32'.
 // Requires AVX512F.
-func M256RorvEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256RorvEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256RorvEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -44366,7 +44366,7 @@ func m256RorvEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm512_mask_rorv_epi32'.
 // Requires AVX512F.
-func M512MaskRorvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskRorvEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskRorvEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -44394,7 +44394,7 @@ func m512MaskRorvEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm512_maskz_rorv_epi32'.
 // Requires AVX512F.
-func M512MaskzRorvEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzRorvEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRorvEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -44417,7 +44417,7 @@ func m512MaskzRorvEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPRORVD'. Intrinsic: '_mm512_rorv_epi32'.
 // Requires AVX512F.
-func M512RorvEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RorvEpi32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RorvEpi32([64]byte(a), [64]byte(b)))
 }
 
@@ -44445,7 +44445,7 @@ func m512RorvEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm_mask_rorv_epi64'.
 // Requires AVX512F.
-func MaskRorvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskRorvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskRorvEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -44473,7 +44473,7 @@ func maskRorvEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm_maskz_rorv_epi64'.
 // Requires AVX512F.
-func MaskzRorvEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzRorvEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzRorvEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -44496,7 +44496,7 @@ func maskzRorvEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm_rorv_epi64'.
 // Requires AVX512F.
-func RorvEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func RorvEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(rorvEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -44524,7 +44524,7 @@ func rorvEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm256_mask_rorv_epi64'.
 // Requires AVX512F.
-func M256MaskRorvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskRorvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskRorvEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -44552,7 +44552,7 @@ func m256MaskRorvEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm256_maskz_rorv_epi64'.
 // Requires AVX512F.
-func M256MaskzRorvEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzRorvEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzRorvEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -44575,7 +44575,7 @@ func m256MaskzRorvEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm256_rorv_epi64'.
 // Requires AVX512F.
-func M256RorvEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256RorvEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256RorvEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -44603,7 +44603,7 @@ func m256RorvEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm512_mask_rorv_epi64'.
 // Requires AVX512F.
-func M512MaskRorvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskRorvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskRorvEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -44631,7 +44631,7 @@ func m512MaskRorvEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm512_maskz_rorv_epi64'.
 // Requires AVX512F.
-func M512MaskzRorvEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzRorvEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzRorvEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -44654,7 +44654,7 @@ func m512MaskzRorvEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPRORVQ'. Intrinsic: '_mm512_rorv_epi64'.
 // Requires AVX512F.
-func M512RorvEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512RorvEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512RorvEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -44706,7 +44706,7 @@ func m512RorvEpi64(a [64]byte, b [64]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscalePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
+func MaskRoundscalePd(src x86.M128d, k x86.Mmask8, a x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskRoundscalePd([2]float64(src), uint8(k), [2]float64(a), imm8))
 }
 
@@ -44758,7 +44758,7 @@ func maskRoundscalePd(src [2]float64, k uint8, a [2]float64, imm8 byte) [2]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscalePd(k x86.Mmask8, a x86.M128d, imm8 byte) x86.M128d {
+func MaskzRoundscalePd(k x86.Mmask8, a x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskzRoundscalePd(uint8(k), [2]float64(a), imm8))
 }
 
@@ -44805,7 +44805,7 @@ func maskzRoundscalePd(k uint8, a [2]float64, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscalePd(a x86.M128d, imm8 byte) x86.M128d {
+func RoundscalePd(a x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(roundscalePd([2]float64(a), imm8))
 }
 
@@ -44857,7 +44857,7 @@ func roundscalePd(a [2]float64, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRoundscalePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
+func M256MaskRoundscalePd(src x86.M256d, k x86.Mmask8, a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskRoundscalePd([4]float64(src), uint8(k), [4]float64(a), imm8))
 }
 
@@ -44909,7 +44909,7 @@ func m256MaskRoundscalePd(src [4]float64, k uint8, a [4]float64, imm8 byte) [4]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRoundscalePd(k x86.Mmask8, a x86.M256d, imm8 byte) x86.M256d {
+func M256MaskzRoundscalePd(k x86.Mmask8, a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskzRoundscalePd(uint8(k), [4]float64(a), imm8))
 }
 
@@ -44956,7 +44956,7 @@ func m256MaskzRoundscalePd(k uint8, a [4]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RoundscalePd(a x86.M256d, imm8 byte) x86.M256d {
+func M256RoundscalePd(a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256RoundscalePd([4]float64(a), imm8))
 }
 
@@ -45008,7 +45008,7 @@ func m256RoundscalePd(a [4]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscalePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
+func M512MaskRoundscalePd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskRoundscalePd([8]float64(src), uint8(k), [8]float64(a), imm8))
 }
 
@@ -45060,7 +45060,7 @@ func m512MaskRoundscalePd(src [8]float64, k uint8, a [8]float64, imm8 byte) [8]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscalePd(k x86.Mmask8, a x86.M512d, imm8 byte) x86.M512d {
+func M512MaskzRoundscalePd(k x86.Mmask8, a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskzRoundscalePd(uint8(k), [8]float64(a), imm8))
 }
 
@@ -45107,7 +45107,7 @@ func m512MaskzRoundscalePd(k uint8, a [8]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscalePd(a x86.M512d, imm8 byte) x86.M512d {
+func M512RoundscalePd(a x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512RoundscalePd([8]float64(a), imm8))
 }
 
@@ -45159,7 +45159,7 @@ func m512RoundscalePd(a [8]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscalePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
+func MaskRoundscalePs(src x86.M128, k x86.Mmask8, a x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskRoundscalePs([4]float32(src), uint8(k), [4]float32(a), imm8))
 }
 
@@ -45211,7 +45211,7 @@ func maskRoundscalePs(src [4]float32, k uint8, a [4]float32, imm8 byte) [4]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscalePs(k x86.Mmask8, a x86.M128, imm8 byte) x86.M128 {
+func MaskzRoundscalePs(k x86.Mmask8, a x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskzRoundscalePs(uint8(k), [4]float32(a), imm8))
 }
 
@@ -45258,7 +45258,7 @@ func maskzRoundscalePs(k uint8, a [4]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscalePs(a x86.M128, imm8 byte) x86.M128 {
+func RoundscalePs(a x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(roundscalePs([4]float32(a), imm8))
 }
 
@@ -45310,7 +45310,7 @@ func roundscalePs(a [4]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskRoundscalePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
+func M256MaskRoundscalePs(src x86.M256, k x86.Mmask8, a x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskRoundscalePs([8]float32(src), uint8(k), [8]float32(a), imm8))
 }
 
@@ -45362,7 +45362,7 @@ func m256MaskRoundscalePs(src [8]float32, k uint8, a [8]float32, imm8 byte) [8]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzRoundscalePs(k x86.Mmask8, a x86.M256, imm8 byte) x86.M256 {
+func M256MaskzRoundscalePs(k x86.Mmask8, a x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskzRoundscalePs(uint8(k), [8]float32(a), imm8))
 }
 
@@ -45409,7 +45409,7 @@ func m256MaskzRoundscalePs(k uint8, a [8]float32, imm8 byte) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256RoundscalePs(a x86.M256, imm8 byte) x86.M256 {
+func M256RoundscalePs(a x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256RoundscalePs([8]float32(a), imm8))
 }
 
@@ -45461,7 +45461,7 @@ func m256RoundscalePs(a [8]float32, imm8 byte) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscalePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
+func M512MaskRoundscalePs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskRoundscalePs([16]float32(src), uint16(k), [16]float32(a), imm8))
 }
 
@@ -45513,7 +45513,7 @@ func m512MaskRoundscalePs(src [16]float32, k uint16, a [16]float32, imm8 byte) [
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscalePs(k x86.Mmask16, a x86.M512, imm8 byte) x86.M512 {
+func M512MaskzRoundscalePs(k x86.Mmask16, a x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskzRoundscalePs(uint16(k), [16]float32(a), imm8))
 }
 
@@ -45560,7 +45560,7 @@ func m512MaskzRoundscalePs(k uint16, a [16]float32, imm8 byte) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscalePs(a x86.M512, imm8 byte) x86.M512 {
+func M512RoundscalePs(a x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512RoundscalePs([16]float32(a), imm8))
 }
 
@@ -45619,7 +45619,7 @@ func m512RoundscalePs(a [16]float32, imm8 byte) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscaleRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) x86.M512d {
+func M512MaskRoundscaleRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskRoundscaleRoundPd([8]float64(src), uint8(k), [8]float64(a), imm8, rounding))
 }
 
@@ -45678,7 +45678,7 @@ func m512MaskRoundscaleRoundPd(src [8]float64, k uint8, a [8]float64, imm8 byte,
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscaleRoundPd(k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) x86.M512d {
+func M512MaskzRoundscaleRoundPd(k x86.Mmask8, a x86.M512d, imm8 byte, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzRoundscaleRoundPd(uint8(k), [8]float64(a), imm8, rounding))
 }
 
@@ -45732,7 +45732,7 @@ func m512MaskzRoundscaleRoundPd(k uint8, a [8]float64, imm8 byte, rounding int) 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscaleRoundPd(a x86.M512d, imm8 byte, rounding int) x86.M512d {
+func M512RoundscaleRoundPd(a x86.M512d, imm8 byte, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512RoundscaleRoundPd([8]float64(a), imm8, rounding))
 }
 
@@ -45791,7 +45791,7 @@ func m512RoundscaleRoundPd(a [8]float64, imm8 byte, rounding int) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskRoundscaleRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte, rounding int) x86.M512 {
+func M512MaskRoundscaleRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, imm8 byte, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskRoundscaleRoundPs([16]float32(src), uint16(k), [16]float32(a), imm8, rounding))
 }
 
@@ -45850,7 +45850,7 @@ func m512MaskRoundscaleRoundPs(src [16]float32, k uint16, a [16]float32, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzRoundscaleRoundPs(k x86.Mmask16, a x86.M512, imm8 byte, rounding int) x86.M512 {
+func M512MaskzRoundscaleRoundPs(k x86.Mmask16, a x86.M512, imm8 byte, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzRoundscaleRoundPs(uint16(k), [16]float32(a), imm8, rounding))
 }
 
@@ -45904,7 +45904,7 @@ func m512MaskzRoundscaleRoundPs(k uint16, a [16]float32, imm8 byte, rounding int
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512RoundscaleRoundPs(a x86.M512, imm8 byte, rounding int) x86.M512 {
+func M512RoundscaleRoundPs(a x86.M512, imm8 byte, rounding int) (dst x86.M512) {
 	return x86.M512(m512RoundscaleRoundPs([16]float32(a), imm8, rounding))
 }
 
@@ -45962,7 +45962,7 @@ func m512RoundscaleRoundPs(a [16]float32, imm8 byte, rounding int) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
+func MaskRoundscaleRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskRoundscaleRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
@@ -46020,7 +46020,7 @@ func maskRoundscaleRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
+func MaskzRoundscaleRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzRoundscaleRoundSd(uint8(k), [2]float64(a), [2]float64(b), imm8, rounding))
 }
 
@@ -46073,7 +46073,7 @@ func maskzRoundscaleRoundSd(k uint8, a [2]float64, b [2]float64, imm8 byte, roun
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleRoundSd(a x86.M128d, b x86.M128d, imm8 byte, rounding int) x86.M128d {
+func RoundscaleRoundSd(a x86.M128d, b x86.M128d, imm8 byte, rounding int) (dst x86.M128d) {
 	return x86.M128d(roundscaleRoundSd([2]float64(a), [2]float64(b), imm8, rounding))
 }
 
@@ -46131,7 +46131,7 @@ func roundscaleRoundSd(a [2]float64, b [2]float64, imm8 byte, rounding int) [2]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
+func MaskRoundscaleRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) (dst x86.M128) {
 	return x86.M128(maskRoundscaleRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
@@ -46189,7 +46189,7 @@ func maskRoundscaleRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
+func MaskzRoundscaleRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte, rounding int) (dst x86.M128) {
 	return x86.M128(maskzRoundscaleRoundSs(uint8(k), [4]float32(a), [4]float32(b), imm8, rounding))
 }
 
@@ -46242,7 +46242,7 @@ func maskzRoundscaleRoundSs(k uint8, a [4]float32, b [4]float32, imm8 byte, roun
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleRoundSs(a x86.M128, b x86.M128, imm8 byte, rounding int) x86.M128 {
+func RoundscaleRoundSs(a x86.M128, b x86.M128, imm8 byte, rounding int) (dst x86.M128) {
 	return x86.M128(roundscaleRoundSs([4]float32(a), [4]float32(b), imm8, rounding))
 }
 
@@ -46293,7 +46293,7 @@ func roundscaleRoundSs(a [4]float32, b [4]float32, imm8 byte, rounding int) [4]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
+func MaskRoundscaleSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskRoundscaleSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
@@ -46344,7 +46344,7 @@ func maskRoundscaleSd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
+func MaskzRoundscaleSd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskzRoundscaleSd(uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
@@ -46390,7 +46390,7 @@ func maskzRoundscaleSd(k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float6
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleSd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
+func RoundscaleSd(a x86.M128d, b x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(roundscaleSd([2]float64(a), [2]float64(b), imm8))
 }
 
@@ -46441,7 +46441,7 @@ func roundscaleSd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskRoundscaleSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
+func MaskRoundscaleSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskRoundscaleSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
@@ -46492,7 +46492,7 @@ func maskRoundscaleSs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzRoundscaleSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
+func MaskzRoundscaleSs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskzRoundscaleSs(uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
@@ -46538,7 +46538,7 @@ func maskzRoundscaleSs(k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float3
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func RoundscaleSs(a x86.M128, b x86.M128, imm8 byte) x86.M128 {
+func RoundscaleSs(a x86.M128, b x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(roundscaleSs([4]float32(a), [4]float32(b), imm8))
 }
 
@@ -46563,7 +46563,7 @@ func roundscaleSs(a [4]float32, b [4]float32, imm8 byte) [4]float32
 //
 // Instruction: 'VRSQRT14PD'. Intrinsic: '_mm_mask_rsqrt14_pd'.
 // Requires AVX512F.
-func MaskRsqrt14Pd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskRsqrt14Pd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskRsqrt14Pd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -46588,7 +46588,7 @@ func maskRsqrt14Pd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VRSQRT14PD'. Intrinsic: '_mm_maskz_rsqrt14_pd'.
 // Requires AVX512F.
-func MaskzRsqrt14Pd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzRsqrt14Pd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzRsqrt14Pd(uint8(k), [2]float64(a)))
 }
 
@@ -46613,7 +46613,7 @@ func maskzRsqrt14Pd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VRSQRT14PD'. Intrinsic: '_mm256_mask_rsqrt14_pd'.
 // Requires AVX512F.
-func M256MaskRsqrt14Pd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskRsqrt14Pd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskRsqrt14Pd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -46638,7 +46638,7 @@ func m256MaskRsqrt14Pd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VRSQRT14PD'. Intrinsic: '_mm256_maskz_rsqrt14_pd'.
 // Requires AVX512F.
-func M256MaskzRsqrt14Pd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzRsqrt14Pd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzRsqrt14Pd(uint8(k), [4]float64(a)))
 }
 
@@ -46663,7 +46663,7 @@ func m256MaskzRsqrt14Pd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VRSQRT14PD'. Intrinsic: '_mm512_mask_rsqrt14_pd'.
 // Requires AVX512F.
-func M512MaskRsqrt14Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskRsqrt14Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskRsqrt14Pd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -46688,7 +46688,7 @@ func m512MaskRsqrt14Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT14PD'. Intrinsic: '_mm512_maskz_rsqrt14_pd'.
 // Requires AVX512F.
-func M512MaskzRsqrt14Pd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzRsqrt14Pd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzRsqrt14Pd(uint8(k), [8]float64(a)))
 }
 
@@ -46708,7 +46708,7 @@ func m512MaskzRsqrt14Pd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT14PD'. Intrinsic: '_mm512_rsqrt14_pd'.
 // Requires AVX512F.
-func M512Rsqrt14Pd(a x86.M512d) x86.M512d {
+func M512Rsqrt14Pd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512Rsqrt14Pd([8]float64(a)))
 }
 
@@ -46733,7 +46733,7 @@ func m512Rsqrt14Pd(a [8]float64) [8]float64
 //
 // Instruction: 'VRSQRT14PS'. Intrinsic: '_mm_mask_rsqrt14_ps'.
 // Requires AVX512F.
-func MaskRsqrt14Ps(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskRsqrt14Ps(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskRsqrt14Ps([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -46758,7 +46758,7 @@ func maskRsqrt14Ps(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VRSQRT14PS'. Intrinsic: '_mm_maskz_rsqrt14_ps'.
 // Requires AVX512F.
-func MaskzRsqrt14Ps(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzRsqrt14Ps(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzRsqrt14Ps(uint8(k), [4]float32(a)))
 }
 
@@ -46783,7 +46783,7 @@ func maskzRsqrt14Ps(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VRSQRT14PS'. Intrinsic: '_mm256_mask_rsqrt14_ps'.
 // Requires AVX512F.
-func M256MaskRsqrt14Ps(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskRsqrt14Ps(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskRsqrt14Ps([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -46808,7 +46808,7 @@ func m256MaskRsqrt14Ps(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VRSQRT14PS'. Intrinsic: '_mm256_maskz_rsqrt14_ps'.
 // Requires AVX512F.
-func M256MaskzRsqrt14Ps(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzRsqrt14Ps(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzRsqrt14Ps(uint8(k), [8]float32(a)))
 }
 
@@ -46833,7 +46833,7 @@ func m256MaskzRsqrt14Ps(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VRSQRT14PS'. Intrinsic: '_mm512_mask_rsqrt14_ps'.
 // Requires AVX512F.
-func M512MaskRsqrt14Ps(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskRsqrt14Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskRsqrt14Ps([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -46858,7 +46858,7 @@ func m512MaskRsqrt14Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT14PS'. Intrinsic: '_mm512_maskz_rsqrt14_ps'.
 // Requires AVX512F.
-func M512MaskzRsqrt14Ps(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzRsqrt14Ps(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzRsqrt14Ps(uint16(k), [16]float32(a)))
 }
 
@@ -46878,7 +46878,7 @@ func m512MaskzRsqrt14Ps(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT14PS'. Intrinsic: '_mm512_rsqrt14_ps'.
 // Requires AVX512F.
-func M512Rsqrt14Ps(a x86.M512) x86.M512 {
+func M512Rsqrt14Ps(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512Rsqrt14Ps([16]float32(a)))
 }
 
@@ -46902,7 +46902,7 @@ func m512Rsqrt14Ps(a [16]float32) [16]float32
 //
 // Instruction: 'VRSQRT14SD'. Intrinsic: '_mm_mask_rsqrt14_sd'.
 // Requires AVX512F.
-func MaskRsqrt14Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskRsqrt14Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskRsqrt14Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -46926,7 +46926,7 @@ func maskRsqrt14Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float
 //
 // Instruction: 'VRSQRT14SD'. Intrinsic: '_mm_maskz_rsqrt14_sd'.
 // Requires AVX512F.
-func MaskzRsqrt14Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzRsqrt14Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzRsqrt14Sd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -46945,7 +46945,7 @@ func maskzRsqrt14Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRSQRT14SD'. Intrinsic: '_mm_rsqrt14_sd'.
 // Requires AVX512F.
-func Rsqrt14Sd(a x86.M128d, b x86.M128d) x86.M128d {
+func Rsqrt14Sd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(rsqrt14Sd([2]float64(a), [2]float64(b)))
 }
 
@@ -46969,7 +46969,7 @@ func rsqrt14Sd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VRSQRT14SS'. Intrinsic: '_mm_mask_rsqrt14_ss'.
 // Requires AVX512F.
-func MaskRsqrt14Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskRsqrt14Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskRsqrt14Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -46993,7 +46993,7 @@ func maskRsqrt14Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float
 //
 // Instruction: 'VRSQRT14SS'. Intrinsic: '_mm_maskz_rsqrt14_ss'.
 // Requires AVX512F.
-func MaskzRsqrt14Ss(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzRsqrt14Ss(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzRsqrt14Ss(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -47012,7 +47012,7 @@ func maskzRsqrt14Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VRSQRT14SS'. Intrinsic: '_mm_rsqrt14_ss'.
 // Requires AVX512F.
-func Rsqrt14Ss(a x86.M128, b x86.M128) x86.M128 {
+func Rsqrt14Ss(a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(rsqrt14Ss([4]float32(a), [4]float32(b)))
 }
 
@@ -47062,7 +47062,7 @@ func rsqrt14Ss(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm_mask_scalef_pd'.
 // Requires AVX512F.
-func MaskScalefPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskScalefPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskScalefPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -47112,7 +47112,7 @@ func maskScalefPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float6
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm_maskz_scalef_pd'.
 // Requires AVX512F.
-func MaskzScalefPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzScalefPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzScalefPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -47156,7 +47156,7 @@ func maskzScalefPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm_scalef_pd'.
 // Requires AVX512F.
-func ScalefPd(a x86.M128d, b x86.M128d) x86.M128d {
+func ScalefPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(scalefPd([2]float64(a), [2]float64(b)))
 }
 
@@ -47206,7 +47206,7 @@ func scalefPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm256_mask_scalef_pd'.
 // Requires AVX512F.
-func M256MaskScalefPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskScalefPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskScalefPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -47256,7 +47256,7 @@ func m256MaskScalefPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]fl
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm256_maskz_scalef_pd'.
 // Requires AVX512F.
-func M256MaskzScalefPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzScalefPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzScalefPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -47300,7 +47300,7 @@ func m256MaskzScalefPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm256_scalef_pd'.
 // Requires AVX512F.
-func M256ScalefPd(a x86.M256d, b x86.M256d) x86.M256d {
+func M256ScalefPd(a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256ScalefPd([4]float64(a), [4]float64(b)))
 }
 
@@ -47350,7 +47350,7 @@ func m256ScalefPd(a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm512_mask_scalef_pd'.
 // Requires AVX512F.
-func M512MaskScalefPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskScalefPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskScalefPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -47400,7 +47400,7 @@ func m512MaskScalefPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]fl
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm512_maskz_scalef_pd'.
 // Requires AVX512F.
-func M512MaskzScalefPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzScalefPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzScalefPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -47444,7 +47444,7 @@ func m512MaskzScalefPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm512_scalef_pd'.
 // Requires AVX512F.
-func M512ScalefPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512ScalefPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512ScalefPd([8]float64(a), [8]float64(b)))
 }
 
@@ -47494,7 +47494,7 @@ func m512ScalefPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm_mask_scalef_ps'.
 // Requires AVX512F.
-func MaskScalefPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskScalefPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskScalefPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -47544,7 +47544,7 @@ func maskScalefPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float3
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm_maskz_scalef_ps'.
 // Requires AVX512F.
-func MaskzScalefPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzScalefPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzScalefPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -47588,7 +47588,7 @@ func maskzScalefPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm_scalef_ps'.
 // Requires AVX512F.
-func ScalefPs(a x86.M128, b x86.M128) x86.M128 {
+func ScalefPs(a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(scalefPs([4]float32(a), [4]float32(b)))
 }
 
@@ -47638,7 +47638,7 @@ func scalefPs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm256_mask_scalef_ps'.
 // Requires AVX512F.
-func M256MaskScalefPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskScalefPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskScalefPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -47688,7 +47688,7 @@ func m256MaskScalefPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]fl
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm256_maskz_scalef_ps'.
 // Requires AVX512F.
-func M256MaskzScalefPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzScalefPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzScalefPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -47732,7 +47732,7 @@ func m256MaskzScalefPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm256_scalef_ps'.
 // Requires AVX512F.
-func M256ScalefPs(a x86.M256, b x86.M256) x86.M256 {
+func M256ScalefPs(a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256ScalefPs([8]float32(a), [8]float32(b)))
 }
 
@@ -47782,7 +47782,7 @@ func m256ScalefPs(a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm512_mask_scalef_ps'.
 // Requires AVX512F.
-func M512MaskScalefPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskScalefPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskScalefPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -47832,7 +47832,7 @@ func m512MaskScalefPs(src [16]float32, k uint16, a [16]float32, b [16]float32) [
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm512_maskz_scalef_ps'.
 // Requires AVX512F.
-func M512MaskzScalefPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzScalefPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzScalefPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -47876,7 +47876,7 @@ func m512MaskzScalefPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm512_scalef_ps'.
 // Requires AVX512F.
-func M512ScalefPs(a x86.M512, b x86.M512) x86.M512 {
+func M512ScalefPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512ScalefPs([16]float32(a), [16]float32(b)))
 }
 
@@ -47933,7 +47933,7 @@ func m512ScalefPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm512_mask_scalef_round_pd'.
 // Requires AVX512F.
-func M512MaskScalefRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512MaskScalefRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskScalefRoundPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
@@ -47990,7 +47990,7 @@ func m512MaskScalefRoundPd(src [8]float64, k uint8, a [8]float64, b [8]float64, 
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm512_maskz_scalef_round_pd'.
 // Requires AVX512F.
-func M512MaskzScalefRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512MaskzScalefRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzScalefRoundPd(uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
@@ -48041,7 +48041,7 @@ func m512MaskzScalefRoundPd(k uint8, a [8]float64, b [8]float64, rounding int) [
 //
 // Instruction: 'VSCALEFPD'. Intrinsic: '_mm512_scalef_round_pd'.
 // Requires AVX512F.
-func M512ScalefRoundPd(a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512ScalefRoundPd(a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512ScalefRoundPd([8]float64(a), [8]float64(b), rounding))
 }
 
@@ -48098,7 +48098,7 @@ func m512ScalefRoundPd(a [8]float64, b [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm512_mask_scalef_round_ps'.
 // Requires AVX512F.
-func M512MaskScalefRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512MaskScalefRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskScalefRoundPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
@@ -48155,7 +48155,7 @@ func m512MaskScalefRoundPs(src [16]float32, k uint16, a [16]float32, b [16]float
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm512_maskz_scalef_round_ps'.
 // Requires AVX512F.
-func M512MaskzScalefRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512MaskzScalefRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzScalefRoundPs(uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
@@ -48206,7 +48206,7 @@ func m512MaskzScalefRoundPs(k uint16, a [16]float32, b [16]float32, rounding int
 //
 // Instruction: 'VSCALEFPS'. Intrinsic: '_mm512_scalef_round_ps'.
 // Requires AVX512F.
-func M512ScalefRoundPs(a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512ScalefRoundPs(a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512ScalefRoundPs([16]float32(a), [16]float32(b), rounding))
 }
 
@@ -48262,7 +48262,7 @@ func m512ScalefRoundPs(a [16]float32, b [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VSCALEFSD'. Intrinsic: '_mm_mask_scalef_round_sd'.
 // Requires AVX512F.
-func MaskScalefRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskScalefRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskScalefRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -48318,7 +48318,7 @@ func maskScalefRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, roun
 //
 // Instruction: 'VSCALEFSD'. Intrinsic: '_mm_maskz_scalef_round_sd'.
 // Requires AVX512F.
-func MaskzScalefRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskzScalefRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzScalefRoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -48368,7 +48368,7 @@ func maskzScalefRoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]fl
 //
 // Instruction: 'VSCALEFSD'. Intrinsic: '_mm_scalef_round_sd'.
 // Requires AVX512F.
-func ScalefRoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func ScalefRoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(scalefRoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
@@ -48424,7 +48424,7 @@ func scalefRoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VSCALEFSS'. Intrinsic: '_mm_mask_scalef_round_ss'.
 // Requires AVX512F.
-func MaskScalefRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskScalefRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskScalefRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -48480,7 +48480,7 @@ func maskScalefRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, roun
 //
 // Instruction: 'VSCALEFSS'. Intrinsic: '_mm_maskz_scalef_round_ss'.
 // Requires AVX512F.
-func MaskzScalefRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskzScalefRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzScalefRoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -48531,7 +48531,7 @@ func maskzScalefRoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]fl
 //
 // Instruction: 'VSCALEFSS'. Intrinsic: '_mm_scalef_round_ss'.
 // Requires AVX512F.
-func ScalefRoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+func ScalefRoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(scalefRoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
@@ -48580,7 +48580,7 @@ func scalefRoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VSCALEFSD'. Intrinsic: '_mm_mask_scalef_sd'.
 // Requires AVX512F.
-func MaskScalefSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskScalefSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskScalefSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -48628,7 +48628,7 @@ func maskScalefSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float6
 //
 // Instruction: 'VSCALEFSD'. Intrinsic: '_mm_maskz_scalef_sd'.
 // Requires AVX512F.
-func MaskzScalefSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzScalefSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzScalefSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -48671,7 +48671,7 @@ func maskzScalefSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSCALEFSD'. Intrinsic: '_mm_scalef_sd'.
 // Requires AVX512F.
-func ScalefSd(a x86.M128d, b x86.M128d) x86.M128d {
+func ScalefSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(scalefSd([2]float64(a), [2]float64(b)))
 }
 
@@ -48720,7 +48720,7 @@ func scalefSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSCALEFSS'. Intrinsic: '_mm_mask_scalef_ss'.
 // Requires AVX512F.
-func MaskScalefSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskScalefSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskScalefSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -48769,7 +48769,7 @@ func maskScalefSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float3
 //
 // Instruction: 'VSCALEFSS'. Intrinsic: '_mm_maskz_scalef_ss'.
 // Requires AVX512F.
-func MaskzScalefSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzScalefSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzScalefSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -48813,7 +48813,7 @@ func maskzScalefSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSCALEFSS'. Intrinsic: '_mm_scalef_ss'.
 // Requires AVX512F.
-func ScalefSs(a x86.M128, b x86.M128) x86.M128 {
+func ScalefSs(a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(scalefSs([4]float32(a), [4]float32(b)))
 }
 
@@ -48842,7 +48842,7 @@ func scalefSs(a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_set_epi32'.
 // Requires AVX512F.
-func M512SetEpi32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M512i {
+func M512SetEpi32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) (dst x86.M512i) {
 	return x86.M512i(m512SetEpi32(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -48863,7 +48863,7 @@ func m512SetEpi32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, 
 //
 // Instruction: '...'. Intrinsic: '_mm512_set_epi64'.
 // Requires AVX512F.
-func M512SetEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) x86.M512i {
+func M512SetEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) (dst x86.M512i) {
 	return x86.M512i(m512SetEpi64(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -48885,7 +48885,7 @@ func m512SetEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1
 //
 // Instruction: '...'. Intrinsic: '_mm512_set_pd'.
 // Requires AVX512F.
-func M512SetPd(e7 float64, e6 float64, e5 float64, e4 float64, e3 float64, e2 float64, e1 float64, e0 float64) x86.M512d {
+func M512SetPd(e7 float64, e6 float64, e5 float64, e4 float64, e3 float64, e2 float64, e1 float64, e0 float64) (dst x86.M512d) {
 	return x86.M512d(m512SetPd(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -48915,7 +48915,7 @@ func m512SetPd(e7 float64, e6 float64, e5 float64, e4 float64, e3 float64, e2 fl
 //
 // Instruction: '...'. Intrinsic: '_mm512_set_ps'.
 // Requires AVX512F.
-func M512SetPs(e15 float32, e14 float32, e13 float32, e12 float32, e11 float32, e10 float32, e9 float32, e8 float32, e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M512 {
+func M512SetPs(e15 float32, e14 float32, e13 float32, e12 float32, e11 float32, e10 float32, e9 float32, e8 float32, e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) (dst x86.M512) {
 	return x86.M512(m512SetPs(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -48933,7 +48933,7 @@ func m512SetPs(e15 float32, e14 float32, e13 float32, e12 float32, e11 float32, 
 //
 // Instruction: '...'. Intrinsic: '_mm512_set1_epi16'.
 // Requires AVX512F.
-func M512Set1Epi16(a int16) x86.M512i {
+func M512Set1Epi16(a int16) (dst x86.M512i) {
 	return x86.M512i(m512Set1Epi16(a))
 }
 
@@ -48956,7 +48956,7 @@ func m512Set1Epi16(a int16) [64]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm_mask_set1_epi32'.
 // Requires AVX512F.
-func MaskSet1Epi32(src x86.M128i, k x86.Mmask8, a int) x86.M128i {
+func MaskSet1Epi32(src x86.M128i, k x86.Mmask8, a int) (dst x86.M128i) {
 	return x86.M128i(maskSet1Epi32([16]byte(src), uint8(k), a))
 }
 
@@ -48979,7 +48979,7 @@ func maskSet1Epi32(src [16]byte, k uint8, a int) [16]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm_maskz_set1_epi32'.
 // Requires AVX512F.
-func MaskzSet1Epi32(k x86.Mmask8, a int) x86.M128i {
+func MaskzSet1Epi32(k x86.Mmask8, a int) (dst x86.M128i) {
 	return x86.M128i(maskzSet1Epi32(uint8(k), a))
 }
 
@@ -49002,7 +49002,7 @@ func maskzSet1Epi32(k uint8, a int) [16]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm256_mask_set1_epi32'.
 // Requires AVX512F.
-func M256MaskSet1Epi32(src x86.M256i, k x86.Mmask8, a int) x86.M256i {
+func M256MaskSet1Epi32(src x86.M256i, k x86.Mmask8, a int) (dst x86.M256i) {
 	return x86.M256i(m256MaskSet1Epi32([32]byte(src), uint8(k), a))
 }
 
@@ -49025,7 +49025,7 @@ func m256MaskSet1Epi32(src [32]byte, k uint8, a int) [32]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm256_maskz_set1_epi32'.
 // Requires AVX512F.
-func M256MaskzSet1Epi32(k x86.Mmask8, a int) x86.M256i {
+func M256MaskzSet1Epi32(k x86.Mmask8, a int) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSet1Epi32(uint8(k), a))
 }
 
@@ -49048,7 +49048,7 @@ func m256MaskzSet1Epi32(k uint8, a int) [32]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_mask_set1_epi32'.
 // Requires AVX512F.
-func M512MaskSet1Epi32(src x86.M512i, k x86.Mmask16, a int) x86.M512i {
+func M512MaskSet1Epi32(src x86.M512i, k x86.Mmask16, a int) (dst x86.M512i) {
 	return x86.M512i(m512MaskSet1Epi32([64]byte(src), uint16(k), a))
 }
 
@@ -49071,7 +49071,7 @@ func m512MaskSet1Epi32(src [64]byte, k uint16, a int) [64]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_maskz_set1_epi32'.
 // Requires AVX512F.
-func M512MaskzSet1Epi32(k x86.Mmask16, a int) x86.M512i {
+func M512MaskzSet1Epi32(k x86.Mmask16, a int) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSet1Epi32(uint16(k), a))
 }
 
@@ -49088,7 +49088,7 @@ func m512MaskzSet1Epi32(k uint16, a int) [64]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm512_set1_epi32'.
 // Requires AVX512F.
-func M512Set1Epi32(a int) x86.M512i {
+func M512Set1Epi32(a int) (dst x86.M512i) {
 	return x86.M512i(m512Set1Epi32(a))
 }
 
@@ -49111,7 +49111,7 @@ func m512Set1Epi32(a int) [64]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm_mask_set1_epi64'.
 // Requires AVX512F.
-func MaskSet1Epi64(src x86.M128i, k x86.Mmask8, a int64) x86.M128i {
+func MaskSet1Epi64(src x86.M128i, k x86.Mmask8, a int64) (dst x86.M128i) {
 	return x86.M128i(maskSet1Epi64([16]byte(src), uint8(k), a))
 }
 
@@ -49134,7 +49134,7 @@ func maskSet1Epi64(src [16]byte, k uint8, a int64) [16]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm_maskz_set1_epi64'.
 // Requires AVX512F.
-func MaskzSet1Epi64(k x86.Mmask8, a int64) x86.M128i {
+func MaskzSet1Epi64(k x86.Mmask8, a int64) (dst x86.M128i) {
 	return x86.M128i(maskzSet1Epi64(uint8(k), a))
 }
 
@@ -49157,7 +49157,7 @@ func maskzSet1Epi64(k uint8, a int64) [16]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm256_mask_set1_epi64'.
 // Requires AVX512F.
-func M256MaskSet1Epi64(src x86.M256i, k x86.Mmask8, a int64) x86.M256i {
+func M256MaskSet1Epi64(src x86.M256i, k x86.Mmask8, a int64) (dst x86.M256i) {
 	return x86.M256i(m256MaskSet1Epi64([32]byte(src), uint8(k), a))
 }
 
@@ -49180,7 +49180,7 @@ func m256MaskSet1Epi64(src [32]byte, k uint8, a int64) [32]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm256_maskz_set1_epi64'.
 // Requires AVX512F.
-func M256MaskzSet1Epi64(k x86.Mmask8, a int64) x86.M256i {
+func M256MaskzSet1Epi64(k x86.Mmask8, a int64) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSet1Epi64(uint8(k), a))
 }
 
@@ -49203,7 +49203,7 @@ func m256MaskzSet1Epi64(k uint8, a int64) [32]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_mask_set1_epi64'.
 // Requires AVX512F.
-func M512MaskSet1Epi64(src x86.M512i, k x86.Mmask8, a int64) x86.M512i {
+func M512MaskSet1Epi64(src x86.M512i, k x86.Mmask8, a int64) (dst x86.M512i) {
 	return x86.M512i(m512MaskSet1Epi64([64]byte(src), uint8(k), a))
 }
 
@@ -49226,7 +49226,7 @@ func m512MaskSet1Epi64(src [64]byte, k uint8, a int64) [64]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_maskz_set1_epi64'.
 // Requires AVX512F.
-func M512MaskzSet1Epi64(k x86.Mmask8, a int64) x86.M512i {
+func M512MaskzSet1Epi64(k x86.Mmask8, a int64) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSet1Epi64(uint8(k), a))
 }
 
@@ -49243,7 +49243,7 @@ func m512MaskzSet1Epi64(k uint8, a int64) [64]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm512_set1_epi64'.
 // Requires AVX512F.
-func M512Set1Epi64(a int64) x86.M512i {
+func M512Set1Epi64(a int64) (dst x86.M512i) {
 	return x86.M512i(m512Set1Epi64(a))
 }
 
@@ -49260,7 +49260,7 @@ func m512Set1Epi64(a int64) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_set1_epi8'.
 // Requires AVX512F.
-func M512Set1Epi8(a byte) x86.M512i {
+func M512Set1Epi8(a byte) (dst x86.M512i) {
 	return x86.M512i(m512Set1Epi8(a))
 }
 
@@ -49278,7 +49278,7 @@ func m512Set1Epi8(a byte) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_set1_pd'.
 // Requires AVX512F.
-func M512Set1Pd(a float64) x86.M512d {
+func M512Set1Pd(a float64) (dst x86.M512d) {
 	return x86.M512d(m512Set1Pd(a))
 }
 
@@ -49296,7 +49296,7 @@ func m512Set1Pd(a float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_set1_ps'.
 // Requires AVX512F.
-func M512Set1Ps(a float32) x86.M512 {
+func M512Set1Ps(a float32) (dst x86.M512) {
 	return x86.M512(m512Set1Ps(a))
 }
 
@@ -49326,7 +49326,7 @@ func m512Set1Ps(a float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_set4_epi32'.
 // Requires AVX512F.
-func M512Set4Epi32(d int, c int, b int, a int) x86.M512i {
+func M512Set4Epi32(d int, c int, b int, a int) (dst x86.M512i) {
 	return x86.M512i(m512Set4Epi32(d, c, b, a))
 }
 
@@ -49348,7 +49348,7 @@ func m512Set4Epi32(d int, c int, b int, a int) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_set4_epi64'.
 // Requires AVX512F.
-func M512Set4Epi64(d int64, c int64, b int64, a int64) x86.M512i {
+func M512Set4Epi64(d int64, c int64, b int64, a int64) (dst x86.M512i) {
 	return x86.M512i(m512Set4Epi64(d, c, b, a))
 }
 
@@ -49370,7 +49370,7 @@ func m512Set4Epi64(d int64, c int64, b int64, a int64) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_set4_pd'.
 // Requires AVX512F.
-func M512Set4Pd(d float64, c float64, b float64, a float64) x86.M512d {
+func M512Set4Pd(d float64, c float64, b float64, a float64) (dst x86.M512d) {
 	return x86.M512d(m512Set4Pd(d, c, b, a))
 }
 
@@ -49400,7 +49400,7 @@ func m512Set4Pd(d float64, c float64, b float64, a float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_set4_ps'.
 // Requires AVX512F.
-func M512Set4Ps(d float32, c float32, b float32, a float32) x86.M512 {
+func M512Set4Ps(d float32, c float32, b float32, a float32) (dst x86.M512) {
 	return x86.M512(m512Set4Ps(d, c, b, a))
 }
 
@@ -49430,7 +49430,7 @@ func m512Set4Ps(d float32, c float32, b float32, a float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr_epi32'.
 // Requires AVX512F.
-func M512SetrEpi32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) x86.M512i {
+func M512SetrEpi32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int, e8 int, e7 int, e6 int, e5 int, e4 int, e3 int, e2 int, e1 int, e0 int) (dst x86.M512i) {
 	return x86.M512i(m512SetrEpi32(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -49452,7 +49452,7 @@ func m512SetrEpi32(e15 int, e14 int, e13 int, e12 int, e11 int, e10 int, e9 int,
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr_epi64'.
 // Requires AVX512F.
-func M512SetrEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) x86.M512i {
+func M512SetrEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e1 int64, e0 int64) (dst x86.M512i) {
 	return x86.M512i(m512SetrEpi64(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -49474,7 +49474,7 @@ func m512SetrEpi64(e7 int64, e6 int64, e5 int64, e4 int64, e3 int64, e2 int64, e
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr_pd'.
 // Requires AVX512F.
-func M512SetrPd(e7 float64, e6 float64, e5 float64, e4 float64, e3 float64, e2 float64, e1 float64, e0 float64) x86.M512d {
+func M512SetrPd(e7 float64, e6 float64, e5 float64, e4 float64, e3 float64, e2 float64, e1 float64, e0 float64) (dst x86.M512d) {
 	return x86.M512d(m512SetrPd(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -49504,7 +49504,7 @@ func m512SetrPd(e7 float64, e6 float64, e5 float64, e4 float64, e3 float64, e2 f
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr_ps'.
 // Requires AVX512F.
-func M512SetrPs(e15 float32, e14 float32, e13 float32, e12 float32, e11 float32, e10 float32, e9 float32, e8 float32, e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) x86.M512 {
+func M512SetrPs(e15 float32, e14 float32, e13 float32, e12 float32, e11 float32, e10 float32, e9 float32, e8 float32, e7 float32, e6 float32, e5 float32, e4 float32, e3 float32, e2 float32, e1 float32, e0 float32) (dst x86.M512) {
 	return x86.M512(m512SetrPs(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -49534,7 +49534,7 @@ func m512SetrPs(e15 float32, e14 float32, e13 float32, e12 float32, e11 float32,
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr4_epi32'.
 // Requires AVX512F.
-func M512Setr4Epi32(d int, c int, b int, a int) x86.M512i {
+func M512Setr4Epi32(d int, c int, b int, a int) (dst x86.M512i) {
 	return x86.M512i(m512Setr4Epi32(d, c, b, a))
 }
 
@@ -49556,7 +49556,7 @@ func m512Setr4Epi32(d int, c int, b int, a int) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr4_epi64'.
 // Requires AVX512F.
-func M512Setr4Epi64(d int64, c int64, b int64, a int64) x86.M512i {
+func M512Setr4Epi64(d int64, c int64, b int64, a int64) (dst x86.M512i) {
 	return x86.M512i(m512Setr4Epi64(d, c, b, a))
 }
 
@@ -49578,7 +49578,7 @@ func m512Setr4Epi64(d int64, c int64, b int64, a int64) [64]byte
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr4_pd'.
 // Requires AVX512F.
-func M512Setr4Pd(d float64, c float64, b float64, a float64) x86.M512d {
+func M512Setr4Pd(d float64, c float64, b float64, a float64) (dst x86.M512d) {
 	return x86.M512d(m512Setr4Pd(d, c, b, a))
 }
 
@@ -49608,7 +49608,7 @@ func m512Setr4Pd(d float64, c float64, b float64, a float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_setr4_ps'.
 // Requires AVX512F.
-func M512Setr4Ps(d float32, c float32, b float32, a float32) x86.M512 {
+func M512Setr4Ps(d float32, c float32, b float32, a float32) (dst x86.M512) {
 	return x86.M512(m512Setr4Ps(d, c, b, a))
 }
 
@@ -49621,7 +49621,7 @@ func m512Setr4Ps(d float32, c float32, b float32, a float32) [16]float32
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_setzero'.
 // Requires AVX512F.
-func M512Setzero() x86.M512 {
+func M512Setzero() (dst x86.M512) {
 	return x86.M512(m512Setzero())
 }
 
@@ -49635,7 +49635,7 @@ func m512Setzero() [16]float32
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_setzero_epi32'.
 // Requires AVX512F.
-func M512SetzeroEpi32() x86.M512i {
+func M512SetzeroEpi32() (dst x86.M512i) {
 	return x86.M512i(m512SetzeroEpi32())
 }
 
@@ -49648,7 +49648,7 @@ func m512SetzeroEpi32() [64]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_setzero_pd'.
 // Requires AVX512F.
-func M512SetzeroPd() x86.M512d {
+func M512SetzeroPd() (dst x86.M512d) {
 	return x86.M512d(m512SetzeroPd())
 }
 
@@ -49661,7 +49661,7 @@ func m512SetzeroPd() [8]float64
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_setzero_ps'.
 // Requires AVX512F.
-func M512SetzeroPs() x86.M512 {
+func M512SetzeroPs() (dst x86.M512) {
 	return x86.M512(m512SetzeroPs())
 }
 
@@ -49675,7 +49675,7 @@ func m512SetzeroPs() [16]float32
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_setzero_si512'.
 // Requires AVX512F.
-func M512SetzeroSi512() x86.M512i {
+func M512SetzeroSi512() (dst x86.M512i) {
 	return x86.M512i(m512SetzeroSi512())
 }
 
@@ -49714,7 +49714,7 @@ func m512SetzeroSi512() [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShuffleEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskShuffleEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskShuffleEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -49753,7 +49753,7 @@ func maskShuffleEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShuffleEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzShuffleEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzShuffleEpi32(uint8(k), [16]byte(a), imm8))
 }
 
@@ -49797,7 +49797,7 @@ func maskzShuffleEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskShuffleEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskShuffleEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -49840,7 +49840,7 @@ func m256MaskShuffleEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzShuffleEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzShuffleEpi32(uint8(k), [32]byte(a), imm8))
 }
 
@@ -49891,7 +49891,7 @@ func m256MaskzShuffleEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzShuffleEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzShuffleEpi32(uint16(k), [64]byte(a), imm8))
 }
 
@@ -49928,7 +49928,7 @@ func m512MaskzShuffleEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleF32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
+func M256MaskShuffleF32x4(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskShuffleF32x4([8]float32(src), uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
@@ -49965,7 +49965,7 @@ func m256MaskShuffleF32x4(src [8]float32, k uint8, a [8]float32, b [8]float32, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleF32x4(k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
+func M256MaskzShuffleF32x4(k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskzShuffleF32x4(uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
@@ -49992,7 +49992,7 @@ func m256MaskzShuffleF32x4(k uint8, a [8]float32, b [8]float32, imm8 byte) [8]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleF32x4(a x86.M256, b x86.M256, imm8 byte) x86.M256 {
+func M256ShuffleF32x4(a x86.M256, b x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256ShuffleF32x4([8]float32(a), [8]float32(b), imm8))
 }
 
@@ -50033,7 +50033,7 @@ func m256ShuffleF32x4(a [8]float32, b [8]float32, imm8 byte) [8]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleF32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
+func M512MaskShuffleF32x4(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskShuffleF32x4([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
@@ -50074,7 +50074,7 @@ func m512MaskShuffleF32x4(src [16]float32, k uint16, a [16]float32, b [16]float3
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleF32x4(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
+func M512MaskzShuffleF32x4(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskzShuffleF32x4(uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
@@ -50105,7 +50105,7 @@ func m512MaskzShuffleF32x4(k uint16, a [16]float32, b [16]float32, imm8 byte) [1
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleF32x4(a x86.M512, b x86.M512, imm8 byte) x86.M512 {
+func M512ShuffleF32x4(a x86.M512, b x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512ShuffleF32x4([16]float32(a), [16]float32(b), imm8))
 }
 
@@ -50142,7 +50142,7 @@ func m512ShuffleF32x4(a [16]float32, b [16]float32, imm8 byte) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleF64x2(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
+func M256MaskShuffleF64x2(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskShuffleF64x2([4]float64(src), uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
@@ -50179,7 +50179,7 @@ func m256MaskShuffleF64x2(src [4]float64, k uint8, a [4]float64, b [4]float64, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleF64x2(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
+func M256MaskzShuffleF64x2(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskzShuffleF64x2(uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
@@ -50206,7 +50206,7 @@ func m256MaskzShuffleF64x2(k uint8, a [4]float64, b [4]float64, imm8 byte) [4]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleF64x2(a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
+func M256ShuffleF64x2(a x86.M256d, b x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256ShuffleF64x2([4]float64(a), [4]float64(b), imm8))
 }
 
@@ -50247,7 +50247,7 @@ func m256ShuffleF64x2(a [4]float64, b [4]float64, imm8 byte) [4]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleF64x2(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
+func M512MaskShuffleF64x2(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskShuffleF64x2([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
@@ -50288,7 +50288,7 @@ func m512MaskShuffleF64x2(src [8]float64, k uint8, a [8]float64, b [8]float64, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleF64x2(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
+func M512MaskzShuffleF64x2(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskzShuffleF64x2(uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
@@ -50319,7 +50319,7 @@ func m512MaskzShuffleF64x2(k uint8, a [8]float64, b [8]float64, imm8 byte) [8]fl
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleF64x2(a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
+func M512ShuffleF64x2(a x86.M512d, b x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512ShuffleF64x2([8]float64(a), [8]float64(b), imm8))
 }
 
@@ -50356,7 +50356,7 @@ func m512ShuffleF64x2(a [8]float64, b [8]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleI32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256MaskShuffleI32x4(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskShuffleI32x4([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -50393,7 +50393,7 @@ func m256MaskShuffleI32x4(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleI32x4(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzShuffleI32x4(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzShuffleI32x4(uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -50419,7 +50419,7 @@ func m256MaskzShuffleI32x4(k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleI32x4(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256ShuffleI32x4(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256ShuffleI32x4([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -50460,7 +50460,7 @@ func m256ShuffleI32x4(a [32]byte, b [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleI32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512MaskShuffleI32x4(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskShuffleI32x4([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -50501,7 +50501,7 @@ func m512MaskShuffleI32x4(src [64]byte, k uint16, a [64]byte, b [64]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleI32x4(k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzShuffleI32x4(k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzShuffleI32x4(uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -50531,7 +50531,7 @@ func m512MaskzShuffleI32x4(k uint16, a [64]byte, b [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleI32x4(a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512ShuffleI32x4(a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512ShuffleI32x4([64]byte(a), [64]byte(b), imm8))
 }
 
@@ -50568,7 +50568,7 @@ func m512ShuffleI32x4(a [64]byte, b [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShuffleI64x2(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256MaskShuffleI64x2(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskShuffleI64x2([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -50605,7 +50605,7 @@ func m256MaskShuffleI64x2(src [32]byte, k uint8, a [32]byte, b [32]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShuffleI64x2(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzShuffleI64x2(k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzShuffleI64x2(uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -50631,7 +50631,7 @@ func m256MaskzShuffleI64x2(k uint8, a [32]byte, b [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleI64x2(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256ShuffleI64x2(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256ShuffleI64x2([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -50672,7 +50672,7 @@ func m256ShuffleI64x2(a [32]byte, b [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShuffleI64x2(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512MaskShuffleI64x2(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskShuffleI64x2([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -50713,7 +50713,7 @@ func m512MaskShuffleI64x2(src [64]byte, k uint8, a [64]byte, b [64]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShuffleI64x2(k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzShuffleI64x2(k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzShuffleI64x2(uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -50743,7 +50743,7 @@ func m512MaskzShuffleI64x2(k uint8, a [64]byte, b [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShuffleI64x2(a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512ShuffleI64x2(a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512ShuffleI64x2([64]byte(a), [64]byte(b), imm8))
 }
 
@@ -50772,7 +50772,7 @@ func m512ShuffleI64x2(a [64]byte, b [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShufflePd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
+func MaskShufflePd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskShufflePd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
@@ -50800,7 +50800,7 @@ func maskShufflePd(src [2]float64, k uint8, a [2]float64, b [2]float64, imm8 byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShufflePd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
+func MaskzShufflePd(k x86.Mmask8, a x86.M128d, b x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(maskzShufflePd(uint8(k), [2]float64(a), [2]float64(b), imm8))
 }
 
@@ -50831,7 +50831,7 @@ func maskzShufflePd(k uint8, a [2]float64, b [2]float64, imm8 byte) [2]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShufflePd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
+func M256MaskShufflePd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskShufflePd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
@@ -50862,7 +50862,7 @@ func m256MaskShufflePd(src [4]float64, k uint8, a [4]float64, b [4]float64, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShufflePd(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) x86.M256d {
+func M256MaskzShufflePd(k x86.Mmask8, a x86.M256d, b x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256MaskzShufflePd(uint8(k), [4]float64(a), [4]float64(b), imm8))
 }
 
@@ -50897,7 +50897,7 @@ func m256MaskzShufflePd(k uint8, a [4]float64, b [4]float64, imm8 byte) [4]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShufflePd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
+func M512MaskShufflePd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskShufflePd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
@@ -50932,7 +50932,7 @@ func m512MaskShufflePd(src [8]float64, k uint8, a [8]float64, b [8]float64, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShufflePd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
+func M512MaskzShufflePd(k x86.Mmask8, a x86.M512d, b x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512MaskzShufflePd(uint8(k), [8]float64(a), [8]float64(b), imm8))
 }
 
@@ -50957,7 +50957,7 @@ func m512MaskzShufflePd(k uint8, a [8]float64, b [8]float64, imm8 byte) [8]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShufflePd(a x86.M512d, b x86.M512d, imm8 byte) x86.M512d {
+func M512ShufflePd(a x86.M512d, b x86.M512d, imm8 byte) (dst x86.M512d) {
 	return x86.M512d(m512ShufflePd([8]float64(a), [8]float64(b), imm8))
 }
 
@@ -50998,7 +50998,7 @@ func m512ShufflePd(a [8]float64, b [8]float64, imm8 byte) [8]float64
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskShufflePs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
+func MaskShufflePs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskShufflePs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
@@ -51039,7 +51039,7 @@ func maskShufflePs(src [4]float32, k uint8, a [4]float32, b [4]float32, imm8 byt
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzShufflePs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) x86.M128 {
+func MaskzShufflePs(k x86.Mmask8, a x86.M128, b x86.M128, imm8 byte) (dst x86.M128) {
 	return x86.M128(maskzShufflePs(uint8(k), [4]float32(a), [4]float32(b), imm8))
 }
 
@@ -51084,7 +51084,7 @@ func maskzShufflePs(k uint8, a [4]float32, b [4]float32, imm8 byte) [4]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskShufflePs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
+func M256MaskShufflePs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskShufflePs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
@@ -51129,7 +51129,7 @@ func m256MaskShufflePs(src [8]float32, k uint8, a [8]float32, b [8]float32, imm8
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzShufflePs(k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) x86.M256 {
+func M256MaskzShufflePs(k x86.Mmask8, a x86.M256, b x86.M256, imm8 byte) (dst x86.M256) {
 	return x86.M256(m256MaskzShufflePs(uint8(k), [8]float32(a), [8]float32(b), imm8))
 }
 
@@ -51182,7 +51182,7 @@ func m256MaskzShufflePs(k uint8, a [8]float32, b [8]float32, imm8 byte) [8]float
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskShufflePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
+func M512MaskShufflePs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskShufflePs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
@@ -51235,7 +51235,7 @@ func m512MaskShufflePs(src [16]float32, k uint16, a [16]float32, b [16]float32, 
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzShufflePs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) x86.M512 {
+func M512MaskzShufflePs(k x86.Mmask16, a x86.M512, b x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512MaskzShufflePs(uint16(k), [16]float32(a), [16]float32(b), imm8))
 }
 
@@ -51278,7 +51278,7 @@ func m512MaskzShufflePs(k uint16, a [16]float32, b [16]float32, imm8 byte) [16]f
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512ShufflePs(a x86.M512, b x86.M512, imm8 byte) x86.M512 {
+func M512ShufflePs(a x86.M512, b x86.M512, imm8 byte) (dst x86.M512) {
 	return x86.M512(m512ShufflePs([16]float32(a), [16]float32(b), imm8))
 }
 
@@ -51302,7 +51302,7 @@ func m512ShufflePs(a [16]float32, b [16]float32, imm8 byte) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sin_pd'.
 // Requires AVX512F.
-func M512MaskSinPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskSinPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskSinPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -51321,7 +51321,7 @@ func m512MaskSinPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_sin_pd'.
 // Requires AVX512F.
-func M512SinPd(a x86.M512d) x86.M512d {
+func M512SinPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512SinPd([8]float64(a)))
 }
 
@@ -51345,7 +51345,7 @@ func m512SinPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sin_ps'.
 // Requires AVX512F.
-func M512MaskSinPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskSinPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskSinPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -51364,7 +51364,7 @@ func m512MaskSinPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_sin_ps'.
 // Requires AVX512F.
-func M512SinPs(a x86.M512) x86.M512 {
+func M512SinPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512SinPs([16]float32(a)))
 }
 
@@ -51395,7 +51395,7 @@ func m512SinPs(a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M512MaskSincosPd(cos_res *x86.M512d, sin_src x86.M512d, cos_src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskSincosPd(cos_res *x86.M512d, sin_src x86.M512d, cos_src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512d{}
 }
@@ -51416,7 +51416,7 @@ func M512MaskSincosPd(cos_res *x86.M512d, sin_src x86.M512d, cos_src x86.M512d, 
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M512SincosPd(cos_res *x86.M512d, a x86.M512d) x86.M512d {
+func M512SincosPd(cos_res *x86.M512d, a x86.M512d) (dst x86.M512d) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512d{}
 }
@@ -51445,7 +51445,7 @@ func M512SincosPd(cos_res *x86.M512d, a x86.M512d) x86.M512d {
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M512MaskSincosPs(cos_res *x86.M512, sin_src x86.M512, cos_src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskSincosPs(cos_res *x86.M512, sin_src x86.M512, cos_src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512{}
 }
@@ -51466,7 +51466,7 @@ func M512MaskSincosPs(cos_res *x86.M512, sin_src x86.M512, cos_src x86.M512, k x
 // Requires AVX512F.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M512SincosPs(cos_res *x86.M512, a x86.M512) x86.M512 {
+func M512SincosPs(cos_res *x86.M512, a x86.M512) (dst x86.M512) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M512{}
 }
@@ -51488,7 +51488,7 @@ func M512SincosPs(cos_res *x86.M512, a x86.M512) x86.M512 {
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sind_pd'.
 // Requires AVX512F.
-func M512MaskSindPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskSindPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskSindPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -51507,7 +51507,7 @@ func m512MaskSindPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_sind_pd'.
 // Requires AVX512F.
-func M512SindPd(a x86.M512d) x86.M512d {
+func M512SindPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512SindPd([8]float64(a)))
 }
 
@@ -51531,7 +51531,7 @@ func m512SindPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sind_ps'.
 // Requires AVX512F.
-func M512MaskSindPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskSindPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskSindPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -51550,7 +51550,7 @@ func m512MaskSindPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_sind_ps'.
 // Requires AVX512F.
-func M512SindPs(a x86.M512) x86.M512 {
+func M512SindPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512SindPs([16]float32(a)))
 }
 
@@ -51574,7 +51574,7 @@ func m512SindPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sinh_pd'.
 // Requires AVX512F.
-func M512MaskSinhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskSinhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskSinhPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -51593,7 +51593,7 @@ func m512MaskSinhPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_sinh_pd'.
 // Requires AVX512F.
-func M512SinhPd(a x86.M512d) x86.M512d {
+func M512SinhPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512SinhPd([8]float64(a)))
 }
 
@@ -51617,7 +51617,7 @@ func m512SinhPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_sinh_ps'.
 // Requires AVX512F.
-func M512MaskSinhPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskSinhPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskSinhPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -51636,7 +51636,7 @@ func m512MaskSinhPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_sinh_ps'.
 // Requires AVX512F.
-func M512SinhPs(a x86.M512) x86.M512 {
+func M512SinhPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512SinhPs([16]float32(a)))
 }
 
@@ -51663,7 +51663,7 @@ func m512SinhPs(a [16]float32) [16]float32
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm_mask_sll_epi32'.
 // Requires AVX512F.
-func MaskSllEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSllEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSllEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -51690,7 +51690,7 @@ func maskSllEpi32(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm_maskz_sll_epi32'.
 // Requires AVX512F.
-func MaskzSllEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSllEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSllEpi32(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -51717,7 +51717,7 @@ func maskzSllEpi32(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm256_mask_sll_epi32'.
 // Requires AVX512F.
-func M256MaskSllEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskSllEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSllEpi32([32]byte(src), uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -51744,7 +51744,7 @@ func m256MaskSllEpi32(src [32]byte, k uint8, a [32]byte, count [16]byte) [32]byt
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm256_maskz_sll_epi32'.
 // Requires AVX512F.
-func M256MaskzSllEpi32(k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskzSllEpi32(k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSllEpi32(uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -51771,7 +51771,7 @@ func m256MaskzSllEpi32(k uint8, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_mask_sll_epi32'.
 // Requires AVX512F.
-func M512MaskSllEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskSllEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSllEpi32([64]byte(src), uint16(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -51798,7 +51798,7 @@ func m512MaskSllEpi32(src [64]byte, k uint16, a [64]byte, count [16]byte) [64]by
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_maskz_sll_epi32'.
 // Requires AVX512F.
-func M512MaskzSllEpi32(k x86.Mmask16, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskzSllEpi32(k x86.Mmask16, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSllEpi32(uint16(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -51820,7 +51820,7 @@ func m512MaskzSllEpi32(k uint16, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm512_sll_epi32'.
 // Requires AVX512F.
-func M512SllEpi32(a x86.M512i, count x86.M128i) x86.M512i {
+func M512SllEpi32(a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512SllEpi32([64]byte(a), [16]byte(count)))
 }
 
@@ -51847,7 +51847,7 @@ func m512SllEpi32(a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm_mask_sll_epi64'.
 // Requires AVX512F.
-func MaskSllEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSllEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSllEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -51874,7 +51874,7 @@ func maskSllEpi64(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm_maskz_sll_epi64'.
 // Requires AVX512F.
-func MaskzSllEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSllEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSllEpi64(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -51901,7 +51901,7 @@ func maskzSllEpi64(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm256_mask_sll_epi64'.
 // Requires AVX512F.
-func M256MaskSllEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskSllEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSllEpi64([32]byte(src), uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -51928,7 +51928,7 @@ func m256MaskSllEpi64(src [32]byte, k uint8, a [32]byte, count [16]byte) [32]byt
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm256_maskz_sll_epi64'.
 // Requires AVX512F.
-func M256MaskzSllEpi64(k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskzSllEpi64(k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSllEpi64(uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -51955,7 +51955,7 @@ func m256MaskzSllEpi64(k uint8, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_mask_sll_epi64'.
 // Requires AVX512F.
-func M512MaskSllEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskSllEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSllEpi64([64]byte(src), uint8(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -51982,7 +51982,7 @@ func m512MaskSllEpi64(src [64]byte, k uint8, a [64]byte, count [16]byte) [64]byt
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_maskz_sll_epi64'.
 // Requires AVX512F.
-func M512MaskzSllEpi64(k x86.Mmask8, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskzSllEpi64(k x86.Mmask8, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSllEpi64(uint8(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -52004,7 +52004,7 @@ func m512MaskzSllEpi64(k uint8, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm512_sll_epi64'.
 // Requires AVX512F.
-func M512SllEpi64(a x86.M512i, count x86.M128i) x86.M512i {
+func M512SllEpi64(a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512SllEpi64([64]byte(a), [16]byte(count)))
 }
 
@@ -52033,7 +52033,7 @@ func m512SllEpi64(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSlliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskSlliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskSlliEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -52062,7 +52062,7 @@ func maskSlliEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSlliEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzSlliEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzSlliEpi32(uint8(k), [16]byte(a), imm8))
 }
 
@@ -52091,7 +52091,7 @@ func maskzSlliEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSlliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskSlliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskSlliEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -52120,7 +52120,7 @@ func m256MaskSlliEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSlliEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzSlliEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSlliEpi32(uint8(k), [32]byte(a), imm8))
 }
 
@@ -52149,7 +52149,7 @@ func m256MaskzSlliEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSlliEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzSlliEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSlliEpi32(uint16(k), [64]byte(a), imm8))
 }
 
@@ -52178,7 +52178,7 @@ func m512MaskzSlliEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSlliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskSlliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskSlliEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -52207,7 +52207,7 @@ func maskSlliEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSlliEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzSlliEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzSlliEpi64(uint8(k), [16]byte(a), imm8))
 }
 
@@ -52236,7 +52236,7 @@ func maskzSlliEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSlliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskSlliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskSlliEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -52265,7 +52265,7 @@ func m256MaskSlliEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSlliEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzSlliEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSlliEpi64(uint8(k), [32]byte(a), imm8))
 }
 
@@ -52294,7 +52294,7 @@ func m256MaskzSlliEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSlliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskSlliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskSlliEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -52323,7 +52323,7 @@ func m512MaskSlliEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSlliEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzSlliEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSlliEpi64(uint8(k), [64]byte(a), imm8))
 }
 
@@ -52347,7 +52347,7 @@ func m512MaskzSlliEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SlliEpi64(a x86.M512i, imm8 byte) x86.M512i {
+func M512SlliEpi64(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512SlliEpi64([64]byte(a), imm8))
 }
 
@@ -52371,7 +52371,7 @@ func m512SlliEpi64(a [64]byte, imm8 byte) [64]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm_mask_sllv_epi32'.
 // Requires AVX512F.
-func MaskSllvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSllvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSllvEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -52395,7 +52395,7 @@ func maskSllvEpi32(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm_maskz_sllv_epi32'.
 // Requires AVX512F.
-func MaskzSllvEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSllvEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSllvEpi32(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -52419,7 +52419,7 @@ func maskzSllvEpi32(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm256_mask_sllv_epi32'.
 // Requires AVX512F.
-func M256MaskSllvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskSllvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSllvEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -52443,7 +52443,7 @@ func m256MaskSllvEpi32(src [32]byte, k uint8, a [32]byte, count [32]byte) [32]by
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm256_maskz_sllv_epi32'.
 // Requires AVX512F.
-func M256MaskzSllvEpi32(k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskzSllvEpi32(k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSllvEpi32(uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -52467,7 +52467,7 @@ func m256MaskzSllvEpi32(k uint8, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm512_maskz_sllv_epi32'.
 // Requires AVX512F.
-func M512MaskzSllvEpi32(k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskzSllvEpi32(k x86.Mmask16, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSllvEpi32(uint16(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -52491,7 +52491,7 @@ func m512MaskzSllvEpi32(k uint16, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm_mask_sllv_epi64'.
 // Requires AVX512F.
-func MaskSllvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSllvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSllvEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -52515,7 +52515,7 @@ func maskSllvEpi64(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm_maskz_sllv_epi64'.
 // Requires AVX512F.
-func MaskzSllvEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSllvEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSllvEpi64(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -52539,7 +52539,7 @@ func maskzSllvEpi64(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm256_mask_sllv_epi64'.
 // Requires AVX512F.
-func M256MaskSllvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskSllvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSllvEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -52563,7 +52563,7 @@ func m256MaskSllvEpi64(src [32]byte, k uint8, a [32]byte, count [32]byte) [32]by
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm256_maskz_sllv_epi64'.
 // Requires AVX512F.
-func M256MaskzSllvEpi64(k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskzSllvEpi64(k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSllvEpi64(uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -52587,7 +52587,7 @@ func m256MaskzSllvEpi64(k uint8, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm512_mask_sllv_epi64'.
 // Requires AVX512F.
-func M512MaskSllvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskSllvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSllvEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -52611,7 +52611,7 @@ func m512MaskSllvEpi64(src [64]byte, k uint8, a [64]byte, count [64]byte) [64]by
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm512_maskz_sllv_epi64'.
 // Requires AVX512F.
-func M512MaskzSllvEpi64(k x86.Mmask8, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskzSllvEpi64(k x86.Mmask8, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSllvEpi64(uint8(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -52630,7 +52630,7 @@ func m512MaskzSllvEpi64(k uint8, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm512_sllv_epi64'.
 // Requires AVX512F.
-func M512SllvEpi64(a x86.M512i, count x86.M512i) x86.M512i {
+func M512SllvEpi64(a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512SllvEpi64([64]byte(a), [64]byte(count)))
 }
 
@@ -52654,7 +52654,7 @@ func m512SllvEpi64(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm_mask_sqrt_pd'.
 // Requires AVX512F.
-func MaskSqrtPd(src x86.M128d, k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskSqrtPd(src x86.M128d, k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskSqrtPd([2]float64(src), uint8(k), [2]float64(a)))
 }
 
@@ -52678,7 +52678,7 @@ func maskSqrtPd(src [2]float64, k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm_maskz_sqrt_pd'.
 // Requires AVX512F.
-func MaskzSqrtPd(k x86.Mmask8, a x86.M128d) x86.M128d {
+func MaskzSqrtPd(k x86.Mmask8, a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzSqrtPd(uint8(k), [2]float64(a)))
 }
 
@@ -52702,7 +52702,7 @@ func maskzSqrtPd(k uint8, a [2]float64) [2]float64
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm256_mask_sqrt_pd'.
 // Requires AVX512F.
-func M256MaskSqrtPd(src x86.M256d, k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskSqrtPd(src x86.M256d, k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskSqrtPd([4]float64(src), uint8(k), [4]float64(a)))
 }
 
@@ -52726,7 +52726,7 @@ func m256MaskSqrtPd(src [4]float64, k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm256_maskz_sqrt_pd'.
 // Requires AVX512F.
-func M256MaskzSqrtPd(k x86.Mmask8, a x86.M256d) x86.M256d {
+func M256MaskzSqrtPd(k x86.Mmask8, a x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzSqrtPd(uint8(k), [4]float64(a)))
 }
 
@@ -52750,7 +52750,7 @@ func m256MaskzSqrtPd(k uint8, a [4]float64) [4]float64
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm512_mask_sqrt_pd'.
 // Requires AVX512F.
-func M512MaskSqrtPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskSqrtPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskSqrtPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -52774,7 +52774,7 @@ func m512MaskSqrtPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm512_maskz_sqrt_pd'.
 // Requires AVX512F.
-func M512MaskzSqrtPd(k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskzSqrtPd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzSqrtPd(uint8(k), [8]float64(a)))
 }
 
@@ -52792,7 +52792,7 @@ func m512MaskzSqrtPd(k uint8, a [8]float64) [8]float64
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm512_sqrt_pd'.
 // Requires AVX512F.
-func M512SqrtPd(a x86.M512d) x86.M512d {
+func M512SqrtPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512SqrtPd([8]float64(a)))
 }
 
@@ -52816,7 +52816,7 @@ func m512SqrtPd(a [8]float64) [8]float64
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm_mask_sqrt_ps'.
 // Requires AVX512F.
-func MaskSqrtPs(src x86.M128, k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskSqrtPs(src x86.M128, k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskSqrtPs([4]float32(src), uint8(k), [4]float32(a)))
 }
 
@@ -52840,7 +52840,7 @@ func maskSqrtPs(src [4]float32, k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm_maskz_sqrt_ps'.
 // Requires AVX512F.
-func MaskzSqrtPs(k x86.Mmask8, a x86.M128) x86.M128 {
+func MaskzSqrtPs(k x86.Mmask8, a x86.M128) (dst x86.M128) {
 	return x86.M128(maskzSqrtPs(uint8(k), [4]float32(a)))
 }
 
@@ -52864,7 +52864,7 @@ func maskzSqrtPs(k uint8, a [4]float32) [4]float32
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm256_mask_sqrt_ps'.
 // Requires AVX512F.
-func M256MaskSqrtPs(src x86.M256, k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskSqrtPs(src x86.M256, k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskSqrtPs([8]float32(src), uint8(k), [8]float32(a)))
 }
 
@@ -52888,7 +52888,7 @@ func m256MaskSqrtPs(src [8]float32, k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm256_maskz_sqrt_ps'.
 // Requires AVX512F.
-func M256MaskzSqrtPs(k x86.Mmask8, a x86.M256) x86.M256 {
+func M256MaskzSqrtPs(k x86.Mmask8, a x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzSqrtPs(uint8(k), [8]float32(a)))
 }
 
@@ -52912,7 +52912,7 @@ func m256MaskzSqrtPs(k uint8, a [8]float32) [8]float32
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm512_mask_sqrt_ps'.
 // Requires AVX512F.
-func M512MaskSqrtPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskSqrtPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskSqrtPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -52936,7 +52936,7 @@ func m512MaskSqrtPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm512_maskz_sqrt_ps'.
 // Requires AVX512F.
-func M512MaskzSqrtPs(k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskzSqrtPs(k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzSqrtPs(uint16(k), [16]float32(a)))
 }
 
@@ -52954,7 +52954,7 @@ func m512MaskzSqrtPs(k uint16, a [16]float32) [16]float32
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm512_sqrt_ps'.
 // Requires AVX512F.
-func M512SqrtPs(a x86.M512) x86.M512 {
+func M512SqrtPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512SqrtPs([16]float32(a)))
 }
 
@@ -52985,7 +52985,7 @@ func m512SqrtPs(a [16]float32) [16]float32
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm512_mask_sqrt_round_pd'.
 // Requires AVX512F.
-func M512MaskSqrtRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+func M512MaskSqrtRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskSqrtRoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
 }
 
@@ -53016,7 +53016,7 @@ func m512MaskSqrtRoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm512_maskz_sqrt_round_pd'.
 // Requires AVX512F.
-func M512MaskzSqrtRoundPd(k x86.Mmask8, a x86.M512d, rounding int) x86.M512d {
+func M512MaskzSqrtRoundPd(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzSqrtRoundPd(uint8(k), [8]float64(a), rounding))
 }
 
@@ -53041,7 +53041,7 @@ func m512MaskzSqrtRoundPd(k uint8, a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VSQRTPD'. Intrinsic: '_mm512_sqrt_round_pd'.
 // Requires AVX512F.
-func M512SqrtRoundPd(a x86.M512d, rounding int) x86.M512d {
+func M512SqrtRoundPd(a x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512SqrtRoundPd([8]float64(a), rounding))
 }
 
@@ -53072,7 +53072,7 @@ func m512SqrtRoundPd(a [8]float64, rounding int) [8]float64
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm512_mask_sqrt_round_ps'.
 // Requires AVX512F.
-func M512MaskSqrtRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+func M512MaskSqrtRoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskSqrtRoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
 }
 
@@ -53103,7 +53103,7 @@ func m512MaskSqrtRoundPs(src [16]float32, k uint16, a [16]float32, rounding int)
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm512_maskz_sqrt_round_ps'.
 // Requires AVX512F.
-func M512MaskzSqrtRoundPs(k x86.Mmask16, a x86.M512, rounding int) x86.M512 {
+func M512MaskzSqrtRoundPs(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzSqrtRoundPs(uint16(k), [16]float32(a), rounding))
 }
 
@@ -53128,7 +53128,7 @@ func m512MaskzSqrtRoundPs(k uint16, a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VSQRTPS'. Intrinsic: '_mm512_sqrt_round_ps'.
 // Requires AVX512F.
-func M512SqrtRoundPs(a x86.M512, rounding int) x86.M512 {
+func M512SqrtRoundPs(a x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512SqrtRoundPs([16]float32(a), rounding))
 }
 
@@ -53158,7 +53158,7 @@ func m512SqrtRoundPs(a [16]float32, rounding int) [16]float32
 //
 // Instruction: 'VSQRTSD'. Intrinsic: '_mm_mask_sqrt_round_sd'.
 // Requires AVX512F.
-func MaskSqrtRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskSqrtRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskSqrtRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -53188,7 +53188,7 @@ func maskSqrtRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, roundi
 //
 // Instruction: 'VSQRTSD'. Intrinsic: '_mm_maskz_sqrt_round_sd'.
 // Requires AVX512F.
-func MaskzSqrtRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskzSqrtRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzSqrtRoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -53212,7 +53212,7 @@ func maskzSqrtRoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]floa
 //
 // Instruction: 'VSQRTSD'. Intrinsic: '_mm_sqrt_round_sd'.
 // Requires AVX512F.
-func SqrtRoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func SqrtRoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(sqrtRoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
@@ -53242,7 +53242,7 @@ func sqrtRoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VSQRTSS'. Intrinsic: '_mm_mask_sqrt_round_ss'.
 // Requires AVX512F.
-func MaskSqrtRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskSqrtRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskSqrtRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -53272,7 +53272,7 @@ func maskSqrtRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, roundi
 //
 // Instruction: 'VSQRTSS'. Intrinsic: '_mm_maskz_sqrt_round_ss'.
 // Requires AVX512F.
-func MaskzSqrtRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskzSqrtRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzSqrtRoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -53297,7 +53297,7 @@ func maskzSqrtRoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]floa
 //
 // Instruction: 'VSQRTSS'. Intrinsic: '_mm_sqrt_round_ss'.
 // Requires AVX512F.
-func SqrtRoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+func SqrtRoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(sqrtRoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
@@ -53320,7 +53320,7 @@ func sqrtRoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VSQRTSD'. Intrinsic: '_mm_mask_sqrt_sd'.
 // Requires AVX512F.
-func MaskSqrtSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskSqrtSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskSqrtSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -53342,7 +53342,7 @@ func maskSqrtSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSQRTSD'. Intrinsic: '_mm_maskz_sqrt_sd'.
 // Requires AVX512F.
-func MaskzSqrtSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzSqrtSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzSqrtSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -53365,7 +53365,7 @@ func maskzSqrtSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSQRTSS'. Intrinsic: '_mm_mask_sqrt_ss'.
 // Requires AVX512F.
-func MaskSqrtSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskSqrtSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskSqrtSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -53388,7 +53388,7 @@ func maskSqrtSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSQRTSS'. Intrinsic: '_mm_maskz_sqrt_ss'.
 // Requires AVX512F.
-func MaskzSqrtSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzSqrtSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzSqrtSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -53415,7 +53415,7 @@ func maskzSqrtSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm_mask_sra_epi32'.
 // Requires AVX512F.
-func MaskSraEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSraEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSraEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -53442,7 +53442,7 @@ func maskSraEpi32(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm_maskz_sra_epi32'.
 // Requires AVX512F.
-func MaskzSraEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSraEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSraEpi32(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -53469,7 +53469,7 @@ func maskzSraEpi32(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm256_mask_sra_epi32'.
 // Requires AVX512F.
-func M256MaskSraEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskSraEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSraEpi32([32]byte(src), uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -53496,7 +53496,7 @@ func m256MaskSraEpi32(src [32]byte, k uint8, a [32]byte, count [16]byte) [32]byt
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm256_maskz_sra_epi32'.
 // Requires AVX512F.
-func M256MaskzSraEpi32(k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskzSraEpi32(k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSraEpi32(uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -53523,7 +53523,7 @@ func m256MaskzSraEpi32(k uint8, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_mask_sra_epi32'.
 // Requires AVX512F.
-func M512MaskSraEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskSraEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSraEpi32([64]byte(src), uint16(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -53550,7 +53550,7 @@ func m512MaskSraEpi32(src [64]byte, k uint16, a [64]byte, count [16]byte) [64]by
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_maskz_sra_epi32'.
 // Requires AVX512F.
-func M512MaskzSraEpi32(k x86.Mmask16, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskzSraEpi32(k x86.Mmask16, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSraEpi32(uint16(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -53572,7 +53572,7 @@ func m512MaskzSraEpi32(k uint16, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm512_sra_epi32'.
 // Requires AVX512F.
-func M512SraEpi32(a x86.M512i, count x86.M128i) x86.M512i {
+func M512SraEpi32(a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512SraEpi32([64]byte(a), [16]byte(count)))
 }
 
@@ -53599,7 +53599,7 @@ func m512SraEpi32(a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm_mask_sra_epi64'.
 // Requires AVX512F.
-func MaskSraEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSraEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSraEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -53626,7 +53626,7 @@ func maskSraEpi64(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm_maskz_sra_epi64'.
 // Requires AVX512F.
-func MaskzSraEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSraEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSraEpi64(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -53648,7 +53648,7 @@ func maskzSraEpi64(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm_sra_epi64'.
 // Requires AVX512F.
-func SraEpi64(a x86.M128i, count x86.M128i) x86.M128i {
+func SraEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sraEpi64([16]byte(a), [16]byte(count)))
 }
 
@@ -53675,7 +53675,7 @@ func sraEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm256_mask_sra_epi64'.
 // Requires AVX512F.
-func M256MaskSraEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskSraEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSraEpi64([32]byte(src), uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -53702,7 +53702,7 @@ func m256MaskSraEpi64(src [32]byte, k uint8, a [32]byte, count [16]byte) [32]byt
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm256_maskz_sra_epi64'.
 // Requires AVX512F.
-func M256MaskzSraEpi64(k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskzSraEpi64(k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSraEpi64(uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -53724,7 +53724,7 @@ func m256MaskzSraEpi64(k uint8, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm256_sra_epi64'.
 // Requires AVX512F.
-func M256SraEpi64(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SraEpi64(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SraEpi64([32]byte(a), [16]byte(count)))
 }
 
@@ -53751,7 +53751,7 @@ func m256SraEpi64(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_mask_sra_epi64'.
 // Requires AVX512F.
-func M512MaskSraEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskSraEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSraEpi64([64]byte(src), uint8(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -53778,7 +53778,7 @@ func m512MaskSraEpi64(src [64]byte, k uint8, a [64]byte, count [16]byte) [64]byt
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_maskz_sra_epi64'.
 // Requires AVX512F.
-func M512MaskzSraEpi64(k x86.Mmask8, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskzSraEpi64(k x86.Mmask8, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSraEpi64(uint8(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -53800,7 +53800,7 @@ func m512MaskzSraEpi64(k uint8, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRAQ'. Intrinsic: '_mm512_sra_epi64'.
 // Requires AVX512F.
-func M512SraEpi64(a x86.M512i, count x86.M128i) x86.M512i {
+func M512SraEpi64(a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512SraEpi64([64]byte(a), [16]byte(count)))
 }
 
@@ -53829,7 +53829,7 @@ func m512SraEpi64(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSraiEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskSraiEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskSraiEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -53858,7 +53858,7 @@ func maskSraiEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSraiEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzSraiEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzSraiEpi32(uint8(k), [16]byte(a), imm8))
 }
 
@@ -53887,7 +53887,7 @@ func maskzSraiEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSraiEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskSraiEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskSraiEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -53916,7 +53916,7 @@ func m256MaskSraiEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSraiEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzSraiEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSraiEpi32(uint8(k), [32]byte(a), imm8))
 }
 
@@ -53945,7 +53945,7 @@ func m256MaskzSraiEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSraiEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzSraiEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSraiEpi32(uint16(k), [64]byte(a), imm8))
 }
 
@@ -53974,7 +53974,7 @@ func m512MaskzSraiEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSraiEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskSraiEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskSraiEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -54003,7 +54003,7 @@ func maskSraiEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSraiEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzSraiEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzSraiEpi64(uint8(k), [16]byte(a), imm8))
 }
 
@@ -54027,7 +54027,7 @@ func maskzSraiEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiEpi64(a x86.M128i, imm8 byte) x86.M128i {
+func SraiEpi64(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(sraiEpi64([16]byte(a), imm8))
 }
 
@@ -54056,7 +54056,7 @@ func sraiEpi64(a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSraiEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskSraiEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskSraiEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -54085,7 +54085,7 @@ func m256MaskSraiEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSraiEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzSraiEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSraiEpi64(uint8(k), [32]byte(a), imm8))
 }
 
@@ -54109,7 +54109,7 @@ func m256MaskzSraiEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SraiEpi64(a x86.M256i, imm8 byte) x86.M256i {
+func M256SraiEpi64(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SraiEpi64([32]byte(a), imm8))
 }
 
@@ -54138,7 +54138,7 @@ func m256SraiEpi64(a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSraiEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskSraiEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskSraiEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -54167,7 +54167,7 @@ func m512MaskSraiEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSraiEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzSraiEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSraiEpi64(uint8(k), [64]byte(a), imm8))
 }
 
@@ -54191,7 +54191,7 @@ func m512MaskzSraiEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SraiEpi64(a x86.M512i, imm8 byte) x86.M512i {
+func M512SraiEpi64(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512SraiEpi64([64]byte(a), imm8))
 }
 
@@ -54215,7 +54215,7 @@ func m512SraiEpi64(a [64]byte, imm8 byte) [64]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm_mask_srav_epi32'.
 // Requires AVX512F.
-func MaskSravEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSravEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSravEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54239,7 +54239,7 @@ func maskSravEpi32(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm_maskz_srav_epi32'.
 // Requires AVX512F.
-func MaskzSravEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSravEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSravEpi32(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54263,7 +54263,7 @@ func maskzSravEpi32(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm256_mask_srav_epi32'.
 // Requires AVX512F.
-func M256MaskSravEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskSravEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSravEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -54287,7 +54287,7 @@ func m256MaskSravEpi32(src [32]byte, k uint8, a [32]byte, count [32]byte) [32]by
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm256_maskz_srav_epi32'.
 // Requires AVX512F.
-func M256MaskzSravEpi32(k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskzSravEpi32(k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSravEpi32(uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -54311,7 +54311,7 @@ func m256MaskzSravEpi32(k uint8, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm512_maskz_srav_epi32'.
 // Requires AVX512F.
-func M512MaskzSravEpi32(k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskzSravEpi32(k x86.Mmask16, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSravEpi32(uint16(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -54335,7 +54335,7 @@ func m512MaskzSravEpi32(k uint16, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm_mask_srav_epi64'.
 // Requires AVX512F.
-func MaskSravEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSravEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSravEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54359,7 +54359,7 @@ func maskSravEpi64(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm_maskz_srav_epi64'.
 // Requires AVX512F.
-func MaskzSravEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSravEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSravEpi64(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54378,7 +54378,7 @@ func maskzSravEpi64(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm_srav_epi64'.
 // Requires AVX512F.
-func SravEpi64(a x86.M128i, count x86.M128i) x86.M128i {
+func SravEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sravEpi64([16]byte(a), [16]byte(count)))
 }
 
@@ -54402,7 +54402,7 @@ func sravEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm256_mask_srav_epi64'.
 // Requires AVX512F.
-func M256MaskSravEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskSravEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSravEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -54426,7 +54426,7 @@ func m256MaskSravEpi64(src [32]byte, k uint8, a [32]byte, count [32]byte) [32]by
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm256_maskz_srav_epi64'.
 // Requires AVX512F.
-func M256MaskzSravEpi64(k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskzSravEpi64(k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSravEpi64(uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -54445,7 +54445,7 @@ func m256MaskzSravEpi64(k uint8, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm256_srav_epi64'.
 // Requires AVX512F.
-func M256SravEpi64(a x86.M256i, count x86.M256i) x86.M256i {
+func M256SravEpi64(a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SravEpi64([32]byte(a), [32]byte(count)))
 }
 
@@ -54469,7 +54469,7 @@ func m256SravEpi64(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm512_mask_srav_epi64'.
 // Requires AVX512F.
-func M512MaskSravEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskSravEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSravEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -54493,7 +54493,7 @@ func m512MaskSravEpi64(src [64]byte, k uint8, a [64]byte, count [64]byte) [64]by
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm512_maskz_srav_epi64'.
 // Requires AVX512F.
-func M512MaskzSravEpi64(k x86.Mmask8, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskzSravEpi64(k x86.Mmask8, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSravEpi64(uint8(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -54512,7 +54512,7 @@ func m512MaskzSravEpi64(k uint8, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRAVQ'. Intrinsic: '_mm512_srav_epi64'.
 // Requires AVX512F.
-func M512SravEpi64(a x86.M512i, count x86.M512i) x86.M512i {
+func M512SravEpi64(a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512SravEpi64([64]byte(a), [64]byte(count)))
 }
 
@@ -54539,7 +54539,7 @@ func m512SravEpi64(a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm_mask_srl_epi32'.
 // Requires AVX512F.
-func MaskSrlEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSrlEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSrlEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54566,7 +54566,7 @@ func maskSrlEpi32(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm_maskz_srl_epi32'.
 // Requires AVX512F.
-func MaskzSrlEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSrlEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSrlEpi32(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54593,7 +54593,7 @@ func maskzSrlEpi32(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm256_mask_srl_epi32'.
 // Requires AVX512F.
-func M256MaskSrlEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskSrlEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSrlEpi32([32]byte(src), uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -54620,7 +54620,7 @@ func m256MaskSrlEpi32(src [32]byte, k uint8, a [32]byte, count [16]byte) [32]byt
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm256_maskz_srl_epi32'.
 // Requires AVX512F.
-func M256MaskzSrlEpi32(k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskzSrlEpi32(k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSrlEpi32(uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -54647,7 +54647,7 @@ func m256MaskzSrlEpi32(k uint8, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_mask_srl_epi32'.
 // Requires AVX512F.
-func M512MaskSrlEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskSrlEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSrlEpi32([64]byte(src), uint16(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -54674,7 +54674,7 @@ func m512MaskSrlEpi32(src [64]byte, k uint16, a [64]byte, count [16]byte) [64]by
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_maskz_srl_epi32'.
 // Requires AVX512F.
-func M512MaskzSrlEpi32(k x86.Mmask16, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskzSrlEpi32(k x86.Mmask16, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSrlEpi32(uint16(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -54696,7 +54696,7 @@ func m512MaskzSrlEpi32(k uint16, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm512_srl_epi32'.
 // Requires AVX512F.
-func M512SrlEpi32(a x86.M512i, count x86.M128i) x86.M512i {
+func M512SrlEpi32(a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512SrlEpi32([64]byte(a), [16]byte(count)))
 }
 
@@ -54723,7 +54723,7 @@ func m512SrlEpi32(a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm_mask_srl_epi64'.
 // Requires AVX512F.
-func MaskSrlEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSrlEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSrlEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54750,7 +54750,7 @@ func maskSrlEpi64(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm_maskz_srl_epi64'.
 // Requires AVX512F.
-func MaskzSrlEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSrlEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSrlEpi64(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -54777,7 +54777,7 @@ func maskzSrlEpi64(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm256_mask_srl_epi64'.
 // Requires AVX512F.
-func M256MaskSrlEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskSrlEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSrlEpi64([32]byte(src), uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -54804,7 +54804,7 @@ func m256MaskSrlEpi64(src [32]byte, k uint8, a [32]byte, count [16]byte) [32]byt
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm256_maskz_srl_epi64'.
 // Requires AVX512F.
-func M256MaskzSrlEpi64(k x86.Mmask8, a x86.M256i, count x86.M128i) x86.M256i {
+func M256MaskzSrlEpi64(k x86.Mmask8, a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSrlEpi64(uint8(k), [32]byte(a), [16]byte(count)))
 }
 
@@ -54831,7 +54831,7 @@ func m256MaskzSrlEpi64(k uint8, a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_mask_srl_epi64'.
 // Requires AVX512F.
-func M512MaskSrlEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskSrlEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSrlEpi64([64]byte(src), uint8(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -54858,7 +54858,7 @@ func m512MaskSrlEpi64(src [64]byte, k uint8, a [64]byte, count [16]byte) [64]byt
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_maskz_srl_epi64'.
 // Requires AVX512F.
-func M512MaskzSrlEpi64(k x86.Mmask8, a x86.M512i, count x86.M128i) x86.M512i {
+func M512MaskzSrlEpi64(k x86.Mmask8, a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSrlEpi64(uint8(k), [64]byte(a), [16]byte(count)))
 }
 
@@ -54880,7 +54880,7 @@ func m512MaskzSrlEpi64(k uint8, a [64]byte, count [16]byte) [64]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm512_srl_epi64'.
 // Requires AVX512F.
-func M512SrlEpi64(a x86.M512i, count x86.M128i) x86.M512i {
+func M512SrlEpi64(a x86.M512i, count x86.M128i) (dst x86.M512i) {
 	return x86.M512i(m512SrlEpi64([64]byte(a), [16]byte(count)))
 }
 
@@ -54909,7 +54909,7 @@ func m512SrlEpi64(a [64]byte, count [16]byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSrliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskSrliEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskSrliEpi32([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -54938,7 +54938,7 @@ func maskSrliEpi32(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSrliEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzSrliEpi32(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzSrliEpi32(uint8(k), [16]byte(a), imm8))
 }
 
@@ -54967,7 +54967,7 @@ func maskzSrliEpi32(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSrliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskSrliEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskSrliEpi32([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -54996,7 +54996,7 @@ func m256MaskSrliEpi32(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSrliEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzSrliEpi32(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSrliEpi32(uint8(k), [32]byte(a), imm8))
 }
 
@@ -55025,7 +55025,7 @@ func m256MaskzSrliEpi32(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSrliEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzSrliEpi32(k x86.Mmask16, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSrliEpi32(uint16(k), [64]byte(a), imm8))
 }
 
@@ -55054,7 +55054,7 @@ func m512MaskzSrliEpi32(k uint16, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskSrliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskSrliEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskSrliEpi64([16]byte(src), uint8(k), [16]byte(a), imm8))
 }
 
@@ -55083,7 +55083,7 @@ func maskSrliEpi64(src [16]byte, k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzSrliEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) x86.M128i {
+func MaskzSrliEpi64(k x86.Mmask8, a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzSrliEpi64(uint8(k), [16]byte(a), imm8))
 }
 
@@ -55112,7 +55112,7 @@ func maskzSrliEpi64(k uint8, a [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskSrliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskSrliEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskSrliEpi64([32]byte(src), uint8(k), [32]byte(a), imm8))
 }
 
@@ -55141,7 +55141,7 @@ func m256MaskSrliEpi64(src [32]byte, k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzSrliEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzSrliEpi64(k x86.Mmask8, a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSrliEpi64(uint8(k), [32]byte(a), imm8))
 }
 
@@ -55170,7 +55170,7 @@ func m256MaskzSrliEpi64(k uint8, a [32]byte, imm8 byte) [32]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskSrliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskSrliEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskSrliEpi64([64]byte(src), uint8(k), [64]byte(a), imm8))
 }
 
@@ -55199,7 +55199,7 @@ func m512MaskSrliEpi64(src [64]byte, k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzSrliEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzSrliEpi64(k x86.Mmask8, a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSrliEpi64(uint8(k), [64]byte(a), imm8))
 }
 
@@ -55223,7 +55223,7 @@ func m512MaskzSrliEpi64(k uint8, a [64]byte, imm8 byte) [64]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512SrliEpi64(a x86.M512i, imm8 byte) x86.M512i {
+func M512SrliEpi64(a x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512SrliEpi64([64]byte(a), imm8))
 }
 
@@ -55247,7 +55247,7 @@ func m512SrliEpi64(a [64]byte, imm8 byte) [64]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm_mask_srlv_epi32'.
 // Requires AVX512F.
-func MaskSrlvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSrlvEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSrlvEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -55271,7 +55271,7 @@ func maskSrlvEpi32(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm_maskz_srlv_epi32'.
 // Requires AVX512F.
-func MaskzSrlvEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSrlvEpi32(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSrlvEpi32(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -55295,7 +55295,7 @@ func maskzSrlvEpi32(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm256_mask_srlv_epi32'.
 // Requires AVX512F.
-func M256MaskSrlvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskSrlvEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSrlvEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -55319,7 +55319,7 @@ func m256MaskSrlvEpi32(src [32]byte, k uint8, a [32]byte, count [32]byte) [32]by
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm256_maskz_srlv_epi32'.
 // Requires AVX512F.
-func M256MaskzSrlvEpi32(k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskzSrlvEpi32(k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSrlvEpi32(uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -55343,7 +55343,7 @@ func m256MaskzSrlvEpi32(k uint8, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm512_maskz_srlv_epi32'.
 // Requires AVX512F.
-func M512MaskzSrlvEpi32(k x86.Mmask16, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskzSrlvEpi32(k x86.Mmask16, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSrlvEpi32(uint16(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -55367,7 +55367,7 @@ func m512MaskzSrlvEpi32(k uint16, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm_mask_srlv_epi64'.
 // Requires AVX512F.
-func MaskSrlvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskSrlvEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSrlvEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -55391,7 +55391,7 @@ func maskSrlvEpi64(src [16]byte, k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm_maskz_srlv_epi64'.
 // Requires AVX512F.
-func MaskzSrlvEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) x86.M128i {
+func MaskzSrlvEpi64(k x86.Mmask8, a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSrlvEpi64(uint8(k), [16]byte(a), [16]byte(count)))
 }
 
@@ -55415,7 +55415,7 @@ func maskzSrlvEpi64(k uint8, a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm256_mask_srlv_epi64'.
 // Requires AVX512F.
-func M256MaskSrlvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskSrlvEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSrlvEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -55439,7 +55439,7 @@ func m256MaskSrlvEpi64(src [32]byte, k uint8, a [32]byte, count [32]byte) [32]by
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm256_maskz_srlv_epi64'.
 // Requires AVX512F.
-func M256MaskzSrlvEpi64(k x86.Mmask8, a x86.M256i, count x86.M256i) x86.M256i {
+func M256MaskzSrlvEpi64(k x86.Mmask8, a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSrlvEpi64(uint8(k), [32]byte(a), [32]byte(count)))
 }
 
@@ -55463,7 +55463,7 @@ func m256MaskzSrlvEpi64(k uint8, a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm512_mask_srlv_epi64'.
 // Requires AVX512F.
-func M512MaskSrlvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskSrlvEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSrlvEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -55487,7 +55487,7 @@ func m512MaskSrlvEpi64(src [64]byte, k uint8, a [64]byte, count [64]byte) [64]by
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm512_maskz_srlv_epi64'.
 // Requires AVX512F.
-func M512MaskzSrlvEpi64(k x86.Mmask8, a x86.M512i, count x86.M512i) x86.M512i {
+func M512MaskzSrlvEpi64(k x86.Mmask8, a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSrlvEpi64(uint8(k), [64]byte(a), [64]byte(count)))
 }
 
@@ -55506,7 +55506,7 @@ func m512MaskzSrlvEpi64(k uint8, a [64]byte, count [64]byte) [64]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm512_srlv_epi64'.
 // Requires AVX512F.
-func M512SrlvEpi64(a x86.M512i, count x86.M512i) x86.M512i {
+func M512SrlvEpi64(a x86.M512i, count x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512SrlvEpi64([64]byte(a), [64]byte(count)))
 }
 
@@ -55646,7 +55646,7 @@ func MaskStoreSs(mem_addr *float32, k x86.Mmask8, a x86.M128)  {
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm_mask_sub_epi32'.
 // Requires AVX512F.
-func MaskSubEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskSubEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSubEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -55669,7 +55669,7 @@ func maskSubEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm_maskz_sub_epi32'.
 // Requires AVX512F.
-func MaskzSubEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzSubEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSubEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -55692,7 +55692,7 @@ func maskzSubEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm256_mask_sub_epi32'.
 // Requires AVX512F.
-func M256MaskSubEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskSubEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSubEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -55715,7 +55715,7 @@ func m256MaskSubEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm256_maskz_sub_epi32'.
 // Requires AVX512F.
-func M256MaskzSubEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzSubEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSubEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -55738,7 +55738,7 @@ func m256MaskzSubEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm512_maskz_sub_epi32'.
 // Requires AVX512F.
-func M512MaskzSubEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzSubEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSubEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -55761,7 +55761,7 @@ func m512MaskzSubEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm_mask_sub_epi64'.
 // Requires AVX512F.
-func MaskSubEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskSubEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskSubEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -55784,7 +55784,7 @@ func maskSubEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm_maskz_sub_epi64'.
 // Requires AVX512F.
-func MaskzSubEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzSubEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzSubEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -55807,7 +55807,7 @@ func maskzSubEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm256_mask_sub_epi64'.
 // Requires AVX512F.
-func M256MaskSubEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskSubEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskSubEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -55830,7 +55830,7 @@ func m256MaskSubEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm256_maskz_sub_epi64'.
 // Requires AVX512F.
-func M256MaskzSubEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzSubEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzSubEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -55853,7 +55853,7 @@ func m256MaskzSubEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm512_mask_sub_epi64'.
 // Requires AVX512F.
-func M512MaskSubEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskSubEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskSubEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -55876,7 +55876,7 @@ func m512MaskSubEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm512_maskz_sub_epi64'.
 // Requires AVX512F.
-func M512MaskzSubEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzSubEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzSubEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -55894,7 +55894,7 @@ func m512MaskzSubEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm512_sub_epi64'.
 // Requires AVX512F.
-func M512SubEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512SubEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512SubEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -55918,7 +55918,7 @@ func m512SubEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm_mask_sub_pd'.
 // Requires AVX512F.
-func MaskSubPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskSubPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskSubPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -55942,7 +55942,7 @@ func maskSubPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm_maskz_sub_pd'.
 // Requires AVX512F.
-func MaskzSubPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzSubPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzSubPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -55966,7 +55966,7 @@ func maskzSubPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm256_mask_sub_pd'.
 // Requires AVX512F.
-func M256MaskSubPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskSubPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskSubPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -55990,7 +55990,7 @@ func m256MaskSubPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]float
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm256_maskz_sub_pd'.
 // Requires AVX512F.
-func M256MaskzSubPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzSubPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzSubPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -56014,7 +56014,7 @@ func m256MaskzSubPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm512_maskz_sub_pd'.
 // Requires AVX512F.
-func M512MaskzSubPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzSubPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzSubPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -56038,7 +56038,7 @@ func m512MaskzSubPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm_mask_sub_ps'.
 // Requires AVX512F.
-func MaskSubPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskSubPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskSubPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -56062,7 +56062,7 @@ func maskSubPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm_maskz_sub_ps'.
 // Requires AVX512F.
-func MaskzSubPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzSubPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzSubPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -56086,7 +56086,7 @@ func maskzSubPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm256_mask_sub_ps'.
 // Requires AVX512F.
-func M256MaskSubPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskSubPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskSubPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -56110,7 +56110,7 @@ func m256MaskSubPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]float
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm256_maskz_sub_ps'.
 // Requires AVX512F.
-func M256MaskzSubPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzSubPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzSubPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -56134,7 +56134,7 @@ func m256MaskzSubPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm512_maskz_sub_ps'.
 // Requires AVX512F.
-func M512MaskzSubPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzSubPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzSubPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -56166,7 +56166,7 @@ func m512MaskzSubPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VSUBPD'. Intrinsic: '_mm512_maskz_sub_round_pd'.
 // Requires AVX512F.
-func M512MaskzSubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) x86.M512d {
+func M512MaskzSubRoundPd(k x86.Mmask8, a x86.M512d, b x86.M512d, rounding int) (dst x86.M512d) {
 	return x86.M512d(m512MaskzSubRoundPd(uint8(k), [8]float64(a), [8]float64(b), rounding))
 }
 
@@ -56198,7 +56198,7 @@ func m512MaskzSubRoundPd(k uint8, a [8]float64, b [8]float64, rounding int) [8]f
 //
 // Instruction: 'VSUBPS'. Intrinsic: '_mm512_maskz_sub_round_ps'.
 // Requires AVX512F.
-func M512MaskzSubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) x86.M512 {
+func M512MaskzSubRoundPs(k x86.Mmask16, a x86.M512, b x86.M512, rounding int) (dst x86.M512) {
 	return x86.M512(m512MaskzSubRoundPs(uint16(k), [16]float32(a), [16]float32(b), rounding))
 }
 
@@ -56228,7 +56228,7 @@ func m512MaskzSubRoundPs(k uint16, a [16]float32, b [16]float32, rounding int) [
 //
 // Instruction: 'VSUBSD'. Intrinsic: '_mm_mask_sub_round_sd'.
 // Requires AVX512F.
-func MaskSubRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskSubRoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskSubRoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -56258,7 +56258,7 @@ func maskSubRoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, roundin
 //
 // Instruction: 'VSUBSD'. Intrinsic: '_mm_maskz_sub_round_sd'.
 // Requires AVX512F.
-func MaskzSubRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func MaskzSubRoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(maskzSubRoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
 }
 
@@ -56283,7 +56283,7 @@ func maskzSubRoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float
 //
 // Instruction: 'VSUBSD'. Intrinsic: '_mm_sub_round_sd'.
 // Requires AVX512F.
-func SubRoundSd(a x86.M128d, b x86.M128d, rounding int) x86.M128d {
+func SubRoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
 	return x86.M128d(subRoundSd([2]float64(a), [2]float64(b), rounding))
 }
 
@@ -56314,7 +56314,7 @@ func subRoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 //
 // Instruction: 'VSUBSS'. Intrinsic: '_mm_mask_sub_round_ss'.
 // Requires AVX512F.
-func MaskSubRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskSubRoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskSubRoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -56344,7 +56344,7 @@ func maskSubRoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, roundin
 //
 // Instruction: 'VSUBSS'. Intrinsic: '_mm_maskz_sub_round_ss'.
 // Requires AVX512F.
-func MaskzSubRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) x86.M128 {
+func MaskzSubRoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(maskzSubRoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
 }
 
@@ -56369,7 +56369,7 @@ func maskzSubRoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float
 //
 // Instruction: 'VSUBSS'. Intrinsic: '_mm_sub_round_ss'.
 // Requires AVX512F.
-func SubRoundSs(a x86.M128, b x86.M128, rounding int) x86.M128 {
+func SubRoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
 	return x86.M128(subRoundSs([4]float32(a), [4]float32(b), rounding))
 }
 
@@ -56392,7 +56392,7 @@ func subRoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 //
 // Instruction: 'VSUBSD'. Intrinsic: '_mm_mask_sub_sd'.
 // Requires AVX512F.
-func MaskSubSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskSubSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskSubSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -56415,7 +56415,7 @@ func maskSubSd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSUBSD'. Intrinsic: '_mm_maskz_sub_sd'.
 // Requires AVX512F.
-func MaskzSubSd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzSubSd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzSubSd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -56439,7 +56439,7 @@ func maskzSubSd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VSUBSS'. Intrinsic: '_mm_mask_sub_ss'.
 // Requires AVX512F.
-func MaskSubSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskSubSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskSubSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -56462,7 +56462,7 @@ func maskSubSs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VSUBSS'. Intrinsic: '_mm_maskz_sub_ss'.
 // Requires AVX512F.
-func MaskzSubSs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzSubSs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzSubSs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -56494,7 +56494,7 @@ func maskzSubSs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_svml_round_pd'.
 // Requires AVX512F.
-func M512MaskSvmlRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskSvmlRoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskSvmlRoundPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -56513,7 +56513,7 @@ func m512MaskSvmlRoundPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_svml_round_pd'.
 // Requires AVX512F.
-func M512SvmlRoundPd(a x86.M512d) x86.M512d {
+func M512SvmlRoundPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512SvmlRoundPd([8]float64(a)))
 }
 
@@ -56537,7 +56537,7 @@ func m512SvmlRoundPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_tan_pd'.
 // Requires AVX512F.
-func M512MaskTanPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskTanPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskTanPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -56556,7 +56556,7 @@ func m512MaskTanPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_tan_pd'.
 // Requires AVX512F.
-func M512TanPd(a x86.M512d) x86.M512d {
+func M512TanPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512TanPd([8]float64(a)))
 }
 
@@ -56580,7 +56580,7 @@ func m512TanPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_tan_ps'.
 // Requires AVX512F.
-func M512MaskTanPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskTanPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskTanPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -56599,7 +56599,7 @@ func m512MaskTanPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_tan_ps'.
 // Requires AVX512F.
-func M512TanPs(a x86.M512) x86.M512 {
+func M512TanPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512TanPs([16]float32(a)))
 }
 
@@ -56623,7 +56623,7 @@ func m512TanPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_tand_pd'.
 // Requires AVX512F.
-func M512MaskTandPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskTandPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskTandPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -56642,7 +56642,7 @@ func m512MaskTandPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_tand_pd'.
 // Requires AVX512F.
-func M512TandPd(a x86.M512d) x86.M512d {
+func M512TandPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512TandPd([8]float64(a)))
 }
 
@@ -56666,7 +56666,7 @@ func m512TandPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_tand_ps'.
 // Requires AVX512F.
-func M512MaskTandPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskTandPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskTandPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -56685,7 +56685,7 @@ func m512MaskTandPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_tand_ps'.
 // Requires AVX512F.
-func M512TandPs(a x86.M512) x86.M512 {
+func M512TandPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512TandPs([16]float32(a)))
 }
 
@@ -56709,7 +56709,7 @@ func m512TandPs(a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_tanh_pd'.
 // Requires AVX512F.
-func M512MaskTanhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskTanhPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskTanhPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -56728,7 +56728,7 @@ func m512MaskTanhPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_tanh_pd'.
 // Requires AVX512F.
-func M512TanhPd(a x86.M512d) x86.M512d {
+func M512TanhPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512TanhPd([8]float64(a)))
 }
 
@@ -56752,7 +56752,7 @@ func m512TanhPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_tanh_ps'.
 // Requires AVX512F.
-func M512MaskTanhPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskTanhPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskTanhPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -56771,7 +56771,7 @@ func m512MaskTanhPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_tanh_ps'.
 // Requires AVX512F.
-func M512TanhPs(a x86.M512) x86.M512 {
+func M512TanhPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512TanhPs([16]float32(a)))
 }
 
@@ -56803,7 +56803,7 @@ func m512TanhPs(a [16]float32) [16]float32
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskTernarylogicEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
+func MaskTernarylogicEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskTernarylogicEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
@@ -56835,7 +56835,7 @@ func maskTernarylogicEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
+func MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzTernarylogicEpi32(uint8(k), [16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
@@ -56862,7 +56862,7 @@ func maskzTernarylogicEpi32(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func TernarylogicEpi32(a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
+func TernarylogicEpi32(a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(ternarylogicEpi32([16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
@@ -56895,7 +56895,7 @@ func ternarylogicEpi32(a [16]byte, b [16]byte, c [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskTernarylogicEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256MaskTernarylogicEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskTernarylogicEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -56928,7 +56928,7 @@ func m256MaskTernarylogicEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzTernarylogicEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzTernarylogicEpi32(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
@@ -56955,7 +56955,7 @@ func m256MaskzTernarylogicEpi32(k uint8, a [32]byte, b [32]byte, c [32]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256TernarylogicEpi32(a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
+func M256TernarylogicEpi32(a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256TernarylogicEpi32([32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
@@ -56988,7 +56988,7 @@ func m256TernarylogicEpi32(a [32]byte, b [32]byte, c [32]byte, imm8 byte) [32]by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskTernarylogicEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512MaskTernarylogicEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskTernarylogicEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -57021,7 +57021,7 @@ func m512MaskTernarylogicEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte, i
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzTernarylogicEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzTernarylogicEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzTernarylogicEpi32(uint16(k), [64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
@@ -57048,7 +57048,7 @@ func m512MaskzTernarylogicEpi32(k uint16, a [64]byte, b [64]byte, c [64]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512TernarylogicEpi32(a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
+func M512TernarylogicEpi32(a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512TernarylogicEpi32([64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
@@ -57080,7 +57080,7 @@ func m512TernarylogicEpi32(a [64]byte, b [64]byte, c [64]byte, imm8 byte) [64]by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskTernarylogicEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
+func MaskTernarylogicEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskTernarylogicEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b), imm8))
 }
 
@@ -57112,7 +57112,7 @@ func maskTernarylogicEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte, imm8 b
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
+func MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(maskzTernarylogicEpi64(uint8(k), [16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
@@ -57139,7 +57139,7 @@ func maskzTernarylogicEpi64(k uint8, a [16]byte, b [16]byte, c [16]byte, imm8 by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func TernarylogicEpi64(a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) x86.M128i {
+func TernarylogicEpi64(a x86.M128i, b x86.M128i, c x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(ternarylogicEpi64([16]byte(a), [16]byte(b), [16]byte(c), imm8))
 }
 
@@ -57172,7 +57172,7 @@ func ternarylogicEpi64(a [16]byte, b [16]byte, c [16]byte, imm8 byte) [16]byte
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskTernarylogicEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256MaskTernarylogicEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskTernarylogicEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b), imm8))
 }
 
@@ -57205,7 +57205,7 @@ func m256MaskTernarylogicEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
+func M256MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MaskzTernarylogicEpi64(uint8(k), [32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
@@ -57232,7 +57232,7 @@ func m256MaskzTernarylogicEpi64(k uint8, a [32]byte, b [32]byte, c [32]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256TernarylogicEpi64(a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) x86.M256i {
+func M256TernarylogicEpi64(a x86.M256i, b x86.M256i, c x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256TernarylogicEpi64([32]byte(a), [32]byte(b), [32]byte(c), imm8))
 }
 
@@ -57265,7 +57265,7 @@ func m256TernarylogicEpi64(a [32]byte, b [32]byte, c [32]byte, imm8 byte) [32]by
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskTernarylogicEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) x86.M512i {
+func M512MaskTernarylogicEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskTernarylogicEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b), imm8))
 }
 
@@ -57298,7 +57298,7 @@ func m512MaskTernarylogicEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte, im
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
+func M512MaskzTernarylogicEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512MaskzTernarylogicEpi64(uint8(k), [64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
@@ -57325,7 +57325,7 @@ func m512MaskzTernarylogicEpi64(k uint8, a [64]byte, b [64]byte, c [64]byte, imm
 // Requires AVX512F.
 //
 // FIXME: Requires compiler support (has immediate)
-func M512TernarylogicEpi64(a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) x86.M512i {
+func M512TernarylogicEpi64(a x86.M512i, b x86.M512i, c x86.M512i, imm8 byte) (dst x86.M512i) {
 	return x86.M512i(m512TernarylogicEpi64([64]byte(a), [64]byte(b), [64]byte(c), imm8))
 }
 
@@ -57349,7 +57349,7 @@ func m512TernarylogicEpi64(a [64]byte, b [64]byte, c [64]byte, imm8 byte) [64]by
 //
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm_mask_test_epi32_mask'.
 // Requires AVX512F.
-func MaskTestEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskTestEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskTestEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -57368,7 +57368,7 @@ func maskTestEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm_test_epi32_mask'.
 // Requires AVX512F.
-func TestEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func TestEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(testEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -57392,7 +57392,7 @@ func testEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm256_mask_test_epi32_mask'.
 // Requires AVX512F.
-func M256MaskTestEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskTestEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskTestEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -57411,7 +57411,7 @@ func m256MaskTestEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTMD'. Intrinsic: '_mm256_test_epi32_mask'.
 // Requires AVX512F.
-func M256TestEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256TestEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256TestEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -57435,7 +57435,7 @@ func m256TestEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm_mask_test_epi64_mask'.
 // Requires AVX512F.
-func MaskTestEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskTestEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskTestEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -57454,7 +57454,7 @@ func maskTestEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm_test_epi64_mask'.
 // Requires AVX512F.
-func TestEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func TestEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(testEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -57478,7 +57478,7 @@ func testEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm256_mask_test_epi64_mask'.
 // Requires AVX512F.
-func M256MaskTestEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskTestEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskTestEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -57497,7 +57497,7 @@ func m256MaskTestEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm256_test_epi64_mask'.
 // Requires AVX512F.
-func M256TestEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256TestEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256TestEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -57521,7 +57521,7 @@ func m256TestEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm512_mask_test_epi64_mask'.
 // Requires AVX512F.
-func M512MaskTestEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskTestEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskTestEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -57540,7 +57540,7 @@ func m512MaskTestEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPTESTMQ'. Intrinsic: '_mm512_test_epi64_mask'.
 // Requires AVX512F.
-func M512TestEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512TestEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512TestEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -57564,7 +57564,7 @@ func m512TestEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm_mask_testn_epi32_mask'.
 // Requires AVX512F.
-func MaskTestnEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskTestnEpi32Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskTestnEpi32Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -57583,7 +57583,7 @@ func maskTestnEpi32Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm_testn_epi32_mask'.
 // Requires AVX512F.
-func TestnEpi32Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func TestnEpi32Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(testnEpi32Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -57607,7 +57607,7 @@ func testnEpi32Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm256_mask_testn_epi32_mask'.
 // Requires AVX512F.
-func M256MaskTestnEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskTestnEpi32Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskTestnEpi32Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -57626,7 +57626,7 @@ func m256MaskTestnEpi32Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm256_testn_epi32_mask'.
 // Requires AVX512F.
-func M256TestnEpi32Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256TestnEpi32Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256TestnEpi32Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -57650,7 +57650,7 @@ func m256TestnEpi32Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm512_mask_testn_epi32_mask'.
 // Requires AVX512F.
-func M512MaskTestnEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) x86.Mmask16 {
+func M512MaskTestnEpi32Mask(k1 x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.Mmask16) {
 	return x86.Mmask16(m512MaskTestnEpi32Mask(uint16(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -57669,7 +57669,7 @@ func m512MaskTestnEpi32Mask(k1 uint16, a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPTESTNMD'. Intrinsic: '_mm512_testn_epi32_mask'.
 // Requires AVX512F.
-func M512TestnEpi32Mask(a x86.M512i, b x86.M512i) x86.Mmask16 {
+func M512TestnEpi32Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask16) {
 	return x86.Mmask16(m512TestnEpi32Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -57693,7 +57693,7 @@ func m512TestnEpi32Mask(a [64]byte, b [64]byte) uint16
 //
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm_mask_testn_epi64_mask'.
 // Requires AVX512F.
-func MaskTestnEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) x86.Mmask8 {
+func MaskTestnEpi64Mask(k1 x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(maskTestnEpi64Mask(uint8(k1), [16]byte(a), [16]byte(b)))
 }
 
@@ -57712,7 +57712,7 @@ func maskTestnEpi64Mask(k1 uint8, a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm_testn_epi64_mask'.
 // Requires AVX512F.
-func TestnEpi64Mask(a x86.M128i, b x86.M128i) x86.Mmask8 {
+func TestnEpi64Mask(a x86.M128i, b x86.M128i) (dst x86.Mmask8) {
 	return x86.Mmask8(testnEpi64Mask([16]byte(a), [16]byte(b)))
 }
 
@@ -57736,7 +57736,7 @@ func testnEpi64Mask(a [16]byte, b [16]byte) uint8
 //
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm256_mask_testn_epi64_mask'.
 // Requires AVX512F.
-func M256MaskTestnEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256MaskTestnEpi64Mask(k1 x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256MaskTestnEpi64Mask(uint8(k1), [32]byte(a), [32]byte(b)))
 }
 
@@ -57755,7 +57755,7 @@ func m256MaskTestnEpi64Mask(k1 uint8, a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm256_testn_epi64_mask'.
 // Requires AVX512F.
-func M256TestnEpi64Mask(a x86.M256i, b x86.M256i) x86.Mmask8 {
+func M256TestnEpi64Mask(a x86.M256i, b x86.M256i) (dst x86.Mmask8) {
 	return x86.Mmask8(m256TestnEpi64Mask([32]byte(a), [32]byte(b)))
 }
 
@@ -57779,7 +57779,7 @@ func m256TestnEpi64Mask(a [32]byte, b [32]byte) uint8
 //
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm512_mask_testn_epi64_mask'.
 // Requires AVX512F.
-func M512MaskTestnEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512MaskTestnEpi64Mask(k1 x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512MaskTestnEpi64Mask(uint8(k1), [64]byte(a), [64]byte(b)))
 }
 
@@ -57798,7 +57798,7 @@ func m512MaskTestnEpi64Mask(k1 uint8, a [64]byte, b [64]byte) uint8
 //
 // Instruction: 'VPTESTNMQ'. Intrinsic: '_mm512_testn_epi64_mask'.
 // Requires AVX512F.
-func M512TestnEpi64Mask(a x86.M512i, b x86.M512i) x86.Mmask8 {
+func M512TestnEpi64Mask(a x86.M512i, b x86.M512i) (dst x86.Mmask8) {
 	return x86.Mmask8(m512TestnEpi64Mask([64]byte(a), [64]byte(b)))
 }
 
@@ -57822,7 +57822,7 @@ func m512TestnEpi64Mask(a [64]byte, b [64]byte) uint8
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_trunc_pd'.
 // Requires AVX512F.
-func M512MaskTruncPd(src x86.M512d, k x86.Mmask8, a x86.M512d) x86.M512d {
+func M512MaskTruncPd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskTruncPd([8]float64(src), uint8(k), [8]float64(a)))
 }
 
@@ -57841,7 +57841,7 @@ func m512MaskTruncPd(src [8]float64, k uint8, a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_trunc_pd'.
 // Requires AVX512F.
-func M512TruncPd(a x86.M512d) x86.M512d {
+func M512TruncPd(a x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512TruncPd([8]float64(a)))
 }
 
@@ -57865,7 +57865,7 @@ func m512TruncPd(a [8]float64) [8]float64
 //
 // Instruction: '...'. Intrinsic: '_mm512_mask_trunc_ps'.
 // Requires AVX512F.
-func M512MaskTruncPs(src x86.M512, k x86.Mmask16, a x86.M512) x86.M512 {
+func M512MaskTruncPs(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskTruncPs([16]float32(src), uint16(k), [16]float32(a)))
 }
 
@@ -57884,7 +57884,7 @@ func m512MaskTruncPs(src [16]float32, k uint16, a [16]float32) [16]float32
 //
 // Instruction: '...'. Intrinsic: '_mm512_trunc_ps'.
 // Requires AVX512F.
-func M512TruncPs(a x86.M512) x86.M512 {
+func M512TruncPs(a x86.M512) (dst x86.M512) {
 	return x86.M512(m512TruncPs([16]float32(a)))
 }
 
@@ -57897,7 +57897,7 @@ func m512TruncPs(a [16]float32) [16]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_undefined'.
 // Requires AVX512F.
-func M512Undefined() x86.M512 {
+func M512Undefined() (dst x86.M512) {
 	return x86.M512(m512Undefined())
 }
 
@@ -57910,7 +57910,7 @@ func m512Undefined() [16]float32
 //
 // Instruction: ''. Intrinsic: '_mm512_undefined_epi32'.
 // Requires AVX512F.
-func M512UndefinedEpi32() x86.M512i {
+func M512UndefinedEpi32() (dst x86.M512i) {
 	return x86.M512i(m512UndefinedEpi32())
 }
 
@@ -57923,7 +57923,7 @@ func m512UndefinedEpi32() [64]byte
 //
 // Instruction: ''. Intrinsic: '_mm512_undefined_pd'.
 // Requires AVX512F.
-func M512UndefinedPd() x86.M512d {
+func M512UndefinedPd() (dst x86.M512d) {
 	return x86.M512d(m512UndefinedPd())
 }
 
@@ -57936,7 +57936,7 @@ func m512UndefinedPd() [8]float64
 //
 // Instruction: ''. Intrinsic: '_mm512_undefined_ps'.
 // Requires AVX512F.
-func M512UndefinedPs() x86.M512 {
+func M512UndefinedPs() (dst x86.M512) {
 	return x86.M512(m512UndefinedPs())
 }
 
@@ -57969,7 +57969,7 @@ func m512UndefinedPs() [16]float32
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm_mask_unpackhi_epi32'.
 // Requires AVX512F.
-func MaskUnpackhiEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskUnpackhiEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskUnpackhiEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -58002,7 +58002,7 @@ func maskUnpackhiEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm_maskz_unpackhi_epi32'.
 // Requires AVX512F.
-func MaskzUnpackhiEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzUnpackhiEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzUnpackhiEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -58037,7 +58037,7 @@ func maskzUnpackhiEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm256_mask_unpackhi_epi32'.
 // Requires AVX512F.
-func M256MaskUnpackhiEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskUnpackhiEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskUnpackhiEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -58072,7 +58072,7 @@ func m256MaskUnpackhiEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]by
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm256_maskz_unpackhi_epi32'.
 // Requires AVX512F.
-func M256MaskzUnpackhiEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzUnpackhiEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzUnpackhiEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -58109,7 +58109,7 @@ func m256MaskzUnpackhiEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm512_mask_unpackhi_epi32'.
 // Requires AVX512F.
-func M512MaskUnpackhiEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskUnpackhiEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskUnpackhiEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -58146,7 +58146,7 @@ func m512MaskUnpackhiEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]b
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm512_maskz_unpackhi_epi32'.
 // Requires AVX512F.
-func M512MaskzUnpackhiEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzUnpackhiEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzUnpackhiEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -58172,7 +58172,7 @@ func m512MaskzUnpackhiEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm512_unpackhi_epi32'.
 // Requires AVX512F.
-func M512UnpackhiEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512UnpackhiEpi32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512UnpackhiEpi32([64]byte(a), [64]byte(b)))
 }
 
@@ -58203,7 +58203,7 @@ func m512UnpackhiEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm_mask_unpackhi_epi64'.
 // Requires AVX512F.
-func MaskUnpackhiEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskUnpackhiEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskUnpackhiEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -58234,7 +58234,7 @@ func maskUnpackhiEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm_maskz_unpackhi_epi64'.
 // Requires AVX512F.
-func MaskzUnpackhiEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzUnpackhiEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzUnpackhiEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -58267,7 +58267,7 @@ func maskzUnpackhiEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm256_mask_unpackhi_epi64'.
 // Requires AVX512F.
-func M256MaskUnpackhiEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskUnpackhiEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskUnpackhiEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -58300,7 +58300,7 @@ func m256MaskUnpackhiEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]by
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm256_maskz_unpackhi_epi64'.
 // Requires AVX512F.
-func M256MaskzUnpackhiEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzUnpackhiEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzUnpackhiEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -58335,7 +58335,7 @@ func m256MaskzUnpackhiEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm512_mask_unpackhi_epi64'.
 // Requires AVX512F.
-func M512MaskUnpackhiEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskUnpackhiEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskUnpackhiEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -58370,7 +58370,7 @@ func m512MaskUnpackhiEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]by
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm512_maskz_unpackhi_epi64'.
 // Requires AVX512F.
-func M512MaskzUnpackhiEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzUnpackhiEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzUnpackhiEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -58394,7 +58394,7 @@ func m512MaskzUnpackhiEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm512_unpackhi_epi64'.
 // Requires AVX512F.
-func M512UnpackhiEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512UnpackhiEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512UnpackhiEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -58426,7 +58426,7 @@ func m512UnpackhiEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm_mask_unpackhi_pd'.
 // Requires AVX512F.
-func MaskUnpackhiPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskUnpackhiPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskUnpackhiPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -58458,7 +58458,7 @@ func maskUnpackhiPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]floa
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm_maskz_unpackhi_pd'.
 // Requires AVX512F.
-func MaskzUnpackhiPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzUnpackhiPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzUnpackhiPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -58491,7 +58491,7 @@ func maskzUnpackhiPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm256_mask_unpackhi_pd'.
 // Requires AVX512F.
-func M256MaskUnpackhiPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskUnpackhiPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskUnpackhiPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -58524,7 +58524,7 @@ func m256MaskUnpackhiPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm256_maskz_unpackhi_pd'.
 // Requires AVX512F.
-func M256MaskzUnpackhiPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzUnpackhiPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzUnpackhiPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -58559,7 +58559,7 @@ func m256MaskzUnpackhiPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm512_mask_unpackhi_pd'.
 // Requires AVX512F.
-func M512MaskUnpackhiPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskUnpackhiPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskUnpackhiPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -58594,7 +58594,7 @@ func m512MaskUnpackhiPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm512_maskz_unpackhi_pd'.
 // Requires AVX512F.
-func M512MaskzUnpackhiPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzUnpackhiPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzUnpackhiPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -58619,7 +58619,7 @@ func m512MaskzUnpackhiPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VUNPCKHPD'. Intrinsic: '_mm512_unpackhi_pd'.
 // Requires AVX512F.
-func M512UnpackhiPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512UnpackhiPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512UnpackhiPd([8]float64(a), [8]float64(b)))
 }
 
@@ -58653,7 +58653,7 @@ func m512UnpackhiPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm_mask_unpackhi_ps'.
 // Requires AVX512F.
-func MaskUnpackhiPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskUnpackhiPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskUnpackhiPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -58687,7 +58687,7 @@ func maskUnpackhiPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]floa
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm_maskz_unpackhi_ps'.
 // Requires AVX512F.
-func MaskzUnpackhiPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzUnpackhiPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzUnpackhiPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -58722,7 +58722,7 @@ func maskzUnpackhiPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm256_mask_unpackhi_ps'.
 // Requires AVX512F.
-func M256MaskUnpackhiPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskUnpackhiPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskUnpackhiPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -58757,7 +58757,7 @@ func m256MaskUnpackhiPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm256_maskz_unpackhi_ps'.
 // Requires AVX512F.
-func M256MaskzUnpackhiPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzUnpackhiPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzUnpackhiPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -58794,7 +58794,7 @@ func m256MaskzUnpackhiPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm512_mask_unpackhi_ps'.
 // Requires AVX512F.
-func M512MaskUnpackhiPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskUnpackhiPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskUnpackhiPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -58831,7 +58831,7 @@ func m512MaskUnpackhiPs(src [16]float32, k uint16, a [16]float32, b [16]float32)
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm512_maskz_unpackhi_ps'.
 // Requires AVX512F.
-func M512MaskzUnpackhiPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzUnpackhiPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzUnpackhiPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -58858,7 +58858,7 @@ func m512MaskzUnpackhiPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VUNPCKHPS'. Intrinsic: '_mm512_unpackhi_ps'.
 // Requires AVX512F.
-func M512UnpackhiPs(a x86.M512, b x86.M512) x86.M512 {
+func M512UnpackhiPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512UnpackhiPs([16]float32(a), [16]float32(b)))
 }
 
@@ -58891,7 +58891,7 @@ func m512UnpackhiPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm_mask_unpacklo_epi32'.
 // Requires AVX512F.
-func MaskUnpackloEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskUnpackloEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskUnpackloEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -58924,7 +58924,7 @@ func maskUnpackloEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm_maskz_unpacklo_epi32'.
 // Requires AVX512F.
-func MaskzUnpackloEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzUnpackloEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzUnpackloEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -58959,7 +58959,7 @@ func maskzUnpackloEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm256_mask_unpacklo_epi32'.
 // Requires AVX512F.
-func M256MaskUnpackloEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskUnpackloEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskUnpackloEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -58994,7 +58994,7 @@ func m256MaskUnpackloEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]by
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm256_maskz_unpacklo_epi32'.
 // Requires AVX512F.
-func M256MaskzUnpackloEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzUnpackloEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzUnpackloEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -59031,7 +59031,7 @@ func m256MaskzUnpackloEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm512_mask_unpacklo_epi32'.
 // Requires AVX512F.
-func M512MaskUnpackloEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskUnpackloEpi32(src x86.M512i, k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskUnpackloEpi32([64]byte(src), uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -59068,7 +59068,7 @@ func m512MaskUnpackloEpi32(src [64]byte, k uint16, a [64]byte, b [64]byte) [64]b
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm512_maskz_unpacklo_epi32'.
 // Requires AVX512F.
-func M512MaskzUnpackloEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzUnpackloEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzUnpackloEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -59094,7 +59094,7 @@ func m512MaskzUnpackloEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm512_unpacklo_epi32'.
 // Requires AVX512F.
-func M512UnpackloEpi32(a x86.M512i, b x86.M512i) x86.M512i {
+func M512UnpackloEpi32(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512UnpackloEpi32([64]byte(a), [64]byte(b)))
 }
 
@@ -59125,7 +59125,7 @@ func m512UnpackloEpi32(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm_mask_unpacklo_epi64'.
 // Requires AVX512F.
-func MaskUnpackloEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskUnpackloEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskUnpackloEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -59156,7 +59156,7 @@ func maskUnpackloEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm_maskz_unpacklo_epi64'.
 // Requires AVX512F.
-func MaskzUnpackloEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzUnpackloEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzUnpackloEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -59189,7 +59189,7 @@ func maskzUnpackloEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm256_mask_unpacklo_epi64'.
 // Requires AVX512F.
-func M256MaskUnpackloEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskUnpackloEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskUnpackloEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -59222,7 +59222,7 @@ func m256MaskUnpackloEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]by
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm256_maskz_unpacklo_epi64'.
 // Requires AVX512F.
-func M256MaskzUnpackloEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzUnpackloEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzUnpackloEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -59257,7 +59257,7 @@ func m256MaskzUnpackloEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm512_mask_unpacklo_epi64'.
 // Requires AVX512F.
-func M512MaskUnpackloEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskUnpackloEpi64(src x86.M512i, k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskUnpackloEpi64([64]byte(src), uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -59292,7 +59292,7 @@ func m512MaskUnpackloEpi64(src [64]byte, k uint8, a [64]byte, b [64]byte) [64]by
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm512_maskz_unpacklo_epi64'.
 // Requires AVX512F.
-func M512MaskzUnpackloEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzUnpackloEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzUnpackloEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -59316,7 +59316,7 @@ func m512MaskzUnpackloEpi64(k uint8, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm512_unpacklo_epi64'.
 // Requires AVX512F.
-func M512UnpackloEpi64(a x86.M512i, b x86.M512i) x86.M512i {
+func M512UnpackloEpi64(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512UnpackloEpi64([64]byte(a), [64]byte(b)))
 }
 
@@ -59348,7 +59348,7 @@ func m512UnpackloEpi64(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm_mask_unpacklo_pd'.
 // Requires AVX512F.
-func MaskUnpackloPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskUnpackloPd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskUnpackloPd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -59380,7 +59380,7 @@ func maskUnpackloPd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]floa
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm_maskz_unpacklo_pd'.
 // Requires AVX512F.
-func MaskzUnpackloPd(k x86.Mmask8, a x86.M128d, b x86.M128d) x86.M128d {
+func MaskzUnpackloPd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maskzUnpackloPd(uint8(k), [2]float64(a), [2]float64(b)))
 }
 
@@ -59413,7 +59413,7 @@ func maskzUnpackloPd(k uint8, a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm256_mask_unpacklo_pd'.
 // Requires AVX512F.
-func M256MaskUnpackloPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskUnpackloPd(src x86.M256d, k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskUnpackloPd([4]float64(src), uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -59446,7 +59446,7 @@ func m256MaskUnpackloPd(src [4]float64, k uint8, a [4]float64, b [4]float64) [4]
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm256_maskz_unpacklo_pd'.
 // Requires AVX512F.
-func M256MaskzUnpackloPd(k x86.Mmask8, a x86.M256d, b x86.M256d) x86.M256d {
+func M256MaskzUnpackloPd(k x86.Mmask8, a x86.M256d, b x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256MaskzUnpackloPd(uint8(k), [4]float64(a), [4]float64(b)))
 }
 
@@ -59481,7 +59481,7 @@ func m256MaskzUnpackloPd(k uint8, a [4]float64, b [4]float64) [4]float64
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm512_mask_unpacklo_pd'.
 // Requires AVX512F.
-func M512MaskUnpackloPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskUnpackloPd(src x86.M512d, k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskUnpackloPd([8]float64(src), uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -59516,7 +59516,7 @@ func m512MaskUnpackloPd(src [8]float64, k uint8, a [8]float64, b [8]float64) [8]
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm512_maskz_unpacklo_pd'.
 // Requires AVX512F.
-func M512MaskzUnpackloPd(k x86.Mmask8, a x86.M512d, b x86.M512d) x86.M512d {
+func M512MaskzUnpackloPd(k x86.Mmask8, a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512MaskzUnpackloPd(uint8(k), [8]float64(a), [8]float64(b)))
 }
 
@@ -59541,7 +59541,7 @@ func m512MaskzUnpackloPd(k uint8, a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VUNPCKLPD'. Intrinsic: '_mm512_unpacklo_pd'.
 // Requires AVX512F.
-func M512UnpackloPd(a x86.M512d, b x86.M512d) x86.M512d {
+func M512UnpackloPd(a x86.M512d, b x86.M512d) (dst x86.M512d) {
 	return x86.M512d(m512UnpackloPd([8]float64(a), [8]float64(b)))
 }
 
@@ -59575,7 +59575,7 @@ func m512UnpackloPd(a [8]float64, b [8]float64) [8]float64
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm_mask_unpacklo_ps'.
 // Requires AVX512F.
-func MaskUnpackloPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskUnpackloPs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskUnpackloPs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -59609,7 +59609,7 @@ func maskUnpackloPs(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]floa
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm_maskz_unpacklo_ps'.
 // Requires AVX512F.
-func MaskzUnpackloPs(k x86.Mmask8, a x86.M128, b x86.M128) x86.M128 {
+func MaskzUnpackloPs(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
 	return x86.M128(maskzUnpackloPs(uint8(k), [4]float32(a), [4]float32(b)))
 }
 
@@ -59644,7 +59644,7 @@ func maskzUnpackloPs(k uint8, a [4]float32, b [4]float32) [4]float32
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm256_mask_unpacklo_ps'.
 // Requires AVX512F.
-func M256MaskUnpackloPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskUnpackloPs(src x86.M256, k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskUnpackloPs([8]float32(src), uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -59679,7 +59679,7 @@ func m256MaskUnpackloPs(src [8]float32, k uint8, a [8]float32, b [8]float32) [8]
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm256_maskz_unpacklo_ps'.
 // Requires AVX512F.
-func M256MaskzUnpackloPs(k x86.Mmask8, a x86.M256, b x86.M256) x86.M256 {
+func M256MaskzUnpackloPs(k x86.Mmask8, a x86.M256, b x86.M256) (dst x86.M256) {
 	return x86.M256(m256MaskzUnpackloPs(uint8(k), [8]float32(a), [8]float32(b)))
 }
 
@@ -59716,7 +59716,7 @@ func m256MaskzUnpackloPs(k uint8, a [8]float32, b [8]float32) [8]float32
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm512_mask_unpacklo_ps'.
 // Requires AVX512F.
-func M512MaskUnpackloPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskUnpackloPs(src x86.M512, k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskUnpackloPs([16]float32(src), uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -59753,7 +59753,7 @@ func m512MaskUnpackloPs(src [16]float32, k uint16, a [16]float32, b [16]float32)
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm512_maskz_unpacklo_ps'.
 // Requires AVX512F.
-func M512MaskzUnpackloPs(k x86.Mmask16, a x86.M512, b x86.M512) x86.M512 {
+func M512MaskzUnpackloPs(k x86.Mmask16, a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512MaskzUnpackloPs(uint16(k), [16]float32(a), [16]float32(b)))
 }
 
@@ -59780,7 +59780,7 @@ func m512MaskzUnpackloPs(k uint16, a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VUNPCKLPS'. Intrinsic: '_mm512_unpacklo_ps'.
 // Requires AVX512F.
-func M512UnpackloPs(a x86.M512, b x86.M512) x86.M512 {
+func M512UnpackloPs(a x86.M512, b x86.M512) (dst x86.M512) {
 	return x86.M512(m512UnpackloPs([16]float32(a), [16]float32(b)))
 }
 
@@ -59803,7 +59803,7 @@ func m512UnpackloPs(a [16]float32, b [16]float32) [16]float32
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm_mask_xor_epi32'.
 // Requires AVX512F.
-func MaskXorEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskXorEpi32(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskXorEpi32([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -59826,7 +59826,7 @@ func maskXorEpi32(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm_maskz_xor_epi32'.
 // Requires AVX512F.
-func MaskzXorEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzXorEpi32(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzXorEpi32(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -59849,7 +59849,7 @@ func maskzXorEpi32(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm256_mask_xor_epi32'.
 // Requires AVX512F.
-func M256MaskXorEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskXorEpi32(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskXorEpi32([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -59872,7 +59872,7 @@ func m256MaskXorEpi32(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm256_maskz_xor_epi32'.
 // Requires AVX512F.
-func M256MaskzXorEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzXorEpi32(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzXorEpi32(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -59895,7 +59895,7 @@ func m256MaskzXorEpi32(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPXORD'. Intrinsic: '_mm512_maskz_xor_epi32'.
 // Requires AVX512F.
-func M512MaskzXorEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzXorEpi32(k x86.Mmask16, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzXorEpi32(uint16(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -59918,7 +59918,7 @@ func m512MaskzXorEpi32(k uint16, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm_mask_xor_epi64'.
 // Requires AVX512F.
-func MaskXorEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskXorEpi64(src x86.M128i, k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskXorEpi64([16]byte(src), uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -59941,7 +59941,7 @@ func maskXorEpi64(src [16]byte, k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm_maskz_xor_epi64'.
 // Requires AVX512F.
-func MaskzXorEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) x86.M128i {
+func MaskzXorEpi64(k x86.Mmask8, a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maskzXorEpi64(uint8(k), [16]byte(a), [16]byte(b)))
 }
 
@@ -59964,7 +59964,7 @@ func maskzXorEpi64(k uint8, a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm256_mask_xor_epi64'.
 // Requires AVX512F.
-func M256MaskXorEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskXorEpi64(src x86.M256i, k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskXorEpi64([32]byte(src), uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -59987,7 +59987,7 @@ func m256MaskXorEpi64(src [32]byte, k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm256_maskz_xor_epi64'.
 // Requires AVX512F.
-func M256MaskzXorEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaskzXorEpi64(k x86.Mmask8, a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaskzXorEpi64(uint8(k), [32]byte(a), [32]byte(b)))
 }
 
@@ -60010,7 +60010,7 @@ func m256MaskzXorEpi64(k uint8, a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPXORQ'. Intrinsic: '_mm512_maskz_xor_epi64'.
 // Requires AVX512F.
-func M512MaskzXorEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzXorEpi64(k x86.Mmask8, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzXorEpi64(uint8(k), [64]byte(a), [64]byte(b)))
 }
 

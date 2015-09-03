@@ -17,7 +17,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm_fmadd_pd'.
 // Requires FMA.
-func FmaddPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FmaddPd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fmaddPd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -36,7 +36,7 @@ func fmaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADD132PD, VFMADD213PD, VFMADD231PD'. Intrinsic: '_mm256_fmadd_pd'.
 // Requires FMA.
-func M256FmaddPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256FmaddPd(a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256FmaddPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -55,7 +55,7 @@ func m256FmaddPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm_fmadd_ps'.
 // Requires FMA.
-func FmaddPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FmaddPs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fmaddPs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -74,7 +74,7 @@ func fmaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADD132PS, VFMADD213PS, VFMADD231PS'. Intrinsic: '_mm256_fmadd_ps'.
 // Requires FMA.
-func M256FmaddPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256FmaddPs(a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256FmaddPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -92,7 +92,7 @@ func m256FmaddPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 //
 // Instruction: 'VFMADD132SD, VFMADD213SD, VFMADD231SD'. Intrinsic: '_mm_fmadd_sd'.
 // Requires FMA.
-func FmaddSd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FmaddSd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fmaddSd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -110,7 +110,7 @@ func fmaddSd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADD132SS, VFMADD213SS, VFMADD231SS'. Intrinsic: '_mm_fmadd_ss'.
 // Requires FMA.
-func FmaddSs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FmaddSs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fmaddSs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -133,7 +133,7 @@ func fmaddSs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm_fmaddsub_pd'.
 // Requires FMA.
-func FmaddsubPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FmaddsubPd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fmaddsubPd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -156,7 +156,7 @@ func fmaddsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMADDSUB132PD, VFMADDSUB213PD, VFMADDSUB231PD'. Intrinsic: '_mm256_fmaddsub_pd'.
 // Requires FMA.
-func M256FmaddsubPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256FmaddsubPd(a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256FmaddsubPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -179,7 +179,7 @@ func m256FmaddsubPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm_fmaddsub_ps'.
 // Requires FMA.
-func FmaddsubPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FmaddsubPs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fmaddsubPs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -202,7 +202,7 @@ func fmaddsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMADDSUB132PS, VFMADDSUB213PS, VFMADDSUB231PS'. Intrinsic: '_mm256_fmaddsub_ps'.
 // Requires FMA.
-func M256FmaddsubPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256FmaddsubPs(a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256FmaddsubPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -221,7 +221,7 @@ func m256FmaddsubPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm_fmsub_pd'.
 // Requires FMA.
-func FmsubPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FmsubPd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fmsubPd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -240,7 +240,7 @@ func fmsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUB132PD, VFMSUB213PD, VFMSUB231PD'. Intrinsic: '_mm256_fmsub_pd'.
 // Requires FMA.
-func M256FmsubPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256FmsubPd(a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256FmsubPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -259,7 +259,7 @@ func m256FmsubPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm_fmsub_ps'.
 // Requires FMA.
-func FmsubPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FmsubPs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fmsubPs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -278,7 +278,7 @@ func fmsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUB132PS, VFMSUB213PS, VFMSUB231PS'. Intrinsic: '_mm256_fmsub_ps'.
 // Requires FMA.
-func M256FmsubPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256FmsubPs(a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256FmsubPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -296,7 +296,7 @@ func m256FmsubPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 //
 // Instruction: 'VFMSUB132SD, VFMSUB213SD, VFMSUB231SD'. Intrinsic: '_mm_fmsub_sd'.
 // Requires FMA.
-func FmsubSd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FmsubSd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fmsubSd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -314,7 +314,7 @@ func fmsubSd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUB132SS, VFMSUB213SS, VFMSUB231SS'. Intrinsic: '_mm_fmsub_ss'.
 // Requires FMA.
-func FmsubSs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FmsubSs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fmsubSs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -337,7 +337,7 @@ func fmsubSs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm_fmsubadd_pd'.
 // Requires FMA.
-func FmsubaddPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FmsubaddPd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fmsubaddPd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -360,7 +360,7 @@ func fmsubaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFMSUBADD132PD, VFMSUBADD213PD, VFMSUBADD231PD'. Intrinsic: '_mm256_fmsubadd_pd'.
 // Requires FMA.
-func M256FmsubaddPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256FmsubaddPd(a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256FmsubaddPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -383,7 +383,7 @@ func m256FmsubaddPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm_fmsubadd_ps'.
 // Requires FMA.
-func FmsubaddPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FmsubaddPs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fmsubaddPs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -406,7 +406,7 @@ func fmsubaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFMSUBADD132PS, VFMSUBADD213PS, VFMSUBADD231PS'. Intrinsic: '_mm256_fmsubadd_ps'.
 // Requires FMA.
-func M256FmsubaddPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256FmsubaddPs(a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256FmsubaddPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -425,7 +425,7 @@ func m256FmsubaddPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm_fnmadd_pd'.
 // Requires FMA.
-func FnmaddPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FnmaddPd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fnmaddPd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -444,7 +444,7 @@ func fnmaddPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMADD132PD, VFNMADD213PD, VFNMADD231PD'. Intrinsic: '_mm256_fnmadd_pd'.
 // Requires FMA.
-func M256FnmaddPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256FnmaddPd(a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256FnmaddPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -463,7 +463,7 @@ func m256FnmaddPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm_fnmadd_ps'.
 // Requires FMA.
-func FnmaddPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FnmaddPs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fnmaddPs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -482,7 +482,7 @@ func fnmaddPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMADD132PS, VFNMADD213PS, VFNMADD231PS'. Intrinsic: '_mm256_fnmadd_ps'.
 // Requires FMA.
-func M256FnmaddPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256FnmaddPs(a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256FnmaddPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -500,7 +500,7 @@ func m256FnmaddPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 //
 // Instruction: 'VFNMADD132SD, VFNMADD213SD, VFNMADD231SD'. Intrinsic: '_mm_fnmadd_sd'.
 // Requires FMA.
-func FnmaddSd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FnmaddSd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fnmaddSd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -518,7 +518,7 @@ func fnmaddSd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMADD132SS, VFNMADD213SS, VFNMADD231SS'. Intrinsic: '_mm_fnmadd_ss'.
 // Requires FMA.
-func FnmaddSs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FnmaddSs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fnmaddSs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -537,7 +537,7 @@ func fnmaddSs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm_fnmsub_pd'.
 // Requires FMA.
-func FnmsubPd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FnmsubPd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fnmsubPd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -556,7 +556,7 @@ func fnmsubPd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMSUB132PD, VFNMSUB213PD, VFNMSUB231PD'. Intrinsic: '_mm256_fnmsub_pd'.
 // Requires FMA.
-func M256FnmsubPd(a x86.M256d, b x86.M256d, c x86.M256d) x86.M256d {
+func M256FnmsubPd(a x86.M256d, b x86.M256d, c x86.M256d) (dst x86.M256d) {
 	return x86.M256d(m256FnmsubPd([4]float64(a), [4]float64(b), [4]float64(c)))
 }
 
@@ -575,7 +575,7 @@ func m256FnmsubPd(a [4]float64, b [4]float64, c [4]float64) [4]float64
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm_fnmsub_ps'.
 // Requires FMA.
-func FnmsubPs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FnmsubPs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fnmsubPs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 
@@ -594,7 +594,7 @@ func fnmsubPs(a [4]float32, b [4]float32, c [4]float32) [4]float32
 //
 // Instruction: 'VFNMSUB132PS, VFNMSUB213PS, VFNMSUB231PS'. Intrinsic: '_mm256_fnmsub_ps'.
 // Requires FMA.
-func M256FnmsubPs(a x86.M256, b x86.M256, c x86.M256) x86.M256 {
+func M256FnmsubPs(a x86.M256, b x86.M256, c x86.M256) (dst x86.M256) {
 	return x86.M256(m256FnmsubPs([8]float32(a), [8]float32(b), [8]float32(c)))
 }
 
@@ -612,7 +612,7 @@ func m256FnmsubPs(a [8]float32, b [8]float32, c [8]float32) [8]float32
 //
 // Instruction: 'VFNMSUB132SD, VFNMSUB213SD, VFNMSUB231SD'. Intrinsic: '_mm_fnmsub_sd'.
 // Requires FMA.
-func FnmsubSd(a x86.M128d, b x86.M128d, c x86.M128d) x86.M128d {
+func FnmsubSd(a x86.M128d, b x86.M128d, c x86.M128d) (dst x86.M128d) {
 	return x86.M128d(fnmsubSd([2]float64(a), [2]float64(b), [2]float64(c)))
 }
 
@@ -631,7 +631,7 @@ func fnmsubSd(a [2]float64, b [2]float64, c [2]float64) [2]float64
 //
 // Instruction: 'VFNMSUB132SS, VFNMSUB213SS, VFNMSUB231SS'. Intrinsic: '_mm_fnmsub_ss'.
 // Requires FMA.
-func FnmsubSs(a x86.M128, b x86.M128, c x86.M128) x86.M128 {
+func FnmsubSs(a x86.M128, b x86.M128, c x86.M128) (dst x86.M128) {
 	return x86.M128(fnmsubSs([4]float32(a), [4]float32(b), [4]float32(c)))
 }
 

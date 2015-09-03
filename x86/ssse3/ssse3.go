@@ -15,7 +15,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'PABSW'. Intrinsic: '_mm_abs_epi16'.
 // Requires SSSE3.
-func AbsEpi16(a x86.M128i) x86.M128i {
+func AbsEpi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(absEpi16([16]byte(a)))
 }
 
@@ -32,7 +32,7 @@ func absEpi16(a [16]byte) [16]byte
 //
 // Instruction: 'PABSD'. Intrinsic: '_mm_abs_epi32'.
 // Requires SSSE3.
-func AbsEpi32(a x86.M128i) x86.M128i {
+func AbsEpi32(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(absEpi32([16]byte(a)))
 }
 
@@ -49,7 +49,7 @@ func absEpi32(a [16]byte) [16]byte
 //
 // Instruction: 'PABSB'. Intrinsic: '_mm_abs_epi8'.
 // Requires SSSE3.
-func AbsEpi8(a x86.M128i) x86.M128i {
+func AbsEpi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(absEpi8([16]byte(a)))
 }
 
@@ -66,7 +66,7 @@ func absEpi8(a [16]byte) [16]byte
 //
 // Instruction: 'PABSW'. Intrinsic: '_mm_abs_pi16'.
 // Requires SSSE3.
-func AbsPi16(a x86.M64) x86.M64 {
+func AbsPi16(a x86.M64) (dst x86.M64) {
 	return x86.M64(absPi16(a))
 }
 
@@ -83,7 +83,7 @@ func absPi16(a x86.M64) x86.M64
 //
 // Instruction: 'PABSD'. Intrinsic: '_mm_abs_pi32'.
 // Requires SSSE3.
-func AbsPi32(a x86.M64) x86.M64 {
+func AbsPi32(a x86.M64) (dst x86.M64) {
 	return x86.M64(absPi32(a))
 }
 
@@ -100,7 +100,7 @@ func absPi32(a x86.M64) x86.M64
 //
 // Instruction: 'PABSB'. Intrinsic: '_mm_abs_pi8'.
 // Requires SSSE3.
-func AbsPi8(a x86.M64) x86.M64 {
+func AbsPi8(a x86.M64) (dst x86.M64) {
 	return x86.M64(absPi8(a))
 }
 
@@ -116,7 +116,7 @@ func absPi8(a x86.M64) x86.M64
 //
 // Instruction: 'PALIGNR'. Intrinsic: '_mm_alignr_epi8'.
 // Requires SSSE3.
-func AlignrEpi8(a x86.M128i, b x86.M128i, count int) x86.M128i {
+func AlignrEpi8(a x86.M128i, b x86.M128i, count int) (dst x86.M128i) {
 	return x86.M128i(alignrEpi8([16]byte(a), [16]byte(b), count))
 }
 
@@ -132,7 +132,7 @@ func alignrEpi8(a [16]byte, b [16]byte, count int) [16]byte
 //
 // Instruction: 'PALIGNR'. Intrinsic: '_mm_alignr_pi8'.
 // Requires SSSE3.
-func AlignrPi8(a x86.M64, b x86.M64, count int) x86.M64 {
+func AlignrPi8(a x86.M64, b x86.M64, count int) (dst x86.M64) {
 	return x86.M64(alignrPi8(a, b, count))
 }
 
@@ -153,7 +153,7 @@ func alignrPi8(a x86.M64, b x86.M64, count int) x86.M64
 //
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_epi16'.
 // Requires SSSE3.
-func HaddEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func HaddEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(haddEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -170,7 +170,7 @@ func haddEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PHADDD'. Intrinsic: '_mm_hadd_epi32'.
 // Requires SSSE3.
-func HaddEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func HaddEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(haddEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -187,7 +187,7 @@ func haddEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_pi16'.
 // Requires SSSE3.
-func HaddPi16(a x86.M64, b x86.M64) x86.M64 {
+func HaddPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(haddPi16(a, b))
 }
 
@@ -202,7 +202,7 @@ func haddPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_pi32'.
 // Requires SSSE3.
-func HaddPi32(a x86.M64, b x86.M64) x86.M64 {
+func HaddPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(haddPi32(a, b))
 }
 
@@ -223,7 +223,7 @@ func haddPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PHADDSW'. Intrinsic: '_mm_hadds_epi16'.
 // Requires SSSE3.
-func HaddsEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func HaddsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(haddsEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -240,7 +240,7 @@ func haddsEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PHADDSW'. Intrinsic: '_mm_hadds_pi16'.
 // Requires SSSE3.
-func HaddsPi16(a x86.M64, b x86.M64) x86.M64 {
+func HaddsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(haddsPi16(a, b))
 }
 
@@ -261,7 +261,7 @@ func haddsPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PHSUBW'. Intrinsic: '_mm_hsub_epi16'.
 // Requires SSSE3.
-func HsubEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func HsubEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(hsubEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -278,7 +278,7 @@ func hsubEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PHSUBD'. Intrinsic: '_mm_hsub_epi32'.
 // Requires SSSE3.
-func HsubEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func HsubEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(hsubEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -295,7 +295,7 @@ func hsubEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PHSUBW'. Intrinsic: '_mm_hsub_pi16'.
 // Requires SSSE3.
-func HsubPi16(a x86.M64, b x86.M64) x86.M64 {
+func HsubPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(hsubPi16(a, b))
 }
 
@@ -310,7 +310,7 @@ func hsubPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PHSUBD'. Intrinsic: '_mm_hsub_pi32'.
 // Requires SSSE3.
-func HsubPi32(a x86.M64, b x86.M64) x86.M64 {
+func HsubPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(hsubPi32(a, b))
 }
 
@@ -331,7 +331,7 @@ func hsubPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PHSUBSW'. Intrinsic: '_mm_hsubs_epi16'.
 // Requires SSSE3.
-func HsubsEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func HsubsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(hsubsEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -348,7 +348,7 @@ func hsubsEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PHSUBSW'. Intrinsic: '_mm_hsubs_pi16'.
 // Requires SSSE3.
-func HsubsPi16(a x86.M64, b x86.M64) x86.M64 {
+func HsubsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(hsubsPi16(a, b))
 }
 
@@ -367,7 +367,7 @@ func hsubsPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMADDUBSW'. Intrinsic: '_mm_maddubs_epi16'.
 // Requires SSSE3.
-func MaddubsEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func MaddubsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maddubsEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -386,7 +386,7 @@ func maddubsEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PMADDUBSW'. Intrinsic: '_mm_maddubs_pi16'.
 // Requires SSSE3.
-func MaddubsPi16(a x86.M64, b x86.M64) x86.M64 {
+func MaddubsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(maddubsPi16(a, b))
 }
 
@@ -406,7 +406,7 @@ func maddubsPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMULHRSW'. Intrinsic: '_mm_mulhrs_epi16'.
 // Requires SSSE3.
-func MulhrsEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func MulhrsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(mulhrsEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -426,7 +426,7 @@ func mulhrsEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PMULHRSW'. Intrinsic: '_mm_mulhrs_pi16'.
 // Requires SSSE3.
-func MulhrsPi16(a x86.M64, b x86.M64) x86.M64 {
+func MulhrsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(mulhrsPi16(a, b))
 }
 
@@ -449,7 +449,7 @@ func mulhrsPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSHUFB'. Intrinsic: '_mm_shuffle_epi8'.
 // Requires SSSE3.
-func ShuffleEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func ShuffleEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(shuffleEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -472,7 +472,7 @@ func shuffleEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSHUFB'. Intrinsic: '_mm_shuffle_pi8'.
 // Requires SSSE3.
-func ShufflePi8(a x86.M64, b x86.M64) x86.M64 {
+func ShufflePi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(shufflePi8(a, b))
 }
 
@@ -497,7 +497,7 @@ func shufflePi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSIGNW'. Intrinsic: '_mm_sign_epi16'.
 // Requires SSSE3.
-func SignEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func SignEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(signEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -522,7 +522,7 @@ func signEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSIGND'. Intrinsic: '_mm_sign_epi32'.
 // Requires SSSE3.
-func SignEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func SignEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(signEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -546,7 +546,7 @@ func signEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSIGNB'. Intrinsic: '_mm_sign_epi8'.
 // Requires SSSE3.
-func SignEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func SignEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(signEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -570,7 +570,7 @@ func signEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSIGNW'. Intrinsic: '_mm_sign_pi16'.
 // Requires SSSE3.
-func SignPi16(a x86.M64, b x86.M64) x86.M64 {
+func SignPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(signPi16(a, b))
 }
 
@@ -594,7 +594,7 @@ func signPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSIGND'. Intrinsic: '_mm_sign_pi32'.
 // Requires SSSE3.
-func SignPi32(a x86.M64, b x86.M64) x86.M64 {
+func SignPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(signPi32(a, b))
 }
 
@@ -618,7 +618,7 @@ func signPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSIGNB'. Intrinsic: '_mm_sign_pi8'.
 // Requires SSSE3.
-func SignPi8(a x86.M64, b x86.M64) x86.M64 {
+func SignPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(signPi8(a, b))
 }
 

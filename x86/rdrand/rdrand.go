@@ -20,7 +20,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Requires RDRAND.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Rdrand16Step(val *uint16) int {
+func Rdrand16Step(val *uint16) (dst int) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -40,7 +40,7 @@ func Rdrand16Step(val *uint16) int {
 // Requires RDRAND.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Rdrand32Step(val *uint32) int {
+func Rdrand32Step(val *uint32) (dst int) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }
@@ -60,7 +60,7 @@ func Rdrand32Step(val *uint32) int {
 // Requires RDRAND.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func Rdrand64Step(val *uint64) int {
+func Rdrand64Step(val *uint64) (dst int) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return 0
 }

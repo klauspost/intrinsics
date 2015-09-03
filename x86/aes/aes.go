@@ -16,7 +16,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'AESDEC'. Intrinsic: '_mm_aesdec_si128'.
 // Requires AES.
-func AesdecSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+func AesdecSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
 	return x86.M128i(aesdecSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
@@ -34,7 +34,7 @@ func aesdecSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESDECLAST'. Intrinsic: '_mm_aesdeclast_si128'.
 // Requires AES.
-func AesdeclastSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+func AesdeclastSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
 	return x86.M128i(aesdeclastSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
@@ -52,7 +52,7 @@ func aesdeclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESENC'. Intrinsic: '_mm_aesenc_si128'.
 // Requires AES.
-func AesencSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+func AesencSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
 	return x86.M128i(aesencSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
@@ -70,7 +70,7 @@ func aesencSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESENCLAST'. Intrinsic: '_mm_aesenclast_si128'.
 // Requires AES.
-func AesenclastSi128(a x86.M128i, RoundKey x86.M128i) x86.M128i {
+func AesenclastSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
 	return x86.M128i(aesenclastSi128([16]byte(a), [16]byte(RoundKey)))
 }
 
@@ -84,7 +84,7 @@ func aesenclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 //
 // Instruction: 'AESIMC'. Intrinsic: '_mm_aesimc_si128'.
 // Requires AES.
-func AesimcSi128(a x86.M128i) x86.M128i {
+func AesimcSi128(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(aesimcSi128([16]byte(a)))
 }
 
@@ -110,7 +110,7 @@ func aesimcSi128(a [16]byte) [16]byte
 // Requires AES.
 //
 // FIXME: Requires compiler support (has immediate)
-func AeskeygenassistSi128(a x86.M128i, imm8 byte) x86.M128i {
+func AeskeygenassistSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(aeskeygenassistSi128([16]byte(a), imm8))
 }
 

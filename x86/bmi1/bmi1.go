@@ -14,7 +14,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'BEXTR'. Intrinsic: '_bextr_u32'.
 // Requires BMI1.
-func BextrU32(a uint32, start uint32, len uint32) uint32 {
+func BextrU32(a uint32, start uint32, len uint32) (dst uint32) {
 	return uint32(bextrU32(a, start, len))
 }
 
@@ -30,7 +30,7 @@ func bextrU32(a uint32, start uint32, len uint32) uint32
 //
 // Instruction: 'BEXTR'. Intrinsic: '_bextr_u64'.
 // Requires BMI1.
-func BextrU64(a uint64, start uint32, len uint32) uint64 {
+func BextrU64(a uint64, start uint32, len uint32) (dst uint64) {
 	return uint64(bextrU64(a, start, len))
 }
 
@@ -45,7 +45,7 @@ func bextrU64(a uint64, start uint32, len uint32) uint64
 //
 // Instruction: 'BLSI'. Intrinsic: '_blsi_u32'.
 // Requires BMI1.
-func BlsiU32(a uint32) uint32 {
+func BlsiU32(a uint32) (dst uint32) {
 	return uint32(blsiU32(a))
 }
 
@@ -60,7 +60,7 @@ func blsiU32(a uint32) uint32
 //
 // Instruction: 'BLSI'. Intrinsic: '_blsi_u64'.
 // Requires BMI1.
-func BlsiU64(a uint64) uint64 {
+func BlsiU64(a uint64) (dst uint64) {
 	return uint64(blsiU64(a))
 }
 
@@ -74,7 +74,7 @@ func blsiU64(a uint64) uint64
 //
 // Instruction: 'BLSMSK'. Intrinsic: '_blsmsk_u32'.
 // Requires BMI1.
-func BlsmskU32(a uint32) uint32 {
+func BlsmskU32(a uint32) (dst uint32) {
 	return uint32(blsmskU32(a))
 }
 
@@ -88,7 +88,7 @@ func blsmskU32(a uint32) uint32
 //
 // Instruction: 'BLSMSK'. Intrinsic: '_blsmsk_u64'.
 // Requires BMI1.
-func BlsmskU64(a uint64) uint64 {
+func BlsmskU64(a uint64) (dst uint64) {
 	return uint64(blsmskU64(a))
 }
 
@@ -102,7 +102,7 @@ func blsmskU64(a uint64) uint64
 //
 // Instruction: 'BLSR'. Intrinsic: '_blsr_u32'.
 // Requires BMI1.
-func BlsrU32(a uint32) uint32 {
+func BlsrU32(a uint32) (dst uint32) {
 	return uint32(blsrU32(a))
 }
 
@@ -116,7 +116,7 @@ func blsrU32(a uint32) uint32
 //
 // Instruction: 'BLSR'. Intrinsic: '_blsr_u64'.
 // Requires BMI1.
-func BlsrU64(a uint64) uint64 {
+func BlsrU64(a uint64) (dst uint64) {
 	return uint64(blsrU64(a))
 }
 
@@ -135,7 +135,7 @@ func blsrU64(a uint64) uint64
 //
 // Instruction: 'TZCNT'. Intrinsic: '_mm_tzcnt_32'.
 // Requires BMI1.
-func Tzcnt32(a uint32) int {
+func Tzcnt32(a uint32) (dst int) {
 	return int(tzcnt32(a))
 }
 
@@ -154,7 +154,7 @@ func tzcnt32(a uint32) int
 //
 // Instruction: 'TZCNT'. Intrinsic: '_mm_tzcnt_64'.
 // Requires BMI1.
-func Tzcnt64(a uint64) int64 {
+func Tzcnt64(a uint64) (dst int64) {
 	return int64(tzcnt64(a))
 }
 
@@ -173,7 +173,7 @@ func tzcnt64(a uint64) int64
 //
 // Instruction: 'TZCNT'. Intrinsic: '_tzcnt_u32'.
 // Requires BMI1.
-func TzcntU32(a uint32) uint32 {
+func TzcntU32(a uint32) (dst uint32) {
 	return uint32(tzcntU32(a))
 }
 
@@ -192,7 +192,7 @@ func tzcntU32(a uint32) uint32
 //
 // Instruction: 'TZCNT'. Intrinsic: '_tzcnt_u64'.
 // Requires BMI1.
-func TzcntU64(a uint64) uint64 {
+func TzcntU64(a uint64) (dst uint64) {
 	return uint64(tzcntU64(a))
 }
 

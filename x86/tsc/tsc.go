@@ -12,7 +12,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'RDTSC'. Intrinsic: '_rdtsc'.
 // Requires TSC.
-func Rdtsc() int64 {
+func Rdtsc() (dst int64) {
 	return int64(rdtsc())
 }
 

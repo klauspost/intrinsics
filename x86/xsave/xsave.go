@@ -13,7 +13,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'XGETBV'. Intrinsic: '_xgetbv'.
 // Requires XSAVE.
-func Xgetbv(a uint32) uint64 {
+func Xgetbv(a uint32) (dst uint64) {
 	return uint64(xgetbv(a))
 }
 

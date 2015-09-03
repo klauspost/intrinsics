@@ -30,7 +30,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_mask_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func M512MaskMultishiftEpi64Epi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskMultishiftEpi64Epi8(src x86.M512i, k x86.Mmask64, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskMultishiftEpi64Epi8([64]byte(src), uint64(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -62,7 +62,7 @@ func m512MaskMultishiftEpi64Epi8(src [64]byte, k uint64, a [64]byte, b [64]byte)
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_maskz_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func M512MaskzMultishiftEpi64Epi8(k x86.Mmask64, a x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzMultishiftEpi64Epi8(k x86.Mmask64, a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzMultishiftEpi64Epi8(uint64(k), [64]byte(a), [64]byte(b)))
 }
 
@@ -89,7 +89,7 @@ func m512MaskzMultishiftEpi64Epi8(k uint64, a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPMULTISHIFTQB'. Intrinsic: '_mm512_multishift_epi64_epi8'.
 // Requires AVX512VBMI.
-func M512MultishiftEpi64Epi8(a x86.M512i, b x86.M512i) x86.M512i {
+func M512MultishiftEpi64Epi8(a x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MultishiftEpi64Epi8([64]byte(a), [64]byte(b)))
 }
 
@@ -114,7 +114,7 @@ func m512MultishiftEpi64Epi8(a [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMT2B'. Intrinsic: '_mm512_mask_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func M512MaskPermutex2varEpi8(a x86.M512i, k x86.Mmask64, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskPermutex2varEpi8(a x86.M512i, k x86.Mmask64, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskPermutex2varEpi8([64]byte(a), uint64(k), [64]byte(idx), [64]byte(b)))
 }
 
@@ -139,7 +139,7 @@ func m512MaskPermutex2varEpi8(a [64]byte, k uint64, idx [64]byte, b [64]byte) [6
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_mask2_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func M512Mask2Permutex2varEpi8(a x86.M512i, idx x86.M512i, k x86.Mmask64, b x86.M512i) x86.M512i {
+func M512Mask2Permutex2varEpi8(a x86.M512i, idx x86.M512i, k x86.Mmask64, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512Mask2Permutex2varEpi8([64]byte(a), [64]byte(idx), uint64(k), [64]byte(b)))
 }
 
@@ -164,7 +164,7 @@ func m512Mask2Permutex2varEpi8(a [64]byte, idx [64]byte, k uint64, b [64]byte) [
 //
 // Instruction: 'VPERMI2B, VPERMT2B'. Intrinsic: '_mm512_maskz_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func M512MaskzPermutex2varEpi8(k x86.Mmask64, a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512MaskzPermutex2varEpi8(k x86.Mmask64, a x86.M512i, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzPermutex2varEpi8(uint64(k), [64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
@@ -184,7 +184,7 @@ func m512MaskzPermutex2varEpi8(k uint64, a [64]byte, idx [64]byte, b [64]byte) [
 //
 // Instruction: 'VPERMI2B'. Intrinsic: '_mm512_permutex2var_epi8'.
 // Requires AVX512VBMI.
-func M512Permutex2varEpi8(a x86.M512i, idx x86.M512i, b x86.M512i) x86.M512i {
+func M512Permutex2varEpi8(a x86.M512i, idx x86.M512i, b x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512Permutex2varEpi8([64]byte(a), [64]byte(idx), [64]byte(b)))
 }
 
@@ -209,7 +209,7 @@ func m512Permutex2varEpi8(a [64]byte, idx [64]byte, b [64]byte) [64]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_mask_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func M512MaskPermutexvarEpi8(src x86.M512i, k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
+func M512MaskPermutexvarEpi8(src x86.M512i, k x86.Mmask64, idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskPermutexvarEpi8([64]byte(src), uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
@@ -234,7 +234,7 @@ func m512MaskPermutexvarEpi8(src [64]byte, k uint64, idx [64]byte, a [64]byte) [
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_maskz_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func M512MaskzPermutexvarEpi8(k x86.Mmask64, idx x86.M512i, a x86.M512i) x86.M512i {
+func M512MaskzPermutexvarEpi8(k x86.Mmask64, idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512MaskzPermutexvarEpi8(uint64(k), [64]byte(idx), [64]byte(a)))
 }
 
@@ -253,7 +253,7 @@ func m512MaskzPermutexvarEpi8(k uint64, idx [64]byte, a [64]byte) [64]byte
 //
 // Instruction: 'VPERMB'. Intrinsic: '_mm512_permutexvar_epi8'.
 // Requires AVX512VBMI.
-func M512PermutexvarEpi8(idx x86.M512i, a x86.M512i) x86.M512i {
+func M512PermutexvarEpi8(idx x86.M512i, a x86.M512i) (dst x86.M512i) {
 	return x86.M512i(m512PermutexvarEpi8([64]byte(idx), [64]byte(a)))
 }
 

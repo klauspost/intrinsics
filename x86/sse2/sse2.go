@@ -15,7 +15,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'PADDW'. Intrinsic: '_mm_add_epi16'.
 // Requires SSE2.
-func AddEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func AddEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -32,7 +32,7 @@ func addEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PADDD'. Intrinsic: '_mm_add_epi32'.
 // Requires SSE2.
-func AddEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func AddEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -49,7 +49,7 @@ func addEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PADDQ'. Intrinsic: '_mm_add_epi64'.
 // Requires SSE2.
-func AddEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func AddEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -66,7 +66,7 @@ func addEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PADDB'. Intrinsic: '_mm_add_epi8'.
 // Requires SSE2.
-func AddEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func AddEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -83,7 +83,7 @@ func addEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'ADDPD'. Intrinsic: '_mm_add_pd'.
 // Requires SSE2.
-func AddPd(a x86.M128d, b x86.M128d) x86.M128d {
+func AddPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(addPd([2]float64(a), [2]float64(b)))
 }
 
@@ -99,7 +99,7 @@ func addPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'ADDSD'. Intrinsic: '_mm_add_sd'.
 // Requires SSE2.
-func AddSd(a x86.M128d, b x86.M128d) x86.M128d {
+func AddSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(addSd([2]float64(a), [2]float64(b)))
 }
 
@@ -112,7 +112,7 @@ func addSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PADDQ'. Intrinsic: '_mm_add_si64'.
 // Requires SSE2.
-func AddSi64(a x86.M64, b x86.M64) x86.M64 {
+func AddSi64(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addSi64(a, b))
 }
 
@@ -129,7 +129,7 @@ func addSi64(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDSW'. Intrinsic: '_mm_adds_epi16'.
 // Requires SSE2.
-func AddsEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func AddsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addsEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -146,7 +146,7 @@ func addsEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PADDSB'. Intrinsic: '_mm_adds_epi8'.
 // Requires SSE2.
-func AddsEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func AddsEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addsEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -163,7 +163,7 @@ func addsEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PADDUSW'. Intrinsic: '_mm_adds_epu16'.
 // Requires SSE2.
-func AddsEpu16(a x86.M128i, b x86.M128i) x86.M128i {
+func AddsEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addsEpu16([16]byte(a), [16]byte(b)))
 }
 
@@ -180,7 +180,7 @@ func addsEpu16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PADDUSB'. Intrinsic: '_mm_adds_epu8'.
 // Requires SSE2.
-func AddsEpu8(a x86.M128i, b x86.M128i) x86.M128i {
+func AddsEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(addsEpu8([16]byte(a), [16]byte(b)))
 }
 
@@ -197,7 +197,7 @@ func addsEpu8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'ANDPD'. Intrinsic: '_mm_and_pd'.
 // Requires SSE2.
-func AndPd(a x86.M128d, b x86.M128d) x86.M128d {
+func AndPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(andPd([2]float64(a), [2]float64(b)))
 }
 
@@ -211,7 +211,7 @@ func andPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PAND'. Intrinsic: '_mm_and_si128'.
 // Requires SSE2.
-func AndSi128(a x86.M128i, b x86.M128i) x86.M128i {
+func AndSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(andSi128([16]byte(a), [16]byte(b)))
 }
 
@@ -228,7 +228,7 @@ func andSi128(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'ANDNPD'. Intrinsic: '_mm_andnot_pd'.
 // Requires SSE2.
-func AndnotPd(a x86.M128d, b x86.M128d) x86.M128d {
+func AndnotPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(andnotPd([2]float64(a), [2]float64(b)))
 }
 
@@ -242,7 +242,7 @@ func andnotPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PANDN'. Intrinsic: '_mm_andnot_si128'.
 // Requires SSE2.
-func AndnotSi128(a x86.M128i, b x86.M128i) x86.M128i {
+func AndnotSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(andnotSi128([16]byte(a), [16]byte(b)))
 }
 
@@ -259,7 +259,7 @@ func andnotSi128(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PAVGW'. Intrinsic: '_mm_avg_epu16'.
 // Requires SSE2.
-func AvgEpu16(a x86.M128i, b x86.M128i) x86.M128i {
+func AvgEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(avgEpu16([16]byte(a), [16]byte(b)))
 }
 
@@ -276,7 +276,7 @@ func avgEpu16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PAVGB'. Intrinsic: '_mm_avg_epu8'.
 // Requires SSE2.
-func AvgEpu8(a x86.M128i, b x86.M128i) x86.M128i {
+func AvgEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(avgEpu8([16]byte(a), [16]byte(b)))
 }
 
@@ -296,7 +296,7 @@ func avgEpu8(a [16]byte, b [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func BslliSi128(a x86.M128i, imm8 byte) x86.M128i {
+func BslliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(bslliSi128([16]byte(a), imm8))
 }
 
@@ -316,7 +316,7 @@ func bslliSi128(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func BsrliSi128(a x86.M128i, imm8 byte) x86.M128i {
+func BsrliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(bsrliSi128([16]byte(a), imm8))
 }
 
@@ -331,7 +331,7 @@ func bsrliSi128(a [16]byte, imm8 byte) [16]byte
 //
 // Instruction: ''. Intrinsic: '_mm_castpd_ps'.
 // Requires SSE2.
-func CastpdPs(a x86.M128d) x86.M128 {
+func CastpdPs(a x86.M128d) (dst x86.M128) {
 	return x86.M128(castpdPs([2]float64(a)))
 }
 
@@ -346,7 +346,7 @@ func castpdPs(a [2]float64) [4]float32
 //
 // Instruction: ''. Intrinsic: '_mm_castpd_si128'.
 // Requires SSE2.
-func CastpdSi128(a x86.M128d) x86.M128i {
+func CastpdSi128(a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(castpdSi128([2]float64(a)))
 }
 
@@ -361,7 +361,7 @@ func castpdSi128(a [2]float64) [16]byte
 //
 // Instruction: ''. Intrinsic: '_mm_castps_pd'.
 // Requires SSE2.
-func CastpsPd(a x86.M128) x86.M128d {
+func CastpsPd(a x86.M128) (dst x86.M128d) {
 	return x86.M128d(castpsPd([4]float32(a)))
 }
 
@@ -376,7 +376,7 @@ func castpsPd(a [4]float32) [2]float64
 //
 // Instruction: ''. Intrinsic: '_mm_castps_si128'.
 // Requires SSE2.
-func CastpsSi128(a x86.M128) x86.M128i {
+func CastpsSi128(a x86.M128) (dst x86.M128i) {
 	return x86.M128i(castpsSi128([4]float32(a)))
 }
 
@@ -391,7 +391,7 @@ func castpsSi128(a [4]float32) [16]byte
 //
 // Instruction: ''. Intrinsic: '_mm_castsi128_pd'.
 // Requires SSE2.
-func Castsi128Pd(a x86.M128i) x86.M128d {
+func Castsi128Pd(a x86.M128i) (dst x86.M128d) {
 	return x86.M128d(castsi128Pd([16]byte(a)))
 }
 
@@ -406,7 +406,7 @@ func castsi128Pd(a [16]byte) [2]float64
 //
 // Instruction: ''. Intrinsic: '_mm_castsi128_ps'.
 // Requires SSE2.
-func Castsi128Ps(a x86.M128i) x86.M128 {
+func Castsi128Ps(a x86.M128i) (dst x86.M128) {
 	return x86.M128(castsi128Ps([16]byte(a)))
 }
 
@@ -426,7 +426,7 @@ func castsi128Ps(a [16]byte) [4]float32
 //
 // Instruction: 'PCMPEQW'. Intrinsic: '_mm_cmpeq_epi16'.
 // Requires SSE2.
-func CmpeqEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpeqEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpeqEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -443,7 +443,7 @@ func cmpeqEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PCMPEQD'. Intrinsic: '_mm_cmpeq_epi32'.
 // Requires SSE2.
-func CmpeqEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpeqEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpeqEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -460,7 +460,7 @@ func cmpeqEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PCMPEQB'. Intrinsic: '_mm_cmpeq_epi8'.
 // Requires SSE2.
-func CmpeqEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpeqEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpeqEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -477,7 +477,7 @@ func cmpeqEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpeq_pd'.
 // Requires SSE2.
-func CmpeqPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpeqPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpeqPd([2]float64(a), [2]float64(b)))
 }
 
@@ -493,7 +493,7 @@ func cmpeqPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpeq_sd'.
 // Requires SSE2.
-func CmpeqSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpeqSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpeqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -510,7 +510,7 @@ func cmpeqSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpge_pd'.
 // Requires SSE2.
-func CmpgePd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpgePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpgePd([2]float64(a), [2]float64(b)))
 }
 
@@ -527,7 +527,7 @@ func cmpgePd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpge_sd'.
 // Requires SSE2.
-func CmpgeSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpgeSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpgeSd([2]float64(a), [2]float64(b)))
 }
 
@@ -544,7 +544,7 @@ func cmpgeSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PCMPGTW'. Intrinsic: '_mm_cmpgt_epi16'.
 // Requires SSE2.
-func CmpgtEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpgtEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpgtEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -561,7 +561,7 @@ func cmpgtEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PCMPGTD'. Intrinsic: '_mm_cmpgt_epi32'.
 // Requires SSE2.
-func CmpgtEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpgtEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpgtEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -578,7 +578,7 @@ func cmpgtEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PCMPGTB'. Intrinsic: '_mm_cmpgt_epi8'.
 // Requires SSE2.
-func CmpgtEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpgtEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpgtEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -595,7 +595,7 @@ func cmpgtEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpgt_pd'.
 // Requires SSE2.
-func CmpgtPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpgtPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpgtPd([2]float64(a), [2]float64(b)))
 }
 
@@ -611,7 +611,7 @@ func cmpgtPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpgt_sd'.
 // Requires SSE2.
-func CmpgtSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpgtSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpgtSd([2]float64(a), [2]float64(b)))
 }
 
@@ -628,7 +628,7 @@ func cmpgtSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmple_pd'.
 // Requires SSE2.
-func CmplePd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmplePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmplePd([2]float64(a), [2]float64(b)))
 }
 
@@ -644,7 +644,7 @@ func cmplePd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmple_sd'.
 // Requires SSE2.
-func CmpleSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpleSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpleSd([2]float64(a), [2]float64(b)))
 }
 
@@ -662,7 +662,7 @@ func cmpleSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PCMPGTW'. Intrinsic: '_mm_cmplt_epi16'.
 // Requires SSE2.
-func CmpltEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpltEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpltEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -680,7 +680,7 @@ func cmpltEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PCMPGTD'. Intrinsic: '_mm_cmplt_epi32'.
 // Requires SSE2.
-func CmpltEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpltEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpltEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -698,7 +698,7 @@ func cmpltEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PCMPGTB'. Intrinsic: '_mm_cmplt_epi8'.
 // Requires SSE2.
-func CmpltEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func CmpltEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(cmpltEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -715,7 +715,7 @@ func cmpltEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmplt_pd'.
 // Requires SSE2.
-func CmpltPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpltPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpltPd([2]float64(a), [2]float64(b)))
 }
 
@@ -731,7 +731,7 @@ func cmpltPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmplt_sd'.
 // Requires SSE2.
-func CmpltSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpltSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpltSd([2]float64(a), [2]float64(b)))
 }
 
@@ -748,7 +748,7 @@ func cmpltSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpneq_pd'.
 // Requires SSE2.
-func CmpneqPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpneqPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpneqPd([2]float64(a), [2]float64(b)))
 }
 
@@ -764,7 +764,7 @@ func cmpneqPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpneq_sd'.
 // Requires SSE2.
-func CmpneqSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpneqSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpneqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -782,7 +782,7 @@ func cmpneqSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpnge_pd'.
 // Requires SSE2.
-func CmpngePd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpngePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpngePd([2]float64(a), [2]float64(b)))
 }
 
@@ -799,7 +799,7 @@ func cmpngePd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpnge_sd'.
 // Requires SSE2.
-func CmpngeSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpngeSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpngeSd([2]float64(a), [2]float64(b)))
 }
 
@@ -816,7 +816,7 @@ func cmpngeSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpngt_pd'.
 // Requires SSE2.
-func CmpngtPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpngtPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpngtPd([2]float64(a), [2]float64(b)))
 }
 
@@ -833,7 +833,7 @@ func cmpngtPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpngt_sd'.
 // Requires SSE2.
-func CmpngtSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpngtSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpngtSd([2]float64(a), [2]float64(b)))
 }
 
@@ -850,7 +850,7 @@ func cmpngtSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpnle_pd'.
 // Requires SSE2.
-func CmpnlePd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpnlePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpnlePd([2]float64(a), [2]float64(b)))
 }
 
@@ -867,7 +867,7 @@ func cmpnlePd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpnle_sd'.
 // Requires SSE2.
-func CmpnleSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpnleSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpnleSd([2]float64(a), [2]float64(b)))
 }
 
@@ -884,7 +884,7 @@ func cmpnleSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpnlt_pd'.
 // Requires SSE2.
-func CmpnltPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpnltPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpnltPd([2]float64(a), [2]float64(b)))
 }
 
@@ -901,7 +901,7 @@ func cmpnltPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpnlt_sd'.
 // Requires SSE2.
-func CmpnltSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpnltSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpnltSd([2]float64(a), [2]float64(b)))
 }
 
@@ -918,7 +918,7 @@ func cmpnltSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpord_pd'.
 // Requires SSE2.
-func CmpordPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpordPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpordPd([2]float64(a), [2]float64(b)))
 }
 
@@ -935,7 +935,7 @@ func cmpordPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpord_sd'.
 // Requires SSE2.
-func CmpordSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpordSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpordSd([2]float64(a), [2]float64(b)))
 }
 
@@ -952,7 +952,7 @@ func cmpordSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpunord_pd'.
 // Requires SSE2.
-func CmpunordPd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpunordPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpunordPd([2]float64(a), [2]float64(b)))
 }
 
@@ -969,7 +969,7 @@ func cmpunordPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpunord_sd'.
 // Requires SSE2.
-func CmpunordSd(a x86.M128d, b x86.M128d) x86.M128d {
+func CmpunordSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(cmpunordSd([2]float64(a), [2]float64(b)))
 }
 
@@ -983,7 +983,7 @@ func cmpunordSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comieq_sd'.
 // Requires SSE2.
-func ComieqSd(a x86.M128d, b x86.M128d) int {
+func ComieqSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(comieqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -998,7 +998,7 @@ func comieqSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comige_sd'.
 // Requires SSE2.
-func ComigeSd(a x86.M128d, b x86.M128d) int {
+func ComigeSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(comigeSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1012,7 +1012,7 @@ func comigeSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comigt_sd'.
 // Requires SSE2.
-func ComigtSd(a x86.M128d, b x86.M128d) int {
+func ComigtSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(comigtSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1027,7 +1027,7 @@ func comigtSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comile_sd'.
 // Requires SSE2.
-func ComileSd(a x86.M128d, b x86.M128d) int {
+func ComileSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(comileSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1041,7 +1041,7 @@ func comileSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comilt_sd'.
 // Requires SSE2.
-func ComiltSd(a x86.M128d, b x86.M128d) int {
+func ComiltSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(comiltSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1056,7 +1056,7 @@ func comiltSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'COMISD'. Intrinsic: '_mm_comineq_sd'.
 // Requires SSE2.
-func ComineqSd(a x86.M128d, b x86.M128d) int {
+func ComineqSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(comineqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1074,7 +1074,7 @@ func comineqSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'CVTDQ2PD'. Intrinsic: '_mm_cvtepi32_pd'.
 // Requires SSE2.
-func Cvtepi32Pd(a x86.M128i) x86.M128d {
+func Cvtepi32Pd(a x86.M128i) (dst x86.M128d) {
 	return x86.M128d(cvtepi32Pd([16]byte(a)))
 }
 
@@ -1091,7 +1091,7 @@ func cvtepi32Pd(a [16]byte) [2]float64
 //
 // Instruction: 'CVTDQ2PS'. Intrinsic: '_mm_cvtepi32_ps'.
 // Requires SSE2.
-func Cvtepi32Ps(a x86.M128i) x86.M128 {
+func Cvtepi32Ps(a x86.M128i) (dst x86.M128) {
 	return x86.M128(cvtepi32Ps([16]byte(a)))
 }
 
@@ -1109,7 +1109,7 @@ func cvtepi32Ps(a [16]byte) [4]float32
 //
 // Instruction: 'CVTPD2DQ'. Intrinsic: '_mm_cvtpd_epi32'.
 // Requires SSE2.
-func CvtpdEpi32(a x86.M128d) x86.M128i {
+func CvtpdEpi32(a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(cvtpdEpi32([2]float64(a)))
 }
 
@@ -1127,7 +1127,7 @@ func cvtpdEpi32(a [2]float64) [16]byte
 //
 // Instruction: 'CVTPD2PI'. Intrinsic: '_mm_cvtpd_pi32'.
 // Requires SSE2.
-func CvtpdPi32(a x86.M128d) x86.M64 {
+func CvtpdPi32(a x86.M128d) (dst x86.M64) {
 	return x86.M64(cvtpdPi32([2]float64(a)))
 }
 
@@ -1146,7 +1146,7 @@ func cvtpdPi32(a [2]float64) x86.M64
 //
 // Instruction: 'CVTPD2PS'. Intrinsic: '_mm_cvtpd_ps'.
 // Requires SSE2.
-func CvtpdPs(a x86.M128d) x86.M128 {
+func CvtpdPs(a x86.M128d) (dst x86.M128) {
 	return x86.M128(cvtpdPs([2]float64(a)))
 }
 
@@ -1164,7 +1164,7 @@ func cvtpdPs(a [2]float64) [4]float32
 //
 // Instruction: 'CVTPI2PD'. Intrinsic: '_mm_cvtpi32_pd'.
 // Requires SSE2.
-func Cvtpi32Pd(a x86.M64) x86.M128d {
+func Cvtpi32Pd(a x86.M64) (dst x86.M128d) {
 	return x86.M128d(cvtpi32Pd(a))
 }
 
@@ -1181,7 +1181,7 @@ func cvtpi32Pd(a x86.M64) [2]float64
 //
 // Instruction: 'CVTPS2DQ'. Intrinsic: '_mm_cvtps_epi32'.
 // Requires SSE2.
-func CvtpsEpi32(a x86.M128) x86.M128i {
+func CvtpsEpi32(a x86.M128) (dst x86.M128i) {
 	return x86.M128i(cvtpsEpi32([4]float32(a)))
 }
 
@@ -1200,7 +1200,7 @@ func cvtpsEpi32(a [4]float32) [16]byte
 //
 // Instruction: 'CVTPS2PD'. Intrinsic: '_mm_cvtps_pd'.
 // Requires SSE2.
-func CvtpsPd(a x86.M128) x86.M128d {
+func CvtpsPd(a x86.M128) (dst x86.M128d) {
 	return x86.M128d(cvtpsPd([4]float32(a)))
 }
 
@@ -1214,7 +1214,7 @@ func cvtpsPd(a [4]float32) [2]float64
 //
 // Instruction: 'MOVSD'. Intrinsic: '_mm_cvtsd_f64'.
 // Requires SSE2.
-func CvtsdF64(a x86.M128d) float64 {
+func CvtsdF64(a x86.M128d) (dst float64) {
 	return float64(cvtsdF64([2]float64(a)))
 }
 
@@ -1228,7 +1228,7 @@ func cvtsdF64(a [2]float64) float64
 //
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si32'.
 // Requires SSE2.
-func CvtsdSi32(a x86.M128d) int {
+func CvtsdSi32(a x86.M128d) (dst int) {
 	return int(cvtsdSi32([2]float64(a)))
 }
 
@@ -1242,7 +1242,7 @@ func cvtsdSi32(a [2]float64) int
 //
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si64'.
 // Requires SSE2.
-func CvtsdSi64(a x86.M128d) int64 {
+func CvtsdSi64(a x86.M128d) (dst int64) {
 	return int64(cvtsdSi64([2]float64(a)))
 }
 
@@ -1256,7 +1256,7 @@ func cvtsdSi64(a [2]float64) int64
 //
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si64x'.
 // Requires SSE2.
-func CvtsdSi64x(a x86.M128d) int64 {
+func CvtsdSi64x(a x86.M128d) (dst int64) {
 	return int64(cvtsdSi64x([2]float64(a)))
 }
 
@@ -1274,7 +1274,7 @@ func cvtsdSi64x(a [2]float64) int64
 //
 // Instruction: 'CVTSD2SS'. Intrinsic: '_mm_cvtsd_ss'.
 // Requires SSE2.
-func CvtsdSs(a x86.M128, b x86.M128d) x86.M128 {
+func CvtsdSs(a x86.M128, b x86.M128d) (dst x86.M128) {
 	return x86.M128(cvtsdSs([4]float32(a), [2]float64(b)))
 }
 
@@ -1287,7 +1287,7 @@ func cvtsdSs(a [4]float32, b [2]float64) [4]float32
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi128_si32'.
 // Requires SSE2.
-func Cvtsi128Si32(a x86.M128i) int {
+func Cvtsi128Si32(a x86.M128i) (dst int) {
 	return int(cvtsi128Si32([16]byte(a)))
 }
 
@@ -1300,7 +1300,7 @@ func cvtsi128Si32(a [16]byte) int
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi128_si64'.
 // Requires SSE2.
-func Cvtsi128Si64(a x86.M128i) int64 {
+func Cvtsi128Si64(a x86.M128i) (dst int64) {
 	return int64(cvtsi128Si64([16]byte(a)))
 }
 
@@ -1313,7 +1313,7 @@ func cvtsi128Si64(a [16]byte) int64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi128_si64x'.
 // Requires SSE2.
-func Cvtsi128Si64x(a x86.M128i) int64 {
+func Cvtsi128Si64x(a x86.M128i) (dst int64) {
 	return int64(cvtsi128Si64x([16]byte(a)))
 }
 
@@ -1330,7 +1330,7 @@ func cvtsi128Si64x(a [16]byte) int64
 //
 // Instruction: 'CVTSI2SD'. Intrinsic: '_mm_cvtsi32_sd'.
 // Requires SSE2.
-func Cvtsi32Sd(a x86.M128d, b int) x86.M128d {
+func Cvtsi32Sd(a x86.M128d, b int) (dst x86.M128d) {
 	return x86.M128d(cvtsi32Sd([2]float64(a), b))
 }
 
@@ -1345,7 +1345,7 @@ func cvtsi32Sd(a [2]float64, b int) [2]float64
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi32_si128'.
 // Requires SSE2.
-func Cvtsi32Si128(a int) x86.M128i {
+func Cvtsi32Si128(a int) (dst x86.M128i) {
 	return x86.M128i(cvtsi32Si128(a))
 }
 
@@ -1362,7 +1362,7 @@ func cvtsi32Si128(a int) [16]byte
 //
 // Instruction: 'CVTSI2SD'. Intrinsic: '_mm_cvtsi64_sd'.
 // Requires SSE2.
-func Cvtsi64Sd(a x86.M128d, b int64) x86.M128d {
+func Cvtsi64Sd(a x86.M128d, b int64) (dst x86.M128d) {
 	return x86.M128d(cvtsi64Sd([2]float64(a), b))
 }
 
@@ -1377,7 +1377,7 @@ func cvtsi64Sd(a [2]float64, b int64) [2]float64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi64_si128'.
 // Requires SSE2.
-func Cvtsi64Si128(a int64) x86.M128i {
+func Cvtsi64Si128(a int64) (dst x86.M128i) {
 	return x86.M128i(cvtsi64Si128(a))
 }
 
@@ -1394,7 +1394,7 @@ func cvtsi64Si128(a int64) [16]byte
 //
 // Instruction: 'CVTSI2SD'. Intrinsic: '_mm_cvtsi64x_sd'.
 // Requires SSE2.
-func Cvtsi64xSd(a x86.M128d, b int64) x86.M128d {
+func Cvtsi64xSd(a x86.M128d, b int64) (dst x86.M128d) {
 	return x86.M128d(cvtsi64xSd([2]float64(a), b))
 }
 
@@ -1409,7 +1409,7 @@ func cvtsi64xSd(a [2]float64, b int64) [2]float64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi64x_si128'.
 // Requires SSE2.
-func Cvtsi64xSi128(a int64) x86.M128i {
+func Cvtsi64xSi128(a int64) (dst x86.M128i) {
 	return x86.M128i(cvtsi64xSi128(a))
 }
 
@@ -1427,7 +1427,7 @@ func cvtsi64xSi128(a int64) [16]byte
 //
 // Instruction: 'CVTSS2SD'. Intrinsic: '_mm_cvtss_sd'.
 // Requires SSE2.
-func CvtssSd(a x86.M128d, b x86.M128) x86.M128d {
+func CvtssSd(a x86.M128d, b x86.M128) (dst x86.M128d) {
 	return x86.M128d(cvtssSd([2]float64(a), [4]float32(b)))
 }
 
@@ -1446,7 +1446,7 @@ func cvtssSd(a [2]float64, b [4]float32) [2]float64
 //
 // Instruction: 'CVTTPD2DQ'. Intrinsic: '_mm_cvttpd_epi32'.
 // Requires SSE2.
-func CvttpdEpi32(a x86.M128d) x86.M128i {
+func CvttpdEpi32(a x86.M128d) (dst x86.M128i) {
 	return x86.M128i(cvttpdEpi32([2]float64(a)))
 }
 
@@ -1465,7 +1465,7 @@ func cvttpdEpi32(a [2]float64) [16]byte
 //
 // Instruction: 'CVTTPD2PI'. Intrinsic: '_mm_cvttpd_pi32'.
 // Requires SSE2.
-func CvttpdPi32(a x86.M128d) x86.M64 {
+func CvttpdPi32(a x86.M128d) (dst x86.M64) {
 	return x86.M64(cvttpdPi32([2]float64(a)))
 }
 
@@ -1483,7 +1483,7 @@ func cvttpdPi32(a [2]float64) x86.M64
 //
 // Instruction: 'CVTTPS2DQ'. Intrinsic: '_mm_cvttps_epi32'.
 // Requires SSE2.
-func CvttpsEpi32(a x86.M128) x86.M128i {
+func CvttpsEpi32(a x86.M128) (dst x86.M128i) {
 	return x86.M128i(cvttpsEpi32([4]float32(a)))
 }
 
@@ -1498,7 +1498,7 @@ func cvttpsEpi32(a [4]float32) [16]byte
 //
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si32'.
 // Requires SSE2.
-func CvttsdSi32(a x86.M128d) int {
+func CvttsdSi32(a x86.M128d) (dst int) {
 	return int(cvttsdSi32([2]float64(a)))
 }
 
@@ -1513,7 +1513,7 @@ func cvttsdSi32(a [2]float64) int
 //
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si64'.
 // Requires SSE2.
-func CvttsdSi64(a x86.M128d) int64 {
+func CvttsdSi64(a x86.M128d) (dst int64) {
 	return int64(cvttsdSi64([2]float64(a)))
 }
 
@@ -1528,7 +1528,7 @@ func cvttsdSi64(a [2]float64) int64
 //
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si64x'.
 // Requires SSE2.
-func CvttsdSi64x(a x86.M128d) int64 {
+func CvttsdSi64x(a x86.M128d) (dst int64) {
 	return int64(cvttsdSi64x([2]float64(a)))
 }
 
@@ -1545,7 +1545,7 @@ func cvttsdSi64x(a [2]float64) int64
 //
 // Instruction: 'DIVPD'. Intrinsic: '_mm_div_pd'.
 // Requires SSE2.
-func DivPd(a x86.M128d, b x86.M128d) x86.M128d {
+func DivPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(divPd([2]float64(a), [2]float64(b)))
 }
 
@@ -1562,7 +1562,7 @@ func divPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'DIVSD'. Intrinsic: '_mm_div_sd'.
 // Requires SSE2.
-func DivSd(a x86.M128d, b x86.M128d) x86.M128d {
+func DivSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(divSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1579,7 +1579,7 @@ func divSd(a [2]float64, b [2]float64) [2]float64
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ExtractEpi16(a x86.M128i, imm8 byte) int {
+func ExtractEpi16(a x86.M128i, imm8 byte) (dst int) {
 	return int(extractEpi16([16]byte(a), imm8))
 }
 
@@ -1597,7 +1597,7 @@ func extractEpi16(a [16]byte, imm8 byte) int
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func InsertEpi16(a x86.M128i, i int, imm8 byte) x86.M128i {
+func InsertEpi16(a x86.M128i, i int, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(insertEpi16([16]byte(a), i, imm8))
 }
 
@@ -1639,7 +1639,7 @@ func lfence()
 // Requires SSE2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func LoadSi128(mem_addr *x86.M128iConst) x86.M128i {
+func LoadSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1659,7 +1659,7 @@ func LoadSi128(mem_addr *x86.M128iConst) x86.M128i {
 // Requires SSE2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func LoadlEpi64(mem_addr *x86.M128iConst) x86.M128i {
+func LoadlEpi64(mem_addr *x86.M128iConst) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1682,7 +1682,7 @@ func LoadlEpi64(mem_addr *x86.M128iConst) x86.M128i {
 // Requires SSE2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func LoaduSi128(mem_addr *x86.M128iConst) x86.M128i {
+func LoaduSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1698,7 +1698,7 @@ func LoaduSi128(mem_addr *x86.M128iConst) x86.M128i {
 //
 // Instruction: 'PMADDWD'. Intrinsic: '_mm_madd_epi16'.
 // Requires SSE2.
-func MaddEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func MaddEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maddEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -1740,7 +1740,7 @@ func MaskmoveuSi128(a x86.M128i, mask x86.M128i, mem_addr *byte)  {
 //
 // Instruction: 'PMAXSW'. Intrinsic: '_mm_max_epi16'.
 // Requires SSE2.
-func MaxEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func MaxEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maxEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -1761,7 +1761,7 @@ func maxEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PMAXUB'. Intrinsic: '_mm_max_epu8'.
 // Requires SSE2.
-func MaxEpu8(a x86.M128i, b x86.M128i) x86.M128i {
+func MaxEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(maxEpu8([16]byte(a), [16]byte(b)))
 }
 
@@ -1778,7 +1778,7 @@ func maxEpu8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'MAXPD'. Intrinsic: '_mm_max_pd'.
 // Requires SSE2.
-func MaxPd(a x86.M128d, b x86.M128d) x86.M128d {
+func MaxPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maxPd([2]float64(a), [2]float64(b)))
 }
 
@@ -1794,7 +1794,7 @@ func maxPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'MAXSD'. Intrinsic: '_mm_max_sd'.
 // Requires SSE2.
-func MaxSd(a x86.M128d, b x86.M128d) x86.M128d {
+func MaxSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(maxSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1832,7 +1832,7 @@ func mfence()
 //
 // Instruction: 'PMINSW'. Intrinsic: '_mm_min_epi16'.
 // Requires SSE2.
-func MinEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func MinEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(minEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -1853,7 +1853,7 @@ func minEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PMINUB'. Intrinsic: '_mm_min_epu8'.
 // Requires SSE2.
-func MinEpu8(a x86.M128i, b x86.M128i) x86.M128i {
+func MinEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(minEpu8([16]byte(a), [16]byte(b)))
 }
 
@@ -1870,7 +1870,7 @@ func minEpu8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'MINPD'. Intrinsic: '_mm_min_pd'.
 // Requires SSE2.
-func MinPd(a x86.M128d, b x86.M128d) x86.M128d {
+func MinPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(minPd([2]float64(a), [2]float64(b)))
 }
 
@@ -1886,7 +1886,7 @@ func minPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'MINSD'. Intrinsic: '_mm_min_sd'.
 // Requires SSE2.
-func MinSd(a x86.M128d, b x86.M128d) x86.M128d {
+func MinSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(minSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1901,7 +1901,7 @@ func minSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_move_epi64'.
 // Requires SSE2.
-func MoveEpi64(a x86.M128i) x86.M128i {
+func MoveEpi64(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(moveEpi64([16]byte(a)))
 }
 
@@ -1917,7 +1917,7 @@ func moveEpi64(a [16]byte) [16]byte
 //
 // Instruction: 'MOVSD'. Intrinsic: '_mm_move_sd'.
 // Requires SSE2.
-func MoveSd(a x86.M128d, b x86.M128d) x86.M128d {
+func MoveSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(moveSd([2]float64(a), [2]float64(b)))
 }
 
@@ -1935,7 +1935,7 @@ func moveSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PMOVMSKB'. Intrinsic: '_mm_movemask_epi8'.
 // Requires SSE2.
-func MovemaskEpi8(a x86.M128i) int {
+func MovemaskEpi8(a x86.M128i) (dst int) {
 	return int(movemaskEpi8([16]byte(a)))
 }
 
@@ -1958,7 +1958,7 @@ func movemaskEpi8(a [16]byte) int
 //
 // Instruction: 'MOVMSKPD'. Intrinsic: '_mm_movemask_pd'.
 // Requires SSE2.
-func MovemaskPd(a x86.M128d) int {
+func MovemaskPd(a x86.M128d) (dst int) {
 	return int(movemaskPd([2]float64(a)))
 }
 
@@ -1971,7 +1971,7 @@ func movemaskPd(a [2]float64) int
 //
 // Instruction: 'MOVDQ2Q'. Intrinsic: '_mm_movepi64_pi64'.
 // Requires SSE2.
-func Movepi64Pi64(a x86.M128i) x86.M64 {
+func Movepi64Pi64(a x86.M128i) (dst x86.M64) {
 	return x86.M64(movepi64Pi64([16]byte(a)))
 }
 
@@ -1986,7 +1986,7 @@ func movepi64Pi64(a [16]byte) x86.M64
 //
 // Instruction: 'MOVQ2DQ'. Intrinsic: '_mm_movpi64_epi64'.
 // Requires SSE2.
-func Movpi64Epi64(a x86.M64) x86.M128i {
+func Movpi64Epi64(a x86.M64) (dst x86.M128i) {
 	return x86.M128i(movpi64Epi64(a))
 }
 
@@ -2003,7 +2003,7 @@ func movpi64Epi64(a x86.M64) [16]byte
 //
 // Instruction: 'PMULUDQ'. Intrinsic: '_mm_mul_epu32'.
 // Requires SSE2.
-func MulEpu32(a x86.M128i, b x86.M128i) x86.M128i {
+func MulEpu32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(mulEpu32([16]byte(a), [16]byte(b)))
 }
 
@@ -2020,7 +2020,7 @@ func mulEpu32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'MULPD'. Intrinsic: '_mm_mul_pd'.
 // Requires SSE2.
-func MulPd(a x86.M128d, b x86.M128d) x86.M128d {
+func MulPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(mulPd([2]float64(a), [2]float64(b)))
 }
 
@@ -2036,7 +2036,7 @@ func mulPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'MULSD'. Intrinsic: '_mm_mul_sd'.
 // Requires SSE2.
-func MulSd(a x86.M128d, b x86.M128d) x86.M128d {
+func MulSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(mulSd([2]float64(a), [2]float64(b)))
 }
 
@@ -2050,7 +2050,7 @@ func mulSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PMULUDQ'. Intrinsic: '_mm_mul_su32'.
 // Requires SSE2.
-func MulSu32(a x86.M64, b x86.M64) x86.M64 {
+func MulSu32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(mulSu32(a, b))
 }
 
@@ -2069,7 +2069,7 @@ func mulSu32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMULHW'. Intrinsic: '_mm_mulhi_epi16'.
 // Requires SSE2.
-func MulhiEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func MulhiEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(mulhiEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -2088,7 +2088,7 @@ func mulhiEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PMULHUW'. Intrinsic: '_mm_mulhi_epu16'.
 // Requires SSE2.
-func MulhiEpu16(a x86.M128i, b x86.M128i) x86.M128i {
+func MulhiEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(mulhiEpu16([16]byte(a), [16]byte(b)))
 }
 
@@ -2107,7 +2107,7 @@ func mulhiEpu16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PMULLW'. Intrinsic: '_mm_mullo_epi16'.
 // Requires SSE2.
-func MulloEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func MulloEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(mulloEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -2124,7 +2124,7 @@ func mulloEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'ORPD'. Intrinsic: '_mm_or_pd'.
 // Requires SSE2.
-func OrPd(a x86.M128d, b x86.M128d) x86.M128d {
+func OrPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(orPd([2]float64(a), [2]float64(b)))
 }
 
@@ -2138,7 +2138,7 @@ func orPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'POR'. Intrinsic: '_mm_or_si128'.
 // Requires SSE2.
-func OrSi128(a x86.M128i, b x86.M128i) x86.M128i {
+func OrSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(orSi128([16]byte(a), [16]byte(b)))
 }
 
@@ -2167,7 +2167,7 @@ func orSi128(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PACKSSWB'. Intrinsic: '_mm_packs_epi16'.
 // Requires SSE2.
-func PacksEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func PacksEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(packsEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -2188,7 +2188,7 @@ func packsEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PACKSSDW'. Intrinsic: '_mm_packs_epi32'.
 // Requires SSE2.
-func PacksEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func PacksEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(packsEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -2217,7 +2217,7 @@ func packsEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PACKUSWB'. Intrinsic: '_mm_packus_epi16'.
 // Requires SSE2.
-func PackusEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func PackusEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(packusEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -2257,7 +2257,7 @@ func pause()
 //
 // Instruction: 'PSADBW'. Intrinsic: '_mm_sad_epu8'.
 // Requires SSE2.
-func SadEpu8(a x86.M128i, b x86.M128i) x86.M128i {
+func SadEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sadEpu8([16]byte(a), [16]byte(b)))
 }
 
@@ -2277,7 +2277,7 @@ func sadEpu8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set_epi16'.
 // Requires SSE2.
-func SetEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M128i {
+func SetEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M128i) {
 	return x86.M128i(setEpi16(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -2293,7 +2293,7 @@ func setEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int
 //
 // Instruction: '...'. Intrinsic: '_mm_set_epi32'.
 // Requires SSE2.
-func SetEpi32(e3 int, e2 int, e1 int, e0 int) x86.M128i {
+func SetEpi32(e3 int, e2 int, e1 int, e0 int) (dst x86.M128i) {
 	return x86.M128i(setEpi32(e3, e2, e1, e0))
 }
 
@@ -2307,7 +2307,7 @@ func setEpi32(e3 int, e2 int, e1 int, e0 int) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set_epi64'.
 // Requires SSE2.
-func SetEpi64(e1 x86.M64, e0 x86.M64) x86.M128i {
+func SetEpi64(e1 x86.M64, e0 x86.M64) (dst x86.M128i) {
 	return x86.M128i(setEpi64(e1, e0))
 }
 
@@ -2321,7 +2321,7 @@ func setEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set_epi64x'.
 // Requires SSE2.
-func SetEpi64x(e1 int64, e0 int64) x86.M128i {
+func SetEpi64x(e1 int64, e0 int64) (dst x86.M128i) {
 	return x86.M128i(setEpi64x(e1, e0))
 }
 
@@ -2350,7 +2350,7 @@ func setEpi64x(e1 int64, e0 int64) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set_epi8'.
 // Requires SSE2.
-func SetEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M128i {
+func SetEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M128i) {
 	return x86.M128i(setEpi8(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -2365,7 +2365,7 @@ func setEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set_pd'.
 // Requires SSE2.
-func SetPd(e1 float64, e0 float64) x86.M128d {
+func SetPd(e1 float64, e0 float64) (dst x86.M128d) {
 	return x86.M128d(setPd(e1, e0))
 }
 
@@ -2382,7 +2382,7 @@ func setPd(e1 float64, e0 float64) [2]float64
 //
 // Instruction: '...'. Intrinsic: '_mm_set_pd1'.
 // Requires SSE2.
-func SetPd1(a float64) x86.M128d {
+func SetPd1(a float64) (dst x86.M128d) {
 	return x86.M128d(setPd1(a))
 }
 
@@ -2397,7 +2397,7 @@ func setPd1(a float64) [2]float64
 //
 // Instruction: '...'. Intrinsic: '_mm_set_sd'.
 // Requires SSE2.
-func SetSd(a float64) x86.M128d {
+func SetSd(a float64) (dst x86.M128d) {
 	return x86.M128d(setSd(a))
 }
 
@@ -2414,7 +2414,7 @@ func setSd(a float64) [2]float64
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_epi16'.
 // Requires SSE2.
-func Set1Epi16(a int16) x86.M128i {
+func Set1Epi16(a int16) (dst x86.M128i) {
 	return x86.M128i(set1Epi16(a))
 }
 
@@ -2431,7 +2431,7 @@ func set1Epi16(a int16) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_epi32'.
 // Requires SSE2.
-func Set1Epi32(a int) x86.M128i {
+func Set1Epi32(a int) (dst x86.M128i) {
 	return x86.M128i(set1Epi32(a))
 }
 
@@ -2447,7 +2447,7 @@ func set1Epi32(a int) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_epi64'.
 // Requires SSE2.
-func Set1Epi64(a x86.M64) x86.M128i {
+func Set1Epi64(a x86.M64) (dst x86.M128i) {
 	return x86.M128i(set1Epi64(a))
 }
 
@@ -2464,7 +2464,7 @@ func set1Epi64(a x86.M64) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_epi64x'.
 // Requires SSE2.
-func Set1Epi64x(a int64) x86.M128i {
+func Set1Epi64x(a int64) (dst x86.M128i) {
 	return x86.M128i(set1Epi64x(a))
 }
 
@@ -2481,7 +2481,7 @@ func set1Epi64x(a int64) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_epi8'.
 // Requires SSE2.
-func Set1Epi8(a byte) x86.M128i {
+func Set1Epi8(a byte) (dst x86.M128i) {
 	return x86.M128i(set1Epi8(a))
 }
 
@@ -2498,7 +2498,7 @@ func set1Epi8(a byte) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_pd'.
 // Requires SSE2.
-func Set1Pd(a float64) x86.M128d {
+func Set1Pd(a float64) (dst x86.M128d) {
 	return x86.M128d(set1Pd(a))
 }
 
@@ -2519,7 +2519,7 @@ func set1Pd(a float64) [2]float64
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_epi16'.
 // Requires SSE2.
-func SetrEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) x86.M128i {
+func SetrEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M128i) {
 	return x86.M128i(setrEpi16(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -2536,7 +2536,7 @@ func setrEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 in
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_epi32'.
 // Requires SSE2.
-func SetrEpi32(e3 int, e2 int, e1 int, e0 int) x86.M128i {
+func SetrEpi32(e3 int, e2 int, e1 int, e0 int) (dst x86.M128i) {
 	return x86.M128i(setrEpi32(e3, e2, e1, e0))
 }
 
@@ -2551,7 +2551,7 @@ func setrEpi32(e3 int, e2 int, e1 int, e0 int) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_epi64'.
 // Requires SSE2.
-func SetrEpi64(e1 x86.M64, e0 x86.M64) x86.M128i {
+func SetrEpi64(e1 x86.M64, e0 x86.M64) (dst x86.M128i) {
 	return x86.M128i(setrEpi64(e1, e0))
 }
 
@@ -2580,7 +2580,7 @@ func setrEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_epi8'.
 // Requires SSE2.
-func SetrEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M128i {
+func SetrEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M128i) {
 	return x86.M128i(setrEpi8(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -2595,7 +2595,7 @@ func setrEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byt
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_pd'.
 // Requires SSE2.
-func SetrPd(e1 float64, e0 float64) x86.M128d {
+func SetrPd(e1 float64, e0 float64) (dst x86.M128d) {
 	return x86.M128d(setrPd(e1, e0))
 }
 
@@ -2608,7 +2608,7 @@ func setrPd(e1 float64, e0 float64) [2]float64
 //
 // Instruction: 'XORPD'. Intrinsic: '_mm_setzero_pd'.
 // Requires SSE2.
-func SetzeroPd() x86.M128d {
+func SetzeroPd() (dst x86.M128d) {
 	return x86.M128d(setzeroPd())
 }
 
@@ -2621,7 +2621,7 @@ func setzeroPd() [2]float64
 //
 // Instruction: 'PXOR'. Intrinsic: '_mm_setzero_si128'.
 // Requires SSE2.
-func SetzeroSi128() x86.M128i {
+func SetzeroSi128() (dst x86.M128i) {
 	return x86.M128i(setzeroSi128())
 }
 
@@ -2650,7 +2650,7 @@ func setzeroSi128() [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShuffleEpi32(a x86.M128i, imm8 byte) x86.M128i {
+func ShuffleEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(shuffleEpi32([16]byte(a), imm8))
 }
 
@@ -2667,7 +2667,7 @@ func shuffleEpi32(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShufflePd(a x86.M128d, b x86.M128d, imm8 byte) x86.M128d {
+func ShufflePd(a x86.M128d, b x86.M128d, imm8 byte) (dst x86.M128d) {
 	return x86.M128d(shufflePd([2]float64(a), [2]float64(b), imm8))
 }
 
@@ -2688,7 +2688,7 @@ func shufflePd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShufflehiEpi16(a x86.M128i, imm8 byte) x86.M128i {
+func ShufflehiEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(shufflehiEpi16([16]byte(a), imm8))
 }
 
@@ -2709,7 +2709,7 @@ func shufflehiEpi16(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func ShuffleloEpi16(a x86.M128i, imm8 byte) x86.M128i {
+func ShuffleloEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(shuffleloEpi16([16]byte(a), imm8))
 }
 
@@ -2730,7 +2730,7 @@ func shuffleloEpi16(a [16]byte, imm8 byte) [16]byte
 //
 // Instruction: 'PSLLW'. Intrinsic: '_mm_sll_epi16'.
 // Requires SSE2.
-func SllEpi16(a x86.M128i, count x86.M128i) x86.M128i {
+func SllEpi16(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sllEpi16([16]byte(a), [16]byte(count)))
 }
 
@@ -2751,7 +2751,7 @@ func sllEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'PSLLD'. Intrinsic: '_mm_sll_epi32'.
 // Requires SSE2.
-func SllEpi32(a x86.M128i, count x86.M128i) x86.M128i {
+func SllEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sllEpi32([16]byte(a), [16]byte(count)))
 }
 
@@ -2772,7 +2772,7 @@ func sllEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'PSLLQ'. Intrinsic: '_mm_sll_epi64'.
 // Requires SSE2.
-func SllEpi64(a x86.M128i, count x86.M128i) x86.M128i {
+func SllEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sllEpi64([16]byte(a), [16]byte(count)))
 }
 
@@ -2795,7 +2795,7 @@ func sllEpi64(a [16]byte, count [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliEpi16(a x86.M128i, imm8 byte) x86.M128i {
+func SlliEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(slliEpi16([16]byte(a), imm8))
 }
 
@@ -2818,7 +2818,7 @@ func slliEpi16(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliEpi32(a x86.M128i, imm8 byte) x86.M128i {
+func SlliEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(slliEpi32([16]byte(a), imm8))
 }
 
@@ -2841,7 +2841,7 @@ func slliEpi32(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliEpi64(a x86.M128i, imm8 byte) x86.M128i {
+func SlliEpi64(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(slliEpi64([16]byte(a), imm8))
 }
 
@@ -2861,7 +2861,7 @@ func slliEpi64(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliSi128(a x86.M128i, imm8 byte) x86.M128i {
+func SlliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(slliSi128([16]byte(a), imm8))
 }
 
@@ -2878,7 +2878,7 @@ func slliSi128(a [16]byte, imm8 byte) [16]byte
 //
 // Instruction: 'SQRTPD'. Intrinsic: '_mm_sqrt_pd'.
 // Requires SSE2.
-func SqrtPd(a x86.M128d) x86.M128d {
+func SqrtPd(a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(sqrtPd([2]float64(a)))
 }
 
@@ -2894,7 +2894,7 @@ func sqrtPd(a [2]float64) [2]float64
 //
 // Instruction: 'SQRTSD'. Intrinsic: '_mm_sqrt_sd'.
 // Requires SSE2.
-func SqrtSd(a x86.M128d, b x86.M128d) x86.M128d {
+func SqrtSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(sqrtSd([2]float64(a), [2]float64(b)))
 }
 
@@ -2915,7 +2915,7 @@ func sqrtSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PSRAW'. Intrinsic: '_mm_sra_epi16'.
 // Requires SSE2.
-func SraEpi16(a x86.M128i, count x86.M128i) x86.M128i {
+func SraEpi16(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sraEpi16([16]byte(a), [16]byte(count)))
 }
 
@@ -2936,7 +2936,7 @@ func sraEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'PSRAD'. Intrinsic: '_mm_sra_epi32'.
 // Requires SSE2.
-func SraEpi32(a x86.M128i, count x86.M128i) x86.M128i {
+func SraEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sraEpi32([16]byte(a), [16]byte(count)))
 }
 
@@ -2959,7 +2959,7 @@ func sraEpi32(a [16]byte, count [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiEpi16(a x86.M128i, imm8 byte) x86.M128i {
+func SraiEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(sraiEpi16([16]byte(a), imm8))
 }
 
@@ -2982,7 +2982,7 @@ func sraiEpi16(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiEpi32(a x86.M128i, imm8 byte) x86.M128i {
+func SraiEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(sraiEpi32([16]byte(a), imm8))
 }
 
@@ -3003,7 +3003,7 @@ func sraiEpi32(a [16]byte, imm8 byte) [16]byte
 //
 // Instruction: 'PSRLW'. Intrinsic: '_mm_srl_epi16'.
 // Requires SSE2.
-func SrlEpi16(a x86.M128i, count x86.M128i) x86.M128i {
+func SrlEpi16(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(srlEpi16([16]byte(a), [16]byte(count)))
 }
 
@@ -3024,7 +3024,7 @@ func srlEpi16(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'PSRLD'. Intrinsic: '_mm_srl_epi32'.
 // Requires SSE2.
-func SrlEpi32(a x86.M128i, count x86.M128i) x86.M128i {
+func SrlEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(srlEpi32([16]byte(a), [16]byte(count)))
 }
 
@@ -3045,7 +3045,7 @@ func srlEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'PSRLQ'. Intrinsic: '_mm_srl_epi64'.
 // Requires SSE2.
-func SrlEpi64(a x86.M128i, count x86.M128i) x86.M128i {
+func SrlEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(srlEpi64([16]byte(a), [16]byte(count)))
 }
 
@@ -3068,7 +3068,7 @@ func srlEpi64(a [16]byte, count [16]byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliEpi16(a x86.M128i, imm8 byte) x86.M128i {
+func SrliEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(srliEpi16([16]byte(a), imm8))
 }
 
@@ -3091,7 +3091,7 @@ func srliEpi16(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliEpi32(a x86.M128i, imm8 byte) x86.M128i {
+func SrliEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(srliEpi32([16]byte(a), imm8))
 }
 
@@ -3114,7 +3114,7 @@ func srliEpi32(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliEpi64(a x86.M128i, imm8 byte) x86.M128i {
+func SrliEpi64(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(srliEpi64([16]byte(a), imm8))
 }
 
@@ -3134,7 +3134,7 @@ func srliEpi64(a [16]byte, imm8 byte) [16]byte
 // Requires SSE2.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliSi128(a x86.M128i, imm8 byte) x86.M128i {
+func SrliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(srliSi128([16]byte(a), imm8))
 }
 
@@ -3379,7 +3379,7 @@ func StreamSi64(mem_addr *int64, a int64)  {
 //
 // Instruction: 'PSUBW'. Intrinsic: '_mm_sub_epi16'.
 // Requires SSE2.
-func SubEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func SubEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -3396,7 +3396,7 @@ func subEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSUBD'. Intrinsic: '_mm_sub_epi32'.
 // Requires SSE2.
-func SubEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func SubEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -3413,7 +3413,7 @@ func subEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSUBQ'. Intrinsic: '_mm_sub_epi64'.
 // Requires SSE2.
-func SubEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func SubEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -3430,7 +3430,7 @@ func subEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSUBB'. Intrinsic: '_mm_sub_epi8'.
 // Requires SSE2.
-func SubEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func SubEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -3448,7 +3448,7 @@ func subEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'SUBPD'. Intrinsic: '_mm_sub_pd'.
 // Requires SSE2.
-func SubPd(a x86.M128d, b x86.M128d) x86.M128d {
+func SubPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(subPd([2]float64(a), [2]float64(b)))
 }
 
@@ -3465,7 +3465,7 @@ func subPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'SUBSD'. Intrinsic: '_mm_sub_sd'.
 // Requires SSE2.
-func SubSd(a x86.M128d, b x86.M128d) x86.M128d {
+func SubSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(subSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3479,7 +3479,7 @@ func subSd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PSUBQ'. Intrinsic: '_mm_sub_si64'.
 // Requires SSE2.
-func SubSi64(a x86.M64, b x86.M64) x86.M64 {
+func SubSi64(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subSi64(a, b))
 }
 
@@ -3496,7 +3496,7 @@ func subSi64(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBSW'. Intrinsic: '_mm_subs_epi16'.
 // Requires SSE2.
-func SubsEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func SubsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subsEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -3513,7 +3513,7 @@ func subsEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSUBSB'. Intrinsic: '_mm_subs_epi8'.
 // Requires SSE2.
-func SubsEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func SubsEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subsEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -3531,7 +3531,7 @@ func subsEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSUBUSW'. Intrinsic: '_mm_subs_epu16'.
 // Requires SSE2.
-func SubsEpu16(a x86.M128i, b x86.M128i) x86.M128i {
+func SubsEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subsEpu16([16]byte(a), [16]byte(b)))
 }
 
@@ -3549,7 +3549,7 @@ func subsEpu16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PSUBUSB'. Intrinsic: '_mm_subs_epu8'.
 // Requires SSE2.
-func SubsEpu8(a x86.M128i, b x86.M128i) x86.M128i {
+func SubsEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(subsEpu8([16]byte(a), [16]byte(b)))
 }
 
@@ -3564,7 +3564,7 @@ func subsEpu8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomieq_sd'.
 // Requires SSE2.
-func UcomieqSd(a x86.M128d, b x86.M128d) int {
+func UcomieqSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(ucomieqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3579,7 +3579,7 @@ func ucomieqSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomige_sd'.
 // Requires SSE2.
-func UcomigeSd(a x86.M128d, b x86.M128d) int {
+func UcomigeSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(ucomigeSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3594,7 +3594,7 @@ func ucomigeSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomigt_sd'.
 // Requires SSE2.
-func UcomigtSd(a x86.M128d, b x86.M128d) int {
+func UcomigtSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(ucomigtSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3609,7 +3609,7 @@ func ucomigtSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomile_sd'.
 // Requires SSE2.
-func UcomileSd(a x86.M128d, b x86.M128d) int {
+func UcomileSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(ucomileSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3624,7 +3624,7 @@ func ucomileSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomilt_sd'.
 // Requires SSE2.
-func UcomiltSd(a x86.M128d, b x86.M128d) int {
+func UcomiltSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(ucomiltSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3639,7 +3639,7 @@ func ucomiltSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomineq_sd'.
 // Requires SSE2.
-func UcomineqSd(a x86.M128d, b x86.M128d) int {
+func UcomineqSd(a x86.M128d, b x86.M128d) (dst int) {
 	return int(ucomineqSd([2]float64(a), [2]float64(b)))
 }
 
@@ -3665,7 +3665,7 @@ func ucomineqSd(a [2]float64, b [2]float64) int
 //
 // Instruction: 'PUNPCKHWD'. Intrinsic: '_mm_unpackhi_epi16'.
 // Requires SSE2.
-func UnpackhiEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackhiEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackhiEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -3687,7 +3687,7 @@ func unpackhiEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PUNPCKHDQ'. Intrinsic: '_mm_unpackhi_epi32'.
 // Requires SSE2.
-func UnpackhiEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackhiEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackhiEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -3707,7 +3707,7 @@ func unpackhiEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PUNPCKHQDQ'. Intrinsic: '_mm_unpackhi_epi64'.
 // Requires SSE2.
-func UnpackhiEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackhiEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackhiEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -3741,7 +3741,7 @@ func unpackhiEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PUNPCKHBW'. Intrinsic: '_mm_unpackhi_epi8'.
 // Requires SSE2.
-func UnpackhiEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackhiEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackhiEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -3761,7 +3761,7 @@ func unpackhiEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'UNPCKHPD'. Intrinsic: '_mm_unpackhi_pd'.
 // Requires SSE2.
-func UnpackhiPd(a x86.M128d, b x86.M128d) x86.M128d {
+func UnpackhiPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(unpackhiPd([2]float64(a), [2]float64(b)))
 }
 
@@ -3787,7 +3787,7 @@ func unpackhiPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PUNPCKLWD'. Intrinsic: '_mm_unpacklo_epi16'.
 // Requires SSE2.
-func UnpackloEpi16(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackloEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackloEpi16([16]byte(a), [16]byte(b)))
 }
 
@@ -3809,7 +3809,7 @@ func unpackloEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PUNPCKLDQ'. Intrinsic: '_mm_unpacklo_epi32'.
 // Requires SSE2.
-func UnpackloEpi32(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackloEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackloEpi32([16]byte(a), [16]byte(b)))
 }
 
@@ -3829,7 +3829,7 @@ func unpackloEpi32(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PUNPCKLQDQ'. Intrinsic: '_mm_unpacklo_epi64'.
 // Requires SSE2.
-func UnpackloEpi64(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackloEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackloEpi64([16]byte(a), [16]byte(b)))
 }
 
@@ -3863,7 +3863,7 @@ func unpackloEpi64(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_mm_unpacklo_epi8'.
 // Requires SSE2.
-func UnpackloEpi8(a x86.M128i, b x86.M128i) x86.M128i {
+func UnpackloEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(unpackloEpi8([16]byte(a), [16]byte(b)))
 }
 
@@ -3883,7 +3883,7 @@ func unpackloEpi8(a [16]byte, b [16]byte) [16]byte
 //
 // Instruction: 'UNPCKLPD'. Intrinsic: '_mm_unpacklo_pd'.
 // Requires SSE2.
-func UnpackloPd(a x86.M128d, b x86.M128d) x86.M128d {
+func UnpackloPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(unpackloPd([2]float64(a), [2]float64(b)))
 }
 
@@ -3900,7 +3900,7 @@ func unpackloPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'XORPD'. Intrinsic: '_mm_xor_pd'.
 // Requires SSE2.
-func XorPd(a x86.M128d, b x86.M128d) x86.M128d {
+func XorPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
 	return x86.M128d(xorPd([2]float64(a), [2]float64(b)))
 }
 
@@ -3914,7 +3914,7 @@ func xorPd(a [2]float64, b [2]float64) [2]float64
 //
 // Instruction: 'PXOR'. Intrinsic: '_mm_xor_si128'.
 // Requires SSE2.
-func XorSi128(a x86.M128i, b x86.M128i) x86.M128i {
+func XorSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
 	return x86.M128i(xorSi128([16]byte(a), [16]byte(b)))
 }
 

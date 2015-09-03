@@ -66,7 +66,7 @@ func xabort(imm8 byte)
 //
 // Instruction: 'XBEGIN'. Intrinsic: '_xbegin'.
 // Requires RTM.
-func Xbegin() uint32 {
+func Xbegin() (dst uint32) {
 	return uint32(xbegin())
 }
 
@@ -110,7 +110,7 @@ func xend()
 //
 // Instruction: 'XTEST'. Intrinsic: '_xtest'.
 // Requires RTM.
-func Xtest() uint8 {
+func Xtest() (dst uint8) {
 	return uint8(xtest())
 }
 

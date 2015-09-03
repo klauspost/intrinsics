@@ -15,7 +15,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'PADDW'. Intrinsic: '_mm_add_pi16'.
 // Requires MMX.
-func AddPi16(a x86.M64, b x86.M64) x86.M64 {
+func AddPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addPi16(a, b))
 }
 
@@ -32,7 +32,7 @@ func addPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDD'. Intrinsic: '_mm_add_pi32'.
 // Requires MMX.
-func AddPi32(a x86.M64, b x86.M64) x86.M64 {
+func AddPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addPi32(a, b))
 }
 
@@ -49,7 +49,7 @@ func addPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDB'. Intrinsic: '_mm_add_pi8'.
 // Requires MMX.
-func AddPi8(a x86.M64, b x86.M64) x86.M64 {
+func AddPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addPi8(a, b))
 }
 
@@ -66,7 +66,7 @@ func addPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDSW'. Intrinsic: '_mm_adds_pi16'.
 // Requires MMX.
-func AddsPi16(a x86.M64, b x86.M64) x86.M64 {
+func AddsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addsPi16(a, b))
 }
 
@@ -83,7 +83,7 @@ func addsPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDSB'. Intrinsic: '_mm_adds_pi8'.
 // Requires MMX.
-func AddsPi8(a x86.M64, b x86.M64) x86.M64 {
+func AddsPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addsPi8(a, b))
 }
 
@@ -100,7 +100,7 @@ func addsPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDUSW'. Intrinsic: '_mm_adds_pu16'.
 // Requires MMX.
-func AddsPu16(a x86.M64, b x86.M64) x86.M64 {
+func AddsPu16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addsPu16(a, b))
 }
 
@@ -117,7 +117,7 @@ func addsPu16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDUSB'. Intrinsic: '_mm_adds_pu8'.
 // Requires MMX.
-func AddsPu8(a x86.M64, b x86.M64) x86.M64 {
+func AddsPu8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(addsPu8(a, b))
 }
 
@@ -131,7 +131,7 @@ func addsPu8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PAND'. Intrinsic: '_mm_and_si64'.
 // Requires MMX.
-func AndSi64(a x86.M64, b x86.M64) x86.M64 {
+func AndSi64(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(andSi64(a, b))
 }
 
@@ -145,7 +145,7 @@ func andSi64(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PANDN'. Intrinsic: '_mm_andnot_si64'.
 // Requires MMX.
-func AndnotSi64(a x86.M64, b x86.M64) x86.M64 {
+func AndnotSi64(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(andnotSi64(a, b))
 }
 
@@ -162,7 +162,7 @@ func andnotSi64(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPEQW'. Intrinsic: '_mm_cmpeq_pi16'.
 // Requires MMX.
-func CmpeqPi16(a x86.M64, b x86.M64) x86.M64 {
+func CmpeqPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(cmpeqPi16(a, b))
 }
 
@@ -179,7 +179,7 @@ func cmpeqPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPEQD'. Intrinsic: '_mm_cmpeq_pi32'.
 // Requires MMX.
-func CmpeqPi32(a x86.M64, b x86.M64) x86.M64 {
+func CmpeqPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(cmpeqPi32(a, b))
 }
 
@@ -196,7 +196,7 @@ func cmpeqPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPEQB'. Intrinsic: '_mm_cmpeq_pi8'.
 // Requires MMX.
-func CmpeqPi8(a x86.M64, b x86.M64) x86.M64 {
+func CmpeqPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(cmpeqPi8(a, b))
 }
 
@@ -213,7 +213,7 @@ func cmpeqPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPGTW'. Intrinsic: '_mm_cmpgt_pi16'.
 // Requires MMX.
-func CmpgtPi16(a x86.M64, b x86.M64) x86.M64 {
+func CmpgtPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(cmpgtPi16(a, b))
 }
 
@@ -230,7 +230,7 @@ func cmpgtPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPGTD'. Intrinsic: '_mm_cmpgt_pi32'.
 // Requires MMX.
-func CmpgtPi32(a x86.M64, b x86.M64) x86.M64 {
+func CmpgtPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(cmpgtPi32(a, b))
 }
 
@@ -247,7 +247,7 @@ func cmpgtPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPGTB'. Intrinsic: '_mm_cmpgt_pi8'.
 // Requires MMX.
-func CmpgtPi8(a x86.M64, b x86.M64) x86.M64 {
+func CmpgtPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(cmpgtPi8(a, b))
 }
 
@@ -260,7 +260,7 @@ func cmpgtPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtm64_si64'.
 // Requires MMX.
-func Cvtm64Si64(a x86.M64) int64 {
+func Cvtm64Si64(a x86.M64) (dst int64) {
 	return int64(cvtm64Si64(a))
 }
 
@@ -275,7 +275,7 @@ func cvtm64Si64(a x86.M64) int64
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi32_si64'.
 // Requires MMX.
-func Cvtsi32Si64(a int) x86.M64 {
+func Cvtsi32Si64(a int) (dst x86.M64) {
 	return x86.M64(cvtsi32Si64(a))
 }
 
@@ -288,7 +288,7 @@ func cvtsi32Si64(a int) x86.M64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi64_m64'.
 // Requires MMX.
-func Cvtsi64M64(a int64) x86.M64 {
+func Cvtsi64M64(a int64) (dst x86.M64) {
 	return x86.M64(cvtsi64M64(a))
 }
 
@@ -301,7 +301,7 @@ func cvtsi64M64(a int64) x86.M64
 //
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi64_si32'.
 // Requires MMX.
-func Cvtsi64Si32(a x86.M64) int {
+func Cvtsi64Si32(a x86.M64) (dst int) {
 	return int(cvtsi64Si32(a))
 }
 
@@ -346,7 +346,7 @@ func empty2()
 //
 // Instruction: 'MOVD'. Intrinsic: '_m_from_int'.
 // Requires MMX.
-func FromInt(a int) x86.M64 {
+func FromInt(a int) (dst x86.M64) {
 	return x86.M64(fromInt(a))
 }
 
@@ -359,7 +359,7 @@ func fromInt(a int) x86.M64
 //
 // Instruction: 'MOVQ'. Intrinsic: '_m_from_int64'.
 // Requires MMX.
-func FromInt64(a int64) x86.M64 {
+func FromInt64(a int64) (dst x86.M64) {
 	return x86.M64(fromInt64(a))
 }
 
@@ -377,7 +377,7 @@ func fromInt64(a int64) x86.M64
 //
 // Instruction: 'PMADDWD'. Intrinsic: '_mm_madd_pi16'.
 // Requires MMX.
-func MaddPi16(a x86.M64, b x86.M64) x86.M64 {
+func MaddPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(maddPi16(a, b))
 }
 
@@ -396,7 +396,7 @@ func maddPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMULHW'. Intrinsic: '_mm_mulhi_pi16'.
 // Requires MMX.
-func MulhiPi16(a x86.M64, b x86.M64) x86.M64 {
+func MulhiPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(mulhiPi16(a, b))
 }
 
@@ -415,7 +415,7 @@ func mulhiPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMULLW'. Intrinsic: '_mm_mullo_pi16'.
 // Requires MMX.
-func MulloPi16(a x86.M64, b x86.M64) x86.M64 {
+func MulloPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(mulloPi16(a, b))
 }
 
@@ -429,7 +429,7 @@ func mulloPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'POR'. Intrinsic: '_mm_or_si64'.
 // Requires MMX.
-func OrSi64(a x86.M64, b x86.M64) x86.M64 {
+func OrSi64(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(orSi64(a, b))
 }
 
@@ -450,7 +450,7 @@ func orSi64(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PACKSSWB'. Intrinsic: '_mm_packs_pi16'.
 // Requires MMX.
-func PacksPi16(a x86.M64, b x86.M64) x86.M64 {
+func PacksPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(packsPi16(a, b))
 }
 
@@ -467,7 +467,7 @@ func packsPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PACKSSDW'. Intrinsic: '_mm_packs_pi32'.
 // Requires MMX.
-func PacksPi32(a x86.M64, b x86.M64) x86.M64 {
+func PacksPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(packsPi32(a, b))
 }
 
@@ -488,7 +488,7 @@ func packsPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PACKUSWB'. Intrinsic: '_mm_packs_pu16'.
 // Requires MMX.
-func PacksPu16(a x86.M64, b x86.M64) x86.M64 {
+func PacksPu16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(packsPu16(a, b))
 }
 
@@ -505,7 +505,7 @@ func packsPu16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PACKSSDW'. Intrinsic: '_m_packssdw'.
 // Requires MMX.
-func Packssdw(a x86.M64, b x86.M64) x86.M64 {
+func Packssdw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(packssdw(a, b))
 }
 
@@ -526,7 +526,7 @@ func packssdw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PACKSSWB'. Intrinsic: '_m_packsswb'.
 // Requires MMX.
-func Packsswb(a x86.M64, b x86.M64) x86.M64 {
+func Packsswb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(packsswb(a, b))
 }
 
@@ -547,7 +547,7 @@ func packsswb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PACKUSWB'. Intrinsic: '_m_packuswb'.
 // Requires MMX.
-func Packuswb(a x86.M64, b x86.M64) x86.M64 {
+func Packuswb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(packuswb(a, b))
 }
 
@@ -564,7 +564,7 @@ func packuswb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDB'. Intrinsic: '_m_paddb'.
 // Requires MMX.
-func Paddb(a x86.M64, b x86.M64) x86.M64 {
+func Paddb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(paddb(a, b))
 }
 
@@ -581,7 +581,7 @@ func paddb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDD'. Intrinsic: '_m_paddd'.
 // Requires MMX.
-func Paddd(a x86.M64, b x86.M64) x86.M64 {
+func Paddd(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(paddd(a, b))
 }
 
@@ -598,7 +598,7 @@ func paddd(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDSB'. Intrinsic: '_m_paddsb'.
 // Requires MMX.
-func Paddsb(a x86.M64, b x86.M64) x86.M64 {
+func Paddsb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(paddsb(a, b))
 }
 
@@ -615,7 +615,7 @@ func paddsb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDSW'. Intrinsic: '_m_paddsw'.
 // Requires MMX.
-func Paddsw(a x86.M64, b x86.M64) x86.M64 {
+func Paddsw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(paddsw(a, b))
 }
 
@@ -632,7 +632,7 @@ func paddsw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDUSB'. Intrinsic: '_m_paddusb'.
 // Requires MMX.
-func Paddusb(a x86.M64, b x86.M64) x86.M64 {
+func Paddusb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(paddusb(a, b))
 }
 
@@ -649,7 +649,7 @@ func paddusb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDUSW'. Intrinsic: '_m_paddusw'.
 // Requires MMX.
-func Paddusw(a x86.M64, b x86.M64) x86.M64 {
+func Paddusw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(paddusw(a, b))
 }
 
@@ -666,7 +666,7 @@ func paddusw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PADDW'. Intrinsic: '_m_paddw'.
 // Requires MMX.
-func Paddw(a x86.M64, b x86.M64) x86.M64 {
+func Paddw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(paddw(a, b))
 }
 
@@ -680,7 +680,7 @@ func paddw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PAND'. Intrinsic: '_m_pand'.
 // Requires MMX.
-func Pand(a x86.M64, b x86.M64) x86.M64 {
+func Pand(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pand(a, b))
 }
 
@@ -694,7 +694,7 @@ func pand(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PANDN'. Intrinsic: '_m_pandn'.
 // Requires MMX.
-func Pandn(a x86.M64, b x86.M64) x86.M64 {
+func Pandn(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pandn(a, b))
 }
 
@@ -711,7 +711,7 @@ func pandn(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPEQB'. Intrinsic: '_m_pcmpeqb'.
 // Requires MMX.
-func Pcmpeqb(a x86.M64, b x86.M64) x86.M64 {
+func Pcmpeqb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pcmpeqb(a, b))
 }
 
@@ -728,7 +728,7 @@ func pcmpeqb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPEQD'. Intrinsic: '_m_pcmpeqd'.
 // Requires MMX.
-func Pcmpeqd(a x86.M64, b x86.M64) x86.M64 {
+func Pcmpeqd(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pcmpeqd(a, b))
 }
 
@@ -745,7 +745,7 @@ func pcmpeqd(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPEQW'. Intrinsic: '_m_pcmpeqw'.
 // Requires MMX.
-func Pcmpeqw(a x86.M64, b x86.M64) x86.M64 {
+func Pcmpeqw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pcmpeqw(a, b))
 }
 
@@ -762,7 +762,7 @@ func pcmpeqw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPGTB'. Intrinsic: '_m_pcmpgtb'.
 // Requires MMX.
-func Pcmpgtb(a x86.M64, b x86.M64) x86.M64 {
+func Pcmpgtb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pcmpgtb(a, b))
 }
 
@@ -779,7 +779,7 @@ func pcmpgtb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPGTD'. Intrinsic: '_m_pcmpgtd'.
 // Requires MMX.
-func Pcmpgtd(a x86.M64, b x86.M64) x86.M64 {
+func Pcmpgtd(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pcmpgtd(a, b))
 }
 
@@ -796,7 +796,7 @@ func pcmpgtd(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PCMPGTW'. Intrinsic: '_m_pcmpgtw'.
 // Requires MMX.
-func Pcmpgtw(a x86.M64, b x86.M64) x86.M64 {
+func Pcmpgtw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pcmpgtw(a, b))
 }
 
@@ -814,7 +814,7 @@ func pcmpgtw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMADDWD'. Intrinsic: '_m_pmaddwd'.
 // Requires MMX.
-func Pmaddwd(a x86.M64, b x86.M64) x86.M64 {
+func Pmaddwd(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pmaddwd(a, b))
 }
 
@@ -833,7 +833,7 @@ func pmaddwd(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMULHW'. Intrinsic: '_m_pmulhw'.
 // Requires MMX.
-func Pmulhw(a x86.M64, b x86.M64) x86.M64 {
+func Pmulhw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pmulhw(a, b))
 }
 
@@ -852,7 +852,7 @@ func pmulhw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PMULLW'. Intrinsic: '_m_pmullw'.
 // Requires MMX.
-func Pmullw(a x86.M64, b x86.M64) x86.M64 {
+func Pmullw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pmullw(a, b))
 }
 
@@ -866,7 +866,7 @@ func pmullw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'POR'. Intrinsic: '_m_por'.
 // Requires MMX.
-func Por(a x86.M64, b x86.M64) x86.M64 {
+func Por(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(por(a, b))
 }
 
@@ -887,7 +887,7 @@ func por(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSLLD'. Intrinsic: '_m_pslld'.
 // Requires MMX.
-func Pslld(a x86.M64, count x86.M64) x86.M64 {
+func Pslld(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(pslld(a, count))
 }
 
@@ -910,7 +910,7 @@ func pslld(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Pslldi(a x86.M64, imm8 byte) x86.M64 {
+func Pslldi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(pslldi(a, imm8))
 }
 
@@ -928,7 +928,7 @@ func pslldi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSLLQ'. Intrinsic: '_m_psllq'.
 // Requires MMX.
-func Psllq(a x86.M64, count x86.M64) x86.M64 {
+func Psllq(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(psllq(a, count))
 }
 
@@ -948,7 +948,7 @@ func psllq(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psllqi(a x86.M64, imm8 byte) x86.M64 {
+func Psllqi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(psllqi(a, imm8))
 }
 
@@ -969,7 +969,7 @@ func psllqi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSLLW'. Intrinsic: '_m_psllw'.
 // Requires MMX.
-func Psllw(a x86.M64, count x86.M64) x86.M64 {
+func Psllw(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(psllw(a, count))
 }
 
@@ -992,7 +992,7 @@ func psllw(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psllwi(a x86.M64, imm8 byte) x86.M64 {
+func Psllwi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(psllwi(a, imm8))
 }
 
@@ -1013,7 +1013,7 @@ func psllwi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSRAD'. Intrinsic: '_m_psrad'.
 // Requires MMX.
-func Psrad(a x86.M64, count x86.M64) x86.M64 {
+func Psrad(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(psrad(a, count))
 }
 
@@ -1036,7 +1036,7 @@ func psrad(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psradi(a x86.M64, imm8 byte) x86.M64 {
+func Psradi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(psradi(a, imm8))
 }
 
@@ -1057,7 +1057,7 @@ func psradi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSRAW'. Intrinsic: '_m_psraw'.
 // Requires MMX.
-func Psraw(a x86.M64, count x86.M64) x86.M64 {
+func Psraw(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(psraw(a, count))
 }
 
@@ -1080,7 +1080,7 @@ func psraw(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrawi(a x86.M64, imm8 byte) x86.M64 {
+func Psrawi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(psrawi(a, imm8))
 }
 
@@ -1101,7 +1101,7 @@ func psrawi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSRLD'. Intrinsic: '_m_psrld'.
 // Requires MMX.
-func Psrld(a x86.M64, count x86.M64) x86.M64 {
+func Psrld(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(psrld(a, count))
 }
 
@@ -1124,7 +1124,7 @@ func psrld(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrldi(a x86.M64, imm8 byte) x86.M64 {
+func Psrldi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(psrldi(a, imm8))
 }
 
@@ -1142,7 +1142,7 @@ func psrldi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSRLQ'. Intrinsic: '_m_psrlq'.
 // Requires MMX.
-func Psrlq(a x86.M64, count x86.M64) x86.M64 {
+func Psrlq(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(psrlq(a, count))
 }
 
@@ -1162,7 +1162,7 @@ func psrlq(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrlqi(a x86.M64, imm8 byte) x86.M64 {
+func Psrlqi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(psrlqi(a, imm8))
 }
 
@@ -1183,7 +1183,7 @@ func psrlqi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSRLW'. Intrinsic: '_m_psrlw'.
 // Requires MMX.
-func Psrlw(a x86.M64, count x86.M64) x86.M64 {
+func Psrlw(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(psrlw(a, count))
 }
 
@@ -1206,7 +1206,7 @@ func psrlw(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func Psrlwi(a x86.M64, imm8 byte) x86.M64 {
+func Psrlwi(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(psrlwi(a, imm8))
 }
 
@@ -1223,7 +1223,7 @@ func psrlwi(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSUBB'. Intrinsic: '_m_psubb'.
 // Requires MMX.
-func Psubb(a x86.M64, b x86.M64) x86.M64 {
+func Psubb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(psubb(a, b))
 }
 
@@ -1240,7 +1240,7 @@ func psubb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBD'. Intrinsic: '_m_psubd'.
 // Requires MMX.
-func Psubd(a x86.M64, b x86.M64) x86.M64 {
+func Psubd(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(psubd(a, b))
 }
 
@@ -1257,7 +1257,7 @@ func psubd(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBSB'. Intrinsic: '_m_psubsb'.
 // Requires MMX.
-func Psubsb(a x86.M64, b x86.M64) x86.M64 {
+func Psubsb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(psubsb(a, b))
 }
 
@@ -1274,7 +1274,7 @@ func psubsb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBSW'. Intrinsic: '_m_psubsw'.
 // Requires MMX.
-func Psubsw(a x86.M64, b x86.M64) x86.M64 {
+func Psubsw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(psubsw(a, b))
 }
 
@@ -1291,7 +1291,7 @@ func psubsw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBUSB'. Intrinsic: '_m_psubusb'.
 // Requires MMX.
-func Psubusb(a x86.M64, b x86.M64) x86.M64 {
+func Psubusb(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(psubusb(a, b))
 }
 
@@ -1309,7 +1309,7 @@ func psubusb(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBUSW'. Intrinsic: '_m_psubusw'.
 // Requires MMX.
-func Psubusw(a x86.M64, b x86.M64) x86.M64 {
+func Psubusw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(psubusw(a, b))
 }
 
@@ -1326,7 +1326,7 @@ func psubusw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBW'. Intrinsic: '_m_psubw'.
 // Requires MMX.
-func Psubw(a x86.M64, b x86.M64) x86.M64 {
+func Psubw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(psubw(a, b))
 }
 
@@ -1352,7 +1352,7 @@ func psubw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKHBW'. Intrinsic: '_m_punpckhbw'.
 // Requires MMX.
-func Punpckhbw(a x86.M64, b x86.M64) x86.M64 {
+func Punpckhbw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(punpckhbw(a, b))
 }
 
@@ -1367,7 +1367,7 @@ func punpckhbw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKHDQ'. Intrinsic: '_m_punpckhdq'.
 // Requires MMX.
-func Punpckhdq(a x86.M64, b x86.M64) x86.M64 {
+func Punpckhdq(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(punpckhdq(a, b))
 }
 
@@ -1389,7 +1389,7 @@ func punpckhdq(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_m_punpckhwd'.
 // Requires MMX.
-func Punpckhwd(a x86.M64, b x86.M64) x86.M64 {
+func Punpckhwd(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(punpckhwd(a, b))
 }
 
@@ -1415,7 +1415,7 @@ func punpckhwd(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_m_punpcklbw'.
 // Requires MMX.
-func Punpcklbw(a x86.M64, b x86.M64) x86.M64 {
+func Punpcklbw(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(punpcklbw(a, b))
 }
 
@@ -1430,7 +1430,7 @@ func punpcklbw(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKLDQ'. Intrinsic: '_m_punpckldq'.
 // Requires MMX.
-func Punpckldq(a x86.M64, b x86.M64) x86.M64 {
+func Punpckldq(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(punpckldq(a, b))
 }
 
@@ -1452,7 +1452,7 @@ func punpckldq(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKLWD'. Intrinsic: '_m_punpcklwd'.
 // Requires MMX.
-func Punpcklwd(a x86.M64, b x86.M64) x86.M64 {
+func Punpcklwd(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(punpcklwd(a, b))
 }
 
@@ -1466,7 +1466,7 @@ func punpcklwd(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PXOR'. Intrinsic: '_m_pxor'.
 // Requires MMX.
-func Pxor(a x86.M64, b x86.M64) x86.M64 {
+func Pxor(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(pxor(a, b))
 }
 
@@ -1482,7 +1482,7 @@ func pxor(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_set_pi16'.
 // Requires MMX.
-func SetPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64 {
+func SetPi16(e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M64) {
 	return x86.M64(setPi16(e3, e2, e1, e0))
 }
 
@@ -1496,7 +1496,7 @@ func setPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_set_pi32'.
 // Requires MMX.
-func SetPi32(e1 int, e0 int) x86.M64 {
+func SetPi32(e1 int, e0 int) (dst x86.M64) {
 	return x86.M64(setPi32(e1, e0))
 }
 
@@ -1517,7 +1517,7 @@ func setPi32(e1 int, e0 int) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_set_pi8'.
 // Requires MMX.
-func SetPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M64 {
+func SetPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M64) {
 	return x86.M64(setPi8(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -1533,7 +1533,7 @@ func setPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 by
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_pi16'.
 // Requires MMX.
-func Set1Pi16(a int16) x86.M64 {
+func Set1Pi16(a int16) (dst x86.M64) {
 	return x86.M64(set1Pi16(a))
 }
 
@@ -1549,7 +1549,7 @@ func set1Pi16(a int16) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_pi32'.
 // Requires MMX.
-func Set1Pi32(a int) x86.M64 {
+func Set1Pi32(a int) (dst x86.M64) {
 	return x86.M64(set1Pi32(a))
 }
 
@@ -1565,7 +1565,7 @@ func set1Pi32(a int) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_set1_pi8'.
 // Requires MMX.
-func Set1Pi8(a byte) x86.M64 {
+func Set1Pi8(a byte) (dst x86.M64) {
 	return x86.M64(set1Pi8(a))
 }
 
@@ -1582,7 +1582,7 @@ func set1Pi8(a byte) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_pi16'.
 // Requires MMX.
-func SetrPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64 {
+func SetrPi16(e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M64) {
 	return x86.M64(setrPi16(e3, e2, e1, e0))
 }
 
@@ -1597,7 +1597,7 @@ func setrPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_pi32'.
 // Requires MMX.
-func SetrPi32(e1 int, e0 int) x86.M64 {
+func SetrPi32(e1 int, e0 int) (dst x86.M64) {
 	return x86.M64(setrPi32(e1, e0))
 }
 
@@ -1618,7 +1618,7 @@ func setrPi32(e1 int, e0 int) x86.M64
 //
 // Instruction: '...'. Intrinsic: '_mm_setr_pi8'.
 // Requires MMX.
-func SetrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M64 {
+func SetrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M64) {
 	return x86.M64(setrPi8(e7, e6, e5, e4, e3, e2, e1, e0))
 }
 
@@ -1631,7 +1631,7 @@ func setrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 b
 //
 // Instruction: 'PXOR'. Intrinsic: '_mm_setzero_si64'.
 // Requires MMX.
-func SetzeroSi64() x86.M64 {
+func SetzeroSi64() (dst x86.M64) {
 	return x86.M64(setzeroSi64())
 }
 
@@ -1652,7 +1652,7 @@ func setzeroSi64() x86.M64
 //
 // Instruction: 'PSLLW'. Intrinsic: '_mm_sll_pi16'.
 // Requires MMX.
-func SllPi16(a x86.M64, count x86.M64) x86.M64 {
+func SllPi16(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(sllPi16(a, count))
 }
 
@@ -1673,7 +1673,7 @@ func sllPi16(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSLLD'. Intrinsic: '_mm_sll_pi32'.
 // Requires MMX.
-func SllPi32(a x86.M64, count x86.M64) x86.M64 {
+func SllPi32(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(sllPi32(a, count))
 }
 
@@ -1691,7 +1691,7 @@ func sllPi32(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSLLQ'. Intrinsic: '_mm_sll_si64'.
 // Requires MMX.
-func SllSi64(a x86.M64, count x86.M64) x86.M64 {
+func SllSi64(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(sllSi64(a, count))
 }
 
@@ -1714,7 +1714,7 @@ func sllSi64(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliPi16(a x86.M64, imm8 byte) x86.M64 {
+func SlliPi16(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(slliPi16(a, imm8))
 }
 
@@ -1737,7 +1737,7 @@ func slliPi16(a x86.M64, imm8 byte) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliPi32(a x86.M64, imm8 byte) x86.M64 {
+func SlliPi32(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(slliPi32(a, imm8))
 }
 
@@ -1757,7 +1757,7 @@ func slliPi32(a x86.M64, imm8 byte) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SlliSi64(a x86.M64, imm8 byte) x86.M64 {
+func SlliSi64(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(slliSi64(a, imm8))
 }
 
@@ -1778,7 +1778,7 @@ func slliSi64(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSRAW'. Intrinsic: '_mm_sra_pi16'.
 // Requires MMX.
-func SraPi16(a x86.M64, count x86.M64) x86.M64 {
+func SraPi16(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(sraPi16(a, count))
 }
 
@@ -1799,7 +1799,7 @@ func sraPi16(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRAD'. Intrinsic: '_mm_sra_pi32'.
 // Requires MMX.
-func SraPi32(a x86.M64, count x86.M64) x86.M64 {
+func SraPi32(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(sraPi32(a, count))
 }
 
@@ -1822,7 +1822,7 @@ func sraPi32(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiPi16(a x86.M64, imm8 byte) x86.M64 {
+func SraiPi16(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(sraiPi16(a, imm8))
 }
 
@@ -1845,7 +1845,7 @@ func sraiPi16(a x86.M64, imm8 byte) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SraiPi32(a x86.M64, imm8 byte) x86.M64 {
+func SraiPi32(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(sraiPi32(a, imm8))
 }
 
@@ -1866,7 +1866,7 @@ func sraiPi32(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSRLW'. Intrinsic: '_mm_srl_pi16'.
 // Requires MMX.
-func SrlPi16(a x86.M64, count x86.M64) x86.M64 {
+func SrlPi16(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(srlPi16(a, count))
 }
 
@@ -1887,7 +1887,7 @@ func srlPi16(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRLD'. Intrinsic: '_mm_srl_pi32'.
 // Requires MMX.
-func SrlPi32(a x86.M64, count x86.M64) x86.M64 {
+func SrlPi32(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(srlPi32(a, count))
 }
 
@@ -1905,7 +1905,7 @@ func srlPi32(a x86.M64, count x86.M64) x86.M64
 //
 // Instruction: 'PSRLQ'. Intrinsic: '_mm_srl_si64'.
 // Requires MMX.
-func SrlSi64(a x86.M64, count x86.M64) x86.M64 {
+func SrlSi64(a x86.M64, count x86.M64) (dst x86.M64) {
 	return x86.M64(srlSi64(a, count))
 }
 
@@ -1928,7 +1928,7 @@ func srlSi64(a x86.M64, count x86.M64) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliPi16(a x86.M64, imm8 byte) x86.M64 {
+func SrliPi16(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(srliPi16(a, imm8))
 }
 
@@ -1951,7 +1951,7 @@ func srliPi16(a x86.M64, imm8 byte) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliPi32(a x86.M64, imm8 byte) x86.M64 {
+func SrliPi32(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(srliPi32(a, imm8))
 }
 
@@ -1971,7 +1971,7 @@ func srliPi32(a x86.M64, imm8 byte) x86.M64
 // Requires MMX.
 //
 // FIXME: Requires compiler support (has immediate)
-func SrliSi64(a x86.M64, imm8 byte) x86.M64 {
+func SrliSi64(a x86.M64, imm8 byte) (dst x86.M64) {
 	return x86.M64(srliSi64(a, imm8))
 }
 
@@ -1988,7 +1988,7 @@ func srliSi64(a x86.M64, imm8 byte) x86.M64
 //
 // Instruction: 'PSUBW'. Intrinsic: '_mm_sub_pi16'.
 // Requires MMX.
-func SubPi16(a x86.M64, b x86.M64) x86.M64 {
+func SubPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subPi16(a, b))
 }
 
@@ -2005,7 +2005,7 @@ func subPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBD'. Intrinsic: '_mm_sub_pi32'.
 // Requires MMX.
-func SubPi32(a x86.M64, b x86.M64) x86.M64 {
+func SubPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subPi32(a, b))
 }
 
@@ -2022,7 +2022,7 @@ func subPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBB'. Intrinsic: '_mm_sub_pi8'.
 // Requires MMX.
-func SubPi8(a x86.M64, b x86.M64) x86.M64 {
+func SubPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subPi8(a, b))
 }
 
@@ -2039,7 +2039,7 @@ func subPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBSW'. Intrinsic: '_mm_subs_pi16'.
 // Requires MMX.
-func SubsPi16(a x86.M64, b x86.M64) x86.M64 {
+func SubsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subsPi16(a, b))
 }
 
@@ -2056,7 +2056,7 @@ func subsPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBSB'. Intrinsic: '_mm_subs_pi8'.
 // Requires MMX.
-func SubsPi8(a x86.M64, b x86.M64) x86.M64 {
+func SubsPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subsPi8(a, b))
 }
 
@@ -2074,7 +2074,7 @@ func subsPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBUSW'. Intrinsic: '_mm_subs_pu16'.
 // Requires MMX.
-func SubsPu16(a x86.M64, b x86.M64) x86.M64 {
+func SubsPu16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subsPu16(a, b))
 }
 
@@ -2091,7 +2091,7 @@ func subsPu16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PSUBUSB'. Intrinsic: '_mm_subs_pu8'.
 // Requires MMX.
-func SubsPu8(a x86.M64, b x86.M64) x86.M64 {
+func SubsPu8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(subsPu8(a, b))
 }
 
@@ -2104,7 +2104,7 @@ func subsPu8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'MOVD'. Intrinsic: '_m_to_int'.
 // Requires MMX.
-func ToInt(a x86.M64) int {
+func ToInt(a x86.M64) (dst int) {
 	return int(toInt(a))
 }
 
@@ -2117,7 +2117,7 @@ func toInt(a x86.M64) int
 //
 // Instruction: 'MOVQ'. Intrinsic: '_m_to_int64'.
 // Requires MMX.
-func ToInt64(a x86.M64) int64 {
+func ToInt64(a x86.M64) (dst int64) {
 	return int64(toInt64(a))
 }
 
@@ -2139,7 +2139,7 @@ func toInt64(a x86.M64) int64
 //
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_mm_unpackhi_pi16'.
 // Requires MMX.
-func UnpackhiPi16(a x86.M64, b x86.M64) x86.M64 {
+func UnpackhiPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(unpackhiPi16(a, b))
 }
 
@@ -2154,7 +2154,7 @@ func unpackhiPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKHDQ'. Intrinsic: '_mm_unpackhi_pi32'.
 // Requires MMX.
-func UnpackhiPi32(a x86.M64, b x86.M64) x86.M64 {
+func UnpackhiPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(unpackhiPi32(a, b))
 }
 
@@ -2180,7 +2180,7 @@ func unpackhiPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKHBW'. Intrinsic: '_mm_unpackhi_pi8'.
 // Requires MMX.
-func UnpackhiPi8(a x86.M64, b x86.M64) x86.M64 {
+func UnpackhiPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(unpackhiPi8(a, b))
 }
 
@@ -2202,7 +2202,7 @@ func unpackhiPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKLWD'. Intrinsic: '_mm_unpacklo_pi16'.
 // Requires MMX.
-func UnpackloPi16(a x86.M64, b x86.M64) x86.M64 {
+func UnpackloPi16(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(unpackloPi16(a, b))
 }
 
@@ -2217,7 +2217,7 @@ func unpackloPi16(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKLDQ'. Intrinsic: '_mm_unpacklo_pi32'.
 // Requires MMX.
-func UnpackloPi32(a x86.M64, b x86.M64) x86.M64 {
+func UnpackloPi32(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(unpackloPi32(a, b))
 }
 
@@ -2243,7 +2243,7 @@ func unpackloPi32(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_mm_unpacklo_pi8'.
 // Requires MMX.
-func UnpackloPi8(a x86.M64, b x86.M64) x86.M64 {
+func UnpackloPi8(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(unpackloPi8(a, b))
 }
 
@@ -2257,7 +2257,7 @@ func unpackloPi8(a x86.M64, b x86.M64) x86.M64
 //
 // Instruction: 'PXOR'. Intrinsic: '_mm_xor_si64'.
 // Requires MMX.
-func XorSi64(a x86.M64, b x86.M64) x86.M64 {
+func XorSi64(a x86.M64, b x86.M64) (dst x86.M64) {
 	return x86.M64(xorSi64(a, b))
 }
 

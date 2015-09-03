@@ -427,6 +427,8 @@ func (in *Intrinsic) fixup() {
 			in.Params[i].Name = "typ"
 		case "func":
 			in.Params[i].Name = "fnc"
+		case "imm8":
+			in.Params[i].Type = "byte"
 		}
 		if param.Type == "" {
 			in.Params[i].Type = "uintptr"
@@ -510,7 +512,12 @@ func (in Intrinsic) Finish() {
 	for _, param := range in.Params {
 		params = append(params, fmt.Sprint(param.Name, " ", param.Type))
 	}
-	fmt.Fprint(out, strings.Join(params, ", "), ") ", in.RetType, " {\n")
+	rettypeprint := in.RetType
+	if len(rettypeprint) > 0 {
+		rettypeprint = "(dst " + rettypeprint + ")"
+	}
+
+	fmt.Fprint(out, strings.Join(params, ", "), ") ", rettypeprint, " {\n")
 
 	// We have a receiver pointer,
 	if rework {
@@ -748,10 +755,13 @@ func (p Params) getAsm() (string, int) {
 		}
 		postfix := param.getPostfix()
 		if postfix == "" {
-			return "\t// FIXME: Unimplemented. Unknown MOVE postfix for type " + param.Type + "\n", 0
+			out += "\t// FIXME: Unimplemented. Unknown MOVE postfix for type " + param.Type + "\n\t//"
 		}
-
-		out += "\tMOV" + postfix + " " + param.Name + "+" + strconv.Itoa(atbytes) + "(FP)," + reg + "\n"
+		if strings.Contains(param.Name, "imm") {
+			out += "\t// FIXME: Immediate parameter should be removed (" + param.Name + " " + param.Type + ")\n"
+		} else {
+			out += "\tMOV" + postfix + " " + param.Name + "+" + strconv.Itoa(atbytes) + "(FP)," + reg + "\n"
+		}
 		if size < 4 {
 			size = 4
 		}

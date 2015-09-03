@@ -16,7 +16,7 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // Instruction: 'VPABSW'. Intrinsic: '_mm256_abs_epi16'.
 // Requires AVX2.
-func M256AbsEpi16(a x86.M256i) x86.M256i {
+func M256AbsEpi16(a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AbsEpi16([32]byte(a)))
 }
 
@@ -34,7 +34,7 @@ func m256AbsEpi16(a [32]byte) [32]byte
 //
 // Instruction: 'VPABSD'. Intrinsic: '_mm256_abs_epi32'.
 // Requires AVX2.
-func M256AbsEpi32(a x86.M256i) x86.M256i {
+func M256AbsEpi32(a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AbsEpi32([32]byte(a)))
 }
 
@@ -52,7 +52,7 @@ func m256AbsEpi32(a [32]byte) [32]byte
 //
 // Instruction: 'VPABSB'. Intrinsic: '_mm256_abs_epi8'.
 // Requires AVX2.
-func M256AbsEpi8(a x86.M256i) x86.M256i {
+func M256AbsEpi8(a x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AbsEpi8([32]byte(a)))
 }
 
@@ -70,7 +70,7 @@ func m256AbsEpi8(a [32]byte) [32]byte
 //
 // Instruction: 'VPADDW'. Intrinsic: '_mm256_add_epi16'.
 // Requires AVX2.
-func M256AddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -88,7 +88,7 @@ func m256AddEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDD'. Intrinsic: '_mm256_add_epi32'.
 // Requires AVX2.
-func M256AddEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -106,7 +106,7 @@ func m256AddEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDQ'. Intrinsic: '_mm256_add_epi64'.
 // Requires AVX2.
-func M256AddEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -124,7 +124,7 @@ func m256AddEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDB'. Intrinsic: '_mm256_add_epi8'.
 // Requires AVX2.
-func M256AddEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -142,7 +142,7 @@ func m256AddEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSW'. Intrinsic: '_mm256_adds_epi16'.
 // Requires AVX2.
-func M256AddsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddsEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddsEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -160,7 +160,7 @@ func m256AddsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDSB'. Intrinsic: '_mm256_adds_epi8'.
 // Requires AVX2.
-func M256AddsEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddsEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddsEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -178,7 +178,7 @@ func m256AddsEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSW'. Intrinsic: '_mm256_adds_epu16'.
 // Requires AVX2.
-func M256AddsEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddsEpu16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddsEpu16([32]byte(a), [32]byte(b)))
 }
 
@@ -196,7 +196,7 @@ func m256AddsEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPADDUSB'. Intrinsic: '_mm256_adds_epu8'.
 // Requires AVX2.
-func M256AddsEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AddsEpu8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AddsEpu8([32]byte(a), [32]byte(b)))
 }
 
@@ -216,7 +216,7 @@ func m256AddsEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPALIGNR'. Intrinsic: '_mm256_alignr_epi8'.
 // Requires AVX2.
-func M256AlignrEpi8(a x86.M256i, b x86.M256i, count int) x86.M256i {
+func M256AlignrEpi8(a x86.M256i, b x86.M256i, count int) (dst x86.M256i) {
 	return x86.M256i(m256AlignrEpi8([32]byte(a), [32]byte(b), count))
 }
 
@@ -231,7 +231,7 @@ func m256AlignrEpi8(a [32]byte, b [32]byte, count int) [32]byte
 //
 // Instruction: 'VPAND'. Intrinsic: '_mm256_and_si256'.
 // Requires AVX2.
-func M256AndSi256(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AndSi256(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AndSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -246,7 +246,7 @@ func m256AndSi256(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPANDN'. Intrinsic: '_mm256_andnot_si256'.
 // Requires AVX2.
-func M256AndnotSi256(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AndnotSi256(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AndnotSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -264,7 +264,7 @@ func m256AndnotSi256(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGW'. Intrinsic: '_mm256_avg_epu16'.
 // Requires AVX2.
-func M256AvgEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AvgEpu16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AvgEpu16([32]byte(a), [32]byte(b)))
 }
 
@@ -282,7 +282,7 @@ func m256AvgEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPAVGB'. Intrinsic: '_mm256_avg_epu8'.
 // Requires AVX2.
-func M256AvgEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256AvgEpu8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256AvgEpu8([32]byte(a), [32]byte(b)))
 }
 
@@ -306,7 +306,7 @@ func m256AvgEpu8(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BlendEpi16(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256BlendEpi16(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256BlendEpi16([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -330,7 +330,7 @@ func m256BlendEpi16(a [32]byte, b [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func BlendEpi32(a x86.M128i, b x86.M128i, imm8 byte) x86.M128i {
+func BlendEpi32(a x86.M128i, b x86.M128i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(blendEpi32([16]byte(a), [16]byte(b), imm8))
 }
 
@@ -354,7 +354,7 @@ func blendEpi32(a [16]byte, b [16]byte, imm8 byte) [16]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BlendEpi32(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256BlendEpi32(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256BlendEpi32([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -376,7 +376,7 @@ func m256BlendEpi32(a [32]byte, b [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPBLENDVB'. Intrinsic: '_mm256_blendv_epi8'.
 // Requires AVX2.
-func M256BlendvEpi8(a x86.M256i, b x86.M256i, mask x86.M256i) x86.M256i {
+func M256BlendvEpi8(a x86.M256i, b x86.M256i, mask x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256BlendvEpi8([32]byte(a), [32]byte(b), [32]byte(mask)))
 }
 
@@ -394,7 +394,7 @@ func m256BlendvEpi8(a [32]byte, b [32]byte, mask [32]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm_broadcastb_epi8'.
 // Requires AVX2.
-func BroadcastbEpi8(a x86.M128i) x86.M128i {
+func BroadcastbEpi8(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(broadcastbEpi8([16]byte(a)))
 }
 
@@ -412,7 +412,7 @@ func broadcastbEpi8(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTB'. Intrinsic: '_mm256_broadcastb_epi8'.
 // Requires AVX2.
-func M256BroadcastbEpi8(a x86.M128i) x86.M256i {
+func M256BroadcastbEpi8(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256BroadcastbEpi8([16]byte(a)))
 }
 
@@ -430,7 +430,7 @@ func m256BroadcastbEpi8(a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm_broadcastd_epi32'.
 // Requires AVX2.
-func BroadcastdEpi32(a x86.M128i) x86.M128i {
+func BroadcastdEpi32(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(broadcastdEpi32([16]byte(a)))
 }
 
@@ -448,7 +448,7 @@ func broadcastdEpi32(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTD'. Intrinsic: '_mm256_broadcastd_epi32'.
 // Requires AVX2.
-func M256BroadcastdEpi32(a x86.M128i) x86.M256i {
+func M256BroadcastdEpi32(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256BroadcastdEpi32([16]byte(a)))
 }
 
@@ -466,7 +466,7 @@ func m256BroadcastdEpi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm_broadcastq_epi64'.
 // Requires AVX2.
-func BroadcastqEpi64(a x86.M128i) x86.M128i {
+func BroadcastqEpi64(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(broadcastqEpi64([16]byte(a)))
 }
 
@@ -484,7 +484,7 @@ func broadcastqEpi64(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTQ'. Intrinsic: '_mm256_broadcastq_epi64'.
 // Requires AVX2.
-func M256BroadcastqEpi64(a x86.M128i) x86.M256i {
+func M256BroadcastqEpi64(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256BroadcastqEpi64([16]byte(a)))
 }
 
@@ -502,7 +502,7 @@ func m256BroadcastqEpi64(a [16]byte) [32]byte
 //
 // Instruction: 'MOVDDUP'. Intrinsic: '_mm_broadcastsd_pd'.
 // Requires AVX2.
-func BroadcastsdPd(a x86.M128d) x86.M128d {
+func BroadcastsdPd(a x86.M128d) (dst x86.M128d) {
 	return x86.M128d(broadcastsdPd([2]float64(a)))
 }
 
@@ -520,7 +520,7 @@ func broadcastsdPd(a [2]float64) [2]float64
 //
 // Instruction: 'VBROADCASTSD'. Intrinsic: '_mm256_broadcastsd_pd'.
 // Requires AVX2.
-func M256BroadcastsdPd(a x86.M128d) x86.M256d {
+func M256BroadcastsdPd(a x86.M128d) (dst x86.M256d) {
 	return x86.M256d(m256BroadcastsdPd([2]float64(a)))
 }
 
@@ -536,7 +536,7 @@ func m256BroadcastsdPd(a [2]float64) [4]float64
 //
 // Instruction: 'VBROADCASTI128'. Intrinsic: '_mm256_broadcastsi128_si256'.
 // Requires AVX2.
-func M256Broadcastsi128Si256(a x86.M128i) x86.M256i {
+func M256Broadcastsi128Si256(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Broadcastsi128Si256([16]byte(a)))
 }
 
@@ -554,7 +554,7 @@ func m256Broadcastsi128Si256(a [16]byte) [32]byte
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm_broadcastss_ps'.
 // Requires AVX2.
-func BroadcastssPs(a x86.M128) x86.M128 {
+func BroadcastssPs(a x86.M128) (dst x86.M128) {
 	return x86.M128(broadcastssPs([4]float32(a)))
 }
 
@@ -572,7 +572,7 @@ func broadcastssPs(a [4]float32) [4]float32
 //
 // Instruction: 'VBROADCASTSS'. Intrinsic: '_mm256_broadcastss_ps'.
 // Requires AVX2.
-func M256BroadcastssPs(a x86.M128) x86.M256 {
+func M256BroadcastssPs(a x86.M128) (dst x86.M256) {
 	return x86.M256(m256BroadcastssPs([4]float32(a)))
 }
 
@@ -590,7 +590,7 @@ func m256BroadcastssPs(a [4]float32) [8]float32
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm_broadcastw_epi16'.
 // Requires AVX2.
-func BroadcastwEpi16(a x86.M128i) x86.M128i {
+func BroadcastwEpi16(a x86.M128i) (dst x86.M128i) {
 	return x86.M128i(broadcastwEpi16([16]byte(a)))
 }
 
@@ -608,7 +608,7 @@ func broadcastwEpi16(a [16]byte) [16]byte
 //
 // Instruction: 'VPBROADCASTW'. Intrinsic: '_mm256_broadcastw_epi16'.
 // Requires AVX2.
-func M256BroadcastwEpi16(a x86.M128i) x86.M256i {
+func M256BroadcastwEpi16(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256BroadcastwEpi16([16]byte(a)))
 }
 
@@ -630,7 +630,7 @@ func m256BroadcastwEpi16(a [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BslliEpi128(a x86.M256i, imm8 byte) x86.M256i {
+func M256BslliEpi128(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256BslliEpi128([32]byte(a), imm8))
 }
 
@@ -652,7 +652,7 @@ func m256BslliEpi128(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256BsrliEpi128(a x86.M256i, imm8 byte) x86.M256i {
+func M256BsrliEpi128(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256BsrliEpi128([32]byte(a), imm8))
 }
 
@@ -670,7 +670,7 @@ func m256BsrliEpi128(a [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPCMPEQW'. Intrinsic: '_mm256_cmpeq_epi16'.
 // Requires AVX2.
-func M256CmpeqEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpeqEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpeqEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -688,7 +688,7 @@ func m256CmpeqEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPEQD'. Intrinsic: '_mm256_cmpeq_epi32'.
 // Requires AVX2.
-func M256CmpeqEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpeqEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpeqEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -706,7 +706,7 @@ func m256CmpeqEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPEQQ'. Intrinsic: '_mm256_cmpeq_epi64'.
 // Requires AVX2.
-func M256CmpeqEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpeqEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpeqEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -724,7 +724,7 @@ func m256CmpeqEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPEQB'. Intrinsic: '_mm256_cmpeq_epi8'.
 // Requires AVX2.
-func M256CmpeqEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpeqEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpeqEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -742,7 +742,7 @@ func m256CmpeqEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTW'. Intrinsic: '_mm256_cmpgt_epi16'.
 // Requires AVX2.
-func M256CmpgtEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpgtEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpgtEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -760,7 +760,7 @@ func m256CmpgtEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTD'. Intrinsic: '_mm256_cmpgt_epi32'.
 // Requires AVX2.
-func M256CmpgtEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpgtEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpgtEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -778,7 +778,7 @@ func m256CmpgtEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTQ'. Intrinsic: '_mm256_cmpgt_epi64'.
 // Requires AVX2.
-func M256CmpgtEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpgtEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpgtEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -796,7 +796,7 @@ func m256CmpgtEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPCMPGTB'. Intrinsic: '_mm256_cmpgt_epi8'.
 // Requires AVX2.
-func M256CmpgtEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256CmpgtEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256CmpgtEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -815,7 +815,7 @@ func m256CmpgtEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWD'. Intrinsic: '_mm256_cvtepi16_epi32'.
 // Requires AVX2.
-func M256Cvtepi16Epi32(a x86.M128i) x86.M256i {
+func M256Cvtepi16Epi32(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepi16Epi32([16]byte(a)))
 }
 
@@ -834,7 +834,7 @@ func m256Cvtepi16Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXWQ'. Intrinsic: '_mm256_cvtepi16_epi64'.
 // Requires AVX2.
-func M256Cvtepi16Epi64(a x86.M128i) x86.M256i {
+func M256Cvtepi16Epi64(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepi16Epi64([16]byte(a)))
 }
 
@@ -853,7 +853,7 @@ func m256Cvtepi16Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXDQ'. Intrinsic: '_mm256_cvtepi32_epi64'.
 // Requires AVX2.
-func M256Cvtepi32Epi64(a x86.M128i) x86.M256i {
+func M256Cvtepi32Epi64(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepi32Epi64([16]byte(a)))
 }
 
@@ -872,7 +872,7 @@ func m256Cvtepi32Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBW'. Intrinsic: '_mm256_cvtepi8_epi16'.
 // Requires AVX2.
-func M256Cvtepi8Epi16(a x86.M128i) x86.M256i {
+func M256Cvtepi8Epi16(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepi8Epi16([16]byte(a)))
 }
 
@@ -891,7 +891,7 @@ func m256Cvtepi8Epi16(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBD'. Intrinsic: '_mm256_cvtepi8_epi32'.
 // Requires AVX2.
-func M256Cvtepi8Epi32(a x86.M128i) x86.M256i {
+func M256Cvtepi8Epi32(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepi8Epi32([16]byte(a)))
 }
 
@@ -910,7 +910,7 @@ func m256Cvtepi8Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVSXBQ'. Intrinsic: '_mm256_cvtepi8_epi64'.
 // Requires AVX2.
-func M256Cvtepi8Epi64(a x86.M128i) x86.M256i {
+func M256Cvtepi8Epi64(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepi8Epi64([16]byte(a)))
 }
 
@@ -929,7 +929,7 @@ func m256Cvtepi8Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWD'. Intrinsic: '_mm256_cvtepu16_epi32'.
 // Requires AVX2.
-func M256Cvtepu16Epi32(a x86.M128i) x86.M256i {
+func M256Cvtepu16Epi32(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepu16Epi32([16]byte(a)))
 }
 
@@ -948,7 +948,7 @@ func m256Cvtepu16Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXWQ'. Intrinsic: '_mm256_cvtepu16_epi64'.
 // Requires AVX2.
-func M256Cvtepu16Epi64(a x86.M128i) x86.M256i {
+func M256Cvtepu16Epi64(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepu16Epi64([16]byte(a)))
 }
 
@@ -967,7 +967,7 @@ func m256Cvtepu16Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXDQ'. Intrinsic: '_mm256_cvtepu32_epi64'.
 // Requires AVX2.
-func M256Cvtepu32Epi64(a x86.M128i) x86.M256i {
+func M256Cvtepu32Epi64(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepu32Epi64([16]byte(a)))
 }
 
@@ -986,7 +986,7 @@ func m256Cvtepu32Epi64(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBW'. Intrinsic: '_mm256_cvtepu8_epi16'.
 // Requires AVX2.
-func M256Cvtepu8Epi16(a x86.M128i) x86.M256i {
+func M256Cvtepu8Epi16(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepu8Epi16([16]byte(a)))
 }
 
@@ -1005,7 +1005,7 @@ func m256Cvtepu8Epi16(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBD'. Intrinsic: '_mm256_cvtepu8_epi32'.
 // Requires AVX2.
-func M256Cvtepu8Epi32(a x86.M128i) x86.M256i {
+func M256Cvtepu8Epi32(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepu8Epi32([16]byte(a)))
 }
 
@@ -1024,7 +1024,7 @@ func m256Cvtepu8Epi32(a [16]byte) [32]byte
 //
 // Instruction: 'VPMOVZXBQ'. Intrinsic: '_mm256_cvtepu8_epi64'.
 // Requires AVX2.
-func M256Cvtepu8Epi64(a x86.M128i) x86.M256i {
+func M256Cvtepu8Epi64(a x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256Cvtepu8Epi64([16]byte(a)))
 }
 
@@ -1044,7 +1044,7 @@ func m256Cvtepu8Epi64(a [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Extracti128Si256(a x86.M256i, imm8 byte) x86.M128i {
+func M256Extracti128Si256(a x86.M256i, imm8 byte) (dst x86.M128i) {
 	return x86.M128i(m256Extracti128Si256([32]byte(a), imm8))
 }
 
@@ -1074,7 +1074,7 @@ func m256Extracti128Si256(a [32]byte, imm8 byte) [16]byte
 //
 // Instruction: 'VPHADDW'. Intrinsic: '_mm256_hadd_epi16'.
 // Requires AVX2.
-func M256HaddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256HaddEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256HaddEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -1096,7 +1096,7 @@ func m256HaddEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHADDD'. Intrinsic: '_mm256_hadd_epi32'.
 // Requires AVX2.
-func M256HaddEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256HaddEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256HaddEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -1126,7 +1126,7 @@ func m256HaddEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHADDSW'. Intrinsic: '_mm256_hadds_epi16'.
 // Requires AVX2.
-func M256HaddsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256HaddsEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256HaddsEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -1156,7 +1156,7 @@ func m256HaddsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHSUBW'. Intrinsic: '_mm256_hsub_epi16'.
 // Requires AVX2.
-func M256HsubEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256HsubEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256HsubEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -1178,7 +1178,7 @@ func m256HsubEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHSUBD'. Intrinsic: '_mm256_hsub_epi32'.
 // Requires AVX2.
-func M256HsubEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256HsubEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256HsubEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -1208,7 +1208,7 @@ func m256HsubEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPHSUBSW'. Intrinsic: '_mm256_hsubs_epi16'.
 // Requires AVX2.
-func M256HsubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256HsubsEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256HsubsEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -1231,7 +1231,7 @@ func m256HsubsEpi16(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func I32gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+func I32gatherEpi32(base_addr *int, vindex x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1259,7 +1259,7 @@ func I32gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskI32gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+func MaskI32gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1280,7 +1280,7 @@ func MaskI32gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256I32gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
+func M256I32gatherEpi32(base_addr *int, vindex x86.M256i, scale int) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1308,7 +1308,7 @@ func M256I32gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256MaskI32gatherEpi32(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
+func M256MaskI32gatherEpi32(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1330,7 +1330,7 @@ func M256MaskI32gatherEpi32(src x86.M256i, base_addr *int, vindex x86.M256i, mas
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+func I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1359,7 +1359,7 @@ func I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskI32gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+func MaskI32gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1381,7 +1381,7 @@ func MaskI32gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M256i {
+func M256I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1410,7 +1410,7 @@ func M256I32gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M256i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256MaskI32gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M128i, mask x86.M256i, scale int) x86.M256i {
+func M256MaskI32gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M128i, mask x86.M256i, scale int) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1456,7 +1456,7 @@ func M256MaskI32gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M128i, mas
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func I64gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+func I64gatherEpi32(base_addr *int, vindex x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1485,7 +1485,7 @@ func I64gatherEpi32(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+func MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1507,7 +1507,7 @@ func MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256I64gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M128i {
+func M256I64gatherEpi32(base_addr *int, vindex x86.M256i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1536,7 +1536,7 @@ func M256I64gatherEpi32(base_addr *int, vindex x86.M256i, scale int) x86.M128i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M256i, mask x86.M128i, scale int) x86.M128i {
+func M256MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M256i, mask x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1557,7 +1557,7 @@ func M256MaskI64gatherEpi32(src x86.M128i, base_addr *int, vindex x86.M256i, mas
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func I64gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
+func I64gatherEpi64(base_addr *int, vindex x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1585,7 +1585,7 @@ func I64gatherEpi64(base_addr *int, vindex x86.M128i, scale int) x86.M128i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskI64gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) x86.M128i {
+func MaskI64gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x86.M128i, scale int) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1606,7 +1606,7 @@ func MaskI64gatherEpi64(src x86.M128i, base_addr *int, vindex x86.M128i, mask x8
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256I64gatherEpi64(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
+func M256I64gatherEpi64(base_addr *int, vindex x86.M256i, scale int) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1634,7 +1634,7 @@ func M256I64gatherEpi64(base_addr *int, vindex x86.M256i, scale int) x86.M256i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256MaskI64gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) x86.M256i {
+func M256MaskI64gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M256i, mask x86.M256i, scale int) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1677,7 +1677,7 @@ func M256MaskI64gatherEpi64(src x86.M256i, base_addr *int, vindex x86.M256i, mas
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Inserti128Si256(a x86.M256i, b x86.M128i, imm8 byte) x86.M256i {
+func M256Inserti128Si256(a x86.M256i, b x86.M128i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256Inserti128Si256([32]byte(a), [16]byte(b), imm8))
 }
 
@@ -1696,7 +1696,7 @@ func m256Inserti128Si256(a [32]byte, b [16]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPMADDWD'. Intrinsic: '_mm256_madd_epi16'.
 // Requires AVX2.
-func M256MaddEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaddEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaddEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -1716,7 +1716,7 @@ func m256MaddEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMADDUBSW'. Intrinsic: '_mm256_maddubs_epi16'.
 // Requires AVX2.
-func M256MaddubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaddubsEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaddubsEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -1741,7 +1741,7 @@ func m256MaddubsEpi16(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskloadEpi32(mem_addr *int, mask x86.M128i) x86.M128i {
+func MaskloadEpi32(mem_addr *int, mask x86.M128i) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1764,7 +1764,7 @@ func MaskloadEpi32(mem_addr *int, mask x86.M128i) x86.M128i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256MaskloadEpi32(mem_addr *int, mask x86.M256i) x86.M256i {
+func M256MaskloadEpi32(mem_addr *int, mask x86.M256i) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1787,7 +1787,7 @@ func M256MaskloadEpi32(mem_addr *int, mask x86.M256i) x86.M256i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func MaskloadEpi64(mem_addr *int, mask x86.M128i) x86.M128i {
+func MaskloadEpi64(mem_addr *int, mask x86.M128i) (dst x86.M128i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M128i{}
 }
@@ -1810,7 +1810,7 @@ func MaskloadEpi64(mem_addr *int, mask x86.M128i) x86.M128i {
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256MaskloadEpi64(mem_addr *int, mask x86.M256i) x86.M256i {
+func M256MaskloadEpi64(mem_addr *int, mask x86.M256i) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -1910,7 +1910,7 @@ func M256MaskstoreEpi64(mem_addr *int64, mask x86.M256i, a x86.M256i)  {
 //
 // Instruction: 'VPMAXSW'. Intrinsic: '_mm256_max_epi16'.
 // Requires AVX2.
-func M256MaxEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -1932,7 +1932,7 @@ func m256MaxEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSD'. Intrinsic: '_mm256_max_epi32'.
 // Requires AVX2.
-func M256MaxEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -1954,7 +1954,7 @@ func m256MaxEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXSB'. Intrinsic: '_mm256_max_epi8'.
 // Requires AVX2.
-func M256MaxEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -1976,7 +1976,7 @@ func m256MaxEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUW'. Intrinsic: '_mm256_max_epu16'.
 // Requires AVX2.
-func M256MaxEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpu16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpu16([32]byte(a), [32]byte(b)))
 }
 
@@ -1998,7 +1998,7 @@ func m256MaxEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUD'. Intrinsic: '_mm256_max_epu32'.
 // Requires AVX2.
-func M256MaxEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpu32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpu32([32]byte(a), [32]byte(b)))
 }
 
@@ -2020,7 +2020,7 @@ func m256MaxEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMAXUB'. Intrinsic: '_mm256_max_epu8'.
 // Requires AVX2.
-func M256MaxEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MaxEpu8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MaxEpu8([32]byte(a), [32]byte(b)))
 }
 
@@ -2042,7 +2042,7 @@ func m256MaxEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSW'. Intrinsic: '_mm256_min_epi16'.
 // Requires AVX2.
-func M256MinEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -2064,7 +2064,7 @@ func m256MinEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSD'. Intrinsic: '_mm256_min_epi32'.
 // Requires AVX2.
-func M256MinEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -2086,7 +2086,7 @@ func m256MinEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINSB'. Intrinsic: '_mm256_min_epi8'.
 // Requires AVX2.
-func M256MinEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -2108,7 +2108,7 @@ func m256MinEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUW'. Intrinsic: '_mm256_min_epu16'.
 // Requires AVX2.
-func M256MinEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpu16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpu16([32]byte(a), [32]byte(b)))
 }
 
@@ -2130,7 +2130,7 @@ func m256MinEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUD'. Intrinsic: '_mm256_min_epu32'.
 // Requires AVX2.
-func M256MinEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpu32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpu32([32]byte(a), [32]byte(b)))
 }
 
@@ -2152,7 +2152,7 @@ func m256MinEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMINUB'. Intrinsic: '_mm256_min_epu8'.
 // Requires AVX2.
-func M256MinEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MinEpu8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MinEpu8([32]byte(a), [32]byte(b)))
 }
 
@@ -2169,7 +2169,7 @@ func m256MinEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMOVMSKB'. Intrinsic: '_mm256_movemask_epi8'.
 // Requires AVX2.
-func M256MovemaskEpi8(a x86.M256i) int {
+func M256MovemaskEpi8(a x86.M256i) (dst int) {
 	return int(m256MovemaskEpi8([32]byte(a)))
 }
 
@@ -2205,7 +2205,7 @@ func m256MovemaskEpi8(a [32]byte) int
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256MpsadbwEpu8(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256MpsadbwEpu8(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256MpsadbwEpu8([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -2223,7 +2223,7 @@ func m256MpsadbwEpu8(a [32]byte, b [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPMULDQ'. Intrinsic: '_mm256_mul_epi32'.
 // Requires AVX2.
-func M256MulEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MulEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MulEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -2242,7 +2242,7 @@ func m256MulEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULUDQ'. Intrinsic: '_mm256_mul_epu32'.
 // Requires AVX2.
-func M256MulEpu32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MulEpu32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MulEpu32([32]byte(a), [32]byte(b)))
 }
 
@@ -2262,7 +2262,7 @@ func m256MulEpu32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHW'. Intrinsic: '_mm256_mulhi_epi16'.
 // Requires AVX2.
-func M256MulhiEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MulhiEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MulhiEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -2282,7 +2282,7 @@ func m256MulhiEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHUW'. Intrinsic: '_mm256_mulhi_epu16'.
 // Requires AVX2.
-func M256MulhiEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MulhiEpu16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MulhiEpu16([32]byte(a), [32]byte(b)))
 }
 
@@ -2303,7 +2303,7 @@ func m256MulhiEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULHRSW'. Intrinsic: '_mm256_mulhrs_epi16'.
 // Requires AVX2.
-func M256MulhrsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MulhrsEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MulhrsEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -2323,7 +2323,7 @@ func m256MulhrsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLW'. Intrinsic: '_mm256_mullo_epi16'.
 // Requires AVX2.
-func M256MulloEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MulloEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MulloEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -2343,7 +2343,7 @@ func m256MulloEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPMULLD'. Intrinsic: '_mm256_mullo_epi32'.
 // Requires AVX2.
-func M256MulloEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256MulloEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256MulloEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -2358,7 +2358,7 @@ func m256MulloEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPOR'. Intrinsic: '_mm256_or_si256'.
 // Requires AVX2.
-func M256OrSi256(a x86.M256i, b x86.M256i) x86.M256i {
+func M256OrSi256(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256OrSi256([32]byte(a), [32]byte(b)))
 }
 
@@ -2404,7 +2404,7 @@ func m256OrSi256(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSWB'. Intrinsic: '_mm256_packs_epi16'.
 // Requires AVX2.
-func M256PacksEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256PacksEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256PacksEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -2434,7 +2434,7 @@ func m256PacksEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKSSDW'. Intrinsic: '_mm256_packs_epi32'.
 // Requires AVX2.
-func M256PacksEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256PacksEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256PacksEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -2480,7 +2480,7 @@ func m256PacksEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSWB'. Intrinsic: '_mm256_packus_epi16'.
 // Requires AVX2.
-func M256PackusEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256PackusEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256PackusEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -2510,7 +2510,7 @@ func m256PackusEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPACKUSDW'. Intrinsic: '_mm256_packus_epi32'.
 // Requires AVX2.
-func M256PackusEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256PackusEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256PackusEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -2541,7 +2541,7 @@ func m256PackusEpi32(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute2x128Si256(a x86.M256i, b x86.M256i, imm8 byte) x86.M256i {
+func M256Permute2x128Si256(a x86.M256i, b x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256Permute2x128Si256([32]byte(a), [32]byte(b), imm8))
 }
 
@@ -2571,7 +2571,7 @@ func m256Permute2x128Si256(a [32]byte, b [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute4x64Epi64(a x86.M256i, imm8 byte) x86.M256i {
+func M256Permute4x64Epi64(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256Permute4x64Epi64([32]byte(a), imm8))
 }
 
@@ -2602,7 +2602,7 @@ func m256Permute4x64Epi64(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256Permute4x64Pd(a x86.M256d, imm8 byte) x86.M256d {
+func M256Permute4x64Pd(a x86.M256d, imm8 byte) (dst x86.M256d) {
 	return x86.M256d(m256Permute4x64Pd([4]float64(a), imm8))
 }
 
@@ -2621,7 +2621,7 @@ func m256Permute4x64Pd(a [4]float64, imm8 byte) [4]float64
 //
 // Instruction: 'VPERMD'. Intrinsic: '_mm256_permutevar8x32_epi32'.
 // Requires AVX2.
-func M256Permutevar8x32Epi32(a x86.M256i, idx x86.M256i) x86.M256i {
+func M256Permutevar8x32Epi32(a x86.M256i, idx x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256Permutevar8x32Epi32([32]byte(a), [32]byte(idx)))
 }
 
@@ -2640,7 +2640,7 @@ func m256Permutevar8x32Epi32(a [32]byte, idx [32]byte) [32]byte
 //
 // Instruction: 'VPERMPS'. Intrinsic: '_mm256_permutevar8x32_ps'.
 // Requires AVX2.
-func M256Permutevar8x32Ps(a x86.M256, idx x86.M256i) x86.M256 {
+func M256Permutevar8x32Ps(a x86.M256, idx x86.M256i) (dst x86.M256) {
 	return x86.M256(m256Permutevar8x32Ps([8]float32(a), [32]byte(idx)))
 }
 
@@ -2665,7 +2665,7 @@ func m256Permutevar8x32Ps(a [8]float32, idx [32]byte) [8]float32
 //
 // Instruction: 'VPSADBW'. Intrinsic: '_mm256_sad_epu8'.
 // Requires AVX2.
-func M256SadEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SadEpu8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SadEpu8([32]byte(a), [32]byte(b)))
 }
 
@@ -2699,7 +2699,7 @@ func m256SadEpu8(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleEpi32(a x86.M256i, imm8 byte) x86.M256i {
+func M256ShuffleEpi32(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256ShuffleEpi32([32]byte(a), imm8))
 }
 
@@ -2729,7 +2729,7 @@ func m256ShuffleEpi32(a [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPSHUFB'. Intrinsic: '_mm256_shuffle_epi8'.
 // Requires AVX2.
-func M256ShuffleEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256ShuffleEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256ShuffleEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -2757,7 +2757,7 @@ func m256ShuffleEpi8(a [32]byte, b [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShufflehiEpi16(a x86.M256i, imm8 byte) x86.M256i {
+func M256ShufflehiEpi16(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256ShufflehiEpi16([32]byte(a), imm8))
 }
 
@@ -2785,7 +2785,7 @@ func m256ShufflehiEpi16(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256ShuffleloEpi16(a x86.M256i, imm8 byte) x86.M256i {
+func M256ShuffleloEpi16(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256ShuffleloEpi16([32]byte(a), imm8))
 }
 
@@ -2811,7 +2811,7 @@ func m256ShuffleloEpi16(a [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPSIGNW'. Intrinsic: '_mm256_sign_epi16'.
 // Requires AVX2.
-func M256SignEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SignEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SignEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -2837,7 +2837,7 @@ func m256SignEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSIGND'. Intrinsic: '_mm256_sign_epi32'.
 // Requires AVX2.
-func M256SignEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SignEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SignEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -2863,7 +2863,7 @@ func m256SignEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSIGNB'. Intrinsic: '_mm256_sign_epi8'.
 // Requires AVX2.
-func M256SignEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SignEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SignEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -2885,7 +2885,7 @@ func m256SignEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSLLW'. Intrinsic: '_mm256_sll_epi16'.
 // Requires AVX2.
-func M256SllEpi16(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SllEpi16(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SllEpi16([32]byte(a), [16]byte(count)))
 }
 
@@ -2907,7 +2907,7 @@ func m256SllEpi16(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLD'. Intrinsic: '_mm256_sll_epi32'.
 // Requires AVX2.
-func M256SllEpi32(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SllEpi32(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SllEpi32([32]byte(a), [16]byte(count)))
 }
 
@@ -2929,7 +2929,7 @@ func m256SllEpi32(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSLLQ'. Intrinsic: '_mm256_sll_epi64'.
 // Requires AVX2.
-func M256SllEpi64(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SllEpi64(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SllEpi64([32]byte(a), [16]byte(count)))
 }
 
@@ -2953,7 +2953,7 @@ func m256SllEpi64(a [32]byte, count [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliEpi16(a x86.M256i, imm8 byte) x86.M256i {
+func M256SlliEpi16(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SlliEpi16([32]byte(a), imm8))
 }
 
@@ -2977,7 +2977,7 @@ func m256SlliEpi16(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliEpi32(a x86.M256i, imm8 byte) x86.M256i {
+func M256SlliEpi32(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SlliEpi32([32]byte(a), imm8))
 }
 
@@ -3001,7 +3001,7 @@ func m256SlliEpi32(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliEpi64(a x86.M256i, imm8 byte) x86.M256i {
+func M256SlliEpi64(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SlliEpi64([32]byte(a), imm8))
 }
 
@@ -3023,7 +3023,7 @@ func m256SlliEpi64(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SlliSi256(a x86.M256i, imm8 byte) x86.M256i {
+func M256SlliSi256(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SlliSi256([32]byte(a), imm8))
 }
 
@@ -3042,7 +3042,7 @@ func m256SlliSi256(a [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm_sllv_epi32'.
 // Requires AVX2.
-func SllvEpi32(a x86.M128i, count x86.M128i) x86.M128i {
+func SllvEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sllvEpi32([16]byte(a), [16]byte(count)))
 }
 
@@ -3061,7 +3061,7 @@ func sllvEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVD'. Intrinsic: '_mm256_sllv_epi32'.
 // Requires AVX2.
-func M256SllvEpi32(a x86.M256i, count x86.M256i) x86.M256i {
+func M256SllvEpi32(a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SllvEpi32([32]byte(a), [32]byte(count)))
 }
 
@@ -3080,7 +3080,7 @@ func m256SllvEpi32(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm_sllv_epi64'.
 // Requires AVX2.
-func SllvEpi64(a x86.M128i, count x86.M128i) x86.M128i {
+func SllvEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sllvEpi64([16]byte(a), [16]byte(count)))
 }
 
@@ -3099,7 +3099,7 @@ func sllvEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSLLVQ'. Intrinsic: '_mm256_sllv_epi64'.
 // Requires AVX2.
-func M256SllvEpi64(a x86.M256i, count x86.M256i) x86.M256i {
+func M256SllvEpi64(a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SllvEpi64([32]byte(a), [32]byte(count)))
 }
 
@@ -3121,7 +3121,7 @@ func m256SllvEpi64(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRAW'. Intrinsic: '_mm256_sra_epi16'.
 // Requires AVX2.
-func M256SraEpi16(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SraEpi16(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SraEpi16([32]byte(a), [16]byte(count)))
 }
 
@@ -3143,7 +3143,7 @@ func m256SraEpi16(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRAD'. Intrinsic: '_mm256_sra_epi32'.
 // Requires AVX2.
-func M256SraEpi32(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SraEpi32(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SraEpi32([32]byte(a), [16]byte(count)))
 }
 
@@ -3167,7 +3167,7 @@ func m256SraEpi32(a [32]byte, count [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SraiEpi16(a x86.M256i, imm8 byte) x86.M256i {
+func M256SraiEpi16(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SraiEpi16([32]byte(a), imm8))
 }
 
@@ -3191,7 +3191,7 @@ func m256SraiEpi16(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SraiEpi32(a x86.M256i, imm8 byte) x86.M256i {
+func M256SraiEpi32(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SraiEpi32([32]byte(a), imm8))
 }
 
@@ -3210,7 +3210,7 @@ func m256SraiEpi32(a [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm_srav_epi32'.
 // Requires AVX2.
-func SravEpi32(a x86.M128i, count x86.M128i) x86.M128i {
+func SravEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(sravEpi32([16]byte(a), [16]byte(count)))
 }
 
@@ -3229,7 +3229,7 @@ func sravEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRAVD'. Intrinsic: '_mm256_srav_epi32'.
 // Requires AVX2.
-func M256SravEpi32(a x86.M256i, count x86.M256i) x86.M256i {
+func M256SravEpi32(a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SravEpi32([32]byte(a), [32]byte(count)))
 }
 
@@ -3251,7 +3251,7 @@ func m256SravEpi32(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLW'. Intrinsic: '_mm256_srl_epi16'.
 // Requires AVX2.
-func M256SrlEpi16(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SrlEpi16(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SrlEpi16([32]byte(a), [16]byte(count)))
 }
 
@@ -3273,7 +3273,7 @@ func m256SrlEpi16(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLD'. Intrinsic: '_mm256_srl_epi32'.
 // Requires AVX2.
-func M256SrlEpi32(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SrlEpi32(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SrlEpi32([32]byte(a), [16]byte(count)))
 }
 
@@ -3295,7 +3295,7 @@ func m256SrlEpi32(a [32]byte, count [16]byte) [32]byte
 //
 // Instruction: 'VPSRLQ'. Intrinsic: '_mm256_srl_epi64'.
 // Requires AVX2.
-func M256SrlEpi64(a x86.M256i, count x86.M128i) x86.M256i {
+func M256SrlEpi64(a x86.M256i, count x86.M128i) (dst x86.M256i) {
 	return x86.M256i(m256SrlEpi64([32]byte(a), [16]byte(count)))
 }
 
@@ -3319,7 +3319,7 @@ func m256SrlEpi64(a [32]byte, count [16]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliEpi16(a x86.M256i, imm8 byte) x86.M256i {
+func M256SrliEpi16(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SrliEpi16([32]byte(a), imm8))
 }
 
@@ -3343,7 +3343,7 @@ func m256SrliEpi16(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliEpi32(a x86.M256i, imm8 byte) x86.M256i {
+func M256SrliEpi32(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SrliEpi32([32]byte(a), imm8))
 }
 
@@ -3367,7 +3367,7 @@ func m256SrliEpi32(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliEpi64(a x86.M256i, imm8 byte) x86.M256i {
+func M256SrliEpi64(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SrliEpi64([32]byte(a), imm8))
 }
 
@@ -3389,7 +3389,7 @@ func m256SrliEpi64(a [32]byte, imm8 byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Requires compiler support (has immediate)
-func M256SrliSi256(a x86.M256i, imm8 byte) x86.M256i {
+func M256SrliSi256(a x86.M256i, imm8 byte) (dst x86.M256i) {
 	return x86.M256i(m256SrliSi256([32]byte(a), imm8))
 }
 
@@ -3408,7 +3408,7 @@ func m256SrliSi256(a [32]byte, imm8 byte) [32]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm_srlv_epi32'.
 // Requires AVX2.
-func SrlvEpi32(a x86.M128i, count x86.M128i) x86.M128i {
+func SrlvEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(srlvEpi32([16]byte(a), [16]byte(count)))
 }
 
@@ -3427,7 +3427,7 @@ func srlvEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVD'. Intrinsic: '_mm256_srlv_epi32'.
 // Requires AVX2.
-func M256SrlvEpi32(a x86.M256i, count x86.M256i) x86.M256i {
+func M256SrlvEpi32(a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SrlvEpi32([32]byte(a), [32]byte(count)))
 }
 
@@ -3446,7 +3446,7 @@ func m256SrlvEpi32(a [32]byte, count [32]byte) [32]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm_srlv_epi64'.
 // Requires AVX2.
-func SrlvEpi64(a x86.M128i, count x86.M128i) x86.M128i {
+func SrlvEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
 	return x86.M128i(srlvEpi64([16]byte(a), [16]byte(count)))
 }
 
@@ -3465,7 +3465,7 @@ func srlvEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // Instruction: 'VPSRLVQ'. Intrinsic: '_mm256_srlv_epi64'.
 // Requires AVX2.
-func M256SrlvEpi64(a x86.M256i, count x86.M256i) x86.M256i {
+func M256SrlvEpi64(a x86.M256i, count x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SrlvEpi64([32]byte(a), [32]byte(count)))
 }
 
@@ -3484,7 +3484,7 @@ func m256SrlvEpi64(a [32]byte, count [32]byte) [32]byte
 // Requires AVX2.
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
-func M256StreamLoadSi256(mem_addr *x86.M256iConst) x86.M256i {
+func M256StreamLoadSi256(mem_addr *x86.M256iConst) (dst x86.M256i) {
 	// FIXME: Rework to avoid possible return value as parameter.
 	return x86.M256i{}
 }
@@ -3500,7 +3500,7 @@ func M256StreamLoadSi256(mem_addr *x86.M256iConst) x86.M256i {
 //
 // Instruction: 'VPSUBW'. Intrinsic: '_mm256_sub_epi16'.
 // Requires AVX2.
-func M256SubEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -3518,7 +3518,7 @@ func m256SubEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBD'. Intrinsic: '_mm256_sub_epi32'.
 // Requires AVX2.
-func M256SubEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -3536,7 +3536,7 @@ func m256SubEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBQ'. Intrinsic: '_mm256_sub_epi64'.
 // Requires AVX2.
-func M256SubEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -3554,7 +3554,7 @@ func m256SubEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBB'. Intrinsic: '_mm256_sub_epi8'.
 // Requires AVX2.
-func M256SubEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -3572,7 +3572,7 @@ func m256SubEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSW'. Intrinsic: '_mm256_subs_epi16'.
 // Requires AVX2.
-func M256SubsEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubsEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubsEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -3590,7 +3590,7 @@ func m256SubsEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBSB'. Intrinsic: '_mm256_subs_epi8'.
 // Requires AVX2.
-func M256SubsEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubsEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubsEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -3609,7 +3609,7 @@ func m256SubsEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSW'. Intrinsic: '_mm256_subs_epu16'.
 // Requires AVX2.
-func M256SubsEpu16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubsEpu16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubsEpu16([32]byte(a), [32]byte(b)))
 }
 
@@ -3628,7 +3628,7 @@ func m256SubsEpu16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPSUBUSB'. Intrinsic: '_mm256_subs_epu8'.
 // Requires AVX2.
-func M256SubsEpu8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256SubsEpu8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256SubsEpu8([32]byte(a), [32]byte(b)))
 }
 
@@ -3656,7 +3656,7 @@ func m256SubsEpu8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHWD'. Intrinsic: '_mm256_unpackhi_epi16'.
 // Requires AVX2.
-func M256UnpackhiEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackhiEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackhiEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -3680,7 +3680,7 @@ func m256UnpackhiEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHDQ'. Intrinsic: '_mm256_unpackhi_epi32'.
 // Requires AVX2.
-func M256UnpackhiEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackhiEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackhiEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -3702,7 +3702,7 @@ func m256UnpackhiEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHQDQ'. Intrinsic: '_mm256_unpackhi_epi64'.
 // Requires AVX2.
-func M256UnpackhiEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackhiEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackhiEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -3738,7 +3738,7 @@ func m256UnpackhiEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKHBW'. Intrinsic: '_mm256_unpackhi_epi8'.
 // Requires AVX2.
-func M256UnpackhiEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackhiEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackhiEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -3766,7 +3766,7 @@ func m256UnpackhiEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLWD'. Intrinsic: '_mm256_unpacklo_epi16'.
 // Requires AVX2.
-func M256UnpackloEpi16(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackloEpi16(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackloEpi16([32]byte(a), [32]byte(b)))
 }
 
@@ -3790,7 +3790,7 @@ func m256UnpackloEpi16(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLDQ'. Intrinsic: '_mm256_unpacklo_epi32'.
 // Requires AVX2.
-func M256UnpackloEpi32(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackloEpi32(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackloEpi32([32]byte(a), [32]byte(b)))
 }
 
@@ -3812,7 +3812,7 @@ func m256UnpackloEpi32(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLQDQ'. Intrinsic: '_mm256_unpacklo_epi64'.
 // Requires AVX2.
-func M256UnpackloEpi64(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackloEpi64(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackloEpi64([32]byte(a), [32]byte(b)))
 }
 
@@ -3848,7 +3848,7 @@ func m256UnpackloEpi64(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPUNPCKLBW'. Intrinsic: '_mm256_unpacklo_epi8'.
 // Requires AVX2.
-func M256UnpackloEpi8(a x86.M256i, b x86.M256i) x86.M256i {
+func M256UnpackloEpi8(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256UnpackloEpi8([32]byte(a), [32]byte(b)))
 }
 
@@ -3863,7 +3863,7 @@ func m256UnpackloEpi8(a [32]byte, b [32]byte) [32]byte
 //
 // Instruction: 'VPXOR'. Intrinsic: '_mm256_xor_si256'.
 // Requires AVX2.
-func M256XorSi256(a x86.M256i, b x86.M256i) x86.M256i {
+func M256XorSi256(a x86.M256i, b x86.M256i) (dst x86.M256i) {
 	return x86.M256i(m256XorSi256([32]byte(a), [32]byte(b)))
 }
 
