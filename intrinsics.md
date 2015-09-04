@@ -32,11 +32,12 @@ Function names are simplified, but the aim is to make it simple to make it easy 
 
 * '_mm_' prefix is dropped.
 * Underscore -> CamelCase.
-* This means that '_mm_and_si128(...)' -> AndSi128(...)
+
+This means that '_mm_and_si128(...)' -> AndSi128(...), '_mm_add_epi8' -> AddEpi8, etc
 
 All intrinsics are separated into packages based on the CPUID features they require. This has the advantage that you can see your cpu requirements in your imports, and it gives reasonably sized packages.
 
-All instruction that receives a pointer are skipped. Grep '// Skipped:' to find these.
+All instruction that receives a pointer are skipped. Grep source for '// Skipped:' to find these.
 Instructions that have an immediate parameter, or returns a value in a parameter pointer are marked with a "FIXME:".
 I generate a rather crude stub assembler for each function that loads each parameter from the stack and writes a return value, but no "operation" code is executed. However for basic instructions it will actually work if you uncomment the "proposed" instruction.
 
@@ -52,7 +53,7 @@ The typical x86 assembler uses only a few types. Here are the 128 bit ones:
 
 These all refer to a REGISTER, they are traditionally not settable directly. In traditional intrinsics you need to call a function to cast between them, set and get values. I think we maybe can do that better in Go.
 
-It should be allowed to do `var m M128 = M128(M128i{})`.
+In my opinion it should be allowed to do `var m M128 = M128(M128i{})`.
 
 Proposed type: []M128, []M128i, []M128d
 
@@ -74,7 +75,7 @@ All of the above is on 128 bit registers (SSEx), there are similar types for 64,
 
 ## Immediates
 
-Some intrinsics have "immediate" values, which needs to be compiled into the opcode. Without compiler support there is no real way of achieving this. Exmaple of this: https://godoc.org/github.com/klauspost/intrinsics/x86/sse#Pshufw
+Some intrinsics have "immediate" values, which needs to be compiled into the opcode. Without compiler support there is no real way of achieving this. Example of this: https://godoc.org/github.com/klauspost/intrinsics/x86/sse#Pshufw
 
 ## VEX prefixed 3+ register instructions
 
