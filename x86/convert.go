@@ -1,6 +1,6 @@
 package x86
 
-// Slice2M128 converts a slice into M128 array.
+// FloatToM128 converts a slice into M128 array.
 // The number of elements is len(src) / 4.
 // FIXME: Should simply be a pointer to the original data, not a copy
 func FloatToM128(src []float32) []M128 {
@@ -12,7 +12,7 @@ func FloatToM128(src []float32) []M128 {
 	return dst
 }
 
-// Slice2M128i converts a byte slice into M128i array.
+// BytesToM128i converts a byte slice into M128i array.
 // The number of elements is len(src) / 16.
 // FIXME: Should simply be a pointer to the original data, not a copy
 func BytesToM128i(src []byte) []M128i {
@@ -29,7 +29,7 @@ func BytesToM128i(src []byte) []M128i {
 	return dst
 }
 
-// M128i2Bytes converts M128i slice to a byte slice.
+// M128iToBytes converts M128i slice to a byte slice.
 // The number of elements is len(src) * 16.
 // FIXME: Should simply be a pointer to the original data, not a copy
 func M128iToBytes(src []M128i) []byte {
@@ -43,7 +43,7 @@ func M128iToBytes(src []M128i) []byte {
 	return dst
 }
 
-// Slice2M128d converts a slice into M128d array.
+// DoubleToM128d converts a slice into M128d array.
 // The number of elements is len(src) / 2.
 // FIXME: Should simply be a pointer to the original data, not a copy
 func DoubleToM128d(src []float64) []M128d {
