@@ -30,10 +30,10 @@ This is actual working code (if the intrinsics are implemented). TestAddEpi8, Te
 
 Function names are simplified, but the aim is to make it simple to make it easy to convert existing intrinsic code.
 
-* '_mm_' prefix is dropped.
+* `_mm_` prefix is dropped.
 * Underscore -> CamelCase.
 
-This means that '_mm_and_si128(...)' -> AndSi128(...), '_mm_add_epi8' -> AddEpi8, etc
+This means that `_mm_and_si128(...) -> AndSi128(...)`, `_mm_add_epi8() -> AddEpi8(...)`, etc.
 
 All intrinsics are separated into packages based on the CPUID features they require. This has the advantage that you can see your cpu requirements in your imports, and it gives reasonably sized packages.
 
@@ -47,24 +47,25 @@ MMX has been included for completeness. Maybe that should just be ignored.
 # TYPES
 
 The typical x86 assembler uses only a few types. Here are the 128 bit ones:
-  * M128i (__m128i), which is a 128 bit register with integer content (8x16, 16x8, 32x4, 64x2 bits packed).
-  * M128 (__m128), 128 bit register containing [4]float32
-  * M128d (__m128d), 128 bit register containing [2]float64
+  * `M128i (__m128i)`, which is a 128 bit register with integer content (8x16, 16x8, 32x4, 64x2 bits packed).
+  * `M128 (__m128)`, 128 bit register containing `[4]float32`
+  * `M128d (__m128d)`, 128 bit register containing `[2]float64`
 
 These all refer to a REGISTER, they are traditionally not settable directly. In traditional intrinsics you need to call a function to cast between them, set and get values. I think we maybe can do that better in Go.
 
 In my opinion it should be allowed to do `var m M128 = M128(M128i{})`.
 
-Proposed type: []M128, []M128i, []M128d
+Proposed type: `[]M128, []M128i, []M128d`
 
 This references a *safe* piece of memory. These reference the content of an underlying slice. There is no alignment guarantee. Here is an example conversion function:
 
+```Go
 // FloatToM128 converts a slice into M128 array.
 // The number of elements is len(src) / 4.
 // Will be a pointer to the original data, not a copy
 func FloatToM128(src []float32) []M128
-
-There should be similar for []float64 -> []M128d, int8, uint8, int16, etc -> []M128i.
+```
+There should be similar for `[]float64 -> []M128d, int8, uint8, int16, etc -> []M128i`.
 
 It behaves as a traditional slice, and looking up an entry gives a "M128x" as you would expect. Since the size is rounded down, only valid memory can be refernced. Writing to the []M128 will write to the original slice.
 
@@ -79,7 +80,7 @@ Some intrinsics have "immediate" values, which needs to be compiled into the opc
 
 ## VEX prefixed 3+ register instructions
 
-This is a conceptual issue. A very nice feature of intrisics is that it can switch from SSE codes (MULPS x1, x2 // x2=x2*x1) to VEX encoded equivalents (MULPS x1, x2, x3 // x3=x2*x1) without needing to rewrite any code. In GCC this is done with compiler flags. IMO we don't want that.
+This is a conceptual issue. A very nice feature of intrisics is that it can switch from SSE codes `(MULPS x1, x2 // x2=x2*x1)` to VEX encoded equivalents `(MULPS x1, x2, x3 // x3=x2*x1)` without needing to rewrite any code. In GCC this is done with compiler flags. IMO we don't want that.
 
 The best solution I have been able to come up with is to duplicate "sse" package into a "sse.vex" package. That will allow enabling VEX encoding by simply changing an import.
 
