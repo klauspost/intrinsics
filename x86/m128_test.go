@@ -11,8 +11,8 @@ import (
 )
 
 func TestAddEpi8(t *testing.T) {
-	a := x86.M128i{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
-	b := x86.M128i{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+	a := sse2.SetEpi32(0x00010203, 0x04050607, 0x08090a0b, 0x0c0d0e0f)
+	b := sse2.SetEpi32(0x00010203, 0x04050607, 0x08090a0b, 0x0c0d0e0f)
 
 	c := sse2.AddEpi8(a, b)
 
@@ -24,8 +24,8 @@ func TestAddEpi8(t *testing.T) {
 }
 
 func TestAddPs(t *testing.T) {
-	a := x86.M128{10.0, 20.0, 30.0, 40.0}
-	b := x86.M128{100.0, 200.0, 300.0, 400.0}
+	a := sse.SetPs(10.0, 20.0, 30.0, 40.0)
+	b := sse.SetPs(100.0, 200.0, 300.0, 400.0)
 
 	c := sse.AddPs(a, b)
 
@@ -37,6 +37,7 @@ func TestAddPs(t *testing.T) {
 }
 
 func TestMulPs(t *testing.T) {
+	// Nice way to initialize
 	a := x86.M128{1.0, 2.0, 3.0, 4.0}
 	b := x86.M128{1000.0, 100.0, 10.0, 1.0}
 
