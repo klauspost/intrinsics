@@ -164,6 +164,9 @@ func (i Intrinsic) getFiles() pack {
 		if err != nil {
 			panic(err)
 		}
+		p.goFile.WriteString("// THESE PACKAGES ARE FOR DEMONSTRATION PURPOSES ONLY!\n")
+		p.goFile.WriteString("//\n// THEY DO NOT NOT CONTAIN WORKING INTRINSICS!\n")
+		p.goFile.WriteString("//\n// See https://github.com/klauspost/intrinsics\n")
 		p.goFile.WriteString("package " + pk + "\n\n")
 		p.goFile.WriteString(`import "github.com/klauspost/intrinsics/arm"` + "\n\n")
 

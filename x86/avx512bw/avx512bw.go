@@ -1,3 +1,8 @@
+// THESE PACKAGES ARE FOR DEMONSTRATION PURPOSES ONLY!
+//
+// THEY DO NOT NOT CONTAIN WORKING INTRINSICS!
+//
+// See https://github.com/klauspost/intrinsics
 package avx512bw
 
 import "github.com/klauspost/intrinsics/x86"
