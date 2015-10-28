@@ -11,8 +11,8 @@ import (
 )
 
 func TestAddEpi8(t *testing.T) {
-	a := sse2.SetEpi32(0x00010203, 0x04050607, 0x08090a0b, 0x0c0d0e0f)
-	b := sse2.SetEpi32(0x00010203, 0x04050607, 0x08090a0b, 0x0c0d0e0f)
+	a := sse2.SetEpi32(0x03020100, 0x07060504, 0x0b0a0908, 0x0f0e0d0c)
+	b := sse2.SetEpi32(0x03020100, 0x07060504, 0x0b0a0908, 0x0f0e0d0c)
 
 	c := sse2.AddEpi8(a, b)
 
