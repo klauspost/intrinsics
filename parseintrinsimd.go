@@ -166,11 +166,11 @@ func (i Intrinsic) getFiles() pack {
 	p, ok := packages[pk]
 	if !ok {
 		var err error
-		err = os.MkdirAll("simd/"+pk, 666)
+		err = os.MkdirAll("simd/"+pk, 0777)
 		if err != nil {
 			panic(err)
 		}
-		err = os.MkdirAll("codegen/"+pk, 666)
+		err = os.MkdirAll("codegen/"+pk, 0777)
 		if err != nil {
 			panic(err)
 		}

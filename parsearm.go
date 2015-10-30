@@ -156,7 +156,7 @@ func (i Intrinsic) getFiles() pack {
 	p, ok := packages[pk]
 	if !ok {
 		var err error
-		err = os.MkdirAll("arm/"+pk, 666)
+		err = os.MkdirAll("arm/"+pk, 0777)
 		if err != nil {
 			panic(err)
 		}
