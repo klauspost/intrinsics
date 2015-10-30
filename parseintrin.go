@@ -1,86 +1,41 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"io"
 	"os"
-	"regexp"
 	"strconv"
 	"strings"
-	"unicode"
 
 	"golang.org/x/net/html"
 )
 
-type Param struct {
-	Name string
-	Type string
-}
-
-type Params []Param
-
-type Intrinsic struct {
-	OrgName     string
-	Name        string
-	AsmName     string
-	Instruction string
-	Description string
-	RetType     string
-	Params      Params
-	CpuID       string
-	Operation   string
-	Performance Perf
-	Package     string
-	cParam      *Param
-}
-
-type Timing struct {
-	Arch       string
-	Latency    float64
-	Throughput float64
-}
-
-type Perf map[string]Timing
-
-//var m64, m128, m256, m512, gen *os.File
-//var m64a, m128a, m256a, m512a, gena *os.File
-type pack struct {
-	goFile  *os.File
-	asmFile *os.File
-}
-
-const genimport = `import . "github.com/klauspost/intrinsics/x86"`
-
 // Downloaded from
 // https://software.intel.com/sites/landingpage/IntrinsicsGuide/#techs=MMX,SSE,SSE2,SSE3,SSSE3,SSE4_1,SSE4_2,AVX,AVX2,FMA,KNC,SVML,Other&avx512techs=AVX512F,AVX512BW,AVX512CD,AVX512DQ,AVX512ER,AVX512IFMA52,AVX512PF,AVX512VBMI
 
-func main() {
+func parsex86() {
+	genimport = `import . "github.com/klauspost/intrinsics/x86"`
 	f, err := os.Open("allintrin.html")
 	if err != nil {
 		panic(err)
 	}
 	defer f.Close()
 
-	parseHTML(f)
+	parseHTMLX86(f)
 	for _, pk := range packages {
 		pk.goFile.Close()
 		pk.asmFile.Close()
 	}
 }
 
-func NewIntrinsic() *Intrinsic {
-	return &Intrinsic{}
-}
-
-func parseHTML(f io.Reader) error {
+func parseHTMLX86(f io.Reader) error {
 	z := html.NewTokenizer(f)
 	in := NewIntrinsic()
 	for {
 		tt := z.Next()
 		switch tt {
 		case html.ErrorToken:
-			in.Finish()
+			in.FinishX86()
 			return z.Err()
 		case html.TextToken:
 		case html.StartTagToken, html.EndTagToken:
@@ -88,18 +43,18 @@ func parseHTML(f io.Reader) error {
 			switch strings.ToLower(string(tn)) {
 			case "span", "div":
 				if tt == html.StartTagToken {
-					in = parseDiv(z, in)
+					in = parseDivX86(z, in)
 				}
 			case "table":
-				in = parseTable(z, in)
+				in = parseTableX86(z, in)
 			}
 		}
 	}
-	in.Finish()
+	in.FinishX86()
 	return nil
 }
 
-func parseDiv(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
+func parseDivX86(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 	more := true
 	var k, v []byte
 	for more {
@@ -109,7 +64,7 @@ func parseDiv(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 		case "class":
 			val := string(v)
 			if strings.Contains(val, "intrinsic") {
-				in.Finish()
+				in.FinishX86()
 				return NewIntrinsic()
 			}
 			switch val {
@@ -118,9 +73,9 @@ func parseDiv(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 			case "instruction":
 				in.Instruction = strings.ToUpper(getText(z))
 			case "rettype":
-				in.RetType = fixType(getText(z))
+				in.RetType = fixTypeX86(getText(z))
 			case "param_type":
-				in.cParam = &Param{Type: fixType(getText(z))}
+				in.cParam = &Param{Type: fixTypeX86(getText(z))}
 			case "param_name":
 				in.cParam.Name = getText(z)
 				if !in.Params.HasParam(in.cParam.Name) {
@@ -131,7 +86,7 @@ func parseDiv(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 				in.Description = strings.TrimSpace(getTextR(z))
 			case "name":
 				in.OrgName = getText(z)
-				in.Name = fixFuncName(in.OrgName)
+				in.Name = fixFuncNameX86(in.OrgName)
 			case "operation":
 				in.Operation = strings.TrimSpace(getText(z))
 			default:
@@ -143,25 +98,12 @@ func parseDiv(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 	return in
 }
 
-func (i Intrinsic) getPackage() string {
-	pk := strings.ToLower(i.CpuID)
-	if pk == "" {
-		pk = "misc"
-	}
-	if pk == "sse4.1" || pk == "sse4.2" {
-		pk = "sse4"
-	}
-	return pk
-}
-
-var packages = make(map[string]pack)
-
-func (i Intrinsic) getFiles() pack {
+func (i Intrinsic) getFilesX86() pack {
 	pk := i.getPackage()
 	p, ok := packages[pk]
 	if !ok {
 		var err error
-		err = os.MkdirAll("x86/"+pk, 666)
+		err = os.MkdirAll("x86/"+pk, 0777)
 		if err != nil {
 			panic(err)
 		}
@@ -186,7 +128,7 @@ func (i Intrinsic) getFiles() pack {
 	return p
 }
 
-func fixFuncName(in string) string {
+func fixFuncNameX86(in string) string {
 	if strings.HasPrefix(in, "_m_") {
 		in = strings.TrimPrefix(in, "_m_")
 	}
@@ -205,7 +147,7 @@ func fixFuncName(in string) string {
 	return out
 }
 
-func parseTable(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
+func parseTableX86(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 	in.Performance = make(map[string]Timing)
 
 	for {
@@ -257,57 +199,7 @@ func parseTable(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 	return in
 }
 
-func getText(z *html.Tokenizer) string {
-	tt := z.Next()
-	switch tt {
-	case html.ErrorToken:
-		panic(z.Err())
-	case html.TextToken:
-		return string(z.Text())
-	}
-	return ""
-}
-
-func getTextR(z *html.Tokenizer) string {
-	r := ""
-	depth := 1
-	for {
-		tt := z.Next()
-		switch tt {
-		case html.ErrorToken:
-			panic(z.Err())
-		case html.TextToken:
-			r += string(z.Text())
-		case html.StartTagToken:
-			tn, _ := z.TagName()
-			tns := strings.ToLower(string(tn))
-			switch tns {
-			case "div":
-				r += "\r"
-				depth++
-			case "span":
-				r += "'"
-				depth++
-			}
-		case html.EndTagToken:
-			tn, _ := z.TagName()
-			tns := strings.ToLower(string(tn))
-			switch tns {
-			case "div":
-				depth--
-			case "span":
-				r += "'"
-				depth--
-			}
-		}
-		if depth == 0 {
-			return r
-		}
-	}
-	return r
-}
-
-func fixType(s string) string {
+func fixTypeX86(s string) string {
 	pointer := false
 	if strings.Contains(s, "*") {
 		pointer = true
@@ -380,94 +272,7 @@ func fixType(s string) string {
 
 }
 
-var camelingRegex = regexp.MustCompile("[0-9A-Za-z]+")
-
-func CamelCase(src string) string {
-	byteSrc := []byte(src)
-	chunks := camelingRegex.FindAll(byteSrc, -1)
-	for idx, val := range chunks {
-		if idx > 0 {
-			chunks[idx] = bytes.Title(val)
-		}
-	}
-	return string(bytes.Join(chunks, nil))
-}
-
-func (p Params) HasParam(s string) bool {
-	for _, param := range p {
-		if param.Name == s {
-			return true
-		}
-	}
-	return false
-}
-
-var usedNames = make(map[string]struct{})
-
-func (in *Intrinsic) fixup() {
-	in.Package = in.getPackage()
-	name := in.Name
-	next := 2
-	for {
-		_, ok := usedNames[in.Package+name]
-		if !ok {
-			break
-		}
-		fmt.Println("Warning: Name conflict:", in.Package+"/"+name+"(...)")
-		name = fmt.Sprintf("%s%d", in.Name, next)
-		next++
-
-	}
-	usedNames[in.Package+name] = struct{}{}
-	in.Name = name
-	a := []rune(name)
-	a[0] = unicode.ToLower(a[0])
-
-	in.AsmName = string(a)
-	for i, param := range in.Params {
-		switch param.Name {
-		case "type":
-			in.Params[i].Name = "typ"
-		case "func":
-			in.Params[i].Name = "fnc"
-		case "imm8":
-			in.Params[i].Type = "byte"
-		}
-		if param.Type == "" {
-			in.Params[i].Type = "uintptr"
-		}
-	}
-
-}
-
-func (in Intrinsic) shouldSkip() bool {
-	if in.RetType == "uintptr" {
-		return true
-	}
-	if strings.HasPrefix(in.RetType, "*") {
-		return true
-	}
-	for _, param := range in.Params {
-		if param.Type == "uintptr" {
-			return true
-		}
-	}
-	return false
-}
-
-func (in Intrinsic) shouldRework() bool {
-	if strings.HasPrefix(in.RetType, "*") {
-		return true
-	}
-	for _, param := range in.Params {
-		if strings.HasPrefix(param.Type, "*") {
-			return true
-		}
-	}
-	return false
-}
-
-func (in Intrinsic) hasImmediate() bool {
+func (in Intrinsic) hasImmediateX86() bool {
 	for _, param := range in.Params {
 		if strings.Contains(param.Name, "imm") {
 			return true
@@ -476,14 +281,14 @@ func (in Intrinsic) hasImmediate() bool {
 	return false
 }
 
-func (in Intrinsic) Finish() {
+func (in Intrinsic) FinishX86() {
 	if in.Name == "" {
 		return
 	}
 
 	in.fixup()
 
-	out := in.getFiles().goFile
+	out := in.getFilesX86().goFile
 
 	if in.shouldSkip() {
 		fmt.Fprintf(out, "\n// Skipped: %s. Contains pointer parameter.\n\n", in.OrgName)
@@ -507,7 +312,7 @@ func (in Intrinsic) Finish() {
 	if rework {
 		fmt.Fprintln(out, "//\n// FIXME: Will likely need to be reworked (has pointer parameter).")
 	}
-	if in.hasImmediate() {
+	if in.hasImmediateX86() {
 		fmt.Fprintln(out, "//\n// FIXME: Requires compiler support (has immediate)")
 	}
 	fmt.Fprint(out, "func ", in.Name, "(")
@@ -543,9 +348,9 @@ func (in Intrinsic) Finish() {
 	}
 	for i, param := range in.Params {
 		pn := param.Name
-		if param.getNative() != "" {
+		if param.getNativeX86() != "" {
 			// cast
-			pn = param.getNative() + "(" + pn + ")"
+			pn = param.getNativeX86() + "(" + pn + ")"
 		}
 		fmt.Fprint(out, pn)
 		if i != len(in.Params)-1 {
@@ -563,24 +368,24 @@ func (in Intrinsic) Finish() {
 	params = []string{}
 	for _, param := range in.Params {
 		typ := param.Type
-		ot := param.getNative()
+		ot := param.getNativeX86()
 		if ot != "" {
 			typ = ot
 		}
 		params = append(params, fmt.Sprint(param.Name, " ", typ))
 	}
-	if retparam.getNative() != "" {
-		retparam = Param{Type: retparam.getNative()}
+	if retparam.getNativeX86() != "" {
+		retparam = Param{Type: retparam.getNativeX86()}
 	}
 	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n\n")
 
 	//emptyType(in.RetType)
 	// ASM
-	out = in.getFiles().asmFile
+	out = in.getFilesX86().asmFile
 	fmt.Fprint(out, "// func ", in.AsmName, "(")
 	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n")
 	fmt.Fprint(out, "TEXT ·"+in.AsmName+"(SB),7,$0\n")
-	load, off := in.Params.getAsm()
+	load, off := in.Params.getAsmX86()
 	fmt.Fprintln(out, load)
 	retparam = Param{Type: in.RetType}
 
@@ -616,12 +421,12 @@ func (in Intrinsic) Finish() {
 			}
 		}
 
-		if retparam.getSize() > 0 && retparam.getReg(0) == "R8" {
+		if retparam.getSizeX86() > 0 && retparam.getReg(0) == "R8" {
 			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" $0, ret+"+strconv.Itoa(off)+"(FP)\n")
-		} else if retparam.getSize() > 8 {
+		} else if retparam.getSizeX86() > 8 {
 			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+rreg+", ret+"+strconv.Itoa(off)+"(FP)\n")
 		} else {
-			fmt.Fprintf(out, "\t// Return size: %d\n", retparam.getSize())
+			fmt.Fprintf(out, "\t// Return size: %d\n", retparam.getSizeX86())
 		}
 
 	}
@@ -629,7 +434,7 @@ func (in Intrinsic) Finish() {
 	fmt.Fprint(out, "\n")
 }
 
-func (p Param) getSize() int {
+func (p Param) getSizeX86() int {
 	t := p.Type
 	tsplit := strings.Split(t, ".")
 	if len(tsplit) > 1 {
@@ -657,7 +462,7 @@ func (p Param) getSize() int {
 	return 0
 }
 
-func (p Param) getNative() string {
+func (p Param) getNativeX86() string {
 	t := p.Type
 	tsplit := strings.Split(t, ".")
 	if len(tsplit) > 1 {
@@ -695,59 +500,11 @@ func (p Param) getNative() string {
 	return ""
 }
 
-func (p Param) getPostfix() string {
-	size := p.getSize()
-	switch size {
-	case 1:
-		return "B"
-	case 2:
-		return "W"
-	case 4:
-		return "L"
-	case 8:
-		return "Q"
-	case 16:
-		return "OU"
-	}
-	return ""
-}
-
-func (p Param) getReg(n int) string {
-	if n > 7 {
-		return ""
-	}
-	t := p.Type
-	tsplit := strings.Split(t, ".")
-	if len(tsplit) > 1 {
-		t = tsplit[1]
-	}
-
-	switch t {
-	case "M64", "M64i":
-		return "M" + strconv.Itoa(n)
-	case "M128", "M128i", "M128d":
-		return "X" + strconv.Itoa(n)
-	case "M256", "M256i", "M256d":
-		return "Y" + strconv.Itoa(n)
-	case "M512", "M512i", "M512d":
-		return "Z" + strconv.Itoa(n)
-	case "int", "uint", "int64", "uint64", "float64", "uintptr", "Mmask64":
-		return "R" + strconv.Itoa(8+n)
-	case "int32", "uint32", "float32", "Mmask32":
-		return "R" + strconv.Itoa(8+n)
-	case "int16", "uint16", "Mmask16":
-		return "R" + strconv.Itoa(8+n)
-	case "int8", "uint8", "Mmask8", "byte":
-		return "R" + strconv.Itoa(8+n)
-	}
-	return ""
-}
-
-func (p Params) getAsm() (string, int) {
+func (p Params) getAsmX86() (string, int) {
 	out := ""
 	atbytes := 0
 	for i, param := range p {
-		size := param.getSize()
+		size := param.getSizeX86()
 		if size == 0 {
 			return "\t// FIXME: Unimplemented. Unknown size of type " + param.Type + "\n", 0
 		}
@@ -770,102 +527,4 @@ func (p Params) getAsm() (string, int) {
 		atbytes += size
 	}
 	return out, atbytes
-}
-
-func emptyType(s string) string {
-	if strings.HasPrefix(s, "int") {
-		return "0"
-	}
-	if strings.HasPrefix(s, "uint") {
-		return "0"
-	}
-	if strings.HasPrefix(s, "Mmask") {
-		return s + "(0)"
-	}
-	if strings.HasPrefix(s, "float") {
-		return "0.0"
-	}
-	switch s {
-	case "string":
-		return `""`
-	case "byte":
-		return "0"
-	case "unsafe.Pointer":
-		return s + "(uintptr(0))"
-	default:
-		return s + "{}"
-	}
-}
-
-// WrapString wraps the given string within lim width in characters.
-//
-// Wrapping is currently naive and only happens at white-space. A future
-// version of the library will implement smarter wrapping. This means that
-// pathological cases can dramatically reach past the limit, such as a very
-// long word.
-func WrapString(s string, lim uint) string {
-	// Initialize a buffer with a slightly larger size to account for breaks
-	init := make([]byte, 0, len(s))
-	buf := bytes.NewBuffer(init)
-
-	var current uint
-	var wordBuf, spaceBuf bytes.Buffer
-	var skipline bool
-
-	for _, char := range s {
-		if char == '\n' {
-			if wordBuf.Len() == 0 {
-				if current+uint(spaceBuf.Len()) > lim {
-					current = 0
-				} else {
-					current += uint(spaceBuf.Len())
-					spaceBuf.WriteTo(buf)
-				}
-				spaceBuf.Reset()
-			} else {
-				current += uint(spaceBuf.Len() + wordBuf.Len())
-				spaceBuf.WriteTo(buf)
-				spaceBuf.Reset()
-				wordBuf.WriteTo(buf)
-				wordBuf.Reset()
-			}
-			buf.WriteRune(char)
-			current = 0
-			skipline = false
-		} else if unicode.IsSpace(char) {
-			if current == 0 && spaceBuf.Len() > 2 {
-				skipline = true
-			}
-
-			if spaceBuf.Len() == 0 || wordBuf.Len() > 0 {
-				current += uint(spaceBuf.Len() + wordBuf.Len())
-				spaceBuf.WriteTo(buf)
-				spaceBuf.Reset()
-				wordBuf.WriteTo(buf)
-				wordBuf.Reset()
-			}
-
-			spaceBuf.WriteRune(char)
-		} else {
-
-			wordBuf.WriteRune(char)
-
-			if current+uint(spaceBuf.Len()+wordBuf.Len()) > lim && uint(wordBuf.Len()) < lim && !skipline {
-				buf.WriteRune('\n')
-				current = 0
-				spaceBuf.Reset()
-			}
-		}
-	}
-
-	if wordBuf.Len() == 0 {
-		if current+uint(spaceBuf.Len()) <= lim {
-			spaceBuf.WriteTo(buf)
-		}
-	} else {
-		spaceBuf.WriteTo(buf)
-		wordBuf.WriteTo(buf)
-	}
-
-	return buf.String()
 }
