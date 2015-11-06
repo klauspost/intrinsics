@@ -47,10 +47,9 @@ type Perf map[string]Timing
 //var m64, m128, m256, m512, gen *os.File
 //var m64a, m128a, m256a, m512a, gena *os.File
 type pack struct {
-	goFile    *os.File
-	toAsmFile *os.File
-	instrFile *os.File
-	asmFile   *os.File
+	goFile      *os.File
+	toInstrFile *os.File
+	asmFile     *os.File
 }
 
 var genimport = `import . "github.com/klauspost/intrinsics/x86"`
@@ -376,7 +375,6 @@ func getTextR(z *html.Tokenizer) string {
 			return r
 		}
 	}
-	return r
 }
 
 func fixType(s string, importname string) string {

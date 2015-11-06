@@ -50,8 +50,6 @@ func parseHTMLX86(f io.Reader) error {
 			}
 		}
 	}
-	in.FinishX86()
-	return nil
 }
 
 func parseDivX86(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
@@ -196,7 +194,6 @@ func parseTableX86(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 			}
 		}
 	}
-	return in
 }
 
 func fixTypeX86(s string) string {
@@ -338,7 +335,6 @@ func (in Intrinsic) FinishX86() {
 			fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
 		}
 	}
-	fmt.Fprintln(out, "\n")
 
 	// Attempts to write a return value
 	if in.RetType != "" {

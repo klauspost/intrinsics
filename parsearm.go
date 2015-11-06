@@ -330,7 +330,6 @@ func (in Intrinsic) FinishArm() {
 		params = append(params, fmt.Sprint(param.Name, " ", param.Type))
 	}
 
-	retparam := Param{Type: in.RetType}
 	rettypeprint := in.RetType
 	if strings.Contains(rettypeprint, ".") {
 		rettypeprint = "(dst " + rettypeprint + ")"
@@ -375,76 +374,6 @@ func (in Intrinsic) FinishArm() {
 
 	/* SKIP ASM DECL */
 	return
-
-	// ASM declaration
-	fmt.Fprint(out, "func ", in.AsmName, "(")
-	params = []string{}
-	for _, param := range in.Params {
-		typ := param.Type
-		ot := param.getNativeArm()
-		if ot != "" {
-			typ = ot
-		}
-		params = append(params, fmt.Sprint(param.Name, " ", typ))
-	}
-	if retparam.getNativeArm() != "" {
-		retparam = Param{Type: retparam.getNativeArm()}
-	}
-	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n\n")
-
-	//emptyType(in.RetType)
-	// ASM
-	out = in.getFilesArm().asmFile
-	fmt.Fprint(out, "// func ", in.AsmName, "(")
-	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n")
-	fmt.Fprint(out, "TEXT ·"+in.AsmName+"(SB),7,$0\n")
-	load, off := in.Params.getAsmArm()
-	fmt.Fprintln(out, load)
-	retparam = Param{Type: in.RetType}
-
-	fmt.Fprint(out, "\t// TODO: Code missing")
-	if in.Instruction != "..." && in.Instruction != "" {
-		if len(params) == 1 {
-			if retparam.getReg(0) == "X0" && in.Params[0].getReg(0) == "X0" {
-				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
-			} else if retparam.getReg(0) == "M0" && in.Params[0].getReg(0) == "M0" {
-				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
-			} else if in.Params[0].getReg(0) != "" {
-				fmt.Fprintf(out, " - could be:\n\t// %s %s", in.Instruction, in.Params[0].getReg(0))
-			} else {
-				fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
-			}
-		} else if len(params) == 2 {
-			fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[1].getReg(1))
-		} else {
-			fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
-		}
-	}
-	fmt.Fprintln(out, "\n")
-
-	// Attempts to write a return value
-	if in.RetType != "" {
-		// Guess a return reg
-		rreg := retparam.getReg(0)
-
-		if len(params) > 0 {
-			rtry := retparam.getReg(len(params) - 1)
-			if rtry != "" {
-				rreg = rtry
-			}
-		}
-
-		if retparam.getSizeArm() > 0 && retparam.getReg(0) == "R8" {
-			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" $0, ret+"+strconv.Itoa(off)+"(FP)\n")
-		} else if retparam.getSizeArm() > 8 {
-			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+rreg+", ret+"+strconv.Itoa(off)+"(FP)\n")
-		} else {
-			fmt.Fprintf(out, "\t// Return size: %d\n", retparam.getSizeArm())
-		}
-
-	}
-	fmt.Fprint(out, "\tRET\n")
-	fmt.Fprint(out, "\n")
 }
 
 func (p Param) getSizeArm() int {
