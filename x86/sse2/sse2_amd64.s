@@ -37,7 +37,7 @@ TEXT ·addEpi8(SB),7,$0
 	MOVOU b+16(FP),X1
 
 	// TODO: Code missing - could be:
-	// PADDB X0, X1
+	PADDB X0, X1
 
 	MOVOU X1, ret+32(FP)
 	RET
@@ -1378,7 +1378,11 @@ TEXT ·setEpi32(SB),7,$0
 
 	// TODO: Code missing
 
-	MOVOU X3, ret+32(FP)
+
+	MOVL R8, ret+32(FP)
+	MOVL R9, ret+36(FP)
+	MOVL R10, ret+40(FP)
+	MOVL R11, ret+44(FP)
 	RET
 
 // func setEpi64(e1 x86.M64, e0 x86.M64) [16]byte

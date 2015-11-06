@@ -40,7 +40,7 @@ TEXT ·addPs(SB),7,$0
 	MOVOU b+16(FP),X1
 
 	// TODO: Code missing - could be:
-	// ADDPS X0, X1
+	ADDPS X0, X1
 
 	MOVOU X1, ret+32(FP)
 	RET
@@ -1507,7 +1507,7 @@ TEXT ·mulPs(SB),7,$0
 	MOVOU b+16(FP),X1
 
 	// TODO: Code missing - could be:
-	// MULPS X0, X1
+	MULPS X0, X1
 
 	MOVOU X1, ret+32(FP)
 	RET
@@ -1853,13 +1853,7 @@ TEXT ·mMSETFLUSHZEROMODE(SB),7,$0
 
 // func setPs(e3 float32, e2 float32, e1 float32, e0 float32) [4]float32
 TEXT ·setPs(SB),7,$0
-	MOVL e3+0(FP),R8
-	MOVL e2+4(FP),R9
-	MOVL e1+8(FP),R10
-	MOVL e0+12(FP),R11
-
-	// TODO: Code missing
-
+	MOVOU e3+0(FP), X3
 	MOVOU X3, ret+16(FP)
 	RET
 
