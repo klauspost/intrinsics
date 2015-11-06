@@ -24,11 +24,8 @@ func parsesimd() {
 	parseHTMLSimd(f)
 	for _, pk := range packages {
 		pk.goFile.Close()
-		pk.toAsmFile.WriteString("}\n")
-		pk.toAsmFile.Close()
-		pk.instrFile.WriteString(")\n")
-		pk.instrFile.Close()
-
+		pk.toInstrFile.WriteString("}\n")
+		pk.toInstrFile.Close()
 	}
 }
 
@@ -54,8 +51,6 @@ func parseHTMLSimd(f io.Reader) error {
 			}
 		}
 	}
-	in.FinishSimd()
-	return nil
 }
 
 func parseDivSimd(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
@@ -111,7 +106,7 @@ func (i Intrinsic) getFilesSimd() pack {
 		if err != nil {
 			panic(err)
 		}
-		err = os.MkdirAll("codegen/"+pk, 0777)
+		err = os.MkdirAll("codegen/", 0777)
 		if err != nil {
 			panic(err)
 		}
@@ -127,51 +122,16 @@ func (i Intrinsic) getFilesSimd() pack {
 
 		p.goFile.WriteString(`var _ = simd.M128{}  // Make sure we use simd package` + "\n\n")
 
-		p.toAsmFile, err = os.Create("codegen/" + pk + ".go")
+		p.toInstrFile, err = os.Create("codegen/" + pk + ".go")
 		if err != nil {
 			panic(err)
 		}
-		p.toAsmFile.WriteString("package codegen\n\n")
-		p.toAsmFile.WriteString("import (\n")
-		p.toAsmFile.WriteString("\t\"github.com/bjwbell/gensimd/simd/" + pk + "\"\n")
-		p.toAsmFile.WriteString(")\n")
-		p.toAsmFile.WriteString("\n")
-		p.toAsmFile.WriteString("var " + pk + "ToGoAsm = map[" + pk + ".Instr]Instr{\n")
-
-		p.instrFile, err = os.Create("codegen/" + pk + "/instructions.go")
-		if err != nil {
-			panic(err)
-		}
-		p.instrFile.WriteString("package " + pk + "\n\n")
-		if err != nil {
-			panic(err)
-		}
-		p.instrFile.WriteString("type Instr int\n")
-		p.instrFile.WriteString(`
-// SSE2 types
-type M128i [16]byte
-type M128 [4]float32
-type M128d [2]float64
-
-// AVX
-type M256 [8]float32
-type M256i [32]byte
-type M256d [4]float64
-
-// AVX2
-type M512 [16]float32
-type M512i [64]byte
-type M512d [8]float64
-
-type Mmask8 uint8
-type Mmask16 uint16
-type Mmask32 uint32
-type Mmask64 uint64
-
-const (
-	INVALID Instr = iota
-`)
-
+		p.toInstrFile.WriteString("package codegen\n\n")
+		p.toInstrFile.WriteString("import (\n")
+		p.toInstrFile.WriteString("\t\"github.com/bjwbell/gensimd/simd/" + pk + "\"\n")
+		p.toInstrFile.WriteString(")\n")
+		p.toInstrFile.WriteString("\n")
+		p.toInstrFile.WriteString(getInstrTable(pk))
 		packages[pk] = p
 	}
 	return p
@@ -245,80 +205,10 @@ func parseTableSimd(z *html.Tokenizer, in *Intrinsic) *Intrinsic {
 			}
 		}
 	}
-	return in
 }
 
 func fixTypeSimd(s string) string {
-	pointer := false
-	if strings.Contains(s, "*") {
-		pointer = true
-	}
-	r := CamelCase(s)
-	if len(r) == 0 {
-		return ""
-	}
-	rb := []byte(r)
-	if rb[0] == 'm' {
-		rb[0] = 'M'
-		r = "simd." + string(rb)
-	}
-
-	switch r {
-	case "void":
-		if pointer {
-			r = "uintptr"
-		} else {
-			r = ""
-		}
-	case "char", "charConst":
-		r = "byte"
-	case "unsignedChar":
-		r = "uint8"
-	case "unsignedShort":
-		r = "uint16"
-	case "sizeT", "constInt", "intConst":
-		r = "int"
-	case "int64Const":
-		r = "int"
-	case "unsignedInt64":
-		r = "uint64"
-	case "unsigned", "constUnsignedInt":
-		r = "uint"
-	case "unsignedInt", "unsignedLong":
-		r = "uint32"
-	case "unsignedInt32":
-		r = "uint32"
-	case "voidConst":
-		r = "uintptr"
-	case "constVoid":
-		r = "uintptr"
-	case "mem_addr":
-		r = "uintptr"
-	case "float", "constFloat":
-		r = "float32"
-	case "double", "constDouble":
-		r = "float64"
-	case "short":
-		r = "int16"
-	case "floatConst":
-		r = "uintptr"
-	case "doubleConst":
-		r = "uintptr"
-	case "longLong":
-		r = "int64"
-	case "constMMCMPINTENUM":
-		r = "uint8"
-	}
-
-	if r == "uintptr" || r == "" {
-		return r
-	}
-
-	if pointer {
-		r = "*" + r
-	}
-	return r
-
+	return fixType(s, "simd")
 }
 
 var wroteAsm = make(map[string]struct{})
@@ -375,21 +265,37 @@ func (in Intrinsic) FinishSimd() {
 	fmt.Fprintln(out, "}")
 	fmt.Fprintln(out, "")
 
-	out = in.getFilesSimd().toAsmFile
+	out = in.getFilesSimd().toInstrFile
 	if in.Instruction == "..." || in.Instruction == "" {
 		fmt.Fprintln(out, "\t// Add Composite: "+in.Package+"."+in.Name)
 	} else {
-		fmt.Fprintln(out, "\t"+in.Package+"."+in.Name+":"+in.Instruction+",")
+		fmt.Fprintln(out, in.makeGenSimd())
 	}
+}
 
-	if in.Instruction != "..." && in.Instruction != "" {
-		_, ok := wroteAsm[in.Package+in.Instruction]
-		if !ok {
-			out = in.getFilesSimd().instrFile
-			fmt.Fprintln(out, "\t"+in.Instruction)
+func (in Intrinsic) makeGenSimd() string {
+	name := in.Name
+	instructionName := in.Instruction
+	resultIdxOp := 1
+	varOps := ""
+	for _, p := range in.Params {
+		// for now skip instructions that use non simd.* params
+		if p.Type != "simd.M128" && p.Type != "simd.M128i" && p.Type != "simd.M128d" {
+			return ""
 		}
-		wroteAsm[in.Package+in.Instruction] = struct{}{}
+		v := fmt.Sprintf("Var: Variable{reflect.TypeOf(%v{})}", p.Type)
+		op := fmt.Sprintf("Op:  Operand{Flags: In | Out, Reg: XMM_REG, NamedReg: REG_INVALID}")
+		varOp := fmt.Sprintf("\t\t\t{%v, %v,},\n", v, op)
+		varOps += varOp
 	}
+	varOps = fmt.Sprintf("[]VarOp{\n%v\t\t},\n", varOps)
+
+	instruction := fmt.Sprintf("\t{\n\t\tName:            \"%v\",\n\t\tInstructionName: \"%v\",\n\t\tVarOps: %v\t\tResultIdxOp: %v,\n\t},", name, instructionName, varOps, resultIdxOp)
+	return instruction
+}
+
+func getInstrTable(pkg string) string {
+	return fmt.Sprintf("var %vIntrTable = []Intrinsic{\n", pkg)
 }
 
 func (p Params) getAsmSimd() (string, int) {

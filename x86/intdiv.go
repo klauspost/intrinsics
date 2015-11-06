@@ -1,5 +1,11 @@
+//+build ignore
+
 package x86
 
+import(
+	"github.com/klauspost/intrinsics/x86/sse2"
+	"github.com/klauspost/intrinsics/x86/misc"
+)
 // The instruction set does not support integer vector division. Instead, we
 // are using a method for fast integer division based on multiplication and
 // shift operations. This method is faster than simple integer division if the
