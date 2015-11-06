@@ -378,3 +378,76 @@ func getTextR(z *html.Tokenizer) string {
 	}
 	return r
 }
+
+func fixType(s string, importname string) string {
+	pointer := false
+	if strings.Contains(s, "*") {
+		pointer = true
+	}
+	r := CamelCase(s)
+	if len(r) == 0 {
+		return ""
+	}
+	rb := []byte(r)
+	if rb[0] == 'm' {
+		rb[0] = 'M'
+		r = importname + "." + string(rb)
+	}
+
+	switch r {
+	case "void":
+		if pointer {
+			r = "uintptr"
+		} else {
+			r = ""
+		}
+	case "char", "charConst":
+		r = "byte"
+	case "unsignedChar":
+		r = "uint8"
+	case "unsignedShort":
+		r = "uint16"
+	case "sizeT", "constInt", "intConst":
+		r = "int"
+	case "int64Const":
+		r = "int"
+	case "unsignedInt64":
+		r = "uint64"
+	case "unsigned", "constUnsignedInt":
+		r = "uint"
+	case "unsignedInt", "unsignedLong":
+		r = "uint32"
+	case "unsignedInt32":
+		r = "uint32"
+	case "voidConst":
+		r = "uintptr"
+	case "constVoid":
+		r = "uintptr"
+	case "mem_addr":
+		r = "uintptr"
+	case "float", "constFloat":
+		r = "float32"
+	case "double", "constDouble":
+		r = "float64"
+	case "short":
+		r = "int16"
+	case "floatConst":
+		r = "uintptr"
+	case "doubleConst":
+		r = "uintptr"
+	case "longLong":
+		r = "int64"
+	case "constMMCMPINTENUM":
+		r = "uint8"
+	}
+
+	if r == "uintptr" || r == "" {
+		return r
+	}
+
+	if pointer {
+		r = "*" + r
+	}
+	return r
+
+}
