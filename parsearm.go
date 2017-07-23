@@ -1,3 +1,5 @@
+// +build ignore
+
 package main
 
 import (
@@ -63,6 +65,10 @@ func main() {
 		pk.goFile.Close()
 		//pk.asmFile.Close()
 	}
+}
+
+func parseDesc(f io.Reader) error {
+
 }
 
 func NewIntrinsic() *Intrinsic {

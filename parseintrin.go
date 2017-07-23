@@ -55,17 +55,67 @@ const genimport = `import . "github.com/klauspost/intrinsics/x86"`
 // Downloaded from
 // https://software.intel.com/sites/landingpage/IntrinsicsGuide/#techs=MMX,SSE,SSE2,SSE3,SSSE3,SSE4_1,SSE4_2,AVX,AVX2,FMA,KNC,SVML,Other&avx512techs=AVX512F,AVX512BW,AVX512CD,AVX512DQ,AVX512ER,AVX512IFMA52,AVX512PF,AVX512VBMI
 
+var opsFile *os.File
+var gcSSAFile *os.File
+var ssa = make(map[string][]string)
+
 func main() {
 	f, err := os.Open("allintrin.html")
 	if err != nil {
 		panic(err)
 	}
 	defer f.Close()
+	opsFile, err = os.Create("x86_ops.go")
+	if err != nil {
+		panic(err)
+	}
+	opsFile.WriteString("// +build ignore\n\n")
+	defer opsFile.Close()
+
+	gcSSAFile, err = os.Create("x86_gc_add_functions.go")
+	if err != nil {
+		panic(err)
+	}
+	gcSSAFile.WriteString("// +build ignore\n\n")
+	defer gcSSAFile.Close()
 
 	parseHTML(f)
 	for _, pk := range packages {
 		pk.goFile.Close()
 		pk.asmFile.Close()
+	}
+	ssaFile, err := os.Create("x86_ssa.go")
+	if err != nil {
+		panic(err)
+	}
+	defer ssaFile.Close()
+	ssaFile.WriteString("// +build ignore\n\n")
+	for key, value := range ssa {
+		if len(value) > 0 {
+			switch key {
+			case "opregreg":
+				fmt.Fprintf(ssaFile, "// 2 ops intrinsics\n\tcase %s:\n", strings.Join(value, ", "))
+				fmt.Fprint(ssaFile, `		r := v.Reg()
+		if r != v.Args[0].Reg() {
+			v.Fatalf("input[0] and output not in same register %s", v.LongString())
+		}
+		opregreg(s, v.Op.Asm(), r, v.Args[1].Reg())
+		`)
+			case "opregregreg":
+				fmt.Fprintf(ssaFile, "// 3 reg intrinsics\n\tcase %s:\n", strings.Join(value, ", "))
+				fmt.Fprint(ssaFile, `		r := v.Reg()
+		opregregreg(s, v.Op.Asm(), r, v.Args[0].Reg(), v.Args[1].Reg())
+		`)
+			case "fpsingle":
+				fmt.Fprintf(ssaFile, "// 1 reg intrinsics\n\tcase %s:\n", strings.Join(value, ", "))
+				fmt.Fprint(ssaFile, `		p := s.Prog(v.Op.Asm())
+		p.From.Type = obj.TYPE_REG
+		p.From.Reg = v.Args[0].Reg()
+		p.To.Type = obj.TYPE_REG
+		p.To.Reg = v.Reg()
+`)
+			}
+		}
 	}
 }
 
@@ -574,7 +624,6 @@ func (in Intrinsic) Finish() {
 	}
 	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n\n")
 
-	//emptyType(in.RetType)
 	// ASM
 	out = in.getFiles().asmFile
 	fmt.Fprint(out, "// func ", in.AsmName, "(")
@@ -627,6 +676,76 @@ func (in Intrinsic) Finish() {
 	}
 	fmt.Fprint(out, "\tRET\n")
 	fmt.Fprint(out, "\n")
+
+	// Take out instructions we cannot find for now.
+	if _, ok := X86_Anames[strings.ToUpper(in.Instruction)]; !ok {
+		return
+	}
+
+
+	// Ops:
+	for {
+		name := "Intrin" + in.OrgName
+		name = CamelCase(name)
+		argslen := len(in.Params)
+		resultInArg0 := false
+		reg := ""
+		rettype := "TM128"
+		asm := in.Instruction
+		if argslen > 2 {
+			break
+		}
+		if argslen == 2 {
+			if in.Params[0].getReg(0) == "X0" && in.Params[1].getReg(0) == "X0" && retparam.getReg(0) == "X0" {
+				reg = "fp21"
+				resultInArg0 = true
+				ssa["opregreg"] = append(ssa["opregreg"], "ssa.OpAMD64"+name)
+			}
+			if in.Params[0].getReg(0) == "Y0" && in.Params[1].getReg(0) == "Y0" && retparam.getReg(0) == "Y0" {
+				reg = "avx21"
+				resultInArg0 = false
+				ssa["opregregreg"] = append(ssa["opregregreg"], "ssa.OpAMD64"+name)
+				rettype = "TM256"
+			}
+		}
+		if argslen == 1 {
+			if in.Params[0].getReg(0) == "X0" && retparam.getReg(0) == "X0" {
+				reg = "fp11"
+				resultInArg0 = true
+				ssa["fpsingle"] = append(ssa["fpsingle"], "ssa.OpAMD64"+name)
+			} else if in.Params[0].getReg(0) == "Y0" && retparam.getReg(0) == "Y0" {
+				reg = "avx11"
+				resultInArg0 = true
+				ssa["fpsingle"] = append(ssa["fpsingle"], "ssa.OpAMD64"+name)
+				rettype = "TM256"
+			} else {
+				fmt.Println(in.OrgName, params, len(params), in.Params[0].getReg(0), "->", retparam.getReg(0))
+			}
+		}
+		if reg == "" || asm == "..." || asm == "" {
+			break
+		}
+		fmt.Fprintf(opsFile, `	{name: "%s", argLength:%d, reg:%s, asm:"%s"`, name, argslen, reg, asm)
+		if resultInArg0 {
+			fmt.Fprint(opsFile, ", resultInArg0: true")
+		}
+		fmt.Fprint(opsFile, "},\n")
+
+		// GC
+		if argslen == 2 {
+			fmt.Fprintf(gcSSAFile, `addF("github.com/klauspost/intrinsics/x86/%s", "%s",`+"\n", in.Package, in.Name)
+			fmt.Fprint(gcSSAFile, `		func(s *state, n *Node, args []*ssa.Value) *ssa.Value {`+"\n")
+			fmt.Fprintf(gcSSAFile, `		return s.newValue2(%s, types.Types[%s], args[0], args[1])`+"\n", "ssa.OpAMD64"+name, rettype)
+			fmt.Fprint(gcSSAFile, "},sys.AMD64)\n\n")
+		}
+		if argslen == 1 {
+			fmt.Fprintf(gcSSAFile, `addF("github.com/klauspost/intrinsics/x86/%s", "%s",`+"\n", in.Package, in.Name)
+			fmt.Fprint(gcSSAFile, `		func(s *state, n *Node, args []*ssa.Value) *ssa.Value {`+"\n")
+			fmt.Fprintf(gcSSAFile, `		return s.newValue1(%s, types.Types[%s], args[0])`+"\n", "ssa.OpAMD64"+name, rettype)
+			fmt.Fprint(gcSSAFile, "},sys.AMD64)\n\n")
+		}
+		break
+	}
 }
 
 func (p Param) getSize() int {
