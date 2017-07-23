@@ -29,10 +29,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'SHA1MSG1'. Intrinsic: '_mm_sha1msg1_epu32'.
 // Requires SHA.
 func Sha1msg1Epu32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sha1msg1Epu32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func sha1msg1Epu32(a [16]byte, b [16]byte) [16]byte
 
 
 // Sha1msg2Epu32: Perform the final calculation for the next four SHA1 message
@@ -55,10 +53,8 @@ func sha1msg1Epu32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'SHA1MSG2'. Intrinsic: '_mm_sha1msg2_epu32'.
 // Requires SHA.
 func Sha1msg2Epu32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sha1msg2Epu32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func sha1msg2Epu32(a [16]byte, b [16]byte) [16]byte
 
 
 // Sha1nexteEpu32: Calculate SHA1 state variable E after four rounds of
@@ -75,10 +71,8 @@ func sha1msg2Epu32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'SHA1NEXTE'. Intrinsic: '_mm_sha1nexte_epu32'.
 // Requires SHA.
 func Sha1nexteEpu32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sha1nexteEpu32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func sha1nexteEpu32(a [16]byte, b [16]byte) [16]byte
 
 
 // Sha1rnds4Epu32: Perform four rounds of SHA1 operation using an initial SHA1
@@ -129,10 +123,8 @@ func sha1nexteEpu32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'SHA1RNDS4'. Intrinsic: '_mm_sha1rnds4_epu32'.
 // Requires SHA.
 func Sha1rnds4Epu32(a x86.M128i, b x86.M128i, fnc int) (dst x86.M128i) {
-	return x86.M128i(sha1rnds4Epu32([16]byte(a), [16]byte(b), fnc))
+	panic("not implemented")
 }
-
-func sha1rnds4Epu32(a [16]byte, b [16]byte, fnc int) [16]byte
 
 
 // Sha256msg1Epu32: Perform an intermediate calculation for the next four
@@ -153,10 +145,8 @@ func sha1rnds4Epu32(a [16]byte, b [16]byte, fnc int) [16]byte
 // Instruction: 'SHA256MSG1'. Intrinsic: '_mm_sha256msg1_epu32'.
 // Requires SHA.
 func Sha256msg1Epu32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sha256msg1Epu32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func sha256msg1Epu32(a [16]byte, b [16]byte) [16]byte
 
 
 // Sha256msg2Epu32: Perform the final calculation for the next four SHA256
@@ -178,10 +168,8 @@ func sha256msg1Epu32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'SHA256MSG2'. Intrinsic: '_mm_sha256msg2_epu32'.
 // Requires SHA.
 func Sha256msg2Epu32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sha256msg2Epu32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func sha256msg2Epu32(a [16]byte, b [16]byte) [16]byte
 
 
 // Sha256rnds2Epu32: Perform 2 rounds of SHA256 operation using an initial
@@ -221,8 +209,6 @@ func sha256msg2Epu32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'SHA256RNDS2'. Intrinsic: '_mm_sha256rnds2_epu32'.
 // Requires SHA.
 func Sha256rnds2Epu32(a x86.M128i, b x86.M128i, k x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sha256rnds2Epu32([16]byte(a), [16]byte(b), [16]byte(k)))
+	panic("not implemented")
 }
-
-func sha256rnds2Epu32(a [16]byte, b [16]byte, k [16]byte) [16]byte
 

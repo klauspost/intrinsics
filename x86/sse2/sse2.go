@@ -21,10 +21,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'PADDW'. Intrinsic: '_mm_add_epi16'.
 // Requires SSE2.
 func AddEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // AddEpi32: Add packed 32-bit integers in 'a' and 'b', and store the results
@@ -38,10 +36,8 @@ func addEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PADDD'. Intrinsic: '_mm_add_epi32'.
 // Requires SSE2.
 func AddEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // AddEpi64: Add packed 64-bit integers in 'a' and 'b', and store the results
@@ -55,10 +51,8 @@ func addEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PADDQ'. Intrinsic: '_mm_add_epi64'.
 // Requires SSE2.
 func AddEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addEpi64([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addEpi64(a [16]byte, b [16]byte) [16]byte
 
 
 // AddEpi8: Add packed 8-bit integers in 'a' and 'b', and store the results in
@@ -72,10 +66,8 @@ func addEpi64(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PADDB'. Intrinsic: '_mm_add_epi8'.
 // Requires SSE2.
 func AddEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // AddPd: Add packed double-precision (64-bit) floating-point elements in 'a'
@@ -89,10 +81,8 @@ func addEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'ADDPD'. Intrinsic: '_mm_add_pd'.
 // Requires SSE2.
 func AddPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(addPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func addPd(a [2]float64, b [2]float64) [2]float64
 
 
 // AddSd: Add the lower double-precision (64-bit) floating-point element in 'a'
@@ -105,10 +95,8 @@ func addPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'ADDSD'. Intrinsic: '_mm_add_sd'.
 // Requires SSE2.
 func AddSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(addSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func addSd(a [2]float64, b [2]float64) [2]float64
 
 
 // AddSi64: Add 64-bit integers 'a' and 'b', and store the result in 'dst'. 
@@ -118,10 +106,8 @@ func addSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PADDQ'. Intrinsic: '_mm_add_si64'.
 // Requires SSE2.
 func AddSi64(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addSi64(a, b))
+	panic("not implemented")
 }
-
-func addSi64(a x86.M64, b x86.M64) x86.M64
 
 
 // AddsEpi16: Add packed 16-bit integers in 'a' and 'b' using saturation, and
@@ -135,10 +121,8 @@ func addSi64(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDSW'. Intrinsic: '_mm_adds_epi16'.
 // Requires SSE2.
 func AddsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addsEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addsEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // AddsEpi8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
@@ -152,10 +136,8 @@ func addsEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PADDSB'. Intrinsic: '_mm_adds_epi8'.
 // Requires SSE2.
 func AddsEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addsEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addsEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // AddsEpu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
@@ -169,10 +151,8 @@ func addsEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PADDUSW'. Intrinsic: '_mm_adds_epu16'.
 // Requires SSE2.
 func AddsEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addsEpu16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addsEpu16(a [16]byte, b [16]byte) [16]byte
 
 
 // AddsEpu8: Add packed unsigned 8-bit integers in 'a' and 'b' using
@@ -186,10 +166,8 @@ func addsEpu16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PADDUSB'. Intrinsic: '_mm_adds_epu8'.
 // Requires SSE2.
 func AddsEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(addsEpu8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func addsEpu8(a [16]byte, b [16]byte) [16]byte
 
 
 // AndPd: Compute the bitwise AND of packed double-precision (64-bit)
@@ -203,10 +181,8 @@ func addsEpu8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'ANDPD'. Intrinsic: '_mm_and_pd'.
 // Requires SSE2.
 func AndPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(andPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func andPd(a [2]float64, b [2]float64) [2]float64
 
 
 // AndSi128: Compute the bitwise AND of 128 bits (representing integer data) in
@@ -217,10 +193,8 @@ func andPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PAND'. Intrinsic: '_mm_and_si128'.
 // Requires SSE2.
 func AndSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(andSi128([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func andSi128(a [16]byte, b [16]byte) [16]byte
 
 
 // AndnotPd: Compute the bitwise AND NOT of packed double-precision (64-bit)
@@ -234,10 +208,8 @@ func andSi128(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'ANDNPD'. Intrinsic: '_mm_andnot_pd'.
 // Requires SSE2.
 func AndnotPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(andnotPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func andnotPd(a [2]float64, b [2]float64) [2]float64
 
 
 // AndnotSi128: Compute the bitwise AND NOT of 128 bits (representing integer
@@ -248,10 +220,8 @@ func andnotPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PANDN'. Intrinsic: '_mm_andnot_si128'.
 // Requires SSE2.
 func AndnotSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(andnotSi128([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func andnotSi128(a [16]byte, b [16]byte) [16]byte
 
 
 // AvgEpu16: Average packed unsigned 16-bit integers in 'a' and 'b', and store
@@ -265,10 +235,8 @@ func andnotSi128(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PAVGW'. Intrinsic: '_mm_avg_epu16'.
 // Requires SSE2.
 func AvgEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(avgEpu16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func avgEpu16(a [16]byte, b [16]byte) [16]byte
 
 
 // AvgEpu8: Average packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -282,10 +250,8 @@ func avgEpu16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PAVGB'. Intrinsic: '_mm_avg_epu8'.
 // Requires SSE2.
 func AvgEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(avgEpu8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func avgEpu8(a [16]byte, b [16]byte) [16]byte
 
 
 // BslliSi128: Shift 'a' left by 'imm8' bytes while shifting in zeros, and
@@ -302,10 +268,8 @@ func avgEpu8(a [16]byte, b [16]byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func BslliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(bslliSi128([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func bslliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // BsrliSi128: Shift 'a' right by 'imm8' bytes while shifting in zeros, and
@@ -322,10 +286,8 @@ func bslliSi128(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func BsrliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(bsrliSi128([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func bsrliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // CastpdPs: Cast vector of type __m128d to type __m128. This intrinsic is only
@@ -337,10 +299,8 @@ func bsrliSi128(a [16]byte, imm8 byte) [16]byte
 // Instruction: ''. Intrinsic: '_mm_castpd_ps'.
 // Requires SSE2.
 func CastpdPs(a x86.M128d) (dst x86.M128) {
-	return x86.M128(castpdPs([2]float64(a)))
+	panic("not implemented")
 }
-
-func castpdPs(a [2]float64) [4]float32
 
 
 // CastpdSi128: Cast vector of type __m128d to type __m128i. This intrinsic is
@@ -352,10 +312,8 @@ func castpdPs(a [2]float64) [4]float32
 // Instruction: ''. Intrinsic: '_mm_castpd_si128'.
 // Requires SSE2.
 func CastpdSi128(a x86.M128d) (dst x86.M128i) {
-	return x86.M128i(castpdSi128([2]float64(a)))
+	panic("not implemented")
 }
-
-func castpdSi128(a [2]float64) [16]byte
 
 
 // CastpsPd: Cast vector of type __m128 to type __m128d. This intrinsic is only
@@ -367,10 +325,8 @@ func castpdSi128(a [2]float64) [16]byte
 // Instruction: ''. Intrinsic: '_mm_castps_pd'.
 // Requires SSE2.
 func CastpsPd(a x86.M128) (dst x86.M128d) {
-	return x86.M128d(castpsPd([4]float32(a)))
+	panic("not implemented")
 }
-
-func castpsPd(a [4]float32) [2]float64
 
 
 // CastpsSi128: Cast vector of type __m128 to type __m128i. This intrinsic is
@@ -382,10 +338,8 @@ func castpsPd(a [4]float32) [2]float64
 // Instruction: ''. Intrinsic: '_mm_castps_si128'.
 // Requires SSE2.
 func CastpsSi128(a x86.M128) (dst x86.M128i) {
-	return x86.M128i(castpsSi128([4]float32(a)))
+	panic("not implemented")
 }
-
-func castpsSi128(a [4]float32) [16]byte
 
 
 // Castsi128Pd: Cast vector of type __m128i to type __m128d. This intrinsic is
@@ -397,10 +351,8 @@ func castpsSi128(a [4]float32) [16]byte
 // Instruction: ''. Intrinsic: '_mm_castsi128_pd'.
 // Requires SSE2.
 func Castsi128Pd(a x86.M128i) (dst x86.M128d) {
-	return x86.M128d(castsi128Pd([16]byte(a)))
+	panic("not implemented")
 }
-
-func castsi128Pd(a [16]byte) [2]float64
 
 
 // Castsi128Ps: Cast vector of type __m128i to type __m128. This intrinsic is
@@ -412,10 +364,8 @@ func castsi128Pd(a [16]byte) [2]float64
 // Instruction: ''. Intrinsic: '_mm_castsi128_ps'.
 // Requires SSE2.
 func Castsi128Ps(a x86.M128i) (dst x86.M128) {
-	return x86.M128(castsi128Ps([16]byte(a)))
+	panic("not implemented")
 }
-
-func castsi128Ps(a [16]byte) [4]float32
 
 
 // Skipped: _mm_clflush. Contains pointer parameter.
@@ -432,10 +382,8 @@ func castsi128Ps(a [16]byte) [4]float32
 // Instruction: 'PCMPEQW'. Intrinsic: '_mm_cmpeq_epi16'.
 // Requires SSE2.
 func CmpeqEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpeqEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpeqEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpeqEpi32: Compare packed 32-bit integers in 'a' and 'b' for equality, and
@@ -449,10 +397,8 @@ func cmpeqEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PCMPEQD'. Intrinsic: '_mm_cmpeq_epi32'.
 // Requires SSE2.
 func CmpeqEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpeqEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpeqEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpeqEpi8: Compare packed 8-bit integers in 'a' and 'b' for equality, and
@@ -466,10 +412,8 @@ func cmpeqEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PCMPEQB'. Intrinsic: '_mm_cmpeq_epi8'.
 // Requires SSE2.
 func CmpeqEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpeqEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpeqEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpeqPd: Compare packed double-precision (64-bit) floating-point elements in
@@ -483,10 +427,8 @@ func cmpeqEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpeq_pd'.
 // Requires SSE2.
 func CmpeqPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpeqPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpeqPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpeqSd: Compare the lower double-precision (64-bit) floating-point elements
@@ -499,10 +441,8 @@ func cmpeqPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpeq_sd'.
 // Requires SSE2.
 func CmpeqSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpeqSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpeqSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpgePd: Compare packed double-precision (64-bit) floating-point elements in
@@ -516,10 +456,8 @@ func cmpeqSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpge_pd'.
 // Requires SSE2.
 func CmpgePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpgePd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpgePd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpgeSd: Compare the lower double-precision (64-bit) floating-point elements
@@ -533,10 +471,8 @@ func cmpgePd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpge_sd'.
 // Requires SSE2.
 func CmpgeSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpgeSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpgeSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpgtEpi16: Compare packed 16-bit integers in 'a' and 'b' for greater-than,
@@ -550,10 +486,8 @@ func cmpgeSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PCMPGTW'. Intrinsic: '_mm_cmpgt_epi16'.
 // Requires SSE2.
 func CmpgtEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpgtEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpgtEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpgtEpi32: Compare packed 32-bit integers in 'a' and 'b' for greater-than,
@@ -567,10 +501,8 @@ func cmpgtEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PCMPGTD'. Intrinsic: '_mm_cmpgt_epi32'.
 // Requires SSE2.
 func CmpgtEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpgtEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpgtEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpgtEpi8: Compare packed 8-bit integers in 'a' and 'b' for greater-than,
@@ -584,10 +516,8 @@ func cmpgtEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PCMPGTB'. Intrinsic: '_mm_cmpgt_epi8'.
 // Requires SSE2.
 func CmpgtEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpgtEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpgtEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpgtPd: Compare packed double-precision (64-bit) floating-point elements in
@@ -601,10 +531,8 @@ func cmpgtEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpgt_pd'.
 // Requires SSE2.
 func CmpgtPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpgtPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpgtPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpgtSd: Compare the lower double-precision (64-bit) floating-point elements
@@ -617,10 +545,8 @@ func cmpgtPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpgt_sd'.
 // Requires SSE2.
 func CmpgtSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpgtSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpgtSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmplePd: Compare packed double-precision (64-bit) floating-point elements in
@@ -634,10 +560,8 @@ func cmpgtSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmple_pd'.
 // Requires SSE2.
 func CmplePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmplePd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmplePd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpleSd: Compare the lower double-precision (64-bit) floating-point elements
@@ -650,10 +574,8 @@ func cmplePd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmple_sd'.
 // Requires SSE2.
 func CmpleSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpleSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpleSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpltEpi16: Compare packed 16-bit integers in 'a' and 'b' for less-than, and
@@ -668,10 +590,8 @@ func cmpleSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PCMPGTW'. Intrinsic: '_mm_cmplt_epi16'.
 // Requires SSE2.
 func CmpltEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpltEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpltEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpltEpi32: Compare packed 32-bit integers in 'a' and 'b' for less-than, and
@@ -686,10 +606,8 @@ func cmpltEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PCMPGTD'. Intrinsic: '_mm_cmplt_epi32'.
 // Requires SSE2.
 func CmpltEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpltEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpltEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpltEpi8: Compare packed 8-bit integers in 'a' and 'b' for less-than, and
@@ -704,10 +622,8 @@ func cmpltEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PCMPGTB'. Intrinsic: '_mm_cmplt_epi8'.
 // Requires SSE2.
 func CmpltEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(cmpltEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func cmpltEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // CmpltPd: Compare packed double-precision (64-bit) floating-point elements in
@@ -721,10 +637,8 @@ func cmpltEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmplt_pd'.
 // Requires SSE2.
 func CmpltPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpltPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpltPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpltSd: Compare the lower double-precision (64-bit) floating-point elements
@@ -737,10 +651,8 @@ func cmpltPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmplt_sd'.
 // Requires SSE2.
 func CmpltSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpltSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpltSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpneqPd: Compare packed double-precision (64-bit) floating-point elements
@@ -754,10 +666,8 @@ func cmpltSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpneq_pd'.
 // Requires SSE2.
 func CmpneqPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpneqPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpneqPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpneqSd: Compare the lower double-precision (64-bit) floating-point
@@ -770,10 +680,8 @@ func cmpneqPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpneq_sd'.
 // Requires SSE2.
 func CmpneqSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpneqSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpneqSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpngePd: Compare packed double-precision (64-bit) floating-point elements
@@ -788,10 +696,8 @@ func cmpneqSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpnge_pd'.
 // Requires SSE2.
 func CmpngePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpngePd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpngePd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpngeSd: Compare the lower double-precision (64-bit) floating-point
@@ -805,10 +711,8 @@ func cmpngePd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpnge_sd'.
 // Requires SSE2.
 func CmpngeSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpngeSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpngeSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpngtPd: Compare packed double-precision (64-bit) floating-point elements
@@ -822,10 +726,8 @@ func cmpngeSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpngt_pd'.
 // Requires SSE2.
 func CmpngtPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpngtPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpngtPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpngtSd: Compare the lower double-precision (64-bit) floating-point
@@ -839,10 +741,8 @@ func cmpngtPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpngt_sd'.
 // Requires SSE2.
 func CmpngtSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpngtSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpngtSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpnlePd: Compare packed double-precision (64-bit) floating-point elements
@@ -856,10 +756,8 @@ func cmpngtSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpnle_pd'.
 // Requires SSE2.
 func CmpnlePd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpnlePd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpnlePd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpnleSd: Compare the lower double-precision (64-bit) floating-point
@@ -873,10 +771,8 @@ func cmpnlePd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpnle_sd'.
 // Requires SSE2.
 func CmpnleSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpnleSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpnleSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpnltPd: Compare packed double-precision (64-bit) floating-point elements
@@ -890,10 +786,8 @@ func cmpnleSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpnlt_pd'.
 // Requires SSE2.
 func CmpnltPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpnltPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpnltPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpnltSd: Compare the lower double-precision (64-bit) floating-point
@@ -907,10 +801,8 @@ func cmpnltPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpnlt_sd'.
 // Requires SSE2.
 func CmpnltSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpnltSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpnltSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpordPd: Compare packed double-precision (64-bit) floating-point elements
@@ -924,10 +816,8 @@ func cmpnltSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpord_pd'.
 // Requires SSE2.
 func CmpordPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpordPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpordPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpordSd: Compare the lower double-precision (64-bit) floating-point
@@ -941,10 +831,8 @@ func cmpordPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpord_sd'.
 // Requires SSE2.
 func CmpordSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpordSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpordSd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpunordPd: Compare packed double-precision (64-bit) floating-point elements
@@ -958,10 +846,8 @@ func cmpordSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPPD'. Intrinsic: '_mm_cmpunord_pd'.
 // Requires SSE2.
 func CmpunordPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpunordPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpunordPd(a [2]float64, b [2]float64) [2]float64
 
 
 // CmpunordSd: Compare the lower double-precision (64-bit) floating-point
@@ -975,10 +861,8 @@ func cmpunordPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'CMPSD'. Intrinsic: '_mm_cmpunord_sd'.
 // Requires SSE2.
 func CmpunordSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(cmpunordSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cmpunordSd(a [2]float64, b [2]float64) [2]float64
 
 
 // ComieqSd: Compare the lower double-precision (64-bit) floating-point element
@@ -989,10 +873,8 @@ func cmpunordSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'COMISD'. Intrinsic: '_mm_comieq_sd'.
 // Requires SSE2.
 func ComieqSd(a x86.M128d, b x86.M128d) int {
-	return int(comieqSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func comieqSd(a [2]float64, b [2]float64) int
 
 
 // ComigeSd: Compare the lower double-precision (64-bit) floating-point element
@@ -1004,10 +886,8 @@ func comieqSd(a [2]float64, b [2]float64) int
 // Instruction: 'COMISD'. Intrinsic: '_mm_comige_sd'.
 // Requires SSE2.
 func ComigeSd(a x86.M128d, b x86.M128d) int {
-	return int(comigeSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func comigeSd(a [2]float64, b [2]float64) int
 
 
 // ComigtSd: Compare the lower double-precision (64-bit) floating-point element
@@ -1018,10 +898,8 @@ func comigeSd(a [2]float64, b [2]float64) int
 // Instruction: 'COMISD'. Intrinsic: '_mm_comigt_sd'.
 // Requires SSE2.
 func ComigtSd(a x86.M128d, b x86.M128d) int {
-	return int(comigtSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func comigtSd(a [2]float64, b [2]float64) int
 
 
 // ComileSd: Compare the lower double-precision (64-bit) floating-point element
@@ -1033,10 +911,8 @@ func comigtSd(a [2]float64, b [2]float64) int
 // Instruction: 'COMISD'. Intrinsic: '_mm_comile_sd'.
 // Requires SSE2.
 func ComileSd(a x86.M128d, b x86.M128d) int {
-	return int(comileSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func comileSd(a [2]float64, b [2]float64) int
 
 
 // ComiltSd: Compare the lower double-precision (64-bit) floating-point element
@@ -1047,10 +923,8 @@ func comileSd(a [2]float64, b [2]float64) int
 // Instruction: 'COMISD'. Intrinsic: '_mm_comilt_sd'.
 // Requires SSE2.
 func ComiltSd(a x86.M128d, b x86.M128d) int {
-	return int(comiltSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func comiltSd(a [2]float64, b [2]float64) int
 
 
 // ComineqSd: Compare the lower double-precision (64-bit) floating-point
@@ -1062,10 +936,8 @@ func comiltSd(a [2]float64, b [2]float64) int
 // Instruction: 'COMISD'. Intrinsic: '_mm_comineq_sd'.
 // Requires SSE2.
 func ComineqSd(a x86.M128d, b x86.M128d) int {
-	return int(comineqSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func comineqSd(a [2]float64, b [2]float64) int
 
 
 // Cvtepi32Pd: Convert packed 32-bit integers in 'a' to packed double-precision
@@ -1080,10 +952,8 @@ func comineqSd(a [2]float64, b [2]float64) int
 // Instruction: 'CVTDQ2PD'. Intrinsic: '_mm_cvtepi32_pd'.
 // Requires SSE2.
 func Cvtepi32Pd(a x86.M128i) (dst x86.M128d) {
-	return x86.M128d(cvtepi32Pd([16]byte(a)))
+	panic("not implemented")
 }
-
-func cvtepi32Pd(a [16]byte) [2]float64
 
 
 // Cvtepi32Ps: Convert packed 32-bit integers in 'a' to packed single-precision
@@ -1097,10 +967,8 @@ func cvtepi32Pd(a [16]byte) [2]float64
 // Instruction: 'CVTDQ2PS'. Intrinsic: '_mm_cvtepi32_ps'.
 // Requires SSE2.
 func Cvtepi32Ps(a x86.M128i) (dst x86.M128) {
-	return x86.M128(cvtepi32Ps([16]byte(a)))
+	panic("not implemented")
 }
-
-func cvtepi32Ps(a [16]byte) [4]float32
 
 
 // CvtpdEpi32: Convert packed double-precision (64-bit) floating-point elements
@@ -1115,10 +983,8 @@ func cvtepi32Ps(a [16]byte) [4]float32
 // Instruction: 'CVTPD2DQ'. Intrinsic: '_mm_cvtpd_epi32'.
 // Requires SSE2.
 func CvtpdEpi32(a x86.M128d) (dst x86.M128i) {
-	return x86.M128i(cvtpdEpi32([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvtpdEpi32(a [2]float64) [16]byte
 
 
 // CvtpdPi32: Convert packed double-precision (64-bit) floating-point elements
@@ -1133,10 +999,8 @@ func cvtpdEpi32(a [2]float64) [16]byte
 // Instruction: 'CVTPD2PI'. Intrinsic: '_mm_cvtpd_pi32'.
 // Requires SSE2.
 func CvtpdPi32(a x86.M128d) (dst x86.M64) {
-	return x86.M64(cvtpdPi32([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvtpdPi32(a [2]float64) x86.M64
 
 
 // CvtpdPs: Convert packed double-precision (64-bit) floating-point elements in
@@ -1152,10 +1016,8 @@ func cvtpdPi32(a [2]float64) x86.M64
 // Instruction: 'CVTPD2PS'. Intrinsic: '_mm_cvtpd_ps'.
 // Requires SSE2.
 func CvtpdPs(a x86.M128d) (dst x86.M128) {
-	return x86.M128(cvtpdPs([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvtpdPs(a [2]float64) [4]float32
 
 
 // Cvtpi32Pd: Convert packed 32-bit integers in 'a' to packed double-precision
@@ -1170,10 +1032,8 @@ func cvtpdPs(a [2]float64) [4]float32
 // Instruction: 'CVTPI2PD'. Intrinsic: '_mm_cvtpi32_pd'.
 // Requires SSE2.
 func Cvtpi32Pd(a x86.M64) (dst x86.M128d) {
-	return x86.M128d(cvtpi32Pd(a))
+	panic("not implemented")
 }
-
-func cvtpi32Pd(a x86.M64) [2]float64
 
 
 // CvtpsEpi32: Convert packed single-precision (32-bit) floating-point elements
@@ -1187,10 +1047,8 @@ func cvtpi32Pd(a x86.M64) [2]float64
 // Instruction: 'CVTPS2DQ'. Intrinsic: '_mm_cvtps_epi32'.
 // Requires SSE2.
 func CvtpsEpi32(a x86.M128) (dst x86.M128i) {
-	return x86.M128i(cvtpsEpi32([4]float32(a)))
+	panic("not implemented")
 }
-
-func cvtpsEpi32(a [4]float32) [16]byte
 
 
 // CvtpsPd: Convert packed single-precision (32-bit) floating-point elements in
@@ -1206,10 +1064,8 @@ func cvtpsEpi32(a [4]float32) [16]byte
 // Instruction: 'CVTPS2PD'. Intrinsic: '_mm_cvtps_pd'.
 // Requires SSE2.
 func CvtpsPd(a x86.M128) (dst x86.M128d) {
-	return x86.M128d(cvtpsPd([4]float32(a)))
+	panic("not implemented")
 }
-
-func cvtpsPd(a [4]float32) [2]float64
 
 
 // CvtsdF64: Copy the lower double-precision (64-bit) floating-point element of
@@ -1220,10 +1076,8 @@ func cvtpsPd(a [4]float32) [2]float64
 // Instruction: 'MOVSD'. Intrinsic: '_mm_cvtsd_f64'.
 // Requires SSE2.
 func CvtsdF64(a x86.M128d) float64 {
-	return float64(cvtsdF64([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvtsdF64(a [2]float64) float64
 
 
 // CvtsdSi32: Convert the lower double-precision (64-bit) floating-point
@@ -1234,10 +1088,8 @@ func cvtsdF64(a [2]float64) float64
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si32'.
 // Requires SSE2.
 func CvtsdSi32(a x86.M128d) int {
-	return int(cvtsdSi32([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvtsdSi32(a [2]float64) int
 
 
 // CvtsdSi64: Convert the lower double-precision (64-bit) floating-point
@@ -1248,10 +1100,8 @@ func cvtsdSi32(a [2]float64) int
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si64'.
 // Requires SSE2.
 func CvtsdSi64(a x86.M128d) int64 {
-	return int64(cvtsdSi64([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvtsdSi64(a [2]float64) int64
 
 
 // CvtsdSi64x: Convert the lower double-precision (64-bit) floating-point
@@ -1262,10 +1112,8 @@ func cvtsdSi64(a [2]float64) int64
 // Instruction: 'CVTSD2SI'. Intrinsic: '_mm_cvtsd_si64x'.
 // Requires SSE2.
 func CvtsdSi64x(a x86.M128d) int64 {
-	return int64(cvtsdSi64x([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvtsdSi64x(a [2]float64) int64
 
 
 // CvtsdSs: Convert the lower double-precision (64-bit) floating-point element
@@ -1280,10 +1128,8 @@ func cvtsdSi64x(a [2]float64) int64
 // Instruction: 'CVTSD2SS'. Intrinsic: '_mm_cvtsd_ss'.
 // Requires SSE2.
 func CvtsdSs(a x86.M128, b x86.M128d) (dst x86.M128) {
-	return x86.M128(cvtsdSs([4]float32(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func cvtsdSs(a [4]float32, b [2]float64) [4]float32
 
 
 // Cvtsi128Si32: Copy the lower 32-bit integer in 'a' to 'dst'. 
@@ -1293,10 +1139,8 @@ func cvtsdSs(a [4]float32, b [2]float64) [4]float32
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi128_si32'.
 // Requires SSE2.
 func Cvtsi128Si32(a x86.M128i) int {
-	return int(cvtsi128Si32([16]byte(a)))
+	panic("not implemented")
 }
-
-func cvtsi128Si32(a [16]byte) int
 
 
 // Cvtsi128Si64: Copy the lower 64-bit integer in 'a' to 'dst'. 
@@ -1306,10 +1150,8 @@ func cvtsi128Si32(a [16]byte) int
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi128_si64'.
 // Requires SSE2.
 func Cvtsi128Si64(a x86.M128i) int64 {
-	return int64(cvtsi128Si64([16]byte(a)))
+	panic("not implemented")
 }
-
-func cvtsi128Si64(a [16]byte) int64
 
 
 // Cvtsi128Si64x: Copy the lower 64-bit integer in 'a' to 'dst'. 
@@ -1319,10 +1161,8 @@ func cvtsi128Si64(a [16]byte) int64
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi128_si64x'.
 // Requires SSE2.
 func Cvtsi128Si64x(a x86.M128i) int64 {
-	return int64(cvtsi128Si64x([16]byte(a)))
+	panic("not implemented")
 }
-
-func cvtsi128Si64x(a [16]byte) int64
 
 
 // Cvtsi32Sd: Convert the 32-bit integer 'b' to a double-precision (64-bit)
@@ -1336,10 +1176,8 @@ func cvtsi128Si64x(a [16]byte) int64
 // Instruction: 'CVTSI2SD'. Intrinsic: '_mm_cvtsi32_sd'.
 // Requires SSE2.
 func Cvtsi32Sd(a x86.M128d, b int) (dst x86.M128d) {
-	return x86.M128d(cvtsi32Sd([2]float64(a), b))
+	panic("not implemented")
 }
-
-func cvtsi32Sd(a [2]float64, b int) [2]float64
 
 
 // Cvtsi32Si128: Copy 32-bit integer 'a' to the lower elements of 'dst', and
@@ -1351,10 +1189,8 @@ func cvtsi32Sd(a [2]float64, b int) [2]float64
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi32_si128'.
 // Requires SSE2.
 func Cvtsi32Si128(a int) (dst x86.M128i) {
-	return x86.M128i(cvtsi32Si128(a))
+	panic("not implemented")
 }
-
-func cvtsi32Si128(a int) [16]byte
 
 
 // Cvtsi64Sd: Convert the 64-bit integer 'b' to a double-precision (64-bit)
@@ -1368,10 +1204,8 @@ func cvtsi32Si128(a int) [16]byte
 // Instruction: 'CVTSI2SD'. Intrinsic: '_mm_cvtsi64_sd'.
 // Requires SSE2.
 func Cvtsi64Sd(a x86.M128d, b int64) (dst x86.M128d) {
-	return x86.M128d(cvtsi64Sd([2]float64(a), b))
+	panic("not implemented")
 }
-
-func cvtsi64Sd(a [2]float64, b int64) [2]float64
 
 
 // Cvtsi64Si128: Copy 64-bit integer 'a' to the lower element of 'dst', and
@@ -1383,10 +1217,8 @@ func cvtsi64Sd(a [2]float64, b int64) [2]float64
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi64_si128'.
 // Requires SSE2.
 func Cvtsi64Si128(a int64) (dst x86.M128i) {
-	return x86.M128i(cvtsi64Si128(a))
+	panic("not implemented")
 }
-
-func cvtsi64Si128(a int64) [16]byte
 
 
 // Cvtsi64xSd: Convert the 64-bit integer 'b' to a double-precision (64-bit)
@@ -1400,10 +1232,8 @@ func cvtsi64Si128(a int64) [16]byte
 // Instruction: 'CVTSI2SD'. Intrinsic: '_mm_cvtsi64x_sd'.
 // Requires SSE2.
 func Cvtsi64xSd(a x86.M128d, b int64) (dst x86.M128d) {
-	return x86.M128d(cvtsi64xSd([2]float64(a), b))
+	panic("not implemented")
 }
-
-func cvtsi64xSd(a [2]float64, b int64) [2]float64
 
 
 // Cvtsi64xSi128: Copy 64-bit integer 'a' to the lower element of 'dst', and
@@ -1415,10 +1245,8 @@ func cvtsi64xSd(a [2]float64, b int64) [2]float64
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi64x_si128'.
 // Requires SSE2.
 func Cvtsi64xSi128(a int64) (dst x86.M128i) {
-	return x86.M128i(cvtsi64xSi128(a))
+	panic("not implemented")
 }
-
-func cvtsi64xSi128(a int64) [16]byte
 
 
 // CvtssSd: Convert the lower single-precision (32-bit) floating-point element
@@ -1433,10 +1261,8 @@ func cvtsi64xSi128(a int64) [16]byte
 // Instruction: 'CVTSS2SD'. Intrinsic: '_mm_cvtss_sd'.
 // Requires SSE2.
 func CvtssSd(a x86.M128d, b x86.M128) (dst x86.M128d) {
-	return x86.M128d(cvtssSd([2]float64(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func cvtssSd(a [2]float64, b [4]float32) [2]float64
 
 
 // CvttpdEpi32: Convert packed double-precision (64-bit) floating-point
@@ -1452,10 +1278,8 @@ func cvtssSd(a [2]float64, b [4]float32) [2]float64
 // Instruction: 'CVTTPD2DQ'. Intrinsic: '_mm_cvttpd_epi32'.
 // Requires SSE2.
 func CvttpdEpi32(a x86.M128d) (dst x86.M128i) {
-	return x86.M128i(cvttpdEpi32([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvttpdEpi32(a [2]float64) [16]byte
 
 
 // CvttpdPi32: Convert packed double-precision (64-bit) floating-point elements
@@ -1471,10 +1295,8 @@ func cvttpdEpi32(a [2]float64) [16]byte
 // Instruction: 'CVTTPD2PI'. Intrinsic: '_mm_cvttpd_pi32'.
 // Requires SSE2.
 func CvttpdPi32(a x86.M128d) (dst x86.M64) {
-	return x86.M64(cvttpdPi32([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvttpdPi32(a [2]float64) x86.M64
 
 
 // CvttpsEpi32: Convert packed single-precision (32-bit) floating-point
@@ -1489,10 +1311,8 @@ func cvttpdPi32(a [2]float64) x86.M64
 // Instruction: 'CVTTPS2DQ'. Intrinsic: '_mm_cvttps_epi32'.
 // Requires SSE2.
 func CvttpsEpi32(a x86.M128) (dst x86.M128i) {
-	return x86.M128i(cvttpsEpi32([4]float32(a)))
+	panic("not implemented")
 }
-
-func cvttpsEpi32(a [4]float32) [16]byte
 
 
 // CvttsdSi32: Convert the lower double-precision (64-bit) floating-point
@@ -1504,10 +1324,8 @@ func cvttpsEpi32(a [4]float32) [16]byte
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si32'.
 // Requires SSE2.
 func CvttsdSi32(a x86.M128d) int {
-	return int(cvttsdSi32([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvttsdSi32(a [2]float64) int
 
 
 // CvttsdSi64: Convert the lower double-precision (64-bit) floating-point
@@ -1519,10 +1337,8 @@ func cvttsdSi32(a [2]float64) int
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si64'.
 // Requires SSE2.
 func CvttsdSi64(a x86.M128d) int64 {
-	return int64(cvttsdSi64([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvttsdSi64(a [2]float64) int64
 
 
 // CvttsdSi64x: Convert the lower double-precision (64-bit) floating-point
@@ -1534,10 +1350,8 @@ func cvttsdSi64(a [2]float64) int64
 // Instruction: 'CVTTSD2SI'. Intrinsic: '_mm_cvttsd_si64x'.
 // Requires SSE2.
 func CvttsdSi64x(a x86.M128d) int64 {
-	return int64(cvttsdSi64x([2]float64(a)))
+	panic("not implemented")
 }
-
-func cvttsdSi64x(a [2]float64) int64
 
 
 // DivPd: Divide packed double-precision (64-bit) floating-point elements in
@@ -1551,10 +1365,8 @@ func cvttsdSi64x(a [2]float64) int64
 // Instruction: 'DIVPD'. Intrinsic: '_mm_div_pd'.
 // Requires SSE2.
 func DivPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(divPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func divPd(a [2]float64, b [2]float64) [2]float64
 
 
 // DivSd: Divide the lower double-precision (64-bit) floating-point element in
@@ -1568,10 +1380,8 @@ func divPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'DIVSD'. Intrinsic: '_mm_div_sd'.
 // Requires SSE2.
 func DivSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(divSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func divSd(a [2]float64, b [2]float64) [2]float64
 
 
 // ExtractEpi16: Extract a 16-bit integer from 'a', selected with 'imm8', and
@@ -1585,10 +1395,8 @@ func divSd(a [2]float64, b [2]float64) [2]float64
 //
 // FIXME: Requires compiler support (has immediate)
 func ExtractEpi16(a x86.M128i, imm8 byte) int {
-	return int(extractEpi16([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func extractEpi16(a [16]byte, imm8 byte) int
 
 
 // InsertEpi16: Copy 'a' to 'dst', and insert the 16-bit integer 'i' into 'dst'
@@ -1603,10 +1411,8 @@ func extractEpi16(a [16]byte, imm8 byte) int
 //
 // FIXME: Requires compiler support (has immediate)
 func InsertEpi16(a x86.M128i, i int, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(insertEpi16([16]byte(a), i, imm8))
+	panic("not implemented")
 }
-
-func insertEpi16(a [16]byte, i int, imm8 byte) [16]byte
 
 
 // Lfence: Perform a serializing operation on all load-from-memory instructions
@@ -1619,10 +1425,8 @@ func insertEpi16(a [16]byte, i int, imm8 byte) [16]byte
 // Instruction: 'LFENCE'. Intrinsic: '_mm_lfence'.
 // Requires SSE2.
 func Lfence()  {
-	lfence()
+	panic("not implemented")
 }
-
-func lfence() 
 
 
 // Skipped: _mm_load_pd. Contains pointer parameter.
@@ -1645,9 +1449,9 @@ func lfence()
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func LoadSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return x86.M128i{}
+	panic("not implemented")
 }
+
 
 // Skipped: _mm_load1_pd. Contains pointer parameter.
 
@@ -1665,9 +1469,9 @@ func LoadSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func LoadlEpi64(mem_addr *x86.M128iConst) (dst x86.M128i) {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return x86.M128i{}
+	panic("not implemented")
 }
+
 
 // Skipped: _mm_loadl_pd. Contains pointer parameter.
 
@@ -1688,9 +1492,9 @@ func LoadlEpi64(mem_addr *x86.M128iConst) (dst x86.M128i) {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func LoaduSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return x86.M128i{}
+	panic("not implemented")
 }
+
 
 // MaddEpi16: Multiply packed signed 16-bit integers in 'a' and 'b', producing
 // intermediate signed 32-bit integers. Horizontally add adjacent pairs of
@@ -1704,10 +1508,8 @@ func LoaduSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
 // Instruction: 'PMADDWD'. Intrinsic: '_mm_madd_epi16'.
 // Requires SSE2.
 func MaddEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(maddEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func maddEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // MaskmoveuSi128: Conditionally store 8-bit integer elements from 'a' into
@@ -1727,9 +1529,9 @@ func maddEpi16(a [16]byte, b [16]byte) [16]byte
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func MaskmoveuSi128(a x86.M128i, mask x86.M128i, mem_addr *byte)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // MaxEpi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
 // maximum values in 'dst'. 
@@ -1746,10 +1548,8 @@ func MaskmoveuSi128(a x86.M128i, mask x86.M128i, mem_addr *byte)  {
 // Instruction: 'PMAXSW'. Intrinsic: '_mm_max_epi16'.
 // Requires SSE2.
 func MaxEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(maxEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func maxEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // MaxEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -1767,10 +1567,8 @@ func maxEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PMAXUB'. Intrinsic: '_mm_max_epu8'.
 // Requires SSE2.
 func MaxEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(maxEpu8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func maxEpu8(a [16]byte, b [16]byte) [16]byte
 
 
 // MaxPd: Compare packed double-precision (64-bit) floating-point elements in
@@ -1784,10 +1582,8 @@ func maxEpu8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'MAXPD'. Intrinsic: '_mm_max_pd'.
 // Requires SSE2.
 func MaxPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(maxPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func maxPd(a [2]float64, b [2]float64) [2]float64
 
 
 // MaxSd: Compare the lower double-precision (64-bit) floating-point elements
@@ -1800,10 +1596,8 @@ func maxPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'MAXSD'. Intrinsic: '_mm_max_sd'.
 // Requires SSE2.
 func MaxSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(maxSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func maxSd(a [2]float64, b [2]float64) [2]float64
 
 
 // Mfence: Perform a serializing operation on all load-from-memory and
@@ -1817,10 +1611,8 @@ func maxSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'MFENCE'. Intrinsic: '_mm_mfence'.
 // Requires SSE2.
 func Mfence()  {
-	mfence()
+	panic("not implemented")
 }
-
-func mfence() 
 
 
 // MinEpi16: Compare packed 16-bit integers in 'a' and 'b', and store packed
@@ -1838,10 +1630,8 @@ func mfence()
 // Instruction: 'PMINSW'. Intrinsic: '_mm_min_epi16'.
 // Requires SSE2.
 func MinEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(minEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func minEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // MinEpu8: Compare packed unsigned 8-bit integers in 'a' and 'b', and store
@@ -1859,10 +1649,8 @@ func minEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PMINUB'. Intrinsic: '_mm_min_epu8'.
 // Requires SSE2.
 func MinEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(minEpu8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func minEpu8(a [16]byte, b [16]byte) [16]byte
 
 
 // MinPd: Compare packed double-precision (64-bit) floating-point elements in
@@ -1876,10 +1664,8 @@ func minEpu8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'MINPD'. Intrinsic: '_mm_min_pd'.
 // Requires SSE2.
 func MinPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(minPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func minPd(a [2]float64, b [2]float64) [2]float64
 
 
 // MinSd: Compare the lower double-precision (64-bit) floating-point elements
@@ -1892,10 +1678,8 @@ func minPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'MINSD'. Intrinsic: '_mm_min_sd'.
 // Requires SSE2.
 func MinSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(minSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func minSd(a [2]float64, b [2]float64) [2]float64
 
 
 // MoveEpi64: Copy the lower 64-bit integer in 'a' to the lower element of
@@ -1907,10 +1691,8 @@ func minSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'MOVQ'. Intrinsic: '_mm_move_epi64'.
 // Requires SSE2.
 func MoveEpi64(a x86.M128i) (dst x86.M128i) {
-	return x86.M128i(moveEpi64([16]byte(a)))
+	panic("not implemented")
 }
-
-func moveEpi64(a [16]byte) [16]byte
 
 
 // MoveSd: Move the lower double-precision (64-bit) floating-point element from
@@ -1923,10 +1705,8 @@ func moveEpi64(a [16]byte) [16]byte
 // Instruction: 'MOVSD'. Intrinsic: '_mm_move_sd'.
 // Requires SSE2.
 func MoveSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(moveSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func moveSd(a [2]float64, b [2]float64) [2]float64
 
 
 // MovemaskEpi8: Create mask from the most significant bit of each 8-bit
@@ -1941,10 +1721,8 @@ func moveSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PMOVMSKB'. Intrinsic: '_mm_movemask_epi8'.
 // Requires SSE2.
 func MovemaskEpi8(a x86.M128i) int {
-	return int(movemaskEpi8([16]byte(a)))
+	panic("not implemented")
 }
-
-func movemaskEpi8(a [16]byte) int
 
 
 // MovemaskPd: Set each bit of mask 'dst' based on the most significant bit of
@@ -1964,10 +1742,8 @@ func movemaskEpi8(a [16]byte) int
 // Instruction: 'MOVMSKPD'. Intrinsic: '_mm_movemask_pd'.
 // Requires SSE2.
 func MovemaskPd(a x86.M128d) int {
-	return int(movemaskPd([2]float64(a)))
+	panic("not implemented")
 }
-
-func movemaskPd(a [2]float64) int
 
 
 // Movepi64Pi64: Copy the lower 64-bit integer in 'a' to 'dst'. 
@@ -1977,10 +1753,8 @@ func movemaskPd(a [2]float64) int
 // Instruction: 'MOVDQ2Q'. Intrinsic: '_mm_movepi64_pi64'.
 // Requires SSE2.
 func Movepi64Pi64(a x86.M128i) (dst x86.M64) {
-	return x86.M64(movepi64Pi64([16]byte(a)))
+	panic("not implemented")
 }
-
-func movepi64Pi64(a [16]byte) x86.M64
 
 
 // Movpi64Epi64: Copy the 64-bit integer 'a' to the lower element of 'dst', and
@@ -1992,10 +1766,8 @@ func movepi64Pi64(a [16]byte) x86.M64
 // Instruction: 'MOVQ2DQ'. Intrinsic: '_mm_movpi64_epi64'.
 // Requires SSE2.
 func Movpi64Epi64(a x86.M64) (dst x86.M128i) {
-	return x86.M128i(movpi64Epi64(a))
+	panic("not implemented")
 }
-
-func movpi64Epi64(a x86.M64) [16]byte
 
 
 // MulEpu32: Multiply the low unsigned 32-bit integers from each packed 64-bit
@@ -2009,10 +1781,8 @@ func movpi64Epi64(a x86.M64) [16]byte
 // Instruction: 'PMULUDQ'. Intrinsic: '_mm_mul_epu32'.
 // Requires SSE2.
 func MulEpu32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(mulEpu32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func mulEpu32(a [16]byte, b [16]byte) [16]byte
 
 
 // MulPd: Multiply packed double-precision (64-bit) floating-point elements in
@@ -2026,10 +1796,8 @@ func mulEpu32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'MULPD'. Intrinsic: '_mm_mul_pd'.
 // Requires SSE2.
 func MulPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(mulPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func mulPd(a [2]float64, b [2]float64) [2]float64
 
 
 // MulSd: Multiply the lower double-precision (64-bit) floating-point element
@@ -2042,10 +1810,8 @@ func mulPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'MULSD'. Intrinsic: '_mm_mul_sd'.
 // Requires SSE2.
 func MulSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(mulSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func mulSd(a [2]float64, b [2]float64) [2]float64
 
 
 // MulSu32: Multiply the low unsigned 32-bit integers from 'a' and 'b', and
@@ -2056,10 +1822,8 @@ func mulSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PMULUDQ'. Intrinsic: '_mm_mul_su32'.
 // Requires SSE2.
 func MulSu32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(mulSu32(a, b))
+	panic("not implemented")
 }
-
-func mulSu32(a x86.M64, b x86.M64) x86.M64
 
 
 // MulhiEpi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -2075,10 +1839,8 @@ func mulSu32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMULHW'. Intrinsic: '_mm_mulhi_epi16'.
 // Requires SSE2.
 func MulhiEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(mulhiEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func mulhiEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // MulhiEpu16: Multiply the packed unsigned 16-bit integers in 'a' and 'b',
@@ -2094,10 +1856,8 @@ func mulhiEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PMULHUW'. Intrinsic: '_mm_mulhi_epu16'.
 // Requires SSE2.
 func MulhiEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(mulhiEpu16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func mulhiEpu16(a [16]byte, b [16]byte) [16]byte
 
 
 // MulloEpi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -2113,10 +1873,8 @@ func mulhiEpu16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PMULLW'. Intrinsic: '_mm_mullo_epi16'.
 // Requires SSE2.
 func MulloEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(mulloEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func mulloEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // OrPd: Compute the bitwise OR of packed double-precision (64-bit)
@@ -2130,10 +1888,8 @@ func mulloEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'ORPD'. Intrinsic: '_mm_or_pd'.
 // Requires SSE2.
 func OrPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(orPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func orPd(a [2]float64, b [2]float64) [2]float64
 
 
 // OrSi128: Compute the bitwise OR of 128 bits (representing integer data) in
@@ -2144,10 +1900,8 @@ func orPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'POR'. Intrinsic: '_mm_or_si128'.
 // Requires SSE2.
 func OrSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(orSi128([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func orSi128(a [16]byte, b [16]byte) [16]byte
 
 
 // PacksEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -2173,10 +1927,8 @@ func orSi128(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PACKSSWB'. Intrinsic: '_mm_packs_epi16'.
 // Requires SSE2.
 func PacksEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(packsEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func packsEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // PacksEpi32: Convert packed 32-bit integers from 'a' and 'b' to packed 16-bit
@@ -2194,10 +1946,8 @@ func packsEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PACKSSDW'. Intrinsic: '_mm_packs_epi32'.
 // Requires SSE2.
 func PacksEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(packsEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func packsEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // PackusEpi16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -2223,10 +1973,8 @@ func packsEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PACKUSWB'. Intrinsic: '_mm_packus_epi16'.
 // Requires SSE2.
 func PackusEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(packusEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func packusEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // Pause: Provide a hint to the processor that the code sequence is a spin-wait
@@ -2238,10 +1986,8 @@ func packusEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PAUSE'. Intrinsic: '_mm_pause'.
 // Requires SSE2.
 func Pause()  {
-	pause()
+	panic("not implemented")
 }
-
-func pause() 
 
 
 // SadEpu8: Compute the absolute differences of packed unsigned 8-bit integers
@@ -2263,10 +2009,8 @@ func pause()
 // Instruction: 'PSADBW'. Intrinsic: '_mm_sad_epu8'.
 // Requires SSE2.
 func SadEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sadEpu8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func sadEpu8(a [16]byte, b [16]byte) [16]byte
 
 
 // SetEpi16: Set packed 16-bit integers in 'dst' with the supplied values. 
@@ -2283,10 +2027,8 @@ func sadEpu8(a [16]byte, b [16]byte) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set_epi16'.
 // Requires SSE2.
 func SetEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M128i) {
-	return x86.M128i(setEpi16(e7, e6, e5, e4, e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [16]byte
 
 
 // SetEpi32: Set packed 32-bit integers in 'dst' with the supplied values. 
@@ -2299,10 +2041,8 @@ func setEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int
 // Instruction: '...'. Intrinsic: '_mm_set_epi32'.
 // Requires SSE2.
 func SetEpi32(e3 int, e2 int, e1 int, e0 int) (dst x86.M128i) {
-	return x86.M128i(setEpi32(e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setEpi32(e3 int, e2 int, e1 int, e0 int) [16]byte
 
 
 // SetEpi64: Set packed 64-bit integers in 'dst' with the supplied values. 
@@ -2313,10 +2053,8 @@ func setEpi32(e3 int, e2 int, e1 int, e0 int) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set_epi64'.
 // Requires SSE2.
 func SetEpi64(e1 x86.M64, e0 x86.M64) (dst x86.M128i) {
-	return x86.M128i(setEpi64(e1, e0))
+	panic("not implemented")
 }
-
-func setEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 
 
 // SetEpi64x: Set packed 64-bit integers in 'dst' with the supplied values. 
@@ -2327,10 +2065,8 @@ func setEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set_epi64x'.
 // Requires SSE2.
 func SetEpi64x(e1 int64, e0 int64) (dst x86.M128i) {
-	return x86.M128i(setEpi64x(e1, e0))
+	panic("not implemented")
 }
-
-func setEpi64x(e1 int64, e0 int64) [16]byte
 
 
 // SetEpi8: Set packed 8-bit integers in 'dst' with the supplied values in
@@ -2356,10 +2092,8 @@ func setEpi64x(e1 int64, e0 int64) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set_epi8'.
 // Requires SSE2.
 func SetEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M128i) {
-	return x86.M128i(setEpi8(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [16]byte
 
 
 // SetPd: Set packed double-precision (64-bit) floating-point elements in 'dst'
@@ -2371,10 +2105,8 @@ func setEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte
 // Instruction: '...'. Intrinsic: '_mm_set_pd'.
 // Requires SSE2.
 func SetPd(e1 float64, e0 float64) (dst x86.M128d) {
-	return x86.M128d(setPd(e1, e0))
+	panic("not implemented")
 }
-
-func setPd(e1 float64, e0 float64) [2]float64
 
 
 // SetPd1: Broadcast double-precision (64-bit) floating-point value 'a' to all
@@ -2388,10 +2120,8 @@ func setPd(e1 float64, e0 float64) [2]float64
 // Instruction: '...'. Intrinsic: '_mm_set_pd1'.
 // Requires SSE2.
 func SetPd1(a float64) (dst x86.M128d) {
-	return x86.M128d(setPd1(a))
+	panic("not implemented")
 }
-
-func setPd1(a float64) [2]float64
 
 
 // SetSd: Copy double-precision (64-bit) floating-point element 'a' to the
@@ -2403,10 +2133,8 @@ func setPd1(a float64) [2]float64
 // Instruction: '...'. Intrinsic: '_mm_set_sd'.
 // Requires SSE2.
 func SetSd(a float64) (dst x86.M128d) {
-	return x86.M128d(setSd(a))
+	panic("not implemented")
 }
-
-func setSd(a float64) [2]float64
 
 
 // Set1Epi16: Broadcast 16-bit integer 'a' to all all elements of 'dst'. This
@@ -2420,10 +2148,8 @@ func setSd(a float64) [2]float64
 // Instruction: '...'. Intrinsic: '_mm_set1_epi16'.
 // Requires SSE2.
 func Set1Epi16(a int16) (dst x86.M128i) {
-	return x86.M128i(set1Epi16(a))
+	panic("not implemented")
 }
-
-func set1Epi16(a int16) [16]byte
 
 
 // Set1Epi32: Broadcast 32-bit integer 'a' to all elements of 'dst'. This
@@ -2437,10 +2163,8 @@ func set1Epi16(a int16) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set1_epi32'.
 // Requires SSE2.
 func Set1Epi32(a int) (dst x86.M128i) {
-	return x86.M128i(set1Epi32(a))
+	panic("not implemented")
 }
-
-func set1Epi32(a int) [16]byte
 
 
 // Set1Epi64: Broadcast 64-bit integer 'a' to all elements of 'dst'. 
@@ -2453,10 +2177,8 @@ func set1Epi32(a int) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set1_epi64'.
 // Requires SSE2.
 func Set1Epi64(a x86.M64) (dst x86.M128i) {
-	return x86.M128i(set1Epi64(a))
+	panic("not implemented")
 }
-
-func set1Epi64(a x86.M64) [16]byte
 
 
 // Set1Epi64x: Broadcast 64-bit integer 'a' to all elements of 'dst'. This
@@ -2470,10 +2192,8 @@ func set1Epi64(a x86.M64) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set1_epi64x'.
 // Requires SSE2.
 func Set1Epi64x(a int64) (dst x86.M128i) {
-	return x86.M128i(set1Epi64x(a))
+	panic("not implemented")
 }
-
-func set1Epi64x(a int64) [16]byte
 
 
 // Set1Epi8: Broadcast 8-bit integer 'a' to all elements of 'dst'. This
@@ -2487,10 +2207,8 @@ func set1Epi64x(a int64) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set1_epi8'.
 // Requires SSE2.
 func Set1Epi8(a byte) (dst x86.M128i) {
-	return x86.M128i(set1Epi8(a))
+	panic("not implemented")
 }
-
-func set1Epi8(a byte) [16]byte
 
 
 // Set1Pd: Broadcast double-precision (64-bit) floating-point value 'a' to all
@@ -2504,10 +2222,8 @@ func set1Epi8(a byte) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_set1_pd'.
 // Requires SSE2.
 func Set1Pd(a float64) (dst x86.M128d) {
-	return x86.M128d(set1Pd(a))
+	panic("not implemented")
 }
-
-func set1Pd(a float64) [2]float64
 
 
 // SetrEpi16: Set packed 16-bit integers in 'dst' with the supplied values in
@@ -2525,10 +2241,8 @@ func set1Pd(a float64) [2]float64
 // Instruction: '...'. Intrinsic: '_mm_setr_epi16'.
 // Requires SSE2.
 func SetrEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M128i) {
-	return x86.M128i(setrEpi16(e7, e6, e5, e4, e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setrEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 int16, e0 int16) [16]byte
 
 
 // SetrEpi32: Set packed 32-bit integers in 'dst' with the supplied values in
@@ -2542,10 +2256,8 @@ func setrEpi16(e7 int16, e6 int16, e5 int16, e4 int16, e3 int16, e2 int16, e1 in
 // Instruction: '...'. Intrinsic: '_mm_setr_epi32'.
 // Requires SSE2.
 func SetrEpi32(e3 int, e2 int, e1 int, e0 int) (dst x86.M128i) {
-	return x86.M128i(setrEpi32(e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setrEpi32(e3 int, e2 int, e1 int, e0 int) [16]byte
 
 
 // SetrEpi64: Set packed 64-bit integers in 'dst' with the supplied values in
@@ -2557,10 +2269,8 @@ func setrEpi32(e3 int, e2 int, e1 int, e0 int) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_setr_epi64'.
 // Requires SSE2.
 func SetrEpi64(e1 x86.M64, e0 x86.M64) (dst x86.M128i) {
-	return x86.M128i(setrEpi64(e1, e0))
+	panic("not implemented")
 }
-
-func setrEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 
 
 // SetrEpi8: Set packed 8-bit integers in 'dst' with the supplied values in
@@ -2586,10 +2296,8 @@ func setrEpi64(e1 x86.M64, e0 x86.M64) [16]byte
 // Instruction: '...'. Intrinsic: '_mm_setr_epi8'.
 // Requires SSE2.
 func SetrEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M128i) {
-	return x86.M128i(setrEpi8(e15, e14, e13, e12, e11, e10, e9, e8, e7, e6, e5, e4, e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setrEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byte, e8 byte, e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) [16]byte
 
 
 // SetrPd: Set packed double-precision (64-bit) floating-point elements in
@@ -2601,10 +2309,8 @@ func setrEpi8(e15 byte, e14 byte, e13 byte, e12 byte, e11 byte, e10 byte, e9 byt
 // Instruction: '...'. Intrinsic: '_mm_setr_pd'.
 // Requires SSE2.
 func SetrPd(e1 float64, e0 float64) (dst x86.M128d) {
-	return x86.M128d(setrPd(e1, e0))
+	panic("not implemented")
 }
-
-func setrPd(e1 float64, e0 float64) [2]float64
 
 
 // SetzeroPd: Return vector of type __m128d with all elements set to zero. 
@@ -2614,10 +2320,8 @@ func setrPd(e1 float64, e0 float64) [2]float64
 // Instruction: 'XORPD'. Intrinsic: '_mm_setzero_pd'.
 // Requires SSE2.
 func SetzeroPd() (dst x86.M128d) {
-	return x86.M128d(setzeroPd())
+	panic("not implemented")
 }
-
-func setzeroPd() [2]float64
 
 
 // SetzeroSi128: Return vector of type __m128i with all elements set to zero. 
@@ -2627,10 +2331,8 @@ func setzeroPd() [2]float64
 // Instruction: 'PXOR'. Intrinsic: '_mm_setzero_si128'.
 // Requires SSE2.
 func SetzeroSi128() (dst x86.M128i) {
-	return x86.M128i(setzeroSi128())
+	panic("not implemented")
 }
-
-func setzeroSi128() [16]byte
 
 
 // ShuffleEpi32: Shuffle 32-bit integers in 'a' using the control in 'imm8',
@@ -2656,10 +2358,8 @@ func setzeroSi128() [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func ShuffleEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(shuffleEpi32([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func shuffleEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // ShufflePd: Shuffle double-precision (64-bit) floating-point elements using
@@ -2673,10 +2373,8 @@ func shuffleEpi32(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func ShufflePd(a x86.M128d, b x86.M128d, imm8 byte) (dst x86.M128d) {
-	return x86.M128d(shufflePd([2]float64(a), [2]float64(b), imm8))
+	panic("not implemented")
 }
-
-func shufflePd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 
 
 // ShufflehiEpi16: Shuffle 16-bit integers in the high 64 bits of 'a' using the
@@ -2694,10 +2392,8 @@ func shufflePd(a [2]float64, b [2]float64, imm8 byte) [2]float64
 //
 // FIXME: Requires compiler support (has immediate)
 func ShufflehiEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(shufflehiEpi16([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func shufflehiEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // ShuffleloEpi16: Shuffle 16-bit integers in the low 64 bits of 'a' using the
@@ -2715,10 +2411,8 @@ func shufflehiEpi16(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func ShuffleloEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(shuffleloEpi16([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func shuffleloEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SllEpi16: Shift packed 16-bit integers in 'a' left by 'count' while shifting
@@ -2736,10 +2430,8 @@ func shuffleloEpi16(a [16]byte, imm8 byte) [16]byte
 // Instruction: 'PSLLW'. Intrinsic: '_mm_sll_epi16'.
 // Requires SSE2.
 func SllEpi16(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sllEpi16([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func sllEpi16(a [16]byte, count [16]byte) [16]byte
 
 
 // SllEpi32: Shift packed 32-bit integers in 'a' left by 'count' while shifting
@@ -2757,10 +2449,8 @@ func sllEpi16(a [16]byte, count [16]byte) [16]byte
 // Instruction: 'PSLLD'. Intrinsic: '_mm_sll_epi32'.
 // Requires SSE2.
 func SllEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sllEpi32([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func sllEpi32(a [16]byte, count [16]byte) [16]byte
 
 
 // SllEpi64: Shift packed 64-bit integers in 'a' left by 'count' while shifting
@@ -2778,10 +2468,8 @@ func sllEpi32(a [16]byte, count [16]byte) [16]byte
 // Instruction: 'PSLLQ'. Intrinsic: '_mm_sll_epi64'.
 // Requires SSE2.
 func SllEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sllEpi64([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func sllEpi64(a [16]byte, count [16]byte) [16]byte
 
 
 // SlliEpi16: Shift packed 16-bit integers in 'a' left by 'imm8' while shifting
@@ -2801,10 +2489,8 @@ func sllEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SlliEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(slliEpi16([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func slliEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SlliEpi32: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting
@@ -2824,10 +2510,8 @@ func slliEpi16(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SlliEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(slliEpi32([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func slliEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // SlliEpi64: Shift packed 64-bit integers in 'a' left by 'imm8' while shifting
@@ -2847,10 +2531,8 @@ func slliEpi32(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SlliEpi64(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(slliEpi64([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func slliEpi64(a [16]byte, imm8 byte) [16]byte
 
 
 // SlliSi128: Shift 'a' left by 'imm8' bytes while shifting in zeros, and store
@@ -2867,10 +2549,8 @@ func slliEpi64(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SlliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(slliSi128([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func slliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // SqrtPd: Compute the square root of packed double-precision (64-bit)
@@ -2884,10 +2564,8 @@ func slliSi128(a [16]byte, imm8 byte) [16]byte
 // Instruction: 'SQRTPD'. Intrinsic: '_mm_sqrt_pd'.
 // Requires SSE2.
 func SqrtPd(a x86.M128d) (dst x86.M128d) {
-	return x86.M128d(sqrtPd([2]float64(a)))
+	panic("not implemented")
 }
-
-func sqrtPd(a [2]float64) [2]float64
 
 
 // SqrtSd: Compute the square root of the lower double-precision (64-bit)
@@ -2900,10 +2578,8 @@ func sqrtPd(a [2]float64) [2]float64
 // Instruction: 'SQRTSD'. Intrinsic: '_mm_sqrt_sd'.
 // Requires SSE2.
 func SqrtSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(sqrtSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func sqrtSd(a [2]float64, b [2]float64) [2]float64
 
 
 // SraEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -2921,10 +2597,8 @@ func sqrtSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PSRAW'. Intrinsic: '_mm_sra_epi16'.
 // Requires SSE2.
 func SraEpi16(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sraEpi16([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func sraEpi16(a [16]byte, count [16]byte) [16]byte
 
 
 // SraEpi32: Shift packed 32-bit integers in 'a' right by 'count' while
@@ -2942,10 +2616,8 @@ func sraEpi16(a [16]byte, count [16]byte) [16]byte
 // Instruction: 'PSRAD'. Intrinsic: '_mm_sra_epi32'.
 // Requires SSE2.
 func SraEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(sraEpi32([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func sraEpi32(a [16]byte, count [16]byte) [16]byte
 
 
 // SraiEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -2965,10 +2637,8 @@ func sraEpi32(a [16]byte, count [16]byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SraiEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(sraiEpi16([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func sraiEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SraiEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -2988,10 +2658,8 @@ func sraiEpi16(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SraiEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(sraiEpi32([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func sraiEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // SrlEpi16: Shift packed 16-bit integers in 'a' right by 'count' while
@@ -3009,10 +2677,8 @@ func sraiEpi32(a [16]byte, imm8 byte) [16]byte
 // Instruction: 'PSRLW'. Intrinsic: '_mm_srl_epi16'.
 // Requires SSE2.
 func SrlEpi16(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(srlEpi16([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func srlEpi16(a [16]byte, count [16]byte) [16]byte
 
 
 // SrlEpi32: Shift packed 32-bit integers in 'a' right by 'count' while
@@ -3030,10 +2696,8 @@ func srlEpi16(a [16]byte, count [16]byte) [16]byte
 // Instruction: 'PSRLD'. Intrinsic: '_mm_srl_epi32'.
 // Requires SSE2.
 func SrlEpi32(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(srlEpi32([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func srlEpi32(a [16]byte, count [16]byte) [16]byte
 
 
 // SrlEpi64: Shift packed 64-bit integers in 'a' right by 'count' while
@@ -3051,10 +2715,8 @@ func srlEpi32(a [16]byte, count [16]byte) [16]byte
 // Instruction: 'PSRLQ'. Intrinsic: '_mm_srl_epi64'.
 // Requires SSE2.
 func SrlEpi64(a x86.M128i, count x86.M128i) (dst x86.M128i) {
-	return x86.M128i(srlEpi64([16]byte(a), [16]byte(count)))
+	panic("not implemented")
 }
-
-func srlEpi64(a [16]byte, count [16]byte) [16]byte
 
 
 // SrliEpi16: Shift packed 16-bit integers in 'a' right by 'imm8' while
@@ -3074,10 +2736,8 @@ func srlEpi64(a [16]byte, count [16]byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SrliEpi16(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(srliEpi16([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func srliEpi16(a [16]byte, imm8 byte) [16]byte
 
 
 // SrliEpi32: Shift packed 32-bit integers in 'a' right by 'imm8' while
@@ -3097,10 +2757,8 @@ func srliEpi16(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SrliEpi32(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(srliEpi32([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func srliEpi32(a [16]byte, imm8 byte) [16]byte
 
 
 // SrliEpi64: Shift packed 64-bit integers in 'a' right by 'imm8' while
@@ -3120,10 +2778,8 @@ func srliEpi32(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SrliEpi64(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(srliEpi64([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func srliEpi64(a [16]byte, imm8 byte) [16]byte
 
 
 // SrliSi128: Shift 'a' right by 'imm8' bytes while shifting in zeros, and
@@ -3140,10 +2796,8 @@ func srliEpi64(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func SrliSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(srliSi128([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func srliSi128(a [16]byte, imm8 byte) [16]byte
 
 
 // StorePd: Store 128-bits (composed of 2 packed double-precision (64-bit)
@@ -3158,9 +2812,9 @@ func srliSi128(a [16]byte, imm8 byte) [16]byte
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StorePd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StorePd1: Store the lower double-precision (64-bit) floating-point element
 // from 'a' into 2 contiguous elements in memory. 'mem_addr' must be aligned on
@@ -3174,9 +2828,9 @@ func StorePd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StorePd1(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StoreSd: Store the lower double-precision (64-bit) floating-point element
 // from 'a' into memory. 'mem_addr' does not need to be aligned on any
@@ -3189,9 +2843,9 @@ func StorePd1(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StoreSd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StoreSi128: Store 128-bits of integer data from 'a' into memory. 
 // 	'mem_addr' must be aligned on a 16-byte boundary or a general-protection
@@ -3204,9 +2858,9 @@ func StoreSd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StoreSi128(mem_addr *x86.M128i, a x86.M128i)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // Store1Pd: Store the lower double-precision (64-bit) floating-point element
 // from 'a' into 2 contiguous elements in memory. 'mem_addr' must be aligned on
@@ -3220,9 +2874,9 @@ func StoreSi128(mem_addr *x86.M128i, a x86.M128i)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Store1Pd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StorehPd: Store the upper double-precision (64-bit) floating-point element
 // from 'a' into memory. 
@@ -3234,9 +2888,9 @@ func Store1Pd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StorehPd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StorelEpi64: Store 64-bit integer from the first element of 'a' into memory. 
 //
@@ -3247,9 +2901,9 @@ func StorehPd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StorelEpi64(mem_addr *x86.M128i, a x86.M128i)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StorelPd: Store the lower double-precision (64-bit) floating-point element
 // from 'a' into memory. 
@@ -3261,9 +2915,9 @@ func StorelEpi64(mem_addr *x86.M128i, a x86.M128i)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StorelPd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StorerPd: Store 2 double-precision (64-bit) floating-point elements from 'a'
 // into memory in reverse order.
@@ -3278,9 +2932,9 @@ func StorelPd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StorerPd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StoreuPd: Store 128-bits (composed of 2 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory.
@@ -3293,9 +2947,9 @@ func StorerPd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StoreuPd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StoreuSi128: Store 128-bits of integer data from 'a' into memory.
 // 	'mem_addr' does not need to be aligned on any particular boundary. 
@@ -3307,9 +2961,9 @@ func StoreuPd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StoreuSi128(mem_addr *x86.M128i, a x86.M128i)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StreamPd: Store 128-bits (composed of 2 packed double-precision (64-bit)
 // floating-point elements) from 'a' into memory using a non-temporal memory
@@ -3324,9 +2978,9 @@ func StoreuSi128(mem_addr *x86.M128i, a x86.M128i)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StreamPd(mem_addr *float64, a x86.M128d)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StreamSi128: Store 128-bits of integer data from 'a' into memory using a
 // non-temporal memory hint. 
@@ -3340,9 +2994,9 @@ func StreamPd(mem_addr *float64, a x86.M128d)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StreamSi128(mem_addr *x86.M128i, a x86.M128i)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StreamSi32: Store 32-bit integer 'a' into memory using a non-temporal hint
 // to minimize cache pollution. If the cache line containing address 'mem_addr'
@@ -3355,9 +3009,9 @@ func StreamSi128(mem_addr *x86.M128i, a x86.M128i)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StreamSi32(mem_addr *int, a int)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // StreamSi64: Store 64-bit integer 'a' into memory using a non-temporal hint
 // to minimize cache pollution. If the cache line containing address 'mem_addr'
@@ -3370,9 +3024,9 @@ func StreamSi32(mem_addr *int, a int)  {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func StreamSi64(mem_addr *int64, a int64)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+
 
 // SubEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers
 // in 'a', and store the results in 'dst'. 
@@ -3385,10 +3039,8 @@ func StreamSi64(mem_addr *int64, a int64)  {
 // Instruction: 'PSUBW'. Intrinsic: '_mm_sub_epi16'.
 // Requires SSE2.
 func SubEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // SubEpi32: Subtract packed 32-bit integers in 'b' from packed 32-bit integers
@@ -3402,10 +3054,8 @@ func subEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSUBD'. Intrinsic: '_mm_sub_epi32'.
 // Requires SSE2.
 func SubEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // SubEpi64: Subtract packed 64-bit integers in 'b' from packed 64-bit integers
@@ -3419,10 +3069,8 @@ func subEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSUBQ'. Intrinsic: '_mm_sub_epi64'.
 // Requires SSE2.
 func SubEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subEpi64([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subEpi64(a [16]byte, b [16]byte) [16]byte
 
 
 // SubEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -3436,10 +3084,8 @@ func subEpi64(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSUBB'. Intrinsic: '_mm_sub_epi8'.
 // Requires SSE2.
 func SubEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // SubPd: Subtract packed double-precision (64-bit) floating-point elements in
@@ -3454,10 +3100,8 @@ func subEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'SUBPD'. Intrinsic: '_mm_sub_pd'.
 // Requires SSE2.
 func SubPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(subPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func subPd(a [2]float64, b [2]float64) [2]float64
 
 
 // SubSd: Subtract the lower double-precision (64-bit) floating-point element
@@ -3471,10 +3115,8 @@ func subPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'SUBSD'. Intrinsic: '_mm_sub_sd'.
 // Requires SSE2.
 func SubSd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(subSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func subSd(a [2]float64, b [2]float64) [2]float64
 
 
 // SubSi64: Subtract 64-bit integer 'b' from 64-bit integer 'a', and store the
@@ -3485,10 +3127,8 @@ func subSd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PSUBQ'. Intrinsic: '_mm_sub_si64'.
 // Requires SSE2.
 func SubSi64(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subSi64(a, b))
+	panic("not implemented")
 }
-
-func subSi64(a x86.M64, b x86.M64) x86.M64
 
 
 // SubsEpi16: Subtract packed 16-bit integers in 'b' from packed 16-bit
@@ -3502,10 +3142,8 @@ func subSi64(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBSW'. Intrinsic: '_mm_subs_epi16'.
 // Requires SSE2.
 func SubsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subsEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subsEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // SubsEpi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers
@@ -3519,10 +3157,8 @@ func subsEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSUBSB'. Intrinsic: '_mm_subs_epi8'.
 // Requires SSE2.
 func SubsEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subsEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subsEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // SubsEpu16: Subtract packed unsigned 16-bit integers in 'b' from packed
@@ -3537,10 +3173,8 @@ func subsEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSUBUSW'. Intrinsic: '_mm_subs_epu16'.
 // Requires SSE2.
 func SubsEpu16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subsEpu16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subsEpu16(a [16]byte, b [16]byte) [16]byte
 
 
 // SubsEpu8: Subtract packed unsigned 8-bit integers in 'b' from packed
@@ -3555,10 +3189,8 @@ func subsEpu16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSUBUSB'. Intrinsic: '_mm_subs_epu8'.
 // Requires SSE2.
 func SubsEpu8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(subsEpu8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func subsEpu8(a [16]byte, b [16]byte) [16]byte
 
 
 // UcomieqSd: Compare the lower double-precision (64-bit) floating-point
@@ -3570,10 +3202,8 @@ func subsEpu8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomieq_sd'.
 // Requires SSE2.
 func UcomieqSd(a x86.M128d, b x86.M128d) int {
-	return int(ucomieqSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func ucomieqSd(a [2]float64, b [2]float64) int
 
 
 // UcomigeSd: Compare the lower double-precision (64-bit) floating-point
@@ -3585,10 +3215,8 @@ func ucomieqSd(a [2]float64, b [2]float64) int
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomige_sd'.
 // Requires SSE2.
 func UcomigeSd(a x86.M128d, b x86.M128d) int {
-	return int(ucomigeSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func ucomigeSd(a [2]float64, b [2]float64) int
 
 
 // UcomigtSd: Compare the lower double-precision (64-bit) floating-point
@@ -3600,10 +3228,8 @@ func ucomigeSd(a [2]float64, b [2]float64) int
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomigt_sd'.
 // Requires SSE2.
 func UcomigtSd(a x86.M128d, b x86.M128d) int {
-	return int(ucomigtSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func ucomigtSd(a [2]float64, b [2]float64) int
 
 
 // UcomileSd: Compare the lower double-precision (64-bit) floating-point
@@ -3615,10 +3241,8 @@ func ucomigtSd(a [2]float64, b [2]float64) int
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomile_sd'.
 // Requires SSE2.
 func UcomileSd(a x86.M128d, b x86.M128d) int {
-	return int(ucomileSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func ucomileSd(a [2]float64, b [2]float64) int
 
 
 // UcomiltSd: Compare the lower double-precision (64-bit) floating-point
@@ -3630,10 +3254,8 @@ func ucomileSd(a [2]float64, b [2]float64) int
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomilt_sd'.
 // Requires SSE2.
 func UcomiltSd(a x86.M128d, b x86.M128d) int {
-	return int(ucomiltSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func ucomiltSd(a [2]float64, b [2]float64) int
 
 
 // UcomineqSd: Compare the lower double-precision (64-bit) floating-point
@@ -3645,10 +3267,8 @@ func ucomiltSd(a [2]float64, b [2]float64) int
 // Instruction: 'UCOMISD'. Intrinsic: '_mm_ucomineq_sd'.
 // Requires SSE2.
 func UcomineqSd(a x86.M128d, b x86.M128d) int {
-	return int(ucomineqSd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func ucomineqSd(a [2]float64, b [2]float64) int
 
 
 // UnpackhiEpi16: Unpack and interleave 16-bit integers from the high half of
@@ -3671,10 +3291,8 @@ func ucomineqSd(a [2]float64, b [2]float64) int
 // Instruction: 'PUNPCKHWD'. Intrinsic: '_mm_unpackhi_epi16'.
 // Requires SSE2.
 func UnpackhiEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackhiEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackhiEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackhiEpi32: Unpack and interleave 32-bit integers from the high half of
@@ -3693,10 +3311,8 @@ func unpackhiEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PUNPCKHDQ'. Intrinsic: '_mm_unpackhi_epi32'.
 // Requires SSE2.
 func UnpackhiEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackhiEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackhiEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackhiEpi64: Unpack and interleave 64-bit integers from the high half of
@@ -3713,10 +3329,8 @@ func unpackhiEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PUNPCKHQDQ'. Intrinsic: '_mm_unpackhi_epi64'.
 // Requires SSE2.
 func UnpackhiEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackhiEpi64([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackhiEpi64(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackhiEpi8: Unpack and interleave 8-bit integers from the high half of 'a'
@@ -3747,10 +3361,8 @@ func unpackhiEpi64(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PUNPCKHBW'. Intrinsic: '_mm_unpackhi_epi8'.
 // Requires SSE2.
 func UnpackhiEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackhiEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackhiEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackhiPd: Unpack and interleave double-precision (64-bit) floating-point
@@ -3767,10 +3379,8 @@ func unpackhiEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'UNPCKHPD'. Intrinsic: '_mm_unpackhi_pd'.
 // Requires SSE2.
 func UnpackhiPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(unpackhiPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func unpackhiPd(a [2]float64, b [2]float64) [2]float64
 
 
 // UnpackloEpi16: Unpack and interleave 16-bit integers from the low half of
@@ -3793,10 +3403,8 @@ func unpackhiPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PUNPCKLWD'. Intrinsic: '_mm_unpacklo_epi16'.
 // Requires SSE2.
 func UnpackloEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackloEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackloEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackloEpi32: Unpack and interleave 32-bit integers from the low half of
@@ -3815,10 +3423,8 @@ func unpackloEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PUNPCKLDQ'. Intrinsic: '_mm_unpacklo_epi32'.
 // Requires SSE2.
 func UnpackloEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackloEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackloEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackloEpi64: Unpack and interleave 64-bit integers from the low half of
@@ -3835,10 +3441,8 @@ func unpackloEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PUNPCKLQDQ'. Intrinsic: '_mm_unpacklo_epi64'.
 // Requires SSE2.
 func UnpackloEpi64(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackloEpi64([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackloEpi64(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackloEpi8: Unpack and interleave 8-bit integers from the low half of 'a'
@@ -3869,10 +3473,8 @@ func unpackloEpi64(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_mm_unpacklo_epi8'.
 // Requires SSE2.
 func UnpackloEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(unpackloEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func unpackloEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // UnpackloPd: Unpack and interleave double-precision (64-bit) floating-point
@@ -3889,10 +3491,8 @@ func unpackloEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'UNPCKLPD'. Intrinsic: '_mm_unpacklo_pd'.
 // Requires SSE2.
 func UnpackloPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(unpackloPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func unpackloPd(a [2]float64, b [2]float64) [2]float64
 
 
 // XorPd: Compute the bitwise XOR of packed double-precision (64-bit)
@@ -3906,10 +3506,8 @@ func unpackloPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'XORPD'. Intrinsic: '_mm_xor_pd'.
 // Requires SSE2.
 func XorPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(xorPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func xorPd(a [2]float64, b [2]float64) [2]float64
 
 
 // XorSi128: Compute the bitwise XOR of 128 bits (representing integer data) in
@@ -3920,8 +3518,6 @@ func xorPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'PXOR'. Intrinsic: '_mm_xor_si128'.
 // Requires SSE2.
 func XorSi128(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(xorSi128([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func xorSi128(a [16]byte, b [16]byte) [16]byte
 

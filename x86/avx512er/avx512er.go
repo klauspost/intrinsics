@@ -24,10 +24,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_exp2a23_pd'.
 // Requires AVX512ER.
 func M512Exp2a23Pd(a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512Exp2a23Pd([8]float64(a)))
+	panic("not implemented")
 }
-
-func m512Exp2a23Pd(a [8]float64) [8]float64
 
 
 // M512MaskExp2a23Pd: Compute the approximate exponential value of 2 raised to
@@ -49,10 +47,8 @@ func m512Exp2a23Pd(a [8]float64) [8]float64
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_mask_exp2a23_pd'.
 // Requires AVX512ER.
 func M512MaskExp2a23Pd(a x86.M512d, k x86.Mmask8, src x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512MaskExp2a23Pd([8]float64(a), uint8(k), [8]float64(src)))
+	panic("not implemented")
 }
-
-func m512MaskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
 
 
 // M512MaskzExp2a23Pd: Compute the approximate exponential value of 2 raised to
@@ -74,10 +70,8 @@ func m512MaskExp2a23Pd(a [8]float64, k uint8, src [8]float64) [8]float64
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_maskz_exp2a23_pd'.
 // Requires AVX512ER.
 func M512MaskzExp2a23Pd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512MaskzExp2a23Pd(uint8(k), [8]float64(a)))
+	panic("not implemented")
 }
-
-func m512MaskzExp2a23Pd(k uint8, a [8]float64) [8]float64
 
 
 // M512Exp2a23Ps: Compute the approximate exponential value of 2 raised to the
@@ -94,10 +88,8 @@ func m512MaskzExp2a23Pd(k uint8, a [8]float64) [8]float64
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_exp2a23_ps'.
 // Requires AVX512ER.
 func M512Exp2a23Ps(a x86.M512) (dst x86.M512) {
-	return x86.M512(m512Exp2a23Ps([16]float32(a)))
+	panic("not implemented")
 }
-
-func m512Exp2a23Ps(a [16]float32) [16]float32
 
 
 // M512MaskExp2a23Ps: Compute the approximate exponential value of 2 raised to
@@ -119,10 +111,8 @@ func m512Exp2a23Ps(a [16]float32) [16]float32
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_mask_exp2a23_ps'.
 // Requires AVX512ER.
 func M512MaskExp2a23Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
-	return x86.M512(m512MaskExp2a23Ps([16]float32(src), uint16(k), [16]float32(a)))
+	panic("not implemented")
 }
-
-func m512MaskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
 // M512MaskzExp2a23Ps: Compute the approximate exponential value of 2 raised to
@@ -144,10 +134,8 @@ func m512MaskExp2a23Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_maskz_exp2a23_ps'.
 // Requires AVX512ER.
 func M512MaskzExp2a23Ps(k x86.Mmask16, a x86.M512) (dst x86.M512) {
-	return x86.M512(m512MaskzExp2a23Ps(uint16(k), [16]float32(a)))
+	panic("not implemented")
 }
-
-func m512MaskzExp2a23Ps(k uint16, a [16]float32) [16]float32
 
 
 // M512Exp2a23RoundPd: Compute the approximate exponential value of 2 raised to
@@ -170,10 +158,8 @@ func m512MaskzExp2a23Ps(k uint16, a [16]float32) [16]float32
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_exp2a23_round_pd'.
 // Requires AVX512ER.
 func M512Exp2a23RoundPd(a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512Exp2a23RoundPd([8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512Exp2a23RoundPd(a [8]float64, rounding int) [8]float64
 
 
 // M512MaskExp2a23RoundPd: Compute the approximate exponential value of 2
@@ -201,10 +187,8 @@ func m512Exp2a23RoundPd(a [8]float64, rounding int) [8]float64
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_mask_exp2a23_round_pd'.
 // Requires AVX512ER.
 func M512MaskExp2a23RoundPd(a x86.M512d, k x86.Mmask8, src x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512MaskExp2a23RoundPd([8]float64(a), uint8(k), [8]float64(src), rounding))
+	panic("not implemented")
 }
-
-func m512MaskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int) [8]float64
 
 
 // M512MaskzExp2a23RoundPd: Compute the approximate exponential value of 2
@@ -232,10 +216,8 @@ func m512MaskExp2a23RoundPd(a [8]float64, k uint8, src [8]float64, rounding int)
 // Instruction: 'VEXP2PD'. Intrinsic: '_mm512_maskz_exp2a23_round_pd'.
 // Requires AVX512ER.
 func M512MaskzExp2a23RoundPd(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512MaskzExp2a23RoundPd(uint8(k), [8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 
 
 // M512Exp2a23RoundPs: Compute the approximate exponential value of 2 raised to
@@ -258,10 +240,8 @@ func m512MaskzExp2a23RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_exp2a23_round_ps'.
 // Requires AVX512ER.
 func M512Exp2a23RoundPs(a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512Exp2a23RoundPs([16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512Exp2a23RoundPs(a [16]float32, rounding int) [16]float32
 
 
 // M512MaskExp2a23RoundPs: Compute the approximate exponential value of 2
@@ -289,10 +269,8 @@ func m512Exp2a23RoundPs(a [16]float32, rounding int) [16]float32
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_mask_exp2a23_round_ps'.
 // Requires AVX512ER.
 func M512MaskExp2a23RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512MaskExp2a23RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 
 
 // M512MaskzExp2a23RoundPs: Compute the approximate exponential value of 2
@@ -320,10 +298,8 @@ func m512MaskExp2a23RoundPs(src [16]float32, k uint16, a [16]float32, rounding i
 // Instruction: 'VEXP2PS'. Intrinsic: '_mm512_maskz_exp2a23_round_ps'.
 // Requires AVX512ER.
 func M512MaskzExp2a23RoundPs(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512MaskzExp2a23RoundPs(uint16(k), [16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 
 
 // M512MaskRcp28Pd: Compute the approximate reciprocal of packed
@@ -344,10 +320,8 @@ func m512MaskzExp2a23RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_mask_rcp28_pd'.
 // Requires AVX512ER.
 func M512MaskRcp28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512MaskRcp28Pd([8]float64(src), uint8(k), [8]float64(a)))
+	panic("not implemented")
 }
-
-func m512MaskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 
 
 // M512MaskzRcp28Pd: Compute the approximate reciprocal of packed
@@ -368,10 +342,8 @@ func m512MaskRcp28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_maskz_rcp28_pd'.
 // Requires AVX512ER.
 func M512MaskzRcp28Pd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512MaskzRcp28Pd(uint8(k), [8]float64(a)))
+	panic("not implemented")
 }
-
-func m512MaskzRcp28Pd(k uint8, a [8]float64) [8]float64
 
 
 // M512Rcp28Pd: Compute the approximate reciprocal of packed double-precision
@@ -386,10 +358,8 @@ func m512MaskzRcp28Pd(k uint8, a [8]float64) [8]float64
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_rcp28_pd'.
 // Requires AVX512ER.
 func M512Rcp28Pd(a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512Rcp28Pd([8]float64(a)))
+	panic("not implemented")
 }
-
-func m512Rcp28Pd(a [8]float64) [8]float64
 
 
 // M512MaskRcp28Ps: Compute the approximate reciprocal of packed
@@ -410,10 +380,8 @@ func m512Rcp28Pd(a [8]float64) [8]float64
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_mask_rcp28_ps'.
 // Requires AVX512ER.
 func M512MaskRcp28Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
-	return x86.M512(m512MaskRcp28Ps([16]float32(src), uint16(k), [16]float32(a)))
+	panic("not implemented")
 }
-
-func m512MaskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
 // M512MaskzRcp28Ps: Compute the approximate reciprocal of packed
@@ -434,10 +402,8 @@ func m512MaskRcp28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_maskz_rcp28_ps'.
 // Requires AVX512ER.
 func M512MaskzRcp28Ps(k x86.Mmask16, a x86.M512) (dst x86.M512) {
-	return x86.M512(m512MaskzRcp28Ps(uint16(k), [16]float32(a)))
+	panic("not implemented")
 }
-
-func m512MaskzRcp28Ps(k uint16, a [16]float32) [16]float32
 
 
 // M512Rcp28Ps: Compute the approximate reciprocal of packed single-precision
@@ -452,10 +418,8 @@ func m512MaskzRcp28Ps(k uint16, a [16]float32) [16]float32
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_rcp28_ps'.
 // Requires AVX512ER.
 func M512Rcp28Ps(a x86.M512) (dst x86.M512) {
-	return x86.M512(m512Rcp28Ps([16]float32(a)))
+	panic("not implemented")
 }
-
-func m512Rcp28Ps(a [16]float32) [16]float32
 
 
 // M512MaskRcp28RoundPd: Compute the approximate reciprocal of packed
@@ -482,10 +446,8 @@ func m512Rcp28Ps(a [16]float32) [16]float32
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_mask_rcp28_round_pd'.
 // Requires AVX512ER.
 func M512MaskRcp28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512MaskRcp28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
 
 
 // M512MaskzRcp28RoundPd: Compute the approximate reciprocal of packed
@@ -512,10 +474,8 @@ func m512MaskRcp28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_maskz_rcp28_round_pd'.
 // Requires AVX512ER.
 func M512MaskzRcp28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512MaskzRcp28RoundPd(uint8(k), [8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 
 
 // M512Rcp28RoundPd: Compute the approximate reciprocal of packed
@@ -537,10 +497,8 @@ func m512MaskzRcp28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 // Instruction: 'VRCP28PD'. Intrinsic: '_mm512_rcp28_round_pd'.
 // Requires AVX512ER.
 func M512Rcp28RoundPd(a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512Rcp28RoundPd([8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512Rcp28RoundPd(a [8]float64, rounding int) [8]float64
 
 
 // M512MaskRcp28RoundPs: Compute the approximate reciprocal of packed
@@ -567,10 +525,8 @@ func m512Rcp28RoundPd(a [8]float64, rounding int) [8]float64
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_mask_rcp28_round_ps'.
 // Requires AVX512ER.
 func M512MaskRcp28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512MaskRcp28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 
 
 // M512MaskzRcp28RoundPs: Compute the approximate reciprocal of packed
@@ -597,10 +553,8 @@ func m512MaskRcp28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_maskz_rcp28_round_ps'.
 // Requires AVX512ER.
 func M512MaskzRcp28RoundPs(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512MaskzRcp28RoundPs(uint16(k), [16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 
 
 // M512Rcp28RoundPs: Compute the approximate reciprocal of packed
@@ -622,10 +576,8 @@ func m512MaskzRcp28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 // Instruction: 'VRCP28PS'. Intrinsic: '_mm512_rcp28_round_ps'.
 // Requires AVX512ER.
 func M512Rcp28RoundPs(a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512Rcp28RoundPs([16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512Rcp28RoundPs(a [16]float32, rounding int) [16]float32
 
 
 // MaskRcp28RoundSd: Compute the approximate reciprocal of the lower
@@ -652,10 +604,8 @@ func m512Rcp28RoundPs(a [16]float32, rounding int) [16]float32
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_mask_rcp28_round_sd'.
 // Requires AVX512ER.
 func MaskRcp28RoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
-	return x86.M128d(maskRcp28RoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
+	panic("not implemented")
 }
-
-func maskRcp28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
 
 
 // MaskzRcp28RoundSd: Compute the approximate reciprocal of the lower
@@ -682,10 +632,8 @@ func maskRcp28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, round
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_maskz_rcp28_round_sd'.
 // Requires AVX512ER.
 func MaskzRcp28RoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
-	return x86.M128d(maskzRcp28RoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
+	panic("not implemented")
 }
-
-func maskzRcp28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
 
 
 // Rcp28RoundSd: Compute the approximate reciprocal of the lower
@@ -707,10 +655,8 @@ func maskzRcp28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]flo
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_rcp28_round_sd'.
 // Requires AVX512ER.
 func Rcp28RoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
-	return x86.M128d(rcp28RoundSd([2]float64(a), [2]float64(b), rounding))
+	panic("not implemented")
 }
-
-func rcp28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 
 
 // MaskRcp28RoundSs: Compute the approximate reciprocal of the lower
@@ -737,10 +683,8 @@ func rcp28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_mask_rcp28_round_ss'.
 // Requires AVX512ER.
 func MaskRcp28RoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
-	return x86.M128(maskRcp28RoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
+	panic("not implemented")
 }
-
-func maskRcp28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
 
 
 // MaskzRcp28RoundSs: Compute the approximate reciprocal of the lower
@@ -767,10 +711,8 @@ func maskRcp28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, round
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_maskz_rcp28_round_ss'.
 // Requires AVX512ER.
 func MaskzRcp28RoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
-	return x86.M128(maskzRcp28RoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
+	panic("not implemented")
 }
-
-func maskzRcp28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
 
 
 // Rcp28RoundSs: Compute the approximate reciprocal of the lower
@@ -792,10 +734,8 @@ func maskzRcp28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]flo
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_rcp28_round_ss'.
 // Requires AVX512ER.
 func Rcp28RoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
-	return x86.M128(rcp28RoundSs([4]float32(a), [4]float32(b), rounding))
+	panic("not implemented")
 }
-
-func rcp28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 
 
 // MaskRcp28Sd: Compute the approximate reciprocal of the lower
@@ -816,10 +756,8 @@ func rcp28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_mask_rcp28_sd'.
 // Requires AVX512ER.
 func MaskRcp28Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(maskRcp28Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func maskRcp28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 
 
 // MaskzRcp28Sd: Compute the approximate reciprocal of the lower
@@ -840,10 +778,8 @@ func maskRcp28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_maskz_rcp28_sd'.
 // Requires AVX512ER.
 func MaskzRcp28Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(maskzRcp28Sd(uint8(k), [2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func maskzRcp28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 
 
 // Rcp28Sd: Compute the approximate reciprocal of the lower double-precision
@@ -859,10 +795,8 @@ func maskzRcp28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 // Instruction: 'VRCP28SD'. Intrinsic: '_mm_rcp28_sd'.
 // Requires AVX512ER.
 func Rcp28Sd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(rcp28Sd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func rcp28Sd(a [2]float64, b [2]float64) [2]float64
 
 
 // MaskRcp28Ss: Compute the approximate reciprocal of the lower
@@ -883,10 +817,8 @@ func rcp28Sd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_mask_rcp28_ss'.
 // Requires AVX512ER.
 func MaskRcp28Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(maskRcp28Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func maskRcp28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 
 
 // MaskzRcp28Ss: Compute the approximate reciprocal of the lower
@@ -907,10 +839,8 @@ func maskRcp28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_maskz_rcp28_ss'.
 // Requires AVX512ER.
 func MaskzRcp28Ss(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(maskzRcp28Ss(uint8(k), [4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func maskzRcp28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 
 
 // Rcp28Ss: Compute the approximate reciprocal of the lower single-precision
@@ -926,10 +856,8 @@ func maskzRcp28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 // Instruction: 'VRCP28SS'. Intrinsic: '_mm_rcp28_ss'.
 // Requires AVX512ER.
 func Rcp28Ss(a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(rcp28Ss([4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func rcp28Ss(a [4]float32, b [4]float32) [4]float32
 
 
 // M512MaskRsqrt28Pd: Compute the approximate reciprocal square root of packed
@@ -950,10 +878,8 @@ func rcp28Ss(a [4]float32, b [4]float32) [4]float32
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_mask_rsqrt28_pd'.
 // Requires AVX512ER.
 func M512MaskRsqrt28Pd(src x86.M512d, k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512MaskRsqrt28Pd([8]float64(src), uint8(k), [8]float64(a)))
+	panic("not implemented")
 }
-
-func m512MaskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 
 
 // M512MaskzRsqrt28Pd: Compute the approximate reciprocal square root of packed
@@ -974,10 +900,8 @@ func m512MaskRsqrt28Pd(src [8]float64, k uint8, a [8]float64) [8]float64
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_maskz_rsqrt28_pd'.
 // Requires AVX512ER.
 func M512MaskzRsqrt28Pd(k x86.Mmask8, a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512MaskzRsqrt28Pd(uint8(k), [8]float64(a)))
+	panic("not implemented")
 }
-
-func m512MaskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
 
 
 // M512Rsqrt28Pd: Compute the approximate reciprocal square root of packed
@@ -993,10 +917,8 @@ func m512MaskzRsqrt28Pd(k uint8, a [8]float64) [8]float64
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_rsqrt28_pd'.
 // Requires AVX512ER.
 func M512Rsqrt28Pd(a x86.M512d) (dst x86.M512d) {
-	return x86.M512d(m512Rsqrt28Pd([8]float64(a)))
+	panic("not implemented")
 }
-
-func m512Rsqrt28Pd(a [8]float64) [8]float64
 
 
 // M512MaskRsqrt28Ps: Compute the approximate reciprocal square root of packed
@@ -1017,10 +939,8 @@ func m512Rsqrt28Pd(a [8]float64) [8]float64
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_mask_rsqrt28_ps'.
 // Requires AVX512ER.
 func M512MaskRsqrt28Ps(src x86.M512, k x86.Mmask16, a x86.M512) (dst x86.M512) {
-	return x86.M512(m512MaskRsqrt28Ps([16]float32(src), uint16(k), [16]float32(a)))
+	panic("not implemented")
 }
-
-func m512MaskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 
 
 // M512MaskzRsqrt28Ps: Compute the approximate reciprocal square root of packed
@@ -1041,10 +961,8 @@ func m512MaskRsqrt28Ps(src [16]float32, k uint16, a [16]float32) [16]float32
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_maskz_rsqrt28_ps'.
 // Requires AVX512ER.
 func M512MaskzRsqrt28Ps(k x86.Mmask16, a x86.M512) (dst x86.M512) {
-	return x86.M512(m512MaskzRsqrt28Ps(uint16(k), [16]float32(a)))
+	panic("not implemented")
 }
-
-func m512MaskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
 
 
 // M512Rsqrt28Ps: Compute the approximate reciprocal square root of packed
@@ -1060,10 +978,8 @@ func m512MaskzRsqrt28Ps(k uint16, a [16]float32) [16]float32
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_rsqrt28_ps'.
 // Requires AVX512ER.
 func M512Rsqrt28Ps(a x86.M512) (dst x86.M512) {
-	return x86.M512(m512Rsqrt28Ps([16]float32(a)))
+	panic("not implemented")
 }
-
-func m512Rsqrt28Ps(a [16]float32) [16]float32
 
 
 // M512MaskRsqrt28RoundPd: Compute the approximate reciprocal square root of
@@ -1090,10 +1006,8 @@ func m512Rsqrt28Ps(a [16]float32) [16]float32
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_mask_rsqrt28_round_pd'.
 // Requires AVX512ER.
 func M512MaskRsqrt28RoundPd(src x86.M512d, k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512MaskRsqrt28RoundPd([8]float64(src), uint8(k), [8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int) [8]float64
 
 
 // M512MaskzRsqrt28RoundPd: Compute the approximate reciprocal square root of
@@ -1120,10 +1034,8 @@ func m512MaskRsqrt28RoundPd(src [8]float64, k uint8, a [8]float64, rounding int)
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_maskz_rsqrt28_round_pd'.
 // Requires AVX512ER.
 func M512MaskzRsqrt28RoundPd(k x86.Mmask8, a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512MaskzRsqrt28RoundPd(uint8(k), [8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 
 
 // M512Rsqrt28RoundPd: Compute the approximate reciprocal square root of packed
@@ -1145,10 +1057,8 @@ func m512MaskzRsqrt28RoundPd(k uint8, a [8]float64, rounding int) [8]float64
 // Instruction: 'VRSQRT28PD'. Intrinsic: '_mm512_rsqrt28_round_pd'.
 // Requires AVX512ER.
 func M512Rsqrt28RoundPd(a x86.M512d, rounding int) (dst x86.M512d) {
-	return x86.M512d(m512Rsqrt28RoundPd([8]float64(a), rounding))
+	panic("not implemented")
 }
-
-func m512Rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
 
 
 // M512MaskRsqrt28RoundPs: Compute the approximate reciprocal square root of
@@ -1175,10 +1085,8 @@ func m512Rsqrt28RoundPd(a [8]float64, rounding int) [8]float64
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_mask_rsqrt28_round_ps'.
 // Requires AVX512ER.
 func M512MaskRsqrt28RoundPs(src x86.M512, k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512MaskRsqrt28RoundPs([16]float32(src), uint16(k), [16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding int) [16]float32
 
 
 // M512MaskzRsqrt28RoundPs: Compute the approximate reciprocal square root of
@@ -1205,10 +1113,8 @@ func m512MaskRsqrt28RoundPs(src [16]float32, k uint16, a [16]float32, rounding i
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_maskz_rsqrt28_round_ps'.
 // Requires AVX512ER.
 func M512MaskzRsqrt28RoundPs(k x86.Mmask16, a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512MaskzRsqrt28RoundPs(uint16(k), [16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512MaskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 
 
 // M512Rsqrt28RoundPs: Compute the approximate reciprocal square root of packed
@@ -1230,10 +1136,8 @@ func m512MaskzRsqrt28RoundPs(k uint16, a [16]float32, rounding int) [16]float32
 // Instruction: 'VRSQRT28PS'. Intrinsic: '_mm512_rsqrt28_round_ps'.
 // Requires AVX512ER.
 func M512Rsqrt28RoundPs(a x86.M512, rounding int) (dst x86.M512) {
-	return x86.M512(m512Rsqrt28RoundPs([16]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m512Rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
 
 
 // MaskRsqrt28RoundSd: Compute the approximate reciprocal square root of the
@@ -1260,10 +1164,8 @@ func m512Rsqrt28RoundPs(a [16]float32, rounding int) [16]float32
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_mask_rsqrt28_round_sd'.
 // Requires AVX512ER.
 func MaskRsqrt28RoundSd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
-	return x86.M128d(maskRsqrt28RoundSd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b), rounding))
+	panic("not implemented")
 }
-
-func maskRsqrt28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
 
 
 // MaskzRsqrt28RoundSd: Compute the approximate reciprocal square root of the
@@ -1290,10 +1192,8 @@ func maskRsqrt28RoundSd(src [2]float64, k uint8, a [2]float64, b [2]float64, rou
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_maskz_rsqrt28_round_sd'.
 // Requires AVX512ER.
 func MaskzRsqrt28RoundSd(k x86.Mmask8, a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
-	return x86.M128d(maskzRsqrt28RoundSd(uint8(k), [2]float64(a), [2]float64(b), rounding))
+	panic("not implemented")
 }
-
-func maskzRsqrt28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]float64
 
 
 // Rsqrt28RoundSd: Compute the approximate reciprocal square root of the lower
@@ -1315,10 +1215,8 @@ func maskzRsqrt28RoundSd(k uint8, a [2]float64, b [2]float64, rounding int) [2]f
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_rsqrt28_round_sd'.
 // Requires AVX512ER.
 func Rsqrt28RoundSd(a x86.M128d, b x86.M128d, rounding int) (dst x86.M128d) {
-	return x86.M128d(rsqrt28RoundSd([2]float64(a), [2]float64(b), rounding))
+	panic("not implemented")
 }
-
-func rsqrt28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 
 
 // MaskRsqrt28RoundSs: Compute the approximate reciprocal square root of the
@@ -1345,10 +1243,8 @@ func rsqrt28RoundSd(a [2]float64, b [2]float64, rounding int) [2]float64
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_mask_rsqrt28_round_ss'.
 // Requires AVX512ER.
 func MaskRsqrt28RoundSs(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
-	return x86.M128(maskRsqrt28RoundSs([4]float32(src), uint8(k), [4]float32(a), [4]float32(b), rounding))
+	panic("not implemented")
 }
-
-func maskRsqrt28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
 
 
 // MaskzRsqrt28RoundSs: Compute the approximate reciprocal square root of the
@@ -1375,10 +1271,8 @@ func maskRsqrt28RoundSs(src [4]float32, k uint8, a [4]float32, b [4]float32, rou
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_maskz_rsqrt28_round_ss'.
 // Requires AVX512ER.
 func MaskzRsqrt28RoundSs(k x86.Mmask8, a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
-	return x86.M128(maskzRsqrt28RoundSs(uint8(k), [4]float32(a), [4]float32(b), rounding))
+	panic("not implemented")
 }
-
-func maskzRsqrt28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]float32
 
 
 // Rsqrt28RoundSs: Compute the approximate reciprocal square root of the lower
@@ -1400,10 +1294,8 @@ func maskzRsqrt28RoundSs(k uint8, a [4]float32, b [4]float32, rounding int) [4]f
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_rsqrt28_round_ss'.
 // Requires AVX512ER.
 func Rsqrt28RoundSs(a x86.M128, b x86.M128, rounding int) (dst x86.M128) {
-	return x86.M128(rsqrt28RoundSs([4]float32(a), [4]float32(b), rounding))
+	panic("not implemented")
 }
-
-func rsqrt28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 
 
 // MaskRsqrt28Sd: Compute the approximate reciprocal square root of the lower
@@ -1424,10 +1316,8 @@ func rsqrt28RoundSs(a [4]float32, b [4]float32, rounding int) [4]float32
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_mask_rsqrt28_sd'.
 // Requires AVX512ER.
 func MaskRsqrt28Sd(src x86.M128d, k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(maskRsqrt28Sd([2]float64(src), uint8(k), [2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func maskRsqrt28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float64
 
 
 // MaskzRsqrt28Sd: Compute the approximate reciprocal square root of the lower
@@ -1448,10 +1338,8 @@ func maskRsqrt28Sd(src [2]float64, k uint8, a [2]float64, b [2]float64) [2]float
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_maskz_rsqrt28_sd'.
 // Requires AVX512ER.
 func MaskzRsqrt28Sd(k x86.Mmask8, a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(maskzRsqrt28Sd(uint8(k), [2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func maskzRsqrt28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 
 
 // Rsqrt28Sd: Compute the approximate reciprocal square root of the lower
@@ -1467,10 +1355,8 @@ func maskzRsqrt28Sd(k uint8, a [2]float64, b [2]float64) [2]float64
 // Instruction: 'VRSQRT28SD'. Intrinsic: '_mm_rsqrt28_sd'.
 // Requires AVX512ER.
 func Rsqrt28Sd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(rsqrt28Sd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func rsqrt28Sd(a [2]float64, b [2]float64) [2]float64
 
 
 // MaskRsqrt28Ss: Compute the approximate reciprocal square root of the lower
@@ -1491,10 +1377,8 @@ func rsqrt28Sd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_mask_rsqrt28_ss'.
 // Requires AVX512ER.
 func MaskRsqrt28Ss(src x86.M128, k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(maskRsqrt28Ss([4]float32(src), uint8(k), [4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func maskRsqrt28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float32
 
 
 // MaskzRsqrt28Ss: Compute the approximate reciprocal square root of the lower
@@ -1515,10 +1399,8 @@ func maskRsqrt28Ss(src [4]float32, k uint8, a [4]float32, b [4]float32) [4]float
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_maskz_rsqrt28_ss'.
 // Requires AVX512ER.
 func MaskzRsqrt28Ss(k x86.Mmask8, a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(maskzRsqrt28Ss(uint8(k), [4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func maskzRsqrt28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 
 
 // Rsqrt28Ss: Compute the approximate reciprocal square root of the lower
@@ -1534,8 +1416,6 @@ func maskzRsqrt28Ss(k uint8, a [4]float32, b [4]float32) [4]float32
 // Instruction: 'VRSQRT28SS'. Intrinsic: '_mm_rsqrt28_ss'.
 // Requires AVX512ER.
 func Rsqrt28Ss(a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(rsqrt28Ss([4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func rsqrt28Ss(a [4]float32, b [4]float32) [4]float32
 

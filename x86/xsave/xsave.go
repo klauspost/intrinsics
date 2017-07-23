@@ -19,10 +19,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'XGETBV'. Intrinsic: '_xgetbv'.
 // Requires XSAVE.
 func Xgetbv(a uint32) uint64 {
-	return uint64(xgetbv(a))
+	panic("not implemented")
 }
-
-func xgetbv(a uint32) uint64
 
 
 // Skipped: _xrstor. Contains pointer parameter.
@@ -45,8 +43,6 @@ func xgetbv(a uint32) uint64
 // Instruction: 'XSETBV'. Intrinsic: '_xsetbv'.
 // Requires XSAVE.
 func Xsetbv(a uint32, val uint64)  {
-	xsetbv(a, val)
+	panic("not implemented")
 }
-
-func xsetbv(a uint32, val uint64) 
 

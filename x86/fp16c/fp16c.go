@@ -24,10 +24,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm_cvtph_ps'.
 // Requires FP16C.
 func CvtphPs(a x86.M128i) (dst x86.M128) {
-	return x86.M128(cvtphPs([16]byte(a)))
+	panic("not implemented")
 }
-
-func cvtphPs(a [16]byte) [4]float32
 
 
 // M256CvtphPs: Convert packed half-precision (16-bit) floating-point elements
@@ -44,10 +42,8 @@ func cvtphPs(a [16]byte) [4]float32
 // Instruction: 'VCVTPH2PS'. Intrinsic: '_mm256_cvtph_ps'.
 // Requires FP16C.
 func M256CvtphPs(a x86.M128i) (dst x86.M256) {
-	return x86.M256(m256CvtphPs([16]byte(a)))
+	panic("not implemented")
 }
-
-func m256CvtphPs(a [16]byte) [8]float32
 
 
 // CvtpsPh: Convert packed single-precision (32-bit) floating-point elements in
@@ -71,10 +67,8 @@ func m256CvtphPs(a [16]byte) [8]float32
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm_cvtps_ph'.
 // Requires FP16C.
 func CvtpsPh(a x86.M128, rounding int) (dst x86.M128i) {
-	return x86.M128i(cvtpsPh([4]float32(a), rounding))
+	panic("not implemented")
 }
-
-func cvtpsPh(a [4]float32, rounding int) [16]byte
 
 
 // M256CvtpsPh: Convert packed single-precision (32-bit) floating-point
@@ -98,8 +92,6 @@ func cvtpsPh(a [4]float32, rounding int) [16]byte
 // Instruction: 'VCVTPS2PH'. Intrinsic: '_mm256_cvtps_ph'.
 // Requires FP16C.
 func M256CvtpsPh(a x86.M256, rounding int) (dst x86.M128i) {
-	return x86.M128i(m256CvtpsPh([8]float32(a), rounding))
+	panic("not implemented")
 }
-
-func m256CvtpsPh(a [8]float32, rounding int) [16]byte
 

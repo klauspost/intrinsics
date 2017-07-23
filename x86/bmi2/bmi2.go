@@ -22,10 +22,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'BZHI'. Intrinsic: '_bzhi_u32'.
 // Requires BMI2.
 func BzhiU32(a uint32, index uint32) uint32 {
-	return uint32(bzhiU32(a, index))
+	panic("not implemented")
 }
-
-func bzhiU32(a uint32, index uint32) uint32
 
 
 // BzhiU64: Copy all bits from unsigned 64-bit integer 'a' to 'dst', and reset
@@ -40,10 +38,8 @@ func bzhiU32(a uint32, index uint32) uint32
 // Instruction: 'BZHI'. Intrinsic: '_bzhi_u64'.
 // Requires BMI2.
 func BzhiU64(a uint64, index uint32) uint64 {
-	return uint64(bzhiU64(a, index))
+	panic("not implemented")
 }
-
-func bzhiU64(a uint64, index uint32) uint64
 
 
 // PdepU32: Deposit contiguous low bits from unsigned 32-bit integer 'a' to
@@ -65,10 +61,8 @@ func bzhiU64(a uint64, index uint32) uint64
 // Instruction: 'PDEP'. Intrinsic: '_pdep_u32'.
 // Requires BMI2.
 func PdepU32(a uint32, mask uint32) uint32 {
-	return uint32(pdepU32(a, mask))
+	panic("not implemented")
 }
-
-func pdepU32(a uint32, mask uint32) uint32
 
 
 // PdepU64: Deposit contiguous low bits from unsigned 64-bit integer 'a' to
@@ -90,10 +84,8 @@ func pdepU32(a uint32, mask uint32) uint32
 // Instruction: 'PDEP'. Intrinsic: '_pdep_u64'.
 // Requires BMI2.
 func PdepU64(a uint64, mask uint64) uint64 {
-	return uint64(pdepU64(a, mask))
+	panic("not implemented")
 }
-
-func pdepU64(a uint64, mask uint64) uint64
 
 
 // PextU32: Extract bits from unsigned 32-bit integer 'a' at the corresponding
@@ -115,10 +107,8 @@ func pdepU64(a uint64, mask uint64) uint64
 // Instruction: 'PEXT'. Intrinsic: '_pext_u32'.
 // Requires BMI2.
 func PextU32(a uint32, mask uint32) uint32 {
-	return uint32(pextU32(a, mask))
+	panic("not implemented")
 }
-
-func pextU32(a uint32, mask uint32) uint32
 
 
 // PextU64: Extract bits from unsigned 64-bit integer 'a' at the corresponding
@@ -140,8 +130,6 @@ func pextU32(a uint32, mask uint32) uint32
 // Instruction: 'PEXT'. Intrinsic: '_pext_u64'.
 // Requires BMI2.
 func PextU64(a uint64, mask uint64) uint64 {
-	return uint64(pextU64(a, mask))
+	panic("not implemented")
 }
-
-func pextU64(a uint64, mask uint64) uint64
 

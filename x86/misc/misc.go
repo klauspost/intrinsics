@@ -20,9 +20,9 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // AddcarryU64: Add unsigned 64-bit integers 'a' and 'b' with unsigned 8-bit
 // carry-in 'c_in' (carry flag), and store the unsigned 64-bit result in 'out',
@@ -34,9 +34,9 @@ func AddcarryU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func AddcarryU64(c_in uint8, a uint64, b uint64, out *uint64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // AllowCpuFeatures: Treat the processor-specific feature(s) specified in 'a'
 // as available. Multiple features may be OR'd together. See the valid feature
@@ -78,10 +78,8 @@ func AddcarryU64(c_in uint8, a uint64, b uint64, out *uint64) uint8 {
 //
 // Instruction: '...'. Intrinsic: '_allow_cpu_features'.
 func AllowCpuFeatures(a uint64)  {
-	allowCpuFeatures(a)
+	panic("not implemented")
 }
-
-func allowCpuFeatures(a uint64) 
 
 
 // BitScanForward: Set 'dst' to the index of the lowest set bit in 32-bit
@@ -99,10 +97,8 @@ func allowCpuFeatures(a uint64)
 //
 // Instruction: 'BSF'. Intrinsic: '_bit_scan_forward'.
 func BitScanForward(a int) int {
-	return int(bitScanForward(a))
+	panic("not implemented")
 }
-
-func bitScanForward(a int) int
 
 
 // BitScanReverse: Set 'dst' to the index of the highest set bit in 32-bit
@@ -120,10 +116,8 @@ func bitScanForward(a int) int
 //
 // Instruction: 'BSR'. Intrinsic: '_bit_scan_reverse'.
 func BitScanReverse(a int) int {
-	return int(bitScanReverse(a))
+	panic("not implemented")
 }
-
-func bitScanReverse(a int) int
 
 
 // BitScanForward2: Set 'index' to the index of the lowest set bit in 32-bit
@@ -145,9 +139,9 @@ func bitScanReverse(a int) int
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanForward2(index *uint32, mask uint32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // BitScanForward64: Set 'index' to the index of the lowest set bit in 64-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
@@ -168,9 +162,9 @@ func BitScanForward2(index *uint32, mask uint32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanForward64(index *uint32, mask uint64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // BitScanReverse2: Set 'index' to the index of the highest set bit in 32-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
@@ -191,9 +185,9 @@ func BitScanForward64(index *uint32, mask uint64) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanReverse2(index *uint32, mask uint32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // BitScanReverse64: Set 'index' to the index of the highest set bit in 64-bit
 // integer 'mask'. If no bits are set in 'mask', then set 'dst' to 0, otherwise
@@ -214,9 +208,9 @@ func BitScanReverse2(index *uint32, mask uint32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func BitScanReverse64(index *uint32, mask uint64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittest: Return the bit at index 'b' of 32-bit integer 'a'. 
 //
@@ -226,9 +220,9 @@ func BitScanReverse64(index *uint32, mask uint64) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittest(a *int32, b int32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittest64: Return the bit at index 'b' of 64-bit integer 'a'. 
 //
@@ -238,9 +232,9 @@ func Bittest(a *int32, b int32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittest64(a *int64, b int64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittestandcomplement: Return the bit at index 'b' of 32-bit integer 'a', and
 // set that bit to its complement. 
@@ -252,9 +246,9 @@ func Bittest64(a *int64, b int64) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandcomplement(a *int32, b int32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittestandcomplement64: Return the bit at index 'b' of 64-bit integer 'a',
 // and set that bit to its complement. 
@@ -266,9 +260,9 @@ func Bittestandcomplement(a *int32, b int32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandcomplement64(a *int64, b int64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittestandreset: Return the bit at index 'b' of 32-bit integer 'a', and set
 // that bit to zero. 
@@ -280,9 +274,9 @@ func Bittestandcomplement64(a *int64, b int64) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandreset(a *int32, b int32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittestandreset64: Return the bit at index 'b' of 64-bit integer 'a', and
 // set that bit to zero. 
@@ -294,9 +288,9 @@ func Bittestandreset(a *int32, b int32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandreset64(a *int64, b int64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittestandset: Return the bit at index 'b' of 32-bit integer 'a', and set
 // that bit to one. 
@@ -308,9 +302,9 @@ func Bittestandreset64(a *int64, b int64) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandset(a *int32, b int32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bittestandset64: Return the bit at index 'b' of 64-bit integer 'a', and set
 // that bit to one. 
@@ -322,9 +316,9 @@ func Bittestandset(a *int32, b int32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Bittestandset64(a *int64, b int64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Bswap: Reverse the byte order of 32-bit integer 'a', and store the result in
 // 'dst'. This intrinsic is provided for conversion between little and big
@@ -337,10 +331,8 @@ func Bittestandset64(a *int64, b int64) uint8 {
 //
 // Instruction: 'BSWAP'. Intrinsic: '_bswap'.
 func Bswap(a int) int {
-	return int(bswap(a))
+	panic("not implemented")
 }
-
-func bswap(a int) int
 
 
 // Bswap64: Reverse the byte order of 64-bit integer 'a', and store the result
@@ -358,10 +350,8 @@ func bswap(a int) int
 //
 // Instruction: 'BSWAP'. Intrinsic: '_bswap64'.
 func Bswap64(a int64) int64 {
-	return int64(bswap64(a))
+	panic("not implemented")
 }
-
-func bswap64(a int64) int64
 
 
 // Castf32U32: Cast from type float to type unsigned __int32 without
@@ -373,10 +363,8 @@ func bswap64(a int64) int64
 //
 // Instruction: ''. Intrinsic: '_castf32_u32'.
 func Castf32U32(a float32) uint32 {
-	return uint32(castf32U32(a))
+	panic("not implemented")
 }
-
-func castf32U32(a float32) uint32
 
 
 // Castf64U64: Cast from type double to type unsigned __int64 without
@@ -388,10 +376,8 @@ func castf32U32(a float32) uint32
 //
 // Instruction: ''. Intrinsic: '_castf64_u64'.
 func Castf64U64(a float64) uint64 {
-	return uint64(castf64U64(a))
+	panic("not implemented")
 }
-
-func castf64U64(a float64) uint64
 
 
 // Castu32F32: Cast from type unsigned __int32 to type float without
@@ -403,10 +389,8 @@ func castf64U64(a float64) uint64
 //
 // Instruction: ''. Intrinsic: '_castu32_f32'.
 func Castu32F32(a uint32) float32 {
-	return float32(castu32F32(a))
+	panic("not implemented")
 }
-
-func castu32F32(a uint32) float32
 
 
 // Castu64F64: Cast from type unsigned __int64 to type double without
@@ -418,10 +402,8 @@ func castu32F32(a uint32) float32
 //
 // Instruction: ''. Intrinsic: '_castu64_f64'.
 func Castu64F64(a uint64) float64 {
-	return float64(castu64F64(a))
+	panic("not implemented")
 }
-
-func castu64F64(a uint64) float64
 
 
 // CvtshSs: Convert the half-precision (16-bit) floating-point value 'a' to a
@@ -432,10 +414,8 @@ func castu64F64(a uint64) float64
 //
 // Instruction: '...'. Intrinsic: '_cvtsh_ss'.
 func CvtshSs(a uint16) float32 {
-	return float32(cvtshSs(a))
+	panic("not implemented")
 }
-
-func cvtshSs(a uint16) float32
 
 
 // CvtssSh: Convert the single-precision (32-bit) floating-point value 'a' to a
@@ -447,10 +427,8 @@ func cvtshSs(a uint16) float32
 //
 // FIXME: Requires compiler support (has immediate)
 func CvtssSh(a float32, imm8 byte) uint16 {
-	return uint16(cvtssSh(a, imm8))
+	panic("not implemented")
 }
-
-func cvtssSh(a float32, imm8 byte) uint16
 
 
 // Skipped: _loadbe_i16. Contains pointer parameter.
@@ -485,10 +463,8 @@ func cvtssSh(a float32, imm8 byte) uint16
 //
 // Instruction: 'ROL'. Intrinsic: '_lrotl'.
 func Lrotl(a uint32, shift int) uint32 {
-	return uint32(lrotl(a, shift))
+	panic("not implemented")
 }
-
-func lrotl(a uint32, shift int) uint32
 
 
 // Lrotr: Shift the bits of unsigned 64-bit integer 'a' right by the number of
@@ -505,10 +481,8 @@ func lrotl(a uint32, shift int) uint32
 //
 // Instruction: 'ROR'. Intrinsic: '_lrotr'.
 func Lrotr(a uint32, shift int) uint32 {
-	return uint32(lrotr(a, shift))
+	panic("not implemented")
 }
-
-func lrotr(a uint32, shift int) uint32
 
 
 // MayIUseCpuFeature: Dynamically query the processor to determine if the
@@ -553,10 +527,8 @@ func lrotr(a uint32, shift int) uint32
 //
 // Instruction: '...'. Intrinsic: '_may_i_use_cpu_feature'.
 func MayIUseCpuFeature(a uint64) int {
-	return int(mayIUseCpuFeature(a))
+	panic("not implemented")
 }
-
-func mayIUseCpuFeature(a uint64) int
 
 
 // Rdpmc: Read the Performance Monitor Counter (PMC) specified by 'a', and
@@ -567,10 +539,8 @@ func mayIUseCpuFeature(a uint64) int
 //
 // Instruction: 'RDPMC'. Intrinsic: '_rdpmc'.
 func Rdpmc(a int) int64 {
-	return int64(rdpmc(a))
+	panic("not implemented")
 }
-
-func rdpmc(a int) int64
 
 
 // Rotl: Shift the bits of unsigned 32-bit integer 'a' left by the number of
@@ -587,10 +557,8 @@ func rdpmc(a int) int64
 //
 // Instruction: 'ROL'. Intrinsic: '_rotl'.
 func Rotl(a uint32, shift int) uint32 {
-	return uint32(rotl(a, shift))
+	panic("not implemented")
 }
-
-func rotl(a uint32, shift int) uint32
 
 
 // Rotr: Shift the bits of unsigned 32-bit integer 'a' right by the number of
@@ -607,10 +575,8 @@ func rotl(a uint32, shift int) uint32
 //
 // Instruction: 'ROR'. Intrinsic: '_rotr'.
 func Rotr(a uint32, shift int) uint32 {
-	return uint32(rotr(a, shift))
+	panic("not implemented")
 }
-
-func rotr(a uint32, shift int) uint32
 
 
 // Rotwl: Shift the bits of unsigned 16-bit integer 'a' left by the number of
@@ -627,10 +593,8 @@ func rotr(a uint32, shift int) uint32
 //
 // Instruction: 'ROL'. Intrinsic: '_rotwl'.
 func Rotwl(a uint16, shift int) uint16 {
-	return uint16(rotwl(a, shift))
+	panic("not implemented")
 }
-
-func rotwl(a uint16, shift int) uint16
 
 
 // Rotwr: Shift the bits of unsigned 16-bit integer 'a' right by the number of
@@ -647,10 +611,8 @@ func rotwl(a uint16, shift int) uint16
 //
 // Instruction: 'ROR'. Intrinsic: '_rotwr'.
 func Rotwr(a uint16, shift int) uint16 {
-	return uint16(rotwr(a, shift))
+	panic("not implemented")
 }
-
-func rotwr(a uint16, shift int) uint16
 
 
 // Skipped: _storebe_i16. Contains pointer parameter.
@@ -682,9 +644,9 @@ func rotwr(a uint16, shift int) uint16
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // SubborrowU64: Add unsigned 8-bit borrow 'b_in' (carry flag) to unsigned
 // 64-bit integer 'a', and subtract the result from unsigned 64-bit integer
@@ -697,6 +659,6 @@ func SubborrowU32(b_in uint8, a uint32, b uint32, out *uint32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func SubborrowU64(b_in uint8, a uint64, b uint64, out *uint64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+

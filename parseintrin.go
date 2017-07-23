@@ -31,7 +31,6 @@ func parsex86() {
 	opsFile.WriteString("// +build ignore\n\n")
 	defer opsFile.Close()
 
-
 	gcSSAFile, err = os.Create("x86_gc_add_functions.go")
 	if err != nil {
 		panic(err)
@@ -310,111 +309,124 @@ func (in Intrinsic) FinishX86() {
 
 	// We have a receiver pointer,
 	if rework {
-		fmt.Fprintln(out, "\t// FIXME: Rework to avoid possible return value as parameter.")
-		if strings.HasPrefix(in.RetType, "x86.") {
-			fmt.Fprint(out, "\treturn "+in.RetType+"{}")
-		} else if in.RetType != "" {
-			fmt.Fprint(out, "\treturn 0")
+		if false {
+			fmt.Fprintln(out, "\t// FIXME: Rework to avoid possible return value as parameter.")
+			if strings.HasPrefix(in.RetType, "x86.") {
+				fmt.Fprint(out, "\treturn "+in.RetType+"{}")
+			} else if in.RetType != "" {
+				fmt.Fprint(out, "\treturn 0")
+			}
+			fmt.Fprint(out, "\n}\n")
+			return
 		}
-		fmt.Fprint(out, "\n}\n")
+		fmt.Fprintln(out, "\t"+`panic("not implemented")`)
+		fmt.Fprintln(out, "}\n")
 		return
 	}
 
-	if in.RetType != "" {
-		fmt.Fprint(out, "\treturn "+in.RetType+"("+in.AsmName+"(")
+	if false {
+		if in.RetType != "" {
+			fmt.Fprint(out, "\treturn "+in.RetType+"("+in.AsmName+"(")
+		} else {
+			fmt.Fprint(out, "\t"+in.AsmName+"(")
+		}
+		for i, param := range in.Params {
+			pn := param.Name
+			if param.getNativeX86() != "" {
+				// cast
+				pn = param.getNativeX86() + "(" + pn + ")"
+			}
+			fmt.Fprint(out, pn)
+			if i != len(in.Params)-1 {
+				fmt.Fprint(out, ", ")
+			}
+		}
+		if in.RetType != "" {
+			fmt.Fprint(out, ")")
+		}
+		fmt.Fprintln(out, ")\n}")
+		fmt.Fprintln(out, "")
 	} else {
-		fmt.Fprint(out, "\t"+in.AsmName+"(")
+		fmt.Fprintln(out, "\t"+`panic("not implemented")`)
+		fmt.Fprintln(out, "}\n")
 	}
-	for i, param := range in.Params {
-		pn := param.Name
-		if param.getNativeX86() != "" {
-			// cast
-			pn = param.getNativeX86() + "(" + pn + ")"
-		}
-		fmt.Fprint(out, pn)
-		if i != len(in.Params)-1 {
-			fmt.Fprint(out, ", ")
-		}
-	}
-	if in.RetType != "" {
-		fmt.Fprint(out, ")")
-	}
-	fmt.Fprintln(out, ")\n}")
-	fmt.Fprintln(out, "")
 
 	// ASM declaration
-	fmt.Fprint(out, "func ", in.AsmName, "(")
-	params = []string{}
-	for _, param := range in.Params {
-		typ := param.Type
-		ot := param.getNativeX86()
-		if ot != "" {
-			typ = ot
+	if false {
+		fmt.Fprint(out, "func ", in.AsmName, "(")
+		params = []string{}
+		for _, param := range in.Params {
+			typ := param.Type
+			ot := param.getNativeX86()
+			if ot != "" {
+				typ = ot
+			}
+			params = append(params, fmt.Sprint(param.Name, " ", typ))
 		}
-		params = append(params, fmt.Sprint(param.Name, " ", typ))
-	}
-	if retparam.getNativeX86() != "" {
-		retparam = Param{Type: retparam.getNativeX86()}
-	}
-	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n\n")
+		if retparam.getNativeX86() != "" {
+			retparam = Param{Type: retparam.getNativeX86()}
+		}
+		fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n\n")
 
+	}
 	// ASM
-	out = in.getFilesX86().asmFile
-	fmt.Fprint(out, "// func ", in.AsmName, "(")
-	fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n")
-	fmt.Fprint(out, "TEXT ·"+in.AsmName+"(SB),7,$0\n")
-	load, off := in.Params.getAsmX86()
-	fmt.Fprintln(out, load)
-	retparam = Param{Type: in.RetType}
 
-	fmt.Fprint(out, "\t// TODO: Code missing")
-	if in.Instruction != "..." && in.Instruction != "" {
-		if len(params) == 1 {
-			if retparam.getReg(0) == "X0" && in.Params[0].getReg(0) == "X0" {
-				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
-			} else if retparam.getReg(0) == "M0" && in.Params[0].getReg(0) == "M0" {
-				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
-			} else if in.Params[0].getReg(0) != "" {
-				fmt.Fprintf(out, " - could be:\n\t// %s %s", in.Instruction, in.Params[0].getReg(0))
+	out = in.getFilesX86().asmFile
+
+	if false {
+		fmt.Fprint(out, "// func ", in.AsmName, "(")
+		fmt.Fprint(out, strings.Join(params, ", "), ") ", retparam.Type, "\n")
+		fmt.Fprint(out, "TEXT ·"+in.AsmName+"(SB),7,$0\n")
+		load, off := in.Params.getAsmX86()
+		fmt.Fprintln(out, load)
+		retparam = Param{Type: in.RetType}
+		fmt.Fprint(out, "\t// TODO: Code missing")
+		if in.Instruction != "..." && in.Instruction != "" {
+			if len(params) == 1 {
+				if retparam.getReg(0) == "X0" && in.Params[0].getReg(0) == "X0" {
+					fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
+				} else if retparam.getReg(0) == "M0" && in.Params[0].getReg(0) == "M0" {
+					fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[0].getReg(0))
+				} else if in.Params[0].getReg(0) != "" {
+					fmt.Fprintf(out, " - could be:\n\t// %s %s", in.Instruction, in.Params[0].getReg(0))
+				} else {
+					fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
+				}
+			} else if len(params) == 2 {
+				fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[1].getReg(1))
 			} else {
 				fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
 			}
-		} else if len(params) == 2 {
-			fmt.Fprintf(out, " - could be:\n\t// %s %s, %s", in.Instruction, in.Params[0].getReg(0), in.Params[1].getReg(1))
-		} else {
-			fmt.Fprintf(out, " - uses instrunction: %s", in.Instruction)
 		}
-	}
 
-	// Attempts to write a return value
-	if in.RetType != "" {
-		// Guess a return reg
-		rreg := retparam.getReg(0)
+		// Attempts to write a return value
+		if in.RetType != "" {
+			// Guess a return reg
+			rreg := retparam.getReg(0)
 
-		if len(params) > 0 {
-			rtry := retparam.getReg(len(params) - 1)
-			if rtry != "" {
-				rreg = rtry
+			if len(params) > 0 {
+				rtry := retparam.getReg(len(params) - 1)
+				if rtry != "" {
+					rreg = rtry
+				}
 			}
-		}
 
-		if retparam.getSizeX86() > 0 && retparam.getReg(0) == "R8" {
-			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" $0, ret+"+strconv.Itoa(off)+"(FP)\n")
-		} else if retparam.getSizeX86() > 8 {
-			fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+rreg+", ret+"+strconv.Itoa(off)+"(FP)\n")
-		} else {
-			fmt.Fprintf(out, "\t// Return size: %d\n", retparam.getSizeX86())
-		}
+			if retparam.getSizeX86() > 0 && retparam.getReg(0) == "R8" {
+				fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" $0, ret+"+strconv.Itoa(off)+"(FP)\n")
+			} else if retparam.getSizeX86() > 8 {
+				fmt.Fprint(out, "\tMOV"+retparam.getPostfix()+" "+rreg+", ret+"+strconv.Itoa(off)+"(FP)\n")
+			} else {
+				fmt.Fprintf(out, "\t// Return size: %d\n", retparam.getSizeX86())
+			}
 
+		}
+		fmt.Fprint(out, "\tRET\n")
+		fmt.Fprint(out, "\n")
 	}
-	fmt.Fprint(out, "\tRET\n")
-	fmt.Fprint(out, "\n")
-
 	// Take out instructions we cannot find for now.
 	if _, ok := X86_Anames[strings.ToUpper(in.Instruction)]; !ok {
 		return
 	}
-
 
 	// Ops:
 	for {

@@ -21,9 +21,9 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func AddcarryxU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // AddcarryxU64: Add unsigned 64-bit integers 'a' and 'b' with unsigned 8-bit
 // carry-in 'c_in' (carry or overflow flag), and store the unsigned 64-bit
@@ -36,6 +36,6 @@ func AddcarryxU32(c_in uint8, a uint32, b uint32, out *uint32) uint8 {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func AddcarryxU64(c_in uint8, a uint64, b uint64, out *uint64) uint8 {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+

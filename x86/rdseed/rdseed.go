@@ -27,9 +27,9 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdseed16Step(val *uint16) int {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Rdseed32Step: Read a 32-bit NIST SP800-90B and SP800-90C compliant random
 // value and store in 'val'. Return 1 if a random value was generated, and 0
@@ -48,9 +48,9 @@ func Rdseed16Step(val *uint16) int {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdseed32Step(val *uint32) int {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Rdseed64Step: Read a 64-bit NIST SP800-90B and SP800-90C compliant random
 // value and store in 'val'. Return 1 if a random value was generated, and 0
@@ -69,6 +69,6 @@ func Rdseed32Step(val *uint32) int {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdseed64Step(val *uint64) int {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+

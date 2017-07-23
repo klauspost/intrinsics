@@ -26,9 +26,9 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdrand16Step(val *uint16) int {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Rdrand32Step: Read a hardware generated 32-bit random value and store the
 // result in 'val'. Return 1 if a random value was generated, and 0 otherwise. 
@@ -46,9 +46,9 @@ func Rdrand16Step(val *uint16) int {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdrand32Step(val *uint32) int {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+
 
 // Rdrand64Step: Read a hardware generated 64-bit random value and store the
 // result in 'val'. Return 1 if a random value was generated, and 0 otherwise. 
@@ -66,6 +66,6 @@ func Rdrand32Step(val *uint32) int {
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Rdrand64Step(val *uint64) int {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return 0
+	panic("not implemented")
 }
+

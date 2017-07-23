@@ -21,10 +21,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'PADDW'. Intrinsic: '_mm_add_pi16'.
 // Requires MMX.
 func AddPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addPi16(a, b))
+	panic("not implemented")
 }
-
-func addPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // AddPi32: Add packed 32-bit integers in 'a' and 'b', and store the results in
@@ -38,10 +36,8 @@ func addPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDD'. Intrinsic: '_mm_add_pi32'.
 // Requires MMX.
 func AddPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addPi32(a, b))
+	panic("not implemented")
 }
-
-func addPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // AddPi8: Add packed 8-bit integers in 'a' and 'b', and store the results in
@@ -55,10 +51,8 @@ func addPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDB'. Intrinsic: '_mm_add_pi8'.
 // Requires MMX.
 func AddPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addPi8(a, b))
+	panic("not implemented")
 }
-
-func addPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // AddsPi16: Add packed 16-bit integers in 'a' and 'b' using saturation, and
@@ -72,10 +66,8 @@ func addPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDSW'. Intrinsic: '_mm_adds_pi16'.
 // Requires MMX.
 func AddsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addsPi16(a, b))
+	panic("not implemented")
 }
-
-func addsPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // AddsPi8: Add packed 8-bit integers in 'a' and 'b' using saturation, and
@@ -89,10 +81,8 @@ func addsPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDSB'. Intrinsic: '_mm_adds_pi8'.
 // Requires MMX.
 func AddsPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addsPi8(a, b))
+	panic("not implemented")
 }
-
-func addsPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // AddsPu16: Add packed unsigned 16-bit integers in 'a' and 'b' using
@@ -106,10 +96,8 @@ func addsPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDUSW'. Intrinsic: '_mm_adds_pu16'.
 // Requires MMX.
 func AddsPu16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addsPu16(a, b))
+	panic("not implemented")
 }
-
-func addsPu16(a x86.M64, b x86.M64) x86.M64
 
 
 // AddsPu8: Add packed unsigned 8-bit integers in 'a' and 'b' using saturation,
@@ -123,10 +111,8 @@ func addsPu16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDUSB'. Intrinsic: '_mm_adds_pu8'.
 // Requires MMX.
 func AddsPu8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(addsPu8(a, b))
+	panic("not implemented")
 }
-
-func addsPu8(a x86.M64, b x86.M64) x86.M64
 
 
 // AndSi64: Compute the bitwise AND of 64 bits (representing integer data) in
@@ -137,10 +123,8 @@ func addsPu8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PAND'. Intrinsic: '_mm_and_si64'.
 // Requires MMX.
 func AndSi64(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(andSi64(a, b))
+	panic("not implemented")
 }
-
-func andSi64(a x86.M64, b x86.M64) x86.M64
 
 
 // AndnotSi64: Compute the bitwise AND NOT of 64 bits (representing integer
@@ -151,10 +135,8 @@ func andSi64(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PANDN'. Intrinsic: '_mm_andnot_si64'.
 // Requires MMX.
 func AndnotSi64(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(andnotSi64(a, b))
+	panic("not implemented")
 }
-
-func andnotSi64(a x86.M64, b x86.M64) x86.M64
 
 
 // CmpeqPi16: Compare packed 16-bit integers in 'a' and 'b' for equality, and
@@ -168,10 +150,8 @@ func andnotSi64(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPEQW'. Intrinsic: '_mm_cmpeq_pi16'.
 // Requires MMX.
 func CmpeqPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(cmpeqPi16(a, b))
+	panic("not implemented")
 }
-
-func cmpeqPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // CmpeqPi32: Compare packed 32-bit integers in 'a' and 'b' for equality, and
@@ -185,10 +165,8 @@ func cmpeqPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPEQD'. Intrinsic: '_mm_cmpeq_pi32'.
 // Requires MMX.
 func CmpeqPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(cmpeqPi32(a, b))
+	panic("not implemented")
 }
-
-func cmpeqPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // CmpeqPi8: Compare packed 8-bit integers in 'a' and 'b' for equality, and
@@ -202,10 +180,8 @@ func cmpeqPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPEQB'. Intrinsic: '_mm_cmpeq_pi8'.
 // Requires MMX.
 func CmpeqPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(cmpeqPi8(a, b))
+	panic("not implemented")
 }
-
-func cmpeqPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // CmpgtPi16: Compare packed 16-bit integers in 'a' and 'b' for greater-than,
@@ -219,10 +195,8 @@ func cmpeqPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPGTW'. Intrinsic: '_mm_cmpgt_pi16'.
 // Requires MMX.
 func CmpgtPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(cmpgtPi16(a, b))
+	panic("not implemented")
 }
-
-func cmpgtPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // CmpgtPi32: Compare packed 32-bit integers in 'a' and 'b' for greater-than,
@@ -236,10 +210,8 @@ func cmpgtPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPGTD'. Intrinsic: '_mm_cmpgt_pi32'.
 // Requires MMX.
 func CmpgtPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(cmpgtPi32(a, b))
+	panic("not implemented")
 }
-
-func cmpgtPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // CmpgtPi8: Compare packed 8-bit integers in 'a' and 'b' for greater-than, and
@@ -253,10 +225,8 @@ func cmpgtPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPGTB'. Intrinsic: '_mm_cmpgt_pi8'.
 // Requires MMX.
 func CmpgtPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(cmpgtPi8(a, b))
+	panic("not implemented")
 }
-
-func cmpgtPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // Cvtm64Si64: Copy 64-bit integer 'a' to 'dst'. 
@@ -266,10 +236,8 @@ func cmpgtPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtm64_si64'.
 // Requires MMX.
 func Cvtm64Si64(a x86.M64) int64 {
-	return int64(cvtm64Si64(a))
+	panic("not implemented")
 }
-
-func cvtm64Si64(a x86.M64) int64
 
 
 // Cvtsi32Si64: Copy 32-bit integer 'a' to the lower elements of 'dst', and
@@ -281,10 +249,8 @@ func cvtm64Si64(a x86.M64) int64
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi32_si64'.
 // Requires MMX.
 func Cvtsi32Si64(a int) (dst x86.M64) {
-	return x86.M64(cvtsi32Si64(a))
+	panic("not implemented")
 }
-
-func cvtsi32Si64(a int) x86.M64
 
 
 // Cvtsi64M64: Copy 64-bit integer 'a' to 'dst'. 
@@ -294,10 +260,8 @@ func cvtsi32Si64(a int) x86.M64
 // Instruction: 'MOVQ'. Intrinsic: '_mm_cvtsi64_m64'.
 // Requires MMX.
 func Cvtsi64M64(a int64) (dst x86.M64) {
-	return x86.M64(cvtsi64M64(a))
+	panic("not implemented")
 }
-
-func cvtsi64M64(a int64) x86.M64
 
 
 // Cvtsi64Si32: Copy the lower 32-bit integer in 'a' to 'dst'. 
@@ -307,10 +271,8 @@ func cvtsi64M64(a int64) x86.M64
 // Instruction: 'MOVD'. Intrinsic: '_mm_cvtsi64_si32'.
 // Requires MMX.
 func Cvtsi64Si32(a x86.M64) int {
-	return int(cvtsi64Si32(a))
+	panic("not implemented")
 }
-
-func cvtsi64Si32(a x86.M64) int
 
 
 // Empty: Empty the MMX state, which marks the x87 FPU registers as available
@@ -322,10 +284,8 @@ func cvtsi64Si32(a x86.M64) int
 // Instruction: 'EMMS'. Intrinsic: '_m_empty'.
 // Requires MMX.
 func Empty()  {
-	empty()
+	panic("not implemented")
 }
-
-func empty() 
 
 
 // Empty2: Empty the MMX state, which marks the x87 FPU registers as available
@@ -337,10 +297,8 @@ func empty()
 // Instruction: 'EMMS'. Intrinsic: '_mm_empty'.
 // Requires MMX.
 func Empty2()  {
-	empty2()
+	panic("not implemented")
 }
-
-func empty2() 
 
 
 // FromInt: Copy 32-bit integer 'a' to the lower elements of 'dst', and zero
@@ -352,10 +310,8 @@ func empty2()
 // Instruction: 'MOVD'. Intrinsic: '_m_from_int'.
 // Requires MMX.
 func FromInt(a int) (dst x86.M64) {
-	return x86.M64(fromInt(a))
+	panic("not implemented")
 }
-
-func fromInt(a int) x86.M64
 
 
 // FromInt64: Copy 64-bit integer 'a' to 'dst'. 
@@ -365,10 +321,8 @@ func fromInt(a int) x86.M64
 // Instruction: 'MOVQ'. Intrinsic: '_m_from_int64'.
 // Requires MMX.
 func FromInt64(a int64) (dst x86.M64) {
-	return x86.M64(fromInt64(a))
+	panic("not implemented")
 }
-
-func fromInt64(a int64) x86.M64
 
 
 // MaddPi16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -383,10 +337,8 @@ func fromInt64(a int64) x86.M64
 // Instruction: 'PMADDWD'. Intrinsic: '_mm_madd_pi16'.
 // Requires MMX.
 func MaddPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(maddPi16(a, b))
+	panic("not implemented")
 }
-
-func maddPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // MulhiPi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -402,10 +354,8 @@ func maddPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMULHW'. Intrinsic: '_mm_mulhi_pi16'.
 // Requires MMX.
 func MulhiPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(mulhiPi16(a, b))
+	panic("not implemented")
 }
-
-func mulhiPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // MulloPi16: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -421,10 +371,8 @@ func mulhiPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMULLW'. Intrinsic: '_mm_mullo_pi16'.
 // Requires MMX.
 func MulloPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(mulloPi16(a, b))
+	panic("not implemented")
 }
-
-func mulloPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // OrSi64: Compute the bitwise OR of 64 bits (representing integer data) in 'a'
@@ -435,10 +383,8 @@ func mulloPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'POR'. Intrinsic: '_mm_or_si64'.
 // Requires MMX.
 func OrSi64(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(orSi64(a, b))
+	panic("not implemented")
 }
-
-func orSi64(a x86.M64, b x86.M64) x86.M64
 
 
 // PacksPi16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -456,10 +402,8 @@ func orSi64(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PACKSSWB'. Intrinsic: '_mm_packs_pi16'.
 // Requires MMX.
 func PacksPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(packsPi16(a, b))
+	panic("not implemented")
 }
-
-func packsPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // PacksPi32: Convert packed 32-bit integers from 'a' and 'b' to packed 16-bit
@@ -473,10 +417,8 @@ func packsPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PACKSSDW'. Intrinsic: '_mm_packs_pi32'.
 // Requires MMX.
 func PacksPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(packsPi32(a, b))
+	panic("not implemented")
 }
-
-func packsPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // PacksPu16: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -494,10 +436,8 @@ func packsPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PACKUSWB'. Intrinsic: '_mm_packs_pu16'.
 // Requires MMX.
 func PacksPu16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(packsPu16(a, b))
+	panic("not implemented")
 }
-
-func packsPu16(a x86.M64, b x86.M64) x86.M64
 
 
 // Packssdw: Convert packed 32-bit integers from 'a' and 'b' to packed 16-bit
@@ -511,10 +451,8 @@ func packsPu16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PACKSSDW'. Intrinsic: '_m_packssdw'.
 // Requires MMX.
 func Packssdw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(packssdw(a, b))
+	panic("not implemented")
 }
-
-func packssdw(a x86.M64, b x86.M64) x86.M64
 
 
 // Packsswb: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -532,10 +470,8 @@ func packssdw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PACKSSWB'. Intrinsic: '_m_packsswb'.
 // Requires MMX.
 func Packsswb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(packsswb(a, b))
+	panic("not implemented")
 }
-
-func packsswb(a x86.M64, b x86.M64) x86.M64
 
 
 // Packuswb: Convert packed 16-bit integers from 'a' and 'b' to packed 8-bit
@@ -553,10 +489,8 @@ func packsswb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PACKUSWB'. Intrinsic: '_m_packuswb'.
 // Requires MMX.
 func Packuswb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(packuswb(a, b))
+	panic("not implemented")
 }
-
-func packuswb(a x86.M64, b x86.M64) x86.M64
 
 
 // Paddb: Add packed 8-bit integers in 'a' and 'b', and store the results in
@@ -570,10 +504,8 @@ func packuswb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDB'. Intrinsic: '_m_paddb'.
 // Requires MMX.
 func Paddb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(paddb(a, b))
+	panic("not implemented")
 }
-
-func paddb(a x86.M64, b x86.M64) x86.M64
 
 
 // Paddd: Add packed 32-bit integers in 'a' and 'b', and store the results in
@@ -587,10 +519,8 @@ func paddb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDD'. Intrinsic: '_m_paddd'.
 // Requires MMX.
 func Paddd(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(paddd(a, b))
+	panic("not implemented")
 }
-
-func paddd(a x86.M64, b x86.M64) x86.M64
 
 
 // Paddsb: Add packed 8-bit integers in 'a' and 'b' using saturation, and store
@@ -604,10 +534,8 @@ func paddd(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDSB'. Intrinsic: '_m_paddsb'.
 // Requires MMX.
 func Paddsb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(paddsb(a, b))
+	panic("not implemented")
 }
-
-func paddsb(a x86.M64, b x86.M64) x86.M64
 
 
 // Paddsw: Add packed 16-bit integers in 'a' and 'b' using saturation, and
@@ -621,10 +549,8 @@ func paddsb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDSW'. Intrinsic: '_m_paddsw'.
 // Requires MMX.
 func Paddsw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(paddsw(a, b))
+	panic("not implemented")
 }
-
-func paddsw(a x86.M64, b x86.M64) x86.M64
 
 
 // Paddusb: Add packed unsigned 8-bit integers in 'a' and 'b' using saturation,
@@ -638,10 +564,8 @@ func paddsw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDUSB'. Intrinsic: '_m_paddusb'.
 // Requires MMX.
 func Paddusb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(paddusb(a, b))
+	panic("not implemented")
 }
-
-func paddusb(a x86.M64, b x86.M64) x86.M64
 
 
 // Paddusw: Add packed unsigned 16-bit integers in 'a' and 'b' using
@@ -655,10 +579,8 @@ func paddusb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDUSW'. Intrinsic: '_m_paddusw'.
 // Requires MMX.
 func Paddusw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(paddusw(a, b))
+	panic("not implemented")
 }
-
-func paddusw(a x86.M64, b x86.M64) x86.M64
 
 
 // Paddw: Add packed 16-bit integers in 'a' and 'b', and store the results in
@@ -672,10 +594,8 @@ func paddusw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PADDW'. Intrinsic: '_m_paddw'.
 // Requires MMX.
 func Paddw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(paddw(a, b))
+	panic("not implemented")
 }
-
-func paddw(a x86.M64, b x86.M64) x86.M64
 
 
 // Pand: Compute the bitwise AND of 64 bits (representing integer data) in 'a'
@@ -686,10 +606,8 @@ func paddw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PAND'. Intrinsic: '_m_pand'.
 // Requires MMX.
 func Pand(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pand(a, b))
+	panic("not implemented")
 }
-
-func pand(a x86.M64, b x86.M64) x86.M64
 
 
 // Pandn: Compute the bitwise AND NOT of 64 bits (representing integer data) in
@@ -700,10 +618,8 @@ func pand(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PANDN'. Intrinsic: '_m_pandn'.
 // Requires MMX.
 func Pandn(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pandn(a, b))
+	panic("not implemented")
 }
-
-func pandn(a x86.M64, b x86.M64) x86.M64
 
 
 // Pcmpeqb: Compare packed 8-bit integers in 'a' and 'b' for equality, and
@@ -717,10 +633,8 @@ func pandn(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPEQB'. Intrinsic: '_m_pcmpeqb'.
 // Requires MMX.
 func Pcmpeqb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pcmpeqb(a, b))
+	panic("not implemented")
 }
-
-func pcmpeqb(a x86.M64, b x86.M64) x86.M64
 
 
 // Pcmpeqd: Compare packed 32-bit integers in 'a' and 'b' for equality, and
@@ -734,10 +648,8 @@ func pcmpeqb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPEQD'. Intrinsic: '_m_pcmpeqd'.
 // Requires MMX.
 func Pcmpeqd(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pcmpeqd(a, b))
+	panic("not implemented")
 }
-
-func pcmpeqd(a x86.M64, b x86.M64) x86.M64
 
 
 // Pcmpeqw: Compare packed 16-bit integers in 'a' and 'b' for equality, and
@@ -751,10 +663,8 @@ func pcmpeqd(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPEQW'. Intrinsic: '_m_pcmpeqw'.
 // Requires MMX.
 func Pcmpeqw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pcmpeqw(a, b))
+	panic("not implemented")
 }
-
-func pcmpeqw(a x86.M64, b x86.M64) x86.M64
 
 
 // Pcmpgtb: Compare packed 8-bit integers in 'a' and 'b' for greater-than, and
@@ -768,10 +678,8 @@ func pcmpeqw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPGTB'. Intrinsic: '_m_pcmpgtb'.
 // Requires MMX.
 func Pcmpgtb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pcmpgtb(a, b))
+	panic("not implemented")
 }
-
-func pcmpgtb(a x86.M64, b x86.M64) x86.M64
 
 
 // Pcmpgtd: Compare packed 32-bit integers in 'a' and 'b' for greater-than, and
@@ -785,10 +693,8 @@ func pcmpgtb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPGTD'. Intrinsic: '_m_pcmpgtd'.
 // Requires MMX.
 func Pcmpgtd(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pcmpgtd(a, b))
+	panic("not implemented")
 }
-
-func pcmpgtd(a x86.M64, b x86.M64) x86.M64
 
 
 // Pcmpgtw: Compare packed 16-bit integers in 'a' and 'b' for greater-than, and
@@ -802,10 +708,8 @@ func pcmpgtd(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PCMPGTW'. Intrinsic: '_m_pcmpgtw'.
 // Requires MMX.
 func Pcmpgtw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pcmpgtw(a, b))
+	panic("not implemented")
 }
-
-func pcmpgtw(a x86.M64, b x86.M64) x86.M64
 
 
 // Pmaddwd: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -820,10 +724,8 @@ func pcmpgtw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMADDWD'. Intrinsic: '_m_pmaddwd'.
 // Requires MMX.
 func Pmaddwd(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pmaddwd(a, b))
+	panic("not implemented")
 }
-
-func pmaddwd(a x86.M64, b x86.M64) x86.M64
 
 
 // Pmulhw: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -839,10 +741,8 @@ func pmaddwd(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMULHW'. Intrinsic: '_m_pmulhw'.
 // Requires MMX.
 func Pmulhw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pmulhw(a, b))
+	panic("not implemented")
 }
-
-func pmulhw(a x86.M64, b x86.M64) x86.M64
 
 
 // Pmullw: Multiply the packed 16-bit integers in 'a' and 'b', producing
@@ -858,10 +758,8 @@ func pmulhw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMULLW'. Intrinsic: '_m_pmullw'.
 // Requires MMX.
 func Pmullw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pmullw(a, b))
+	panic("not implemented")
 }
-
-func pmullw(a x86.M64, b x86.M64) x86.M64
 
 
 // Por: Compute the bitwise OR of 64 bits (representing integer data) in 'a'
@@ -872,10 +770,8 @@ func pmullw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'POR'. Intrinsic: '_m_por'.
 // Requires MMX.
 func Por(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(por(a, b))
+	panic("not implemented")
 }
-
-func por(a x86.M64, b x86.M64) x86.M64
 
 
 // Pslld: Shift packed 32-bit integers in 'a' left by 'count' while shifting in
@@ -893,10 +789,8 @@ func por(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSLLD'. Intrinsic: '_m_pslld'.
 // Requires MMX.
 func Pslld(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(pslld(a, count))
+	panic("not implemented")
 }
-
-func pslld(a x86.M64, count x86.M64) x86.M64
 
 
 // Pslldi: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting in
@@ -916,10 +810,8 @@ func pslld(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Pslldi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(pslldi(a, imm8))
+	panic("not implemented")
 }
-
-func pslldi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psllq: Shift 64-bit integer 'a' left by 'count' while shifting in zeros, and
@@ -934,10 +826,8 @@ func pslldi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSLLQ'. Intrinsic: '_m_psllq'.
 // Requires MMX.
 func Psllq(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(psllq(a, count))
+	panic("not implemented")
 }
-
-func psllq(a x86.M64, count x86.M64) x86.M64
 
 
 // Psllqi: Shift 64-bit integer 'a' left by 'imm8' while shifting in zeros, and
@@ -954,10 +844,8 @@ func psllq(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Psllqi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(psllqi(a, imm8))
+	panic("not implemented")
 }
-
-func psllqi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psllw: Shift packed 16-bit integers in 'a' left by 'count' while shifting in
@@ -975,10 +863,8 @@ func psllqi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSLLW'. Intrinsic: '_m_psllw'.
 // Requires MMX.
 func Psllw(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(psllw(a, count))
+	panic("not implemented")
 }
-
-func psllw(a x86.M64, count x86.M64) x86.M64
 
 
 // Psllwi: Shift packed 16-bit integers in 'a' left by 'imm8' while shifting in
@@ -998,10 +884,8 @@ func psllw(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Psllwi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(psllwi(a, imm8))
+	panic("not implemented")
 }
-
-func psllwi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrad: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -1019,10 +903,8 @@ func psllwi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSRAD'. Intrinsic: '_m_psrad'.
 // Requires MMX.
 func Psrad(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(psrad(a, count))
+	panic("not implemented")
 }
-
-func psrad(a x86.M64, count x86.M64) x86.M64
 
 
 // Psradi: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -1042,10 +924,8 @@ func psrad(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Psradi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(psradi(a, imm8))
+	panic("not implemented")
 }
-
-func psradi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psraw: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1063,10 +943,8 @@ func psradi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSRAW'. Intrinsic: '_m_psraw'.
 // Requires MMX.
 func Psraw(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(psraw(a, count))
+	panic("not implemented")
 }
-
-func psraw(a x86.M64, count x86.M64) x86.M64
 
 
 // Psrawi: Shift packed 16-bit integers in 'a' right by 'imm8' while shifting
@@ -1086,10 +964,8 @@ func psraw(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Psrawi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(psrawi(a, imm8))
+	panic("not implemented")
 }
-
-func psrawi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrld: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -1107,10 +983,8 @@ func psrawi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSRLD'. Intrinsic: '_m_psrld'.
 // Requires MMX.
 func Psrld(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(psrld(a, count))
+	panic("not implemented")
 }
-
-func psrld(a x86.M64, count x86.M64) x86.M64
 
 
 // Psrldi: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -1130,10 +1004,8 @@ func psrld(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Psrldi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(psrldi(a, imm8))
+	panic("not implemented")
 }
-
-func psrldi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrlq: Shift 64-bit integer 'a' right by 'count' while shifting in zeros,
@@ -1148,10 +1020,8 @@ func psrldi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSRLQ'. Intrinsic: '_m_psrlq'.
 // Requires MMX.
 func Psrlq(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(psrlq(a, count))
+	panic("not implemented")
 }
-
-func psrlq(a x86.M64, count x86.M64) x86.M64
 
 
 // Psrlqi: Shift 64-bit integer 'a' right by 'imm8' while shifting in zeros,
@@ -1168,10 +1038,8 @@ func psrlq(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Psrlqi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(psrlqi(a, imm8))
+	panic("not implemented")
 }
-
-func psrlqi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psrlw: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1189,10 +1057,8 @@ func psrlqi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSRLW'. Intrinsic: '_m_psrlw'.
 // Requires MMX.
 func Psrlw(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(psrlw(a, count))
+	panic("not implemented")
 }
-
-func psrlw(a x86.M64, count x86.M64) x86.M64
 
 
 // Psrlwi: Shift packed 16-bit integers in 'a' right by 'imm8' while shifting
@@ -1212,10 +1078,8 @@ func psrlw(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func Psrlwi(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(psrlwi(a, imm8))
+	panic("not implemented")
 }
-
-func psrlwi(a x86.M64, imm8 byte) x86.M64
 
 
 // Psubb: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -1229,10 +1093,8 @@ func psrlwi(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSUBB'. Intrinsic: '_m_psubb'.
 // Requires MMX.
 func Psubb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(psubb(a, b))
+	panic("not implemented")
 }
-
-func psubb(a x86.M64, b x86.M64) x86.M64
 
 
 // Psubd: Subtract packed 32-bit integers in 'b' from packed 32-bit integers in
@@ -1246,10 +1108,8 @@ func psubb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBD'. Intrinsic: '_m_psubd'.
 // Requires MMX.
 func Psubd(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(psubd(a, b))
+	panic("not implemented")
 }
-
-func psubd(a x86.M64, b x86.M64) x86.M64
 
 
 // Psubsb: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -1263,10 +1123,8 @@ func psubd(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBSB'. Intrinsic: '_m_psubsb'.
 // Requires MMX.
 func Psubsb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(psubsb(a, b))
+	panic("not implemented")
 }
-
-func psubsb(a x86.M64, b x86.M64) x86.M64
 
 
 // Psubsw: Subtract packed 16-bit integers in 'b' from packed 16-bit integers
@@ -1280,10 +1138,8 @@ func psubsb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBSW'. Intrinsic: '_m_psubsw'.
 // Requires MMX.
 func Psubsw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(psubsw(a, b))
+	panic("not implemented")
 }
-
-func psubsw(a x86.M64, b x86.M64) x86.M64
 
 
 // Psubusb: Subtract packed unsigned 8-bit integers in 'b' from packed unsigned
@@ -1297,10 +1153,8 @@ func psubsw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBUSB'. Intrinsic: '_m_psubusb'.
 // Requires MMX.
 func Psubusb(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(psubusb(a, b))
+	panic("not implemented")
 }
-
-func psubusb(a x86.M64, b x86.M64) x86.M64
 
 
 // Psubusw: Subtract packed unsigned 16-bit integers in 'b' from packed
@@ -1315,10 +1169,8 @@ func psubusb(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBUSW'. Intrinsic: '_m_psubusw'.
 // Requires MMX.
 func Psubusw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(psubusw(a, b))
+	panic("not implemented")
 }
-
-func psubusw(a x86.M64, b x86.M64) x86.M64
 
 
 // Psubw: Subtract packed 16-bit integers in 'b' from packed 16-bit integers in
@@ -1332,10 +1184,8 @@ func psubusw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBW'. Intrinsic: '_m_psubw'.
 // Requires MMX.
 func Psubw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(psubw(a, b))
+	panic("not implemented")
 }
-
-func psubw(a x86.M64, b x86.M64) x86.M64
 
 
 // Punpckhbw: Unpack and interleave 8-bit integers from the high half of 'a'
@@ -1358,10 +1208,8 @@ func psubw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKHBW'. Intrinsic: '_m_punpckhbw'.
 // Requires MMX.
 func Punpckhbw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(punpckhbw(a, b))
+	panic("not implemented")
 }
-
-func punpckhbw(a x86.M64, b x86.M64) x86.M64
 
 
 // Punpckhdq: Unpack and interleave 32-bit integers from the high half of 'a'
@@ -1373,10 +1221,8 @@ func punpckhbw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKHDQ'. Intrinsic: '_m_punpckhdq'.
 // Requires MMX.
 func Punpckhdq(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(punpckhdq(a, b))
+	panic("not implemented")
 }
-
-func punpckhdq(a x86.M64, b x86.M64) x86.M64
 
 
 // Punpckhwd: Unpack and interleave 16-bit integers from the high half of 'a'
@@ -1395,10 +1241,8 @@ func punpckhdq(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_m_punpckhwd'.
 // Requires MMX.
 func Punpckhwd(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(punpckhwd(a, b))
+	panic("not implemented")
 }
-
-func punpckhwd(a x86.M64, b x86.M64) x86.M64
 
 
 // Punpcklbw: Unpack and interleave 8-bit integers from the low half of 'a' and
@@ -1421,10 +1265,8 @@ func punpckhwd(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_m_punpcklbw'.
 // Requires MMX.
 func Punpcklbw(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(punpcklbw(a, b))
+	panic("not implemented")
 }
-
-func punpcklbw(a x86.M64, b x86.M64) x86.M64
 
 
 // Punpckldq: Unpack and interleave 32-bit integers from the low half of 'a'
@@ -1436,10 +1278,8 @@ func punpcklbw(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKLDQ'. Intrinsic: '_m_punpckldq'.
 // Requires MMX.
 func Punpckldq(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(punpckldq(a, b))
+	panic("not implemented")
 }
-
-func punpckldq(a x86.M64, b x86.M64) x86.M64
 
 
 // Punpcklwd: Unpack and interleave 16-bit integers from the low half of 'a'
@@ -1458,10 +1298,8 @@ func punpckldq(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKLWD'. Intrinsic: '_m_punpcklwd'.
 // Requires MMX.
 func Punpcklwd(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(punpcklwd(a, b))
+	panic("not implemented")
 }
-
-func punpcklwd(a x86.M64, b x86.M64) x86.M64
 
 
 // Pxor: Compute the bitwise OR of 64 bits (representing integer data) in 'a'
@@ -1472,10 +1310,8 @@ func punpcklwd(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PXOR'. Intrinsic: '_m_pxor'.
 // Requires MMX.
 func Pxor(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(pxor(a, b))
+	panic("not implemented")
 }
-
-func pxor(a x86.M64, b x86.M64) x86.M64
 
 
 // SetPi16: Set packed 16-bit integers in 'dst' with the supplied values. 
@@ -1488,10 +1324,8 @@ func pxor(a x86.M64, b x86.M64) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_set_pi16'.
 // Requires MMX.
 func SetPi16(e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M64) {
-	return x86.M64(setPi16(e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 
 
 // SetPi32: Set packed 32-bit integers in 'dst' with the supplied values. 
@@ -1502,10 +1336,8 @@ func setPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_set_pi32'.
 // Requires MMX.
 func SetPi32(e1 int, e0 int) (dst x86.M64) {
-	return x86.M64(setPi32(e1, e0))
+	panic("not implemented")
 }
-
-func setPi32(e1 int, e0 int) x86.M64
 
 
 // SetPi8: Set packed 8-bit integers in 'dst' with the supplied values in
@@ -1523,10 +1355,8 @@ func setPi32(e1 int, e0 int) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_set_pi8'.
 // Requires MMX.
 func SetPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M64) {
-	return x86.M64(setPi8(e7, e6, e5, e4, e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M64
 
 
 // Set1Pi16: Broadcast 16-bit integer 'a' to all all elements of 'dst'. 
@@ -1539,10 +1369,8 @@ func setPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 by
 // Instruction: '...'. Intrinsic: '_mm_set1_pi16'.
 // Requires MMX.
 func Set1Pi16(a int16) (dst x86.M64) {
-	return x86.M64(set1Pi16(a))
+	panic("not implemented")
 }
-
-func set1Pi16(a int16) x86.M64
 
 
 // Set1Pi32: Broadcast 32-bit integer 'a' to all elements of 'dst'. 
@@ -1555,10 +1383,8 @@ func set1Pi16(a int16) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_set1_pi32'.
 // Requires MMX.
 func Set1Pi32(a int) (dst x86.M64) {
-	return x86.M64(set1Pi32(a))
+	panic("not implemented")
 }
-
-func set1Pi32(a int) x86.M64
 
 
 // Set1Pi8: Broadcast 8-bit integer 'a' to all elements of 'dst'. 
@@ -1571,10 +1397,8 @@ func set1Pi32(a int) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_set1_pi8'.
 // Requires MMX.
 func Set1Pi8(a byte) (dst x86.M64) {
-	return x86.M64(set1Pi8(a))
+	panic("not implemented")
 }
-
-func set1Pi8(a byte) x86.M64
 
 
 // SetrPi16: Set packed 16-bit integers in 'dst' with the supplied values in
@@ -1588,10 +1412,8 @@ func set1Pi8(a byte) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_setr_pi16'.
 // Requires MMX.
 func SetrPi16(e3 int16, e2 int16, e1 int16, e0 int16) (dst x86.M64) {
-	return x86.M64(setrPi16(e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setrPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 
 
 // SetrPi32: Set packed 32-bit integers in 'dst' with the supplied values in
@@ -1603,10 +1425,8 @@ func setrPi16(e3 int16, e2 int16, e1 int16, e0 int16) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_setr_pi32'.
 // Requires MMX.
 func SetrPi32(e1 int, e0 int) (dst x86.M64) {
-	return x86.M64(setrPi32(e1, e0))
+	panic("not implemented")
 }
-
-func setrPi32(e1 int, e0 int) x86.M64
 
 
 // SetrPi8: Set packed 8-bit integers in 'dst' with the supplied values in
@@ -1624,10 +1444,8 @@ func setrPi32(e1 int, e0 int) x86.M64
 // Instruction: '...'. Intrinsic: '_mm_setr_pi8'.
 // Requires MMX.
 func SetrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) (dst x86.M64) {
-	return x86.M64(setrPi8(e7, e6, e5, e4, e3, e2, e1, e0))
+	panic("not implemented")
 }
-
-func setrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 byte) x86.M64
 
 
 // SetzeroSi64: Return vector of type __m64 with all elements set to zero. 
@@ -1637,10 +1455,8 @@ func setrPi8(e7 byte, e6 byte, e5 byte, e4 byte, e3 byte, e2 byte, e1 byte, e0 b
 // Instruction: 'PXOR'. Intrinsic: '_mm_setzero_si64'.
 // Requires MMX.
 func SetzeroSi64() (dst x86.M64) {
-	return x86.M64(setzeroSi64())
+	panic("not implemented")
 }
-
-func setzeroSi64() x86.M64
 
 
 // SllPi16: Shift packed 16-bit integers in 'a' left by 'count' while shifting
@@ -1658,10 +1474,8 @@ func setzeroSi64() x86.M64
 // Instruction: 'PSLLW'. Intrinsic: '_mm_sll_pi16'.
 // Requires MMX.
 func SllPi16(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(sllPi16(a, count))
+	panic("not implemented")
 }
-
-func sllPi16(a x86.M64, count x86.M64) x86.M64
 
 
 // SllPi32: Shift packed 32-bit integers in 'a' left by 'count' while shifting
@@ -1679,10 +1493,8 @@ func sllPi16(a x86.M64, count x86.M64) x86.M64
 // Instruction: 'PSLLD'. Intrinsic: '_mm_sll_pi32'.
 // Requires MMX.
 func SllPi32(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(sllPi32(a, count))
+	panic("not implemented")
 }
-
-func sllPi32(a x86.M64, count x86.M64) x86.M64
 
 
 // SllSi64: Shift 64-bit integer 'a' left by 'count' while shifting in zeros,
@@ -1697,10 +1509,8 @@ func sllPi32(a x86.M64, count x86.M64) x86.M64
 // Instruction: 'PSLLQ'. Intrinsic: '_mm_sll_si64'.
 // Requires MMX.
 func SllSi64(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(sllSi64(a, count))
+	panic("not implemented")
 }
-
-func sllSi64(a x86.M64, count x86.M64) x86.M64
 
 
 // SlliPi16: Shift packed 16-bit integers in 'a' left by 'imm8' while shifting
@@ -1720,10 +1530,8 @@ func sllSi64(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SlliPi16(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(slliPi16(a, imm8))
+	panic("not implemented")
 }
-
-func slliPi16(a x86.M64, imm8 byte) x86.M64
 
 
 // SlliPi32: Shift packed 32-bit integers in 'a' left by 'imm8' while shifting
@@ -1743,10 +1551,8 @@ func slliPi16(a x86.M64, imm8 byte) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SlliPi32(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(slliPi32(a, imm8))
+	panic("not implemented")
 }
-
-func slliPi32(a x86.M64, imm8 byte) x86.M64
 
 
 // SlliSi64: Shift 64-bit integer 'a' left by 'imm8' while shifting in zeros,
@@ -1763,10 +1569,8 @@ func slliPi32(a x86.M64, imm8 byte) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SlliSi64(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(slliSi64(a, imm8))
+	panic("not implemented")
 }
-
-func slliSi64(a x86.M64, imm8 byte) x86.M64
 
 
 // SraPi16: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1784,10 +1588,8 @@ func slliSi64(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSRAW'. Intrinsic: '_mm_sra_pi16'.
 // Requires MMX.
 func SraPi16(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(sraPi16(a, count))
+	panic("not implemented")
 }
-
-func sraPi16(a x86.M64, count x86.M64) x86.M64
 
 
 // SraPi32: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -1805,10 +1607,8 @@ func sraPi16(a x86.M64, count x86.M64) x86.M64
 // Instruction: 'PSRAD'. Intrinsic: '_mm_sra_pi32'.
 // Requires MMX.
 func SraPi32(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(sraPi32(a, count))
+	panic("not implemented")
 }
-
-func sraPi32(a x86.M64, count x86.M64) x86.M64
 
 
 // SraiPi16: Shift packed 16-bit integers in 'a' right by 'imm8' while shifting
@@ -1828,10 +1628,8 @@ func sraPi32(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SraiPi16(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(sraiPi16(a, imm8))
+	panic("not implemented")
 }
-
-func sraiPi16(a x86.M64, imm8 byte) x86.M64
 
 
 // SraiPi32: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -1851,10 +1649,8 @@ func sraiPi16(a x86.M64, imm8 byte) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SraiPi32(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(sraiPi32(a, imm8))
+	panic("not implemented")
 }
-
-func sraiPi32(a x86.M64, imm8 byte) x86.M64
 
 
 // SrlPi16: Shift packed 16-bit integers in 'a' right by 'count' while shifting
@@ -1872,10 +1668,8 @@ func sraiPi32(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSRLW'. Intrinsic: '_mm_srl_pi16'.
 // Requires MMX.
 func SrlPi16(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(srlPi16(a, count))
+	panic("not implemented")
 }
-
-func srlPi16(a x86.M64, count x86.M64) x86.M64
 
 
 // SrlPi32: Shift packed 32-bit integers in 'a' right by 'count' while shifting
@@ -1893,10 +1687,8 @@ func srlPi16(a x86.M64, count x86.M64) x86.M64
 // Instruction: 'PSRLD'. Intrinsic: '_mm_srl_pi32'.
 // Requires MMX.
 func SrlPi32(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(srlPi32(a, count))
+	panic("not implemented")
 }
-
-func srlPi32(a x86.M64, count x86.M64) x86.M64
 
 
 // SrlSi64: Shift 64-bit integer 'a' right by 'count' while shifting in zeros,
@@ -1911,10 +1703,8 @@ func srlPi32(a x86.M64, count x86.M64) x86.M64
 // Instruction: 'PSRLQ'. Intrinsic: '_mm_srl_si64'.
 // Requires MMX.
 func SrlSi64(a x86.M64, count x86.M64) (dst x86.M64) {
-	return x86.M64(srlSi64(a, count))
+	panic("not implemented")
 }
-
-func srlSi64(a x86.M64, count x86.M64) x86.M64
 
 
 // SrliPi16: Shift packed 16-bit integers in 'a' right by 'imm8' while shifting
@@ -1934,10 +1724,8 @@ func srlSi64(a x86.M64, count x86.M64) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SrliPi16(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(srliPi16(a, imm8))
+	panic("not implemented")
 }
-
-func srliPi16(a x86.M64, imm8 byte) x86.M64
 
 
 // SrliPi32: Shift packed 32-bit integers in 'a' right by 'imm8' while shifting
@@ -1957,10 +1745,8 @@ func srliPi16(a x86.M64, imm8 byte) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SrliPi32(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(srliPi32(a, imm8))
+	panic("not implemented")
 }
-
-func srliPi32(a x86.M64, imm8 byte) x86.M64
 
 
 // SrliSi64: Shift 64-bit integer 'a' right by 'imm8' while shifting in zeros,
@@ -1977,10 +1763,8 @@ func srliPi32(a x86.M64, imm8 byte) x86.M64
 //
 // FIXME: Requires compiler support (has immediate)
 func SrliSi64(a x86.M64, imm8 byte) (dst x86.M64) {
-	return x86.M64(srliSi64(a, imm8))
+	panic("not implemented")
 }
-
-func srliSi64(a x86.M64, imm8 byte) x86.M64
 
 
 // SubPi16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers
@@ -1994,10 +1778,8 @@ func srliSi64(a x86.M64, imm8 byte) x86.M64
 // Instruction: 'PSUBW'. Intrinsic: '_mm_sub_pi16'.
 // Requires MMX.
 func SubPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subPi16(a, b))
+	panic("not implemented")
 }
-
-func subPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // SubPi32: Subtract packed 32-bit integers in 'b' from packed 32-bit integers
@@ -2011,10 +1793,8 @@ func subPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBD'. Intrinsic: '_mm_sub_pi32'.
 // Requires MMX.
 func SubPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subPi32(a, b))
+	panic("not implemented")
 }
-
-func subPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // SubPi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -2028,10 +1808,8 @@ func subPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBB'. Intrinsic: '_mm_sub_pi8'.
 // Requires MMX.
 func SubPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subPi8(a, b))
+	panic("not implemented")
 }
-
-func subPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // SubsPi16: Subtract packed 16-bit integers in 'b' from packed 16-bit integers
@@ -2045,10 +1823,8 @@ func subPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBSW'. Intrinsic: '_mm_subs_pi16'.
 // Requires MMX.
 func SubsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subsPi16(a, b))
+	panic("not implemented")
 }
-
-func subsPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // SubsPi8: Subtract packed 8-bit integers in 'b' from packed 8-bit integers in
@@ -2062,10 +1838,8 @@ func subsPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBSB'. Intrinsic: '_mm_subs_pi8'.
 // Requires MMX.
 func SubsPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subsPi8(a, b))
+	panic("not implemented")
 }
-
-func subsPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // SubsPu16: Subtract packed unsigned 16-bit integers in 'b' from packed
@@ -2080,10 +1854,8 @@ func subsPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBUSW'. Intrinsic: '_mm_subs_pu16'.
 // Requires MMX.
 func SubsPu16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subsPu16(a, b))
+	panic("not implemented")
 }
-
-func subsPu16(a x86.M64, b x86.M64) x86.M64
 
 
 // SubsPu8: Subtract packed unsigned 8-bit integers in 'b' from packed unsigned
@@ -2097,10 +1869,8 @@ func subsPu16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSUBUSB'. Intrinsic: '_mm_subs_pu8'.
 // Requires MMX.
 func SubsPu8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(subsPu8(a, b))
+	panic("not implemented")
 }
-
-func subsPu8(a x86.M64, b x86.M64) x86.M64
 
 
 // ToInt: Copy the lower 32-bit integer in 'a' to 'dst'. 
@@ -2110,10 +1880,8 @@ func subsPu8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'MOVD'. Intrinsic: '_m_to_int'.
 // Requires MMX.
 func ToInt(a x86.M64) int {
-	return int(toInt(a))
+	panic("not implemented")
 }
-
-func toInt(a x86.M64) int
 
 
 // ToInt64: Copy 64-bit integer 'a' to 'dst'. 
@@ -2123,10 +1891,8 @@ func toInt(a x86.M64) int
 // Instruction: 'MOVQ'. Intrinsic: '_m_to_int64'.
 // Requires MMX.
 func ToInt64(a x86.M64) int64 {
-	return int64(toInt64(a))
+	panic("not implemented")
 }
-
-func toInt64(a x86.M64) int64
 
 
 // UnpackhiPi16: Unpack and interleave 16-bit integers from the high half of
@@ -2145,10 +1911,8 @@ func toInt64(a x86.M64) int64
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_mm_unpackhi_pi16'.
 // Requires MMX.
 func UnpackhiPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(unpackhiPi16(a, b))
+	panic("not implemented")
 }
-
-func unpackhiPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // UnpackhiPi32: Unpack and interleave 32-bit integers from the high half of
@@ -2160,10 +1924,8 @@ func unpackhiPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKHDQ'. Intrinsic: '_mm_unpackhi_pi32'.
 // Requires MMX.
 func UnpackhiPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(unpackhiPi32(a, b))
+	panic("not implemented")
 }
-
-func unpackhiPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // UnpackhiPi8: Unpack and interleave 8-bit integers from the high half of 'a'
@@ -2186,10 +1948,8 @@ func unpackhiPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKHBW'. Intrinsic: '_mm_unpackhi_pi8'.
 // Requires MMX.
 func UnpackhiPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(unpackhiPi8(a, b))
+	panic("not implemented")
 }
-
-func unpackhiPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // UnpackloPi16: Unpack and interleave 16-bit integers from the low half of 'a'
@@ -2208,10 +1968,8 @@ func unpackhiPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKLWD'. Intrinsic: '_mm_unpacklo_pi16'.
 // Requires MMX.
 func UnpackloPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(unpackloPi16(a, b))
+	panic("not implemented")
 }
-
-func unpackloPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // UnpackloPi32: Unpack and interleave 32-bit integers from the low half of 'a'
@@ -2223,10 +1981,8 @@ func unpackloPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKLDQ'. Intrinsic: '_mm_unpacklo_pi32'.
 // Requires MMX.
 func UnpackloPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(unpackloPi32(a, b))
+	panic("not implemented")
 }
-
-func unpackloPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // UnpackloPi8: Unpack and interleave 8-bit integers from the low half of 'a'
@@ -2249,10 +2005,8 @@ func unpackloPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PUNPCKLBW'. Intrinsic: '_mm_unpacklo_pi8'.
 // Requires MMX.
 func UnpackloPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(unpackloPi8(a, b))
+	panic("not implemented")
 }
-
-func unpackloPi8(a x86.M64, b x86.M64) x86.M64
 
 
 // XorSi64: Compute the bitwise XOR of 64 bits (representing integer data) in
@@ -2263,8 +2017,6 @@ func unpackloPi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PXOR'. Intrinsic: '_mm_xor_si64'.
 // Requires MMX.
 func XorSi64(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(xorSi64(a, b))
+	panic("not implemented")
 }
-
-func xorSi64(a x86.M64, b x86.M64) x86.M64
 

@@ -36,10 +36,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // FIXME: Requires compiler support (has immediate)
 func Xabort(imm8 byte)  {
-	xabort(imm8)
+	panic("not implemented")
 }
-
-func xabort(imm8 byte) 
 
 
 // Xbegin: Specify the start of an RTM code region. 
@@ -72,10 +70,8 @@ func xabort(imm8 byte)
 // Instruction: 'XBEGIN'. Intrinsic: '_xbegin'.
 // Requires RTM.
 func Xbegin() uint32 {
-	return uint32(xbegin())
+	panic("not implemented")
 }
-
-func xbegin() uint32
 
 
 // Xend: Specify the end of an RTM code region.
@@ -98,10 +94,8 @@ func xbegin() uint32
 // Instruction: 'XEND'. Intrinsic: '_xend'.
 // Requires RTM.
 func Xend()  {
-	xend()
+	panic("not implemented")
 }
-
-func xend() 
 
 
 // Xtest: Query the transactional execution status, return 0 if inside a
@@ -116,8 +110,6 @@ func xend()
 // Instruction: 'XTEST'. Intrinsic: '_xtest'.
 // Requires RTM.
 func Xtest() uint8 {
-	return uint8(xtest())
+	panic("not implemented")
 }
-
-func xtest() uint8
 

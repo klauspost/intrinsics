@@ -22,10 +22,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'AESDEC'. Intrinsic: '_mm_aesdec_si128'.
 // Requires AES.
 func AesdecSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
-	return x86.M128i(aesdecSi128([16]byte(a), [16]byte(RoundKey)))
+	panic("not implemented")
 }
-
-func aesdecSi128(a [16]byte, RoundKey [16]byte) [16]byte
 
 
 // AesdeclastSi128: Perform the last round of an AES decryption flow on data
@@ -40,10 +38,8 @@ func aesdecSi128(a [16]byte, RoundKey [16]byte) [16]byte
 // Instruction: 'AESDECLAST'. Intrinsic: '_mm_aesdeclast_si128'.
 // Requires AES.
 func AesdeclastSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
-	return x86.M128i(aesdeclastSi128([16]byte(a), [16]byte(RoundKey)))
+	panic("not implemented")
 }
-
-func aesdeclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 
 
 // AesencSi128: Perform one round of an AES encryption flow on data (state) in
@@ -58,10 +54,8 @@ func aesdeclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 // Instruction: 'AESENC'. Intrinsic: '_mm_aesenc_si128'.
 // Requires AES.
 func AesencSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
-	return x86.M128i(aesencSi128([16]byte(a), [16]byte(RoundKey)))
+	panic("not implemented")
 }
-
-func aesencSi128(a [16]byte, RoundKey [16]byte) [16]byte
 
 
 // AesenclastSi128: Perform the last round of an AES encryption flow on data
@@ -76,10 +70,8 @@ func aesencSi128(a [16]byte, RoundKey [16]byte) [16]byte
 // Instruction: 'AESENCLAST'. Intrinsic: '_mm_aesenclast_si128'.
 // Requires AES.
 func AesenclastSi128(a x86.M128i, RoundKey x86.M128i) (dst x86.M128i) {
-	return x86.M128i(aesenclastSi128([16]byte(a), [16]byte(RoundKey)))
+	panic("not implemented")
 }
-
-func aesenclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 
 
 // AesimcSi128: Perform the InvMixColumns transformation on 'a' and store the
@@ -90,10 +82,8 @@ func aesenclastSi128(a [16]byte, RoundKey [16]byte) [16]byte
 // Instruction: 'AESIMC'. Intrinsic: '_mm_aesimc_si128'.
 // Requires AES.
 func AesimcSi128(a x86.M128i) (dst x86.M128i) {
-	return x86.M128i(aesimcSi128([16]byte(a)))
+	panic("not implemented")
 }
-
-func aesimcSi128(a [16]byte) [16]byte
 
 
 // AeskeygenassistSi128: Assist in expanding the AES cipher key by computing
@@ -116,8 +106,6 @@ func aesimcSi128(a [16]byte) [16]byte
 //
 // FIXME: Requires compiler support (has immediate)
 func AeskeygenassistSi128(a x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(aeskeygenassistSi128([16]byte(a), imm8))
+	panic("not implemented")
 }
-
-func aeskeygenassistSi128(a [16]byte, imm8 byte) [16]byte
 

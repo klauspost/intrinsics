@@ -19,10 +19,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'RDFSBASE'. Intrinsic: '_readfsbase_u32'.
 // Requires FSGSBASE.
 func ReadfsbaseU32() uint32 {
-	return uint32(readfsbaseU32())
+	panic("not implemented")
 }
-
-func readfsbaseU32() uint32
 
 
 // ReadfsbaseU64: Read the FS segment base register and store the 64-bit result
@@ -33,10 +31,8 @@ func readfsbaseU32() uint32
 // Instruction: 'RDFSBASE'. Intrinsic: '_readfsbase_u64'.
 // Requires FSGSBASE.
 func ReadfsbaseU64() uint64 {
-	return uint64(readfsbaseU64())
+	panic("not implemented")
 }
-
-func readfsbaseU64() uint64
 
 
 // ReadgsbaseU32: Read the GS segment base register and store the 32-bit result
@@ -48,10 +44,8 @@ func readfsbaseU64() uint64
 // Instruction: 'RDGSBASE'. Intrinsic: '_readgsbase_u32'.
 // Requires FSGSBASE.
 func ReadgsbaseU32() uint32 {
-	return uint32(readgsbaseU32())
+	panic("not implemented")
 }
-
-func readgsbaseU32() uint32
 
 
 // ReadgsbaseU64: Read the GS segment base register and store the 64-bit result
@@ -62,10 +56,8 @@ func readgsbaseU32() uint32
 // Instruction: 'RDGSBASE'. Intrinsic: '_readgsbase_u64'.
 // Requires FSGSBASE.
 func ReadgsbaseU64() uint64 {
-	return uint64(readgsbaseU64())
+	panic("not implemented")
 }
-
-func readgsbaseU64() uint64
 
 
 // WritefsbaseU32: Write the unsigned 32-bit integer 'a' to the FS segment base
@@ -77,10 +69,8 @@ func readgsbaseU64() uint64
 // Instruction: 'WRFSBASE'. Intrinsic: '_writefsbase_u32'.
 // Requires FSGSBASE.
 func WritefsbaseU32(a uint32)  {
-	writefsbaseU32(a)
+	panic("not implemented")
 }
-
-func writefsbaseU32(a uint32) 
 
 
 // WritefsbaseU64: Write the unsigned 64-bit integer 'a' to the FS segment base
@@ -91,10 +81,8 @@ func writefsbaseU32(a uint32)
 // Instruction: 'WRFSBASE'. Intrinsic: '_writefsbase_u64'.
 // Requires FSGSBASE.
 func WritefsbaseU64(a uint64)  {
-	writefsbaseU64(a)
+	panic("not implemented")
 }
-
-func writefsbaseU64(a uint64) 
 
 
 // WritegsbaseU32: Write the unsigned 32-bit integer 'a' to the GS segment base
@@ -106,10 +94,8 @@ func writefsbaseU64(a uint64)
 // Instruction: 'WRGSBASE'. Intrinsic: '_writegsbase_u32'.
 // Requires FSGSBASE.
 func WritegsbaseU32(a uint32)  {
-	writegsbaseU32(a)
+	panic("not implemented")
 }
-
-func writegsbaseU32(a uint32) 
 
 
 // WritegsbaseU64: Write the unsigned 64-bit integer 'a' to the GS segment base
@@ -120,8 +106,6 @@ func writegsbaseU32(a uint32)
 // Instruction: 'WRGSBASE'. Intrinsic: '_writegsbase_u64'.
 // Requires FSGSBASE.
 func WritegsbaseU64(a uint64)  {
-	writegsbaseU64(a)
+	panic("not implemented")
 }
-
-func writegsbaseU64(a uint64) 
 

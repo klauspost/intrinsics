@@ -20,10 +20,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'BEXTR'. Intrinsic: '_bextr_u32'.
 // Requires BMI1.
 func BextrU32(a uint32, start uint32, len uint32) uint32 {
-	return uint32(bextrU32(a, start, len))
+	panic("not implemented")
 }
-
-func bextrU32(a uint32, start uint32, len uint32) uint32
 
 
 // BextrU64: Extract contiguous bits from unsigned 64-bit integer 'a', and
@@ -36,10 +34,8 @@ func bextrU32(a uint32, start uint32, len uint32) uint32
 // Instruction: 'BEXTR'. Intrinsic: '_bextr_u64'.
 // Requires BMI1.
 func BextrU64(a uint64, start uint32, len uint32) uint64 {
-	return uint64(bextrU64(a, start, len))
+	panic("not implemented")
 }
-
-func bextrU64(a uint64, start uint32, len uint32) uint64
 
 
 // BlsiU32: Extract the lowest set bit from unsigned 32-bit integer 'a' and set
@@ -51,10 +47,8 @@ func bextrU64(a uint64, start uint32, len uint32) uint64
 // Instruction: 'BLSI'. Intrinsic: '_blsi_u32'.
 // Requires BMI1.
 func BlsiU32(a uint32) uint32 {
-	return uint32(blsiU32(a))
+	panic("not implemented")
 }
-
-func blsiU32(a uint32) uint32
 
 
 // BlsiU64: Extract the lowest set bit from unsigned 64-bit integer 'a' and set
@@ -66,10 +60,8 @@ func blsiU32(a uint32) uint32
 // Instruction: 'BLSI'. Intrinsic: '_blsi_u64'.
 // Requires BMI1.
 func BlsiU64(a uint64) uint64 {
-	return uint64(blsiU64(a))
+	panic("not implemented")
 }
-
-func blsiU64(a uint64) uint64
 
 
 // BlsmskU32: Set all the lower bits of 'dst' up to and including the lowest
@@ -80,10 +72,8 @@ func blsiU64(a uint64) uint64
 // Instruction: 'BLSMSK'. Intrinsic: '_blsmsk_u32'.
 // Requires BMI1.
 func BlsmskU32(a uint32) uint32 {
-	return uint32(blsmskU32(a))
+	panic("not implemented")
 }
-
-func blsmskU32(a uint32) uint32
 
 
 // BlsmskU64: Set all the lower bits of 'dst' up to and including the lowest
@@ -94,10 +84,8 @@ func blsmskU32(a uint32) uint32
 // Instruction: 'BLSMSK'. Intrinsic: '_blsmsk_u64'.
 // Requires BMI1.
 func BlsmskU64(a uint64) uint64 {
-	return uint64(blsmskU64(a))
+	panic("not implemented")
 }
-
-func blsmskU64(a uint64) uint64
 
 
 // BlsrU32: Copy all bits from unsigned 32-bit integer 'a' to 'dst', and reset
@@ -108,10 +96,8 @@ func blsmskU64(a uint64) uint64
 // Instruction: 'BLSR'. Intrinsic: '_blsr_u32'.
 // Requires BMI1.
 func BlsrU32(a uint32) uint32 {
-	return uint32(blsrU32(a))
+	panic("not implemented")
 }
-
-func blsrU32(a uint32) uint32
 
 
 // BlsrU64: Copy all bits from unsigned 64-bit integer 'a' to 'dst', and reset
@@ -122,10 +108,8 @@ func blsrU32(a uint32) uint32
 // Instruction: 'BLSR'. Intrinsic: '_blsr_u64'.
 // Requires BMI1.
 func BlsrU64(a uint64) uint64 {
-	return uint64(blsrU64(a))
+	panic("not implemented")
 }
-
-func blsrU64(a uint64) uint64
 
 
 // Tzcnt32: Count the number of trailing zero bits in unsigned 32-bit integer
@@ -141,10 +125,8 @@ func blsrU64(a uint64) uint64
 // Instruction: 'TZCNT'. Intrinsic: '_mm_tzcnt_32'.
 // Requires BMI1.
 func Tzcnt32(a uint32) int {
-	return int(tzcnt32(a))
+	panic("not implemented")
 }
-
-func tzcnt32(a uint32) int
 
 
 // Tzcnt64: Count the number of trailing zero bits in unsigned 64-bit integer
@@ -160,10 +142,8 @@ func tzcnt32(a uint32) int
 // Instruction: 'TZCNT'. Intrinsic: '_mm_tzcnt_64'.
 // Requires BMI1.
 func Tzcnt64(a uint64) int64 {
-	return int64(tzcnt64(a))
+	panic("not implemented")
 }
-
-func tzcnt64(a uint64) int64
 
 
 // TzcntU32: Count the number of trailing zero bits in unsigned 32-bit integer
@@ -179,10 +159,8 @@ func tzcnt64(a uint64) int64
 // Instruction: 'TZCNT'. Intrinsic: '_tzcnt_u32'.
 // Requires BMI1.
 func TzcntU32(a uint32) uint32 {
-	return uint32(tzcntU32(a))
+	panic("not implemented")
 }
-
-func tzcntU32(a uint32) uint32
 
 
 // TzcntU64: Count the number of trailing zero bits in unsigned 64-bit integer
@@ -198,8 +176,6 @@ func tzcntU32(a uint32) uint32
 // Instruction: 'TZCNT'. Intrinsic: '_tzcnt_u64'.
 // Requires BMI1.
 func TzcntU64(a uint64) uint64 {
-	return uint64(tzcntU64(a))
+	panic("not implemented")
 }
-
-func tzcntU64(a uint64) uint64
 

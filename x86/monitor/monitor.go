@@ -22,8 +22,6 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'MWAIT'. Intrinsic: '_mm_mwait'.
 // Requires MONITOR.
 func Mwait(extensions uint, hints uint)  {
-	mwait(extensions, hints)
+	panic("not implemented")
 }
-
-func mwait(extensions uint, hints uint) 
 

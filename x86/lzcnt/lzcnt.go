@@ -23,10 +23,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'LZCNT'. Intrinsic: '_lzcnt_u32'.
 // Requires LZCNT.
 func LzcntU32(a uint32) uint32 {
-	return uint32(lzcntU32(a))
+	panic("not implemented")
 }
-
-func lzcntU32(a uint32) uint32
 
 
 // LzcntU64: Count the number of leading zero bits in unsigned 64-bit integer
@@ -42,8 +40,6 @@ func lzcntU32(a uint32) uint32
 // Instruction: 'LZCNT'. Intrinsic: '_lzcnt_u64'.
 // Requires LZCNT.
 func LzcntU64(a uint64) uint64 {
-	return uint64(lzcntU64(a))
+	panic("not implemented")
 }
-
-func lzcntU64(a uint64) uint64
 

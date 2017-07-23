@@ -46,8 +46,6 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // FIXME: Requires compiler support (has immediate)
 func Clmulepi64Si128(a x86.M128i, b x86.M128i, imm8 byte) (dst x86.M128i) {
-	return x86.M128i(clmulepi64Si128([16]byte(a), [16]byte(b), imm8))
+	panic("not implemented")
 }
-
-func clmulepi64Si128(a [16]byte, b [16]byte, imm8 byte) [16]byte
 

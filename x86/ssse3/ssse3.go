@@ -21,10 +21,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'PABSW'. Intrinsic: '_mm_abs_epi16'.
 // Requires SSSE3.
 func AbsEpi16(a x86.M128i) (dst x86.M128i) {
-	return x86.M128i(absEpi16([16]byte(a)))
+	panic("not implemented")
 }
-
-func absEpi16(a [16]byte) [16]byte
 
 
 // AbsEpi32: Compute the absolute value of packed 32-bit integers in 'a', and
@@ -38,10 +36,8 @@ func absEpi16(a [16]byte) [16]byte
 // Instruction: 'PABSD'. Intrinsic: '_mm_abs_epi32'.
 // Requires SSSE3.
 func AbsEpi32(a x86.M128i) (dst x86.M128i) {
-	return x86.M128i(absEpi32([16]byte(a)))
+	panic("not implemented")
 }
-
-func absEpi32(a [16]byte) [16]byte
 
 
 // AbsEpi8: Compute the absolute value of packed 8-bit integers in 'a', and
@@ -55,10 +51,8 @@ func absEpi32(a [16]byte) [16]byte
 // Instruction: 'PABSB'. Intrinsic: '_mm_abs_epi8'.
 // Requires SSSE3.
 func AbsEpi8(a x86.M128i) (dst x86.M128i) {
-	return x86.M128i(absEpi8([16]byte(a)))
+	panic("not implemented")
 }
-
-func absEpi8(a [16]byte) [16]byte
 
 
 // AbsPi16: Compute the absolute value of packed 16-bit integers in 'a', and
@@ -72,10 +66,8 @@ func absEpi8(a [16]byte) [16]byte
 // Instruction: 'PABSW'. Intrinsic: '_mm_abs_pi16'.
 // Requires SSSE3.
 func AbsPi16(a x86.M64) (dst x86.M64) {
-	return x86.M64(absPi16(a))
+	panic("not implemented")
 }
-
-func absPi16(a x86.M64) x86.M64
 
 
 // AbsPi32: Compute the absolute value of packed 32-bit integers in 'a', and
@@ -89,10 +81,8 @@ func absPi16(a x86.M64) x86.M64
 // Instruction: 'PABSD'. Intrinsic: '_mm_abs_pi32'.
 // Requires SSSE3.
 func AbsPi32(a x86.M64) (dst x86.M64) {
-	return x86.M64(absPi32(a))
+	panic("not implemented")
 }
-
-func absPi32(a x86.M64) x86.M64
 
 
 // AbsPi8: Compute the absolute value of packed 8-bit integers in 'a', and
@@ -106,10 +96,8 @@ func absPi32(a x86.M64) x86.M64
 // Instruction: 'PABSB'. Intrinsic: '_mm_abs_pi8'.
 // Requires SSSE3.
 func AbsPi8(a x86.M64) (dst x86.M64) {
-	return x86.M64(absPi8(a))
+	panic("not implemented")
 }
-
-func absPi8(a x86.M64) x86.M64
 
 
 // AlignrEpi8: Concatenate 16-byte blocks in 'a' and 'b' into a 32-byte
@@ -122,10 +110,8 @@ func absPi8(a x86.M64) x86.M64
 // Instruction: 'PALIGNR'. Intrinsic: '_mm_alignr_epi8'.
 // Requires SSSE3.
 func AlignrEpi8(a x86.M128i, b x86.M128i, count int) (dst x86.M128i) {
-	return x86.M128i(alignrEpi8([16]byte(a), [16]byte(b), count))
+	panic("not implemented")
 }
-
-func alignrEpi8(a [16]byte, b [16]byte, count int) [16]byte
 
 
 // AlignrPi8: Concatenate 8-byte blocks in 'a' and 'b' into a 16-byte temporary
@@ -138,10 +124,8 @@ func alignrEpi8(a [16]byte, b [16]byte, count int) [16]byte
 // Instruction: 'PALIGNR'. Intrinsic: '_mm_alignr_pi8'.
 // Requires SSSE3.
 func AlignrPi8(a x86.M64, b x86.M64, count int) (dst x86.M64) {
-	return x86.M64(alignrPi8(a, b, count))
+	panic("not implemented")
 }
-
-func alignrPi8(a x86.M64, b x86.M64, count int) x86.M64
 
 
 // HaddEpi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and
@@ -159,10 +143,8 @@ func alignrPi8(a x86.M64, b x86.M64, count int) x86.M64
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_epi16'.
 // Requires SSSE3.
 func HaddEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(haddEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func haddEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // HaddEpi32: Horizontally add adjacent pairs of 32-bit integers in 'a' and
@@ -176,10 +158,8 @@ func haddEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PHADDD'. Intrinsic: '_mm_hadd_epi32'.
 // Requires SSSE3.
 func HaddEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(haddEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func haddEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // HaddPi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and 'b',
@@ -193,10 +173,8 @@ func haddEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_pi16'.
 // Requires SSSE3.
 func HaddPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(haddPi16(a, b))
+	panic("not implemented")
 }
-
-func haddPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // HaddPi32: Horizontally add adjacent pairs of 32-bit integers in 'a' and 'b',
@@ -208,10 +186,8 @@ func haddPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PHADDW'. Intrinsic: '_mm_hadd_pi32'.
 // Requires SSSE3.
 func HaddPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(haddPi32(a, b))
+	panic("not implemented")
 }
-
-func haddPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // HaddsEpi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and
@@ -229,10 +205,8 @@ func haddPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PHADDSW'. Intrinsic: '_mm_hadds_epi16'.
 // Requires SSSE3.
 func HaddsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(haddsEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func haddsEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // HaddsPi16: Horizontally add adjacent pairs of 16-bit integers in 'a' and 'b'
@@ -246,10 +220,8 @@ func haddsEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PHADDSW'. Intrinsic: '_mm_hadds_pi16'.
 // Requires SSSE3.
 func HaddsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(haddsPi16(a, b))
+	panic("not implemented")
 }
-
-func haddsPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // HsubEpi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a'
@@ -267,10 +239,8 @@ func haddsPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PHSUBW'. Intrinsic: '_mm_hsub_epi16'.
 // Requires SSSE3.
 func HsubEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(hsubEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func hsubEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // HsubEpi32: Horizontally subtract adjacent pairs of 32-bit integers in 'a'
@@ -284,10 +254,8 @@ func hsubEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PHSUBD'. Intrinsic: '_mm_hsub_epi32'.
 // Requires SSSE3.
 func HsubEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(hsubEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func hsubEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // HsubPi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a' and
@@ -301,10 +269,8 @@ func hsubEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PHSUBW'. Intrinsic: '_mm_hsub_pi16'.
 // Requires SSSE3.
 func HsubPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(hsubPi16(a, b))
+	panic("not implemented")
 }
-
-func hsubPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // HsubPi32: Horizontally subtract adjacent pairs of 32-bit integers in 'a' and
@@ -316,10 +282,8 @@ func hsubPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PHSUBD'. Intrinsic: '_mm_hsub_pi32'.
 // Requires SSSE3.
 func HsubPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(hsubPi32(a, b))
+	panic("not implemented")
 }
-
-func hsubPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // HsubsEpi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a'
@@ -337,10 +301,8 @@ func hsubPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PHSUBSW'. Intrinsic: '_mm_hsubs_epi16'.
 // Requires SSSE3.
 func HsubsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(hsubsEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func hsubsEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // HsubsPi16: Horizontally subtract adjacent pairs of 16-bit integers in 'a'
@@ -354,10 +316,8 @@ func hsubsEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PHSUBSW'. Intrinsic: '_mm_hsubs_pi16'.
 // Requires SSSE3.
 func HsubsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(hsubsPi16(a, b))
+	panic("not implemented")
 }
-
-func hsubsPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // MaddubsEpi16: Vertically multiply each unsigned 8-bit integer from 'a' with
@@ -373,10 +333,8 @@ func hsubsPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMADDUBSW'. Intrinsic: '_mm_maddubs_epi16'.
 // Requires SSSE3.
 func MaddubsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(maddubsEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func maddubsEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // MaddubsPi16: Vertically multiply each unsigned 8-bit integer from 'a' with
@@ -392,10 +350,8 @@ func maddubsEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PMADDUBSW'. Intrinsic: '_mm_maddubs_pi16'.
 // Requires SSSE3.
 func MaddubsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(maddubsPi16(a, b))
+	panic("not implemented")
 }
-
-func maddubsPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // MulhrsEpi16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -412,10 +368,8 @@ func maddubsPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PMULHRSW'. Intrinsic: '_mm_mulhrs_epi16'.
 // Requires SSSE3.
 func MulhrsEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(mulhrsEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func mulhrsEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // MulhrsPi16: Multiply packed 16-bit integers in 'a' and 'b', producing
@@ -432,10 +386,8 @@ func mulhrsEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PMULHRSW'. Intrinsic: '_mm_mulhrs_pi16'.
 // Requires SSSE3.
 func MulhrsPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(mulhrsPi16(a, b))
+	panic("not implemented")
 }
-
-func mulhrsPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // ShuffleEpi8: Shuffle packed 8-bit integers in 'a' according to shuffle
@@ -455,10 +407,8 @@ func mulhrsPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSHUFB'. Intrinsic: '_mm_shuffle_epi8'.
 // Requires SSSE3.
 func ShuffleEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(shuffleEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func shuffleEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // ShufflePi8: Shuffle packed 8-bit integers in 'a' according to shuffle
@@ -478,10 +428,8 @@ func shuffleEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSHUFB'. Intrinsic: '_mm_shuffle_pi8'.
 // Requires SSSE3.
 func ShufflePi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(shufflePi8(a, b))
+	panic("not implemented")
 }
-
-func shufflePi8(a x86.M64, b x86.M64) x86.M64
 
 
 // SignEpi16: Negate packed 16-bit integers in 'a' when the corresponding
@@ -503,10 +451,8 @@ func shufflePi8(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSIGNW'. Intrinsic: '_mm_sign_epi16'.
 // Requires SSSE3.
 func SignEpi16(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(signEpi16([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func signEpi16(a [16]byte, b [16]byte) [16]byte
 
 
 // SignEpi32: Negate packed 32-bit integers in 'a' when the corresponding
@@ -528,10 +474,8 @@ func signEpi16(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSIGND'. Intrinsic: '_mm_sign_epi32'.
 // Requires SSSE3.
 func SignEpi32(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(signEpi32([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func signEpi32(a [16]byte, b [16]byte) [16]byte
 
 
 // SignEpi8: Negate packed 8-bit integers in 'a' when the corresponding signed
@@ -552,10 +496,8 @@ func signEpi32(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSIGNB'. Intrinsic: '_mm_sign_epi8'.
 // Requires SSSE3.
 func SignEpi8(a x86.M128i, b x86.M128i) (dst x86.M128i) {
-	return x86.M128i(signEpi8([16]byte(a), [16]byte(b)))
+	panic("not implemented")
 }
-
-func signEpi8(a [16]byte, b [16]byte) [16]byte
 
 
 // SignPi16: Negate packed 16-bit integers in 'a' when the corresponding signed
@@ -576,10 +518,8 @@ func signEpi8(a [16]byte, b [16]byte) [16]byte
 // Instruction: 'PSIGNW'. Intrinsic: '_mm_sign_pi16'.
 // Requires SSSE3.
 func SignPi16(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(signPi16(a, b))
+	panic("not implemented")
 }
-
-func signPi16(a x86.M64, b x86.M64) x86.M64
 
 
 // SignPi32: Negate packed 32-bit integers in 'a' when the corresponding signed
@@ -600,10 +540,8 @@ func signPi16(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSIGND'. Intrinsic: '_mm_sign_pi32'.
 // Requires SSSE3.
 func SignPi32(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(signPi32(a, b))
+	panic("not implemented")
 }
-
-func signPi32(a x86.M64, b x86.M64) x86.M64
 
 
 // SignPi8: Negate packed 8-bit integers in 'a' when the corresponding signed
@@ -624,8 +562,6 @@ func signPi32(a x86.M64, b x86.M64) x86.M64
 // Instruction: 'PSIGNB'. Intrinsic: '_mm_sign_pi8'.
 // Requires SSSE3.
 func SignPi8(a x86.M64, b x86.M64) (dst x86.M64) {
-	return x86.M64(signPi8(a, b))
+	panic("not implemented")
 }
-
-func signPi8(a x86.M64, b x86.M64) x86.M64
 

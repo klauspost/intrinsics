@@ -6,12 +6,19 @@ type M64i [8]byte
 type M64Const *M64
 
 // SSE+
-type M128i [16]byte
-type M128 [4]float32
-type M128d [2]float64
-type M128Const *M128
-type M128iConst *M128i
-type M128dConst *M128d
+//type M128i [16]byte
+//type M128 [4]float32
+//type M128d [2]float64
+//type M128Const *M128
+//type M128iConst *M128i
+//type M128dConst *M128d
+
+type M128i _m128_
+type M128 _m128_
+type M128d _m128_
+type M128Const _m128_
+type M128iConst _m128_
+type M128dConst _m128_
 
 // AVX
 type M256 [8]float32

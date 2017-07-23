@@ -20,6 +20,6 @@ var _ = x86.M64{}  // Make sure we use x86 package
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func Prefetch(p *byte, i int)  {
-	// FIXME: Rework to avoid possible return value as parameter.
-
+	panic("not implemented")
 }
+

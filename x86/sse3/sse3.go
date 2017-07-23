@@ -26,10 +26,8 @@ var _ = x86.M64{}  // Make sure we use x86 package
 // Instruction: 'ADDSUBPD'. Intrinsic: '_mm_addsub_pd'.
 // Requires SSE3.
 func AddsubPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(addsubPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func addsubPd(a [2]float64, b [2]float64) [2]float64
 
 
 // AddsubPs: Alternatively add and subtract packed single-precision (32-bit)
@@ -48,10 +46,8 @@ func addsubPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'ADDSUBPS'. Intrinsic: '_mm_addsub_ps'.
 // Requires SSE3.
 func AddsubPs(a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(addsubPs([4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func addsubPs(a [4]float32, b [4]float32) [4]float32
 
 
 // HaddPd: Horizontally add adjacent pairs of double-precision (64-bit)
@@ -63,10 +59,8 @@ func addsubPs(a [4]float32, b [4]float32) [4]float32
 // Instruction: 'HADDPD'. Intrinsic: '_mm_hadd_pd'.
 // Requires SSE3.
 func HaddPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(haddPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func haddPd(a [2]float64, b [2]float64) [2]float64
 
 
 // HaddPs: Horizontally add adjacent pairs of single-precision (32-bit)
@@ -80,10 +74,8 @@ func haddPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'HADDPS'. Intrinsic: '_mm_hadd_ps'.
 // Requires SSE3.
 func HaddPs(a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(haddPs([4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func haddPs(a [4]float32, b [4]float32) [4]float32
 
 
 // HsubPd: Horizontally subtract adjacent pairs of double-precision (64-bit)
@@ -95,10 +87,8 @@ func haddPs(a [4]float32, b [4]float32) [4]float32
 // Instruction: 'HSUBPD'. Intrinsic: '_mm_hsub_pd'.
 // Requires SSE3.
 func HsubPd(a x86.M128d, b x86.M128d) (dst x86.M128d) {
-	return x86.M128d(hsubPd([2]float64(a), [2]float64(b)))
+	panic("not implemented")
 }
-
-func hsubPd(a [2]float64, b [2]float64) [2]float64
 
 
 // HsubPs: Horizontally add adjacent pairs of single-precision (32-bit)
@@ -112,10 +102,8 @@ func hsubPd(a [2]float64, b [2]float64) [2]float64
 // Instruction: 'HSUBPS'. Intrinsic: '_mm_hsub_ps'.
 // Requires SSE3.
 func HsubPs(a x86.M128, b x86.M128) (dst x86.M128) {
-	return x86.M128(hsubPs([4]float32(a), [4]float32(b)))
+	panic("not implemented")
 }
-
-func hsubPs(a [4]float32, b [4]float32) [4]float32
 
 
 // LddquSi128: Load 128-bits of integer data from unaligned memory into 'dst'.
@@ -129,9 +117,9 @@ func hsubPs(a [4]float32, b [4]float32) [4]float32
 //
 // FIXME: Will likely need to be reworked (has pointer parameter).
 func LddquSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
-	// FIXME: Rework to avoid possible return value as parameter.
-	return x86.M128i{}
+	panic("not implemented")
 }
+
 
 // Skipped: _mm_loaddup_pd. Contains pointer parameter.
 
@@ -145,10 +133,8 @@ func LddquSi128(mem_addr *x86.M128iConst) (dst x86.M128i) {
 // Instruction: 'MOVDDUP'. Intrinsic: '_mm_movedup_pd'.
 // Requires SSE3.
 func MovedupPd(a x86.M128d) (dst x86.M128d) {
-	return x86.M128d(movedupPd([2]float64(a)))
+	panic("not implemented")
 }
-
-func movedupPd(a [2]float64) [2]float64
 
 
 // MovehdupPs: Duplicate odd-indexed single-precision (32-bit) floating-point
@@ -162,10 +148,8 @@ func movedupPd(a [2]float64) [2]float64
 // Instruction: 'MOVSHDUP'. Intrinsic: '_mm_movehdup_ps'.
 // Requires SSE3.
 func MovehdupPs(a x86.M128) (dst x86.M128) {
-	return x86.M128(movehdupPs([4]float32(a)))
+	panic("not implemented")
 }
-
-func movehdupPs(a [4]float32) [4]float32
 
 
 // MoveldupPs: Duplicate even-indexed single-precision (32-bit) floating-point
@@ -179,8 +163,6 @@ func movehdupPs(a [4]float32) [4]float32
 // Instruction: 'MOVSLDUP'. Intrinsic: '_mm_moveldup_ps'.
 // Requires SSE3.
 func MoveldupPs(a x86.M128) (dst x86.M128) {
-	return x86.M128(moveldupPs([4]float32(a)))
+	panic("not implemented")
 }
-
-func moveldupPs(a [4]float32) [4]float32
 
